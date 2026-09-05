@@ -1,11 +1,11 @@
-// Maydan offline cache.
+// Maydan platform offline cache.
 //
 // The game is a single self-contained document — no API, no external asset — so
 // "works offline" reduces to holding that one file plus its icons. Everything is
 // precached on install; the network is only ever consulted to find a newer copy.
 //
 // Bump CACHE when index.html changes, or installed players keep the old build.
-const CACHE = 'maydan-0.9.2';
+const CACHE = 'maydan-platform-1.0.0';
 
 const ASSETS = [
   './',

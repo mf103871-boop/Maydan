@@ -1,0 +1,10 @@
+run = "npm run dev"
+entrypoint = "src/main.jsx"
+modules = ["nodejs-22"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[deployment]
+run = ["sh", "-c", "npm run build && node scripts/dev.mjs --serve-only"]

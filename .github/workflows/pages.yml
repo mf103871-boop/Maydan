@@ -25,17 +25,22 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
       - name: configure pages
         uses: actions/configure-pages@v5
-        with:
-          # Turns Pages on for this repository the first time, so nobody has to
-          # find the setting by hand.
-          enablement: true
+      - name: install
+        run: npm ci --no-audit --no-fund
+      - name: test
+        run: npm test
+      - name: build
+        # dist/ is the site: the single-file game plus the PWA files from public/.
+        run: npm run build
       - name: upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          # The game is static and needs no build step — the repository root is
-          # the site.
-          path: .
+          path: dist
       - id: deploy
         uses: actions/deploy-pages@v4

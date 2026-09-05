@@ -1,0 +1,75 @@
+/* ── الشاشة الرئيسية ── */
+.home-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-mark { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-weight: 900; font-size: 22px; color: var(--accent); background: linear-gradient(145deg, #1d2a5a, #0c1230); border: 1px solid rgba(245,184,46,.5); box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+.brand-name { font-size: 20px; font-weight: 900; line-height: 1.1; }
+.brand-sub { font-size: 12px; color: var(--muted); font-weight: 700; }
+.roster-card { display: flex; align-items: center; gap: 12px; }
+.roster-faces { display: flex; }
+.roster-faces span { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 18px; background: color-mix(in srgb, var(--c) 30%, var(--bg-2)); border: 2px solid var(--bg); margin-inline-end: -8px; }
+.games-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (min-width: 560px) { .games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.game-card { --ga: var(--game-accent); position: relative; display: grid; gap: 8px; text-align: start; padding: 14px; min-height: 176px; border-radius: 22px; background: linear-gradient(160deg, color-mix(in srgb, var(--ga) 16%, var(--surface)), var(--surface) 60%); border: 1px solid color-mix(in srgb, var(--ga) 35%, var(--stroke)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ga) 12%, transparent), var(--shadow-soft); overflow: hidden; isolation: isolate; transform-style: preserve-3d; transition: transform .16s var(--ease-out), box-shadow .2s ease; animation: card-in .55s var(--ease-out) both; animation-delay: var(--delay, 0ms); will-change: transform; }
+.game-card::after { content: ""; position: absolute; inset: -40% -20% auto; height: 70%; background: radial-gradient(closest-side, color-mix(in srgb, var(--ga) 35%, transparent), transparent); pointer-events: none; opacity: .8; }
+.game-card:active { box-shadow: 0 0 0 2px color-mix(in srgb, var(--ga) 60%, transparent), 0 14px 30px color-mix(in srgb, var(--ga) 25%, transparent); }
+.game-card .icon { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; color: var(--ga); background: color-mix(in srgb, var(--ga) 18%, transparent); border: 1px solid color-mix(in srgb, var(--ga) 40%, transparent); }
+.game-card .icon svg { width: 30px; height: 30px; }
+.game-card .name { font-size: 18px; font-weight: 900; line-height: 1.2; }
+.game-card .tagline { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.game-card .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; font-size: 12px; color: var(--muted); font-weight: 700; }
+.game-card .badge-new { position: absolute; top: 10px; inset-inline-start: 10px; z-index: 2; }
+.game-card.is-soon { opacity: .55; border-style: dashed; }
+@keyframes card-in { from { opacity: 0; transform: translateY(18px); } }
+
+/* ── تفاصيل اللعبة ── */
+.details-hero { display: grid; justify-items: center; gap: 12px; text-align: center; padding: 18px 12px 8px; }
+.details-hero .icon { width: 96px; height: 96px; border-radius: 30px; display: grid; place-items: center; color: var(--game-accent); background: color-mix(in srgb, var(--game-accent) 18%, transparent); border: 1px solid color-mix(in srgb, var(--game-accent) 45%, transparent); box-shadow: 0 0 60px color-mix(in srgb, var(--game-accent) 30%, transparent); animation: ui-trophy .7s var(--ease-spring) both; }
+.details-hero .icon svg { width: 54px; height: 54px; }
+.details-hero h1 { font-size: clamp(30px, 8vw, 40px); font-weight: 900; color: var(--game-accent); }
+.details-hero p { color: var(--muted); max-width: 440px; line-height: 1.7; }
+.steps { display: grid; gap: 10px; counter-reset: step; }
+.step { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; background: var(--surface); border: 1px solid var(--stroke); animation: card-in .5s var(--ease-out) both; animation-delay: var(--delay, 0ms); line-height: 1.6; }
+.step::before { counter-increment: step; content: counter(step); flex: 0 0 auto; width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font-weight: 900; color: #0B0E1A; background: var(--game-accent); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.fact { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--stroke); font-size: 14px; font-weight: 700; color: var(--muted); }
+.fact svg { width: 16px; height: 16px; color: var(--game-accent); }
+
+/* ── إطار اللعبة ── */
+.game-frame { --game-accent: var(--accent); min-height: 100dvh; display: flex; flex-direction: column; }
+.game-bar { position: sticky; top: 0; z-index: 210; display: flex; align-items: center; gap: 10px; min-height: calc(52px + var(--safe-top)); padding: var(--safe-top) max(10px, var(--safe-right)) 0 max(10px, var(--safe-left)); background: linear-gradient(180deg, color-mix(in srgb, var(--game-accent) 22%, var(--bg)), color-mix(in srgb, var(--game-accent) 8%, var(--bg))); border-bottom: 1px solid color-mix(in srgb, var(--game-accent) 35%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.game-bar .title { flex: 1; min-width: 0; font-weight: 900; font-size: 16px; color: var(--game-accent); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.game-bar .btn-icon { width: 42px; height: 42px; min-height: 42px; }
+.game-body { flex: 1; display: flex; flex-direction: column; }
+.game-body > .screen { min-height: 0; padding-top: 12px; flex: 1; }
+/* رأس «بَديهة» اللاصق يلتصق تحت شريط المنصة لا فوقه */
+.game-frame .m-root .m-header { top: calc(52px + var(--safe-top)); }
+.game-frame .m-root { padding-top: 10px; min-height: calc(100dvh - 52px - var(--safe-top)); }
+
+/* ── الإعدادات ── */
+.setting { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: var(--surface); border: 1px solid var(--stroke); }
+.setting .icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--surface-2); color: var(--accent); flex: 0 0 auto; }
+.setting .text { flex: 1; min-width: 0; }
+.setting .text b { display: block; font-size: 16px; }
+.setting .text small { color: var(--muted); font-size: 13px; }
+.switch { width: 54px; height: 32px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1px solid var(--stroke-strong); position: relative; flex: 0 0 auto; transition: background-color .2s ease; min-height: 32px; }
+.switch::after { content: ""; position: absolute; top: 3px; inset-inline-start: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; transition: transform .2s var(--ease-out); }
+.switch[aria-checked="true"] { background: var(--success); }
+.switch[aria-checked="true"]::after { transform: translateX(-22px); }
+
+/* ── Splash ── */
+.splash { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: radial-gradient(600px 420px at 50% 40%, #1a2350 0%, #0f1430 50%, var(--bg) 100%); cursor: pointer; }
+.splash canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.splash-inner { position: relative; display: grid; justify-items: center; gap: 12px; }
+.splash-mark { width: 124px; height: 124px; border-radius: 34px; display: grid; place-items: center; font-size: 46px; font-weight: 900; color: var(--accent); background: linear-gradient(145deg, #1d2a5a, #0c1230); border: 1px solid rgba(245,184,46,.6); box-shadow: 0 24px 70px rgba(0,0,0,.45), 0 0 50px rgba(245,184,46,.15); animation: splash-mark .9s var(--ease-spring) both; }
+.splash-title { font-size: 36px; font-weight: 900; color: #fff; background: linear-gradient(90deg, #fff 0%, var(--accent) 50%, #fff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% 100%; clip-path: inset(0 100% 0 0); animation: splash-reveal 1s var(--ease-out) .35s forwards, splash-shine 2.2s linear .6s infinite; }
+.splash-sub { color: var(--muted); font-size: 14px; font-weight: 700; opacity: 0; animation: ui-fade .5s ease-out .9s forwards; }
+.splash-skip { position: absolute; bottom: calc(24px + var(--safe-bottom)); inset-inline: 0; text-align: center; color: var(--muted); font-size: 13px; opacity: 0; animation: ui-fade .4s ease-out 1.1s forwards; }
+@keyframes splash-mark { from { transform: scale(.4) rotate(-8deg); opacity: 0; } }
+@keyframes splash-reveal { to { clip-path: inset(0 0 0 0); } }
+@keyframes splash-shine { to { background-position: -200% 0; } }
+.splash.is-leaving { animation: splash-out .35s ease-in forwards; }
+@keyframes splash-out { to { opacity: 0; transform: scale(1.04); } }
+
+.about-list { display: grid; gap: 8px; }
+.about-list .row { padding: 10px 12px; border-radius: 14px; background: var(--surface); border: 1px solid var(--stroke); }
+.about-list .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
