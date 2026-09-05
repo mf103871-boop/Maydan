@@ -1,0 +1,41 @@
+name: pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+# The site is one deploy of one branch: let a running deploy finish rather than
+# cancelling it, or a half-uploaded artifact becomes the live site.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: configure pages
+        uses: actions/configure-pages@v5
+        with:
+          # Turns Pages on for this repository the first time, so nobody has to
+          # find the setting by hand.
+          enablement: true
+      - name: upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # The game is static and needs no build step — the repository root is
+          # the site.
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4

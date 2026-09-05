@@ -1,0 +1,25 @@
+{
+  "name": "ميدان — لعبة أسئلة جماعية",
+  "short_name": "ميدان",
+  "description": "لعبة أسئلة عربية جماعية من فريقين إلى أربعة. 43 فئة و1032 سؤالًا، تعمل دون إنترنت.",
+  "lang": "ar",
+  "dir": "rtl",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#050713",
+  "theme_color": "#050713",
+  "categories": ["games", "entertainment", "education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "screenshots/home.png", "sizes": "390x844", "type": "image/png", "form_factor": "narrow", "label": "شاشة البداية" }
+  ]
+}
