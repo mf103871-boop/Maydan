@@ -1,12 +1,23 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readdirSync, readFileSync } from 'node:fs';
-import path from 'node:path';
 import logic from '../src/games/badeeha/logic.js';
 import { seeded } from './helpers.js';
 
-const dir = path.resolve('src/data/categories');
-const CATS = readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(path.join(dir, f), 'utf8')));
+// فئات اصطناعية: منطق بناء الجولة يجب أن يُختبر بمعزل عن محتوى البنك الحقيقي،
+// فالبنك يتغيّر مع كل حزمة جديدة بينما قواعد التوزيع والتكرار ثابتة.
+const TIERS = [200, 400, 600, 800, 1000];
+const makeCategory = (index) => ({
+  id: `cat${index}`,
+  name: `فئة ${index}`,
+  icon: '🎯',
+  qs: TIERS.flatMap((p) => Array.from({ length: 6 }, (_, k) => ({
+    p,
+    q: `سؤال ${index}-${p}-${k}`,
+    a: `إجابة ${index}-${p}-${k}`,
+    qid: `${index}${p}${k}`.padStart(12, '0'),
+  }))),
+});
+const CATS = Array.from({ length: 8 }, (_, i) => makeCategory(i));
 const six = CATS.slice(0, 6).map((c) => c.id);
 const deckIds = (deck) => Object.values(deck).flat().map((q) => q.qid);
 
