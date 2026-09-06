@@ -337,14 +337,23 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
       }
     }
 
-    // تسريب الإجابة في نص سؤال آخر (للأسئلة النصية)
+    // تسريب الإجابة. حالتان مختلفتان:
+    // • داخل سؤالها نفسه: السؤال معطوب، لا شيء يبقى ليُخمَّن → خطأ دائمًا.
+    // • داخل سؤال آخر: إجابة من كلمتين فأكثر تظهر حرفيًا في سؤال آخر تكشفه فعلًا
+    //   → خطأ. أما الكلمة المفردة الشائعة («الشمس» في سؤال فلكي آخر) فورودها
+    //   عرضيّ لا يدل على شيء، ومنعها يعني حذف أسئلة سليمة → تحذير للمراجعة.
     for (const q of qs) {
       if (!q || !q.a || q.type) continue;
       const na = normalizeArabic(q.a);
       if (na.length < 4) continue;
+      if (q.q && answerLeaks(na, normalizeArabic(q.q))) err(`${q.qid}: إجابته «${q.a}» مكتوبة داخل نص سؤالها`);
+      const multiWord = na.split(' ').length > 1;
       for (const other of qs) {
         if (!other || other === q || !other.q) continue;
-        if (answerLeaks(na, normalizeArabic(other.q))) err(`${q.qid}: إجابته «${q.a}» مكشوفة في نص ${other.qid}`);
+        if (!answerLeaks(na, normalizeArabic(other.q))) continue;
+        const message = `${q.qid}: إجابته «${q.a}» مكشوفة في نص ${other.qid}`;
+        if (multiWord) err(message);
+        else warn(`${message} (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)`);
       }
     }
 

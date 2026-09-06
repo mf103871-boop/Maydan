@@ -2,9 +2,9 @@
 // الترتيب هو ترتيب الفئات في شاشة الاختيار (حقل order في bank-status.json).
 // صيغة الحزمة وأنواع الأسئلة في docs/bank/SCHEMA.md.
 
-export const NO_CATEGORIES_YET = true;
+import pack_general from './general.json' with { type: 'json' };
 
-export const CATS = [];
+export const CATS = [pack_general];
 
 export const CATEGORY_IDS = CATS.map((category) => category.id);
 export const TOTAL_QUESTIONS = CATS.reduce((sum, category) => sum + category.qs.length, 0);

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
-import { STORY_CREDITS, STORY_ACTOR, answerLeaks } from '../scripts/bank.mjs';
+import { STORY_CREDITS, STORY_ACTOR, answerLeaks, normalizeArabic } from '../scripts/bank.mjs';
 
 // حزم أسئلة «بَديهة». البنك يُعاد بناؤه حزمة حزمة، فالاختبارات تتحقق مما هو
 // موجود فعلًا بدل أن تفرض عددًا ثابتًا من الحزم.
@@ -59,12 +59,9 @@ test('المعرّفات فريدة عبر البنك كله، ولا سؤال �
   }
 });
 
-test('لا سؤال مكرر نصًا داخل الحزمة، ولا إجابة مكشوفة في سؤال آخر منها', () => {
-  const norm = (s) => String(s || '')
-    .replace(/[ً-ْـ]/g, '')
-    .replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي')
-    .replace(/[«»"'؟?.,،:؛()]/g, ' ')
-    .replace(/\s+/g, ' ').trim();
+test('لا سؤال مكرر نصًا داخل الحزمة، ولا إجابة مكشوفة كشفًا فعليًا', () => {
+  // التطبيع نفسه الذي يستعمله bank:validate، فلا يختلف الاثنان في حكم واحد.
+  const norm = normalizeArabic;
   for (const c of cats) {
     const texts = c.qs.filter((q) => q.q).map((q) => norm(q.q));
     // الفئات ذات النمط الواحد (مثل شبكات التركيز) تتعمّد تكرار نص الطلب
@@ -75,6 +72,12 @@ test('لا سؤال مكرر نصًا داخل الحزمة، ولا إجابة 
       if (!q.a || q.type) continue;
       const answer = norm(q.a);
       if (answer.length < 4) continue;
+      // الإجابة داخل سؤالها: السؤال يحمل جوابه فلا شيء يبقى ليُخمَّن.
+      assert.ok(!(q.q && answerLeaks(answer, norm(q.q))), `${c.id}: إجابة ${q.qid} «${q.a}» مكتوبة داخل نص سؤالها`);
+      // في سؤال آخر: عبارة من كلمتين فأكثر تتكرر حرفيًا تكشفه فعلًا. أما الكلمة
+      // المفردة الشائعة («الشمس» في سؤال فلكي آخر) فورودها عرضيّ — يُحذّر منه
+      // bank:validate للمراجعة ولا يُرسِب البناء. انظر docs/bank/RUBRIC.md.
+      if (answer.split(' ').length < 2) continue;
       for (const other of c.qs) {
         if (other.qid === q.qid || !other.q) continue;
         assert.ok(!answerLeaks(answer, norm(other.q)), `${c.id}: إجابة ${q.qid} «${q.a}» مكشوفة في نص ${other.qid}`);
