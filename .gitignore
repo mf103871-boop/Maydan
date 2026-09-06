@@ -7,4 +7,4 @@ release/
 
 # الحزم التجريبية (scripts/demo-packs.mjs) — للاختبار المحلي فقط
 media/demo/
-src/data/categories/demo*.json
+src/data/categories/demo[a-f].json

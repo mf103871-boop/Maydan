@@ -73,3 +73,6 @@
 .about-list { display: grid; gap: 8px; }
 .about-list .row { padding: 10px 12px; border-radius: 14px; background: var(--surface); border: 1px solid var(--stroke); }
 .about-list .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
+.credits-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; line-height: 1.7; max-height: 50vh; overflow: auto; }
+.credits-list li { padding: 8px 10px; border-radius: 12px; background: var(--surface); border: 1px solid var(--stroke); overflow-wrap: anywhere; }
+.credits-list a { color: var(--accent, inherit); text-decoration: underline; }

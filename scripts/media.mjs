@@ -8,10 +8,11 @@ const AUDIO = /\.(mp3|m4a|aac|ogg|opus|wav)$/i;
 const VIDEO = /\.(mp4|webm|mov)$/i;
 const EXTERNAL = /^(https?:)?\/\/|^data:/i;
 
+// المرجع نص أو كائن إسناد { src, … }؛ هنا يهمّنا المسار فقط.
 export function mediaRefs(question) {
-  if (!question || !question.media) return [];
+  if (!question || question.media == null) return [];
   return (Array.isArray(question.media) ? question.media : [question.media])
-    .map((r) => String(r || '').trim())
+    .map((r) => (r && typeof r === 'object' ? String(r.src || '') : String(r || '')).trim())
     .filter(Boolean);
 }
 

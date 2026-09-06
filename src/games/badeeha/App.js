@@ -7,6 +7,8 @@ import MAYDAN_BETA_CSS from "./styles.css";
 import MaydanLogicBeta from "./logic.js";
 import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
+import { mulberry32 } from "../../shared/lib/rng.js";
+import { arabicNormalize } from "../../shared/lib/arabicNormalize.js";
 import {
   preloadMedia,
   cacheForOffline,
@@ -74,7 +76,12 @@ const TOOLS = [
     complete: "أكملوا الناقص",
     common: "ما القاسم المشترك بينها؟",
     hints: "خمّنوا، ولكم أن تطلبوا تلميحًا بثمن",
+    choice: "اختاروا الإجابة الصحيحة",
+    code: "فكّوا الشفرة",
   },
+  // مقطع الصوت يُسمع ثلاث مرات قبل كشف الإجابة، ثم بلا حدّ.
+  MAX_AUDIO_PLAYS = 3,
+  JUMBLE_TILES = 12,
   // كل تلميح يُطلب يخصم من نقاط السؤال، ولا تقل أبدًا عن الربع.
   HINT_COST_PERCENT = 25,
   shuffle = (arr) => {
@@ -758,6 +765,274 @@ function MaydanModal({ title, onClose, children, bottom = !1 }) {
     )
   );
 }
+// ── مكوّنات الوسائط ──────────────────────────────────────────────────────
+// خارج مكوّن اللعبة عمدًا: مكوّن يُعرَّف داخل دالة العرض يتغير هويته مع كل إعادة
+// عرض (مؤقت الثواني مثلًا)، فيُفكّ ويُركَّب من جديد ويفقد حالته — يتوقف الصوت
+// وتعود قطع «إكشفني» إلى الغطاء. هنا الهوية ثابتة والحالة تبقى.
+// مرجع الملف في السؤال قصير («01.webp»)، ومجلد الحزمة يكمله. الأخطاء تُعرض
+// للاعب بدل أن تترك مربعًا فارغًا لا يفهمه أحد.
+function MediaBox({ url, kind, className, alt, children }) {
+  // المحمَّل يُفحص أولًا: ملف أخفق مرة (جولة بلا شبكة) ثم نجح لاحقًا يبقى في
+  // سجل الإخفاقات، فترتيبٌ معكوس كان يُظهر خطأً دائمًا لملف موجود فعلًا.
+  const [state, setState] = useState(mediaIsLoaded(url) ? "ready" : mediaHasFailed(url) ? "error" : "loading");
+  useEffect(() => {
+    setState(mediaIsLoaded(url) ? "ready" : mediaHasFailed(url) ? "error" : "loading");
+  }, [url]);
+  if (!url) {
+    return hBeta("div", { className: "m-media-box is-error" }, hBeta("p", null, "لا ملف لهذا السؤال"));
+  }
+  return hBeta(
+    "div",
+    { className: `m-media-box ${className || ""} ${state === "loading" ? "is-loading" : ""}` },
+    state === "error"
+      ? hBeta(
+          "div",
+          { className: "m-media-error", role: "status" },
+          hBeta("span", { "aria-hidden": "true" }, "📡"),
+          hBeta("b", null, "تعذّر تحميل الملف"),
+          hBeta("small", null, navigator.onLine === false ? "لا يوجد اتصال بالإنترنت" : "تحقق من الاتصال ثم أعد المحاولة"),
+          hBeta(
+            "button",
+            { type: "button", className: "m-secondary m-small", onClick: () => { setState("loading"); preloadMedia([url]).then((r) => setState(r.failed === 0 ? "ready" : "error")); } },
+            "أعد المحاولة",
+          ),
+        )
+      : children({ onReady: () => setState("ready"), onError: () => setState("error") }),
+    state === "loading" && hBeta("span", { className: "m-media-spinner", "aria-label": "جارٍ التحميل" }),
+  );
+}
+
+// ترتيب قطع «ركّبها صح» ثابت لكل سؤال (مشتق من معرّفه) كي لا يتغير عند إعادة الرسم أو الاستئناف.
+// مقارنة الإجابات بالموحّد نفسه الذي يستعمله bank:validate، فما يقبله المدقّق
+// خيارًا صحيحًا تُبرزه الشاشة حتمًا.
+const arabicKey = arabicNormalize;
+
+function jumbleOrder(seed) {
+  let h = 2166136261;
+  for (const ch of String(seed)) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+  const random = mulberry32(h >>> 0),
+    order = Array.from({ length: JUMBLE_TILES }, (_, i) => i);
+  for (let i = order.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  if (order.every((v, i) => v === i)) [order[0], order[1]] = [order[1], order[0]];
+  return order;
+}
+
+function MediaImage({ question, url, effect, revealed, onSfx }) {
+  const [tiles, setTiles] = useState(() => (effect === "reveal" ? Array.from({ length: 12 }, (_, i) => i) : []));
+  const [enlarged, setEnlarged] = useState(false);
+  // شبكة القطع تأخذ نسبة الصورة الحقيقية، وإلا مطّت صورةً مربّعة داخل إطار 4:3
+  const [ratio, setRatio] = useState(null);
+  useEffect(() => { if (effect === "reveal") setTiles(Array.from({ length: 12 }, (_, i) => i)); setEnlarged(false); setRatio(null); }, [url, effect]);
+  useEffect(() => { if (!enlarged) return undefined; const onKey = (e) => { if (e.key === "Escape") setEnlarged(false); }; window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey); }, [enlarged]);
+  const shown = revealed ? [] : tiles;
+  const cls = ["m-media-img", `fx-${effect}`, revealed ? "is-revealed" : ""].join(" ");
+  // التكبير باللمس لا يكشف ما يخفيه المؤثّر: يُتاح للصورة العادية دائمًا، وللبقية بعد الكشف.
+  const canEnlarge = effect === "none" || revealed;
+  const jumbled = effect === "jumble" && !revealed;
+  const order = jumbled ? jumbleOrder(question.qid || url) : null;
+  return hBeta(
+    MediaBox,
+    { url, className: `fx-frame-${effect}`, alt: question.q || "صورة السؤال" },
+    ({ onReady, onError }) =>
+      hBeta(
+        "div",
+        {
+          className: `m-media-stage ${canEnlarge ? "can-enlarge" : ""}`,
+          onClick: canEnlarge ? () => { setEnlarged(true); onSfx && onSfx("click"); } : undefined,
+          role: canEnlarge ? "button" : undefined,
+          "aria-label": canEnlarge ? "تكبير الصورة" : undefined,
+        },
+        hBeta("img", {
+          src: url,
+          alt: revealed ? question.a || "صورة السؤال" : "صورة السؤال",
+          className: jumbled ? `${cls} is-hidden-src` : cls,
+          style: effect === "zoom" ? { transformOrigin: question.origin || "50% 50%" } : null,
+          onLoad: (event) => {
+            const img = event.currentTarget;
+            if (img && img.naturalWidth && img.naturalHeight) setRatio(img.naturalWidth / img.naturalHeight);
+            onReady();
+          },
+          onError,
+          draggable: false,
+        }),
+        jumbled &&
+          hBeta(
+            "div",
+            { className: "m-jumble", "aria-hidden": "true", style: ratio ? { aspectRatio: String(ratio) } : null },
+            order.map((source, slot) =>
+              hBeta("i", {
+                key: slot,
+                style: {
+                  backgroundImage: `url("${url}")`,
+                  backgroundPosition: `${(source % 4) * (100 / 3)}% ${Math.floor(source / 4) * 50}%`,
+                },
+              }),
+            ),
+          ),
+        enlarged &&
+          hBeta(
+            "div",
+            {
+              className: "m-lightbox",
+              role: "dialog",
+              "aria-label": "الصورة مكبّرة — اضغط للإغلاق",
+              onClick: (e) => { e.stopPropagation(); setEnlarged(false); },
+            },
+            hBeta("img", { src: url, alt: revealed ? question.a || "صورة السؤال" : "صورة السؤال", className: cls, draggable: false }),
+          ),
+        effect === "reveal" &&
+          hBeta(
+            "div",
+            { className: "m-reveal-tiles", "aria-hidden": "true" },
+            Array.from({ length: 12 }, (_, i) =>
+              hBeta("i", { key: i, className: shown.includes(i) ? "" : "is-open" }),
+            ),
+          ),
+        effect === "reveal" &&
+          !revealed &&
+          hBeta(
+            "button",
+            {
+              type: "button",
+              className: "m-secondary m-small m-reveal-tile-btn",
+              disabled: shown.length === 0,
+              onClick: () => {
+                setTiles((list) => list.filter((_, index) => index !== Math.floor(Math.random() * list.length)));
+                onSfx && onSfx("click");
+              },
+            },
+            `اكشف قطعة (${shown.length})`,
+          ),
+      ),
+  );
+}
+
+function MediaAudio({ url, revealed }) {
+  const ref = useRef(null);
+  const [playing, setPlaying] = useState(false);
+  // تُحتسب المرة عند بدء التشغيل من أوله؛ الإيقاف المؤقت ثم الاستئناف لا يُحتسب.
+  const [plays, setPlays] = useState(0);
+  // متوقف في منتصف المقطع: استئنافه ليس مرة جديدة، فلا يُقفل الزر بعد نفاد المرات
+  const [midway, setMidway] = useState(false);
+  useEffect(() => { setPlays(0); setPlaying(false); setMidway(false); }, [url]);
+  useEffect(() => () => { if (ref.current) ref.current.pause(); }, []);
+  const spent = !revealed && plays >= MAX_AUDIO_PLAYS,
+    left = Math.max(0, MAX_AUDIO_PLAYS - plays);
+  const start = (fromStart) => {
+    const el = ref.current;
+    if (!el) return;
+    const fresh = fromStart || el.currentTime === 0 || el.ended;
+    if (fresh && spent) return;
+    if (fromStart) el.currentTime = 0;
+    // العدّ بعد تأكد التشغيل: ضغطة على مقطع ما زال يُحمَّل ثم إيقافها كانت تحرق مرة بلا صوت
+    el.play().then(() => { setPlaying(true); if (fresh) setPlays((n) => n + 1); }).catch(() => setPlaying(false));
+  };
+  const toggle = () => {
+    const el = ref.current;
+    if (!el) return;
+    if (el.paused) start(false);
+    else { el.pause(); setPlaying(false); }
+  };
+  return hBeta(
+    MediaBox,
+    { url, className: "is-audio" },
+    ({ onReady, onError }) =>
+      hBeta(
+        "div",
+        { className: `m-audio ${spent ? "is-spent" : ""}` },
+        hBeta("audio", {
+          ref,
+          src: url,
+          preload: "auto",
+          onCanPlay: onReady,
+          onError,
+          // الحالة تتبع العنصر نفسه لا الأزرار فقط (إيقاف من النظام، انتهاء المقطع…)
+          onPlay: () => { setPlaying(true); setMidway(false); },
+          onPause: () => { const el = ref.current; setPlaying(false); setMidway(!!el && el.currentTime > 0 && !el.ended); },
+          onEnded: () => { setPlaying(false); setMidway(false); },
+        }),
+        hBeta(
+          "button",
+          {
+            type: "button",
+            className: "m-audio-btn",
+            onClick: toggle,
+            disabled: spent && !playing && !midway,
+            "aria-label": playing ? "إيقاف" : "تشغيل",
+          },
+          hBeta("span", { "aria-hidden": "true" }, playing ? "⏸" : "▶"),
+        ),
+        hBeta(
+          "div",
+          { className: "m-audio-meta" },
+          hBeta("b", null, playing ? "يعمل الآن" : spent ? "انتهت مرات السماع" : "اضغط للاستماع"),
+          hBeta(
+            "small",
+            null,
+            revealed
+              ? "بعد الكشف يمكنكم إعادة السماع بلا حدّ"
+              : spent
+                ? "اكشفوا الإجابة لإعادة السماع"
+                : `${left === 1 ? "مرة واحدة متبقية" : left === 2 ? "مرتان متبقيتان" : `${left} مرات متبقية`} من ${MAX_AUDIO_PLAYS}`,
+          ),
+        ),
+        hBeta(
+          "button",
+          {
+            type: "button",
+            className: "m-secondary m-small",
+            disabled: spent,
+            onClick: () => start(true),
+          },
+          "↻ من البداية",
+        ),
+      ),
+  );
+}
+
+// «أربع صور وكلمة»: شبكة 2×2، كل صورة بصندوقها كي لا يعطّل ملفٌ واحد البقية.
+function FourPics({ question, urls, revealed }) {
+  return hBeta(
+    "div",
+    { className: "m-fourpics" },
+    urls.map((one, index) =>
+      hBeta(MediaBox, { key: one, url: one }, ({ onReady, onError }) =>
+        hBeta("img", {
+          src: one,
+          alt: revealed ? `${question.a} — صورة ${index + 1}` : `صورة ${index + 1}`,
+          className: "m-media-img",
+          onLoad: onReady,
+          onError,
+          draggable: false,
+        }),
+      ),
+    ),
+  );
+}
+
+function MediaVideo({ url }) {
+  const ref = useRef(null);
+  return hBeta(
+    MediaBox,
+    { url, className: "is-video" },
+    ({ onReady, onError }) =>
+      hBeta("video", {
+        ref,
+        src: url,
+        className: "m-media-video",
+        controls: true,
+        playsInline: true,
+        preload: "auto",
+        onLoadedData: onReady,
+        onError,
+      }),
+  );
+}
+
+
 function MaydanBeta() {
   const logic = MaydanLogicBeta,
     [hydrated, setHydrated] = useState(!1),
@@ -1527,158 +1802,6 @@ ${record.answered} من ${record.total} سؤالًا`,
       }),
     );
   }
-  // ── الوسائط ──────────────────────────────────────────────────────────────
-  // مرجع الملف في السؤال قصير («01.webp»)، ومجلد الحزمة يكمله. الأخطاء تُعرض
-  // للاعب بدل أن تترك مربعًا فارغًا لا يفهمه أحد.
-  function MediaBox({ url, kind, className, alt, children }) {
-    const [state, setState] = useState(mediaHasFailed(url) ? "error" : mediaIsLoaded(url) ? "ready" : "loading");
-    useEffect(() => {
-      setState(mediaHasFailed(url) ? "error" : mediaIsLoaded(url) ? "ready" : "loading");
-    }, [url]);
-    if (!url) {
-      return hBeta("div", { className: "m-media-box is-error" }, hBeta("p", null, "لا ملف لهذا السؤال"));
-    }
-    return hBeta(
-      "div",
-      { className: `m-media-box ${className || ""} ${state === "loading" ? "is-loading" : ""}` },
-      state === "error"
-        ? hBeta(
-            "div",
-            { className: "m-media-error", role: "status" },
-            hBeta("span", { "aria-hidden": "true" }, "📡"),
-            hBeta("b", null, "تعذّر تحميل الملف"),
-            hBeta("small", null, navigator.onLine === false ? "لا يوجد اتصال بالإنترنت" : "تحقق من الاتصال ثم أعد المحاولة"),
-            hBeta(
-              "button",
-              { type: "button", className: "m-secondary m-small", onClick: () => { setState("loading"); preloadMedia([url]).then((r) => setState(r.ok ? "ready" : "error")); } },
-              "أعد المحاولة",
-            ),
-          )
-        : children({ onReady: () => setState("ready"), onError: () => setState("error") }),
-      state === "loading" && hBeta("span", { className: "m-media-spinner", "aria-label": "جارٍ التحميل" }),
-    );
-  }
-
-  function MediaImage({ question, url, effect }) {
-    const [tiles, setTiles] = useState(() => (effect === "reveal" ? Array.from({ length: 12 }, (_, i) => i) : []));
-    useEffect(() => { if (effect === "reveal") setTiles(Array.from({ length: 12 }, (_, i) => i)); }, [url, effect]);
-    const shown = revealed ? [] : tiles;
-    const cls = ["m-media-img", `fx-${effect}`, revealed ? "is-revealed" : ""].join(" ");
-    return hBeta(
-      MediaBox,
-      { url, className: `fx-frame-${effect}`, alt: question.q || "صورة السؤال" },
-      ({ onReady, onError }) =>
-        hBeta(
-          "div",
-          { className: "m-media-stage" },
-          hBeta("img", {
-            src: url,
-            alt: revealed ? question.a || "صورة السؤال" : "صورة السؤال",
-            className: cls,
-            style: effect === "zoom" ? { transformOrigin: question.origin || "50% 50%" } : null,
-            onLoad: onReady,
-            onError,
-            draggable: false,
-          }),
-          effect === "reveal" &&
-            hBeta(
-              "div",
-              { className: "m-reveal-tiles", "aria-hidden": "true" },
-              Array.from({ length: 12 }, (_, i) =>
-                hBeta("i", { key: i, className: shown.includes(i) ? "" : "is-open" }),
-              ),
-            ),
-          effect === "reveal" &&
-            !revealed &&
-            hBeta(
-              "button",
-              {
-                type: "button",
-                className: "m-secondary m-small m-reveal-tile-btn",
-                disabled: shown.length === 0,
-                onClick: () => {
-                  setTiles((list) => list.filter((_, index) => index !== Math.floor(Math.random() * list.length)));
-                  playSfx("click");
-                },
-              },
-              `اكشف قطعة (${shown.length})`,
-            ),
-        ),
-    );
-  }
-
-  function MediaAudio({ url }) {
-    const ref = useRef(null);
-    const [playing, setPlaying] = useState(false);
-    useEffect(() => () => { if (ref.current) ref.current.pause(); }, []);
-    const toggle = () => {
-      const el = ref.current;
-      if (!el) return;
-      if (el.paused) {
-        el.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-      } else {
-        el.pause();
-        setPlaying(false);
-      }
-    };
-    return hBeta(
-      MediaBox,
-      { url, className: "is-audio" },
-      ({ onReady, onError }) =>
-        hBeta(
-          "div",
-          { className: "m-audio" },
-          hBeta("audio", {
-            ref,
-            src: url,
-            preload: "auto",
-            onCanPlay: onReady,
-            onError,
-            onEnded: () => setPlaying(false),
-          }),
-          hBeta(
-            "button",
-            { type: "button", className: "m-audio-btn", onClick: toggle, "aria-label": playing ? "إيقاف" : "تشغيل" },
-            hBeta("span", { "aria-hidden": "true" }, playing ? "⏸" : "▶"),
-          ),
-          hBeta(
-            "div",
-            { className: "m-audio-meta" },
-            hBeta("b", null, playing ? "يعمل الآن" : "اضغط للاستماع"),
-            hBeta("small", null, "يمكنكم إعادة السماع أكثر من مرة"),
-          ),
-          hBeta(
-            "button",
-            {
-              type: "button",
-              className: "m-secondary m-small",
-              onClick: () => { const el = ref.current; if (el) { el.currentTime = 0; el.play().then(() => setPlaying(true)).catch(() => {}); } },
-            },
-            "↻ من البداية",
-          ),
-        ),
-    );
-  }
-
-  function MediaVideo({ url }) {
-    const ref = useRef(null);
-    return hBeta(
-      MediaBox,
-      { url, className: "is-video" },
-      ({ onReady, onError }) =>
-        hBeta("video", {
-          ref,
-          src: url,
-          className: "m-media-video",
-          controls: true,
-          playsInline: true,
-          preload: "auto",
-          onLoadedData: onReady,
-          onError,
-        }),
-    );
-  }
-
   function QuestionVisual({ question }) {
     const packId = current ? current.categoryId : null;
     const urls = questionMedia(question, packId),
@@ -1695,9 +1818,38 @@ ${record.answered} من ${record.total} سؤالًا`,
         "div",
         null,
         ownText,
-        hBeta(MediaImage, { question, url, effect: question.effect || "none" }),
+        urls.length === 4
+          ? hBeta(FourPics, { question, urls, revealed })
+          : hBeta(MediaImage, { question, url, effect: question.effect || "none", revealed, onSfx: playSfx }),
       );
-    if (question.type === "audio") return hBeta("div", null, ownText, hBeta(MediaAudio, { url }));
+    if (question.type === "choice") {
+      const options = question.options || [],
+        isAnswer = (option) => arabicKey(option) === arabicKey(question.a);
+      return hBeta(
+        "div",
+        null,
+        hBeta("p", { className: "m-statement" }, question.q),
+        hBeta(
+          "div",
+          { className: `m-options ${options.some((o) => String(o).length > 18) ? "is-long" : ""}` },
+          options.map((option, index) =>
+            hBeta(
+              "span",
+              { key: `${option}-${index}`, className: revealed && isAnswer(option) ? "is-answer" : "" },
+              option,
+            ),
+          ),
+        ),
+      );
+    }
+    if (question.type === "code")
+      return hBeta(
+        "div",
+        null,
+        hBeta("div", { className: "m-code", dir: question.dir || "ltr", lang: /[A-Za-z]/.test(question.q || "") ? "en" : undefined }, question.q),
+        question.hint && hBeta("p", { className: "m-hint" }, `تلميح: ${question.hint}`),
+      );
+    if (question.type === "audio") return hBeta("div", null, ownText, hBeta(MediaAudio, { url, revealed }));
     if (question.type === "video") return hBeta("div", null, ownText, hBeta(MediaVideo, { url }));
     if (question.type === "diff")
       return hBeta(
@@ -2581,6 +2733,10 @@ ${record.answered} من ${record.total} سؤالًا`,
             { className: "m-answer", role: "status" },
             hBeta("small", null, "الإجابة"),
             hBeta("strong", null, answerText(currentQuestion)),
+            // الصيغ المقبولة الأخرى (اسم بلغتين، لقب) تظهر للمضيف كي لا يظلم إجابة صحيحة بصياغة مختلفة
+            Array.isArray(currentQuestion.alt) &&
+              currentQuestion.alt.length > 0 &&
+              hBeta("span", { className: "m-answer-alt" }, `يُقبل أيضًا: ${currentQuestion.alt.join(" · ")}`),
           ),
       ),
       !revealed &&

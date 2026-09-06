@@ -2,14 +2,19 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
+import { STORY_CREDITS, STORY_ACTOR, answerLeaks } from '../scripts/bank.mjs';
 
 // حزم أسئلة «بَديهة». البنك يُعاد بناؤه حزمة حزمة، فالاختبارات تتحقق مما هو
 // موجود فعلًا بدل أن تفرض عددًا ثابتًا من الحزم.
 const dir = path.resolve('src/data/categories');
 const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
 const cats = files.map((f) => JSON.parse(readFileSync(path.join(dir, f), 'utf8')));
-const TIERS = [200, 400, 600, 800, 1000];
+// الحدود من ملف الحالة: الفئة «done» تُفحص بصرامة (48 لكل خانة)، و«pending» بحد أدنى 24 إجمالًا.
+const STATUS = JSON.parse(readFileSync(path.resolve('src/data/bank-status.json'), 'utf8'));
+const TIERS = STATUS.tiers;
+const TIER_MIN = STATUS.tierMin;
 const MIN_PER_PACK = 24;
+const QID = /^(?:[0-9a-f]{12}|[a-z][a-z0-9]*-(?:200|400|600|800|1000)-\d{3})$/;
 
 test('كل حزمة لها معرّف واسم وأيقونة، والمعرّفات فريدة', () => {
   assert.equal(new Set(cats.map((c) => c.id)).size, cats.length, 'معرّف حزمة مكرر');
@@ -21,11 +26,23 @@ test('كل حزمة لها معرّف واسم وأيقونة، والمعرّف
   }
 });
 
-test(`كل حزمة ≥ ${MIN_PER_PACK} سؤالًا، وفيها أسئلة بكل شريحة من 200 إلى 1000`, () => {
+test(`كل حزمة مسجّلة في bank-status.json، وpending ≥ ${MIN_PER_PACK} سؤالًا، وdone ≥ ${TIER_MIN} في كل شريحة`, () => {
+  assert.equal(TIER_MIN, 48, 'TIER_MIN لا يُخفَّض لتمرير الاختبارات');
   for (const c of cats) {
-    assert.ok(c.qs.length >= MIN_PER_PACK, `${c.id}: ${c.qs.length} سؤالًا فقط`);
-    const tiers = new Set(c.qs.map((q) => q.p));
-    for (const p of TIERS) assert.ok(tiers.has(p), `${c.id}: لا أسئلة بشريحة ${p}`);
+    const meta = STATUS.categories[c.id];
+    assert.ok(meta, `${c.id}: ليست في bank-status.json`);
+    const perTier = Object.fromEntries(TIERS.map((t) => [t, c.qs.filter((q) => q.p === t).length]));
+    if (meta.status === 'done') {
+      for (const p of TIERS) assert.ok(perTier[p] >= TIER_MIN, `${c.id}: شريحة ${p} فيها ${perTier[p]} والحد ${TIER_MIN}`);
+      for (const p of TIERS) assert.equal(meta.counts[p], perTier[p], `${c.id}: bank-status لا يطابق الملف في شريحة ${p}`);
+      assert.ok(meta.doneAt, `${c.id}: done بلا doneAt`);
+    } else {
+      assert.ok(c.qs.length >= MIN_PER_PACK, `${c.id}: ${c.qs.length} سؤالًا فقط`);
+      for (const p of TIERS) assert.ok(perTier[p] > 0, `${c.id}: لا أسئلة بشريحة ${p}`);
+    }
+  }
+  for (const [id, meta] of Object.entries(STATUS.categories)) {
+    if (meta.status === 'done') assert.ok(files.includes(`${id}.json`), `${id}: مسجّلة done ولا ملف لها`);
   }
 });
 
@@ -33,7 +50,7 @@ test('المعرّفات فريدة عبر البنك كله، ولا سؤال �
   const all = cats.flatMap((c) => c.qs.map((q) => ({ ...q, cat: c.id })));
   assert.equal(new Set(all.map((q) => q.qid)).size, all.length, 'qid مكرر');
   for (const q of all) {
-    assert.match(String(q.qid || ''), /^[0-9a-f]{12}$/, `${q.cat}: qid غير صالح (${q.qid})`);
+    assert.match(String(q.qid || ''), QID, `${q.cat}: qid غير صالح (${q.qid})`);
     assert.ok(TIERS.includes(q.p), `${q.cat}/${q.qid}: نقاط غير صالحة`);
     const hasPrompt = (q.q && String(q.q).trim()) || q.type;
     assert.ok(hasPrompt, `${q.cat}/${q.qid}: سؤال بلا نص`);
@@ -60,7 +77,7 @@ test('لا سؤال مكرر نصًا داخل الحزمة، ولا إجابة 
       if (answer.length < 4) continue;
       for (const other of c.qs) {
         if (other.qid === q.qid || !other.q) continue;
-        assert.ok(!norm(other.q).includes(answer), `${c.id}: إجابة ${q.qid} «${q.a}» مكشوفة في نص ${other.qid}`);
+        assert.ok(!answerLeaks(answer, norm(other.q)), `${c.id}: إجابة ${q.qid} «${q.a}» مكشوفة في نص ${other.qid}`);
       }
     }
   }
@@ -68,19 +85,11 @@ test('لا سؤال مكرر نصًا داخل الحزمة، ولا إجابة 
 
 // حزم الأعمال الدرامية والأنمي تُعلَّم بـ "style": "story"، فتُمنع فيها أسئلة
 // الإنتاج: صاحب اللعبة يريد أسئلة عن أحداث العمل لا عن مخرجه ومؤلفه.
-const CREDITS = [
-  [/من أخرج|المخرج|أخرجه\b|مخرج مسلسل|مخرج فيلم/, 'المخرج'],
-  [/من كتب|كاتب السيناريو|السيناريو والحوار|الكاتبان|الكاتبتان|من كتبت/, 'الكاتب'],
-  [/الموسيقى التصويرية|من لحّن|الملحن/, 'الملحن'],
-  [/استوديو|شركة الإنتاج|من أنتج/, 'الإنتاج'],
-  [/بدأ عرض|عُرض عام|بدأ بثه|القناة التي عرضت/, 'تاريخ العرض'],
-  [/عدد المواسم|عدد مواسم|كم موسمًا|عدد الحلقات|كم حلقة/, 'عدد المواسم أو الحلقات'],
-  [/جائزة|أوسكار/, 'الجوائز'],
-  [/مؤلف مانغا|من مبتكر|رسّام المانغا/, 'مؤلف المانغا'],
-  [/قائمة طاقم|طاقم الجزء|طاقم العمل/, 'قائمة الطاقم'],
-];
-const ACTOR = /من الممثل الذي أدى|من الممثلة التي أدت|من أدى شخصية|من أدت شخصية|من أدى دور|من الفنان الذي أدى|من الفنانة التي أدت|الذي جسّد شخصية/;
-const ACTOR_LIMIT = 2;
+// الأنماط نفسها التي يستعملها bank:validate كي لا يختلف الاثنان.
+const CREDITS = STORY_CREDITS;
+const ACTOR = STORY_ACTOR;
+// القاعدة (RUBRIC §4): أسئلة الممثلين ومؤدّي الأصوات ≤ 20% من الفئة، وفي خانتي 800 و1000 فقط.
+const ACTOR_SHARE = 0.2;
 
 test('حزم المسلسلات والأنمي: أسئلة عن أحداث العمل لا عن صناعته', () => {
   for (const c of cats.filter((x) => x.style === 'story')) {
@@ -91,7 +100,8 @@ test('حزم المسلسلات والأنمي: أسئلة عن أحداث ال�
       }
     }
     const actors = c.qs.filter((q) => ACTOR.test(q.q || ''));
-    assert.ok(actors.length <= ACTOR_LIMIT, `${c.id}: ${actors.length} أسئلة عن الممثلين والحد ${ACTOR_LIMIT}`);
+    assert.ok(actors.length <= Math.floor(c.qs.length * ACTOR_SHARE), `${c.id}: ${actors.length} أسئلة عن الممثلين من ${c.qs.length} والحد 20%`);
+    for (const q of actors) assert.ok([800, 1000].includes(q.p), `${c.id}/${q.qid}: سؤال عن الممثلين في خانة ${q.p}؛ المسموح 800 و1000 فقط`);
   }
 });
 

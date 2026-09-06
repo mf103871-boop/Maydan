@@ -3,24 +3,39 @@
 أنواع الأسئلة وحقولها كاملةً في [`docs/PACK_FORMAT.md`](../docs/PACK_FORMAT.md).
 هذا الملف عن الملفات نفسها: أين توضع، وكيف يشير إليها السؤال.
 
-كل حزمة لها مجلد باسم معرّفها، وملفاتها بداخله:
+كل حزمة لها مجلد باسم معرّفها، وكل ملف باسم سؤاله:
 
 ```
 media/
-  logos/     01.webp  02.webp …
-  songs/     01.mp3   02.mp3  …
-  posters/   01.webp  …
+  animals/    animals-200-001.webp  animals-200-002.webp …  _sources.json
+  sound/      sound-200-001.mp3 …                           _sources.json
 ```
 
-والسؤال يشير إلى الملف باسمه القصير فقط:
+والسؤال يحمل كائن إسناد كاملًا لا اسم ملف مجردًا:
 
 ```json
-{ "p": 400, "type": "image", "q": "ما هذا الشعار؟", "a": "بيبسي",
-  "media": "01.webp", "qid": "a1b2c3d4e5f6" }
+{ "p": 200, "type": "image", "q": "أي حيوان هذا؟", "a": "الأسد", "qid": "animals-200-001",
+  "media": { "src": "animals-200-001.webp", "type": "image", "title": "Lion waiting in Namibia",
+             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lion_waiting_in_Namibia.jpg",
+             "author": "Kevin Pluck", "license": "CC BY 2.0",
+             "licenseUrl": "https://creativecommons.org/licenses/by/2.0/" } }
 ```
 
-فيُبنى العنوان `media/logos/01.webp`. ويجوز بدل ذلك وضع عنوان كامل
-(`https://…`) إن كانت الوسائط مستضافة في مكان آخر.
+فيُبنى العنوان `media/animals/animals-200-001.webp`، وتظهر بطاقة الإسناد في شاشة
+«المصادر والتراخيص» تحت «حول». `_sources.json` فهرس يكتبه `npm run media:fetch`
+لكل ما جُلب (المصدر، المؤلف، الترخيص، الحجم، تاريخ الجلب) لمراجعة الحقوق لاحقًا.
+
+## الجلب
+
+```
+npm run media:fetch -- animals "lion" image --list            # المرشّحون وتراخيصهم
+npm run media:fetch -- animals "lion" image --qid animals-200-001
+npm run media:fetch -- sound "lion roar" audio --qid sound-200-001
+```
+
+المصادر: Wikimedia Commons ثم Openverse ثم NASA ثم Internet Archive، بفلتر
+ترخيص (CC0 / ملك عام / CC BY / CC BY-SA فقط). المعالجة تلقائية: WebP بأطول ضلع
+640px ≤ 30KB، أو MP3 أحادي 48kbps ≤ 8 ثوانٍ ≤ 50KB.
 
 ## ما يفحصه البناء
 
@@ -35,8 +50,8 @@ media/
 | صوت | `.mp3` أو `.m4a` | مدعومة في كل المتصفحات |
 | فيديو | `.mp4` (H.264) | يعمل على آيفون وأندرويد |
 
-اضغط الصور إلى عرض 1200 بكسل كحد أقصى؛ الشاشة لن تعرض أكثر من ذلك، والحجم
-الأصغر يعني فتحًا أسرع على بيانات الجوال.
+الحدود التي يفرضها `bank:validate`: صورة ≤ 30KB (أطول ضلع 640px)، صوت ≤ 50KB
+(≤ 8 ثوانٍ)، والفئة كلها ≤ 4MB — سؤال يتجاوزها يوقف البناء.
 
 ## الإنترنت
 

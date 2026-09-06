@@ -1,0 +1,1280 @@
+{
+  "$comment": "حالة بنك أسئلة «بَديهة». تُحدَّث في نهاية كل حزمة، ويقرؤها bank:validate وbank:report والاختبارات. لا تُخفَّض tierMin.",
+  "tierMin": 48,
+  "tiers": [
+    200,
+    400,
+    600,
+    800,
+    1000
+  ],
+  "maxQuestionWords": 22,
+  "maxAnswerWords": 6,
+  "mediaBudget": {
+    "imageKB": 30,
+    "audioKB": 50,
+    "categoryMB": 4
+  },
+  "categories": {
+    "general": {
+      "name": "معلومات عامة",
+      "icon": "🧠",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 1
+    },
+    "geo": {
+      "name": "جغرافيا",
+      "icon": "🌍",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 2
+    },
+    "capitals": {
+      "name": "عواصم",
+      "icon": "🏙️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 3
+    },
+    "science": {
+      "name": "علوم",
+      "icon": "🔬",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 4
+    },
+    "animals": {
+      "name": "حيوانات",
+      "icon": "🐾",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 5
+    },
+    "history": {
+      "name": "تاريخ",
+      "icon": "📜",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 6
+    },
+    "food": {
+      "name": "أكلات ومطابخ",
+      "icon": "🍽️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 7
+    },
+    "fruitsveg": {
+      "name": "فواكه وخضار",
+      "icon": "🍉",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 8
+    },
+    "sports": {
+      "name": "رياضة",
+      "icon": "🏅",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 9
+    },
+    "football": {
+      "name": "كرة القدم",
+      "icon": "⚽",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 10
+    },
+    "worldcup": {
+      "name": "كأس العالم",
+      "icon": "🏆",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 11
+    },
+    "ucl": {
+      "name": "دوري أبطال أوروبا",
+      "icon": "🏵️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 12
+    },
+    "premier": {
+      "name": "الدوري الإنجليزي",
+      "icon": "🦁",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 13
+    },
+    "tech": {
+      "name": "تقنية",
+      "icon": "💻",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 14
+    },
+    "apps": {
+      "name": "تطبيقات وسوشيال",
+      "icon": "📲",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 15
+    },
+    "brands": {
+      "name": "ماركات وشركات",
+      "icon": "🏷️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 16
+    },
+    "cars": {
+      "name": "سيارات",
+      "icon": "🚗",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 17
+    },
+    "shopping": {
+      "name": "تسوق وحديث البنات",
+      "icon": "💄",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 18
+    },
+    "arabic": {
+      "name": "لغة عربية",
+      "icon": "🔤",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 19
+    },
+    "proverbs": {
+      "name": "أمثال شعبية",
+      "icon": "🧿",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 20
+    },
+    "dialects": {
+      "name": "لهجات عربية",
+      "icon": "🗣️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 21
+    },
+    "arabliterature": {
+      "name": "أدب عربي",
+      "icon": "✒️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 22
+    },
+    "books": {
+      "name": "كتب وروايات",
+      "icon": "📕",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 23
+    },
+    "quotes": {
+      "name": "من القائل",
+      "icon": "💬",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 24
+    },
+    "arabcelebs": {
+      "name": "مشاهير عرب",
+      "icon": "🌟",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 25
+    },
+    "youtubers": {
+      "name": "يوتيوبرز وصنّاع محتوى",
+      "icon": "📱",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 26
+    },
+    "arabmusic": {
+      "name": "أغاني عربية",
+      "icon": "🎵",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 27
+    },
+    "tarab": {
+      "name": "طرب وأغاني زمان",
+      "icon": "📻",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 28
+    },
+    "arabart": {
+      "name": "فن عربي",
+      "icon": "🖌️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 29
+    },
+    "theater": {
+      "name": "مسرح",
+      "icon": "🎭",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 30
+    },
+    "ramadan": {
+      "name": "رمضان",
+      "icon": "🌙",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 31,
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+    },
+    "islamiyat": {
+      "name": "إسلاميات",
+      "icon": "☪️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 32,
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+    },
+    "quran": {
+      "name": "القرآن الكريم",
+      "icon": "📖",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 33,
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+    },
+    "seerah": {
+      "name": "السيرة النبوية",
+      "icon": "🕋",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 34,
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+    },
+    "prophets": {
+      "name": "قصص الأنبياء",
+      "icon": "🕊️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 35,
+      "note": "معلومات عامة فقط: أسماء وأماكن وأحداث وأعداد؛ لا فتاوى ولا مسائل خلافية."
+    },
+    "arabseries": {
+      "name": "مسلسلات عربية",
+      "icon": "📺",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 36,
+      "style": "story"
+    },
+    "ramadanseries": {
+      "name": "مسلسلات رمضان",
+      "icon": "🌛",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 37,
+      "style": "story"
+    },
+    "babalhara": {
+      "name": "باب الحارة",
+      "icon": "🚪",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 38,
+      "style": "story"
+    },
+    "syriandrama": {
+      "name": "دراما سورية",
+      "icon": "🇸🇾",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 39,
+      "style": "story"
+    },
+    "egyptdrama": {
+      "name": "دراما مصرية",
+      "icon": "🇪🇬",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 40,
+      "style": "story"
+    },
+    "turkishdrama": {
+      "name": "مسلسلات تركية",
+      "icon": "🇹🇷",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 41,
+      "style": "story"
+    },
+    "ertugrul": {
+      "name": "قيامة أرطغرل",
+      "icon": "🏹",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 42,
+      "style": "story"
+    },
+    "foreignseries": {
+      "name": "مسلسلات أجنبية",
+      "icon": "🎬",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 43,
+      "style": "story"
+    },
+    "breakingbad": {
+      "name": "بريكنغ باد",
+      "icon": "🧪",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 44,
+      "style": "story"
+    },
+    "squidgame": {
+      "name": "لعبة الحبار",
+      "icon": "🦑",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 45,
+      "style": "story"
+    },
+    "movies": {
+      "name": "أفلام عالمية",
+      "icon": "🎥",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 46,
+      "style": "story"
+    },
+    "arabmovies": {
+      "name": "أفلام عربية",
+      "icon": "🎟️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 47,
+      "style": "story"
+    },
+    "actors": {
+      "name": "ممثلون ونجوم",
+      "icon": "🌠",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 48
+    },
+    "anime": {
+      "name": "أنمي",
+      "icon": "🍥",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 49,
+      "style": "story"
+    },
+    "naruto": {
+      "name": "ناروتو",
+      "icon": "🌀",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 50,
+      "style": "story"
+    },
+    "onepiece": {
+      "name": "ون بيس",
+      "icon": "🏴‍☠️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 51,
+      "style": "story"
+    },
+    "dragonball": {
+      "name": "دراغون بول",
+      "icon": "🐲",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 52,
+      "style": "story"
+    },
+    "aot": {
+      "name": "هجوم العمالقة",
+      "icon": "🏯",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 53,
+      "style": "story"
+    },
+    "deathnote": {
+      "name": "ديث نوت",
+      "icon": "📓",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 54,
+      "style": "story"
+    },
+    "demonslayer": {
+      "name": "قاتل الشياطين",
+      "icon": "👺",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 55,
+      "style": "story"
+    },
+    "jujutsu": {
+      "name": "جوجوتسو كايسن",
+      "icon": "👁️",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 56,
+      "style": "story"
+    },
+    "hunterxhunter": {
+      "name": "هنتر × هنتر",
+      "icon": "🎴",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 57,
+      "style": "story"
+    },
+    "spacetoon": {
+      "name": "سبيستون",
+      "icon": "📡",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 58,
+      "style": "story"
+    },
+    "cartoon": {
+      "name": "كرتون",
+      "icon": "🐰",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 59,
+      "style": "story"
+    },
+    "videogames": {
+      "name": "ألعاب فيديو",
+      "icon": "🎮",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 60
+    },
+    "puzzles": {
+      "name": "ألغاز وذكاء",
+      "icon": "🧩",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 61
+    },
+    "emoji": {
+      "name": "إيموجي",
+      "icon": "😀",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 62,
+      "defaultType": "emoji"
+    },
+    "hidden": {
+      "name": "البطة المخفية",
+      "icon": "🦆",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 63,
+      "defaultType": "grid"
+    },
+    "completeproverb": {
+      "name": "أكمل المثل",
+      "icon": "🧵",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 64,
+      "defaultType": "complete"
+    },
+    "beforeafter": {
+      "name": "قبل ولا بعد",
+      "icon": "⏳",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 65,
+      "defaultType": "choice"
+    },
+    "commonbond": {
+      "name": "القاسم المشترك",
+      "icon": "🔗",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 66,
+      "defaultType": "common"
+    },
+    "code": {
+      "name": "الشفرة",
+      "icon": "🔣",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 67,
+      "defaultType": "code"
+    },
+    "hints": {
+      "name": "تلميحات",
+      "icon": "💡",
+      "media": false,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 68,
+      "defaultType": "hints"
+    },
+    "flags": {
+      "name": "أعلام",
+      "icon": "🚩",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 69,
+      "mediaKind": "image",
+      "defaultType": "image"
+    },
+    "zoom": {
+      "name": "زووم",
+      "icon": "🔍",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 70,
+      "mediaKind": "image",
+      "defaultType": "image:zoom"
+    },
+    "blur": {
+      "name": "وضّح شوي",
+      "icon": "🌫️",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 71,
+      "mediaKind": "image",
+      "defaultType": "image:blur"
+    },
+    "reveal": {
+      "name": "إكشفني",
+      "icon": "🪟",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 72,
+      "mediaKind": "image",
+      "defaultType": "image:reveal"
+    },
+    "silhouette": {
+      "name": "الظل",
+      "icon": "🌑",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 73,
+      "mediaKind": "image",
+      "defaultType": "image:silhouette"
+    },
+    "guesscar": {
+      "name": "خمن السيارة",
+      "icon": "🚘",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 74,
+      "mediaKind": "image",
+      "defaultType": "image"
+    },
+    "placefinder": {
+      "name": "وين المكان؟",
+      "icon": "📍",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 75,
+      "mediaKind": "image",
+      "defaultType": "image"
+    },
+    "fourpics": {
+      "name": "أربع صور وكلمة",
+      "icon": "🖼️",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 76,
+      "mediaKind": "image",
+      "defaultType": "image×4"
+    },
+    "tilepuzzle": {
+      "name": "ركّبها صح",
+      "icon": "🧱",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 77,
+      "mediaKind": "image",
+      "defaultType": "image:jumble"
+    },
+    "spotdiff": {
+      "name": "اكتشف الفرق",
+      "icon": "🧐",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 78,
+      "mediaKind": "image",
+      "defaultType": "diff"
+    },
+    "sound": {
+      "name": "خمن الصوت",
+      "icon": "🔊",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 79,
+      "mediaKind": "audio",
+      "defaultType": "audio"
+    },
+    "childhood": {
+      "name": "صور الطفولة",
+      "icon": "👶",
+      "media": true,
+      "status": "pending",
+      "counts": {
+        "200": 0,
+        "400": 0,
+        "600": 0,
+        "800": 0,
+        "1000": 0
+      },
+      "doneAt": null,
+      "order": 80,
+      "mediaKind": "image",
+      "defaultType": "image",
+      "note": "معلّقة: صور طفولة المشاهير غير قابلة للترخيص. تُحوَّل إلى فئة نصية أو تُحذف قبل تنفيذ حزمتها."
+    }
+  }
+}

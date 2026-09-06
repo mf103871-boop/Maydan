@@ -183,6 +183,7 @@
   .m-answer { width:100%; display:flex; flex-direction:column; gap:4px; margin-top:8px; padding-top:14px; border-top:1px solid rgba(52,211,153,.24); animation:m-answer-in .3s cubic-bezier(.2,.8,.2,1) both; }
   .m-answer small { color:#a7f3d0; font-size:13px; font-weight:800; }
   .m-answer strong { color:#6ee7b7; font-size:clamp(22px,6vw,34px); line-height:1.55; text-wrap:balance; }
+  .m-answer-alt { color:var(--muted); font-size:13.5px; line-height:1.6; }
   .m-visual-frame { width:min(210px,70vw); aspect-ratio:1; overflow:hidden; border:1px solid var(--line); border-radius:19px; display:grid; place-items:center; background:#17233f; }
   .m-zoom-emoji { font-size:145px; line-height:1; transform:scale(4.6); transition:transform .8s cubic-bezier(.2,.8,.2,1); }
   .m-zoom-emoji.revealed { transform:scale(1); }
@@ -360,6 +361,25 @@
   .m-offline-text { flex:1; min-width:0; display:grid; gap:2px; }
   .m-offline-text b { font-size:14.5px; }
   .m-offline-text small { color:var(--muted); font-size:12.5px; }
+
+  /* ركّبها صح: 12 قطعة من الصورة نفسها في مواضع مبدّلة، والصورة الأصلية مخفية تحتها لتحميلها فقط */
+  .m-media-img.is-hidden-src { opacity:0; position:absolute; inset:0; pointer-events:none; }
+  .m-jumble { position:relative; width:100%; aspect-ratio:4/3; max-height:46vh; display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(3,1fr); gap:2px; background:#0b1533; }
+  .m-jumble i { display:block; background-size:400% 300%; background-repeat:no-repeat; }
+  .m-media-stage.can-enlarge { cursor:zoom-in; }
+  .m-lightbox { position:fixed; inset:0; z-index:60; display:grid; place-items:center; padding:18px; background:rgba(3,6,18,.92); cursor:zoom-out; animation:m-fade .18s ease; }
+  .m-lightbox img { max-width:100%; max-height:100%; width:auto; border-radius:14px; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+  @keyframes m-fade { from { opacity:0; } to { opacity:1; } }
+  .m-fourpics { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .m-fourpics .m-media-box { min-height:120px; aspect-ratio:1; }
+  .m-fourpics .m-media-img { width:100%; height:100%; object-fit:cover; max-height:none; }
+  .m-audio.is-spent .m-audio-btn { filter:grayscale(1); opacity:.55; }
+  /* خيارات السؤال (قبل ولا بعد…). ليست .m-choice: ذاك صنف أزرار اختيار النمط في شاشة الإعداد. */
+  .m-options { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .m-options.is-long { grid-template-columns:1fr; }
+  .m-options span { min-height:56px; display:grid; place-items:center; padding:8px 12px; text-align:center; border-radius:16px; font-size:18px; font-weight:800; background:rgba(18,32,68,.84); border:1px solid var(--line-strong); }
+  .m-options span.is-answer { background:rgba(52,211,153,.18); border-color:var(--success); color:#d1fae5; }
+  .m-code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:clamp(20px,5.6vw,28px); font-weight:800; letter-spacing:.12em; line-height:1.8; text-align:center; padding:16px 12px; border-radius:16px; background:rgba(8,17,41,.7); border:1px solid var(--line); word-break:break-word; }
 
   .m-diff { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
   .m-diff-side { position:relative; }

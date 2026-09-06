@@ -9,6 +9,8 @@ import {
   deckMedia,
   mediaKind,
   isExternal,
+  mediaEntries,
+  collectCredits,
 } from '../src/shared/media/resolve.js';
 import { mediaRefs, checkMedia, copyMedia } from '../scripts/media.mjs';
 
@@ -35,6 +37,28 @@ test('questionMedia: ملف واحد أو عدة ملفات', () => {
   assert.deepEqual(questionMedia({ media: ['a.webp', 'b.webp'] }, 'p'), ['media/p/a.webp', 'media/p/b.webp']);
   assert.deepEqual(questionMedia({ q: 'بلا وسائط' }, 'p'), []);
   assert.deepEqual(questionMedia(null, 'p'), []);
+});
+
+test('questionMedia وmediaRefs: كائن الإسناد { src, … } يُعامل كالنص', () => {
+  const credit = { src: 'lion.webp', type: 'image', title: 'Lion', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Lion.jpg', author: 'A', license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/' };
+  assert.deepEqual(questionMedia({ media: credit }, 'animals'), ['media/animals/lion.webp']);
+  assert.deepEqual(questionMedia({ media: [credit, { ...credit, src: 'tiger.webp' }] }, 'animals'), ['media/animals/lion.webp', 'media/animals/tiger.webp']);
+  assert.deepEqual(mediaRefs({ media: credit }), ['lion.webp']);
+  assert.deepEqual(mediaRefs({ media: [credit, 'x.mp3', { src: '' }] }), ['lion.webp', 'x.mp3']);
+  assert.equal(mediaEntries({ media: credit }).length, 1);
+});
+
+test('collectCredits: بطاقة إسناد لكل ملف مرة واحدة، والنصوص المجردة تُتجاهل', () => {
+  const credit = { src: 'lion.webp', type: 'image', title: 'Lion', sourceUrl: 'https://x/y', author: 'A', license: 'CC BY 4.0', licenseUrl: 'https://cc/by' };
+  const cats = [
+    { id: 'animals', name: 'حيوانات', qs: [{ media: credit }, { media: credit }, { media: 'plain.webp' }, { q: 'نصي' }] },
+    { id: 'sound', name: 'أصوات', qs: [{ media: { ...credit, src: 'roar.mp3', type: 'audio' } }] },
+  ];
+  const credits = collectCredits(cats);
+  assert.equal(credits.length, 2);
+  assert.deepEqual(credits[0], { url: 'media/animals/lion.webp', category: 'animals', categoryName: 'حيوانات', type: 'image', title: 'Lion', sourceUrl: 'https://x/y', author: 'A', license: 'CC BY 4.0', licenseUrl: 'https://cc/by' });
+  assert.equal(credits[1].type, 'audio');
+  assert.deepEqual(collectCredits([]), []);
 });
 
 test('deckMedia: يجمع ملفات الجولة بلا تكرار ويتجاهل حزمة غير معروفة', () => {

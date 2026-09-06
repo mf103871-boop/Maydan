@@ -8,8 +8,10 @@
 // activation never clears, filled on demand as packs are played and on request
 // when a player asks to have a pack ready offline.
 //
-// Bump CACHE when index.html changes, or installed players keep the old build.
-const CACHE = 'maydan-platform-1.0.0';
+// CACHE is stamped by the build (version + a hash of index.html), so any change
+// to the document produces a new cache name and installed players get it on
+// their next launch; a frozen literal here once kept them on an old build.
+const CACHE = 'maydan-platform-__BUILD_ID__';
 const MEDIA_CACHE = 'maydan-media-v1';
 const MEDIA_PATH = /\/media\//;
 
