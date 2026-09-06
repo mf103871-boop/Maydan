@@ -31,8 +31,25 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
-      .then(() => self.clients.claim())
+      .then((keys) => {
+        const stale = keys.filter((k) => k !== CACHE);
+        return Promise.all(stale.map((k) => caches.delete(k))).then(() => stale.length > 0);
+      })
+      .then((wasUpgrade) => self.clients.claim().then(() => wasUpgrade))
+      .then((wasUpgrade) => {
+        // An upgrade means the open page was served from the previous version's
+        // cache before this worker took over, so it is showing the old release.
+        // The page cannot fix that itself — the code that would is in the new
+        // document it has not received — so the worker reloads it from here.
+        // Only on an upgrade: on a first install nothing on screen is stale.
+        if (!wasUpgrade) return undefined;
+        return self.clients.matchAll({ type: 'window' }).then((clients) => {
+          for (const client of clients) {
+            if (typeof client.navigate === 'function') client.navigate(client.url).catch(() => {});
+          }
+        });
+      })
+      .catch(() => {})
   );
 });
 

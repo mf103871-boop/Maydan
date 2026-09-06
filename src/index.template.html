@@ -40,6 +40,20 @@ window.onerror = function (msg, src, line, col) {
 </script>
 <script>
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  // Navigations are served from cache first so a launch from the home screen
+  // never waits on a network that might not be there. The cost is that a
+  // returning player sees the previous release once before the new worker
+  // takes over. skipWaiting + clients.claim make that handover happen on this
+  // very load, so reloading when it does turns "stale until you open it twice"
+  // into a single refresh the player barely notices.
+  var hadController = !!navigator.serviceWorker.controller;
+  var reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', function () {
+    // No previous worker means this is the first install: nothing is stale.
+    if (!hadController || reloading) return;
+    reloading = true;
+    location.reload();
+  });
   window.addEventListener('load', function () {
     navigator.serviceWorker.register('sw.js').catch(function () {});
   });
