@@ -1,0 +1,3005 @@
+[
+ {
+  "id": "mamnoo-concepts-001",
+  "word": "الصبر",
+  "forbidden": [
+   "انتظار",
+   "تحمّل",
+   "هدوء",
+   "طويل",
+   "أعصاب"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-002",
+  "word": "الوقت",
+  "forbidden": [
+   "ساعة",
+   "دقيقة",
+   "يمر",
+   "زمن",
+   "يوم"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-003",
+  "word": "الذاكرة",
+  "forbidden": [
+   "نسيان",
+   "عقل",
+   "الماضي",
+   "حفظ",
+   "معلومات"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-004",
+  "word": "المفاجأة",
+  "forbidden": [
+   "غير متوقع",
+   "هدية",
+   "صدمة",
+   "عيد ميلاد",
+   "دهشة"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-005",
+  "word": "النجاح",
+  "forbidden": [
+   "فوز",
+   "تفوّق",
+   "هدف",
+   "امتحان",
+   "تحقيق"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-006",
+  "word": "الصداقة",
+  "forbidden": [
+   "رفيق",
+   "زميل",
+   "علاقة",
+   "وفاء",
+   "مقرّب"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-007",
+  "word": "الشجاعة",
+  "forbidden": [
+   "خوف",
+   "جرأة",
+   "بطل",
+   "قوة",
+   "إقدام"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-008",
+  "word": "السعادة",
+  "forbidden": [
+   "فرح",
+   "ابتسامة",
+   "ضحك",
+   "حزن",
+   "شعور"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-009",
+  "word": "الخوف",
+  "forbidden": [
+   "رعب",
+   "ظلام",
+   "فزع",
+   "قلق",
+   "شجاعة"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-010",
+  "word": "الحلم",
+  "forbidden": [
+   "نوم",
+   "ليل",
+   "خيال",
+   "طموح",
+   "يقظة"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-011",
+  "word": "الأمل",
+  "forbidden": [
+   "تفاؤل",
+   "مستقبل",
+   "يأس",
+   "انتظار",
+   "تمنّي"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-012",
+  "word": "التعاون",
+  "forbidden": [
+   "مساعدة",
+   "فريق",
+   "معًا",
+   "عمل",
+   "مشاركة"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-concepts-013",
+  "word": "الملل",
+  "forbidden": [
+   "ضجر",
+   "فراغ",
+   "تكرار",
+   "انتظار",
+   "تسلية"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-014",
+  "word": "الفضول",
+  "forbidden": [
+   "معرفة",
+   "سؤال",
+   "اكتشاف",
+   "استطلاع",
+   "تدخّل"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-015",
+  "word": "الكرم",
+  "forbidden": [
+   "عطاء",
+   "ضيف",
+   "بخل",
+   "سخاء",
+   "مال"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-016",
+  "word": "الصدق",
+  "forbidden": [
+   "كذب",
+   "حقيقة",
+   "أمانة",
+   "صراحة",
+   "وعد"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-017",
+  "word": "الاحترام",
+  "forbidden": [
+   "تقدير",
+   "أدب",
+   "كبير",
+   "تحية",
+   "مكانة"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-018",
+  "word": "التواضع",
+  "forbidden": [
+   "غرور",
+   "كبرياء",
+   "بسيط",
+   "تكبّر",
+   "تفاخر"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-019",
+  "word": "العدل",
+  "forbidden": [
+   "ظلم",
+   "قاضٍ",
+   "مساواة",
+   "حق",
+   "ميزان"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-020",
+  "word": "الإبداع",
+  "forbidden": [
+   "فن",
+   "فكرة",
+   "جديد",
+   "ابتكار",
+   "خيال"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-021",
+  "word": "الحظ",
+  "forbidden": [
+   "صدفة",
+   "نصيب",
+   "سعيد",
+   "فوز",
+   "قدر"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-022",
+  "word": "التركيز",
+  "forbidden": [
+   "انتباه",
+   "تشتّت",
+   "ذهن",
+   "دراسة",
+   "هدوء"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-023",
+  "word": "المسؤولية",
+  "forbidden": [
+   "واجب",
+   "تحمّل",
+   "التزام",
+   "مهمة",
+   "كبير"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-024",
+  "word": "الطموح",
+  "forbidden": [
+   "هدف",
+   "حلم",
+   "مستقبل",
+   "سعي",
+   "نجاح"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-concepts-025",
+  "word": "الحنين",
+  "forbidden": [
+   "الماضي",
+   "ذكريات",
+   "اشتياق",
+   "طفولة",
+   "بيت"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-concepts-026",
+  "word": "القناعة",
+  "forbidden": [
+   "رضا",
+   "طمع",
+   "قليل",
+   "كفاية",
+   "اكتفاء"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-concepts-027",
+  "word": "البديهة",
+  "forbidden": [
+   "سرعة",
+   "جواب",
+   "ذكاء",
+   "فوري",
+   "حاضر"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-concepts-028",
+  "word": "الحدس",
+  "forbidden": [
+   "شعور",
+   "إحساس",
+   "توقّع",
+   "داخلي",
+   "قلب"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-concepts-029",
+  "word": "الحكمة",
+  "forbidden": [
+   "عقل",
+   "خبرة",
+   "كبار",
+   "تجربة",
+   "رأي"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-concepts-030",
+  "word": "المرونة",
+  "forbidden": [
+   "تكيّف",
+   "تغيير",
+   "صلب",
+   "لين",
+   "ظروف"
+  ],
+  "category": "مفاهيم",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-food-001",
+  "word": "بيتزا",
+  "forbidden": [
+   "إيطاليا",
+   "جبن",
+   "عجينة",
+   "دائرية",
+   "فرن"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-002",
+  "word": "شاي",
+  "forbidden": [
+   "مشروب",
+   "ساخن",
+   "كوب",
+   "أوراق",
+   "سكر"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-003",
+  "word": "أرز",
+  "forbidden": [
+   "حبوب",
+   "أبيض",
+   "طبخ",
+   "مسلوق",
+   "آسيا"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-004",
+  "word": "تمر",
+  "forbidden": [
+   "نخلة",
+   "رمضان",
+   "حلو",
+   "نواة",
+   "صحراء"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-005",
+  "word": "برجر",
+  "forbidden": [
+   "لحم",
+   "خبز",
+   "ساندويتش",
+   "مطعم",
+   "أمريكا"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-006",
+  "word": "آيس كريم",
+  "forbidden": [
+   "بارد",
+   "مثلج",
+   "صيف",
+   "بوظة",
+   "يذوب"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-007",
+  "word": "فلافل",
+  "forbidden": [
+   "حمص",
+   "مقلية",
+   "طعمية",
+   "ساندويتش",
+   "فول"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-008",
+  "word": "كبسة",
+  "forbidden": [
+   "أرز",
+   "لحم",
+   "السعودية",
+   "دجاج",
+   "بهارات"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-009",
+  "word": "عصير",
+  "forbidden": [
+   "فواكه",
+   "برتقال",
+   "مشروب",
+   "خلاط",
+   "سائل"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-010",
+  "word": "بطاطس مقلية",
+  "forbidden": [
+   "زيت",
+   "أصابع",
+   "برجر",
+   "كاتشب",
+   "مقرمشة"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-011",
+  "word": "قهوة",
+  "forbidden": [
+   "بن",
+   "صباح",
+   "مشروب",
+   "كافيين",
+   "فنجان"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-012",
+  "word": "شوكولاتة",
+  "forbidden": [
+   "كاكاو",
+   "حلوى",
+   "بنية",
+   "تذوب",
+   "سويسرا"
+  ],
+  "category": "أكلات",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-food-013",
+  "word": "شاورما",
+  "forbidden": [
+   "لحم",
+   "سيخ",
+   "يدور",
+   "دجاج",
+   "خبز"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-014",
+  "word": "كنافة",
+  "forbidden": [
+   "جبن",
+   "شعيرية",
+   "قطر",
+   "حلوى",
+   "فرن"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-015",
+  "word": "سوشي",
+  "forbidden": [
+   "اليابان",
+   "أرز",
+   "سمك",
+   "نيء",
+   "أعواد"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-016",
+  "word": "حمص",
+  "forbidden": [
+   "طحينة",
+   "مقبلات",
+   "زيت",
+   "ليمون",
+   "خبز"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-017",
+  "word": "لازانيا",
+  "forbidden": [
+   "طبقات",
+   "إيطاليا",
+   "معكرونة",
+   "جبن",
+   "لحم"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-018",
+  "word": "مقلوبة",
+  "forbidden": [
+   "أرز",
+   "باذنجان",
+   "قدر",
+   "دجاج",
+   "طبق"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-019",
+  "word": "مندي",
+  "forbidden": [
+   "أرز",
+   "لحم",
+   "حفرة",
+   "دخان",
+   "اليمن"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-020",
+  "word": "كشري",
+  "forbidden": [
+   "مصر",
+   "أرز",
+   "عدس",
+   "معكرونة",
+   "صلصة"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-021",
+  "word": "بقلاوة",
+  "forbidden": [
+   "عجين",
+   "فستق",
+   "طبقات",
+   "قطر",
+   "تركيا"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-022",
+  "word": "طاجين",
+  "forbidden": [
+   "المغرب",
+   "فخار",
+   "لحم",
+   "غطاء",
+   "مخروطي"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-023",
+  "word": "كابتشينو",
+  "forbidden": [
+   "قهوة",
+   "رغوة",
+   "حليب",
+   "إيطاليا",
+   "كوب"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-024",
+  "word": "سمبوسة",
+  "forbidden": [
+   "مثلث",
+   "مقلية",
+   "رمضان",
+   "حشوة",
+   "عجينة"
+  ],
+  "category": "أكلات",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-food-025",
+  "word": "أم علي",
+  "forbidden": [
+   "مصر",
+   "حلوى",
+   "حليب",
+   "مكسرات",
+   "فرن"
+  ],
+  "category": "أكلات",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-food-026",
+  "word": "مسخّن",
+  "forbidden": [
+   "دجاج",
+   "بصل",
+   "سماق",
+   "خبز",
+   "زيت"
+  ],
+  "category": "أكلات",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-food-027",
+  "word": "هريس",
+  "forbidden": [
+   "قمح",
+   "لحم",
+   "الخليج",
+   "رمضان",
+   "قدر"
+  ],
+  "category": "أكلات",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-food-028",
+  "word": "تشيز كيك",
+  "forbidden": [
+   "جبن",
+   "بسكويت",
+   "كعكة",
+   "حلوى",
+   "فراولة"
+  ],
+  "category": "أكلات",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-food-029",
+  "word": "زلابية",
+  "forbidden": [
+   "مقلية",
+   "عجينة",
+   "قطر",
+   "رمضان",
+   "مقرمشة"
+  ],
+  "category": "أكلات",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-food-030",
+  "word": "ثريد",
+  "forbidden": [
+   "خبز",
+   "مرق",
+   "لحم",
+   "الخليج",
+   "خضار"
+  ],
+  "category": "أكلات",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-home-001",
+  "word": "مكنسة",
+  "forbidden": [
+   "تنظيف",
+   "غبار",
+   "أرضية",
+   "كهرباء",
+   "سجاد"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-002",
+  "word": "ثلاجة",
+  "forbidden": [
+   "بارد",
+   "طعام",
+   "مطبخ",
+   "فريزر",
+   "تبريد"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-003",
+  "word": "مقلاة",
+  "forbidden": [
+   "زيت",
+   "بيض",
+   "طبخ",
+   "نار",
+   "بطاطس"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-004",
+  "word": "مكواة",
+  "forbidden": [
+   "ملابس",
+   "حرارة",
+   "تجاعيد",
+   "قميص",
+   "بخار"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-005",
+  "word": "ملعقة",
+  "forbidden": [
+   "أكل",
+   "شوربة",
+   "شوكة",
+   "سكر",
+   "تحريك"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-006",
+  "word": "سكين",
+  "forbidden": [
+   "قطع",
+   "حاد",
+   "خضار",
+   "مطبخ",
+   "شفرة"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-007",
+  "word": "كوب",
+  "forbidden": [
+   "شاي",
+   "ماء",
+   "شرب",
+   "قهوة",
+   "زجاج"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-008",
+  "word": "صحن",
+  "forbidden": [
+   "أكل",
+   "طعام",
+   "دائري",
+   "مائدة",
+   "تقديم"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-009",
+  "word": "مصباح",
+  "forbidden": [
+   "نور",
+   "ضوء",
+   "كهرباء",
+   "ظلام",
+   "سقف"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-010",
+  "word": "وسادة",
+  "forbidden": [
+   "نوم",
+   "رأس",
+   "سرير",
+   "ناعمة",
+   "قطن"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-011",
+  "word": "مرآة",
+  "forbidden": [
+   "انعكاس",
+   "وجه",
+   "زجاج",
+   "شعر",
+   "حمام"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-012",
+  "word": "غسالة",
+  "forbidden": [
+   "ملابس",
+   "ماء",
+   "صابون",
+   "تنظيف",
+   "دوران"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-home-013",
+  "word": "خلاط",
+  "forbidden": [
+   "عصير",
+   "فواكه",
+   "كهرباء",
+   "شفرات",
+   "مزج"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-014",
+  "word": "مصفاة",
+  "forbidden": [
+   "معكرونة",
+   "ماء",
+   "ثقوب",
+   "أرز",
+   "غسل"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-015",
+  "word": "مبشرة",
+  "forbidden": [
+   "جبن",
+   "جزر",
+   "ثقوب",
+   "حديد",
+   "ناعم"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-016",
+  "word": "غلاية",
+  "forbidden": [
+   "ماء",
+   "شاي",
+   "كهرباء",
+   "بخار",
+   "ساخن"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-017",
+  "word": "مفرش",
+  "forbidden": [
+   "طاولة",
+   "قماش",
+   "سفرة",
+   "غطاء",
+   "زينة"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-018",
+  "word": "ستارة",
+  "forbidden": [
+   "نافذة",
+   "قماش",
+   "شمس",
+   "تغطية",
+   "ضوء"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-019",
+  "word": "شماعة",
+  "forbidden": [
+   "ملابس",
+   "خزانة",
+   "قميص",
+   "تعليق",
+   "معطف"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-020",
+  "word": "مفتاح",
+  "forbidden": [
+   "باب",
+   "قفل",
+   "حديد",
+   "سيارة",
+   "إغلاق"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-021",
+  "word": "مكيف",
+  "forbidden": [
+   "هواء",
+   "بارد",
+   "صيف",
+   "حرارة",
+   "كهرباء"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-022",
+  "word": "فرن",
+  "forbidden": [
+   "خبز",
+   "كعك",
+   "حرارة",
+   "طبخ",
+   "نار"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-023",
+  "word": "مقص",
+  "forbidden": [
+   "ورق",
+   "قطع",
+   "قماش",
+   "حاد",
+   "شفرتان"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-024",
+  "word": "دلو",
+  "forbidden": [
+   "ماء",
+   "تنظيف",
+   "مسح",
+   "بلاستيك",
+   "حمل"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-home-025",
+  "word": "ممسحة",
+  "forbidden": [
+   "أرض",
+   "ماء",
+   "تنظيف",
+   "دلو",
+   "بلل"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-home-026",
+  "word": "مفك",
+  "forbidden": [
+   "برغي",
+   "أدوات",
+   "تركيب",
+   "شد",
+   "لولب"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-home-027",
+  "word": "قمع",
+  "forbidden": [
+   "سائل",
+   "زجاجة",
+   "صب",
+   "ضيق",
+   "زيت"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-home-028",
+  "word": "كماشة",
+  "forbidden": [
+   "مسمار",
+   "شد",
+   "قبض",
+   "حديد",
+   "سحب"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-home-029",
+  "word": "مرطبان",
+  "forbidden": [
+   "زجاج",
+   "مربى",
+   "غطاء",
+   "حفظ",
+   "مخلل"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-home-030",
+  "word": "هاون",
+  "forbidden": [
+   "ثوم",
+   "دق",
+   "طحن",
+   "توابل",
+   "حجر"
+  ],
+  "category": "أدوات منزلية",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-jobs-001",
+  "word": "طبيب",
+  "forbidden": [
+   "مستشفى",
+   "مريض",
+   "علاج",
+   "دواء",
+   "سماعة"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-002",
+  "word": "معلّم",
+  "forbidden": [
+   "مدرسة",
+   "طلاب",
+   "درس",
+   "سبورة",
+   "يشرح"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-003",
+  "word": "طيّار",
+  "forbidden": [
+   "سماء",
+   "يقود",
+   "رحلة",
+   "كابتن",
+   "ركاب"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-004",
+  "word": "مزارع",
+  "forbidden": [
+   "أرض",
+   "حقل",
+   "محصول",
+   "حصاد",
+   "تراب"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-005",
+  "word": "نجّار",
+  "forbidden": [
+   "خشب",
+   "منشار",
+   "مسمار",
+   "طاولة",
+   "كرسي"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-006",
+  "word": "طبّاخ",
+  "forbidden": [
+   "طعام",
+   "أكل",
+   "مطعم",
+   "وصفة",
+   "قدر"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-007",
+  "word": "سائق",
+  "forbidden": [
+   "سيارة",
+   "حافلة",
+   "مقود",
+   "طريق",
+   "ركاب"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-008",
+  "word": "خبّاز",
+  "forbidden": [
+   "فرن",
+   "عجين",
+   "دقيق",
+   "رغيف",
+   "تنّور"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-009",
+  "word": "رسّام",
+  "forbidden": [
+   "لوحة",
+   "ألوان",
+   "فرشاة",
+   "فنان",
+   "صورة"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-010",
+  "word": "حلّاق",
+  "forbidden": [
+   "شعر",
+   "مقص",
+   "يقصّ",
+   "رأس",
+   "صالون"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-011",
+  "word": "صيّاد",
+  "forbidden": [
+   "بحر",
+   "سمك",
+   "شبكة",
+   "قارب",
+   "صنارة"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-012",
+  "word": "مهرّج",
+  "forbidden": [
+   "سيرك",
+   "ضحك",
+   "أنف",
+   "ألوان",
+   "أطفال"
+  ],
+  "category": "مهن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-jobs-013",
+  "word": "مبرمج",
+  "forbidden": [
+   "حاسوب",
+   "كمبيوتر",
+   "تطبيق",
+   "كود",
+   "شاشة"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-014",
+  "word": "مهندس",
+  "forbidden": [
+   "بناء",
+   "تصميم",
+   "مخطط",
+   "مشروع",
+   "جسر"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-015",
+  "word": "إطفائي",
+  "forbidden": [
+   "حريق",
+   "نار",
+   "ماء",
+   "خرطوم",
+   "سيارة"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-016",
+  "word": "صيدلي",
+  "forbidden": [
+   "دواء",
+   "وصفة",
+   "طبيب",
+   "حبوب",
+   "علاج"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-017",
+  "word": "محامٍ",
+  "forbidden": [
+   "محكمة",
+   "قانون",
+   "قاضٍ",
+   "دفاع",
+   "قضية"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-018",
+  "word": "مذيع",
+  "forbidden": [
+   "تلفزيون",
+   "أخبار",
+   "ميكروفون",
+   "برنامج",
+   "شاشة"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-019",
+  "word": "مصوّر",
+  "forbidden": [
+   "كاميرا",
+   "عدسة",
+   "يلتقط",
+   "فلاش",
+   "استوديو"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-020",
+  "word": "خيّاط",
+  "forbidden": [
+   "قماش",
+   "إبرة",
+   "ملابس",
+   "ماكينة",
+   "مقص"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-021",
+  "word": "سبّاك",
+  "forbidden": [
+   "ماء",
+   "أنابيب",
+   "حنفية",
+   "تسريب",
+   "حمّام"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-022",
+  "word": "ميكانيكي",
+  "forbidden": [
+   "سيارة",
+   "محرك",
+   "إصلاح",
+   "ورشة",
+   "إطار"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-023",
+  "word": "قبطان",
+  "forbidden": [
+   "سفينة",
+   "بحر",
+   "يقود",
+   "طاقم",
+   "ميناء"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-024",
+  "word": "رائد فضاء",
+  "forbidden": [
+   "صاروخ",
+   "قمر",
+   "بدلة",
+   "كواكب",
+   "محطة"
+  ],
+  "category": "مهن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-jobs-025",
+  "word": "نحّات",
+  "forbidden": [
+   "تمثال",
+   "حجر",
+   "رخام",
+   "أزميل",
+   "ينقش"
+  ],
+  "category": "مهن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-jobs-026",
+  "word": "مترجم",
+  "forbidden": [
+   "لغة",
+   "إنجليزية",
+   "عربية",
+   "كلمات",
+   "يحوّل"
+  ],
+  "category": "مهن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-jobs-027",
+  "word": "عالم آثار",
+  "forbidden": [
+   "قديم",
+   "حفريات",
+   "تاريخ",
+   "أهرامات",
+   "متحف"
+  ],
+  "category": "مهن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-jobs-028",
+  "word": "نحّال",
+  "forbidden": [
+   "عسل",
+   "خلية",
+   "لسعة",
+   "قفير",
+   "بدلة"
+  ],
+  "category": "مهن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-jobs-029",
+  "word": "أمين مكتبة",
+  "forbidden": [
+   "روايات",
+   "قراءة",
+   "استعارة",
+   "رفوف",
+   "هدوء"
+  ],
+  "category": "مهن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-jobs-030",
+  "word": "مرشد سياحي",
+  "forbidden": [
+   "زوّار",
+   "آثار",
+   "جولة",
+   "يشرح",
+   "معالم"
+  ],
+  "category": "مهن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-nature-001",
+  "word": "بركان",
+  "forbidden": [
+   "جبل",
+   "حمم",
+   "انفجار",
+   "نار",
+   "دخان"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-002",
+  "word": "قوس قزح",
+  "forbidden": [
+   "ألوان",
+   "مطر",
+   "سماء",
+   "سبعة",
+   "شمس"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-003",
+  "word": "صحراء",
+  "forbidden": [
+   "رمل",
+   "جمل",
+   "حار",
+   "واحة",
+   "جاف"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-004",
+  "word": "نحلة",
+  "forbidden": [
+   "عسل",
+   "خلية",
+   "لسعة",
+   "زهرة",
+   "طنين"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-005",
+  "word": "نهر",
+  "forbidden": [
+   "ماء",
+   "يجري",
+   "بحر",
+   "النيل",
+   "ضفة"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-006",
+  "word": "شجرة",
+  "forbidden": [
+   "أوراق",
+   "جذور",
+   "خضراء",
+   "ثمار",
+   "ظل"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-007",
+  "word": "قمر",
+  "forbidden": [
+   "ليل",
+   "سماء",
+   "بدر",
+   "هلال",
+   "أرض"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-008",
+  "word": "بحر",
+  "forbidden": [
+   "ماء",
+   "مالح",
+   "موج",
+   "سمك",
+   "شاطئ"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-009",
+  "word": "أسد",
+  "forbidden": [
+   "ملك",
+   "غابة",
+   "زئير",
+   "لبدة",
+   "مفترس"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-010",
+  "word": "فراشة",
+  "forbidden": [
+   "أجنحة",
+   "ألوان",
+   "زهرة",
+   "يرقة",
+   "تطير"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-011",
+  "word": "ثلج",
+  "forbidden": [
+   "أبيض",
+   "بارد",
+   "شتاء",
+   "جبل",
+   "يذوب"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-012",
+  "word": "جبل",
+  "forbidden": [
+   "عالٍ",
+   "قمة",
+   "صخر",
+   "تسلق",
+   "مرتفع"
+  ],
+  "category": "طبيعة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-nature-013",
+  "word": "زلزال",
+  "forbidden": [
+   "أرض",
+   "هزة",
+   "تهتز",
+   "بيوت",
+   "ريختر"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-014",
+  "word": "واحة",
+  "forbidden": [
+   "صحراء",
+   "نخيل",
+   "ماء",
+   "رمل",
+   "خضراء"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-015",
+  "word": "سلحفاة",
+  "forbidden": [
+   "بطيئة",
+   "درع",
+   "صدفة",
+   "أرنب",
+   "تزحف"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-016",
+  "word": "شلال",
+  "forbidden": [
+   "ماء",
+   "يسقط",
+   "مرتفع",
+   "نهر",
+   "صخور"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-017",
+  "word": "بومة",
+  "forbidden": [
+   "ليل",
+   "حكيمة",
+   "طائر",
+   "عيون",
+   "تدور"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-018",
+  "word": "جليد",
+  "forbidden": [
+   "ماء",
+   "متجمد",
+   "بارد",
+   "ثلج",
+   "القطب"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-019",
+  "word": "رعد",
+  "forbidden": [
+   "صوت",
+   "برق",
+   "مطر",
+   "سماء",
+   "عاصفة"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-020",
+  "word": "زرافة",
+  "forbidden": [
+   "رقبة",
+   "طويلة",
+   "أفريقيا",
+   "بقع",
+   "أوراق"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-021",
+  "word": "دلفين",
+  "forbidden": [
+   "بحر",
+   "ذكي",
+   "يقفز",
+   "سمكة",
+   "ودود"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-022",
+  "word": "غابة",
+  "forbidden": [
+   "أشجار",
+   "حيوانات",
+   "كثيفة",
+   "خضراء",
+   "مطر"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-023",
+  "word": "ضباب",
+  "forbidden": [
+   "رؤية",
+   "سحاب",
+   "أبيض",
+   "صباح",
+   "بخار"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-024",
+  "word": "حرباء",
+  "forbidden": [
+   "ألوان",
+   "تتغير",
+   "لسان",
+   "سحلية",
+   "عيون"
+  ],
+  "category": "طبيعة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-nature-025",
+  "word": "شفق قطبي",
+  "forbidden": [
+   "ألوان",
+   "سماء",
+   "الشمال",
+   "ليل",
+   "أضواء"
+  ],
+  "category": "طبيعة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-nature-026",
+  "word": "نيزك",
+  "forbidden": [
+   "سماء",
+   "فضاء",
+   "يسقط",
+   "حجر",
+   "نار"
+  ],
+  "category": "طبيعة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-nature-027",
+  "word": "خفاش",
+  "forbidden": [
+   "ليل",
+   "يطير",
+   "كهف",
+   "مقلوب",
+   "صدى"
+  ],
+  "category": "طبيعة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-nature-028",
+  "word": "سراب",
+  "forbidden": [
+   "صحراء",
+   "ماء",
+   "وهم",
+   "حرارة",
+   "عطشان"
+  ],
+  "category": "طبيعة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-nature-029",
+  "word": "ينبوع",
+  "forbidden": [
+   "ماء",
+   "أرض",
+   "يتدفق",
+   "جبل",
+   "عين"
+  ],
+  "category": "طبيعة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-nature-030",
+  "word": "مرجان",
+  "forbidden": [
+   "بحر",
+   "ألوان",
+   "شعاب",
+   "أسماك",
+   "صخور"
+  ],
+  "category": "طبيعة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-places-001",
+  "word": "مطار",
+  "forbidden": [
+   "سفر",
+   "حقائب",
+   "جواز",
+   "إقلاع",
+   "رحلة"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-002",
+  "word": "مكتبة",
+  "forbidden": [
+   "قراءة",
+   "رفوف",
+   "هدوء",
+   "استعارة",
+   "روايات"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-003",
+  "word": "مستشفى",
+  "forbidden": [
+   "طبيب",
+   "ممرضة",
+   "علاج",
+   "إسعاف",
+   "مريض"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-004",
+  "word": "شاطئ",
+  "forbidden": [
+   "بحر",
+   "رمل",
+   "سباحة",
+   "موج",
+   "صيف"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-005",
+  "word": "صيدلية",
+  "forbidden": [
+   "دواء",
+   "علاج",
+   "وصفة",
+   "أقراص",
+   "طبيب"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-006",
+  "word": "سوق",
+  "forbidden": [
+   "شراء",
+   "بيع",
+   "بضائع",
+   "تاجر",
+   "أسعار"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-007",
+  "word": "مدرسة",
+  "forbidden": [
+   "طلاب",
+   "معلم",
+   "فصل",
+   "تعليم",
+   "واجبات"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-008",
+  "word": "مطعم",
+  "forbidden": [
+   "أكل",
+   "طاولة",
+   "نادل",
+   "قائمة",
+   "طبخ"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-009",
+  "word": "حديقة حيوانات",
+  "forbidden": [
+   "أسد",
+   "قفص",
+   "زرافة",
+   "قرد",
+   "أطفال"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-010",
+  "word": "مسبح",
+  "forbidden": [
+   "ماء",
+   "غطس",
+   "صيف",
+   "عوم",
+   "منقذ"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-011",
+  "word": "ملعب",
+  "forbidden": [
+   "كرة",
+   "جمهور",
+   "مباراة",
+   "هدف",
+   "فريق"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-012",
+  "word": "مخبز",
+  "forbidden": [
+   "عجين",
+   "فرن",
+   "دقيق",
+   "فطائر",
+   "كعك"
+  ],
+  "category": "أماكن",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-places-013",
+  "word": "متحف",
+  "forbidden": [
+   "تاريخ",
+   "آثار",
+   "لوحات",
+   "تماثيل",
+   "معرض"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-014",
+  "word": "سينما",
+  "forbidden": [
+   "فيلم",
+   "شاشة",
+   "فشار",
+   "تذكرة",
+   "مقاعد"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-015",
+  "word": "بنك",
+  "forbidden": [
+   "مال",
+   "حساب",
+   "صراف",
+   "بطاقة",
+   "إيداع"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-016",
+  "word": "محطة وقود",
+  "forbidden": [
+   "بنزين",
+   "سيارة",
+   "تعبئة",
+   "خزان",
+   "مضخة"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-017",
+  "word": "مزرعة",
+  "forbidden": [
+   "أبقار",
+   "فلاح",
+   "دجاج",
+   "حقل",
+   "محاصيل"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-019",
+  "word": "جزيرة",
+  "forbidden": [
+   "بحر",
+   "ماء",
+   "محاطة",
+   "شاطئ",
+   "قارب"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-020",
+  "word": "فندق",
+  "forbidden": [
+   "غرفة",
+   "نوم",
+   "سفر",
+   "استقبال",
+   "حجز"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-021",
+  "word": "مصنع",
+  "forbidden": [
+   "إنتاج",
+   "آلات",
+   "عمال",
+   "مبنى",
+   "سلع"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-023",
+  "word": "محطة قطار",
+  "forbidden": [
+   "سكة",
+   "رصيف",
+   "تذكرة",
+   "مسافرون",
+   "عربات"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-024",
+  "word": "ميناء",
+  "forbidden": [
+   "سفن",
+   "بحر",
+   "بضائع",
+   "رسو",
+   "شحن"
+  ],
+  "category": "أماكن",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-places-025",
+  "word": "مرصد",
+  "forbidden": [
+   "نجوم",
+   "تلسكوب",
+   "فضاء",
+   "سماء",
+   "فلك"
+  ],
+  "category": "أماكن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-places-026",
+  "word": "كهف",
+  "forbidden": [
+   "ظلام",
+   "جبل",
+   "خفافيش",
+   "صخور",
+   "حفرة"
+  ],
+  "category": "أماكن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-places-028",
+  "word": "بيت زجاجي",
+  "forbidden": [
+   "نباتات",
+   "زراعة",
+   "حرارة",
+   "شفاف",
+   "حديقة"
+  ],
+  "category": "أماكن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-places-029",
+  "word": "منجم",
+  "forbidden": [
+   "ذهب",
+   "حفر",
+   "فحم",
+   "تحت الأرض",
+   "عمال"
+  ],
+  "category": "أماكن",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-sports-001",
+  "word": "كرة القدم",
+  "forbidden": [
+   "هدف",
+   "ملعب",
+   "فريق",
+   "حارس",
+   "ركل"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-002",
+  "word": "سباحة",
+  "forbidden": [
+   "ماء",
+   "بحر",
+   "غطس",
+   "عوم",
+   "حوض"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-003",
+  "word": "هدف",
+  "forbidden": [
+   "شباك",
+   "مرمى",
+   "كرة",
+   "تسجيل",
+   "حارس"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-004",
+  "word": "حَكَم",
+  "forbidden": [
+   "صافرة",
+   "بطاقة",
+   "مباراة",
+   "قرار",
+   "قانون"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-005",
+  "word": "ميدالية",
+  "forbidden": [
+   "ذهب",
+   "فضة",
+   "فوز",
+   "رقبة",
+   "أولمبياد"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-006",
+  "word": "كرة السلة",
+  "forbidden": [
+   "حلقة",
+   "شبكة",
+   "تنطيط",
+   "طويل",
+   "قفز"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-007",
+  "word": "مضرب",
+  "forbidden": [
+   "تنس",
+   "كرة",
+   "شبكة",
+   "ريشة",
+   "خشب"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-008",
+  "word": "حارس المرمى",
+  "forbidden": [
+   "هدف",
+   "قفاز",
+   "شباك",
+   "كرة",
+   "تصدي"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-009",
+  "word": "صافرة",
+  "forbidden": [
+   "حكم",
+   "نفخ",
+   "صوت",
+   "بداية",
+   "مباراة"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-010",
+  "word": "كأس",
+  "forbidden": [
+   "بطولة",
+   "فوز",
+   "رفع",
+   "ذهبي",
+   "نهائي"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-011",
+  "word": "دراجة",
+  "forbidden": [
+   "عجلة",
+   "بدال",
+   "سباق",
+   "ركوب",
+   "طريق"
+  ],
+  "category": "رياضة",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-sports-013",
+  "word": "ركلة جزاء",
+  "forbidden": [
+   "هدف",
+   "حارس",
+   "نقطة",
+   "خطأ",
+   "مرمى"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-014",
+  "word": "تسلل",
+  "forbidden": [
+   "خطأ",
+   "مدافع",
+   "حكم",
+   "راية",
+   "خط"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-015",
+  "word": "ماراثون",
+  "forbidden": [
+   "جري",
+   "مسافة",
+   "طويل",
+   "كيلومتر",
+   "سباق"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-016",
+  "word": "جمباز",
+  "forbidden": [
+   "مرونة",
+   "قفز",
+   "حركات",
+   "توازن",
+   "شقلبة"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-017",
+  "word": "مبارزة",
+  "forbidden": [
+   "سيف",
+   "قناع",
+   "لمس",
+   "خصم",
+   "فارس"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-018",
+  "word": "تنس الطاولة",
+  "forbidden": [
+   "مضرب",
+   "شبكة",
+   "كرة",
+   "بينج",
+   "صغيرة"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-019",
+  "word": "بطاقة حمراء",
+  "forbidden": [
+   "طرد",
+   "حكم",
+   "خطأ",
+   "لاعب",
+   "خروج"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-020",
+  "word": "تزلج",
+  "forbidden": [
+   "ثلج",
+   "جليد",
+   "انزلاق",
+   "جبل",
+   "عصا"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-021",
+  "word": "أولمبياد",
+  "forbidden": [
+   "ميدالية",
+   "دول",
+   "أربع سنوات",
+   "شعلة",
+   "حلقات"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-022",
+  "word": "مدرب",
+  "forbidden": [
+   "فريق",
+   "خطة",
+   "لاعبين",
+   "تمرين",
+   "تعليمات"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-023",
+  "word": "سباق الحواجز",
+  "forbidden": [
+   "جري",
+   "قفز",
+   "عقبة",
+   "مضمار",
+   "سرعة"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-024",
+  "word": "رمي الرمح",
+  "forbidden": [
+   "قذف",
+   "مسافة",
+   "عصا",
+   "طويل",
+   "ألعاب قوى"
+  ],
+  "category": "رياضة",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-sports-025",
+  "word": "ضربة ركنية",
+  "forbidden": [
+   "زاوية",
+   "راية",
+   "عرضية",
+   "كرة",
+   "رأس"
+  ],
+  "category": "رياضة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-sports-026",
+  "word": "جودو",
+  "forbidden": [
+   "يابان",
+   "حزام",
+   "رمي",
+   "أرض",
+   "مصارعة"
+  ],
+  "category": "رياضة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-sports-027",
+  "word": "سباق التتابع",
+  "forbidden": [
+   "عصا",
+   "تسليم",
+   "أربعة",
+   "جري",
+   "فريق"
+  ],
+  "category": "رياضة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-sports-028",
+  "word": "الوقت الإضافي",
+  "forbidden": [
+   "تعادل",
+   "دقائق",
+   "نهاية",
+   "مباراة",
+   "ضائع"
+  ],
+  "category": "رياضة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-sports-029",
+  "word": "كرة اليد",
+  "forbidden": [
+   "رمي",
+   "مرمى",
+   "سبعة",
+   "حارس",
+   "قفز"
+  ],
+  "category": "رياضة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-sports-030",
+  "word": "ترياثلون",
+  "forbidden": [
+   "سباحة",
+   "دراجة",
+   "جري",
+   "ثلاثة",
+   "متتالية"
+  ],
+  "category": "رياضة",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-things-001",
+  "word": "مظلة",
+  "forbidden": [
+   "مطر",
+   "شمس",
+   "تفتح",
+   "يد",
+   "بلل"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-002",
+  "word": "ساعة",
+  "forbidden": [
+   "وقت",
+   "عقارب",
+   "معصم",
+   "دقائق",
+   "حائط"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-004",
+  "word": "حقيبة",
+  "forbidden": [
+   "تحمل",
+   "ظهر",
+   "سفر",
+   "أغراض",
+   "مدرسة"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-005",
+  "word": "نظارة",
+  "forbidden": [
+   "عين",
+   "زجاج",
+   "رؤية",
+   "شمس",
+   "وجه"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-006",
+  "word": "كرسي",
+  "forbidden": [
+   "جلوس",
+   "طاولة",
+   "أرجل",
+   "خشب",
+   "مقعد"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-007",
+  "word": "قلم",
+  "forbidden": [
+   "كتابة",
+   "ورقة",
+   "حبر",
+   "رصاص",
+   "مدرسة"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-008",
+  "word": "هاتف",
+  "forbidden": [
+   "اتصال",
+   "رسائل",
+   "جوال",
+   "شاشة",
+   "رنين"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-010",
+  "word": "مشط",
+  "forbidden": [
+   "شعر",
+   "أسنان",
+   "تسريح",
+   "رأس",
+   "فرشاة"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-011",
+  "word": "كتاب",
+  "forbidden": [
+   "قراءة",
+   "صفحات",
+   "ورق",
+   "مؤلف",
+   "غلاف"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-012",
+  "word": "شمعة",
+  "forbidden": [
+   "نار",
+   "ضوء",
+   "تذوب",
+   "ظلام",
+   "فتيل"
+  ],
+  "category": "أشياء",
+  "difficulty": 1
+ },
+ {
+  "id": "mamnoo-things-013",
+  "word": "بوصلة",
+  "forbidden": [
+   "اتجاه",
+   "شمال",
+   "إبرة",
+   "ضياع",
+   "خريطة"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-014",
+  "word": "منبه",
+  "forbidden": [
+   "استيقاظ",
+   "صباح",
+   "رنين",
+   "نوم",
+   "ساعة"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-015",
+  "word": "مغناطيس",
+  "forbidden": [
+   "حديد",
+   "جذب",
+   "ثلاجة",
+   "قطب",
+   "يلتصق"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-016",
+  "word": "منظار",
+  "forbidden": [
+   "بعيد",
+   "تقريب",
+   "عدسة",
+   "نجوم",
+   "عين"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-017",
+  "word": "مسطرة",
+  "forbidden": [
+   "قياس",
+   "خط",
+   "سنتيمتر",
+   "مستقيم",
+   "طول"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-018",
+  "word": "كشاف",
+  "forbidden": [
+   "ضوء",
+   "بطارية",
+   "ظلام",
+   "يد",
+   "إضاءة"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-019",
+  "word": "خيمة",
+  "forbidden": [
+   "رحلة",
+   "صحراء",
+   "نوم",
+   "قماش",
+   "أوتاد"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-020",
+  "word": "سلة",
+  "forbidden": [
+   "تسوق",
+   "فواكه",
+   "خوص",
+   "تحمل",
+   "مهملات"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-021",
+  "word": "صندوق",
+  "forbidden": [
+   "خشب",
+   "غطاء",
+   "تخزين",
+   "كرتون",
+   "مغلق"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-023",
+  "word": "إبرة",
+  "forbidden": [
+   "خيط",
+   "خياطة",
+   "ثقب",
+   "حادة",
+   "دبوس"
+  ],
+  "category": "أشياء",
+  "difficulty": 2
+ },
+ {
+  "id": "mamnoo-things-025",
+  "word": "مطرقة",
+  "forbidden": [
+   "مسمار",
+   "يدق",
+   "حديد",
+   "نجار",
+   "أداة"
+  ],
+  "category": "أشياء",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-things-026",
+  "word": "ساعة رملية",
+  "forbidden": [
+   "حبيبات",
+   "وقت",
+   "زجاج",
+   "تقلب",
+   "دقائق"
+  ],
+  "category": "أشياء",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-things-027",
+  "word": "عدسة مكبرة",
+  "forbidden": [
+   "زجاج",
+   "محقق",
+   "صغير",
+   "يضخم",
+   "قراءة"
+  ],
+  "category": "أشياء",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-things-028",
+  "word": "ترمس",
+  "forbidden": [
+   "شاي",
+   "ساخن",
+   "قهوة",
+   "يحفظ",
+   "سفر"
+  ],
+  "category": "أشياء",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-things-029",
+  "word": "مرساة",
+  "forbidden": [
+   "سفينة",
+   "بحر",
+   "تثبيت",
+   "حديد",
+   "قاع"
+  ],
+  "category": "أشياء",
+  "difficulty": 3
+ },
+ {
+  "id": "mamnoo-things-030",
+  "word": "مقود",
+  "forbidden": [
+   "سيارة",
+   "سائق",
+   "توجيه",
+   "دائري",
+   "يدان"
+  ],
+  "category": "أشياء",
+  "difficulty": 3
+ }
+]

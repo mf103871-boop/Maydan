@@ -14,15 +14,17 @@ export function GameFrame({ game, inGame, exitMessage, children, onExit }) {
     navigate(target, { replace: true });
   }, [onExit]);
 
-  const requestExit = useCallback((target = '/') => {
-    // جسر التطبيق الأصلي لبديهة: إن تعامل مع الرجوع داخليًا فلا نخرج
-    if (typeof window.maydanBack === 'function' && window.maydanBack()) return;
+  // زر الرجوع في المتصفح يعني «رجوع خطوة»، فتتعامل معه اللعبة أولًا إن كانت
+  // تدير ملاحتها الداخلية (بَديهة تفعل عبر window.maydanBack). أما زر المنصة
+  // فيعني «اخرج من اللعبة»، ولا يمرّ باللعبة أبدًا وإلا تعذّر الخروج منها.
+  const requestExit = useCallback((target = '/', { fromBack = false } = {}) => {
+    if (fromBack && typeof window.maydanBack === 'function' && window.maydanBack()) return;
     if (inGame) setConfirming(target);
     else leave(target);
   }, [inGame, leave]);
 
   useEffect(() => {
-    setExitGuard((target) => { requestExit(target); return true; });
+    setExitGuard((target) => { requestExit(target, { fromBack: true }); return true; });
     return () => setExitGuard(null);
   }, [requestExit]);
 

@@ -1,0 +1,28 @@
+.beep { --game-accent: #FF4D4D; display: grid; gap: 14px; }
+.beep-turn { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 18px; background: color-mix(in srgb, var(--p-color) 18%, var(--surface)); border: 1px solid color-mix(in srgb, var(--p-color) 50%, transparent); }
+.beep-turn .avatar { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 26px; background: color-mix(in srgb, var(--p-color) 30%, transparent); }
+.beep-turn b { font-size: 20px; }
+.beep-turn small { display: block; color: var(--muted); font-size: 13px; }
+.beep-prompt { min-height: 150px; display: grid; place-items: center; text-align: center; padding: 22px 18px; border-radius: 24px; background: linear-gradient(160deg, color-mix(in srgb, var(--game-accent) 16%, var(--surface)), var(--surface) 70%); border: 1px solid color-mix(in srgb, var(--game-accent) 40%, var(--stroke)); font-size: clamp(24px, 6.5vw, 34px); font-weight: 900; line-height: 1.4; text-wrap: balance; animation: ui-modal-in .3s var(--ease-out) both; }
+.beep-prompt small { display: block; font-size: 13px; color: var(--muted); font-weight: 700; margin-top: 8px; }
+.beep-intro { display: grid; justify-items: center; gap: 14px; text-align: center; padding: 28px 12px; }
+.beep-intro .big { font-size: 72px; line-height: 1; animation: ui-trophy .7s var(--ease-spring) both; }
+.beep-intro h2 { font-size: clamp(26px, 7vw, 36px); font-weight: 900; }
+.beep-lives { display: flex; gap: 4px; font-size: 16px; }
+.beep-players { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.beep-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--stroke); font-size: 13px; font-weight: 800; }
+.beep-chip.is-out { opacity: .4; text-decoration: line-through; }
+.beep-chip.is-turn { border-color: var(--game-accent); background: color-mix(in srgb, var(--game-accent) 18%, var(--surface)); }
+.beep-bomb { position: relative; width: 150px; height: 150px; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; font-size: 72px; background: radial-gradient(circle at 35% 30%, #3a3f5a, #0B0E1A 70%); border: 2px solid rgba(255,77,77,.5); box-shadow: 0 0 0 10px rgba(255,77,77,.08), 0 20px 50px rgba(0,0,0,.5); animation: beep-tick 1s ease-in-out infinite; }
+.beep-bomb.is-hot { animation-duration: .5s; border-color: var(--danger); box-shadow: 0 0 0 14px rgba(255,77,77,.16), 0 0 60px rgba(255,77,77,.4); }
+@keyframes beep-tick { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.beep-boom { position: fixed; inset: 0; z-index: 330; display: grid; place-items: center; text-align: center; background: radial-gradient(circle at 50% 50%, #FF4D4D 0%, #7a1414 40%, #0B0E1A 100%); animation: beep-flash .6s ease-out both, flash-bad .6s ease-out both; }
+.beep-boom .inner { display: grid; gap: 10px; justify-items: center; }
+.beep-boom .big { font-size: 110px; line-height: 1; animation: ui-trophy .5s var(--ease-spring) both; }
+.beep-boom h2 { font-size: clamp(28px, 8vw, 40px); font-weight: 900; color: #fff; }
+.beep-boom p { color: #FFD1D1; font-weight: 700; }
+@keyframes beep-flash { 0% { filter: brightness(3); } 100% { filter: brightness(1); } }
+.beep-judge { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.beep-judge .btn { min-height: 92px; font-size: 22px; flex-direction: column; gap: 4px; }
+.beep-judge .btn span { font-size: 34px; }
+.beep-actions { display: grid; gap: 10px; }

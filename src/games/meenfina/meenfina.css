@@ -1,0 +1,29 @@
+.meenfina { --game-accent: #2ED8A3; display: grid; gap: 14px; }
+.meen-statement { padding: 26px 20px; border-radius: 26px; background: linear-gradient(160deg, rgba(46,216,163,.18), var(--surface) 68%); border: 1px solid rgba(46,216,163,.45); text-align: center; font-size: clamp(26px, 7vw, 36px); font-weight: 900; line-height: 1.5; text-wrap: balance; animation: ui-modal-in .3s var(--ease-out) both; }
+.meen-count { position: fixed; inset: 0; z-index: 320; display: grid; place-items: center; background: radial-gradient(circle, rgba(46,216,163,.25), var(--bg) 70%); }
+.meen-count .num { font-size: 140px; font-weight: 900; color: var(--game-accent); line-height: 1; animation: meen-pop .95s var(--ease-out) both; }
+.meen-count .go { font-size: clamp(44px, 12vw, 76px); font-weight: 900; color: #fff; animation: ui-trophy .5s var(--ease-spring) both; }
+@keyframes meen-pop { 0% { transform: scale(2.2); opacity: 0; } 30% { transform: scale(1); opacity: 1; } 100% { transform: scale(.85); opacity: .25; } }
+.meen-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+@media (min-width: 520px) { .meen-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.meen-pick { display: grid; justify-items: center; gap: 6px; padding: 14px 8px; border-radius: 18px; background: var(--surface); border: 1px solid var(--stroke-strong); font-weight: 800; min-height: 96px; transition: transform .12s var(--ease-out), background-color .18s ease, border-color .18s ease; position: relative; overflow: hidden; }
+.meen-pick span { font-size: 34px; }
+.meen-pick.selected { background: color-mix(in srgb, var(--pick-color) 26%, var(--surface)); border-color: var(--pick-color); transform: scale(1.03); }
+.meen-pick .count { position: absolute; top: 6px; inset-inline-end: 8px; min-width: 22px; height: 22px; border-radius: 999px; background: var(--pick-color); color: #0B0E1A; font-size: 12px; font-weight: 900; display: grid; place-items: center; }
+.meen-bars { display: grid; gap: 8px; }
+.meen-bar { display: flex; align-items: center; gap: 10px; }
+.meen-bar .who { width: 92px; flex: 0 0 auto; font-weight: 800; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.meen-bar .track { flex: 1; height: 30px; border-radius: 10px; background: var(--surface); border: 1px solid var(--stroke); overflow: hidden; }
+.meen-bar .fill { height: 100%; border-radius: 9px; background: var(--bar-color); width: 0; animation: meen-grow .7s var(--ease-out) forwards; animation-delay: var(--delay, 0ms); }
+@keyframes meen-grow { to { width: var(--w); } }
+.meen-bar b { width: 26px; text-align: center; font-variant-numeric: tabular-nums; }
+.meen-winner { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 14px; }
+.meen-winner .faces { display: flex; gap: 8px; }
+.meen-winner .faces span { width: 68px; height: 68px; border-radius: 20px; display: grid; place-items: center; font-size: 38px; background: color-mix(in srgb, var(--game-accent) 25%, transparent); border: 1px solid color-mix(in srgb, var(--game-accent) 55%, transparent); animation: ui-trophy .6s var(--ease-spring) both; }
+.meen-winner h2 { font-size: clamp(24px, 6.5vw, 32px); font-weight: 900; }
+.meen-titles { display: grid; gap: 6px; }
+.meen-titles div { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--stroke); }
+.meen-titles .grow { flex: 1; min-width: 0; }
+.meen-titles small { color: var(--game-accent); font-weight: 800; font-size: 13px; display: block; }
+.meen-intro { display: grid; justify-items: center; gap: 12px; text-align: center; padding: 20px 12px; }
+.meen-intro .big { font-size: 70px; animation: ui-trophy .7s var(--ease-spring) both; }

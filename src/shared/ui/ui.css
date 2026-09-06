@@ -105,12 +105,8 @@
 /* screens */
 .screen { width: min(100%, 720px); margin: 0 auto; padding: calc(10px + var(--safe-top)) max(14px, var(--safe-right)) calc(28px + var(--safe-bottom)) max(14px, var(--safe-left)); min-height: 100dvh; animation: screen-in var(--dur) var(--ease-out) both; }
 .screen[data-dir="back"] { animation-name: screen-in-back; }
-.screen-ghost { position: fixed; inset: 0; z-index: 300; pointer-events: none; overflow: hidden; animation: screen-out 240ms ease-in both; }
-.screen-ghost[data-dir="back"] { animation-name: screen-out-back; }
 @keyframes screen-in { from { opacity: 0; transform: translateX(-28px); } }
 @keyframes screen-in-back { from { opacity: 0; transform: translateX(28px); } }
-@keyframes screen-out { to { opacity: 0; transform: translateX(28px); } }
-@keyframes screen-out-back { to { opacity: 0; transform: translateX(-28px); } }
 
 .topbar { display: flex; align-items: center; gap: 10px; min-height: 56px; margin-bottom: 10px; }
 .topbar h1 { flex: 1; min-width: 0; font-size: 22px; font-weight: 900; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

@@ -1,5 +1,5 @@
 // غلاف المنصة: المزوّدون (صوت/اهتزاز/تخزين/دفتر اللاعبين/إعدادات)، الموجّه، وانتقالات الشاشات.
-import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useMemo, useState, useCallback } from 'react';
 import { PlatformContext } from './context.js';
 import { useRoute, navigate, getDirection } from './router.js';
 import { createStorage } from '../shared/lib/storage.js';
@@ -23,31 +23,12 @@ const platformStorage = createStorage('platform');
 const DEFAULT_SETTINGS = { soundOn: true, hapticsOn: true, reducedMotion: false, splashSeen: false };
 
 function ScreenHost({ route }) {
-  // انتقال الخروج: لقطة ثابتة من الشاشة السابقة تنزلق وتتلاشى فوق الشاشة الجديدة.
-  const hostRef = useRef(null);
-  const ghostRef = useRef(null);
-  const lastPath = useRef(route.path);
-  useEffect(() => {
-    if (lastPath.current === route.path) return;
-    lastPath.current = route.path;
-    const host = hostRef.current;
-    const reduced = document.documentElement.dataset.reducedMotion === 'true';
-    if (!host || reduced || !ghostRef.current) return;
-    const ghost = ghostRef.current;
-    ghost.innerHTML = host.dataset.snapshot || '';
-    ghost.dataset.dir = getDirection();
-    ghost.hidden = !ghost.innerHTML;
-    const t = setTimeout(() => { ghost.innerHTML = ''; ghost.hidden = true; }, 260);
-    return () => clearTimeout(t);
-  }, [route.path]);
-  useEffect(() => {
-    const host = hostRef.current;
-    if (!host) return undefined;
-    // خزّن لقطة DOM الحالية قبل كل تغيير مسار
-    const snap = () => { try { host.dataset.snapshot = host.firstElementChild ? host.firstElementChild.outerHTML : ''; } catch (e) { /* ignore */ } };
-    window.addEventListener('hashchange', snap, true);
-    return () => window.removeEventListener('hashchange', snap, true);
-  }, []);
+  // Screens animate in, with the direction taken from how the route was
+  // reached (forward vs. back). There is deliberately no outgoing "ghost" of
+  // the previous screen: cloning its DOM duplicates every control and ARIA
+  // node for the length of the animation, which assistive tech and automated
+  // clicks can reach. The directional enter animation carries the transition
+  // on its own.
   let screen = null;
   if (route.name === 'home') screen = <Home key="home" />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
@@ -55,12 +36,7 @@ function ScreenHost({ route }) {
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'settings') screen = <Settings key="settings" />;
   else if (route.name === 'about') screen = <About key="about" />;
-  return (
-    <>
-      <div ref={hostRef} data-route={route.path}>{screen}</div>
-      <div ref={ghostRef} className="screen-ghost" aria-hidden="true" hidden />
-    </>
-  );
+  return screen;
 }
 
 function Providers({ children }) {
