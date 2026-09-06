@@ -98,6 +98,6 @@ test('حزم المسلسلات والأنمي: أسئلة عن أحداث ال�
 test('index.js يستورد كل ملفات الحزم الموجودة', () => {
   const src = readFileSync(path.join(dir, 'index.js'), 'utf8');
   for (const f of files) assert.ok(src.includes(`./${f}`), `index.js لا يستورد ${f}`);
-  const imported = (src.match(/from '\.\/[a-z0-9]+\.json'/g) || []).length;
+  const imported = (src.match(/from ['"]\.\/[a-z0-9]+\.json['"]/g) || []).length;
   assert.equal(imported, files.length, 'عدد الاستيرادات لا يطابق عدد ملفات الحزم');
 });

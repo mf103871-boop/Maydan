@@ -11,7 +11,7 @@ export function About() {
     <Screen dir={getDirection()} className="stack" aria-label="عن المنصة">
       <TopBar title="عن منصة ميدان" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <Card className="stack">
-        <p className="card-muted" style={{ fontSize: 15 }}>ألعاب جماعية تُلعب على جهاز واحد يتناقله الأصدقاء والعائلة. كل شيء يعمل دون إنترنت، ولا تُرسل أي بيانات إلى أي مكان.</p>
+        <p className="card-muted" style={{ fontSize: 15 }}>ألعاب جماعية تُلعب على جهاز واحد يتناقله الأصدقاء والعائلة. تعمل دون إنترنت ولا تُرسل أي بيانات إلى أي مكان؛ وحزم الأسئلة ذات الصور والأصوات تحتاج الشبكة أول مرة فقط، ثم تُحفظ في الجهاز.</p>
         <div className="about-list">
           {GAMES.map((g) => <div key={g.id} className="row" style={{ '--c': g.accent }}><span className="dot" aria-hidden="true" /><b>{g.name}</b><span className="muted" style={{ fontSize: 13 }}>{g.tagline}</span></div>)}
         </div>

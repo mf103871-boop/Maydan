@@ -5,6 +5,7 @@ import { readFile, writeFile, mkdir, cp, rm, readdir, stat } from 'node:fs/promi
 import { gzipSync } from 'node:zlib';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkMedia, copyMedia, fmtMB } from './media.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -74,11 +75,17 @@ export async function buildOnce({ minify = true } = {}) {
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
   await copyPublic();
+  // الوسائط تُفحص قبل النسخ: سؤال يشير إلى ملف غير موجود يوقف البناء.
+  const media = await checkMedia(ROOT);
+  if (media.errors.length) {
+    throw new Error(`وسائط ناقصة (${media.errors.length}):\n  ${media.errors.slice(0, 12).join('\n  ')}`);
+  }
+  const copied = await copyMedia(ROOT, DIST);
   const out = path.join(DIST, 'index.html');
   await writeFile(out, html, 'utf8');
   const bytes = Buffer.byteLength(html, 'utf8');
   const gzip = gzipSync(Buffer.from(html, 'utf8')).length;
-  return { out, bytes, gzip, version: pkg.version, warnings: result.warnings };
+  return { out, bytes, gzip, version: pkg.version, warnings: result.warnings, media: { packs: media.packs, files: copied.count, bytes: copied.total } };
 }
 
 export function fmtKB(n) {

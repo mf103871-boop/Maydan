@@ -6,8 +6,15 @@ import { CATS } from "../../data/categories/index.js";
 import MAYDAN_BETA_CSS from "./styles.css";
 import MaydanLogicBeta from "./logic.js";
 import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
+import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
+import {
+  preloadMedia,
+  cacheForOffline,
+  isLoaded as mediaIsLoaded,
+  hasFailed as mediaHasFailed,
+} from "../../shared/media/preload.js";
 
-const { useState, useEffect, useRef } = React;
+const { useState, useEffect, useRef, useMemo } = React;
 const TOOLS = [
     { id: "double", label: "دبل النقاط", icon: "✨", hint: "نقاط هذا السؤال ×2 إذا جاوبتوا صح" },
     { id: "two", label: "جوابين", icon: "✌️", hint: "يحق لفريقكم قول إجابتين" },
@@ -46,6 +53,8 @@ const TOOLS = [
   STORE_KEY = "maydan-used-questions-v3",
   RESULTS_KEY = "maydan-results-v1",
   TOTAL_Q = CATS.reduce((n, c) => n + c.qs.length, 0),
+  // حزم الوسائط تحتاج الشبكة أول مرة، فلا نَعِد اللاعب بما لا نفي به.
+  HAS_MEDIA = CATS.some((c) => c.qs.some((q) => q.media)),
   TYPE_PROMPT = {
     zoom: "ما هذا الشيء؟ الصورة مقرّبة جدًا",
     pic: "خمّنوا ما هذا من ظلّه",
@@ -56,7 +65,18 @@ const TOOLS = [
     flag: "علم أي دولة هذا؟",
     sound: "استمعوا وخمّنوا مصدر الصوت",
     grid: "ركّزوا في الصورة قبل انتهاء الوقت",
+    image: "ما الذي في الصورة؟",
+    audio: "استمعوا إلى المقطع وخمّنوا",
+    video: "شاهدوا المقطع وخمّنوا",
+    diff: "ما الفرق بين الصورتين؟",
+    truefalse: "هل العبارة صحيحة أم خاطئة؟",
+    scramble: "رتّبوا الحروف لتكوين الكلمة",
+    complete: "أكملوا الناقص",
+    common: "ما القاسم المشترك بينها؟",
+    hints: "خمّنوا، ولكم أن تطلبوا تلميحًا بثمن",
   },
+  // كل تلميح يُطلب يخصم من نقاط السؤال، ولا تقل أبدًا عن الربع.
+  HINT_COST_PERCENT = 25,
   shuffle = (arr) => {
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
@@ -756,6 +776,8 @@ function MaydanBeta() {
     [revealed, setRevealed] = useState(!1),
     [mixedItems, setMixedItems] = useState([]),
     [effect, setEffect] = useState({ double: !1, two: !1 }),
+    [hintsUsed, setHintsUsed] = useState(0),
+    [offlineMedia, setOfflineMedia] = useState({ state: "idle", done: 0, total: 0 }),
     [questionBaseTeams, setQuestionBaseTeams] = useState(null),
     [history, setHistory] = useState({}),
     [results, setResults] = useState([]),
@@ -1008,6 +1030,7 @@ function MaydanBeta() {
       setCurrent(null),
       setQuestionBaseTeams(null),
       setEffect({ double: !1, two: !1 }),
+      setHintsUsed(0),
       setPaused(!1),
       setScreen("board"),
       playSfx("click"));
@@ -1127,6 +1150,8 @@ function MaydanBeta() {
       (deadlineRef.current = null),
       (timeoutPlayedRef.current = !1),
       betaRemoveKey(MAYDAN_BETA_KEYS.active),
+      // وسائط الجولة تُجلب في الخلفية فور بناء اللوحة، فلا ينتظر أحد عند فتح السؤال.
+      preloadMedia(deckMedia(nextDeck, CATS)),
       setScreen("board"),
       playSfx("start"),
       haptic("medium"));
@@ -1180,6 +1205,7 @@ function MaydanBeta() {
         setPaused(!1),
         setRevealed(!1),
         setEffect({ double: !1, two: !1 }),
+        setHintsUsed(0),
         (timeoutPlayedRef.current = !1),
         (deadlineRef.current = Date.now() + timerLength * 1e3),
         question.type === "order")
@@ -1289,7 +1315,13 @@ function MaydanBeta() {
     let nextTeams = betaCloneTeams(teams);
     if (winnerIndex !== null) {
       const sameTeam = winnerIndex === turn,
-        points = sameTeam && effect.double ? question.p * 2 : question.p,
+        base = hintsUsed > 0
+          ? Math.max(
+              Math.round(question.p * 0.25),
+              Math.round((question.p * (100 - hintsUsed * HINT_COST_PERCENT)) / 100),
+            )
+          : question.p,
+        points = sameTeam && effect.double ? base * 2 : base,
         isSteal = question.type !== "closest" && !sameTeam;
       ((nextTeams = nextTeams.map((team, index) =>
         index === winnerIndex
@@ -1316,6 +1348,7 @@ function MaydanBeta() {
       setCurrent(null),
       setQuestionBaseTeams(null),
       setEffect({ double: !1, two: !1 }),
+      setHintsUsed(0),
       setRevealed(!1),
       (deadlineRef.current = null),
       Object.keys(nextUsed).length >= totalQuestions
@@ -1494,7 +1527,287 @@ ${record.answered} من ${record.total} سؤالًا`,
       }),
     );
   }
+  // ── الوسائط ──────────────────────────────────────────────────────────────
+  // مرجع الملف في السؤال قصير («01.webp»)، ومجلد الحزمة يكمله. الأخطاء تُعرض
+  // للاعب بدل أن تترك مربعًا فارغًا لا يفهمه أحد.
+  function MediaBox({ url, kind, className, alt, children }) {
+    const [state, setState] = useState(mediaHasFailed(url) ? "error" : mediaIsLoaded(url) ? "ready" : "loading");
+    useEffect(() => {
+      setState(mediaHasFailed(url) ? "error" : mediaIsLoaded(url) ? "ready" : "loading");
+    }, [url]);
+    if (!url) {
+      return hBeta("div", { className: "m-media-box is-error" }, hBeta("p", null, "لا ملف لهذا السؤال"));
+    }
+    return hBeta(
+      "div",
+      { className: `m-media-box ${className || ""} ${state === "loading" ? "is-loading" : ""}` },
+      state === "error"
+        ? hBeta(
+            "div",
+            { className: "m-media-error", role: "status" },
+            hBeta("span", { "aria-hidden": "true" }, "📡"),
+            hBeta("b", null, "تعذّر تحميل الملف"),
+            hBeta("small", null, navigator.onLine === false ? "لا يوجد اتصال بالإنترنت" : "تحقق من الاتصال ثم أعد المحاولة"),
+            hBeta(
+              "button",
+              { type: "button", className: "m-secondary m-small", onClick: () => { setState("loading"); preloadMedia([url]).then((r) => setState(r.ok ? "ready" : "error")); } },
+              "أعد المحاولة",
+            ),
+          )
+        : children({ onReady: () => setState("ready"), onError: () => setState("error") }),
+      state === "loading" && hBeta("span", { className: "m-media-spinner", "aria-label": "جارٍ التحميل" }),
+    );
+  }
+
+  function MediaImage({ question, url, effect }) {
+    const [tiles, setTiles] = useState(() => (effect === "reveal" ? Array.from({ length: 12 }, (_, i) => i) : []));
+    useEffect(() => { if (effect === "reveal") setTiles(Array.from({ length: 12 }, (_, i) => i)); }, [url, effect]);
+    const shown = revealed ? [] : tiles;
+    const cls = ["m-media-img", `fx-${effect}`, revealed ? "is-revealed" : ""].join(" ");
+    return hBeta(
+      MediaBox,
+      { url, className: `fx-frame-${effect}`, alt: question.q || "صورة السؤال" },
+      ({ onReady, onError }) =>
+        hBeta(
+          "div",
+          { className: "m-media-stage" },
+          hBeta("img", {
+            src: url,
+            alt: revealed ? question.a || "صورة السؤال" : "صورة السؤال",
+            className: cls,
+            style: effect === "zoom" ? { transformOrigin: question.origin || "50% 50%" } : null,
+            onLoad: onReady,
+            onError,
+            draggable: false,
+          }),
+          effect === "reveal" &&
+            hBeta(
+              "div",
+              { className: "m-reveal-tiles", "aria-hidden": "true" },
+              Array.from({ length: 12 }, (_, i) =>
+                hBeta("i", { key: i, className: shown.includes(i) ? "" : "is-open" }),
+              ),
+            ),
+          effect === "reveal" &&
+            !revealed &&
+            hBeta(
+              "button",
+              {
+                type: "button",
+                className: "m-secondary m-small m-reveal-tile-btn",
+                disabled: shown.length === 0,
+                onClick: () => {
+                  setTiles((list) => list.filter((_, index) => index !== Math.floor(Math.random() * list.length)));
+                  playSfx("click");
+                },
+              },
+              `اكشف قطعة (${shown.length})`,
+            ),
+        ),
+    );
+  }
+
+  function MediaAudio({ url }) {
+    const ref = useRef(null);
+    const [playing, setPlaying] = useState(false);
+    useEffect(() => () => { if (ref.current) ref.current.pause(); }, []);
+    const toggle = () => {
+      const el = ref.current;
+      if (!el) return;
+      if (el.paused) {
+        el.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+      } else {
+        el.pause();
+        setPlaying(false);
+      }
+    };
+    return hBeta(
+      MediaBox,
+      { url, className: "is-audio" },
+      ({ onReady, onError }) =>
+        hBeta(
+          "div",
+          { className: "m-audio" },
+          hBeta("audio", {
+            ref,
+            src: url,
+            preload: "auto",
+            onCanPlay: onReady,
+            onError,
+            onEnded: () => setPlaying(false),
+          }),
+          hBeta(
+            "button",
+            { type: "button", className: "m-audio-btn", onClick: toggle, "aria-label": playing ? "إيقاف" : "تشغيل" },
+            hBeta("span", { "aria-hidden": "true" }, playing ? "⏸" : "▶"),
+          ),
+          hBeta(
+            "div",
+            { className: "m-audio-meta" },
+            hBeta("b", null, playing ? "يعمل الآن" : "اضغط للاستماع"),
+            hBeta("small", null, "يمكنكم إعادة السماع أكثر من مرة"),
+          ),
+          hBeta(
+            "button",
+            {
+              type: "button",
+              className: "m-secondary m-small",
+              onClick: () => { const el = ref.current; if (el) { el.currentTime = 0; el.play().then(() => setPlaying(true)).catch(() => {}); } },
+            },
+            "↻ من البداية",
+          ),
+        ),
+    );
+  }
+
+  function MediaVideo({ url }) {
+    const ref = useRef(null);
+    return hBeta(
+      MediaBox,
+      { url, className: "is-video" },
+      ({ onReady, onError }) =>
+        hBeta("video", {
+          ref,
+          src: url,
+          className: "m-media-video",
+          controls: true,
+          playsInline: true,
+          preload: "auto",
+          onLoadedData: onReady,
+          onError,
+        }),
+    );
+  }
+
   function QuestionVisual({ question }) {
+    const packId = current ? current.categoryId : null;
+    const urls = questionMedia(question, packId),
+      url = urls[0] || null,
+      // نصّ السؤال يظهر فوق الوسائط حين يضيف شيئًا: الترويسة تعرض عبارة النوع
+      // العامة، فلا داعي لتكرارها إن كتبها كاتب الحزمة كما هي.
+      ownText =
+        question.q && question.q.trim() && question.q.trim() !== TYPE_PROMPT[question.type]
+          ? hBeta("p", { className: "m-question-text" }, question.q)
+          : null;
+
+    if (question.type === "image")
+      return hBeta(
+        "div",
+        null,
+        ownText,
+        hBeta(MediaImage, { question, url, effect: question.effect || "none" }),
+      );
+    if (question.type === "audio") return hBeta("div", null, ownText, hBeta(MediaAudio, { url }));
+    if (question.type === "video") return hBeta("div", null, ownText, hBeta(MediaVideo, { url }));
+    if (question.type === "diff")
+      return hBeta(
+        "div",
+        null,
+        ownText,
+        hBeta(
+          "div",
+          { className: "m-diff" },
+          urls.map((one, index) =>
+            hBeta(
+              "div",
+              { key: one, className: "m-diff-side" },
+              hBeta(MediaBox, { url: one }, ({ onReady, onError }) =>
+                hBeta("img", { src: one, alt: `الصورة ${index + 1}`, className: "m-media-img", onLoad: onReady, onError }),
+              ),
+              revealed &&
+                question.spot &&
+                hBeta("span", {
+                  className: "m-diff-spot",
+                  style: { insetInlineStart: `${question.spot.x}%`, top: `${question.spot.y}%`, width: `${question.spot.r * 2}%` },
+                  "aria-hidden": "true",
+                }),
+            ),
+          ),
+        ),
+      );
+    if (question.type === "truefalse")
+      return hBeta(
+        "div",
+        null,
+        hBeta("p", { className: "m-statement" }, question.q),
+        hBeta(
+          "div",
+          { className: "m-tf" },
+          ["صح", "خطأ"].map((label) =>
+            hBeta(
+              "span",
+              { key: label, className: revealed && String(question.a).trim() === label ? "is-answer" : "" },
+              label,
+            ),
+          ),
+        ),
+      );
+    if (question.type === "scramble") {
+      const letters = question.letters || String(question.a || "").replace(/\s+/g, "").split("");
+      return hBeta(
+        "div",
+        null,
+        ownText,
+        hBeta(
+          "div",
+          { className: "m-scramble", dir: "rtl" },
+          (revealed ? String(question.a).replace(/\s+/g, "").split("") : letters).map((ch, index) =>
+            hBeta("span", { key: `${ch}-${index}`, className: revealed ? "is-answer" : "" }, ch),
+          ),
+        ),
+      );
+    }
+    if (question.type === "complete") {
+      const parts = String(question.q || "").split("___");
+      return hBeta(
+        "p",
+        { className: "m-complete" },
+        parts[0],
+        hBeta("span", { className: revealed ? "m-blank is-answer" : "m-blank" }, revealed ? question.a : "؟؟؟"),
+        parts[1] || "",
+      );
+    }
+    if (question.type === "common")
+      return hBeta(
+        "div",
+        null,
+        ownText,
+        hBeta(
+          "div",
+          { className: "m-item-list" },
+          (question.items || []).map((item, index) => hBeta("span", { key: `${item}-${index}` }, item)),
+        ),
+      );
+    if (question.type === "hints") {
+      const hints = question.hints || [];
+      return hBeta(
+        "div",
+        null,
+        ownText,
+        hBeta(
+          "div",
+          { className: "m-hints" },
+          hints.map((hint, index) =>
+            hBeta(
+              "div",
+              { key: index, className: index < hintsUsed || revealed ? "is-open" : "" },
+              index < hintsUsed || revealed ? hint : `تلميح ${index + 1}`,
+            ),
+          ),
+        ),
+        !revealed &&
+          hintsUsed < hints.length &&
+          hBeta(
+            "button",
+            {
+              type: "button",
+              className: "m-secondary m-small",
+              onClick: () => { setHintsUsed((n) => n + 1); playSfx("click"); },
+            },
+            `اطلب تلميحًا (تُخصم ${HINT_COST_PERCENT}% من النقاط)`,
+          ),
+      );
+    }
     if (question.type === "zoom")
       return hBeta(
         "div",
@@ -1649,7 +1962,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         { className: "m-home-stats", "aria-label": "معلومات اللعبة" },
         hBeta("span", null, hBeta("b", { dir: "ltr" }, CATS.length), " فئة"),
         hBeta("span", null, hBeta("b", { dir: "ltr" }, TOTAL_Q), " سؤال"),
-        hBeta("span", null, "تعمل دون إنترنت"),
+        hBeta("span", null, HAS_MEDIA ? "الوسائط تُحفظ في الجهاز" : "تعمل دون إنترنت"),
       ),
       savedActive &&
         hBeta(
@@ -1974,6 +2287,7 @@ ${record.answered} من ${record.total} سؤالًا`,
           ),
         ),
       ),
+      selectedMediaUrls.length > 0 && hBeta(OfflineMediaRow, null),
       setupError && hBeta("p", { className: "m-error", role: "alert" }, setupError),
       hBeta(
         "button",
@@ -1987,6 +2301,64 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
     );
   }
+  // الحزم ذات الوسائط تحتاج الإنترنت أول مرة فقط؛ هذا الزر يجلبها مقدّمًا
+  // ويضعها في مخزن العامل الخدمي، فتُلعب بعدها بلا شبكة. لا يظهر للحزم النصية.
+  const selectedMediaUrls = useMemo(() => {
+    const urls = [];
+    for (const categoryId of selectedCategories) {
+      const category = CATS.find((item) => item.id === categoryId);
+      if (!category) continue;
+      for (const question of category.qs) urls.push(...questionMedia(question, categoryId));
+    }
+    return [...new Set(urls)];
+  }, [selectedCategories]);
+
+  function OfflineMediaRow() {
+    const { state, done, total } = offlineMedia,
+      count = selectedMediaUrls.length;
+    return hBeta(
+      "div",
+      { className: "m-offline-row" },
+      hBeta(
+        "div",
+        { className: "m-offline-text" },
+        hBeta("b", null, "وسائط الفئات المختارة"),
+        hBeta(
+          "small",
+          null,
+          state === "busy"
+            ? `يُحمَّل ${done} من ${total}…`
+            : state === "done"
+              ? "جاهزة للّعب دون إنترنت"
+              : state === "error"
+                ? "تعذّر تحميل بعض الملفات؛ ستُجلب عند فتح السؤال"
+                : `${count} ملفًا · حمّلها الآن لتلعبوا دون إنترنت`,
+        ),
+      ),
+      hBeta(
+        "button",
+        {
+          type: "button",
+          className: "m-secondary m-small",
+          disabled: state === "busy" || state === "done",
+          onClick: async () => {
+            setOfflineMedia({ state: "busy", done: 0, total: count });
+            const result = await cacheForOffline(selectedMediaUrls, {
+              onProgress: ({ done: n, total: t }) =>
+                setOfflineMedia({ state: "busy", done: n, total: t || count }),
+            });
+            setOfflineMedia({
+              state: result && result.failed ? "error" : "done",
+              done: count,
+              total: count,
+            });
+          },
+        },
+        state === "busy" ? "…" : state === "done" ? "✓ جاهزة" : "حمّل",
+      ),
+    );
+  }
+
   function BoardScreen() {
     return hBeta(
       "section",

@@ -1,11 +1,17 @@
-// Maydan platform offline cache.
+// Maydan platform cache.
 //
-// The game is a single self-contained document — no API, no external asset — so
-// "works offline" reduces to holding that one file plus its icons. Everything is
-// precached on install; the network is only ever consulted to find a newer copy.
+// Two caches, because the two halves age differently. The app shell is one
+// document plus its icons: small, precached on install, replaced wholesale on
+// every release. Pack media is large, arrives over time, and must survive an
+// app update — re-downloading a hundred megabytes because the code changed
+// would be indefensible on a phone plan. So media lives in its own cache that
+// activation never clears, filled on demand as packs are played and on request
+// when a player asks to have a pack ready offline.
 //
 // Bump CACHE when index.html changes, or installed players keep the old build.
 const CACHE = 'maydan-platform-1.0.0';
+const MEDIA_CACHE = 'maydan-media-v1';
+const MEDIA_PATH = /\/media\//;
 
 const ASSETS = [
   './',
@@ -32,7 +38,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
       .then((keys) => {
-        const stale = keys.filter((k) => k !== CACHE);
+        const stale = keys.filter((k) => k !== CACHE && k !== MEDIA_CACHE);
         return Promise.all(stale.map((k) => caches.delete(k))).then(() => stale.length > 0);
       })
       .then((wasUpgrade) => self.clients.claim().then(() => wasUpgrade))
@@ -79,6 +85,17 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // الوسائط: من المخزن أولًا فهي لا تتغيّر، وما يُجلب يُخزَّن للمرة القادمة.
+  if (MEDIA_PATH.test(new URL(request.url).pathname)) {
+    event.respondWith(
+      caches.open(MEDIA_CACHE).then((cache) => cache.match(request).then((hit) => hit || fetch(request).then((response) => {
+        if (response && response.ok) cache.put(request, response.clone());
+        return response;
+      })))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(request).then((cached) => cached || fetch(request).then((response) => {
       if (response && response.ok) {
@@ -87,5 +104,33 @@ self.addEventListener('fetch', (event) => {
       }
       return response;
     }))
+  );
+});
+
+// «نزّل الحزمة» من الصفحة: تُخزَّن الملفات دفعة واحدة مع تقرير تقدّم، فيستطيع
+// اللاعب تجهيز الجولة قبل سفر أو مكان بلا تغطية.
+self.addEventListener('message', (event) => {
+  const data = event.data || {};
+  if (data.type !== 'cache-media' || !Array.isArray(data.urls)) return;
+  const port = event.ports && event.ports[0];
+  const urls = [...new Set(data.urls)];
+  const post = (message) => { if (port) port.postMessage(message); };
+  event.waitUntil(
+    caches.open(MEDIA_CACHE).then(async (cache) => {
+      let ok = 0;
+      let done = 0;
+      for (const url of urls) {
+        try {
+          const hit = await cache.match(url);
+          if (!hit) await cache.add(url);
+          ok += 1;
+        } catch (error) {
+          // ملف واحد يسقط لا يوقف البقية
+        }
+        done += 1;
+        post({ type: 'progress', done, total: urls.length, ok });
+      }
+      post({ type: 'done', total: urls.length, ok, failed: urls.length - ok });
+    })
   );
 });
