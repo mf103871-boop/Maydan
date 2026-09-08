@@ -15,6 +15,10 @@ ios/build/
 *.p8
 *.mobileprovision
 
+# Smaller iOS icons are generated from the preserved 1024px App Store icon.
+ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-*.png
+!ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-1024.png
+
 # الحزم التجريبية (scripts/demo-packs.mjs) — للاختبار المحلي فقط
 media/demo/
 src/data/categories/demo[a-f].json

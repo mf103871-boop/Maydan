@@ -1,6 +1,7 @@
 import { cp, mkdir, readdir, readFile, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import sharp from 'sharp';
 import { buildOnce, ROOT, DIST } from '../lib.mjs';
 
 // Build from this checkout on every invocation; never ship a stale copied bank.
@@ -26,5 +27,18 @@ async function verifyDirectory(source, target) {
 }
 
 const files = await verifyDirectory(DIST, destination);
+// Preserve the existing store artwork; resize only for Xcode's required slots.
+const iconDirectory = path.join(ROOT, 'ios/Maydan/Assets.xcassets/AppIcon.appiconset');
+const sourceIcon = await readFile(path.join(iconDirectory, 'icon-1024.png'));
+const catalog = JSON.parse(await readFile(path.join(iconDirectory, 'Contents.json'), 'utf8'));
+const generated = new Map();
+for (const slot of catalog.images) {
+  if (!slot.filename || slot.filename === 'icon-1024.png') continue;
+  const side = Number(slot.size.split('x')[0]) * Number(slot.scale.replace('x', ''));
+  if (generated.has(slot.filename) && generated.get(slot.filename) !== side) throw new Error('Inconsistent app icon sizes');
+  if (generated.has(slot.filename)) continue;
+  await sharp(sourceIcon).resize(side, side).removeAlpha().png().toFile(path.join(iconDirectory, slot.filename));
+  generated.set(slot.filename, side);
+}
 const hash = createHash('sha256').update(await readFile(path.join(destination, 'index.html'))).digest('hex');
 console.log(`iOS resources ready: ${files} files; ${build.buildId}; HTML SHA-256 ${hash}`);

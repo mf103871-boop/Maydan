@@ -48,7 +48,7 @@ jobs:
         run: npm test
       - name: Build and verify bundled game resources
         run: npm run ios:prepare
-      - name: Compile the iPhone and iPad application
+      - name: Compile the iPhone application
         run: |
           xcodebuild -version
           xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
