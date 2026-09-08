@@ -5,6 +5,16 @@ release/
 *.log
 .DS_Store
 
+# Native build outputs and signing material stay outside source control.
+ios/Maydan/www/
+ios/build/
+**/xcuserdata/
+*.ipa
+*.xcarchive/
+*.p12
+*.p8
+*.mobileprovision
+
 # الحزم التجريبية (scripts/demo-packs.mjs) — للاختبار المحلي فقط
 media/demo/
 src/data/categories/demo[a-f].json
