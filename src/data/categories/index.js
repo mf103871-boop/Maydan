@@ -20,8 +20,11 @@ import pack_arabic from './arabic.json' with { type: 'json' };
 import pack_proverbs from './proverbs.json' with { type: 'json' };
 import pack_dialects from './dialects.json' with { type: 'json' };
 import pack_books from './books.json' with { type: 'json' };
+import pack_actors from './actors.json' with { type: 'json' };
+import pack_videogames from './videogames.json' with { type: 'json' };
+import pack_puzzles from './puzzles.json' with { type: 'json' };
 
-export const CATS = [pack_general, pack_geo, pack_capitals, pack_science, pack_animals, pack_history, pack_food, pack_fruitsveg, pack_sports, pack_football, pack_tech, pack_brands, pack_cars, pack_shopping, pack_arabic, pack_proverbs, pack_dialects, pack_books];
+export const CATS = [pack_general, pack_geo, pack_capitals, pack_science, pack_animals, pack_history, pack_food, pack_fruitsveg, pack_sports, pack_football, pack_tech, pack_brands, pack_cars, pack_shopping, pack_arabic, pack_proverbs, pack_dialects, pack_books, pack_actors, pack_videogames, pack_puzzles];
 
 export const CATEGORY_IDS = CATS.map((category) => category.id);
 export const TOTAL_QUESTIONS = CATS.reduce((sum, category) => sum + category.qs.length, 0);
