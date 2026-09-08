@@ -27,7 +27,7 @@ async function verifyDirectory(source, target) {
 }
 
 const files = await verifyDirectory(DIST, destination);
-// Preserve the existing store artwork; resize only for Xcode's required slots.
+// Derive Xcode's required slots from the approved release artwork.
 const iconDirectory = path.join(ROOT, 'ios/Maydan/Assets.xcassets/AppIcon.appiconset');
 const sourceIcon = await readFile(path.join(iconDirectory, 'icon-1024.png'));
 const catalog = JSON.parse(await readFile(path.join(iconDirectory, 'Contents.json'), 'utf8'));

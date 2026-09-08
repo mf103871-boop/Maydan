@@ -62,9 +62,9 @@ export function Splash({ onDone, duration = 1800 }) {
     <div className={`splash ${leaving ? 'is-leaving' : ''}`} onClick={finish} role="button" tabIndex={0} aria-label="تخطي شاشة البداية" onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && finish()}>
       <canvas ref={canvasRef} aria-hidden="true" />
       <div className="splash-inner">
-        <div className="splash-mark" aria-hidden="true">م</div>
-        <div className="splash-title">منصة ميدان</div>
-        <div className="splash-sub">ألعاب جماعية على جهاز واحد</div>
+        <img className="splash-mark" src="icons/icon-512.png" width="124" height="124" alt="" />
+        <div className="splash-title">ميدان</div>
+        <div className="splash-sub">ألعاب جمعتنا</div>
       </div>
       <div className="splash-skip">المس الشاشة للتخطي</div>
     </div>

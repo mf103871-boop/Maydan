@@ -44,7 +44,7 @@ export function Settings() {
         <p className="card-muted">يحذف دفتر اللاعبين، والإعدادات، وسجلات كل الألعاب من هذا الجهاز.</p>
         <Button variant="danger" icon={<IconTrash />} onClick={() => setConfirmClear(true)}>مسح كل البيانات</Button>
       </Card>
-      <p className="muted center" style={{ fontSize: 13 }}>منصة ميدان · الإصدار {version}</p>
+      <p className="muted center" style={{ fontSize: 13 }}>ميدان: ألعاب جمعتنا · الإصدار {version}</p>
       {confirmClear && (
         <ConfirmModal title="مسح كل البيانات؟" danger message="لا يمكن التراجع. ستُحذف أسماء اللاعبين والنتائج والمباريات المحفوظة." confirmLabel="نعم، امسح" cancelLabel="إلغاء"
           onConfirm={() => { clearAllPlatformData(); setConfirmClear(false); toast('تم مسح البيانات'); setTimeout(() => location.reload(), 500); }} onCancel={() => setConfirmClear(false)} />

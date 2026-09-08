@@ -1,5 +1,9 @@
 {
-  "appName": "منصه ميدان",
+  "appName": "ميدان: ألعاب جمعتنا",
+  "displayName": "ميدان",
+  "publishedName": "منصه ميدان",
+  "subtitle": "تحديات وضحك للأصدقاء والعائلة",
+  "whatsNew": "هوية جديدة لميدان باسم «ميدان: ألعاب جمعتنا» وأيقونة جديدة. تحديث محتوى الأسئلة وتحسين تجربة الألعاب الجماعية على جهاز واحد.",
   "appleId": "6808385717",
   "bundleId": "Maydan",
   "teamId": "96WJBK2MB2",
@@ -11,6 +15,7 @@
   "metadataSource": "https://itunes.apple.com/lookup?id=6808385717&country=jo",
   "storeUrl": "https://apps.apple.com/app/id6808385717",
   "teamSource": "Previously supplied Apple Developer account PDF for Abdallah Alsadog, showing Maydan and Team ID 96WJBK2MB2",
-  "iconSource": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/58/bb/a9/58bba9ca-b4f0-5f30-89b8-6edfedf71b7b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/1024x1024bb.png",
+  "iconSource": "public/icons/icon-1024.png",
+  "brandingSource": "docs/branding.md",
   "releaseStatus": "awaiting-signing-and-device-testing"
 }

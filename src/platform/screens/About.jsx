@@ -44,16 +44,20 @@ export function About() {
   const { version } = usePlatform();
   return (
     <Screen dir={getDirection()} className="stack" aria-label="عن المنصة">
-      <TopBar title="عن منصة ميدان" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
+      <TopBar title="عن ميدان" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <Card className="stack">
+        <div className="brand">
+          <img className="brand-mark" src="icons/icon-192.png" width="44" height="44" alt="" />
+          <div><div className="brand-name">ميدان</div><div className="brand-sub">ألعاب جمعتنا</div></div>
+        </div>
         <p className="card-muted" style={{ fontSize: 15 }}>ألعاب جماعية تُلعب على جهاز واحد يتناقله الأصدقاء والعائلة. تعمل دون إنترنت ولا تُرسل أي بيانات إلى أي مكان؛ وحزم الأسئلة ذات الصور والأصوات تحتاج الشبكة أول مرة فقط، ثم تُحفظ في الجهاز.</p>
         <div className="about-list">
           {GAMES.map((g) => <div key={g.id} className="row" style={{ '--c': g.accent }}><span className="dot" aria-hidden="true" /><b>{g.name}</b><span className="muted" style={{ fontSize: 13 }}>{g.tagline}</span></div>)}
         </div>
       </Card>
       <Card className="stack">
-        <span className="card-title">كيف تُضاف لعبة؟</span>
-        <p className="card-muted">كل لعبة وحدة مستقلة في <code dir="ltr">src/games/&lt;id&gt;</code> تصدّر manifest فيه الاسم واللون و«كيف تلعب» والمكوّن. تسجيلها سطر واحد في السجل. التفاصيل في README.</p>
+        <span className="card-title">جمعتكم تبدأ هنا</span>
+        <p className="card-muted">أضف أسماء اللاعبين، اختر اللعبة التي تناسب جمعتكم، ومرّر الجهاز بينكم. تحديات معلومات وسرعة وتمثيل وضحك، في مكان واحد.</p>
       </Card>
       <Credits />
       <p className="muted center" style={{ fontSize: 13 }}>الإصدار {version} · صُنعت بحب للجلسات العائلية</p>
