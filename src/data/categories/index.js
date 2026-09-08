@@ -25,10 +25,14 @@ import pack_books from './books.json' with { type: 'json' };
 import pack_arabmusic from './arabmusic.json' with { type: 'json' };
 import pack_theater from './theater.json' with { type: 'json' };
 import pack_actors from './actors.json' with { type: 'json' };
+import pack_anime from './anime.json' with { type: 'json' };
+import pack_naruto from './naruto.json' with { type: 'json' };
+import pack_onepiece from './onepiece.json' with { type: 'json' };
+import pack_dragonball from './dragonball.json' with { type: 'json' };
 import pack_videogames from './videogames.json' with { type: 'json' };
 import pack_puzzles from './puzzles.json' with { type: 'json' };
 
-export const CATS = [pack_general, pack_geo, pack_capitals, pack_science, pack_animals, pack_history, pack_food, pack_fruitsveg, pack_sports, pack_football, pack_worldcup, pack_tech, pack_apps, pack_brands, pack_cars, pack_shopping, pack_arabic, pack_proverbs, pack_dialects, pack_books, pack_arabmusic, pack_theater, pack_actors, pack_videogames, pack_puzzles];
+export const CATS = [pack_general, pack_geo, pack_capitals, pack_science, pack_animals, pack_history, pack_food, pack_fruitsveg, pack_sports, pack_football, pack_worldcup, pack_tech, pack_apps, pack_brands, pack_cars, pack_shopping, pack_arabic, pack_proverbs, pack_dialects, pack_books, pack_arabmusic, pack_theater, pack_actors, pack_anime, pack_naruto, pack_onepiece, pack_dragonball, pack_videogames, pack_puzzles];
 
 export const CATEGORY_IDS = CATS.map((category) => category.id);
 export const TOTAL_QUESTIONS = CATS.reduce((sum, category) => sum + category.qs.length, 0);

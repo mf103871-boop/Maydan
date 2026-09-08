@@ -61,7 +61,7 @@ for (const pack of batch.packs) {
     qs.push(out);
   }
   const meta = status.categories[pack.id];
-  writeFileSync(path.join(CATS, `${pack.id}.json`), `${JSON.stringify({ id: pack.id, name: meta.name, icon: meta.icon, qs }, null, 2)}\n`);
+  writeFileSync(path.join(CATS, `${pack.id}.json`), `${JSON.stringify({ id: pack.id, name: meta.name, icon: meta.icon, ...(meta.style ? { style: meta.style } : {}), ...(meta.defaultType ? { defaultType: meta.defaultType } : {}), qs }, null, 2)}\n`);
   for (const q of qs) { bankQ.add(N(q.q)); bankA.add(N(q.a)); }
   console.log(`${pack.id.padEnd(10)} ${TIERS.map((t) => String(counters.get(t)).padStart(3)).join(' ')} = ${String(qs.length).padStart(4)}  أُسقط ${drops.length}${gaps.length ? `  ⚠ ينقص ${gaps.join(' ')}` : '  ✓'}`);
 }
