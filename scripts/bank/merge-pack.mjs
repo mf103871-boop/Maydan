@@ -1,11 +1,11 @@
 // يدمج مخرجات ورشة الحزم: يطبّق أحكام التدقيق، يُسقط التكرار داخل الحزمة وعبر
 // البنك كله، ويكتب ملف الفئة. ثم يطبع ما ينقص كل خانة.
 //   node .cache/merge-pack.mjs <batch.json>
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { arabicNormalize as N } from '../../src/shared/lib/arabicNormalize.js';
 import path from 'node:path';
+import { ROOT } from '../bank.mjs';
 
-const ROOT = '/home/user/-';
 const CATS = path.join(ROOT, 'src/data/categories');
 const TIERS = [200, 400, 600, 800, 1000];
 const w = (s) => (String(s || '').trim() ? String(s).trim().split(/\s+/).length : 0);
@@ -21,13 +21,17 @@ const batch = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const status = JSON.parse(readFileSync(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
 
 for (const pack of batch.packs) {
+  if (!Object.hasOwn(status.categories, pack.id)) throw new Error(`فئة غير معتمدة: ${pack.id}`);
+  if (existsSync(path.join(CATS, `${pack.id}.json`))) throw new Error(`الحزمة موجودة: استعمل append-pack لاستكمال ${pack.id}`);
   const verdicts = new Map((pack.checks || []).map((v) => [v.i, v]));
   const kept = []; const drops = [];
   pack.questions.forEach((q, i) => {
     const v = verdicts.get(i);
+    if (!v || !['keep', 'fix', 'drop'].includes(v.verdict)) { drops.push({ q: q.q, why: 'لا يوجد حكم تدقيق صالح' }); return; }
     if (v && v.verdict === 'drop') { drops.push({ q: q.q, why: v.reason }); return; }
     const item = { ...q, alt: q.alt || [] };
     if (v && v.verdict === 'fix') { if (v.q) item.q = v.q; if (v.a) item.a = v.a; if (v.alt) item.alt = v.alt; if (v.p && TIERS.includes(v.p)) item.p = v.p; }
+    if (!TIERS.includes(item.p) || !item.q?.trim() || !item.a?.trim() || !item.topic?.trim()) { drops.push({ q: item.q, why: 'حقول ناقصة أو خانة غير صالحة' }); return; }
     if (w(item.q) > 22 || w(item.a) > 6) { drops.push({ q: item.q, why: 'تجاوز الحدود' }); return; }
     kept.push(item);
   });
@@ -56,7 +60,7 @@ for (const pack of batch.packs) {
   const qs = [];
   for (const t of TIERS) for (const q of per(t).slice(0, 48)) {
     const n = counters.get(t) + 1; counters.set(t, n);
-    const out = { p: t, q: q.q.trim(), a: q.a.trim(), qid: `${pack.id}-${t}-${String(n).padStart(3, '0')}`, topic: q.topic, verified: true };
+    const out = { ...q, p: t, q: q.q.trim(), a: q.a.trim(), qid: `${pack.id}-${t}-${String(n).padStart(3, '0')}`, topic: q.topic, verified: true };
     if (q.alt && q.alt.length) out.alt = q.alt;
     qs.push(out);
   }
