@@ -277,6 +277,261 @@
       ]
     },
     {
+      "p": 200,
+      "q": "ما اسم القطة البيضاء التي تحارب الجريمة في الأنمي الياباني؟",
+      "a": "كابامارو",
+      "topic": "أنمي كلاسيكي",
+      "source": "https://en.wikipedia.org/wiki/Igano_Kabamaru",
+      "alt": [],
+      "qid": "anime-200-024",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم المدرسة التي يتعلم فيها السحرة في أنمي جوجوتسو كايسن؟",
+      "a": "مدرسة طوكيو للسحر",
+      "topic": "عوالم وأماكن",
+      "source": "https://en.wikipedia.org/wiki/Jujutsu_Kaisen",
+      "alt": [],
+      "qid": "anime-200-025",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ماذا تسمى الرسوم المتحركة اليابانية؟",
+      "a": "الأنمي",
+      "topic": "مصطلحات الأنمي",
+      "source": "https://www.britannica.com/art/anime",
+      "alt": [],
+      "qid": "anime-200-026",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم بطل لعبة البطاقات الذي يحمل لغز الألفية في «يوغي يو»؟",
+      "a": "يوجي موتو",
+      "topic": "شخصيات أنمي مشهورة",
+      "source": "https://en.wikipedia.org/wiki/Yugi_Muto",
+      "alt": [],
+      "qid": "anime-200-027",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الفتى الذي يخرج في رحلة للعثور على والده في «هنتر × هنتر»؟",
+      "a": "غون فريكس",
+      "topic": "شخصيات أنمي مشهورة",
+      "source": "https://en.wikipedia.org/wiki/Gon_Freecss",
+      "alt": [],
+      "qid": "anime-200-028",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "من صديق غون ذي الشعر الأبيض في «هنتر × هنتر»؟",
+      "a": "كيلوا زولديك",
+      "topic": "شخصيات أنمي مشهورة",
+      "source": "https://en.wikipedia.org/wiki/Killua_Zoldyck",
+      "alt": [],
+      "qid": "anime-200-029",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم المهرج الغامض الذي يواجه غون في «هنتر × هنتر»؟",
+      "a": "هيسوكا مورو",
+      "topic": "شخصيات أنمي مشهورة",
+      "source": "https://en.wikipedia.org/wiki/Hisoka_Morow",
+      "alt": [],
+      "qid": "anime-200-030",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم فيلم غيبلي الذي تلتقي فيه شيزوكو بفتى صانع كمان؟",
+      "a": "همس القلب",
+      "topic": "أفلام أنمي",
+      "source": "https://en.wikipedia.org/wiki/Whisper_of_the_Heart",
+      "alt": [],
+      "qid": "anime-200-031",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم فيلم غيبلي عن سمكة صغيرة تصادق صبيًا بشريًا؟",
+      "a": "بونيو على الجرف",
+      "topic": "أفلام أنمي",
+      "source": "https://en.wikipedia.org/wiki/Ponyo",
+      "alt": [],
+      "qid": "anime-200-032",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما الاسم الياباني للقصص المصورة التي تُقرأ من اليمين إلى اليسار؟",
+      "a": "مانغا",
+      "topic": "مصطلحات الأنمي",
+      "source": "https://en.wikipedia.org/wiki/Manga",
+      "alt": [],
+      "qid": "anime-200-033",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما التصنيف الذي يستهدف فتيات اليافعات في قصص الأنمي والمانغا؟",
+      "a": "شوجو",
+      "topic": "مصطلحات الأنمي",
+      "source": "https://en.wikipedia.org/wiki/Sh%C5%8Djo",
+      "alt": [],
+      "qid": "anime-200-034",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اللقب الياباني للطالب الأصغر الذي يتعلم من زميل أقدم؟",
+      "a": "كوهَاي",
+      "topic": "مصطلحات الأنمي",
+      "source": "https://en.wikipedia.org/wiki/Senpai_and_k%C5%8Dhai",
+      "alt": [],
+      "qid": "anime-200-035",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ماذا يسمى تلخيص أحداث الحلقات السابقة في بداية حلقة أنمي؟",
+      "a": "ريكاب",
+      "topic": "مصطلحات الأنمي",
+      "source": "https://en.wikipedia.org/wiki/Recap_sequence",
+      "alt": [],
+      "qid": "anime-200-036",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الحي الياباني الشهير الذي يرتبط بثقافة الأنمي والألعاب؟",
+      "a": "أكيهابارا",
+      "topic": "عوالم وأماكن",
+      "source": "https://en.wikipedia.org/wiki/Akihabara",
+      "alt": [],
+      "qid": "anime-200-037",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم المدينة الخيالية التي تقع فيها معظم أحداث المحقق كونان؟",
+      "a": "مدينة بيكا",
+      "topic": "عوالم وأماكن",
+      "source": "https://en.wikipedia.org/wiki/Detective_Conan",
+      "alt": [],
+      "qid": "anime-200-038",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم المنطقة التي تبدأ فيها رحلة آش في ألعاب وأنمي بوكيمون؟",
+      "a": "منطقة كانتو",
+      "topic": "عوالم وأماكن",
+      "source": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red,_Blue,_and_Yellow",
+      "alt": [],
+      "qid": "anime-200-039",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الأرخبيل الذي يزوره آش في مغامرته البحرية المبكرة؟",
+      "a": "جزر البرتقال",
+      "topic": "عوالم وأماكن",
+      "source": "https://en.wikipedia.org/wiki/Orange_Islands",
+      "alt": [],
+      "qid": "anime-200-040",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الأطراف الصناعية التي يستخدمها بطل «الخيميائي المعدني الكامل» بدل ذراعه؟",
+      "a": "الأوتوميل",
+      "topic": "قدرات وأسلحة في الأعمال",
+      "source": "https://en.wikipedia.org/wiki/Fullmetal_Alchemist",
+      "alt": [],
+      "qid": "anime-200-041",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم السيف الخاص الذي يستخدمه صائدو الشياطين في «قاتل الشياطين»؟",
+      "a": "سيف نيتشيرين",
+      "topic": "قدرات وأسلحة في الأعمال",
+      "source": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba",
+      "alt": [],
+      "qid": "anime-200-042",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم التسديدة الشهيرة التي يستخدمها تسوباسا في «كابتن ماجد»؟",
+      "a": "ركلة النمر",
+      "topic": "أنمي الرياضة",
+      "source": "https://en.wikipedia.org/wiki/Captain_Tsubasa",
+      "alt": [],
+      "qid": "anime-200-043",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما الطبق الياباني الذي يأكله ناروتو باستمرار في أنمي «ناروتو»؟",
+      "a": "رامن",
+      "topic": "أنمي الطبخ والحياة اليومية",
+      "source": "https://en.wikipedia.org/wiki/Naruto_(TV_series)",
+      "alt": [],
+      "qid": "anime-200-044",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الطفلة ذات الشعر القصير في الأنمي الكوميدي الياباني المعروف؟",
+      "a": "ماروكو",
+      "topic": "أنمي كلاسيكي",
+      "source": "https://en.wikipedia.org/wiki/Chibi_Maruko-chan",
+      "alt": [],
+      "qid": "anime-200-045",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم البطلة التي تتحول إلى محاربة القمر في الأنمي الياباني الشهير؟",
+      "a": "أوساغي",
+      "alt": [
+        "سيلور مون",
+        "أوساغي تسوكينو"
+      ],
+      "topic": "شخصيات أنمي مشهورة",
+      "source": "https://en.wikipedia.org/wiki/Sailor_Moon_(character)",
+      "qid": "anime-200-046",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الصبي الذي يلتقي بالأميرة في فيلم الأنمي ذي الجزيرة الطائرة؟",
+      "a": "بازو",
+      "topic": "أفلام أنمي",
+      "source": "https://en.wikipedia.org/wiki/Castle_in_the_Sky",
+      "alt": [],
+      "qid": "anime-200-047",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الفتاة التي تعيش مع أسرتها في جزيرة بعد تحطم السفينة في الأنمي المدبلج؟",
+      "a": "فلونة",
+      "alt": [
+        "فلونا"
+      ],
+      "topic": "الأنمي المدبلج عربيًا",
+      "source": "https://en.wikipedia.org/wiki/Swiss_Family_Robinson_(anime)",
+      "qid": "anime-200-048",
+      "verified": true
+    },
+    {
       "p": 400,
       "q": "ما اسم الفتى الذي يعيش على جزيرة نائية ويصادق الفتاة لينا؟",
       "a": "عدنان",
@@ -796,6 +1051,56 @@
         "الخدمة",
         "عاملة في المدرسة"
       ]
+    },
+    {
+      "p": 400,
+      "q": "من الشخصية التي تحمل دفترًا يقتل من يكتب اسمه فيه؟",
+      "a": "لايت ياغامي",
+      "topic": "شخصيات أنمي مشهورة",
+      "source": "https://en.wikipedia.org/wiki/Death_Note",
+      "alt": [],
+      "qid": "anime-400-044",
+      "verified": true
+    },
+    {
+      "p": 400,
+      "q": "ما اسم السيف الأسود الذي يستخدمه غاتس في بيرسيرك؟",
+      "a": "قاتل التنانين",
+      "topic": "قدرات وأسلحة في الأعمال",
+      "source": "https://en.wikipedia.org/wiki/Berserk_(manga)",
+      "alt": [],
+      "qid": "anime-400-045",
+      "verified": true
+    },
+    {
+      "p": 400,
+      "q": "ما اسم العالم الذي تجري فيه معظم أحداث ون بيس؟",
+      "a": "البحر الأزرق",
+      "topic": "عوالم وأماكن",
+      "source": "https://en.wikipedia.org/wiki/One_Piece",
+      "alt": [],
+      "qid": "anime-400-046",
+      "verified": true
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الفتاة التي تدخل عالم الأرواح بحثًا عن والديها في فيلم المخطوفة؟",
+      "a": "شيهيرو",
+      "topic": "أفلام أنمي",
+      "source": "https://en.wikipedia.org/wiki/Spirited_Away",
+      "alt": [],
+      "qid": "anime-400-047",
+      "verified": true
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الفيلم الذي يلتقي فيه فتى بوحش في عالم آخر؟",
+      "a": "الفتى والوحش",
+      "topic": "أفلام أنمي",
+      "source": "https://en.wikipedia.org/wiki/The_Boy_and_the_Beast",
+      "alt": [],
+      "qid": "anime-400-048",
+      "verified": true
     },
     {
       "p": 600,

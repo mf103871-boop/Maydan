@@ -272,6 +272,246 @@
       ]
     },
     {
+      "p": 200,
+      "q": "ما اسم المسرح الذي يعتمد على تحريك الدمى؟",
+      "a": "مسرح الدمى",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-025"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم النص المكتوب للحوار والحركة في العرض؟",
+      "a": "السيناريو المسرحي",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-026"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم أول عرض تجريبي قبل الافتتاح الرسمي؟",
+      "a": "العرض التجريبي",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-027"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الجمهور الذي يشاهد العرض؟",
+      "a": "المتفرجون",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-028"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الصف الأول القريب من الخشبة؟",
+      "a": "المقاعد الأمامية",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-029"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم العرض الذي يجمع التمثيل والغناء والرقص؟",
+      "a": "الميوزيكال",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-030"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم القناع الذي يرمز إلى الكوميديا؟",
+      "a": "قناع الضحك",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-031"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم القناع الذي يرمز إلى التراجيديا؟",
+      "a": "قناع الحزن",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-032"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم حركة دخول الممثل إلى الخشبة؟",
+      "a": "الدخول المسرحي",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-033"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم خروج الممثل من الخشبة؟",
+      "a": "الخروج المسرحي",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-034"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الصوت المسجل الذي يرافق العرض؟",
+      "a": "المؤثر الصوتي",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-035"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الملابس التي يرتديها الممثل لشخصيته؟",
+      "a": "الزي المسرحي",
+      "topic": "مصطلحات المسرح",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-036"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم مسرحية بريخت عن جاليليو؟",
+      "a": "حياة غاليليو",
+      "topic": "مسرحيات عربية شهيرة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-037"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم مسرحية فؤاد المهندس الشهيرة مع شويكار؟",
+      "a": "سك على بناتك",
+      "topic": "مسرحيات عربية شهيرة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-038"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم مسرحية موليير عن النفاق؟",
+      "a": "طرطوف",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-039"
+    },
+    {
+      "p": 200,
+      "q": "من بطل مسرحية «مدرسة المشاغبين»؟",
+      "a": "سعيد صالح",
+      "topic": "المسرح المصري",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-040"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم مسرحية سمير غانم الشهيرة؟",
+      "a": "المتزوجون",
+      "topic": "المسرح المصري",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-200-041"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم المسرحية التي يعمل فيها البطل خادمًا لدى عائلة ثرية؟",
+      "a": "الواد سيد الشغال",
+      "topic": "مسرحيات عربية شهيرة",
+      "source": "https://en.wikipedia.org/wiki/Al-Wad_Sayed_El-Shaghal",
+      "alt": [],
+      "qid": "theater-200-042",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "من الشخصية التي تنتقم لوالدها أجاممنون في مأساة يونانية؟",
+      "a": "إلكترا",
+      "topic": "شخصيات مسرحية",
+      "source": "https://en.wikipedia.org/wiki/Electra_(Sophocles)",
+      "alt": [],
+      "qid": "theater-200-043",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم المسرح الكويتي الواقع في منطقة الدسمة؟",
+      "a": "مسرح الدسمة",
+      "topic": "المسرح الخليجي والكويتي",
+      "source": "https://en.wikipedia.org/wiki/Dasma_Theatre",
+      "alt": [],
+      "qid": "theater-200-044",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما النوع المسرحي الذي ينتهي غالبًا بموت البطل؟",
+      "a": "المأساة",
+      "topic": "الكوميديا والتراجيديا",
+      "source": "https://en.wikipedia.org/wiki/Tragedy",
+      "alt": [],
+      "qid": "theater-200-045",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم العرض الذي تحرك فيه الدمى بخيوط؟",
+      "a": "عرض العرائس",
+      "topic": "المسرح الغنائي والعرائس",
+      "source": "https://en.wikipedia.org/wiki/Puppet_theatre",
+      "alt": [],
+      "qid": "theater-200-046",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم المسرح الذي اشتهر بالعروض التجريبية واللامعقولة؟",
+      "a": "مسرح العبث",
+      "topic": "المسرح العالمي",
+      "source": "https://en.wikipedia.org/wiki/Theatre_of_the_Absurd",
+      "alt": [],
+      "qid": "theater-200-047",
+      "verified": true
+    },
+    {
+      "p": 200,
+      "q": "ما اسم المسرحية الكوميدية التي يظهر فيها بطل عادل إمام شاهدًا مرتبكًا أمام المحكمة؟",
+      "a": "شاهد ماشفش حاجة",
+      "topic": "مسرحيات عربية شهيرة",
+      "source": "https://en.wikipedia.org/wiki/Shahid_Mashafsh_Haga",
+      "alt": [],
+      "qid": "theater-200-048",
+      "verified": true
+    },
+    {
       "p": 400,
       "q": "من الفنانة المصرية بطلة مسرحية «سيدتي الجميلة»؟",
       "a": "شويكار",
@@ -707,6 +947,86 @@
       "alt": [
         "عاصي ومنصور الرحباني"
       ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم مسرحية سعد الله ونوس عن الملك والوزير؟",
+      "a": "الملك هو الملك",
+      "topic": "مسرحيات عربية شهيرة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-400-041"
+    },
+    {
+      "p": 400,
+      "q": "من مؤلف «مسرحية الحياة حلم»؟",
+      "a": "كالديرون",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-400-042"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم مسرحية توفيق الحكيم عن الطعام؟",
+      "a": "الطعام لكل فم",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-400-043"
+    },
+    {
+      "p": 400,
+      "q": "من مؤلف مسرحية «تاجر البندقية»؟",
+      "a": "وليام شكسبير",
+      "topic": "شكسبير ومسرحياته",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-400-044"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم مسرحية تشيخوف عن ثلاث أخوات؟",
+      "a": "الأخوات الثلاث",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-400-045"
+    },
+    {
+      "p": 400,
+      "q": "من مؤلف مسرحية «الأبله» المسرحية؟",
+      "a": "أوغست سترندبرغ",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-400-046"
+    },
+    {
+      "p": 400,
+      "q": "من كتب مأساة الأمير الدنماركي في المسرح الإنجليزي؟",
+      "a": "شكسبير",
+      "topic": "شكسبير ومسرحياته",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-400-047"
+    },
+    {
+      "p": 400,
+      "q": "من الكاتب المسرحي الأمريكي صاحب مسرحية «الأسوار»؟",
+      "a": "أوغست ويلسون",
+      "topic": "المسرح العالمي",
+      "source": "https://en.wikipedia.org/wiki/August_Wilson",
+      "alt": [],
+      "qid": "theater-400-048",
+      "verified": true
     },
     {
       "p": 600,
@@ -1149,6 +1469,86 @@
         "ويست إند",
         "حي الويست إند"
       ]
+    },
+    {
+      "p": 600,
+      "q": "ما اسم مسرحية بريخت عن آنا؟",
+      "a": "الأم شجاعة وأبناؤها",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-600-041"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم المسرحية الغنائية التي بطلتها إفيتا؟",
+      "a": "إيفيتا",
+      "topic": "المسرح الغنائي والعرائس",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-600-042"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم مسرحية شكسبير عن الحب والسلطة في روما؟",
+      "a": "أنطونيوس وكليوباترا",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-600-043"
+    },
+    {
+      "p": 600,
+      "q": "من الكاتب الإنجليزي صاحب مسرحيات كثيرة عن ملوك بريطانيا؟",
+      "a": "ويليام شكسبير",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-600-044"
+    },
+    {
+      "p": 600,
+      "q": "من مؤلف «وحيد القرن»؟",
+      "a": "أوجين يونسكو",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-600-045"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم مسرحية سعد الله ونوس عن حفلة سمر؟",
+      "a": "حفلة سمر من أجل 5 حزيران",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-600-046"
+    },
+    {
+      "p": 600,
+      "q": "من مؤلف مسرحية «بيت برناردا ألبا»؟",
+      "a": "فيديريكو غارثيا لوركا",
+      "topic": "المسرح العالمي",
+      "verified": true,
+      "source": "https://ar.wikipedia.org",
+      "alt": [],
+      "qid": "theater-600-047"
+    },
+    {
+      "p": 600,
+      "q": "من أول كاتب مسرحي أمريكي نال جائزة نوبل للأدب؟",
+      "a": "يوجين أونيل",
+      "topic": "المسرح العالمي",
+      "source": "https://en.wikipedia.org/wiki/Eugene_O%27Neill",
+      "alt": [],
+      "qid": "theater-600-048",
+      "verified": true
     },
     {
       "p": 800,
