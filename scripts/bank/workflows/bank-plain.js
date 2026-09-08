@@ -98,7 +98,7 @@ ${questions.map((q, k) => `${k} | [${q.p}] [${q.topic}] ${q.q} → ${q.a}  {مص
 )
 
 phase('Write')
-const written = await parallel(args.newPacks.map((pack) => () =>
+const written = await parallel((args.newPacks || []).map((pack) => () =>
   parallel(pack.topics.map((topic) => () => agent(
     `اكتب 40 سؤالًا عربيًا لفئة «${pack.name}» في لعبة أسئلة عائلية، **كلها في الموضوع الفرعي «${topic}» وحده**.
 
