@@ -1,0 +1,3630 @@
+{
+  "id": "commonbond",
+  "name": "القاسم المشترك",
+  "icon": "🔗",
+  "qs": [
+    {
+      "p": 200,
+      "q": "ما المجموعة الحيوانية التي تضم القط والكلب والحصان؟",
+      "a": "ثدييات",
+      "qid": "commonbond-200-001",
+      "type": "common",
+      "items": [
+        "القط",
+        "الكلب",
+        "الحصان"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Mammalia/"
+    },
+    {
+      "p": 200,
+      "q": "ما المجموعة التي تجمع العصفور والحمامة والببغاء؟",
+      "a": "طيور",
+      "qid": "commonbond-200-002",
+      "type": "common",
+      "items": [
+        "العصفور",
+        "الحمامة",
+        "الببغاء"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Aves/"
+    },
+    {
+      "p": 200,
+      "q": "ما الاسم الجامع للسردين والسلمون والتونة؟",
+      "a": "أسماك",
+      "qid": "commonbond-200-003",
+      "type": "common",
+      "items": [
+        "السردين",
+        "السلمون",
+        "التونة"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Actinopterygii/"
+    },
+    {
+      "p": 200,
+      "q": "ما التصنيف الجامع للنملة والنحلة والفراشة؟",
+      "a": "حشرات",
+      "qid": "commonbond-200-004",
+      "type": "common",
+      "items": [
+        "النملة",
+        "النحلة",
+        "الفراشة"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Insecta/"
+    },
+    {
+      "p": 200,
+      "q": "ما المجموعة الحيوانية التي تجمع التمساح والثعبان والسلحفاة؟",
+      "a": "زواحف",
+      "qid": "commonbond-200-005",
+      "type": "common",
+      "items": [
+        "التمساح",
+        "الثعبان",
+        "السلحفاة"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Reptilia/"
+    },
+    {
+      "p": 200,
+      "q": "كيف تتكاثر الدجاجة والبطة والنعامة؟",
+      "a": "وضع البيض",
+      "qid": "commonbond-200-006",
+      "type": "common",
+      "items": [
+        "الدجاجة",
+        "البطة",
+        "النعامة"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Aves/"
+    },
+    {
+      "p": 200,
+      "q": "ما وظيفة كروم وفايرفوكس وسفاري المشتركة؟",
+      "a": "متصفحات الويب",
+      "qid": "commonbond-200-007",
+      "type": "common",
+      "items": [
+        "كروم",
+        "فايرفوكس",
+        "سفاري"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Browsing_the_web"
+    },
+    {
+      "p": 200,
+      "q": "ما الفئة البرمجية التي تجمع ويندوز وماك أو إس ولينكس؟",
+      "a": "أنظمة تشغيل",
+      "qid": "commonbond-200-008",
+      "type": "common",
+      "items": [
+        "ويندوز",
+        "ماك أو إس",
+        "لينكس"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://support.google.com/chrome/a/answer/7100626?hl=en"
+    },
+    {
+      "p": 200,
+      "q": "ما وظيفة لوحة المفاتيح والفأرة والميكروفون تجاه الحاسوب؟",
+      "a": "أجهزة إدخال",
+      "qid": "commonbond-200-009",
+      "type": "common",
+      "items": [
+        "لوحة المفاتيح",
+        "الفأرة",
+        "الميكروفون"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://www.computerhope.com/jargon/i/inputdev.htm"
+    },
+    {
+      "p": 200,
+      "q": "ما وظيفة الشاشة والطابعة ومكبر الصوت تجاه المستخدم؟",
+      "a": "أجهزة إخراج",
+      "qid": "commonbond-200-010",
+      "type": "common",
+      "items": [
+        "الشاشة",
+        "الطابعة",
+        "مكبر الصوت"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://www.computerhope.com/jargon/o/outputde.htm"
+    },
+    {
+      "p": 200,
+      "q": "لماذا نستخدم القرص الصلب وذاكرة USB وبطاقة الذاكرة؟",
+      "a": "تخزين البيانات",
+      "qid": "commonbond-200-011",
+      "type": "common",
+      "items": [
+        "القرص الصلب",
+        "ذاكرة USB",
+        "بطاقة الذاكرة"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://www.ibm.com/think/topics/data-storage"
+    },
+    {
+      "p": 200,
+      "q": "ما المهمة المشتركة لأوامر نسخ وقص ولصق عند كتابة مستند؟",
+      "a": "تحرير النصوص",
+      "qid": "commonbond-200-012",
+      "type": "common",
+      "items": [
+        "نسخ",
+        "قص",
+        "لصق"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://support.microsoft.com/en-us/accessibility/windows/keyboard-shortcuts-in-windows"
+    },
+    {
+      "p": 200,
+      "q": "أي دولة تجمع القاهرة والإسكندرية وأسوان؟",
+      "a": "مصر",
+      "qid": "commonbond-200-013",
+      "type": "common",
+      "items": [
+        "القاهرة",
+        "الإسكندرية",
+        "أسوان"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Egypt"
+    },
+    {
+      "p": 200,
+      "q": "أي دولة تجمع باريس وليون ومرسيليا؟",
+      "a": "فرنسا",
+      "qid": "commonbond-200-014",
+      "type": "common",
+      "items": [
+        "باريس",
+        "ليون",
+        "مرسيليا"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/France"
+    },
+    {
+      "p": 200,
+      "q": "أي دولة تجمع روما وميلانو والبندقية؟",
+      "a": "إيطاليا",
+      "qid": "commonbond-200-015",
+      "type": "common",
+      "items": [
+        "روما",
+        "ميلانو",
+        "البندقية"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Italy"
+    },
+    {
+      "p": 200,
+      "q": "أي دولة تضم مكة والرياض وجدة؟",
+      "a": "السعودية",
+      "qid": "commonbond-200-016",
+      "type": "common",
+      "items": [
+        "مكة",
+        "الرياض",
+        "جدة"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Saudi_Arabia"
+    },
+    {
+      "p": 200,
+      "q": "أي دولة تضم طوكيو وكيوتو وأوساكا؟",
+      "a": "اليابان",
+      "qid": "commonbond-200-017",
+      "type": "common",
+      "items": [
+        "طوكيو",
+        "كيوتو",
+        "أوساكا"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Japan"
+    },
+    {
+      "p": 200,
+      "q": "أي دولة تجمع دبي والشارقة وأبوظبي؟",
+      "a": "الإمارات",
+      "qid": "commonbond-200-018",
+      "type": "common",
+      "items": [
+        "دبي",
+        "الشارقة",
+        "أبوظبي"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/United_Arab_Emirates"
+    },
+    {
+      "p": 200,
+      "q": "ما التصنيف الفلكي الجامع للأرض والمريخ وزحل؟",
+      "a": "كواكب",
+      "qid": "commonbond-200-019",
+      "type": "common",
+      "items": [
+        "الأرض",
+        "المريخ",
+        "زحل"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/solar-system/planets/"
+    },
+    {
+      "p": 200,
+      "q": "ما المادة التي نجدها في الجليد والبخار والندى؟",
+      "a": "الماء",
+      "qid": "commonbond-200-020",
+      "type": "common",
+      "items": [
+        "الجليد",
+        "البخار",
+        "الندى"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.grc.nasa.gov/www/k-12/airplane/state.html"
+    },
+    {
+      "p": 200,
+      "q": "ما الذي نقيسه بالمتر والسنتيمتر والكيلومتر؟",
+      "a": "الطول",
+      "qid": "commonbond-200-021",
+      "type": "common",
+      "items": [
+        "المتر",
+        "السنتيمتر",
+        "الكيلومتر"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.nist.gov/pml/owm/metric-si/si-units"
+    },
+    {
+      "p": 200,
+      "q": "ما الذي نقيسه بالثانية والدقيقة والساعة؟",
+      "a": "الزمن",
+      "qid": "commonbond-200-022",
+      "type": "common",
+      "items": [
+        "الثانية",
+        "الدقيقة",
+        "الساعة"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.nist.gov/pml/owm/metric-si/si-units"
+    },
+    {
+      "p": 200,
+      "q": "ما الاسم الجامع للسمع والبصر والشم؟",
+      "a": "الحواس",
+      "qid": "commonbond-200-023",
+      "type": "common",
+      "items": [
+        "السمع",
+        "البصر",
+        "الشم"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/14-1-sensory-perception"
+    },
+    {
+      "p": 200,
+      "q": "ما المستوى التشريحي الذي يجمع القلب والكبد والمعدة؟",
+      "a": "أعضاء الجسم",
+      "qid": "commonbond-200-024",
+      "type": "common",
+      "items": [
+        "القلب",
+        "الكبد",
+        "المعدة"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body"
+    },
+    {
+      "p": 200,
+      "q": "ماذا تصف كلمات أحمر وأزرق وأخضر؟",
+      "a": "ألوان",
+      "qid": "commonbond-200-025",
+      "type": "common",
+      "items": [
+        "أحمر",
+        "أزرق",
+        "أخضر"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/لون"
+    },
+    {
+      "p": 200,
+      "q": "ما المجموعة الزمنية التي ينتمي إليها السبت والأحد والاثنين؟",
+      "a": "أيام الأسبوع",
+      "qid": "commonbond-200-026",
+      "type": "common",
+      "items": [
+        "السبت",
+        "الأحد",
+        "الاثنين"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Week"
+    },
+    {
+      "p": 200,
+      "q": "ما المجموعة التقويمية التي تضم يناير وفبراير ومارس؟",
+      "a": "أشهر ميلادية",
+      "qid": "commonbond-200-027",
+      "type": "common",
+      "items": [
+        "يناير",
+        "فبراير",
+        "مارس"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Gregorian_calendar"
+    },
+    {
+      "p": 200,
+      "q": "ما التصنيف النحوي للكلمات أنا وأنت وهو؟",
+      "a": "ضمائر منفصلة",
+      "qid": "commonbond-200-028",
+      "type": "common",
+      "items": [
+        "أنا",
+        "أنت",
+        "هو"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://learning.aljazeera.net/ar/generallanguage/المعرب-والمبني"
+    },
+    {
+      "p": 200,
+      "q": "ما التصنيف النحوي للكلمات هذا وهذه وهؤلاء؟",
+      "a": "أسماء إشارة",
+      "qid": "commonbond-200-029",
+      "type": "common",
+      "items": [
+        "هذا",
+        "هذه",
+        "هؤلاء"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://learning.aljazeera.net/ar/generallanguage/المعرب-والمبني"
+    },
+    {
+      "p": 200,
+      "q": "ما النوع النحوي للكلمات أين ومتى وكيف؟",
+      "a": "أسماء استفهام",
+      "qid": "commonbond-200-030",
+      "type": "common",
+      "items": [
+        "أين",
+        "متى",
+        "كيف"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/اسم_استفهام"
+    },
+    {
+      "p": 200,
+      "q": "ما طريقة إنتاج الصوت التي تجمع العود والكمان والغيتار؟",
+      "a": "اهتزاز الأوتار",
+      "qid": "commonbond-200-031",
+      "type": "common",
+      "items": [
+        "العود",
+        "الكمان",
+        "الغيتار"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/String_instrument"
+    },
+    {
+      "p": 200,
+      "q": "ما طريقة العزف المشتركة بين الناي والفلوت والكلارينيت؟",
+      "a": "النفخ",
+      "qid": "commonbond-200-032",
+      "type": "common",
+      "items": [
+        "الناي",
+        "الفلوت",
+        "الكلارينيت"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Wind_instrument"
+    },
+    {
+      "p": 200,
+      "q": "ما الفئة الموسيقية التي تجمع الدف والطبل والصنج؟",
+      "a": "آلات إيقاعية",
+      "qid": "commonbond-200-033",
+      "type": "common",
+      "items": [
+        "الدف",
+        "الطبل",
+        "الصنج"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Percussion_instrument"
+    },
+    {
+      "p": 200,
+      "q": "ما النشاط الفني الذي تجمع أدواته القلم والفحم والورق؟",
+      "a": "الرسم",
+      "qid": "commonbond-200-034",
+      "type": "common",
+      "items": [
+        "قلم رصاص",
+        "فحم",
+        "ورق"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Drawing"
+    },
+    {
+      "p": 200,
+      "q": "ما الحرفة التي تجمع الإبرة والخيوط الملونة والطارة؟",
+      "a": "التطريز",
+      "qid": "commonbond-200-035",
+      "type": "common",
+      "items": [
+        "الإبرة",
+        "الخيوط الملونة",
+        "الطارة"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Embroidery"
+    },
+    {
+      "p": 200,
+      "q": "ما الفن الذي يستخدم الصلصال والحجر والإزميل لصنع مجسمات؟",
+      "a": "النحت",
+      "qid": "commonbond-200-036",
+      "type": "common",
+      "items": [
+        "الصلصال",
+        "الحجر",
+        "الإزميل"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Sculpture"
+    },
+    {
+      "p": 200,
+      "q": "ما اللعبة التي تجمع التسلل والركنية وركلة الجزاء؟",
+      "a": "كرة القدم",
+      "qid": "commonbond-200-037",
+      "type": "common",
+      "items": [
+        "التسلل",
+        "الركنية",
+        "ركلة الجزاء"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Association_football"
+    },
+    {
+      "p": 200,
+      "q": "ما اللعبة التي تجمع الرمية الحرة والسلام دانك والتصويبة الثلاثية؟",
+      "a": "كرة السلة",
+      "qid": "commonbond-200-038",
+      "type": "common",
+      "items": [
+        "الرمية الحرة",
+        "السلام دانك",
+        "التصويبة الثلاثية"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Basketball"
+    },
+    {
+      "p": 200,
+      "q": "ما اللعبة التي تجمع قطع الوزير والرخ والحصان؟",
+      "a": "الشطرنج",
+      "qid": "commonbond-200-039",
+      "type": "common",
+      "items": [
+        "الوزير",
+        "الرخ",
+        "الحصان"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://handbook.fide.com/chapter/E012023"
+    },
+    {
+      "p": 200,
+      "q": "ما الرياضة التي تجمع أساليب الحرة والظهر والفراشة؟",
+      "a": "السباحة",
+      "qid": "commonbond-200-040",
+      "type": "common",
+      "items": [
+        "الحرة",
+        "الظهر",
+        "الفراشة"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Swimming_(sport)"
+    },
+    {
+      "p": 200,
+      "q": "ما الرياضة التي تجمع الحلبة والقفاز والضربة القاضية بالقبضة؟",
+      "a": "الملاكمة",
+      "qid": "commonbond-200-041",
+      "type": "common",
+      "items": [
+        "الحلبة",
+        "القفاز",
+        "الضربة القاضية بالقبضة"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Boxing"
+    },
+    {
+      "p": 200,
+      "q": "ما الرياضة التي تجمع ويمبلدون ورولان غاروس وأستراليا المفتوحة؟",
+      "a": "التنس",
+      "qid": "commonbond-200-042",
+      "type": "common",
+      "items": [
+        "ويمبلدون",
+        "رولان غاروس",
+        "أستراليا المفتوحة"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://www.itftennis.com/en/tours/grand-slam-tournaments/"
+    },
+    {
+      "p": 200,
+      "q": "ما العائلة الغذائية التي تجمع البرتقال والليمون واليوسفي؟",
+      "a": "حمضيات",
+      "qid": "commonbond-200-043",
+      "type": "common",
+      "items": [
+        "برتقال",
+        "ليمون",
+        "يوسفي"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Citrus"
+    },
+    {
+      "p": 200,
+      "q": "ما المجموعة التي ينتمي إليها الحليب والجبن والزبادي؟",
+      "a": "منتجات ألبان",
+      "qid": "commonbond-200-044",
+      "type": "common",
+      "items": [
+        "حليب",
+        "جبن",
+        "زبادي"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Dairy_product"
+    },
+    {
+      "p": 200,
+      "q": "كيف نصنف التفاح والموز والعنب على المائدة؟",
+      "a": "فواكه",
+      "qid": "commonbond-200-045",
+      "type": "common",
+      "items": [
+        "تفاح",
+        "موز",
+        "عنب"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Fruit"
+    },
+    {
+      "p": 200,
+      "q": "ما الاستخدام المشترك للكمون والفلفل الأسود والكركم في المطبخ؟",
+      "a": "توابل",
+      "qid": "commonbond-200-046",
+      "type": "common",
+      "items": [
+        "كمون",
+        "فلفل أسود",
+        "كركم"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Spice"
+    },
+    {
+      "p": 200,
+      "q": "ما نوع الخضروات الذي يجمع الخس والسبانخ والجرجير؟",
+      "a": "خضروات ورقية",
+      "qid": "commonbond-200-047",
+      "type": "common",
+      "items": [
+        "خس",
+        "سبانخ",
+        "جرجير"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Leaf_vegetable"
+    },
+    {
+      "p": 200,
+      "q": "ما الفئة التي تضم السكين والشوكة والملعقة عند تناول الطعام؟",
+      "a": "أدوات مائدة",
+      "qid": "commonbond-200-048",
+      "type": "common",
+      "items": [
+        "سكين",
+        "شوكة",
+        "ملعقة"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Cutlery"
+    },
+    {
+      "p": 400,
+      "q": "ما المجموعة التي تضم الضفدع والسمندر والسيسيليا؟",
+      "a": "برمائيات",
+      "qid": "commonbond-400-001",
+      "type": "common",
+      "items": [
+        "الضفدع",
+        "السمندر",
+        "السيسيليا"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Amphibia/"
+    },
+    {
+      "p": 400,
+      "q": "ما الرتبة التي تجمع القندس والسنجاب والنيص؟",
+      "a": "قوارض",
+      "qid": "commonbond-400-002",
+      "type": "common",
+      "items": [
+        "القندس",
+        "السنجاب",
+        "النيص"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Rodentia/"
+    },
+    {
+      "p": 400,
+      "q": "ما الفصيلة التي تضم الأسد والنمر والفهد؟",
+      "a": "السنوريات",
+      "qid": "commonbond-400-003",
+      "type": "common",
+      "items": [
+        "الأسد",
+        "النمر",
+        "الفهد"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Felidae/"
+    },
+    {
+      "p": 400,
+      "q": "ما الفصيلة التي تجمع الذئب والثعلب وابن آوى؟",
+      "a": "الكلبيات",
+      "qid": "commonbond-400-004",
+      "type": "common",
+      "items": [
+        "الذئب",
+        "الثعلب",
+        "ابن آوى"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Canidae/"
+    },
+    {
+      "p": 400,
+      "q": "ما العجز الحركي الذي يجمع النعامة والكيوي والبطريق؟",
+      "a": "العجز عن الطيران",
+      "qid": "commonbond-400-005",
+      "type": "common",
+      "items": [
+        "النعامة",
+        "الكيوي",
+        "البطريق"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animals.sandiegozoo.org/animals/kiwi"
+    },
+    {
+      "p": 400,
+      "q": "بأي عضو تتنفس الحيتان والدلافين والفظوظ رغم حياتها المائية؟",
+      "a": "الرئتان",
+      "qid": "commonbond-400-006",
+      "type": "common",
+      "items": [
+        "الحيتان",
+        "الدلافين",
+        "الفظوظ"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://www.marinemammalcenter.org/animal-care/learn-about-marine-mammals"
+    },
+    {
+      "p": 400,
+      "q": "ما نوع الملفات الذي تجمعه الامتدادات PNG وJPEG وGIF؟",
+      "a": "صيغ صور",
+      "qid": "commonbond-400-007",
+      "type": "common",
+      "items": [
+        "PNG",
+        "JPEG",
+        "GIF"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types"
+    },
+    {
+      "p": 400,
+      "q": "ما نوع المحتوى الذي تخزنه ملفات MP3 وWAV وFLAC؟",
+      "a": "صوت",
+      "qid": "commonbond-400-008",
+      "type": "common",
+      "items": [
+        "MP3",
+        "WAV",
+        "FLAC"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Audio_codecs"
+    },
+    {
+      "p": 400,
+      "q": "ما التصنيف الذي يجمع MP4 وWebM وOgg بوصفها أغلفة للمقاطع؟",
+      "a": "حاويات وسائط",
+      "qid": "commonbond-400-009",
+      "type": "common",
+      "items": [
+        "MP4",
+        "WebM",
+        "Ogg"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Containers"
+    },
+    {
+      "p": 400,
+      "q": "ما التصنيف الذي يجمع بايثون وجافا وسي بلس بلس؟",
+      "a": "لغات برمجة",
+      "qid": "commonbond-400-010",
+      "type": "common",
+      "items": [
+        "Python",
+        "Java",
+        "C++"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://docs.python.org/3/tutorial/appetite.html"
+    },
+    {
+      "p": 400,
+      "q": "ما الشركة التي تقدم آيفون وآيباد وماك؟",
+      "a": "أبل",
+      "qid": "commonbond-400-011",
+      "type": "common",
+      "items": [
+        "آيفون",
+        "آيباد",
+        "ماك"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://www.apple.com/"
+    },
+    {
+      "p": 400,
+      "q": "ما الحزمة المكتبية التي تجمع وورد وإكسل وباوربوينت؟",
+      "a": "مايكروسوفت أوفيس",
+      "qid": "commonbond-400-012",
+      "type": "common",
+      "items": [
+        "وورد",
+        "إكسل",
+        "باوربوينت"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://www.microsoft.com/en-us/microsoft-365/products-apps-services"
+    },
+    {
+      "p": 400,
+      "q": "ما الصفة الإدارية المشتركة للقاهرة وبغداد وتونس؟",
+      "a": "عواصم عربية",
+      "qid": "commonbond-400-013",
+      "type": "common",
+      "items": [
+        "القاهرة",
+        "بغداد",
+        "تونس"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Arab_world"
+    },
+    {
+      "p": 400,
+      "q": "ما الصفة الجغرافية التي تجمع آيسلندا ومدغشقر وسريلانكا بوصفها دولًا؟",
+      "a": "دول جزرية",
+      "qid": "commonbond-400-014",
+      "type": "common",
+      "items": [
+        "آيسلندا",
+        "مدغشقر",
+        "سريلانكا"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Island_country"
+    },
+    {
+      "p": 400,
+      "q": "ما الاسم الإقليمي الجامع للنرويج والسويد والدنمارك؟",
+      "a": "إسكندنافيا",
+      "qid": "commonbond-400-015",
+      "type": "common",
+      "items": [
+        "النرويج",
+        "السويد",
+        "الدنمارك"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Scandinavia"
+    },
+    {
+      "p": 400,
+      "q": "ما المجرى المائي الذي يجمع الأقصر وأسوان والقاهرة؟",
+      "a": "نهر النيل",
+      "qid": "commonbond-400-016",
+      "type": "common",
+      "items": [
+        "الأقصر",
+        "أسوان",
+        "القاهرة"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Nile"
+    },
+    {
+      "p": 400,
+      "q": "ما السلسلة الجبلية التي تمتد في بيرو وبوليفيا وتشيلي؟",
+      "a": "الأنديز",
+      "qid": "commonbond-400-017",
+      "type": "common",
+      "items": [
+        "بيرو",
+        "بوليفيا",
+        "تشيلي"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Andes"
+    },
+    {
+      "p": 400,
+      "q": "ما السلسلة الجبلية التي تشترك فيها نيبال وبوتان والهند؟",
+      "a": "الهيمالايا",
+      "qid": "commonbond-400-018",
+      "type": "common",
+      "items": [
+        "نيبال",
+        "بوتان",
+        "الهند"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Himalayas"
+    },
+    {
+      "p": 400,
+      "q": "ما التصنيف السطحي المشترك لعطارد والزهرة والمريخ؟",
+      "a": "كواكب صخرية",
+      "qid": "commonbond-400-019",
+      "type": "common",
+      "items": [
+        "عطارد",
+        "الزهرة",
+        "المريخ"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/solar-system/planets/"
+    },
+    {
+      "p": 400,
+      "q": "ما التصنيف المعتمد لبلوتو وسيريس وإيريس؟",
+      "a": "كواكب قزمة",
+      "qid": "commonbond-400-020",
+      "type": "common",
+      "items": [
+        "بلوتو",
+        "سيريس",
+        "إيريس"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/solar-system/planets/"
+    },
+    {
+      "p": 400,
+      "q": "ما العائلة الكيميائية التي تجمع الهيليوم والنيون والأرجون؟",
+      "a": "غازات نبيلة",
+      "qid": "commonbond-400-021",
+      "type": "common",
+      "items": [
+        "الهيليوم",
+        "النيون",
+        "الأرجون"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://periodic-table.rsc.org/"
+    },
+    {
+      "p": 400,
+      "q": "ما التصنيف المادي العام للذهب والنحاس والحديد؟",
+      "a": "فلزات",
+      "qid": "commonbond-400-022",
+      "type": "common",
+      "items": [
+        "الذهب",
+        "النحاس",
+        "الحديد"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://periodic-table.rsc.org/"
+    },
+    {
+      "p": 400,
+      "q": "ما الاسم الجامع للصلبة والسائلة والغازية؟",
+      "a": "حالات المادة",
+      "qid": "commonbond-400-023",
+      "type": "common",
+      "items": [
+        "الصلبة",
+        "السائلة",
+        "الغازية"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.grc.nasa.gov/www/k-12/airplane/state.html"
+    },
+    {
+      "p": 400,
+      "q": "ما الكمية التي نقيسها بالسلسيوس والفهرنهايت والكلفن؟",
+      "a": "درجة الحرارة",
+      "qid": "commonbond-400-024",
+      "type": "common",
+      "items": [
+        "السلسيوس",
+        "الفهرنهايت",
+        "الكلفن"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.nist.gov/pml/owm/si-units-temperature"
+    },
+    {
+      "p": 400,
+      "q": "ما النوع النحوي للكلمات مِن وإلى وعن؟",
+      "a": "حروف جر",
+      "qid": "commonbond-400-025",
+      "type": "common",
+      "items": [
+        "مِن",
+        "إلى",
+        "عن"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/حرف_جر"
+    },
+    {
+      "p": 400,
+      "q": "ما النوع الذي يجمع ثم وأو وبل؟",
+      "a": "حروف عطف",
+      "qid": "commonbond-400-026",
+      "type": "common",
+      "items": [
+        "ثم",
+        "أو",
+        "بل"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/عطف_(نحو)"
+    },
+    {
+      "p": 400,
+      "q": "ما التصنيف الذي يجمع الذي والتي والذين؟",
+      "a": "أسماء موصولة",
+      "qid": "commonbond-400-027",
+      "type": "common",
+      "items": [
+        "الذي",
+        "التي",
+        "الذين"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://learning.aljazeera.net/ar/generallanguage/المعرب-والمبني"
+    },
+    {
+      "p": 400,
+      "q": "ما صيغة العدد المشتركة في طالبان وكتابان وقلمان؟",
+      "a": "المثنى",
+      "qid": "commonbond-400-028",
+      "type": "common",
+      "items": [
+        "طالبان",
+        "كتابان",
+        "قلمان"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Arabic_nouns_and_adjectives"
+    },
+    {
+      "p": 400,
+      "q": "ما صيغة العدد المشتركة في معلمات وطبيبات ومهندسات؟",
+      "a": "جمع مؤنث سالم",
+      "qid": "commonbond-400-029",
+      "type": "common",
+      "items": [
+        "معلمات",
+        "طبيبات",
+        "مهندسات"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Arabic_nouns_and_adjectives"
+    },
+    {
+      "p": 400,
+      "q": "ما نوع الجمع في كتب ورجال وأقلام؟",
+      "a": "جمع تكسير",
+      "qid": "commonbond-400-030",
+      "type": "common",
+      "items": [
+        "كتب",
+        "رجال",
+        "أقلام"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Arabic_nouns_and_adjectives"
+    },
+    {
+      "p": 400,
+      "q": "ما المجال الفني الذي يضم الثلث والنسخ والرقعة؟",
+      "a": "الخط العربي",
+      "qid": "commonbond-400-031",
+      "type": "common",
+      "items": [
+        "الثلث",
+        "النسخ",
+        "الرقعة"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Arabic_calligraphy"
+    },
+    {
+      "p": 400,
+      "q": "ما النوع الموسيقي الذي ينتمي إليه البياتي والراست والحجاز؟",
+      "a": "مقامات عربية",
+      "qid": "commonbond-400-032",
+      "type": "common",
+      "items": [
+        "البياتي",
+        "الراست",
+        "الحجاز"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Arabic_maqam"
+    },
+    {
+      "p": 400,
+      "q": "ما العائلة الآلية التي تجمع الكمان والفيولا والتشيلو؟",
+      "a": "عائلة الكمان",
+      "qid": "commonbond-400-033",
+      "type": "common",
+      "items": [
+        "الكمان",
+        "الفيولا",
+        "التشيلو"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Violin_family"
+    },
+    {
+      "p": 400,
+      "q": "ما التصنيف الفني للبورتريه والطبيعة الصامتة والمنظر الطبيعي؟",
+      "a": "أنواع اللوحات",
+      "qid": "commonbond-400-034",
+      "type": "common",
+      "items": [
+        "البورتريه",
+        "الطبيعة الصامتة",
+        "المنظر الطبيعي"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Painting"
+    },
+    {
+      "p": 400,
+      "q": "ما الاسم التصنيفي الجامع للرواية والقصة القصيرة والقصيدة؟",
+      "a": "أجناس أدبية",
+      "qid": "commonbond-400-035",
+      "type": "common",
+      "items": [
+        "الرواية",
+        "القصة القصيرة",
+        "القصيدة"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Literary_genre"
+    },
+    {
+      "p": 400,
+      "q": "ما مجموعة الحكايات التي تجمع علاء الدين وعلي بابا والسندباد؟",
+      "a": "ألف ليلة وليلة",
+      "qid": "commonbond-400-036",
+      "type": "common",
+      "items": [
+        "علاء الدين",
+        "علي بابا",
+        "السندباد"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights"
+    },
+    {
+      "p": 400,
+      "q": "ما الأداة الرياضية المشتركة بين الريشة الطائرة والإسكواش والبادِل؟",
+      "a": "المضرب",
+      "qid": "commonbond-400-037",
+      "type": "common",
+      "items": [
+        "الريشة الطائرة",
+        "الإسكواش",
+        "البادِل"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Racket_sport"
+    },
+    {
+      "p": 400,
+      "q": "ما المسابقة الرياضية التي تضم الحلق وحصان الحلق والمتوازي؟",
+      "a": "جمباز الرجال الفني",
+      "qid": "commonbond-400-038",
+      "type": "common",
+      "items": [
+        "الحلق",
+        "حصان الحلق",
+        "المتوازي"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Artistic_gymnastics"
+    },
+    {
+      "p": 400,
+      "q": "ما مجموعة مسابقات الميدان التي تجمع الرمح والقرص والجلة؟",
+      "a": "مسابقات الرمي",
+      "qid": "commonbond-400-039",
+      "type": "common",
+      "items": [
+        "رمي الرمح",
+        "رمي القرص",
+        "دفع الجلة"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Track_and_field"
+    },
+    {
+      "p": 400,
+      "q": "ما مجموعة مسابقات الميدان التي تجمع الطويل والعالي والزانة؟",
+      "a": "مسابقات الوثب",
+      "qid": "commonbond-400-040",
+      "type": "common",
+      "items": [
+        "الوثب الطويل",
+        "الوثب العالي",
+        "القفز بالزانة"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Track_and_field"
+    },
+    {
+      "p": 400,
+      "q": "ما التصنيف الذي يجمع طواف فرنسا وجيرو إيطاليا وفويلتا إسبانيا؟",
+      "a": "الجولات الكبرى للدراجات",
+      "qid": "commonbond-400-041",
+      "type": "common",
+      "items": [
+        "طواف فرنسا",
+        "جيرو إيطاليا",
+        "فويلتا إسبانيا"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Grand_Tour_(cycling)"
+    },
+    {
+      "p": 400,
+      "q": "ما الفئة البطولية التي تجمع أمريكا المفتوحة وأستراليا المفتوحة وويمبلدون؟",
+      "a": "غراند سلام",
+      "qid": "commonbond-400-042",
+      "type": "common",
+      "items": [
+        "أمريكا المفتوحة",
+        "أستراليا المفتوحة",
+        "ويمبلدون"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://www.itftennis.com/en/tours/grand-slam-tournaments/"
+    },
+    {
+      "p": 400,
+      "q": "كيف نصنف العدس والحمص والفول ضمن المحاصيل الجافة؟",
+      "a": "بقوليات",
+      "qid": "commonbond-400-043",
+      "type": "common",
+      "items": [
+        "عدس",
+        "حمص",
+        "فول"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Pulse_(legume)"
+    },
+    {
+      "p": 400,
+      "q": "ما المجموعة الزراعية التي تضم القمح والأرز والذرة؟",
+      "a": "حبوب غذائية",
+      "qid": "commonbond-400-044",
+      "type": "common",
+      "items": [
+        "قمح",
+        "أرز",
+        "ذرة"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Cereal"
+    },
+    {
+      "p": 400,
+      "q": "ما الرابط بين السباغيتي والبيني والفوسيلي في قوائم الطعام؟",
+      "a": "أشكال معكرونة",
+      "qid": "commonbond-400-045",
+      "type": "common",
+      "items": [
+        "سباغيتي",
+        "بيني",
+        "فوسيلي"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_pasta"
+    },
+    {
+      "p": 400,
+      "q": "ما المجموعة التي تضم الإسبريسو واللاتيه والكابتشينو؟",
+      "a": "مشروبات قهوة",
+      "qid": "commonbond-400-046",
+      "type": "common",
+      "items": [
+        "إسبريسو",
+        "لاتيه",
+        "كابتشينو"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_coffee_drinks"
+    },
+    {
+      "p": 400,
+      "q": "ما الرابط الغذائي بين بسمتي وياسمين وأربوريو؟",
+      "a": "أصناف أرز",
+      "qid": "commonbond-400-047",
+      "type": "common",
+      "items": [
+        "بسمتي",
+        "ياسمين",
+        "أربوريو"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_rice_cultivars"
+    },
+    {
+      "p": 400,
+      "q": "ما المنتج الذي تجمع أنواعه شيدر وموزاريلا وغودا؟",
+      "a": "أجبان",
+      "qid": "commonbond-400-048",
+      "type": "common",
+      "items": [
+        "شيدر",
+        "موزاريلا",
+        "غودا"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Cheese"
+    },
+    {
+      "p": 600,
+      "q": "ما المجموعة التي تضم الكنغر والكوالا والومبت؟",
+      "a": "جرابيات",
+      "qid": "commonbond-600-001",
+      "type": "common",
+      "items": [
+        "الكنغر",
+        "الكوالا",
+        "الومبت"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Metatheria/"
+    },
+    {
+      "p": 600,
+      "q": "ما الشعبة التي تجمع الحلزون والمحار والحبار؟",
+      "a": "رخويات",
+      "qid": "commonbond-600-002",
+      "type": "common",
+      "items": [
+        "الحلزون",
+        "المحار",
+        "الحبار"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Mollusca/"
+    },
+    {
+      "p": 600,
+      "q": "ما المجموعة التي تجمع السلطعون والروبيان والكركند؟",
+      "a": "قشريات",
+      "qid": "commonbond-600-003",
+      "type": "common",
+      "items": [
+        "السلطعون",
+        "الروبيان",
+        "الكركند"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Crustacea/"
+    },
+    {
+      "p": 600,
+      "q": "ما الطائفة التي تجمع العنكبوت والعقرب والقراد؟",
+      "a": "العنكبيات",
+      "qid": "commonbond-600-004",
+      "type": "common",
+      "items": [
+        "العنكبوت",
+        "العقرب",
+        "القراد"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Arachnida/"
+    },
+    {
+      "p": 600,
+      "q": "ما الرتبة التي تجمع الغوريلا والليمور والبابون؟",
+      "a": "الرئيسيات",
+      "qid": "commonbond-600-005",
+      "type": "common",
+      "items": [
+        "الغوريلا",
+        "الليمور",
+        "البابون"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Primates/"
+    },
+    {
+      "p": 600,
+      "q": "ما الشعبة التي تجمع نجم البحر وقنفذه وخياره؟",
+      "a": "شوكيات الجلد",
+      "qid": "commonbond-600-006",
+      "type": "common",
+      "items": [
+        "نجم البحر",
+        "قنفذ البحر",
+        "خيار البحر"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Echinodermata/"
+    },
+    {
+      "p": 600,
+      "q": "ما الوظيفة البروتوكولية للألفاظ GET وPOST وDELETE؟",
+      "a": "طرق طلب HTTP",
+      "qid": "commonbond-600-007",
+      "type": "common",
+      "items": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
+    },
+    {
+      "p": 600,
+      "q": "ما النتيجة العامة التي تشير إليها رموز الخادم 200 و201 و204؟",
+      "a": "نجاح طلب HTTP",
+      "qid": "commonbond-600-008",
+      "type": "common",
+      "items": [
+        "200",
+        "201",
+        "204"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+    },
+    {
+      "p": 600,
+      "q": "ما وظيفة الوسوم h1 وh2 وh3 في بنية الصفحة؟",
+      "a": "عناوين HTML",
+      "qid": "commonbond-600-009",
+      "type": "common",
+      "items": [
+        "h1",
+        "h2",
+        "h3"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements"
+    },
+    {
+      "p": 600,
+      "q": "ما التصنيف البرمجي لكل من color وmargin وdisplay؟",
+      "a": "خصائص CSS",
+      "qid": "commonbond-600-010",
+      "type": "common",
+      "items": [
+        "color",
+        "margin",
+        "display"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference"
+    },
+    {
+      "p": 600,
+      "q": "ما الذي تصنفه الكلمات string وnumber وboolean في جافاسكريبت؟",
+      "a": "أنواع البيانات",
+      "qid": "commonbond-600-011",
+      "type": "common",
+      "items": [
+        "string",
+        "number",
+        "boolean"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures"
+    },
+    {
+      "p": 600,
+      "q": "عند الاتصال بمستودع بعيد، ما اتجاه نقل البيانات في clone وfetch وpull؟",
+      "a": "من البعيد إلى المحلي",
+      "qid": "commonbond-600-012",
+      "type": "common",
+      "items": [
+        "git clone",
+        "git fetch",
+        "git pull"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://git-scm.com/docs/git-fetch",
+      "sources": [
+        "https://git-scm.com/docs/git-clone",
+        "https://git-scm.com/docs/git-fetch",
+        "https://git-scm.com/docs/git-pull"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما المجموعة المائية التي تضم سوبيريور وميشيغان وهورون؟",
+      "a": "البحيرات العظمى",
+      "qid": "commonbond-600-013",
+      "type": "common",
+      "items": [
+        "سوبيريور",
+        "ميشيغان",
+        "هورون"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Great_Lakes"
+    },
+    {
+      "p": 600,
+      "q": "ما السلسلة التي تجمع مون بلان وماترهورن ويونغفراو؟",
+      "a": "جبال الألب",
+      "qid": "commonbond-600-014",
+      "type": "common",
+      "items": [
+        "مون بلان",
+        "ماترهورن",
+        "يونغفراو"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Alps"
+    },
+    {
+      "p": 600,
+      "q": "ما الاسم الإقليمي الجامع لإستونيا ولاتفيا وليتوانيا؟",
+      "a": "دول البلطيق",
+      "qid": "commonbond-600-015",
+      "type": "common",
+      "items": [
+        "إستونيا",
+        "لاتفيا",
+        "ليتوانيا"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Baltic_states"
+    },
+    {
+      "p": 600,
+      "q": "ما العلاقة بين أنهار نيغرو وماديرا وتاباجوس وأكبر أنهار أمريكا الجنوبية؟",
+      "a": "روافد الأمازون",
+      "qid": "commonbond-600-016",
+      "type": "common",
+      "items": [
+        "نيغرو",
+        "ماديرا",
+        "تاباجوس"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Amazon_River"
+    },
+    {
+      "p": 600,
+      "q": "ما البحر الذي تطل عليه الإسكندرية ومرسيليا وبرشلونة؟",
+      "a": "البحر المتوسط",
+      "qid": "commonbond-600-017",
+      "type": "common",
+      "items": [
+        "الإسكندرية",
+        "مرسيليا",
+        "برشلونة"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Mediterranean_Sea"
+    },
+    {
+      "p": 600,
+      "q": "ما المنطقة البحرية الشهيرة التي تحددها عادة ميامي وبرمودا وسان خوان؟",
+      "a": "مثلث برمودا",
+      "qid": "commonbond-600-018",
+      "type": "common",
+      "items": [
+        "ميامي",
+        "برمودا",
+        "سان خوان"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Bermuda_Triangle"
+    },
+    {
+      "p": 600,
+      "q": "ما الجرم الذي تدور حوله آيو وأوروبا وغانيميد؟",
+      "a": "المشتري",
+      "qid": "commonbond-600-019",
+      "type": "common",
+      "items": [
+        "آيو",
+        "أوروبا",
+        "غانيميد"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/jupiter/jupiter-moons/"
+    },
+    {
+      "p": 600,
+      "q": "ما الغلاف الذي يضم التروبوسفير والستراتوسفير والميزوسفير؟",
+      "a": "الغلاف الجوي",
+      "qid": "commonbond-600-020",
+      "type": "common",
+      "items": [
+        "التروبوسفير",
+        "الستراتوسفير",
+        "الميزوسفير"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://scied.ucar.edu/learning-zone/atmosphere/layers-earths-atmosphere"
+    },
+    {
+      "p": 600,
+      "q": "ما أصل الغرانيت والبازلت والسبج في تصنيف الصخور؟",
+      "a": "صخور نارية",
+      "qid": "commonbond-600-021",
+      "type": "common",
+      "items": [
+        "الغرانيت",
+        "البازلت",
+        "السبج"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.usgs.gov/faqs/what-are-igneous-rocks"
+    },
+    {
+      "p": 600,
+      "q": "ما الأصل الجيولوجي الجامع للرخام والأردواز والنيس؟",
+      "a": "صخور متحولة",
+      "qid": "commonbond-600-022",
+      "type": "common",
+      "items": [
+        "الرخام",
+        "الأردواز",
+        "النيس"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.usgs.gov/faqs/what-are-metamorphic-rocks"
+    },
+    {
+      "p": 600,
+      "q": "ما العائلة الفيزيائية التي تجمع الراديو والأشعة السينية وتحت الحمراء؟",
+      "a": "موجات كهرومغناطيسية",
+      "qid": "commonbond-600-023",
+      "type": "common",
+      "items": [
+        "موجات الراديو",
+        "الأشعة السينية",
+        "الأشعة تحت الحمراء"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/ems/"
+    },
+    {
+      "p": 600,
+      "q": "أين توجد المطرقة والسندان والركاب تشريحيًا؟",
+      "a": "الأذن الوسطى",
+      "qid": "commonbond-600-024",
+      "type": "common",
+      "items": [
+        "المطرقة",
+        "السندان",
+        "الركاب"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.nidcd.nih.gov/health/how-do-we-hear"
+    },
+    {
+      "p": 600,
+      "q": "ما المجموعة النحوية التي ينتمي إليها أب وأخ وحم؟",
+      "a": "الأسماء الخمسة",
+      "qid": "commonbond-600-025",
+      "type": "common",
+      "items": [
+        "أب",
+        "أخ",
+        "حم"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/الأسماء_الخمسة"
+    },
+    {
+      "p": 600,
+      "q": "ما المجموعة النحوية التي تجمع صار وأصبح وأمسى؟",
+      "a": "كان وأخواتها",
+      "qid": "commonbond-600-026",
+      "type": "common",
+      "items": [
+        "صار",
+        "أصبح",
+        "أمسى"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/كان_وأخواتها"
+    },
+    {
+      "p": 600,
+      "q": "ما المجموعة النحوية التي تجمع ليت ولعل وكأن؟",
+      "a": "إن وأخواتها",
+      "qid": "commonbond-600-027",
+      "type": "common",
+      "items": [
+        "ليت",
+        "لعل",
+        "كأن"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/إن_وأخواتها"
+    },
+    {
+      "p": 600,
+      "q": "ما التصنيف الصرفي للقاضي والراعي والساعي من حيث الآخر؟",
+      "a": "أسماء منقوصة",
+      "qid": "commonbond-600-028",
+      "type": "common",
+      "items": [
+        "القاضي",
+        "الراعي",
+        "الساعي"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/اسم_منقوص"
+    },
+    {
+      "p": 600,
+      "q": "ما التصنيف الصرفي للفتى والعصا والهدى من حيث الآخر؟",
+      "a": "أسماء مقصورة",
+      "qid": "commonbond-600-029",
+      "type": "common",
+      "items": [
+        "الفتى",
+        "العصا",
+        "الهدى"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/اسم_مقصور"
+    },
+    {
+      "p": 600,
+      "q": "ما التصنيف الصرفي لصحراء وحمراء ودعاء من حيث الآخر؟",
+      "a": "أسماء ممدودة",
+      "qid": "commonbond-600-030",
+      "type": "common",
+      "items": [
+        "صحراء",
+        "حمراء",
+        "دعاء"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/اسم_ممدود"
+    },
+    {
+      "p": 600,
+      "q": "إلى أي عالم قصصي ينتمي كريستوفر روبن وبيغليت وإيور؟",
+      "a": "ويني الدبدوب",
+      "qid": "commonbond-600-031",
+      "type": "common",
+      "items": [
+        "كريستوفر روبن",
+        "بيغليت",
+        "إيور"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Winnie-the-Pooh"
+    },
+    {
+      "p": 600,
+      "q": "أي حكاية تجمع دوروثي والفزاعة والرجل الصفيح؟",
+      "a": "ساحر أوز",
+      "qid": "commonbond-600-032",
+      "type": "common",
+      "items": [
+        "دوروثي",
+        "الفزاعة",
+        "الرجل الصفيح"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/The_Wonderful_Wizard_of_Oz"
+    },
+    {
+      "p": 600,
+      "q": "ما الرواية التي تجمع أثوس وبورثوس وأراميس؟",
+      "a": "الفرسان الثلاثة",
+      "qid": "commonbond-600-033",
+      "type": "common",
+      "items": [
+        "أثوس",
+        "بورثوس",
+        "أراميس"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/The_Three_Musketeers"
+    },
+    {
+      "p": 600,
+      "q": "أي رواية تجمع جان فالجان وكوزيت وغافروش؟",
+      "a": "البؤساء",
+      "qid": "commonbond-600-034",
+      "type": "common",
+      "items": [
+        "جان فالجان",
+        "كوزيت",
+        "غافروش"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Les_Mis%C3%A9rables"
+    },
+    {
+      "p": 600,
+      "q": "أي رواية تجمع بيكي تاتشر والعمة بولي وهاكلبيري فين؟",
+      "a": "مغامرات توم سوير",
+      "qid": "commonbond-600-035",
+      "type": "common",
+      "items": [
+        "بيكي تاتشر",
+        "العمة بولي",
+        "هاكلبيري فين"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/The_Adventures_of_Tom_Sawyer"
+    },
+    {
+      "p": 600,
+      "q": "أي رواية تجمع سانتياغو ومانولين وسمكة المارلين؟",
+      "a": "الشيخ والبحر",
+      "qid": "commonbond-600-036",
+      "type": "common",
+      "items": [
+        "سانتياغو",
+        "مانولين",
+        "سمكة المارلين"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/The_Old_Man_and_the_Sea"
+    },
+    {
+      "p": 600,
+      "q": "ما الاستخدام الرياضي المشترك للفويل والإيبيه والسابر؟",
+      "a": "أسلحة المبارزة",
+      "qid": "commonbond-600-037",
+      "type": "common",
+      "items": [
+        "الفويل",
+        "الإيبيه",
+        "السابر"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Fencing"
+    },
+    {
+      "p": 600,
+      "q": "ما البطولة الآلية التي تشتهر بها حلبات موناكو ومونزا وسيلفرستون؟",
+      "a": "فورمولا 1",
+      "qid": "commonbond-600-038",
+      "type": "common",
+      "items": [
+        "موناكو",
+        "مونزا",
+        "سيلفرستون"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_Formula_One_circuits"
+    },
+    {
+      "p": 600,
+      "q": "ما الرياضة التي تجمع ألفاظ إيبون ووازاري وماتيه؟",
+      "a": "الجودو",
+      "qid": "commonbond-600-039",
+      "type": "common",
+      "items": [
+        "إيبون",
+        "وازاري",
+        "ماتيه"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Judo"
+    },
+    {
+      "p": 600,
+      "q": "ما اللعبة التي تجمع مصطلحات سترايك وسبير وسبليت؟",
+      "a": "البولينغ",
+      "qid": "commonbond-600-040",
+      "type": "common",
+      "items": [
+        "سترايك",
+        "سبير",
+        "سبليت"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Ten-pin_bowling"
+    },
+    {
+      "p": 600,
+      "q": "ما المرحلة اللعبية التي تجمع روي لوبيز والدفاع الصقلي وغامبت الوزير؟",
+      "a": "افتتاحيات شطرنجية",
+      "qid": "commonbond-600-041",
+      "type": "common",
+      "items": [
+        "روي لوبيز",
+        "الدفاع الصقلي",
+        "غامبت الوزير"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Chess_opening"
+    },
+    {
+      "p": 600,
+      "q": "ما الرياضة التي تجمع السكرم والتراي والتحويلة؟",
+      "a": "الرغبي",
+      "qid": "commonbond-600-042",
+      "type": "common",
+      "items": [
+        "السكرم",
+        "التراي",
+        "التحويلة"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Rugby_union"
+    },
+    {
+      "p": 600,
+      "q": "ما القاسم الزراعي المشترك بين غالا وفوجي وغراني سميث؟",
+      "a": "أصناف تفاح",
+      "qid": "commonbond-600-043",
+      "type": "common",
+      "items": [
+        "غالا",
+        "فوجي",
+        "غراني سميث"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_apple_cultivars_(A%E2%80%93K)"
+    },
+    {
+      "p": 600,
+      "q": "ما الذي يربط المجهول ودقلة نور والعجوة في البساتين؟",
+      "a": "أصناف تمر",
+      "qid": "commonbond-600-044",
+      "type": "common",
+      "items": [
+        "المجهول",
+        "دقلة نور",
+        "العجوة"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Date_palm",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Date_palm",
+        "https://en.wikipedia.org/wiki/Ajwa_date"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما المجموعة التي تجمع السينشا والماتشا والغيوكورو؟",
+      "a": "شاي أخضر ياباني",
+      "qid": "commonbond-600-045",
+      "type": "common",
+      "items": [
+        "سينشا",
+        "ماتشا",
+        "غيوكورو"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Green_tea"
+    },
+    {
+      "p": 600,
+      "q": "ما القاسم المشترك بين الباغيت والبريوش والفوغاس في المخابز؟",
+      "a": "خبز فرنسي",
+      "qid": "commonbond-600-046",
+      "type": "common",
+      "items": [
+        "باغيت",
+        "بريوش",
+        "فوغاس"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_breads"
+    },
+    {
+      "p": 600,
+      "q": "ما الرابطة الغذائية بين البرغل والفريكة والسميد؟",
+      "a": "مشتقات القمح",
+      "qid": "commonbond-600-047",
+      "type": "common",
+      "items": [
+        "برغل",
+        "فريكة",
+        "سميد"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Freekeh",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Freekeh",
+        "https://en.wikipedia.org/wiki/Bulgur",
+        "https://en.wikipedia.org/wiki/Couscous"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما الفصيلة النباتية التي تجمع اللفت والملفوف والبروكلي؟",
+      "a": "الفصيلة الصليبية",
+      "qid": "commonbond-600-048",
+      "type": "common",
+      "items": [
+        "لفت",
+        "ملفوف",
+        "بروكلي"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Brassicaceae"
+    },
+    {
+      "p": 800,
+      "q": "ما الفصيلة التي تجمع الغرير وثعلب الماء والشره؟",
+      "a": "العرسيات",
+      "qid": "commonbond-800-001",
+      "type": "common",
+      "items": [
+        "الغرير",
+        "ثعلب الماء",
+        "الشره"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Mustelidae/"
+    },
+    {
+      "p": 800,
+      "q": "ما الرتبة التي تجمع الأرنب والأرنب البري والبيكا؟",
+      "a": "الأرنبيات",
+      "qid": "commonbond-800-002",
+      "type": "common",
+      "items": [
+        "الأرنب",
+        "الأرنب البري",
+        "البيكا"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Lagomorpha/"
+    },
+    {
+      "p": 800,
+      "q": "ما طائفة الأخطبوط والحبار والنوتيلوس؟",
+      "a": "رأسيات الأرجل",
+      "qid": "commonbond-800-003",
+      "type": "common",
+      "items": [
+        "الأخطبوط",
+        "الحبار",
+        "النوتيلوس"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Cephalopoda/"
+    },
+    {
+      "p": 800,
+      "q": "ما الشعبة التي تجمع المرجان وقنديل البحر وشقائق النعمان البحرية؟",
+      "a": "اللاسعات",
+      "qid": "commonbond-800-004",
+      "type": "common",
+      "items": [
+        "المرجان",
+        "قنديل البحر",
+        "شقائق النعمان البحرية"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Cnidaria/"
+    },
+    {
+      "p": 800,
+      "q": "ما الفصيلة التي تضم الماعز والغزلان والبيسون؟",
+      "a": "البقريات",
+      "qid": "commonbond-800-005",
+      "type": "common",
+      "items": [
+        "الماعز",
+        "الغزلان",
+        "البيسون"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Bovidae/"
+    },
+    {
+      "p": 800,
+      "q": "ما المجموعة الفرعية التي تجمع الأوركا والبيلوغا والنروال؟",
+      "a": "الحيتان المسننة",
+      "qid": "commonbond-800-006",
+      "type": "common",
+      "items": [
+        "الأوركا",
+        "البيلوغا",
+        "النروال"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Odontoceti/"
+    },
+    {
+      "p": 800,
+      "q": "ما طبيعة وحدات القياس em وrem وvw في تنسيق الصفحات؟",
+      "a": "وحدات طول نسبية",
+      "qid": "commonbond-800-007",
+      "type": "common",
+      "items": [
+        "em",
+        "rem",
+        "vw"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length"
+    },
+    {
+      "p": 800,
+      "q": "كيف تصنف وحدات px وcm وin في تنسيق الصفحات؟",
+      "a": "وحدات طول مطلقة",
+      "qid": "commonbond-800-008",
+      "type": "common",
+      "items": [
+        "px",
+        "cm",
+        "in"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length"
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الكائن الذي يوفر الأساليب map وfilter وreduce في جافاسكريبت؟",
+      "a": "المصفوفة",
+      "qid": "commonbond-800-009",
+      "type": "common",
+      "items": [
+        "map",
+        "filter",
+        "reduce"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+    },
+    {
+      "p": 800,
+      "q": "ما تسمية المحددات :hover و:focus و:checked في لغة التنسيق؟",
+      "a": "أصناف زائفة",
+      "qid": "commonbond-800-010",
+      "type": "common",
+      "items": [
+        ":hover",
+        ":focus",
+        ":checked"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes"
+    },
+    {
+      "p": 800,
+      "q": "ما تسمية المحددات ::before و::after و::first-letter؟",
+      "a": "عناصر زائفة",
+      "qid": "commonbond-800-011",
+      "type": "common",
+      "items": [
+        "::before",
+        "::after",
+        "::first-letter"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements"
+    },
+    {
+      "p": 800,
+      "q": "أي نموذج لتخطيط الصفحات يضم content وpadding وborder؟",
+      "a": "نموذج الصندوق",
+      "qid": "commonbond-800-012",
+      "type": "common",
+      "items": [
+        "content",
+        "padding",
+        "border"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction"
+    },
+    {
+      "p": 800,
+      "q": "ما الأرخبيل الإسباني الذي يضم تينيريفي وغران كناريا ولانثاروتي؟",
+      "a": "جزر الكناري",
+      "qid": "commonbond-800-013",
+      "type": "common",
+      "items": [
+        "تينيريفي",
+        "غران كناريا",
+        "لانثاروتي"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Canary_Islands"
+    },
+    {
+      "p": 800,
+      "q": "ما الأرخبيل البرتغالي الذي يضم ساو ميغيل وتيرسيرا وبيكو؟",
+      "a": "جزر الأزور",
+      "qid": "commonbond-800-014",
+      "type": "common",
+      "items": [
+        "ساو ميغيل",
+        "تيرسيرا",
+        "بيكو"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Azores"
+    },
+    {
+      "p": 800,
+      "q": "ما المجموعة الإقليمية التي تضم تنجانيقا وملاوي وتوركانا؟",
+      "a": "البحيرات الإفريقية العظمى",
+      "qid": "commonbond-800-015",
+      "type": "common",
+      "items": [
+        "تنجانيقا",
+        "ملاوي",
+        "توركانا"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/African_Great_Lakes"
+    },
+    {
+      "p": 800,
+      "q": "ما المجموعة الملاحية التي تجمع أوريسند والحزام الكبير والحزام الصغير؟",
+      "a": "المضايق الدنماركية",
+      "qid": "commonbond-800-016",
+      "type": "common",
+      "items": [
+        "أوريسند",
+        "الحزام الكبير",
+        "الحزام الصغير"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Danish_straits"
+    },
+    {
+      "p": 800,
+      "q": "ما السلسلة التي تضم كي تو وبرود بيك وغاشربروم الأول؟",
+      "a": "القراقر",
+      "qid": "commonbond-800-017",
+      "type": "common",
+      "items": [
+        "كي تو",
+        "برود بيك",
+        "غاشربروم الأول"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Karakoram"
+    },
+    {
+      "p": 800,
+      "q": "ما التحالف التجاري التاريخي الذي جمع لوبيك وهامبورغ وبريمن؟",
+      "a": "الرابطة الهانزية",
+      "qid": "commonbond-800-018",
+      "type": "common",
+      "items": [
+        "لوبيك",
+        "هامبورغ",
+        "بريمن"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Hanseatic_League"
+    },
+    {
+      "p": 800,
+      "q": "ما الجرم الذي تدور حوله تيتانيا وأوبيرون وميراندا؟",
+      "a": "أورانوس",
+      "qid": "commonbond-800-019",
+      "type": "common",
+      "items": [
+        "تيتانيا",
+        "أوبيرون",
+        "ميراندا"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/uranus/moons/"
+    },
+    {
+      "p": 800,
+      "q": "ما العائلة الكيميائية التي تجمع الفلور والكلور والبروم؟",
+      "a": "الهالوجينات",
+      "qid": "commonbond-800-020",
+      "type": "common",
+      "items": [
+        "الفلور",
+        "الكلور",
+        "البروم"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://periodic-table.rsc.org/"
+    },
+    {
+      "p": 800,
+      "q": "ما العائلة التي تجمع الليثيوم والصوديوم والبوتاسيوم في الجدول الدوري؟",
+      "a": "الفلزات القلوية",
+      "qid": "commonbond-800-021",
+      "type": "common",
+      "items": [
+        "الليثيوم",
+        "الصوديوم",
+        "البوتاسيوم"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://periodic-table.rsc.org/"
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الجسيمات المسمّاة العلوي والسفلي والغريب؟",
+      "a": "الكواركات",
+      "qid": "commonbond-800-022",
+      "type": "common",
+      "items": [
+        "العلوي",
+        "السفلي",
+        "الغريب"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://home.cern/science/physics/standard-model/"
+    },
+    {
+      "p": 800,
+      "q": "ما الدور المشترك للفوتون والغلوون وبوزون W؟",
+      "a": "حمل القوى الأساسية",
+      "qid": "commonbond-800-023",
+      "type": "common",
+      "items": [
+        "الفوتون",
+        "الغلوون",
+        "بوزون W"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://home.cern/science/physics/standard-model/"
+    },
+    {
+      "p": 800,
+      "q": "ما الفهرس الفلكي الذي يضم M1 وM31 وM45؟",
+      "a": "فهرس مسييه",
+      "qid": "commonbond-800-024",
+      "type": "common",
+      "items": [
+        "M1: سديم السرطان",
+        "M31: مجرة أندروميدا",
+        "M45: الثريا"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/"
+    },
+    {
+      "p": 800,
+      "q": "ما الحكم الصرفي المشترك في أحمد ومساجد وفاطمة؟",
+      "a": "ممنوع من الصرف",
+      "qid": "commonbond-800-025",
+      "type": "common",
+      "items": [
+        "أحمد",
+        "مساجد",
+        "فاطمة"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/ممنوع_من_الصرف"
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الاعتلال الجامع لوعد ووجد ووقف؟",
+      "a": "مثال واوي",
+      "qid": "commonbond-800-026",
+      "type": "common",
+      "items": [
+        "وعد",
+        "وجد",
+        "وقف"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/فعل_معتل"
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الاعتلال الجامع لقال وباع ونام؟",
+      "a": "أجوف",
+      "qid": "commonbond-800-027",
+      "type": "common",
+      "items": [
+        "قال",
+        "باع",
+        "نام"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/فعل_معتل"
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الاعتلال الجامع لدعا ورمى وسعى؟",
+      "a": "ناقص",
+      "qid": "commonbond-800-028",
+      "type": "common",
+      "items": [
+        "دعا",
+        "رمى",
+        "سعى"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/فعل_معتل"
+    },
+    {
+      "p": 800,
+      "q": "ما نوع المشتقات التي تجمع غفور وصبور وشكور؟",
+      "a": "صيغ مبالغة",
+      "qid": "commonbond-800-029",
+      "type": "common",
+      "items": [
+        "غفور",
+        "صبور",
+        "شكور"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/صيغة_مبالغة"
+    },
+    {
+      "p": 800,
+      "q": "ما الوزن الصرفي الجامع لاستخرج واستغفر واستقبل؟",
+      "a": "استفعل",
+      "qid": "commonbond-800-030",
+      "type": "common",
+      "items": [
+        "استخرج",
+        "استغفر",
+        "استقبل"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/ميزان_صرفي"
+    },
+    {
+      "p": 800,
+      "q": "ما الحركة الفنية التي تجمع مونيه ورينوار وسيسلي؟",
+      "a": "الانطباعية",
+      "qid": "commonbond-800-031",
+      "type": "common",
+      "items": [
+        "كلود مونيه",
+        "بيير أوغست رينوار",
+        "ألفريد سيسلي"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Impressionism"
+    },
+    {
+      "p": 800,
+      "q": "ما الحركة الفنية التي اشتهر بها براك وبيكاسو وخوان غريس؟",
+      "a": "التكعيبية",
+      "qid": "commonbond-800-032",
+      "type": "common",
+      "items": [
+        "جورج براك",
+        "بابلو بيكاسو",
+        "خوان غريس"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Cubism"
+    },
+    {
+      "p": 800,
+      "q": "ما الحركة الفنية التي تجمع دالي وماغريت وماكس إرنست؟",
+      "a": "السريالية",
+      "qid": "commonbond-800-033",
+      "type": "common",
+      "items": [
+        "سلفادور دالي",
+        "رينيه ماغريت",
+        "ماكس إرنست"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Surrealism"
+    },
+    {
+      "p": 800,
+      "q": "ما التقنية اللونية التي تجمع سورا وسينياك وهنري إدمون كروس؟",
+      "a": "التنقيطية",
+      "qid": "commonbond-800-034",
+      "type": "common",
+      "items": [
+        "جورج سورا",
+        "بول سينياك",
+        "هنري إدمون كروس"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Pointillism"
+    },
+    {
+      "p": 800,
+      "q": "ما الجماعة الفنية التي أسسها ميليه وهولمان هنت وروزيتي؟",
+      "a": "جماعة ما قبل الرافائيليين",
+      "qid": "commonbond-800-035",
+      "type": "common",
+      "items": [
+        "جون إيفرت ميليه",
+        "وليام هولمان هنت",
+        "دانتي غابرييل روزيتي"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Pre-Raphaelite_Brotherhood"
+    },
+    {
+      "p": 800,
+      "q": "ما الحركة الفنية التي تجمع ماتيس وديران وفلامنك؟",
+      "a": "الوحشية",
+      "qid": "commonbond-800-036",
+      "type": "common",
+      "items": [
+        "هنري ماتيس",
+        "أندريه ديران",
+        "موريس فلامنك"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Fauvism"
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الحركات الذي يجمع الآكسل واللوتز والسالكو؟",
+      "a": "قفزات التزلج الفني",
+      "qid": "commonbond-800-037",
+      "type": "common",
+      "items": [
+        "آكسل",
+        "لوتز",
+        "سالكو"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Figure_skating_jumps"
+    },
+    {
+      "p": 800,
+      "q": "ما العلاقة المشتركة بنتيجة البار في بيردي وإيغل وألباتروس؟",
+      "a": "نتائج أقل من البار",
+      "qid": "commonbond-800-038",
+      "type": "common",
+      "items": [
+        "بيردي",
+        "إيغل",
+        "ألباتروس"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Par_(score)"
+    },
+    {
+      "p": 800,
+      "q": "ما وظيفة كوت وبولد ورن آوت في مباراة الكريكيت؟",
+      "a": "إخراج الضارب",
+      "qid": "commonbond-800-039",
+      "type": "common",
+      "items": [
+        "Caught",
+        "Bowled",
+        "Run out"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://www.lords.org/mcc/about-the-laws-of-cricket"
+    },
+    {
+      "p": 800,
+      "q": "ما النوع المهاري الذي يجمع أوسوتو غاري وأوتشي ماتا وسيوي ناغي؟",
+      "a": "رميات الجودو",
+      "qid": "commonbond-800-040",
+      "type": "common",
+      "items": [
+        "أوسوتو غاري",
+        "أوتشي ماتا",
+        "سيوي ناغي"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_Kodokan_judo_techniques"
+    },
+    {
+      "p": 800,
+      "q": "ما الأصل الجغرافي للتايكواندو والتايكيون والهابكيدو؟",
+      "a": "فنون قتال كورية",
+      "qid": "commonbond-800-041",
+      "type": "common",
+      "items": [
+        "التايكواندو",
+        "التايكيون",
+        "الهابكيدو"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Korean_martial_arts"
+    },
+    {
+      "p": 800,
+      "q": "ما اللعبة التي تجمع مفاهيم كو وأتاري وسيكي؟",
+      "a": "غو",
+      "qid": "commonbond-800-042",
+      "type": "common",
+      "items": [
+        "كو",
+        "أتاري",
+        "سيكي"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_Go_terms"
+    },
+    {
+      "p": 800,
+      "q": "ما الفصيلة التي تضم نباتات الطماطم والباذنجان والفلفل الحلو؟",
+      "a": "الفصيلة الباذنجانية",
+      "qid": "commonbond-800-043",
+      "type": "common",
+      "items": [
+        "طماطم",
+        "باذنجان",
+        "فلفل حلو"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Solanaceae"
+    },
+    {
+      "p": 800,
+      "q": "ما القرابة النباتية الجامعة للبقدونس والكرفس والجزر؟",
+      "a": "الفصيلة الخيمية",
+      "qid": "commonbond-800-044",
+      "type": "common",
+      "items": [
+        "بقدونس",
+        "كرفس",
+        "جزر"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Apiaceae"
+    },
+    {
+      "p": 800,
+      "q": "أي فصيلة نباتية تجمع النعناع والريحان والمريمية؟",
+      "a": "الفصيلة الشفوية",
+      "qid": "commonbond-800-045",
+      "type": "common",
+      "items": [
+        "نعناع",
+        "ريحان",
+        "مريمية"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Lamiaceae"
+    },
+    {
+      "p": 800,
+      "q": "ما الرابطة على مستوى النوع بين البروكلي والقرنبيط وكرنب بروكسل؟",
+      "a": "أصناف الكرنب البري",
+      "qid": "commonbond-800-046",
+      "type": "common",
+      "items": [
+        "بروكلي",
+        "قرنبيط",
+        "كرنب بروكسل"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Brassica_oleracea"
+    },
+    {
+      "p": 800,
+      "q": "أي مجموعة محصولية تضم باترنات وأكورن وكالابازا؟",
+      "a": "القرع الشتوي",
+      "qid": "commonbond-800-047",
+      "type": "common",
+      "items": [
+        "باترنات",
+        "أكورن",
+        "كالابازا"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Winter_squash"
+    },
+    {
+      "p": 800,
+      "q": "ما الرابط الزراعي بين كانيليني وبورلوتي وبينتو؟",
+      "a": "أصناف فاصوليا",
+      "qid": "commonbond-800-048",
+      "type": "common",
+      "items": [
+        "كانيليني",
+        "بورلوتي",
+        "بينتو"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Phaseolus_vulgaris"
+    },
+    {
+      "p": 1000,
+      "q": "ما الرتبة التي تجمع خلد الماء وآكلي النمل الشوكي الموضحين؟",
+      "a": "وحيدات المسلك",
+      "qid": "commonbond-1000-001",
+      "type": "common",
+      "items": [
+        "خلد الماء",
+        "آكل النمل الشوكي قصير المنقار",
+        "آكل النمل الشوكي طويل المنقار"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Monotremata/"
+    },
+    {
+      "p": 1000,
+      "q": "ما الرتبة التي تجمع الحصان ووحيد القرن والتابير؟",
+      "a": "فرديات الأصابع",
+      "qid": "commonbond-1000-002",
+      "type": "common",
+      "items": [
+        "الحصان",
+        "وحيد القرن",
+        "التابير"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Perissodactyla/"
+    },
+    {
+      "p": 1000,
+      "q": "ما الرتبة التي تضم النمل والنحل والدبابير؟",
+      "a": "غشائيات الأجنحة",
+      "qid": "commonbond-1000-003",
+      "type": "common",
+      "items": [
+        "النمل",
+        "النحل",
+        "الدبابير"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Hymenoptera/"
+    },
+    {
+      "p": 1000,
+      "q": "ما الرتبة التي تجمع الأطوم وخروف البحر الإفريقي ونظيره الأمريكي؟",
+      "a": "الخيلانيات",
+      "qid": "commonbond-1000-004",
+      "type": "common",
+      "items": [
+        "الأطوم",
+        "خروف البحر الإفريقي",
+        "خروف البحر الأمريكي"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Sirenia/"
+    },
+    {
+      "p": 1000,
+      "q": "ما الرتبة التي تضم الفيل الآسيوي وفيل الغابات وفيل السافانا؟",
+      "a": "الخرطوميات",
+      "qid": "commonbond-1000-005",
+      "type": "common",
+      "items": [
+        "الفيل الآسيوي",
+        "فيل الغابات الإفريقي",
+        "فيل السافانا الإفريقي"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animals.sandiegozoo.org/animals/elephant"
+    },
+    {
+      "p": 1000,
+      "q": "ما الرتبة التي تجمع الفراشة الملكية وعثة أطلس وفراشة الحرير؟",
+      "a": "حرشفيات الأجنحة",
+      "qid": "commonbond-1000-006",
+      "type": "common",
+      "items": [
+        "الفراشة الملكية",
+        "عثة أطلس",
+        "فراشة الحرير"
+      ],
+      "topic": "الحيوانات",
+      "verified": true,
+      "source": "https://animaldiversity.org/accounts/Lepidoptera/"
+    },
+    {
+      "p": 1000,
+      "q": "ما الفئة المشتركة لردود HTTP ذات الرموز 302 و303 و307؟",
+      "a": "إعادة التوجيه",
+      "qid": "commonbond-1000-007",
+      "type": "common",
+      "items": [
+        "302",
+        "303",
+        "307"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+    },
+    {
+      "p": 1000,
+      "q": "ما الصفة المشتركة للترويسات If-Match وIf-None-Match وIf-Modified-Since؟",
+      "a": "ترويسات شرطية",
+      "qid": "commonbond-1000-008",
+      "type": "common",
+      "items": [
+        "If-Match",
+        "If-None-Match",
+        "If-Modified-Since"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Conditional_requests"
+    },
+    {
+      "p": 1000,
+      "q": "ما طابور ردود النداء لطرائق الوعود then وcatch وإشعارات MutationObserver بالمتصفح؟",
+      "a": "طابور المهام الدقيقة",
+      "qid": "commonbond-1000-009",
+      "type": "common",
+      "items": [
+        "Promise.prototype.then",
+        "Promise.prototype.catch",
+        "MutationObserver"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide",
+      "sources": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide",
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "ما العائلة البرمجية التي تجمع Uint8Array وFloat32Array وInt16Array؟",
+      "a": "المصفوفات ذات الأنواع",
+      "qid": "commonbond-1000-010",
+      "type": "common",
+      "items": [
+        "Uint8Array",
+        "Float32Array",
+        "Int16Array"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Typed_arrays"
+    },
+    {
+      "p": 1000,
+      "q": "إلى أي عائلة تجزئة تنتمي SHA-256 وSHA-384 وSHA-512؟",
+      "a": "SHA-2",
+      "qid": "commonbond-1000-011",
+      "type": "common",
+      "items": [
+        "SHA-256",
+        "SHA-384",
+        "SHA-512"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest"
+    },
+    {
+      "p": 1000,
+      "q": "ما الاستخدام المشترك للقيم gzip وdeflate وbr في ترويسة Content-Encoding؟",
+      "a": "ضغط المحتوى",
+      "qid": "commonbond-1000-012",
+      "type": "common",
+      "items": [
+        "gzip",
+        "deflate",
+        "br"
+      ],
+      "topic": "تقنية وحوسبة",
+      "verified": true,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Encoding"
+    },
+    {
+      "p": 1000,
+      "q": "ما المجموعة الجزرية الإندونيسية التي تضم بالي ولومبوك وفلوريس؟",
+      "a": "جزر سوندا الصغرى",
+      "qid": "commonbond-1000-013",
+      "type": "common",
+      "items": [
+        "بالي",
+        "لومبوك",
+        "فلوريس"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Lesser_Sunda_Islands"
+    },
+    {
+      "p": 1000,
+      "q": "ما الأرخبيل الذي يجمع موريشيوس وريونيون ورودريغز؟",
+      "a": "جزر ماسكارين",
+      "qid": "commonbond-1000-014",
+      "type": "common",
+      "items": [
+        "موريشيوس",
+        "ريونيون",
+        "رودريغز"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Mascarene_Islands"
+    },
+    {
+      "p": 1000,
+      "q": "إلى أي محيط تتبع بحار لابتيف وكارا وبوفورت؟",
+      "a": "المحيط المتجمد الشمالي",
+      "qid": "commonbond-1000-015",
+      "type": "common",
+      "items": [
+        "بحر لابتيف",
+        "بحر كارا",
+        "بحر بوفورت"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Arctic_Ocean"
+    },
+    {
+      "p": 1000,
+      "q": "ما المجموعة الجزرية التي تضم هندرسون ودوسي وأوينو؟",
+      "a": "جزر بيتكايرن",
+      "qid": "commonbond-1000-016",
+      "type": "common",
+      "items": [
+        "هندرسون",
+        "دوسي",
+        "أوينو"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Pitcairn_Islands"
+    },
+    {
+      "p": 1000,
+      "q": "ما الوظيفة الجغرافية لسيمبلون وغوتهارد وسان برنار الكبير؟",
+      "a": "ممرات عبر الألب",
+      "qid": "commonbond-1000-017",
+      "type": "common",
+      "items": [
+        "سيمبلون",
+        "غوتهارد",
+        "سان برنار الكبير"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Alps"
+    },
+    {
+      "p": 1000,
+      "q": "ما الأرخبيل البولينيزي الذي يجمع تاهيتي وبورا بورا وراياتيا؟",
+      "a": "جزر المجتمع",
+      "qid": "commonbond-1000-018",
+      "type": "common",
+      "items": [
+        "تاهيتي",
+        "بورا بورا",
+        "راياتيا"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Society_Islands"
+    },
+    {
+      "p": 1000,
+      "q": "ما الجرم الذي تتبعه ستيكس ونيكس وكيربيروس؟",
+      "a": "بلوتو",
+      "qid": "commonbond-1000-019",
+      "type": "common",
+      "items": [
+        "ستيكس",
+        "نيكس",
+        "كيربيروس"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/dwarf-planets/pluto/moons/"
+    },
+    {
+      "p": 1000,
+      "q": "في أي منطقة وراء نبتون تقع هاوميا وماكيماكي وأروكوث؟",
+      "a": "حزام كايبر",
+      "qid": "commonbond-1000-020",
+      "type": "common",
+      "items": [
+        "هاوميا",
+        "ماكيماكي",
+        "أروكوث"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://science.nasa.gov/solar-system/kuiper-belt/facts/"
+    },
+    {
+      "p": 1000,
+      "q": "ما العائلة الجسيمية التي تجمع الإلكترون والميون والتاو؟",
+      "a": "اللبتونات",
+      "qid": "commonbond-1000-021",
+      "type": "common",
+      "items": [
+        "الإلكترون",
+        "الميون",
+        "التاو"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://home.cern/science/physics/standard-model/"
+    },
+    {
+      "p": 1000,
+      "q": "ما المجموعة الفلزية التي تضم الأوزميوم والإيريديوم والروثينيوم؟",
+      "a": "فلزات مجموعة البلاتين",
+      "qid": "commonbond-1000-022",
+      "type": "common",
+      "items": [
+        "الأوزميوم",
+        "الإيريديوم",
+        "الروثينيوم"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://www.usgs.gov/centers/national-minerals-information-center/platinum-group-metals-statistics-and-information"
+    },
+    {
+      "p": 1000,
+      "q": "ما السلسلة الكيميائية التي تجمع السيريوم والنيوديميوم والإربيوم؟",
+      "a": "اللانثانيدات",
+      "qid": "commonbond-1000-023",
+      "type": "common",
+      "items": [
+        "السيريوم",
+        "النيوديميوم",
+        "الإربيوم"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://periodic-table.rsc.org/"
+    },
+    {
+      "p": 1000,
+      "q": "ما المجموعة المعدنية التي تضم الألبايت والأنورثيت والأورثوكليز؟",
+      "a": "الفلسبارات",
+      "qid": "commonbond-1000-024",
+      "type": "common",
+      "items": [
+        "الألبايت",
+        "الأنورثيت",
+        "الأورثوكليز"
+      ],
+      "topic": "فضاء وعلوم",
+      "verified": true,
+      "source": "https://geology.com/minerals/feldspar.shtml"
+    },
+    {
+      "p": 1000,
+      "q": "ما نوع الاعتلال الجامع لوقى ووفى ووعى؟",
+      "a": "لفيف مفروق",
+      "qid": "commonbond-1000-025",
+      "type": "common",
+      "items": [
+        "وقى",
+        "وفى",
+        "وعى"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/فعل_معتل"
+    },
+    {
+      "p": 1000,
+      "q": "ما نوع الاعتلال الجامع لطوى وروى وشوى؟",
+      "a": "لفيف مقرون",
+      "qid": "commonbond-1000-026",
+      "type": "common",
+      "items": [
+        "طوى",
+        "روى",
+        "شوى"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/فعل_معتل"
+    },
+    {
+      "p": 1000,
+      "q": "ما التصنيف النحوي للكلمات صه ومه وآمين عند طلب الفعل؟",
+      "a": "أسماء أفعال أمر",
+      "qid": "commonbond-1000-027",
+      "type": "common",
+      "items": [
+        "صه",
+        "مه",
+        "آمين"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/اسم_فعل"
+    },
+    {
+      "p": 1000,
+      "q": "ما التصنيف الدال على جماعة في قوم ورهط وجيش؟",
+      "a": "أسماء جمع",
+      "qid": "commonbond-1000-028",
+      "type": "common",
+      "items": [
+        "قوم",
+        "رهط",
+        "جيش"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/اسم_جمع"
+    },
+    {
+      "p": 1000,
+      "q": "ما نوع الجمع الذي تمثله أرغفة وأقلام وأفلس في التقسيم الصرفي؟",
+      "a": "جمع قلة",
+      "qid": "commonbond-1000-029",
+      "type": "common",
+      "items": [
+        "أرغفة",
+        "أقلام",
+        "أفلس"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/جمع_قلة"
+    },
+    {
+      "p": 1000,
+      "q": "ما الصيغة الصرفية التي تجمع مساجد ومصابيح ومفاتيح؟",
+      "a": "صيغة منتهى الجموع",
+      "qid": "commonbond-1000-030",
+      "type": "common",
+      "items": [
+        "مساجد",
+        "مصابيح",
+        "مفاتيح"
+      ],
+      "topic": "كلمات ولغة",
+      "verified": true,
+      "source": "https://ar.wikipedia.org/wiki/صيغ_منتهى_الجموع"
+    },
+    {
+      "p": 1000,
+      "q": "ما التقليد المسرحي الذي يجمع شخصيات أرليكينو وبنتالوني وكولومبينا؟",
+      "a": "كوميديا ديلارتي",
+      "qid": "commonbond-1000-031",
+      "type": "common",
+      "items": [
+        "أرليكينو",
+        "بنتالوني",
+        "كولومبينا"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Commedia_dell%27arte"
+    },
+    {
+      "p": 1000,
+      "q": "ما التقليد الأدبي الجامع للهايكو والتانكا والرينغا؟",
+      "a": "الشعر الياباني",
+      "qid": "commonbond-1000-032",
+      "type": "common",
+      "items": [
+        "الهايكو",
+        "التانكا",
+        "الرينغا"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Japanese_poetry"
+    },
+    {
+      "p": 1000,
+      "q": "ما عائلة الطباعة التي تجمع الأكوَاتنت والميزوتنت والحفر بالإبرة الجافة؟",
+      "a": "الطباعة الغائرة",
+      "qid": "commonbond-1000-033",
+      "type": "common",
+      "items": [
+        "الأكواتنت",
+        "الميزوتنت",
+        "الحفر بالإبرة الجافة"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Intaglio_(printmaking)"
+    },
+    {
+      "p": 1000,
+      "q": "ما نوع مولد الصوت الذي يجمع الأوبوا والباسون والقرن الإنجليزي؟",
+      "a": "ريشة مزدوجة",
+      "qid": "commonbond-1000-034",
+      "type": "common",
+      "items": [
+        "الأوبوا",
+        "الباسون",
+        "القرن الإنجليزي"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Double_reed"
+    },
+    {
+      "p": 1000,
+      "q": "ما النظام اللحني التاريخي الذي يجمع الدوري والفريجي والليدي؟",
+      "a": "المقامات الكنسية",
+      "qid": "commonbond-1000-035",
+      "type": "common",
+      "items": [
+        "الدوري",
+        "الفريجي",
+        "الليدي"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Church_mode"
+    },
+    {
+      "p": 1000,
+      "q": "ما التقليد الكتابي الذي يجمع التعليق والنستعليق والشكسته؟",
+      "a": "الخط الفارسي",
+      "qid": "commonbond-1000-036",
+      "type": "common",
+      "items": [
+        "التعليق",
+        "النستعليق",
+        "الشكسته"
+      ],
+      "topic": "فنون وأدب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Persian_calligraphy"
+    },
+    {
+      "p": 1000,
+      "q": "ما الاسم الجامع لطرق الفوز يوريكيري وأوشيداشي وأواتيناغي في السومو؟",
+      "a": "كيماريتي",
+      "qid": "commonbond-1000-037",
+      "type": "common",
+      "items": [
+        "يوريكيري",
+        "أوشيداشي",
+        "أواتيناغي"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Kimarite"
+    },
+    {
+      "p": 1000,
+      "q": "ما نوع النهايات الذي يجمع أوضاع لوسينا وفيليدور وفانكورا؟",
+      "a": "نهايات الرخ والبيدق",
+      "qid": "commonbond-1000-038",
+      "type": "common",
+      "items": [
+        "وضع لوسينا",
+        "وضع فيليدور",
+        "وضع فانكورا"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Rook_and_pawn_versus_rook_endgame"
+    },
+    {
+      "p": 1000,
+      "q": "ما اللعبة الصينية التي تجمع المدفع والعربة والفيل على رقعتها؟",
+      "a": "شيانغتشي",
+      "qid": "commonbond-1000-039",
+      "type": "common",
+      "items": [
+        "المدفع",
+        "العربة",
+        "الفيل"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Xiangqi"
+    },
+    {
+      "p": 1000,
+      "q": "ما اللعبة اليابانية التي تجمع الجنرال الذهبي والفضي والرمح؟",
+      "a": "الشوغي",
+      "qid": "commonbond-1000-040",
+      "type": "common",
+      "items": [
+        "الجنرال الذهبي",
+        "الجنرال الفضي",
+        "الرمح"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Shogi"
+    },
+    {
+      "p": 1000,
+      "q": "ما التصنيف الجامع للأمازون والنايترايدر والغراسهوبر على الرقع المبتكرة؟",
+      "a": "قطع شطرنج خيالية",
+      "qid": "commonbond-1000-041",
+      "type": "common",
+      "items": [
+        "الأمازون",
+        "النايترايدر",
+        "الغراسهوبر"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Fairy_chess_piece"
+    },
+    {
+      "p": 1000,
+      "q": "ما النوع الحركي الذي يجمع التليمارك والكريستيانا والستيم على الثلج؟",
+      "a": "منعطفات التزلج",
+      "qid": "commonbond-1000-042",
+      "type": "common",
+      "items": [
+        "تليمارك",
+        "كريستيانا",
+        "ستيم"
+      ],
+      "topic": "رياضة وألعاب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Stem_christie"
+    },
+    {
+      "p": 1000,
+      "q": "ما التصنيف الغذائي الذي يجمع الكينوا والقطيفة والحنطة السوداء رغم اختلاف فصائلها؟",
+      "a": "حبوب كاذبة",
+      "qid": "commonbond-1000-043",
+      "type": "common",
+      "items": [
+        "كينوا",
+        "قطيفة",
+        "حنطة سوداء"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Pseudocereal"
+    },
+    {
+      "p": 1000,
+      "q": "ما القاسم الزراعي بين غيشا بنما وبوربون وتيبيكا؟",
+      "a": "أصناف البن العربي",
+      "qid": "commonbond-1000-044",
+      "type": "common",
+      "items": [
+        "غيشا بنما",
+        "بوربون",
+        "تيبيكا"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://varieties.worldcoffeeresearch.org/arabica/varieties"
+    },
+    {
+      "p": 1000,
+      "q": "ما فئة التصنيع التي تجمع بوفور وكومتيه وغرويير؟",
+      "a": "أجبان مطبوخة مضغوطة",
+      "qid": "commonbond-1000-045",
+      "type": "common",
+      "items": [
+        "بوفور",
+        "كومتيه",
+        "غرويير"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Types_of_cheese"
+    },
+    {
+      "p": 1000,
+      "q": "ما القاسم الصناعي الغذائي بين الآغار والألجينات والكاراجينان؟",
+      "a": "مواد هلامية من الطحالب",
+      "qid": "commonbond-1000-046",
+      "type": "common",
+      "items": [
+        "آغار",
+        "ألجينات",
+        "كاراجينان"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://www.fao.org/4/y4765e/y4765e04.htm"
+    },
+    {
+      "p": 1000,
+      "q": "ما الرابط الحسي بين الغلوتامات والإينوزينات والغوانيلات؟",
+      "a": "مكونات طعم الأومامي",
+      "qid": "commonbond-1000-047",
+      "type": "common",
+      "items": [
+        "غلوتامات",
+        "إينوزينات",
+        "غوانيلات"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://www.umamiinfo.com/what/whatisumami/"
+    },
+    {
+      "p": 1000,
+      "q": "ما القاسم الزراعي بين كونكورد وكاتاوبا وديلاوير؟",
+      "a": "أصناف عنب أمريكية",
+      "qid": "commonbond-1000-048",
+      "type": "common",
+      "items": [
+        "كونكورد",
+        "كاتاوبا",
+        "ديلاوير"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Catawba_(grape)",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Concord_(grape)",
+        "https://en.wikipedia.org/wiki/Catawba_(grape)",
+        "https://en.wikipedia.org/wiki/Delaware_(grape)"
+      ]
+    }
+  ]
+}

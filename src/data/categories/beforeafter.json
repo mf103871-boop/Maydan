@@ -1,0 +1,6967 @@
+{
+  "icon": "⏳",
+  "id": "beforeafter",
+  "name": "قبل ولا بعد",
+  "qs": [
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "الكشف العلني عن حاسوب إنياك مقارنة بـإطلاق أول آيفون؟",
+      "qid": "beforeafter-200-001",
+      "source": [
+        "https://www.computerhistory.org/timeline/1946/",
+        "https://www.computerhistory.org/timeline/2007/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "eniac",
+          "iphone"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1946,
+          2007
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق أول آيفون مقارنة بـتسليم يونيفاك الأول لمكتب الإحصاء الأمريكي؟",
+      "qid": "beforeafter-200-002",
+      "source": [
+        "https://www.computerhistory.org/timeline/2007/",
+        "https://www.computerhistory.org/timeline/1951/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "iphone",
+          "univac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2007,
+          1951
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "ظهور لغة فورتران مقارنة بـإطلاق أول آيفون؟",
+      "qid": "beforeafter-200-003",
+      "source": [
+        "https://www.computerhistory.org/timeline/1957/",
+        "https://www.computerhistory.org/timeline/2007/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "fortran",
+          "iphone"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1957,
+          2007
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق أول آيفون مقارنة بـظهور لعبة سبيس وور؟",
+      "qid": "beforeafter-200-004",
+      "source": [
+        "https://www.computerhistory.org/timeline/2007/",
+        "https://www.computerhistory.org/timeline/1962/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "iphone",
+          "spacewar"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2007,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل شبكة أربانت مقارنة بـإطلاق أول آيفون؟",
+      "qid": "beforeafter-200-005",
+      "source": [
+        "https://www.computerhistory.org/timeline/1969/",
+        "https://www.computerhistory.org/timeline/2007/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "arpanet",
+          "iphone"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1969,
+          2007
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق أول آيفون مقارنة بـطرح معالج إنتل 4004؟",
+      "qid": "beforeafter-200-006",
+      "source": [
+        "https://www.computerhistory.org/timeline/2007/",
+        "https://www.computerhistory.org/timeline/1971/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "iphone",
+          "intel4004"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2007,
+          1971
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "اكتمال حاسوب آبل الأول مقارنة بـإطلاق أول آيفون؟",
+      "qid": "beforeafter-200-007",
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/2007/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apple1",
+          "iphone"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          2007
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق أول آيفون مقارنة بـالإعلان عن حاسوب آي بي إم الشخصي؟",
+      "qid": "beforeafter-200-008",
+      "source": [
+        "https://www.computerhistory.org/timeline/2007/",
+        "https://www.computerhistory.org/timeline/1981/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "iphone",
+          "ibmpc"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2007,
+          1981
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق تلسكوب جيمس ويب مقارنة بـهبوط أبولو 11 على القمر؟",
+      "qid": "beforeafter-200-009",
+      "source": [
+        "https://science.nasa.gov/mission/webb/",
+        "https://www.nasa.gov/mission/apollo-11/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "webb",
+          "apollo11"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2021,
+          1969
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "هبوط أبولو 11 على القمر مقارنة بـإطلاق أرتميس 1؟",
+      "qid": "beforeafter-200-010",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://www.nasa.gov/mission/artemis-i/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo11",
+          "artemis1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1969,
+          2022
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق مركبة كيوريوسيتي من الأرض مقارنة بـهبوط أبولو 11 على القمر؟",
+      "qid": "beforeafter-200-011",
+      "source": [
+        "https://science.nasa.gov/mission/msl-curiosity/",
+        "https://www.nasa.gov/mission/apollo-11/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "curiosity",
+          "apollo11"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2011,
+          1969
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق أبولو 8 مقارنة بـإطلاق تلسكوب جيمس ويب؟",
+      "qid": "beforeafter-200-012",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-8/",
+        "https://science.nasa.gov/mission/webb/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo8",
+          "webb"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          2021
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق أرتميس 1 مقارنة بـإطلاق أبولو 8؟",
+      "qid": "beforeafter-200-013",
+      "source": [
+        "https://www.nasa.gov/mission/artemis-i/",
+        "https://www.nasa.gov/mission/apollo-8/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "artemis1",
+          "apollo8"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2022,
+          1968
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق أبولو 13 مقارنة بـإطلاق تلسكوب جيمس ويب؟",
+      "qid": "beforeafter-200-014",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-13/",
+        "https://science.nasa.gov/mission/webb/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo13",
+          "webb"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1970,
+          2021
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق أرتميس 1 مقارنة بـإطلاق أبولو 13؟",
+      "qid": "beforeafter-200-015",
+      "source": [
+        "https://www.nasa.gov/mission/artemis-i/",
+        "https://www.nasa.gov/mission/apollo-13/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "artemis1",
+          "apollo13"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2022,
+          1970
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "إطلاق فوياجر 1 مقارنة بـإطلاق أرتميس 1؟",
+      "qid": "beforeafter-200-016",
+      "source": [
+        "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "https://www.nasa.gov/mission/artemis-i/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "voyager1",
+          "artemis1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1977,
+          2022
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "تدشين تمثال الحرية بنيويورك مقارنة بـافتتاح اللوفر أبوظبي؟",
+      "qid": "beforeafter-200-017",
+      "source": [
+        "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "liberty",
+          "louvreabudhabi"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1886,
+          2017
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح اللوفر أبوظبي مقارنة بـاكتمال بناء برج إيفل؟",
+      "qid": "beforeafter-200-018",
+      "source": [
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+        "https://www.toureiffel.paris/en/the-monument/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "louvreabudhabi",
+          "eiffel"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2017,
+          1889
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح تاور بريدج في لندن مقارنة بـافتتاح اللوفر أبوظبي؟",
+      "qid": "beforeafter-200-019",
+      "source": [
+        "https://www.towerbridge.org.uk/stories/history",
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "towerbridge",
+          "louvreabudhabi"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1894,
+          2017
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح اللوفر أبوظبي مقارنة بـافتتاح مبنى إمباير ستيت؟",
+      "qid": "beforeafter-200-020",
+      "source": [
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+        "https://www.esbnyc.com/about/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "louvreabudhabi",
+          "empirestate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2017,
+          1931
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "تدشين تمثال الحرية بنيويورك مقارنة بـافتتاح برج خليفة؟",
+      "qid": "beforeafter-200-021",
+      "source": [
+        "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+        "https://en.wikipedia.org/wiki/Burj_Khalifa"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "liberty",
+          "burjkhalifa"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1886,
+          2010
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح برج خليفة مقارنة بـاكتمال بناء برج إيفل؟",
+      "qid": "beforeafter-200-022",
+      "source": [
+        "https://en.wikipedia.org/wiki/Burj_Khalifa",
+        "https://www.toureiffel.paris/en/the-monument/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "burjkhalifa",
+          "eiffel"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2010,
+          1889
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح تاور بريدج في لندن مقارنة بـافتتاح برج خليفة؟",
+      "qid": "beforeafter-200-023",
+      "source": [
+        "https://www.towerbridge.org.uk/stories/history",
+        "https://en.wikipedia.org/wiki/Burj_Khalifa"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "towerbridge",
+          "burjkhalifa"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1894,
+          2010
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح برج خليفة مقارنة بـافتتاح مبنى إمباير ستيت؟",
+      "qid": "beforeafter-200-024",
+      "source": [
+        "https://en.wikipedia.org/wiki/Burj_Khalifa",
+        "https://www.esbnyc.com/about/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "burjkhalifa",
+          "empirestate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2010,
+          1931
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "صدور رسوم «الأسد الملك» الأصلية مقارنة بـصدور رسوم «سنو وايت والأقزام السبعة»؟",
+      "qid": "beforeafter-200-025",
+      "source": [
+        "https://movies.disney.com/the-lion-king",
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "lionking",
+          "snowwhite"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1994,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "صدور رسوم «سنو وايت والأقزام السبعة» مقارنة بـصدور أول أفلام «جوراسيك بارك»؟",
+      "qid": "beforeafter-200-026",
+      "source": [
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
+        "https://www.universalpicturesathome.com/movies/jurassic-park"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "snowwhite",
+          "jurassicpark"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1937,
+          1993
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "صدور رسوم «علاء الدين» الأصلية مقارنة بـصدور رسوم «سنو وايت والأقزام السبعة»؟",
+      "qid": "beforeafter-200-027",
+      "source": [
+        "https://movies.disney.com/aladdin",
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "aladdin",
+          "snowwhite"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1992,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "صدور رسوم «سنو وايت والأقزام السبعة» مقارنة بـصدور رسوم «الجميلة والوحش» الأصلية؟",
+      "qid": "beforeafter-200-028",
+      "source": [
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
+        "https://movies.disney.com/beauty-and-the-beast"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "snowwhite",
+          "beautybeast"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1937,
+          1991
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "صدور أول أفلام «العودة إلى المستقبل» مقارنة بـصدور رسوم «سنو وايت والأقزام السبعة»؟",
+      "qid": "beforeafter-200-029",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "bttf",
+          "snowwhite"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1985,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "صدور رسوم «سندريلا» الأصلية مقارنة بـصدور رسوم «الأسد الملك» الأصلية؟",
+      "qid": "beforeafter-200-030",
+      "source": [
+        "https://movies.disney.com/cinderella-1950",
+        "https://movies.disney.com/the-lion-king"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cinderella",
+          "lionking"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1994
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "صدور أول أفلام «جوراسيك بارك» مقارنة بـصدور رسوم «سندريلا» الأصلية؟",
+      "qid": "beforeafter-200-031",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jurassic-park",
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jurassicpark",
+          "cinderella"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1993,
+          1950
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "صدور رسوم «سندريلا» الأصلية مقارنة بـصدور رسوم «علاء الدين» الأصلية؟",
+      "qid": "beforeafter-200-032",
+      "source": [
+        "https://movies.disney.com/cinderella-1950",
+        "https://movies.disney.com/aladdin"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cinderella",
+          "aladdin"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "أول أولمبياد صيفي بمكسيكو سيتي مقارنة بـأول أولمبياد صيفي بريو دي جانيرو؟",
+      "qid": "beforeafter-200-033",
+      "source": [
+        "https://en.wikipedia.org/wiki/1968_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "mexico",
+          "rio"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          2016
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "أول أولمبياد صيفي بريو دي جانيرو مقارنة بـأول أولمبياد صيفي بميونخ؟",
+      "qid": "beforeafter-200-034",
+      "source": [
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "rio",
+          "munich"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2016,
+          1972
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "أول أولمبياد صيفي بمونتريال مقارنة بـأول أولمبياد صيفي بريو دي جانيرو؟",
+      "qid": "beforeafter-200-035",
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montreal",
+          "rio"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          2016
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "أول أولمبياد صيفي بريو دي جانيرو مقارنة بـأول أولمبياد صيفي بموسكو؟",
+      "qid": "beforeafter-200-036",
+      "source": [
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "rio",
+          "moscow"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2016,
+          1980
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "أول أولمبياد صيفي بسيول مقارنة بـأول أولمبياد صيفي بريو دي جانيرو؟",
+      "qid": "beforeafter-200-037",
+      "source": [
+        "https://en.wikipedia.org/wiki/1988_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "seoul",
+          "rio"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1988,
+          2016
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "أول أولمبياد صيفي بريو دي جانيرو مقارنة بـأول أولمبياد صيفي ببرشلونة؟",
+      "qid": "beforeafter-200-038",
+      "source": [
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "rio",
+          "barcelona"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2016,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "أول أولمبياد صيفي بأتلانتا مقارنة بـأول أولمبياد صيفي بريو دي جانيرو؟",
+      "qid": "beforeafter-200-039",
+      "source": [
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "atlanta",
+          "rio"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1996,
+          2016
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "أول أولمبياد صيفي بريو دي جانيرو مقارنة بـأول أولمبياد صيفي بسيدني؟",
+      "qid": "beforeafter-200-040",
+      "source": [
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "rio",
+          "sydneygames"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2016,
+          2000
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو الرياض مقارنة بـبدء تشغيل مترو لندن؟",
+      "qid": "beforeafter-200-041",
+      "source": [
+        "https://en.wikipedia.org/wiki/Riyadh_Metro",
+        "https://en.wikipedia.org/wiki/London_Underground"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "riyadhmetro",
+          "londonmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2024,
+          1863
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو باريس مقارنة بـبدء تشغيل مترو الرياض؟",
+      "qid": "beforeafter-200-042",
+      "source": [
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+        "https://en.wikipedia.org/wiki/Riyadh_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "parismetro",
+          "riyadhmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1900,
+          2024
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو الرياض مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
+      "qid": "beforeafter-200-043",
+      "source": [
+        "https://en.wikipedia.org/wiki/Riyadh_Metro",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "riyadhmetro",
+          "newyorkmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2024,
+          1904
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـبدء تشغيل مترو الرياض؟",
+      "qid": "beforeafter-200-044",
+      "source": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metro",
+        "https://en.wikipedia.org/wiki/Riyadh_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "tokyometro",
+          "riyadhmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1927,
+          2024
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو الرياض مقارنة بـبدء تشغيل مترو موسكو؟",
+      "qid": "beforeafter-200-045",
+      "source": [
+        "https://en.wikipedia.org/wiki/Riyadh_Metro",
+        "https://en.wikipedia.org/wiki/Moscow_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "riyadhmetro",
+          "moscowmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2024,
+          1935
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو ستوكهولم كمترو كامل مقارنة بـبدء تشغيل مترو الرياض؟",
+      "qid": "beforeafter-200-046",
+      "source": [
+        "https://en.wikipedia.org/wiki/Stockholm_metro",
+        "https://en.wikipedia.org/wiki/Riyadh_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "stockholmmetro",
+          "riyadhmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          2024
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو الرياض مقارنة بـبدء تشغيل مترو مونتريال؟",
+      "qid": "beforeafter-200-047",
+      "source": [
+        "https://en.wikipedia.org/wiki/Riyadh_Metro",
+        "https://en.wikipedia.org/wiki/Montreal_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "riyadhmetro",
+          "montrealmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2024,
+          1966
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو دبي مقارنة بـبدء تشغيل مترو الرياض؟",
+      "qid": "beforeafter-200-048",
+      "source": [
+        "https://en.wikipedia.org/wiki/Dubai_Metro",
+        "https://en.wikipedia.org/wiki/Riyadh_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "dubaimetro",
+          "riyadhmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2009,
+          2024
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو لندن مقارنة بـبدء تشغيل مترو الدوحة؟",
+      "qid": "beforeafter-400-041",
+      "source": [
+        "https://en.wikipedia.org/wiki/London_Underground",
+        "https://en.wikipedia.org/wiki/Doha_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "londonmetro",
+          "dohametro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1863,
+          2019
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو الدوحة مقارنة بـبدء تشغيل مترو باريس؟",
+      "qid": "beforeafter-400-042",
+      "source": [
+        "https://en.wikipedia.org/wiki/Doha_Metro",
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "dohametro",
+          "parismetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2019,
+          1900
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح أول خط أنفاق لمترو نيويورك مقارنة بـبدء تشغيل مترو الدوحة؟",
+      "qid": "beforeafter-400-043",
+      "source": [
+        "https://en.wikipedia.org/wiki/New_York_City_Subway",
+        "https://en.wikipedia.org/wiki/Doha_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "newyorkmetro",
+          "dohametro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1904,
+          2019
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو الدوحة مقارنة بـافتتاح أول خط لمترو طوكيو؟",
+      "qid": "beforeafter-400-044",
+      "source": [
+        "https://en.wikipedia.org/wiki/Doha_Metro",
+        "https://en.wikipedia.org/wiki/Tokyo_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "dohametro",
+          "tokyometro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2019,
+          1927
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو موسكو مقارنة بـبدء تشغيل مترو الدوحة؟",
+      "qid": "beforeafter-400-045",
+      "source": [
+        "https://en.wikipedia.org/wiki/Moscow_Metro",
+        "https://en.wikipedia.org/wiki/Doha_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "moscowmetro",
+          "dohametro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1935,
+          2019
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو الرياض مقارنة بـبدء تشغيل مترو الدوحة؟",
+      "qid": "beforeafter-400-048",
+      "source": [
+        "https://en.wikipedia.org/wiki/Riyadh_Metro",
+        "https://en.wikipedia.org/wiki/Doha_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "riyadhmetro",
+          "dohametro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2024,
+          2019
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو دبي مقارنة بـبدء تشغيل مترو لندن؟",
+      "qid": "beforeafter-600-041",
+      "source": [
+        "https://en.wikipedia.org/wiki/Dubai_Metro",
+        "https://en.wikipedia.org/wiki/London_Underground"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "dubaimetro",
+          "londonmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2009,
+          1863
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو باريس مقارنة بـبدء تشغيل مترو دبي؟",
+      "qid": "beforeafter-600-042",
+      "source": [
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+        "https://en.wikipedia.org/wiki/Dubai_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "parismetro",
+          "dubaimetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1900,
+          2009
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو دبي مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
+      "qid": "beforeafter-600-043",
+      "source": [
+        "https://en.wikipedia.org/wiki/Dubai_Metro",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "dubaimetro",
+          "newyorkmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2009,
+          1904
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـبدء تشغيل مترو دبي؟",
+      "qid": "beforeafter-600-044",
+      "source": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metro",
+        "https://en.wikipedia.org/wiki/Dubai_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "tokyometro",
+          "dubaimetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1927,
+          2009
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 200,
+      "q": "بدء تشغيل مترو دبي مقارنة بـبدء تشغيل مترو موسكو؟",
+      "qid": "beforeafter-600-045",
+      "source": [
+        "https://en.wikipedia.org/wiki/Dubai_Metro",
+        "https://en.wikipedia.org/wiki/Moscow_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "dubaimetro",
+          "moscowmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2009,
+          1935
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق مركبة كيوريوسيتي من الأرض مقارنة بـإطلاق تلسكوب جيمس ويب؟",
+      "qid": "beforeafter-1000-016",
+      "source": [
+        "https://science.nasa.gov/mission/msl-curiosity/",
+        "https://science.nasa.gov/mission/webb/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "curiosity",
+          "webb"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2011,
+          2021
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح مبنى إمباير ستيت مقارنة بـتدشين تمثال الحرية بنيويورك؟",
+      "qid": "beforeafter-1000-020",
+      "source": [
+        "https://www.esbnyc.com/about/history",
+        "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "empirestate",
+          "liberty"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1931,
+          1886
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "اكتمال بناء برج إيفل مقارنة بـافتتاح مبنى إمباير ستيت؟",
+      "qid": "beforeafter-1000-021",
+      "source": [
+        "https://www.toureiffel.paris/en/the-monument/history",
+        "https://www.esbnyc.com/about/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "eiffel",
+          "empirestate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1889,
+          1931
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "بدء تشغيل مترو باريس مقارنة بـبدء تشغيل مترو لندن؟",
+      "qid": "beforeafter-1000-041",
+      "source": [
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+        "https://en.wikipedia.org/wiki/London_Underground"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "parismetro",
+          "londonmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1900,
+          1863
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "بدء تشغيل مترو لندن مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
+      "qid": "beforeafter-1000-046",
+      "source": [
+        "https://en.wikipedia.org/wiki/London_Underground",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "londonmetro",
+          "newyorkmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1863,
+          1904
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق أول ماكنتوش مقارنة بـالكشف العلني عن حاسوب إنياك؟",
+      "qid": "beforeafter-400-001",
+      "source": [
+        "https://www.computerhistory.org/timeline/1984/",
+        "https://www.computerhistory.org/timeline/1946/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "macintosh",
+          "eniac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1984,
+          1946
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "تسليم يونيفاك الأول لمكتب الإحصاء الأمريكي مقارنة بـإطلاق أول ماكنتوش؟",
+      "qid": "beforeafter-400-002",
+      "source": [
+        "https://www.computerhistory.org/timeline/1951/",
+        "https://www.computerhistory.org/timeline/1984/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "univac",
+          "macintosh"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1951,
+          1984
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق أول ماكنتوش مقارنة بـظهور لغة فورتران؟",
+      "qid": "beforeafter-400-003",
+      "source": [
+        "https://www.computerhistory.org/timeline/1984/",
+        "https://www.computerhistory.org/timeline/1957/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "macintosh",
+          "fortran"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1984,
+          1957
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "ظهور لعبة سبيس وور مقارنة بـإطلاق أول ماكنتوش؟",
+      "qid": "beforeafter-400-004",
+      "source": [
+        "https://www.computerhistory.org/timeline/1962/",
+        "https://www.computerhistory.org/timeline/1984/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "spacewar",
+          "macintosh"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1962,
+          1984
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق أول ماكنتوش مقارنة بـبدء تشغيل شبكة أربانت؟",
+      "qid": "beforeafter-400-005",
+      "source": [
+        "https://www.computerhistory.org/timeline/1984/",
+        "https://www.computerhistory.org/timeline/1969/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "macintosh",
+          "arpanet"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1984,
+          1969
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "طرح معالج إنتل 4004 مقارنة بـإطلاق أول ماكنتوش؟",
+      "qid": "beforeafter-400-006",
+      "source": [
+        "https://www.computerhistory.org/timeline/1971/",
+        "https://www.computerhistory.org/timeline/1984/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "intel4004",
+          "macintosh"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1971,
+          1984
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق أول ماكنتوش مقارنة بـاكتمال حاسوب آبل الأول؟",
+      "qid": "beforeafter-400-007",
+      "source": [
+        "https://www.computerhistory.org/timeline/1984/",
+        "https://www.computerhistory.org/timeline/1976/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "macintosh",
+          "apple1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1984,
+          1976
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق أول ماكنتوش مقارنة بـإطلاق أول آيفون؟",
+      "qid": "beforeafter-400-008",
+      "source": [
+        "https://www.computerhistory.org/timeline/1984/",
+        "https://www.computerhistory.org/timeline/2007/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "macintosh",
+          "iphone"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1984,
+          2007
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق أبولو 8 مقارنة بـإطلاق مركبة كيوريوسيتي من الأرض؟",
+      "qid": "beforeafter-400-009",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-8/",
+        "https://science.nasa.gov/mission/msl-curiosity/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo8",
+          "curiosity"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          2011
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق مركبة كيوريوسيتي من الأرض مقارنة بـإطلاق أبولو 13؟",
+      "qid": "beforeafter-400-010",
+      "source": [
+        "https://science.nasa.gov/mission/msl-curiosity/",
+        "https://www.nasa.gov/mission/apollo-13/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "curiosity",
+          "apollo13"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2011,
+          1970
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق فوياجر 1 مقارنة بـإطلاق تلسكوب جيمس ويب؟",
+      "qid": "beforeafter-400-011",
+      "source": [
+        "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "https://science.nasa.gov/mission/webb/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "voyager1",
+          "webb"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1977,
+          2021
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق تلسكوب جيمس ويب مقارنة بـإطلاق تلسكوب هابل؟",
+      "qid": "beforeafter-400-012",
+      "source": [
+        "https://science.nasa.gov/mission/webb/",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "webb",
+          "hubble"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2021,
+          1990
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق تلسكوب هابل مقارنة بـإطلاق أرتميس 1؟",
+      "qid": "beforeafter-400-013",
+      "source": [
+        "https://science.nasa.gov/mission/hubble/",
+        "https://www.nasa.gov/mission/artemis-i/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "hubble",
+          "artemis1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1990,
+          2022
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق نيو هورايزنز مقارنة بـهبوط أبولو 11 على القمر؟",
+      "qid": "beforeafter-400-014",
+      "source": [
+        "https://science.nasa.gov/mission/new-horizons/",
+        "https://www.nasa.gov/mission/apollo-11/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "newhorizons",
+          "apollo11"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2006,
+          1969
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق أبولو 8 مقارنة بـإطلاق نيو هورايزنز؟",
+      "qid": "beforeafter-400-015",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-8/",
+        "https://science.nasa.gov/mission/new-horizons/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo8",
+          "newhorizons"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          2006
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق نيو هورايزنز مقارنة بـإطلاق أبولو 13؟",
+      "qid": "beforeafter-400-016",
+      "source": [
+        "https://science.nasa.gov/mission/new-horizons/",
+        "https://www.nasa.gov/mission/apollo-13/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "newhorizons",
+          "apollo13"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2006,
+          1970
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح اللوفر أبوظبي مقارنة بـافتتاح جسر البوابة الذهبية؟",
+      "qid": "beforeafter-400-017",
+      "source": [
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "louvreabudhabi",
+          "goldengate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2017,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح برج سبيس نيدل مقارنة بـافتتاح اللوفر أبوظبي؟",
+      "qid": "beforeafter-400-018",
+      "source": [
+        "https://www.spaceneedle.com/history",
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "spaceneedle",
+          "louvreabudhabi"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1962,
+          2017
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح اللوفر أبوظبي مقارنة بـافتتاح دار أوبرا سيدني؟",
+      "qid": "beforeafter-400-019",
+      "source": [
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+        "https://www.sydneyoperahouse.com/our-story"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "louvreabudhabi",
+          "sydneyopera"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2017,
+          1973
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح جسر البوابة الذهبية مقارنة بـافتتاح برج خليفة؟",
+      "qid": "beforeafter-400-020",
+      "source": [
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+        "https://en.wikipedia.org/wiki/Burj_Khalifa"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "goldengate",
+          "burjkhalifa"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1937,
+          2010
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح برج خليفة مقارنة بـافتتاح برج سبيس نيدل؟",
+      "qid": "beforeafter-400-021",
+      "source": [
+        "https://en.wikipedia.org/wiki/Burj_Khalifa",
+        "https://www.spaceneedle.com/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "burjkhalifa",
+          "spaceneedle"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2010,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح دار أوبرا سيدني مقارنة بـافتتاح برج خليفة؟",
+      "qid": "beforeafter-400-022",
+      "source": [
+        "https://www.sydneyoperahouse.com/our-story",
+        "https://en.wikipedia.org/wiki/Burj_Khalifa"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "sydneyopera",
+          "burjkhalifa"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1973,
+          2010
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "الافتتاح الرسمي لبرجي بتروناس مقارنة بـتدشين تمثال الحرية بنيويورك؟",
+      "qid": "beforeafter-400-023",
+      "source": [
+        "https://en.wikipedia.org/wiki/Petronas_Towers",
+        "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "petronas",
+          "liberty"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1999,
+          1886
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "اكتمال بناء برج إيفل مقارنة بـالافتتاح الرسمي لبرجي بتروناس؟",
+      "qid": "beforeafter-400-024",
+      "source": [
+        "https://www.toureiffel.paris/en/the-monument/history",
+        "https://en.wikipedia.org/wiki/Petronas_Towers"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "eiffel",
+          "petronas"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1889,
+          1999
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور رسوم «سنو وايت والأقزام السبعة» مقارنة بـصدور فيلم «إي تي»؟",
+      "qid": "beforeafter-400-025",
+      "source": [
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "snowwhite",
+          "et"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1937,
+          1982
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور فيلم «الفك المفترس» الأصلي مقارنة بـصدور رسوم «سنو وايت والأقزام السبعة»؟",
+      "qid": "beforeafter-400-026",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jaws",
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jaws",
+          "snowwhite"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1975,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور رسوم «سندريلا» الأصلية مقارنة بـصدور رسوم «الجميلة والوحش» الأصلية؟",
+      "qid": "beforeafter-400-027",
+      "source": [
+        "https://movies.disney.com/cinderella-1950",
+        "https://movies.disney.com/beauty-and-the-beast"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cinderella",
+          "beautybeast"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1991
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور أول أفلام «العودة إلى المستقبل» مقارنة بـصدور رسوم «سندريلا» الأصلية؟",
+      "qid": "beforeafter-400-028",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "bttf",
+          "cinderella"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1985,
+          1950
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور رسوم «سندريلا» الأصلية مقارنة بـصدور فيلم «إي تي»؟",
+      "qid": "beforeafter-400-029",
+      "source": [
+        "https://movies.disney.com/cinderella-1950",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cinderella",
+          "et"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1982
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور رسوم «الأسد الملك» الأصلية مقارنة بـصدور رسوم «كتاب الأدغال» الأصلية؟",
+      "qid": "beforeafter-400-030",
+      "source": [
+        "https://movies.disney.com/the-lion-king",
+        "https://movies.disney.com/the-jungle-book-1967"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "lionking",
+          "junglebook"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1994,
+          1967
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور رسوم «كتاب الأدغال» الأصلية مقارنة بـصدور أول أفلام «جوراسيك بارك»؟",
+      "qid": "beforeafter-400-031",
+      "source": [
+        "https://movies.disney.com/the-jungle-book-1967",
+        "https://www.universalpicturesathome.com/movies/jurassic-park"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "junglebook",
+          "jurassicpark"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1967,
+          1993
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور رسوم «علاء الدين» الأصلية مقارنة بـصدور رسوم «كتاب الأدغال» الأصلية؟",
+      "qid": "beforeafter-400-032",
+      "source": [
+        "https://movies.disney.com/aladdin",
+        "https://movies.disney.com/the-jungle-book-1967"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "aladdin",
+          "junglebook"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1992,
+          1967
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "أول أولمبياد صيفي ببكين مقارنة بـأول أولمبياد صيفي بمكسيكو سيتي؟",
+      "qid": "beforeafter-400-033",
+      "source": [
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1968_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "beijing",
+          "mexico"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2008,
+          1968
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "أول أولمبياد صيفي بميونخ مقارنة بـأول أولمبياد صيفي ببكين؟",
+      "qid": "beforeafter-400-034",
+      "source": [
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "munich",
+          "beijing"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1972,
+          2008
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "أول أولمبياد صيفي ببكين مقارنة بـأول أولمبياد صيفي بمونتريال؟",
+      "qid": "beforeafter-400-035",
+      "source": [
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "beijing",
+          "montreal"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2008,
+          1976
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "أول أولمبياد صيفي بموسكو مقارنة بـأول أولمبياد صيفي ببكين؟",
+      "qid": "beforeafter-400-036",
+      "source": [
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "moscow",
+          "beijing"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1980,
+          2008
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "أول أولمبياد صيفي ببكين مقارنة بـأول أولمبياد صيفي بسيول؟",
+      "qid": "beforeafter-400-037",
+      "source": [
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1988_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "beijing",
+          "seoul"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2008,
+          1988
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "أول أولمبياد صيفي ببرشلونة مقارنة بـأول أولمبياد صيفي ببكين؟",
+      "qid": "beforeafter-400-038",
+      "source": [
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "barcelona",
+          "beijing"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1992,
+          2008
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "أول أولمبياد صيفي ببكين مقارنة بـأول أولمبياد صيفي بأتلانتا؟",
+      "qid": "beforeafter-400-039",
+      "source": [
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "beijing",
+          "atlanta"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2008,
+          1996
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "أول أولمبياد صيفي ببكين مقارنة بـأول أولمبياد صيفي بريو دي جانيرو؟",
+      "qid": "beforeafter-400-040",
+      "source": [
+        "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2016_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "beijing",
+          "rio"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2008,
+          2016
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "بدء تشغيل مترو الدوحة مقارنة بـبدء تشغيل مترو ستوكهولم كمترو كامل؟",
+      "qid": "beforeafter-400-046",
+      "source": [
+        "https://en.wikipedia.org/wiki/Doha_Metro",
+        "https://en.wikipedia.org/wiki/Stockholm_metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "dohametro",
+          "stockholmmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2019,
+          1950
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "بدء تشغيل مترو مونتريال مقارنة بـبدء تشغيل مترو الدوحة؟",
+      "qid": "beforeafter-400-047",
+      "source": [
+        "https://en.wikipedia.org/wiki/Montreal_Metro",
+        "https://en.wikipedia.org/wiki/Doha_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montrealmetro",
+          "dohametro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1966,
+          2019
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "الكشف العلني عن حاسوب إنياك مقارنة بـالإعلان عن حاسوب آي بي إم الشخصي؟",
+      "qid": "beforeafter-600-001",
+      "source": [
+        "https://www.computerhistory.org/timeline/1946/",
+        "https://www.computerhistory.org/timeline/1981/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "eniac",
+          "ibmpc"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1946,
+          1981
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "الإعلان عن حاسوب آي بي إم الشخصي مقارنة بـتسليم يونيفاك الأول لمكتب الإحصاء الأمريكي؟",
+      "qid": "beforeafter-600-002",
+      "source": [
+        "https://www.computerhistory.org/timeline/1981/",
+        "https://www.computerhistory.org/timeline/1951/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "ibmpc",
+          "univac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1981,
+          1951
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "اكتمال حاسوب آبل الأول مقارنة بـالكشف العلني عن حاسوب إنياك؟",
+      "qid": "beforeafter-600-008",
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1946/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apple1",
+          "eniac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1946
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "تدشين تمثال الحرية بنيويورك مقارنة بـافتتاح دار أوبرا سيدني؟",
+      "qid": "beforeafter-600-017",
+      "source": [
+        "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+        "https://www.sydneyoperahouse.com/our-story"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "liberty",
+          "sydneyopera"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1886,
+          1973
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح دار أوبرا سيدني مقارنة بـاكتمال بناء برج إيفل؟",
+      "qid": "beforeafter-600-018",
+      "source": [
+        "https://www.sydneyoperahouse.com/our-story",
+        "https://www.toureiffel.paris/en/the-monument/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "sydneyopera",
+          "eiffel"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1973,
+          1889
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "بدء تشغيل مترو ستوكهولم كمترو كامل مقارنة بـبدء تشغيل مترو دبي؟",
+      "qid": "beforeafter-600-046",
+      "source": [
+        "https://en.wikipedia.org/wiki/Stockholm_metro",
+        "https://en.wikipedia.org/wiki/Dubai_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "stockholmmetro",
+          "dubaimetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          2009
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "بدء تشغيل مترو دبي مقارنة بـبدء تشغيل مترو مونتريال؟",
+      "qid": "beforeafter-600-047",
+      "source": [
+        "https://en.wikipedia.org/wiki/Dubai_Metro",
+        "https://en.wikipedia.org/wiki/Montreal_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "dubaimetro",
+          "montrealmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2009,
+          1966
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "بدء تشغيل مترو لندن مقارنة بـبدء تشغيل مترو مونتريال؟",
+      "qid": "beforeafter-600-048",
+      "source": [
+        "https://en.wikipedia.org/wiki/London_Underground",
+        "https://en.wikipedia.org/wiki/Montreal_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "londonmetro",
+          "montrealmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1863,
+          1966
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق تلسكوب هابل مقارنة بـهبوط أبولو 11 على القمر؟",
+      "qid": "beforeafter-800-012",
+      "source": [
+        "https://science.nasa.gov/mission/hubble/",
+        "https://www.nasa.gov/mission/apollo-11/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "hubble",
+          "apollo11"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1990,
+          1969
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق أبولو 8 مقارنة بـإطلاق تلسكوب هابل؟",
+      "qid": "beforeafter-800-013",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-8/",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo8",
+          "hubble"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          1990
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "إطلاق تلسكوب هابل مقارنة بـإطلاق أبولو 13؟",
+      "qid": "beforeafter-800-014",
+      "source": [
+        "https://science.nasa.gov/mission/hubble/",
+        "https://www.nasa.gov/mission/apollo-13/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "hubble",
+          "apollo13"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1990,
+          1970
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "الافتتاح الرسمي لبرجي بتروناس مقارنة بـافتتاح تاور بريدج في لندن؟",
+      "qid": "beforeafter-800-017",
+      "source": [
+        "https://en.wikipedia.org/wiki/Petronas_Towers",
+        "https://www.towerbridge.org.uk/stories/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "petronas",
+          "towerbridge"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1999,
+          1894
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "افتتاح مبنى إمباير ستيت مقارنة بـالافتتاح الرسمي لبرجي بتروناس؟",
+      "qid": "beforeafter-800-018",
+      "source": [
+        "https://www.esbnyc.com/about/history",
+        "https://en.wikipedia.org/wiki/Petronas_Towers"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "empirestate",
+          "petronas"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1931,
+          1999
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "الافتتاح الرسمي لبرجي بتروناس مقارنة بـافتتاح جسر البوابة الذهبية؟",
+      "qid": "beforeafter-800-019",
+      "source": [
+        "https://en.wikipedia.org/wiki/Petronas_Towers",
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "petronas",
+          "goldengate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1999,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور رسوم «سنو وايت والأقزام السبعة» مقارنة بـصدور رسوم «سندريلا» الأصلية؟",
+      "qid": "beforeafter-800-025",
+      "source": [
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "snowwhite",
+          "cinderella"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1937,
+          1950
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور رسوم «كتاب الأدغال» الأصلية مقارنة بـصدور رسوم «سنو وايت والأقزام السبعة»؟",
+      "qid": "beforeafter-800-026",
+      "source": [
+        "https://movies.disney.com/the-jungle-book-1967",
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "junglebook",
+          "snowwhite"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1967,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "صدور فيلم «الفك المفترس» الأصلي مقارنة بـصدور رسوم «سندريلا» الأصلية؟",
+      "qid": "beforeafter-800-028",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jaws",
+        "https://movies.disney.com/cinderella-1950"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jaws",
+          "cinderella"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1975,
+          1950
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 400,
+      "q": "بدء تشغيل مترو ستوكهولم كمترو كامل مقارنة بـبدء تشغيل مترو لندن؟",
+      "qid": "beforeafter-800-046",
+      "source": [
+        "https://en.wikipedia.org/wiki/Stockholm_metro",
+        "https://en.wikipedia.org/wiki/London_Underground"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "stockholmmetro",
+          "londonmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1863
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق تلسكوب هابل مقارنة بـإطلاق فوياجر 1؟",
+      "qid": "beforeafter-1000-009",
+      "source": [
+        "https://science.nasa.gov/mission/hubble/",
+        "https://science.nasa.gov/mission/voyager/voyager-1/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "hubble",
+          "voyager1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1990,
+          1977
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق فوياجر 1 مقارنة بـإطلاق كاسيني؟",
+      "qid": "beforeafter-1000-010",
+      "source": [
+        "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "https://science.nasa.gov/mission/cassini/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "voyager1",
+          "cassini"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1977,
+          1997
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق تلسكوب جيمس ويب مقارنة بـإطلاق نيو هورايزنز؟",
+      "qid": "beforeafter-1000-015",
+      "source": [
+        "https://science.nasa.gov/mission/webb/",
+        "https://science.nasa.gov/mission/new-horizons/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "webb",
+          "newhorizons"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2021,
+          2006
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح مبنى إمباير ستيت مقارنة بـافتتاح تاور بريدج في لندن؟",
+      "qid": "beforeafter-1000-022",
+      "source": [
+        "https://www.esbnyc.com/about/history",
+        "https://www.towerbridge.org.uk/stories/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "empirestate",
+          "towerbridge"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1931,
+          1894
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "ظهور لغة فورتران مقارنة بـالإعلان عن حاسوب آي بي إم الشخصي؟",
+      "qid": "beforeafter-600-003",
+      "source": [
+        "https://www.computerhistory.org/timeline/1957/",
+        "https://www.computerhistory.org/timeline/1981/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "fortran",
+          "ibmpc"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1957,
+          1981
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "الإعلان عن حاسوب آي بي إم الشخصي مقارنة بـظهور لعبة سبيس وور؟",
+      "qid": "beforeafter-600-004",
+      "source": [
+        "https://www.computerhistory.org/timeline/1981/",
+        "https://www.computerhistory.org/timeline/1962/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "ibmpc",
+          "spacewar"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1981,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "بدء تشغيل شبكة أربانت مقارنة بـالإعلان عن حاسوب آي بي إم الشخصي؟",
+      "qid": "beforeafter-600-005",
+      "source": [
+        "https://www.computerhistory.org/timeline/1969/",
+        "https://www.computerhistory.org/timeline/1981/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "arpanet",
+          "ibmpc"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1969,
+          1981
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "الإعلان عن حاسوب آي بي إم الشخصي مقارنة بـطرح معالج إنتل 4004؟",
+      "qid": "beforeafter-600-006",
+      "source": [
+        "https://www.computerhistory.org/timeline/1981/",
+        "https://www.computerhistory.org/timeline/1971/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "ibmpc",
+          "intel4004"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1981,
+          1971
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "اكتمال حاسوب آبل الأول مقارنة بـالإعلان عن حاسوب آي بي إم الشخصي؟",
+      "qid": "beforeafter-600-007",
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1981/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apple1",
+          "ibmpc"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1981
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق كاسيني مقارنة بـهبوط أبولو 11 على القمر؟",
+      "qid": "beforeafter-600-009",
+      "source": [
+        "https://science.nasa.gov/mission/cassini/",
+        "https://www.nasa.gov/mission/apollo-11/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cassini",
+          "apollo11"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1997,
+          1969
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق أبولو 8 مقارنة بـإطلاق كاسيني؟",
+      "qid": "beforeafter-600-010",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-8/",
+        "https://science.nasa.gov/mission/cassini/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo8",
+          "cassini"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          1997
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق كاسيني مقارنة بـإطلاق أبولو 13؟",
+      "qid": "beforeafter-600-011",
+      "source": [
+        "https://science.nasa.gov/mission/cassini/",
+        "https://www.nasa.gov/mission/apollo-13/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cassini",
+          "apollo13"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1997,
+          1970
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق فوياجر 1 مقارنة بـإطلاق مركبة كيوريوسيتي من الأرض؟",
+      "qid": "beforeafter-600-012",
+      "source": [
+        "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "https://science.nasa.gov/mission/msl-curiosity/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "voyager1",
+          "curiosity"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1977,
+          2011
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق مركبة كيوريوسيتي من الأرض مقارنة بـإطلاق تلسكوب هابل؟",
+      "qid": "beforeafter-600-013",
+      "source": [
+        "https://science.nasa.gov/mission/msl-curiosity/",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "curiosity",
+          "hubble"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2011,
+          1990
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق كاسيني مقارنة بـإطلاق أرتميس 1؟",
+      "qid": "beforeafter-600-014",
+      "source": [
+        "https://science.nasa.gov/mission/cassini/",
+        "https://www.nasa.gov/mission/artemis-i/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cassini",
+          "artemis1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1997,
+          2022
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق تلسكوب جيمس ويب مقارنة بـإطلاق كاسيني؟",
+      "qid": "beforeafter-600-015",
+      "source": [
+        "https://science.nasa.gov/mission/webb/",
+        "https://science.nasa.gov/mission/cassini/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "webb",
+          "cassini"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2021,
+          1997
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق نيو هورايزنز مقارنة بـإطلاق أرتميس 1؟",
+      "qid": "beforeafter-600-016",
+      "source": [
+        "https://science.nasa.gov/mission/new-horizons/",
+        "https://www.nasa.gov/mission/artemis-i/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "newhorizons",
+          "artemis1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2006,
+          2022
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح تاور بريدج في لندن مقارنة بـافتتاح دار أوبرا سيدني؟",
+      "qid": "beforeafter-600-019",
+      "source": [
+        "https://www.towerbridge.org.uk/stories/history",
+        "https://www.sydneyoperahouse.com/our-story"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "towerbridge",
+          "sydneyopera"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1894,
+          1973
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح دار أوبرا سيدني مقارنة بـافتتاح مبنى إمباير ستيت؟",
+      "qid": "beforeafter-600-020",
+      "source": [
+        "https://www.sydneyoperahouse.com/our-story",
+        "https://www.esbnyc.com/about/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "sydneyopera",
+          "empirestate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1973,
+          1931
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح جسر البوابة الذهبية مقارنة بـافتتاح دار أوبرا سيدني؟",
+      "qid": "beforeafter-600-021",
+      "source": [
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+        "https://www.sydneyoperahouse.com/our-story"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "goldengate",
+          "sydneyopera"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1937,
+          1973
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح برج سبيس نيدل مقارنة بـتدشين تمثال الحرية بنيويورك؟",
+      "qid": "beforeafter-600-022",
+      "source": [
+        "https://www.spaceneedle.com/history",
+        "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "spaceneedle",
+          "liberty"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1962,
+          1886
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "اكتمال بناء برج إيفل مقارنة بـافتتاح برج سبيس نيدل؟",
+      "qid": "beforeafter-600-023",
+      "source": [
+        "https://www.toureiffel.paris/en/the-monument/history",
+        "https://www.spaceneedle.com/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "eiffel",
+          "spaceneedle"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1889,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح برج سبيس نيدل مقارنة بـافتتاح تاور بريدج في لندن؟",
+      "qid": "beforeafter-600-024",
+      "source": [
+        "https://www.spaceneedle.com/history",
+        "https://www.towerbridge.org.uk/stories/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "spaceneedle",
+          "towerbridge"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1962,
+          1894
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور رسوم «الجميلة والوحش» الأصلية مقارنة بـصدور رسوم «كتاب الأدغال» الأصلية؟",
+      "qid": "beforeafter-600-025",
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
+        "https://movies.disney.com/the-jungle-book-1967"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "beautybeast",
+          "junglebook"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1991,
+          1967
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور رسوم «كتاب الأدغال» الأصلية مقارنة بـصدور أول أفلام «العودة إلى المستقبل»؟",
+      "qid": "beforeafter-600-026",
+      "source": [
+        "https://movies.disney.com/the-jungle-book-1967",
+        "https://www.universalpicturesathome.com/movies/back-to-the-future"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "junglebook",
+          "bttf"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1967,
+          1985
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور فيلم «إي تي» مقارنة بـصدور رسوم «كتاب الأدغال» الأصلية؟",
+      "qid": "beforeafter-600-027",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+        "https://movies.disney.com/the-jungle-book-1967"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "et",
+          "junglebook"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1982,
+          1967
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور رسوم «كتاب الأدغال» الأصلية مقارنة بـصدور فيلم «الفك المفترس» الأصلي؟",
+      "qid": "beforeafter-600-028",
+      "source": [
+        "https://movies.disney.com/the-jungle-book-1967",
+        "https://www.universalpicturesathome.com/movies/jaws"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "junglebook",
+          "jaws"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1967,
+          1975
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور رسوم «الأسد الملك» الأصلية مقارنة بـصدور فيلم «الفك المفترس» الأصلي؟",
+      "qid": "beforeafter-600-029",
+      "source": [
+        "https://movies.disney.com/the-lion-king",
+        "https://www.universalpicturesathome.com/movies/jaws"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "lionking",
+          "jaws"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1994,
+          1975
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور فيلم «الفك المفترس» الأصلي مقارنة بـصدور أول أفلام «جوراسيك بارك»؟",
+      "qid": "beforeafter-600-030",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jaws",
+        "https://www.universalpicturesathome.com/movies/jurassic-park"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jaws",
+          "jurassicpark"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1975,
+          1993
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور رسوم «علاء الدين» الأصلية مقارنة بـصدور فيلم «الفك المفترس» الأصلي؟",
+      "qid": "beforeafter-600-031",
+      "source": [
+        "https://movies.disney.com/aladdin",
+        "https://www.universalpicturesathome.com/movies/jaws"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "aladdin",
+          "jaws"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1992,
+          1975
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور فيلم «الفك المفترس» الأصلي مقارنة بـصدور رسوم «الجميلة والوحش» الأصلية؟",
+      "qid": "beforeafter-600-032",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jaws",
+        "https://movies.disney.com/beauty-and-the-beast"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jaws",
+          "beautybeast"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1975,
+          1991
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بمكسيكو سيتي مقارنة بـأول أولمبياد صيفي بسيدني؟",
+      "qid": "beforeafter-600-033",
+      "source": [
+        "https://en.wikipedia.org/wiki/1968_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "mexico",
+          "sydneygames"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          2000
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بسيدني مقارنة بـأول أولمبياد صيفي بميونخ؟",
+      "qid": "beforeafter-600-034",
+      "source": [
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "sydneygames",
+          "munich"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2000,
+          1972
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بمونتريال مقارنة بـأول أولمبياد صيفي بسيدني؟",
+      "qid": "beforeafter-600-035",
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montreal",
+          "sydneygames"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          2000
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بسيدني مقارنة بـأول أولمبياد صيفي بموسكو؟",
+      "qid": "beforeafter-600-036",
+      "source": [
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "sydneygames",
+          "moscow"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2000,
+          1980
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بسيول مقارنة بـأول أولمبياد صيفي بسيدني؟",
+      "qid": "beforeafter-600-037",
+      "source": [
+        "https://en.wikipedia.org/wiki/1988_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "seoul",
+          "sydneygames"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1988,
+          2000
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بسيدني مقارنة بـأول أولمبياد صيفي ببرشلونة؟",
+      "qid": "beforeafter-600-038",
+      "source": [
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "sydneygames",
+          "barcelona"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2000,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بأتلانتا مقارنة بـأول أولمبياد صيفي بسيدني؟",
+      "qid": "beforeafter-600-039",
+      "source": [
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "atlanta",
+          "sydneygames"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1996,
+          2000
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بأتلانتا مقارنة بـأول أولمبياد صيفي بمكسيكو سيتي؟",
+      "qid": "beforeafter-600-040",
+      "source": [
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1968_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "atlanta",
+          "mexico"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1996,
+          1968
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "اكتمال حاسوب آبل الأول مقارنة بـتسليم يونيفاك الأول لمكتب الإحصاء الأمريكي؟",
+      "qid": "beforeafter-800-001",
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1951/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apple1",
+          "univac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1951
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "الكشف العلني عن حاسوب إنياك مقارنة بـطرح معالج إنتل 4004؟",
+      "qid": "beforeafter-800-006",
+      "source": [
+        "https://www.computerhistory.org/timeline/1946/",
+        "https://www.computerhistory.org/timeline/1971/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "eniac",
+          "intel4004"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1946,
+          1971
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "طرح معالج إنتل 4004 مقارنة بـتسليم يونيفاك الأول لمكتب الإحصاء الأمريكي؟",
+      "qid": "beforeafter-800-007",
+      "source": [
+        "https://www.computerhistory.org/timeline/1971/",
+        "https://www.computerhistory.org/timeline/1951/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "intel4004",
+          "univac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1971,
+          1951
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "هبوط أبولو 11 على القمر مقارنة بـإطلاق فوياجر 1؟",
+      "qid": "beforeafter-800-009",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-11/",
+        "https://science.nasa.gov/mission/voyager/voyager-1/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo11",
+          "voyager1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1969,
+          1977
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق فوياجر 1 مقارنة بـإطلاق أبولو 8؟",
+      "qid": "beforeafter-800-010",
+      "source": [
+        "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "https://www.nasa.gov/mission/apollo-8/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "voyager1",
+          "apollo8"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1977,
+          1968
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق أبولو 13 مقارنة بـإطلاق فوياجر 1؟",
+      "qid": "beforeafter-800-011",
+      "source": [
+        "https://www.nasa.gov/mission/apollo-13/",
+        "https://science.nasa.gov/mission/voyager/voyager-1/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apollo13",
+          "voyager1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1970,
+          1977
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق فوياجر 1 مقارنة بـإطلاق نيو هورايزنز؟",
+      "qid": "beforeafter-800-015",
+      "source": [
+        "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "https://science.nasa.gov/mission/new-horizons/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "voyager1",
+          "newhorizons"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1977,
+          2006
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "إطلاق نيو هورايزنز مقارنة بـإطلاق تلسكوب هابل؟",
+      "qid": "beforeafter-800-016",
+      "source": [
+        "https://science.nasa.gov/mission/new-horizons/",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "newhorizons",
+          "hubble"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2006,
+          1990
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح برج سبيس نيدل مقارنة بـالافتتاح الرسمي لبرجي بتروناس؟",
+      "qid": "beforeafter-800-020",
+      "source": [
+        "https://www.spaceneedle.com/history",
+        "https://en.wikipedia.org/wiki/Petronas_Towers"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "spaceneedle",
+          "petronas"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1962,
+          1999
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "الافتتاح الرسمي لبرجي بتروناس مقارنة بـافتتاح دار أوبرا سيدني؟",
+      "qid": "beforeafter-800-021",
+      "source": [
+        "https://en.wikipedia.org/wiki/Petronas_Towers",
+        "https://www.sydneyoperahouse.com/our-story"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "petronas",
+          "sydneyopera"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1999,
+          1973
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح تاور بريدج في لندن مقارنة بـافتتاح جسر البوابة الذهبية؟",
+      "qid": "beforeafter-800-022",
+      "source": [
+        "https://www.towerbridge.org.uk/stories/history",
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "towerbridge",
+          "goldengate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1894,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح برج سبيس نيدل مقارنة بـافتتاح مبنى إمباير ستيت؟",
+      "qid": "beforeafter-800-023",
+      "source": [
+        "https://www.spaceneedle.com/history",
+        "https://www.esbnyc.com/about/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "spaceneedle",
+          "empirestate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1962,
+          1931
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "افتتاح جسر البوابة الذهبية مقارنة بـافتتاح برج سبيس نيدل؟",
+      "qid": "beforeafter-800-024",
+      "source": [
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+        "https://www.spaceneedle.com/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "goldengate",
+          "spaceneedle"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1937,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور رسوم «سندريلا» الأصلية مقارنة بـصدور رسوم «كتاب الأدغال» الأصلية؟",
+      "qid": "beforeafter-800-027",
+      "source": [
+        "https://movies.disney.com/cinderella-1950",
+        "https://movies.disney.com/the-jungle-book-1967"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cinderella",
+          "junglebook"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1967
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور فيلم «الفك المفترس» الأصلي مقارنة بـصدور فيلم «إي تي»؟",
+      "qid": "beforeafter-800-029",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jaws",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jaws",
+          "et"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1975,
+          1982
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور أول أفلام «العودة إلى المستقبل» مقارنة بـصدور فيلم «الفك المفترس» الأصلي؟",
+      "qid": "beforeafter-800-030",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://www.universalpicturesathome.com/movies/jaws"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "bttf",
+          "jaws"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1985,
+          1975
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور فيلم «إي تي» مقارنة بـصدور أول أفلام «جوراسيك بارك»؟",
+      "qid": "beforeafter-800-031",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+        "https://www.universalpicturesathome.com/movies/jurassic-park"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "et",
+          "jurassicpark"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1982,
+          1993
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "صدور رسوم «الأسد الملك» الأصلية مقارنة بـصدور فيلم «إي تي»؟",
+      "qid": "beforeafter-800-032",
+      "source": [
+        "https://movies.disney.com/the-lion-king",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "lionking",
+          "et"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1994,
+          1982
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بأتلانتا مقارنة بـأول أولمبياد صيفي بميونخ؟",
+      "qid": "beforeafter-800-033",
+      "source": [
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "atlanta",
+          "munich"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1996,
+          1972
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بمونتريال مقارنة بـأول أولمبياد صيفي بأتلانتا؟",
+      "qid": "beforeafter-800-034",
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montreal",
+          "atlanta"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1996
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بأتلانتا مقارنة بـأول أولمبياد صيفي بموسكو؟",
+      "qid": "beforeafter-800-035",
+      "source": [
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "atlanta",
+          "moscow"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1996,
+          1980
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بسيول مقارنة بـأول أولمبياد صيفي بأتلانتا؟",
+      "qid": "beforeafter-800-036",
+      "source": [
+        "https://en.wikipedia.org/wiki/1988_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "seoul",
+          "atlanta"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1988,
+          1996
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بأتلانتا مقارنة بـأول أولمبياد صيفي ببرشلونة؟",
+      "qid": "beforeafter-800-037",
+      "source": [
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "atlanta",
+          "barcelona"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1996,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بمكسيكو سيتي مقارنة بـأول أولمبياد صيفي ببرشلونة؟",
+      "qid": "beforeafter-800-038",
+      "source": [
+        "https://en.wikipedia.org/wiki/1968_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "mexico",
+          "barcelona"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي ببرشلونة مقارنة بـأول أولمبياد صيفي بميونخ؟",
+      "qid": "beforeafter-800-039",
+      "source": [
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "barcelona",
+          "munich"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1992,
+          1972
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 600,
+      "q": "أول أولمبياد صيفي بمونتريال مقارنة بـأول أولمبياد صيفي ببرشلونة؟",
+      "qid": "beforeafter-800-040",
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montreal",
+          "barcelona"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "صدور أول أفلام «العودة إلى المستقبل» مقارنة بـصدور رسوم «الجميلة والوحش» الأصلية؟",
+      "qid": "beforeafter-1000-026",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://movies.disney.com/beauty-and-the-beast"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "bttf",
+          "beautybeast"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1985,
+          1991
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "صدور رسوم «علاء الدين» الأصلية مقارنة بـصدور أول أفلام «العودة إلى المستقبل»؟",
+      "qid": "beforeafter-1000-027",
+      "source": [
+        "https://movies.disney.com/aladdin",
+        "https://www.universalpicturesathome.com/movies/back-to-the-future"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "aladdin",
+          "bttf"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1992,
+          1985
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "صدور رسوم «الجميلة والوحش» الأصلية مقارنة بـصدور رسوم «الأسد الملك» الأصلية؟",
+      "qid": "beforeafter-1000-030",
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
+        "https://movies.disney.com/the-lion-king"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "beautybeast",
+          "lionking"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1991,
+          1994
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "أول أولمبياد صيفي بسيول مقارنة بـأول أولمبياد صيفي بموسكو؟",
+      "qid": "beforeafter-1000-036",
+      "source": [
+        "https://en.wikipedia.org/wiki/1988_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "seoul",
+          "moscow"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1988,
+          1980
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "أول أولمبياد صيفي بسيول مقارنة بـأول أولمبياد صيفي ببرشلونة؟",
+      "qid": "beforeafter-1000-037",
+      "source": [
+        "https://en.wikipedia.org/wiki/1988_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "seoul",
+          "barcelona"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1988,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "أول أولمبياد صيفي ببرشلونة مقارنة بـأول أولمبياد صيفي بموسكو؟",
+      "qid": "beforeafter-1000-040",
+      "source": [
+        "https://en.wikipedia.org/wiki/1992_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "barcelona",
+          "moscow"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1992,
+          1980
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "ظهور لغة فورتران مقارنة بـاكتمال حاسوب آبل الأول؟",
+      "qid": "beforeafter-800-002",
+      "source": [
+        "https://www.computerhistory.org/timeline/1957/",
+        "https://www.computerhistory.org/timeline/1976/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "fortran",
+          "apple1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1957,
+          1976
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "اكتمال حاسوب آبل الأول مقارنة بـظهور لعبة سبيس وور؟",
+      "qid": "beforeafter-800-003",
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1962/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apple1",
+          "spacewar"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "بدء تشغيل شبكة أربانت مقارنة بـاكتمال حاسوب آبل الأول؟",
+      "qid": "beforeafter-800-004",
+      "source": [
+        "https://www.computerhistory.org/timeline/1969/",
+        "https://www.computerhistory.org/timeline/1976/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "arpanet",
+          "apple1"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1969,
+          1976
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "اكتمال حاسوب آبل الأول مقارنة بـطرح معالج إنتل 4004؟",
+      "qid": "beforeafter-800-005",
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1971/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "apple1",
+          "intel4004"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1971
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "ظهور لغة فورتران مقارنة بـطرح معالج إنتل 4004؟",
+      "qid": "beforeafter-800-008",
+      "source": [
+        "https://www.computerhistory.org/timeline/1957/",
+        "https://www.computerhistory.org/timeline/1971/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "fortran",
+          "intel4004"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1957,
+          1971
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "بدء تشغيل مترو باريس مقارنة بـبدء تشغيل مترو مونتريال؟",
+      "qid": "beforeafter-800-041",
+      "source": [
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+        "https://en.wikipedia.org/wiki/Montreal_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "parismetro",
+          "montrealmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1900,
+          1966
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "بدء تشغيل مترو مونتريال مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
+      "qid": "beforeafter-800-042",
+      "source": [
+        "https://en.wikipedia.org/wiki/Montreal_Metro",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montrealmetro",
+          "newyorkmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1966,
+          1904
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـبدء تشغيل مترو مونتريال؟",
+      "qid": "beforeafter-800-043",
+      "source": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metro",
+        "https://en.wikipedia.org/wiki/Montreal_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "tokyometro",
+          "montrealmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1927,
+          1966
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "بدء تشغيل مترو مونتريال مقارنة بـبدء تشغيل مترو موسكو؟",
+      "qid": "beforeafter-800-044",
+      "source": [
+        "https://en.wikipedia.org/wiki/Montreal_Metro",
+        "https://en.wikipedia.org/wiki/Moscow_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montrealmetro",
+          "moscowmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1966,
+          1935
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "بدء تشغيل مترو ستوكهولم كمترو كامل مقارنة بـبدء تشغيل مترو مونتريال؟",
+      "qid": "beforeafter-800-045",
+      "source": [
+        "https://en.wikipedia.org/wiki/Stockholm_metro",
+        "https://en.wikipedia.org/wiki/Montreal_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "stockholmmetro",
+          "montrealmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1966
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "بدء تشغيل مترو باريس مقارنة بـبدء تشغيل مترو ستوكهولم كمترو كامل؟",
+      "qid": "beforeafter-800-047",
+      "source": [
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+        "https://en.wikipedia.org/wiki/Stockholm_metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "parismetro",
+          "stockholmmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1900,
+          1950
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 800,
+      "q": "بدء تشغيل مترو ستوكهولم كمترو كامل مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
+      "qid": "beforeafter-800-048",
+      "source": [
+        "https://en.wikipedia.org/wiki/Stockholm_metro",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "stockholmmetro",
+          "newyorkmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1904
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "الكشف العلني عن حاسوب إنياك مقارنة بـتسليم يونيفاك الأول لمكتب الإحصاء الأمريكي؟",
+      "qid": "beforeafter-1000-001",
+      "source": [
+        "https://www.computerhistory.org/timeline/1946/",
+        "https://www.computerhistory.org/timeline/1951/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "eniac",
+          "univac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1946,
+          1951
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "ظهور لغة فورتران مقارنة بـتسليم يونيفاك الأول لمكتب الإحصاء الأمريكي؟",
+      "qid": "beforeafter-1000-002",
+      "source": [
+        "https://www.computerhistory.org/timeline/1957/",
+        "https://www.computerhistory.org/timeline/1951/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "fortran",
+          "univac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1957,
+          1951
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "ظهور لغة فورتران مقارنة بـظهور لعبة سبيس وور؟",
+      "qid": "beforeafter-1000-003",
+      "source": [
+        "https://www.computerhistory.org/timeline/1957/",
+        "https://www.computerhistory.org/timeline/1962/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "fortran",
+          "spacewar"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1957,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "بدء تشغيل شبكة أربانت مقارنة بـظهور لعبة سبيس وور؟",
+      "qid": "beforeafter-1000-004",
+      "source": [
+        "https://www.computerhistory.org/timeline/1969/",
+        "https://www.computerhistory.org/timeline/1962/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "arpanet",
+          "spacewar"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1969,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "بدء تشغيل شبكة أربانت مقارنة بـطرح معالج إنتل 4004؟",
+      "qid": "beforeafter-1000-005",
+      "source": [
+        "https://www.computerhistory.org/timeline/1969/",
+        "https://www.computerhistory.org/timeline/1971/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "arpanet",
+          "intel4004"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1969,
+          1971
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "ظهور لغة فورتران مقارنة بـالكشف العلني عن حاسوب إنياك؟",
+      "qid": "beforeafter-1000-006",
+      "source": [
+        "https://www.computerhistory.org/timeline/1957/",
+        "https://www.computerhistory.org/timeline/1946/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "fortran",
+          "eniac"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1957,
+          1946
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "تسليم يونيفاك الأول لمكتب الإحصاء الأمريكي مقارنة بـظهور لعبة سبيس وور؟",
+      "qid": "beforeafter-1000-007",
+      "source": [
+        "https://www.computerhistory.org/timeline/1951/",
+        "https://www.computerhistory.org/timeline/1962/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "univac",
+          "spacewar"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1951,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "طرح معالج إنتل 4004 مقارنة بـظهور لعبة سبيس وور؟",
+      "qid": "beforeafter-1000-008",
+      "source": [
+        "https://www.computerhistory.org/timeline/1971/",
+        "https://www.computerhistory.org/timeline/1962/"
+      ],
+      "topic": "تاريخ الحوسبة",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "intel4004",
+          "spacewar"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1971,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "إطلاق كاسيني مقارنة بـإطلاق تلسكوب هابل؟",
+      "qid": "beforeafter-1000-011",
+      "source": [
+        "https://science.nasa.gov/mission/cassini/",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cassini",
+          "hubble"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1997,
+          1990
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "إطلاق كاسيني مقارنة بـإطلاق نيو هورايزنز؟",
+      "qid": "beforeafter-1000-012",
+      "source": [
+        "https://science.nasa.gov/mission/cassini/",
+        "https://science.nasa.gov/mission/new-horizons/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "cassini",
+          "newhorizons"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1997,
+          2006
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "إطلاق مركبة كيوريوسيتي من الأرض مقارنة بـإطلاق كاسيني؟",
+      "qid": "beforeafter-1000-013",
+      "source": [
+        "https://science.nasa.gov/mission/msl-curiosity/",
+        "https://science.nasa.gov/mission/cassini/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "curiosity",
+          "cassini"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2011,
+          1997
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "إطلاق نيو هورايزنز مقارنة بـإطلاق مركبة كيوريوسيتي من الأرض؟",
+      "qid": "beforeafter-1000-014",
+      "source": [
+        "https://science.nasa.gov/mission/new-horizons/",
+        "https://science.nasa.gov/mission/msl-curiosity/"
+      ],
+      "topic": "رحلات الفضاء",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "newhorizons",
+          "curiosity"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          2006,
+          2011
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "تدشين تمثال الحرية بنيويورك مقارنة بـاكتمال بناء برج إيفل؟",
+      "qid": "beforeafter-1000-017",
+      "source": [
+        "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+        "https://www.toureiffel.paris/en/the-monument/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "liberty",
+          "eiffel"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1886,
+          1889
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "افتتاح تاور بريدج في لندن مقارنة بـتدشين تمثال الحرية بنيويورك؟",
+      "qid": "beforeafter-1000-018",
+      "source": [
+        "https://www.towerbridge.org.uk/stories/history",
+        "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "towerbridge",
+          "liberty"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1894,
+          1886
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "اكتمال بناء برج إيفل مقارنة بـافتتاح تاور بريدج في لندن؟",
+      "qid": "beforeafter-1000-019",
+      "source": [
+        "https://www.toureiffel.paris/en/the-monument/history",
+        "https://www.towerbridge.org.uk/stories/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "eiffel",
+          "towerbridge"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1889,
+          1894
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "افتتاح مبنى إمباير ستيت مقارنة بـافتتاح جسر البوابة الذهبية؟",
+      "qid": "beforeafter-1000-023",
+      "source": [
+        "https://www.esbnyc.com/about/history",
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "empirestate",
+          "goldengate"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1931,
+          1937
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "افتتاح دار أوبرا سيدني مقارنة بـافتتاح برج سبيس نيدل؟",
+      "qid": "beforeafter-1000-024",
+      "source": [
+        "https://www.sydneyoperahouse.com/our-story",
+        "https://www.spaceneedle.com/history"
+      ],
+      "topic": "معالم عمرانية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "sydneyopera",
+          "spaceneedle"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1973,
+          1962
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "صدور أول أفلام «العودة إلى المستقبل» مقارنة بـصدور فيلم «إي تي»؟",
+      "qid": "beforeafter-1000-025",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "bttf",
+          "et"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1985,
+          1982
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "صدور رسوم «الجميلة والوحش» الأصلية مقارنة بـصدور رسوم «علاء الدين» الأصلية؟",
+      "qid": "beforeafter-1000-028",
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
+        "https://movies.disney.com/aladdin"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "beautybeast",
+          "aladdin"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1991,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "صدور أول أفلام «جوراسيك بارك» مقارنة بـصدور رسوم «الجميلة والوحش» الأصلية؟",
+      "qid": "beforeafter-1000-029",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jurassic-park",
+        "https://movies.disney.com/beauty-and-the-beast"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jurassicpark",
+          "beautybeast"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1993,
+          1991
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "صدور أول أفلام «جوراسيك بارك» مقارنة بـصدور رسوم «علاء الدين» الأصلية؟",
+      "qid": "beforeafter-1000-031",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jurassic-park",
+        "https://movies.disney.com/aladdin"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jurassicpark",
+          "aladdin"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1993,
+          1992
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "صدور أول أفلام «جوراسيك بارك» مقارنة بـصدور رسوم «الأسد الملك» الأصلية؟",
+      "qid": "beforeafter-1000-032",
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jurassic-park",
+        "https://movies.disney.com/the-lion-king"
+      ],
+      "topic": "إصدارات سينمائية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "jurassicpark",
+          "lionking"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1993,
+          1994
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "أول أولمبياد صيفي بمكسيكو سيتي مقارنة بـأول أولمبياد صيفي بميونخ؟",
+      "qid": "beforeafter-1000-033",
+      "source": [
+        "https://en.wikipedia.org/wiki/1968_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "mexico",
+          "munich"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1968,
+          1972
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "أول أولمبياد صيفي بمونتريال مقارنة بـأول أولمبياد صيفي بميونخ؟",
+      "qid": "beforeafter-1000-034",
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montreal",
+          "munich"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1972
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "أول أولمبياد صيفي بمونتريال مقارنة بـأول أولمبياد صيفي بموسكو؟",
+      "qid": "beforeafter-1000-035",
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montreal",
+          "moscow"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1980
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "أول أولمبياد صيفي بمونتريال مقارنة بـأول أولمبياد صيفي بمكسيكو سيتي؟",
+      "qid": "beforeafter-1000-038",
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1968_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "montreal",
+          "mexico"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1976,
+          1968
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "أول أولمبياد صيفي بميونخ مقارنة بـأول أولمبياد صيفي بموسكو؟",
+      "qid": "beforeafter-1000-039",
+      "source": [
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
+      ],
+      "topic": "دورات أولمبية",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "munich",
+          "moscow"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1972,
+          1980
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "بدء تشغيل مترو باريس مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
+      "qid": "beforeafter-1000-042",
+      "source": [
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "parismetro",
+          "newyorkmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1900,
+          1904
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
+      "qid": "beforeafter-1000-043",
+      "source": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metro",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "tokyometro",
+          "newyorkmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1927,
+          1904
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـبدء تشغيل مترو موسكو؟",
+      "qid": "beforeafter-1000-044",
+      "source": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metro",
+        "https://en.wikipedia.org/wiki/Moscow_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "tokyometro",
+          "moscowmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1927,
+          1935
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "بدء تشغيل مترو ستوكهولم كمترو كامل مقارنة بـبدء تشغيل مترو موسكو؟",
+      "qid": "beforeafter-1000-045",
+      "source": [
+        "https://en.wikipedia.org/wiki/Stockholm_metro",
+        "https://en.wikipedia.org/wiki/Moscow_Metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "stockholmmetro",
+          "moscowmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1950,
+          1935
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "بعد",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـبدء تشغيل مترو باريس؟",
+      "qid": "beforeafter-1000-047",
+      "source": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metro",
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "tokyometro",
+          "parismetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1927,
+          1900
+        ]
+      },
+      "verified": true
+    },
+    {
+      "a": "قبل",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "p": 1000,
+      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـبدء تشغيل مترو ستوكهولم كمترو كامل؟",
+      "qid": "beforeafter-1000-048",
+      "source": [
+        "https://en.wikipedia.org/wiki/Tokyo_Metro",
+        "https://en.wikipedia.org/wiki/Stockholm_metro"
+      ],
+      "topic": "شبكات المترو",
+      "type": "choice",
+      "verification": {
+        "checkedAt": "2026-09-08",
+        "events": [
+          "tokyometro",
+          "stockholmmetro"
+        ],
+        "method": "dated-event-comparison",
+        "years": [
+          1927,
+          1950
+        ]
+      },
+      "verified": true
+    }
+  ]
+}

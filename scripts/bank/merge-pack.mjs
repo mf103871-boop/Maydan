@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { arabicNormalize as N } from '../../src/shared/lib/arabicNormalize.js';
 import path from 'node:path';
-import { ROOT } from '../bank.mjs';
+import { ROOT, fabricatedContentReasons, readRetiredQids } from '../bank.mjs';
 
 const CATS = path.join(ROOT, 'src/data/categories');
 const TIERS = [200, 400, 600, 800, 1000];
@@ -19,6 +19,7 @@ for (const f of readdirSync(CATS).filter((x) => x.endsWith('.json'))) {
 
 const batch = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const status = JSON.parse(readFileSync(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
+const retiredQids = await readRetiredQids(ROOT);
 
 for (const pack of batch.packs) {
   if (!Object.hasOwn(status.categories, pack.id)) throw new Error(`فئة غير معتمدة: ${pack.id}`);
@@ -33,6 +34,8 @@ for (const pack of batch.packs) {
     if (v && v.verdict === 'fix') { if (v.q) item.q = v.q; if (v.a) item.a = v.a; if (v.alt) item.alt = v.alt; if (v.p && TIERS.includes(v.p)) item.p = v.p; }
     if (!TIERS.includes(item.p) || !item.q?.trim() || !item.a?.trim() || !item.topic?.trim()) { drops.push({ q: item.q, why: 'حقول ناقصة أو خانة غير صالحة' }); return; }
     if (w(item.q) > 22 || w(item.a) > 6) { drops.push({ q: item.q, why: 'تجاوز الحدود' }); return; }
+    const fabricated = fabricatedContentReasons(item);
+    if (fabricated.length) { drops.push({ q: item.q, why: fabricated.join('؛ ') }); return; }
     kept.push(item);
   });
 
@@ -40,7 +43,8 @@ for (const pack of batch.packs) {
   for (const q of kept) {
     const nq = N(q.q); const na = N(q.a);
     if (seenQ.has(nq) || bankQ.has(nq)) { drops.push({ q: q.q, why: 'نص مكرر' }); continue; }
-    if (seenA.has(na) || bankA.has(na)) { drops.push({ q: q.q, why: `إجابة مكررة «${q.a}»` }); continue; }
+    if (seenA.has(na)) { drops.push({ q: q.q, why: `إجابة مكررة داخل الفئة «${q.a}»` }); continue; }
+    if (bankA.has(na)) console.warn(`${pack.id}: إجابة تتكرر في فئة أخرى «${q.a}» — راجع الملاءمة`);
     if (leak(na, nq)) { drops.push({ q: q.q, why: 'الإجابة داخل سؤالها' }); continue; }
     seenQ.add(nq); seenA.add(na); unique.push(q);
   }
@@ -57,10 +61,15 @@ for (const pack of batch.packs) {
   const gaps = TIERS.filter((t) => per(t).length < 48).map((t) => `${t}:${48 - per(t).length}`);
   // نكتب ما توفّر (حتى 48 لكل خانة) ونبلّغ بالنواقص
   const counters = new Map(TIERS.map((t) => [t, 0]));
+  const retiredMax = new Map(TIERS.map((t) => [t, Math.max(0, ...[...retiredQids]
+    .filter((qid) => qid.startsWith(`${pack.id}-${t}-`))
+    .map((qid) => Number(qid.split('-').at(-1))))]));
   const qs = [];
   for (const t of TIERS) for (const q of per(t).slice(0, 48)) {
     const n = counters.get(t) + 1; counters.set(t, n);
-    const out = { ...q, p: t, q: q.q.trim(), a: q.a.trim(), qid: `${pack.id}-${t}-${String(n).padStart(3, '0')}`, topic: q.topic, verified: true };
+    const serial = retiredMax.get(t) + n;
+    if (serial > 999) throw new Error(`نفدت المعرّفات في ${pack.id}-${t}`);
+    const out = { ...q, p: t, q: q.q.trim(), a: q.a.trim(), qid: `${pack.id}-${t}-${String(serial).padStart(3, '0')}`, topic: q.topic, verified: true };
     if (q.alt && q.alt.length) out.alt = q.alt;
     qs.push(out);
   }

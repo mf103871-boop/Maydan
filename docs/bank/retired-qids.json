@@ -1,0 +1,459 @@
+{
+  "$comment": "معرّفات متقاعدة لا يعاد إسنادها. المراجع تشرح سبب الحذف؛ يحتفظ السجل بمعرّفات قد تبقى على أجهزة اللاعبين.",
+  "ranges": [
+    {
+      "category": "ucl",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-ucl.md"
+    },
+    {
+      "category": "ucl",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-ucl.md"
+    },
+    {
+      "category": "ucl",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-ucl.md"
+    },
+    {
+      "category": "ucl",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-ucl.md"
+    },
+    {
+      "category": "ucl",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-ucl.md"
+    },
+    {
+      "category": "premier",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-premier.md"
+    },
+    {
+      "category": "premier",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-premier.md"
+    },
+    {
+      "category": "premier",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-premier.md"
+    },
+    {
+      "category": "premier",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-premier.md"
+    },
+    {
+      "category": "premier",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-premier.md"
+    },
+    {
+      "category": "arabseries",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabseries.md"
+    },
+    {
+      "category": "arabseries",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabseries.md"
+    },
+    {
+      "category": "arabseries",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabseries.md"
+    },
+    {
+      "category": "arabseries",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabseries.md"
+    },
+    {
+      "category": "arabseries",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabseries.md"
+    },
+    {
+      "category": "foreignseries",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-foreignseries.md"
+    },
+    {
+      "category": "foreignseries",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-foreignseries.md"
+    },
+    {
+      "category": "foreignseries",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-foreignseries.md"
+    },
+    {
+      "category": "foreignseries",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-foreignseries.md"
+    },
+    {
+      "category": "foreignseries",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-foreignseries.md"
+    },
+    {
+      "category": "aot",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-aot.md"
+    },
+    {
+      "category": "aot",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-aot.md"
+    },
+    {
+      "category": "aot",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-aot.md"
+    },
+    {
+      "category": "aot",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-aot.md"
+    },
+    {
+      "category": "aot",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-aot.md"
+    },
+    {
+      "category": "deathnote",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-deathnote.md"
+    },
+    {
+      "category": "deathnote",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-deathnote.md"
+    },
+    {
+      "category": "deathnote",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-deathnote.md"
+    },
+    {
+      "category": "deathnote",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-deathnote.md"
+    },
+    {
+      "category": "deathnote",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-deathnote.md"
+    },
+    {
+      "category": "demonslayer",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-demonslayer.md"
+    },
+    {
+      "category": "demonslayer",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-demonslayer.md"
+    },
+    {
+      "category": "demonslayer",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-demonslayer.md"
+    },
+    {
+      "category": "demonslayer",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-demonslayer.md"
+    },
+    {
+      "category": "demonslayer",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-demonslayer.md"
+    },
+    {
+      "category": "jujutsu",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-jujutsu.md"
+    },
+    {
+      "category": "jujutsu",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-jujutsu.md"
+    },
+    {
+      "category": "jujutsu",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-jujutsu.md"
+    },
+    {
+      "category": "jujutsu",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-jujutsu.md"
+    },
+    {
+      "category": "jujutsu",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-jujutsu.md"
+    },
+    {
+      "category": "hunterxhunter",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-hunterxhunter.md"
+    },
+    {
+      "category": "hunterxhunter",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-hunterxhunter.md"
+    },
+    {
+      "category": "hunterxhunter",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-hunterxhunter.md"
+    },
+    {
+      "category": "hunterxhunter",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-hunterxhunter.md"
+    },
+    {
+      "category": "hunterxhunter",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-hunterxhunter.md"
+    },
+    {
+      "category": "spacetoon",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-spacetoon.md"
+    },
+    {
+      "category": "spacetoon",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-spacetoon.md"
+    },
+    {
+      "category": "spacetoon",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-spacetoon.md"
+    },
+    {
+      "category": "spacetoon",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-spacetoon.md"
+    },
+    {
+      "category": "spacetoon",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-spacetoon.md"
+    },
+    {
+      "category": "movies",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/review-movies-rewrite.md"
+    },
+    {
+      "category": "movies",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/review-movies-rewrite.md"
+    },
+    {
+      "category": "movies",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/review-movies-rewrite.md"
+    },
+    {
+      "category": "movies",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/review-movies-rewrite.md"
+    },
+    {
+      "category": "movies",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/review-movies-rewrite.md"
+    },
+    {
+      "category": "arabmovies",
+      "tier": 200,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabmovies.md"
+    },
+    {
+      "category": "arabmovies",
+      "tier": 400,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabmovies.md"
+    },
+    {
+      "category": "arabmovies",
+      "tier": 600,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabmovies.md"
+    },
+    {
+      "category": "arabmovies",
+      "tier": 800,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabmovies.md"
+    },
+    {
+      "category": "arabmovies",
+      "tier": 1000,
+      "start": 1,
+      "end": 48,
+      "reference": "docs/bank/removed-arabmovies.md"
+    },
+    {
+      "category": "onepiece",
+      "tier": 200,
+      "start": 43,
+      "end": 48,
+      "reference": "docs/bank/removed-onepiece.md"
+    },
+    {
+      "category": "onepiece",
+      "tier": 400,
+      "start": 44,
+      "end": 48,
+      "reference": "docs/bank/removed-onepiece.md"
+    },
+    {
+      "category": "dragonball",
+      "tier": 200,
+      "start": 43,
+      "end": 48,
+      "reference": "docs/bank/removed-dragonball.md"
+    },
+    {
+      "category": "dragonball",
+      "tier": 400,
+      "start": 42,
+      "end": 48,
+      "reference": "docs/bank/removed-dragonball.md"
+    }
+  ],
+  "qids": [
+    "actors-200-016", "actors-200-034", "actors-200-035", "actors-200-036",
+    "actors-200-038", "actors-200-039", "actors-200-040", "actors-200-041",
+    "actors-200-043", "actors-200-047", "actors-200-048", "actors-400-009",
+    "actors-600-014", "actors-800-031", "actors-1000-005", "actors-1000-035"
+  ]
+}

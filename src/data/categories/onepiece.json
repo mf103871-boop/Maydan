@@ -383,7 +383,7 @@
       "q": "ما اسم طبّاخ سفينة لوفي الذي يقاتل بركلاته فقط؟",
       "a": "سانجي",
       "qid": "onepiece-200-032",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "طاقم قبعة القش",
       "verified": true,
       "alt": [
         "فينسموك سانجي",
@@ -395,7 +395,7 @@
       "q": "من ملّاحة طاقم لوفي التي ترسم الخرائط؟",
       "a": "نامي",
       "qid": "onepiece-200-033",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "طاقم قبعة القش",
       "verified": true,
       "alt": [
         "نامى"
@@ -403,95 +403,197 @@
     },
     {
       "p": 200,
-      "q": "ما اسم طبيب الطاقم وهو رنّة صغيرة؟",
-      "a": "توني توني تشوبر",
+      "q": "ما نوع الحيوان الذي كان عليه تشوبر قبل أكل فاكهته؟",
+      "a": "رنّة",
       "qid": "onepiece-200-034",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "طاقم قبعة القش",
       "verified": true,
       "alt": [
-        "تشوبر",
-        "توني تشوبر"
-      ]
+        "رنة",
+        "غزال الرنة"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Tony_Tony_Chopper"
     },
     {
       "p": 200,
-      "q": "ما اسم الجزيرة التي نشأ فيها لوفي مع إيس وسابو؟",
-      "a": "مملكة غوا",
-      "topic": "طفولة لوفي",
-      "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
-      "qid": "onepiece-200-035"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الأخ الذي ظنه العالم ميتًا قبل ظهوره في الجيش الثوري؟",
+      "q": "ما اسم والد لوفي الذي يقود جيش الثوار؟",
       "a": "مونكي دي دراغون",
-      "topic": "عائلة لوفي",
+      "topic": "القراصنة والمنظمات",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy",
+      "alt": [
+        "دراغون",
+        "مونكي دي دراجون"
+      ],
       "qid": "onepiece-200-036"
     },
     {
       "p": 200,
-      "q": "ما اسم المخلوق الذي يقود سفينة قبعة القش في البحر؟",
-      "a": "نامي الملاحة",
+      "q": "من قائد الطاقم الذي يسعى إلى أن يصبح ملك القراصنة؟",
+      "a": "مونكي دي لوفي",
       "topic": "طاقم قبعة القش",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy",
+      "alt": [
+        "لوفي"
+      ],
       "qid": "onepiece-200-037"
     },
     {
       "p": 200,
-      "q": "ما لقب طبيب قبعة القش ذي القرون؟",
-      "a": "الطبيب القَطِني",
-      "topic": "طاقم قبعة القش",
+      "q": "كم سيفًا يستخدم زورو في أسلوبه الشهير؟",
+      "a": "ثلاثة سيوف",
+      "topic": "الهجمات والقدرات",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Roronoa_Zoro",
+      "alt": [
+        "3 سيوف",
+        "ثلاثة"
+      ],
       "qid": "onepiece-200-038"
     },
     {
       "p": 200,
-      "q": "ما اسم الطائر الذي ينقل الأخبار في عالم القراصنة؟",
-      "a": "مورغانز",
-      "topic": "العالم",
+      "q": "ما لون أنف باغي المميز؟",
+      "a": "أحمر",
+      "topic": "القراصنة والمنظمات",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
-      "qid": "onepiece-200-039"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم القاعدة البحرية التي يقودها كوبي لاحقًا؟",
-      "a": "جزيرة هاتشينوسو",
-      "topic": "أماكن",
-      "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Buggy",
+      "alt": [
+        "الأحمر"
+      ],
       "qid": "onepiece-200-040"
     },
     {
       "p": 200,
-      "q": "ما اسم المهرجان الذي تقام فيه مبارزة القراصنة في ديفي باك؟",
+      "q": "ما اسم المسابقة التي يتنافس فيها طاقما لوفي وفوكسي على أفراد الطاقم؟",
       "a": "ديفي باك فايت",
-      "topic": "أحداث",
+      "topic": "أحداث مفصلية",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates#Foxy_Pirates",
+      "alt": [
+        "دافي باك فايت",
+        "Davy Back Fight"
+      ],
       "qid": "onepiece-200-041"
     },
     {
       "p": 200,
-      "q": "ما اسم فاكهة روبن التي تمنحها القدرة على إنبات أطرافها؟",
-      "a": "هانا هانا نو مي",
+      "q": "ما الأطراف التي تنبتها روبن بكثرة لإمساك خصومها؟",
+      "a": "أذرع",
       "topic": "فواكه الشيطان",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Nico_Robin",
+      "alt": [
+        "الأذرع",
+        "الأيدي"
+      ],
       "qid": "onepiece-200-042"
+    },
+    {
+      "p": 200,
+      "q": "ما المادة التي يصنعها كروكودايل بقوة فاكهته؟",
+      "a": "الرمل",
+      "qid": "onepiece-200-049",
+      "topic": "فواكه الشيطان",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Crocodile",
+      "alt": [
+        "الرمال"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما القدرة التي يفقدها من يأكل فاكهة شيطان عند نزوله البحر؟",
+      "a": "السباحة",
+      "qid": "onepiece-200-050",
+      "topic": "فواكه الشيطان",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy#Devil_Fruit"
+    },
+    {
+      "p": 200,
+      "q": "ما المادة التي صار جسد لوفي يشبهها بعد أكل فاكهته؟",
+      "a": "المطاط",
+      "qid": "onepiece-200-051",
+      "topic": "فواكه الشيطان",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy#Devil_Fruit"
+    },
+    {
+      "p": 200,
+      "q": "ما العضو الذي فقده شانكس عندما أنقذ لوفي طفلًا؟",
+      "a": "ذراعه اليسرى",
+      "qid": "onepiece-200-052",
+      "topic": "أحداث مفصلية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy#One_Piece",
+      "alt": [
+        "الذراع اليسرى",
+        "يده اليسرى"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "إلى ماذا تحوّل هانكوك ضحايا قوة فاكهتها؟",
+      "a": "حجارة",
+      "qid": "onepiece-200-053",
+      "topic": "فواكه الشيطان",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates#Boa_Hancock",
+      "alt": [
+        "الحجر",
+        "تماثيل حجرية"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما القوة التي يُنتجها إنيل ويضرب بها أعداءه؟",
+      "a": "الكهرباء",
+      "qid": "onepiece-200-054",
+      "topic": "فواكه الشيطان",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_characters#Eneru",
+      "alt": [
+        "البرق"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "من نجّار الطاقم الذي يظهر بجسد نصف آليّ؟",
+      "a": "فرانكي",
+      "qid": "onepiece-400-003",
+      "topic": "طاقم قبعة القش",
+      "verified": true,
+      "alt": [
+        "فرانكي السايبورغ"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Straw_Hats"
+    },
+    {
+      "p": 200,
+      "q": "من عضو الطاقم الذي ينتمي إلى قوم رجال السمك؟",
+      "a": "جينبي",
+      "qid": "onepiece-600-004",
+      "topic": "طاقم قبعة القش",
+      "verified": true,
+      "alt": [
+        "جينبيه"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Straw_Hats"
+    },
+    {
+      "p": 400,
+      "q": "ما المملكة التي نشأ فيها لوفي وإيس وسابو؟",
+      "a": "مملكة غوا",
+      "topic": "الجزر والبحار",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_characters#Dawn_Island",
+      "alt": [
+        "مملكة جوا",
+        "Goa Kingdom"
+      ],
+      "qid": "onepiece-200-035"
     },
     {
       "p": 400,
@@ -515,17 +617,6 @@
       "alt": [
         "ثاوزاند ساني",
         "صني"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "من نجّار الطاقم الذي يظهر بجسد نصف آليّ؟",
-      "a": "فرانكي",
-      "qid": "onepiece-400-003",
-      "topic": "طاقم قبعة القش",
-      "verified": true,
-      "alt": [
-        "فرانكي السايبورغ"
       ]
     },
     {
@@ -747,14 +838,16 @@
     },
     {
       "p": 400,
-      "q": "من زعيم الطاقم الذي استعبد قرية كوكوياشي وفرض الإتاوة عليها؟",
-      "a": "أرلونج",
+      "q": "من القرصانة التي تحالفت مع باغي بعدما هزمها لوفي في بداية رحلته؟",
+      "a": "ألفيدا",
       "qid": "onepiece-400-022",
       "topic": "القراصنة والمنظمات",
       "verified": true,
       "alt": [
-        "أرلونغ"
-      ]
+        "ألفيدا",
+        "Alvida"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Alvida"
     },
     {
       "p": 400,
@@ -805,7 +898,7 @@
     },
     {
       "p": 400,
-      "q": "من زعيم فرقة سي بي ناين الذي تنكّر نجارًا في ووتر سيفن؟",
+      "q": "من أقوى مقاتلي سي بي ناين الذي تنكّر نجارًا في ووتر سيفن؟",
       "a": "روب لوتشي",
       "qid": "onepiece-400-027",
       "topic": "البحرية والحكومة",
@@ -813,7 +906,8 @@
       "alt": [
         "لوتشي",
         "روب لوشي"
-      ]
+      ],
+      "source": "https://en.wikipedia.org/wiki/World_Government_(One_Piece)#Rob_Lucci"
     },
     {
       "p": 400,
@@ -901,33 +995,35 @@
     },
     {
       "p": 400,
-      "q": "ما اسم السفينة الجديدة التي أبحر بها الطاقم بعد وداع سفينتهم الأولى؟",
-      "a": "ثاوزند ساني",
+      "q": "ما اسم المنظمة السرية التي أسسها كروكودايل في ألاباستا؟",
+      "a": "باروك ووركس",
       "qid": "onepiece-400-035",
-      "topic": "أحداث مفصلية",
+      "topic": "القراصنة والمنظمات",
       "verified": true,
       "alt": [
-        "ساني",
-        "الساني"
-      ]
+        "باروك وركس",
+        "Baroque Works"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Crocodile"
     },
     {
       "p": 400,
-      "q": "ما اسم الجزيرة الواقعة في السماء التي زارها الطاقم؟",
-      "a": "سكايبيا",
+      "q": "ما اسم الجزيرة التي تحكمها هانكوك وتسكنها محاربات الكوجا؟",
+      "a": "أمازون ليلي",
       "qid": "onepiece-400-036",
-      "topic": "أحداث مفصلية",
+      "topic": "الجزر والبحار",
       "verified": true,
       "alt": [
-        "سكاي بيا"
-      ]
+        "Amazon Lily"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates#Boa_Hancock"
     },
     {
       "p": 400,
       "q": "ما اسم عالمة الآثار في طاقم لوفي؟",
       "a": "نيكو روبن",
       "qid": "onepiece-400-037",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "طاقم قبعة القش",
       "verified": true,
       "alt": [
         "روبن",
@@ -936,63 +1032,161 @@
     },
     {
       "p": 400,
-      "q": "ما اسم السفينة التي سبقت سفينة طاقم قبعة القش الحالية؟",
-      "a": "فرانكي كولا",
-      "topic": "سفن",
+      "q": "من أخو لوفي الذي حاول إنقاذه من الإعدام في الحرب الكبرى؟",
+      "a": "إيس",
+      "topic": "أحداث مفصلية",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy",
+      "alt": [
+        "آيس",
+        "بورتغاس دي إيس"
+      ],
       "qid": "onepiece-400-038"
     },
     {
       "p": 400,
       "q": "ما اسم المدينة التي تضم مقر شركة جالي لا؟",
       "a": "ووتر سفن",
-      "topic": "الأماكن",
+      "topic": "الجزر والبحار",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_characters#Water_7",
+      "alt": [
+        "ووتر سيفن",
+        "Water 7"
+      ],
       "qid": "onepiece-400-039"
     },
     {
       "p": 400,
-      "q": "ما اسم الجزيرة التي اشتهرت بصناعة السفن؟",
-      "a": "بوفي توم",
-      "topic": "وسائل النقل",
+      "q": "من عمدة مدينة بناء السفن ورئيس شركة غالي لا؟",
+      "a": "آيسبرغ",
+      "topic": "السفن",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_characters#Water_7",
+      "alt": [
+        "آيسبيرغ",
+        "Iceburg"
+      ],
       "qid": "onepiece-400-040"
     },
     {
       "p": 400,
-      "q": "ما اسم الجزيرة التي تدرب فيها لوفي بعد الحرب؟",
-      "a": "روسوكينا",
-      "topic": "أماكن",
+      "q": "من القرصان صاحب قدرة الرمال الذي واجهه لوفي في مملكة فيفي؟",
+      "a": "كروكودايل",
+      "topic": "القراصنة والمنظمات",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Crocodile",
+      "alt": [
+        "كروكودايل",
+        "Crocodile"
+      ],
       "qid": "onepiece-400-041"
     },
     {
       "p": 400,
       "q": "من قائد قراصنة القلب وطبيبهم؟",
       "a": "ترافالغار لاو",
-      "topic": "القراصنة",
+      "topic": "القراصنة والمنظمات",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates#Trafalgar_Law",
+      "alt": [
+        "ترافلغار لو",
+        "ترافالغار لو",
+        "Trafalgar Law"
+      ],
       "qid": "onepiece-400-042"
     },
     {
       "p": 400,
-      "q": "ما اسم التقنية التي يستخدمها لوفي لتكبير قبضته بالهواء؟",
-      "a": "غومو غومو نو فووسن",
-      "topic": "تقنيات",
+      "q": "ما التقنية التي ينفخ فيها لوفي عظامه لتكبير أطرافه؟",
+      "a": "جير ثيرد",
+      "topic": "الهجمات والقدرات",
       "verified": true,
-      "source": "https://onepiece.fandom.com/wiki/One_Piece_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy#Devil_Fruit",
+      "alt": [
+        "جير الثالث",
+        "غير الثالث",
+        "Gear 3"
+      ],
       "qid": "onepiece-400-043"
+    },
+    {
+      "p": 400,
+      "q": "ما اسم أميرة المملكة الصحراوية التي رافقت لوفي لحماية بلادها؟",
+      "a": "فيفي",
+      "qid": "onepiece-400-049",
+      "topic": "أحداث مفصلية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy#One_Piece",
+      "alt": [
+        "نفرتاري فيفي",
+        "نيفرتاري فيفي"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "من الملك الشره الذي يستطيع أكل أي شيء وواجهه الطاقم في جزيرة تشوبر؟",
+      "a": "وابول",
+      "qid": "onepiece-400-050",
+      "topic": "أحداث مفصلية",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_characters#Wapol",
+      "alt": [
+        "وابول",
+        "Wapol"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم جد لوفي الذي يعمل نائب أدميرال؟",
+      "a": "غارب",
+      "qid": "onepiece-400-051",
+      "topic": "البحرية والحكومة",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Monkey_D._Luffy",
+      "alt": [
+        "مونكي دي غارب",
+        "غارب"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "من السيّاف الذي هزم زورو عند المطعم العائم؟",
+      "a": "ميهوك",
+      "qid": "onepiece-400-052",
+      "topic": "القراصنة والمنظمات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Dracule_Mihawk",
+      "alt": [
+        "دراكول ميهوك",
+        "ميهاوك"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الفاكهة التي يفصل بها باغي أجزاء جسده؟",
+      "a": "بارا بارا نو مي",
+      "qid": "onepiece-400-053",
+      "topic": "فواكه الشيطان",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Buggy",
+      "alt": [
+        "فاكهة التقطيع",
+        "Bara Bara no Mi"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما اسم رئيس صحيفة الأخبار الاقتصادية العالمية في ون بيس؟",
+      "a": "مورغانز",
+      "topic": "القراصنة والمنظمات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_characters#World_Economic_Journal",
+      "alt": [
+        "مورغانس",
+        "Morgans"
+      ],
+      "qid": "onepiece-200-039"
     },
     {
       "p": 600,
@@ -1026,17 +1220,6 @@
       "alt": [
         "أسلوب السيوف الثلاثة",
         "ثري سورد ستايل"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "من عضو الطاقم الذي ينتمي إلى قوم رجال السمك؟",
-      "a": "جينبي",
-      "qid": "onepiece-600-004",
-      "topic": "طاقم قبعة القش",
-      "verified": true,
-      "alt": [
-        "جينبيه"
       ]
     },
     {
@@ -1346,7 +1529,7 @@
     },
     {
       "p": 600,
-      "q": "ما اسم طاقم المحاربات النساء القادم من جزيرة أمازون ليلي؟",
+      "q": "ما اسم طاقم المحاربات النساء الذي تقوده هانكوك؟",
       "a": "قراصنة الكوجا",
       "qid": "onepiece-600-030",
       "topic": "القراصنة والمنظمات",
@@ -1354,7 +1537,8 @@
       "alt": [
         "كوجا",
         "قراصنة كوجا"
-      ]
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_pirates#Kuja_Pirates"
     },
     {
       "p": 600,
@@ -1501,7 +1685,7 @@
     },
     {
       "p": 600,
-      "q": "ما الاسم المستعار الذي حمله كروكودايل داخل منظمة باروك ووركس؟",
+      "q": "ما الاسم المستعار الذي استعمله كروكودايل قائد المنظمة السرية في ألاباستا؟",
       "a": "السيد صفر",
       "qid": "onepiece-600-043",
       "topic": "الألقاب والمكافآت",
@@ -1509,7 +1693,8 @@
       "alt": [
         "مستر زيرو",
         "Mr. 0"
-      ]
+      ],
+      "source": "https://en.wikipedia.org/wiki/Four_Emperors_(One_Piece)#Crocodile"
     },
     {
       "p": 600,
@@ -1525,15 +1710,16 @@
     },
     {
       "p": 600,
-      "q": "ما اسم الأرخبيل الذي تفرّق فيه أفراد الطاقم قبل رحلة التدريب؟",
-      "a": "أرخبيل ساباودي",
+      "q": "ما اسم فاكهة روبن التي تمنحها القدرة على إنبات أطرافها؟",
+      "a": "هانا هانا نو مي",
       "qid": "onepiece-600-045",
-      "topic": "أحداث مفصلية",
+      "topic": "فواكه الشيطان",
       "verified": true,
       "alt": [
-        "ساباودي",
-        "سابودي"
-      ]
+        "فاكهة الزهور",
+        "Hana Hana no Mi"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Nico_Robin"
     },
     {
       "p": 600,
@@ -1971,7 +2157,7 @@
       "q": "ما الاسم الحقيقي للأدميرال الأعظم الملقّب أكاينو؟",
       "a": "ساكازوكي",
       "qid": "onepiece-800-034",
-      "topic": "القراصنة والمنظمات",
+      "topic": "البحرية والحكومة",
       "verified": true,
       "alt": [
         "ساكازوكي الكلب الأحمر"
@@ -2683,15 +2869,17 @@
     },
     {
       "p": 1000,
-      "q": "ما اسم الجزيرة التي أمضى فيها لوفي تدريبه قبل عودة الطاقم؟",
-      "a": "روسكاينا",
+      "q": "ما اسم الأرنب الأليف الذي يرافق تشيمني في محطة القطار البحري؟",
+      "a": "غونبي",
       "qid": "onepiece-1000-046",
-      "topic": "أحداث مفصلية",
+      "topic": "الجزر والبحار",
       "verified": true,
       "alt": [
-        "جزيرة روسكاينا",
-        "روسكينا"
-      ]
+        "غونبه",
+        "غونبي",
+        "Gonbe"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_One_Piece_characters#Water_7"
     },
     {
       "p": 1000,
@@ -2710,7 +2898,7 @@
       "q": "ما اسم السيف الأسود الذي يحمله أعظم سيّاف في العالم؟",
       "a": "يورو",
       "qid": "onepiece-1000-048",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "طاقم قبعة القش",
       "verified": true,
       "alt": [
         "يورو الليل",

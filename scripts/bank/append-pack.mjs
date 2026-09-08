@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { arabicNormalize as N } from '../../src/shared/lib/arabicNormalize.js';
 import path from 'node:path';
-import { ROOT } from '../bank.mjs';
+import { ROOT, fabricatedContentReasons, readRetiredQids } from '../bank.mjs';
 
 const CATS = path.join(ROOT, 'src/data/categories');
 const TIERS = [200, 400, 600, 800, 1000];
@@ -12,6 +12,7 @@ const leak = (na, nq) => na.length >= 4 && new RegExp(`(^| )(?:و|ف|ب|ك|ل|ا
 
 const batch = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const status = JSON.parse(readFileSync(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
+const retiredQids = await readRetiredQids(ROOT);
 for (const add of batch.packs) {
   if (!Object.hasOwn(status.categories, add.id)) throw new Error(`فئة غير معتمدة: ${add.id}`);
   const file = path.join(CATS, `${add.id}.json`);
@@ -36,7 +37,10 @@ for (const add of batch.packs) {
     if (!TIERS.includes(item.p) || !item.q?.trim() || !item.a?.trim() || !item.topic?.trim()) { dropped += 1; return; }
     const nq = N(item.q); const na = N(item.a);
     if (w(item.q) > 22 || w(item.a) > 6) { dropped += 1; return; }
-    if (seenQ.has(nq) || bankQ.has(nq) || seenA.has(na) || bankA.has(na)) { dropped += 1; return; }
+    if (fabricatedContentReasons(item).length) { dropped += 1; return; }
+    if (seenQ.has(nq) || bankQ.has(nq) || seenA.has(na)) { dropped += 1; return; }
+    // RUBRIC §6: تكرار الإجابة بين فئتين تحذير؛ المنع داخل الفئة فقط.
+    if (bankA.has(na)) console.warn(`${add.id}: إجابة تتكرر في فئة أخرى «${item.a}» — راجع الملاءمة`);
     if (leak(na, nq)) { dropped += 1; return; }
     if (na.split(' ').length > 1 && pool.some((o) => leak(na, N(o.q)))) { dropped += 1; return; }
     if (pool.filter((o) => o.p === item.p).length >= 48) { dropped += 1; return; }
@@ -44,10 +48,10 @@ for (const add of batch.packs) {
     seenQ.add(nq); seenA.add(na); pool.push({ ...item, qid: undefined }); added += 1;
   });
   // المعرّفات القديمة ثابتة، حتى بعد الحذف أو إعادة تصنيف الصعوبة.
-  const usedIds = new Set(pack.qs.map((q) => q.qid));
-  const nextIds = new Map(TIERS.map((t) => [t, Math.max(0, ...pack.qs
-    .filter((q) => q.qid?.startsWith(`${add.id}-${t}-`))
-    .map((q) => Number(q.qid.split('-').at(-1))))]));
+  const usedIds = new Set([...pack.qs.map((q) => q.qid), ...retiredQids]);
+  const nextIds = new Map(TIERS.map((t) => [t, Math.max(0, ...[...usedIds]
+    .filter((qid) => qid?.startsWith(`${add.id}-${t}-`))
+    .map((qid) => Number(qid.split('-').at(-1))))]));
   const counters = new Map(TIERS.map((t) => [t, 0]));
   const qs = [];
   for (const t of TIERS) for (const q of pool.filter((x) => x.p === t)) {

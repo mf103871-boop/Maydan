@@ -70,6 +70,32 @@ export async function readStatus(root = ROOT) {
   return JSON.parse(await readFile(path.join(root, STATUS_FILE), 'utf8'));
 }
 
+// المعرّفات المحذوفة لا تصبح متاحة من جديد: قد تبقى في سجل لعب على جهاز آخر.
+export async function readRetiredQids(root = ROOT) {
+  let registry;
+  try {
+    registry = JSON.parse(await readFile(path.join(root, 'docs/bank/retired-qids.json'), 'utf8'));
+  } catch (error) {
+    if (error.code === 'ENOENT') return new Set();
+    throw error;
+  }
+  if (!Array.isArray(registry.ranges) || !Array.isArray(registry.qids)) throw new Error('بنية سجل المعرّفات المحذوفة غير صالحة');
+  const retired = new Set();
+  for (const qid of registry.qids) {
+    if (!QID_NEW.test(qid) && !QID_LEGACY.test(qid)) throw new Error(`معرّف محذوف غير صالح: ${qid}`);
+    retired.add(qid);
+  }
+  for (const range of registry.ranges) {
+    if (typeof range.category !== 'string' || !CATEGORY_ID.test(range.category) || ![200, 400, 600, 800, 1000].includes(range.tier)
+        || !Number.isInteger(range.start) || !Number.isInteger(range.end)
+        || range.start < 1 || range.end > 999 || range.start > range.end) {
+      throw new Error('نطاق غير صالح في سجل المعرّفات المحذوفة');
+    }
+    for (let n = range.start; n <= range.end; n += 1) retired.add(`${range.category}-${range.tier}-${String(n).padStart(3, '0')}`);
+  }
+  return retired;
+}
+
 export async function writeStatus(status, root = ROOT) {
   await writeFile(path.join(root, STATUS_FILE), `${JSON.stringify(status, null, 2)}\n`);
 }
@@ -127,11 +153,33 @@ export function answerLeaks(answerNorm, questionNorm) {
   return new RegExp(`(^| )${CLITIC}${escaped}( |$)`).test(questionNorm);
 }
 
+// علامات حشو ظهرت في دفعات فعلية ومرّت سابقًا لأنها فريدة نصيًا فقط.
+// هذا فحص للقوالب المعروفة، وليس إثباتًا لصحة المعلومة أو مصدرها.
+export function fabricatedContentReasons(question) {
+  const text = normalizeArabic(question?.q || '');
+  const answers = [question?.a, ...(Array.isArray(question?.alt) ? question.alt : [])]
+    .filter(Boolean).map((a) => normalizeArabic(a));
+  const reasons = [];
+  if (/^في مستوي (200|400|600|800|1000) ما الاسم رقم \d+/.test(text)
+      || /ما (الفريق|الشخصيه|الاسم) المرتبط (بموسم|برقم) \d+/.test(text)) {
+    reasons.push('سؤال قالبي عن رقم أو مستوى بدل معلومة محددة');
+  }
+  if (answers.some((a) => /(?:^| )مستوي (200|400|600|800|1000)$/.test(a)
+      || /(?:^| )معني \d+$/.test(a)
+      || /(?:^| )(200|400|600|800|1000) \d{3}$/.test(a))) {
+    reasons.push('إجابة تحمل لاحقة مستوى أو رمز حشو');
+  }
+  return reasons;
+}
+
 // ── التحقق ────────────────────────────────────────────────────────────────
 export async function validateBank(root = ROOT, { only = null } = {}) {
   const errors = [];
   const warnings = [];
   const status = await readStatus(root);
+  let retiredQids;
+  try { retiredQids = await readRetiredQids(root); }
+  catch (error) { return { errors: [`سجل المعرّفات المحذوفة: ${error.message}`], warnings, categories: [] }; }
   const tiers = status.tiers || [200, 400, 600, 800, 1000];
   const tierMin = status.tierMin || 48;
   const maxQ = status.maxQuestionWords || 22;
@@ -200,6 +248,7 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
 
       // المعرّف
       const qid = String(q.qid || '');
+      if (retiredQids.has(qid)) qerr('معرّف محذوف سابقًا لا يجوز إعادة استخدامه');
       if (!QID_NEW.test(qid) && !QID_LEGACY.test(qid)) qerr(`qid غير صالح (المطلوب <id>-<tier>-<nnn>)`);
       else if (QID_NEW.test(qid) && !qid.startsWith(`${id}-`)) qerr('qid لا يبدأ بمعرّف الفئة');
       if (seenQid.has(qid)) qerr(`qid مكرر (ورد أيضًا في ${seenQid.get(qid)})`);
@@ -226,6 +275,7 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
       if (!answer && !(type && NO_WRITTEN_ANSWER.has(type))) qerr('سؤال بلا إجابة');
       if (answer && wordCount(answer) > maxA) qerr(`الإجابة ${wordCount(answer)} كلمات والحد ${maxA}`);
       if (q.alt !== undefined && (!Array.isArray(q.alt) || q.alt.some((x) => !String(x || '').trim()))) qerr('alt يجب أن تكون مصفوفة نصوص غير فارغة');
+      for (const reason of fabricatedContentReasons(q)) qerr(reason);
 
       // حقول الجودة (إلزامية للفئات المكتملة)
       if (done) {

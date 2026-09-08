@@ -9,7 +9,7 @@
       "q": "ما اسم الهجوم الشهير الذي يطلقه غوكو من كفّيه بعد شحن طاقته؟",
       "a": "كاميهاميها",
       "qid": "dragonball-200-001",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الهجمات والقدرات",
       "verified": true,
       "alt": [
         "كامي هامي ها"
@@ -20,7 +20,7 @@
       "q": "من أمير جنس السايان الذي كان عدوًّا لغوكو ثم صار من حلفائه؟",
       "a": "فيجيتا",
       "qid": "dragonball-200-002",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "ڤيجيتا",
@@ -32,7 +32,7 @@
       "q": "ما اسم الابن الأكبر لغوكو؟",
       "a": "غوهان",
       "qid": "dragonball-200-003",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "العائلات والعلاقات",
       "verified": true,
       "alt": [
         "سون غوهان",
@@ -44,7 +44,7 @@
       "q": "من المحارب الأخضر الذي درّب ابن غوكو الأكبر وصار من أقوى حلفاء الأرض؟",
       "a": "بيكولو",
       "qid": "dragonball-200-004",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "بيكلو",
@@ -56,7 +56,7 @@
       "q": "من صديق غوكو البشري القصير ورفيقه في أغلب المعارك؟",
       "a": "كريلين",
       "qid": "dragonball-200-005",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "كريلن",
@@ -68,7 +68,7 @@
       "q": "ما العضو الإضافي الذي يولد به أبناء جنس السايان؟",
       "a": "ذيل",
       "qid": "dragonball-200-006",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الأجناس والأعراق",
       "verified": true,
       "alt": [
         "الذيل"
@@ -79,7 +79,7 @@
       "q": "إلى أيّ مخلوق ضخم يتحوّل السايايني حين ينظر إلى القمر المكتمل؟",
       "a": "قرد عملاق",
       "qid": "dragonball-200-007",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "التحوّلات",
       "verified": true,
       "alt": [
         "أوزارو",
@@ -166,7 +166,9 @@
       "verified": true,
       "alt": [
         "شينرون",
-        "شن لونغ"
+        "شنرون",
+        "Shenron",
+        "Shenlong"
       ]
     },
     {
@@ -300,7 +302,7 @@
       "q": "من بطل قصة دراغون بول ومحاربها الرئيسي؟",
       "a": "غوكو",
       "qid": "dragonball-200-026",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "سون غوكو",
@@ -312,168 +314,285 @@
       "p": 200,
       "q": "ما اسم جد غوكو الذي ربّاه في الجبال؟",
       "a": "سون غوهان الجد",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "العائلات والعلاقات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Goku",
+      "alt": [
+        "الجد غوهان",
+        "غوهان الجد"
+      ],
       "qid": "dragonball-200-027"
     },
     {
       "p": 200,
-      "q": "ما اسم ابن فيجيتا الأصغر؟",
-      "a": "ترانكس الطفل",
-      "topic": "عائلة فيجيتا",
+      "q": "ما لون شعر بولما في معظم حلقات الأنمي؟",
+      "a": "فيروزي",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Bulma",
+      "alt": [
+        "فيروزي مائل للأزرق",
+        "تركوازي"
+      ],
       "qid": "dragonball-200-028"
     },
     {
       "p": 200,
-      "q": "ما اسم ابن غوكو الأول؟",
-      "a": "سون غوهان",
-      "topic": "عائلة غوكو",
+      "q": "ما اللون الغالب على زي غوكو القتالي الذي منحه له روشي؟",
+      "a": "البرتقالي",
+      "topic": "الأدوات والتدريب",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Krillin#Design_and_appearance",
+      "alt": [
+        "برتقالي"
+      ],
       "qid": "dragonball-200-029"
     },
     {
       "p": 200,
-      "q": "ما اسم الكرات التي تحقق أمنية عند جمعها على الأرض؟",
-      "a": "كرات التنين الأرضية",
-      "topic": "الأدوات",
+      "q": "كم عينًا يملك تينشينهان؟",
+      "a": "ثلاث عيون",
+      "topic": "الأجناس والأعراق",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Tien_Shinhan",
+      "alt": [
+        "3 عيون",
+        "ثلاث"
+      ],
       "qid": "dragonball-200-030"
     },
     {
       "p": 200,
-      "q": "ما اسم التنين الذي يظهر بعد جمع كرات الأرض؟",
-      "a": "شينرون",
-      "topic": "التنانين",
+      "q": "ما الذي تمنحه التنانين لمن يجمع الكرات السحرية؟",
+      "a": "تحقيق الأمنيات",
+      "topic": "كرات التنين والتنانين",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball",
+      "alt": [
+        "تحقيق الأماني"
+      ],
       "qid": "dragonball-200-031"
     },
     {
       "p": 200,
       "q": "ما اسم السحابة التي يركبها غوكو؟",
       "a": "كِنْتون",
-      "topic": "الأدوات",
+      "topic": "الأدوات والتدريب",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball",
+      "alt": [
+        "كينتون",
+        "كينتو أون",
+        "نيمبوس",
+        "Kinto'un"
+      ],
       "qid": "dragonball-200-032"
     },
     {
       "p": 200,
       "q": "ما اسم العصا السحرية التي يحملها غوكو؟",
       "a": "نيوبو",
-      "topic": "الأدوات",
+      "topic": "الأدوات والتدريب",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball",
+      "alt": [
+        "نيوي بو",
+        "نيويبو",
+        "عصا القوة",
+        "Nyoi-bo"
+      ],
       "qid": "dragonball-200-033"
     },
     {
       "p": 200,
-      "q": "ما اسم المعلم الذي درّب غوكو وكريلن؟",
-      "a": "معلّم السلحفاة",
-      "topic": "المعلمون",
+      "q": "ما الشيء الذي يرتديه روشي على ظهره في بداية القصة؟",
+      "a": "صدفة سلحفاة",
+      "topic": "الأدوات والتدريب",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Master_Roshi",
+      "alt": [
+        "درع سلحفاة"
+      ],
       "qid": "dragonball-200-034"
     },
     {
       "p": 200,
-      "q": "ما اسم الحارس الذي يراقب الأرض من المرصد؟",
-      "a": "كامي الأرض",
-      "topic": "الشخصيات",
+      "q": "أي عضو في وجه كريلين غائب؟",
+      "a": "الأنف",
+      "topic": "الأجناس والأعراق",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Krillin#Design_and_appearance",
+      "alt": [
+        "أنفه"
+      ],
       "qid": "dragonball-200-035"
     },
     {
       "p": 200,
-      "q": "ما اسم صديق غوكو الأصلع في بدايات السلسلة؟",
-      "a": "كريلن",
-      "topic": "الشخصيات",
+      "q": "ما الحركة التي يؤديها مقاتلان قبل اتحادهما دون أقراط؟",
+      "a": "رقصة متزامنة",
+      "topic": "التحوّلات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Fusion_characters",
+      "alt": [
+        "رقصة الاندماج"
+      ],
       "qid": "dragonball-200-036"
     },
     {
       "p": 200,
       "q": "ما اسم البطولة القتالية التي يشارك فيها الأبطال؟",
       "a": "تينكايتشي بودوكاي",
-      "topic": "البطولات",
+      "topic": "بطولات فنون القتال",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball",
+      "alt": [
+        "بطولة العالم للفنون القتالية",
+        "Tenkaichi Budokai"
+      ],
       "qid": "dragonball-200-037"
     },
     {
       "p": 200,
       "q": "ما اسم التقنية التي تسمح بالانتقال الفوري؟",
       "a": "شونكان إيدو",
-      "topic": "التقنيات",
+      "topic": "الهجمات والقدرات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball",
+      "alt": [
+        "Shunkan Ido"
+      ],
       "qid": "dragonball-200-038"
     },
     {
       "p": 200,
-      "q": "ما اسم الاندماج الذي يتم عبر رقصة خاصة؟",
-      "a": "فيوجن دانس",
-      "topic": "الاندماج",
+      "q": "ما وظيفة كبسولات عائلة بولما قبل فتحها؟",
+      "a": "تصغير الأشياء وتخزينها",
+      "topic": "الأدوات والتدريب",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Bulma",
+      "alt": [
+        "تخزين الأشياء بحجم صغير"
+      ],
       "qid": "dragonball-200-039"
     },
     {
       "p": 200,
-      "q": "ما اسم الاندماج الذي يتم بواسطة أقراط؟",
+      "q": "ما اسم الأقراط التي تسمح لغوكو وفيجيتا بالاندماج؟",
       "a": "بوتارا",
-      "topic": "الاندماج",
+      "topic": "الأدوات والتدريب",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Fusion_characters",
+      "alt": [
+        "أقراط بوتارا",
+        "البوتارا",
+        "Potara"
+      ],
       "qid": "dragonball-200-040"
     },
     {
       "p": 200,
       "q": "ما اسم التحول ذي الشعر الذهبي الأول لغوكو؟",
       "a": "سوبر سايان الأول",
-      "topic": "التحولات",
+      "topic": "التحوّلات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball",
+      "alt": [
+        "سوبر سايان",
+        "Super Saiyan"
+      ],
       "qid": "dragonball-200-041"
     },
     {
       "p": 200,
-      "q": "ما اسم سباق السيارات الذي شارك فيه غوكو وأصدقاؤه؟",
-      "a": "سباق الصحراء الكبير",
-      "topic": "الأحداث",
+      "q": "ما المهنة التي يعمل بها غوكو لكسب المال في بداية سوبر؟",
+      "a": "مزارع",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Goku",
+      "alt": [
+        "فلاح"
+      ],
       "qid": "dragonball-200-042"
+    },
+    {
+      "p": 200,
+      "q": "كم كرة يجب جمعها لاستدعاء تنين الأرض؟",
+      "a": "سبع كرات",
+      "qid": "dragonball-200-049",
+      "topic": "كرات التنين والتنانين",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Goku",
+      "alt": [
+        "سبع",
+        "7"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الكوكب الذي يدافع عنه غوكو وأصدقاؤه؟",
+      "a": "الأرض",
+      "qid": "dragonball-200-050",
+      "topic": "الكواكب والأماكن",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Goku"
+    },
+    {
+      "p": 200,
+      "q": "ما لون شعر غوهان في تحوّل سوبر سايان المعتاد؟",
+      "a": "ذهبي",
+      "qid": "dragonball-200-051",
+      "topic": "التحوّلات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Gohan#Transformations",
+      "alt": [
+        "أصفر",
+        "الذهبي"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما اسم زوجة غوكو؟",
+      "a": "تشي تشي",
+      "qid": "dragonball-200-052",
+      "topic": "العائلات والعلاقات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball",
+      "alt": [
+        "تشيشي",
+        "Chi-Chi"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما شكل القمر الذي يسبب تحوّل السايان ذي الذيل إلى وحش ضخم؟",
+      "a": "البدر",
+      "qid": "dragonball-200-053",
+      "topic": "التحوّلات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball",
+      "alt": [
+        "القمر المكتمل"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "إلى أي طعام سكري يحوّل بو ضحاياه قبل أكلهم؟",
+      "a": "حلوى",
+      "qid": "dragonball-200-054",
+      "topic": "الهجمات والقدرات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Majin_Buu",
+      "alt": [
+        "الحلوى"
+      ]
     },
     {
       "p": 400,
       "q": "من الطاغية الفضائي الذي دمّر الكوكب الأصلي لجنس السايان؟",
       "a": "فريزا",
       "qid": "dragonball-400-001",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "فريزر",
@@ -485,7 +604,7 @@
       "q": "ما اسم الابن الثاني لغوكو؟",
       "a": "غوتين",
       "qid": "dragonball-400-002",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "غوتن",
@@ -497,7 +616,7 @@
       "q": "ما اسم ابن بولما من الأمير السايايني؟",
       "a": "ترانكس",
       "qid": "dragonball-400-003",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "ترنكس"
@@ -508,7 +627,7 @@
       "q": "من الوحش الحيوي الذي أقام بطولة قتالية تحمل اسمه؟",
       "a": "سيل",
       "qid": "dragonball-400-004",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "سل"
@@ -519,7 +638,7 @@
       "q": "من الشرير الورديّ البدين الذي يحوّل خصومه إلى حلوى؟",
       "a": "ماجين بو",
       "qid": "dragonball-400-005",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "بو",
@@ -531,7 +650,7 @@
       "q": "ما اسم غوكو الأصلي بين أبناء جنسه؟",
       "a": "كاكاروت",
       "qid": "dragonball-400-006",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "كاكاروتو",
@@ -671,7 +790,7 @@
     },
     {
       "p": 400,
-      "q": "ما اسم المكان العائم في السماء الذي يقيم فيه حارس الكوكب ومساعده مستر بوبو؟",
+      "q": "ما اسم المكان العائم في السماء الذي يقيم فيه حارس الكوكب ومساعده؟",
       "a": "قصر الإله",
       "qid": "dragonball-400-018",
       "topic": "الكواكب والأماكن",
@@ -707,7 +826,7 @@
     },
     {
       "p": 400,
-      "q": "ما اسم الجبل الذي يقوم عليه قصر الملك الثور والد تشي تشي؟",
+      "q": "ما اسم الجبل الذي يقوم عليه قصر الملك الثور؟",
       "a": "جبل النار",
       "qid": "dragonball-400-021",
       "topic": "الكواكب والأماكن",
@@ -757,16 +876,16 @@
     },
     {
       "p": 400,
-      "q": "من ربّى غوكو صغيرًا في الجبال؟",
-      "a": "الجد غوهان",
+      "q": "ما صلة غوهان ببان؟",
+      "a": "والدها",
       "qid": "dragonball-400-025",
       "topic": "العائلات والعلاقات",
       "verified": true,
       "alt": [
-        "غوهان الجد",
-        "سون غوهان الجد",
-        "الجد غوهان"
-      ]
+        "أبوها",
+        "الأب"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Gohan"
     },
     {
       "p": 400,
@@ -796,7 +915,7 @@
     },
     {
       "p": 400,
-      "q": "من أي جنس تشي تشي زوجة غوكو؟",
+      "q": "من أي جنس زوجة غوكو؟",
       "a": "بشرية",
       "qid": "dragonball-400-028",
       "topic": "الأجناس والأعراق",
@@ -810,161 +929,269 @@
     },
     {
       "p": 400,
-      "q": "ماذا يفعل بيكولو بذراعه حين يفقدها في المعركة؟",
-      "a": "ينبتها من جديد",
+      "q": "ما الوثيقة التي حاول غوكو وبيكولو الحصول عليها بطلب من زوجة غوكو؟",
+      "a": "رخصة قيادة",
       "qid": "dragonball-400-029",
+      "topic": "الأدوات والتدريب",
+      "verified": true,
+      "alt": [
+        "رخصة السياقة",
+        "رخصة قيادة سيارة"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Piccolo_(Dragon_Ball)"
+    },
+    {
+      "p": 400,
+      "q": "ما نوع الحيوان الذي يشبهه بيروس؟",
+      "a": "قط",
+      "qid": "dragonball-400-030",
       "topic": "الأجناس والأعراق",
       "verified": true,
       "alt": [
-        "ينبتها من جديد",
-        "يعيد إنباتها",
-        "يجدّدها",
-        "تنمو من جديد"
-      ]
+        "قطة",
+        "قط سفنكس"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Beerus"
     },
     {
       "p": 400,
-      "q": "ما اسم التنين الضخم الذي يظهر ليحقّق أمنية عند جمع كرات الأرض؟",
-      "a": "شنرون",
-      "qid": "dragonball-400-030",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "q": "ما اسم الجيش ذي الشعار الأحمر الذي واجهه غوكو طفلًا؟",
+      "a": "ريد ريبون",
+      "topic": "الأعداء والمنظمات",
       "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Red_Ribbon_Army",
       "alt": [
-        "شينلونغ",
-        "شنلونغ",
-        "شنرون",
-        "شن لونغ"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما اسم شقيق غوكو السايان الذي جاء إلى الأرض؟",
-      "a": "راديتز الأخ",
-      "topic": "الأعداء",
-      "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+        "جيش الشريط الأحمر",
+        "جيش الرداء الأحمر",
+        "Red Ribbon Army"
+      ],
       "qid": "dragonball-400-031"
     },
     {
       "p": 400,
-      "q": "ما اسم الكوكب الذي ينتمي إليه فريزا؟",
-      "a": "كوكب فريزا",
-      "topic": "الأعداء",
+      "q": "ما اسم العالِم الذي صنع سيل والمقاتلين الآليين؟",
+      "a": "الدكتور جيرو",
+      "topic": "الأعداء والمنظمات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Red_Ribbon_Army",
+      "alt": [
+        "دكتور غيرو",
+        "جيرو",
+        "Dr. Gero"
+      ],
       "qid": "dragonball-400-032"
     },
     {
       "p": 400,
-      "q": "ما اسم والد فريزا؟",
-      "a": "ملك كولد",
-      "topic": "الأعداء",
+      "q": "ما اسم التقنية التي يطلق بها كريلين قرص طاقة حادًا؟",
+      "a": "كيئنزان",
+      "topic": "الهجمات والقدرات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Krillin#Abilities",
+      "alt": [
+        "كيينزان",
+        "القرص المدمر",
+        "Kienzan",
+        "Destructo Disc"
+      ],
       "qid": "dragonball-400-033"
     },
     {
       "p": 400,
-      "q": "ما اسم محاربي الناميك الذين يساعدون الأبطال؟",
+      "q": "ما اسم العرق ذي البشرة الخضراء الذي ينتمي إليه بيكولو؟",
       "a": "الناميكيون",
-      "topic": "الشخصيات",
+      "topic": "الأجناس والأعراق",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Namekians",
+      "alt": [
+        "ناميكيون",
+        "الناميكيين"
+      ],
       "qid": "dragonball-400-034"
     },
     {
       "p": 400,
-      "q": "ما اسم التقنية التي يتعلمها غوهان لإطلاق طاقته؟",
-      "a": "ماسِنكو",
-      "topic": "التقنيات",
+      "q": "ما اسم موجة الطاقة التي علّمها بيكولو لغوهان ويعني اسمها وميض الشيطان؟",
+      "a": "ماسينكو",
+      "topic": "الهجمات والقدرات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Gohan",
+      "alt": [
+        "ماسنكو",
+        "Masenko"
+      ],
       "qid": "dragonball-400-035"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم هجوم فيجيتا الكروي الشهير؟",
-      "a": "فلاش غالِك",
-      "topic": "التقنيات",
-      "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
-      "qid": "dragonball-400-036"
     },
     {
       "p": 400,
       "q": "ما اسم هجوم غوهان النهائي ضد سيل؟",
       "a": "كاميهاميها الأب والابن",
-      "topic": "التقنيات",
+      "topic": "الهجمات والقدرات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
+      "source": "https://en.wikipedia.org/wiki/Gohan",
       "alt": [],
       "qid": "dragonball-400-037"
     },
     {
       "p": 400,
-      "q": "ما اسم الوحش الذي ظهر من بيضة بابيدي؟",
-      "a": "ماجين بوو",
-      "topic": "الأعداء",
+      "q": "ما وظيفة الآلي رقم 17 عندما نراه في سوبر؟",
+      "a": "حارس محمية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Red_Ribbon_Army#Android_17",
+      "alt": [
+        "حارس غابات",
+        "حارس الحياة البرية"
+      ],
       "qid": "dragonball-400-038"
     },
     {
       "p": 400,
-      "q": "ما اسم والد فيجيتا؟",
-      "a": "ملك السايان",
-      "topic": "عائلة فيجيتا",
+      "q": "ما اسم والد الأمير السايايني فيجيتا؟",
+      "a": "الملك فيجيتا",
+      "topic": "العائلات والعلاقات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Vegeta",
+      "alt": [
+        "ملك فيجيتا",
+        "King Vegeta"
+      ],
       "qid": "dragonball-400-039"
     },
     {
       "p": 400,
-      "q": "ما اسم صديق غوكو الذي كان شريرًا ثم أصبح حليفًا؟",
+      "q": "من قاطع الطريق الذي رافقه بوار ثم صادق غوكو؟",
       "a": "يامتشا",
-      "topic": "الشخصيات",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Puar",
+      "alt": [
+        "ياموتشا",
+        "Yamcha"
+      ],
       "qid": "dragonball-400-040"
     },
     {
       "p": 400,
-      "q": "ما اسم المقاتل الصغير الذي يندمج مع بيكولو؟",
-      "a": "كاميلي",
-      "topic": "الشخصيات",
+      "q": "من المتدرّب الإلهي الذي استولى على جسد غوكو وصار بلاك؟",
+      "a": "زاماسو",
+      "topic": "الأعداء والمنظمات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Goku_Black/Zamasu",
+      "alt": [
+        "Zamasu"
+      ],
       "qid": "dragonball-400-041"
     },
     {
-      "p": 600,
-      "q": "ما رقم الأندرويد الشقراء التي صارت من حلفاء محاربي الأرض؟",
-      "a": "١٨",
-      "qid": "dragonball-600-001",
-      "topic": "الشخصيات الرئيسية",
+      "p": 400,
+      "q": "ما اسم المساعد الذي يخدم كامي ثم دندي في مرصد الأرض؟",
+      "a": "مستر بوبو",
+      "qid": "dragonball-400-049",
+      "topic": "الشخصيات والمرافقون",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Mr._Popo",
+      "alt": [
+        "السيد بوبو",
+        "Mr. Popo"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم شركة عائلة بولما التي تصنع الكبسولات؟",
+      "a": "كابسول كورب",
+      "qid": "dragonball-400-050",
+      "topic": "الأدوات والتدريب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Bulma",
+      "alt": [
+        "شركة كبسولة",
+        "كابسول كوربوريشن",
+        "Capsule Corporation"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما السلاح الذي يحمله ترانكس المستقبلي في غمد على ظهره؟",
+      "a": "سيف طويل",
+      "qid": "dragonball-400-051",
+      "topic": "الأدوات والتدريب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Trunks_(Dragon_Ball)#Abilities",
+      "alt": [
+        "السيف"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم اختراع بولما الذي يعيد ترانكس إلى الماضي؟",
+      "a": "آلة الزمن",
+      "qid": "dragonball-400-052",
+      "topic": "الأدوات والتدريب",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Bulma",
+      "alt": [
+        "آلة السفر عبر الزمن"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم تحوّل غوكو وفيجيتا ذي الشعر الأزرق؟",
+      "a": "سوبر سايان بلو",
+      "qid": "dragonball-400-053",
+      "topic": "التحوّلات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Vegeta#Abilities",
+      "alt": [
+        "السوبر سايان الأزرق",
+        "Super Saiyan Blue"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم شكل فريزا ذي الجلد الذهبي الذي كشفه بعد عودته للحياة؟",
+      "a": "فريزا الذهبي",
+      "qid": "dragonball-400-054",
+      "topic": "التحوّلات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Frieza#Golden_Frieza",
+      "alt": [
+        "غولدن فريزا",
+        "Golden Frieza"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "من الشخصية التي تدرّب عندها غوكو في العالم الآخر على كوكب صغير شديد الجاذبية؟",
+      "a": "الملك كايو",
+      "qid": "dragonball-600-016",
+      "topic": "الأدوات والتدريب",
       "verified": true,
       "alt": [
-        "18",
-        "ثمانية عشر",
-        "الأندرويد ١٨"
-      ]
+        "كايو الشمالي",
+        "الملك كاي"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Goku#In_Dragon_Ball"
+    },
+    {
+      "p": 400,
+      "q": "من المعلّم الذي درّب غوكو على الحالة التي يتحرّك فيها الجسد وحده؟",
+      "a": "ويس",
+      "qid": "dragonball-800-007",
+      "topic": "الأدوات والتدريب",
+      "verified": true,
+      "alt": [
+        "ويسّ",
+        "ويز"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Goku"
     },
     {
       "p": 600,
       "q": "ما اسم الحفيدة الوحيدة لغوكو؟",
       "a": "بان",
       "qid": "dragonball-600-002",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "پان"
@@ -975,7 +1202,7 @@
       "q": "من زوجة ابن غوكو الأكبر؟",
       "a": "فيديل",
       "qid": "dragonball-600-003",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "ڤيديل",
@@ -987,7 +1214,7 @@
       "q": "ما اسم والد غوكو السايايني؟",
       "a": "باردوك",
       "qid": "dragonball-600-004",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "برداك",
@@ -999,7 +1226,7 @@
       "q": "ما اسم الأخ الأكبر لغوكو الذي جاء إلى الأرض ليأخذه معه؟",
       "a": "راديتز",
       "qid": "dragonball-600-005",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "رادتز",
@@ -1008,34 +1235,37 @@
     },
     {
       "p": 600,
-      "q": "من المحارب صاحب العين الثالثة في جبهته؟",
-      "a": "تينشينهان",
+      "q": "من أخو معلّم تينشينهان الذي يعمل قاتلًا مأجورًا؟",
+      "a": "تاو باي باي",
       "qid": "dragonball-600-006",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الأعداء والمنظمات",
       "verified": true,
       "alt": [
-        "تين شين هان",
-        "تنشنهان"
-      ]
+        "تاو",
+        "تاو بايباي",
+        "Tao Pai Pai"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Red_Ribbon_Army#Mercenary_Tao"
     },
     {
       "p": 600,
-      "q": "من المحارب الذي كان قاطع طريق في الصحراء قبل أن يصادق غوكو؟",
-      "a": "ياموتشا",
+      "q": "ما اسم العرّافة التي تبيّن لاحقًا أنها أخت روشي الكبرى؟",
+      "a": "بابا العرافة",
       "qid": "dragonball-600-007",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "العائلات والعلاقات",
       "verified": true,
       "alt": [
-        "يامتشا",
-        "يامشا"
-      ]
+        "أوراناي بابا",
+        "Fortuneteller Baba"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Fortuneteller_Baba"
     },
     {
       "p": 600,
       "q": "ما اسم السايايني الضخم الأصلع الذي هاجم الأرض مع الأمير السايايني؟",
       "a": "نابا",
       "qid": "dragonball-600-008",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "نبا"
@@ -1122,18 +1352,6 @@
       "alt": [
         "جوجيتا",
         "غوغيتا"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "من الشخصية التي تدرّب عندها غوكو في العالم الآخر على كوكب صغير شديد الجاذبية؟",
-      "a": "الملك كايو",
-      "qid": "dragonball-600-016",
-      "topic": "الهجمات والقدرات",
-      "verified": true,
-      "alt": [
-        "كايو الشمالي",
-        "الملك كاي"
       ]
     },
     {
@@ -1245,14 +1463,15 @@
     },
     {
       "p": 600,
-      "q": "بأي اسم كان غوكو ينادي كرته التذكارية؟",
-      "a": "جدّي غوهان",
+      "q": "ما الأمنية التي طلبها بيكولو دايماو من التنين؟",
+      "a": "استعادة شبابه",
       "qid": "dragonball-600-026",
       "topic": "كرات التنين والتنانين",
       "verified": true,
       "alt": [
-        "غوهان الجد"
-      ]
+        "العودة إلى الشباب"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#King_Piccolo"
     },
     {
       "p": 600,
@@ -1359,7 +1578,7 @@
     },
     {
       "p": 600,
-      "q": "كم سنة تفصل بين نسخة وأخرى من بطولة العالم لفنون القتال؟",
+      "q": "كم سنة فصلت بين بطولتي الفنون القتالية الحادية والعشرين والثانية والعشرين؟",
       "a": "ثلاث سنوات",
       "qid": "dragonball-600-035",
       "topic": "بطولات فنون القتال",
@@ -1367,7 +1586,8 @@
       "alt": [
         "ثلاث",
         "3 سنوات"
-      ]
+      ],
+      "source": "https://en.wikipedia.org/wiki/Krillin#In_Dragon_Ball"
     },
     {
       "p": 600,
@@ -1439,7 +1659,7 @@
       "q": "ما اسم الكوكب الذي دمّره فريزا وكان موطن قوم غوكو؟",
       "a": "كوكب فيجيتا",
       "qid": "dragonball-600-041",
-      "topic": "الأجناس والأعراق",
+      "topic": "الكواكب والأماكن",
       "verified": true,
       "alt": [
         "فيجيتا",
@@ -1473,36 +1693,36 @@
     },
     {
       "p": 600,
-      "q": "ما اسم الفتى من قوم بيكولو الذي صار حارسًا للأرض؟",
-      "a": "دندي",
+      "q": "من الساموراي الذي قطع ذيل فيجيتا لإنقاذ المقاتلين؟",
+      "a": "ياجيروبي",
       "qid": "dragonball-600-044",
-      "topic": "الأجناس والأعراق",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
-        "ديندي",
-        "دندي",
-        "دنداي"
-      ]
+        "ياجيروبي",
+        "Yajirobe"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Yajirobe"
     },
     {
       "p": 600,
-      "q": "ما اسم الغرفة التي تعادل سنة كاملة داخلها يومًا واحدًا خارجها؟",
-      "a": "غرفة الروح والزمن",
+      "q": "ما السلاح الذي كسره غوهان أثناء التدريب في عالم الكايوشين؟",
+      "a": "سيف زد",
       "qid": "dragonball-600-045",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "الأدوات والتدريب",
       "verified": true,
       "alt": [
-        "غرفة الزمن",
-        "غرفة الزمان والمكان",
-        "غرفة الروح والزمن"
-      ]
+        "سيف زيتا",
+        "Z Sword"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Gohan"
     },
     {
       "p": 600,
       "q": "ما اسم البذور السحرية التي تشفي المقاتل وتعيد إليه قوّته فورًا؟",
       "a": "السينزو",
       "qid": "dragonball-600-046",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "الأدوات والتدريب",
       "verified": true,
       "alt": [
         "حبوب السينزو",
@@ -1515,7 +1735,7 @@
       "q": "ما اسم الجهاز الذي يوضع على العين لقياس قوة الخصم؟",
       "a": "سكاوتر",
       "qid": "dragonball-600-047",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "الأدوات والتدريب",
       "verified": true,
       "alt": [
         "السكاوتر",
@@ -1525,20 +1745,75 @@
     },
     {
       "p": 600,
-      "q": "ما اسم السجن الفضائي الذي احتُجز فيه غوكو في فيلم برولي؟",
-      "a": "سجن غالاكسي",
-      "topic": "الأفلام",
+      "q": "ما اسم الفتاة التي كسرت جهاز التحكم ببرولي في فيلم سوبر؟",
+      "a": "تشيلاي",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Broly",
+      "alt": [
+        "تشيلي",
+        "Cheelai"
+      ],
       "qid": "dragonball-600-048"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم المقاتل الذي انتحل غوتين وترانكس هويته للمشاركة في بطولة الكبار؟",
+      "a": "مايتي ماسك",
+      "qid": "dragonball-600-049",
+      "topic": "بطولات فنون القتال",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Trunks_(Dragon_Ball)#Present_Trunks",
+      "alt": [
+        "القناع العظيم",
+        "Mighty Mask"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما اسم والد الطاغية الفضائي الذي دمّر كوكب السايان؟",
+      "a": "الملك كولد",
+      "qid": "dragonball-800-004",
+      "topic": "العائلات والعلاقات",
+      "verified": true,
+      "alt": [
+        "كينغ كولد",
+        "كولد"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Frieza"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم هجوم فيجيتا الأخضر في جي تي الذي يطلقه بيده اليسرى؟",
+      "a": "فاينل شاين",
+      "topic": "الهجمات والقدرات",
+      "verified": true,
+      "source": "https://en.wikipedia.org/wiki/Vegeta#Abilities",
+      "alt": [
+        "فاينل شاين أتاك",
+        "Final Shine Attack"
+      ],
+      "qid": "dragonball-400-036"
+    },
+    {
+      "p": 800,
+      "q": "ما الاسم البشري للأندرويد الشقراء زوجة كريلين قبل تعديلها؟",
+      "a": "لازولي",
+      "qid": "dragonball-600-001",
+      "topic": "الشخصيات والمرافقون",
+      "verified": true,
+      "alt": [
+        "لازوري",
+        "Lazuli"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Android_18"
     },
     {
       "p": 800,
       "q": "ما اسم الرفيق الصغير الشاحب للمحارب صاحب الأعين الثلاث؟",
       "a": "تشاوزو",
       "qid": "dragonball-800-001",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "شاوزو",
@@ -1550,7 +1825,7 @@
       "q": "ما اسم الطفل الذي اختاره غوكو تلميذًا له في نهاية آخر بطولة قتالية؟",
       "a": "أووب",
       "qid": "dragonball-800-002",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "أوب",
@@ -1562,7 +1837,7 @@
       "q": "ما اسم الخنزير الصغير الذي يغيّر شكله ورافق غوكو في رحلته الأولى؟",
       "a": "أوولونغ",
       "qid": "dragonball-800-003",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "أولونغ",
@@ -1571,28 +1846,15 @@
     },
     {
       "p": 800,
-      "q": "ما اسم والد الطاغية الفضائي الذي دمّر كوكب السايان؟",
-      "a": "الملك كولد",
-      "qid": "dragonball-800-004",
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "alt": [
-        "كينغ كولد",
-        "كولد"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "ما رقم الرجل الآليّ الطويل ذي الشعر الأحمر الذي أحبّ الطيور والحيوانات؟",
-      "a": "١٦",
+      "q": "ما الاسم البشري للأندرويد الفائز ببطولة القوة قبل تعديله؟",
+      "a": "لابيس",
       "qid": "dragonball-800-005",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
-        "16",
-        "ستة عشر",
-        "الأندرويد ١٦"
-      ]
+        "Lapis"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Red_Ribbon_Army#Android_17"
     },
     {
       "p": 800,
@@ -1604,18 +1866,6 @@
       "alt": [
         "روزيه",
         "سوبر سايان روزي"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "من المعلّم الذي درّب غوكو على الحالة التي يتحرّك فيها الجسد وحده؟",
-      "a": "ويس",
-      "qid": "dragonball-800-007",
-      "topic": "التحوّلات",
-      "verified": true,
-      "alt": [
-        "ويسّ",
-        "ويز"
       ]
     },
     {
@@ -1668,15 +1918,17 @@
     },
     {
       "p": 800,
-      "q": "ما اسم الأقراط السحرية التي يضعها مقاتلان في أذنيهما ليصيرا كائنًا واحدًا؟",
-      "a": "البوتارا",
+      "q": "ما المدة القصوى المعتادة لاندماج البشر بأقراطهم السحرية قبل أن ينفصلوا؟",
+      "a": "ساعة واحدة",
       "qid": "dragonball-800-012",
-      "topic": "الهجمات والقدرات",
+      "topic": "التحوّلات",
       "verified": true,
       "alt": [
-        "أقراط بوتارا",
-        "بوتارا"
-      ]
+        "ساعة",
+        "ستون دقيقة",
+        "60 دقيقة"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Fusion_characters"
     },
     {
       "p": 800,
@@ -1750,7 +2002,7 @@
     },
     {
       "p": 800,
-      "q": "ماذا طلب الأبطال من التنين بشأن ذاكرة الناس بعد النصر الأخير؟",
+      "q": "ماذا طلب الأبطال من التنين بشأن ذاكرة الناس بعد هزيمة بو؟",
       "a": "محو ذكرى ماجن بو",
       "qid": "dragonball-800-019",
       "topic": "كرات التنين والتنانين",
@@ -2010,16 +2262,15 @@
     },
     {
       "p": 800,
-      "q": "ما اسم الكوكب الذي تعلّم غوكو من أهله الانتقال الفوري؟",
-      "a": "يادرات",
+      "q": "ما اسم الدب الأصفر من الكون السادس الذي رماه غوكو خارج الحلبة؟",
+      "a": "بوتامو",
       "qid": "dragonball-800-040",
-      "topic": "الأجناس والأعراق",
+      "topic": "بطولات فنون القتال",
       "verified": true,
       "alt": [
-        "ياردرات",
-        "يادرات",
-        "يارديرات"
-      ]
+        "Botamo"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Botamo"
     },
     {
       "p": 800,
@@ -2049,15 +2300,17 @@
     },
     {
       "p": 800,
-      "q": "ما اسم المحارب من قوم بيكولو الذي اندمج مع بيكولو أثناء قتال فريزا؟",
-      "a": "نيل",
+      "q": "من مقاتل فرقة جينيو الذي تفاخر بأنه الأسرع في الكون؟",
+      "a": "بورتر",
       "qid": "dragonball-800-043",
-      "topic": "الأجناس والأعراق",
+      "topic": "الأعداء والمنظمات",
       "verified": true,
       "alt": [
-        "نيل",
-        "نايل"
-      ]
+        "باتر",
+        "بوتا",
+        "Burter"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Ginyu_Force"
     },
     {
       "p": 800,
@@ -2075,16 +2328,16 @@
     },
     {
       "p": 800,
-      "q": "ما اسم أكبر حكماء قوم بيكولو الذي وهب الكرات السحرية لكوكبه؟",
-      "a": "غورو",
+      "q": "ما اسم العضو الأحمر في فرقة جينيو ذي الشعر الأبيض؟",
+      "a": "جيس",
       "qid": "dragonball-800-045",
-      "topic": "الأجناس والأعراق",
+      "topic": "الأعداء والمنظمات",
       "verified": true,
       "alt": [
-        "الشيخ الأكبر",
-        "غورو",
-        "الحكيم غورو"
-      ]
+        "جييس",
+        "Jeice"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Ginyu_Force"
     },
     {
       "p": 800,
@@ -2102,25 +2355,29 @@
     },
     {
       "p": 800,
-      "q": "ما اسم القرطين اللذين يندمج مرتدياهما في محارب واحد؟",
-      "a": "أقراط بوتارا",
+      "q": "ما اسم المقاتل الضخم ذي الشعر البرتقالي في فرقة جينيو؟",
+      "a": "ريكوم",
       "qid": "dragonball-800-047",
-      "topic": "تفاصيل دقيقة للمتعمّقين",
+      "topic": "الأعداء والمنظمات",
       "verified": true,
       "alt": [
-        "بوتارا",
-        "أقراط بوتارا",
-        "حلق بوتارا"
-      ]
+        "ريكووم",
+        "Recoome"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Ginyu_Force"
     },
     {
       "p": 800,
-      "q": "ما اسم الملائكي الذي يدرب بيروس؟",
-      "a": "ويس المعلّم",
-      "topic": "الملائكة",
+      "q": "من معلّم زاماسو في الكون العاشر؟",
+      "a": "غواسو",
+      "topic": "العائلات والعلاقات",
       "verified": true,
-      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_Wiki",
-      "alt": [],
+      "source": "https://en.wikipedia.org/wiki/List_of_Dragon_Ball_characters#Universe_10",
+      "alt": [
+        "غوواس",
+        "غوواسو",
+        "Gowasu"
+      ],
       "qid": "dragonball-800-048"
     },
     {
@@ -2128,7 +2385,7 @@
       "q": "ما اسم والدة غوكو؟",
       "a": "جيني",
       "qid": "dragonball-1000-001",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "غيني",
@@ -2140,7 +2397,7 @@
       "q": "ما اسم الأخت الكبرى لبولما؟",
       "a": "تايتس",
       "qid": "dragonball-1000-002",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "تايتز",
@@ -2152,7 +2409,7 @@
       "q": "ما اسم القط الأزرق الصغير الطائر الذي يرافق محارب الصحراء دائمًا؟",
       "a": "بوار",
       "qid": "dragonball-1000-003",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "بو آر",
@@ -2164,7 +2421,7 @@
       "q": "ما اسم والد بولما مخترع الكبسولات الشهيرة؟",
       "a": "الدكتور بريف",
       "qid": "dragonball-1000-004",
-      "topic": "الشخصيات الرئيسية",
+      "topic": "الشخصيات والمرافقون",
       "verified": true,
       "alt": [
         "بريف",
@@ -2397,14 +2654,15 @@
     },
     {
       "p": 1000,
-      "q": "ماذا تمنّى إمبراطور الفضاء الشرير من تنين الأرض في فيلم برولي؟",
+      "q": "ما التغيير الجسدي الذي أراد فريزا طلبه من التنين في فيلم برولي؟",
       "a": "زيادة طوله خمسة سنتيمترات",
       "qid": "dragonball-1000-024",
       "topic": "كرات التنين والتنانين",
       "verified": true,
       "alt": [
         "أن يصير أطول قليلًا"
-      ]
+      ],
+      "source": "https://en.wikipedia.org/wiki/Frieza#Dragon_Ball_Z:_Resurrection_'F'_/_Dragon_Ball_Super"
     },
     {
       "p": 1000,
@@ -2598,16 +2856,17 @@
     },
     {
       "p": 1000,
-      "q": "من الفتى الذي واجهه غوكو في آخر بطولة فنون قتال ورحل معه للتدريب؟",
-      "a": "أوب",
+      "q": "بأي اسم دخل كامي بطولة الفنون القتالية الثالثة والعشرين داخل جسد بشري؟",
+      "a": "شين",
       "qid": "dragonball-1000-040",
       "topic": "بطولات فنون القتال",
       "verified": true,
       "alt": [
-        "أووب",
-        "أوب",
-        "أوبو"
-      ]
+        "شين البشري",
+        "هيرو",
+        "Shen"
+      ],
+      "source": "https://en.dragon-ball-official.com/news/01_335.html"
     },
     {
       "p": 1000,
@@ -2700,16 +2959,17 @@
     },
     {
       "p": 1000,
-      "q": "ما اسم الجنس الذي أخذ عنه غوكو رقصة الاندماج؟",
-      "a": "الميتامور",
+      "q": "ما اسم الزوجة الفضائية لأخي فيجيتا الأصغر؟",
+      "a": "غوري",
       "qid": "dragonball-1000-048",
-      "topic": "الأجناس والأعراق",
+      "topic": "العائلات والعلاقات",
       "verified": true,
       "alt": [
-        "الميتامورانز",
-        "سكان ميتامور",
-        "الميتامور"
-      ]
+        "غوري",
+        "غور",
+        "Gure"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Dragon_Ball:_Yo!_Son_Goku_and_His_Friends_Return!!"
     }
   ]
 }

@@ -1,0 +1,396 @@
+{
+  "checkedAt": "2026-09-08",
+  "note": "أزواج تحريرية من أحداث موثقة. السنوات لا تظهر للاعب، وتقارن بعد توثيق الحدثين. تقديرات الصعوبة تحريرية ولم تقس على جمهور.",
+  "groups": [
+    {
+      "topic": "تاريخ الحوسبة",
+      "events": [
+        {
+          "id": "eniac",
+          "label": "الكشف العلني عن حاسوب إنياك",
+          "year": 1946,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1946/"
+        },
+        {
+          "id": "univac",
+          "label": "تسليم يونيفاك الأول لمكتب الإحصاء الأمريكي",
+          "year": 1951,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1951/"
+        },
+        {
+          "id": "fortran",
+          "label": "ظهور لغة فورتران",
+          "year": 1957,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1957/"
+        },
+        {
+          "id": "spacewar",
+          "label": "ظهور لعبة سبيس وور",
+          "year": 1962,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1962/"
+        },
+        {
+          "id": "arpanet",
+          "label": "بدء تشغيل شبكة أربانت",
+          "year": 1969,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1969/"
+        },
+        {
+          "id": "intel4004",
+          "label": "طرح معالج إنتل 4004",
+          "year": 1971,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1971/"
+        },
+        {
+          "id": "apple1",
+          "label": "اكتمال حاسوب آبل الأول",
+          "year": 1976,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1976/"
+        },
+        {
+          "id": "ibmpc",
+          "label": "الإعلان عن حاسوب آي بي إم الشخصي",
+          "year": 1981,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1981/"
+        },
+        {
+          "id": "macintosh",
+          "label": "إطلاق أول ماكنتوش",
+          "year": 1984,
+          "sourceUrl": "https://www.computerhistory.org/timeline/1984/"
+        },
+        {
+          "id": "iphone",
+          "label": "إطلاق أول آيفون",
+          "year": 2007,
+          "sourceUrl": "https://www.computerhistory.org/timeline/2007/"
+        }
+      ]
+    },
+    {
+      "topic": "رحلات الفضاء",
+      "events": [
+        {
+          "id": "apollo8",
+          "label": "إطلاق أبولو 8",
+          "year": 1968,
+          "sourceUrl": "https://www.nasa.gov/mission/apollo-8/"
+        },
+        {
+          "id": "apollo11",
+          "label": "هبوط أبولو 11 على القمر",
+          "year": 1969,
+          "sourceUrl": "https://www.nasa.gov/mission/apollo-11/"
+        },
+        {
+          "id": "apollo13",
+          "label": "إطلاق أبولو 13",
+          "year": 1970,
+          "sourceUrl": "https://www.nasa.gov/mission/apollo-13/"
+        },
+        {
+          "id": "voyager1",
+          "label": "إطلاق فوياجر 1",
+          "year": 1977,
+          "sourceUrl": "https://science.nasa.gov/mission/voyager/voyager-1/"
+        },
+        {
+          "id": "hubble",
+          "label": "إطلاق تلسكوب هابل",
+          "year": 1990,
+          "sourceUrl": "https://science.nasa.gov/mission/hubble/"
+        },
+        {
+          "id": "cassini",
+          "label": "إطلاق كاسيني",
+          "year": 1997,
+          "sourceUrl": "https://science.nasa.gov/mission/cassini/"
+        },
+        {
+          "id": "newhorizons",
+          "label": "إطلاق نيو هورايزنز",
+          "year": 2006,
+          "sourceUrl": "https://science.nasa.gov/mission/new-horizons/"
+        },
+        {
+          "id": "curiosity",
+          "label": "إطلاق مركبة كيوريوسيتي من الأرض",
+          "year": 2011,
+          "sourceUrl": "https://science.nasa.gov/mission/msl-curiosity/"
+        },
+        {
+          "id": "webb",
+          "label": "إطلاق تلسكوب جيمس ويب",
+          "year": 2021,
+          "sourceUrl": "https://science.nasa.gov/mission/webb/"
+        },
+        {
+          "id": "artemis1",
+          "label": "إطلاق أرتميس 1",
+          "year": 2022,
+          "sourceUrl": "https://www.nasa.gov/mission/artemis-i/"
+        }
+      ]
+    },
+    {
+      "topic": "معالم عمرانية",
+      "events": [
+        {
+          "id": "liberty",
+          "label": "تدشين تمثال الحرية بنيويورك",
+          "year": 1886,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+        },
+        {
+          "id": "eiffel",
+          "label": "اكتمال بناء برج إيفل",
+          "year": 1889,
+          "sourceUrl": "https://www.toureiffel.paris/en/the-monument/history"
+        },
+        {
+          "id": "towerbridge",
+          "label": "افتتاح تاور بريدج في لندن",
+          "year": 1894,
+          "sourceUrl": "https://www.towerbridge.org.uk/stories/history"
+        },
+        {
+          "id": "empirestate",
+          "label": "افتتاح مبنى إمباير ستيت",
+          "year": 1931,
+          "sourceUrl": "https://www.esbnyc.com/about/history"
+        },
+        {
+          "id": "goldengate",
+          "label": "افتتاح جسر البوابة الذهبية",
+          "year": 1937,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+        },
+        {
+          "id": "spaceneedle",
+          "label": "افتتاح برج سبيس نيدل",
+          "year": 1962,
+          "sourceUrl": "https://www.spaceneedle.com/history"
+        },
+        {
+          "id": "sydneyopera",
+          "label": "افتتاح دار أوبرا سيدني",
+          "year": 1973,
+          "sourceUrl": "https://www.sydneyoperahouse.com/our-story"
+        },
+        {
+          "id": "petronas",
+          "label": "الافتتاح الرسمي لبرجي بتروناس",
+          "year": 1999,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Petronas_Towers"
+        },
+        {
+          "id": "burjkhalifa",
+          "label": "افتتاح برج خليفة",
+          "year": 2010,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+        },
+        {
+          "id": "louvreabudhabi",
+          "label": "افتتاح اللوفر أبوظبي",
+          "year": 2017,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi"
+        }
+      ]
+    },
+    {
+      "topic": "إصدارات سينمائية",
+      "events": [
+        {
+          "id": "snowwhite",
+          "label": "صدور رسوم «سنو وايت والأقزام السبعة»",
+          "year": 1937,
+          "sourceUrl": "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+        },
+        {
+          "id": "cinderella",
+          "label": "صدور رسوم «سندريلا» الأصلية",
+          "year": 1950,
+          "sourceUrl": "https://movies.disney.com/cinderella-1950"
+        },
+        {
+          "id": "junglebook",
+          "label": "صدور رسوم «كتاب الأدغال» الأصلية",
+          "year": 1967,
+          "sourceUrl": "https://movies.disney.com/the-jungle-book-1967"
+        },
+        {
+          "id": "jaws",
+          "label": "صدور فيلم «الفك المفترس» الأصلي",
+          "year": 1975,
+          "sourceUrl": "https://www.universalpicturesathome.com/movies/jaws"
+        },
+        {
+          "id": "et",
+          "label": "صدور فيلم «إي تي»",
+          "year": 1982,
+          "sourceUrl": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+        },
+        {
+          "id": "bttf",
+          "label": "صدور أول أفلام «العودة إلى المستقبل»",
+          "year": 1985,
+          "sourceUrl": "https://www.universalpicturesathome.com/movies/back-to-the-future"
+        },
+        {
+          "id": "beautybeast",
+          "label": "صدور رسوم «الجميلة والوحش» الأصلية",
+          "year": 1991,
+          "sourceUrl": "https://movies.disney.com/beauty-and-the-beast"
+        },
+        {
+          "id": "aladdin",
+          "label": "صدور رسوم «علاء الدين» الأصلية",
+          "year": 1992,
+          "sourceUrl": "https://movies.disney.com/aladdin"
+        },
+        {
+          "id": "jurassicpark",
+          "label": "صدور أول أفلام «جوراسيك بارك»",
+          "year": 1993,
+          "sourceUrl": "https://www.universalpicturesathome.com/movies/jurassic-park"
+        },
+        {
+          "id": "lionking",
+          "label": "صدور رسوم «الأسد الملك» الأصلية",
+          "year": 1994,
+          "sourceUrl": "https://movies.disney.com/the-lion-king"
+        }
+      ]
+    },
+    {
+      "topic": "دورات أولمبية",
+      "events": [
+        {
+          "id": "mexico",
+          "label": "أول أولمبياد صيفي بمكسيكو سيتي",
+          "year": 1968,
+          "sourceUrl": "https://en.wikipedia.org/wiki/1968_Summer_Olympics"
+        },
+        {
+          "id": "munich",
+          "label": "أول أولمبياد صيفي بميونخ",
+          "year": 1972,
+          "sourceUrl": "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+        },
+        {
+          "id": "montreal",
+          "label": "أول أولمبياد صيفي بمونتريال",
+          "year": 1976,
+          "sourceUrl": "https://en.wikipedia.org/wiki/1976_Summer_Olympics"
+        },
+        {
+          "id": "moscow",
+          "label": "أول أولمبياد صيفي بموسكو",
+          "year": 1980,
+          "sourceUrl": "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
+        },
+        {
+          "id": "seoul",
+          "label": "أول أولمبياد صيفي بسيول",
+          "year": 1988,
+          "sourceUrl": "https://en.wikipedia.org/wiki/1988_Summer_Olympics"
+        },
+        {
+          "id": "barcelona",
+          "label": "أول أولمبياد صيفي ببرشلونة",
+          "year": 1992,
+          "sourceUrl": "https://en.wikipedia.org/wiki/1992_Summer_Olympics"
+        },
+        {
+          "id": "atlanta",
+          "label": "أول أولمبياد صيفي بأتلانتا",
+          "year": 1996,
+          "sourceUrl": "https://en.wikipedia.org/wiki/1996_Summer_Olympics"
+        },
+        {
+          "id": "sydneygames",
+          "label": "أول أولمبياد صيفي بسيدني",
+          "year": 2000,
+          "sourceUrl": "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
+        },
+        {
+          "id": "beijing",
+          "label": "أول أولمبياد صيفي ببكين",
+          "year": 2008,
+          "sourceUrl": "https://en.wikipedia.org/wiki/2008_Summer_Olympics"
+        },
+        {
+          "id": "rio",
+          "label": "أول أولمبياد صيفي بريو دي جانيرو",
+          "year": 2016,
+          "sourceUrl": "https://en.wikipedia.org/wiki/2016_Summer_Olympics"
+        }
+      ]
+    },
+    {
+      "topic": "شبكات المترو",
+      "events": [
+        {
+          "id": "londonmetro",
+          "label": "بدء تشغيل مترو لندن",
+          "year": 1863,
+          "sourceUrl": "https://en.wikipedia.org/wiki/London_Underground"
+        },
+        {
+          "id": "parismetro",
+          "label": "بدء تشغيل مترو باريس",
+          "year": 1900,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro"
+        },
+        {
+          "id": "newyorkmetro",
+          "label": "افتتاح أول خط أنفاق لمترو نيويورك",
+          "year": 1904,
+          "sourceUrl": "https://en.wikipedia.org/wiki/New_York_City_Subway"
+        },
+        {
+          "id": "tokyometro",
+          "label": "افتتاح أول خط لمترو طوكيو",
+          "year": 1927,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Tokyo_Metro"
+        },
+        {
+          "id": "moscowmetro",
+          "label": "بدء تشغيل مترو موسكو",
+          "year": 1935,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Moscow_Metro"
+        },
+        {
+          "id": "stockholmmetro",
+          "label": "بدء تشغيل مترو ستوكهولم كمترو كامل",
+          "year": 1950,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Stockholm_metro"
+        },
+        {
+          "id": "montrealmetro",
+          "label": "بدء تشغيل مترو مونتريال",
+          "year": 1966,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Montreal_Metro"
+        },
+        {
+          "id": "dubaimetro",
+          "label": "بدء تشغيل مترو دبي",
+          "year": 2009,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dubai_Metro"
+        },
+        {
+          "id": "dohametro",
+          "label": "بدء تشغيل مترو الدوحة",
+          "year": 2019,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Doha_Metro"
+        },
+        {
+          "id": "riyadhmetro",
+          "label": "بدء تشغيل مترو الرياض",
+          "year": 2024,
+          "sourceUrl": "https://en.wikipedia.org/wiki/Riyadh_Metro"
+        }
+      ]
+    }
+  ]
+}

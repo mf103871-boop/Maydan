@@ -17,6 +17,8 @@ import {
   answerLeaks,
   STORY_CREDITS,
   STORY_ACTOR,
+  fabricatedContentReasons,
+  readRetiredQids,
 } from '../scripts/bank.mjs';
 
 // ── البنك الحقيقي ─────────────────────────────────────────────────────────
@@ -65,6 +67,50 @@ test('wordCount وترتيب الأسئلة', () => {
   assert.equal(wordCount(''), 0);
   const sorted = sortQuestions([{ p: 600, qid: 'x-600-002' }, { p: 200, qid: 'x-200-010' }, { p: 200, qid: 'x-200-002' }, { p: 600, qid: 'x-600-001' }]);
   assert.deepEqual(sorted.map((q) => q.qid), ['x-200-002', 'x-200-010', 'x-600-001', 'x-600-002']);
+});
+
+test('القوالب المعروفة لا تمر كحقائق، والأرقام الحقيقية لا تُرفض', () => {
+  for (const q of [
+    { q: 'في مستوى ٢٠٠، ما الاسم رقم ١ المرتبط بفئة «أفلام»؟', a: 'العراب، مستوى ٢٠٠' },
+    { q: 'ما الفريق المرتبط بموسم 01 (200-001)؟', a: 'فريق 200-001' },
+    { q: 'نص مختلف', a: 'كلمة — معنى 123' },
+    { q: 'نص مختلف', a: 'اسم', alt: ['اسم، مستوى 400'] },
+  ]) assert.ok(fabricatedContentReasons(q).length, JSON.stringify(q));
+  for (const q of [
+    { q: 'ما رقم القميص الشهير لميسي مع برشلونة؟', a: '10' },
+    { q: 'ما اسم العملة اليابانية؟', a: 'الين' },
+    { q: 'ما الاسم الذي يطلق على مجموعة من ألف عنصر؟', a: 'ألف' },
+  ]) assert.deepEqual(fabricatedContentReasons(q), []);
+});
+
+test('المدقّق يرفض القوالب حتى مع verified وحدود وأعداد صحيحة', async () => {
+  const qs = makeQuestions('fake', 5);
+  qs[0] = { ...qs[0], q: 'في مستوى 200، ما الاسم رقم 1 المرتبط بفئة «أنمي»؟', a: 'إيرين، مستوى 200' };
+  const root = await makeRoot({ categories: { fake: meta() }, packs: [{ id: 'fake', name: 'ف', icon: 'f', qs }] });
+  try {
+    const { errors } = await validateBank(root);
+    assert.ok(errors.some((e) => e.includes('fake-200-001: سؤال قالبي')));
+    assert.ok(errors.some((e) => e.includes('fake-200-001: إجابة تحمل لاحقة')));
+  } finally { await rm(root, { recursive: true, force: true }); }
+});
+
+test('المعرّفات المتقاعدة: توسيع النطاقات ورفض إعادة الاستخدام حتى بعد تغيير الشريحة', async () => {
+  const qs = makeQuestions('retired', 5);
+  qs[0].p = 400;
+  const root = await makeRoot({ categories: { retired: meta() }, packs: [{ id: 'retired', name: 'متقاعد', icon: 'r', qs: sortQuestions(qs) }] });
+  try {
+    assert.equal((await readRetiredQids(root)).size, 0);
+    await mkdir(path.join(root, 'docs/bank'), { recursive: true });
+    const file = path.join(root, 'docs/bank/retired-qids.json');
+    await writeFile(file, JSON.stringify({ ranges: [{ category: 'retired', tier: 200, start: 1, end: 2 }], qids: ['retired-1000-099'] }));
+    assert.deepEqual([...await readRetiredQids(root)].sort(), ['retired-1000-099', 'retired-200-001', 'retired-200-002']);
+    const { errors } = await validateBank(root);
+    assert.ok(errors.some(e => e.includes('retired-200-001: معرّف محذوف سابقًا')));
+    assert.ok(errors.some(e => e.includes('retired-200-002: معرّف محذوف سابقًا')));
+    await writeFile(file, JSON.stringify({ ranges: [{ tier: 200, start: 1, end: 2 }], qids: [] }));
+    await assert.rejects(readRetiredQids(root), /نطاق غير صالح/);
+    assert.ok((await validateBank(root)).errors.some(e => e.includes('سجل المعرّفات المحذوفة')));
+  } finally { await rm(root, { recursive: true, force: true }); }
 });
 
 // ── المدقّق على مستودع مؤقت ────────────────────────────────────────────────

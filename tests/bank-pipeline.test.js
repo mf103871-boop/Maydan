@@ -64,3 +64,37 @@ test('merge requires a verdict, retains sources and refuses to overwrite a pack'
   assert.notEqual(result.status, 0);
   assert.deepEqual(await readPack(root), original);
 });
+
+test('append and merge allow a shared answer across categories but reject fabricated suffixes', async (t) => {
+  for (const command of ['append', 'merge']) {
+    const root = await fixture(t, command === 'append' ? { id: 'trial', name: 'اختبار', icon: '🧩', qs: [] } : undefined);
+    await writeFile(path.join(root, 'src/data/categories/other.json'), JSON.stringify({ id: 'other', qs: [
+      { p: 400, qid: 'other-400-001', q: 'من تولى رئاسة أكاديمية السينما؟', a: 'غريغوري بيك' },
+    ] }));
+    const questions = [
+      { ...candidate('غريغوري بيك'), q: 'من جسّد أتيكوس فينش في فيلم «أن تقتل طائرًا محاكيًا»؟' },
+      { ...candidate('توم هانكس، مستوى 200'), q: 'سؤال قالبي مختلف' },
+    ];
+    const result = await run(root, command, questions, questions.map((_, i) => ({ i, verdict: 'keep' })));
+    assert.equal(result.status, 0, result.stderr);
+    const pack = await readPack(root);
+    assert.deepEqual(pack.qs.map((q) => q.a), ['غريغوري بيك']);
+    assert.match(result.stderr, /إجابة تتكرر في فئة أخرى/);
+  }
+});
+
+test('append and merge skip retired identifiers even when the old questions are absent', async (t) => {
+  for (const command of ['append', 'merge']) {
+    const old = { p: 400, qid: 'trial-200-008', q: 'واقعة محفوظة قديمة', a: 'جواب محفوظ', topic: 'موضوع', verified: true };
+    const root = await fixture(t, command === 'append' ? { id: 'trial', name: 'اختبار', icon: '🧩', qs: [old] } : undefined);
+    await mkdir(path.join(root, 'docs/bank'), { recursive: true });
+    await writeFile(path.join(root, 'docs/bank/retired-qids.json'), JSON.stringify({
+      ranges: [{ category: 'trial', tier: 200, start: 9, end: 48 }], qids: ['trial-200-050'],
+    }));
+    const result = await run(root, command, [candidate()], [{ i: 0, verdict: 'keep' }]);
+    assert.equal(result.status, 0, result.stderr);
+    const pack = await readPack(root);
+    assert.equal(pack.qs.find(q => q.a === 'إجابة جديدة').qid, 'trial-200-051');
+    if (command === 'append') assert.deepEqual(pack.qs.find(q => q.qid === old.qid), old);
+  }
+});
