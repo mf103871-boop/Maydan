@@ -948,15 +948,15 @@
       "name": "ألغاز وذكاء",
       "icon": "🧩",
       "media": false,
-      "status": "done",
+      "status": "pending",
       "counts": {
         "200": 48,
-        "400": 48,
+        "400": 45,
         "600": 48,
         "800": 48,
         "1000": 48
       },
-      "doneAt": "2026-09-08T09:36:33.486Z",
+      "doneAt": null,
       "order": 61
     },
     "emoji": {
