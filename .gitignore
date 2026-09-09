@@ -5,6 +5,20 @@ release/
 *.log
 .DS_Store
 
+# Native build outputs and signing material stay outside source control.
+ios/Maydan/www/
+ios/build/
+**/xcuserdata/
+*.ipa
+*.xcarchive/
+*.p12
+*.p8
+*.mobileprovision
+
+# Smaller iOS icons are generated from the release's 1024px App Store icon.
+ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-*.png
+!ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-1024.png
+
 # الحزم التجريبية (scripts/demo-packs.mjs) — للاختبار المحلي فقط
 media/demo/
 src/data/categories/demo[a-f].json

@@ -1,0 +1,68 @@
+name: iOS build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/ios-release-pipeline]
+  pull_request:
+    paths:
+      - 'ios/**'
+      - 'scripts/ios/**'
+      - '.github/workflows/ios-build.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  simulator:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Select a stable Xcode 26 or newer
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import glob, os, re
+          candidates = []
+          for app in glob.glob('/Applications/Xcode_*.app'):
+              match = re.fullmatch(r'Xcode_(\d+(?:\.\d+)*)\.app', os.path.basename(app))
+              if match:
+                  version = tuple(map(int, match[1].split('.')))
+                  if version[0] >= 26:
+                      candidates.append((version, app))
+          if not candidates:
+              raise SystemExit('A stable Xcode 26 or newer is required.')
+          selected = max(candidates)[1] + '/Contents/Developer'
+          with open(os.environ['GITHUB_ENV'], 'a') as out:
+              out.write('DEVELOPER_DIR=' + selected + '\n')
+          print('Selected', selected)
+          PY
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Test the game
+        run: npm test
+      - name: Build and verify bundled game resources
+        run: npm run ios:prepare
+      - name: Compile the iPhone application
+        run: |
+          xcodebuild -version
+          xcodebuild -project ios/Maydan.xcodeproj -scheme Maydan \
+            -configuration Release -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath ios/build CODE_SIGNING_ALLOWED=NO build
+      - name: Package the simulator app
+        run: ditto -c -k --sequesterRsrc --keepParent ios/build/Build/Products/Release-iphonesimulator/Maydan.app ios/build/Maydan-simulator.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Maydan-iOS-simulator
+          path: ios/build/Maydan-simulator.zip
+          retention-days: 7
+
+# This workflow compiles an unsigned simulator app. App Store signing and
+# upload are intentionally a separate release step once the existing app's
+# identity, signing account and current version are available.

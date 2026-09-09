@@ -51,8 +51,8 @@ export function Home() {
     <Screen dir={getDirection()} className="stack" aria-label="الرئيسية">
       <header className="home-head">
         <div className="brand">
-          <div className="brand-mark" aria-hidden="true">م</div>
-          <div><div className="brand-name">منصة ميدان</div><div className="brand-sub">ألعاب جماعية على جهاز واحد</div></div>
+          <img className="brand-mark" src="icons/icon-192.png" width="44" height="44" alt="" />
+          <div><div className="brand-name">ميدان</div><div className="brand-sub">ألعاب جمعتنا</div></div>
         </div>
         <div className="row">
           <IconButton label="عن المنصة" onClick={() => navigate('/about')}><IconInfo /></IconButton>

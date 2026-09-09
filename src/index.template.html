@@ -4,22 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0B0E1A">
-<meta name="description" content="منصة ميدان — ألعاب جماعية على جهاز واحد للأصدقاء والعائلة: بَديهة، قبل ما يطق، ممنوع، على جبينك، فبركة، ومين فينا.">
+<meta name="description" content="ميدان: ألعاب جمعتنا — تحديات معلومات وسرعة وتمثيل للأصدقاء والعائلة على جهاز واحد: بَديهة، قبل ما يطق، ممنوع، على جبينك، فبركة، ومين فينا.">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="ميدان">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="application-name" content="منصة ميدان">
+<meta name="application-name" content="ميدان: ألعاب جمعتنا">
 <meta name="version" content="<!--VERSION-->">
-<title>منصة ميدان</title>
+<title>ميدان: ألعاب جمعتنا</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230B0E1A'/><text x='50' y='66' text-anchor='middle' font-size='46' font-weight='800' fill='%23F5B82E' font-family='sans-serif'>م</text></svg>">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <style>
 <!--TOKENS_CSS-->
 #boot{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#F5B82E;background:radial-gradient(520px 340px at 50% 38%,#1a2350 0%,#0f1430 48%,#0B0E1A 100%)}
-#boot .mark{width:112px;height:112px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(245,184,46,.55);border-radius:30px;background:linear-gradient(145deg,#1d2a5a,#0c1230);box-shadow:0 22px 60px rgba(0,0,0,.4);font-size:34px;font-weight:900}
+#boot .mark{width:112px;height:112px;display:block;object-fit:cover;border:1px solid rgba(245,184,46,.35);border-radius:30px;background:#0B0E1A;box-shadow:0 22px 60px rgba(0,0,0,.4)}
+#boot .name{font-size:24px;font-weight:900;margin:0}
 #boot .ring{width:28px;height:28px;border:3px solid rgba(245,184,46,.2);border-top-color:#F5B82E;border-radius:50%;animation:boot-spin .85s linear infinite}
 #boot small{color:#A5A8BD;font-size:13px}
 @keyframes boot-spin{to{transform:rotate(360deg)}}
@@ -27,7 +28,7 @@
 </style>
 </head>
 <body>
-<div id="root"><div id="boot"><div class="mark">ميدان</div><div class="ring"></div><small>تجهز الساحة…</small></div></div>
+<div id="root"><div id="boot"><img class="mark" src="icons/icon-192.png" width="112" height="112" alt=""><p class="name">ميدان</p><small>ألعاب جمعتنا</small><div class="ring"></div><small>تجهز الساحة…</small></div></div>
 <div id="fatal" role="alert"></div>
 <script>
 window.onerror = function (msg, src, line, col) {
