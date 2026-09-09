@@ -1,0 +1,2407 @@
+{
+  "id": "arabcelebs",
+  "name": "مشاهير عرب",
+  "icon": "🌟",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطرب المصري صاحب أغنية نور العين؟",
+      "a": "عمرو دياب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطربة اللبنانية صاحبة أغنية معجبوك؟",
+      "a": "نانسي عجرم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطرب المصري صاحب أغنية ناسيني ليه؟",
+      "a": "تامر حسني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطربة اللبنانية صاحبة أغنية ضيعت عمرك؟",
+      "a": "إليسا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطرب العراقي صاحب أغنية زيديني عشقا؟",
+      "a": "كاظم الساهر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطربة السورية صاحبة أغنية إيه اللي صار؟",
+      "a": "أصالة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطربة اللبنانية صاحبة أغنية سهرنا يا ليل؟",
+      "a": "نجوى كرم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطرب اللبناني صاحب أغنية قديش كان فيك؟",
+      "a": "وائل كفوري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطرب السعودي صاحب أغنية أبيت ألحان؟",
+      "a": "محمد عبده",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطربة المصرية صاحبة أغنية مشاعر؟",
+      "a": "شيرين عبد الوهاب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطربة اللبنانية صاحبة أغنية بيت عيونك؟",
+      "a": "يارا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "إعلام وتلفزيون",
+      "q": "من الإعلامية المصرية مقدمة برنامج معكم؟",
+      "a": "منى الشاذلي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "إعلام وتلفزيون",
+      "q": "من الإعلامي اللبناني مقدم المليون سابقا؟",
+      "a": "جورج قرداحي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "إعلام وتلفزيون",
+      "q": "من الإعلامي المصري صاحب البرنامج الساخر بعد 2011؟",
+      "a": "باسم يوسف",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "إعلام وتلفزيون",
+      "q": "من الإعلامي المصري مقدم الحكاية؟",
+      "a": "عمرو أديب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "إعلام وتلفزيون",
+      "q": "من الإعلامية المصرية مقدمة القاهرة اليوم سابقا؟",
+      "a": "لميس الحديدي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "إعلام وتلفزيون",
+      "q": "من الإعلامي السعودي مقدم خواطر؟",
+      "a": "أحمد الشقيري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "رياضة عربية",
+      "q": "من جناح مانشستر سيتي الجزائري السابق؟",
+      "a": "رياض محرز",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "رياضة عربية",
+      "q": "من حارس أشبيلية المغربي السابق؟",
+      "a": "ياسين بونو",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "رياضة عربية",
+      "q": "من صانع ألعاب الأهلي المصري في أمم 2006؟",
+      "a": "محمد أبو تريكة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "رياضة عربية",
+      "q": "من قائد منتخب مصر في أمم 2006؟",
+      "a": "أحمد حسن",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "رياضة عربية",
+      "q": "من جناح الهلال السعودي رقم 29 غالبا؟",
+      "a": "سالم الدوسري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "أزياء وجمال",
+      "q": "من مؤسسة علامة التجميل هودا بيوتي؟",
+      "a": "هدى قطان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "أزياء وجمال",
+      "q": "من مصمم الأزياء اللبناني صاحب العروض الباريسية؟",
+      "a": "إيلي صعب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "أزياء وجمال",
+      "q": "من النجمة المصرية الشهيرة في عروض الأزياء ياسمين؟",
+      "a": "ياسمين صبري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم شركة النفط السعودية؟",
+      "a": "أرامكو",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم شركة الاتصالات السعودية الأولى؟",
+      "a": "إس تي سي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم شركة الألبان السعودية الكبرى؟",
+      "a": "المراعي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المواهب أحلى صوت؟",
+      "a": "ذا فويس",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المقالب الرمضاني الأشهر مع رامز؟",
+      "a": "رامز جلال",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "بلدان وجذور",
+      "q": "من أي بلد صاحبة أغنية إيه اللي صار؟",
+      "a": "سوريا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وشعارات",
+      "q": "ما اللقب الجماهيري لصاحب زيديني عشقا؟",
+      "a": "الهضبة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وشعارات",
+      "q": "ما اللقب الجماهيري لصاحب نور العين؟",
+      "a": "السقا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب محمود عبد الرازق في الزمالك؟",
+      "a": "شيكابالا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب محمود الخطيب في الأهلي؟",
+      "a": "الحوت",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب محمد صلاح في المدرجات الإنجليزية؟",
+      "a": "المصري الملك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب حسين الجسمي الشائع؟",
+      "a": "صوت الإمارات",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "مغنون عرب",
+      "q": "من المطربة المغربية صاحبة أغنية كيليني؟",
+      "a": "أسماء المنور",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "رياضة عربية",
+      "q": "من جناح منتخب مصر تريزيغيه؟",
+      "a": "محمود حسن",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "إعلام وتلفزيون",
+      "q": "من الإعلامية الكويتية فجر؟",
+      "a": "فجر السعيد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب ماجد عبد الله التهديفي؟",
+      "a": "سفين",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وشعارات",
+      "q": "ما اللقب الشبابي لصاحب أغنية ناسيني ليه؟",
+      "a": "أمير البوب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "بلدان وجذور",
+      "q": "ما عاصمة بلد صاحبة معجبوك؟",
+      "a": "بيروت",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم الناقل الإماراتي الثاني بعد الإمارات؟",
+      "a": "الاتحاد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المقالب الكلاسيكي بالكاميرا؟",
+      "a": "الكاميرا الخفية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "أزياء وجمال",
+      "q": "ما اسم الدار الباريسية لصاحب العروض اللبنانية إيلي؟",
+      "a": "دار صعب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم برنامج آخر المنسمين؟",
+      "a": "إبراهيم عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "أزياء وجمال",
+      "q": "ما اسم أحمر الشفاه الشائع؟",
+      "a": "روج",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من المطرب الكويتي صاحب أغنية نسيتني؟",
+      "a": "عبد الله الرويشد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من المطرب التونسي صاحب أغنية أحبك؟",
+      "a": "صابر الرباعي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من المطربة الكويتية نوال؟",
+      "a": "نوال الكويتية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "إعلام وتلفزيون",
+      "q": "ما اسم القناة الإخبارية القطرية الأشهر؟",
+      "a": "الجزيرة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من جناح باريس المغربي أشرف؟",
+      "a": "أشرف حكيمي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من جناح المغرب حكيم؟",
+      "a": "حكيم زياش",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من مهاجم المغرب يوسف؟",
+      "a": "يوسف النصيري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "أزياء وجمال",
+      "q": "ما اسم دار زهير مراد التجارية؟",
+      "a": "دار مراد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "بلدان وجذور",
+      "q": "من أي بلد عمر العبدلات؟",
+      "a": "الأردن",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب أنغام الصوتي الشائع؟",
+      "a": "صوت مصر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب أبي تريكة بين الجماهير؟",
+      "a": "الملك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب حكيم في الغناء الشعبي؟",
+      "a": "سلطان الشعبي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وشعارات",
+      "q": "ما الشجرة رمز لبنان في الأغاني؟",
+      "a": "الأرز",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من قائد المغرب في مونديال 2022؟",
+      "a": "رومين سايس",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من هداف تونس السابق وهبي؟",
+      "a": "وهبي الخزري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "أزياء وجمال",
+      "q": "ما اسم طلاء الأظافر الشائع؟",
+      "a": "مانيكير",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وشعارات",
+      "q": "ما رقم قميص صلاح الأشهر؟",
+      "a": "أحد عشر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية أحببتك؟",
+      "a": "أحلام",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية سهر الليل؟",
+      "a": "راشد الماجد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية المسافة؟",
+      "a": "عبد المجيد عبد الله",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية كرامة؟",
+      "a": "هاني شاكر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية أخطيت في حقك؟",
+      "a": "لطيفة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية أنت الحبيب؟",
+      "a": "سميرة سعيد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية وناسه؟",
+      "a": "عاصي الحلاني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية صعبة؟",
+      "a": "ناصيف زيتون",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية ست الحبايب الحديثة؟",
+      "a": "محمد فؤاد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم آخر كلام سابقا؟",
+      "a": "يسري فودة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم القاهرة 360 سابقا؟",
+      "a": "خيري رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من وسط أرسنال المصري السابق؟",
+      "a": "محمد النني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من حارس منتخب مصر الأساسي 2018؟",
+      "a": "محمد الشناوي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من وسط فيورنتينا المغربي سفيان؟",
+      "a": "سفيان أمرابط",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من مهاجم نانت المصري مصطفى؟",
+      "a": "مصطفى محمد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المليون؟",
+      "a": "من سيربح المليون",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المواهب غوت تالنت عربيا؟",
+      "a": "عرب غوت تالنت",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج إسعاد يونس؟",
+      "a": "صاحبة السعادة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج أحمد حلمي المسرحي؟",
+      "a": "مسرح مصر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم مجموعة الفطيم؟",
+      "a": "ماجد الفطيم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "إعلام وتلفزيون",
+      "q": "من عضو لجنة أحلى صوت النادر؟",
+      "a": "نادر نور",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدمة برنامج هي؟",
+      "a": "هالة سرحان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من هداف الأهلي المصري عماد؟",
+      "a": "عماد متعب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من هداف الهلال ياسر؟",
+      "a": "ياسر القحطاني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم المشغل المصري السابق قبل وي؟",
+      "a": "فودافون",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "رياضة عربية",
+      "q": "من مهاجم الأهلي خالد؟",
+      "a": "خالد بيبو",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "بلدان وجذور",
+      "q": "ما عاصمة الكويت؟",
+      "a": "مدينة الكويت",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم القاهرة 360؟",
+      "a": "أسامة كمال",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب حماقي؟",
+      "a": "صوت الجيل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم التاسعة سابقا؟",
+      "a": "وائل الإبراشي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم اللعبة؟",
+      "a": "شريف عامر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم ميدل إيست اللبنانية؟",
+      "a": "الميدل إيست",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "بلدان وجذور",
+      "q": "من أي بلد أبو بكر سالم؟",
+      "a": "اليمن",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "بلدان وجذور",
+      "q": "من أي بلد ريم البنا؟",
+      "a": "فلسطين",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "بلدان وجذور",
+      "q": "من أي بلد أحمد فكرون؟",
+      "a": "ليبيا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "بلدان وجذور",
+      "q": "من أي بلد هيثم مصطفى؟",
+      "a": "السودان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب يوسف المساكني الكروي؟",
+      "a": "يويا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب الخطيب الإداري في الأهلي؟",
+      "a": "المعلم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب هيفاء وهبي الشائع؟",
+      "a": "القطاوية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وشعارات",
+      "q": "ما اللون الأشهر لقميص الأهلي المصري؟",
+      "a": "أحمر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب علي الحجار الصوتي؟",
+      "a": "صوت النيل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية حبيبي وين؟",
+      "a": "جوزيف عطية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية فيك نقص؟",
+      "a": "رامي صبري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية ولا حاجة؟",
+      "a": "حمادة هلال",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية ناري؟",
+      "a": "لطفي بوشناق",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية انت عمري غناء لا لحنا؟",
+      "a": "أم كلثوم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم تلفزيون النهار الكلاسيكي مفيد؟",
+      "a": "مفيد فوزي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من حارس مصر صاحب رقم القفازات التاريخية؟",
+      "a": "عصام الحضري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من هداف العراق في آسيا 2007؟",
+      "a": "يونس محمود",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من وسط الأهلي طارق؟",
+      "a": "طارق حامد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من نجم الوحدات حسن؟",
+      "a": "حسن عبد الفتاح",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من نجم الوداد أوناجم؟",
+      "a": "محمد أوناجم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المواهب الخليجي نجم؟",
+      "a": "نجم الخليج",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المقالب اللبناني تك؟",
+      "a": "تك تك بوم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من ملحن الأطلال؟",
+      "a": "رياض السنباطي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من شاعر الأطلال؟",
+      "a": "إبراهيم ناجي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية سيرة الحب غناء؟",
+      "a": "عبد الحليم حافظ",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم برنامج مصر النهاردة سابقا؟",
+      "a": "محمود سعد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدمة برنامج كلام تاني؟",
+      "a": "مني عبد الوهاب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب حسام حسن؟",
+      "a": "الصاروخ",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "بلدان وجذور",
+      "q": "ما عاصمة بلد أبو بكر سالم؟",
+      "a": "صنعاء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من صانع ألعاب الزمالك حازم؟",
+      "a": "حازم إمام",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من صانع ألعاب الهلال الشلهوب؟",
+      "a": "محمد الشلهوب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم الناقل الخليجي المشترك؟",
+      "a": "طيران الخليج",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم برنامج الطبعة الأولى سابقا؟",
+      "a": "يوسف الحسيني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية أنت محبوبي؟",
+      "a": "عباس إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية سدرة؟",
+      "a": "أصيل هميم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية يا مسهرني غناء؟",
+      "a": "سيد مكاوي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية حبيبي يا نور العين القديمة؟",
+      "a": "محمد عبد المطلب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من مهاجم ويلز المصري السابق؟",
+      "a": "عمرو زكي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من مهاجم هامبورغ المصري السابق؟",
+      "a": "محمد زيدان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من نجم الزمالك جمال؟",
+      "a": "جمال حمزة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من حارس الزمالك أبو النجا؟",
+      "a": "محمد أبو النجا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدمة كلام تاني؟",
+      "a": "مني عبد الكريم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم الأهلي بنك؟",
+      "a": "البنك الأهلي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب زكي؟",
+      "a": "القناص",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "رياضة عربية",
+      "q": "من وسط الأهلي حسام؟",
+      "a": "حسام غالي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم الملعب؟",
+      "a": "خالد الغندور",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب نمرة؟",
+      "a": "صوت الثورة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من المطربة الجزائرية وردة؟",
+      "a": "وردة الجزائرية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب جورج وسوف؟",
+      "a": "السلطان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب محمد عساف؟",
+      "a": "صوت فلسطين",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما اللون الأشهر لقميص الهلال؟",
+      "a": "أزرق",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب محمد الدعيع؟",
+      "a": "السد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "بلدان وجذور",
+      "q": "من أي بلد عماد الحوسني؟",
+      "a": "عمان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب ماجدة الرومي؟",
+      "a": "سيدة الكأس",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية كرامة يا مصر؟",
+      "a": "مدحت صالح",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية يا ناس؟",
+      "a": "أنوشكا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية حبيبة القلب؟",
+      "a": "وليد توفيق",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية تراب؟",
+      "a": "عبير نعمة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية لمعلم؟",
+      "a": "سعد لمجرد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية وين عايشين؟",
+      "a": "جوليا بطرس",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية شادو الجنوب؟",
+      "a": "محمد منير",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم الجديد زياد؟",
+      "a": "زياد نجيم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدمة النهار جيزيل؟",
+      "a": "جيزيل خوري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "رياضة عربية",
+      "q": "من حارس الأردن عامر؟",
+      "a": "عامر شفيع",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "رياضة عربية",
+      "q": "من نجم القادسية بدر؟",
+      "a": "بدر المطوع",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "رياضة عربية",
+      "q": "من مهاجم البحرين إسماعيل؟",
+      "a": "إسماعيل عبد اللطيف",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج الأطفال أحلى صوت؟",
+      "a": "ذا فويس كيدز",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المواهب العراقي؟",
+      "a": "عراق آيدول",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج المواهب الكويتي أكاديمي؟",
+      "a": "أكاديمي النجوم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية النهر الخالد غناء؟",
+      "a": "محمد عبد الوهاب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية فتح يا ورد؟",
+      "a": "فيروز",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم الاتجاه المعاكس؟",
+      "a": "فيصل القاسم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "رياضة عربية",
+      "q": "من نجم الأهلي بركات؟",
+      "a": "محمد بركات",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب سامي الجابر؟",
+      "a": "الذهبي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "بلدان وجذور",
+      "q": "ما عاصمة بلد عساف؟",
+      "a": "رام الله",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "رياضة عربية",
+      "q": "من حارس الزمالك عبد الواحد؟",
+      "a": "عبد الواحد السيد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم مشغل عمان؟",
+      "a": "عمانتل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم مشغل فلسطين؟",
+      "a": "جوال",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم مشغل السودان؟",
+      "a": "سوداتل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدمة برنامج حديث العرب؟",
+      "a": "لينا زهر الدين",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية حبيبة؟",
+      "a": "وديع الصافي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "رياضة عربية",
+      "q": "من مدافع الأهلي سيد؟",
+      "a": "سيد معوض",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "رياضة عربية",
+      "q": "من نجم الأهلي النحاس؟",
+      "a": "عماد النحاس",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "رياضة عربية",
+      "q": "من مدافع الزمالك الونش؟",
+      "a": "محمود الونش",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب بركات؟",
+      "a": "الأفندي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية ريحة التراب؟",
+      "a": "مارسيل خليفة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم الستاد؟",
+      "a": "مدحت شلبي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب العفاسي؟",
+      "a": "صوت الأناشيد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج الكورة مع مدحت؟",
+      "a": "الكورة مع شلبي",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "arabcelebs-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "بلدان وجذور",
+      "q": "ما مدينة حلب؟",
+      "a": "حلب",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "arabcelebs-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب الكبيسي الغنائي؟",
+      "a": "صوت قطر",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "arabcelebs-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب الصادق؟",
+      "a": "صوت البادية",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "arabcelebs-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج ينبع؟",
+      "a": "ينبع الكلام",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم الناقل العماني جوا؟",
+      "a": "الطيران العماني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "أزياء وجمال",
+      "q": "ما اسم عطر المسك الأبيض؟",
+      "a": "مسك أبيض",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من نجم الكرامة السوري سينان؟",
+      "a": "سينان الشومري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "بلدان وجذور",
+      "q": "من أي بلد سيد ولد أبه؟",
+      "a": "موريتانيا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب الشاب خالد؟",
+      "a": "ملك الراي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب محمد وردي؟",
+      "a": "فنان الشعب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب صباح فخري؟",
+      "a": "سلطان الطرب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب علي عبد الستار؟",
+      "a": "صوت الخليج",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما اللون الأشهر لقميص الترجي؟",
+      "a": "أصفر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية صحراوي؟",
+      "a": "الشاب مامي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية سالم؟",
+      "a": "سالم بن فارس",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية يا بهي؟",
+      "a": "فضيلة الدزيرية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية نويت؟",
+      "a": "لطفي نويرة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية يا طيور؟",
+      "a": "درة زروق",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم بي إن حفيظ؟",
+      "a": "حفيظ دراجي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم السودانية عثمان؟",
+      "a": "عثمان ميرغني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من مهاجم ليستر الجزائري السابق إسلام؟",
+      "a": "إسلام سليماني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من حارس الجزائر رايس؟",
+      "a": "رايس مبولحي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من نجم الأهلي طرابلس أحمد؟",
+      "a": "أحمد الزوي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "برامج ومسابقات",
+      "q": "ما برنامج معكم؟",
+      "a": "معكم منى",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من شاعر زهرة المدائن؟",
+      "a": "الأخوان رحباني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من ملحن سيرة الحب؟",
+      "a": "بليغ حمدي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "أزياء وجمال",
+      "q": "ما اسم دار حبيقة؟",
+      "a": "جورج حبيقة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم بلا حدود سابقا؟",
+      "a": "أحمد منصور",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم تلفزيون الكويت السابق؟",
+      "a": "جاسم الشهاب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "بلدان وجذور",
+      "q": "ما عاصمة بلد الشاب خالد؟",
+      "a": "الجزائر العاصمة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من مغني أغنية يا بنت السلطان؟",
+      "a": "أحمد عدوية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من مدرب الزمالك حسن لاعبا سابقا؟",
+      "a": "حسن شحاتة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من صانع ألعاب الهلال الثنيان؟",
+      "a": "يوسف الثنيان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم مشغل ليبيا؟",
+      "a": "ليبيانا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "ما ملعب السد الرئيسي؟",
+      "a": "جاسم بن حمد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "ما ملعب مكة الكبير؟",
+      "a": "جوهرة المشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب الخطيب اللاعب؟",
+      "a": "المعلم الصغير",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم برنامج في الصندوق؟",
+      "a": "موسى عبد الستار",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية يا رايح؟",
+      "a": "الهادي الجويني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية راني؟",
+      "a": "الشاب حسني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من نجم الزمالك طارق؟",
+      "a": "طارق السيد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب عدوية؟",
+      "a": "ملك الشعبي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من نجم الإسماعيلي درويش؟",
+      "a": "محمد أبو جري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من مهاجم المصري البورسعيدي السابق؟",
+      "a": "حسام حسن المصري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدمة حديث البلد؟",
+      "a": "نادين تحسين بك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "أعمال وعلامات",
+      "q": "ما اسم بنك قطر الوطني؟",
+      "a": "كيو إن بي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب زيدان المصري؟",
+      "a": "أبو تريكة الثاني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحبة أغنية فتحي؟",
+      "a": "بلقيس فتحي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "مغنون عرب",
+      "q": "من صاحب أغنية سمسم؟",
+      "a": "سمسم شهاب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "رياضة عربية",
+      "q": "من جناح الهلال سفيان؟",
+      "a": "سفيان ريان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "إعلام وتلفزيون",
+      "q": "من مقدم الحياة اليوم وائل؟",
+      "a": "وائل سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وشعارات",
+      "q": "ما لقب عدوية الابن؟",
+      "a": "ابن السلطان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "arabcelebs-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "أزياء وجمال",
+      "q": "ما اسم المسك؟",
+      "a": "مسك",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "arabcelebs-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "بلدان وجذور",
+      "q": "ما مدينة فاس؟",
+      "a": "فاس",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "arabcelebs-1000-048"
+    }
+  ]
+}

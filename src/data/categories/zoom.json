@@ -1,0 +1,4808 @@
+{
+  "id": "zoom",
+  "name": "زووم",
+  "icon": "🔍",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 1؟",
+      "a": "برج إيفل",
+      "qid": "zoom-200-001",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "79% 48%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-001.webp",
+        "type": "image",
+        "title": "Eiffel Tower, seen from the Champ de Mars, Paris, France",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",
+        "author": "Benh LIEU SONG",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 2؟",
+      "a": "تمثال الحرية",
+      "qid": "zoom-200-002",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "69% 79%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-002.webp",
+        "type": "image",
+        "title": "September 11 attacks in New York City: View of the World Trade Center and the Statue of Liberty. (Image: US National Pa…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:National_Park_Service_9-11_Statue_of_Liberty_and_WTC_fire.jpg",
+        "author": "National Park Service",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 3؟",
+      "a": "تاج محل",
+      "qid": "zoom-200-003",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "72% 37%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-003.webp",
+        "type": "image",
+        "title": "Taj Mahal, Agra, India.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit2.jpg",
+        "author": "Yann; edited by King of Hearts",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 4؟",
+      "a": "الكولوسيوم",
+      "qid": "zoom-200-004",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "72% 74%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-004.webp",
+        "type": "image",
+        "title": "A 4×4 segment panorama of the Colosseum at dusk. Taken by myself with a Canon 5D and 50mm f/1.8 lens at f/5.6.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+        "author": "Diliff",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 5؟",
+      "a": "الهرم الأكبر",
+      "qid": "zoom-200-005",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "32% 71%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-005.webp",
+        "type": "image",
+        "title": "This is a photo of a natural heritage site in Egypt identified by the ID:",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_of_Giza_(%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D9%87%D9%88%D9%84).jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 6؟",
+      "a": "بيغ بن",
+      "qid": "zoom-200-006",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "33% 45%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-006.webp",
+        "type": "image",
+        "title": "Big Ben at sunset with light trails on Westminster Bridge. Five × 13s exposures, taken over a period of five minutes, w…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Big_Ben_at_sunset_-_2014-10-27_17-30.jpg",
+        "author": "Colin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 7؟",
+      "a": "دار أوبرا سيدني",
+      "qid": "zoom-200-007",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "68% 60%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-007.webp",
+        "type": "image",
+        "title": "A exposure blended photo of the Sydney Opera House, as viewed from the Sydney Harbour Bridge. Taken by myself with a Ca…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_-_Dec_2008.jpg",
+        "author": "Diliff",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 8؟",
+      "a": "المسيح الفادي",
+      "qid": "zoom-200-008",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "76% 49%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-008.webp",
+        "type": "image",
+        "title": "Cristo Redentor, Rio de Janeiro, Brasil",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ_the_Redeemer_-_Cristo_Redentor.jpg",
+        "author": "Arne Müseler",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 9؟",
+      "a": "برج بيزا",
+      "qid": "zoom-200-009",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "47% 25%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-009.webp",
+        "type": "image",
+        "title": "The Duomo and Tower of Pisa at sunrise",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Duomo_and_Tower_of_Pisa_at_sunrise.jpg",
+        "author": "MHoser",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 10؟",
+      "a": "جبل فوجي",
+      "qid": "zoom-200-010",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "36% 25%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-010.webp",
+        "type": "image",
+        "title": "Two U.S. Navy Grumman E-2C Hawkeye (BuNo 164107, 165296) assigned to Carrier Airborne Early Warning Squadron 115 (VAW-1…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grumman_E-2C_Hawkeyes_of_VAW-115_fly_past_Mount_Fuji_on_15_February_2007_(070215-N-2604L-024).jpg",
+        "author": "U.S. Navy photo by Lt. j.g. Andrew Leatherwood",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 11؟",
+      "a": "الخزنة",
+      "qid": "zoom-200-011",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "60% 63%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-011.webp",
+        "type": "image",
+        "title": "Al Khazneh, Petra, Jordan.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al_Khazneh_Petra_edit_2.jpg",
+        "author": "Al_Khazneh_Petra.jpg: Graham Racher from London, UK derivative work: MrPanyGoff",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 12؟",
+      "a": "برج خليفة",
+      "qid": "zoom-200-012",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "37% 71%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-012.webp",
+        "type": "image",
+        "title": "Burj Khalifa",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(16260269606).jpg",
+        "author": "Laika ac",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 13؟",
+      "a": "الكعبة",
+      "qid": "zoom-200-013",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 28%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-013.webp",
+        "type": "image",
+        "title": "Supplicating Pilgrim at Masjid Al Haram. Mecca, Saudi Arabia.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Supplicating_Pilgrim_at_Masjid_Al_Haram._Mecca,_Saudi_Arabia.jpg",
+        "author": "Ali Mansuri",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 14؟",
+      "a": "المسجد الأزرق",
+      "qid": "zoom-200-014",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "69% 31%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-014.webp",
+        "type": "image",
+        "title": "Panoramic view of the courtyard of the Blue Mosque, in Istanbul, Turkey. The courtyard has a square shape, but the merc…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blue_Mosque_Courtyard_Dusk_Wikimedia_Commons.jpg",
+        "author": "Benh LIEU SONG (Flickr)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 15؟",
+      "a": "ساغرادا فاميليا",
+      "qid": "zoom-200-015",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 42%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-015.webp",
+        "type": "image",
+        "title": "Spiral staircase in the Sagrada Família Cathedral, Barcelona, Spain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sagrada_Familia_March_2015-19bw.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 16؟",
+      "a": "جسر البوابة الذهبية",
+      "qid": "zoom-200-016",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "41% 49%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-016.webp",
+        "type": "image",
+        "title": "Golden Gate Bridge as seen from Marshall’s Beach, Presidio of San Francisco, in March 2018",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach,_March_2018.jpg",
+        "author": "Frank Schulenburg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 17؟",
+      "a": "شلالات نياغارا",
+      "qid": "zoom-200-017",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "46% 68%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-017.webp",
+        "type": "image",
+        "title": "Niagara Falls - Horseshoe Falls, Canada.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Niagara_watervallen_canada.jpg",
+        "author": "Quistnix",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 18؟",
+      "a": "الغراند كانيون",
+      "qid": "zoom-200-018",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "77% 44%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-018.webp",
+        "type": "image",
+        "title": "View from Hopi Point over Grand Canyon with rainbow",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_Hopi_Point_with_rainbow_2013.jpg",
+        "author": "Tuxyso",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 19؟",
+      "a": "ماتشو بيتشو",
+      "qid": "zoom-200-019",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "78% 47%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-019.webp",
+        "type": "image",
+        "title": "The Macchu Picchu, a UNESCO World Heritage Site near Cusco in Peru, at twilight.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:80_-_Machu_Picchu_-_Juin_2009_-_edit.jpg",
+        "author": "Martin St-Amant (S23678)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 20؟",
+      "a": "ستون هنج",
+      "qid": "zoom-200-020",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "31% 57%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-020.webp",
+        "type": "image",
+        "title": "Stonehenge Heel Stone.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stonehenge_Heel_Stone.jpg",
+        "author": "DeFacto",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 21؟",
+      "a": "البارثينون",
+      "qid": "zoom-200-021",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "24% 46%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-021.webp",
+        "type": "image",
+        "title": "Picture of Parthenon I took in late afternoon.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parthenon_from_south.jpg",
+        "author": "Thermos",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 22؟",
+      "a": "سور الصين",
+      "qid": "zoom-200-022",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "26% 25%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-022.webp",
+        "type": "image",
+        "title": "Badaling, China: Great Wall of China at Badaling",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Badaling_China_Great-Wall-of-China-01.jpg",
+        "author": "CEphoto, Uwe Aranas",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 23؟",
+      "a": "أبو الهول",
+      "qid": "zoom-200-023",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "21% 45%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-023.webp",
+        "type": "image",
+        "title": "Sphinx at Universitetskaya Embankment in Saint Petersburg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sphinx_at_Universitetskaya_Embankment_(img1).jpg",
+        "author": "Florstein (Telegram:WikiPhoto.Space)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 24؟",
+      "a": "جسر البرج",
+      "qid": "zoom-200-024",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "32% 77%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-024.webp",
+        "type": "image",
+        "title": "A high resolution image of Tower Bridge in London at dusk. This image is a mosaic of around twenty 12.8 megapixel segme…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_London_Dusk_Feb_2006.jpg",
+        "author": "Diliff",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 25؟",
+      "a": "برج سي إن",
+      "qid": "zoom-200-025",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "29% 68%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-025.webp",
+        "type": "image",
+        "title": "The CN Tower and the Toronto Harbour viewed from the Toronto City Centre Airport.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Toronto_-_ON_-_Toronto_Harbourfront7.jpg",
+        "author": "Wladyslaw",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 26؟",
+      "a": "إمباير ستيت",
+      "qid": "zoom-200-026",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 72%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-026.webp",
+        "type": "image",
+        "title": "View of the Empire State Building in New York City from the Top of the Rock at 30 Rockefeller Plaza during sunset. The…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
+        "author": "Dllu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 27؟",
+      "a": "إبرة الفضاء",
+      "qid": "zoom-200-027",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "68% 22%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-027.webp",
+        "type": "image",
+        "title": "View from Space Needle, Seattle.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seattle_from_Space_Needle_June_2018_003.jpg",
+        "author": "King of Hearts",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 28؟",
+      "a": "معبد اللوتس",
+      "qid": "zoom-200-028",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "55% 60%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-028.webp",
+        "type": "image",
+        "title": "Lotus Temple, Delhi",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lotus_Temple_3.jpg",
+        "author": "Gannu03",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 29؟",
+      "a": "أنغكور وات",
+      "qid": "zoom-200-029",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "70% 31%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-029.webp",
+        "type": "image",
+        "title": "Angkor Wat with its reflection",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angkor_Wat_with_its_reflection_(cropped).jpg",
+        "author": "Satdeep Gill",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 30؟",
+      "a": "المدينة المحرمة",
+      "qid": "zoom-200-030",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "49% 51%",
+      "topic": "معالم",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-030.webp",
+        "type": "image",
+        "title": "Sunset of the northwest corner of the Forbidden City.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunset_of_the_Forbidden_City_2006.JPG",
+        "author": "User:kallgan",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 31؟",
+      "a": "أسد",
+      "qid": "zoom-200-031",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "66% 42%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-031.webp",
+        "type": "image",
+        "title": "The leopard is the smallest of the four \"big cats\" in the genus Panthera. The image was taken in the Bali Safary Park,…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panthera_pardus_close_up.jpg",
+        "author": "tropicaLiving",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 32؟",
+      "a": "فيل",
+      "qid": "zoom-200-032",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "46% 21%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-032.webp",
+        "type": "image",
+        "title": "African bush elephants (Loxodonta africana) female with six-week-old baby, Matetsi Safari Area, Zimbabwe",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_bush_elephants_(Loxodonta_africana)_female_with_six-week-old_baby.jpg",
+        "author": "Charles J. Sharp",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 33؟",
+      "a": "زرافة",
+      "qid": "zoom-200-033",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "27% 45%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-033.webp",
+        "type": "image",
+        "title": "A group of giraffe in the Masai Mara National Park.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Three_giraffes_01.jpg",
+        "author": "Byrdyak",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 34؟",
+      "a": "بطريق",
+      "qid": "zoom-200-034",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "58% 78%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-034.webp",
+        "type": "image",
+        "title": "Pengiuns at Burger's Zoo (The Netherlands)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sander-pinguins.jpg",
+        "author": "Sander Spek",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 35؟",
+      "a": "نمر",
+      "qid": "zoom-200-035",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "36% 58%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-035.webp",
+        "type": "image",
+        "title": "Keibu Keioiba (Tiger head cartoon face)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keibu_Keioiba_(Tiger_head_cartoon_face).jpg",
+        "author": "Gnoeee (Gnoeee)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 36؟",
+      "a": "باندا",
+      "qid": "zoom-200-036",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "24% 29%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-036.webp",
+        "type": "image",
+        "title": "Giant panda eating bamboo at Taipei Zoo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giant_panda_eating_bamboo_Taipei_Zoo.jpg",
+        "author": "KQuhen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 37؟",
+      "a": "كنغر",
+      "qid": "zoom-200-037",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "51% 53%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-037.webp",
+        "type": "image",
+        "title": "Eastern Grey Kangaroo mother and joey, Brunkerville, New South Wales, Australia",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Macropus_giganteus_-_Brunkerville.jpg",
+        "author": "JJ Harrison (https://www.jjharrison.com.au/)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 38؟",
+      "a": "كوالا",
+      "qid": "zoom-200-038",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "41% 47%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-038.webp",
+        "type": "image",
+        "title": "Koala (Phascolarctos cinereus) in Zoo Duisburg, Germany",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Koala_in_Zoo_Duisburg.jpg",
+        "author": "Till Niermann",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 39؟",
+      "a": "حمار وحشي",
+      "qid": "zoom-200-039",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "20% 25%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-039.webp",
+        "type": "image",
+        "title": "Hartmann's mountain zebra in Etosha National Park.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Equus_zebra_hartmannae_-_Etosha_2015.jpg",
+        "author": "Yathin S Krishnappa",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 40؟",
+      "a": "فرس النهر",
+      "qid": "zoom-200-040",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "59% 66%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-040.webp",
+        "type": "image",
+        "title": "Pod of Hippos (Hippopotamus amphibius) in Luangwa Valley, Zambia",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippo_pod_edit.jpg",
+        "author": "Paul Maritz",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 41؟",
+      "a": "وحيد القرن",
+      "qid": "zoom-200-041",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "35% 38%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-041.webp",
+        "type": "image",
+        "title": "A photo taken of Rhinoceros eating in a national park in South Africa.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhinoceros_in_South_Africa_adjusted.jpg",
+        "author": "Komencanto, modified by ArtMechanic",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 42؟",
+      "a": "فهد",
+      "qid": "zoom-200-042",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "74% 35%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-042.webp",
+        "type": "image",
+        "title": "Cheetah (Acinonyx jubatus) female, Phinda Private Game Reserve, KwaZulu Natal, South Africa.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cheetah_(Acinonyx_jubatus)_female_2.jpg",
+        "author": "Charles J. Sharp",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 43؟",
+      "a": "دب قطبي",
+      "qid": "zoom-200-043",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "62% 70%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-043.webp",
+        "type": "image",
+        "title": "This male Polar bear (Ursus maritimus) just had a fiasco when chasing a bearded seal. Subsequently he was restlessly se…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polar_bear_(Ursus_maritimus)_in_the_drift_ice_region_north_of_Svalbard.jpg",
+        "author": "Andreas Weith",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 44؟",
+      "a": "دب بني",
+      "qid": "zoom-200-044",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "36% 59%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-044.webp",
+        "type": "image",
+        "title": "Brown bear (Ursus arctos arctos) running. From Skandinavisk Dyrepark, Denmark.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brown_bear_(Ursus_arctos_arctos)_running.jpg",
+        "author": "Malene Thyssen",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 45؟",
+      "a": "ذئب",
+      "qid": "zoom-200-045",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "37% 38%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-045.webp",
+        "type": "image",
+        "title": "Gray wolf",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Front_view_of_a_resting_Canis_lupus_ssp.jpg",
+        "author": "Gary Kramer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 46؟",
+      "a": "ثعلب",
+      "qid": "zoom-200-046",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "73% 48%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-046.webp",
+        "type": "image",
+        "title": "Vulpes vulpes (Red Fox) near Nome, Alaska, USA",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alaska_Red_Fox_(Vulpes_vulpes).jpg",
+        "author": "Gregory \"Slobirdr\" Smith",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 47؟",
+      "a": "نسر",
+      "qid": "zoom-200-047",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "43% 61%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-047.webp",
+        "type": "image",
+        "title": "An Eastern Imperial Eagle.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kaiseradler_Aquila_heliaca_2_amk.jpg",
+        "author": "user:AngMoKio",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا بعد التقريب رقم 48؟",
+      "a": "بومة",
+      "qid": "zoom-200-048",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "22% 47%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-200-048.webp",
+        "type": "image",
+        "title": "A rehabilitated Eurasian eagle-owl at Raptor Fest, a wildlife conservation event held by NYC Parks in Central Park. The…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eurasian_eagle-owl_(44088).jpg",
+        "author": "Rhododendrites",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 49؟",
+      "a": "فلامنجو",
+      "qid": "zoom-400-001",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "20% 66%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-001.webp",
+        "type": "image",
+        "title": "The geographical information in this file was retrospectively estimated.The location may therefore be somewhat imprecis…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reflection_of_the_Flamingo_Hotel_in_front_of_the_Bellagio.jpg",
+        "author": "Julian Lupyan",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 50؟",
+      "a": "طاووس",
+      "qid": "zoom-400-002",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "44% 42%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-002.webp",
+        "type": "image",
+        "title": "Male white peacock (Pavo cristatus mut. alba), Palmitos Park, Gran Canaria.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:White_Peacock,_Palmitos_Park,_May_2018.jpg",
+        "author": "Martin Falbisoner",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 51؟",
+      "a": "أخطبوط",
+      "qid": "zoom-400-003",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "41% 71%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-003.webp",
+        "type": "image",
+        "title": "Octopus vulgaris",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Octopus_vulgaris_Merculiano.jpg",
+        "author": "Comingio Merculiano (1845-1915) in Jatta Giuseppe (1860-1903)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 52؟",
+      "a": "دلفين",
+      "qid": "zoom-400-004",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "40% 61%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-004.webp",
+        "type": "image",
+        "title": "This is a photo of a place that is recognized as a heritage site by the Council for Conservation of Heritage Sites in I…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eilat_Dolphin_Reef_(3).jpg",
+        "author": "טל שמע",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 53؟",
+      "a": "قرش",
+      "qid": "zoom-400-005",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "22% 52%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-005.webp",
+        "type": "image",
+        "title": "Blue shark (Prionace glauca), Faial-Pico Channel, Azores Islands, Portugal. The blue shark is a species of requiem shar…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tibur%C3%B3n_azul_(Prionace_glauca),_canal_Fayal-Pico,_islas_Azores,_Portugal,_2020-07-27,_DD_14.jpg",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 54؟",
+      "a": "سلحفاة بحرية",
+      "qid": "zoom-400-006",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "65% 50%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-006.webp",
+        "type": "image",
+        "title": "Green turtle (Chelonia mydas), Hawai'i, USA.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hawaii_turtle_2.JPG",
+        "author": "Brocken Inaglory",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 55؟",
+      "a": "جمل",
+      "qid": "zoom-400-007",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "35% 52%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-007.webp",
+        "type": "image",
+        "title": "Camel in Gobi Desert, Gobi Gurvansaikhan National Park, Mongolia",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camel_in_Gobi_Desert_01.jpg",
+        "author": "Bernard Gagnon",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 56؟",
+      "a": "حصان",
+      "qid": "zoom-400-008",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "78% 62%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-008.webp",
+        "type": "image",
+        "title": "Horses on Bianditz mountain, in Navarre, Spain. Behind them Aiako mountains can be seen.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Biandintz_eta_zaldiak_-_modified2.jpg",
+        "author": "Mikel Ortega from Errenteria, Basque Country, Spain, with a retouche by Richard Bartz. See the original file here.",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 57؟",
+      "a": "بقرة",
+      "qid": "zoom-400-009",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "41% 66%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-009.webp",
+        "type": "image",
+        "title": "A dual breed (beef and milk) cow near Oeschinen Lake, Switzerland at an altitude of 1575 m. The breed is most likely Sw…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cow_(Fleckvieh_breed)_Oeschinensee_Slaunger_2009-07-07.jpg",
+        "author": "Kim Hansen",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 58؟",
+      "a": "ماعز",
+      "qid": "zoom-400-010",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "30% 44%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-010.webp",
+        "type": "image",
+        "title": "Male goat (Capra aegagrus hircus), Margarita Island, Venezuela.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus_in_isla_Margarita.jpg",
+        "author": "Wilfredor",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 59؟",
+      "a": "فراشة",
+      "qid": "zoom-400-011",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 46%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-011.webp",
+        "type": "image",
+        "title": "Common brimstone butterfly (Gonepteryx rhamni) male, Parsonage Moor, Oxfordshire",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Common_brimstone_butterfly_(Gonepteryx_rhamni)_male.jpg",
+        "author": "Charles J. Sharp",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 60؟",
+      "a": "نحلة",
+      "qid": "zoom-400-012",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "38% 29%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-012.webp",
+        "type": "image",
+        "title": "Female Halictus sp. feeding on flower",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Halictus_bee_on_flower-2.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 61؟",
+      "a": "بيتزا",
+      "qid": "zoom-400-013",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "30% 37%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-013.webp",
+        "type": "image",
+        "title": "Vegetarian Pizza",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vegetarian_Pizza.jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 62؟",
+      "a": "برغر",
+      "qid": "zoom-400-014",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "47% 39%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-014.webp",
+        "type": "image",
+        "title": "A McDonald's Big Mac hamburger, as bought in the United States.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Big_Mac_hamburger.jpg",
+        "author": "Evan-Amos",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 63؟",
+      "a": "سوشي",
+      "qid": "zoom-400-015",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "31% 66%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-015.webp",
+        "type": "image",
+        "title": "Homemade Sahimi by myself with salmon, tuna and white fish. The fish was obtained at a weekend street market in Saude,…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sashimi_of_S%C3%A3o_Paulo.jpg",
+        "author": "Wilfredor",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 64؟",
+      "a": "آيس كريم",
+      "qid": "zoom-400-016",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 34%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-016.webp",
+        "type": "image",
+        "title": "Hand holding an ice cream cone with a spoon included.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ice_cream_cone_with_spoon.jpg",
+        "author": "Thegreatmutata",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 65؟",
+      "a": "بطيخ",
+      "qid": "zoom-400-017",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "58% 46%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-017.webp",
+        "type": "image",
+        "title": "Watermelon flower",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Citrullus_lanatus_03.JPG",
+        "author": "Prenn",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 66؟",
+      "a": "فراولة",
+      "qid": "zoom-400-018",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "20% 79%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-018.webp",
+        "type": "image",
+        "title": "Halved garden Strawberry. Grown in Spain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garden_strawberry_(Fragaria_%C3%97_ananassa)_halved.jpg",
+        "author": "Ivar Leidus",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 67؟",
+      "a": "موز",
+      "qid": "zoom-400-019",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "54% 66%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-019.webp",
+        "type": "image",
+        "title": "Cavendish banana from Maracaibo, Venezuela",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_banana_from_Maracaibo.jpg",
+        "author": "Wilfredor",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 68؟",
+      "a": "تفاحة",
+      "qid": "zoom-400-020",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "63% 54%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-020.webp",
+        "type": "image",
+        "title": "Red Apple. Used white paper behind apple and above apple and bounced SB-600 at 1/4th power.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
+        "author": "Abhijit Tembhekar from Mumbai, India",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 69؟",
+      "a": "برتقالة",
+      "qid": "zoom-400-021",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "26% 55%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-021.webp",
+        "type": "image",
+        "title": "Oranges – whole, halved, and peeled segment",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oranges_-_whole-halved-segment.jpg",
+        "author": "Ivar Leidus",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 70؟",
+      "a": "عنب",
+      "qid": "zoom-400-022",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "29% 73%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-022.webp",
+        "type": "image",
+        "title": "Veraison (the onset of ripening) of Zinfandel grapes in Dry Creek Valley, Sonoma County, California",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grapes,_Dry_Creek_Valley-7705.jpg",
+        "author": "Frank Schulenburg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 71؟",
+      "a": "ليمون",
+      "qid": "zoom-400-023",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "28% 51%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-023.webp",
+        "type": "image",
+        "title": "This image shows a whole and a cut lemon.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lemon.jpg",
+        "author": "André Karwath aka Aka",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 72؟",
+      "a": "أناناس",
+      "qid": "zoom-400-024",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "72% 40%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-024.webp",
+        "type": "image",
+        "title": "Pineapple on its plant, Costa Rica",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AnanasComosusOnPlant.jpg",
+        "author": "Markus Leupold-Löwenthal",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 73؟",
+      "a": "كرواسون",
+      "qid": "zoom-400-025",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "43% 27%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-025.webp",
+        "type": "image",
+        "title": "Viennoiserie typiquement française",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg",
+        "author": "Herry Wibisono (herryway)",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 74؟",
+      "a": "خبز",
+      "qid": "zoom-400-026",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "46% 73%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-026.webp",
+        "type": "image",
+        "title": "The Bread Loaf Inn building, part of the Middlebury College Bread Loaf Campus in Ripton, Vermont.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bread_Loaf_Inn.jpg",
+        "author": "MConradWard",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 75؟",
+      "a": "جبن",
+      "qid": "zoom-400-027",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "67% 41%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-027.webp",
+        "type": "image",
+        "title": "Dutch: Stilleven met kazen, amandelen en krakelingen Still Life with Cheeses, Almonds and Pretzelstitle QS:P1476,nl:\"St…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Peeters_-_Still_Life_with_Cheeses,_Almonds_and_Pretzels.jpg",
+        "author": "Clara Peeters",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 76؟",
+      "a": "شوكولا",
+      "qid": "zoom-400-028",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "38% 21%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-028.webp",
+        "type": "image",
+        "title": "Danusia Classic bar",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Baton_Danusia_Klasyczna.jpg",
+        "author": "photo: Jacek Halicki, design and trademarks: anonymous employees of Wawel S.A.",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 77؟",
+      "a": "قهوة",
+      "qid": "zoom-400-029",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "62% 48%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-029.webp",
+        "type": "image",
+        "title": "A photo of a cup of coffee.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_small_cup_of_coffee.JPG",
+        "author": "Julius Schorzman",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 78؟",
+      "a": "شاي",
+      "qid": "zoom-400-030",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "21% 58%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-030.webp",
+        "type": "image",
+        "title": "Cups for tea",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Fili%C5%BCanki_do_herbaty.jpg",
+        "author": "Jacek Halicki",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 79؟",
+      "a": "عسل",
+      "qid": "zoom-400-031",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "30% 60%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-031.webp",
+        "type": "image",
+        "title": "Acacia and lavender honey from France, and thyme honey from Greece, by La Maison du Miel.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Three_French_monofloral_honey_jars.jpg",
+        "author": "Hayden Soloviev",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 80؟",
+      "a": "زيتون",
+      "qid": "zoom-400-032",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 64%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-032.webp",
+        "type": "image",
+        "title": "Garda DOP olive oil",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2023_Oliwa_z_oliwek_Garda_DOP_(1).jpg",
+        "author": "Jacek Halicki",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 81؟",
+      "a": "فلافل",
+      "qid": "zoom-400-033",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "73% 33%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-033.webp",
+        "type": "image",
+        "title": "Falafel",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falafel_1.JPG",
+        "author": "Miansari66",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 82؟",
+      "a": "شاورما",
+      "qid": "zoom-400-034",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "66% 36%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-034.webp",
+        "type": "image",
+        "title": "En shawarma.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shawarma_closeup.png",
+        "author": "cyclone bill",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 83؟",
+      "a": "حمص",
+      "qid": "zoom-400-035",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "24% 44%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-035.webp",
+        "type": "image",
+        "title": "Homemade hummus and pita",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Homemade_hummus_and_pita_03.jpg",
+        "author": "Satdeep Gill",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 84؟",
+      "a": "تمر",
+      "qid": "zoom-400-036",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "25% 68%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-036.webp",
+        "type": "image",
+        "title": "This is an image with the theme \"Farm to Plate\" from:",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dates_fruit.jpg",
+        "author": "Hajia Hijjah",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 85؟",
+      "a": "رمان",
+      "qid": "zoom-400-037",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "67% 44%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-037.webp",
+        "type": "image",
+        "title": "Pomegranate fruit – whole and piece with arils",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pomegranate_fruit_-_whole_and_piece_with_arils.jpg",
+        "author": "Ivar Leidus",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 86؟",
+      "a": "تين",
+      "qid": "zoom-400-038",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "78% 75%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-038.webp",
+        "type": "image",
+        "title": "Halved common fig. Grown in Brazil",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fig_(Ficus_carica)_fruit_halved.jpg",
+        "author": "Ivar Leidus",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 87؟",
+      "a": "مانجو",
+      "qid": "zoom-400-039",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "60% 71%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-039.webp",
+        "type": "image",
+        "title": "Mango fruits – single and halved. Grown in Brazil",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mangos_-_single_and_halved.jpg",
+        "author": "Ivar Leidus",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 88؟",
+      "a": "جوز هند",
+      "qid": "zoom-400-040",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "37% 67%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-040.webp",
+        "type": "image",
+        "title": "Coconuts – single and cracked open. Grown in Dominican Republic",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coconuts_-_single_and_cracked_open.jpg",
+        "author": "Ivar Leidus",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 89؟",
+      "a": "طماطم",
+      "qid": "zoom-400-041",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 29%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-041.webp",
+        "type": "image",
+        "title": "Best Of Cheese Foods! Tomato Burger Tomato Pizza Tomato Lasagna",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomato_je.jpg",
+        "author": "Softeis",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 90؟",
+      "a": "خيار",
+      "qid": "zoom-400-042",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "33% 66%",
+      "topic": "طعام",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-042.webp",
+        "type": "image",
+        "title": "cucumber in jaffna",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cucumber_in_jaffna.JPG",
+        "author": "Maathavan",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 91؟",
+      "a": "دراجة",
+      "qid": "zoom-400-043",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "34% 37%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-043.webp",
+        "type": "image",
+        "title": "Reflexions on a rainy day...",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bicycle_reflections.jpg",
+        "author": "Tomascastelazo",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 92؟",
+      "a": "دراجة نارية",
+      "qid": "zoom-400-044",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "39% 25%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-044.webp",
+        "type": "image",
+        "title": "Young girl riding a motorcycle in the rice fields in Don Det, Laos, with four other children passengers",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Five_children_on_a_motorcycle.jpg",
+        "author": "Basile Morin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 93؟",
+      "a": "حافلة",
+      "qid": "zoom-400-045",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "63% 66%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-045.webp",
+        "type": "image",
+        "title": "Place: District of Germersheim, Rhineland-Palatinate, Germany Location: Rheinzabern Image Description: VRN bus route 59…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2026-03-27_D500-2061_Achim-Lammerts_Bus-595-Rheinzabern.jpg",
+        "author": "Achim Lammerts (Syntaxys)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 94؟",
+      "a": "قطار",
+      "qid": "zoom-400-046",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "40% 69%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-046.webp",
+        "type": "image",
+        "title": "FCAB railway crossing the 35 kilometers (22 mi) long route over the west side of the Ascotán salt flat, southwestern Bo…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferrocarril_en_el_salar_de_Ascot%C3%A1n,_Chile,_2016-02-09,_DD_46.JPG",
+        "author": "Diego Delso",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 95؟",
+      "a": "طائرة",
+      "qid": "zoom-400-047",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "56% 66%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-047.webp",
+        "type": "image",
+        "title": "An airliner flying over Las Vegas, Nevada.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Airliner_Contrail.jpg",
+        "author": "Noah Wulf",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا بعد التقريب رقم 96؟",
+      "a": "مروحية",
+      "qid": "zoom-400-048",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "75% 66%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-400-048.webp",
+        "type": "image",
+        "title": "Los Angeles Police Department (LAPD) 1987 Bell 206 Jetranger helicopter",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:LAPD_Bell_206_Jetranger.jpg",
+        "author": "Mfield - Matthew Field, http://www.photography.mattfield.com",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 97؟",
+      "a": "شراع",
+      "qid": "zoom-600-001",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "62% 68%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-001.webp",
+        "type": "image",
+        "title": "View from the beach to the Western Scheldt (with s sailboat at sunset), Zoutelande, Zeeland, Netherlands",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zoutelande_(NL),_Strand,_Blick_auf_die_Nordsee_--_2022_--_4984.jpg",
+        "author": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 98؟",
+      "a": "سفينة",
+      "qid": "zoom-600-002",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "37% 74%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-002.webp",
+        "type": "image",
+        "title": "Cruise ship in the Port of Nagasaki",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cruise_ship_in_the_Port_of_Nagasaki,_20240814_0829_3199.jpg",
+        "author": "Jakub Hałun",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 99؟",
+      "a": "غواصة",
+      "qid": "zoom-600-003",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "74% 42%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-003.webp",
+        "type": "image",
+        "title": "Soviet submarine M-296 of Quebec-class as a memorial in Odessa under name M-305.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Submarine_M-296_2016_G2.jpg",
+        "author": "George Chernilevsky",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 100؟",
+      "a": "جرار",
+      "qid": "zoom-600-004",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "45% 28%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-004.webp",
+        "type": "image",
+        "title": "Tractor John Deere 6320 with front and rear mower cutting grass near Stična, a village in the Municipality of Ivančna G…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tractor_John_Deere_6320_with_front_and_rear_mower_cutting_grass.jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 101؟",
+      "a": "إطفائية",
+      "qid": "zoom-600-005",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "55% 41%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-005.webp",
+        "type": "image",
+        "title": "A Soviet PMG-1 fire engine based on a GAZ-AA truck (production: 1932—1941). Fire engines based on ZiS/ZiL chassis are s…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PMG-1_fire_engine_based_on_GAZ-AA.jpg",
+        "author": "Dmitry Ivanov.",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 102؟",
+      "a": "إسعاف",
+      "qid": "zoom-600-006",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "72% 61%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-006.webp",
+        "type": "image",
+        "title": "A 1966 Bedford J1 Ambulance in the livery of the Birmingham Fire and Ambulance Service of that era",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bedford_J1_Ambulance_1966.jpg",
+        "author": "DeFacto",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 103؟",
+      "a": "سيارة شرطة",
+      "qid": "zoom-600-007",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "24% 67%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-007.webp",
+        "type": "image",
+        "title": "Photo of a Swedish police car with emergency lights activated, driving on Hornsgatan towards Zinkensdamm",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Swedish_police_car_with_lights_on.jpg",
+        "author": "ThibautRe",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 104؟",
+      "a": "تاكسي",
+      "qid": "zoom-600-008",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "59% 43%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-008.webp",
+        "type": "image",
+        "title": "TAXI in night traffic. Ljubljana, Slovenia.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:TAXI.jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 105؟",
+      "a": "ترام",
+      "qid": "zoom-600-009",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "62% 44%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-009.webp",
+        "type": "image",
+        "title": "Tram Flexity Zurich No. 4001 as tram No. 4 towards Altstetten station at the stop Zurich, Sportweg (Zurich, Switzerland)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flexity_Tram_Z%C3%BCrich_4001.jpg",
+        "author": "Chme82",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 106؟",
+      "a": "منطاد",
+      "qid": "zoom-600-010",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "59% 75%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-010.webp",
+        "type": "image",
+        "title": "Hot air balloon festival in León, Guanajuato, Mexico. November 2010.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leon_hot_air_balloon_festival_2010.jpg",
+        "author": "Tomas Castelazo",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 107؟",
+      "a": "صاروخ",
+      "qid": "zoom-600-011",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "57% 43%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-011.webp",
+        "type": "image",
+        "title": "A Black Brant IX sounding rocket launches from the Poker Flat Research Range in Alaska at 5:14 a.m. EST, Feb. 22, 2017.…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:First_NASA_ISINGLASS_rocket_launch.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 108؟",
+      "a": "صحن لاقط",
+      "qid": "zoom-600-012",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "24% 46%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-012.webp",
+        "type": "image",
+        "title": "Antenna 2, a 28.5 meters (94 ft) diameter parabolic satellite communication antenna at Erdfunkstelle Raisting (Raisting…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erdfunkstelle_Raisting_2.jpg",
+        "author": "Richard Bartz, Munich aka Makro Freak",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 109؟",
+      "a": "يخت",
+      "qid": "zoom-600-013",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "28% 67%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-013.webp",
+        "type": "image",
+        "title": "A MYA Langkawi yacht in the Seychelles in the year 2025. The yacht was build in 2008 by Blohm + Voss for the Russian ol…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_MYA_Langkawi_Yacht_-_Seychelles_-_2025_-_10.jpg",
+        "author": "NorbertNagel",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 110؟",
+      "a": "زورق",
+      "qid": "zoom-600-014",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "79% 56%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-014.webp",
+        "type": "image",
+        "title": "A man and women make their way up the Euphrates in Basra, Iraq",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boat_on_Euphrates.jpg",
+        "author": "Christiaan Briggs",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 111؟",
+      "a": "سكوتر",
+      "qid": "zoom-600-015",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "22% 61%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-015.webp",
+        "type": "image",
+        "title": "Zündapp Bella R 154, Baujahr 1958",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Z%C3%BCndapp_Bella_R_154_(2008-05-21)_Seitenansicht_ret.jpg",
+        "author": "Spurzem - Lothar Spurzem",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 112؟",
+      "a": "شاحنة",
+      "qid": "zoom-600-016",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "38% 79%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-016.webp",
+        "type": "image",
+        "title": "A Lōdal Evo T-28 waste collection truck operated by Recology in San Francisco, California, USA. This vehicle is a side-…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Recology_Lodal_Garbage_Truck_14425_in_San_Francisco.jpg",
+        "author": "Dllu",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 113؟",
+      "a": "جرافة",
+      "qid": "zoom-600-017",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "79% 60%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-017.webp",
+        "type": "image",
+        "title": "Komatsu bulldozer (D85 PX; semi-U tilt dozer) pushing Indonesian coal in Power plant Ljubljana (TE-TOL; central heating…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Komatsu_bulldozer_pushing_coal_in_Power_plant_Ljubljana_(winter_2017).jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 114؟",
+      "a": "رافعة",
+      "qid": "zoom-600-018",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "70% 27%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-018.webp",
+        "type": "image",
+        "title": "Construction Crane at Salt End, East Riding of Yorkshire, England.The crane is being used to help construct a new plant…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Construction_Crane_at_Saltend_-_geograph.org.uk_-_1384359.jpg",
+        "author": "Andy Beecroft",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 115؟",
+      "a": "سيارة سباق",
+      "qid": "zoom-600-019",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "32% 30%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-019.webp",
+        "type": "image",
+        "title": "Ferrari F2007, 2007 Barcelona motorshow",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:070616_Ferrari_F1_2007_01.JPG",
+        "author": "Xavigivax",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 116؟",
+      "a": "قاطرة بخارية",
+      "qid": "zoom-600-020",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "61% 38%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-020.webp",
+        "type": "image",
+        "title": "Steam locomotive wheels, valve & engine animation. Walschaerts valve gear (mechanism for moving the valve in a steam en…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steam_locomotive_work.gif",
+        "author": "Panther",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 117؟",
+      "a": "عبّارة",
+      "qid": "zoom-600-021",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 65%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-021.webp",
+        "type": "image",
+        "title": "Light trail of the largest German ferry M/S Mecklenburg-Vorpommern on its way from Rostock to Trelleborg: Aperture f/20…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferry_light_trail,_Rostock.jpg",
+        "author": "Radomianin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 118؟",
+      "a": "كاياك",
+      "qid": "zoom-600-022",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 64%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-022.webp",
+        "type": "image",
+        "title": "Kayaker playboating at Saint-Clément-sur-Durance's canoe stadium, on the Durance river (France).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2015-08_playboating_Durance_09.jpg",
+        "author": "0x010C",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 119؟",
+      "a": "طيران شراعي",
+      "qid": "zoom-600-023",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "58% 56%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-023.webp",
+        "type": "image",
+        "title": "Lavezzari tests his split-keel triple-sectioned flexible-wing-sailed hang glider at Berck Beach, France, 1904.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lavezzari_hang_glider.jpg",
+        "author": "Jacques Legrand and Edouard Chemel. Ben MacKworth-Praed",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 120؟",
+      "a": "مظلة طيران",
+      "qid": "zoom-600-024",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "73% 40%",
+      "topic": "مركبات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-024.webp",
+        "type": "image",
+        "title": "Paraglider on the puy de Dôme in Auvergne, France.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parapente_-_166.jpg",
+        "author": "Another one of my pictures: This photograph was taken by Medium69 (William Crochot) and released under the license stated below. You are free to use it for any purpose as long as you credit the author (William Crochot), the Source (Wikimedia Commons) and the license (CC-BY-SA 4.0) in close relation to the image. Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source RAW. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 121؟",
+      "a": "بركان",
+      "qid": "zoom-600-025",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "57% 53%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-025.webp",
+        "type": "image",
+        "title": "Eruption of Stromboli (Isole Eolie/Italia), ca. 100m (300ft) vertically. Exposure of several seconds. The dashed trajec…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stromboli_Eruption.jpg",
+        "author": "Wolfgang Beyer",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 122؟",
+      "a": "برق",
+      "qid": "zoom-600-026",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "34% 37%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-026.webp",
+        "type": "image",
+        "title": "Lightning during an overnight storm at the port and lighthouse in Port-la-Nouvelle in the Aude department in southern F…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Port_and_lighthouse_overnight_storm_with_lightning_in_Port-la-Nouvelle.jpg",
+        "author": "Maxime Raynal from France",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 123؟",
+      "a": "قوس قزح",
+      "qid": "zoom-600-027",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "40% 46%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-027.webp",
+        "type": "image",
+        "title": "This photo shows the place where the rainbow rises (the end of a rainbow), many mythologies were associated with such p…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:WhereRainbowRises.jpg",
+        "author": "Wing-Chi Poon",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 124؟",
+      "a": "ندفة ثلج",
+      "qid": "zoom-600-028",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "63% 29%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-028.webp",
+        "type": "image",
+        "title": "Snowflake closeup",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snowflake_closeup.jpg",
+        "author": "Пекарь Константин",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 125؟",
+      "a": "شلال",
+      "qid": "zoom-600-029",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "25% 62%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-029.webp",
+        "type": "image",
+        "title": "Boy under waterfall in Phu Sang National Park, Thailand",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phu_Sang_Waterfall_01.jpg",
+        "author": "Khunkay",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 126؟",
+      "a": "كثبان",
+      "qid": "zoom-600-030",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "65% 37%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-030.webp",
+        "type": "image",
+        "title": "Dunes in the Thar Desert (Great Indian Desert)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dunes,_D%C3%A9sert_du_Thar.jpg",
+        "author": "Clément Bardot",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 127؟",
+      "a": "شعاب",
+      "qid": "zoom-600-031",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "78% 48%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-031.webp",
+        "type": "image",
+        "title": "A variety of corals form an outcrop on Flynn Reef, part of the Great Barrier Reef near Cairns, Queensland, Australia.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coral_Outcrop_Flynn_Reef.jpg",
+        "author": "Toby Hudson",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 128؟",
+      "a": "نهر جليدي",
+      "qid": "zoom-600-032",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "40% 59%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-032.webp",
+        "type": "image",
+        "title": "Sofia Massif (3,637 metres (11,932 ft)) and Sofia Glacier in clouds and fog under fresh autumn snow. Karachay-Cherkessi…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sofia_Massif_and_Sofia_Glacier,_Karachay-Cherkessia,_Caucasus_Mountains.jpg",
+        "author": "Vyacheslav Argenberg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 129؟",
+      "a": "كهف",
+      "qid": "zoom-600-033",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "31% 40%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-033.webp",
+        "type": "image",
+        "title": "This is a photograph of a Natura 2000 protected area with ID",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2015_Jaskinia_Nied%C5%BAwiedzia_w_Kletnie,_szata_naciekowa_26.jpg",
+        "author": "Jacek Halicki",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 130؟",
+      "a": "ينبوع حار",
+      "qid": "zoom-600-034",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "21% 26%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-034.webp",
+        "type": "image",
+        "title": "Steam phase eruption of Castle Geyser in Yellowstone National Park. The steam from the geyser casting a shadow ot itsel…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steam_Phase_eruption_of_Castle_geyser_with_shadows.jpg",
+        "author": "Brocken Inaglory",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 131؟",
+      "a": "شفق قطبي",
+      "qid": "zoom-600-035",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "40% 30%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-035.webp",
+        "type": "image",
+        "title": "Aurora Borealistitle QS:P1476,en:\"Aurora Borealis\"label QS:Len,\"Aurora Borealis\"label QS:Lfr,\"Aurora Borealis\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frederic_Edwin_Church_-_Aurora_Borealis_-_Google_Art_Project.jpg",
+        "author": "Frederic Edwin Church",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 132؟",
+      "a": "بدر",
+      "qid": "zoom-600-036",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "74% 77%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-036.webp",
+        "type": "image",
+        "title": "Nearly Full Moon view from earth in Belgium (Hamois).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Full_Moon_Luc_Viatour.jpg",
+        "author": "Luc Viatour",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 133؟",
+      "a": "الشمس",
+      "qid": "zoom-600-037",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "36% 67%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-037.webp",
+        "type": "image",
+        "title": "New LROC low orbit image of the Apollo 14 Lunar Module descent stage. Upper two panels show new image but with differen…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:On_the_rim!_(LROC363_-_ap14_lm_closeup).png",
+        "author": "NASA/GSFC/Arizona State University",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 134؟",
+      "a": "زحل",
+      "qid": "zoom-600-038",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "45% 78%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-038.webp",
+        "type": "image",
+        "title": "A swing high above Saturn by NASA's Cassini spacecraft revealed this stately view of the golden-hued planet and its mai…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Top_view_of_the_rings_of_Saturn_by_Cassini_-_October_10,_2013.jpg",
+        "author": "NASA/JPL-Caltech/SSI/Cornell",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 135؟",
+      "a": "الأرض",
+      "qid": "zoom-600-039",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "44% 39%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-039.webp",
+        "type": "image",
+        "title": "STS-135 final flyaround of ISSThis picture of the International Space Station was photographed from the space shuttle A…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:STS-135_final_flyaround_of_ISS_1.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 136؟",
+      "a": "المريخ",
+      "qid": "zoom-600-040",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "45% 45%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-040.webp",
+        "type": "image",
+        "title": "An artist's impression of a terraformed Mars centered over Valles Marineris. The Tharsis region can be seen of the left…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:TerraformedMarsGlobeRealistic.jpg",
+        "author": "Daein Ballard",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 137؟",
+      "a": "شجرة",
+      "qid": "zoom-600-041",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "23% 54%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-041.webp",
+        "type": "image",
+        "title": "Deelerwoud (the eastern part) Oak with emerging young leaves and a dead tree in front of it.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Deelerwoud,_09-05-2024_(d.j.b.)_16.jpg",
+        "author": "Dominicus Johannes Bergsma",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 138؟",
+      "a": "عباد الشمس",
+      "qid": "zoom-600-042",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "76% 66%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-042.webp",
+        "type": "image",
+        "title": "Sunflower head. Ukraine, Vinnytsia Rajon.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunflower_head_2015_G1.jpg",
+        "author": "George Chernilevsky",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 139؟",
+      "a": "وردة",
+      "qid": "zoom-600-043",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "37% 28%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-043.webp",
+        "type": "image",
+        "title": "Edible rose in the Laquenexy orchard garden, Moselle, France. - possibly Rosa 'Abraham Darby'.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Comestible_rose_in_the_Laquenexy_orchard_garden,_Moselle,_France_(01).jpg",
+        "author": "M0tty",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 140؟",
+      "a": "صبار",
+      "qid": "zoom-600-044",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "54% 54%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-044.webp",
+        "type": "image",
+        "title": "Pachycereus pringlei forest in Sonoran Desert, Sonora, Mexico.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pachycereus_pringlei_forest.jpg",
+        "author": "Tomascastelazo",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 141؟",
+      "a": "فطر",
+      "qid": "zoom-600-045",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "79% 28%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-045.webp",
+        "type": "image",
+        "title": "Picked edible fungi in basket. Cep (Boletus edulis, Boletus reticulatus), and Iodine bolete (Boletus impolitus). Trophi…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edible_fungi_in_basket_2012_G1.jpg",
+        "author": "George Chernilevsky",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 142؟",
+      "a": "كوز صنوبر",
+      "qid": "zoom-600-046",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "31% 57%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-046.webp",
+        "type": "image",
+        "title": "Pollen cone on a Ponderosa pine (Pinus ponderosa) in spring in Tuntorp, Brastad, Lysekil Municipality, Sweden. The Pond…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pollen_cone_on_a_Ponderosa_pine_in_Tuntorp,_Brastad,_Sweden.jpg",
+        "author": "W.carter",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 143؟",
+      "a": "ورقة قيقب",
+      "qid": "zoom-600-047",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "27% 54%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-047.webp",
+        "type": "image",
+        "title": "high contrast photo of a red maple leaf on a fallen paper birch trunk.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_maple_leaf_on_paper_birch.jpg",
+        "author": "The Cosmonaut",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا بعد التقريب رقم 144؟",
+      "a": "لوتس",
+      "qid": "zoom-600-048",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "69% 72%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-600-048.webp",
+        "type": "image",
+        "title": "Flower of an Indian Lotus (Nelumbo nucifera)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lotus_flower_(978659).jpg",
+        "author": "Hong Zhang (jennyzhh2008)",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 145؟",
+      "a": "صدفة",
+      "qid": "zoom-800-001",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "43% 43%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-001.webp",
+        "type": "image",
+        "title": "Acavus haemastoma fastuosa (Albers, 1854); Diameter 4.4 cm; Originating from Galle, Sri Lanka; Shell of own collection,…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Acavus_haemastoma_fastuosa_01.JPG",
+        "author": "H. Zell",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 146؟",
+      "a": "نجم بحر",
+      "qid": "zoom-800-002",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "63% 72%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-002.webp",
+        "type": "image",
+        "title": "The Atlantic red sea star Asterias rubens. This starfish was sampled on the Belgian Continental Shelf.Studio image.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Asterias_rubens.jpg",
+        "author": "Hans Hillewaert",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 147؟",
+      "a": "مرجان",
+      "qid": "zoom-800-003",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "21% 64%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-003.webp",
+        "type": "image",
+        "title": "A variety of corals form an outcrop on Flynn Reef, part of the Great Barrier Reef near Cairns, Queensland, Australia.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coral_Outcrop_Flynn_Reef.jpg",
+        "author": "Toby Hudson",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 148؟",
+      "a": "دلية جليد",
+      "qid": "zoom-800-004",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "22% 67%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-004.webp",
+        "type": "image",
+        "title": "Icicles and ice formations on a granite cliff in Gåseberg, Lysekil Municipality, Sweden. The \"growth rings\" or banding…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ice_formations_2.jpg",
+        "author": "W.carter",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 149؟",
+      "a": "ضباب",
+      "qid": "zoom-800-005",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "62% 25%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-005.webp",
+        "type": "image",
+        "title": "Fog curls around the peaks of Mt Lu (Lushan) in Jiangxi province, China. The trees have been identified as Pinus hwangs…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Lushan_-_fog.JPG",
+        "author": "me (w:User:pfctdayelise)",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 150؟",
+      "a": "وادي نهر",
+      "qid": "zoom-800-006",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 21%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-006.webp",
+        "type": "image",
+        "title": "Blyde River valley at Bourke’s Luck Potholes, Blyde River Canyon Nature Reserve, Mpumalanga, South Africa",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blyde_River_Canyon_Nature_Reserve_(ZA),_Blyde_River_--_2024_--_9998.jpg",
+        "author": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 151؟",
+      "a": "بيانو",
+      "qid": "zoom-800-007",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "79% 25%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-007.webp",
+        "type": "image",
+        "title": "Steinway & Sons concert grand piano in high polish polyester finish, model D-274 (length: 274 cm / 107.9 in, width: 156…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steinway_%26_Sons_concert_grand_piano,_model_D-274,_manufactured_at_Steinway%27s_factory_in_Hamburg,_Germany.png",
+        "author": "Steinway & Sons, 10 Rondenbarg, Hamburg D-22525, Germany, eu.steinway.com.Steinway & Sons, 1 Steinway Place, Long Island City, New York 11105, The United States, www.steinway.com.",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 152؟",
+      "a": "كمان",
+      "qid": "zoom-800-008",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "35% 58%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-008.webp",
+        "type": "image",
+        "title": "The Bow Fiddle Rock outside of Portknockie, Moray is a natural formation noted for its resemblance to a fiddle bow.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bow_Fiddle_Rock_East.jpg",
+        "author": "Lucas Kendall",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 153؟",
+      "a": "غيتار",
+      "qid": "zoom-800-009",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "67% 29%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-009.webp",
+        "type": "image",
+        "title": "Man playing an acoustic brazilian guitar (Violão) on Marco Zero Square, Refice, Pernambuco, Brazil.Play music of this i…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Man_playing_an_acoustic_brazilian_guitar_(Viol%C3%A3o)_on_Marco_Zero_Square,_Refice,_Pernambuco,_Brazil.jpg",
+        "author": "Wilfredor",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 154؟",
+      "a": "طبول",
+      "qid": "zoom-800-010",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "72% 74%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-010.webp",
+        "type": "image",
+        "title": "A drum kit or drum set is a musical instrument consisting of a collection of percussion instruments arranged to be play…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_drum_kit_made_by_Mapex_Drums_-_Cacon_Photos-_Copyleft_-_Creative_Commons_11.jpg",
+        "author": "Mostafameraji",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 155؟",
+      "a": "بوق",
+      "qid": "zoom-800-011",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "42% 33%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-011.webp",
+        "type": "image",
+        "title": "Naked body of a Yamaha YTR6335 B♭ trumpet.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trompette_-_corps.JPG",
+        "author": "Eusebius",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 156؟",
+      "a": "ناي",
+      "qid": "zoom-800-012",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "26% 34%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-012.webp",
+        "type": "image",
+        "title": "Nose flute: The nose flute is crafted in a bamboo section, breakthrough nine holes. The entire surface is decorated wit…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fl%C3%BBte_nasale_MHNT_ETH_AC_FI_47_Gaston_de_Roquemaurel.jpg",
+        "author": "Didier Descouens",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 157؟",
+      "a": "أكورديون",
+      "qid": "zoom-800-013",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "38% 40%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-013.webp",
+        "type": "image",
+        "title": "Blind accordion player, Patzcuaro, Michoacán, México",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blind_accordion_player.jpg",
+        "author": "Tomascastelazo",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 158؟",
+      "a": "قيثارة",
+      "qid": "zoom-800-014",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "20% 66%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-014.webp",
+        "type": "image",
+        "title": "A picture of a musical instrument called a harp against a black background",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_musical_instrument._A_harp.jpg",
+        "author": "Eacquahdennis",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 159؟",
+      "a": "مجهر",
+      "qid": "zoom-800-015",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "72% 32%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-015.webp",
+        "type": "image",
+        "title": "Binocular compound microscope from 1914; Carl Zeiss (1816–88), Jena, Germany; materials: brass, metal, glass; owner: Th…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Binocular_compound_microscope,_Carl_Zeiss_Jena,_1914_(6779276516).jpg",
+        "author": "Chad Anderson, staff photographer for SFO Museum",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 160؟",
+      "a": "تلسكوب",
+      "qid": "zoom-800-016",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "25% 72%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-016.webp",
+        "type": "image",
+        "title": "Photo of a comet from Konska near Žilina on 15.08.2020.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kom%C3%A9ta_C-2020_F3_(NEOWISE).jpg",
+        "author": "Palonitor",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 161؟",
+      "a": "آلة كاتبة",
+      "qid": "zoom-800-017",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "66% 31%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-017.webp",
+        "type": "image",
+        "title": "This picture shows a Olympia Simplex typewriter from 1935.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olympia_Simplex.jpg",
+        "author": "Sammlung der Medien und Wissenschaft",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 162؟",
+      "a": "آلة خياطة",
+      "qid": "zoom-800-018",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "76% 73%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-018.webp",
+        "type": "image",
+        "title": "Vesta sewing machine (L.O. Dietrich Altenburg)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vesta_sewing_machine_IMGP0718.jpg",
+        "author": "Nikodem Nijaki",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 163؟",
+      "a": "كاميرا",
+      "qid": "zoom-800-019",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "42% 69%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-019.webp",
+        "type": "image",
+        "title": "Größte begehbare Großformatkamera \"Imago 1:1\" im Kunstraum \"Imago 1:1\" in Berlin-Kreuzberg",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fformatkamera_Imago_1-1.jpg",
+        "author": "Assenmacher",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 164؟",
+      "a": "ساعة يد",
+      "qid": "zoom-800-020",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "32% 22%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-020.webp",
+        "type": "image",
+        "title": "Self-winding (automatic) wristwatch with transparent backside (Pizzaro 1897). Macro stacked image.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Self-winding_wristwatch_(transparent_backside).jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 165؟",
+      "a": "بوصلة",
+      "qid": "zoom-800-021",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "51% 32%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-021.webp",
+        "type": "image",
+        "title": "Navigational compass. This is a special type of Dividers used to work on the chart. Notice how the design allows to use…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Navigational_compass.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 166؟",
+      "a": "ساعة رملية",
+      "qid": "zoom-800-022",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "52% 79%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-022.webp",
+        "type": "image",
+        "title": "Alternative version of image:Wooden hourglass 2.jpg. Wooden hourglass. Total height:25 cm. Wooden disk diameter: 11.5 c…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wooden_hourglass_3.jpg",
+        "author": "User:S Sepp",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 167؟",
+      "a": "مصباح",
+      "qid": "zoom-800-023",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "64% 32%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-023.webp",
+        "type": "image",
+        "title": "Electric bulb from Neolux (max. 230 V, 60 W, E27/ES, energyclass E) in studio",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gluehlampe_01_KMJ.jpg",
+        "author": "KMJ",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 168؟",
+      "a": "مفتاح",
+      "qid": "zoom-800-024",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "60% 20%",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-024.webp",
+        "type": "image",
+        "title": "Bird's eye view of Cedar-Key, Fla., Levy Co. Beck & Pauli, litho.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cedar_Key_1884b_small.jpg",
+        "author": "Stoner, J. J.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 169؟",
+      "a": "قفل",
+      "qid": "zoom-800-025",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "44% 48%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-025.webp",
+        "type": "image",
+        "title": "Love padlocks on the Butchers' Bridge in Ljubljana, Slovenia.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Love_padlocks_on_the_Butchers%27_Bridge_(Ljubljana).jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 170؟",
+      "a": "مطرقة",
+      "qid": "zoom-800-026",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "41% 21%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-026.webp",
+        "type": "image",
+        "title": "Tool set laid out on a white surface with a BLACK+DECKER 20 V cordless drill/driver centered; surrounding items include…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Repair_tool_kit.jpg",
+        "author": "Wilfredor",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 171؟",
+      "a": "مفك",
+      "qid": "zoom-800-027",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "27% 46%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-027.webp",
+        "type": "image",
+        "title": "Philips screwdriver - black",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Black_screwdriver.png",
+        "author": "多多123",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 172؟",
+      "a": "مفتاح ربط",
+      "qid": "zoom-800-028",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "68% 45%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-028.webp",
+        "type": "image",
+        "title": "Monkey wrench from lates 1800 or earlies 1900, found in Coacalco, Mexico",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monkey_wrench_Mexico_1900.jpg",
+        "author": "Carlos Valenzuela Montuy",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 173؟",
+      "a": "مقص",
+      "qid": "zoom-800-029",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "51% 56%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-029.webp",
+        "type": "image",
+        "title": "Pair of scissors with black handle, 2015-06-07",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pair_of_scissors_with_black_handle,_2015-06-07.jpg",
+        "author": "Crisco 1492",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 174؟",
+      "a": "إبرة",
+      "qid": "zoom-800-030",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "26% 70%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-030.webp",
+        "type": "image",
+        "title": "Flat bone sewing needle - Views of the same object Locality : Gourdan cave says \"Elephant Cave\", Gourdan–Polignan, Haut…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aiguille_os_246.1_Global.jpg",
+        "author": "Didier Descouens",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 175؟",
+      "a": "فرشاة",
+      "qid": "zoom-800-031",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "72% 25%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-031.webp",
+        "type": "image",
+        "title": "Screenshot of Paintbrush for OS X with a diagram of the heart along with a basic representation if its arteries.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paintbrush_screenshot.png",
+        "author": "Shanghai killer whale",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 176؟",
+      "a": "لوحة ألوان",
+      "qid": "zoom-800-032",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "45% 78%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-032.webp",
+        "type": "image",
+        "title": "Red and yellow paints being mixed on a palette.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_and_yellow_paint_palette.jpg",
+        "author": "quattrostagioni",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 177؟",
+      "a": "معداد",
+      "qid": "zoom-800-033",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "32% 43%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-033.webp",
+        "type": "image",
+        "title": "Line art drawing of an abacus, the flat slab forming the uppermost member or division of the capital of a column above…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abacus_-_architecture_(PSF).png",
+        "author": "Pearson Scott Foresman",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 178؟",
+      "a": "كرة أرضية",
+      "qid": "zoom-800-034",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "41% 49%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-034.webp",
+        "type": "image",
+        "title": "View from Myrtle Edwards Park to the P-I Globe in Seattle, Washington, USA",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seattle_(WA,_USA),_P-I_Globe_--_2022_--_1708.jpg",
+        "author": "Dietmar Rabich",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 179؟",
+      "a": "منظار",
+      "qid": "zoom-800-035",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "43% 28%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-035.webp",
+        "type": "image",
+        "title": "The sun sets over a set of \"Big Eyes\" binoculars on the signal bridge of the USS Harry S. Truman while an MH-60S Seahaw…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Navy_binoculars.jpg",
+        "author": "U.S. Navy photo by Airman Ricardo J. Reyes.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 180؟",
+      "a": "مكبر صوت",
+      "qid": "zoom-800-036",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "73% 62%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-036.webp",
+        "type": "image",
+        "title": "Lisbon, Portugal, March 21 2024: Activists banners and megaphones still sitting in the ground at a student's day demons…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trans_feminism_symbols_and_megaphone,_transgender_flag.jpg",
+        "author": "Lua Eva Blue",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 181؟",
+      "a": "كرة قدم",
+      "qid": "zoom-800-037",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "38% 58%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-037.webp",
+        "type": "image",
+        "title": "Ryan Valentine scores the goal that keeps Wrexham in the Football League.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ryan_Valentine_scores.jpg",
+        "author": "Markbarnes",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 182؟",
+      "a": "كرة سلة",
+      "qid": "zoom-800-038",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "51% 40%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-038.webp",
+        "type": "image",
+        "title": "Basketball, 1. Damen-Basketball-Bundesliga, ChemCats Chemnitz; Abigail Asoro (9)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basketball,_1._Damen-Basketball-Bundesliga,_ChemCats_Chemnitz_LR10_by_Stepro_IMG_7684.jpg",
+        "author": "Steffen Prößdorf",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 183؟",
+      "a": "مضرب تنس",
+      "qid": "zoom-800-039",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "35% 68%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-039.webp",
+        "type": "image",
+        "title": "Richèl Hogenkamp at the Madrid Open 2015, Madrid, Spain.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rich%C3%A8l_Hogenkamp_-_Masters_de_Madrid_2015_-_11.jpg",
+        "author": "Carlos Delgado",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 184؟",
+      "a": "قفاز بيسبول",
+      "qid": "zoom-800-040",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "66% 40%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-040.webp",
+        "type": "image",
+        "title": "Baseball glove - top is with catching surface visible and baseball bat behind. Photo taken 12/30/2004 by Jeremy Kemp. T…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baseball_glove_front_back_without_background.png",
+        "author": "[1], modified by Kingofears",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 185؟",
+      "a": "كرة أمريكية",
+      "qid": "zoom-800-041",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 58%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-041.webp",
+        "type": "image",
+        "title": "American Football - First Avenue - Minnesota - Band - Reunion 5/17",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mike_Kinsella,_American_Football_-_First_Avenue_-_Minnesota_-_Band_-_Reunion_5_17.jpg",
+        "author": "Andy Witchger",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 186؟",
+      "a": "كرة طائرة",
+      "qid": "zoom-800-042",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "37% 26%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-042.webp",
+        "type": "image",
+        "title": "A Mikasa VLS200 beach volleyball ball.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beach_volleyball_ball.png",
+        "author": "Beach_volleyball_ball.jpg: Thue derivative work: Amada44 talk to me",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 187؟",
+      "a": "كرة غولف",
+      "qid": "zoom-800-043",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "39% 48%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-043.webp",
+        "type": "image",
+        "title": "Birdies welcome",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nest_box_%E2%80%9CBirdies_Welcome%E2%80%9D,_Chico,_2024-03-12.jpg",
+        "author": "Radomianin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 188؟",
+      "a": "دبوس بولينغ",
+      "qid": "zoom-800-044",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "35% 51%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-044.webp",
+        "type": "image",
+        "title": "Diagram showing margin for error in covering single-pin spare in ten-pin bowling Sourcing for measurements: USBC Equipm…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:20220211_Bowling_balls_and_pin_-_margin_for_error_to_cover_single-pin_spare.jpg",
+        "author": "RCraig09",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 189؟",
+      "a": "عصا هوكي",
+      "qid": "zoom-800-045",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "22% 66%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-045.webp",
+        "type": "image",
+        "title": "The worlds largest hockey stick is located at the cowichan community center which is actually in Duncan, B.C. The stick…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Worlds_Largest_Hockey_Stick_(5696860977).jpg",
+        "author": "Doug Hay",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 190؟",
+      "a": "قفازات ملاكمة",
+      "qid": "zoom-800-046",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 30%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-046.webp",
+        "type": "image",
+        "title": "Boxing gloves",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boxing_gloves.jpg",
+        "author": "en:User:Andman8",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 191؟",
+      "a": "شعلة أولمبية",
+      "qid": "zoom-800-047",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "66% 64%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-047.webp",
+        "type": "image",
+        "title": "Lantern with The Olympic Flame of Tokyo 2020 Olympic games at Japan Olympic Museum in Tokyo, Japan. Limited time exhibi…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokyo2020_The-Olympic-Flame_01.jpg",
+        "author": "RuinDig/Yuki Uchida",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما هذا بعد التقريب رقم 192؟",
+      "a": "ميدالية",
+      "qid": "zoom-800-048",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "76% 20%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-800-048.webp",
+        "type": "image",
+        "title": "Synthetic made gold crystals by the chemical transport reaction in chlorine gas. Purity >99.99%",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gold-crystals.jpg",
+        "author": "Alchemist-hp (talk) www.pse-mendelejew.de",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 193؟",
+      "a": "شطرنج",
+      "qid": "zoom-1000-001",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "38% 39%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-001.webp",
+        "type": "image",
+        "title": "Chess set composed of Rio Staunton pieces by House of Chess and a Wegiel Handmade Wooden Chess Board. The pieces are ma…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg",
+        "author": "Wilfredor",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 194؟",
+      "a": "مضرب طاولة",
+      "qid": "zoom-1000-002",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "77% 76%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-002.webp",
+        "type": "image",
+        "title": "European Table Tennis Championships in the Rudi-Sedlmayer-Halle as part of the European Championships 2022 in Munich: T…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2022-08-19_European_Championships_2022_%E2%80%93_Table_Tennis_by_Sandro_Halank%E2%80%93007.jpg",
+        "author": "Sandro Halank, Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 195؟",
+      "a": "كرة رجبي",
+      "qid": "zoom-1000-003",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "53% 31%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-003.webp",
+        "type": "image",
+        "title": "Navy quarterback Keenan Reynolds lands in the end zone for a touchdown against Air Force at the Air Force Academy in Co…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Warrior_Games_athletes_honored_at_Navy-Air_Force_football_game_141004-D-DB155-022.jpg",
+        "author": "EJ Hersom",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 196؟",
+      "a": "مضرب كريكت",
+      "qid": "zoom-1000-004",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "69% 50%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-004.webp",
+        "type": "image",
+        "title": "A Gunn & Moore Flare DXM bat (Harrow size) and a Gunn & Moore Purist 156g cricket ball.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GandM_Flare_DXM_bat-Purist_156g_ball.jpg",
+        "author": "Marie-Lan Nguyen",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 197؟",
+      "a": "زلاجة تزلج",
+      "qid": "zoom-1000-005",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "39% 51%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-005.webp",
+        "type": "image",
+        "title": "Priit Narusk in the qualification for the Tour de Ski in Prague.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Priit_Narusk_at_Tour_de_Ski.jpg",
+        "author": "che (Please credit as \"Petr Novák, Wikipedia\" in case you use this outside Wikimedia projects.)",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 198؟",
+      "a": "لوح تزلج",
+      "qid": "zoom-1000-006",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "68% 73%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-006.webp",
+        "type": "image",
+        "title": "Sébastien Toutant, a snowboarder, at the downtown Québec big air competition. He won the event.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Big_air_Qu%C3%A9bec_2011.jpg",
+        "author": "Letartean",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 199؟",
+      "a": "لوح أمواج",
+      "qid": "zoom-1000-007",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "70% 51%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-007.webp",
+        "type": "image",
+        "title": "2010 Mavericks surfing competition. The image was taken from a boat. Here's Shalom's description of his experience: \"Th…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2010_mavericks_competition_edit1.jpg",
+        "author": "2010_mavericks_competition.jpg: Shalom Jacobovitz derivative work: Brocken Inaglory ([[User talk:Brocken Inaglory|talk]])",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 200؟",
+      "a": "لوح تزلج شوارع",
+      "qid": "zoom-1000-008",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "35% 61%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-008.webp",
+        "type": "image",
+        "title": "“Street of Mediateka” skateboarding competition at Zagłębiowska Mediateka on Kościelna Street in Sosnowiec, Silesian Vo…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zawody_w_skateboardingu_Street_of_Mediateka,_Zag%C5%82%C4%99biowska_Mediateka,_ulica_Ko%C5%9Bcielna,_Sosnowiec,_22_czerwca_2024_01.jpg",
+        "author": "Krzysztof Popławski",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 201؟",
+      "a": "شبكة مرمى",
+      "qid": "zoom-1000-009",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "28% 69%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-009.webp",
+        "type": "image",
+        "title": "Alaska's Vladimir Novak gets the empty netter.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Empty_net_goal_(3376907373).jpg",
+        "author": "mark6mauno",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 202؟",
+      "a": "صافرة",
+      "qid": "zoom-1000-010",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "31% 35%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-010.webp",
+        "type": "image",
+        "title": "Ref's whistle from 1992, Belgrade, Yugoslavia",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1992_Referee_whistles_for_football_Laslovarga_(8).jpg",
+        "author": "Laslovarga",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 203؟",
+      "a": "ساعة إيقاف",
+      "qid": "zoom-1000-011",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "29% 25%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-011.webp",
+        "type": "image",
+        "title": "Focus stack of a vintage stopwatch. Focus stack of 25 pictures with Helicon Focus.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stopwatch,_1810201155,_ako.jpg",
+        "author": "Ansgar Koreng",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 204؟",
+      "a": "كأس بطولة",
+      "qid": "zoom-1000-012",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "31% 75%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-012.webp",
+        "type": "image",
+        "title": "The cup for the CS:GO MLG Columbus tournament.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MLG_Columbus_CSGO_Major_cup.jpg",
+        "author": "SteelSeries",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 205؟",
+      "a": "نظارات سباحة",
+      "qid": "zoom-1000-013",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "26% 36%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-013.webp",
+        "type": "image",
+        "title": "Calvin Borel signing a racing form after a race at Churchill Downs.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calvin_Borel.jpg",
+        "author": "Joe Schneid, Louisville, Kentucky",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 206؟",
+      "a": "قناع مبارزة",
+      "qid": "zoom-1000-014",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "38% 36%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-014.webp",
+        "type": "image",
+        "title": "Hungary's Áron Szilágyi (L) fences against Russia's Nikolay Kovalev (R) in the men's sabre semi-finals of the 2013 Worl…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kovalev_v_Szilagyi_2013_Fencing_WCH_SMS-IN_t194135.jpg",
+        "author": "Marie-Lan Nguyen",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 207؟",
+      "a": "قوس رماية",
+      "qid": "zoom-1000-015",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "70% 38%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-015.webp",
+        "type": "image",
+        "title": "Arlington State College, female archery students demonstrating bow and arrow.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arlington_State_College,_female_archery_students_demonstrating_bow_and_arrow_(10004206).jpg",
+        "author": "University of Texas at Arlington Photograph Collection",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 208؟",
+      "a": "ثقل",
+      "qid": "zoom-1000-016",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "54% 35%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-016.webp",
+        "type": "image",
+        "title": "Young man lifting dumbbell weight for exercise in fitness gym",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Young_man_lifting_dumbbell_weight_for_exercise_in_fitness_gym.jpg",
+        "author": "Nenad Stojkovic",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 209؟",
+      "a": "حصيرة يوغا",
+      "qid": "zoom-1000-017",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "25% 51%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-017.webp",
+        "type": "image",
+        "title": "Woman on a yoga mat next to a window doing lower back exercises.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Woman_on_a_yoga_mat_next_to_a_window_doing_lower_back_exercises_-_50401795697.jpg",
+        "author": "Nenad Stojkovic",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 210؟",
+      "a": "خط نهاية",
+      "qid": "zoom-1000-018",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "62% 56%",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-018.webp",
+        "type": "image",
+        "title": "Florian Lipowitz (team Red Bull–Bora–hansgrohe) secures Stage 5 victory in Novo Mesto and claims the overall 2026 Tour…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Florian_Lipowitz_passing_Finish_line,_Stage_5,_Novo_mesto,_2026_ToS.jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 211؟",
+      "a": "سديم",
+      "qid": "zoom-1000-019",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "63% 63%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-019.webp",
+        "type": "image",
+        "title": "In one of the most detailed astronomical images ever produced, NASA/ESA's Hubble Space Telescope captured an unpreceden…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
+        "author": "NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space Telescope Orion Treasury Project Team",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 212؟",
+      "a": "درب التبانة",
+      "qid": "zoom-1000-020",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "22% 57%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-020.webp",
+        "type": "image",
+        "title": "The Milky Way over Mount Elbrus, the highest mountain in the Caucasus Mountains. The Serpens-Aquila Rift stands in the…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Milky_way_in_Elbrus.jpg",
+        "author": "oliwok",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 213؟",
+      "a": "رائد فضاء",
+      "qid": "zoom-1000-021",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "55% 70%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-021.webp",
+        "type": "image",
+        "title": "Leland's now-famous NASA portrait featuring his two rescue dogs, Jake and Scout, whom he secretly smuggled into NASA fo…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:NASA_astronaut_Leland_D._Melvin_with_his_dogs_Jake_and_Scout.jpg",
+        "author": "Robert Markowitz",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 214؟",
+      "a": "مكوك",
+      "qid": "zoom-1000-022",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "27% 21%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-022.webp",
+        "type": "image",
+        "title": "The Space Shuttle Discovery and its seven-member STS-120 crew head toward Earth-orbit and a scheduled link-up with the…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:STS120LaunchHiRes-edit1.jpg",
+        "author": "NASA; edited by jjron (tilt corrected)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 215؟",
+      "a": "محطة الفضاء",
+      "qid": "zoom-1000-023",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "57% 45%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-023.webp",
+        "type": "image",
+        "title": "iss056e162175 (Sept. 12, 2018) --- Cameras outside the International Space Station captured a stark and sobering view o…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dramatic_Views_of_Hurricane_Florence_from_the_International_Space_Station_From_9_12_(42828603210)_(cropped).jpg",
+        "author": "NASA/Goddard Space Flight Center",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 216؟",
+      "a": "وحدة قمرية",
+      "qid": "zoom-1000-024",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "21% 46%",
+      "topic": "آلات",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-024.webp",
+        "type": "image",
+        "title": "Buzz Aldrin removing the passive seismometer from a compartment in the SEQ bay of the Lunar Lander.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apollo_11_Lunar_Lander_-_5927_NASA.jpg",
+        "author": "Neil Armstrong",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 217؟",
+      "a": "عربة المريخ",
+      "qid": "zoom-1000-025",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "77% 29%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-025.webp",
+        "type": "image",
+        "title": "An artist's concept portrays a NASA Mars Exploration Rover on the surface of Mars. Rovers Opportunity and Spirit were l…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:NASA_Mars_Rover.jpg",
+        "author": "NASA/JPL/Cornell University, Maas Digital LLC",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 218؟",
+      "a": "ثقب أسود",
+      "qid": "zoom-1000-026",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "54% 28%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-026.webp",
+        "type": "image",
+        "title": "This is an illustration of a close-up look at a black hole drifting through our Milky Way galaxy. The black hole is the…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Illustration_of_an_Isolated_Black_Hole_(52675793824).png",
+        "author": "NASA Hubble",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 219؟",
+      "a": "مذنب",
+      "qid": "zoom-1000-027",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "51% 66%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-027.webp",
+        "type": "image",
+        "title": "Photo of the comet Hale-Bopp above a tree. This picture was taken in the vicinity of Pazin in Istria/Croatia during a s…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Comet-Hale-Bopp-29-03-1997_hires_adj.jpg",
+        "author": "Philipp Salzgeber",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 220؟",
+      "a": "فوهة نيزك",
+      "qid": "zoom-1000-028",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "70% 24%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-028.webp",
+        "type": "image",
+        "title": "This image has a resolution of 2 meters per pixel, and illumination is from the right. Layers of exposed limestone and…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meteor_Crater_-_Arizona.jpg",
+        "author": "National Map Seamless Server",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 221؟",
+      "a": "كسوف",
+      "qid": "zoom-1000-029",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "70% 76%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-029.webp",
+        "type": "image",
+        "title": "Total Solar eclipse in France.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Solar_eclipse_1999_4.jpg",
+        "author": "Luc Viatour",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 222؟",
+      "a": "خسوف",
+      "qid": "zoom-1000-030",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "48% 64%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-030.webp",
+        "type": "image",
+        "title": "The total lunar eclipse took place on April 15, 2014. This 4 panel mosaic composite image was produced with an Officina…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lunar_eclipse_04-15-2014_by_R_Jay_GaBany.jpg",
+        "author": "Robert Jay GaBany",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 223؟",
+      "a": "الجبار",
+      "qid": "zoom-1000-031",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "61% 72%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-031.webp",
+        "type": "image",
+        "title": "This VISTA image shows the spectacular star-forming region known as the Flame Nebula, or NGC 2024, in the constellation…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_hidden_fires_of_the_Flame_Nebula.jpg",
+        "author": "ESO/J. Emerson/VISTA. Acknowledgment: Cambridge Astronomical Survey Unit",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 224؟",
+      "a": "أندروميدا",
+      "qid": "zoom-1000-032",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "32% 55%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-032.webp",
+        "type": "image",
+        "title": "The Andromeda Galaxy is a spiral galaxy approximately 2.5 million light-years away in the constellation Andromeda. The…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andromeda_Galaxy_(with_h-alpha).jpg",
+        "author": "Adam Evans",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 225؟",
+      "a": "المشتري",
+      "qid": "zoom-1000-033",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "78% 66%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-033.webp",
+        "type": "image",
+        "title": "Jupiter as seen by the space probe \"Cassini\". This is the most detailed global color portrait of Jupiter ever assembled…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Jupiter_from_Cassini.jpg",
+        "author": "NASA/JPL/Space Science Institute",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 226؟",
+      "a": "نبتون",
+      "qid": "zoom-1000-034",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "58% 40%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-034.webp",
+        "type": "image",
+        "title": "This enhanced-color picture of Neptune was produced from the last whole planet images taken through the green and orang…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Neptune_Full.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 227؟",
+      "a": "الزهرة",
+      "qid": "zoom-1000-035",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "34% 30%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-035.webp",
+        "type": "image",
+        "title": "This global view of the surface of Venus is centered at 180 degrees east longitude. Magellan synthetic aperture radar m…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Venus_globe.jpg",
+        "author": "NASA/JPL",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 228؟",
+      "a": "عطارد",
+      "qid": "zoom-1000-036",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "38% 22%",
+      "topic": "طبيعة",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-036.webp",
+        "type": "image",
+        "title": "Full-color image of Mercury from first MESSENGER flyby.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mercury_in_color_-_Prockter07_centered.jpg",
+        "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington. Edited version of Image:Mercury in color - Prockter07.jpg by Papa Lima Whiskey.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 229؟",
+      "a": "بلوتو",
+      "qid": "zoom-1000-037",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "51% 45%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-037.webp",
+        "type": "image",
+        "title": "NASA's New Horizons spacecraft captured this high-resolution enhanced color view of Pluto on July 14, 2015. The image c…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pluto-01_Stern_03_Pluto_Color_TXT.jpg",
+        "author": "NASA / Johns Hopkins University Applied Physics Laboratory / Southwest Research Institute",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 230؟",
+      "a": "كويكب",
+      "qid": "zoom-1000-038",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "59% 36%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-038.webp",
+        "type": "image",
+        "title": "A tightly cropped version of Image:(253) mathilde.jpg, for use in w:Template:Asteroid-stub",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:(253)_mathilde_crop.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 231؟",
+      "a": "قمر صناعي",
+      "qid": "zoom-1000-039",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "20% 40%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-039.webp",
+        "type": "image",
+        "title": "A view of most of North America taken from a low orbit of about 826 km altitude. The whole hemisphere is not visible ow…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:North_America_from_low_orbiting_satellite_Suomi_NPP.jpg",
+        "author": "NASA/NOAA/GSFC/Suomi NPP/VIIRS/Norman Kuring",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 232؟",
+      "a": "تلسكوب راديوي",
+      "qid": "zoom-1000-040",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "26% 62%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-040.webp",
+        "type": "image",
+        "title": "Radio telescope The Dish at Stanford University. It weighs 300,000 pounds and rotates on a circular railway track.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Radio_telescope_The_Dish.jpg",
+        "author": "Steve Jurvetson from Menlo Park, USA",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 233؟",
+      "a": "غرفة التحكم",
+      "qid": "zoom-1000-041",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "76% 73%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-041.webp",
+        "type": "image",
+        "title": "Eugene F. Kranz, flight director, is shown at his console on May 30, 1965, in the Mission Operations Control Room in th…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eugene_F._Kranz_at_his_console_at_the_NASA_Mission_Control_Center.jpg",
+        "author": "Adam Cuerden",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 234؟",
+      "a": "خوذة فضاء",
+      "qid": "zoom-1000-042",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "75% 28%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-042.webp",
+        "type": "image",
+        "title": "NASA astronaut Sunita Williams",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunita_Williams.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 235؟",
+      "a": "محرك صاروخ",
+      "qid": "zoom-1000-043",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "52% 72%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-043.webp",
+        "type": "image",
+        "title": "Dr. von Braun standing by five F-1 Engines. A pioneer of America's space program, Dr. von Braun stands by the five F-1…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:S-IC_engines_and_Von_Braun.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 236؟",
+      "a": "لوح شمسي",
+      "qid": "zoom-1000-044",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "30% 62%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-044.webp",
+        "type": "image",
+        "title": "Sungai-Sungai, Sabah: Solar panel station which produces the electricity for the school, the clinic and the police stat…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sungai-Sungai_Sabah_Solar-Panel-Station-02.jpg",
+        "author": "CEphoto, Uwe Aranas",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 237؟",
+      "a": "هابل",
+      "qid": "zoom-1000-045",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "50% 35%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-045.webp",
+        "type": "image",
+        "title": "This Hubble Space Telescope image shows a group of interacting galaxies called Arp 273. The larger of the spiral galaxi…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:UGC_1810_and_UGC_1813_in_Arp_273_(captured_by_the_Hubble_Space_Telescope).jpg",
+        "author": "NASA, ESA, and the Hubble Heritage Team (STScI/AURA)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 238؟",
+      "a": "جيمس ويب",
+      "qid": "zoom-1000-046",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "72% 61%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-046.webp",
+        "type": "image",
+        "title": "Caption: During cryogenic testing, the mirrors will be subjected to temperatures dipping to 24 Kelvins, permitting engi…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:James_Webb_Space_Telescope_Mirror37.jpg",
+        "author": "NASA/MSFC/David Higginbotham/Emmett Given",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 239؟",
+      "a": "كيوريوسيتي",
+      "qid": "zoom-1000-047",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "31% 42%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-047.webp",
+        "type": "image",
+        "title": "This artist's concept features NASA's Mars Science Laboratory Curiosity rover, a mobile robot for investigating Mars' p…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Curiosity_-_Robot_Geologist_and_Chemist_in_One!.jpg",
+        "author": "NASA/JPL-Caltech",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما هذا بعد التقريب رقم 240؟",
+      "a": "أبولو",
+      "qid": "zoom-1000-048",
+      "type": "image",
+      "effect": "zoom",
+      "origin": "37% 72%",
+      "topic": "فضاء",
+      "verified": true,
+      "media": {
+        "src": "zoom-1000-048.webp",
+        "type": "image",
+        "title": "The Apollo 11 lunar landing mission crew, pictured from left to right, Neil A. Armstrong, commander; Michael Collins, c…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apollo_11_Crew.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    }
+  ]
+}

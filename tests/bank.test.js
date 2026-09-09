@@ -27,17 +27,18 @@ test('البنك الفعلي يجتاز bank:validate بلا أخطاء', async
   assert.deepEqual(errors, []);
 });
 
-test('bank-status.json: 80 فئة بترتيب فريد، والحدود لم تُخفَّض', async () => {
+test('bank-status.json: 79 فئة بترتيب فريد بعد حذف childhood، والحدود لم تُخفَّض', async () => {
   const status = JSON.parse(await readFile(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
   // الحزم التجريبية (scripts/demo-packs.mjs) تُسجَّل مؤقتًا باسم demo[a-f] ولا تُحتسب
   const cats = Object.entries(status.categories).filter(([id]) => !/^demo[a-f]$/.test(id));
-  assert.equal(cats.length, 80);
+  assert.equal(cats.length, 79);
+  assert.ok(!status.categories.childhood, 'childhood حُذفت بقرار صاحب المشروع');
   assert.equal(status.tierMin, 48, 'TIER_MIN لا يُخفَّض');
   assert.deepEqual(status.tiers, [200, 400, 600, 800, 1000]);
   assert.equal(status.maxQuestionWords, 22);
   assert.equal(status.maxAnswerWords, 6);
   const orders = cats.map(([, c]) => c.order);
-  assert.equal(new Set(orders).size, 80, 'ترتيب مكرر');
+  assert.equal(new Set(orders).size, 79, 'ترتيب مكرر');
   for (const [id, c] of cats) {
     assert.match(id, /^[a-z][a-z0-9]*$/, id);
     assert.ok(c.name && c.icon, `${id}: بلا اسم أو أيقونة`);
@@ -45,7 +46,7 @@ test('bank-status.json: 80 فئة بترتيب فريد، والحدود لم ت
     assert.equal(typeof c.media, 'boolean', `${id}: media ليست منطقية`);
     for (const t of status.tiers) assert.equal(typeof c.counts[t], 'number', `${id}: عدّاد ${t}`);
   }
-  assert.equal(cats.filter(([, c]) => c.media).length, 12, 'اثنتا عشرة فئة وسائط');
+  assert.equal(cats.filter(([, c]) => c.media).length, 11, 'إحدى عشرة فئة وسائط بعد حذف childhood');
 });
 
 // ── أدوات صغيرة ───────────────────────────────────────────────────────────

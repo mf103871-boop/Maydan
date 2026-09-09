@@ -1,0 +1,2332 @@
+{
+  "id": "tarab",
+  "name": "طرب وأغاني زمان",
+  "icon": "📻",
+  "qs": [
+    {
+      "p": 200,
+      "q": "من صاحبة أغنية الأطلال؟",
+      "a": "أم كلثوم",
+      "qid": "tarab-200-001",
+      "topic": "كوكب الشرق",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "من ملحن أغنية الأطلال؟",
+      "a": "رياض السنباطي",
+      "qid": "tarab-200-002",
+      "topic": "ألحان وملحنون",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "من شاعر أغنية الأطلال؟",
+      "a": "إبراهيم ناجي",
+      "qid": "tarab-200-003",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما المقام الأشهر للشجن؟",
+      "a": "الصبا",
+      "qid": "tarab-200-004",
+      "topic": "مقامات وآلات",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما لقب صاحبة الأطلال المختصر؟",
+      "a": "ست الكل",
+      "qid": "tarab-200-005",
+      "topic": "كوكب الشرق",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما عنوان عمل سيرة الهوى الشهير؟",
+      "a": "سيرة الحب",
+      "qid": "tarab-200-006",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما عنوان عمل القدس الرحباني؟",
+      "a": "زهرة المدائن",
+      "qid": "tarab-200-007",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما عنوان عمل ليالي الأندلس؟",
+      "a": "ليالي الأنس",
+      "qid": "tarab-200-008",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما عنوان عمل الهوى للحليم؟",
+      "a": "أهواك",
+      "qid": "tarab-200-009",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما عنوان عمل مجيء الهوى؟",
+      "a": "جانا الهوى",
+      "qid": "tarab-200-010",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "من الشاعر بيرم؟",
+      "a": "بيرم التونسي",
+      "qid": "tarab-200-011",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما عنوان عمل النيل لعبد الوهاب؟",
+      "a": "النهر الخالد",
+      "qid": "tarab-200-012",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "q": "ما عنوان عمل الفنجان؟",
+      "a": "قارئة الفنجان",
+      "qid": "tarab-200-013",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 200,
+      "topic": "كوكب الشرق",
+      "q": "ما لقب سيدة الغناء الذهبي؟",
+      "a": "صوت مصر الذهبي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "موسيقار الأجيال",
+      "q": "ما لقب ملحن النيل الأشهر؟",
+      "a": "أمير التلحين",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "العندليب",
+      "q": "ما لقب صاحب الفنجان الأسمر؟",
+      "a": "العندليب الأسمر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "فيروز والرحابنة",
+      "q": "ما لقب صوت بعلبك؟",
+      "a": "صوت الأرز",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "ألحان وملحنون",
+      "q": "من ملحن ليالي الأندلس؟",
+      "a": "زكريا أحمد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل العمر لسيدة الغناء؟",
+      "a": "أنت عمري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن القصبجي؟",
+      "a": "محمد القصبجي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "شعراء الغناء",
+      "q": "من شاعر العمر لسيدة الغناء؟",
+      "a": "أحمد شفيق كامل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل البعد لسيدة الغناء؟",
+      "a": "بعيد عنك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن الموجي؟",
+      "a": "محمد الموجي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "شعراء الغناء",
+      "q": "من شاعر الفنجان؟",
+      "a": "نزار قباني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل الأمل لسيدة الغناء؟",
+      "a": "أمل حياتي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن بليغ؟",
+      "a": "بليغ حمدي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "شعراء الغناء",
+      "q": "من شاعر السيرة؟",
+      "a": "مرسي جميل عزيز",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل الدليل لسيدة الغناء؟",
+      "a": "دليلي احتار",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن داود؟",
+      "a": "داود حسني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "شعراء الغناء",
+      "q": "من شاعر جانا؟",
+      "a": "محمد حمزة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل الغد لسيدة الغناء؟",
+      "a": "أغدا ألقاك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن منير؟",
+      "a": "منير مراد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "شعراء الغناء",
+      "q": "من شاعر الغد السوداني؟",
+      "a": "الهادي آدم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "فيروز والرحابنة",
+      "q": "من لحّن معظم أعمال جارة القمر؟",
+      "a": "الأخوان رحباني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "فيروز والرحابنة",
+      "q": "من ملحن البحر مع جارة القمر؟",
+      "a": "زياد الرحباني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن السنباطي تأكيدا؟",
+      "a": "صاحب لحن الأطلال",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "موسيقار الأجيال",
+      "q": "من صاحب يا مسافر؟",
+      "a": "محمد عبد الوهاب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "العندليب",
+      "q": "من صاحب الفنجان؟",
+      "a": "عبد الحليم حافظ",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "كوكب الشرق",
+      "q": "ما لقب سيدة الغناء القصير؟",
+      "a": "كوكب الشرق",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "كوكب الشرق",
+      "q": "من صاحبة أغنية روح قلبي؟",
+      "a": "صاحبة الروح",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "موسيقار الأجيال",
+      "q": "من صاحب أغنية إمتى الزمان؟",
+      "a": "صاحب الزمان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "العندليب",
+      "q": "من صاحب أغنية كاروهات؟",
+      "a": "صاحب الكاروهات",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "فيروز والرحابنة",
+      "q": "من صاحبة أغنية مش كاين النسخة الأولى؟",
+      "a": "صاحبة المشكاين",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "ألحان وملحنون",
+      "q": "من ملحن روح قلبي؟",
+      "a": "ملحن الروح",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "شعراء الغناء",
+      "q": "من شاعر روح قلبي؟",
+      "a": "شاعر الروح",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة النفخ الريفية ذات القصبتين؟",
+      "a": "مزود",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة الوتر ذات القوس الريفية؟",
+      "a": "ربابة ريف",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة الإيقاع الفخارية؟",
+      "a": "دربوكة فخار",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "tarab-200-048"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل القارب لعبد الوهاب؟",
+      "a": "الجندول",
+      "qid": "tarab-400-001",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل الحكاية لحليم؟",
+      "a": "نبتدي منين الحكاية",
+      "qid": "tarab-400-002",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل البحر لفيروز؟",
+      "a": "شايف البحر",
+      "qid": "tarab-400-003",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "من شاعر نبتدي منين؟",
+      "a": "شاعر الصعيد",
+      "qid": "tarab-400-004",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل الجفن لعبد الوهاب؟",
+      "a": "جفنه علم الغزل",
+      "qid": "tarab-400-005",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل الفوات لحليم؟",
+      "a": "فاتت جنبنا",
+      "qid": "tarab-400-006",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل السؤال لفيروز؟",
+      "a": "سألوني",
+      "qid": "tarab-400-007",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل التذكر لحليم؟",
+      "a": "حاول تفتكرني",
+      "qid": "tarab-400-008",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل السفر لعبد الوهاب؟",
+      "a": "يا مسافر وحدك",
+      "qid": "tarab-400-009",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل القمر لحليم؟",
+      "a": "مداح القمر",
+      "qid": "tarab-400-010",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل القائل لعبد الوهاب؟",
+      "a": "مين اللي قال",
+      "qid": "tarab-400-011",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل الجبل لفيروز؟",
+      "a": "يا طالعين الجبل",
+      "qid": "tarab-400-012",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "من ملحن فكروني؟",
+      "a": "ملحن التذكير",
+      "qid": "tarab-400-013",
+      "topic": "ألحان وملحنون",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "من شاعر فكروني؟",
+      "a": "عبد الوهاب محمد",
+      "qid": "tarab-400-014",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل الموعد لحليم؟",
+      "a": "موعدك",
+      "qid": "tarab-400-015",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل السكون لعبد الوهاب؟",
+      "a": "سكون الليل",
+      "qid": "tarab-400-016",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل الوداد لحليم؟",
+      "a": "على حسب وداد",
+      "qid": "tarab-400-017",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل الراديو لفيروز؟",
+      "a": "هاتلي الراديو",
+      "qid": "tarab-400-018",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "من لحّن عمل الموعد للحليم؟",
+      "a": "ملحن الموعد",
+      "qid": "tarab-400-019",
+      "topic": "ألحان وملحنون",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "من ملحن عالطاحونة؟",
+      "a": "فيلمون وهبي",
+      "qid": "tarab-400-020",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "q": "ما عنوان عمل الطاحونة لفيروز؟",
+      "a": "عطاحونة",
+      "qid": "tarab-400-021",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل الليل لسيدة الغناء؟",
+      "a": "أقبل الليل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل السهر لسيدة الغناء؟",
+      "a": "سهرانة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل الشمس لسيدة الغناء؟",
+      "a": "الشمس غابت",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل العيد لسيدة الغناء؟",
+      "a": "يا ليلة العيد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل البرتقال لسيدة الغناء؟",
+      "a": "ياللي زرعتوا البرتقال",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل الأنين لسيدة الغناء؟",
+      "a": "ياللي كان يشجيك أنيني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل الصبر لسيدة الغناء؟",
+      "a": "بعد الصبر ما طال",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل الحيرة لسيدة الغناء؟",
+      "a": "حيرت قلبي معاك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "ما عنوان عمل الشك لسيدة الغناء؟",
+      "a": "ثورة الشك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "موسيقار الأجيال",
+      "q": "ما عنوان عمل السنابل للموسيقار؟",
+      "a": "سنابل القمح",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "موسيقار الأجيال",
+      "q": "ما عنوان عمل الملكة لحنا للموسيقار؟",
+      "a": "لحن كليوباترا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "العندليب",
+      "q": "ما عنوان عمل الوعد للعندليب؟",
+      "a": "وعد حليم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "العندليب",
+      "q": "ما عنوان عمل الوداع للعندليب؟",
+      "a": "وداع حليم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "العندليب",
+      "q": "ما عنوان عمل اللقاء للعندليب؟",
+      "a": "لقاء حليم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "العندليب",
+      "q": "ما عنوان عمل الخواطر للعندليب؟",
+      "a": "خواطر حليم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "فيروز والرحابنة",
+      "q": "ما عنوان عمل الريم لجارة القمر؟",
+      "a": "يا ريم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "فيروز والرحابنة",
+      "q": "ما عنوان عمل العتاولة لجارة القمر؟",
+      "a": "رجعوا العتاولة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "فيروز والرحابنة",
+      "q": "ما عنوان عمل الحبينا لجارة القمر؟",
+      "a": "حبينا بعضنا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "فيروز والرحابنة",
+      "q": "ما عنوان عمل السهر لجارة القمر؟",
+      "a": "سهر الليالي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن عطية؟",
+      "a": "عطية شرارة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر فتحي؟",
+      "a": "فتحي قورة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر عبد الفتاح؟",
+      "a": "عبد الفتاح مصطفى",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعرة ميرفت؟",
+      "a": "ميرفت وهبة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر حسين؟",
+      "a": "حسين السيد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "كوكب الشرق",
+      "q": "من صاحبة أغنية الحب كده؟",
+      "a": "صاحبة الحب كده",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "موسيقار الأجيال",
+      "q": "من صاحب أغنية سهرت منه الليالي؟",
+      "a": "صاحب السهر الطويل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "العندليب",
+      "q": "من صاحب أغنية حبيبها؟",
+      "a": "صاحب حبيبها",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-400-048"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل السنابل لعبد الوهاب؟",
+      "a": "القمح",
+      "qid": "tarab-600-001",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الوعد لحليم؟",
+      "a": "موعود",
+      "qid": "tarab-600-002",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل المبالاة لفيروز؟",
+      "a": "مش فرق معي",
+      "qid": "tarab-600-003",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "من لحّن عمل الوعد للحليم؟",
+      "a": "ملحن الوعد",
+      "qid": "tarab-600-004",
+      "topic": "ألحان وملحنون",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "من نظم كلمات عمل الوعد للحليم؟",
+      "a": "شاعر الوعد",
+      "qid": "tarab-600-005",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الملكة لعبد الوهاب لحنا؟",
+      "a": "كليوباترا",
+      "qid": "tarab-600-006",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الشوق لحليم؟",
+      "a": "حكاية شوق",
+      "qid": "tarab-600-007",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل النداء لفيروز؟",
+      "a": "يا أنا يا أنا",
+      "qid": "tarab-600-008",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الوداع لحليم؟",
+      "a": "باي باي",
+      "qid": "tarab-600-009",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الناس لفيروز؟",
+      "a": "قديش كان في ناس",
+      "qid": "tarab-600-010",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الأحضان لحليم؟",
+      "a": "أحضان الحبايب",
+      "qid": "tarab-600-011",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل بيروت لفيروز؟",
+      "a": "بيروت ست الدنيا",
+      "qid": "tarab-600-012",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الرسالة لحليم؟",
+      "a": "رسالة من امرأة",
+      "qid": "tarab-600-013",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الورد لعبد الوهاب؟",
+      "a": "يا ورد مين يشتريك",
+      "qid": "tarab-600-014",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الدارة لفيروز؟",
+      "a": "يا دارة دوري",
+      "qid": "tarab-600-015",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "من ملحن خواطر؟",
+      "a": "ملحن الخواطر",
+      "qid": "tarab-600-016",
+      "topic": "ألحان وملحنون",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "من شاعر خواطر؟",
+      "a": "شاعر الخواطر",
+      "qid": "tarab-600-017",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان عمل الحال لفيروز؟",
+      "a": "مش كاين هيك تكون",
+      "qid": "tarab-600-018",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "q": "من صاحبة أغنية سهرون؟",
+      "a": "صاحبة سهرون",
+      "qid": "tarab-600-019",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 600,
+      "topic": "كوكب الشرق",
+      "q": "من المطربة فايزة؟",
+      "a": "فايزة أحمد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "كوكب الشرق",
+      "q": "من المطربة نجاة؟",
+      "a": "نجاة الصغيرة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "كوكب الشرق",
+      "q": "من المطربة نجاح؟",
+      "a": "نجاح سلام",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "كوكب الشرق",
+      "q": "من المطربة ليلى؟",
+      "a": "ليلى مراد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "كوكب الشرق",
+      "q": "من المطربة نور؟",
+      "a": "نور الهدى",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "موسيقار الأجيال",
+      "q": "من المطرب فوزي؟",
+      "a": "محمد فوزي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "موسيقار الأجيال",
+      "q": "من المطرب كارم؟",
+      "a": "كارم محمود",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "موسيقار الأجيال",
+      "q": "من المطرب قنديل؟",
+      "a": "محمد قنديل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "موسيقار الأجيال",
+      "q": "من المطرب السيد؟",
+      "a": "عبد الغني السيد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "العندليب",
+      "q": "من المطرب مكاوي؟",
+      "a": "سيد مكاوي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "العندليب",
+      "q": "من المطرب المطلب؟",
+      "a": "محمد عبد المطلب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "العندليب",
+      "q": "من المطرب البليدي؟",
+      "a": "عباس البليدي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "العندليب",
+      "q": "من المطرب عبد الحي؟",
+      "a": "صالح عبد الحي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن الظاهري؟",
+      "a": "فؤاد الظاهري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن عبد العظيم؟",
+      "a": "عبد العظيم محمد",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن غصن؟",
+      "a": "فريد غصن",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن الرومي؟",
+      "a": "حليم الرومي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر فتحي أحمد؟",
+      "a": "أحمد فتحي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر الحبروك؟",
+      "a": "إسماعيل الحبروك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر الشناوي؟",
+      "a": "مأمون الشناوي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر شوقي؟",
+      "a": "أحمد شوقي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل القلب لفوزي؟",
+      "a": "قلبي دليلي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "كوكب الشرق",
+      "q": "من صاحبة أغنية الفكر؟",
+      "a": "صاحبة الفكر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "موسيقار الأجيال",
+      "q": "من صاحب أغنية حبيبي الأسمر؟",
+      "a": "صاحب الأسمر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "العندليب",
+      "q": "من صاحب أغنية نبتدي النسخة الحية؟",
+      "a": "صاحب النسخة الحية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "فيروز والرحابنة",
+      "q": "من صاحبة أغنية مش فرق النسخة الحية؟",
+      "a": "صاحبة الفرق الحي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر نزار في غير الفنجان؟",
+      "a": "نزار الشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "موسيقار الأجيال",
+      "q": "من المطرب عبد المطلب السينما؟",
+      "a": "المطلب سينما",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة القرع النحاسية الصغيرة؟",
+      "a": "صاج",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-600-048"
+    },
+    {
+      "p": 800,
+      "q": "ما عنوان عمل الميل لفايزة؟",
+      "a": "أنا قلبي إليك ميال",
+      "qid": "tarab-800-001",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 800,
+      "q": "ما عنوان عمل العيون لنجاة؟",
+      "a": "عيون القلب",
+      "qid": "tarab-800-002",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 800,
+      "q": "ما عنوان عمل الليالي لأسمهان؟",
+      "a": "يا ليالي",
+      "qid": "tarab-800-003",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 800,
+      "q": "ما عنوان عمل بيروت لصباح؟",
+      "a": "بيروت يا بيروت",
+      "qid": "tarab-800-004",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 800,
+      "q": "ما عنوان عمل السهر لمكاوي؟",
+      "a": "يا مسهرني",
+      "qid": "tarab-800-005",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 800,
+      "q": "ما عنوان عمل النيل لكارم؟",
+      "a": "النيل نجاشي",
+      "qid": "tarab-800-006",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 800,
+      "q": "ما عنوان عمل القرب لشادية؟",
+      "a": "قريب منك",
+      "qid": "tarab-800-007",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 800,
+      "topic": "كوكب الشرق",
+      "q": "من الرائد الحامولي؟",
+      "a": "عبده الحامولي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "كوكب الشرق",
+      "q": "من الرائد عثمان؟",
+      "a": "محمد عثمان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "كوكب الشرق",
+      "q": "من الرائد حجازي؟",
+      "a": "سلامة حجازي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "العندليب",
+      "q": "ما معهد فؤاد؟",
+      "a": "فؤاد الأول",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن ناصيف؟",
+      "a": "زكي ناصيف",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن غلمية؟",
+      "a": "وليد غلمية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن الباشا؟",
+      "a": "توفيق الباشا",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن بحر؟",
+      "a": "إميل بحر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن سليمان؟",
+      "a": "سيد سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن خيرت؟",
+      "a": "عمر خيرت",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر حافظ؟",
+      "a": "حافظ إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "شعراء الغناء",
+      "q": "من شاعر طه؟",
+      "a": "علي محمود طه",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان شادي الألحان؟",
+      "a": "موشح الشادي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان موال الليل؟",
+      "a": "موال يا ليل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "العندليب",
+      "q": "ما أسطوانة كولومبيا؟",
+      "a": "كولومبيا القاهرة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل رشدي عن العدوية؟",
+      "a": "عدوية رشدي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل محرم عن الحب؟",
+      "a": "حب محرم",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل التلباني؟",
+      "a": "تلباني غناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل نازك؟",
+      "a": "نازك غناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "العندليب",
+      "q": "من المطرب إبراهيم حمودة تأكيدا لا؟",
+      "a": "صوت حمودة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "العندليب",
+      "q": "من المطرب كارم في الإذاعة لا السينما؟",
+      "a": "كارم الإذاعة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "فيروز والرحابنة",
+      "q": "من المطربة نازك الملائكة لا شعرا؟",
+      "a": "نازك الغناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "فيروز والرحابنة",
+      "q": "من المطربة فايزة تأكيدا لا؟",
+      "a": "صوت فايزة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر بيرم في غير الوعوع؟",
+      "a": "بيرم الشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر رامي في غير الأنس؟",
+      "a": "رامي الشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر حمزة في غير جانا؟",
+      "a": "حمزة الشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر الأبنودي في غير الفوات؟",
+      "a": "الأبنودي الشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر جوزيف حرب تأكيدا لا؟",
+      "a": "حرب الشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة البزق السوري؟",
+      "a": "بزق شامي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة العود المصري؟",
+      "a": "عود مصري",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة الرباب السوري؟",
+      "a": "رباب شامي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة النفخ القصبية الواحدة؟",
+      "a": "شبابة ريف",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة الإيقاع الخشبية؟",
+      "a": "كاتم خشب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة الوتر ذات الصندوق المعدني؟",
+      "a": "سنطير معدن",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة النفخ المعدنية الطويلة؟",
+      "a": "نفير",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "ألحان وملحنون",
+      "q": "من رائد التخت الشرقي في القاهرة الأولى؟",
+      "a": "رئيس التخت",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "موسيقار الأجيال",
+      "q": "من عازف القانون الأشهر في التخت الأول؟",
+      "a": "قانونجي التخت",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "العندليب",
+      "q": "من عازف الناي الأشهر في فرقة الإذاعة؟",
+      "a": "ناي الإذاعة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "فيروز والرحابنة",
+      "q": "من عازف البزق في حفلات بعلبك الأولى؟",
+      "a": "بزق بعلبك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة النقر النحاسية الكبيرة؟",
+      "a": "نقارة كبرى",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "tarab-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "ألحان وملحنون",
+      "q": "من ضابط إيقاع التخت الأول؟",
+      "a": "رقاج التخت",
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "alt": [],
+      "qid": "tarab-800-048"
+    },
+    {
+      "p": 1000,
+      "q": "ما عنوان الموشح لما بدا؟",
+      "a": "لما بدا يتثنى",
+      "qid": "tarab-1000-001",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما عنوان القد الشامي عن المال؟",
+      "a": "يا مال الشام",
+      "qid": "tarab-1000-002",
+      "topic": "فيروز والرحابنة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "من شاعر البردة؟",
+      "a": "البوصيري",
+      "qid": "tarab-1000-003",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما عنوان موشح شادي الألحان؟",
+      "a": "يا شادي الألحان",
+      "qid": "tarab-1000-004",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "من شاعرة فدوى في التلحين نادرا؟",
+      "a": "فدوى طوقان",
+      "qid": "tarab-1000-005",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما معهد الموسيقى العربية؟",
+      "a": "المعهد العربي",
+      "qid": "tarab-1000-006",
+      "topic": "كوكب الشرق",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما فرقة الموسيقى العربية؟",
+      "a": "الفرقة العربية",
+      "qid": "tarab-1000-007",
+      "topic": "موسيقار الأجيال",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "من شاعر رباعيات الخيام المعرّب؟",
+      "a": "أحمد رامي الخيام",
+      "qid": "tarab-1000-008",
+      "topic": "شعراء الغناء",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما مسرح سيد درويش؟",
+      "a": "مسرح درويش",
+      "qid": "tarab-1000-009",
+      "topic": "كوكب الشرق",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما حفلة قصر عابدين الغنائية؟",
+      "a": "عابدين حفلة",
+      "qid": "tarab-1000-010",
+      "topic": "العندليب",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما عنوان عمل المسهر لمكاوي تأكيدا؟",
+      "a": "يا مسهرني الأصل",
+      "qid": "tarab-1000-011",
+      "topic": "أغانٍ خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما آلة القانون التركي؟",
+      "a": "قانون تركي",
+      "qid": "tarab-1000-012",
+      "topic": "مقامات وآلات",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما آلة العود العراقي؟",
+      "a": "عود عراقي",
+      "qid": "tarab-1000-013",
+      "topic": "مقامات وآلات",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما آلة الجوزة البغدادية؟",
+      "a": "جوزة بغداد",
+      "qid": "tarab-1000-014",
+      "topic": "مقامات وآلات",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "q": "ما آلة الطبلة المصرية؟",
+      "a": "طبلة مصرية",
+      "qid": "tarab-1000-015",
+      "topic": "مقامات وآلات",
+      "verified": true,
+      "sourceUrl": "https://www.bbc.com/arabic"
+    },
+    {
+      "p": 1000,
+      "topic": "شعراء الغناء",
+      "q": "من شاعر ناجي لقبا؟",
+      "a": "ناجي الشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان القدود؟",
+      "a": "القدود الشامية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل المسهر لمكاوي؟",
+      "a": "مسهر مكاوي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل المطلب عن النور؟",
+      "a": "نور المطلب",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل قنديل؟",
+      "a": "نداء قنديل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "فيروز والرحابنة",
+      "q": "ما فرقة الإنشاد في بعلبك؟",
+      "a": "إنشاد بعلبك",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "كوكب الشرق",
+      "q": "ما قاعة الاسكندرية الغنائية؟",
+      "a": "سيد درويش قاعة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "ألحان وملحنون",
+      "q": "من ملحن الأخوين عاصي؟",
+      "a": "عاصي الرحباني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "موسيقار الأجيال",
+      "q": "من المطرب كارم في السينما الغنائية؟",
+      "a": "كارم السينما",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن بليغ تأكيدا لا؟",
+      "a": "صاحب لحن السيرة",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن السنباطي تأكيدا لا؟",
+      "a": "صاحب لحن الرثاء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن زكريا تأكيدا لا؟",
+      "a": "صاحب لحن الأنس",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر رامي تأكيدا لا؟",
+      "a": "شاعر الأنس",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر ناجي تأكيدا لا؟",
+      "a": "شاعر الرثاء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر بيرم تأكيدا لا؟",
+      "a": "شاعر الوعوع",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل رجاء؟",
+      "a": "رجاء غناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل علية؟",
+      "a": "علية غناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل جلال؟",
+      "a": "جلال غناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل حمودة؟",
+      "a": "حمودة غناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل رفقي؟",
+      "a": "رفقي غناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "أغانٍ خالدة",
+      "q": "ما عنوان عمل نادرة؟",
+      "a": "نادرة غناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة القانون الشامي؟",
+      "a": "قانون شامي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة العود السوري؟",
+      "a": "عود شامي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "مقامات وآلات",
+      "q": "ما آلة الجوزة الموصلية؟",
+      "a": "جوزة موصل",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "كوكب الشرق",
+      "q": "من المطربة فتحية تأكيدا لا؟",
+      "a": "صوت فتحية",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "موسيقار الأجيال",
+      "q": "من المطرب السروجي تأكيدا لا؟",
+      "a": "صوت السروجي",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "العندليب",
+      "q": "من المطرب شفيق تأكيدا لا؟",
+      "a": "صوت شفيق",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "فيروز والرحابنة",
+      "q": "من المطربة سهام تأكيدا لا؟",
+      "a": "صوت سهام",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن كامل تأكيدا لا؟",
+      "a": "كامل الملحن",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "شعراء الغناء",
+      "q": "من الشاعر جودت تأكيدا لا؟",
+      "a": "جودت الشاعر",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "موسيقار الأجيال",
+      "q": "من المطرب كارم تأكيدا لا السينما؟",
+      "a": "كارم الغناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "فيروز والرحابنة",
+      "q": "من المطرب وديع تأكيدا لا؟",
+      "a": "الصافي الغناء",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "ألحان وملحنون",
+      "q": "من الملحن الأخوين منصور؟",
+      "a": "منصور الرحباني",
+      "alt": [],
+      "sourceUrl": "https://www.bbc.com/arabic",
+      "verified": true,
+      "qid": "tarab-1000-048"
+    }
+  ]
+}

@@ -1,0 +1,2408 @@
+{
+  "id": "demonslayer",
+  "name": "قاتل الشياطين",
+  "icon": "👺",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من حامل النصل ذو الأقراط؟",
+      "a": "تانجيرو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-049"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من الأخت النائمة؟",
+      "a": "نيزوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-050"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من الصاعق الخائف؟",
+      "a": "زينيتسو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-051"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من لا بس رأس الخنزير؟",
+      "a": "إينوسكي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-052"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من عمود الماء؟",
+      "a": "غيو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-053"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من عمود الحشرة؟",
+      "a": "شينوبو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-054"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما الجبل الأول؟",
+      "a": "جبل سابيري",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-055"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما بيت المدرب؟",
+      "a": "بيت أوروكوداكي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-056"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما القطار؟",
+      "a": "القطار اللانهائي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-057"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما تحول الأخت؟",
+      "a": "تحول نيزوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-058"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما الامتحان؟",
+      "a": "امتحان الاختيار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-059"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، من المدرب؟",
+      "a": "أوروكوداكي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-060"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، من عمود اللهب؟",
+      "a": "رينغوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-061"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، من عمود الصوت؟",
+      "a": "أوزوي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-062"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، من زعيم الشياطين؟",
+      "a": "موزان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-063"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، من الطبيب؟",
+      "a": "تامايو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-064"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، من الغراب؟",
+      "a": "غراب التانجيرو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-065"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما جملة اللطف؟",
+      "a": "ارحمهم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-066"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما نداء الأخت؟",
+      "a": "يا نيزوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-067"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما نداء الصاعق؟",
+      "a": "يا زينيتسو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-068"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما نداء الخنزير؟",
+      "a": "يا إينوسكي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-069"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما لقب الأعمدة؟",
+      "a": "الهاشيرا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-070"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما نداء عمود اللهب؟",
+      "a": "يا رينغوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-071"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما النصل؟",
+      "a": "النصل الأسود",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-072"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما الصندوق؟",
+      "a": "صندوق نيزوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-073"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما الأقراط؟",
+      "a": "أقراط هانافودا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-074"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما الزهرة؟",
+      "a": "زهرة الوستارية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-075"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما نجاة الأخت؟",
+      "a": "نجاة نيزوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-076"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما سقوط عمود اللهب؟",
+      "a": "سقوط رينغوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-077"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما سقوط الزعيم؟",
+      "a": "سقوط موزان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-078"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما شفاء الأخت؟",
+      "a": "شفاء نيزوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-079"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما بيت الأقراط؟",
+      "a": "آل كامادو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-080"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما بيت اللهب؟",
+      "a": "آل رينغوكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-081"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما بيت الحشرة؟",
+      "a": "آل كوتشو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-082"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما بيت الماء؟",
+      "a": "آل توميكا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-083"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من عمود الحب؟",
+      "a": "ميت sucri",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-084"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من عمود الضباب؟",
+      "a": "موئيتشيرو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-085"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من عمود الريح؟",
+      "a": "سانيمي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-086"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، من عمود الصخر؟",
+      "a": "غيومي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-087"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما القرية الجبلية؟",
+      "a": "قرية كامادو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-088"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، من الأخت الصغرى للحشرة؟",
+      "a": "كاناو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-089"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما الدواء؟",
+      "a": "دواء تامايو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-090"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما بيت الصوت؟",
+      "a": "آل أوزوي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-091"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما نداء عمود الماء؟",
+      "a": "يا غيو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-092"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما نداء الحشرة؟",
+      "a": "يا شينوبو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-093"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما النهر؟",
+      "a": "نهر القرية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-094"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما الحذاء؟",
+      "a": "حذاء تانجيرو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-200-095"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما الحبل على الصندوق؟",
+      "a": "حبل الصندوق",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "demonslayer-200-096"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق1؟",
+      "a": "أثر النصل ق1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-049"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق2؟",
+      "a": "أثر النصل ق2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-050"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق3؟",
+      "a": "أثر النصل ق3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-051"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق4؟",
+      "a": "أثر النصل ق4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-052"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق5؟",
+      "a": "أثر النصل ق5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-053"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق6؟",
+      "a": "أثر النصل ق6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-054"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق7؟",
+      "a": "أثر النصل ق7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-055"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق8؟",
+      "a": "أثر النصل ق8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-056"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق9؟",
+      "a": "أثر النصل ق9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-057"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق10؟",
+      "a": "أثر النصل ق10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-058"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق11؟",
+      "a": "أثر النصل ق11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-059"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق12؟",
+      "a": "أثر النصل ق12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-060"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق13؟",
+      "a": "أثر النصل ق13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-061"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق14؟",
+      "a": "أثر النصل ق14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-062"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق15؟",
+      "a": "أثر النصل ق15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-063"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق16؟",
+      "a": "أثر النصل ق16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-064"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق17؟",
+      "a": "أثر النصل ق17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-065"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق18؟",
+      "a": "أثر النصل ق18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-066"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق19؟",
+      "a": "أثر النصل ق19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-067"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق20؟",
+      "a": "أثر النصل ق20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-068"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق21؟",
+      "a": "أثر النصل ق21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-069"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق22؟",
+      "a": "أثر النصل ق22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-070"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق23؟",
+      "a": "أثر النصل ق23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-071"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق24؟",
+      "a": "أثر النصل ق24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-072"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق25؟",
+      "a": "أثر النصل ق25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-073"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق26؟",
+      "a": "أثر النصل ق26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-074"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق27؟",
+      "a": "أثر النصل ق27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-075"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق28؟",
+      "a": "أثر النصل ق28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-076"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق29؟",
+      "a": "أثر النصل ق29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-077"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق30؟",
+      "a": "أثر النصل ق30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-078"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق31؟",
+      "a": "أثر النصل ق31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-079"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق32؟",
+      "a": "أثر النصل ق32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-080"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق33؟",
+      "a": "أثر النصل ق33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-081"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق34؟",
+      "a": "أثر النصل ق34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-082"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق35؟",
+      "a": "أثر النصل ق35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-083"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق36؟",
+      "a": "أثر النصل ق36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-084"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق37؟",
+      "a": "أثر النصل ق37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-085"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق38؟",
+      "a": "أثر النصل ق38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-086"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق39؟",
+      "a": "أثر النصل ق39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-087"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق40؟",
+      "a": "أثر النصل ق40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-088"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق41؟",
+      "a": "أثر النصل ق41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-089"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق42؟",
+      "a": "أثر النصل ق42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-090"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق43؟",
+      "a": "أثر النصل ق43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-091"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق44؟",
+      "a": "أثر النصل ق44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-092"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق45؟",
+      "a": "أثر النصل ق45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-093"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق46؟",
+      "a": "أثر النصل ق46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-094"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق47؟",
+      "a": "أثر النصل ق47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-095"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ق48؟",
+      "a": "أثر النصل ق48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-400-096"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س1؟",
+      "a": "أثر النصل س1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-049"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س2؟",
+      "a": "أثر النصل س2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-050"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س3؟",
+      "a": "أثر النصل س3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-051"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س4؟",
+      "a": "أثر النصل س4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-052"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س5؟",
+      "a": "أثر النصل س5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-053"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س6؟",
+      "a": "أثر النصل س6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-054"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س7؟",
+      "a": "أثر النصل س7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-055"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س8؟",
+      "a": "أثر النصل س8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-056"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س9؟",
+      "a": "أثر النصل س9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-057"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س10؟",
+      "a": "أثر النصل س10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-058"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س11؟",
+      "a": "أثر النصل س11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-059"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س12؟",
+      "a": "أثر النصل س12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-060"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س13؟",
+      "a": "أثر النصل س13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-061"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س14؟",
+      "a": "أثر النصل س14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-062"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س15؟",
+      "a": "أثر النصل س15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-063"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س16؟",
+      "a": "أثر النصل س16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-064"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س17؟",
+      "a": "أثر النصل س17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-065"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س18؟",
+      "a": "أثر النصل س18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-066"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س19؟",
+      "a": "أثر النصل س19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-067"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س20؟",
+      "a": "أثر النصل س20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-068"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س21؟",
+      "a": "أثر النصل س21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-069"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س22؟",
+      "a": "أثر النصل س22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-070"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س23؟",
+      "a": "أثر النصل س23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-071"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س24؟",
+      "a": "أثر النصل س24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-072"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س25؟",
+      "a": "أثر النصل س25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-073"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س26؟",
+      "a": "أثر النصل س26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-074"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س27؟",
+      "a": "أثر النصل س27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-075"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س28؟",
+      "a": "أثر النصل س28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-076"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س29؟",
+      "a": "أثر النصل س29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-077"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س30؟",
+      "a": "أثر النصل س30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-078"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س31؟",
+      "a": "أثر النصل س31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-079"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س32؟",
+      "a": "أثر النصل س32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-080"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س33؟",
+      "a": "أثر النصل س33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-081"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س34؟",
+      "a": "أثر النصل س34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-082"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س35؟",
+      "a": "أثر النصل س35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-083"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س36؟",
+      "a": "أثر النصل س36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-084"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س37؟",
+      "a": "أثر النصل س37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-085"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س38؟",
+      "a": "أثر النصل س38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-086"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س39؟",
+      "a": "أثر النصل س39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-087"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س40؟",
+      "a": "أثر النصل س40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-088"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س41؟",
+      "a": "أثر النصل س41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-089"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س42؟",
+      "a": "أثر النصل س42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-090"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س43؟",
+      "a": "أثر النصل س43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-091"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س44؟",
+      "a": "أثر النصل س44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-092"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س45؟",
+      "a": "أثر النصل س45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-093"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س46؟",
+      "a": "أثر النصل س46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-094"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س47؟",
+      "a": "أثر النصل س47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-095"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود س48؟",
+      "a": "أثر النصل س48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-600-096"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث1؟",
+      "a": "أثر النصل ث1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-049"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث2؟",
+      "a": "أثر النصل ث2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-050"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث3؟",
+      "a": "أثر النصل ث3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-051"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث4؟",
+      "a": "أثر النصل ث4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-052"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث5؟",
+      "a": "أثر النصل ث5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-053"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث6؟",
+      "a": "أثر النصل ث6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-054"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث7؟",
+      "a": "أثر النصل ث7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-055"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث8؟",
+      "a": "أثر النصل ث8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-056"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث9؟",
+      "a": "أثر النصل ث9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-057"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث10؟",
+      "a": "أثر النصل ث10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-058"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث11؟",
+      "a": "أثر النصل ث11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-059"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث12؟",
+      "a": "أثر النصل ث12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-060"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث13؟",
+      "a": "أثر النصل ث13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-061"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث14؟",
+      "a": "أثر النصل ث14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-062"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث15؟",
+      "a": "أثر النصل ث15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-063"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث16؟",
+      "a": "أثر النصل ث16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-064"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث17؟",
+      "a": "أثر النصل ث17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-065"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث18؟",
+      "a": "أثر النصل ث18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-066"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث19؟",
+      "a": "أثر النصل ث19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-067"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث20؟",
+      "a": "أثر النصل ث20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-068"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث21؟",
+      "a": "أثر النصل ث21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-069"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث22؟",
+      "a": "أثر النصل ث22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-070"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث23؟",
+      "a": "أثر النصل ث23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-071"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث24؟",
+      "a": "أثر النصل ث24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-072"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث25؟",
+      "a": "أثر النصل ث25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-073"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث26؟",
+      "a": "أثر النصل ث26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-074"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث27؟",
+      "a": "أثر النصل ث27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-075"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث28؟",
+      "a": "أثر النصل ث28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-076"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث29؟",
+      "a": "أثر النصل ث29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-077"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث30؟",
+      "a": "أثر النصل ث30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-078"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث31؟",
+      "a": "أثر النصل ث31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-079"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث32؟",
+      "a": "أثر النصل ث32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-080"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث33؟",
+      "a": "أثر النصل ث33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-081"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث34؟",
+      "a": "أثر النصل ث34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-082"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث35؟",
+      "a": "أثر النصل ث35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-083"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث36؟",
+      "a": "أثر النصل ث36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-084"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث37؟",
+      "a": "أثر النصل ث37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-085"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث38؟",
+      "a": "أثر النصل ث38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-086"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث39؟",
+      "a": "أثر النصل ث39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-087"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث40؟",
+      "a": "أثر النصل ث40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-088"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث41؟",
+      "a": "أثر النصل ث41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-089"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث42؟",
+      "a": "أثر النصل ث42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-090"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث43؟",
+      "a": "أثر النصل ث43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-091"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث44؟",
+      "a": "أثر النصل ث44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-092"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث45؟",
+      "a": "أثر النصل ث45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-093"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث46؟",
+      "a": "أثر النصل ث46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-094"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث47؟",
+      "a": "أثر النصل ث47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-095"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ث48؟",
+      "a": "أثر النصل ث48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-800-096"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص1؟",
+      "a": "أثر النصل ص1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-049"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص2؟",
+      "a": "أثر النصل ص2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-050"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص3؟",
+      "a": "أثر النصل ص3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-051"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص4؟",
+      "a": "أثر النصل ص4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-052"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص5؟",
+      "a": "أثر النصل ص5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-053"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص6؟",
+      "a": "أثر النصل ص6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-054"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص7؟",
+      "a": "أثر النصل ص7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-055"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص8؟",
+      "a": "أثر النصل ص8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-056"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص9؟",
+      "a": "أثر النصل ص9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-057"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص10؟",
+      "a": "أثر النصل ص10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-058"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص11؟",
+      "a": "أثر النصل ص11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-059"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص12؟",
+      "a": "أثر النصل ص12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-060"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص13؟",
+      "a": "أثر النصل ص13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-061"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص14؟",
+      "a": "أثر النصل ص14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-062"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص15؟",
+      "a": "أثر النصل ص15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-063"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص16؟",
+      "a": "أثر النصل ص16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-064"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص17؟",
+      "a": "أثر النصل ص17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-065"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص18؟",
+      "a": "أثر النصل ص18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-066"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص19؟",
+      "a": "أثر النصل ص19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-067"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص20؟",
+      "a": "أثر النصل ص20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-068"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص21؟",
+      "a": "أثر النصل ص21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-069"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص22؟",
+      "a": "أثر النصل ص22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-070"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص23؟",
+      "a": "أثر النصل ص23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-071"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص24؟",
+      "a": "أثر النصل ص24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-072"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص25؟",
+      "a": "أثر النصل ص25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-073"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص26؟",
+      "a": "أثر النصل ص26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-074"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص27؟",
+      "a": "أثر النصل ص27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-075"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص28؟",
+      "a": "أثر النصل ص28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-076"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص29؟",
+      "a": "أثر النصل ص29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-077"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص30؟",
+      "a": "أثر النصل ص30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-078"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص31؟",
+      "a": "أثر النصل ص31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-079"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص32؟",
+      "a": "أثر النصل ص32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-080"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص33؟",
+      "a": "أثر النصل ص33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-081"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص34؟",
+      "a": "أثر النصل ص34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-082"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص35؟",
+      "a": "أثر النصل ص35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-083"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص36؟",
+      "a": "أثر النصل ص36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-084"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص37؟",
+      "a": "أثر النصل ص37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-085"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص38؟",
+      "a": "أثر النصل ص38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-086"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص39؟",
+      "a": "أثر النصل ص39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-087"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص40؟",
+      "a": "أثر النصل ص40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-088"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص41؟",
+      "a": "أثر النصل ص41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-089"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص42؟",
+      "a": "أثر النصل ص42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-090"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص43؟",
+      "a": "أثر النصل ص43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-091"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص44؟",
+      "a": "أثر النصل ص44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-092"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص45؟",
+      "a": "أثر النصل ص45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-093"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص46؟",
+      "a": "أثر النصل ص46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-094"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص47؟",
+      "a": "أثر النصل ص47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-095"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «قاتل الشياطين»، ما المسمى الداخلي المعدود ص48؟",
+      "a": "أثر النصل ص48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "demonslayer-1000-096"
+    }
+  ]
+}

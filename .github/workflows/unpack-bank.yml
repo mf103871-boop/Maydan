@@ -1,0 +1,51 @@
+name: Unpack bank archives
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'maydan-push-part1.tar.gz'
+      - 'maydan-push-part2.tar.gz'
+      - 'maydan-push-part3.tar.gz'
+      - '.github/workflows/unpack-bank.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract parts and install into tree
+        run: |
+          set -euo pipefail
+          tar -xzf maydan-push-part1.tar.gz
+          tar -xzf maydan-push-part2.tar.gz
+          tar -xzf maydan-push-part3.tar.gz
+          mkdir -p src/data/categories tests media
+          cp p1/src/data/bank-status.json src/data/bank-status.json
+          cp -f p1/src/data/categories/* src/data/categories/
+          if [ -f p1/tests/bank.test.js ]; then cp p1/tests/bank.test.js tests/bank.test.js; fi
+          for t in p1/media-tars/*.tar p2/media-tars/*.tar p3/media-tars/*.tar; do
+            tar -C media -xf "$t"
+          done
+          rm -rf p1 p2 p3
+          git rm -f maydan-push-part1.tar.gz maydan-push-part2.tar.gz maydan-push-part3.tar.gz
+          ls src/data/categories/*.json | wc -l
+          ls -d media/*/ | wc -l
+
+      - name: Commit unpacked files
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data tests/bank.test.js media
+          git add -u
+          if git diff --cached --quiet; then
+            echo "no changes"
+            exit 0
+          fi
+          git commit -m "bank: unpack packs and media from uploaded archives"
+          git push

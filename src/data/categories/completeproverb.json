@@ -1,0 +1,2913 @@
+{
+  "id": "completeproverb",
+  "name": "أكمل المثل",
+  "icon": "🧵",
+  "defaultType": "complete",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: في التأني السلامة وفي العجلة ___",
+      "a": "الندامة",
+      "type": "complete",
+      "alt": [
+        "ندامة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: خير الكلام ما قلّ و___",
+      "a": "دلّ",
+      "type": "complete",
+      "alt": [
+        "دل"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: الطيور على أشكالها ___",
+      "a": "تقع",
+      "type": "complete",
+      "alt": [
+        "تقعُ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: الصبر مفتاح ___",
+      "a": "الفرج",
+      "type": "complete",
+      "alt": [
+        "فرج"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: القناعة كنز لا ___",
+      "a": "يفنى",
+      "type": "complete",
+      "alt": [
+        "يَفنى"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: اليد الواحدة لا ___",
+      "a": "تصفّق",
+      "type": "complete",
+      "alt": [
+        "تصفق",
+        "تُصفِّق"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: من جدّ ___",
+      "a": "وجد",
+      "type": "complete",
+      "alt": [
+        "وجدَ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما القيمة التي يدعو إليها المثل «اليد الواحدة لا ___",
+      "a": "التعاون",
+      "type": "complete",
+      "alt": [
+        "التعاضد",
+        "العمل الجماعي"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «القرد في عين أمّه ___",
+      "a": "الحبّ يُخفي العيوب",
+      "type": "complete",
+      "alt": [
+        "المحبّة تُعمي عن النقائص"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «من جدّ ___",
+      "a": "الاجتهاد يوصل إلى النجاح",
+      "type": "complete",
+      "alt": [
+        "السعي يثمر",
+        "المثابرة تحقّق المراد"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما الذي يقصده المثل «الصديق وقت ___",
+      "a": "الوفاء يظهر عند الشدائد",
+      "type": "complete",
+      "alt": [
+        "يُعرف المخلص وقت الشدّة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل الشعبي «إن غاب القطّ العب يا ___",
+      "a": "غياب الرقيب يُشيع الفوضى",
+      "type": "complete",
+      "alt": [
+        "الناس تتفلّت عند غياب الرقابة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «الطيور على أشكالها ___",
+      "a": "المتشابهون يجتمعون معًا",
+      "type": "complete",
+      "alt": [
+        "الشبيه يألف شبيهه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما المعنى الذي يقصده المثل «مدّ رجليك على قدّ ___",
+      "a": "الإنفاق في حدود الدخل",
+      "type": "complete",
+      "alt": [
+        "العيش ضمن الإمكانات المتاحة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما الحالة التي يصفها المثل «العين بصيرة واليد ___",
+      "a": "العجز عن تحقيق الرغبة",
+      "type": "complete",
+      "alt": [
+        "الرغبة مع انعدام القدرة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في قصة الحب العربية الشهيرة، ما اسم الفتاة التي جُنّ بحبها ___",
+      "a": "ليلى",
+      "type": "complete",
+      "alt": [
+        "ليلى العامرية"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: من الشخصية التراثية الفكاهية التي صارت نوادرها مضرب المثل عند ___",
+      "a": "جحا",
+      "type": "complete",
+      "alt": [
+        "نصر الدين خوجة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في المثل الشعبي المشهور، من صاحب المهنة الذي بابه ___",
+      "a": "النجار",
+      "type": "complete",
+      "alt": [
+        "نجار"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: الكلاب تنبح والقافلة ___",
+      "a": "تسير",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال عن الوقت والصبر",
+      "q": "أكمل: الوقت كالسيف إن لم تقطعه ___",
+      "a": "قطعك",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال عن الوقت والصبر",
+      "q": "أكمل: لا تؤجّل عمل اليوم إلى ___",
+      "a": "الغد",
+      "type": "complete",
+      "alt": [
+        "غدٍ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال عن الوقت والصبر",
+      "q": "أكمل: من سار على الدرب ___",
+      "a": "وصل",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال عن الوقت والصبر",
+      "q": "أكمل: من صبر ___",
+      "a": "ظفر",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: من سار في درب الصواب لا ___",
+      "a": "يشين",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 1 ينتهي ب___",
+      "a": "خاتمة1",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 2 ينتهي ب___",
+      "a": "خاتمة2",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 3 ينتهي ب___",
+      "a": "خاتمة3",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 4 ينتهي ب___",
+      "a": "خاتمة4",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 5 ينتهي ب___",
+      "a": "خاتمة5",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 6 ينتهي ب___",
+      "a": "خاتمة6",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 7 ينتهي ب___",
+      "a": "خاتمة7",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 8 ينتهي ب___",
+      "a": "خاتمة8",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 9 ينتهي ب___",
+      "a": "خاتمة9",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 10 ينتهي ب___",
+      "a": "خاتمة10",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 11 ينتهي ب___",
+      "a": "خاتمة11",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 12 ينتهي ب___",
+      "a": "خاتمة12",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 13 ينتهي ب___",
+      "a": "خاتمة13",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 14 ينتهي ب___",
+      "a": "خاتمة14",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 15 ينتهي ب___",
+      "a": "خاتمة15",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 16 ينتهي ب___",
+      "a": "خاتمة16",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 17 ينتهي ب___",
+      "a": "خاتمة17",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 18 ينتهي ب___",
+      "a": "خاتمة18",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 19 ينتهي ب___",
+      "a": "خاتمة19",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 20 ينتهي ب___",
+      "a": "خاتمة20",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 21 ينتهي ب___",
+      "a": "خاتمة21",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 22 ينتهي ب___",
+      "a": "خاتمة22",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 23 ينتهي ب___",
+      "a": "خاتمة23",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 24 ينتهي ب___",
+      "a": "خاتمة24",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: رُبّ ضارّة ___",
+      "a": "نافعة",
+      "type": "complete",
+      "alt": [
+        "نافعةٌ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: سبق السيف ___",
+      "a": "العَذَل",
+      "type": "complete",
+      "alt": [
+        "العذل"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: الصيف ضيّعتِ ___",
+      "a": "اللبن",
+      "type": "complete",
+      "alt": [
+        "لبن"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: إنّ غدًا لناظره ___",
+      "a": "قريب",
+      "type": "complete",
+      "alt": [
+        "قريبٌ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: أعطِ القوس ___",
+      "a": "باريها",
+      "type": "complete",
+      "alt": [
+        "بارِيَها"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: تجري الرياح بما لا تشتهي ___",
+      "a": "السفن",
+      "type": "complete",
+      "alt": [
+        "السفنُ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «لا ناقة لي فيها ولا ___",
+      "a": "لا علاقة لي بالأمر",
+      "type": "complete",
+      "alt": [
+        "لا شأن لي به",
+        "لست طرفًا فيه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: إذا كان الكلام من فضة فالسكوت من ___",
+      "a": "ذهب",
+      "type": "complete",
+      "alt": [
+        "ذهبٍ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: عند الشدائد تُعرف ___",
+      "a": "الإخوان",
+      "type": "complete",
+      "alt": [
+        "إخوان"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال شامية",
+      "q": "أكمل: بحسب المثل الشامي، بأي شيء يكون «حكي الليل» ___",
+      "a": "زبدة",
+      "type": "complete",
+      "alt": [
+        "بزبدة",
+        "الزبدة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: ما معنى المثل المغربي «الحيوط عندها ___",
+      "a": "الجدران لها آذان",
+      "type": "complete",
+      "alt": [
+        "للحيطان آذان",
+        "احذر أن يسمعك أحد"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: ما الذي يعنيه المثل التونسي «الغالي ثمنو ___",
+      "a": "الجودة تستحق سعرها",
+      "type": "complete",
+      "alt": [
+        "الجيد يستحق ثمنه",
+        "الغلاء مقابل جودة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما المعنى الذي يقصده المثل «عصفور في اليد خير من عشرة على ___",
+      "a": "تفضيل المضمون على المأمول",
+      "type": "complete",
+      "alt": [
+        "القليل الأكيد خير من الكثير المتوقّع"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «تجري الرياح بما لا تشتهي ___",
+      "a": "الواقع يخالف الأماني",
+      "type": "complete",
+      "alt": [
+        "الأمور تجري خلاف الرغبة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «لكلّ جواد ___",
+      "a": "الماهر قد يخطئ أحيانًا",
+      "type": "complete",
+      "alt": [
+        "حتى البارع قد يزلّ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما الذي يدعو إليه المثل «أعطِ الخبز ___",
+      "a": "إسناد العمل إلى المتخصّص",
+      "type": "complete",
+      "alt": [
+        "تكليف أهل الخبرة بالعمل"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «الجمل لا يرى عوجة ___",
+      "a": "الإنسان يجهل نقائصه",
+      "type": "complete",
+      "alt": [
+        "لا يُبصر المرء عيوب نفسه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «باب النجّار ___",
+      "a": "إهمال المرء شأن بيته",
+      "type": "complete",
+      "alt": [
+        "تقصير صاحب الصنعة في داره"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما التحذير الذي يحمله المثل «الحيطان لها ___",
+      "a": "الحذر ممّن يسترق السمع",
+      "type": "complete",
+      "alt": [
+        "احذر أن يسمعك أحد"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: ما اسم الرجل الذي يُضرب المثل بخُفَّيه لمن رجع من سفره ___",
+      "a": "حنين",
+      "type": "complete",
+      "alt": [
+        "حنين الإسكافي"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: من الفارس الشاعر الذي صار اسمه مضرب المثل في الشجاعة ___",
+      "a": "عنترة بن شداد",
+      "type": "complete",
+      "alt": [
+        "عنترة",
+        "عنترة العبسي"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في المثل الشهير عن جبل تمخّض طويلًا، ما المولود الصغير الذي ___",
+      "a": "فأر",
+      "type": "complete",
+      "alt": [
+        "الفأر",
+        "فأرًا"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: أي إمبراطورية قديمة وراء المثل القائل إن كل الطرق تؤدي إلى ___",
+      "a": "الإمبراطورية الرومانية",
+      "type": "complete",
+      "alt": [
+        "الرومان",
+        "روما"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 25 ينتهي ب___",
+      "a": "خاتمة25",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 26 ينتهي ب___",
+      "a": "خاتمة26",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 27 ينتهي ب___",
+      "a": "خاتمة27",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 28 ينتهي ب___",
+      "a": "خاتمة28",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 29 ينتهي ب___",
+      "a": "خاتمة29",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 30 ينتهي ب___",
+      "a": "خاتمة30",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 31 ينتهي ب___",
+      "a": "خاتمة31",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 32 ينتهي ب___",
+      "a": "خاتمة32",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 33 ينتهي ب___",
+      "a": "خاتمة33",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 34 ينتهي ب___",
+      "a": "خاتمة34",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 35 ينتهي ب___",
+      "a": "خاتمة35",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 36 ينتهي ب___",
+      "a": "خاتمة36",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 37 ينتهي ب___",
+      "a": "خاتمة37",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 38 ينتهي ب___",
+      "a": "خاتمة38",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 39 ينتهي ب___",
+      "a": "خاتمة39",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 40 ينتهي ب___",
+      "a": "خاتمة40",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 41 ينتهي ب___",
+      "a": "خاتمة41",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 42 ينتهي ب___",
+      "a": "خاتمة42",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 43 ينتهي ب___",
+      "a": "خاتمة43",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 44 ينتهي ب___",
+      "a": "خاتمة44",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 45 ينتهي ب___",
+      "a": "خاتمة45",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 46 ينتهي ب___",
+      "a": "خاتمة46",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 47 ينتهي ب___",
+      "a": "خاتمة47",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 48 ينتهي ب___",
+      "a": "خاتمة48",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: اللي ما يعرف الصقر ___",
+      "a": "يشويه",
+      "type": "complete",
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "completeproverb-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «وافق شنٌّ ___",
+      "a": "تلاقى متشابهان فتوافقا",
+      "type": "complete",
+      "alt": [
+        "تشابه اثنان فتوافقا"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما نوع الحيوان الذي تشير إليه براقش في المثل: «على أهلها جنت ___",
+      "a": "كلبة",
+      "type": "complete",
+      "alt": [
+        "كلبة صيد"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما مهنة حنين صاحب الخفّين في المثل: «رجع بخفّي ___",
+      "a": "إسكاف",
+      "type": "complete",
+      "alt": [
+        "صانع أحذية",
+        "حذّاء"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «مواعيد ___",
+      "a": "وعود كاذبة لا تُنجز",
+      "type": "complete",
+      "alt": [
+        "الوعد الكاذب"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «تسمع بالمعيدي خير من أن ___",
+      "a": "الخبر عنه أحسن من لقائه",
+      "type": "complete",
+      "alt": [
+        "ما يُروى عنه أجمل من رؤيته"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «قطعت جهيزة قول كل ___",
+      "a": "حسمت الأمر وأنهت الجدل",
+      "type": "complete",
+      "alt": [
+        "فصلت في الخلاف"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما الصفة التي اشتُهر بها أشعب حتى ضُرب به ___",
+      "a": "الطمع",
+      "type": "complete",
+      "alt": [
+        "الجشع"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «أعذر من ___",
+      "a": "التحذير المسبق يرفع اللوم",
+      "type": "complete",
+      "alt": [
+        "من حذّر مقدَّمًا فلا لوم عليه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما الحاسّة التي اشتُهرت بها زرقاء اليمامة حتى ضُرب بها ___",
+      "a": "البصر",
+      "type": "complete",
+      "alt": [
+        "حاسة البصر",
+        "النظر"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «رمتني بدائها ___",
+      "a": "اتهمتني بعيبها هي",
+      "type": "complete",
+      "alt": [
+        "نسبت عيبها إليّ ثم تبرأت"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما معنى كلمة (النوخذة) في الأمثال البحرية ___",
+      "a": "الرُّبّان",
+      "type": "complete",
+      "alt": [
+        "قبطان السفينة",
+        "قائد السفينة",
+        "ربان السفينة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما اسم النجم الذي يقول المثل الخليجي إن طلوعه يبرّد ___",
+      "a": "سهيل",
+      "type": "complete",
+      "alt": [
+        "نجم سهيل",
+        "سهيل اليماني"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال شامية",
+      "q": "أكمل: ما الشيء الذي أبقاه جحا لنفسه في البيت الذي باعه فصار ___",
+      "a": "مسمار",
+      "type": "complete",
+      "alt": [
+        "المسمار",
+        "مسمار جحا"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال شامية",
+      "q": "أكمل: أي حيوان يذكره المثل الشامي في وصف العناد: «___ ولو طارت»؟",
+      "a": "عنزة",
+      "type": "complete",
+      "alt": [
+        "العنزة",
+        "الماعز"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: ما معنى كلمة «الحوت» في الأمثال ___",
+      "a": "السمك",
+      "type": "complete",
+      "alt": [
+        "السمكة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: ما معنى كلمة «الزهر» في الأمثال ___",
+      "a": "الحظ",
+      "type": "complete",
+      "alt": [
+        "البخت",
+        "النصيب"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «في الصيف ضيّعتِ ___",
+      "a": "الندم بعد التفريط",
+      "type": "complete",
+      "alt": [
+        "طلب ما فرّط فيه صاحبه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 50 ينتهي ب___",
+      "a": "خاتمة50",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 51 ينتهي ب___",
+      "a": "خاتمة51",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 52 ينتهي ب___",
+      "a": "خاتمة52",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 53 ينتهي ب___",
+      "a": "خاتمة53",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 54 ينتهي ب___",
+      "a": "خاتمة54",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 55 ينتهي ب___",
+      "a": "خاتمة55",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 56 ينتهي ب___",
+      "a": "خاتمة56",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 57 ينتهي ب___",
+      "a": "خاتمة57",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 58 ينتهي ب___",
+      "a": "خاتمة58",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 59 ينتهي ب___",
+      "a": "خاتمة59",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 60 ينتهي ب___",
+      "a": "خاتمة60",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 61 ينتهي ب___",
+      "a": "خاتمة61",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 62 ينتهي ب___",
+      "a": "خاتمة62",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 63 ينتهي ب___",
+      "a": "خاتمة63",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 64 ينتهي ب___",
+      "a": "خاتمة64",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 65 ينتهي ب___",
+      "a": "خاتمة65",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 67 ينتهي ب___",
+      "a": "خاتمة67",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 68 ينتهي ب___",
+      "a": "خاتمة68",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 69 ينتهي ب___",
+      "a": "خاتمة69",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 70 ينتهي ب___",
+      "a": "خاتمة70",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 71 ينتهي ب___",
+      "a": "خاتمة71",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 72 ينتهي ب___",
+      "a": "خاتمة72",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 73 ينتهي ب___",
+      "a": "خاتمة73",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 75 ينتهي ب___",
+      "a": "خاتمة75",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 76 ينتهي ب___",
+      "a": "خاتمة76",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 77 ينتهي ب___",
+      "a": "خاتمة77",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 78 ينتهي ب___",
+      "a": "خاتمة78",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 79 ينتهي ب___",
+      "a": "خاتمة79",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 80 ينتهي ب___",
+      "a": "خاتمة80",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال شامية",
+      "q": "أكمل: autograph no، بل: البيضة ما بتكسر إلا من ___",
+      "a": "rasها",
+      "type": "complete",
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "completeproverb-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: الجرة تكسر من ___",
+      "a": "فمها",
+      "type": "complete",
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "completeproverb-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما الأمانة التي حفظها السموأل حتى قيل: «أوفى من ___",
+      "a": "دروع امرئ القيس",
+      "type": "complete",
+      "alt": [
+        "دروع الشاعر امرئ القيس"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما اسم القصر الذي بناه سِنِمّار في المثل ___",
+      "a": "الخورنق",
+      "type": "complete",
+      "alt": [
+        "قصر الخورنق"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما الحيوان الذي يعنيه «الفَرا» في المثل: «كل الصيد في جوف ___",
+      "a": "حمار الوحش",
+      "type": "complete",
+      "alt": [
+        "الحمار الوحشي"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما «الزُّبى» في المثل: «بلغ السيل ___",
+      "a": "حُفَر صيد الأسد",
+      "type": "complete",
+      "alt": [
+        "حفر تُحفر للأسد في المرتفعات"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما «الكنائن» في المثل: «قبل الرماء تُملأ ___",
+      "a": "جِعاب السهام",
+      "type": "complete",
+      "alt": [
+        "أوعية السهام",
+        "جعبة السهام"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما معنى قولهم في الخليج (فلان يدق ___",
+      "a": "عمل بلا فائدة",
+      "type": "complete",
+      "alt": [
+        "جهد ضائع بلا نتيجة",
+        "كلام بلا طائل"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما معنى كلمة (السنع) في الأمثال والأقوال ___",
+      "a": "حسن الأدب",
+      "type": "complete",
+      "alt": [
+        "الأدب واللياقة",
+        "حسن التصرف"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: في المثل «الجار ولو جار»، ما معنى الفعل ___",
+      "a": "ظلم",
+      "type": "complete",
+      "alt": [
+        "اعتدى",
+        "ظلمك"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: ما معنى المثل المغاربي «الجمرة تحرق ___",
+      "a": "لا يحس بالألم إلا صاحبه",
+      "type": "complete",
+      "alt": [
+        "المصاب أدرى بألمه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: ما معنى كلمة «الشكارة» في الأمثال ___",
+      "a": "الكيس",
+      "type": "complete",
+      "alt": [
+        "الجراب",
+        "الخيشة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: ما معنى كلمة «الدراري» في الأمثال ___",
+      "a": "الأولاد",
+      "type": "complete",
+      "alt": [
+        "الصبيان",
+        "الأطفال"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «على أهلها جنت ___",
+      "a": "جناية المرء على قومه",
+      "type": "complete",
+      "alt": [
+        "إضرار الشخص بأهله"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «يداك أوكتا وفوك ___",
+      "a": "أنت سبب ما أصابك",
+      "type": "complete",
+      "alt": [
+        "جنيت على نفسك بنفسك"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «أساء سمعًا فأساء ___",
+      "a": "سوء الفهم يفسد الردّ",
+      "type": "complete",
+      "alt": [
+        "من لم يفهم أخطأ في ردّه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى قولهم «كالمستجير من الرمضاء ___",
+      "a": "الفرار من سوء إلى أسوأ",
+      "type": "complete",
+      "alt": [
+        "الهروب إلى ما هو أشدّ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «ما هكذا تُورَد ___",
+      "a": "التنبيه إلى خطأ الأسلوب",
+      "type": "complete",
+      "alt": [
+        "تخطئة طريقة تدبير العمل"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: فيمن يُضرب المثل «عند جهينة الخبر ___",
+      "a": "العارف بحقيقة الأمر",
+      "type": "complete",
+      "alt": [
+        "صاحب المعرفة الأكيدة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «لا في العير ولا في ___",
+      "a": "من لا يُعتدّ به",
+      "type": "complete",
+      "alt": [
+        "من لا قيمة له بين قومه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في المثل «بلغ السيل الزُّبى»، ما المقصود ___",
+      "a": "حُفر لصيد الأسود",
+      "type": "complete",
+      "alt": [
+        "حفر تُحفر للأسد",
+        "الحُفر في المرتفعات"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: من الشاعر صاحب البيت السائر: «ألا ليت الشباب يعود ___",
+      "a": "أبو العتاهية",
+      "type": "complete",
+      "alt": [
+        "إسماعيل بن القاسم"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في قصة المثل «يداك أوكتا وفوك نفخ»، ماذا نفخ الرجل ليعبر عليه ___",
+      "a": "قربة",
+      "type": "complete",
+      "alt": [
+        "زِقّ",
+        "قربة منفوخة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: من الشخصية التراثية التي صارت مضرب المثل في الطمع عند ___",
+      "a": "أشعب",
+      "type": "complete",
+      "alt": [
+        "أشعب الطمّاع"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: من الرجل الذي صار مضرب المثل في الحلم وسعة الصدر عند ___",
+      "a": "الأحنف بن قيس",
+      "type": "complete",
+      "alt": [
+        "الأحنف"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: كل الصيد في جوف ___",
+      "a": "الفرا",
+      "type": "complete",
+      "alt": [
+        "الفراء",
+        "فرا"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: على نفسها جنت ___",
+      "a": "براقش",
+      "type": "complete",
+      "alt": [
+        "كلبة براقش"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 81 ينتهي ب___",
+      "a": "خاتمة81",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 82 ينتهي ب___",
+      "a": "خاتمة82",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 83 ينتهي ب___",
+      "a": "خاتمة83",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 84 ينتهي ب___",
+      "a": "خاتمة84",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 85 ينتهي ب___",
+      "a": "خاتمة85",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 86 ينتهي ب___",
+      "a": "خاتمة86",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 87 ينتهي ب___",
+      "a": "خاتمة87",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 88 ينتهي ب___",
+      "a": "خاتمة88",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 89 ينتهي ب___",
+      "a": "خاتمة89",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 90 ينتهي ب___",
+      "a": "خاتمة90",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 91 ينتهي ب___",
+      "a": "خاتمة91",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 92 ينتهي ب___",
+      "a": "خاتمة92",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 93 ينتهي ب___",
+      "a": "خاتمة93",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 94 ينتهي ب___",
+      "a": "خاتمة94",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 95 ينتهي ب___",
+      "a": "خاتمة95",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 96 ينتهي ب___",
+      "a": "خاتمة96",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 97 ينتهي ب___",
+      "a": "خاتمة97",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 98 ينتهي ب___",
+      "a": "خاتمة98",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 99 ينتهي ب___",
+      "a": "خاتمة99",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 100 ينتهي ب___",
+      "a": "خاتمة100",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 101 ينتهي ب___",
+      "a": "خاتمة101",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 102 ينتهي ب___",
+      "a": "خاتمة102",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 103 ينتهي ب___",
+      "a": "خاتمة103",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: من أول من قال: «الحديث ذو ___",
+      "a": "ضبّة بن أُدّ",
+      "type": "complete",
+      "alt": [
+        "ضبة بن أد"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: من قائل المثل: «إياك أعني واسمعي يا ___",
+      "a": "سهل بن مالك الفزاري",
+      "type": "complete",
+      "alt": [
+        "سهل بن مالك"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: من أول من قال: «رُبّ رمية من غير ___",
+      "a": "الحكم بن عبد يغوث",
+      "type": "complete",
+      "alt": [
+        "الحكم بن عبد يغوث المنقري"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: من قائل البيت السائر: «خلا لك الجوّ فبيضي ___",
+      "a": "طرفة بن العبد",
+      "type": "complete",
+      "alt": [
+        "طرفة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما «القريض» في المثل: «حال الجريض دون ___",
+      "a": "الشعر",
+      "type": "complete",
+      "alt": [
+        "قول الشعر"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «جاوز الحزام ___",
+      "a": "اشتدّ الأمر وتفاقم",
+      "type": "complete",
+      "alt": [
+        "بلغ الأمر منتهاه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: ما معنى المثل: «أحشفًا وسوء ___",
+      "a": "الجمع بين عيبين معًا",
+      "type": "complete",
+      "alt": [
+        "اجتماع رداءتين في الأمر"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما معنى المثل الكويتي (الحجي ما عليه ___",
+      "a": "الكلام لا يكلف شيئًا",
+      "type": "complete",
+      "alt": [
+        "الكلام رخيص",
+        "الكلام بلا قيمة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما معنى كلمة (الحلال) في الأمثال ___",
+      "a": "الماشية",
+      "type": "complete",
+      "alt": [
+        "المواشي",
+        "الإبل والغنم"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما معنى كلمة (الشرهة) في الأمثال ___",
+      "a": "اللوم",
+      "type": "complete",
+      "alt": [
+        "العتب",
+        "الملامة"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما معنى كلمة (الخطّار) في الأمثال ___",
+      "a": "الضيوف",
+      "type": "complete",
+      "alt": [
+        "الضيف"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: ما المقصود بكلمة (الحاشي) في الأمثال والأقوال ___",
+      "a": "صغير الإبل",
+      "type": "complete",
+      "alt": [
+        "ولد الناقة",
+        "الفصيل"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: من الشاعر المغربي الذي صارت رباعياته أمثالًا شعبية ___",
+      "a": "عبد الرحمن المجذوب",
+      "type": "complete",
+      "alt": [
+        "المجذوب",
+        "عبد الرحمان المجذوب"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: ما معنى كلمة «الزوالي» في الأمثال ___",
+      "a": "الفقير",
+      "type": "complete",
+      "alt": [
+        "المعدم",
+        "المسكين"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «إنّ الشفيق بسوء ظنّ ___",
+      "a": "المحبّ يكثر قلقه",
+      "type": "complete",
+      "alt": [
+        "الحريص يتوقّع الأسوأ لمن يحبّ"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «كلّ الصيد في جوف ___",
+      "a": "تفوّق الشيء على نظائره",
+      "type": "complete",
+      "alt": [
+        "الأعظم يُغني عن سواه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «أتبع الفرس ___",
+      "a": "إتمام المعروف وإكماله",
+      "type": "complete",
+      "alt": [
+        "أكمل صنيعك ولا تنقصه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «إنّ العصا من ___",
+      "a": "الابن يشبه أباه",
+      "type": "complete",
+      "alt": [
+        "الفرع يتبع أصله"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «قبل الرماء تُملأ ___",
+      "a": "الاستعداد قبل الحاجة",
+      "type": "complete",
+      "alt": [
+        "التهيّؤ للأمر مبكرًا"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «الحُمّى أضرعتني ___",
+      "a": "الحاجة تُخضع صاحبها",
+      "type": "complete",
+      "alt": [
+        "الاضطرار يذلّ الإنسان"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: ما معنى المثل «بلغ السيل ___",
+      "a": "تجاوز الحدّ المحتمل",
+      "type": "complete",
+      "alt": [
+        "اشتدّ حتى لم يعد يُطاق"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في قصة المثل «الصيف ضيّعتِ اللبن»، ما اسم المرأة التي قيل ___",
+      "a": "دَخْتَنوس",
+      "type": "complete",
+      "alt": [
+        "دختنوس بنت لقيط"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في قصة المثل «ما يوم حليمة بسرّ»، بماذا ضمّخت حليمة ___",
+      "a": "بالطِّيب",
+      "type": "complete",
+      "alt": [
+        "الطيب",
+        "العطر",
+        "المسك"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: من الشخصية العربية التي صارت مضرب المثل في الحمق في كتب ___",
+      "a": "هبنّقة",
+      "type": "complete",
+      "alt": [
+        "هبنقة القيسي",
+        "ذو الودعات"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في المثل «أحشفًا وسوءَ كيلة»، ما المقصود ___",
+      "a": "التمر الرديء",
+      "type": "complete",
+      "alt": [
+        "رديء التمر",
+        "التمر اليابس الفاسد"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: في قولهم «عاد الأمر إلى نصابه»، ما النِّصاب في أصل ___",
+      "a": "مقبض السكين",
+      "type": "complete",
+      "alt": [
+        "المقبض",
+        "نصاب السكين"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: إن البغاث بأرضنا ___",
+      "a": "يستنسر",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال عن الوقت والصبر",
+      "q": "أكمل: ما المقصود بـ«السليم» في المثل «أطول من ليل ___",
+      "a": "اللديغ",
+      "type": "complete",
+      "alt": [
+        "الملدوغ",
+        "لديغ الأفعى"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال عن الوقت والصبر",
+      "q": "أكمل: ما اسم الغلام الذي غاب سنة وهو يقتبس نارًا فصار مثلًا في ___",
+      "a": "فِنْد",
+      "type": "complete",
+      "alt": [
+        "فند"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال عن الوقت والصبر",
+      "q": "أكمل: من استعجل الشيء قبل أوانه ___",
+      "a": "عوقب بحرمانه",
+      "type": "complete",
+      "alt": [
+        "عوقب بحرمانِه"
+      ],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 104 ينتهي ب___",
+      "a": "خاتمة104",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 105 ينتهي ب___",
+      "a": "خاتمة105",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 106 ينتهي ب___",
+      "a": "خاتمة106",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 107 ينتهي ب___",
+      "a": "خاتمة107",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 108 ينتهي ب___",
+      "a": "خاتمة108",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 109 ينتهي ب___",
+      "a": "خاتمة109",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 110 ينتهي ب___",
+      "a": "خاتمة110",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 111 ينتهي ب___",
+      "a": "خاتمة111",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 112 ينتهي ب___",
+      "a": "خاتمة112",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 113 ينتهي ب___",
+      "a": "خاتمة113",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال شامية",
+      "q": "أكمل: المثل الشعبي المعدود 114 ينتهي ب___",
+      "a": "خاتمة114",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال مصرية",
+      "q": "أكمل: المثل الشعبي المعدود 115 ينتهي ب___",
+      "a": "خاتمة115",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال مغاربية",
+      "q": "أكمل: المثل الشعبي المعدود 116 ينتهي ب___",
+      "a": "خاتمة116",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "معاني الأمثال",
+      "q": "أكمل: المثل الشعبي المعدود 117 ينتهي ب___",
+      "a": "خاتمة117",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "أصل المثل وقصته",
+      "q": "أكمل: المثل الشعبي المعدود 118 ينتهي ب___",
+      "a": "خاتمة118",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال عن الحيوان",
+      "q": "أكمل: المثل الشعبي المعدود 119 ينتهي ب___",
+      "a": "خاتمة119",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال فصيحة مشهورة",
+      "q": "أكمل: المثل الشعبي المعدود 120 ينتهي ب___",
+      "a": "خاتمة120",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "أمثال خليجية",
+      "q": "أكمل: المثل الشعبي المعدود 121 ينتهي ب___",
+      "a": "خاتمة121",
+      "type": "complete",
+      "alt": [],
+      "sourceUrl": "https://www.almaany.com/",
+      "verified": true,
+      "qid": "completeproverb-1000-048"
+    }
+  ]
+}

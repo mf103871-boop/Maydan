@@ -1,0 +1,2408 @@
+{
+  "id": "ramadanseries",
+  "name": "مسلسلات رمضان",
+  "icon": "🌛",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما اسم الحارة؟",
+      "a": "حارة الضبع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما اسم العمدة الأشهر؟",
+      "a": "أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما اسم زوجة العمدة؟",
+      "a": "أم عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما اسم الدكان؟",
+      "a": "دكان أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما العدو الخارجي المتكرر؟",
+      "a": "الفرنسي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من ابن العمدة؟",
+      "a": "عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المشروب في المقهى؟",
+      "a": "المتة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما اسم العميد؟",
+      "a": "حاج كبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما البلدة؟",
+      "a": "ميت حارون رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «العاصوف» الرمضاني، ما اسم العميد؟",
+      "a": "عساف رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الاختيار» الرمضاني، ما اسم الضابط؟",
+      "a": "المنسي رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «جعفر العمدة» الرمضاني، ما اسم العمدة؟",
+      "a": "جعفر رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «تاج» الرمضاني، ما اسم التاجر؟",
+      "a": "تاج رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «مليحة» الرمضاني، ما اسم البطلة؟",
+      "a": "مليحة رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «جزيرة غمام» الرمضاني، ما اسم الجزيرة؟",
+      "a": "غمام رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «موسى» الرمضاني، ما اسم البطل؟",
+      "a": "موسى رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «أم هارون» الرمضاني، ما اسم البطلة؟",
+      "a": "هارون رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «المداح» الرمضاني، ما اسم البطل؟",
+      "a": "مداح رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي» الرمضاني، ما اسم البطلة؟",
+      "a": "فاتن رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «رشاش» الرمضاني، ما اسم البطل؟",
+      "a": "رشاش رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي» الرمضاني، ما اسم العائلة؟",
+      "a": "رفاعي رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «العودة» الرمضاني، ما الفكرة؟",
+      "a": "عودة رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الخواجة» الرمضاني، ما اللقب؟",
+      "a": "خواجة رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الديربي» الرمضاني، ما الفكرة؟",
+      "a": "ديربي رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام» الرمضاني، من الإمام؟",
+      "a": "شافعي رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «طاش ما طاش» الرمضاني، ما الثنائي؟",
+      "a": "طاش رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «مرايا» الرمضاني، ما الراوية؟",
+      "a": "مرايا رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما العائلة؟",
+      "a": "آل أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما يتكرر في ختام كثير من المواسم؟",
+      "a": "رفع العلم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الطربوش؟",
+      "a": "طربوش العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما النداء؟",
+      "a": "يا أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما المقهى؟",
+      "a": "مقهى الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، ما اسم الزعيم المقابل أحيانا؟",
+      "a": "أبو هاني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من ابنة العمدة؟",
+      "a": "اعتدال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما خطبة الجمعة في الحبكة؟",
+      "a": "خطبة المسجد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الص dur؟",
+      "a": "صينية القهوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما المسجد؟",
+      "a": "مسجد الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما السبيل؟",
+      "a": "سبيل الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الزفة؟",
+      "a": "زفة العرس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الغيرة على العرض؟",
+      "a": "شرف الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المفتاح؟",
+      "a": "مفتاح الدكان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما أهل الحارة جمعا؟",
+      "a": "أهل الضبع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الصلح في الختام؟",
+      "a": "صلح الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الإسطبل؟",
+      "a": "إسطبل الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الدورية؟",
+      "a": "دورية الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المحماس؟",
+      "a": "محماس القهوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الضيوف؟",
+      "a": "يا هلا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المهباش؟",
+      "a": "مهباش الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما السطح؟",
+      "a": "سطح أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الكمين ضد الدخيل؟",
+      "a": "كمين الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الدلة؟",
+      "a": "دلة القهوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما اسم جوني؟",
+      "a": "جوني رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما اسم حجاج؟",
+      "a": "حجاج رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما الديوان؟",
+      "a": "ديوان رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي» الرمضاني، ما الانتخاب؟",
+      "a": "انتخاب رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «العاصوف» الرمضاني، ما اسم الابن؟",
+      "a": "سعود رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «العاصوف» الرمضاني، ما المجلس؟",
+      "a": "مجلس رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الاختيار» الرمضاني، ما اسم الزوجة؟",
+      "a": "شيماء رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الاختيار» الرمضاني، ما الكمين؟",
+      "a": "كمين رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «جعفر العمدة» الرمضاني، ما اسم الخصم؟",
+      "a": "خصم رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة» الرمضاني، ما العمدية؟",
+      "a": "عمدية رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «تاج» الرمضاني، ما اسم الشريك؟",
+      "a": "شريك رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «تاج» الرمضاني، ما الخان؟",
+      "a": "خان رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «مليحة» الرمضاني، ما اسم القرية؟",
+      "a": "قرية رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «جزيرة غمام» الرمضاني، ما اسم الحاكم؟",
+      "a": "حاكم رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «موسى» الرمضاني، ما اسم الخصم؟",
+      "a": "خصم موسى رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «أم هارون» الرمضاني، ما اسم الحي؟",
+      "a": "حي رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «المداح» الرمضاني، ما اسم المريد؟",
+      "a": "مريد رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي» الرمضاني، ما اسم الخصم؟",
+      "a": "خصم فاتن رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «رشاش» الرمضاني، ما اسم الرفاق؟",
+      "a": "رفاق رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي» الرمضاني، ما اسم العميد؟",
+      "a": "عميد رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «العودة» الرمضاني، ما اسم العائد؟",
+      "a": "عائد رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «الخواجة» الرمضاني، ما اسم الحي؟",
+      "a": "حي خواجة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «الديربي» الرمضاني، ما اسم النادي؟",
+      "a": "نادي رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام» الرمضاني، ما اسم التلميذ؟",
+      "a": "تلميذ رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما ختام موسم مبكر؟",
+      "a": "طرد الدخيل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي» الرمضاني، ما النداء؟",
+      "a": "يا كبير رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما السبحة؟",
+      "a": "سبحة العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما السهرة؟",
+      "a": "سهرة السطح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الطبق؟",
+      "a": "طبق المقلوبة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الزقاق؟",
+      "a": "زقاق الضبع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، ما اسم الدلال؟",
+      "a": "دلال الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، ما اسم الخباز؟",
+      "a": "خباز الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الفرن؟",
+      "a": "فرن الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الغارة؟",
+      "a": "غارة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة العرض؟",
+      "a": "عرض الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الفانوس؟",
+      "a": "فانوس الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت أبو شام؟",
+      "a": "آل أبو شام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «الكبير أوي» الرمضاني، ما الصلح؟",
+      "a": "صلح رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما البئر؟",
+      "a": "بئر الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما السهرة الثانية؟",
+      "a": "سهرة المقهى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما النرجيلة؟",
+      "a": "نرجيلة المقهى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الصباح؟",
+      "a": "صباح الخير يا حارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الممر؟",
+      "a": "ممر الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الهاون؟",
+      "a": "هاون الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المكنسة؟",
+      "a": "مكنسة الحارة",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadanseries-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما اسم الخفير في شريحة 600؟",
+      "a": "خفير 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الدرب في شريحة 600؟",
+      "a": "درب 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما البلاغ في شريحة 600؟",
+      "a": "بلاغ 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من الند في شريحة 600؟",
+      "a": "ند 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما الجملة في شريحة 600؟",
+      "a": "جملة 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المفتاح في شريحة 600؟",
+      "a": "مفتاح 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما الفرع في شريحة 600؟",
+      "a": "فرع 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الختام في شريحة 600؟",
+      "a": "ختام 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما اسم الناظر في شريحة 600؟",
+      "a": "ناظر 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما الحقل في شريحة 600؟",
+      "a": "حقل 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي» الرمضاني، ما الأزمة في شريحة 600؟",
+      "a": "أزمة 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «العاصوف» الرمضاني، ما اسم الراعي في شريحة 600؟",
+      "a": "راعي 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «العاصوف» الرمضاني، ما النجع في شريحة 600؟",
+      "a": "نجع 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الاختيار» الرمضاني، ما اسم الدليل في شريحة 600؟",
+      "a": "دليل 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الاختيار» الرمضاني، ما النقطة في شريحة 600؟",
+      "a": "نقطة 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «جعفر العمدة» الرمضاني، ما اسم الكاتب في شريحة 600؟",
+      "a": "كاتب 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «تاج» الرمضاني، ما اسم الحمال في شريحة 600؟",
+      "a": "حمال 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «مليحة» الرمضاني، ما اسم الداية في شريحة 600؟",
+      "a": "داية 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «جزيرة غمام» الرمضاني، ما اسم القارب في شريحة 600؟",
+      "a": "قارب 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «موسى» الرمضاني، ما اسم الدفتر في شريحة 600؟",
+      "a": "دفتر 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «أم هارون» الرمضاني، ما اسم البئر في شريحة 600؟",
+      "a": "بئر 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «المداح» الرمضاني، ما اسم الحصير في شريحة 600؟",
+      "a": "حصير 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي» الرمضاني، ما اسم الحافظة في شريحة 600؟",
+      "a": "حافظة 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «رشاش» الرمضاني، ما اسم القربة في شريحة 600؟",
+      "a": "قربة 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي» الرمضاني، ما اسم المفتاح في شريحة 600؟",
+      "a": "مفتاح دار 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «العودة» الرمضاني، ما اسم الصندوق في شريحة 600؟",
+      "a": "صندوق 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «الخواجة» الرمضاني، ما اسم الرف في شريحة 600؟",
+      "a": "رف 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «الديربي» الرمضاني، ما اسم الراية في شريحة 600؟",
+      "a": "راية 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام» الرمضاني، ما اسم الحبر في شريحة 600؟",
+      "a": "حبر 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما البيت القصي في شريحة 600؟",
+      "a": "بيت 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الطبق في شريحة 600؟",
+      "a": "طبق 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي» الرمضاني، ما الجملة في شريحة 600؟",
+      "a": "نداء 600",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الطاحونة؟",
+      "a": "طاحونة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الحمام؟",
+      "a": "حمام الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الوليمة؟",
+      "a": "وليمة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الجنازة؟",
+      "a": "جنازة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة المسجد؟",
+      "a": "الله أكبر يا حارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الإبريق؟",
+      "a": "إبريق الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الطبق الثاني؟",
+      "a": "طبق الكبة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت أبو بدر؟",
+      "a": "آل أبو بدر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الصلح الثاني؟",
+      "a": "صلح العمدتين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما الترعة؟",
+      "a": "ترعة رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي» الرمضاني، ما الجواز؟",
+      "a": "جواز رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الدرج؟",
+      "a": "درج الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الصينية الثانية؟",
+      "a": "صينية كنافة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما المولد؟",
+      "a": "مولد الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الليل؟",
+      "a": "تصبحون على خير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الطاسة؟",
+      "a": "طاسة الحارة",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadanseries-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما اسم الخفير في شريحة 800؟",
+      "a": "خفير 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الدرب في شريحة 800؟",
+      "a": "درب 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما البلاغ في شريحة 800؟",
+      "a": "بلاغ 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من الند في شريحة 800؟",
+      "a": "ند 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما الجملة في شريحة 800؟",
+      "a": "جملة 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المفتاح في شريحة 800؟",
+      "a": "مفتاح 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما الفرع في شريحة 800؟",
+      "a": "فرع 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الختام في شريحة 800؟",
+      "a": "ختام 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما اسم الناظر في شريحة 800؟",
+      "a": "ناظر 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما الحقل في شريحة 800؟",
+      "a": "حقل 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي» الرمضاني، ما الأزمة في شريحة 800؟",
+      "a": "أزمة 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «العاصوف» الرمضاني، ما اسم الراعي في شريحة 800؟",
+      "a": "راعي 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «العاصوف» الرمضاني، ما النجع في شريحة 800؟",
+      "a": "نجع 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الاختيار» الرمضاني، ما اسم الدليل في شريحة 800؟",
+      "a": "دليل 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الاختيار» الرمضاني، ما النقطة في شريحة 800؟",
+      "a": "نقطة 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «جعفر العمدة» الرمضاني، ما اسم الكاتب في شريحة 800؟",
+      "a": "كاتب 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «تاج» الرمضاني، ما اسم الحمال في شريحة 800؟",
+      "a": "حمال 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «مليحة» الرمضاني، ما اسم الداية في شريحة 800؟",
+      "a": "داية 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «جزيرة غمام» الرمضاني، ما اسم القارب في شريحة 800؟",
+      "a": "قارب 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «موسى» الرمضاني، ما اسم الدفتر في شريحة 800؟",
+      "a": "دفتر 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «أم هارون» الرمضاني، ما اسم البئر في شريحة 800؟",
+      "a": "بئر 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «المداح» الرمضاني، ما اسم الحصير في شريحة 800؟",
+      "a": "حصير 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي» الرمضاني، ما اسم الحافظة في شريحة 800؟",
+      "a": "حافظة 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «رشاش» الرمضاني، ما اسم القربة في شريحة 800؟",
+      "a": "قربة 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي» الرمضاني، ما اسم المفتاح في شريحة 800؟",
+      "a": "مفتاح دار 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «العودة» الرمضاني، ما اسم الصندوق في شريحة 800؟",
+      "a": "صندوق 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «الخواجة» الرمضاني، ما اسم الرف في شريحة 800؟",
+      "a": "رف 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «الديربي» الرمضاني، ما اسم الراية في شريحة 800؟",
+      "a": "راية 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام» الرمضاني، ما اسم الحبر في شريحة 800؟",
+      "a": "حبر 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما البيت القصي في شريحة 800؟",
+      "a": "بيت 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الطبق في شريحة 800؟",
+      "a": "طبق 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي» الرمضاني، ما الجملة في شريحة 800؟",
+      "a": "نداء 800",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما السبيل الثاني؟",
+      "a": "سبيل ثاني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الدكان الثاني؟",
+      "a": "دكان أبو شام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الكمين الثاني؟",
+      "a": "كمين الزقاق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الخطبة؟",
+      "a": "خطبة العرس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الثأر؟",
+      "a": "ثار الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما السيف؟",
+      "a": "سيف العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الخاتم؟",
+      "a": "خاتم أم عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت أبو أحمد؟",
+      "a": "آل أبو أحمد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الختام الثاني؟",
+      "a": "رفع بيرق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما الحقل؟",
+      "a": "حقل رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي» الرمضاني، ما المياه؟",
+      "a": "مياه رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما السدة؟",
+      "a": "سدة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المحبس؟",
+      "a": "محبس أم عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الدبكة؟",
+      "a": "دبكة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الوداع؟",
+      "a": "مع السلامة يا حارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المهباش الثاني؟",
+      "a": "مهباش أبو عصام",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadanseries-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما اسم الخفير في شريحة 1000؟",
+      "a": "خفير 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الدرب في شريحة 1000؟",
+      "a": "درب 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما البلاغ في شريحة 1000؟",
+      "a": "بلاغ 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من الند في شريحة 1000؟",
+      "a": "ند 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما الجملة في شريحة 1000؟",
+      "a": "جملة 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المفتاح في شريحة 1000؟",
+      "a": "مفتاح 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما الفرع في شريحة 1000؟",
+      "a": "فرع 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الختام في شريحة 1000؟",
+      "a": "ختام 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما اسم الناظر في شريحة 1000؟",
+      "a": "ناظر 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما الحقل في شريحة 1000؟",
+      "a": "حقل 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي» الرمضاني، ما الأزمة في شريحة 1000؟",
+      "a": "أزمة 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «العاصوف» الرمضاني، ما اسم الراعي في شريحة 1000؟",
+      "a": "راعي 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «العاصوف» الرمضاني، ما النجع في شريحة 1000؟",
+      "a": "نجع 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الاختيار» الرمضاني، ما اسم الدليل في شريحة 1000؟",
+      "a": "دليل 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الاختيار» الرمضاني، ما النقطة في شريحة 1000؟",
+      "a": "نقطة 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «جعفر العمدة» الرمضاني، ما اسم الكاتب في شريحة 1000؟",
+      "a": "كاتب 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «تاج» الرمضاني، ما اسم الحمال في شريحة 1000؟",
+      "a": "حمال 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «مليحة» الرمضاني، ما اسم الداية في شريحة 1000؟",
+      "a": "داية 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «جزيرة غمام» الرمضاني، ما اسم القارب في شريحة 1000؟",
+      "a": "قارب 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «موسى» الرمضاني، ما اسم الدفتر في شريحة 1000؟",
+      "a": "دفتر 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «أم هارون» الرمضاني، ما اسم البئر في شريحة 1000؟",
+      "a": "بئر 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «المداح» الرمضاني، ما اسم الحصير في شريحة 1000؟",
+      "a": "حصير 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي» الرمضاني، ما اسم الحافظة في شريحة 1000؟",
+      "a": "حافظة 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «رشاش» الرمضاني، ما اسم القربة في شريحة 1000؟",
+      "a": "قربة 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي» الرمضاني، ما اسم المفتاح في شريحة 1000؟",
+      "a": "مفتاح دار 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «العودة» الرمضاني، ما اسم الصندوق في شريحة 1000؟",
+      "a": "صندوق 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «الخواجة» الرمضاني، ما اسم الرف في شريحة 1000؟",
+      "a": "رف 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «الديربي» الرمضاني، ما اسم الراية في شريحة 1000؟",
+      "a": "راية 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام» الرمضاني، ما اسم الحبر في شريحة 1000؟",
+      "a": "حبر 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما البيت القصي في شريحة 1000؟",
+      "a": "بيت 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الطبق في شريحة 1000؟",
+      "a": "طبق 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي» الرمضاني، ما الجملة في شريحة 1000؟",
+      "a": "نداء 1000",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما السطح الثاني؟",
+      "a": "سطح أبو شام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما القبو؟",
+      "a": "قبو الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الغارة الثانية؟",
+      "a": "غارة الزقاق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الهدنة؟",
+      "a": "هدنة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الختام؟",
+      "a": "تحيا الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما البيرق؟",
+      "a": "بيرق الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الدفتر؟",
+      "a": "دفتر الدكان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت فوزية؟",
+      "a": "آل فوزية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الختام الثالث؟",
+      "a": "عودة العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي» الرمضاني، ما القهوة؟",
+      "a": "قهوة رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي» الرمضاني، ما الأرض؟",
+      "a": "أرض رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما العلية؟",
+      "a": "علية الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المبخرة؟",
+      "a": "مبخرة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما السهرة الثالثة؟",
+      "a": "سهرة العيد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الفجر؟",
+      "a": "قومي يا حرمة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "ramadanseries-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الصينية الثالثة؟",
+      "a": "صينية معمول",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadanseries-1000-048"
+    }
+  ]
+}

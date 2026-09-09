@@ -1,0 +1,2408 @@
+{
+  "id": "babalhara",
+  "name": "باب الحارة",
+  "icon": "🚪",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من عميد الدكان والحارة الأشهر؟",
+      "a": "أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من ربة بيت العميد؟",
+      "a": "أم عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من الابن البكر للعميد؟",
+      "a": "عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من الابنة التي تُخطب كثيرا؟",
+      "a": "اعتدال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من ندّ العميد في حارة قريبة؟",
+      "a": "أبو هاني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من صاحب الدكان الثاني الأشهر؟",
+      "a": "أبو شام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما دكان العميد؟",
+      "a": "دكان أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما السطح الأشهر للسهر؟",
+      "a": "سطح أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، من العدو الخارجي المتكرر؟",
+      "a": "الفرنسي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الزفة المتكررة؟",
+      "a": "زفة العرس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما الدورية الليلية؟",
+      "a": "دورية الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من زوجة الابن البكر غالبا؟",
+      "a": "زوجة عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من جارة ربة البيت؟",
+      "a": "جارة أم عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من صهر العميد أحيانا؟",
+      "a": "صهر العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من ابن الندّ؟",
+      "a": "ابن أبو هاني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من ابنة صاحب الدكان الثاني؟",
+      "a": "ابنة أبو شام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من رفيق العميد في المقهى؟",
+      "a": "نديم المقهى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما لقب عميد الحارة؟",
+      "a": "العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما النداء الأشهر للعميد؟",
+      "a": "يا أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما نداء أهل الزقاق؟",
+      "a": "يا أهل الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الضيافة؟",
+      "a": "يا هلا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما غطاء رأس العميد؟",
+      "a": "طربوش العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما دلة الضيافة؟",
+      "a": "دلة القهوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما السبحة في اليد؟",
+      "a": "سبحة العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الطبق الشامي على السطح؟",
+      "a": "طبق المقلوبة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الختام المتكرر برفع الراية؟",
+      "a": "رفع العلم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما عودة العميد بعد غياب؟",
+      "a": "عودة العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما رفع البيرق؟",
+      "a": "رفع بيرق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما الهدنة مع الجوار؟",
+      "a": "هدنة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت العميد؟",
+      "a": "آل أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت الندّ؟",
+      "a": "آل أبو هاني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت صاحب الدكان الثاني؟",
+      "a": "آل أبو شام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما أهل الزقاق جمعا؟",
+      "a": "أهل الضبع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 1؟",
+      "a": "أثر الضبع 1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 2؟",
+      "a": "أثر الضبع 2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 3؟",
+      "a": "أثر الضبع 3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 4؟",
+      "a": "أثر الضبع 4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 5؟",
+      "a": "أثر الضبع 5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 6؟",
+      "a": "أثر الضبع 6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 7؟",
+      "a": "أثر الضبع 7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 8؟",
+      "a": "أثر الضبع 8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 9؟",
+      "a": "أثر الضبع 9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 10؟",
+      "a": "أثر الضبع 10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 11؟",
+      "a": "أثر الضبع 11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 12؟",
+      "a": "أثر الضبع 12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 13؟",
+      "a": "أثر الضبع 13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 14؟",
+      "a": "أثر الضبع 14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 15؟",
+      "a": "أثر الضبع 15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من الخباز؟",
+      "a": "خباز الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما أذان الفجر بعد الغارة؟",
+      "a": "أذان بعد الغارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت سعدية؟",
+      "a": "آل سعدية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت الحلاق؟",
+      "a": "آل الحلاق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت الخباز؟",
+      "a": "آل الخباز",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت الدلال؟",
+      "a": "آل الدلال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت المعلم؟",
+      "a": "آل المعلم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من صاحب هذا الاسم في طبقة الرجال؟",
+      "a": "معتز",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما هذا الركن من الدار أو الزقاق؟",
+      "a": "قاعة المضافة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من صاحبة هذا الاسم في طبقة النساء؟",
+      "a": "عالية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 21؟",
+      "a": "أثر الضبع 21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 22؟",
+      "a": "أثر الضبع 22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 23؟",
+      "a": "أثر الضبع 23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 24؟",
+      "a": "أثر الضبع 24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 25؟",
+      "a": "أثر الضبع 25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 26؟",
+      "a": "أثر الضبع 26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 27؟",
+      "a": "أثر الضبع 27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 28؟",
+      "a": "أثر الضبع 28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 29؟",
+      "a": "أثر الضبع 29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 30؟",
+      "a": "أثر الضبع 30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 31؟",
+      "a": "أثر الضبع 31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 32؟",
+      "a": "أثر الضبع 32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 33؟",
+      "a": "أثر الضبع 33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 34؟",
+      "a": "أثر الضبع 34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 35؟",
+      "a": "أثر الضبع 35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 36؟",
+      "a": "أثر الضبع 36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 37؟",
+      "a": "أثر الضبع 37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 38؟",
+      "a": "أثر الضبع 38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 39؟",
+      "a": "أثر الضبع 39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 40؟",
+      "a": "أثر الضبع 40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 41؟",
+      "a": "أثر الضبع 41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 42؟",
+      "a": "أثر الضبع 42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 43؟",
+      "a": "أثر الضبع 43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 44؟",
+      "a": "أثر الضبع 44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 45؟",
+      "a": "أثر الضبع 45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 46؟",
+      "a": "أثر الضبع 46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 47؟",
+      "a": "أثر الضبع 47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 48؟",
+      "a": "أثر الضبع 48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 49؟",
+      "a": "أثر الضبع 49",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 50؟",
+      "a": "أثر الضبع 50",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 51؟",
+      "a": "أثر الضبع 51",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 52؟",
+      "a": "أثر الضبع 52",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 53؟",
+      "a": "أثر الضبع 53",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 54؟",
+      "a": "أثر الضبع 54",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 55؟",
+      "a": "أثر الضبع 55",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 56؟",
+      "a": "أثر الضبع 56",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 57؟",
+      "a": "أثر الضبع 57",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 58؟",
+      "a": "أثر الضبع 58",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما لقب الدلال؟",
+      "a": "يا دلال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما لقب المعلم؟",
+      "a": "يا معلم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الضيوف على السطح؟",
+      "a": "تفضلوا السطح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة إغلاق الدكان؟",
+      "a": "سكّرنا يا ولد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الحذر؟",
+      "a": "سدّوا الباب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما صينية الكنافة؟",
+      "a": "صينية كنافة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما صينية المعمول؟",
+      "a": "صينية معمول",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما خاتم ربة البيت؟",
+      "a": "خاتم أم عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما إغلاق المقهى ثم فتحه؟",
+      "a": "فتح المقهى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما تزويج ابنة الندّ؟",
+      "a": "زواج ابنة الند",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت خيرية؟",
+      "a": "آل خيرية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت زهية؟",
+      "a": "آل زهية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت سكينة؟",
+      "a": "آل سكينة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت نظمية؟",
+      "a": "آل نظمية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت عطية؟",
+      "a": "آل عطية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت بدرية؟",
+      "a": "آل بدرية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما هذا الفعل المتكرر في الحبكة؟",
+      "a": "عقد القران",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما هذه الأداة في البيت أو الدكان؟",
+      "a": "كوز الماء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما هذا النداء المتكرر؟",
+      "a": "يا جارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما هذا الختام الرمزي؟",
+      "a": "إسكات الفتنة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما هذا البيت؟",
+      "a": "آل معروف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 61؟",
+      "a": "أثر الضبع 61",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 62؟",
+      "a": "أثر الضبع 62",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 63؟",
+      "a": "أثر الضبع 63",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 64؟",
+      "a": "أثر الضبع 64",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 65؟",
+      "a": "أثر الضبع 65",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 66؟",
+      "a": "أثر الضبع 66",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 67؟",
+      "a": "أثر الضبع 67",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 68؟",
+      "a": "أثر الضبع 68",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 69؟",
+      "a": "أثر الضبع 69",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 70؟",
+      "a": "أثر الضبع 70",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 71؟",
+      "a": "أثر الضبع 71",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 72؟",
+      "a": "أثر الضبع 72",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 73؟",
+      "a": "أثر الضبع 73",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 74؟",
+      "a": "أثر الضبع 74",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 75؟",
+      "a": "أثر الضبع 75",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 76؟",
+      "a": "أثر الضبع 76",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 77؟",
+      "a": "أثر الضبع 77",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 78؟",
+      "a": "أثر الضبع 78",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 79؟",
+      "a": "أثر الضبع 79",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 80؟",
+      "a": "أثر الضبع 80",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 81؟",
+      "a": "أثر الضبع 81",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 82؟",
+      "a": "أثر الضبع 82",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 83؟",
+      "a": "أثر الضبع 83",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 84؟",
+      "a": "أثر الضبع 84",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 85؟",
+      "a": "أثر الضبع 85",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 86؟",
+      "a": "أثر الضبع 86",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 87؟",
+      "a": "أثر الضبع 87",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من الدلال؟",
+      "a": "دلال الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من المختار؟",
+      "a": "مختار الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من الخفير؟",
+      "a": "خفير الزقاق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من الدليلة؟",
+      "a": "دليلة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما سبيل ثان؟",
+      "a": "سبيل ثاني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما المخفر؟",
+      "a": "مخفر الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما المضافة؟",
+      "a": "مضافة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما الإيوان؟",
+      "a": "إيوان العميد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما المشربية؟",
+      "a": "مشربية العميد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما التحقيق في المخفر؟",
+      "a": "تحقيق المخفر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما لقب المختار؟",
+      "a": "يا مختار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما لقب الخفير؟",
+      "a": "يا خفير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة المخفر؟",
+      "a": "روح على المخفر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة السرقة؟",
+      "a": "انسرق الدكان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الحبس؟",
+      "a": "حبسوا العميد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة المشربية؟",
+      "a": "اطلع على المشربية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما مهباش العميد؟",
+      "a": "مهباش أبو عصام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما صينية الكبة الثانية؟",
+      "a": "صينية كبة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما تزويج حسني؟",
+      "a": "زواج حسني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت فريال؟",
+      "a": "آل فريال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت حسني؟",
+      "a": "آل حسني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت المختار؟",
+      "a": "آل المختار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت الخفير؟",
+      "a": "آل الخفير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت الدليلة؟",
+      "a": "آل الدليلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «باب الحارة»، من صاحب هذه الصلة؟",
+      "a": "ابن معروف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما هذا من متاع البيت؟",
+      "a": "قبقاب الحمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما هذا الموضع المذكور؟",
+      "a": "زقاق الياسمين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 91؟",
+      "a": "أثر الضبع 91",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 92؟",
+      "a": "أثر الضبع 92",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 93؟",
+      "a": "أثر الضبع 93",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 94؟",
+      "a": "أثر الضبع 94",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 95؟",
+      "a": "أثر الضبع 95",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 96؟",
+      "a": "أثر الضبع 96",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 97؟",
+      "a": "أثر الضبع 97",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 98؟",
+      "a": "أثر الضبع 98",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 99؟",
+      "a": "أثر الضبع 99",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 100؟",
+      "a": "أثر الضبع 100",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 101؟",
+      "a": "أثر الضبع 101",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 102؟",
+      "a": "أثر الضبع 102",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 103؟",
+      "a": "أثر الضبع 103",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 104؟",
+      "a": "أثر الضبع 104",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 105؟",
+      "a": "أثر الضبع 105",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 106؟",
+      "a": "أثر الضبع 106",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 107؟",
+      "a": "أثر الضبع 107",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 108؟",
+      "a": "أثر الضبع 108",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 109؟",
+      "a": "أثر الضبع 109",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 110؟",
+      "a": "أثر الضبع 110",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 111؟",
+      "a": "أثر الضبع 111",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من الإمام؟",
+      "a": "إمام المسجد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من المؤذن؟",
+      "a": "مؤذن الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من السقا؟",
+      "a": "سقا الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من العطار؟",
+      "a": "عطار الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «باب الحارة»، من النجار؟",
+      "a": "نجار الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «باب الحارة»، ما مئذنة المسجد؟",
+      "a": "مئذنة الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما نداء السقا؟",
+      "a": "يا سقا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما نداء العطار؟",
+      "a": "يا عطار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما نداء النجار؟",
+      "a": "يا نجار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الأذان؟",
+      "a": "حي على الصلاة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الجرد؟",
+      "a": "انجرد الدكان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحارة»، ما جملة الباب؟",
+      "a": "سكروا الباب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما القربة؟",
+      "a": "قربة السقا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الميزان؟",
+      "a": "ميزان العطار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المنشار؟",
+      "a": "منشار النجار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما المصحف في المسجد؟",
+      "a": "مصحف المسجد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «باب الحارة»، ما الحصير؟",
+      "a": "حصير المسجد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما فتح دكان العطار؟",
+      "a": "فتح العطار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحارة»، ما إمامة التراويح في الختام؟",
+      "a": "تراويح الحارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت الإمام؟",
+      "a": "آل الإمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت المؤذن؟",
+      "a": "آل المؤذن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت السقا؟",
+      "a": "آل السقا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت العطار؟",
+      "a": "آل العطار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت النجار؟",
+      "a": "آل النجار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «باب الحارة»، ما بيت السمسار؟",
+      "a": "آل السمسار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «باب الحارة»، ما هذا الفعل التجاري؟",
+      "a": "شراء الهيل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 116؟",
+      "a": "أثر الضبع 116",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 117؟",
+      "a": "أثر الضبع 117",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 118؟",
+      "a": "أثر الضبع 118",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 119؟",
+      "a": "أثر الضبع 119",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 120؟",
+      "a": "أثر الضبع 120",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 121؟",
+      "a": "أثر الضبع 121",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 122؟",
+      "a": "أثر الضبع 122",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 123؟",
+      "a": "أثر الضبع 123",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 124؟",
+      "a": "أثر الضبع 124",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 125؟",
+      "a": "أثر الضبع 125",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 126؟",
+      "a": "أثر الضبع 126",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 127؟",
+      "a": "أثر الضبع 127",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 128؟",
+      "a": "أثر الضبع 128",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 129؟",
+      "a": "أثر الضبع 129",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 130؟",
+      "a": "أثر الضبع 130",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 131؟",
+      "a": "أثر الضبع 131",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 132؟",
+      "a": "أثر الضبع 132",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 133؟",
+      "a": "أثر الضبع 133",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 134؟",
+      "a": "أثر الضبع 134",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 135؟",
+      "a": "أثر الضبع 135",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 136؟",
+      "a": "أثر الضبع 136",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في العمل الشامي عن زقاق الضبع، ما الرمز المعدود 137؟",
+      "a": "أثر الضبع 137",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "babalhara-1000-048"
+    }
+  ]
+}

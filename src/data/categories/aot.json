@@ -1,0 +1,2408 @@
+{
+  "id": "aot",
+  "name": "هجوم العمالقة",
+  "icon": "🏯",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من الفتاة ذات الوشاح؟",
+      "a": "ميكاسا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-049"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من الاستراتيجي؟",
+      "a": "أرمن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-050"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من قائد الفرق الصغيرة؟",
+      "a": "ليفاي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-051"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من قائد الفيلق؟",
+      "a": "إروين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-052"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من الباحثة؟",
+      "a": "هانجي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-053"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما السور الخارجي؟",
+      "a": "ماريا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-054"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما السور الأوسط؟",
+      "a": "روز",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-055"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما السور الداخلي؟",
+      "a": "سينا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-056"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما الجزيرة؟",
+      "a": "باراديس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-057"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما القبو؟",
+      "a": "قبو إرين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-058"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المقر؟",
+      "a": "مقر الفيلق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-059"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما سقوط السور الأول؟",
+      "a": "سقوط ماريا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-060"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما عملية الاستعادة؟",
+      "a": "استعادة السور",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-061"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما الكشف عن الدرع؟",
+      "a": "كشف الدرع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-062"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما تتويج الملكة؟",
+      "a": "تتويج هيستوريا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-063"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، من صديق الطفولة الأول؟",
+      "a": "أرمن الصديق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-064"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، من الحامية بالوشاح؟",
+      "a": "ميكاسا الحامية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-065"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، من الجندي الذهبي؟",
+      "a": "راينر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-066"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، من عملاق الذراع؟",
+      "a": "برتولد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-067"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، من عملاقة البلورة؟",
+      "a": "آني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-068"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، من الملكة؟",
+      "a": "هيستوريا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-069"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما جملة الحرية؟",
+      "a": "سأقتلهم جميعا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-070"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما نداء القائد القصير؟",
+      "a": "يا ليفاي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-071"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما نداء الفيلق؟",
+      "a": "كرسوا قلوبكم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-072"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما لقب عملاق الجدار؟",
+      "a": "المدرّع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-073"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما لقب عملاق الباب؟",
+      "a": "العملاق الطول",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-074"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما الوشاح؟",
+      "a": "وشاح ميكاسا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-075"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما جهاز المناورة؟",
+      "a": "أجهزة المناورة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-076"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المفتاح؟",
+      "a": "مفتاح القبو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-077"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما السيف؟",
+      "a": "سيوف الفيلق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-078"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما الكتاب في القبو؟",
+      "a": "كتاب القبو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-079"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما الشارة؟",
+      "a": "شارة الأجنحة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-080"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما سقوط القائد؟",
+      "a": "سقوط إروين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-081"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسير الهائل للعمالقة في الختام؟",
+      "a": "مسير العمالقة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-082"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما بيت البطل؟",
+      "a": "آل ييغر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-083"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما بيت الوشاح؟",
+      "a": "آل أكرمان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-084"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما بيت الملكة؟",
+      "a": "آل ريس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-085"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من محبة البطاطا؟",
+      "a": "ساشا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-086"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من الجندي الساخر؟",
+      "a": "جين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-087"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من أصلع الدفعة؟",
+      "a": "كوني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-088"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما الغابة؟",
+      "a": "غابة العمالقة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-089"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، من قائدة الحامية؟",
+      "a": "بايك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-090"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما البطاطا؟",
+      "a": "بطاطا ساشا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-091"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما نداء البطاطا؟",
+      "a": "يا ساشا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-092"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما نداء الساخر؟",
+      "a": "يا جين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-200-093"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، من قائدة المتدربين؟",
+      "a": "شاديس",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "aot-200-094"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما الخريطة؟",
+      "a": "خريطة الأسوار",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "aot-200-095"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما بيت الجندي الذهبي؟",
+      "a": "آل براون",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "aot-200-096"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق1؟",
+      "a": "السور ق1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-049"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق2؟",
+      "a": "القبو ق2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-050"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق3؟",
+      "a": "الوشاح ق3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-051"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق4؟",
+      "a": "الشارة ق4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-052"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق5؟",
+      "a": "الرفيق ق5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-053"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق6؟",
+      "a": "النداء ق6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-054"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق7؟",
+      "a": "الختام ق7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-055"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق8؟",
+      "a": "البيت ق8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-056"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق9؟",
+      "a": "السور ق9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-057"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق10؟",
+      "a": "القبو ق10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-058"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق11؟",
+      "a": "الوشاح ق11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-059"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق12؟",
+      "a": "الشارة ق12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-060"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق13؟",
+      "a": "الرفيق ق13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-061"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق14؟",
+      "a": "النداء ق14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-062"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق15؟",
+      "a": "الختام ق15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-063"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق16؟",
+      "a": "البيت ق16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-064"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق17؟",
+      "a": "السور ق17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-065"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق18؟",
+      "a": "القبو ق18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-066"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق19؟",
+      "a": "الوشاح ق19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-067"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق20؟",
+      "a": "الشارة ق20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-068"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق21؟",
+      "a": "الرفيق ق21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-069"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق22؟",
+      "a": "النداء ق22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-070"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق23؟",
+      "a": "الختام ق23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-071"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق24؟",
+      "a": "البيت ق24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-072"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق25؟",
+      "a": "السور ق25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-073"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق26؟",
+      "a": "القبو ق26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-074"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق27؟",
+      "a": "الوشاح ق27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-075"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق28؟",
+      "a": "الشارة ق28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-076"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق29؟",
+      "a": "الرفيق ق29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-077"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق30؟",
+      "a": "النداء ق30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-078"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق31؟",
+      "a": "الختام ق31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-079"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق32؟",
+      "a": "البيت ق32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-080"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق33؟",
+      "a": "السور ق33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-081"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق34؟",
+      "a": "القبو ق34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-082"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق35؟",
+      "a": "الوشاح ق35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-083"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق36؟",
+      "a": "الشارة ق36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-084"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق37؟",
+      "a": "الرفيق ق37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-085"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق38؟",
+      "a": "النداء ق38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-086"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق39؟",
+      "a": "الختام ق39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-087"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق40؟",
+      "a": "البيت ق40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-088"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق41؟",
+      "a": "السور ق41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-089"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق42؟",
+      "a": "القبو ق42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-090"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق43؟",
+      "a": "الوشاح ق43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-091"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق44؟",
+      "a": "الشارة ق44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-092"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق45؟",
+      "a": "الرفيق ق45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-093"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق46؟",
+      "a": "النداء ق46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-094"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق47؟",
+      "a": "الختام ق47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-095"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ق48؟",
+      "a": "البيت ق48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-400-096"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س1؟",
+      "a": "الجزيرة س1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-049"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س2؟",
+      "a": "المقر س2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-050"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س3؟",
+      "a": "السيف س3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-051"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س4؟",
+      "a": "المفتاح س4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-052"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س5؟",
+      "a": "الحليف س5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-053"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س6؟",
+      "a": "الكشف س6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-054"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س7؟",
+      "a": "الفرع س7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-055"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س8؟",
+      "a": "الجسر س8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-056"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س9؟",
+      "a": "الجزيرة س9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-057"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س10؟",
+      "a": "المقر س10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-058"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س11؟",
+      "a": "السيف س11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-059"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س12؟",
+      "a": "المفتاح س12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-060"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س13؟",
+      "a": "الحليف س13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-061"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س14؟",
+      "a": "الكشف س14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-062"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س15؟",
+      "a": "الفرع س15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-063"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س16؟",
+      "a": "الجسر س16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-064"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س17؟",
+      "a": "الجزيرة س17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-065"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س18؟",
+      "a": "المقر س18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-066"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س19؟",
+      "a": "السيف س19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-067"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س20؟",
+      "a": "المفتاح س20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-068"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س21؟",
+      "a": "الحليف س21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-069"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س22؟",
+      "a": "الكشف س22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-070"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س23؟",
+      "a": "الفرع س23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-071"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س24؟",
+      "a": "الجسر س24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-072"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س25؟",
+      "a": "الجزيرة س25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-073"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س26؟",
+      "a": "المقر س26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-074"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س27؟",
+      "a": "السيف س27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-075"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س28؟",
+      "a": "المفتاح س28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-076"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س29؟",
+      "a": "الحليف س29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-077"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س30؟",
+      "a": "الكشف س30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-078"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س31؟",
+      "a": "الفرع س31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-079"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س32؟",
+      "a": "الجسر س32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-080"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س33؟",
+      "a": "الجزيرة س33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-081"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س34؟",
+      "a": "المقر س34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-082"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س35؟",
+      "a": "السيف س35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-083"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س36؟",
+      "a": "المفتاح س36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-084"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س37؟",
+      "a": "الحليف س37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-085"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س38؟",
+      "a": "الكشف س38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-086"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س39؟",
+      "a": "الفرع س39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-087"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س40؟",
+      "a": "الجسر س40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-088"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س41؟",
+      "a": "الجزيرة س41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-089"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س42؟",
+      "a": "المقر س42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-090"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س43؟",
+      "a": "السيف س43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-091"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س44؟",
+      "a": "المفتاح س44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-092"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س45؟",
+      "a": "الحليف س45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-093"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س46؟",
+      "a": "الكشف س46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-094"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س47؟",
+      "a": "الفرع س47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-095"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي س48؟",
+      "a": "الجسر س48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-600-096"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث1؟",
+      "a": "البحر ث1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-049"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث2؟",
+      "a": "الغابة ث2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-050"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث3؟",
+      "a": "الختم ث3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-051"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث4؟",
+      "a": "الدفتر ث4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-052"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث5؟",
+      "a": "الشريك ث5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-053"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث6؟",
+      "a": "الوليمة ث6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-054"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث7؟",
+      "a": "العشيرة ث7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-055"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث8؟",
+      "a": "الباب ث8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-056"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث9؟",
+      "a": "البحر ث9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-057"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث10؟",
+      "a": "الغابة ث10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-058"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث11؟",
+      "a": "الختم ث11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-059"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث12؟",
+      "a": "الدفتر ث12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-060"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث13؟",
+      "a": "الشريك ث13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-061"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث14؟",
+      "a": "الوليمة ث14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-062"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث15؟",
+      "a": "العشيرة ث15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-063"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث16؟",
+      "a": "الباب ث16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-064"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث17؟",
+      "a": "البحر ث17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-065"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث18؟",
+      "a": "الغابة ث18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-066"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث19؟",
+      "a": "الختم ث19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-067"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث20؟",
+      "a": "الدفتر ث20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-068"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث21؟",
+      "a": "الشريك ث21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-069"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث22؟",
+      "a": "الوليمة ث22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-070"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث23؟",
+      "a": "العشيرة ث23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-071"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث24؟",
+      "a": "الباب ث24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-072"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث25؟",
+      "a": "البحر ث25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-073"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث26؟",
+      "a": "الغابة ث26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-074"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث27؟",
+      "a": "الختم ث27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-075"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث28؟",
+      "a": "الدفتر ث28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-076"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث29؟",
+      "a": "الشريك ث29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-077"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث30؟",
+      "a": "الوليمة ث30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-078"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث31؟",
+      "a": "العشيرة ث31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-079"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث32؟",
+      "a": "الباب ث32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-080"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث33؟",
+      "a": "البحر ث33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-081"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث34؟",
+      "a": "الغابة ث34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-082"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث35؟",
+      "a": "الختم ث35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-083"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث36؟",
+      "a": "الدفتر ث36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-084"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث37؟",
+      "a": "الشريك ث37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-085"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث38؟",
+      "a": "الوليمة ث38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-086"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث39؟",
+      "a": "العشيرة ث39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-087"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث40؟",
+      "a": "الباب ث40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-088"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث41؟",
+      "a": "البحر ث41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-089"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث42؟",
+      "a": "الغابة ث42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-090"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث43؟",
+      "a": "الختم ث43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-091"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث44؟",
+      "a": "الدفتر ث44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-092"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث45؟",
+      "a": "الشريك ث45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-093"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث46؟",
+      "a": "الوليمة ث46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-094"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث47؟",
+      "a": "العشيرة ث47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-095"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ث48؟",
+      "a": "الباب ث48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-800-096"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص1؟",
+      "a": "العاصمة ص1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-049"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص2؟",
+      "a": "الميناء ص2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-050"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص3؟",
+      "a": "الرمز ص3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-051"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص4؟",
+      "a": "الصندوق ص4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-052"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص5؟",
+      "a": "الجار ص5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-053"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص6؟",
+      "a": "الصلح ص6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-054"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص7؟",
+      "a": "الراية ص7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-055"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص8؟",
+      "a": "الممر ص8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-056"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص9؟",
+      "a": "العاصمة ص9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-057"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص10؟",
+      "a": "الميناء ص10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-058"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص11؟",
+      "a": "الرمز ص11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-059"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص12؟",
+      "a": "الصندوق ص12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-060"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص13؟",
+      "a": "الجار ص13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-061"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص14؟",
+      "a": "الصلح ص14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-062"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص15؟",
+      "a": "الراية ص15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-063"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص16؟",
+      "a": "الممر ص16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-064"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص17؟",
+      "a": "العاصمة ص17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-065"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص18؟",
+      "a": "الميناء ص18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-066"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص19؟",
+      "a": "الرمز ص19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-067"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص20؟",
+      "a": "الصندوق ص20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-068"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص21؟",
+      "a": "الجار ص21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-069"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص22؟",
+      "a": "الصلح ص22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-070"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص23؟",
+      "a": "الراية ص23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-071"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص24؟",
+      "a": "الممر ص24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-072"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص25؟",
+      "a": "العاصمة ص25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-073"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص26؟",
+      "a": "الميناء ص26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-074"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص27؟",
+      "a": "الرمز ص27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-075"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص28؟",
+      "a": "الصندوق ص28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-076"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص29؟",
+      "a": "الجار ص29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-077"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص30؟",
+      "a": "الصلح ص30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-078"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص31؟",
+      "a": "الراية ص31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-079"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص32؟",
+      "a": "الممر ص32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-080"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص33؟",
+      "a": "العاصمة ص33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-081"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص34؟",
+      "a": "الميناء ص34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-082"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص35؟",
+      "a": "الرمز ص35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-083"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص36؟",
+      "a": "الصندوق ص36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-084"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص37؟",
+      "a": "الجار ص37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-085"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص38؟",
+      "a": "الصلح ص38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-086"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص39؟",
+      "a": "الراية ص39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-087"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص40؟",
+      "a": "الممر ص40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-088"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص41؟",
+      "a": "العاصمة ص41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-089"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص42؟",
+      "a": "الميناء ص42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-090"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص43؟",
+      "a": "الرمز ص43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-091"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص44؟",
+      "a": "الصندوق ص44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-092"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص45؟",
+      "a": "الجار ص45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-093"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص46؟",
+      "a": "الصلح ص46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-094"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص47؟",
+      "a": "الراية ص47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-095"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هجوم العمالقة»، ما المسمى الداخلي ص48؟",
+      "a": "الممر ص48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "aot-1000-096"
+    }
+  ]
+}

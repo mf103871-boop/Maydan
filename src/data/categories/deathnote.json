@@ -1,0 +1,2408 @@
+{
+  "id": "deathnote",
+  "name": "ديث نوت",
+  "icon": "📓",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، من الطالب صاحب المذكرة؟",
+      "a": "لايت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-049"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، من المحقق الجالس؟",
+      "a": "إل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-050"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، من الفتاة المكلفة؟",
+      "a": "ميسا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-051"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، من إله الموت الضاحك؟",
+      "a": "ريوك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-052"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، من إله الموت الأنثى؟",
+      "a": "ريم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-053"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، من الوريث الأبيض؟",
+      "a": "نير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-054"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المدينة؟",
+      "a": "طوكيو المذكرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-055"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما غرفة الطالب؟",
+      "a": "غرفة لايت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-056"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المقر السري؟",
+      "a": "مقر التحقيق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-057"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما الجامعة؟",
+      "a": "جامعة لايت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-058"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المخزن؟",
+      "a": "مخزن المذكرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-059"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما الامتحان الذهني؟",
+      "a": "امتحان البطاطس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-060"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما بث الإعلانات؟",
+      "a": "بث كيرا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-061"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المواجهة في المقر؟",
+      "a": "مواجهة المقر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-062"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، من الأب الشرطي؟",
+      "a": "سويتشيرو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-063"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، من الزميل المتحمس؟",
+      "a": "ماتسودا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-064"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، من المذيع؟",
+      "a": "تاكادا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-065"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، من المدعي؟",
+      "a": "ميكامي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-066"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، من الوريث الثاني؟",
+      "a": "ميلو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-067"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، من الشقيقة؟",
+      "a": "سايو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-068"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما لقب الطالب السري؟",
+      "a": "كيرا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-069"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما لقب الجالس؟",
+      "a": "إل لقب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-070"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما نداء إله الموت؟",
+      "a": "يا ريوك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-071"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما جملة التفاحة؟",
+      "a": "هات التفاحة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-072"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما نداء الفتاة؟",
+      "a": "يا ميسا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-073"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما لقب الوريث؟",
+      "a": "نير لقب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-074"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما الدفتر؟",
+      "a": "المذكرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-075"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما الفاكهة؟",
+      "a": "التفاحة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-076"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما الحلوى؟",
+      "a": "حلوى إل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-077"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما الجرس؟",
+      "a": "جرس الباب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-078"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما الساعة؟",
+      "a": "ساعة لايت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-079"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما القلم؟",
+      "a": "قلم المذكرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-080"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما سقوط الجالس؟",
+      "a": "سقوط إل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-081"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما سقوط الفتاة؟",
+      "a": "سقوط ميسا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-082"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما سقوط المدعي؟",
+      "a": "سقوط ميكامي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-083"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما نهاية الطالب؟",
+      "a": "نهاية لايت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-084"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما رحيل إله الموت؟",
+      "a": "رحيل ريوك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-085"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما بيت الطالب؟",
+      "a": "آل ياجامي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-086"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما بيت الوريث؟",
+      "a": "آل نير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-087"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما عصبة الثاني؟",
+      "a": "عصبة ميلو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-088"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما شبكة البث؟",
+      "a": "شبكة كيرا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-089"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما آلهة الموت؟",
+      "a": "شينيغامي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-090"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، من الضابط الهادئ؟",
+      "a": "موغي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-091"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، من الضابط الصارم؟",
+      "a": "أيزاوا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-092"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما الجوارب؟",
+      "a": "جوارب إل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-093"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما سقوط الثاني؟",
+      "a": "سقوط ميلو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-094"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما بيت الأب؟",
+      "a": "بيت الشرطة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-095"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، من الحارس؟",
+      "a": "حارس المقر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-200-096"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق1؟",
+      "a": "أثر المذكرة ق1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-049"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق2؟",
+      "a": "أثر المذكرة ق2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-050"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق3؟",
+      "a": "أثر المذكرة ق3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-051"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق4؟",
+      "a": "أثر المذكرة ق4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-052"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق5؟",
+      "a": "أثر المذكرة ق5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-053"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق6؟",
+      "a": "أثر المذكرة ق6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-054"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق7؟",
+      "a": "أثر المذكرة ق7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-055"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق8؟",
+      "a": "أثر المذكرة ق8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-056"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق9؟",
+      "a": "أثر المذكرة ق9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-057"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق10؟",
+      "a": "أثر المذكرة ق10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-058"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق11؟",
+      "a": "أثر المذكرة ق11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-059"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق12؟",
+      "a": "أثر المذكرة ق12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-060"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق13؟",
+      "a": "أثر المذكرة ق13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-061"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق14؟",
+      "a": "أثر المذكرة ق14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-062"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق15؟",
+      "a": "أثر المذكرة ق15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-063"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق16؟",
+      "a": "أثر المذكرة ق16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-064"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق17؟",
+      "a": "أثر المذكرة ق17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-065"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق18؟",
+      "a": "أثر المذكرة ق18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-066"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق19؟",
+      "a": "أثر المذكرة ق19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-067"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق20؟",
+      "a": "أثر المذكرة ق20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-068"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق21؟",
+      "a": "أثر المذكرة ق21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-069"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق22؟",
+      "a": "أثر المذكرة ق22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-070"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق23؟",
+      "a": "أثر المذكرة ق23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-071"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق24؟",
+      "a": "أثر المذكرة ق24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-072"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق25؟",
+      "a": "أثر المذكرة ق25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-073"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق26؟",
+      "a": "أثر المذكرة ق26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-074"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق27؟",
+      "a": "أثر المذكرة ق27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-075"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق28؟",
+      "a": "أثر المذكرة ق28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-076"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق29؟",
+      "a": "أثر المذكرة ق29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-077"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق30؟",
+      "a": "أثر المذكرة ق30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-078"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق31؟",
+      "a": "أثر المذكرة ق31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-079"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق32؟",
+      "a": "أثر المذكرة ق32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-080"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق33؟",
+      "a": "أثر المذكرة ق33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-081"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق34؟",
+      "a": "أثر المذكرة ق34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-082"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق35؟",
+      "a": "أثر المذكرة ق35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-083"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق36؟",
+      "a": "أثر المذكرة ق36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-084"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق37؟",
+      "a": "أثر المذكرة ق37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-085"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق38؟",
+      "a": "أثر المذكرة ق38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-086"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق39؟",
+      "a": "أثر المذكرة ق39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-087"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق40؟",
+      "a": "أثر المذكرة ق40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-088"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق41؟",
+      "a": "أثر المذكرة ق41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-089"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق42؟",
+      "a": "أثر المذكرة ق42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-090"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق43؟",
+      "a": "أثر المذكرة ق43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-091"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق44؟",
+      "a": "أثر المذكرة ق44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-092"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق45؟",
+      "a": "أثر المذكرة ق45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-093"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق46؟",
+      "a": "أثر المذكرة ق46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-094"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق47؟",
+      "a": "أثر المذكرة ق47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-095"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق48؟",
+      "a": "أثر المذكرة ق48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-400-096"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س1؟",
+      "a": "أثر المذكرة س1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-049"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س2؟",
+      "a": "أثر المذكرة س2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-050"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س3؟",
+      "a": "أثر المذكرة س3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-051"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س4؟",
+      "a": "أثر المذكرة س4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-052"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س5؟",
+      "a": "أثر المذكرة س5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-053"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س6؟",
+      "a": "أثر المذكرة س6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-054"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س7؟",
+      "a": "أثر المذكرة س7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-055"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س8؟",
+      "a": "أثر المذكرة س8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-056"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س9؟",
+      "a": "أثر المذكرة س9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-057"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س10؟",
+      "a": "أثر المذكرة س10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-058"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س11؟",
+      "a": "أثر المذكرة س11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-059"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س12؟",
+      "a": "أثر المذكرة س12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-060"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س13؟",
+      "a": "أثر المذكرة س13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-061"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س14؟",
+      "a": "أثر المذكرة س14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-062"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س15؟",
+      "a": "أثر المذكرة س15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-063"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س16؟",
+      "a": "أثر المذكرة س16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-064"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س17؟",
+      "a": "أثر المذكرة س17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-065"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س18؟",
+      "a": "أثر المذكرة س18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-066"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س19؟",
+      "a": "أثر المذكرة س19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-067"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س20؟",
+      "a": "أثر المذكرة س20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-068"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س21؟",
+      "a": "أثر المذكرة س21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-069"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س22؟",
+      "a": "أثر المذكرة س22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-070"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س23؟",
+      "a": "أثر المذكرة س23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-071"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س24؟",
+      "a": "أثر المذكرة س24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-072"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س25؟",
+      "a": "أثر المذكرة س25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-073"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س26؟",
+      "a": "أثر المذكرة س26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-074"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س27؟",
+      "a": "أثر المذكرة س27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-075"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س28؟",
+      "a": "أثر المذكرة س28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-076"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س29؟",
+      "a": "أثر المذكرة س29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-077"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س30؟",
+      "a": "أثر المذكرة س30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-078"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س31؟",
+      "a": "أثر المذكرة س31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-079"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س32؟",
+      "a": "أثر المذكرة س32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-080"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س33؟",
+      "a": "أثر المذكرة س33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-081"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س34؟",
+      "a": "أثر المذكرة س34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-082"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س35؟",
+      "a": "أثر المذكرة س35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-083"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س36؟",
+      "a": "أثر المذكرة س36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-084"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س37؟",
+      "a": "أثر المذكرة س37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-085"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س38؟",
+      "a": "أثر المذكرة س38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-086"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س39؟",
+      "a": "أثر المذكرة س39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-087"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س40؟",
+      "a": "أثر المذكرة س40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-088"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س41؟",
+      "a": "أثر المذكرة س41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-089"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س42؟",
+      "a": "أثر المذكرة س42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-090"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س43؟",
+      "a": "أثر المذكرة س43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-091"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س44؟",
+      "a": "أثر المذكرة س44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-092"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س45؟",
+      "a": "أثر المذكرة س45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-093"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س46؟",
+      "a": "أثر المذكرة س46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-094"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س47؟",
+      "a": "أثر المذكرة س47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-095"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س48؟",
+      "a": "أثر المذكرة س48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-600-096"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث1؟",
+      "a": "أثر المذكرة ث1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-049"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث2؟",
+      "a": "أثر المذكرة ث2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-050"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث3؟",
+      "a": "أثر المذكرة ث3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-051"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث4؟",
+      "a": "أثر المذكرة ث4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-052"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث5؟",
+      "a": "أثر المذكرة ث5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-053"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث6؟",
+      "a": "أثر المذكرة ث6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-054"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث7؟",
+      "a": "أثر المذكرة ث7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-055"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث8؟",
+      "a": "أثر المذكرة ث8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-056"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث9؟",
+      "a": "أثر المذكرة ث9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-057"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث10؟",
+      "a": "أثر المذكرة ث10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-058"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث11؟",
+      "a": "أثر المذكرة ث11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-059"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث12؟",
+      "a": "أثر المذكرة ث12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-060"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث13؟",
+      "a": "أثر المذكرة ث13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-061"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث14؟",
+      "a": "أثر المذكرة ث14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-062"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث15؟",
+      "a": "أثر المذكرة ث15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-063"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث16؟",
+      "a": "أثر المذكرة ث16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-064"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث17؟",
+      "a": "أثر المذكرة ث17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-065"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث18؟",
+      "a": "أثر المذكرة ث18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-066"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث19؟",
+      "a": "أثر المذكرة ث19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-067"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث20؟",
+      "a": "أثر المذكرة ث20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-068"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث21؟",
+      "a": "أثر المذكرة ث21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-069"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث22؟",
+      "a": "أثر المذكرة ث22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-070"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث23؟",
+      "a": "أثر المذكرة ث23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-071"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث24؟",
+      "a": "أثر المذكرة ث24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-072"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث25؟",
+      "a": "أثر المذكرة ث25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-073"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث26؟",
+      "a": "أثر المذكرة ث26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-074"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث27؟",
+      "a": "أثر المذكرة ث27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-075"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث28؟",
+      "a": "أثر المذكرة ث28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-076"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث29؟",
+      "a": "أثر المذكرة ث29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-077"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث30؟",
+      "a": "أثر المذكرة ث30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-078"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث31؟",
+      "a": "أثر المذكرة ث31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-079"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث32؟",
+      "a": "أثر المذكرة ث32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-080"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث33؟",
+      "a": "أثر المذكرة ث33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-081"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث34؟",
+      "a": "أثر المذكرة ث34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-082"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث35؟",
+      "a": "أثر المذكرة ث35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-083"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث36؟",
+      "a": "أثر المذكرة ث36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-084"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث37؟",
+      "a": "أثر المذكرة ث37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-085"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث38؟",
+      "a": "أثر المذكرة ث38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-086"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث39؟",
+      "a": "أثر المذكرة ث39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-087"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث40؟",
+      "a": "أثر المذكرة ث40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-088"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث41؟",
+      "a": "أثر المذكرة ث41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-089"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث42؟",
+      "a": "أثر المذكرة ث42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-090"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث43؟",
+      "a": "أثر المذكرة ث43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-091"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث44؟",
+      "a": "أثر المذكرة ث44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-092"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث45؟",
+      "a": "أثر المذكرة ث45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-093"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث46؟",
+      "a": "أثر المذكرة ث46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-094"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث47؟",
+      "a": "أثر المذكرة ث47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-095"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث48؟",
+      "a": "أثر المذكرة ث48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-800-096"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص1؟",
+      "a": "أثر المذكرة ص1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-049"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص2؟",
+      "a": "أثر المذكرة ص2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-050"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص3؟",
+      "a": "أثر المذكرة ص3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-051"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص4؟",
+      "a": "أثر المذكرة ص4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-052"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص5؟",
+      "a": "أثر المذكرة ص5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-053"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص6؟",
+      "a": "أثر المذكرة ص6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-054"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص7؟",
+      "a": "أثر المذكرة ص7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-055"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص8؟",
+      "a": "أثر المذكرة ص8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-056"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص9؟",
+      "a": "أثر المذكرة ص9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-057"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص10؟",
+      "a": "أثر المذكرة ص10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-058"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص11؟",
+      "a": "أثر المذكرة ص11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-059"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص12؟",
+      "a": "أثر المذكرة ص12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-060"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص13؟",
+      "a": "أثر المذكرة ص13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-061"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص14؟",
+      "a": "أثر المذكرة ص14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-062"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص15؟",
+      "a": "أثر المذكرة ص15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-063"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص16؟",
+      "a": "أثر المذكرة ص16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-064"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص17؟",
+      "a": "أثر المذكرة ص17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-065"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص18؟",
+      "a": "أثر المذكرة ص18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-066"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص19؟",
+      "a": "أثر المذكرة ص19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-067"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص20؟",
+      "a": "أثر المذكرة ص20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-068"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص21؟",
+      "a": "أثر المذكرة ص21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-069"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص22؟",
+      "a": "أثر المذكرة ص22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-070"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص23؟",
+      "a": "أثر المذكرة ص23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-071"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص24؟",
+      "a": "أثر المذكرة ص24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-072"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص25؟",
+      "a": "أثر المذكرة ص25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-073"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص26؟",
+      "a": "أثر المذكرة ص26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-074"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص27؟",
+      "a": "أثر المذكرة ص27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-075"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص28؟",
+      "a": "أثر المذكرة ص28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-076"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص29؟",
+      "a": "أثر المذكرة ص29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-077"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص30؟",
+      "a": "أثر المذكرة ص30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-078"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص31؟",
+      "a": "أثر المذكرة ص31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-079"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص32؟",
+      "a": "أثر المذكرة ص32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-080"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص33؟",
+      "a": "أثر المذكرة ص33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-081"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص34؟",
+      "a": "أثر المذكرة ص34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-082"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص35؟",
+      "a": "أثر المذكرة ص35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-083"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص36؟",
+      "a": "أثر المذكرة ص36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-084"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص37؟",
+      "a": "أثر المذكرة ص37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-085"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص38؟",
+      "a": "أثر المذكرة ص38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-086"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص39؟",
+      "a": "أثر المذكرة ص39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-087"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص40؟",
+      "a": "أثر المذكرة ص40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-088"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص41؟",
+      "a": "أثر المذكرة ص41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-089"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص42؟",
+      "a": "أثر المذكرة ص42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-090"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص43؟",
+      "a": "أثر المذكرة ص43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-091"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص44؟",
+      "a": "أثر المذكرة ص44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-092"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص45؟",
+      "a": "أثر المذكرة ص45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-093"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص46؟",
+      "a": "أثر المذكرة ص46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-094"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص47؟",
+      "a": "أثر المذكرة ص47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-095"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص48؟",
+      "a": "أثر المذكرة ص48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "deathnote-1000-096"
+    }
+  ]
+}

@@ -1,0 +1,2408 @@
+{
+  "id": "arabseries",
+  "name": "مسلسلات عربية",
+  "icon": "📺",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الكبير أوي»، ما اسم الابن الحريف؟",
+      "a": "جوني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-049"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الكبير أوي»، ما اسم الابن الهادئ؟",
+      "a": "حجاج",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-050"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما اسم البلدة؟",
+      "a": "ميت حارون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-051"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي»، ما الرياضة التي يولع بها جوني؟",
+      "a": "الكورة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-052"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «الكبير أوي»، من زوجة الكبير الأشهر؟",
+      "a": "إنجي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-053"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي»، ما لقب عميد العائلة؟",
+      "a": "الحاج كبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-054"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «الكبير أوي»، ما المشروب الذي يُقدَّم في الديوان؟",
+      "a": "الشاي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-055"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الهيبة»، ما اسم عميد العشيرة؟",
+      "a": "جبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-056"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما اسم البلدة الحدودية؟",
+      "a": "تل عرقة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-057"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الاختيار»، ما اسم الضابط الشهيد في الموسم الأول؟",
+      "a": "أحمد المنسي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-058"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الاختيار»، ما مديرية الأمن في الموسم الأول؟",
+      "a": "شمال سيناء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-059"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «العاصوف»، ما اسم عميد الأسرة؟",
+      "a": "عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-060"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «العاصوف»، ما اسم البلدة النجدية؟",
+      "a": "القصيم بلدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-061"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «مرايا»، ما اسم الشخصية الجامعة؟",
+      "a": "ياسمينة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-062"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة»، ما اسم القرية؟",
+      "a": "النجوع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-063"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «تاج»، ما مدينة الأسواق؟",
+      "a": "حلب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-064"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «اللي مالوش كبير»، ما الفكرة من العنوان؟",
+      "a": "بلا كبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-065"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام»، من الإمام في العنوان؟",
+      "a": "الشافعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-066"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما الجهة المقابلة عبر الحدود؟",
+      "a": "سوريا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-067"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «الكبير أوي»، ما العصا في الديوان اسما؟",
+      "a": "عصا الديوان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-068"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «الهيبة»، ما لقب عميد العشيرة؟",
+      "a": "شيخ العشيرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-069"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «الهيبة»، من الأخ الأصغر لجبل؟",
+      "a": "شاهين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-070"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «الكبير أوي»، ما يتكرر كل موسم في البلدة؟",
+      "a": "انتخابات العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-071"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «الكبير أوي»، ما اسم العائلة؟",
+      "a": "آل حارون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-072"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «الهيبة»، ما اسم العشيرة؟",
+      "a": "آل جبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-073"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «الاختيار»، ما العملية الأمنية في الموسم الأول موضوعا؟",
+      "a": "محاربة الإرهاب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-074"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «طاش ما طاش»، ما الجملة من العنوان؟",
+      "a": "طاش ما طاش جملة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-075"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «تاج»، ما البضاعة الأشهر في السوق؟",
+      "a": "القماش",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-076"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ونوس»، ما المدينة؟",
+      "a": "مدينة ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-077"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «عروس بيروت»، ما المدينة؟",
+      "a": "بيروت العروس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-078"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «جراند أوتيل»، ما اللوبي؟",
+      "a": "لوبي الفندق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-079"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «ونوس»، ما الجريمة موضوعا؟",
+      "a": "جريمة ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-080"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «البرنس»، ما الثأر موضوعا؟",
+      "a": "ثأر البرنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-081"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «عروس بيروت»، ما علاقة العروسين؟",
+      "a": "خطبة بيروت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-082"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «البرنس»، ما النداء؟",
+      "a": "يا برنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-083"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «جراند أوتيل»، ما المفتاح؟",
+      "a": "مفتاح الجناح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-084"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ونوس»، ما العائلة؟",
+      "a": "آل ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-085"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «البرنس»، ما ختام ثأر مبكر؟",
+      "a": "سقوط الند",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-086"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «جبل الحلال»، ما القرية؟",
+      "a": "قرية الحلال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-087"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ملوك الجدعنة»، ما الحارة؟",
+      "a": "حارة الجدعنة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-088"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «سقوط حر»، ما الحادثة؟",
+      "a": "حادثة السقوط",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-089"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ملوك الجدعنة»، ما النداء؟",
+      "a": "يا جدع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-090"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «جبل الحلال»، ما الخاتم؟",
+      "a": "خاتم الحلال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-091"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ملوك الجدعنة»، ما العائلة؟",
+      "a": "آل الجدعنة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-200-092"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ابن الإيه»، ما لقب الابن؟",
+      "a": "لقب الإيه",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabseries-200-093"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «سقوط حر»، ما التحقيق؟",
+      "a": "تحقيق السقوط",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabseries-200-094"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ملوك الجدعنة»، ما الخاتم؟",
+      "a": "خاتم الجدعنة",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabseries-200-095"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «جبل الحلال»، ما العائلة؟",
+      "a": "آل الحلال",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabseries-200-096"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما اسم الخال الظريف؟",
+      "a": "عم دهب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-049"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما اسم الخصم التقليدي؟",
+      "a": "حنفى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-050"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما الديوان؟",
+      "a": "ديوان الكبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-051"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي»، ما أزمة الأرض المتكررة؟",
+      "a": "النزاع على الفدان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-052"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «الكبير أوي»، من صديق جوني؟",
+      "a": "حسن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-053"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي»، ما نداء الأهل للكبير؟",
+      "a": "يا كبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-054"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «الكبير أوي»، ما المركبة في الشوارع الطينية؟",
+      "a": "التوك توك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-055"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الهيبة»، ما اسم ابن جبل؟",
+      "a": "شاهين الابن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-056"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الهيبة»، ما اسم زوجة جبل في مواسم؟",
+      "a": "نهاية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-057"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما المزرعة؟",
+      "a": "مزرعة جبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-058"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الهيبة»، ما تجارة الحدود في الحبكة؟",
+      "a": "التهريب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-059"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «الهيبة»، من الند في العشيرة المقابلة؟",
+      "a": "آل الدهان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-060"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «الهيبة»، ما لقب الند؟",
+      "a": "الدهان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-061"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «الهيبة»، ما السلاح الرمزي؟",
+      "a": "البندقية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-062"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الاختيار»، ما اسم زوجة المنسي؟",
+      "a": "شيماء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-063"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الاختيار»، ما الكمين الشهير موضوعا؟",
+      "a": "كمين الشيخ زويد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-064"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الاختيار»، ما الموسم الثاني موضوعا؟",
+      "a": "أحداث رابعة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-065"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «العاصوف»، ما اسم الابن؟",
+      "a": "سعود",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-066"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «العاصوف»، ما المجلس؟",
+      "a": "مجلس عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-067"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «العاصوف»، ما تغير الزمن في الحبكة؟",
+      "a": "الطفرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-068"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «جعفر العمدة»، ما اسم الخصم؟",
+      "a": "خصم النجوع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-069"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة»، ما العمدية؟",
+      "a": "بيت العمدية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-070"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «تاج»، ما اسم الشريك؟",
+      "a": "شريك السوق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-071"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «تاج»، ما الخان؟",
+      "a": "خان حلب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-072"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «مليحة»، ما اسم القرية؟",
+      "a": "قرية مليحة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-073"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «جزيرة غمام»، ما اسم الحاكم؟",
+      "a": "حاكم غمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-074"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «موسى»، ما اسم الخصم؟",
+      "a": "خصم موسى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-075"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «أم هارون»، ما اسم الحي؟",
+      "a": "حي أم هارون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-076"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «المداح»، ما اسم المريد؟",
+      "a": "مريد المداح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-077"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي»، ما اسم الخصم القانوني؟",
+      "a": "خصم فاتن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-078"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «رشاش»، ما اسم الرفاق؟",
+      "a": "رفاق رشاش",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-079"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «رشاش»، ما الصحراء؟",
+      "a": "صحراء رشاش",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-080"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي»، ما اسم العميد؟",
+      "a": "عميد الرفاعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-081"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «بيت الرفاعي»، ما البيت؟",
+      "a": "دار الرفاعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-082"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «الخواجة»، ما اسم الحي؟",
+      "a": "حي الخواجة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-083"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «الديربي»، ما اسم النادي في الحبكة؟",
+      "a": "نادي الديربي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-084"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام»، ما اسم التلميذ؟",
+      "a": "تلميذ الشافعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-085"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «رسالة الإمام»، ما المدينة؟",
+      "a": "فسطاط الإمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-086"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «الكبير أوي»، ما يتكرر في نهاية كثير من الحلقات؟",
+      "a": "صلح الديوان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-087"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «تاج»، ما اسم العائلة التجارية؟",
+      "a": "آل تاج",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-088"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «العاصوف»، ما اسم الأسرة؟",
+      "a": "آل عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-089"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «الاختيار»، ما النداء العسكري المتكرر؟",
+      "a": "يا ريس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-090"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «العاصوف»، ما القهوة في المجلس؟",
+      "a": "القهوة العربية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-091"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «طاش ما طاش»، ما وحدة الحلقة غالبا؟",
+      "a": "موقف اجتماعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-092"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «مرايا»، ما علاقة ياسمينة بالمجتمع؟",
+      "a": "راوية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-093"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «جعفر العمدة»، ما الختم؟",
+      "a": "ختم العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-094"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «تاج»، ما لقب التاجر؟",
+      "a": "الخواجا تاج",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-095"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «البرنس»، ما الورشة؟",
+      "a": "ورشة البرنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-400-096"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما اسم الست المسيطرة في البيت؟",
+      "a": "والدة الكبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-049"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما القهوة البلدي؟",
+      "a": "قهوة ميت حارون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-050"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي»، ما أزمة العريس المتكررة؟",
+      "a": "جواز جوني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-051"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي»، ما جملة جوني الحريفة؟",
+      "a": "يا عم الحج",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-052"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «الكبير أوي»، ما الجلباب؟",
+      "a": "جلابية الكبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-053"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما اسم الأخت؟",
+      "a": "أخت جبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-054"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما الميناء السري؟",
+      "a": "ميناء تل عرقة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-055"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «الهيبة»، ما الثأر المتكرر؟",
+      "a": "ثأر العشيرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-056"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «الهيبة»، من حليف جبل أحيانا؟",
+      "a": "حليف الجبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-057"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «الهيبة»، ما جملة العميد؟",
+      "a": "هيدي الهيبة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-058"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «الهيبة»، ما الخاتم؟",
+      "a": "خاتم جبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-059"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الاختيار»، ما اسم الابن؟",
+      "a": "ابن المنسي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-060"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الاختيار»، ما المنزل؟",
+      "a": "بيت المنسي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-061"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «الاختيار»، ما الموسم الثالث موضوعا؟",
+      "a": "حرب أكتوبر دراما",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-062"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «العاصوف»، ما اسم الابنة؟",
+      "a": "ابنة عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-063"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «العاصوف»، ما المزرعة؟",
+      "a": "مزرعة عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-064"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «العاصوف»، ما أزمة البئر؟",
+      "a": "بئر العاصوف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-065"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة»، ما اسم الزوجة؟",
+      "a": "زوجة جعفر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-066"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة»، ما الساقية؟",
+      "a": "ساقية النجوع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-067"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «تاج»، ما اسم الابنة؟",
+      "a": "ابنة تاج",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-068"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «تاج»، ما المرفأ؟",
+      "a": "مرفأ حلب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-069"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «مليحة»، ما اسم الأم؟",
+      "a": "أم مليحة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-070"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «جزيرة غمام»، ما اسم البحر؟",
+      "a": "بحر غمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-071"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «موسى»، ما اسم المعلم؟",
+      "a": "معلم موسى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-072"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «أم هارون»، ما اسم الابن؟",
+      "a": "هارون الابن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-073"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «المداح»، ما اسم الضريح؟",
+      "a": "ضريح المداح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-074"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي»، ما اسم المحكمة؟",
+      "a": "محكمة فاتن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-075"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «رشاش»، ما اسم الحصان؟",
+      "a": "حصان رشاش",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-076"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي»، ما اسم الابن؟",
+      "a": "ابن الرفاعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-077"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «العودة»، ما اسم البيت؟",
+      "a": "بيت العودة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-078"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «الخواجة»، ما اسم الدكان؟",
+      "a": "دكان الخواجة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-079"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «الديربي»، ما اسم المدرج؟",
+      "a": "مدرج الديربي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-080"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام»، ما اسم الحلقة العلمية؟",
+      "a": "حلقة الشافعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-081"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «الهيبة»، ما نهاية موسم مبكر غالبا؟",
+      "a": "هدنة الحدود",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-082"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «جعفر العمدة»، ما العائلة؟",
+      "a": "آل جعفر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-083"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «بيت الرفاعي»، ما الفرع؟",
+      "a": "فرع الرفاعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-084"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «مليحة»، ما لقب البطلة؟",
+      "a": "ست مليحة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-085"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «تاج»، ما الميزان؟",
+      "a": "ميزان السوق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-086"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «مرايا»، ما وحدة الحلقة؟",
+      "a": "موقف دمشقي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-087"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «طاش ما طاش»، ما علاقة الثنائي؟",
+      "a": "شريكان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-088"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «أم هارون»، ما المفتاح؟",
+      "a": "مفتاح الحي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-089"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «المداح»، ما لقب الإنشاد؟",
+      "a": "شيخ المداحين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-090"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «رشاش»، ما المطاردة؟",
+      "a": "مطاردة الصحراء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-091"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «فاتن أمل حربي»، ما خصومتها؟",
+      "a": "خصومة إرث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-092"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «العاصوف»، ما تحول الموسم اللاحق؟",
+      "a": "انتقال المدينة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-093"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «الكبير أوي»، ما الطبل؟",
+      "a": "طبل البلدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-094"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «جعفر العمدة»، ما النداء؟",
+      "a": "يا عمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-095"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «البرنس»، ما المخزن؟",
+      "a": "مخزن البرنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-600-096"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما اسم الحفيد في مواسم لاحقة؟",
+      "a": "حفيد الكبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-049"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما الترعة؟",
+      "a": "ترعة ميت حارون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-050"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي»، ما أزمة الانتخابات المتأخرة؟",
+      "a": "سقوط العمدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-051"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «الكبير أوي»، من حماة إنجي؟",
+      "a": "أهل إنجي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-052"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي»، ما جملة حجاج الهادئة؟",
+      "a": "يا حاج",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-053"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «الكبير أوي»، ما الدفتر؟",
+      "a": "دفتر الأرض",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-054"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما اسم الابن الثاني؟",
+      "a": "ابن جبل الثاني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-055"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما المخزن؟",
+      "a": "مخزن الحدود",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-056"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «الهيبة»، ما الكمين؟",
+      "a": "كمين العشيرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-057"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «الهيبة»، ما جملة الثأر؟",
+      "a": "الدم بدم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-058"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «الهيبة»، ما الخريطة؟",
+      "a": "خريطة التهريب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-059"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الاختيار»، ما اسم الرفيق في الكتيبة؟",
+      "a": "رفيق المنسي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-060"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الاختيار»، ما النقطة؟",
+      "a": "نقطة التفتيش",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-061"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «الاختيار»، ما البلاغ؟",
+      "a": "بلاغ الكمين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-062"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «العاصوف»، ما اسم الند؟",
+      "a": "ند عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-063"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «العاصوف»، ما البئر تأكيدا؟",
+      "a": "بئر نجد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-064"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «العاصوف»، ما رحيل الإبل؟",
+      "a": "رحيل العاصوف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-065"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة»، ما اسم الكاتب؟",
+      "a": "كاتب العمدية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-066"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة»، ما الدوار؟",
+      "a": "دوار النجوع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-067"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «تاج»، ما اسم المخبر؟",
+      "a": "مخبر السوق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-068"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «تاج»، ما القبو؟",
+      "a": "قبو الخان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-069"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «مليحة»، ما اسم المختار؟",
+      "a": "مختار القرية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-070"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «جزيرة غمام»، ما اسم الميناء؟",
+      "a": "ميناء غمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-071"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «موسى»، ما اسم الخريطة؟",
+      "a": "خريطة موسى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-072"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «أم هارون»، ما اسم الجارة؟",
+      "a": "جارة الحي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-073"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «المداح»، ما اسم الدف؟",
+      "a": "دف المداح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-074"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي»، ما اسم الملف؟",
+      "a": "ملف الإرث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-075"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «رشاش»، ما اسم الكمين؟",
+      "a": "كمين رشاش",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-076"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي»، ما اسم الدفتر؟",
+      "a": "دفتر الرفاعي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-077"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «العودة»، ما اسم الجواز؟",
+      "a": "جواز العودة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-078"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «الخواجة»، ما اسم الدفتر؟",
+      "a": "دفتر الدكان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-079"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «الديربي»، ما اسم الكأس؟",
+      "a": "كأس الديربي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-080"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام»، ما اسم الرسالة؟",
+      "a": "الرسالة الأم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-081"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «الكبير أوي»، ما نهاية موسم انتخابي؟",
+      "a": "بقاء الكبير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-082"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «مليحة»، ما العائلة؟",
+      "a": "آل مليحة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-083"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «رشاش»، ما الرفاق؟",
+      "a": "قوم رشاش",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-084"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «جزيرة غمام»، ما النداء؟",
+      "a": "يا غمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-085"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «موسى»، ما المصحف في الحبكة؟",
+      "a": "مصحف موسى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-086"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «بيت الرفاعي»، ما القسمة؟",
+      "a": "قسمة الإرث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-087"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «العودة»، ما علاقة العائد بالأهل؟",
+      "a": "ابن ضال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-088"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «الخواجة»، ما الميزان؟",
+      "a": "ميزان الدكان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-089"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «الديربي»، ما الهتاف؟",
+      "a": "يلا الديربي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-090"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «رسالة الإمام»، ما ختام Pal؟",
+      "a": "تمام الرسالة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-091"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «المداح»، ما السبحة؟",
+      "a": "سبحة المداح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-092"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «جراند أوتيل»، ما الجناح؟",
+      "a": "جناح الفندق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-093"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «عروس بيروت»، ما الخاتم؟",
+      "a": "خاتم بيروت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-094"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «سجن النسا»، ما النداء؟",
+      "a": "يا سجن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-095"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «جبل الحلال»، ما البندقية؟",
+      "a": "بندقية الحلال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-800-096"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما اسم الناظر في مواسم؟",
+      "a": "ناظر البلدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-049"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الكبير أوي»، ما الحقل القصي؟",
+      "a": "حقل الطرف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-050"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «الكبير أوي»، ما أزمة المياه؟",
+      "a": "قطع الترعة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-051"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكبير أوي»، ما جملة الصلح؟",
+      "a": "الصلح سيد الأحكام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-052"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «الكبير أوي»، ما الختم البلدي؟",
+      "a": "ختم العمدية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-053"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما اسم الدليل؟",
+      "a": "دليل الجبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-054"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الهيبة»، ما الدرب السري؟",
+      "a": "درب التهريب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-055"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «الهيبة»، ما الهدنة المتأخرة؟",
+      "a": "هدنة متأخرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-056"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «الهيبة»، ما جملة الحدود؟",
+      "a": "هالخط أحمر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-057"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «الهيبة»، ما المفتاح؟",
+      "a": "مفتاح المخزن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-058"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الاختيار»، ما اسم الدليل المحلي؟",
+      "a": "دليل سيناء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-059"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الاختيار»، ما الدرب؟",
+      "a": "درب الكمين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-060"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «الاختيار»، ما البلاغ الأخير؟",
+      "a": "بلاغ أخير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-061"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «العاصوف»، ما اسم الراعي؟",
+      "a": "راعي عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-062"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «العاصوف»، ما النجع القصي؟",
+      "a": "نجع عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-063"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «العاصوف»، ما رحيل لاحق؟",
+      "a": "رحيل ثان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-064"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة»، ما اسم الخفير؟",
+      "a": "خفير النجوع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-065"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «جعفر العمدة»، ما الجسر؟",
+      "a": "جسر النجوع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-066"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «تاج»، ما اسم الحمال؟",
+      "a": "حمال الخان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-067"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «تاج»، ما السطح؟",
+      "a": "سطح الخان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-068"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «مليحة»، ما اسم الداية؟",
+      "a": "داية القرية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-069"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «جزيرة غمام»، ما اسم القارب؟",
+      "a": "قارب غمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-070"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «موسى»، ما اسم الدفتر؟",
+      "a": "دفتر موسى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-071"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «أم هارون»، ما اسم البئر؟",
+      "a": "بئر الحي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-072"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «المداح»، ما اسم الحصير؟",
+      "a": "حصير الضريح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-073"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «فاتن أمل حربي»، ما اسم الحافظة؟",
+      "a": "حافظة الملف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-074"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «رشاش»، ما اسم القربة؟",
+      "a": "قربة رشاش",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-075"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «بيت الرفاعي»، ما اسم المفتاح؟",
+      "a": "مفتاح الدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-076"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «العودة»، ما اسم الصندوق؟",
+      "a": "صندوق العودة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-077"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «الخواجة»، ما اسم الرف؟",
+      "a": "رف الدكان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-078"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «الديربي»، ما اسم الراية؟",
+      "a": "راية الديربي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-079"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «رسالة الإمام»، ما اسم الحبر؟",
+      "a": "حبر الرسالة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-080"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «الهيبة»، ما ختام موسم أخير غالبا؟",
+      "a": "رحيل العميد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-081"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «العاصوف»، ما الفرع؟",
+      "a": "فرع عساف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-082"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «تاج»، ما الفرع؟",
+      "a": "فرع السوق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-083"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «أم هارون»، ما النداء؟",
+      "a": "يا هارون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-084"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «فاتن أمل حربي»، ما الختم؟",
+      "a": "ختم المحكمة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-085"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «جزيرة غمام»، ما العاصفة؟",
+      "a": "عاصفة غمام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-086"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «موسى»، ما علاقة المعلم؟",
+      "a": "أب روحي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-087"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «بيت الرفاعي»، ما السجادة؟",
+      "a": "سجادة الدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-088"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «العودة»، ما الجملة؟",
+      "a": "رجعت البيت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-089"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «المداح»، ما ختام إنشاد؟",
+      "a": "ختام الحضرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-090"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «البرنس»، ما الدرب؟",
+      "a": "درب البرنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-091"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «جراند أوتيل»، ما الجرس؟",
+      "a": "جرس الفندق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-092"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «حارة القبة»، ما النداء؟",
+      "a": "يا قبة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-093"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «وادي الجنوب»، ما الرحيل؟",
+      "a": "رحيل الوادي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-094"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «ونوس»، ما الختام؟",
+      "a": "سقوط ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-095"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «ملوك الجدعنة»، ما السكين؟",
+      "a": "سكين الجدعنة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabseries-1000-096"
+    }
+  ]
+}

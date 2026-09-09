@@ -1,0 +1,2408 @@
+{
+  "id": "breakingbad",
+  "name": "بريكنغ باد",
+  "icon": "🧪",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، من المدرّس الذي يتحول؟",
+      "a": "والتر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، من الشريك الشاب؟",
+      "a": "جيسي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، من الزوجة؟",
+      "a": "سكايلر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، من الصهر الشرطي؟",
+      "a": "هانك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، من صاحب المطعم؟",
+      "a": "غوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، من المحامي؟",
+      "a": "سول",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المدينة؟",
+      "a": "ألbuquerque",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المطعم؟",
+      "a": "لوس بولوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما التشخيص الذي يبدأ الحبكة؟",
+      "a": "المرض",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما الاختفاء في الصحراء؟",
+      "a": "رحلة الصحراء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، من الابن؟",
+      "a": "والتر الابن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، من ابنة الزوجين؟",
+      "a": "هولي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، من زوجة الصهر؟",
+      "a": "ماري",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، من مساعد صاحب المطعم؟",
+      "a": "مايك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، من شريك جيسي العاطفي؟",
+      "a": "جين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، من ابن الجيران في الحبكة؟",
+      "a": "بروك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما اللقب السري للمدرّس؟",
+      "a": "هايزنبرغ",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما النداء للشريك؟",
+      "a": "يا جيسي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما النداء للزوجة؟",
+      "a": "يا سكايلر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما جملة الاعتراف المتكررة؟",
+      "a": "أنا السبب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما نداء المحامي؟",
+      "a": "يا سول",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما نداء الصهر؟",
+      "a": "يا هانك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما النظارة؟",
+      "a": "نظارة المدرس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما الجرس في المطعم؟",
+      "a": "جرس المطعم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما سقوط الشريك المكسيكي؟",
+      "a": "سقوط توكو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما رحيل الزوجة مؤقتا؟",
+      "a": "رحيل سكايلر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما سقوط صاحب المطعم؟",
+      "a": "سقوط غوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما الختام في المختبر؟",
+      "a": "ختام المختبر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما بيت المدرّس؟",
+      "a": "آل وايت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما بيت الصهر؟",
+      "a": "آل شرادر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما بيت الشريك؟",
+      "a": "آل بينكمان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما شبكة المطعم؟",
+      "a": "شبكة غوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما عصبة الصحراء لاحقا؟",
+      "a": "عصبة تود",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما مكتب المحامي؟",
+      "a": "مكتب سول",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، من الكيميائي في المختبر؟",
+      "a": "غيل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المدينة الجنوبية؟",
+      "a": "ألباكركي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المدرسة؟",
+      "a": "مدرسة الكيمياء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما الكراج؟",
+      "a": "كراج المنزل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما عيد الميلاد في البيت؟",
+      "a": "عيد البيت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما غسيل الأموال عبر المغسلة؟",
+      "a": "غسيل المغسلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، من رفيق جيسي في الكراج؟",
+      "a": "بادجر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، من رفيقه الآخر؟",
+      "a": "سكينير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما جملة القبعة؟",
+      "a": "ارتد القبعة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما الساعة؟",
+      "a": "ساعة المدرس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما بيت مايك؟",
+      "a": "آل مايك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما البار؟",
+      "a": "بار الصحراء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما اللافتة؟",
+      "a": "لافتة المغسلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما الكتاب المدرسي؟",
+      "a": "كتاب الكيمياء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق1؟",
+      "a": "المدرسة ق1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق2؟",
+      "a": "الكراج ق2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق3؟",
+      "a": "الخزنة ق3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق4؟",
+      "a": "اللافتة ق4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق5؟",
+      "a": "المفتاح ق5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق6؟",
+      "a": "الدفتر ق6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق7؟",
+      "a": "الجار ق7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق8؟",
+      "a": "الخطة ق8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق9؟",
+      "a": "المدرسة ق9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق10؟",
+      "a": "الكراج ق10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق11؟",
+      "a": "الخزنة ق11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق12؟",
+      "a": "اللافتة ق12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق13؟",
+      "a": "المفتاح ق13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق14؟",
+      "a": "الدفتر ق14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق15؟",
+      "a": "الجار ق15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق16؟",
+      "a": "الخطة ق16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق17؟",
+      "a": "المدرسة ق17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق18؟",
+      "a": "الكراج ق18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق19؟",
+      "a": "الخزنة ق19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق20؟",
+      "a": "اللافتة ق20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق21؟",
+      "a": "المفتاح ق21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق22؟",
+      "a": "الدفتر ق22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق23؟",
+      "a": "الجار ق23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق24؟",
+      "a": "الخطة ق24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق25؟",
+      "a": "المدرسة ق25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق26؟",
+      "a": "الكراج ق26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق27؟",
+      "a": "الخزنة ق27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق28؟",
+      "a": "اللافتة ق28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق29؟",
+      "a": "المفتاح ق29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق30؟",
+      "a": "الدفتر ق30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق31؟",
+      "a": "الجار ق31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق32؟",
+      "a": "الخطة ق32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق33؟",
+      "a": "المدرسة ق33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق34؟",
+      "a": "الكراج ق34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق35؟",
+      "a": "الخزنة ق35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق36؟",
+      "a": "اللافتة ق36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق37؟",
+      "a": "المفتاح ق37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق38؟",
+      "a": "الدفتر ق38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق39؟",
+      "a": "الجار ق39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق40؟",
+      "a": "الخطة ق40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق41؟",
+      "a": "المدرسة ق41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق42؟",
+      "a": "الكراج ق42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق43؟",
+      "a": "الخزنة ق43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق44؟",
+      "a": "اللافتة ق44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق45؟",
+      "a": "المفتاح ق45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق46؟",
+      "a": "الدفتر ق46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق47؟",
+      "a": "الجار ق47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ق48؟",
+      "a": "الخطة ق48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س1؟",
+      "a": "البار س1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س2؟",
+      "a": "القبو س2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س3؟",
+      "a": "السطح س3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س4؟",
+      "a": "الصندوق س4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س5؟",
+      "a": "الخريطة س5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س6؟",
+      "a": "الجرس س6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س7؟",
+      "a": "النداء س7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س8؟",
+      "a": "الختام س8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س9؟",
+      "a": "البار س9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س10؟",
+      "a": "القبو س10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س11؟",
+      "a": "السطح س11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س12؟",
+      "a": "الصندوق س12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س13؟",
+      "a": "الخريطة س13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س14؟",
+      "a": "الجرس س14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س15؟",
+      "a": "النداء س15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س16؟",
+      "a": "الختام س16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س17؟",
+      "a": "البار س17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س18؟",
+      "a": "القبو س18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س19؟",
+      "a": "السطح س19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س20؟",
+      "a": "الصندوق س20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س21؟",
+      "a": "الخريطة س21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س22؟",
+      "a": "الجرس س22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س23؟",
+      "a": "النداء س23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س24؟",
+      "a": "الختام س24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س25؟",
+      "a": "البار س25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س26؟",
+      "a": "القبو س26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س27؟",
+      "a": "السطح س27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س28؟",
+      "a": "الصندوق س28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س29؟",
+      "a": "الخريطة س29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س30؟",
+      "a": "الجرس س30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س31؟",
+      "a": "النداء س31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س32؟",
+      "a": "الختام س32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س33؟",
+      "a": "البار س33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س34؟",
+      "a": "القبو س34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س35؟",
+      "a": "السطح س35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س36؟",
+      "a": "الصندوق س36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س37؟",
+      "a": "الخريطة س37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س38؟",
+      "a": "الجرس س38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س39؟",
+      "a": "النداء س39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س40؟",
+      "a": "الختام س40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س41؟",
+      "a": "البار س41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س42؟",
+      "a": "القبو س42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س43؟",
+      "a": "السطح س43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س44؟",
+      "a": "الصندوق س44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س45؟",
+      "a": "الخريطة س45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س46؟",
+      "a": "الجرس س46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س47؟",
+      "a": "النداء س47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي س48؟",
+      "a": "الختام س48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث1؟",
+      "a": "الممر ث1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث2؟",
+      "a": "القفل ث2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث3؟",
+      "a": "الكاميرا ث3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث4؟",
+      "a": "الشاحنة ث4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث5؟",
+      "a": "الرسالة ث5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث6؟",
+      "a": "الختم ث6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث7؟",
+      "a": "الرفيق ث7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث8؟",
+      "a": "الفرع ث8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث9؟",
+      "a": "الممر ث9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث10؟",
+      "a": "القفل ث10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث11؟",
+      "a": "الكاميرا ث11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث12؟",
+      "a": "الشاحنة ث12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث13؟",
+      "a": "الرسالة ث13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث14؟",
+      "a": "الختم ث14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث15؟",
+      "a": "الرفيق ث15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث16؟",
+      "a": "الفرع ث16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث17؟",
+      "a": "الممر ث17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث18؟",
+      "a": "القفل ث18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث19؟",
+      "a": "الكاميرا ث19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث20؟",
+      "a": "الشاحنة ث20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث21؟",
+      "a": "الرسالة ث21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث22؟",
+      "a": "الختم ث22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث23؟",
+      "a": "الرفيق ث23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث24؟",
+      "a": "الفرع ث24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث25؟",
+      "a": "الممر ث25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث26؟",
+      "a": "القفل ث26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث27؟",
+      "a": "الكاميرا ث27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث28؟",
+      "a": "الشاحنة ث28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث29؟",
+      "a": "الرسالة ث29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث30؟",
+      "a": "الختم ث30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث31؟",
+      "a": "الرفيق ث31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث32؟",
+      "a": "الفرع ث32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث33؟",
+      "a": "الممر ث33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث34؟",
+      "a": "القفل ث34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث35؟",
+      "a": "الكاميرا ث35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث36؟",
+      "a": "الشاحنة ث36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث37؟",
+      "a": "الرسالة ث37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث38؟",
+      "a": "الختم ث38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث39؟",
+      "a": "الرفيق ث39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث40؟",
+      "a": "الفرع ث40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث41؟",
+      "a": "الممر ث41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث42؟",
+      "a": "القفل ث42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث43؟",
+      "a": "الكاميرا ث43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث44؟",
+      "a": "الشاحنة ث44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث45؟",
+      "a": "الرسالة ث45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث46؟",
+      "a": "الختم ث46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث47؟",
+      "a": "الرفيق ث47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ث48؟",
+      "a": "الفرع ث48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص1؟",
+      "a": "القطار ص1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص2؟",
+      "a": "الجسر ص2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص3؟",
+      "a": "ال pal ص3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص4؟",
+      "a": "الخزان ص4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص5؟",
+      "a": "البطاقة ص5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص6؟",
+      "a": "الرمز ص6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص7؟",
+      "a": "الوليمة ص7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص8؟",
+      "a": "البيت ص8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص9؟",
+      "a": "القطار ص9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص10؟",
+      "a": "الجسر ص10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص11؟",
+      "a": "ال pal ص11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص12؟",
+      "a": "الخزان ص12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص13؟",
+      "a": "البطاقة ص13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص14؟",
+      "a": "الرمز ص14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص15؟",
+      "a": "الوليمة ص15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص16؟",
+      "a": "البيت ص16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص17؟",
+      "a": "القطار ص17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص18؟",
+      "a": "الجسر ص18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص19؟",
+      "a": "ال pal ص19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص20؟",
+      "a": "الخزان ص20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص21؟",
+      "a": "البطاقة ص21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص22؟",
+      "a": "الرمز ص22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص23؟",
+      "a": "الوليمة ص23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص24؟",
+      "a": "البيت ص24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص25؟",
+      "a": "القطار ص25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص26؟",
+      "a": "الجسر ص26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص27؟",
+      "a": "ال pal ص27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص28؟",
+      "a": "الخزان ص28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص29؟",
+      "a": "البطاقة ص29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص30؟",
+      "a": "الرمز ص30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص31؟",
+      "a": "الوليمة ص31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص32؟",
+      "a": "البيت ص32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص33؟",
+      "a": "القطار ص33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص34؟",
+      "a": "الجسر ص34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص35؟",
+      "a": "ال pal ص35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص36؟",
+      "a": "الخزان ص36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص37؟",
+      "a": "البطاقة ص37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص38؟",
+      "a": "الرمز ص38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص39؟",
+      "a": "الوليمة ص39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص40؟",
+      "a": "البيت ص40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص41؟",
+      "a": "القطار ص41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص42؟",
+      "a": "الجسر ص42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص43؟",
+      "a": "ال pal ص43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص44؟",
+      "a": "الخزان ص44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص45؟",
+      "a": "البطاقة ص45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص46؟",
+      "a": "الرمز ص46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص47؟",
+      "a": "الوليمة ص47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «بريكنغ باد»، ما المسمى الداخلي ص48؟",
+      "a": "البيت ص48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "breakingbad-1000-048"
+    }
+  ]
+}

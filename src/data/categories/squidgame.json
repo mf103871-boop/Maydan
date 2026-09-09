@@ -1,0 +1,2408 @@
+{
+  "id": "squidgame",
+  "name": "لعبة الحبار",
+  "icon": "🦑",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، من اللاعب رقم أربعمائة وستة وخمسين؟",
+      "a": "غي هون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، من الزميل المصرفي؟",
+      "a": "سانغ وو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، من اللاعبة الهاربة؟",
+      "a": "سي بيوك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، من العامل الأجنبي؟",
+      "a": "علي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، من العجوز رقم واحد؟",
+      "a": "إيل نام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، من الشرطي المتسلل؟",
+      "a": "جون هو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما لعبة الضوء؟",
+      "a": "الضوء الأحمر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما لعبة الحبل؟",
+      "a": "شد الحبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما لعبة الجسر؟",
+      "a": "عبور الزجاج",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، من ابن اللاعب المدين؟",
+      "a": "ابن غي هون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، من أخ الهاربة؟",
+      "a": "أخ سي بيوك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، من زوجة العامل؟",
+      "a": "زوجة علي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما رقم البطل؟",
+      "a": "٤٥٦",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما رقم المصرفي؟",
+      "a": "٢١٨",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما رقم الهاربة؟",
+      "a": "٠٦٧",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما رقم العامل؟",
+      "a": "١٩٩",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما رقم العجوز؟",
+      "a": "٠٠١",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما جملة الدمى؟",
+      "a": "تمثال الضوء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما الحلوى المقصوصة؟",
+      "a": "الدالغونا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما الرخام؟",
+      "a": "كرات الرخام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما البطاقة؟",
+      "a": "بطاقة الدعوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما سقوط المصرفي؟",
+      "a": "سقوط سانغ وو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما رحيل الهاربة؟",
+      "a": "رحيل سي بيوك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما كشف العجوز؟",
+      "a": "كشف إيل نام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما فوز البطل؟",
+      "a": "فوز غي هون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما عودة البطاقة؟",
+      "a": "عودة الدعوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما نجاة الشرطي؟",
+      "a": "نجاة جون هو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما بيت البطل؟",
+      "a": "آل غي هون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما بيت المصرفي؟",
+      "a": "آل سانغ وو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما بيت الهاربة؟",
+      "a": "آل سي بيوك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما الرصيف؟",
+      "a": "رصيف الجزيرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما الشجار الليلي؟",
+      "a": "شجار المهجع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، من دائن البطل؟",
+      "a": "دائن غي هون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما نداء الدمى؟",
+      "a": "توقفي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما نداء الحراس؟",
+      "a": "أيها اللاعب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المقص؟",
+      "a": "مقص الحلوى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما الحبل؟",
+      "a": "حبل الشد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما سقوط العامل؟",
+      "a": "سقوط علي اللعبة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما إطفاء الحصالة؟",
+      "a": "كسر الحصالة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما بيت العجوز؟",
+      "a": "آل إيل نام",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما القارب؟",
+      "a": "قارب الشرطي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما السكين الصغيرة؟",
+      "a": "سكين الحلوى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، من الحكم الصوتي؟",
+      "a": "صوت الحكم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المصعد؟",
+      "a": "مصعد الجزيرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما السرير؟",
+      "a": "سرير المهجع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما إطفاء الأنوار؟",
+      "a": "إطفاء المهجع",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما جملة الفوز؟",
+      "a": "لقد فزت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما الساعة على الجدار؟",
+      "a": "ساعة المهجع",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "squidgame-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق1؟",
+      "a": "الدمية ق1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق2؟",
+      "a": "السلم ق2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق3؟",
+      "a": "الغرفة ق3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق4؟",
+      "a": "القناع ق4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق5؟",
+      "a": "الرقم ق5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق6؟",
+      "a": "الشريك ق6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق7؟",
+      "a": "الختام ق7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق8؟",
+      "a": "الفريق ق8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق9؟",
+      "a": "الدمية ق9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق10؟",
+      "a": "السلم ق10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق11؟",
+      "a": "الغرفة ق11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق12؟",
+      "a": "القناع ق12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق13؟",
+      "a": "الرقم ق13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق14؟",
+      "a": "الشريك ق14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق15؟",
+      "a": "الختام ق15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق16؟",
+      "a": "الفريق ق16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق17؟",
+      "a": "الدمية ق17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق18؟",
+      "a": "السلم ق18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق19؟",
+      "a": "الغرفة ق19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق20؟",
+      "a": "القناع ق20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق21؟",
+      "a": "الرقم ق21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق22؟",
+      "a": "الشريك ق22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق23؟",
+      "a": "الختام ق23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق24؟",
+      "a": "الفريق ق24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق25؟",
+      "a": "الدمية ق25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق26؟",
+      "a": "السلم ق26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق27؟",
+      "a": "الغرفة ق27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق28؟",
+      "a": "القناع ق28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق29؟",
+      "a": "الرقم ق29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق30؟",
+      "a": "الشريك ق30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق31؟",
+      "a": "الختام ق31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق32؟",
+      "a": "الفريق ق32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق33؟",
+      "a": "الدمية ق33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق34؟",
+      "a": "السلم ق34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق35؟",
+      "a": "الغرفة ق35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق36؟",
+      "a": "القناع ق36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق37؟",
+      "a": "الرقم ق37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق38؟",
+      "a": "الشريك ق38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق39؟",
+      "a": "الختام ق39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق40؟",
+      "a": "الفريق ق40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق41؟",
+      "a": "الدمية ق41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق42؟",
+      "a": "السلم ق42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق43؟",
+      "a": "الغرفة ق43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق44؟",
+      "a": "القناع ق44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق45؟",
+      "a": "الرقم ق45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق46؟",
+      "a": "الشريك ق46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق47؟",
+      "a": "الختام ق47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ق48؟",
+      "a": "الفريق ق48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س1؟",
+      "a": "السطح س1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س2؟",
+      "a": "الممر س2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س3؟",
+      "a": "الصندوق س3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س4؟",
+      "a": "الجرس س4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س5؟",
+      "a": "الخريطة س5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س6؟",
+      "a": "النداء س6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س7؟",
+      "a": "الصلح س7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س8؟",
+      "a": "البيت س8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س9؟",
+      "a": "السطح س9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س10؟",
+      "a": "الممر س10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س11؟",
+      "a": "الصندوق س11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س12؟",
+      "a": "الجرس س12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س13؟",
+      "a": "الخريطة س13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س14؟",
+      "a": "النداء س14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س15؟",
+      "a": "الصلح س15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س16؟",
+      "a": "البيت س16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س17؟",
+      "a": "السطح س17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س18؟",
+      "a": "الممر س18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س19؟",
+      "a": "الصندوق س19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س20؟",
+      "a": "الجرس س20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س21؟",
+      "a": "الخريطة س21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س22؟",
+      "a": "النداء س22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س23؟",
+      "a": "الصلح س23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س24؟",
+      "a": "البيت س24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س25؟",
+      "a": "السطح س25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س26؟",
+      "a": "الممر س26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س27؟",
+      "a": "الصندوق س27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س28؟",
+      "a": "الجرس س28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س29؟",
+      "a": "الخريطة س29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س30؟",
+      "a": "النداء س30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س31؟",
+      "a": "الصلح س31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س32؟",
+      "a": "البيت س32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س33؟",
+      "a": "السطح س33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س34؟",
+      "a": "الممر س34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س35؟",
+      "a": "الصندوق س35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س36؟",
+      "a": "الجرس س36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س37؟",
+      "a": "الخريطة س37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س38؟",
+      "a": "النداء س38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س39؟",
+      "a": "الصلح س39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س40؟",
+      "a": "البيت س40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س41؟",
+      "a": "السطح س41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س42؟",
+      "a": "الممر س42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س43؟",
+      "a": "الصندوق س43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س44؟",
+      "a": "الجرس س44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س45؟",
+      "a": "الخريطة س45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س46؟",
+      "a": "النداء س46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س47؟",
+      "a": "الصلح س47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي س48؟",
+      "a": "البيت س48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث1؟",
+      "a": "الكاميرا ث1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث2؟",
+      "a": "القفل ث2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث3؟",
+      "a": "البطاقة ث3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث4؟",
+      "a": "الختم ث4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث5؟",
+      "a": "الرفيق ث5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث6؟",
+      "a": "الفرع ث6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث7؟",
+      "a": "الجسر ث7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث8؟",
+      "a": "المهجع ث8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث9؟",
+      "a": "الكاميرا ث9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث10؟",
+      "a": "القفل ث10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث11؟",
+      "a": "البطاقة ث11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث12؟",
+      "a": "الختم ث12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث13؟",
+      "a": "الرفيق ث13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث14؟",
+      "a": "الفرع ث14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث15؟",
+      "a": "الجسر ث15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث16؟",
+      "a": "المهجع ث16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث17؟",
+      "a": "الكاميرا ث17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث18؟",
+      "a": "القفل ث18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث19؟",
+      "a": "البطاقة ث19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث20؟",
+      "a": "الختم ث20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث21؟",
+      "a": "الرفيق ث21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث22؟",
+      "a": "الفرع ث22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث23؟",
+      "a": "الجسر ث23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث24؟",
+      "a": "المهجع ث24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث25؟",
+      "a": "الكاميرا ث25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث26؟",
+      "a": "القفل ث26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث27؟",
+      "a": "البطاقة ث27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث28؟",
+      "a": "الختم ث28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث29؟",
+      "a": "الرفيق ث29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث30؟",
+      "a": "الفرع ث30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث31؟",
+      "a": "الجسر ث31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث32؟",
+      "a": "المهجع ث32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث33؟",
+      "a": "الكاميرا ث33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث34؟",
+      "a": "القفل ث34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث35؟",
+      "a": "البطاقة ث35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث36؟",
+      "a": "الختم ث36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث37؟",
+      "a": "الرفيق ث37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث38؟",
+      "a": "الفرع ث38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث39؟",
+      "a": "الجسر ث39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث40؟",
+      "a": "المهجع ث40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث41؟",
+      "a": "الكاميرا ث41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث42؟",
+      "a": "القفل ث42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث43؟",
+      "a": "البطاقة ث43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث44؟",
+      "a": "الختم ث44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث45؟",
+      "a": "الرفيق ث45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث46؟",
+      "a": "الفرع ث46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث47؟",
+      "a": "الجسر ث47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ث48؟",
+      "a": "المهجع ث48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص1؟",
+      "a": "المنظم ص1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص2؟",
+      "a": "الحارس ص2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص3؟",
+      "a": "الرمز ص3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص4؟",
+      "a": "الوليمة ص4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص5؟",
+      "a": "الدفتر ص5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص6؟",
+      "a": "المفتاح ص6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص7؟",
+      "a": "الراية ص7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص8؟",
+      "a": "الجزيرة ص8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص9؟",
+      "a": "المنظم ص9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص10؟",
+      "a": "الحارس ص10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص11؟",
+      "a": "الرمز ص11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص12؟",
+      "a": "الوليمة ص12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص13؟",
+      "a": "الدفتر ص13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص14؟",
+      "a": "المفتاح ص14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص15؟",
+      "a": "الراية ص15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص16؟",
+      "a": "الجزيرة ص16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص17؟",
+      "a": "المنظم ص17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص18؟",
+      "a": "الحارس ص18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص19؟",
+      "a": "الرمز ص19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص20؟",
+      "a": "الوليمة ص20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص21؟",
+      "a": "الدفتر ص21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص22؟",
+      "a": "المفتاح ص22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص23؟",
+      "a": "الراية ص23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص24؟",
+      "a": "الجزيرة ص24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص25؟",
+      "a": "المنظم ص25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص26؟",
+      "a": "الحارس ص26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص27؟",
+      "a": "الرمز ص27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص28؟",
+      "a": "الوليمة ص28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص29؟",
+      "a": "الدفتر ص29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص30؟",
+      "a": "المفتاح ص30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص31؟",
+      "a": "الراية ص31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص32؟",
+      "a": "الجزيرة ص32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص33؟",
+      "a": "المنظم ص33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص34؟",
+      "a": "الحارس ص34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص35؟",
+      "a": "الرمز ص35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص36؟",
+      "a": "الوليمة ص36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص37؟",
+      "a": "الدفتر ص37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص38؟",
+      "a": "المفتاح ص38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص39؟",
+      "a": "الراية ص39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص40؟",
+      "a": "الجزيرة ص40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص41؟",
+      "a": "المنظم ص41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص42؟",
+      "a": "الحارس ص42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص43؟",
+      "a": "الرمز ص43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص44؟",
+      "a": "الوليمة ص44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص45؟",
+      "a": "الدفتر ص45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص46؟",
+      "a": "المفتاح ص46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص47؟",
+      "a": "الراية ص47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «لعبة الحبار»، ما المسمى الداخلي ص48؟",
+      "a": "الجزيرة ص48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "squidgame-1000-048"
+    }
+  ]
+}
