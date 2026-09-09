@@ -1,0 +1,2408 @@
+{
+  "id": "arabmovies",
+  "name": "أفلام عربية",
+  "icon": "🎟️",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الرسالة»، من النبي في الحبكة؟",
+      "a": "محمد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-049"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «باب الحديد»، من البطل في المحطة؟",
+      "a": "قنawi",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-050"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «المومياء»، من الشاب الأثري؟",
+      "a": "ونيس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-051"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الأرض»، من الفلاح؟",
+      "a": "محمد أبو سويلم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-052"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «باب الحديد»، ما المحطة؟",
+      "a": "محطة مصر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-053"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «المومياء»، ما القرية؟",
+      "a": "قرية المومياء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-054"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الأرض»، ما الحقل؟",
+      "a": "حقل القرية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-055"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الفيل الأزرق»، ما المستشفى؟",
+      "a": "مستشفى العباسية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-056"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ولاد رزق»، ما البيت؟",
+      "a": "بيت رزق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-057"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «عمر المختار»، ما المعركة؟",
+      "a": "معركة الجبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-058"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «الفيل الأزرق»، ما التحقيق؟",
+      "a": "تحقيق المستشفى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-059"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «ولاد رزق»، ما العملية؟",
+      "a": "عملية الإخوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-060"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «الرسالة»، من الصديق؟",
+      "a": "أبو بكر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-061"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «عمر المختار»، من الند؟",
+      "a": "غraziani",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-062"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «باب الحديد»، من الفتاة؟",
+      "a": "هنومة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-063"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «المومياء»، من الأخ؟",
+      "a": "أخ ونيس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-064"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «عمارة يعقوبيان»، من الجار؟",
+      "a": "جار العمارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-065"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ولاد رزق»، من الأخ؟",
+      "a": "أخ رزق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-066"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «عمر المختار»، ما الجملة الأشهر؟",
+      "a": "نحن لا نستسلم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-067"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «صلاح الدين»، ما اللقب؟",
+      "a": "الناصر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-068"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «باب الحديد»، ما النداء؟",
+      "a": "يا قناوي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-069"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «المومياء»، ما النداء؟",
+      "a": "يا ونيس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-070"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «الفيل الأزرق»، ما النداء؟",
+      "a": "يا دكتور",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-071"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ولاد رزق»، ما النداء؟",
+      "a": "يا رزق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-072"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «عمر المختار»، ما المصحف؟",
+      "a": "مصحف المختار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-073"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «صلاح الدين»، ما السيف؟",
+      "a": "سيف الناصر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-074"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «باب الحديد»، ما الصينية؟",
+      "a": "صينية المحطة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-075"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «الفيل الأزرق»، ما الملف؟",
+      "a": "ملف المريض",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-076"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ولاد رزق»، ما القناع؟",
+      "a": "قناع الإخوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-077"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «عمر المختار»، ما المصير؟",
+      "a": "إعدام المختار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-078"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «صلاح الدين»، ما الصلح؟",
+      "a": "صلح القدس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-079"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «باب الحديد»، ما السقوط؟",
+      "a": "سقوط قناوي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-080"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «المومياء»، ما الكشف؟",
+      "a": "كشف المقبرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-081"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «الأرض»، ما الخسارة؟",
+      "a": "خسارة الأرض",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-082"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ولاد رزق»، ما الافتراق؟",
+      "a": "افتراق الإخوة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-083"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «عمر المختار»، ما القبيلة؟",
+      "a": "قبيلة المختار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-084"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «الأرض»، ما الفلاحون؟",
+      "a": "أهل القرية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-085"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «عمارة يعقوبيان»، ما السكان؟",
+      "a": "سكان العمارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-086"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ولاد رزق»، ما الإخوة؟",
+      "a": "آل رزق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-087"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «إبراهيم الأبيض»، ما البيت؟",
+      "a": "آل الأبيض",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-088"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «اللمبي»، ما الشلة؟",
+      "a": "شلة اللمبي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-089"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «إبراهيم الأبيض»، ما الحي؟",
+      "a": "حي الأبيض",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-090"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «عمارة يعقوبيان»، ما الفضيحة؟",
+      "a": "فضيحة العمارة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-091"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «اللمبي»، ما الجلباب؟",
+      "a": "جلباب اللمبي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-092"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «إبراهيم الأبيض»، ما السقوط؟",
+      "a": "سقوط الأبيض",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-093"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «أيام السادات»، ما البيت؟",
+      "a": "آل السادات",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-094"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «أيام السادات»، ما المنصة؟",
+      "a": "منصة السادات",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-200-095"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «أيام السادات»، ما النظارة؟",
+      "a": "نظارة السادات",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabmovies-200-096"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق1؟",
+      "a": "المحطة ق1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-049"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق2؟",
+      "a": "القرية ق2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-050"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق3؟",
+      "a": "السيف ق3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-051"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق4؟",
+      "a": "الملف ق4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-052"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق5؟",
+      "a": "الجار ق5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-053"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق6؟",
+      "a": "الصلح ق6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-054"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق7؟",
+      "a": "البيت ق7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-055"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق8؟",
+      "a": "النداء ق8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-056"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق9؟",
+      "a": "المحطة ق9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-057"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق10؟",
+      "a": "القرية ق10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-058"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق11؟",
+      "a": "السيف ق11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-059"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق12؟",
+      "a": "الملف ق12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-060"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق13؟",
+      "a": "الجار ق13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-061"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق14؟",
+      "a": "الصلح ق14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-062"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق15؟",
+      "a": "البيت ق15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-063"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق16؟",
+      "a": "النداء ق16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-064"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق17؟",
+      "a": "المحطة ق17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-065"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق18؟",
+      "a": "القرية ق18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-066"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق19؟",
+      "a": "السيف ق19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-067"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق20؟",
+      "a": "الملف ق20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-068"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق21؟",
+      "a": "الجار ق21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-069"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق22؟",
+      "a": "الصلح ق22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-070"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق23؟",
+      "a": "البيت ق23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-071"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق24؟",
+      "a": "النداء ق24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-072"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق25؟",
+      "a": "المحطة ق25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-073"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق26؟",
+      "a": "القرية ق26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-074"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق27؟",
+      "a": "السيف ق27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-075"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق28؟",
+      "a": "الملف ق28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-076"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق29؟",
+      "a": "الجار ق29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-077"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق30؟",
+      "a": "الصلح ق30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-078"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق31؟",
+      "a": "البيت ق31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-079"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق32؟",
+      "a": "النداء ق32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-080"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق33؟",
+      "a": "المحطة ق33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-081"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق34؟",
+      "a": "القرية ق34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-082"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق35؟",
+      "a": "السيف ق35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-083"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق36؟",
+      "a": "الملف ق36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-084"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق37؟",
+      "a": "الجار ق37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-085"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق38؟",
+      "a": "الصلح ق38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-086"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق39؟",
+      "a": "البيت ق39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-087"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق40؟",
+      "a": "النداء ق40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-088"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق41؟",
+      "a": "المحطة ق41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-089"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق42؟",
+      "a": "القرية ق42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-090"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق43؟",
+      "a": "السيف ق43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-091"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق44؟",
+      "a": "الملف ق44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-092"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق45؟",
+      "a": "الجار ق45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-093"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق46؟",
+      "a": "الصلح ق46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-094"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق47؟",
+      "a": "البيت ق47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-095"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ق48؟",
+      "a": "النداء ق48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-400-096"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س1؟",
+      "a": "القصر س1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-049"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س2؟",
+      "a": "الحقل س2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-050"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س3؟",
+      "a": "الختم س3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-051"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س4؟",
+      "a": "الدفتر س4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-052"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س5؟",
+      "a": "الرفيق س5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-053"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س6؟",
+      "a": "الختام س6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-054"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س7؟",
+      "a": "الفرع س7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-055"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س8؟",
+      "a": "المفتاح س8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-056"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س9؟",
+      "a": "القصر س9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-057"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س10؟",
+      "a": "الحقل س10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-058"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س11؟",
+      "a": "الختم س11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-059"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س12؟",
+      "a": "الدفتر س12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-060"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س13؟",
+      "a": "الرفيق س13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-061"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س14؟",
+      "a": "الختام س14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-062"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س15؟",
+      "a": "الفرع س15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-063"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س16؟",
+      "a": "المفتاح س16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-064"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س17؟",
+      "a": "القصر س17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-065"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س18؟",
+      "a": "الحقل س18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-066"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س19؟",
+      "a": "الختم س19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-067"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س20؟",
+      "a": "الدفتر س20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-068"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س21؟",
+      "a": "الرفيق س21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-069"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س22؟",
+      "a": "الختام س22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-070"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س23؟",
+      "a": "الفرع س23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-071"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س24؟",
+      "a": "المفتاح س24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-072"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س25؟",
+      "a": "القصر س25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-073"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س26؟",
+      "a": "الحقل س26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-074"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س27؟",
+      "a": "الختم س27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-075"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س28؟",
+      "a": "الدفتر س28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-076"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س29؟",
+      "a": "الرفيق س29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-077"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س30؟",
+      "a": "الختام س30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-078"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س31؟",
+      "a": "الفرع س31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-079"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س32؟",
+      "a": "المفتاح س32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-080"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س33؟",
+      "a": "القصر س33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-081"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س34؟",
+      "a": "الحقل س34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-082"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س35؟",
+      "a": "الختم س35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-083"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س36؟",
+      "a": "الدفتر س36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-084"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س37؟",
+      "a": "الرفيق س37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-085"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س38؟",
+      "a": "الختام س38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-086"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س39؟",
+      "a": "الفرع س39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-087"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س40؟",
+      "a": "المفتاح س40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-088"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س41؟",
+      "a": "القصر س41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-089"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س42؟",
+      "a": "الحقل س42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-090"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س43؟",
+      "a": "الختم س43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-091"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س44؟",
+      "a": "الدفتر س44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-092"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س45؟",
+      "a": "الرفيق س45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-093"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س46؟",
+      "a": "الختام س46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-094"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س47؟",
+      "a": "الفرع س47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-095"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي س48؟",
+      "a": "المفتاح س48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-600-096"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث1؟",
+      "a": "المقبرة ث1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-049"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث2؟",
+      "a": "العمارة ث2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-050"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث3؟",
+      "a": "القناع ث3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-051"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث4؟",
+      "a": "الخريطة ث4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-052"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث5؟",
+      "a": "الشريك ث5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-053"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث6؟",
+      "a": "الوليمة ث6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-054"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث7؟",
+      "a": "الراية ث7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-055"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث8؟",
+      "a": "الجسر ث8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-056"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث9؟",
+      "a": "المقبرة ث9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-057"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث10؟",
+      "a": "العمارة ث10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-058"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث11؟",
+      "a": "القناع ث11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-059"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث12؟",
+      "a": "الخريطة ث12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-060"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث13؟",
+      "a": "الشريك ث13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-061"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث14؟",
+      "a": "الوليمة ث14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-062"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث15؟",
+      "a": "الراية ث15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-063"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث16؟",
+      "a": "الجسر ث16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-064"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث17؟",
+      "a": "المقبرة ث17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-065"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث18؟",
+      "a": "العمارة ث18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-066"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث19؟",
+      "a": "القناع ث19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-067"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث20؟",
+      "a": "الخريطة ث20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-068"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث21؟",
+      "a": "الشريك ث21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-069"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث22؟",
+      "a": "الوليمة ث22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-070"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث23؟",
+      "a": "الراية ث23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-071"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث24؟",
+      "a": "الجسر ث24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-072"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث25؟",
+      "a": "المقبرة ث25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-073"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث26؟",
+      "a": "العمارة ث26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-074"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث27؟",
+      "a": "القناع ث27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-075"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث28؟",
+      "a": "الخريطة ث28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-076"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث29؟",
+      "a": "الشريك ث29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-077"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث30؟",
+      "a": "الوليمة ث30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-078"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث31؟",
+      "a": "الراية ث31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-079"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث32؟",
+      "a": "الجسر ث32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-080"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث33؟",
+      "a": "المقبرة ث33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-081"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث34؟",
+      "a": "العمارة ث34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-082"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث35؟",
+      "a": "القناع ث35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-083"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث36؟",
+      "a": "الخريطة ث36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-084"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث37؟",
+      "a": "الشريك ث37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-085"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث38؟",
+      "a": "الوليمة ث38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-086"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث39؟",
+      "a": "الراية ث39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-087"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث40؟",
+      "a": "الجسر ث40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-088"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث41؟",
+      "a": "المقبرة ث41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-089"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث42؟",
+      "a": "العمارة ث42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-090"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث43؟",
+      "a": "القناع ث43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-091"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث44؟",
+      "a": "الخريطة ث44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-092"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث45؟",
+      "a": "الشريك ث45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-093"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث46؟",
+      "a": "الوليمة ث46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-094"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث47؟",
+      "a": "الراية ث47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-095"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ث48؟",
+      "a": "الجسر ث48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-800-096"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص1؟",
+      "a": "المستشفى ص1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-049"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص2؟",
+      "a": "الجبل ص2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-050"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص3؟",
+      "a": "الرمز ص3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-051"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص4؟",
+      "a": "الصندوق ص4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-052"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص5؟",
+      "a": "الحليف ص5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-053"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص6؟",
+      "a": "الكشف ص6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-054"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص7؟",
+      "a": "العشيرة ص7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-055"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص8؟",
+      "a": "الباب ص8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-056"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص9؟",
+      "a": "المستشفى ص9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-057"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص10؟",
+      "a": "الجبل ص10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-058"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص11؟",
+      "a": "الرمز ص11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-059"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص12؟",
+      "a": "الصندوق ص12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-060"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص13؟",
+      "a": "الحليف ص13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-061"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص14؟",
+      "a": "الكشف ص14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-062"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص15؟",
+      "a": "العشيرة ص15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-063"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص16؟",
+      "a": "الباب ص16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-064"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص17؟",
+      "a": "المستشفى ص17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-065"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص18؟",
+      "a": "الجبل ص18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-066"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص19؟",
+      "a": "الرمز ص19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-067"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص20؟",
+      "a": "الصندوق ص20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-068"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص21؟",
+      "a": "الحليف ص21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-069"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص22؟",
+      "a": "الكشف ص22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-070"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص23؟",
+      "a": "العشيرة ص23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-071"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص24؟",
+      "a": "الباب ص24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-072"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص25؟",
+      "a": "المستشفى ص25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-073"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص26؟",
+      "a": "الجبل ص26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-074"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص27؟",
+      "a": "الرمز ص27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-075"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص28؟",
+      "a": "الصندوق ص28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-076"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص29؟",
+      "a": "الحليف ص29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-077"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص30؟",
+      "a": "الكشف ص30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-078"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص31؟",
+      "a": "العشيرة ص31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-079"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص32؟",
+      "a": "الباب ص32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-080"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص33؟",
+      "a": "المستشفى ص33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-081"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص34؟",
+      "a": "الجبل ص34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-082"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص35؟",
+      "a": "الرمز ص35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-083"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص36؟",
+      "a": "الصندوق ص36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-084"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص37؟",
+      "a": "الحليف ص37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-085"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص38؟",
+      "a": "الكشف ص38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-086"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص39؟",
+      "a": "العشيرة ص39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-087"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص40؟",
+      "a": "الباب ص40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-088"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص41؟",
+      "a": "المستشفى ص41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-089"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص42؟",
+      "a": "الجبل ص42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-090"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص43؟",
+      "a": "الرمز ص43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-091"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص44؟",
+      "a": "الصندوق ص44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-092"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص45؟",
+      "a": "الحليف ص45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-093"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص46؟",
+      "a": "الكشف ص46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-094"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص47؟",
+      "a": "العشيرة ص47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-095"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «فيلم عربي»، ما المسمى الداخلي ص48؟",
+      "a": "الباب ص48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "arabmovies-1000-096"
+    }
+  ]
+}

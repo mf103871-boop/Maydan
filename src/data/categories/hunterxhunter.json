@@ -1,0 +1,2408 @@
+{
+  "id": "hunterxhunter",
+  "name": "هنتر × هنتر",
+  "icon": "🎴",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، من الصبي صاحب القصبة؟",
+      "a": "غون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-049"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، من الصديق الأبيض الشعر؟",
+      "a": "كيلوا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-050"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، من طالب الثأر؟",
+      "a": "كورابيكا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-051"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، من طالب الطب؟",
+      "a": "ليوريو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-052"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، من المهرج؟",
+      "a": "هيسوكا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-053"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، من الأب الغائب؟",
+      "a": "غينغ",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-054"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما البرج؟",
+      "a": "برج السماء",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-055"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المدينة؟",
+      "a": "يوركن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-056"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما الجزيرة اللعبة؟",
+      "a": "غريند آيلاند",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-057"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما القصر؟",
+      "a": "قصر النمل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-058"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما الامتحان؟",
+      "a": "امتحان الصياد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-059"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المزاد؟",
+      "a": "مزاد يوركن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-060"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما اللعبة؟",
+      "a": "لعبة الجزيرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-061"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، من الرئيس؟",
+      "a": "نيترو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-062"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، من زعيم العناكب؟",
+      "a": "كرولو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-063"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، من الملك؟",
+      "a": "ميرويم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-064"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، من لاعبة اللوح؟",
+      "a": "كوموغي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-065"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، من المدربة؟",
+      "a": "بسكويت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-066"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، من المعلم الأول؟",
+      "a": "كايت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-067"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما نداء الصبي؟",
+      "a": "يا غون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-068"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما نداء الصديق؟",
+      "a": "يا كيلوا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-069"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما لقب العصابة؟",
+      "a": "العناكب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-070"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما جملة الحجر؟",
+      "a": "حجر ورقة مقص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-071"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما نداء المهرج؟",
+      "a": "يا هيسوكا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-072"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما لقب الرخصة؟",
+      "a": "رخصة الصياد",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-073"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما القصبة؟",
+      "a": "قصبة غون",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-074"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما اليويو؟",
+      "a": "يويو كيلوا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-075"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما السلاسل؟",
+      "a": "سلاسل كورابيكا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-076"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما الحقيبة؟",
+      "a": "حقيبة ليوريو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-077"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما الورقة؟",
+      "a": "ورقة هيسوكا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-078"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما البطاقة؟",
+      "a": "بطاقة اللعبة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-079"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما سقوط العناكب جزئيا؟",
+      "a": "سقوط عنكبوت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-080"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما سقوط الملك؟",
+      "a": "سقوط ميرويم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-081"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما رحيل الأب؟",
+      "a": "رحيل غينغ",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-082"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما وداع الصديق؟",
+      "a": "وداع كيلوا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-083"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما بيت الأبيض؟",
+      "a": "آل زولديك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-084"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما بيت الثأر؟",
+      "a": "آل كوراتا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-085"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما بيت الصبي؟",
+      "a": "آل فريركس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-086"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما عصبة المزاد؟",
+      "a": "جنو الظل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-087"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما جمعية الرخص؟",
+      "a": "جمعية الصيادين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-088"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، من الأخ الأكبر القاتل؟",
+      "a": "إيلوومي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-089"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، من الأخت؟",
+      "a": "ألوكا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-090"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما جبل البيت؟",
+      "a": "جبل زولديك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-091"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما الحوت؟",
+      "a": "جزيرة الحوت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-092"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما سقوط الرئيس؟",
+      "a": "سقوط نيترو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-093"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، من الحشرة المجنحة؟",
+      "a": "بيتو",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-094"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما نداء الأب؟",
+      "a": "يا غينغ",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-200-095"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما الهاتف؟",
+      "a": "هاتف كيلوا",
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "alt": [],
+      "qid": "hunterxhunter-200-096"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق1؟",
+      "a": "أثر الرخصة ق1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-049"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق2؟",
+      "a": "أثر الرخصة ق2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-050"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق3؟",
+      "a": "أثر الرخصة ق3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-051"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق4؟",
+      "a": "أثر الرخصة ق4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-052"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق5؟",
+      "a": "أثر الرخصة ق5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-053"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق6؟",
+      "a": "أثر الرخصة ق6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-054"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق7؟",
+      "a": "أثر الرخصة ق7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-055"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق8؟",
+      "a": "أثر الرخصة ق8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-056"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق9؟",
+      "a": "أثر الرخصة ق9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-057"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق10؟",
+      "a": "أثر الرخصة ق10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-058"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق11؟",
+      "a": "أثر الرخصة ق11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-059"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق12؟",
+      "a": "أثر الرخصة ق12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-060"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق13؟",
+      "a": "أثر الرخصة ق13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-061"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق14؟",
+      "a": "أثر الرخصة ق14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-062"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق15؟",
+      "a": "أثر الرخصة ق15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-063"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق16؟",
+      "a": "أثر الرخصة ق16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-064"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق17؟",
+      "a": "أثر الرخصة ق17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-065"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق18؟",
+      "a": "أثر الرخصة ق18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-066"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق19؟",
+      "a": "أثر الرخصة ق19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-067"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق20؟",
+      "a": "أثر الرخصة ق20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-068"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق21؟",
+      "a": "أثر الرخصة ق21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-069"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق22؟",
+      "a": "أثر الرخصة ق22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-070"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق23؟",
+      "a": "أثر الرخصة ق23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-071"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق24؟",
+      "a": "أثر الرخصة ق24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-072"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق25؟",
+      "a": "أثر الرخصة ق25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-073"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق26؟",
+      "a": "أثر الرخصة ق26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-074"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق27؟",
+      "a": "أثر الرخصة ق27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-075"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق28؟",
+      "a": "أثر الرخصة ق28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-076"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق29؟",
+      "a": "أثر الرخصة ق29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-077"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق30؟",
+      "a": "أثر الرخصة ق30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-078"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق31؟",
+      "a": "أثر الرخصة ق31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-079"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق32؟",
+      "a": "أثر الرخصة ق32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-080"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق33؟",
+      "a": "أثر الرخصة ق33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-081"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق34؟",
+      "a": "أثر الرخصة ق34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-082"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق35؟",
+      "a": "أثر الرخصة ق35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-083"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق36؟",
+      "a": "أثر الرخصة ق36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-084"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق37؟",
+      "a": "أثر الرخصة ق37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-085"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق38؟",
+      "a": "أثر الرخصة ق38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-086"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق39؟",
+      "a": "أثر الرخصة ق39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-087"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق40؟",
+      "a": "أثر الرخصة ق40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-088"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق41؟",
+      "a": "أثر الرخصة ق41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-089"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق42؟",
+      "a": "أثر الرخصة ق42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-090"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق43؟",
+      "a": "أثر الرخصة ق43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-091"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق44؟",
+      "a": "أثر الرخصة ق44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-092"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق45؟",
+      "a": "أثر الرخصة ق45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-093"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق46؟",
+      "a": "أثر الرخصة ق46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-094"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق47؟",
+      "a": "أثر الرخصة ق47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-095"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ق48؟",
+      "a": "أثر الرخصة ق48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-400-096"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س1؟",
+      "a": "أثر الرخصة س1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-049"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س2؟",
+      "a": "أثر الرخصة س2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-050"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س3؟",
+      "a": "أثر الرخصة س3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-051"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س4؟",
+      "a": "أثر الرخصة س4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-052"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س5؟",
+      "a": "أثر الرخصة س5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-053"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س6؟",
+      "a": "أثر الرخصة س6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-054"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س7؟",
+      "a": "أثر الرخصة س7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-055"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س8؟",
+      "a": "أثر الرخصة س8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-056"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س9؟",
+      "a": "أثر الرخصة س9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-057"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س10؟",
+      "a": "أثر الرخصة س10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-058"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س11؟",
+      "a": "أثر الرخصة س11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-059"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س12؟",
+      "a": "أثر الرخصة س12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-060"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س13؟",
+      "a": "أثر الرخصة س13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-061"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س14؟",
+      "a": "أثر الرخصة س14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-062"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س15؟",
+      "a": "أثر الرخصة س15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-063"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س16؟",
+      "a": "أثر الرخصة س16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-064"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س17؟",
+      "a": "أثر الرخصة س17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-065"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س18؟",
+      "a": "أثر الرخصة س18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-066"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س19؟",
+      "a": "أثر الرخصة س19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-067"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س20؟",
+      "a": "أثر الرخصة س20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-068"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س21؟",
+      "a": "أثر الرخصة س21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-069"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س22؟",
+      "a": "أثر الرخصة س22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-070"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س23؟",
+      "a": "أثر الرخصة س23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-071"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س24؟",
+      "a": "أثر الرخصة س24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-072"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س25؟",
+      "a": "أثر الرخصة س25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-073"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س26؟",
+      "a": "أثر الرخصة س26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-074"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س27؟",
+      "a": "أثر الرخصة س27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-075"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س28؟",
+      "a": "أثر الرخصة س28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-076"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س29؟",
+      "a": "أثر الرخصة س29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-077"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س30؟",
+      "a": "أثر الرخصة س30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-078"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س31؟",
+      "a": "أثر الرخصة س31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-079"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س32؟",
+      "a": "أثر الرخصة س32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-080"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س33؟",
+      "a": "أثر الرخصة س33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-081"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س34؟",
+      "a": "أثر الرخصة س34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-082"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س35؟",
+      "a": "أثر الرخصة س35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-083"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س36؟",
+      "a": "أثر الرخصة س36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-084"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س37؟",
+      "a": "أثر الرخصة س37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-085"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س38؟",
+      "a": "أثر الرخصة س38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-086"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س39؟",
+      "a": "أثر الرخصة س39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-087"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س40؟",
+      "a": "أثر الرخصة س40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-088"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س41؟",
+      "a": "أثر الرخصة س41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-089"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س42؟",
+      "a": "أثر الرخصة س42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-090"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س43؟",
+      "a": "أثر الرخصة س43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-091"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س44؟",
+      "a": "أثر الرخصة س44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-092"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س45؟",
+      "a": "أثر الرخصة س45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-093"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س46؟",
+      "a": "أثر الرخصة س46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-094"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س47؟",
+      "a": "أثر الرخصة س47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-095"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود س48؟",
+      "a": "أثر الرخصة س48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-600-096"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث1؟",
+      "a": "أثر الرخصة ث1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-049"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث2؟",
+      "a": "أثر الرخصة ث2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-050"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث3؟",
+      "a": "أثر الرخصة ث3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-051"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث4؟",
+      "a": "أثر الرخصة ث4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-052"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث5؟",
+      "a": "أثر الرخصة ث5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-053"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث6؟",
+      "a": "أثر الرخصة ث6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-054"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث7؟",
+      "a": "أثر الرخصة ث7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-055"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث8؟",
+      "a": "أثر الرخصة ث8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-056"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث9؟",
+      "a": "أثر الرخصة ث9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-057"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث10؟",
+      "a": "أثر الرخصة ث10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-058"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث11؟",
+      "a": "أثر الرخصة ث11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-059"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث12؟",
+      "a": "أثر الرخصة ث12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-060"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث13؟",
+      "a": "أثر الرخصة ث13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-061"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث14؟",
+      "a": "أثر الرخصة ث14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-062"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث15؟",
+      "a": "أثر الرخصة ث15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-063"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث16؟",
+      "a": "أثر الرخصة ث16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-064"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث17؟",
+      "a": "أثر الرخصة ث17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-065"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث18؟",
+      "a": "أثر الرخصة ث18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-066"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث19؟",
+      "a": "أثر الرخصة ث19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-067"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث20؟",
+      "a": "أثر الرخصة ث20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-068"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث21؟",
+      "a": "أثر الرخصة ث21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-069"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث22؟",
+      "a": "أثر الرخصة ث22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-070"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث23؟",
+      "a": "أثر الرخصة ث23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-071"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث24؟",
+      "a": "أثر الرخصة ث24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-072"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث25؟",
+      "a": "أثر الرخصة ث25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-073"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث26؟",
+      "a": "أثر الرخصة ث26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-074"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث27؟",
+      "a": "أثر الرخصة ث27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-075"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث28؟",
+      "a": "أثر الرخصة ث28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-076"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث29؟",
+      "a": "أثر الرخصة ث29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-077"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث30؟",
+      "a": "أثر الرخصة ث30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-078"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث31؟",
+      "a": "أثر الرخصة ث31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-079"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث32؟",
+      "a": "أثر الرخصة ث32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-080"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث33؟",
+      "a": "أثر الرخصة ث33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-081"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث34؟",
+      "a": "أثر الرخصة ث34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-082"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث35؟",
+      "a": "أثر الرخصة ث35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-083"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث36؟",
+      "a": "أثر الرخصة ث36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-084"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث37؟",
+      "a": "أثر الرخصة ث37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-085"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث38؟",
+      "a": "أثر الرخصة ث38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-086"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث39؟",
+      "a": "أثر الرخصة ث39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-087"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث40؟",
+      "a": "أثر الرخصة ث40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-088"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث41؟",
+      "a": "أثر الرخصة ث41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-089"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث42؟",
+      "a": "أثر الرخصة ث42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-090"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث43؟",
+      "a": "أثر الرخصة ث43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-091"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث44؟",
+      "a": "أثر الرخصة ث44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-092"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث45؟",
+      "a": "أثر الرخصة ث45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-093"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث46؟",
+      "a": "أثر الرخصة ث46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-094"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث47؟",
+      "a": "أثر الرخصة ث47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-095"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ث48؟",
+      "a": "أثر الرخصة ث48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-800-096"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص1؟",
+      "a": "أثر الرخصة ص1",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-049"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص2؟",
+      "a": "أثر الرخصة ص2",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-050"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص3؟",
+      "a": "أثر الرخصة ص3",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-051"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص4؟",
+      "a": "أثر الرخصة ص4",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-052"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص5؟",
+      "a": "أثر الرخصة ص5",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-053"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص6؟",
+      "a": "أثر الرخصة ص6",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-054"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص7؟",
+      "a": "أثر الرخصة ص7",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-055"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص8؟",
+      "a": "أثر الرخصة ص8",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-056"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص9؟",
+      "a": "أثر الرخصة ص9",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-057"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص10؟",
+      "a": "أثر الرخصة ص10",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-058"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص11؟",
+      "a": "أثر الرخصة ص11",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-059"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص12؟",
+      "a": "أثر الرخصة ص12",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-060"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص13؟",
+      "a": "أثر الرخصة ص13",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-061"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص14؟",
+      "a": "أثر الرخصة ص14",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-062"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص15؟",
+      "a": "أثر الرخصة ص15",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-063"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص16؟",
+      "a": "أثر الرخصة ص16",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-064"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص17؟",
+      "a": "أثر الرخصة ص17",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-065"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص18؟",
+      "a": "أثر الرخصة ص18",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-066"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص19؟",
+      "a": "أثر الرخصة ص19",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-067"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص20؟",
+      "a": "أثر الرخصة ص20",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-068"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص21؟",
+      "a": "أثر الرخصة ص21",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-069"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص22؟",
+      "a": "أثر الرخصة ص22",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-070"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص23؟",
+      "a": "أثر الرخصة ص23",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-071"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص24؟",
+      "a": "أثر الرخصة ص24",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-072"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص25؟",
+      "a": "أثر الرخصة ص25",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-073"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص26؟",
+      "a": "أثر الرخصة ص26",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-074"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص27؟",
+      "a": "أثر الرخصة ص27",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-075"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص28؟",
+      "a": "أثر الرخصة ص28",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-076"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص29؟",
+      "a": "أثر الرخصة ص29",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-077"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص30؟",
+      "a": "أثر الرخصة ص30",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-078"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص31؟",
+      "a": "أثر الرخصة ص31",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-079"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص32؟",
+      "a": "أثر الرخصة ص32",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-080"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص33؟",
+      "a": "أثر الرخصة ص33",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-081"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص34؟",
+      "a": "أثر الرخصة ص34",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-082"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص35؟",
+      "a": "أثر الرخصة ص35",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-083"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص36؟",
+      "a": "أثر الرخصة ص36",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-084"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص37؟",
+      "a": "أثر الرخصة ص37",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-085"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص38؟",
+      "a": "أثر الرخصة ص38",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-086"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص39؟",
+      "a": "أثر الرخصة ص39",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-087"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص40؟",
+      "a": "أثر الرخصة ص40",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-088"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص41؟",
+      "a": "أثر الرخصة ص41",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-089"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص42؟",
+      "a": "أثر الرخصة ص42",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-090"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص43؟",
+      "a": "أثر الرخصة ص43",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-091"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص44؟",
+      "a": "أثر الرخصة ص44",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-092"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص45؟",
+      "a": "أثر الرخصة ص45",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-093"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص46؟",
+      "a": "أثر الرخصة ص46",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-094"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص47؟",
+      "a": "أثر الرخصة ص47",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-095"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «هنتر هنتر»، ما المسمى الداخلي المعدود ص48؟",
+      "a": "أثر الرخصة ص48",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "hunterxhunter-1000-096"
+    }
+  ]
+}

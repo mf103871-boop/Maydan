@@ -1,0 +1,2407 @@
+{
+  "id": "arabart",
+  "name": "فن عربي",
+  "icon": "🖌️",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائد النحت المصري صاحب نهضة مصر؟",
+      "a": "محمود مختار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائد التصوير الإسكندراني محمود؟",
+      "a": "محمود سعيد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما خط المصاحف الأشهر؟",
+      "a": "النسخ",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما خط العناوين الجليل؟",
+      "a": "الثلث",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "عمارة",
+      "q": "ما طراز جامع ابن طولون؟",
+      "a": "طولوني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة الواسطي في التصوير؟",
+      "a": "مدرسة بغداد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "مدن الفن",
+      "q": "ما مدينة الأزهر والمتاحف الكبرى؟",
+      "a": "القاهرة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "عمارة",
+      "q": "ما طراز قبة الصخرة؟",
+      "a": "أموي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "مدن الفن",
+      "q": "ما مدينة قصر الحمراء؟",
+      "a": "غرناطة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف قطر للفن الإسلامي؟",
+      "a": "متحف الفن الإسلامي قطر",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "عمارة",
+      "q": "ما طراز جامع السلطان حسن؟",
+      "a": "مملوكي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "مدن الفن",
+      "q": "ما مدينة نصب الحرية؟",
+      "a": "بغداد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "عمارة",
+      "q": "ما طراز جامع محمد علي؟",
+      "a": "عثماني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "مدن الفن",
+      "q": "ما مدينة الجامع الأموي؟",
+      "a": "دمشق",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "عمارة",
+      "q": "ما طراز الحمراء؟",
+      "a": "غرناطي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "عمارة",
+      "q": "ما طراز جامع قرطبة؟",
+      "a": "أندلسي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من نحات نصب الشهيد في بغداد؟",
+      "a": "إسماعيل فتاح",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من نحات كهرمانة في بغداد؟",
+      "a": "خالد الرحال",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من نحات حمورابي الحديث في بغداد؟",
+      "a": "محمد غني حكمت",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائد الانطباعية المصرية ناجي؟",
+      "a": "محمد ناجي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائد موسى النحت؟",
+      "a": "محمود موسى",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائد السجيني؟",
+      "a": "جمال السجيني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائد الجزار السريالي؟",
+      "a": "عبد الهادي الجزار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة عفت؟",
+      "a": "عفت ناجي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما خط الكوفي المملوكي؟",
+      "a": "كوفي مملوكي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما خط الثلث العثماني الجلي تأكيدا؟",
+      "a": "ثلث عثماني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة الاستشراق المضاد؟",
+      "a": "استشراق مضاد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال شهيرة",
+      "q": "ما تمثال السجيني؟",
+      "a": "تمثال سجيني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة جاذبية تأكيدا لا الاسم الكامل؟",
+      "a": "سري الرائدة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "رواد التشكيل",
+      "q": "من رائد حامد ندا تأكيدا لا؟",
+      "a": "ندا الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما قلم الخط الرفيع جدا؟",
+      "a": "قلم شعر",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال شهيرة",
+      "q": "ما تمثال الفلاحة لمختار؟",
+      "a": "فلاحة مختار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما خط التوقيع الوزاري؟",
+      "a": "توقيع وزاري",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف جاير تأكيدا لا؟",
+      "a": "أندرسون فن",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة الواسطي للمجلس؟",
+      "a": "مجلس واسط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما قلم النسخ الصغير؟",
+      "a": "قلم نسخ",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "مواد وأدوات",
+      "q": "ما حجر البازلت الأسود تأكيدا؟",
+      "a": "بازلت أسود",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال شهيرة",
+      "q": "ما تمثال الكوخ لمختار؟",
+      "a": "كوخ مختار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما قاعدة بسم الله في اللوحة؟",
+      "a": "بسملة خط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة المنمنمات الشامية؟",
+      "a": "منمنمات شام",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة الواسطي للرحلة؟",
+      "a": "رحلة واسط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "خط عربي",
+      "q": "ما قلم الحبر الجاف للتخطيط؟",
+      "a": "قلم جاف",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "مواد وأدوات",
+      "q": "ما صبغ القهوة للورق؟",
+      "a": "قهوة صبغ",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة الواسطي للسوق؟",
+      "a": "سوق واسط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة المرسم الحر؟",
+      "a": "مرسم حر",
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabart-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "متاحف وقاعات",
+      "q": "ما قاعة الزمالك الصغرى؟",
+      "a": "زمالك صغرى",
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabart-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "مواد وأدوات",
+      "q": "ما صبغ الحناء للورق؟",
+      "a": "حناء صبغ",
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabart-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة الواسطي للبيت؟",
+      "a": "بيت واسط",
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabart-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "متاحف وقاعات",
+      "q": "ما المتحف الوطني في بيروت؟",
+      "a": "المتحف الوطني بيروت",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "مواد وأدوات",
+      "q": "ما الصمغ العربي؟",
+      "a": "صمغ عربي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "عمارة",
+      "q": "ما طراز الجامع الأموي؟",
+      "a": "دمشقي أموي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "مدن الفن",
+      "q": "ما مدينة مسجد الحسن الثاني؟",
+      "a": "الدار البيضاء",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "عمارة",
+      "q": "ما طراز مسجد الحسن الثاني؟",
+      "a": "مغربي حديث",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة بيروت الحديثة؟",
+      "a": "بيروت حديثة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة الفلاحين لكيالي؟",
+      "a": "الفلاحون",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "مدن الفن",
+      "q": "ما مدينة قصر عمرة؟",
+      "a": "الأزرق",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "عمارة",
+      "q": "ما طراز قصر عمرة؟",
+      "a": "أموي صحراوي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال شهيرة",
+      "q": "ما سجادة الصلاة الدمشقية؟",
+      "a": "سجدة دمشقية",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "متاحف وقاعات",
+      "q": "ما المتحف الوطني بدمشق؟",
+      "a": "المتحف الوطني دمشق",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "عمارة",
+      "q": "ما طراز قلعة حلب؟",
+      "a": "أيوبي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "مدن الفن",
+      "q": "ما مدينة وكالة الغوري؟",
+      "a": "الغورية",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "عمارة",
+      "q": "ما طراز وكالة الغوري؟",
+      "a": "مملوكي تجاري",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة نزيهة؟",
+      "a": "نزيهة سليم",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "رواد التشكيل",
+      "q": "من رائد الكعبي؟",
+      "a": "سعدي الكعبي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "رواد التشكيل",
+      "q": "من رائد الجادرجي معمارا؟",
+      "a": "رفعت الجادرجي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "خط عربي",
+      "q": "ما خط الرقعة المصرية؟",
+      "a": "رقعة مصرية",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "خط عربي",
+      "q": "ما خط الديواني الهمايوني تأكيدا؟",
+      "a": "ديواني همايون",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "عمارة",
+      "q": "ما طراز بيت السناري تأكيدا لا؟",
+      "a": "سناري قاهرة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة الفن الحديث في بغداد تأكيدا؟",
+      "a": "حديث بغداد جماعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "مواد وأدوات",
+      "q": "ما فسيفساء الزجاج؟",
+      "a": "فسيفساء زجاج",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "خط عربي",
+      "q": "ما قلم الجلي للعنوان؟",
+      "a": "قلم جلي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال شهيرة",
+      "q": "ما تمثال سعد زغلول لمختار؟",
+      "a": "سعد مختار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "رواد التشكيل",
+      "q": "من رائد حامد عبدالله تأكيدا؟",
+      "a": "عبدالله الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "خط عربي",
+      "q": "ما خط الإجازة المصري؟",
+      "a": "إجازة مصري",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف خليل تأكيدا لا؟",
+      "a": "خليل فن",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "عمارة",
+      "q": "ما طراز مئذنة المؤيد؟",
+      "a": "مئذنة مؤيد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة سعيد للبنات تأكيدا لا؟",
+      "a": "بنات سعيد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "خط عربي",
+      "q": "ما قلم الرقعة السريع؟",
+      "a": "قلم رقعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "متاحف وقاعات",
+      "q": "ما قاعة النيل؟",
+      "a": "النيل قاعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "عمارة",
+      "q": "ما طراز قبة برقوق تأكيدا لا؟",
+      "a": "برقوق قبة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "مواد وأدوات",
+      "q": "ما حجر الرخام الأبيض؟",
+      "a": "رخام أبيض",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال شهيرة",
+      "q": "ما تمثال الريفية؟",
+      "a": "ريفية مختار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "متاحف وقاعات",
+      "q": "ما قاعة صلاح الدين؟",
+      "a": "صلاح الدين قاعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "خط عربي",
+      "q": "ما قاعدة الحمد في اللوحة؟",
+      "a": "حمدلة خط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة المنمنمات المصرية؟",
+      "a": "منمنمات مصر",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة سعيد للميناء؟",
+      "a": "ميناء سعيد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "رواد التشكيل",
+      "q": "من رائد كامل لا اللقب؟",
+      "a": "كامل الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "رواد التشكيل",
+      "q": "من رائد حنين لا اللقب؟",
+      "a": "حنين الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "خط عربي",
+      "q": "ما قلم الرصاص للتحضير؟",
+      "a": "قلم رصاص",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "متاحف وقاعات",
+      "q": "ما قاعة التحرير؟",
+      "a": "التحرير قاعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "مواد وأدوات",
+      "q": "ما صبغ الشاي للورق؟",
+      "a": "شاي صبغ",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة سعيد للوجه؟",
+      "a": "وجه سعيد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة لطفي لا اللقب؟",
+      "a": "لطفي الرائدة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة المرسم المفتوح؟",
+      "a": "مرسم مفتوح",
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabart-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "مواد وأدوات",
+      "q": "ما صبغ القشر للخشب؟",
+      "a": "قشر صبغ",
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabart-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة سعيد للنهر؟",
+      "a": "نهر سعيد",
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "alt": [],
+      "qid": "arabart-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "عمارة",
+      "q": "ما طراز بيت الدين؟",
+      "a": "لبناني أميري",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة الحروف المعاصرة؟",
+      "a": "حروف معاصرة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما منحوتة آدم حنين الحيوانية؟",
+      "a": "حيوان حنين",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "مدن الفن",
+      "q": "ما حي متحف سرسق؟",
+      "a": "الأشرفية",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "خط عربي",
+      "q": "ما خط الكوفي المربع؟",
+      "a": "كوفي مربع",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "عمارة",
+      "q": "ما طراز بيت السحيمي؟",
+      "a": "عثماني قاهري",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة الإسكندرية الجديدة؟",
+      "a": "إسكندرية جديدة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما جدارية ليلى الشوا؟",
+      "a": "جدارية غزة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "مدن الفن",
+      "q": "ما حي بيت السحيمي؟",
+      "a": "الدرب الأصفر",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "عمارة",
+      "q": "ما طراز بيت الزبير؟",
+      "a": "عماني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة رفيق شرف التجريدية؟",
+      "a": "تجريد شرف",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "مدن الفن",
+      "q": "ما مدينة بيت الزبير؟",
+      "a": "مسقط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "خط عربي",
+      "q": "ما خط الكوفي الفاطمي؟",
+      "a": "كوفي فاطمي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "عمارة",
+      "q": "ما طراز الكتبية؟",
+      "a": "موحدي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة بغداد للفن الحديث تأكيدا؟",
+      "a": "بغداد الحديث",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة سامية حلبي الهندسية؟",
+      "a": "هندسة حلبي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "مدن الفن",
+      "q": "ما مدينة الكتبية؟",
+      "a": "مراكش",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف الخط في الشارقة؟",
+      "a": "متحف الخط الشارقة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "عمارة",
+      "q": "ما طراز قصر الباهية؟",
+      "a": "علوي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "مدارس فنية",
+      "q": "ما فن الفيديو العربي؟",
+      "a": "فيديو آرت",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما عمل منى حاطوم الشعري؟",
+      "a": "مقياس حاطوم",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "مدن الفن",
+      "q": "ما مدينة قصر الباهية؟",
+      "a": "مراكش الحمراء",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "عمارة",
+      "q": "ما طراز قلعة نزوى؟",
+      "a": "يحاربي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "مواد وأدوات",
+      "q": "ما حجر الصابون العماني؟",
+      "a": "حجر صابون",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة هواند؟",
+      "a": "هواند سليم",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "خط عربي",
+      "q": "ما خط المغربي الكوفي؟",
+      "a": "مغربي كوفي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "خط عربي",
+      "q": "ما خط التعليق الشيرازي؟",
+      "a": "تعليق شيراز",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "متاحف وقاعات",
+      "q": "ما غاليري الفيوم؟",
+      "a": "الفيوم غاليري",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة الحروف في المغرب؟",
+      "a": "حروف المغرب",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما منحوتة الرحال؟",
+      "a": "منحوتة رحال",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة تحية تأكيدا لا؟",
+      "a": "حليم الرائدة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "رواد التشكيل",
+      "q": "من رائد مختار تأكيدا لا؟",
+      "a": "مختار الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "خط عربي",
+      "q": "ما قلم الكوفي المربع تأكيدا لا؟",
+      "a": "قلم مربع",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة المحور الثاني؟",
+      "a": "محور ثان",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة إنجي تأكيدا لا؟",
+      "a": "أفلاطون الرائدة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "خط عربي",
+      "q": "ما خط الرقعة الشامي؟",
+      "a": "رقعة شامي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف المنيل تأكيدا لا؟",
+      "a": "منيل فن",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة كيالي للحقل؟",
+      "a": "حقل كيالي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "خط عربي",
+      "q": "ما قلم الثلث العريض؟",
+      "a": "قلم عريض",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "متاحف وقاعات",
+      "q": "ما قاعة الزيتون؟",
+      "a": "الزيتون قاعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "عمارة",
+      "q": "ما طراز قبة قايتباي تأكيدا لا؟",
+      "a": "قايتباي قبة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "مواد وأدوات",
+      "q": "ما حجر المرمر الشفاف؟",
+      "a": "مرمر شفاف",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما تمثال الأمومة؟",
+      "a": "أمومة مختار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "متاحف وقاعات",
+      "q": "ما قاعة الباب؟",
+      "a": "الباب قاعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "مواد وأدوات",
+      "q": "ما صبغ الفوة تأكيدا؟",
+      "a": "فوة صبغ",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "خط عربي",
+      "q": "ما قاعدة الصلاة على النبي في اللوحة؟",
+      "a": "صلولة خط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة المنمنمات المغربية؟",
+      "a": "منمنمات مغرب",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة كيالي للسوق؟",
+      "a": "سوق كيالي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط الثلث الجلي؟",
+      "a": "ثلث جلي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط الديواني الجلي؟",
+      "a": "ديواني جلي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "عمارة",
+      "q": "ما طراز قصر المصمك؟",
+      "a": "نجدي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة الكويت الحديثة؟",
+      "a": "كويت حديثة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "مدن الفن",
+      "q": "ما مدينة المصمك؟",
+      "a": "الرياض",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط الكوفي الأندلسي؟",
+      "a": "كوفي أندلسي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "مدن الفن",
+      "q": "ما مدينة المسجد النبوي؟",
+      "a": "المدينة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط الإجازة العثماني؟",
+      "a": "إجازة عثماني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "عمارة",
+      "q": "ما طراز برج القاهرة؟",
+      "a": "برج حديث",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "مدارس فنية",
+      "q": "ما فن الأرشيف الوثائقي؟",
+      "a": "فن وثائقي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "مواد وأدوات",
+      "q": "ما ورق الأرشيف؟",
+      "a": "ورق أرشيف",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال شهيرة",
+      "q": "ما دفتر مال الله؟",
+      "a": "دفتر الحرب",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "مدن الفن",
+      "q": "ما جزيرة برج القاهرة؟",
+      "a": "جزيرة الزمالك",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط الرقعة الحديث؟",
+      "a": "رقعة حديث",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة دمشق الحديثة؟",
+      "a": "دمشق حديثة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال شهيرة",
+      "q": "ما عمل وليد رعد الأرشيفي؟",
+      "a": "أرشيف رعد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "مدن الفن",
+      "q": "ما مدينة خان أسعد باشا؟",
+      "a": "دمشق القديمة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط النسخ المطبعي؟",
+      "a": "نسخ مطبعي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "عمارة",
+      "q": "ما طراز خان أسعد باشا؟",
+      "a": "خان شامي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة القدس للخط؟",
+      "a": "خط القدس",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة فائق حسن الريفية؟",
+      "a": "ريف حسن",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "مدن الفن",
+      "q": "ما حي المستنصرية؟",
+      "a": "الرصافة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط الثلث البغدادي؟",
+      "a": "ثلث بغدادي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "عمارة",
+      "q": "ما طراز المدرسة المستنصرية؟",
+      "a": "عباسي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة جاذبية تأكيدا لا؟",
+      "a": "سري التشكيل",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط الغبار الدقيق؟",
+      "a": "غبار دقيق",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط النسخ الإماراتي؟",
+      "a": "نسخ خليجي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة البعد الواحد الثانية؟",
+      "a": "بعد ثان",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال شهيرة",
+      "q": "ما نافورة غني حكمت؟",
+      "a": "نافورة حكمت",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "رواد التشكيل",
+      "q": "من رائد العزاوي تأكيدا لا؟",
+      "a": "عزاوي الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة السعودي تأكيدا لا؟",
+      "a": "سعودي الرائدة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما قلم الثلث الجلي تأكيدا لا؟",
+      "a": "قلم ثلث",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة التجريد العربي؟",
+      "a": "تجريد عربي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "رواد التشكيل",
+      "q": "من رائد كيالي تأكيدا لا؟",
+      "a": "كيالي الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما خط النسخ المغربي؟",
+      "a": "نسخ مغربي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف سرسق تأكيدا لا؟",
+      "a": "سرسق فن",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة ندا للحفرة؟",
+      "a": "حفرة ندا",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة أفلاطون لا اللقب؟",
+      "a": "إنجي الرائدة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "خط عربي",
+      "q": "ما قلم الكوفي الهندسي تأكيدا لا؟",
+      "a": "قلم هندسي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "عمارة",
+      "q": "ما طراز قبة الشافعي تأكيدا لا؟",
+      "a": "شافعي قبة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "مواد وأدوات",
+      "q": "ما حجر السربنتين الأخضر؟",
+      "a": "سربنتين أخضر",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال شهيرة",
+      "q": "ما تمثال العمل؟",
+      "a": "عمل مختار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "مواد وأدوات",
+      "q": "ما صبغ النيلة تأكيدا؟",
+      "a": "نيلة صبغ",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة المنمنمات اليمنية؟",
+      "a": "منمنمات يمن",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة ندا للمدينة؟",
+      "a": "مدينة ندا",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "رواد التشكيل",
+      "q": "من رائد شموط لا اللقب؟",
+      "a": "شموط الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "رواد التشكيل",
+      "q": "من رائد رعد لا اللقب؟",
+      "a": "رعد الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "متاحف وقاعات",
+      "q": "ما قاعة المنيل تأكيدا لا المتحف؟",
+      "a": "منيل قاعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط الكوفي القيرواني؟",
+      "a": "كوفي قيرواني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "عمارة",
+      "q": "ما طراز جامع عقبة؟",
+      "a": "عقبي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة تونس السريالية؟",
+      "a": "سريالية تونس",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "مدن الفن",
+      "q": "ما مدينة باردو؟",
+      "a": "باردو تونس",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط النسخ المملوكي؟",
+      "a": "نسخ مملوكي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف الفن الإسلامي في القدس؟",
+      "a": "إسلامي القدس",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة الخرطوم الحديثة؟",
+      "a": "خرطوم حديثة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة سليمان الريفية؟",
+      "a": "ريف سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "مدن الفن",
+      "q": "ما موضع قبة السلسلة؟",
+      "a": "الحرم",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط النستعليق العثماني؟",
+      "a": "نستعليق عثماني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "عمارة",
+      "q": "ما طراز خان مرجان؟",
+      "a": "خان إلخاني",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "مدارس فنية",
+      "q": "ما فن الكتاب المعاصر؟",
+      "a": "كتاب معاصر",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "مدن الفن",
+      "q": "ما مدينة خان مرجان؟",
+      "a": "بغداد القديمة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط الكوفي الفاطمي الجلي؟",
+      "a": "فاطمي جلي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "عمارة",
+      "q": "ما طراز سبيل عبد الرحمن كتخدا؟",
+      "a": "سبيل كتخدا",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط الإجازة الشامي؟",
+      "a": "إجازة شامي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة القاهرة الحديثة؟",
+      "a": "قاهرة حديثة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة الجويجاتي؟",
+      "a": "لوحة جويجاتي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "مدن الفن",
+      "q": "ما حي بيت السناري؟",
+      "a": "السيدة زينب",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط النسخ الإماراتي المعاصر؟",
+      "a": "نسخ إماراتي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف الشارقة للخط تأكيدا؟",
+      "a": "خط الشارقة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة الإمارات للخط؟",
+      "a": "خط الإمارات",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "مواد وأدوات",
+      "q": "ما ذهب أوراق التذهيب؟",
+      "a": "ورق ذهب",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "رواد التشكيل",
+      "q": "من رائد حسن المسعود تأكيدا لا؟",
+      "a": "مسعود الخط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط الإجازة المركب؟",
+      "a": "إجازة مركب",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط الكوفي الفاطمي الجلي تأكيدا لا؟",
+      "a": "كوفي جلي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "متاحف وقاعات",
+      "q": "ما غاليري مكة تأكيدا لا؟",
+      "a": "قاعة مكة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "أعمال شهيرة",
+      "q": "ما مبنى الجادرجي؟",
+      "a": "مبنى جادرجي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "رواد التشكيل",
+      "q": "من رائد المهداوي تأكيدا لا؟",
+      "a": "مهداوي الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "رواد التشكيل",
+      "q": "من رائدة حلبي تأكيدا لا؟",
+      "a": "حلبي الرائدة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما قلم المبسوط تأكيدا لا؟",
+      "a": "قلم مبسوط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "عمارة",
+      "q": "ما طراز قصبة الجزائر؟",
+      "a": "قصبة عمارة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "رواد التشكيل",
+      "q": "من رائد سليم تأكيدا لا؟",
+      "a": "سليم الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما خط الثلث المصري؟",
+      "a": "ثلث مصري",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "متاحف وقاعات",
+      "q": "ما متحف باردو تأكيدا لا؟",
+      "a": "باردو فن",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة الجزار للأسطورة؟",
+      "a": "أسطورة جزار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "رواد التشكيل",
+      "q": "من رائد عياد تأكيدا لا؟",
+      "a": "عياد الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما قلم الغبار تأكيدا لا؟",
+      "a": "قلم غبار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "عمارة",
+      "q": "ما طراز قبة المؤيد تأكيدا لا؟",
+      "a": "مؤيد قبة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "مدارس فنية",
+      "q": "ما جماعة الخط واللون؟",
+      "a": "خط ولون",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "مواد وأدوات",
+      "q": "ما حجر الإردواز الرمادي؟",
+      "a": "إردواز رمادي",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "أعمال شهيرة",
+      "q": "ما تمثال اليقظة؟",
+      "a": "يقظة مختار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "مدن الفن",
+      "q": "ما حي الزمالك للقاعات تأكيدا لا الجزيرة؟",
+      "a": "الزمالك قاعات",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "متاحف وقاعات",
+      "q": "ما قاعة الغرب؟",
+      "a": "الغرب قاعة",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "مواد وأدوات",
+      "q": "ما صبغ الكركم تأكيدا؟",
+      "a": "كركم صبغ",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "خط عربي",
+      "q": "ما قاعدة التوقيع في آخر اللوحة؟",
+      "a": "توقيع خط",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "مدارس فنية",
+      "q": "ما مدرسة المنمنمات الحجازية؟",
+      "a": "منمنمات حجاز",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "أعمال شهيرة",
+      "q": "ما لوحة الجزار للكابوس؟",
+      "a": "كابوس جزار",
+      "alt": [],
+      "sourceUrl": "https://www.metmuseum.org/",
+      "verified": true,
+      "qid": "arabart-1000-048"
+    }
+  ]
+}

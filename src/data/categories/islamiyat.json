@@ -1,0 +1,2407 @@
+{
+  "id": "islamiyat",
+  "name": "إسلاميات",
+  "icon": "☪️",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما أول ركن من أركان الإسلام اسما؟",
+      "a": "الشهادة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الركن الثاني اسما؟",
+      "a": "الصلاة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الركن الثالث اسما؟",
+      "a": "الزكاة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الركن الرابع اسما؟",
+      "a": "الصوم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الركن الخامس اسما؟",
+      "a": "الحج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من أول الأنبياء اسما في سلسلة النسب الشهيرة؟",
+      "a": "آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي الطوفان اسما؟",
+      "a": "نوح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من خليل الرحمن اسما؟",
+      "a": "إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي بني إسرائيل الكليم اسما؟",
+      "a": "موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي الإنجيل اسما؟",
+      "a": "عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "كتب ومصاحف",
+      "q": "ما الكتاب المنزل على محمد؟",
+      "a": "القرآن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "كتب ومصاحف",
+      "q": "ما الكتاب المنسوب إلى موسى اسما؟",
+      "a": "التوراة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "كتب ومصاحف",
+      "q": "ما الكتاب المنسوب إلى عيسى اسما؟",
+      "a": "الإنجيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من أول الخلفاء الراشدين اسما؟",
+      "a": "أبو بكر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من ثاني الخلفاء الراشدين اسما؟",
+      "a": "عمر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من ثالث الخلفاء الراشدين اسما؟",
+      "a": "عثمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من رابع الخلفاء الراشدين اسما؟",
+      "a": "علي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أركان الإسلام عددا؟",
+      "a": "خمسة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أركان الإيمان في النص الشهير عددا؟",
+      "a": "ستة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة المسجد الحرام؟",
+      "a": "مكة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي الزبور اسما؟",
+      "a": "داود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي الحكمة ابن داود اسما؟",
+      "a": "سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من مؤذن الرسول اسما؟",
+      "a": "بلال",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "أعداد وتقاويم",
+      "q": "كم الصلوات المفروضة عددا في اليوم؟",
+      "a": "خمس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم الشهادتين مجتمعتين؟",
+      "a": "الشهادتان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من كاتب الوحي زيد؟",
+      "a": "زيد بن ثابت",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أشهر الحج المعلومات شهرة ثلاثة؟",
+      "a": "ثلاثة أشهر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن تاريخية",
+      "q": "ما شعب أبي طالب؟",
+      "a": "الشعب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من أمين الأمة اسما؟",
+      "a": "أبو عبيدة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من فاتح القادسية اسما؟",
+      "a": "سعد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من تاجر العشرة اسما؟",
+      "a": "ابن عوف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أبواب المسجد الحرام الكبرى شهرة؟",
+      "a": "أبواب الحرم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي عثمان بن طلحة اسما؟",
+      "a": "عثمان طلحة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التأمين تأكيدا لا؟",
+      "a": "تأمين ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم الركن الأسود موضعا؟",
+      "a": "ركن أسود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدد أستار الكعبة السنوية اسما؟",
+      "a": "كسوة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من صاحب القصص ذي القرنين لقبا؟",
+      "a": "ذو القرنين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التسبيح في الركوع اسما؟",
+      "a": "تسبيح ركوع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "كتب ومصاحف",
+      "q": "ما كتاب الشفا تأكيدا لا؟",
+      "a": "شفا عياض",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد ذي الحليفة؟",
+      "a": "الحليفة مسجد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم الحمدلة تأكيدا لا؟",
+      "a": "حمدلة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم السعي تأكيدا لا الاسم السابق؟",
+      "a": "سعي الصفا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدد أشواط السعي اسما؟",
+      "a": "سبعة سعي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء ورسل",
+      "q": "من صاحب القصص ذي الكفل تأكيدا لا؟",
+      "a": "كفل ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة يلملم تأكيدا لا؟",
+      "a": "يلملم ميقات",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "كتب ومصاحف",
+      "q": "ما مصنف الدر في التفسير؟",
+      "a": "در سيوطي",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الدار القرشية في أخبار الفتح اسما؟",
+      "a": "حكيم",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن تاريخية",
+      "q": "ما الثنية العليا عند دخول مكة من كداء؟",
+      "a": "عليا مكة",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن تاريخية",
+      "q": "ما خندق المدينة؟",
+      "a": "الخندق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "أعداد وتقاويم",
+      "q": "كم ركعات الظهر عددا؟",
+      "a": "أربع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من أم المؤمنين زينب بنت خزيمة اسما؟",
+      "a": "زينب خزيمة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "أعداد وتقاويم",
+      "q": "كم ركعات المغرب عددا؟",
+      "a": "ثلاث",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "أعداد وتقاويم",
+      "q": "كم ركعات الفجر عددا؟",
+      "a": "اثنتان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "أعداد وتقاويم",
+      "q": "كم ركعات العشاء عددا؟",
+      "a": "أربع عشاء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب السر اسما؟",
+      "a": "حذيفة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من معلم اليمن اسما؟",
+      "a": "معاذ",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من أشعري القضاء اسما؟",
+      "a": "أبو موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من مكثر الرواية من دوس اسما؟",
+      "a": "أبو هريرة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أميال المدينة إلى قباء تقريبا على المشهور؟",
+      "a": "ثلاثة أميال",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 1 من الصحابة؟",
+      "a": "طلحة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 2 من الصحابة؟",
+      "a": "المقداد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 3 من الصحابة؟",
+      "a": "الزبير بن العوام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 4 من الصحابة؟",
+      "a": "سعد بن معاذ",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 5 من الصحابة؟",
+      "a": "سعد بن عبادة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 6 من الصحابة؟",
+      "a": "أسيد بن حضير",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 7 من الصحابة؟",
+      "a": "عباد بن بشر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "كتب ومصاحف",
+      "q": "ما كتاب دلائل النبوة لأبي نعيم؟",
+      "a": "دلائل أبي نعيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التسبيح في السجود اسما؟",
+      "a": "تسبيح سجود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم المبيت بمنى؟",
+      "a": "مبيت منى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التحميد بعد الرفع اسما؟",
+      "a": "تحميد رفع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم النحر بمنى؟",
+      "a": "نحر منى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم الاستعاذة تأكيدا لا؟",
+      "a": "استعاذة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع الحمراء تأكيدا لا؟",
+      "a": "حمراء طريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد الشجرة تأكيدا لا؟",
+      "a": "شجرة ذو",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد الجن تأكيدا لا؟",
+      "a": "جن مكة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم الحوقلة تأكيدا لا؟",
+      "a": "حوقلة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم الاستغفار تأكيدا لا؟",
+      "a": "استغفار ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم الطواف تأكيدا لا الاسم السابق؟",
+      "a": "طواف بيت",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم الوقوف تأكيدا لا؟",
+      "a": "وقوف عرفة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدد أشواط الطواف اسما؟",
+      "a": "سبعة طواف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدد الجمرات الثلاث اسما؟",
+      "a": "ثلاث جمرات",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء ورسل",
+      "q": "من صاحب القصص طالوت تأكيدا لا؟",
+      "a": "طالوت ملك",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء ورسل",
+      "q": "من صاحب القصص جالوت تأكيدا لا؟",
+      "a": "جالوت جبار",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن تاريخية",
+      "q": "ما ميقات ذات عرق موضعا؟",
+      "a": "عرق ميقات",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "كتب ومصاحف",
+      "q": "ما كتاب الدر المنثور تأكيدا لا؟",
+      "a": "سيوطي در",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد البيعة تأكيدا لا؟",
+      "a": "بيعة عقبة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التحميد تأكيدا لا؟",
+      "a": "تحميد ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم الجمرات تأكيدا لا؟",
+      "a": "جمار منى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدد أيام النحر اسما؟",
+      "a": "أيام نحر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء ورسل",
+      "q": "من صاحب القصص لقمان تأكيدا لا؟",
+      "a": "لقمان حكيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة وادي العقيق تأكيدا لا؟",
+      "a": "عقيق مدينة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما ميقات ذات عرق تأكيدا لا؟",
+      "a": "عرق ذات",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن تاريخية",
+      "q": "ما الثنية السفلى عند خروج مكة؟",
+      "a": "سفلى مكة",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما ميقات أهل نجد اسما للموضع؟",
+      "a": "نجد ميقات",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن تاريخية",
+      "q": "ما الممر الصخري الأسفل لخروج البلد؟",
+      "a": "ممر أسفل",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما ميقات نجد للقادم برا؟",
+      "a": "ميق نجد",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من أم المؤمنين زينب بنت جحش اسما؟",
+      "a": "زينب جحش",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أبواب الإيمان في النص العددي الشهير تقريبا؟",
+      "a": "بضع وسبعون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد القبلتين تأكيدا لا؟",
+      "a": "قبلتين ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من كاتب الوحي عبد الله بن مسعود؟",
+      "a": "ابن مسعود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما سنن أبي داود اسما؟",
+      "a": "أبو داود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع فتح مكة؟",
+      "a": "موضع الفتح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "أعداد وتقاويم",
+      "q": "كم سورا في المصحف عددا؟",
+      "a": "أربع عشرة ومائة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع الطائف حصارا؟",
+      "a": "حصار الطائف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "أعداد وتقاويم",
+      "q": "كم جزءا في المصحف عددا؟",
+      "a": "ثلاثون جزءا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من أم أنس بن مالك؟",
+      "a": "أم سليم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من أم عبد الله بن الزبير؟",
+      "a": "أسماء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "أعداد وتقاويم",
+      "q": "كم حزبا في المصحف عددا؟",
+      "a": "ستون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد الجمعة تأكيدا لا؟",
+      "a": "جمعة العوالي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من جندب الغفاري اسما؟",
+      "a": "أبو ذر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من العشرة سعيد اسما؟",
+      "a": "سعيد بن زيد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد الإجابة تأكيدا؟",
+      "a": "إجابة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد بني دينار تأكيدا لا؟",
+      "a": "دينار ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أميال مكة إلى عرفة تقريبا على المشهور؟",
+      "a": "ستة فراسخ",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 41 من الصحابة؟",
+      "a": "سهيل بن عمرو",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 42 من الصحابة؟",
+      "a": "أبو سفيان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 43 من الصحابة؟",
+      "a": "هند",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 44 من الصحابة؟",
+      "a": "عكرمة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 45 من الصحابة؟",
+      "a": "صفوان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صاحب الأثر المعدود في الطبقة رقم 46 من الصحابة؟",
+      "a": "عمير بن وهب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 1 على طريق الحج الشمالي؟",
+      "a": "ملل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 2 على طريق الحج الشمالي؟",
+      "a": "الروحاء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 3 على طريق الحج الشمالي؟",
+      "a": "السيالة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 4 على طريق الحج الشمالي؟",
+      "a": "العرج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 5 على طريق الحج الشمالي؟",
+      "a": "الأبواء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 6 على طريق الحج الشمالي؟",
+      "a": "ودان طريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 7 على طريق الحج الشمالي؟",
+      "a": "الجحفة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 8 على طريق الحج الشمالي؟",
+      "a": "قديد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 9 على طريق الحج الشمالي؟",
+      "a": "عسفان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن تاريخية",
+      "q": "ما الموضع المعدود رقم 10 على طريق الحج الشمالي؟",
+      "a": "مر الظهران",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 1 في كتب الرواية؟",
+      "a": "السنن الكبرى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 2 في كتب الرواية؟",
+      "a": "المعجم الكبير",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 3 في كتب الرواية؟",
+      "a": "المستدرك",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 4 في كتب الرواية؟",
+      "a": "شرح معاني",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 5 في كتب الرواية؟",
+      "a": "معالم السنن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 6 في كتب الرواية؟",
+      "a": "عارضة الأحوذي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 7 في كتب الرواية؟",
+      "a": "فتح الباري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم البسملة تأكيدا لا؟",
+      "a": "بسملة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم الرمي أيام التشريق؟",
+      "a": "رمي تشريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما كتاب زاد المعاد تأكيدا لا؟",
+      "a": "معاد ابن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التسبيح تأكيدا لا؟",
+      "a": "تسبيح ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم المزدلفة تأكيدا لا؟",
+      "a": "مزدلفة جمع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدّ سواري الظلال في العد القديم؟",
+      "a": "سواري ظلال",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "كتب ومصاحف",
+      "q": "ما مصنف العارضة على جامع الترمذي؟",
+      "a": "عارضة أحوذي",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "أعداد وتقاويم",
+      "q": "كم آية الفاتحة عددا على العد الكوفي الشهير؟",
+      "a": "سبع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي يونس تأكيدا لا؟",
+      "a": "يونس الحوت",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي أيوب تأكيدا لا؟",
+      "a": "أيوب الصبر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "أعداد وتقاويم",
+      "q": "كم سجدة التلاوة في المصحف عددا على المشهور؟",
+      "a": "أربع عشرة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "كتب ومصاحف",
+      "q": "ما تفسير الزمخشري اسما؟",
+      "a": "الكشاف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "كتب ومصاحف",
+      "q": "ما دلائل النبوة للبيهقي اسما؟",
+      "a": "دلائل البيهقي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "أعداد وتقاويم",
+      "q": "كم يوما في ذي الحجة حتى النحر شهرة؟",
+      "a": "عشرة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي شعيب تأكيدا لا؟",
+      "a": "شعيب مدين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي صالح تأكيدا لا؟",
+      "a": "صالح ثمود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أشهر حرم عددا؟",
+      "a": "أربعة حرم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم الندوة دارا؟",
+      "a": "دار الندوة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "خلفاء وشخصيات",
+      "q": "من عمار اسما تأكيدا لا؟",
+      "a": "عمار ياسر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "خلفاء وشخصيات",
+      "q": "من خباب اسما تأكيدا لا؟",
+      "a": "خباب الأرت",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "خلفاء وشخصيات",
+      "q": "من صهيب اسما تأكيدا لا؟",
+      "a": "صهيب رومي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "خلفاء وشخصيات",
+      "q": "من سلمان اسما تأكيدا لا؟",
+      "a": "سلمان فارس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "كتب ومصاحف",
+      "q": "ما كتاب المعارف تأكيدا لا؟",
+      "a": "قتيبة معارف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "كتب ومصاحف",
+      "q": "ما كتاب المعارف ثالثا لا؟",
+      "a": "كتاب قتيبة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد بني سالم تأكيدا لا؟",
+      "a": "سالم ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد بني ظفر تأكيدا لا؟",
+      "a": "ظفر ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم جلسة الاستراحة اسما؟",
+      "a": "جلسة استراحة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "أعداد وتقاويم",
+      "q": "كم درجة الكعبة الخارجية تقريبا في بعض العد؟",
+      "a": "درجات الكعبة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 8 في كتب الرواية؟",
+      "a": "عمدة القاري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 9 في كتب الرواية؟",
+      "a": "إرشاد الساري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "كتب ومصاحف",
+      "q": "ما المصنف المعدود رقم 10 في كتب الرواية؟",
+      "a": "النهاية ابن أثير",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما المصلى المعدود رقم 1 في آثار المدينة؟",
+      "a": "مسجد الراية ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما المصلى المعدود رقم 2 في آثار المدينة؟",
+      "a": "مسجد الغمامة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما المصلى المعدود رقم 3 في آثار المدينة؟",
+      "a": "مسجد الإجابة ثالث",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما المصلى المعدود رقم 4 في آثار المدينة؟",
+      "a": "مسجد السقيا ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما المصلى المعدود رقم 5 في آثار المدينة؟",
+      "a": "مسجد الفتح ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الاسم المعدود رقم 1 في هيئات الجلوس؟",
+      "a": "التورك",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الاسم المعدود رقم 2 في هيئات الجلوس؟",
+      "a": "الافتراش",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الاسم المعدود رقم 3 في هيئات الجلوس؟",
+      "a": "الرفع الأول",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الاسم المعدود رقم 4 في هيئات الجلوس؟",
+      "a": "الرفع الثاني",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومصطلحات",
+      "q": "ما الاسم المعدود رقم 5 في هيئات الجلوس؟",
+      "a": "جلسة الوسطى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "شعائر بأسمائها",
+      "q": "ما الشعيرة المعدودة رقم 1 في مناسك اليوم؟",
+      "a": "طواف القدوم ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "شعائر بأسمائها",
+      "q": "ما الشعيرة المعدودة رقم 2 في مناسك اليوم؟",
+      "a": "سعي القدوم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "شعائر بأسمائها",
+      "q": "ما الشعيرة المعدودة رقم 3 في مناسك اليوم؟",
+      "a": "رمي الصغرى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "شعائر بأسمائها",
+      "q": "ما الشعيرة المعدودة رقم 4 في مناسك اليوم؟",
+      "a": "رمي الوسطى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "شعائر بأسمائها",
+      "q": "ما الشعيرة المعدودة رقم 5 في مناسك اليوم؟",
+      "a": "حلق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "شعائر بأسمائها",
+      "q": "ما الشعيرة المعدودة رقم 6 في مناسك اليوم؟",
+      "a": "تقصير",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدد أبواب المسجد النبوي القديمة الشهيرة؟",
+      "a": "أبواب قديمة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء ورسل",
+      "q": "من صاحب القصص المعدود بعد يوشع؟",
+      "a": "كالب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء ورسل",
+      "q": "من صاحب القصص التالي ليوشع في العد؟",
+      "a": "يشوع ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي سهل بن حنيف اسما؟",
+      "a": "سهل حنيف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن تاريخية",
+      "q": "ما جبل أبي قبيس؟",
+      "a": "أبو قبيس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد الميقات في ذي الحليفة؟",
+      "a": "ميقات الحليفة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التهليل تأكيدا لا؟",
+      "a": "تهليل ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي أبو الهيثم التيهان تأكيدا لا؟",
+      "a": "تيهان أنصاري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي إدريس تأكيدا لا؟",
+      "a": "إدريس الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي إلياس تأكيدا لا؟",
+      "a": "إلياس الرائد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "أعداد وتقاويم",
+      "q": "كم نقباء العقبة الثانية عددا على المشهور؟",
+      "a": "اثنا عشر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي هود تأكيدا لا؟",
+      "a": "هود عاد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي لوط تأكيدا لا؟",
+      "a": "لوط المؤتفكة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "أعداد وتقاويم",
+      "q": "كم مهاجري الحبشة في الهجرة الأولى تقريبا على المشهور؟",
+      "a": "أحد عشر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التكبير المقيد اسما؟",
+      "a": "تكبير مقيد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من بلال تأكيدا لا؟",
+      "a": "بلال الحبشي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "أعداد وتقاويم",
+      "q": "كم أهل العقبة الأولى عددا على المشهور؟",
+      "a": "اثنا عشر بيعة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم الجمرة الكبرى؟",
+      "a": "جمرة العقبة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي يوسف تأكيدا لا؟",
+      "a": "يوسف مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء ورسل",
+      "q": "من نبي يعقوب تأكيدا لا؟",
+      "a": "يعقوب إسرائيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من مصعب تأكيدا لا؟",
+      "a": "مصعب المدينة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "أعداد وتقاويم",
+      "q": "كم يوما غزوة بدر زمنا تقريبا؟",
+      "a": "يوم بدر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع ذات السلاسل تأكيدا؟",
+      "a": "موضع السلاسل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد بني بياضة تأكيدا لا؟",
+      "a": "بياضة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد بني الحبلى تأكيدا لا؟",
+      "a": "حبلى ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم جلوس التشهد الأخير؟",
+      "a": "تشهد أخير",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم المقام؟",
+      "a": "مقام إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "أعداد وتقاويم",
+      "q": "كم طوافا في الأسبوع الواحد اسما للسبعة؟",
+      "a": "أسبوع طواف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي أسيد تأكيدا لا؟",
+      "a": "أسيد حضير",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي عباد تأكيدا لا؟",
+      "a": "عباد بشر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي محمد مسلمة تأكيدا لا؟",
+      "a": "مسلمة مدني",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي أبو أيوب تأكيدا لا؟",
+      "a": "أيوب أنصاري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي أبو طلحة تأكيدا لا؟",
+      "a": "طلحة أنصاري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي أبو الدرداء تأكيدا لا؟",
+      "a": "درداء شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي أبو سعيد تأكيدا لا؟",
+      "a": "سعيد خدري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي أبو قتادة تأكيدا لا؟",
+      "a": "قتادة أنصاري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي كعب مالك تأكيدا لا؟",
+      "a": "مالك كعب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "خلفاء وشخصيات",
+      "q": "من الصحابي حسان تأكيدا لا؟",
+      "a": "حسان شاعر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن تاريخية",
+      "q": "ما ثنية الوداع تأكيدا لا؟",
+      "a": "وداع ثنية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع ملل؟",
+      "a": "ملل طريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع الروحاء؟",
+      "a": "روحاء طريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع السيالة؟",
+      "a": "سيالة طريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع العرج؟",
+      "a": "عرج طريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع الأبواء؟",
+      "a": "أبواء طريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "كتب ومصاحف",
+      "q": "ما كتاب النهاية لابن أثير؟",
+      "a": "نهاية أثير",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد التنعيم تأكيدا لا؟",
+      "a": "تنعيم مسجد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد الجعرانة تأكيدا لا؟",
+      "a": "جعرانة مسجد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم التورك تأكيدا لا؟",
+      "a": "تورك ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "أركان ومصطلحات",
+      "q": "ما اسم الافتراش تأكيدا لا؟",
+      "a": "افتراش ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم الحلق تأكيدا لا؟",
+      "a": "حلق نسك",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "شعائر بأسمائها",
+      "q": "ما اسم أخذ بعض الشعر في النسك؟",
+      "a": "تقصير نسك",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدد درجات المنبر القديم تأكيدا؟",
+      "a": "منبر ثلاث",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء ورسل",
+      "q": "من فتى يوشع في القصص اسما؟",
+      "a": "كالب فتى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن تاريخية",
+      "q": "ما موضع دومة تأكيدا لا؟",
+      "a": "دومة طريق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "كتب ومصاحف",
+      "q": "ما كتاب الثقات تأكيدا لا؟",
+      "a": "ثقات ابن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "islamiyat-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "أعداد وتقاويم",
+      "q": "ما عدّ أبواب السلام في العد القديم؟",
+      "a": "أبواب سلام",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "islamiyat-1000-048"
+    }
+  ]
+}

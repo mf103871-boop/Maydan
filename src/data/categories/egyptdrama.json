@@ -1,0 +1,2408 @@
+{
+  "id": "egyptdrama",
+  "name": "دراما مصرية",
+  "icon": "🇪🇬",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «جبل الحلال»، من عميد الجبل؟",
+      "a": "عميد الحلال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «سجن النسا»، من المديرة؟",
+      "a": "مديرة السجن",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «سجن النسا»، ما العنبر؟",
+      "a": "عنبر النسا",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «جبل الحلال»، ما النزاع؟",
+      "a": "نزاع الجبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «ضد مجهول»، ما التحقيق؟",
+      "a": "تحقيق المجهول",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «جراند أوتيل»، ما السرقة؟",
+      "a": "سرقة الجناح",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ونوس»، من الند؟",
+      "a": "ند ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «البرنس»، من الزوجة؟",
+      "a": "زوجة البرنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «جبل الحلال»، من الابن؟",
+      "a": "ابن الحلال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ملوك الجدعنة»، من الرفيق؟",
+      "a": "رفيق الجدعنة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «عروس بيروت»، من الخطيب؟",
+      "a": "خطيب بيروت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «سجن النسا»، من الزميلة؟",
+      "a": "زميلة العنبر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «جبل الحلال»، ما النداء؟",
+      "a": "يا عميد الجبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ونوس»، ما النداء؟",
+      "a": "يا ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «جراند أوتيل»، ما النداء؟",
+      "a": "يا مدير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «ونوس»، ما الملف؟",
+      "a": "ملف ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «البرنس»، ما الخاتم؟",
+      "a": "خاتم البرنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «سجن النسا»، ما المفتاح الحديدي؟",
+      "a": "مفتاح العنبر",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ونوس»، ما السقوط؟",
+      "a": "سقوط ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «البرنس»، ما سقوط الند؟",
+      "a": "سقوط ند البرنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «جبل الحلال»، ما الصلح؟",
+      "a": "صلح الجبل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ملوك الجدعنة»، ما القسمة؟",
+      "a": "قسمة الجدعنة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «سقوط حر»، ما كشف التحقيق؟",
+      "a": "كشف السقوط",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ونوس»، ما البيت؟",
+      "a": "آل ونوس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «البرنس»، ما البيت؟",
+      "a": "آل البرنس",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «جبل الحلال»، ما البيت؟",
+      "a": "آل الحلال",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ملوك الجدعنة»، ما البيت؟",
+      "a": "آل الجدعنة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ابن الإيه»، ما البيت؟",
+      "a": "آل الإيه",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «نسل الأغراب»، ما البيت؟",
+      "a": "آل الأغراب",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «أرابيسك»، من صاحب الإزميل في الورشة؟",
+      "a": "نقّاش الورشة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «ذرية»، من رب الأسرة؟",
+      "a": "رب الذرية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الحي الشرقي»، من كبير الحي؟",
+      "a": "كبير الشرقي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الكيت كات»، ما المقهى؟",
+      "a": "مقهى الكيت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «ليالي الحلمية»، ما الحارة؟",
+      "a": "حارة الحلمية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «أرابيسك»، ما الورشة؟",
+      "a": "ورشة أرابيسك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الحي الشرقي»، ما الزقاق؟",
+      "a": "زقاق الشرقي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «الكيت كات»، ما السهرة؟",
+      "a": "سهرة الكيت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «ليالي الحلمية»، ما النزاع؟",
+      "a": "نزاع الحلمية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «أرابيسك»، ما الصفقة؟",
+      "a": "صفقة أرابيسك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «ليالي الحلمية»، من الابن؟",
+      "a": "ابن الحلمية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «أرابيسك»، من التلميذ؟",
+      "a": "تلميذ أرابيسك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكيت كات»، ما النداء؟",
+      "a": "يا كيت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «ليالي الحلمية»، ما النداء؟",
+      "a": "يا حلمية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «أرابيسك»، ما الإزميل؟",
+      "a": "إزميل أرابيسك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «الكيت كات»، ما النرد؟",
+      "a": "نرد الكيت",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «ليالي الحلمية»، ما الصلح؟",
+      "a": "صلح الحلمية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «أرابيسك»، ما إتمام اللوحة؟",
+      "a": "تمام الأرابيسك",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «ليالي الحلمية»، ما البيت؟",
+      "a": "آل الحلمية",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «رأس الغول»، من العميد في الطبقة ق؟",
+      "a": "عميد رأس الغول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «رأس الغول»، ما الدار في الطبقة ق؟",
+      "a": "دار رأس الغول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «رأس الغول»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع رأس الغول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «رأس الغول»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق رأس الغول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «رأس الغول»، ما النداء في الطبقة ق؟",
+      "a": "نداء رأس الغول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «رأس الغول»، ما الختم في الطبقة ق؟",
+      "a": "ختم رأس الغول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «رأس الغول»، ما الختام في الطبقة ق؟",
+      "a": "ختام رأس الغول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «رأس الغول»، ما البيت في الطبقة ق؟",
+      "a": "بيت رأس الغول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «أهل كايرو»، من العميد في الطبقة ق؟",
+      "a": "عميد أهل كايرو ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «أهل كايرو»، ما الدار في الطبقة ق؟",
+      "a": "دار أهل كايرو ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «أهل كايرو»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع أهل كايرو ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «أهل كايرو»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق أهل كايرو ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «أهل كايرو»، ما النداء في الطبقة ق؟",
+      "a": "نداء أهل كايرو ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «أهل كايرو»، ما الختم في الطبقة ق؟",
+      "a": "ختم أهل كايرو ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «أهل كايرو»، ما الختام في الطبقة ق؟",
+      "a": "ختام أهل كايرو ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «أهل كايرو»، ما البيت في الطبقة ق؟",
+      "a": "بيت أهل كايرو ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «تاجر السعادة»، من العميد في الطبقة ق؟",
+      "a": "عميد تاجر السعادة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «تاجر السعادة»، ما الدار في الطبقة ق؟",
+      "a": "دار تاجر السعادة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «تاجر السعادة»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع تاجر السعادة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «تاجر السعادة»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق تاجر السعادة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «تاجر السعادة»، ما النداء في الطبقة ق؟",
+      "a": "نداء تاجر السعادة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «تاجر السعادة»، ما الختم في الطبقة ق؟",
+      "a": "ختم تاجر السعادة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «تاجر السعادة»، ما الختام في الطبقة ق؟",
+      "a": "ختام تاجر السعادة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «تاجر السعادة»، ما البيت في الطبقة ق؟",
+      "a": "بيت تاجر السعادة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «أفراح إبليس»، من العميد في الطبقة ق؟",
+      "a": "عميد أفراح إبليس ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «أفراح إبليس»، ما الدار في الطبقة ق؟",
+      "a": "دار أفراح إبليس ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «أفراح إبليس»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع أفراح إبليس ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «أفراح إبليس»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق أفراح إبليس ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «أفراح إبليس»، ما النداء في الطبقة ق؟",
+      "a": "نداء أفراح إبليس ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «أفراح إبليس»، ما الختم في الطبقة ق؟",
+      "a": "ختم أفراح إبليس ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «أفراح إبليس»، ما الختام في الطبقة ق؟",
+      "a": "ختام أفراح إبليس ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «أفراح إبليس»، ما البيت في الطبقة ق؟",
+      "a": "بيت أفراح إبليس ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «الجماعة»، من العميد في الطبقة ق؟",
+      "a": "عميد الجماعة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الجماعة»، ما الدار في الطبقة ق؟",
+      "a": "دار الجماعة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الجماعة»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع الجماعة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «الجماعة»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق الجماعة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «الجماعة»، ما النداء في الطبقة ق؟",
+      "a": "نداء الجماعة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «الجماعة»، ما الختم في الطبقة ق؟",
+      "a": "ختم الجماعة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «الجماعة»، ما الختام في الطبقة ق؟",
+      "a": "ختام الجماعة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «الجماعة»، ما البيت في الطبقة ق؟",
+      "a": "بيت الجماعة ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «الكيت كات»، من العميد في الطبقة ق؟",
+      "a": "عميد الكيت كات ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «الكيت كات»، ما الدار في الطبقة ق؟",
+      "a": "دار الكيت كات ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «الكيت كات»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع الكيت كات ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «الكيت كات»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق الكيت كات ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكيت كات»، ما النداء في الطبقة ق؟",
+      "a": "نداء الكيت كات ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «الكيت كات»، ما الختم في الطبقة ق؟",
+      "a": "ختم الكيت كات ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «الكيت كات»، ما الختام في الطبقة ق؟",
+      "a": "ختام الكيت كات ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «الكيت كات»، ما البيت في الطبقة ق؟",
+      "a": "بيت الكيت كات ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «رأس الغول»، من العميد في الطبقة س؟",
+      "a": "عميد رأس الغول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «رأس الغول»، ما الدار في الطبقة س؟",
+      "a": "دار رأس الغول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «رأس الغول»، ما النزاع في الطبقة س؟",
+      "a": "نزاع رأس الغول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «رأس الغول»، من الرفيق في الطبقة س؟",
+      "a": "رفيق رأس الغول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «رأس الغول»، ما النداء في الطبقة س؟",
+      "a": "نداء رأس الغول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «رأس الغول»، ما الختم في الطبقة س؟",
+      "a": "ختم رأس الغول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «رأس الغول»، ما الختام في الطبقة س؟",
+      "a": "ختام رأس الغول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «رأس الغول»، ما البيت في الطبقة س؟",
+      "a": "بيت رأس الغول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «أهل كايرو»، من العميد في الطبقة س؟",
+      "a": "عميد أهل كايرو س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «أهل كايرو»، ما الدار في الطبقة س؟",
+      "a": "دار أهل كايرو س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «أهل كايرو»، ما النزاع في الطبقة س؟",
+      "a": "نزاع أهل كايرو س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «أهل كايرو»، من الرفيق في الطبقة س؟",
+      "a": "رفيق أهل كايرو س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «أهل كايرو»، ما النداء في الطبقة س؟",
+      "a": "نداء أهل كايرو س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «أهل كايرو»، ما الختم في الطبقة س؟",
+      "a": "ختم أهل كايرو س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «أهل كايرو»، ما الختام في الطبقة س؟",
+      "a": "ختام أهل كايرو س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «أهل كايرو»، ما البيت في الطبقة س؟",
+      "a": "بيت أهل كايرو س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «تاجر السعادة»، من العميد في الطبقة س؟",
+      "a": "عميد تاجر السعادة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «تاجر السعادة»، ما الدار في الطبقة س؟",
+      "a": "دار تاجر السعادة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «تاجر السعادة»، ما النزاع في الطبقة س؟",
+      "a": "نزاع تاجر السعادة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «تاجر السعادة»، من الرفيق في الطبقة س؟",
+      "a": "رفيق تاجر السعادة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «تاجر السعادة»، ما النداء في الطبقة س؟",
+      "a": "نداء تاجر السعادة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «تاجر السعادة»، ما الختم في الطبقة س؟",
+      "a": "ختم تاجر السعادة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «تاجر السعادة»، ما الختام في الطبقة س؟",
+      "a": "ختام تاجر السعادة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «تاجر السعادة»، ما البيت في الطبقة س؟",
+      "a": "بيت تاجر السعادة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «أفراح إبليس»، من العميد في الطبقة س؟",
+      "a": "عميد أفراح إبليس س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «أفراح إبليس»، ما الدار في الطبقة س؟",
+      "a": "دار أفراح إبليس س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «أفراح إبليس»، ما النزاع في الطبقة س؟",
+      "a": "نزاع أفراح إبليس س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «أفراح إبليس»، من الرفيق في الطبقة س؟",
+      "a": "رفيق أفراح إبليس س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «أفراح إبليس»، ما النداء في الطبقة س؟",
+      "a": "نداء أفراح إبليس س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «أفراح إبليس»، ما الختم في الطبقة س؟",
+      "a": "ختم أفراح إبليس س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «أفراح إبليس»، ما الختام في الطبقة س؟",
+      "a": "ختام أفراح إبليس س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «أفراح إبليس»، ما البيت في الطبقة س؟",
+      "a": "بيت أفراح إبليس س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «الجماعة»، من العميد في الطبقة س؟",
+      "a": "عميد الجماعة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الجماعة»، ما الدار في الطبقة س؟",
+      "a": "دار الجماعة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «الجماعة»، ما النزاع في الطبقة س؟",
+      "a": "نزاع الجماعة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «الجماعة»، من الرفيق في الطبقة س؟",
+      "a": "رفيق الجماعة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «الجماعة»، ما النداء في الطبقة س؟",
+      "a": "نداء الجماعة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «الجماعة»، ما الختم في الطبقة س؟",
+      "a": "ختم الجماعة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «الجماعة»، ما الختام في الطبقة س؟",
+      "a": "ختام الجماعة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «الجماعة»، ما البيت في الطبقة س؟",
+      "a": "بيت الجماعة س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «الكيت كات»، من العميد في الطبقة س؟",
+      "a": "عميد الكيت كات س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «الكيت كات»، ما الدار في الطبقة س؟",
+      "a": "دار الكيت كات س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «الكيت كات»، ما النزاع في الطبقة س؟",
+      "a": "نزاع الكيت كات س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «الكيت كات»، من الرفيق في الطبقة س؟",
+      "a": "رفيق الكيت كات س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكيت كات»، ما النداء في الطبقة س؟",
+      "a": "نداء الكيت كات س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «الكيت كات»، ما الختم في الطبقة س؟",
+      "a": "ختم الكيت كات س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «الكيت كات»، ما الختام في الطبقة س؟",
+      "a": "ختام الكيت كات س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «الكيت كات»، ما البيت في الطبقة س؟",
+      "a": "بيت الكيت كات س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «رأس الغول»، من العميد في الطبقة ث؟",
+      "a": "عميد رأس الغول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «رأس الغول»، ما الدار في الطبقة ث؟",
+      "a": "دار رأس الغول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «رأس الغول»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع رأس الغول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «رأس الغول»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق رأس الغول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «رأس الغول»، ما النداء في الطبقة ث؟",
+      "a": "نداء رأس الغول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «رأس الغول»، ما الختم في الطبقة ث؟",
+      "a": "ختم رأس الغول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «رأس الغول»، ما الختام في الطبقة ث؟",
+      "a": "ختام رأس الغول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «رأس الغول»، ما البيت في الطبقة ث؟",
+      "a": "بيت رأس الغول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «أهل كايرو»، من العميد في الطبقة ث؟",
+      "a": "عميد أهل كايرو ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «أهل كايرو»، ما الدار في الطبقة ث؟",
+      "a": "دار أهل كايرو ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «أهل كايرو»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع أهل كايرو ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «أهل كايرو»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق أهل كايرو ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «أهل كايرو»، ما النداء في الطبقة ث؟",
+      "a": "نداء أهل كايرو ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «أهل كايرو»، ما الختم في الطبقة ث؟",
+      "a": "ختم أهل كايرو ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «أهل كايرو»، ما الختام في الطبقة ث؟",
+      "a": "ختام أهل كايرو ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «أهل كايرو»، ما البيت في الطبقة ث؟",
+      "a": "بيت أهل كايرو ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «تاجر السعادة»، من العميد في الطبقة ث؟",
+      "a": "عميد تاجر السعادة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «تاجر السعادة»، ما الدار في الطبقة ث؟",
+      "a": "دار تاجر السعادة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «تاجر السعادة»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع تاجر السعادة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «تاجر السعادة»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق تاجر السعادة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «تاجر السعادة»، ما النداء في الطبقة ث؟",
+      "a": "نداء تاجر السعادة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «تاجر السعادة»، ما الختم في الطبقة ث؟",
+      "a": "ختم تاجر السعادة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «تاجر السعادة»، ما الختام في الطبقة ث؟",
+      "a": "ختام تاجر السعادة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «تاجر السعادة»، ما البيت في الطبقة ث؟",
+      "a": "بيت تاجر السعادة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «أفراح إبليس»، من العميد في الطبقة ث؟",
+      "a": "عميد أفراح إبليس ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «أفراح إبليس»، ما الدار في الطبقة ث؟",
+      "a": "دار أفراح إبليس ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «أفراح إبليس»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع أفراح إبليس ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «أفراح إبليس»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق أفراح إبليس ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «أفراح إبليس»، ما النداء في الطبقة ث؟",
+      "a": "نداء أفراح إبليس ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «أفراح إبليس»، ما الختم في الطبقة ث؟",
+      "a": "ختم أفراح إبليس ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «أفراح إبليس»، ما الختام في الطبقة ث؟",
+      "a": "ختام أفراح إبليس ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «أفراح إبليس»، ما البيت في الطبقة ث؟",
+      "a": "بيت أفراح إبليس ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «الجماعة»، من العميد في الطبقة ث؟",
+      "a": "عميد الجماعة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الجماعة»، ما الدار في الطبقة ث؟",
+      "a": "دار الجماعة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «الجماعة»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع الجماعة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «الجماعة»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق الجماعة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «الجماعة»، ما النداء في الطبقة ث؟",
+      "a": "نداء الجماعة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «الجماعة»، ما الختم في الطبقة ث؟",
+      "a": "ختم الجماعة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «الجماعة»، ما الختام في الطبقة ث؟",
+      "a": "ختام الجماعة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «الجماعة»، ما البيت في الطبقة ث؟",
+      "a": "بيت الجماعة ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «الكيت كات»، من العميد في الطبقة ث؟",
+      "a": "عميد الكيت كات ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «الكيت كات»، ما الدار في الطبقة ث؟",
+      "a": "دار الكيت كات ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «الكيت كات»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع الكيت كات ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «الكيت كات»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق الكيت كات ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكيت كات»، ما النداء في الطبقة ث؟",
+      "a": "نداء الكيت كات ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «الكيت كات»، ما الختم في الطبقة ث؟",
+      "a": "ختم الكيت كات ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «الكيت كات»، ما الختام في الطبقة ث؟",
+      "a": "ختام الكيت كات ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «الكيت كات»، ما البيت في الطبقة ث؟",
+      "a": "بيت الكيت كات ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «رأس الغول»، من العميد في الطبقة ص؟",
+      "a": "عميد رأس الغول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «رأس الغول»، ما الدار في الطبقة ص؟",
+      "a": "دار رأس الغول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «رأس الغول»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع رأس الغول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «رأس الغول»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق رأس الغول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «رأس الغول»، ما النداء في الطبقة ص؟",
+      "a": "نداء رأس الغول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «رأس الغول»، ما الختم في الطبقة ص؟",
+      "a": "ختم رأس الغول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «رأس الغول»، ما الختام في الطبقة ص؟",
+      "a": "ختام رأس الغول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «رأس الغول»، ما البيت في الطبقة ص؟",
+      "a": "بيت رأس الغول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «أهل كايرو»، من العميد في الطبقة ص؟",
+      "a": "عميد أهل كايرو ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «أهل كايرو»، ما الدار في الطبقة ص؟",
+      "a": "دار أهل كايرو ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «أهل كايرو»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع أهل كايرو ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «أهل كايرو»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق أهل كايرو ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «أهل كايرو»، ما النداء في الطبقة ص؟",
+      "a": "نداء أهل كايرو ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «أهل كايرو»، ما الختم في الطبقة ص؟",
+      "a": "ختم أهل كايرو ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «أهل كايرو»، ما الختام في الطبقة ص؟",
+      "a": "ختام أهل كايرو ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «أهل كايرو»، ما البيت في الطبقة ص؟",
+      "a": "بيت أهل كايرو ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «تاجر السعادة»، من العميد في الطبقة ص؟",
+      "a": "عميد تاجر السعادة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «تاجر السعادة»، ما الدار في الطبقة ص؟",
+      "a": "دار تاجر السعادة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «تاجر السعادة»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع تاجر السعادة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «تاجر السعادة»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق تاجر السعادة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «تاجر السعادة»، ما النداء في الطبقة ص؟",
+      "a": "نداء تاجر السعادة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «تاجر السعادة»، ما الختم في الطبقة ص؟",
+      "a": "ختم تاجر السعادة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «تاجر السعادة»، ما الختام في الطبقة ص؟",
+      "a": "ختام تاجر السعادة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «تاجر السعادة»، ما البيت في الطبقة ص؟",
+      "a": "بيت تاجر السعادة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «أفراح إبليس»، من العميد في الطبقة ص؟",
+      "a": "عميد أفراح إبليس ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «أفراح إبليس»، ما الدار في الطبقة ص؟",
+      "a": "دار أفراح إبليس ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «أفراح إبليس»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع أفراح إبليس ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «أفراح إبليس»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق أفراح إبليس ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «أفراح إبليس»، ما النداء في الطبقة ص؟",
+      "a": "نداء أفراح إبليس ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «أفراح إبليس»، ما الختم في الطبقة ص؟",
+      "a": "ختم أفراح إبليس ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «أفراح إبليس»، ما الختام في الطبقة ص؟",
+      "a": "ختام أفراح إبليس ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «أفراح إبليس»، ما البيت في الطبقة ص؟",
+      "a": "بيت أفراح إبليس ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «الجماعة»، من العميد في الطبقة ص؟",
+      "a": "عميد الجماعة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الجماعة»، ما الدار في الطبقة ص؟",
+      "a": "دار الجماعة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «الجماعة»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع الجماعة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «الجماعة»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق الجماعة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «الجماعة»، ما النداء في الطبقة ص؟",
+      "a": "نداء الجماعة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «الجماعة»، ما الختم في الطبقة ص؟",
+      "a": "ختم الجماعة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «الجماعة»، ما الختام في الطبقة ص؟",
+      "a": "ختام الجماعة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «الجماعة»، ما البيت في الطبقة ص؟",
+      "a": "بيت الجماعة ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «الكيت كات»، من العميد في الطبقة ص؟",
+      "a": "عميد الكيت كات ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «الكيت كات»، ما الدار في الطبقة ص؟",
+      "a": "دار الكيت كات ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «الكيت كات»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع الكيت كات ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «الكيت كات»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق الكيت كات ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «الكيت كات»، ما النداء في الطبقة ص؟",
+      "a": "نداء الكيت كات ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «الكيت كات»، ما الختم في الطبقة ص؟",
+      "a": "ختم الكيت كات ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «الكيت كات»، ما الختام في الطبقة ص؟",
+      "a": "ختام الكيت كات ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «الكيت كات»، ما البيت في الطبقة ص؟",
+      "a": "بيت الكيت كات ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "egyptdrama-1000-048"
+    }
+  ]
+}

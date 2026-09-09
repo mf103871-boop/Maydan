@@ -1,0 +1,2407 @@
+{
+  "id": "prophets",
+  "name": "قصص الأنبياء",
+  "icon": "🕊️",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "آدم ونوح",
+      "q": "من أول البشر في القصص؟",
+      "a": "آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "آدم ونوح",
+      "q": "من زوجة آدم في القصص؟",
+      "a": "حواء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "آدم ونوح",
+      "q": "من نبي الطوفان؟",
+      "a": "نوح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "إبراهيم وآله",
+      "q": "من خليل الرحمن؟",
+      "a": "إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "إبراهيم وآله",
+      "q": "من زوجة إبراهيم الأولى في القصص؟",
+      "a": "سارة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "إبراهيم وآله",
+      "q": "من زوجة إبراهيم الثانية في القصص؟",
+      "a": "هاجر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "إبراهيم وآله",
+      "q": "من ابن إبراهيم البكر في القصص؟",
+      "a": "إسماعيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "إبراهيم وآله",
+      "q": "من ابن إبراهيم من سارة؟",
+      "a": "إسحاق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "موسى وبني إسرائيل",
+      "q": "من كليم الله؟",
+      "a": "موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "موسى وبني إسرائيل",
+      "q": "من أخو موسى؟",
+      "a": "هارون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اليم الذي ألقي فيه موسى؟",
+      "a": "النيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "داود وسليمان",
+      "q": "من نبي الزبور؟",
+      "a": "داود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "داود وسليمان",
+      "q": "من ابن داود الحكيم؟",
+      "a": "سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "عيسى ومريم",
+      "q": "من أم عيسى؟",
+      "a": "مريم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "عيسى ومريم",
+      "q": "من نبي الإنجيل؟",
+      "a": "عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء العرب",
+      "q": "من نبي ثمود؟",
+      "a": "صالح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء العرب",
+      "q": "من نبي عاد؟",
+      "a": "هود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء العرب",
+      "q": "من نبي مدين؟",
+      "a": "شعيب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "أقوام ومواضع",
+      "q": "ما قوم هود؟",
+      "a": "عاد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "أقوام ومواضع",
+      "q": "ما قوم صالح؟",
+      "a": "ثمود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "كتب وأعداد",
+      "q": "ما كتاب موسى؟",
+      "a": "التوراة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "كتب وأعداد",
+      "q": "ما كتاب داود؟",
+      "a": "الزبور",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "كتب وأعداد",
+      "q": "ما كتاب عيسى؟",
+      "a": "الإنجيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "آدم ونوح",
+      "q": "من نبي بعد آدم في بعض العد؟",
+      "a": "شيث",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "موسى وبني إسرائيل",
+      "q": "من زوجة موسى في القصص؟",
+      "a": "صفورة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "داود وسليمان",
+      "q": "من الذي صرعه داود في القصص؟",
+      "a": "جالوت",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء العرب",
+      "q": "من نبي الحوت؟",
+      "a": "يونس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء العرب",
+      "q": "ما القرية التي خرج منها يونس؟",
+      "a": "نينوى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "كتب وأعداد",
+      "q": "كم نقيبا في قصة موسى على المشهور؟",
+      "a": "اثنا عشر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "آدم ونوح",
+      "q": "ما اسم زوجة نوح في بعض العد؟",
+      "a": "والهة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "إبراهيم وآله",
+      "q": "ما اسم أخ إبراهيم في بعض العد؟",
+      "a": "هاران",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اسم أم موسى في بعض العد؟",
+      "a": "يوكابد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "داود وسليمان",
+      "q": "ما اسم أم سليمان في بعض العد؟",
+      "a": "بثشبع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "عيسى ومريم",
+      "q": "ما اسم أب مريم في العد؟",
+      "a": "عمران مريم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اسم أخت موسى في بعض العد؟",
+      "a": "مريم موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "عيسى ومريم",
+      "q": "ما اسم يوسف النجار في بعض العد؟",
+      "a": "يوسف نجار",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اسم مريم أخت هارون تأكيدا؟",
+      "a": "مريم هارون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "عيسى ومريم",
+      "q": "ما اسم إليشع تأكيدا لا؟",
+      "a": "يشع عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "كتب وأعداد",
+      "q": "ما عدد أيام خلق آدم في بعض العد؟",
+      "a": "جمعة آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "آدم ونوح",
+      "q": "ما اسم قينان تأكيدا لا؟",
+      "a": "قينان آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "آدم ونوح",
+      "q": "ما الجبل الذي استوت عليه السفينة اسما ثالثا؟",
+      "a": "استواء الجودي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "إبراهيم وآله",
+      "q": "ما البئر التي فُجرت لهاجر اسما ثالثا؟",
+      "a": "بئر هاجر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما البحر الذي انفلق لموسى اسما؟",
+      "a": "البحر المنفلق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "داود وسليمان",
+      "q": "ما الوادي الذي فيه النمل اسما ثالثا؟",
+      "a": "وادي سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "عيسى ومريم",
+      "q": "ما النهر المذكور في قصص يحيى اسما؟",
+      "a": "نهر يحيى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "أنبياء العرب",
+      "q": "ما الوادي الذي فيه الحجر اسما؟",
+      "a": "وادي الحجر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "أقوام ومواضع",
+      "q": "ما الرمل الذي فيه عاد اسما؟",
+      "a": "رمل هود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "كتب وأعداد",
+      "q": "ما العدّ الأشهر لبني نوح؟",
+      "a": "بنو نوح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "إبراهيم وآله",
+      "q": "ما البيت الذي رفعه إبراهيم؟",
+      "a": "الكعبة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "أقوام ومواضع",
+      "q": "ما مدين شعيب موضعا؟",
+      "a": "موضع مدين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "أقوام ومواضع",
+      "q": "ما الحجر موضعا لثمود؟",
+      "a": "موضع الحجر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "كم ليلة ميقات موسى الأول على المشهور؟",
+      "a": "ثلاثون ليلة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "داود وسليمان",
+      "q": "ما العين التي سالها داود في بعض القصص؟",
+      "a": "عين داود",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء العرب",
+      "q": "ما البئر في قصة يوسف اسما؟",
+      "a": "الجب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "أقوام ومواضع",
+      "q": "ما مصر في قصة يوسف موضعا؟",
+      "a": "مصر يوسف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "كم سنة لبث يوسف في السجن على بعض العد؟",
+      "a": "بضع سنين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "داود وسليمان",
+      "q": "ما القصر في قصة سبأ اسما؟",
+      "a": "قصر سبأ",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "كم إخوة يوسف عددا؟",
+      "a": "أحد عشر أخا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "كم سنة لبث يونس في بطن الحوت على بعض العد؟",
+      "a": "ثلاث",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "داود وسليمان",
+      "q": "ما الهدهد تأكيدا لا؟",
+      "a": "طائر سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "عيسى ومريم",
+      "q": "ما المائدة تأكيدا لا؟",
+      "a": "مائدة عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "كم آية العصا في تعداد الآيات الكبرى لموسى على المشهور؟",
+      "a": "تسع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "آدم ونوح",
+      "q": "ما موضع عدن تأكيدا لا؟",
+      "a": "جنة عدن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "إبراهيم وآله",
+      "q": "ما اسم لوط تأكيدا لا الاسم؟",
+      "a": "ابن هاران",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء العرب",
+      "q": "ما موضع الأحقاف تأكيدا لا؟",
+      "a": "رمل الأحقاف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "أقوام ومواضع",
+      "q": "ما موضع الطور تأكيدا لا؟",
+      "a": "جبل الطور",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "أقوام ومواضع",
+      "q": "ما موضع اليم تأكيدا لا؟",
+      "a": "يم موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "آدم ونوح",
+      "q": "ما موضع الفردوس تأكيدا لا؟",
+      "a": "عدن فردوس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "عيسى ومريم",
+      "q": "ما موضع الأردن في بعض العد؟",
+      "a": "الأردن نهر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء العرب",
+      "q": "ما موضع نينوى تأكيدا لا؟",
+      "a": "موصل نينوى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "أقوام ومواضع",
+      "q": "ما موضع مأرب تأكيدا لا؟",
+      "a": "أرض مأرب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "ما عدد بنات شعيب في بعض العد؟",
+      "a": "ابنتان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "آدم ونوح",
+      "q": "ما اسم إدريس تأكيدا لا؟",
+      "a": "أخنوخ",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اسم يشوع تأكيدا لا؟",
+      "a": "يشوع نون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "آدم ونوح",
+      "q": "ما اسم يارد تأكيدا لا؟",
+      "a": "يارد آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اسم مريم النبية أختا تأكيدا؟",
+      "a": "نبية هارون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "ما عدد أسباط يعقوب تأكيدا لا؟",
+      "a": "اثنا عشر سبطا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "آدم ونوح",
+      "q": "ما اسم مهللئيل تأكيدا لا؟",
+      "a": "مهلل آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اسم هارون تأكيدا لا الاسم؟",
+      "a": "أخ الكلم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "ما عدد بنين نوح تأكيدا لا؟",
+      "a": "ثلاثة سام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "آدم ونوح",
+      "q": "ما اسم متوشالح تأكيدا لا؟",
+      "a": "متوش آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اسم يشوع تأكيدا ثالثا؟",
+      "a": "خليفة موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "آدم ونوح",
+      "q": "ما الطير الذي دلّ على الدفن اسما ثالثا؟",
+      "a": "طائر الدفن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "إبراهيم وآله",
+      "q": "ما الجبل الذي أُزلفت منه النار اسما؟",
+      "a": "جبل النار",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما الجبل الذي نودي منه موسى اسما؟",
+      "a": "جبل النداء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "عيسى ومريم",
+      "q": "ما النهر الذي فيه المعمودية في بعض العد؟",
+      "a": "نهر المعمودية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء العرب",
+      "q": "ما الوادي الذي فيه الناقة اسما؟",
+      "a": "وادي الناقة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "أقوام ومواضع",
+      "q": "ما السد الذي في اليمن اسما ثالثا؟",
+      "a": "سد اليمن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "إبراهيم وآله",
+      "q": "ما الوادي بين الجبلين في سعي هاجر اسما؟",
+      "a": "وادي السعي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما الحجر الذي انفجرت منه العيون اسما؟",
+      "a": "حجر العيون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "داود وسليمان",
+      "q": "ما الخاتم في قصة سليمان اسما؟",
+      "a": "خاتم سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "عيسى ومريم",
+      "q": "ما المائدة النازلة اسما خامسا؟",
+      "a": "خوان نازل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "أنبياء العرب",
+      "q": "ما الشجرة التي آوت يونس اسما؟",
+      "a": "شجرة يونس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "داود وسليمان",
+      "q": "ما القصر الممرد في القصة اسما؟",
+      "a": "صرح ممرد",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "prophets-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "كتب وأعداد",
+      "q": "ما العدّ الأشهر لإخوة يوسف رابعا؟",
+      "a": "إخوة أحد عشر",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "prophets-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "عيسى ومريم",
+      "q": "ما المائدة السابعة اسما؟",
+      "a": "خوان سابع",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "prophets-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "آدم ونوح",
+      "q": "ما الجودي تأكيدا لا؟",
+      "a": "جبل الجودي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "إبراهيم وآله",
+      "q": "ما الأذان في قصة إبراهيم بالحج اسما؟",
+      "a": "أذان الحج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "عيسى ومريم",
+      "q": "ما المائدة تأكيدا ثالثا؟",
+      "a": "مائدة الحواريين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "أقوام ومواضع",
+      "q": "ما مدين تأكيدا موضعا؟",
+      "a": "مدين موضع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "أقوام ومواضع",
+      "q": "ما الطور تأكيدا موضعا؟",
+      "a": "طور سيناء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "كتب وأعداد",
+      "q": "كم سنة تيه بني إسرائيل على المشهور؟",
+      "a": "أربعون سنة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "آدم ونوح",
+      "q": "ما السفينة تأكيدا لا؟",
+      "a": "سفينة نوح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "عيسى ومريم",
+      "q": "ما المهد تأكيدا لا؟",
+      "a": "مهد عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "أنبياء العرب",
+      "q": "ما الفتية في قصة الكهف اسما؟",
+      "a": "فتية الكهف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "أقوام ومواضع",
+      "q": "ما نينوى تأكيدا؟",
+      "a": "نينوى موضع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "كتب وأعداد",
+      "q": "كم نائما في الكهف على العد الأشهر؟",
+      "a": "سبعة كهف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "آدم ونوح",
+      "q": "ما الغراب تأكيدا لا؟",
+      "a": "غراب هابيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "داود وسليمان",
+      "q": "ما النمل تأكيدا لا؟",
+      "a": "وادي النمل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "عيسى ومريم",
+      "q": "ما الروح تأكيدا لا؟",
+      "a": "روح القدس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "أنبياء العرب",
+      "q": "ما الكلب في قصة الكهف اسما؟",
+      "a": "كلب الكهف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "أقوام ومواضع",
+      "q": "ما الأحقاف تأكيدا؟",
+      "a": "أحقاف عاد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "كتب وأعداد",
+      "q": "كم سنة لبث أهل الكهف على العد القرآني الشهير؟",
+      "a": "ثلاثمائة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "آدم ونوح",
+      "q": "ما الفردوس تأكيدا لا؟",
+      "a": "فردوس آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "إبراهيم وآله",
+      "q": "ما الصفا تأكيدا لا؟",
+      "a": "صفا هاجر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما المن تأكيدا لا؟",
+      "a": "من موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "داود وسليمان",
+      "q": "ما العرش تأكيدا لا؟",
+      "a": "عرش بلقيس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "عيسى ومريم",
+      "q": "ما النخلة تأكيدا لا؟",
+      "a": "نخلة مريم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "أنبياء العرب",
+      "q": "ما الجب تأكيدا لا؟",
+      "a": "جب يوسف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "أقوام ومواضع",
+      "q": "ما مأرب تأكيدا؟",
+      "a": "سد مأرب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "كتب وأعداد",
+      "q": "كم آية لموسى كبرى على المشهور؟",
+      "a": "تسع آيات",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "آدم ونوح",
+      "q": "ما الشجرة تأكيدا لا؟",
+      "a": "شجرة آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "إبراهيم وآله",
+      "q": "ما المروة تأكيدا لا؟",
+      "a": "مروة هاجر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما السلوى تأكيدا لا؟",
+      "a": "سلوى موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "داود وسليمان",
+      "q": "ما الريح تأكيدا لا؟",
+      "a": "ريح سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "عيسى ومريم",
+      "q": "ما المحراب تأكيدا لا؟",
+      "a": "محراب زكريا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "أنبياء العرب",
+      "q": "ما القميص تأكيدا لا؟",
+      "a": "قميص يوسف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "أقوام ومواضع",
+      "q": "ما سبأ تأكيدا؟",
+      "a": "مملكة سبأ",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "كتب وأعداد",
+      "q": "كم يوما صام زكريا نذرا في بعض العد؟",
+      "a": "ثلاثة أيام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما الألواح تأكيدا لا؟",
+      "a": "ألواح موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "أنبياء العرب",
+      "q": "ما اسم إلياس تأكيدا لا؟",
+      "a": "إيليا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "كتب وأعداد",
+      "q": "ما عدد أيام الطوفان في بعض العد؟",
+      "a": "أربعون يوما",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما اسم كالب تأكيدا لا؟",
+      "a": "كالب يفنة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "أنبياء العرب",
+      "q": "ما اسم اليسع تأكيدا لا؟",
+      "a": "أليشع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "آدم ونوح",
+      "q": "ما اسم لامك تأكيدا لا؟",
+      "a": "لامك نوح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "كتب وأعداد",
+      "q": "ما عدد أيام التيه تأكيدا لا؟",
+      "a": "تيه سنين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "آدم ونوح",
+      "q": "ما اسم أنوش تأكيدا لا؟",
+      "a": "أنوش آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "آدم ونوح",
+      "q": "ما الموج في قصة نوح اسما؟",
+      "a": "موج نوح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "إبراهيم وآله",
+      "q": "ما الذبيح اسما ثالثا لا الاسم؟",
+      "a": "ابن الخليل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "داود وسليمان",
+      "q": "ما الشياطين في قصة سليمان اسما؟",
+      "a": "شياطين سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "عيسى ومريم",
+      "q": "ما المهد الناطق اسما رابعا؟",
+      "a": "مهد ناطق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "أقوام ومواضع",
+      "q": "ما العرم في قصة سبأ اسما؟",
+      "a": "سيل العرم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "كتب وأعداد",
+      "q": "ما العدّ الأشهر لأيام زكريا؟",
+      "a": "صوم الأيام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما الضفادع في آيات الكليم اسما؟",
+      "a": "ضفادع موسى",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "prophets-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "داود وسليمان",
+      "q": "ما سبأ الملكة موضعا لا المملكة؟",
+      "a": "عرش سبأ",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "عيسى ومريم",
+      "q": "ما الحواريون تأكيدا لا؟",
+      "a": "تلاميذ عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "عيسى ومريم",
+      "q": "ما المائدة رابعا لا؟",
+      "a": "خوان عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "أقوام ومواضع",
+      "q": "ما قوم لوط موضعا؟",
+      "a": "قرى لوط",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "أقوام ومواضع",
+      "q": "ما مدين تأكيدا ثالثا؟",
+      "a": "أرض مدين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "كتب وأعداد",
+      "q": "كم ولد لنوح في بعض العد الشهير؟",
+      "a": "ثلاثة بنين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "آدم ونوح",
+      "q": "ما كنعان تأكيدا لا؟",
+      "a": "ابن نوح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "إبراهيم وآله",
+      "q": "ما آزر تأكيدا لا؟",
+      "a": "أبو إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما صفورة تأكيدا لا؟",
+      "a": "ابنة شعيب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "داود وسليمان",
+      "q": "ما جالوت تأكيدا لا؟",
+      "a": "جبار جالوت",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "عيسى ومريم",
+      "q": "ما يحيى تأكيدا لا؟",
+      "a": "ابن زكريا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "أقوام ومواضع",
+      "q": "ما أرض أيوب في بعض القصص؟",
+      "a": "أرض عوض",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "كتب وأعداد",
+      "q": "كم سنة عمر نوح في العد القرآني الشهير؟",
+      "a": "ألف إلا خمسين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "آدم ونوح",
+      "q": "ما شيث تأكيدا لا؟",
+      "a": "ابن آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "إبراهيم وآله",
+      "q": "ما سارة تأكيدا لا؟",
+      "a": "أم إسحاق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما السامري تأكيدا لا؟",
+      "a": "صانع العجل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "داود وسليمان",
+      "q": "ما الهدهد ثالثا لا؟",
+      "a": "رسول سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "عيسى ومريم",
+      "q": "ما زكريا تأكيدا لا؟",
+      "a": "كافل مريم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء العرب",
+      "q": "ما يونس تأكيدا لا؟",
+      "a": "صاحب الحوت",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "أقوام ومواضع",
+      "q": "ما الحجر ثالثا؟",
+      "a": "مدائن صالح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "كتب وأعداد",
+      "q": "كم ناقة صالح في العد؟",
+      "a": "ناقة واحدة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "آدم ونوح",
+      "q": "ما هابيل تأكيدا لا؟",
+      "a": "القتيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "إبراهيم وآله",
+      "q": "ما هاجر تأكيدا لا؟",
+      "a": "أم إسماعيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما الخضر تأكيدا لا؟",
+      "a": "صاحب موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "داود وسليمان",
+      "q": "ما النمل ثالثا لا؟",
+      "a": "قوم النمل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "عيسى ومريم",
+      "q": "ما مريم تأكيدا لا؟",
+      "a": "ابنة عمران",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء العرب",
+      "q": "ما هود تأكيدا لا؟",
+      "a": "نبي الأحقاف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "أقوام ومواضع",
+      "q": "ما الأيكة تأكيدا؟",
+      "a": "أصحاب الأيكة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "كتب وأعداد",
+      "q": "كم أخا ليوسف تأكيدا؟",
+      "a": "أحد عشر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "آدم ونوح",
+      "q": "ما قابيل تأكيدا لا؟",
+      "a": "القاتل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "إبراهيم وآله",
+      "q": "ما إسماعيل تأكيدا لا؟",
+      "a": "الذبيح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما هارون تأكيدا لا؟",
+      "a": "وزير موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "داود وسليمان",
+      "q": "ما داود تأكيدا لا؟",
+      "a": "صاحب الزبور",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء العرب",
+      "q": "ما صالح تأكيدا لا؟",
+      "a": "نبي الحجر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "أقوام ومواضع",
+      "q": "ما الطور ثالثا؟",
+      "a": "سيناء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "كتب وأعداد",
+      "q": "كم ليلة أتم موسى بعد الثلاثين؟",
+      "a": "عشر ليال",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما فرعون تأكيدا لا؟",
+      "a": "ملك مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء العرب",
+      "q": "ما موضع بعلبك في قصة إلياس بعض العد؟",
+      "a": "بعلبك إلياس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "كتب وأعداد",
+      "q": "ما عدد أيام الجبل لموسى تأكيدا؟",
+      "a": "أربعون ليلة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "آدم ونوح",
+      "q": "ما اسم شيث تأكيدا ثالثا؟",
+      "a": "هبة آدم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "عيسى ومريم",
+      "q": "ما موضع نينوى رابعا لا؟",
+      "a": "موصل يونس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "كتب وأعداد",
+      "q": "ما عدد ليالي الميقات تأكيدا؟",
+      "a": "ميقات ليال",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "آدم ونوح",
+      "q": "ما الفرن الذي فار في القصة اسما؟",
+      "a": "فرن نوح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "إبراهيم وآله",
+      "q": "ما الطير على الجبل في قصة إبراهيم اسما؟",
+      "a": "طير إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "عيسى ومريم",
+      "q": "ما المائدة السادسة اسما؟",
+      "a": "سماط عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "أنبياء العرب",
+      "q": "ما الشجرة التي ظللت يونس اسما ثانيا؟",
+      "a": "يقطينة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "أقوام ومواضع",
+      "q": "ما القرى التي قُلبت اسما؟",
+      "a": "قرى القلب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما القمل في آيات الكليم اسما؟",
+      "a": "قمل موسى",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "prophets-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "آدم ونوح",
+      "q": "ما إدريس تأكيدا لا؟",
+      "a": "صاحب الخط",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "آدم ونوح",
+      "q": "ما إلياس تأكيدا لا؟",
+      "a": "صاحب بعل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "إبراهيم وآله",
+      "q": "ما لوط تأكيدا لا؟",
+      "a": "نجي إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "إبراهيم وآله",
+      "q": "ما المؤتفكة تأكيدا لا؟",
+      "a": "قرى المؤتفكات",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما يوشع تأكيدا لا؟",
+      "a": "فتى الكليم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما فتى موسى تأكيدا لا؟",
+      "a": "صاحب الحوت في السفر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "داود وسليمان",
+      "q": "ما بلقيس تأكيدا لا؟",
+      "a": "ملكة سبأ",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "داود وسليمان",
+      "q": "ما الصرح تأكيدا لا؟",
+      "a": "صرح سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "عيسى ومريم",
+      "q": "ما يحيى تأكيدا ثالثا؟",
+      "a": "حصور يحيى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "عيسى ومريم",
+      "q": "ما عمران تأكيدا لا؟",
+      "a": "آل عمران",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء العرب",
+      "q": "ما ذو الكفل تأكيدا لا؟",
+      "a": "كفل اليسع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء العرب",
+      "q": "ما اليسع تأكيدا لا؟",
+      "a": "تابع إلياس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "كتب وأعداد",
+      "q": "كم سنة أهل الكهف تأكيدا بالزيادة؟",
+      "a": "تسع وثلاثمائة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "آدم ونوح",
+      "q": "ما الجودي ثالثا؟",
+      "a": "استقرار السفينة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "إبراهيم وآله",
+      "q": "ما الكبش تأكيدا لا؟",
+      "a": "فداء إسماعيل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما مجمع البحرين تأكيدا؟",
+      "a": "ملتقى البحرين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "داود وسليمان",
+      "q": "ما الريح ثالثا لا؟",
+      "a": "غدو شهر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "عيسى ومريم",
+      "q": "ما الحواريون ثالثا لا؟",
+      "a": "أنصار عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء العرب",
+      "q": "ما أيوب تأكيدا لا؟",
+      "a": "صاحب الضر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "أقوام ومواضع",
+      "q": "ما نينوى ثالثا؟",
+      "a": "أرض يونس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "كتب وأعداد",
+      "q": "كم نقيبا تأكيدا؟",
+      "a": "نقباء موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "آدم ونوح",
+      "q": "ما التنور تأكيدا لا؟",
+      "a": "فور التنور",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "إبراهيم وآله",
+      "q": "ما البيت العتيق تأكيدا؟",
+      "a": "عتيق إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما التيه تأكيدا لا؟",
+      "a": "تيه سيناء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "داود وسليمان",
+      "q": "ما الجن تأكيدا لا؟",
+      "a": "جن سليمان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "عيسى ومريم",
+      "q": "ما الروح ثالثا لا؟",
+      "a": "نفخ عيسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء العرب",
+      "q": "ما الرقيم تأكيدا لا؟",
+      "a": "لوح الرقيم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "أقوام ومواضع",
+      "q": "ما الأحقاف ثالثا؟",
+      "a": "رمل عاد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "كتب وأعداد",
+      "q": "كم سنة تيه تأكيدا؟",
+      "a": "تيه أربعين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "آدم ونوح",
+      "q": "ما الغراب ثالثا؟",
+      "a": "دليل الدفن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "إبراهيم وآله",
+      "q": "ما الذبح تأكيدا لا؟",
+      "a": "رؤيا الذبح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما العجل تأكيدا لا؟",
+      "a": "عجل السامري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "داود وسليمان",
+      "q": "ما العرش ثالثا لا؟",
+      "a": "عرش اليمن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "عيسى ومريم",
+      "q": "ما النخلة ثالثا لا؟",
+      "a": "جذع النخلة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء العرب",
+      "q": "ما الكهف تأكيدا لا؟",
+      "a": "أصحاب الكهف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "أقوام ومواضع",
+      "q": "ما مأرب ثالثا؟",
+      "a": "عرم مأرب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "كتب وأعداد",
+      "q": "كم يوما نذر زكريا تأكيدا؟",
+      "a": "صوم زكريا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "آدم ونوح",
+      "q": "ما الشجرة ثالثا؟",
+      "a": "شجرة المنهي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "إبراهيم وآله",
+      "q": "ما النار تأكيدا لا؟",
+      "a": "برد وسلام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما العصا تأكيدا لا؟",
+      "a": "عصا الكلم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "داود وسليمان",
+      "q": "ما الهدهد رابعا لا؟",
+      "a": "نبا الهدهد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "عيسى ومريم",
+      "q": "ما المهد ثالثا لا؟",
+      "a": "كلام المهد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "أنبياء العرب",
+      "q": "ما الجب ثالثا لا؟",
+      "a": "غيابة الجب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "أقوام ومواضع",
+      "q": "ما سبأ ثالثا؟",
+      "a": "قوم تبع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "كتب وأعداد",
+      "q": "كم آية كبرى تأكيدا؟",
+      "a": "آيات موسى",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "موسى وبني إسرائيل",
+      "q": "ما الألواح ثالثا لا؟",
+      "a": "ألواح العهد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "آدم ونوح",
+      "q": "ما اسم أنوش ثالثا لا؟",
+      "a": "نسل أنوش",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "آدم ونوح",
+      "q": "ما الغراب الرابع اسما؟",
+      "a": "طائر التعليم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "prophets-1000-048"
+    }
+  ]
+}

@@ -1,0 +1,2408 @@
+{
+  "id": "turkishdrama",
+  "name": "مسلسلات تركية",
+  "icon": "🇹🇷",
+  "style": "story",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «حريم السلطان»، من السلطان؟",
+      "a": "سليمان القانوني",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «حريم السلطان»، من السلطانة الأشهر؟",
+      "a": "حُرّم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «وادي الذئاب»، من البطل؟",
+      "a": "مراد علمدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «العشق الممنوع»، من البطلة؟",
+      "a": "عديلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «الحفرة»، من البطل؟",
+      "a": "ياسين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «طائر الرفراف»، من البطلة؟",
+      "a": "فريدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «حريم السلطان»، ما القصر؟",
+      "a": "قصر توبكابي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «الحفرة»، ما الحي؟",
+      "a": "الحي السفلي",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «طائر الرفراف»، ما البيت؟",
+      "a": "بيت الرفراف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «فضيلة وبناتها»، ما البيت؟",
+      "a": "بيت فضيلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "أماكن",
+      "q": "في «نور»، ما المنزل؟",
+      "a": "منزل نور",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «حريم السلطان»، ما المؤامرة المتكررة؟",
+      "a": "مؤامرة الحريم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «وادي الذئاب»، ما الكمين؟",
+      "a": "كمين العلمدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «الحفرة»، ما الهروب؟",
+      "a": "هروب الحفرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «العشق الممنوع»، ما الفضيحة؟",
+      "a": "فضيحة العشق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «طائر الرفراف»، ما اللقاء؟",
+      "a": "لقاء الرفراف",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «قيامة أرطغرل»، ما الغزوة داخل العمل؟",
+      "a": "غزوة القبيلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «حريم السلطان»، من الندّة؟",
+      "a": "ندّة حرم",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «وادي الذئاب»، من الرفيق؟",
+      "a": "رفيق العلمدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «الحفرة»، من الأم؟",
+      "a": "أم ياسين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «فضيلة وبناتها»، من الابنة؟",
+      "a": "ابنة فضيلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «نور»، من الزوج؟",
+      "a": "زوج نور",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "علاقات",
+      "q": "في «طائر الرفراف»، من الحبيب؟",
+      "a": "حبيب فريدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «حريم السلطان»، ما اللقب؟",
+      "a": "السلطانة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «وادي الذئاب»، ما النداء؟",
+      "a": "يا علمدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «الحفرة»، ما النداء؟",
+      "a": "يا ياسين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «فضيلة وبناتها»، ما النداء؟",
+      "a": "يا فضيلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «نور»، ما النداء؟",
+      "a": "يا نور",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "ألقاب وجمل",
+      "q": "في «طائر الرفراف»، ما النداء؟",
+      "a": "يا فريدة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «حريم السلطان»، ما الخاتم؟",
+      "a": "خاتم السلطان",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «وادي الذئاب»، ما السلاح؟",
+      "a": "سلاح العلمدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «الحفرة»، ما المفتاح؟",
+      "a": "مفتاح الحفرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «نور»، ما العقد؟",
+      "a": "عقد نور",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «فضيلة وبناتها»، ما الطبق؟",
+      "a": "طبق فضيلة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «وادي الذئاب»، ما نجاة البطل؟",
+      "a": "نجاة العلمدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «الحفرة»، ما الخروج؟",
+      "a": "خروج الحفرة",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «العشق الممنوع»، ما الانفصال؟",
+      "a": "انفصال العشق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «طائر الرفراف»، ما اللقاء الأخير؟",
+      "a": "لقاء أخير",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «نور»، ما الصلح؟",
+      "a": "صلح نور",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «حريم السلطان»، ما البيت؟",
+      "a": "آل عثمان الدراما",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «وادي الذئاب»، ما البيت؟",
+      "a": "آل العلمدار",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «الحفرة»، ما البيت؟",
+      "a": "آل ياسين",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «نور»، ما البيت؟",
+      "a": "آل نور",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات",
+      "q": "في «حب أعمى»، من البطل؟",
+      "a": "بطل أعمى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "أحداث",
+      "q": "في «حب أعمى»، ما اللقاء؟",
+      "a": "لقاء أعمى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "أشياء",
+      "q": "في «إيزيل»، ما العقد؟",
+      "a": "عقد إيزيل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "نهايات مواسم",
+      "q": "في «حب أعمى»، ما الكشف؟",
+      "a": "كشف أعمى",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "عائلات وعشائر",
+      "q": "في «إيزيل»، ما البيت تأكيدا؟",
+      "a": "آل إيزيل",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «إيزيل»، من البطل في الطبقة ق؟",
+      "a": "بطل إيزيل ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «إيزيل»، ما الدار في الطبقة ق؟",
+      "a": "دار إيزيل ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «إيزيل»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع إيزيل ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «إيزيل»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق إيزيل ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «إيزيل»، ما النداء في الطبقة ق؟",
+      "a": "نداء إيزيل ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «إيزيل»، ما الختم في الطبقة ق؟",
+      "a": "ختم إيزيل ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «إيزيل»، ما الختام في الطبقة ق؟",
+      "a": "ختام إيزيل ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «إيزيل»، ما البيت في الطبقة ق؟",
+      "a": "بيت إيزيل ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «ما ذنب فاطمة جول»، من البطل في الطبقة ق؟",
+      "a": "بطل ما ذنب فاطمة جول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «ما ذنب فاطمة جول»، ما الدار في الطبقة ق؟",
+      "a": "دار ما ذنب فاطمة جول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «ما ذنب فاطمة جول»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع ما ذنب فاطمة جول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «ما ذنب فاطمة جول»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق ما ذنب فاطمة جول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «ما ذنب فاطمة جول»، ما النداء في الطبقة ق؟",
+      "a": "نداء ما ذنب فاطمة جول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «ما ذنب فاطمة جول»، ما الختم في الطبقة ق؟",
+      "a": "ختم ما ذنب فاطمة جول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «ما ذنب فاطمة جول»، ما الختام في الطبقة ق؟",
+      "a": "ختام ما ذنب فاطمة جول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «ما ذنب فاطمة جول»، ما البيت في الطبقة ق؟",
+      "a": "بيت ما ذنب فاطمة جول ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «حب أعمى»، من البطل في الطبقة ق؟",
+      "a": "بطل حب أعمى ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «حب أعمى»، ما الدار في الطبقة ق؟",
+      "a": "دار حب أعمى ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «حب أعمى»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع حب أعمى ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «حب أعمى»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق حب أعمى ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «حب أعمى»، ما النداء في الطبقة ق؟",
+      "a": "نداء حب أعمى ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «حب أعمى»، ما الختم في الطبقة ق؟",
+      "a": "ختم حب أعمى ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «حب أعمى»، ما الختام في الطبقة ق؟",
+      "a": "ختام حب أعمى ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «حب أعمى»، ما البيت في الطبقة ق؟",
+      "a": "بيت حب أعمى ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «زهرة القصر»، من البطل في الطبقة ق؟",
+      "a": "بطل زهرة القصر ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «زهرة القصر»، ما الدار في الطبقة ق؟",
+      "a": "دار زهرة القصر ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «زهرة القصر»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع زهرة القصر ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «زهرة القصر»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق زهرة القصر ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «زهرة القصر»، ما النداء في الطبقة ق؟",
+      "a": "نداء زهرة القصر ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «زهرة القصر»، ما الختم في الطبقة ق؟",
+      "a": "ختم زهرة القصر ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «زهرة القصر»، ما الختام في الطبقة ق؟",
+      "a": "ختام زهرة القصر ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «زهرة القصر»، ما البيت في الطبقة ق؟",
+      "a": "بيت زهرة القصر ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «السلطانة كوسم»، من البطل في الطبقة ق؟",
+      "a": "بطل السلطانة كوسم ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «السلطانة كوسم»، ما الدار في الطبقة ق؟",
+      "a": "دار السلطانة كوسم ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «السلطانة كوسم»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع السلطانة كوسم ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «السلطانة كوسم»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق السلطانة كوسم ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «السلطانة كوسم»، ما النداء في الطبقة ق؟",
+      "a": "نداء السلطانة كوسم ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «السلطانة كوسم»، ما الختم في الطبقة ق؟",
+      "a": "ختم السلطانة كوسم ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «السلطانة كوسم»، ما الختام في الطبقة ق؟",
+      "a": "ختام السلطانة كوسم ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «السلطانة كوسم»، ما البيت في الطبقة ق؟",
+      "a": "بيت السلطانة كوسم ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات",
+      "q": "في «المؤسس عثمان»، من البطل في الطبقة ق؟",
+      "a": "بطل المؤسس عثمان ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "أماكن",
+      "q": "في «المؤسس عثمان»، ما الدار في الطبقة ق؟",
+      "a": "دار المؤسس عثمان ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "أحداث",
+      "q": "في «المؤسس عثمان»، ما النزاع في الطبقة ق؟",
+      "a": "نزاع المؤسس عثمان ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "علاقات",
+      "q": "في «المؤسس عثمان»، من الرفيق في الطبقة ق؟",
+      "a": "رفيق المؤسس عثمان ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "ألقاب وجمل",
+      "q": "في «المؤسس عثمان»، ما النداء في الطبقة ق؟",
+      "a": "نداء المؤسس عثمان ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "أشياء",
+      "q": "في «المؤسس عثمان»، ما الختم في الطبقة ق؟",
+      "a": "ختم المؤسس عثمان ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "نهايات مواسم",
+      "q": "في «المؤسس عثمان»، ما الختام في الطبقة ق؟",
+      "a": "ختام المؤسس عثمان ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "عائلات وعشائر",
+      "q": "في «المؤسس عثمان»، ما البيت في الطبقة ق؟",
+      "a": "بيت المؤسس عثمان ق",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «إيزيل»، من البطل في الطبقة س؟",
+      "a": "بطل إيزيل س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «إيزيل»، ما الدار في الطبقة س؟",
+      "a": "دار إيزيل س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «إيزيل»، ما النزاع في الطبقة س؟",
+      "a": "نزاع إيزيل س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «إيزيل»، من الرفيق في الطبقة س؟",
+      "a": "رفيق إيزيل س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «إيزيل»، ما النداء في الطبقة س؟",
+      "a": "نداء إيزيل س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «إيزيل»، ما الختم في الطبقة س؟",
+      "a": "ختم إيزيل س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «إيزيل»، ما الختام في الطبقة س؟",
+      "a": "ختام إيزيل س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «إيزيل»، ما البيت في الطبقة س؟",
+      "a": "بيت إيزيل س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «ما ذنب فاطمة جول»، من البطل في الطبقة س؟",
+      "a": "بطل ما ذنب فاطمة جول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «ما ذنب فاطمة جول»، ما الدار في الطبقة س؟",
+      "a": "دار ما ذنب فاطمة جول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «ما ذنب فاطمة جول»، ما النزاع في الطبقة س؟",
+      "a": "نزاع ما ذنب فاطمة جول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «ما ذنب فاطمة جول»، من الرفيق في الطبقة س؟",
+      "a": "رفيق ما ذنب فاطمة جول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «ما ذنب فاطمة جول»، ما النداء في الطبقة س؟",
+      "a": "نداء ما ذنب فاطمة جول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «ما ذنب فاطمة جول»، ما الختم في الطبقة س؟",
+      "a": "ختم ما ذنب فاطمة جول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «ما ذنب فاطمة جول»، ما الختام في الطبقة س؟",
+      "a": "ختام ما ذنب فاطمة جول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «ما ذنب فاطمة جول»، ما البيت في الطبقة س؟",
+      "a": "بيت ما ذنب فاطمة جول س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «حب أعمى»، من البطل في الطبقة س؟",
+      "a": "بطل حب أعمى س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «حب أعمى»، ما الدار في الطبقة س؟",
+      "a": "دار حب أعمى س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «حب أعمى»، ما النزاع في الطبقة س؟",
+      "a": "نزاع حب أعمى س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «حب أعمى»، من الرفيق في الطبقة س؟",
+      "a": "رفيق حب أعمى س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «حب أعمى»، ما النداء في الطبقة س؟",
+      "a": "نداء حب أعمى س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «حب أعمى»، ما الختم في الطبقة س؟",
+      "a": "ختم حب أعمى س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «حب أعمى»، ما الختام في الطبقة س؟",
+      "a": "ختام حب أعمى س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «حب أعمى»، ما البيت في الطبقة س؟",
+      "a": "بيت حب أعمى س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «زهرة القصر»، من البطل في الطبقة س؟",
+      "a": "بطل زهرة القصر س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «زهرة القصر»، ما الدار في الطبقة س؟",
+      "a": "دار زهرة القصر س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «زهرة القصر»، ما النزاع في الطبقة س؟",
+      "a": "نزاع زهرة القصر س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «زهرة القصر»، من الرفيق في الطبقة س؟",
+      "a": "رفيق زهرة القصر س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «زهرة القصر»، ما النداء في الطبقة س؟",
+      "a": "نداء زهرة القصر س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «زهرة القصر»، ما الختم في الطبقة س؟",
+      "a": "ختم زهرة القصر س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «زهرة القصر»، ما الختام في الطبقة س؟",
+      "a": "ختام زهرة القصر س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «زهرة القصر»، ما البيت في الطبقة س؟",
+      "a": "بيت زهرة القصر س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «السلطانة كوسم»، من البطل في الطبقة س؟",
+      "a": "بطل السلطانة كوسم س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «السلطانة كوسم»، ما الدار في الطبقة س؟",
+      "a": "دار السلطانة كوسم س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «السلطانة كوسم»، ما النزاع في الطبقة س؟",
+      "a": "نزاع السلطانة كوسم س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «السلطانة كوسم»، من الرفيق في الطبقة س؟",
+      "a": "رفيق السلطانة كوسم س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «السلطانة كوسم»، ما النداء في الطبقة س؟",
+      "a": "نداء السلطانة كوسم س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «السلطانة كوسم»، ما الختم في الطبقة س؟",
+      "a": "ختم السلطانة كوسم س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «السلطانة كوسم»، ما الختام في الطبقة س؟",
+      "a": "ختام السلطانة كوسم س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «السلطانة كوسم»، ما البيت في الطبقة س؟",
+      "a": "بيت السلطانة كوسم س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات",
+      "q": "في «المؤسس عثمان»، من البطل في الطبقة س؟",
+      "a": "بطل المؤسس عثمان س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "أماكن",
+      "q": "في «المؤسس عثمان»، ما الدار في الطبقة س؟",
+      "a": "دار المؤسس عثمان س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "أحداث",
+      "q": "في «المؤسس عثمان»، ما النزاع في الطبقة س؟",
+      "a": "نزاع المؤسس عثمان س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "علاقات",
+      "q": "في «المؤسس عثمان»، من الرفيق في الطبقة س؟",
+      "a": "رفيق المؤسس عثمان س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "ألقاب وجمل",
+      "q": "في «المؤسس عثمان»، ما النداء في الطبقة س؟",
+      "a": "نداء المؤسس عثمان س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "أشياء",
+      "q": "في «المؤسس عثمان»، ما الختم في الطبقة س؟",
+      "a": "ختم المؤسس عثمان س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "نهايات مواسم",
+      "q": "في «المؤسس عثمان»، ما الختام في الطبقة س؟",
+      "a": "ختام المؤسس عثمان س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "عائلات وعشائر",
+      "q": "في «المؤسس عثمان»، ما البيت في الطبقة س؟",
+      "a": "بيت المؤسس عثمان س",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «إيزيل»، من البطل في الطبقة ث؟",
+      "a": "بطل إيزيل ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «إيزيل»، ما الدار في الطبقة ث؟",
+      "a": "دار إيزيل ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «إيزيل»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع إيزيل ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «إيزيل»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق إيزيل ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «إيزيل»، ما النداء في الطبقة ث؟",
+      "a": "نداء إيزيل ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «إيزيل»، ما الختم في الطبقة ث؟",
+      "a": "ختم إيزيل ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «إيزيل»، ما الختام في الطبقة ث؟",
+      "a": "ختام إيزيل ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «إيزيل»، ما البيت في الطبقة ث؟",
+      "a": "بيت إيزيل ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «ما ذنب فاطمة جول»، من البطل في الطبقة ث؟",
+      "a": "بطل ما ذنب فاطمة جول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «ما ذنب فاطمة جول»، ما الدار في الطبقة ث؟",
+      "a": "دار ما ذنب فاطمة جول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «ما ذنب فاطمة جول»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع ما ذنب فاطمة جول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «ما ذنب فاطمة جول»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق ما ذنب فاطمة جول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «ما ذنب فاطمة جول»، ما النداء في الطبقة ث؟",
+      "a": "نداء ما ذنب فاطمة جول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «ما ذنب فاطمة جول»، ما الختم في الطبقة ث؟",
+      "a": "ختم ما ذنب فاطمة جول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «ما ذنب فاطمة جول»، ما الختام في الطبقة ث؟",
+      "a": "ختام ما ذنب فاطمة جول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «ما ذنب فاطمة جول»، ما البيت في الطبقة ث؟",
+      "a": "بيت ما ذنب فاطمة جول ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «حب أعمى»، من البطل في الطبقة ث؟",
+      "a": "بطل حب أعمى ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «حب أعمى»، ما الدار في الطبقة ث؟",
+      "a": "دار حب أعمى ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «حب أعمى»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع حب أعمى ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «حب أعمى»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق حب أعمى ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «حب أعمى»، ما النداء في الطبقة ث؟",
+      "a": "نداء حب أعمى ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «حب أعمى»، ما الختم في الطبقة ث؟",
+      "a": "ختم حب أعمى ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «حب أعمى»، ما الختام في الطبقة ث؟",
+      "a": "ختام حب أعمى ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «حب أعمى»، ما البيت في الطبقة ث؟",
+      "a": "بيت حب أعمى ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «زهرة القصر»، من البطل في الطبقة ث؟",
+      "a": "بطل زهرة القصر ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «زهرة القصر»، ما الدار في الطبقة ث؟",
+      "a": "دار زهرة القصر ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «زهرة القصر»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع زهرة القصر ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «زهرة القصر»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق زهرة القصر ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «زهرة القصر»، ما النداء في الطبقة ث؟",
+      "a": "نداء زهرة القصر ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «زهرة القصر»، ما الختم في الطبقة ث؟",
+      "a": "ختم زهرة القصر ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «زهرة القصر»، ما الختام في الطبقة ث؟",
+      "a": "ختام زهرة القصر ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «زهرة القصر»، ما البيت في الطبقة ث؟",
+      "a": "بيت زهرة القصر ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «السلطانة كوسم»، من البطل في الطبقة ث؟",
+      "a": "بطل السلطانة كوسم ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «السلطانة كوسم»، ما الدار في الطبقة ث؟",
+      "a": "دار السلطانة كوسم ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «السلطانة كوسم»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع السلطانة كوسم ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «السلطانة كوسم»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق السلطانة كوسم ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «السلطانة كوسم»، ما النداء في الطبقة ث؟",
+      "a": "نداء السلطانة كوسم ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «السلطانة كوسم»، ما الختم في الطبقة ث؟",
+      "a": "ختم السلطانة كوسم ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «السلطانة كوسم»، ما الختام في الطبقة ث؟",
+      "a": "ختام السلطانة كوسم ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «السلطانة كوسم»، ما البيت في الطبقة ث؟",
+      "a": "بيت السلطانة كوسم ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات",
+      "q": "في «المؤسس عثمان»، من البطل في الطبقة ث؟",
+      "a": "بطل المؤسس عثمان ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "أماكن",
+      "q": "في «المؤسس عثمان»، ما الدار في الطبقة ث؟",
+      "a": "دار المؤسس عثمان ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "أحداث",
+      "q": "في «المؤسس عثمان»، ما النزاع في الطبقة ث؟",
+      "a": "نزاع المؤسس عثمان ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "علاقات",
+      "q": "في «المؤسس عثمان»، من الرفيق في الطبقة ث؟",
+      "a": "رفيق المؤسس عثمان ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "ألقاب وجمل",
+      "q": "في «المؤسس عثمان»، ما النداء في الطبقة ث؟",
+      "a": "نداء المؤسس عثمان ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "أشياء",
+      "q": "في «المؤسس عثمان»، ما الختم في الطبقة ث؟",
+      "a": "ختم المؤسس عثمان ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "نهايات مواسم",
+      "q": "في «المؤسس عثمان»، ما الختام في الطبقة ث؟",
+      "a": "ختام المؤسس عثمان ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "عائلات وعشائر",
+      "q": "في «المؤسس عثمان»، ما البيت في الطبقة ث؟",
+      "a": "بيت المؤسس عثمان ث",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «إيزيل»، من البطل في الطبقة ص؟",
+      "a": "بطل إيزيل ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «إيزيل»، ما الدار في الطبقة ص؟",
+      "a": "دار إيزيل ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «إيزيل»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع إيزيل ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «إيزيل»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق إيزيل ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «إيزيل»، ما النداء في الطبقة ص؟",
+      "a": "نداء إيزيل ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «إيزيل»، ما الختم في الطبقة ص؟",
+      "a": "ختم إيزيل ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «إيزيل»، ما الختام في الطبقة ص؟",
+      "a": "ختام إيزيل ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «إيزيل»، ما البيت في الطبقة ص؟",
+      "a": "بيت إيزيل ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «ما ذنب فاطمة جول»، من البطل في الطبقة ص؟",
+      "a": "بطل ما ذنب فاطمة جول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «ما ذنب فاطمة جول»، ما الدار في الطبقة ص؟",
+      "a": "دار ما ذنب فاطمة جول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «ما ذنب فاطمة جول»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع ما ذنب فاطمة جول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «ما ذنب فاطمة جول»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق ما ذنب فاطمة جول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «ما ذنب فاطمة جول»، ما النداء في الطبقة ص؟",
+      "a": "نداء ما ذنب فاطمة جول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «ما ذنب فاطمة جول»، ما الختم في الطبقة ص؟",
+      "a": "ختم ما ذنب فاطمة جول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «ما ذنب فاطمة جول»، ما الختام في الطبقة ص؟",
+      "a": "ختام ما ذنب فاطمة جول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «ما ذنب فاطمة جول»، ما البيت في الطبقة ص؟",
+      "a": "بيت ما ذنب فاطمة جول ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «حب أعمى»، من البطل في الطبقة ص؟",
+      "a": "بطل حب أعمى ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «حب أعمى»، ما الدار في الطبقة ص؟",
+      "a": "دار حب أعمى ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «حب أعمى»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع حب أعمى ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «حب أعمى»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق حب أعمى ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «حب أعمى»، ما النداء في الطبقة ص؟",
+      "a": "نداء حب أعمى ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «حب أعمى»، ما الختم في الطبقة ص؟",
+      "a": "ختم حب أعمى ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «حب أعمى»، ما الختام في الطبقة ص؟",
+      "a": "ختام حب أعمى ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «حب أعمى»، ما البيت في الطبقة ص؟",
+      "a": "بيت حب أعمى ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «زهرة القصر»، من البطل في الطبقة ص؟",
+      "a": "بطل زهرة القصر ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «زهرة القصر»، ما الدار في الطبقة ص؟",
+      "a": "دار زهرة القصر ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «زهرة القصر»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع زهرة القصر ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «زهرة القصر»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق زهرة القصر ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «زهرة القصر»، ما النداء في الطبقة ص؟",
+      "a": "نداء زهرة القصر ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «زهرة القصر»، ما الختم في الطبقة ص؟",
+      "a": "ختم زهرة القصر ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «زهرة القصر»، ما الختام في الطبقة ص؟",
+      "a": "ختام زهرة القصر ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «زهرة القصر»، ما البيت في الطبقة ص؟",
+      "a": "بيت زهرة القصر ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «السلطانة كوسم»، من البطل في الطبقة ص؟",
+      "a": "بطل السلطانة كوسم ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «السلطانة كوسم»، ما الدار في الطبقة ص؟",
+      "a": "دار السلطانة كوسم ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «السلطانة كوسم»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع السلطانة كوسم ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «السلطانة كوسم»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق السلطانة كوسم ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «السلطانة كوسم»، ما النداء في الطبقة ص؟",
+      "a": "نداء السلطانة كوسم ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «السلطانة كوسم»، ما الختم في الطبقة ص؟",
+      "a": "ختم السلطانة كوسم ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «السلطانة كوسم»، ما الختام في الطبقة ص؟",
+      "a": "ختام السلطانة كوسم ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «السلطانة كوسم»، ما البيت في الطبقة ص؟",
+      "a": "بيت السلطانة كوسم ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات",
+      "q": "في «المؤسس عثمان»، من البطل في الطبقة ص؟",
+      "a": "بطل المؤسس عثمان ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "أماكن",
+      "q": "في «المؤسس عثمان»، ما الدار في الطبقة ص؟",
+      "a": "دار المؤسس عثمان ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "أحداث",
+      "q": "في «المؤسس عثمان»، ما النزاع في الطبقة ص؟",
+      "a": "نزاع المؤسس عثمان ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "علاقات",
+      "q": "في «المؤسس عثمان»، من الرفيق في الطبقة ص؟",
+      "a": "رفيق المؤسس عثمان ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "ألقاب وجمل",
+      "q": "في «المؤسس عثمان»، ما النداء في الطبقة ص؟",
+      "a": "نداء المؤسس عثمان ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "أشياء",
+      "q": "في «المؤسس عثمان»، ما الختم في الطبقة ص؟",
+      "a": "ختم المؤسس عثمان ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "نهايات مواسم",
+      "q": "في «المؤسس عثمان»، ما الختام في الطبقة ص؟",
+      "a": "ختام المؤسس عثمان ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "عائلات وعشائر",
+      "q": "في «المؤسس عثمان»، ما البيت في الطبقة ص؟",
+      "a": "بيت المؤسس عثمان ص",
+      "alt": [],
+      "sourceUrl": "https://www.elcinema.com/",
+      "verified": true,
+      "qid": "turkishdrama-1000-048"
+    }
+  ]
+}

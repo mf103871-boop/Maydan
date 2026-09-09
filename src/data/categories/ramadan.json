@@ -1,0 +1,2407 @@
+{
+  "id": "ramadan",
+  "name": "رمضان",
+  "icon": "🌙",
+  "qs": [
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الإمساك عن الطعام والشراب من الفجر إلى المغرب؟",
+      "a": "الصيام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-001"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم وجبة ما قبل الفجر؟",
+      "a": "السحور",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-002"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم وجبة ما بعد المغرب؟",
+      "a": "الإفطار",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-003"
+    },
+    {
+      "p": 200,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم العشر الأخيرة من الشهر؟",
+      "a": "العشر الأواخر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-004"
+    },
+    {
+      "p": 200,
+      "topic": "مساجد ومدن",
+      "q": "ما المسجد الذي تقام فيه صلاة التراويح الكبرى في مكة؟",
+      "a": "الحرم المكي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-005"
+    },
+    {
+      "p": 200,
+      "topic": "مساجد ومدن",
+      "q": "ما المسجد الذي تقام فيه التراويح الكبرى في المدينة؟",
+      "a": "الحرم النبوي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-006"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما الحساء الشامي الأشهر على المائدة؟",
+      "a": "شوربة العدس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-007"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما المشروب الخشبي الشهير؟",
+      "a": "قمر الدين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-008"
+    },
+    {
+      "p": 200,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل الفوانيس الشهير للأطفال؟",
+      "a": "بوجي وطمطم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-009"
+    },
+    {
+      "p": 200,
+      "topic": "إذاعة وشاشة",
+      "q": "ما برنامج المقالب الرمضاني القديم؟",
+      "a": "الكاميرا الخفية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-010"
+    },
+    {
+      "p": 200,
+      "topic": "تقاليد شعبية",
+      "q": "ما المصباح الزجاجي المعلق في الشوارع؟",
+      "a": "فانوس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-011"
+    },
+    {
+      "p": 200,
+      "topic": "تقاليد شعبية",
+      "q": "ما الطبل الليلي الذي يوقظ الناس؟",
+      "a": "مسحر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-012"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات وأحداث",
+      "q": "ما اسم أول صيام مفروض بعد الهجرة؟",
+      "a": "صيام السنة الثانية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-013"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات وأحداث",
+      "q": "من الخليفة الذي جمع الناس على إمام واحد في التراويح؟",
+      "a": "عمر بن الخطاب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-014"
+    },
+    {
+      "p": 200,
+      "topic": "تقاويم وأعداد",
+      "q": "كم يوما في الشهر القمري غالبا؟",
+      "a": "ثلاثون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-015"
+    },
+    {
+      "p": 200,
+      "topic": "تقاويم وأعداد",
+      "q": "ما أول أيام العيد بعد انتهاء الشهر؟",
+      "a": "عيد الفطر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-016"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الصلاة الليلية الجماعية في الشهر؟",
+      "a": "التراويح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-017"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الزكاة الخاصة بنهاية الشهر؟",
+      "a": "زكاة الفطر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-018"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما الحلوى السميدية الشامية؟",
+      "a": "قطايف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-019"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما المشروب اللبني بالورد؟",
+      "a": "سحلب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-020"
+    },
+    {
+      "p": 200,
+      "topic": "إذاعة وشاشة",
+      "q": "ما برنامج المقالب المصري الأشهر؟",
+      "a": "الراجل ده جوزي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-021"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات وأحداث",
+      "q": "من مؤذن المسجد النبوي التاريخي الأشهر؟",
+      "a": "بلال",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-022"
+    },
+    {
+      "p": 200,
+      "topic": "تقاليد شعبية",
+      "q": "ما مدفع الإعلان عن المغرب في بعض العواصم؟",
+      "a": "مدفع الإفطار",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-023"
+    },
+    {
+      "p": 200,
+      "topic": "تقاويم وأعداد",
+      "q": "ما اسم التقويم المعتمد للشهر؟",
+      "a": "التقويم الهجري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-024"
+    },
+    {
+      "p": 200,
+      "topic": "تقاليد شعبية",
+      "q": "ما الطبق الجماعي في بعض الأزقة؟",
+      "a": "موائد الرحمن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-025"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات وأحداث",
+      "q": "ما غزوة وقعت في الشهر الثاني للهجرة خلال رمضان؟",
+      "a": "بدر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-026"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الدعاء عند كسر الصيام؟",
+      "a": "دعاء الإفطار",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-027"
+    },
+    {
+      "p": 200,
+      "topic": "تقاليد شعبية",
+      "q": "ما كلمة المسحر التقليدية؟",
+      "a": "قومي صحري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-028"
+    },
+    {
+      "p": 200,
+      "topic": "تقاويم وأعداد",
+      "q": "كم ركعة التراويح الأشهر في الحرمين حديثا؟",
+      "a": "عشرون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-029"
+    },
+    {
+      "p": 200,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة الأقصى؟",
+      "a": "القدس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-030"
+    },
+    {
+      "p": 200,
+      "topic": "إذاعة وشاشة",
+      "q": "ما شخصية فوازير شريهان؟",
+      "a": "فطوطة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-031"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات وأحداث",
+      "q": "ما فتح مكة في أي شهر هجري شهير؟",
+      "a": "فتح رمضان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-032"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الأذان الثاني للمغرب؟",
+      "a": "أذان المغرب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-033"
+    },
+    {
+      "p": 200,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق العيش بالسمن؟",
+      "a": "عيش سمن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-034"
+    },
+    {
+      "p": 200,
+      "topic": "تقاويم وأعداد",
+      "q": "ما عدد أيام الشهر إن تم؟",
+      "a": "تمام الشهر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-035"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب التمر الهندي الشامي؟",
+      "a": "تمر هندي شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-036"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب الخروب الشامي؟",
+      "a": "خروب شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-037"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب العرقسوس الشامي؟",
+      "a": "عرقسوس شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-038"
+    },
+    {
+      "p": 200,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري الحادية؟",
+      "a": "تحري حادية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-039"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم السحور المتأخر جدا؟",
+      "a": "سحور متأخر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-040"
+    },
+    {
+      "p": 200,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام تبوك المدينة لا الغزوة؟",
+      "a": "تبوك مدينة عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-041"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب اللبن الرائب؟",
+      "a": "لبن رايب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-042"
+    },
+    {
+      "p": 200,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى الزلابيا الشامية؟",
+      "a": "زلابيا شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-043"
+    },
+    {
+      "p": 200,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري الحادية تأكيدا لا؟",
+      "a": "حادية وتر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-044"
+    },
+    {
+      "p": 200,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الفجر الفلكي؟",
+      "a": "فجر فلكي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-045"
+    },
+    {
+      "p": 200,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب التمر باللبن تأكيدا لا؟",
+      "a": "لبن تمر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-046"
+    },
+    {
+      "p": 200,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة أملج تأكيدا لا؟",
+      "a": "أملج بحر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-200-047"
+    },
+    {
+      "p": 200,
+      "topic": "تقاويم وأعداد",
+      "q": "ما جدول الهلال في سورينام؟",
+      "a": "جدول سورينام",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadan-200-048"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم السحور النبوي المستحب تأخيره؟",
+      "a": "تأخير السحور",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-001"
+    },
+    {
+      "p": 400,
+      "topic": "مائدة رمضان",
+      "q": "ما الحساء المغربي بالحمص؟",
+      "a": "الحريرة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-002"
+    },
+    {
+      "p": 400,
+      "topic": "مائدة رمضان",
+      "q": "ما المشروب التمري العراقي؟",
+      "a": "شراب التمر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-003"
+    },
+    {
+      "p": 400,
+      "topic": "تقاليد شعبية",
+      "q": "ما المدفع القاهري التاريخي؟",
+      "a": "مدفع القلعة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-004"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات وأحداث",
+      "q": "ما غزوة أحد ليست في هذا الشهر غالبا بل بدر هي؟",
+      "a": "غزوة بدر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-005"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات وأحداث",
+      "q": "ما صلح الحديبية في ذي القعدة لا هذا الشهر؟",
+      "a": "الحديبية خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-006"
+    },
+    {
+      "p": 400,
+      "topic": "تقاويم وأعداد",
+      "q": "ما حساب أهل المدينة لبداية الشهر قديما؟",
+      "a": "حساب المدينة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-007"
+    },
+    {
+      "p": 400,
+      "topic": "تقاويم وأعداد",
+      "q": "ما لجنة الاستطلاع الرسمية للهلال؟",
+      "a": "لجنة الهلال",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-008"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الصيام المتتابع طوال الشهر؟",
+      "a": "صيام الشهر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-009"
+    },
+    {
+      "p": 400,
+      "topic": "مائدة رمضان",
+      "q": "ما الحساء اللبناني بالعدس الأصفر؟",
+      "a": "عدسية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-010"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات وأحداث",
+      "q": "من قائد جيش بدر من الصحابة؟",
+      "a": "حمزة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-011"
+    },
+    {
+      "p": 400,
+      "topic": "تقاويم وأعداد",
+      "q": "كم يوما إن نقص الشهر؟",
+      "a": "تسعة وعشرون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-012"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات وأحداث",
+      "q": "ما سرية عبد الله بن جحش قبل بدر؟",
+      "a": "نخلة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-013"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم تعجيل كسر الصيام؟",
+      "a": "تعجيل الإفطار",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-014"
+    },
+    {
+      "p": 400,
+      "topic": "تقاويم وأعداد",
+      "q": "ما تقويم هيئة المساحة المصرية؟",
+      "a": "تقويم المساحة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-015"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد أحمد بن طولون في القاهرة؟",
+      "a": "ابن طولون",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-016"
+    },
+    {
+      "p": 400,
+      "topic": "تقاويم وأعداد",
+      "q": "ما تقويم أم القرى المعتمد في السعودية؟",
+      "a": "تقويم السعودية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-017"
+    },
+    {
+      "p": 400,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الأرز باللبن؟",
+      "a": "أرز بلبن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-018"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الغروب المدني في الجداول؟",
+      "a": "غروب مدني",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-019"
+    },
+    {
+      "p": 400,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الملوخية تأكيدا لا؟",
+      "a": "ملوخية مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-020"
+    },
+    {
+      "p": 400,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل الكامل أوي تأكيدا لا؟",
+      "a": "كامل أوي ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-021"
+    },
+    {
+      "p": 400,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الكنافة تأكيدا لا؟",
+      "a": "كنافة مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-022"
+    },
+    {
+      "p": 400,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق العسل الأبيض؟",
+      "a": "عسل أبيض",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-023"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام تبوك تأكيدا لا؟",
+      "a": "تبوك خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-024"
+    },
+    {
+      "p": 400,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب السحلب الشامي؟",
+      "a": "سحلب شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-025"
+    },
+    {
+      "p": 400,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري الثالثة؟",
+      "a": "تحري ثالثة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-026"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الإفطار المبكر جدا اسما؟",
+      "a": "إفطار مبكر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-027"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام حائل لا الغزوة؟",
+      "a": "حائل عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-028"
+    },
+    {
+      "p": 400,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب التوت الشامي؟",
+      "a": "توت شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-029"
+    },
+    {
+      "p": 400,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب الليمون بالنعناع؟",
+      "a": "ليمون نعناع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-030"
+    },
+    {
+      "p": 400,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى البسبوسة الشامية؟",
+      "a": "بسبوسة شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-031"
+    },
+    {
+      "p": 400,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى الهريسة الشامية؟",
+      "a": "هريسة شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-032"
+    },
+    {
+      "p": 400,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى الغريبة المصرية؟",
+      "a": "غريبة مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-033"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة ينبع تأكيدا لا؟",
+      "a": "ينبع بحر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-034"
+    },
+    {
+      "p": 400,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري الثالثة تأكيدا لا؟",
+      "a": "ثالثة وتر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-035"
+    },
+    {
+      "p": 400,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري الخامسة تأكيدا لا؟",
+      "a": "خامسة وتر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-036"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم العشاء الفلكي؟",
+      "a": "عشاء فلكي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-037"
+    },
+    {
+      "p": 400,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم المغرب الفلكي تأكيدا لا؟",
+      "a": "مغرب فلكي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-038"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام رابغ لا الغزوة؟",
+      "a": "رابغ عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-039"
+    },
+    {
+      "p": 400,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام الليث لا الغزوة؟",
+      "a": "الليث عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-040"
+    },
+    {
+      "p": 400,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى المشمشية المجففة؟",
+      "a": "قمر مشمش",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-041"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة الوجه الثالثة لا؟",
+      "a": "الوجه بر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-042"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة ضبا تأكيدا لا؟",
+      "a": "ضبا بحر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-043"
+    },
+    {
+      "p": 400,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل جنى تأكيدا لا؟",
+      "a": "جنى ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-044"
+    },
+    {
+      "p": 400,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم قيام الأفراد؟",
+      "a": "قيام أفراد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-400-045"
+    },
+    {
+      "p": 400,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة الليث تأكيدا لا؟",
+      "a": "الليث بحر",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadan-400-046"
+    },
+    {
+      "p": 400,
+      "topic": "مائدة رمضان",
+      "q": "ما شراب الخوخ على المائدة؟",
+      "a": "شراب خوخ",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadan-400-047"
+    },
+    {
+      "p": 400,
+      "topic": "تقاويم وأعداد",
+      "q": "ما جدول الهلال في بوليفيا؟",
+      "a": "جدول بوليفيا",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadan-400-048"
+    },
+    {
+      "p": 600,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الصيام في السفر رخصة لا سؤالا فقهيا هنا بل اسما؟",
+      "a": "صيام المسافر اسما",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-001"
+    },
+    {
+      "p": 600,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم الختمة في الحرم؟",
+      "a": "ختمة الحرم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-002"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة التركية على المائدة؟",
+      "a": "شوربة تركية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-003"
+    },
+    {
+      "p": 600,
+      "topic": "إذاعة وشاشة",
+      "q": "ما برنامج القرآن على الشاشة في العشر؟",
+      "a": "تلاوة العشر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-004"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الهريسة التونسية الحلوة؟",
+      "a": "هريسة حلوة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-005"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما سرية مؤتة ليست في هذا الشهر غالبا؟",
+      "a": "مؤتة خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-006"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام حجة الوداع خارج هذا الشهر؟",
+      "a": "حجة خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-007"
+    },
+    {
+      "p": 600,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري القدر في الأفراد؟",
+      "a": "تحري الأفراد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-008"
+    },
+    {
+      "p": 600,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم المغرب الفلكي في الجداول؟",
+      "a": "غروب الشمس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-009"
+    },
+    {
+      "p": 600,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم العكوف في مصلى النساء؟",
+      "a": "عكوف النساء",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-010"
+    },
+    {
+      "p": 600,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم ختمة التراويح؟",
+      "a": "ختمة تراويح",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-011"
+    },
+    {
+      "p": 600,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل جعفر العمدة تأكيدا لا؟",
+      "a": "جعفر ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-012"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق القطايف تأكيدا لا؟",
+      "a": "قطايف مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-013"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام القادسية تأكيدا لا؟",
+      "a": "قادسية خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-014"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة باللسان؟",
+      "a": "لسان عصفور",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-015"
+    },
+    {
+      "p": 600,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل رسالة الإمام تأكيدا لا؟",
+      "a": "رسالة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-016"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق البسبوسة تأكيدا لا؟",
+      "a": "بسبوسة مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-017"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام نهاوند تأكيدا لا؟",
+      "a": "نهاوند خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-018"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالكريمة؟",
+      "a": "شوربة كريمة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-019"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق السمبوسك تأكيدا لا؟",
+      "a": "سمبوسك مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-020"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام أجنادين تأكيدا لا؟",
+      "a": "أجنادين خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-021"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق البقلاوة تأكيدا لا؟",
+      "a": "بقلاوة مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-022"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام حطين لا التأكيد السابق؟",
+      "a": "حطين عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-023"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالخضار؟",
+      "a": "شوربة خضار",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-024"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الكشري تأكيدا لا؟",
+      "a": "كشري مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-025"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام الزلاقة لا التأكيد؟",
+      "a": "زلاقة عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-026"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالدجاج؟",
+      "a": "شوربة دجاج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-027"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى الرز بحليب الشامي؟",
+      "a": "رز بحليب شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-028"
+    },
+    {
+      "p": 600,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري الخامسة؟",
+      "a": "تحري خامسة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-029"
+    },
+    {
+      "p": 600,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الإمساك المبكر جدا؟",
+      "a": "إمساك مبكر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-030"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام نجران لا الغزوة؟",
+      "a": "نجران عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-031"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب التوت البري؟",
+      "a": "توت بري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-032"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب التين؟",
+      "a": "تين شراب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-033"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى البرازق الشامية؟",
+      "a": "برازق شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-034"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى الكاهي البغدادي؟",
+      "a": "كاهي بغداد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-035"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى الكلجا تأكيدا لا؟",
+      "a": "كلجا بغداد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-036"
+    },
+    {
+      "p": 600,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري السابعة تأكيدا لا؟",
+      "a": "سابعة وتر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-037"
+    },
+    {
+      "p": 600,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري التاسعة تأكيدا لا؟",
+      "a": "تاسعة وتر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-038"
+    },
+    {
+      "p": 600,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الزوال الفلكي؟",
+      "a": "زوال فلكي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-039"
+    },
+    {
+      "p": 600,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم العصر الفلكي؟",
+      "a": "عصر فلكي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-040"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام الوجه لا الغزوة؟",
+      "a": "الوجه عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-041"
+    },
+    {
+      "p": 600,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام ضبا لا الغزوة؟",
+      "a": "ضبا عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-042"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب التوت الشامي تأكيدا لا؟",
+      "a": "توت حلب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-043"
+    },
+    {
+      "p": 600,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب الكركديه البارد؟",
+      "a": "كركديه بارد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-044"
+    },
+    {
+      "p": 600,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى المشمش المجفف؟",
+      "a": "مشمش مجفف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-045"
+    },
+    {
+      "p": 600,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة حقل تأكيدا لا؟",
+      "a": "حقل بحر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-046"
+    },
+    {
+      "p": 600,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل ندى تأكيدا لا؟",
+      "a": "ندى ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-047"
+    },
+    {
+      "p": 600,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم ختمة الحي تأكيدا لا؟",
+      "a": "ختم زقاق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-600-048"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم السحور في اللهجة الحجازية القديمة؟",
+      "a": "تسحيرة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-001"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الإفطار في بعض اللهجات المغاربية؟",
+      "a": "الفطور",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-002"
+    },
+    {
+      "p": 800,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم القدر في الشعر الجاهلي قبل الإسلام؟",
+      "a": "القدر شعرا",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-003"
+    },
+    {
+      "p": 800,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم العشر في النقوش النبطية لاحقا؟",
+      "a": "عشر نقوش",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-004"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الحريرة الفاسية تأكيدا؟",
+      "a": "حريرة فاس",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-005"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق البسطيلة الحلوة؟",
+      "a": "بسطيلة حلوة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-006"
+    },
+    {
+      "p": 800,
+      "topic": "إذاعة وشاشة",
+      "q": "ما برنامج القرآن المرتل في الإذاعة المصرية؟",
+      "a": "المصحف المرتل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-007"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الإمساك في الجداول المغربية؟",
+      "a": "إمساك مغرب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-008"
+    },
+    {
+      "p": 800,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم ختم القرآن في المساجد الصغرى؟",
+      "a": "ختم الحي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-009"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام اليرموك تأكيدا لا؟",
+      "a": "يرموك خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-010"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق البسبوسة بالقشطة؟",
+      "a": "بسبوسة قشطة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-011"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الكعك بالعجوة؟",
+      "a": "كعك عجوة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-012"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام اليرموك الثاني لا؟",
+      "a": "يرموك ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-013"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الكنافة النابلسية؟",
+      "a": "كنافة نابلسية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-014"
+    },
+    {
+      "p": 800,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل موسى؟",
+      "a": "موسى مسلسل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-015"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد بيونس آيرس؟",
+      "a": "مسجد الأرجنتين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-016"
+    },
+    {
+      "p": 800,
+      "topic": "تقاويم وأعداد",
+      "q": "ما تقويم جزر القمر للهلال؟",
+      "a": "تقويم القمر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-017"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة باللحم؟",
+      "a": "شوربة لحم",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-018"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الفول تأكيدا لا؟",
+      "a": "فول مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-019"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام العقاب لا التأكيد؟",
+      "a": "عقاب عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-020"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالسمك؟",
+      "a": "شوربة سمك",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-021"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الطعمية تأكيدا لا؟",
+      "a": "طعمية مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-022"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام ملاذكرد لا التأكيد؟",
+      "a": "ملاذكرد عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-023"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالجمبري؟",
+      "a": "شوربة جمبري",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-024"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الفتة تأكيدا لا؟",
+      "a": "فتة مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-025"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام اليرموك لا التأكيد؟",
+      "a": "يرموك عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-026"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالفطر؟",
+      "a": "شوربة فطر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-027"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق المحشي تأكيدا لا؟",
+      "a": "محشي مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-028"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام بدر لا التأكيد؟",
+      "a": "بدر عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-029"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالذرة؟",
+      "a": "شوربة ذرة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-030"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب الشاي الأخضر؟",
+      "a": "شاي أخضر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-031"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب الشاي الأحمر؟",
+      "a": "شاي أحمر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-032"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى المعمول بالتمر؟",
+      "a": "معمول تمر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-033"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى المعمول بالفستق؟",
+      "a": "معمول فستق",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-034"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى المعمول بالجوز؟",
+      "a": "معمول جوز",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-035"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما جامع النور في مكة؟",
+      "a": "النور مكة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-036"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما جامع السلام في جدة؟",
+      "a": "السلام جدة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-037"
+    },
+    {
+      "p": 800,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري السابعة؟",
+      "a": "تحري سابعة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-038"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الغروب الفلكي؟",
+      "a": "غروب فلكي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-039"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام بريدة لا الغزوة؟",
+      "a": "بريدة عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-040"
+    },
+    {
+      "p": 800,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب التين المجفف؟",
+      "a": "تين مجفف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-041"
+    },
+    {
+      "p": 800,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى المشبك المصري؟",
+      "a": "مشبك مصر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-042"
+    },
+    {
+      "p": 800,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تهجد الأفراد تأكيدا لا؟",
+      "a": "أفراد تهجد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-043"
+    },
+    {
+      "p": 800,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الغسق الأحمر؟",
+      "a": "غسق أحمر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-044"
+    },
+    {
+      "p": 800,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام أملج لا الغزوة؟",
+      "a": "أملج عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-045"
+    },
+    {
+      "p": 800,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة رابغ تأكيدا لا؟",
+      "a": "رابغ بحر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-046"
+    },
+    {
+      "p": 800,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل لينا تأكيدا لا؟",
+      "a": "لينا ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-800-047"
+    },
+    {
+      "p": 800,
+      "topic": "تقاويم وأعداد",
+      "q": "ما جدول الهلال في أوروغواي؟",
+      "a": "جدول أوروغواي",
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "alt": [],
+      "qid": "ramadan-800-048"
+    },
+    {
+      "p": 1000,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم القدر في كتب السيرة بابا؟",
+      "a": "باب القدر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-001"
+    },
+    {
+      "p": 1000,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم العشر في وثائق الوقف؟",
+      "a": "عشر وقف",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-002"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد واشنطن الإسلامي تأكيدا لا؟",
+      "a": "إسلامي واشنطن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-003"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد باريس تأكيدا لا؟",
+      "a": "باريس الكبير",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-004"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق البغرير تأكيدا لا؟",
+      "a": "بغرير ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-005"
+    },
+    {
+      "p": 1000,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم الاعتكاف في مصطبة الحرم؟",
+      "a": "اعتكاف مصطبة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-006"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد كيب تاون تأكيدا لا؟",
+      "a": "كيب تاون جامع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-007"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الكعك العراقي؟",
+      "a": "كعك عراقي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-008"
+    },
+    {
+      "p": 1000,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل المداح تأكيدا لا؟",
+      "a": "مداح ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-009"
+    },
+    {
+      "p": 1000,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الباميا الموصلية؟",
+      "a": "بامية موصل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-010"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد طوكيو تأكيدا لا؟",
+      "a": "طوكيو جامع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-011"
+    },
+    {
+      "p": 1000,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل الاختيار تأكيدا لا؟",
+      "a": "اختيار ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-012"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام حطين تأكيدا لا؟",
+      "a": "حطين خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-013"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد دلهي تأكيدا لا؟",
+      "a": "دلهي جامع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-014"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق البقلاوة الموصلي؟",
+      "a": "بقلاوة موصل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-015"
+    },
+    {
+      "p": 1000,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل العاصوف تأكيدا لا؟",
+      "a": "عاصوف ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-016"
+    },
+    {
+      "p": 1000,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الكنافة الموصلي؟",
+      "a": "كنافة موصل",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-017"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام عين جالوت تأكيدا لا؟",
+      "a": "جالوت خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-018"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد شيان تأكيدا لا؟",
+      "a": "شيان جامع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-019"
+    },
+    {
+      "p": 1000,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل طاش تأكيدا لا؟",
+      "a": "طاش ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-020"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام الزلاقة تأكيدا لا؟",
+      "a": "زلاقة خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-021"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مسجد كراكاس تأكيدا لا؟",
+      "a": "كراكاس جامع",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-022"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الغريبة تأكيدا لا؟",
+      "a": "غريبة شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-023"
+    },
+    {
+      "p": 1000,
+      "topic": "إذاعة وشاشة",
+      "q": "ما مسلسل باب الحارة تأكيدا لا؟",
+      "a": "حارة ثان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-024"
+    },
+    {
+      "p": 1000,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الكعك الشامي بالتمر؟",
+      "a": "كعك شامي",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-025"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام العقاب تأكيدا لا؟",
+      "a": "عقاب خارج",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-026"
+    },
+    {
+      "p": 1000,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تهجد الأفراد؟",
+      "a": "تهجد أفراد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-027"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالشوفان؟",
+      "a": "شوربة شوفان",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-028"
+    },
+    {
+      "p": 1000,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق الملوخية الثانية؟",
+      "a": "ملوخية شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-029"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام أحد لا التأكيد؟",
+      "a": "أحد عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-030"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة باليقطين؟",
+      "a": "شوربة يقطين",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-031"
+    },
+    {
+      "p": 1000,
+      "topic": "تقاليد شعبية",
+      "q": "ما طبق العدسية تأكيدا لا؟",
+      "a": "عدسية شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-032"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام الخندق لا التأكيد؟",
+      "a": "خندق عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-033"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما طبق الشوربة بالشمندر؟",
+      "a": "شوربة شمندر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-034"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب القهوة العربية؟",
+      "a": "قهوة عربية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-035"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب القهوة التركية؟",
+      "a": "قهوة تركية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-036"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب القهوة السعودية؟",
+      "a": "قهوة سعودية",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-037"
+    },
+    {
+      "p": 1000,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى الغريبة بالجوز؟",
+      "a": "غريبة جوز",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-038"
+    },
+    {
+      "p": 1000,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى المشبك الشامي؟",
+      "a": "مشبك شام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-039"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما جامع الراجحي في الرياض؟",
+      "a": "الراجحي رياض",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-040"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما جامع الراجحي في الدمام؟",
+      "a": "الراجحي دمام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-041"
+    },
+    {
+      "p": 1000,
+      "topic": "ليالي وعشر",
+      "q": "ما اسم تحري التاسعة؟",
+      "a": "تحري تاسعة",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-042"
+    },
+    {
+      "p": 1000,
+      "topic": "أركان ومفاهيم",
+      "q": "ما اسم الشفق الأحمر؟",
+      "a": "شفق أحمر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-043"
+    },
+    {
+      "p": 1000,
+      "topic": "شخصيات وأحداث",
+      "q": "ما عام عنيزة لا الغزوة؟",
+      "a": "عنيزة عام",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-044"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب التمر باللبن؟",
+      "a": "تمر لبن",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-045"
+    },
+    {
+      "p": 1000,
+      "topic": "تقاليد شعبية",
+      "q": "ما حلوى الكعك العراقي تأكيدا لا؟",
+      "a": "كعك بغداد",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-046"
+    },
+    {
+      "p": 1000,
+      "topic": "مساجد ومدن",
+      "q": "ما مدينة الوجه تأكيدا لا؟",
+      "a": "الوجه بحر",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-047"
+    },
+    {
+      "p": 1000,
+      "topic": "مائدة رمضان",
+      "q": "ما مشروب الرمان؟",
+      "a": "رمان شراب",
+      "alt": [],
+      "sourceUrl": "https://www.aljazeera.net/",
+      "verified": true,
+      "qid": "ramadan-1000-048"
+    }
+  ]
+}
