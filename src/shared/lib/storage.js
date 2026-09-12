@@ -20,6 +20,8 @@ export function createStorage(scope, backend) {
 
   return {
     prefix,
+    // Callers that promise recovery after reload must distinguish memory fallback.
+    persistent: Boolean(store),
     get(key, fallback = null) {
       try {
         const raw = store ? store.getItem(fullKey(key)) : memory.get(fullKey(key));

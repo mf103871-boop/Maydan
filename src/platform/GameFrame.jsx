@@ -5,7 +5,7 @@ import { IconHome, IconVolume, IconVolumeOff } from '../shared/ui/icons.jsx';
 import { setExitGuard, navigate } from './router.js';
 import { usePlatform } from './context.js';
 
-export function GameFrame({ game, inGame, exitMessage, children, onExit }) {
+export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onExit }) {
   const platform = usePlatform();
   const [confirming, setConfirming] = useState(null); // target path | null
   const leave = useCallback((target = '/') => {
@@ -19,9 +19,9 @@ export function GameFrame({ game, inGame, exitMessage, children, onExit }) {
   // فيعني «اخرج من اللعبة»، ولا يمرّ باللعبة أبدًا وإلا تعذّر الخروج منها.
   const requestExit = useCallback((target = '/', { fromBack = false } = {}) => {
     if (fromBack && typeof window.maydanBack === 'function' && window.maydanBack()) return;
-    if (inGame) setConfirming(target);
+    if (inGame) { beforeExit?.(); setConfirming(target); }
     else leave(target);
-  }, [inGame, leave]);
+  }, [inGame, leave, beforeExit]);
 
   useEffect(() => {
     setExitGuard((target) => { requestExit(target, { fromBack: true }); return true; });

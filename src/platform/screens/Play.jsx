@@ -19,6 +19,11 @@ export function Play({ id }) {
   const [mode, setMode] = useState(game && game.players.mode === 'both' ? 'individual' : (game && game.players.mode) || 'individual');
   const [inGame, setInGame] = useState(game ? game.setup === 'self' : false);
   const [session, setSession] = useState(0);
+  const [savedSession, setSavedSession] = useState(null);
+  const [gameOptions, setGameOptions] = useState(null);
+  const [setupValid, setSetupValid] = useState(true);
+  const [exitMessage, setExitMessage] = useState(null);
+  const [beforeExit, setBeforeExit] = useState(null);
 
   const storage = useMemo(() => createStorage(id), [id]);
   const wakeLock = useMemo(() => createWakeLock(), []);
@@ -34,12 +39,21 @@ export function Play({ id }) {
     settings: platform.settings,
     navigate,
     setInGame,
+    setSetupValid,
+    setGameOptions,
+    setExitMessage,
+    setBeforeExit: (handler) => setBeforeExit(() => handler),
+    resumeGame: (saved) => {
+      setPlayers(saved.players); setGameOptions(saved.settings || null); setSavedSession(saved); setInGame(true);
+      setStage('play'); setSession((s) => s + 1);
+    },
     requestExit: () => { setInGame(false); navigate('/', { replace: true }); },
-    restart: () => { setSession((s) => s + 1); },
-    backToSetup: () => { setInGame(false); setStage('setup'); },
+    restart: () => { setSavedSession(null); setSession((s) => s + 1); },
+    backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); },
   }), [platform, storage]);
 
   const start = useCallback((list) => {
+    setSavedSession(null);
     if (mode === 'teams') setTeams(list); else setPlayers(list);
     setInGame(true);
     setStage('play');
@@ -51,7 +65,7 @@ export function Play({ id }) {
   const Component = game.Component;
 
   return (
-    <GameFrame game={game} inGame={inGame} exitMessage={game.exitMessage}>
+    <GameFrame game={game} inGame={inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
       {stage === 'setup' ? (
         <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={`إعداد ${game.name}`}>
           <TopBar title="من يلعب؟" eyebrow={game.name} />
@@ -63,13 +77,13 @@ export function Play({ id }) {
               {game.SetupOptions && <game.SetupOptions api={api} storage={storage} />}
             </TeamsSetup>
           ) : (
-            <PlayersSetup roster={platform.roster} setRoster={platform.setRoster} min={game.players.min} max={game.players.max} api={api} onStart={start}>
+            <PlayersSetup roster={platform.roster} setRoster={platform.setRoster} min={game.players.min} max={game.players.max} api={api} onStart={start} startDisabled={!setupValid}>
               {game.SetupOptions && <game.SetupOptions api={api} storage={storage} />}
             </PlayersSetup>
           )}
         </Screen>
       ) : (
-        <Component key={session} api={api} players={players} teams={teams} mode={mode} onExit={api.requestExit} />
+        <Component key={session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
       )}
     </GameFrame>
   );
