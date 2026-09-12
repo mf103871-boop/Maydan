@@ -4,7 +4,7 @@ import { Button, Card, Modal } from '../ui/components.jsx';
 import { IconPlus } from '../ui/icons.jsx';
 import { addPlayer, EMOJIS, ROSTER_LIMIT } from './roster.js';
 
-export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onStart, children, startLabel = 'ابدأ اللعب', api }) {
+export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onStart, children, startLabel = 'ابدأ اللعب', startDisabled = false, api }) {
   const [selected, setSelected] = useState(() => roster.slice(0, Math.min(max, roster.length)).map((p) => p.id));
   const [adding, setAdding] = useState(false);
   const [name, setName] = useState('');
@@ -26,7 +26,7 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
     api && api.sound.play('pop');
   };
   const players = selected.map((id) => roster.find((p) => p.id === id)).filter(Boolean);
-  const canStart = players.length >= min;
+  const canStart = players.length >= min && !startDisabled;
 
   return (
     <div className="stack">
