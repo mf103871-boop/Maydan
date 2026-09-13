@@ -1,6 +1,6 @@
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 6px 14px 6px 8px; border-radius: 999px; background: var(--surface); border: 1px solid var(--stroke-strong); font-weight: 800; font-size: 15px; transition: transform .12s var(--ease-out), background-color .15s ease, border-color .15s ease; position: relative; overflow: hidden; }
-.chip .avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-size: 18px; background: color-mix(in srgb, var(--chip-color) 30%, transparent); }
+.chip .avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-size: 18px; background-color: color-mix(in srgb, var(--chip-color) 30%, transparent); }
 .chip.selected { background: color-mix(in srgb, var(--chip-color) 22%, var(--surface)); border-color: var(--chip-color); }
 .chip.selected .order { position: absolute; top: -2px; inset-inline-start: -2px; width: 20px; height: 20px; border-radius: 50%; background: var(--chip-color); color: #0B0E1A; font-size: 12px; display: grid; place-items: center; font-weight: 900; }
 .chip:active { transform: scale(.96); }
