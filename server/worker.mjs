@@ -1,6 +1,7 @@
 import { Room } from './room.mjs';
 import { readJson, json, errorResponse, sha256, credentials } from './protocol.mjs';
 import { fail } from './room-model.mjs';
+import packageInfo from '../package.json' with { type: 'json' };
 export { Room };
 
 // Small per-IP limits for accidental floods and room-code guessing.
@@ -32,7 +33,7 @@ function allowedOrigin(request, env) {
 }
 export async function routeRequest(request, env) {
   const url = new URL(request.url);
-  if (url.pathname === '/health' && request.method === 'GET') return json({ ok: true, protocol: 1, game: 'meenfina' });
+  if (url.pathname === '/health' && request.method === 'GET') return json({ ok: true, protocol: 1, game: 'meenfina', games: ['meenfina', 'fabraka'], version: packageInfo.version });
   const origin = allowedOrigin(request, env);
   if (!origin) return json({ error: 'ORIGIN' }, 403);
   const headers = { 'access-control-allow-origin': origin, vary: 'Origin',

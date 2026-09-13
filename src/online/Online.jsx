@@ -5,16 +5,20 @@ import { Screen, TopBar, Button, Card, ConfirmModal, Podium, Scoreboard } from '
 import { Avatar, AvatarPicker, GameArtwork } from '../shared/brand/art.jsx';
 import { navigate, setExitGuard } from '../platform/router.js';
 import { usePlatform } from '../platform/context.js';
-import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, normalizeCode, validCode, resolveServerUrl, errorText } from './shared.js';
+import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, ONLINE_GAMES, normalizeCode, validCode, resolveServerUrl, errorText } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession } from './client.js';
+import { normalizeOptions } from '../games/fabraka/logic.js';
+import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES } from './Fabraka.jsx';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
 const arabic = (number) => Number(number).toLocaleString('ar');
 const inviteUrl = (code) => { const url = new URL(location.href); url.search = ''; url.hash = `/room/${code}`; return url.toString(); };
 function ErrorNotice({ code }) { return code ? <p className="online-notice error" role="alert">{errorText(code)}</p> : null; }
 
-function Entry({ initialCode = '', onJoined }) {
+function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
   const [mode, setMode] = useState(initialCode ? 'join' : 'create');
+  const [game, setGame] = useState(ONLINE_GAMES[initialGame] ? initialGame : 'meenfina');
+  const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeOptions(readSaved(SERVER, 'fabrakaSettings')));
   const [name, setName] = useState(() => readSaved(SERVER, 'profile')?.name || '');
   const [avatar, setAvatar] = useState(() => readSaved(SERVER, 'profile')?.avatar ?? 0);
   const [code, setCode] = useState(initialCode);
@@ -31,12 +35,13 @@ function Entry({ initialCode = '', onJoined }) {
     if (mode === 'join' && !validCode(normalized)) { setError('INVALID'); return; }
     setBusy(true);
     try {
-      const pendingKey = mode === 'create' ? 'pendingCreate' : `pendingJoin:${normalized}`;
+      const pendingKey = mode === 'create' ? (game === 'meenfina' ? 'pendingCreate' : `pendingCreate:${game}`) : `pendingJoin:${normalized}`;
       let session = mode === 'join' ? readSaved(SERVER, normalized) : null;
       session ||= credentialsRef.current || readSaved(SERVER, pendingKey) || newCredentials();
       credentialsRef.current = session;
       save(SERVER, pendingKey, session); // Persist before HTTP so a retry can reclaim the same seat.
-      const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds });
+      const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds,
+        ...(mode === 'create' ? { game, ...(game === 'fabraka' ? { settings: fabrakaSettings } : {}) } : {}) });
       const stored = save(SERVER, result.code, session);
       save(SERVER, 'persistence', stored);
       save(SERVER, 'profile', { name: name.trim(), avatar }); save(SERVER, 'lastRoom', result.code); save(SERVER, pendingKey, null);
@@ -46,10 +51,10 @@ function Entry({ initialCode = '', onJoined }) {
   }
   return <>
     <Card className="online-intro">
-      <GameArtwork game="meenfina" />
-      <span className="online-label">مين فينا؟ · تجربة جماعية</span>
+      <GameArtwork game={game} />
+      <span className="online-label">{mode === 'create' ? ONLINE_GAMES[game].name : 'غرف ميدان'} · تجربة جماعية</span>
       <h1>اللّمّة وحدة، وكل واحد بجواله</h1>
-      <p>٣–١٢ لاعبًا · تصويت سري · نفس السؤال للجميع</p>
+      <p>{mode === 'join' ? 'رمز واحد يجمعكم في نفس اللعبة' : game === 'fabraka' ? '٣–٨ لاعبين · كتابة متزامنة · تصويت سري' : '٣–١٢ لاعبًا · تصويت سري · نفس السؤال للجميع'}</p>
     </Card>
     {!SERVER && <p className="online-notice" role="status">الغرف غير متاحة بعد. تقدر تلعب ألعاب ميدان على جهاز واحد من الرئيسية.</p>}
     {lastRoom && !initialCode && readSaved(SERVER, lastRoom) && <Button full onClick={() => onJoined(lastRoom, readSaved(SERVER, lastRoom), readSaved(SERVER, 'persistence') !== false)}>العودة إلى غرفتي <bdi>{lastRoom}</bdi></Button>}
@@ -59,10 +64,13 @@ function Entry({ initialCode = '', onJoined }) {
         <Button variant={mode === 'join' ? 'primary' : 'ghost'} aria-pressed={mode === 'join'} onClick={() => { setMode('join'); setError(''); credentialsRef.current = null; }}>دخول برمز</Button>
       </div>
       <form className="stack" onSubmit={submit}>
-        <label className="online-field">اسمك في الغرفة<input autoComplete="nickname" maxLength={40} value={name} onChange={(e) => setName(e.target.value)} placeholder="اكتب اسمك" required /></label>
+        {mode === 'create' && <div className="online-game-picker" role="group" aria-label="لعبة الغرفة">{Object.entries(ONLINE_GAMES).map(([id, info]) => <button key={id} type="button" disabled={busy} aria-pressed={game === id} className={game === id ? 'selected' : ''} onClick={() => { setGame(id); setError(''); credentialsRef.current = null; }}><GameArtwork game={id} /><b>{info.name}</b><small>{arabic(info.min)}–{arabic(info.max)} لاعبين</small></button>)}</div>}
+        <label className="online-field">اسمك في الغرفة<input autoComplete="nickname" maxLength={20} value={name} onChange={(e) => setName(e.target.value)} placeholder="اكتب اسمك" required /></label>
         <div><span className="online-field-label">اختر شخصيتك</span><AvatarPicker value={AVATARS[avatar]} onChange={(emoji) => setAvatar(AVATARS.indexOf(emoji))} /></div>
         {mode === 'join' ? <label className="online-field">رمز الغرفة<input className="online-code-input" dir="ltr" inputMode="numeric" autoComplete="off" maxLength={8} value={code} onChange={(e) => { setCode(normalizeCode(e.target.value)); credentialsRef.current = null; }} placeholder="123456" required /></label>
+          : game === 'fabraka' ? <FabrakaSettings value={fabrakaSettings} disabled={busy} onChange={(next) => { setFabrakaSettings(next); save(SERVER, 'fabrakaSettings', next); }} />
           : <label className="online-field">عدد الجولات<select value={rounds} onChange={(e) => setRounds(Number(e.target.value))}>{ROUND_OPTIONS.map((n) => <option key={n} value={n}>{arabic(n)} جولات</option>)}</select></label>}
+        {mode === 'create' && game === 'fabraka' && <FabrakaRules />}
         <ErrorNotice code={error} />
         <Button type="submit" variant="primary" size="lg" full disabled={!SERVER || busy} loading={busy}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
       </form>
@@ -97,7 +105,7 @@ function Lobby({ state, me, isHost, disabled, act }) {
   return <>
     <Invite code={state.code} />
     <Card className="stack">
-      <div className="row-between"><h2>غرفة الانتظار</h2><span>{arabic(players.length)} / ١٢</span></div>
+      <div className="row-between"><h2>غرفة الانتظار</h2><span>{arabic(players.length)} / {arabic(ONLINE_GAMES[state.game || 'meenfina'].max)}</span></div>
       <ul className="online-players">{players.map((p) => <li key={p.id}>
         <Avatar index={p.avatar} /><div className="grow"><b>{p.name}{p.id === me?.id ? ' (أنت)' : ''}</b><small>{p.id === state.hostId ? 'المضيف · ' : ''}{!p.connected ? 'انقطع الاتصال' : p.ready ? 'جاهز' : 'يستعد'}</small></div>
         <span className={`online-presence ${p.connected && p.ready ? 'ready' : ''}`} aria-hidden="true" />
@@ -107,7 +115,8 @@ function Lobby({ state, me, isHost, disabled, act }) {
       {isHost ? <Button full variant="primary" size="lg" disabled={disabled || !canStart} onClick={() => act('start')}>ابدأ اللعب</Button> : <p className="online-footnote">المضيف يبدأ الجولة عندما يجهز الجميع.</p>}
       {!canStart && isHost && <p className="online-footnote">نحتاج ٣ لاعبين على الأقل، متصلين وجاهزين جميعًا. تقدر تزيل مقعدًا منقطعًا من الانتظار.</p>}
     </Card>
-    <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>
+    {state.game === 'fabraka' ? <Card className="stack"><h2>فبركة · {FABRAKA_MODES[state.settings.mode]}</h2><p>{arabic(state.rounds)} جولات · {state.settings.writeSeconds ? `${arabic(state.settings.writeSeconds)} ثانية للكتابة` : 'كتابة براحتنا'} · {arabic(state.settings.discussionSeconds)} ثانية للنقاش · ٣٠ ثانية للتصويت.</p><FabrakaRules /></Card>
+      : <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>}
   </>;
 }
 function Match({ state, disabled, isHost, act, clockOffset }) {
@@ -172,8 +181,8 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   async function act(type, fields) {
     if (busyRef.current) return;
     busyRef.current = true; setBusy(true); setError('');
-    try { await clientRef.current.command(type, fields); }
-    catch (e) { setError(e.code); }
+    try { await clientRef.current.command(type, { ...fields, matchId: state.matchId, round: state.round }); return true; }
+    catch (e) { setError(e.code); return false; }
     finally { busyRef.current = false; setBusy(false); }
   }
   async function leave() {
@@ -190,17 +199,19 @@ function ConnectedRoom({ code, session, stored, onLeft }) {
   const isHost = state?.hostId === session.id;
   const disabled = busy || status !== 'connected';
   return <>
-    <TopBar title="مين فينا؟" eyebrow={`غرفة ${code}`} end={<Button size="sm" onClick={() => setExitTarget('/online')}>خروج</Button>} />
+    <TopBar title={state ? ONLINE_GAMES[state.game || 'meenfina'].name : 'غرف ميدان'} eyebrow={`غرفة ${code}`} end={<Button size="sm" onClick={() => setExitTarget(state?.game === 'fabraka' ? '/online/fabraka' : '/online')}>خروج</Button>} />
     <p className={`online-connection ${status === 'connected' ? 'connected' : ''}`} role="status">{status === 'connected' ? 'متصل · كل واحد بجواله' : status === 'ended' ? 'انتهى الاتصال بالغرفة' : status === 'replaced' ? 'الجلسة مفتوحة في تبويب آخر' : 'جاري الاتصال بالغرفة…'}</p>
     <ErrorNotice code={error} />
     {state?.hostMissingSince && <p className="online-notice">انقطع اتصال المضيف. تنتقل الإدارة للاعب متصل بعد ٢٠ ثانية إذا لم يعد.</p>}
     {['replaced', 'reconnecting', 'disconnected'].includes(status) && <Button onClick={() => { clientRef.current.stop(); clientRef.current.start(); }}>إعادة الاتصال</Button>}
     {status === 'ended' ? <Button full onClick={() => { clearSession(SERVER, code); setExitGuard(null); onLeft(); navigate('/online', { replace: true }); }}>العودة إلى الغرف</Button>
-      : state && (state.phase === 'lobby' ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} /> : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />)}
+      : state && (state.phase === 'lobby' ? <Lobby state={state} me={me} isHost={isHost} disabled={disabled} act={act} /> : state.game === 'fabraka'
+        ? <FabrakaMatch state={state} me={me} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />
+        : <Match state={state} disabled={disabled} isHost={isHost} act={act} clockOffset={clientRef.current?.clockOffset || 0} />)}
     {exitTarget && <ConfirmModal title="تطلع من الغرفة؟" message="مغادرتك تنهي مقعدك الحالي. إذا كنت المضيف تنتقل الإدارة للاعب متصل." confirmLabel="الخروج" cancelLabel="خلّيني ألعب" onConfirm={leave} onCancel={() => setExitTarget(null)} />}
   </>;
 }
-export function Online({ code = '' }) {
+export function Online({ code = '', game = 'meenfina' }) {
   const [session, setSession] = useState(() => code ? readSaved(SERVER, code) : null);
   const [stored, setStored] = useState(() => readSaved(SERVER, 'persistence') !== false);
   function joined(nextCode, nextSession, isStored) {
@@ -208,6 +219,6 @@ export function Online({ code = '' }) {
     else { setStored(isStored); setSession(nextSession); }
   }
   return <Screen className="stack online-screen" aria-label="غرف ميدان">
-    {session && code ? <ConnectedRoom code={code} session={session} stored={stored} onLeft={() => setSession(null)} /> : <><TopBar title="غرف ميدان" end={<Button size="sm" onClick={() => navigate('/')}>الرئيسية</Button>} /><Entry initialCode={code} onJoined={joined} /></>}
+    {session && code ? <ConnectedRoom code={code} session={session} stored={stored} onLeft={() => setSession(null)} /> : <><TopBar title="غرف ميدان" end={<Button size="sm" onClick={() => navigate('/')}>الرئيسية</Button>} /><Entry initialCode={code} initialGame={game} onJoined={joined} /></>}
   </Screen>;
 }

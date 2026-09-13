@@ -29,8 +29,9 @@ export function GameDetails({ id }) {
         <div className="section-title" style={{ marginBottom: 10 }}>كيف تلعب؟</div>
         <ol className="steps">{game.howToPlay.map((s, i) => <li key={i} className="step" style={{ '--delay': `${120 + i * 90}ms` }}>{s}</li>)}</ol>
       </div>
-      <div className="setup-sticky">
-        <Button variant="accent" size="lg" full icon={<IconPlay />} onClick={() => { sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`); }}>العب</Button>
+      <div className="setup-sticky stack">
+        {['meenfina', 'fabraka'].includes(game.id) && <Button variant="accent" size="lg" full onClick={() => navigate(`/online/${game.id}`)}>العب من كل جوال · غرف جماعية</Button>}
+        <Button variant={['meenfina', 'fabraka'].includes(game.id) ? 'secondary' : 'accent'} size="lg" full icon={<IconPlay />} onClick={() => { sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`); }}>{['meenfina', 'fabraka'].includes(game.id) ? 'العب على جهاز واحد' : 'العب'}</Button>
       </div>
     </Screen>
   );

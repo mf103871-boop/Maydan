@@ -39,7 +39,7 @@ export function joinRoom(room, input, now) {
   room.members.push(joined);
   return joined;
 }
-function transferHost(room, now, immediate = false) {
+export function transferHost(room, now, immediate = false) {
   const host = room.members.find((m) => m.id === room.hostId && !m.left);
   if (host?.connected) { room.hostMissingSince = null; return; }
   room.hostMissingSince ??= now;

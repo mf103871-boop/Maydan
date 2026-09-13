@@ -62,7 +62,7 @@ export function Home() {
 
       <button type="button" className="card online-home-card" onClick={() => navigate('/online')}>
         <GameArtwork game="meenfina" />
-        <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» · دخول برمز وتصويت سري</small></span>
+        <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» و«فبركة» · دخول برمز وتصويت سري</small></span>
         <span className="online-new">تجريبي</span>
       </button>
 

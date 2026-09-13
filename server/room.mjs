@@ -1,5 +1,6 @@
 import statements from '../src/data/games/meenfina/statements.json' with { type: 'json' };
-import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, RoomError, fail } from './room-model.mjs';
+import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, RoomError, fail } from './game-model.mjs';
+import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled } from './protocol.mjs';
 const SOCKET_IDLE = 45_000;
 
@@ -98,10 +99,15 @@ export class Room {
           if (this.room) {
             const owner = this.room.members.find((m) => m.id === input.id && !m.left);
             if (!owner || owner.tokenHash !== input.tokenHash) return json({ error: 'COLLISION' }, 409);
-            return json({ code: this.room.code, id: input.id });
+            if ((this.room.game || 'meenfina') !== (input.game || 'meenfina')) fail('GAME');
+            return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
-          await this.commit(createRoom(code, input, Date.now()));
-          return json({ code, id: input.id }, 201);
+          const created = createRoom(code, input, Date.now());
+          // Reject empty topic selections while the creator can still edit them,
+          // rather than trapping an assembled group in an unstartable lobby.
+          if (created.game === 'fabraka' && buildFabrakaDeck(created).length < created.rounds) fail('QUESTIONS');
+          await this.commit(created);
+          return json({ code, id: input.id, game: this.room.game }, 201);
         }
         if (!this.room) fail('NOT_FOUND', 404);
         if (request.method === 'POST' && endpoint === 'join') {
@@ -109,7 +115,7 @@ export class Room {
           const candidate = structuredClone(this.room);
           joinRoom(candidate, input, Date.now());
           await this.commit(candidate);
-          return json({ code: this.room.code, id: input.id });
+          return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
         }
         if (request.method === 'POST' && endpoint === 'leave') {
           const id = await this.authenticate(await readJson(request));
@@ -170,7 +176,8 @@ export class Room {
         }
         if (!a.id || !requestId) fail('AUTH', 401);
         const candidate = structuredClone(this.room);
-        action(candidate, a.id, command, now, command.type === 'start' ? shuffled(statements) : []);
+        const deck = command.type === 'start' ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : shuffled(statements)) : [];
+        action(candidate, a.id, command, now, deck);
         await this.commit(candidate);
         this.send(ws, { type: 'ack', requestId, ok: true });
       } catch (error) {

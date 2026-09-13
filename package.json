@@ -1,9 +1,9 @@
 {
   "name": "maydan-platform",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "private": true,
   "type": "module",
-  "description": "ميدان: ألعاب جمعتنا — ألعاب على جهاز واحد وغرف مين فينا من عدة هواتف",
+  "description": "ميدان: ألعاب جمعتنا — ألعاب على جهاز واحد وغرف مين فينا وفبركة من عدة هواتف",
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",

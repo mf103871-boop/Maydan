@@ -1,4 +1,4 @@
-import { PROTOCOL, validateServerUrl } from './shared.js';
+import { PROTOCOL, FABRAKA_PROTOCOL, validateServerUrl } from './shared.js';
 export class ClientError extends Error {
   constructor(code) { super(code); this.code = code; }
 }
@@ -66,7 +66,8 @@ export class RoomClient {
       let message;
       try { message = JSON.parse(event.data); } catch { return; }
       if (message.type === 'state') {
-        if (message.state.protocol !== PROTOCOL) { this.onError('CONFIG'); this.stop(); return; }
+        const protocol = message.state.game === 'fabraka' ? FABRAKA_PROTOCOL : PROTOCOL;
+        if (message.state.protocol !== protocol) { this.onError('CONFIG'); this.stop(); return; }
         if (this.state && message.state.revision < this.state.revision) return;
         clearTimeout(this.openTimer); this.attempt = 0;
         this.state = message.state; this.clockOffset = message.state.serverNow - Date.now();
@@ -98,11 +99,14 @@ export class RoomClient {
   }
   command(type, fields = {}) {
     if (this.connectionStatus !== 'connected' || this.ws?.readyState !== 1 || !this.state) return Promise.reject(new ClientError('DISCONNECTED'));
+    // UI commands belong to the round the player saw, even if a newer snapshot
+    // arrived before React rendered it. Protocol scripts default to current state.
+    const { matchId = this.state.matchId, round = this.state.round, ...payload } = fields;
     const requestId = `${Date.now()}-${++this.counter}`;
     return new Promise((resolve, reject) => {
       const timer = setTimeout(() => { this.pending.delete(requestId); reject(new ClientError('TIMEOUT')); }, 10_000);
       this.pending.set(requestId, { resolve, reject, timer });
-      try { this.ws.send(JSON.stringify({ type, ...fields, requestId, matchId: this.state.matchId, round: this.state.round })); }
+      try { this.ws.send(JSON.stringify({ type, ...payload, requestId, matchId, round })); }
       catch { clearTimeout(timer); this.pending.delete(requestId); reject(new ClientError('DISCONNECTED')); }
     });
   }
