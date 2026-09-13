@@ -1,3 +1,4 @@
+import { Avatar } from '../brand/art.jsx';
 // «سلّم الجوال لـ …» — يخفي المحتوى الخاص باللاعب حتى يلمس الشاشة.
 import React, { useState, useEffect } from 'react';
 import { Button } from '../ui/components.jsx';
@@ -9,7 +10,7 @@ export function PassPhoneScreen({ player, hint = 'لا يرى الشاشة غي�
   if (shown) return children;
   return (
     <div className="pass-screen" style={{ '--pass-color': player.color }}>
-      <div className="pass-avatar" aria-hidden="true">{player.emoji || '📱'}</div>
+      <div className="pass-avatar" aria-hidden="true"><Avatar player={player} /></div>
       <div className="pass-title">سلّم الجوال إلى</div>
       <div className="pass-name">{player.name}</div>
       <p className="pass-hint">{hint}</p>

@@ -6,6 +6,8 @@ const ROUTES = [
   ['home', /^\/?$/],
   ['game', /^\/game\/([a-z0-9-]+)$/],
   ['play', /^\/play\/([a-z0-9-]+)$/],
+  ['online', /^\/online$/],
+  ['room', /^\/room\/(\d{6})$/],
   ['players', /^\/players$/],
   ['settings', /^\/settings$/],
   ['about', /^\/about$/],
@@ -62,7 +64,7 @@ function onHashChange() {
   const next = parseHash(location.hash);
   if (restoring) { restoring = false; current = next; return; }
   const previous = current;
-  const leavingPlay = previous.name === 'play' && next.name !== 'play';
+  const leavingPlay = (previous.name === 'play' && next.name !== 'play') || (previous.name === 'room' && next.path !== previous.path);
   if (leavingPlay && exitGuard) {
     // أعد المسار كما كان، ثم اسأل الحارس؛ الحارس ينادي navigate بنفسه عند التأكيد.
     restoring = true;

@@ -22,3 +22,9 @@ ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-*.png
 # الحزم التجريبية (scripts/demo-packs.mjs) — للاختبار المحلي فقط
 media/demo/
 src/data/categories/demo[a-f].json
+
+# Local room emulation and Cloudflare credentials.
+.wrangler/
+.dev.vars
+.env
+.env.*

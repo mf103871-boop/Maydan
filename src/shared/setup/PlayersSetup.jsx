@@ -1,8 +1,9 @@
+import { Avatar, AvatarPicker } from '../brand/art.jsx';
 // اختيار اللاعبين من دفتر اللاعبين (أو إضافة لاعب سريع)، بترتيب الاختيار.
 import React, { useState } from 'react';
 import { Button, Card, Modal } from '../ui/components.jsx';
 import { IconPlus } from '../ui/icons.jsx';
-import { addPlayer, EMOJIS, ROSTER_LIMIT } from './roster.js';
+import { addPlayer, ROSTER_LIMIT } from './roster.js';
 
 export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onStart, children, startLabel = 'ابدأ اللعب', startDisabled = false, api }) {
   const [selected, setSelected] = useState(() => roster.slice(0, Math.min(max, roster.length)).map((p) => p.id));
@@ -41,7 +42,7 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
             return (
               <button key={p.id} type="button" className={`chip ${order >= 0 ? 'selected' : ''}`} style={{ '--chip-color': p.color }} aria-pressed={order >= 0} onClick={() => toggle(p.id)}>
                 {order >= 0 && <span className="order" aria-hidden="true">{order + 1}</span>}
-                <span className="avatar" aria-hidden="true">{p.emoji}</span>{p.name}
+                <Avatar player={p} className="avatar" />{p.name}
               </button>
             );
           })}
@@ -60,8 +61,8 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
       {adding && (
         <Modal title="لاعب جديد" onClose={() => { setAdding(false); setError(''); }} footer={<Button variant="primary" size="lg" full onClick={submitAdd}>إضافة</Button>}>
           <label className="field"><span>الاسم</span><input className="input" value={name} maxLength={20} autoFocus onChange={(e) => { setName(e.target.value); setError(''); }} onKeyDown={(e) => e.key === 'Enter' && submitAdd()} placeholder="مثال: نورة" /></label>
-          <div className="field"><span>الإيموجي</span>
-            <div className="emoji-grid">{EMOJIS.map((e) => <button key={e} type="button" className={emoji === e ? 'selected' : ''} aria-pressed={emoji === e} aria-label={`إيموجي ${e}`} onClick={() => setEmoji(e)}>{e}</button>)}</div>
+          <div className="field"><span>اختر شخصيتك</span>
+            <AvatarPicker value={emoji} onChange={setEmoji} />
           </div>
           {error && <p className="setup-error" role="alert">{error}</p>}
         </Modal>

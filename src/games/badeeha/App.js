@@ -1,3 +1,5 @@
+import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
+import { Podium } from '../../shared/ui/components.jsx';
 // لعبة «بَديهة» (ميدان سابقًا) — الكود الأصلي منقول كما هو بأسلوب React.createElement.
 // التعديلات الوحيدة: الاستيرادات أعلاه بدل المتغيرات العامة، اسم اللعبة في النصوص،
 // ومفاتيح التخزين تحت النطاق maydan:badeeha (انظر keys.js).
@@ -2096,8 +2098,8 @@ ${record.answered} من ${record.total} سؤالًا`,
       hBeta(
         "div",
         { className: "m-logo", "aria-label": "بَديهة" },
+        hBeta(GameArtwork, { game: "badeeha" }),
         hBeta("span", null, "بَديهة"),
-        hBeta("small", null, "BADEEHA"),
       ),
       hBeta(
         "div",
@@ -2858,41 +2860,12 @@ ${record.answered} من ${record.total} سؤالًا`,
           hBeta("i", { key: index, style: { "--i": index } }),
         ),
       ),
-      hBeta(
-        "div",
-        { className: "m-winner-spotlight" },
-        hBeta(
-          "div",
-          { className: "m-result-icon", "aria-hidden": "true" },
-          record.winner ? "🏆" : "🤝",
-        ),
-        hBeta(
-          "p",
-          { className: "m-kicker" },
-          record.early ? "انتهت المباراة مبكرًا" : "اكتملت الجولة",
-        ),
-        hBeta(
-          "h1",
-          { className: "m-result-title" },
-          record.winner ? `فاز ${winners[0]}` : "تعادل جميل!",
-        ),
-      ),
-      hBeta(
-        "div",
-        { className: "m-result-scores" },
-        record.teams
-          .slice()
-          .sort((a, b) => b.score - a.score)
-          .map((team) =>
-            hBeta(
-              "div",
-              { key: team.id },
-              hBeta("b", null, team.name),
-              hBeta("strong", null, team.score),
-              hBeta("small", null, `✅ ${team.correct} · 🥷 ${team.steals}`),
-            ),
-          ),
-      ),
+      hBeta(Podium, { entries: record.teams, title: record.winner ? `فاز ${winners[0]}` : "تعادل جميل!" }),
+      hBeta("p", { className: "m-kicker" }, record.early ? "انتهت المباراة مبكرًا" : "اكتملت الجولة"),
+      hBeta("div", { className: "m-result-statistics" }, record.teams.map((team) =>
+        hBeta("div", { key: team.id }, hBeta(Avatar, { player: team }), hBeta("b", null, team.name),
+          hBeta("small", null, `إجابات: ${team.correct} · سرقات: ${team.steals}`)),
+      )),
       hBeta(
         "p",
         { className: "m-muted" },

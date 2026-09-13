@@ -1,38 +1,41 @@
 /* ═══════════════════════════════════════════════════════════════════
    منصة ميدان — نظام التصميم
-   الطابع: «ساحة ليلية» — خلفية داكنة عميقة، بطاقات زجاجية، ذهب ميدان.
+   الطابع: صلصال ناعم — خلفية عاجية، فيروزي وبنفسجي وذهبي.
    كل لون في المنصة والألعاب الجديدة يُشتق من هذه المتغيرات.
    ═══════════════════════════════════════════════════════════════════ */
 :root {
-  color-scheme: dark;
-  --bg: #0B0E1A;
-  --bg-2: #131833;
-  --surface: rgba(255, 255, 255, 0.06);
-  --surface-2: rgba(255, 255, 255, 0.10);
-  --stroke: rgba(255, 255, 255, 0.10);
-  --stroke-strong: rgba(255, 255, 255, 0.18);
-  --text: #F7F7FB;
-  --muted: #A5A8BD;
-  --accent: #F5B82E;
-  --accent-ink: #1B1405;
-  --danger: #FF4D4D;
-  --success: #2ED8A3;
-  --info: #4DA3FF;
+  color-scheme: light;
+  --bg: #FFF7E7;
+  --bg-2: #FFFCF4;
+  --surface: #FFFCF3;
+  --surface-2: #F2E7DB;
+  --stroke: #E6D4BE;
+  --stroke-strong: #CFB599;
+  --text: #352547;
+  --plum: #352547;
+  --muted: #77677C;
+  --accent: #087D89;
+  --accent-ink: #FFFFFF;
+  --purple: #9250BD;
+  --gold: #FFC94D;
+  --turquoise: #18B7BE;
+  --danger: #AE343E;
+  --success: #16775D;
+  --info: #087D89;
 
-  /* accent لكل لعبة */
-  --g-badeeha: #F5B82E;
-  --g-beep: #FF4D4D;
-  --g-mamnoo: #FF5C8A;
-  --g-jabeen: #4DA3FF;
-  --g-fabraka: #B57BFF;
-  --g-meenfina: #2ED8A3;
+  --g-badeeha: #B78118;
+  --g-beep: #8650B5;
+  --g-mamnoo: #C54543;
+  --g-jabeen: #078C97;
+  --g-fabraka: #A052AD;
+  --g-meenfina: #A67A21;
 
-  --radius: 22px;
-  --radius-sm: 14px;
+  --radius: 24px;
+  --radius-sm: 16px;
   --radius-pill: 999px;
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.22);
-  --font: "SF Arabic", "Segoe UI", "Noto Sans Arabic", "Noto Naskh Arabic", Tahoma, system-ui, sans-serif;
+  --shadow: 0 16px 40px rgba(91, 61, 36, 0.13);
+  --shadow-soft: 0 4px 12px rgba(91, 61, 36, 0.09);
+  --font: "Maydan Round", "SF Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
 
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);

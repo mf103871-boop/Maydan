@@ -23,7 +23,7 @@ for (const [filename, side] of Object.entries({
 for (const side of [192, 512]) {
   const inset = Math.round(side * 0.06);
   await sharp(source).resize(side - 2 * inset, side - 2 * inset)
-    .extend({ top: inset, bottom: inset, left: inset, right: inset, background: '#0B0E1A' })
+    .extend({ top: inset, bottom: inset, left: inset, right: inset, background: '#9250BD' })
     .removeAlpha().png({ compressionLevel: 9 }).toFile(path.join(directory, `maskable-${side}.png`));
 }
 await copyFile(master, path.join(ROOT, 'ios/Maydan/Assets.xcassets/AppIcon.appiconset/icon-1024.png'));

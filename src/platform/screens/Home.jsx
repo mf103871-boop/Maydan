@@ -1,10 +1,11 @@
 // الرئيسية: الشعار، الإعدادات، دفتر اللاعبين، وشبكة بطاقات الألعاب.
 import React, { useRef } from 'react';
-import { Screen, Badge, IconButton, ripple } from '../../shared/ui/components.jsx';
-import { IconSettings, IconUsers, IconClock, IconInfo, IconPlus } from '../../shared/ui/icons.jsx';
+import { Screen, IconButton, ripple } from '../../shared/ui/components.jsx';
+import { IconSettings, IconUsers, IconClock, IconInfo } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
+import { Avatar, BrandMark, Wordmark, GameArtwork } from '../../shared/brand/art.jsx';
 
 // جمع «لعبة» بحسب العدد: لعبة واحدة، لعبتان، 3–10 ألعاب، 11+ لعبة
 export function gamesLabel(n) {
@@ -31,13 +32,12 @@ function GameCard({ game, index, onOpen }) {
     <button ref={ref} type="button" className={`game-card ${game.soon ? 'is-soon' : ''}`} style={{ '--game-accent': game.accent, '--delay': `${index * 60}ms` }}
       onPointerDown={(e) => { tilt(e); ripple(e); }} onPointerMove={tilt} onPointerUp={untilt} onPointerLeave={untilt} onPointerCancel={untilt}
       onClick={() => onOpen(game)} aria-label={`${game.name}: ${game.tagline}`} disabled={!!game.soon}>
-      {game.isNew && <Badge variant="new">جديد</Badge>}
       <span className="icon" aria-hidden="true">{Icon ? <Icon /> : '🎮'}</span>
       <span className="name">{game.name}</span>
       <span className="tagline">{game.tagline}</span>
       <span className="meta">
-        <span>👥 {game.players.min}–{game.players.max}</span>
-        <span>⏱ {game.duration}</span>
+        <span><IconUsers /> <bdi>{game.players.min}–{game.players.max}</bdi></span>
+        <span><IconClock /> <bdi>{game.duration}</bdi></span>
       </span>
     </button>
   );
@@ -46,13 +46,13 @@ function GameCard({ game, index, onOpen }) {
 export function Home() {
   const { roster, sound, haptics, version } = usePlatform();
   const open = (game) => { sound.play('pop'); haptics.vibrate('selection'); navigate(`/game/${game.id}`); };
-  const cards = [...GAMES, { id: 'soon', name: 'قريبًا', tagline: 'لعبة جديدة في الإصدار القادم', accent: '#A5A8BD', players: { min: 2, max: 8 }, duration: '—', soon: true }];
+  const cards = GAMES;
   return (
-    <Screen dir={getDirection()} className="stack" aria-label="الرئيسية">
+    <Screen dir={getDirection()} className="stack home-screen" aria-label="الرئيسية">
       <header className="home-head">
         <div className="brand">
-          <img className="brand-mark" src="icons/icon-192.png" width="44" height="44" alt="" />
-          <div><div className="brand-name">ميدان</div><div className="brand-sub">ألعاب جمعتنا</div></div>
+          <BrandMark />
+          <div><Wordmark /><div className="brand-sub">ألعاب جمعتنا</div></div>
         </div>
         <div className="row">
           <IconButton label="عن المنصة" onClick={() => navigate('/about')}><IconInfo /></IconButton>
@@ -60,15 +60,18 @@ export function Home() {
         </div>
       </header>
 
+      <button type="button" className="card online-home-card" onClick={() => navigate('/online')}>
+        <GameArtwork game="meenfina" />
+        <span><strong>اللّمّة من كل جوال</strong><small>غرف «مين فينا؟» · دخول برمز وتصويت سري</small></span>
+        <span className="online-new">تجريبي</span>
+      </button>
+
       <button type="button" className="card roster-card" onClick={() => { sound.play('click'); navigate('/players'); }} aria-label="دفتر اللاعبين" onPointerDown={ripple} style={{ position: 'relative', overflow: 'hidden' }}>
-        <span className="icon" style={{ color: 'var(--accent)' }}><IconUsers /></span>
         <span className="grow" style={{ textAlign: 'start' }}>
           <span className="card-title" style={{ display: 'block' }}>دفتر اللاعبين</span>
           <span className="card-muted">{roster.length ? `${roster.length} لاعبين جاهزون لكل الألعاب` : 'أضف أسماء أصدقائك مرة واحدة'}</span>
         </span>
-        {roster.length ? (
-          <span className="roster-faces" aria-hidden="true">{roster.slice(0, 5).map((p) => <span key={p.id} style={{ '--c': p.color }}>{p.emoji}</span>)}</span>
-        ) : <IconPlus />}
+        <span className="roster-faces" aria-hidden="true">{roster.length ? roster.slice(0, 4).map((p) => <Avatar key={p.id} player={p} />) : [0, 1, 2, 3].map((index) => <Avatar key={index} index={index} />)}</span>
       </button>
 
       <div>
@@ -80,7 +83,7 @@ export function Home() {
           {cards.map((g, i) => <GameCard key={g.id} game={g} index={i} onOpen={open} />)}
         </div>
       </div>
-      <p className="muted center" style={{ fontSize: 12 }}>الإصدار {version} · تعمل دون إنترنت</p>
+      <p className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
     </Screen>
   );
 }

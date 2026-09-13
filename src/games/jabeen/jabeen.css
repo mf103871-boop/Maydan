@@ -1,4 +1,4 @@
-.jabeen { --game-accent: #4DA3FF; display: grid; gap: 14px; }
+.jabeen { --game-accent: #078C97; display: grid; gap: 14px; }
 .jabeen-stage { position: fixed; inset: 0; z-index: 300; display: grid; grid-template-rows: auto 1fr auto; background: var(--bg); }
 .jabeen-word { display: grid; place-items: center; text-align: center; padding: 16px; font-size: clamp(44px, 13vw, 92px); font-weight: 900; line-height: 1.15; color: #fff; text-wrap: balance; }
 .jabeen-stage.is-good { background: radial-gradient(circle, #147a52, var(--bg) 75%); animation: flash-good .5s ease-out; }

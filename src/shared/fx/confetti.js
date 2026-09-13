@@ -1,5 +1,5 @@
 // قصاصات ملونة على canvas خاص بنا — بلا مكتبة. تحترم «تقليل الحركة».
-const DEFAULT_COLORS = ['#F5B82E', '#FF4D4D', '#2ED8A3', '#4DA3FF', '#B57BFF', '#FF5C8A', '#FFFFFF'];
+const DEFAULT_COLORS = ['#FFC94D', '#18B7BE', '#9250BD', '#D9B6EF', '#FFFFFF'];
 
 function reducedMotion() {
   try {

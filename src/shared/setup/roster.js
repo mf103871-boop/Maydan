@@ -24,7 +24,8 @@ export function nextColor(roster) {
 
 export function nextEmoji(roster) {
   const used = new Set(roster.map((p) => p.emoji));
-  return EMOJIS.find((e) => !used.has(e)) || EMOJIS[roster.length % EMOJIS.length];
+  const portraits = ['😎', '🦋', '🌟', '🚀'];
+  return portraits.find((e) => !used.has(e)) || portraits[roster.length % portraits.length];
 }
 
 export function makePlayer(roster, name, emoji) {

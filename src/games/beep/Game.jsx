@@ -1,3 +1,4 @@
+import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 // واجهة «قبل ما يطق!» — تعتمد على logic.js للحالة وعلى المكونات المشتركة للمؤقت والنتائج.
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
@@ -44,7 +45,7 @@ function ThreeRound({ state, dispatch, api, source }) {
   if (state.phase === 'intro') {
     return (
       <div className="beep-intro">
-        <div className="big" aria-hidden="true">{player.emoji}</div>
+        <div className="big" aria-hidden="true"><Avatar player={player} /></div>
         <p className="muted">الجولة {state.round} من {state.rounds}</p>
         <h2>دور {player.name}</h2>
         <p className="muted">خذ الجوال واستعد. عندما تضغط «جاهز» يظهر الطلب ويبدأ المؤقت.</p>
@@ -56,7 +57,7 @@ function ThreeRound({ state, dispatch, api, source }) {
   if (state.phase === 'prompt') {
     return (
       <>
-        <div className="beep-turn" style={{ '--p-color': player.color }}><span className="avatar">{player.emoji}</span><div><b>{player.name}</b><small>قل ثلاثة بصوت عالٍ</small></div></div>
+        <div className="beep-turn" style={{ '--p-color': player.color }}><span className="avatar"><Avatar player={player} /></span><div><b>{player.name}</b><small>قل ثلاثة بصوت عالٍ</small></div></div>
         <Timer timer={timer} api={api} accent="#FF4D4D" />
         <div className="beep-prompt">{state.prompt.text}<small>{state.prompt.category}</small></div>
         <Button variant="accent" size="lg" full onClick={() => { timer.pause(); api.sound.play('pop'); dispatch({ type: 'FINISH' }); }}>خلصت! ✋</Button>
@@ -89,7 +90,7 @@ function BombRound({ state, dispatch, api, source, random }) {
   if (state.phase === 'intro') {
     return (
       <div className="beep-intro">
-        <div className="big" aria-hidden="true">💣</div>
+        <div className="big" aria-hidden="true"><GameArtwork game="beep" /></div>
         <h2>القنبلة مع {player.name}</h2>
         <p className="muted">أجب على الطلب ثم مرّر الجوال فورًا. المؤقت مخفي… قد ينفجر في أي لحظة.</p>
         <Button variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', prompt: source.next(1, 1) }); }}>تشغيل القنبلة</Button>
@@ -100,8 +101,8 @@ function BombRound({ state, dispatch, api, source, random }) {
   if (state.phase === 'prompt') {
     return (
       <>
-        <div className="beep-turn" style={{ '--p-color': player.color }}><span className="avatar">{player.emoji}</span><div><b>{player.name}</b><small>أجب ثم مرّر بسرعة</small></div></div>
-        <div className={`beep-bomb ${hot ? 'is-hot' : ''}`} aria-hidden="true">💣</div>
+        <div className="beep-turn" style={{ '--p-color': player.color }}><span className="avatar"><Avatar player={player} /></span><div><b>{player.name}</b><small>أجب ثم مرّر بسرعة</small></div></div>
+        <div className={`beep-bomb ${hot ? 'is-hot' : ''}`} aria-hidden="true"><GameArtwork game="beep" /></div>
         {timer.resuming !== null && <Timer timer={timer} api={api} size={1} />}
         <div className="beep-prompt">{state.prompt.text}<small>{state.prompt.category}</small></div>
         <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pass'); api.haptics.vibrate('light'); dispatch({ type: 'PASS', prompt: source.next(1, 1) }); }}>أجبت — مرّر الجوال ⬅</Button>
@@ -131,7 +132,7 @@ function PlayersStrip({ state }) {
     <div className="beep-players" aria-label="اللاعبون">
       {state.players.map((p, i) => (
         <span key={p.id} className={`beep-chip ${state.eliminated.includes(p.id) ? 'is-out' : ''} ${i === state.turn ? 'is-turn' : ''}`}>
-          {p.emoji} {p.name}
+          <Avatar player={p} /> {p.name}
           {state.mode === 'three' ? <b>{state.scores[p.id]}</b> : <span className="beep-lives" aria-label={`${state.lives[p.id]} أرواح`}>{'❤️'.repeat(state.lives[p.id])}{'🖤'.repeat(3 - state.lives[p.id])}</span>}
         </span>
       ))}

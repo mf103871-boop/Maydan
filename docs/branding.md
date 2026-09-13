@@ -1,29 +1,34 @@
-# ميدان: ألعاب جمعتنا
+# ميدان: ألعاب جمعتنا — الهوية الصلصالية
 
-هوية الإصدار 1.1، بتاريخ 2026-09-08، بناءً على طلب صاحب التطبيق إنشاء اسم وأيقونة احترافيين وتطبيقهما.
+هوية الإصدار 1.2، اعتمدها صاحب التطبيق بتاريخ 2026-09-12، مبنية على [النموذج المعتمد](branding/approved-clay-proposal.webp).
 
-| الاستخدام | القيمة |
+| العنصر | الهوية |
 | --- | --- |
-| اسم التطبيق الكامل | ميدان: ألعاب جمعتنا |
-| تحت أيقونة الهاتف | ميدان |
-| العنوان الفرعي للمتجر | تحديات وضحك للأصدقاء والعائلة |
-| اللون الأساسي | `#0B0E1A` |
-| اللون الذهبي | `#F5B82E` |
-| المصدر المعتمد للأيقونة | `public/icons/icon-1024.png` |
+| الاسم | ميدان: ألعاب جمعتنا |
+| العالم البصري | شخصيات عربية ورسوم ثلاثية الأبعاد بملمس صلصال ناعم |
+| الخلفية | عاجي `#FFF7E7` |
+| النص | بنفسجي داكن `#352547` |
+| ألوان الرسوم | فيروزي `#18B7BE`، بنفسجي `#9250BD`، ذهبي `#FFC94D` |
+| الأزرار الأساسية | فيروزي داكن بتدرج ولمعة خفيفة، مع نص أبيض كبير |
+| الخط | Baloo Bhaijaan 2، محلي ومتغير الوزن، مرخص OFL |
+| أيقونة التطبيق | كأس ذهبي صلصالي على خلفية بنفسجية؛ أصل PNG معتم 1024×1024 |
 
-الكأس الذهبي يجمع دلالة التحدي والاجتماع، مع نجمة مفرغة وخلفية كحلية. صُمّم الأصل بأداة توليد الصور المدمجة، ثم جُهّز تقنيًا بالمقاسات اللازمة؛ لا يوجد نص داخل الأيقونة لتبقى واضحة عند التصغير. المصدر PNG مربع 1024×1024، بلا شفافية أو زوايا خارجية مستديرة.
+## التوزيع
 
-يشغّل `npm run brand:icons` توليد أيقونات الموقع وPWA وينسخ الأصل إلى iOS. يشغّل `npm run ios:prepare` بناء محتوى اللعبة وتوليد مقاسات Xcode من أصل iOS. الصورتان الأصليتان في الموقع وiOS متطابقتان.
+- بَديهة: لمبة. قبل ما يطق!: ساعة بقنبلة. ممنوع!: كف أحمر.
+- على جبينك: شخصية ببطاقة على الجبين. فَبْرَكة: قناع بنفسجي. مين فينا؟: مجموعة أصدقاء.
+- أربع شخصيات في دفتر اللاعبين والإعداد والأدوار والنتائج. تبقى هويات اللاعبين المحفوظة صالحة؛ عرض الشخصيات القديمة ثابت ولا يغيّر بياناتها.
+- تظهر الخلفية المصوّرة في البداية، وتظل خلفيات الأسئلة والبطاقات هادئة وواضحة.
+- شاشات الفوز في الألعاب الست تستخدم الكأس ومنصة التتويج نفسها، بما فيها بَديهة.
 
-طُبّق الاسم والرسم في شاشة الافتتاح والرئيسية والتعريف، وأيقونات المتصفح والتثبيت، واسم iOS الظاهر. معرّف التطبيق `Maydan` ورقم Apple `6808385717` وفريقه `96WJBK2MB2` كما هي. الاسم الحالي المنشور «منصه ميدان»؛ الاسم الجديد ونص التحديث في `ios/app-store.json` جاهزان لإدخال بيانات الإصدار، ولا يعني حفظهما أن تحديثًا أُرسل إلى Apple.
+## الأصول والتنفيذ
 
-## وصف التوليد
+الأصول مضمنة في `src/shared/brand/assets/` وتُجمّع كـdata URLs في HTML، بما فيها الخط العربي. لا تعتمد الرسومات على CDN أو شبكة وقت اللعب. ملفات sprites تعرض مراجع المستخدم داخل نوافذ CSS بدون تغيير الرسومات الأصلية. أُنتجت خلفية البداية العمودية وأيقونة التطبيق بأداة توليد الصور المدمجة، وفق النموذج المعتمد؛ استُخدم Sharp للتحويل والضغط والمقاسات اللازمة للتطبيق فقط.
 
-الأداة: built-in image generation؛ لم يُستخدم CLI أو مفتاح API خارجي.
+مراجع المستخدم: لوحة أيقونات الألعاب الست، لوحة الشخصيات الأربع، الكأس، وعالم اللعبة. وصف التوليد للخلفية: «عالم صلصالي عمودي 2:3؛ أربع شخصيات مرجعية حول الكرة الأرضية، بلدة عربية صغيرة ونخيل ونهر، والثلث العلوي سماء فارغة للشعار الحي؛ بلا كتابة». وصف توليد الأيقونة: «كأس ذهبي بنجمة وقاعدة بنفسجية على مربع بنفسجي معتم؛ واضح عند التصغير؛ بلا نص أو قصاصات».
 
-```text
-Use case: logo-brand
-Asset type: final production iOS App Store icon and PWA icon for an Arabic social party-game app named “ميدان: ألعاب جمعتنا” (Maydan).
-Create one exceptionally polished, original, premium app icon. Full-bleed square 1024×1024 opaque dark midnight navy (#0B0E1A) background, with a very subtle navy radial glow. A single bold sculpted golden emblem at the center: a contemporary trophy whose broad rounded cup and generous open handles subtly evoke friends gathered around a shared game. Geometric, balanced, welcoming, memorable silhouette, thick clean forms, sophisticated warm gold (#F5B82E) with restrained satin highlights and subtle dimensional depth. A small crisp four-point star cut out as navy negative space in the upper cup gives the emblem a unique signature. Integrated short pedestal, beautiful proportions, emblem occupies about 64% of the square, centered optically with plentiful safe space. Recognizable instantly at 32 pixels. Match a premium navy-and-gold game interface. Minimal visual elements, strong contrast, professional design studio finish.
-Constraints: deliver only the square icon artwork, no mockup or device, no outer frame, no rounded outer corners, no border, no transparency, no lettering, no words, no numerals, no watermark, no laurel wreath, no people illustrations, no piles of objects, no tiny ornament, no exaggerated metallic reflections.
-```
+`npm run brand:icons` يولّد مقاسات الويب وPWA وينسخ أصل iOS. `npm run ios:prepare` يبني الموارد من المصدر الحالي ويولّد مقاسات Xcode. إصدار المتجر المجهّز هو 1.2؛ التجهيز لا يعني إرسال تحديث إلى Apple، ويظل التوقيع والاختبار على جهاز iOS مطلوبين.
+
+حافظ التحديث على الألعاب الست وقواعدها، وبنك الأسئلة، والتخزين، واستئناف الجلسات. رقم الإصدار وبصمة البناء يحدّثان مخزن PWA تلقائيًا.
+
+لم تُعتمد لقطة تثبيت جديدة للتطبيق بعد؛ أُزيلت إحالة لقطة الواجهة القديمة من ملف PWA إلى حين تصوير الواجهة الجديدة في المتصفح.

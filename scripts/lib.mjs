@@ -43,11 +43,12 @@ export function esbuildOptions({ minify = true, version = '0.0.0', media = {} } 
     jsx: 'automatic',
     // New files are JSX; the migrated trivia game is plain React.createElement
     // in .js and parses fine under the jsx loader too.
-    loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': 'dataurl', '.png': 'dataurl' },
+    loader: { '.js': 'jsx', '.css': 'text', '.json': 'json', '.webp': 'dataurl', '.png': 'dataurl', '.woff2': 'dataurl' },
     define: {
       'process.env.NODE_ENV': JSON.stringify(minify ? 'production' : 'development'),
       __MAYDAN_VERSION__: JSON.stringify(version),
       __MAYDAN_MEDIA_VERSIONS__: JSON.stringify(media),
+      __MAYDAN_ROOMS_URL__: JSON.stringify(process.env.MAYDAN_ROOMS_URL || ''),
     },
     legalComments: 'none',
     charset: 'utf8',

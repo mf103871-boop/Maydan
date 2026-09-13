@@ -34,7 +34,7 @@
   background: var(--surface); border: 1px solid var(--stroke); border-radius: var(--radius);
   padding: 16px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
 }
-@supports not (backdrop-filter: blur(1px)) { .card { background: rgba(19,24,51,.92); } }
+@supports not (backdrop-filter: blur(1px)) { .card { background: var(--surface); } }
 .card-title { font-size: 17px; font-weight: 800; color: var(--text); }
 .card-muted { color: var(--muted); font-size: 14px; line-height: 1.6; }
 

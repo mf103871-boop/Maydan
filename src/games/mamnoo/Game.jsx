@@ -1,3 +1,4 @@
+import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
 import { Timer, useTimer } from '../../shared/ui/index.js';
@@ -76,7 +77,7 @@ function Round({ state, dispatch, api, source }) {
   if (state.phase === 'roundEnd') {
     return (
       <div className="mamnoo-intro">
-        <div className="big-emoji" aria-hidden="true">⏰</div>
+        <div className="big-emoji" aria-hidden="true"><GameArtwork game="beep" /></div>
         <h2>انتهت جولة {team.name}</h2>
         <div className="mamnoo-tally"><span>✅ {state.tally.correct}</span><span>🚫 {state.tally.buzz}</span><span>⏭ {state.tally.skip}</span></div>
         <Scoreboard entries={entries} />

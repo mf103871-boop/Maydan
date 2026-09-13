@@ -1,4 +1,4 @@
-.meenfina { --game-accent: #2ED8A3; display: grid; gap: 14px; }
+.meenfina { --game-accent: #A67A21; display: grid; gap: 14px; }
 .meen-statement { padding: 26px 20px; border-radius: 26px; background: linear-gradient(160deg, rgba(46,216,163,.18), var(--surface) 68%); border: 1px solid rgba(46,216,163,.45); text-align: center; font-size: clamp(26px, 7vw, 36px); font-weight: 900; line-height: 1.5; text-wrap: balance; animation: ui-modal-in .3s var(--ease-out) both; }
 .meen-count { position: fixed; inset: 0; z-index: 320; display: grid; place-items: center; background: radial-gradient(circle, rgba(46,216,163,.25), var(--bg) 70%); }
 .meen-count .num { font-size: 140px; font-weight: 900; color: var(--game-accent); line-height: 1; animation: meen-pop .95s var(--ease-out) both; }

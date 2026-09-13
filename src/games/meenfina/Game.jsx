@@ -1,3 +1,4 @@
+import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
 import { PassPhoneScreen } from '../../shared/setup/PassPhoneScreen.jsx';
@@ -64,7 +65,7 @@ export function Game({ api, players, onExit }) {
           <Podium entries={table} />
           <div className="meen-titles">
             {table.map((p) => (
-              <div key={p.id}><span aria-hidden="true">{p.emoji}</span><span className="grow"><b>{p.name}</b><small>{p.title || 'بلا لقب هذه المرة'}</small></span><span className="badge">{p.score}</span></div>
+              <div key={p.id}><span aria-hidden="true"><Avatar player={p} /></span><span className="grow"><b>{p.name}</b><small>{p.title || 'بلا لقب هذه المرة'}</small></span><span className="badge">{p.score}</span></div>
             ))}
           </div>
           <Button variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); api.restart(); }}>العب مرة أخرى</Button>
@@ -80,7 +81,7 @@ export function Game({ api, players, onExit }) {
       <style>{css}</style>
       {state.phase === 'intro' && (
         <div className="meen-intro">
-          <div className="big" aria-hidden="true">👉</div>
+          <div className="big" aria-hidden="true"><GameArtwork game="meenfina" /></div>
           <p className="muted">العبارة {state.round} من {state.rounds}</p>
           <h2 style={{ fontSize: 26, fontWeight: 900 }}>{state.mode === 'point' ? 'جهّزوا أصابعكم' : 'تصويت سري'}</h2>
           <p className="muted">{state.mode === 'point' ? 'ستظهر العبارة ثم عدّ 3-2-1، وأشيروا جميعًا في اللحظة نفسها.' : 'سيمرّ الجوال على كل لاعب ليصوّت سرًا.'}</p>
@@ -104,7 +105,7 @@ export function Game({ api, players, onExit }) {
             {state.players.map((p) => (
               <button key={p.id} type="button" className={`meen-pick ${picked.includes(p.id) ? 'selected' : ''}`} style={{ '--pick-color': p.color }} aria-pressed={picked.includes(p.id)} onClick={() => toggle(p.id)}>
                 {picked.includes(p.id) && <span className="count" aria-hidden="true">{picked.indexOf(p.id) + 1}</span>}
-                <span aria-hidden="true">{p.emoji}</span>{p.name}
+                <span aria-hidden="true"><Avatar player={p} /></span>{p.name}
               </button>
             ))}
           </div>
@@ -121,7 +122,7 @@ export function Game({ api, players, onExit }) {
             <div className="meen-grid">
               {state.players.map((p) => (
                 <button key={p.id} type="button" className="meen-pick" style={{ '--pick-color': p.color }} onClick={() => { api.sound.play('pop'); api.haptics.vibrate('selection'); dispatch({ type: 'VOTE', targetId: p.id }); }}>
-                  <span aria-hidden="true">{p.emoji}</span>{p.name}
+                  <span aria-hidden="true"><Avatar player={p} /></span>{p.name}
                 </button>
               ))}
             </div>
@@ -139,7 +140,7 @@ export function Game({ api, players, onExit }) {
               <div className="meen-bars">
                 {state.players.map((p, i) => (
                   <div key={p.id} className="meen-bar">
-                    <span className="who">{p.emoji} {p.name}</span>
+                    <span className="who"><Avatar player={p} /> {p.name}</span>
                     <span className="track"><span className="fill" style={{ '--w': `${max ? ((counts[p.id] || 0) / max) * 100 : 0}%`, '--bar-color': p.color, '--delay': `${i * 70}ms` }} /></span>
                     <b>{counts[p.id] || 0}</b>
                   </div>
@@ -149,7 +150,7 @@ export function Game({ api, players, onExit }) {
             <div className="meen-winner">
               {winners.length > 0 ? (
                 <>
-                  <div className="faces" aria-hidden="true">{winners.map((w) => <span key={w.id}>{w.emoji}</span>)}</div>
+                  <div className="faces" aria-hidden="true">{winners.map((w) => <Avatar key={w.id} player={w} />)}</div>
                   <h2>{winners.map((w) => w.name).join(' و')}</h2>
                   <p className="muted">{winners.length > 1 ? 'تعادل! نقطة لكل واحد.' : 'نقطة واحدة'}</p>
                 </>

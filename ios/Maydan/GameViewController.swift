@@ -22,12 +22,14 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
         static let bridgeName = "maydan"
         static let maximumShareTextLength = 10_000
         static let backgroundColor = UIColor(
-            red: 2 / 255,
-            green: 6 / 255,
-            blue: 23 / 255,
+            red: 255 / 255,
+            green: 247 / 255,
+            blue: 231 / 255,
             alpha: 1
         )
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle { .darkContent }
 
     private static let sharedProcessPool = WKProcessPool()
 

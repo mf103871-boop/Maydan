@@ -1,4 +1,4 @@
-.beep { --game-accent: #FF4D4D; display: grid; gap: 14px; }
+.beep { --game-accent: #8650B5; display: grid; gap: 14px; }
 .beep-turn { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 18px; background: color-mix(in srgb, var(--p-color) 18%, var(--surface)); border: 1px solid color-mix(in srgb, var(--p-color) 50%, transparent); }
 .beep-turn .avatar { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 26px; background: color-mix(in srgb, var(--p-color) 30%, transparent); }
 .beep-turn b { font-size: 20px; }

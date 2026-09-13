@@ -1,35 +1,39 @@
-/* ── الشاشة الرئيسية ── */
-.home-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; }
+/* ── الرئيسية: شاشة الألعاب في الهوية الصلصالية ── */
+.home-screen { max-width: 860px; gap: 16px; padding-top: calc(18px + var(--safe-top)); }
+.home-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 62px; }
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand-mark { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 14px; display: block; object-fit: cover; background: var(--bg); border: 1px solid rgba(245,184,46,.35); box-shadow: 0 8px 22px rgba(0,0,0,.35); }
-.brand-name { font-size: 20px; font-weight: 900; line-height: 1.1; }
-.brand-sub { font-size: 12px; color: var(--muted); font-weight: 700; }
-.roster-card { display: flex; align-items: center; gap: 12px; }
-.roster-faces { display: flex; }
-.roster-faces span { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 18px; background: color-mix(in srgb, var(--c) 30%, var(--bg-2)); border: 2px solid var(--bg); margin-inline-end: -8px; }
+.home-head .row { gap: 8px; }
+.roster-card { display: flex; align-items: center; gap: 12px; padding: 12px 14px; }
+.roster-card .card-title { font-size: 18px; }
+.roster-card .card-muted { font-size: 12px; }
+.roster-faces { display: flex; flex-shrink: 0; padding-inline-end: 6px; }
+.roster-faces .clay-avatar { width: 40px; height: 40px; margin-inline-end: -7px; }
 .games-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-@media (min-width: 560px) { .games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.game-card { --ga: var(--game-accent); position: relative; display: grid; gap: 8px; text-align: start; padding: 14px; min-height: 176px; border-radius: 22px; background: linear-gradient(160deg, color-mix(in srgb, var(--ga) 16%, var(--surface)), var(--surface) 60%); border: 1px solid color-mix(in srgb, var(--ga) 35%, var(--stroke)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ga) 12%, transparent), var(--shadow-soft); overflow: hidden; isolation: isolate; transform-style: preserve-3d; transition: transform .16s var(--ease-out), box-shadow .2s ease; animation: card-in .55s var(--ease-out) both; animation-delay: var(--delay, 0ms); will-change: transform; }
-.game-card::after { content: ""; position: absolute; inset: -40% -20% auto; height: 70%; background: radial-gradient(closest-side, color-mix(in srgb, var(--ga) 35%, transparent), transparent); pointer-events: none; opacity: .8; }
-.game-card:active { box-shadow: 0 0 0 2px color-mix(in srgb, var(--ga) 60%, transparent), 0 14px 30px color-mix(in srgb, var(--ga) 25%, transparent); }
-.game-card .icon { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; color: var(--ga); background: color-mix(in srgb, var(--ga) 18%, transparent); border: 1px solid color-mix(in srgb, var(--ga) 40%, transparent); }
-.game-card .icon svg { width: 30px; height: 30px; }
-.game-card .name { font-size: 18px; font-weight: 900; line-height: 1.2; }
-.game-card .tagline { font-size: 13px; color: var(--muted); line-height: 1.5; }
-.game-card .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; font-size: 12px; color: var(--muted); font-weight: 700; }
-.game-card .badge-new { position: absolute; top: 10px; inset-inline-start: 10px; z-index: 2; }
-.game-card.is-soon { opacity: .55; border-style: dashed; }
-@keyframes card-in { from { opacity: 0; transform: translateY(18px); } }
+.game-card { --ga: var(--game-accent); position: relative; display: grid; justify-items: center; align-content: start; gap: 3px; text-align: center; padding: 9px 8px 12px; min-height: 179px; border-radius: 23px; background: linear-gradient(155deg, #FFFEF7, color-mix(in srgb, var(--ga) 9%, #FFF9ED)); border: 1px solid color-mix(in srgb, var(--ga) 24%, #EADFCF); box-shadow: inset 0 2px 1px #FFFFFF, 0 3px 0 #D5C3B258, 0 5px 9px #6E4C3010; overflow: hidden; isolation: isolate; transition: transform .16s var(--ease-out), box-shadow .2s ease; animation: card-in .45s var(--ease-out) both; animation-delay: var(--delay, 0ms); }
+.game-card:active { box-shadow: inset 0 2px 4px #64483618; }
+.game-card .icon { width: 86px; height: 86px; display: grid; place-items: center; }
+.game-card .icon .clay-art { width: 100%; height: 100%; }
+.game-card .name { font-size: 23px; font-weight: 800; line-height: 1.25; color: var(--plum); }
+.game-card .tagline { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.game-card .meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; column-gap: 8px; font-size: 11px; color: var(--muted); font-weight: 600; margin-top: 4px; }
+.game-card .meta > span { display: inline-flex; align-items: center; gap: 3px; }
+.game-card .meta svg { width: 12px; height: 12px; }
+.home-screen .section-title { color: var(--plum); font-size: 23px; }
+.home-footer { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; color: var(--muted); padding: 3px 0; }
+.home-footer span { padding-inline-start: 8px; border-inline-start: 1px solid var(--stroke); font-size: 11px; }
+@keyframes card-in { from { opacity: 0; transform: translateY(12px); } }
+@media (min-width: 620px) { .home-screen { padding-top: calc(30px + var(--safe-top)); gap: 22px; } .games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; } .game-card { min-height: 235px; padding-block: 18px; } .game-card .icon { width: 122px; height: 122px; } .game-card .name { font-size: 26px; } .game-card .tagline { font-size: 14px; } .game-card .meta { font-size: 13px; } }
+@media (max-width: 350px) { .home-head .row { gap: 6px; } .home-head .brand { gap: 6px; } .home-head .brand-mark { width: 40px; height: 40px; } .home-head .brand-name { font-size: 30px; } .home-head .brand-sub { font-size: 12px; } .roster-faces .clay-avatar { width: 33px; height: 33px; } .game-card .name { font-size: 21px; } .game-card .tagline { font-size: 11px; } .game-card .meta { font-size: 10px; } .games-grid { gap: 9px; } }
 
 /* ── تفاصيل اللعبة ── */
 .details-hero { display: grid; justify-items: center; gap: 12px; text-align: center; padding: 18px 12px 8px; }
-.details-hero .icon { width: 96px; height: 96px; border-radius: 30px; display: grid; place-items: center; color: var(--game-accent); background: color-mix(in srgb, var(--game-accent) 18%, transparent); border: 1px solid color-mix(in srgb, var(--game-accent) 45%, transparent); box-shadow: 0 0 60px color-mix(in srgb, var(--game-accent) 30%, transparent); animation: ui-trophy .7s var(--ease-spring) both; }
-.details-hero .icon svg { width: 54px; height: 54px; }
-.details-hero h1 { font-size: clamp(30px, 8vw, 40px); font-weight: 900; color: var(--game-accent); }
+.details-hero .icon { width: 148px; height: 148px; display: grid; place-items: center; background: transparent; animation: ui-trophy .7s var(--ease-spring) both; }
+.details-hero .icon .clay-art { width: 100%; height: 100%; }
+.details-hero h1 { font-size: clamp(30px, 8vw, 40px); font-weight: 800; color: var(--plum); }
 .details-hero p { color: var(--muted); max-width: 440px; line-height: 1.7; }
 .steps { display: grid; gap: 10px; counter-reset: step; }
 .step { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; background: var(--surface); border: 1px solid var(--stroke); animation: card-in .5s var(--ease-out) both; animation-delay: var(--delay, 0ms); line-height: 1.6; }
-.step::before { counter-increment: step; content: counter(step); flex: 0 0 auto; width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font-weight: 900; color: #0B0E1A; background: var(--game-accent); }
+.step::before { counter-increment: step; content: counter(step); flex: 0 0 auto; width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font-weight: 900; color: var(--plum); background: #EAD9F5; }
 .facts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .fact { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--stroke); font-size: 14px; font-weight: 700; color: var(--muted); }
 .fact svg { width: 16px; height: 16px; color: var(--game-accent); }
@@ -38,7 +42,7 @@
 .game-frame { --game-accent: var(--accent); min-height: 100dvh; display: flex; flex-direction: column; }
 .game-bar { position: sticky; top: 0; z-index: 210; display: flex; align-items: center; gap: 10px; min-height: calc(52px + var(--safe-top)); padding: var(--safe-top) max(10px, var(--safe-right)) 0 max(10px, var(--safe-left)); background: linear-gradient(180deg, color-mix(in srgb, var(--game-accent) 22%, var(--bg)), color-mix(in srgb, var(--game-accent) 8%, var(--bg))); border-bottom: 1px solid color-mix(in srgb, var(--game-accent) 35%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .game-bar .title { flex: 1; min-width: 0; font-weight: 900; font-size: 16px; color: var(--game-accent); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.game-bar .btn-icon { width: 42px; height: 42px; min-height: 42px; }
+.game-bar .btn-icon { width: 48px; height: 48px; min-height: 48px; }
 .game-body { flex: 1; display: flex; flex-direction: column; }
 .game-body > .screen { min-height: 0; padding-top: 12px; flex: 1; }
 /* رأس «بَديهة» اللاصق يلتصق تحت شريط المنصة لا فوقه */
@@ -51,24 +55,22 @@
 .setting .text { flex: 1; min-width: 0; }
 .setting .text b { display: block; font-size: 16px; }
 .setting .text small { color: var(--muted); font-size: 13px; }
-.switch { width: 54px; height: 32px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1px solid var(--stroke-strong); position: relative; flex: 0 0 auto; transition: background-color .2s ease; min-height: 32px; }
+.switch { width: 54px; height: 32px; border-radius: 999px; background: #DCCAE6; border: 1px solid var(--stroke-strong); position: relative; flex: 0 0 auto; transition: background-color .2s ease; min-height: 32px; }
 .switch::after { content: ""; position: absolute; top: 3px; inset-inline-start: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; transition: transform .2s var(--ease-out); }
 .switch[aria-checked="true"] { background: var(--success); }
 .switch[aria-checked="true"]::after { transform: translateX(-22px); }
 
-/* ── Splash ── */
-.splash { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: radial-gradient(600px 420px at 50% 40%, #1a2350 0%, #0f1430 50%, var(--bg) 100%); cursor: pointer; }
-.splash canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.splash-inner { position: relative; display: grid; justify-items: center; gap: 12px; }
-.splash-mark { width: 124px; height: 124px; border-radius: 34px; display: block; object-fit: cover; background: var(--bg); border: 1px solid rgba(245,184,46,.35); box-shadow: 0 24px 70px rgba(0,0,0,.45), 0 0 50px rgba(245,184,46,.15); animation: splash-mark .9s var(--ease-spring) both; }
-.splash-title { font-size: 36px; font-weight: 900; color: #fff; background: linear-gradient(90deg, #fff 0%, var(--accent) 50%, #fff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% 100%; clip-path: inset(0 100% 0 0); animation: splash-reveal 1s var(--ease-out) .35s forwards, splash-shine 2.2s linear .6s infinite; }
-.splash-sub { color: var(--muted); font-size: 14px; font-weight: 700; opacity: 0; animation: ui-fade .5s ease-out .9s forwards; }
-.splash-skip { position: absolute; bottom: calc(24px + var(--safe-bottom)); inset-inline: 0; text-align: center; color: var(--muted); font-size: 13px; opacity: 0; animation: ui-fade .4s ease-out 1.1s forwards; }
-@keyframes splash-mark { from { transform: scale(.4) rotate(-8deg); opacity: 0; } }
-@keyframes splash-reveal { to { clip-path: inset(0 0 0 0); } }
-@keyframes splash-shine { to { background-position: -200% 0; } }
-.splash.is-leaving { animation: splash-out .35s ease-in forwards; }
-@keyframes splash-out { to { opacity: 0; transform: scale(1.04); } }
+/* ── بداية غامرة، مع الشعار كنص حي فوق الرسم ── */
+.splash { position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: #48BFF0; cursor: pointer; }
+.splash-world { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+.splash::after { content: ''; position: absolute; inset: auto 0 0; height: 13%; pointer-events: none; background: linear-gradient(transparent, #FFF7E7 90%); }
+.splash-inner { position: absolute; top: calc(5% + var(--safe-top)); inset-inline: 16px; display: grid; justify-items: center; z-index: 1; animation: splash-mark .5s var(--ease-out) both; }
+.splash-sub { color: var(--plum); font-size: clamp(22px, 6vw, 32px); font-weight: 800; margin-top: -12px; }
+.splash-skip { position: absolute; z-index: 2; bottom: calc(18px + var(--safe-bottom)); inset-inline: 12px; text-align: center; color: var(--plum); font-size: 15px; font-weight: 600; }
+@keyframes splash-mark { from { opacity: 0; transform: translateY(-10px); } }
+.splash.is-leaving { animation: splash-out .25s ease-in forwards; }
+@keyframes splash-out { to { opacity: 0; } }
+@media (min-aspect-ratio: 1/1) { .splash-world { object-position: 25% bottom; } .splash-inner { inset-inline: 48% 2%; top: 25%; } .splash-inner .wordmark-art { font-size: clamp(76px, 12vw, 150px); } }
 
 .about-list { display: grid; gap: 8px; }
 .about-list .row { padding: 10px 12px; border-radius: 14px; background: var(--surface); border: 1px solid var(--stroke); }

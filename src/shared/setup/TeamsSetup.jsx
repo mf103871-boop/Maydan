@@ -1,3 +1,4 @@
+import { Avatar } from '../brand/art.jsx';
 // من فريقين إلى أربعة بأسماء مختلفة.
 import React, { useState } from 'react';
 import { Button, Card, Segment } from '../ui/components.jsx';
@@ -23,7 +24,7 @@ export function TeamsSetup({ min = 2, max = 4, onStart, children, startLabel = '
         <div className="stack" style={{ marginTop: 12 }}>
           {teams.map((t, i) => (
             <label key={t.id} className="team-input" style={{ '--team-color': t.color }}>
-              <span aria-hidden="true">{t.emoji}</span>
+              <Avatar index={i % 4} />
               <input className="input" value={names[i]} maxLength={20} aria-label={`اسم الفريق ${i + 1}`} onChange={(e) => { const next = [...names]; next[i] = e.target.value; setNames(next); setError(''); }} />
             </label>
           ))}

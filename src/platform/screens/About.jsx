@@ -1,3 +1,4 @@
+import { BrandMark } from '../../shared/brand/art.jsx';
 import React from 'react';
 import { Screen, TopBar, IconButton, Card } from '../../shared/ui/components.jsx';
 import { IconBack } from '../../shared/ui/icons.jsx';
@@ -47,17 +48,21 @@ export function About() {
       <TopBar title="عن ميدان" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <Card className="stack">
         <div className="brand">
-          <img className="brand-mark" src="icons/icon-192.png" width="44" height="44" alt="" />
+          <BrandMark />
           <div><div className="brand-name">ميدان</div><div className="brand-sub">ألعاب جمعتنا</div></div>
         </div>
-        <p className="card-muted" style={{ fontSize: 15 }}>ألعاب جماعية تُلعب على جهاز واحد يتناقله الأصدقاء والعائلة. تعمل دون إنترنت ولا تُرسل أي بيانات إلى أي مكان؛ وحزم الأسئلة ذات الصور والأصوات تحتاج الشبكة أول مرة فقط، ثم تُحفظ في الجهاز.</p>
+        <p className="card-muted" style={{ fontSize: 15 }}>ألعاب عربية للأصدقاء والعائلة على جهاز واحد، وغرف «مين فينا؟» ليلعب كل واحد من هاتفه. ألعاب الجهاز الواحد تعمل دون إنترنت بعد تنزيل المحتوى؛ والغرف تحتاج اتصالًا على كل هاتف.</p>
         <div className="about-list">
           {GAMES.map((g) => <div key={g.id} className="row" style={{ '--c': g.accent }}><span className="dot" aria-hidden="true" /><b>{g.name}</b><span className="muted" style={{ fontSize: 13 }}>{g.tagline}</span></div>)}
         </div>
       </Card>
       <Card className="stack">
+        <span className="card-title">بيانات الغرف</span>
+        <p className="card-muted">عند دخول غرفة، تُرسل أسماء اللاعبين وشخصياتهم وتصويتاتهم إلى خادم ميدان لتنسيق اللعبة. يرى اللاعبون مجموع الأصوات فقط، وتبقى الاختيارات الفردية مخفية عن الآخرين. تنتهي الغرفة بعد ساعتين وتُحذف بياناتها النشطة. يُحفظ مفتاح العودة على جهازك، فلا تشارك بيانات المتصفح مع غيرك.</p>
+      </Card>
+      <Card className="stack">
         <span className="card-title">جمعتكم تبدأ هنا</span>
-        <p className="card-muted">أضف أسماء اللاعبين، اختر اللعبة التي تناسب جمعتكم، ومرّر الجهاز بينكم. تحديات معلومات وسرعة وتمثيل وضحك، في مكان واحد.</p>
+        <p className="card-muted">اختر لعبة لجهاز واحد، أو أنشئ غرفة «مين فينا؟» وشارك رمزها مع أصحابك. تحديات معلومات وسرعة وتمثيل وضحك، في مكان واحد.</p>
       </Card>
       <Credits />
       <p className="muted center" style={{ fontSize: 13 }}>الإصدار {version} · صُنعت بحب للجلسات العائلية</p>

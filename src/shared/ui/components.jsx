@@ -1,3 +1,4 @@
+import { Avatar, TrophyArtwork } from '../brand/art.jsx';
 // المكونات المشتركة: زر، بطاقة، شارة، نافذة، ورقة سفلية، تنبيه، حلقة تقدم، لوحة نتائج، منصة تتويج، شاشة.
 import React, { useEffect, useRef, useState, useCallback, createContext, useContext } from 'react';
 import { IconClose } from './icons.jsx';
@@ -183,7 +184,7 @@ export function Scoreboard({ entries, unit = '' }) {
     <div className="scoreboard">
       {entries.map((e) => (
         <div key={e.id} className={`score-row ${e.score === max && max > 0 ? 'is-leader' : ''}`} style={{ '--row-color': e.color }}>
-          <span className="avatar" aria-hidden="true">{e.emoji || '•'}</span>
+          <Avatar player={e} className="avatar" />
           <span className="name">{e.name}</span>
           {e.delta ? <span className="delta">+{e.delta}</span> : null}
           <span className="score">{e.score}{unit}</span>
@@ -225,16 +226,16 @@ export function Podium({ entries, title, unit = '' }) {
   const heading = title || (winners.length > 1 ? 'تعادل جميل!' : `فاز ${sorted[0].name}`);
   return (
     <div className="podium">
-      <div className="podium-trophy" aria-hidden="true">{winners.length > 1 ? '🤝' : '🏆'}</div>
+      <div className="podium-trophy" aria-hidden="true"><TrophyArtwork /></div>
       <h1 className="podium-title">{heading}</h1>
       <div className="podium-stage">
         {order.map((e) => {
           const rank = sorted.indexOf(e);
           return (
-            <div key={e.id} className="podium-col" style={{ '--col-color': e.color, '--delay': `${rank * 160 + 200}ms`, '--h': `${heights[rank]}px` }}>
-              <span className="avatar" aria-hidden="true">{e.emoji || ['🥇', '🥈', '🥉'][rank]}</span>
+            <div key={e.id} data-rank={sorted.findIndex((entry) => entry.score === e.score) + 1} className="podium-col" style={{ '--col-color': e.color, '--delay': `${rank * 160 + 200}ms`, '--h': `${heights[rank]}px` }}>
+              <Avatar player={e} className="avatar" />
               <span className="name">{e.name}</span>
-              <div className="block"><CountUp value={e.score} />{unit}</div>
+              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => entry.score === e.score) + 1}</span><span><CountUp value={e.score} />{unit}</span></div>
             </div>
           );
         })}

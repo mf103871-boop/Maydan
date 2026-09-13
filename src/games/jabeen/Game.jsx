@@ -1,3 +1,4 @@
+import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
 import { useTimer } from '../../shared/ui/useTimer.js';
@@ -96,7 +97,7 @@ export function Game({ api, players, onExit }) {
       <style>{css}</style>
       {state.phase === 'intro' && (
         <div className="jabeen-intro">
-          <div className="big" aria-hidden="true">{entrant.emoji}</div>
+          <div className="big" aria-hidden="true"><Avatar player={entrant} /></div>
           <h2>دور {entrant.name}</h2>
           <p className="muted">فئة «{state.categoryName}» · {state.seconds} ثانية</p>
           <p className="muted">ضع الجوال على جبينك والشاشة نحو الآخرين. هم يصفون وأنت تخمّن.</p>

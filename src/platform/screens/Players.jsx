@@ -1,8 +1,9 @@
+import { Avatar, AvatarPicker } from '../../shared/brand/art.jsx';
 // دفتر اللاعبين: إضافة وحذف حتى 12 لاعبًا يُعاد استخدامهم في كل الألعاب الفردية.
 import React, { useState } from 'react';
 import { Screen, TopBar, IconButton, Button, Card, Modal } from '../../shared/ui/components.jsx';
 import { IconBack, IconTrash, IconPlus } from '../../shared/ui/icons.jsx';
-import { addPlayer, EMOJIS, ROSTER_LIMIT } from '../../shared/setup/roster.js';
+import { addPlayer, ROSTER_LIMIT } from '../../shared/setup/roster.js';
 import { usePlatform } from '../context.js';
 import { back, getDirection } from '../router.js';
 
@@ -26,8 +27,8 @@ export function Players() {
         <label className="field"><span>اسم اللاعب</span>
           <input className="input" value={name} maxLength={20} placeholder="مثال: سارة" onChange={(e) => { setName(e.target.value); setError(''); }} onKeyDown={(e) => e.key === 'Enter' && add()} />
         </label>
-        <div className="field"><span>الإيموجي (اختياري)</span>
-          <div className="emoji-grid">{EMOJIS.map((e) => <button key={e} type="button" className={emoji === e ? 'selected' : ''} aria-pressed={emoji === e} aria-label={`إيموجي ${e}`} onClick={() => setEmoji(emoji === e ? null : e)}>{e}</button>)}</div>
+        <div className="field"><span>شخصيتك (اختياري)</span>
+          <AvatarPicker value={emoji} onChange={setEmoji} />
         </div>
         {error && <p className="setup-error" role="alert">{error}</p>}
         <Button variant="primary" size="lg" full icon={<IconPlus />} onClick={add} disabled={roster.length >= ROSTER_LIMIT}>إضافة</Button>
@@ -35,7 +36,7 @@ export function Players() {
       <div className="scoreboard">
         {roster.map((p) => (
           <div key={p.id} className="score-row" style={{ '--row-color': p.color }}>
-            <span className="avatar" aria-hidden="true">{p.emoji}</span>
+            <Avatar player={p} className="avatar" />
             <span className="name">{p.name}</span>
             <IconButton label={`حذف ${p.name}`} onClick={() => setRemoving(p)}><IconTrash /></IconButton>
           </div>

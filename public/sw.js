@@ -66,6 +66,9 @@ self.addEventListener('fetch', (event) => {
   const request = event.request;
   if (request.method !== 'GET') return;
   if (new URL(request.url).origin !== self.location.origin) return;
+  // Room endpoints must stay live even when the game and API share a host.
+  const pathname = new URL(request.url).pathname;
+  if (pathname === '/api' || pathname.startsWith('/api/') || pathname === '/health') return;
 
   // Navigations: serve the cached document immediately (a launch from the home
   // screen must not wait on the network, or on there being one), then refresh

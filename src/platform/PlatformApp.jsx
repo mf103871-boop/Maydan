@@ -10,6 +10,8 @@ import { ToastProvider, useToast } from '../shared/ui/components.jsx';
 import uiCss from '../shared/ui/ui.css';
 import setupCss from '../shared/setup/setup.css';
 import platformCss from './platform.css';
+import brandCss from '../shared/brand/brand.css';
+import { BrandFonts } from '../shared/brand/art.jsx';
 import { Splash } from './screens/Splash.jsx';
 import { Home } from './screens/Home.jsx';
 import { GameDetails } from './screens/GameDetails.jsx';
@@ -17,6 +19,8 @@ import { Play } from './screens/Play.jsx';
 import { Players } from './screens/Players.jsx';
 import { Settings } from './screens/Settings.jsx';
 import { About } from './screens/About.jsx';
+import { Online } from '../online/Online.jsx';
+import onlineCss from '../online/online.css';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
@@ -36,6 +40,8 @@ function ScreenHost({ route }) {
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'settings') screen = <Settings key="settings" />;
   else if (route.name === 'about') screen = <About key="about" />;
+  else if (route.name === 'online') screen = <Online key="online" />;
+  else if (route.name === 'room') screen = <Online key={`room-${route.params.id}`} code={route.params.id} />;
   return screen;
 }
 
@@ -71,11 +77,14 @@ function Shell() {
   const [booted, setBooted] = useState(false);
   return (
     <>
+      <BrandFonts />
       <style>{uiCss}</style>
       <style>{setupCss}</style>
       <style>{platformCss}</style>
       {!booted && <Splash onDone={() => setBooted(true)} />}
       <ScreenHost route={route} />
+      <style>{brandCss}</style>
+      <style>{onlineCss}</style>
     </>
   );
 }
