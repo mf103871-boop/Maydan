@@ -1,0 +1,128 @@
+name: Prepare Maydan for Cloudflare
+
+on:
+  push:
+    branches: [prepare-cloudflare]
+    paths:
+      - .github/workflows/prepare-cloudflare.yml
+      - Maydan-1.3.1-part-1.zip
+      - Maydan-1.3.1-part-2.zip
+  workflow_dispatch:
+
+concurrency:
+  group: maydan-archive-import
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    if: github.repository == 'mf103871-boop/Maydan'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify and unpack the two delivered archives
+        shell: python
+        run: |
+          import hashlib, os, stat, zipfile
+          from pathlib import Path, PurePosixPath
+
+          archives = {
+              'Maydan-1.3.1-part-1.zip': '4a4a006614c9d8bbb9263a8fa84dc87e5d84342a33d0703af90d64ae99c55c35',
+              'Maydan-1.3.1-part-2.zip': '0807573b5ef6b0b5d71bc5d067660e2edfab4e63efdb4218e977ef2678adfbec',
+          }
+          prefix = 'Maydan-1.3.1/'
+          files = {}
+          for archive_name, expected_hash in archives.items():
+              archive_path = Path(archive_name)
+              assert hashlib.sha256(archive_path.read_bytes()).hexdigest() == expected_hash, f'Archive changed: {archive_name}'
+              with zipfile.ZipFile(archive_path) as archive:
+                  for info in archive.infolist():
+                      if info.is_dir():
+                          continue
+                      assert info.filename.startswith(prefix), 'Unexpected archive root'
+                      name = info.filename[len(prefix):]
+                      path = PurePosixPath(name)
+                      assert name and not path.is_absolute() and '..' not in path.parts and '.git' not in path.parts
+                      assert name not in files, f'Duplicate file: {name}'
+                      mode = info.external_attr >> 16
+                      assert not stat.S_ISLNK(mode), 'Symlinks are not expected in this release'
+                      files[name] = (archive.read(info), mode)
+          assert len(files) == 3168, 'The two archives are incomplete'
+          manifest = {}
+          for line in files['SHA256SUMS.txt'][0].decode('utf-8').splitlines():
+              digest, name = line.split('  ', 1)
+              assert name not in manifest
+              manifest[name] = digest
+          assert set(manifest) == set(files) - {'SHA256SUMS.txt'}
+          for name, digest in manifest.items():
+              assert hashlib.sha256(files[name][0]).hexdigest() == digest, f'File checksum mismatch: {name}'
+          assert files['SOURCE-COMMIT.txt'][0].decode().strip() == '8e4c27dddc9074d1169d8b9a975c78101fda273b'
+          metadata = {'START-HERE-AR.txt', 'SOURCE-COMMIT.txt', 'SHA256SUMS.txt'}
+          destination = Path(os.environ['RUNNER_TEMP']) / 'maydan-source'
+          destination.mkdir(exist_ok=False)
+          source_names = []
+          for name, (data, mode) in sorted(files.items()):
+              if name in metadata:
+                  continue
+              target = destination / name
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(data)
+              target.chmod(mode & 0o777 or 0o644)
+              source_names.append(name)
+          assert len(source_names) == 3165
+          (Path(os.environ['RUNNER_TEMP']) / 'maydan-source-paths').write_bytes(b'\0'.join(name.encode() for name in source_names) + b'\0')
+          print(f'Verified and unpacked {len(source_names)} source files.')
+      - name: Install the locked dependencies
+        working-directory: ${{ runner.temp }}/maydan-source
+        run: npm ci --no-audit --no-fund
+      - name: Run the game and room tests
+        working-directory: ${{ runner.temp }}/maydan-source
+        run: npm test
+      - name: Build the full Cloudflare game
+        working-directory: ${{ runner.temp }}/maydan-source
+        run: npm run build:cloudflare
+      - name: Publish the verified source branch
+        env:
+          GIT_INDEX_FILE: ${{ runner.temp }}/maydan-import.index
+        shell: bash
+        run: |
+          set -euo pipefail
+          maydan_source="$RUNNER_TEMP/maydan-source"
+          git read-tree --empty
+          git --work-tree="$maydan_source" --literal-pathspecs add --force --pathspec-from-file="$RUNNER_TEMP/maydan-source-paths" --pathspec-file-nul
+          maydan_source_tree=$(git write-tree)
+          if [ "$maydan_source_tree" != '5c42757e9b078081afe76a66ed0a05dd4146a70f' ]; then
+            echo 'Extracted source does not match the verified release tree.' >&2
+            exit 1
+          fi
+          # Keep this workflow identical to its parent so the repository token
+          # does not need to create, change, or remove a workflow file.
+          cp .github/workflows/prepare-cloudflare.yml "$maydan_source/.github/workflows/prepare-cloudflare.yml"
+          git --work-tree="$maydan_source" add --force -- .github/workflows/prepare-cloudflare.yml
+          maydan_tree=$(git write-tree)
+          if git ls-remote --exit-code --heads origin refs/heads/cloudflare-ready >/dev/null 2>&1; then
+            git fetch origin refs/heads/cloudflare-ready
+            if [ "$(git rev-parse 'FETCH_HEAD^{tree}')" = "$maydan_tree" ]; then
+              echo 'The verified source branch already exists.'
+              exit 0
+            fi
+            echo 'cloudflare-ready already contains different work; it was not overwritten.' >&2
+            exit 1
+          fi
+          maydan_commit=$(git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit-tree "$maydan_tree" -p "$GITHUB_SHA" -m 'Prepare Maydan 1.3.1 artwork, multiplayer rooms, and Cloudflare hosting')
+          git push origin "$maydan_commit:refs/heads/cloudflare-ready"
+          {
+            echo 'Maydan 1.3.1 is ready in the cloudflare-ready branch.'
+            echo
+            echo "https://github.com/$GITHUB_REPOSITORY/tree/cloudflare-ready"
+            echo
+            echo 'Cloudflare build command: npm run build:cloudflare'
+            echo 'Cloudflare deploy command: npm run cloudflare:deploy'
+            echo 'Worker name: maydan-game'
+          } >> "$GITHUB_STEP_SUMMARY"
