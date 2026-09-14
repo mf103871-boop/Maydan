@@ -31,7 +31,8 @@ function Round({ state, dispatch, api, source }) {
   const team = currentTeam(state);
   const [flash, setFlash] = useState('');
   const timer = useTimer({ seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('warning'); dispatch({ type: 'TIME_UP' }); } });
-  useEffect(() => { if (state.phase === 'play' && !timer.running && timer.left === state.seconds) timer.start(); if (state.phase !== 'play' && timer.running) timer.pause(); }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+  // كل دور يبدأ بمؤقت جديد: نصفّره صراحةً ثم نشغّله، فلا نعتمد على مساواة هشّة مع قيمة سابقة.
+  useEffect(() => { if (state.phase === 'play') { timer.reset(state.seconds); timer.start(); } else if (timer.running) timer.pause(); }, [state.phase, state.round, state.turn]); // eslint-disable-line react-hooks/exhaustive-deps
   const act = (type, sound, haptic, cls) => {
     api.sound.play(sound); api.haptics.vibrate(haptic);
     setFlash(cls); setTimeout(() => setFlash(''), 500);
@@ -110,7 +111,7 @@ export function Game({ api, teams, onExit }) {
           <Button variant="secondary" full onClick={api.backToSetup}>تغيير الفرق أو الإعدادات</Button>
           <Button variant="ghost" full onClick={onExit}>العودة للمنصة</Button>
         </div>
-      ) : <Round state={state} dispatch={dispatch} api={api} source={source} />}
+      ) : <Round key={`${state.round}-${state.turn}`} state={state} dispatch={dispatch} api={api} source={source} />}
     </Screen>
   );
 }

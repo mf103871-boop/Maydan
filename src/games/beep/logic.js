@@ -157,3 +157,13 @@ export function standings(state) {
 export function nextBombSeconds(random = Math.random) {
   return randInt(random, BOMB_RANGE[0], BOMB_RANGE[1]);
 }
+
+// وضع القنبلة: «أجب ثم مرّر فورًا»، فالطلبات تبقى سهلة ومتنوّعة بدل الأصعب دائمًا.
+// المنحنى يدور: سهل، سهل، متوسط — ولا يصل أبدًا إلى المستوى 3.
+export const BOMB_LEVELS = [1, 1, 2];
+
+// وسيطات createPromptSource().next لسحبة القنبلة رقم drawIndex؛ rounds = 3 تجعل round هو المستوى نفسه.
+export function bombPromptArgs(drawIndex = 0) {
+  const i = Number.isFinite(drawIndex) ? Math.abs(Math.trunc(drawIndex)) : 0;
+  return [BOMB_LEVELS[i % BOMB_LEVELS.length], 3];
+}

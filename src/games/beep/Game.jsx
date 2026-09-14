@@ -7,7 +7,7 @@ import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import prompts from '../../data/games/beep/prompts.json';
 import css from './beep.css';
-import { initialState, reduce, currentPlayer, standings, createPromptSource, normalizeOptions, nextBombSeconds, SECONDS, ROUNDS } from './logic.js';
+import { initialState, reduce, currentPlayer, standings, createPromptSource, normalizeOptions, nextBombSeconds, bombPromptArgs, SECONDS, ROUNDS } from './logic.js';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -84,7 +84,8 @@ function BombRound({ state, dispatch, api, source, random }) {
   const player = currentPlayer(state);
   const [hot, setHot] = useState(false);
   const timer = useTimer({ seconds: state.bombSeconds, onEnd: () => { api.sound.play('explosion'); api.haptics.vibrate('explosion'); dispatch({ type: 'EXPLODE' }); } });
-  useEffect(() => { if (state.phase === 'prompt' && !timer.running && !timer.paused && state.bombElapsed === 0 && timer.left === state.bombSeconds) timer.start(); }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+  // كل قنبلة جديدة لها مدة عشوائية جديدة: نصفّر المؤقت عليها ثم نشغّله (القنبلة تستمر عبر التمرير لأن الطور يبقى prompt).
+  useEffect(() => { if (state.phase === 'prompt') { timer.reset(state.bombSeconds); timer.start(); } }, [state.phase, state.round]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { setHot(timer.running && timer.left <= 8); if (timer.running) api.sound.play(timer.left <= 8 ? 'tickFast' : 'tick'); }, [timer.left]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (state.phase === 'intro') {
@@ -93,7 +94,7 @@ function BombRound({ state, dispatch, api, source, random }) {
         <div className="big" aria-hidden="true"><GameArtwork game="beep" /></div>
         <h2>القنبلة مع {player.name}</h2>
         <p className="muted">أجب على الطلب ثم مرّر الجوال فورًا. المؤقت مخفي… قد ينفجر في أي لحظة.</p>
-        <Button variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', prompt: source.next(1, 1) }); }}>تشغيل القنبلة</Button>
+        <Button variant="accent" size="lg" full onClick={() => { api.sound.play('whoosh'); dispatch({ type: 'BEGIN', prompt: source.next(...bombPromptArgs(state.history.length)) }); }}>تشغيل القنبلة</Button>
         <PlayersStrip state={state} />
       </div>
     );
@@ -105,7 +106,7 @@ function BombRound({ state, dispatch, api, source, random }) {
         <div className={`beep-bomb ${hot ? 'is-hot' : ''}`} aria-hidden="true"><GameArtwork game="beep" /></div>
         {timer.resuming !== null && <Timer timer={timer} api={api} size={1} />}
         <div className="beep-prompt">{state.prompt.text}<small>{state.prompt.category}</small></div>
-        <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pass'); api.haptics.vibrate('light'); dispatch({ type: 'PASS', prompt: source.next(1, 1) }); }}>أجبت — مرّر الجوال ⬅</Button>
+        <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pass'); api.haptics.vibrate('light'); dispatch({ type: 'PASS', prompt: source.next(...bombPromptArgs(state.history.length)) }); }}>أجبت — مرّر الجوال ⬅</Button>
         <PlayersStrip state={state} />
       </>
     );
