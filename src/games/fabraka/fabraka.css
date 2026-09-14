@@ -22,7 +22,7 @@
 .fab-input { font-size: 18px; min-height: 54px; }
 .fab-hint { font-size: 13px; color: var(--muted); line-height: 1.8; }
 .fab-note, .fab-save-error { padding: 12px 14px; border: 1px solid var(--stroke-strong); border-radius: 14px; background: var(--fab-tint); font-size: 14px; line-height: 1.8; }
-.fab-save-error { border-color: var(--warning, #F5B82E); }
+.fab-save-error { border-color: var(--warning); }
 .fab-resume { border-color: var(--game-accent) !important; background: var(--fab-tint) !important; }
 .fab-modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
 .fab-mode { padding: 17px 8px; min-height: 58px; border: 1px solid var(--stroke-strong); border-radius: 16px; background: var(--surface); font-size: 17px; font-weight: 800; color: var(--text); }
@@ -37,6 +37,8 @@
 .fab-details .stack { margin-top: 10px; gap: 8px; }
 .fab-categories { display: flex; flex-wrap: wrap; gap: 8px; }
 .fab-categories .chip { min-height: 44px; font-size: 13px; }
+.fab-categories .chip small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.fab-categories .chip:disabled { opacity: .45; cursor: not-allowed; }
 .fab-categories .chip[aria-pressed="true"] { border-color: var(--game-accent); background: var(--fab-tint); }
 .fab-rules { padding-inline-start: 22px; margin: 0; font-size: 14px; line-height: 1.9; color: var(--muted); }
 .fab-rules li + li { margin-top: 9px; }
@@ -48,7 +50,7 @@ button.fab-opt:not(:disabled), .fab-mode, .fab-abstain { cursor: pointer; }
 .fab-opt .tag { font-size: 11px; padding: 4px 8px; border-radius: 20px; background: var(--surface-2); color: var(--muted); flex: 0 0 auto; }
 .fab-abstain { border: 1px solid var(--stroke); background: var(--surface); color: var(--muted); border-radius: 13px; padding: 12px; min-height: 46px; }
 .fab-clock { width: fit-content; margin-inline: auto; padding: 8px 18px; border-radius: 30px; background: var(--fab-tint); border: 1px solid var(--stroke-strong); font-size: 20px; font-weight: 900; font-variant-numeric: tabular-nums; }
-.fab-clock.urgent { border-color: var(--warning, #F5B82E); color: var(--warning, #F5B82E); }
+.fab-clock.urgent { border-color: var(--warning); color: var(--warning); }
 .fab-discussion { display: grid; gap: 12px; }
 .fab-discussion h2 { font-size: 21px; }
 .fab-reveal-title { display: grid; gap: 8px; }

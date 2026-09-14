@@ -24,6 +24,7 @@ export function Settings() {
   const share = async () => {
     const text = reports.slice(0, 100).map((r, i) => [`${i + 1}. [${r.category} — ${r.points}] ${r.reason}`, `السؤال: ${r.question}`, `الإجابة: ${r.answer}`, `المعرّف: ${r.qid}`].join('\n')).join('\n\n');
     const result = await shareText('بلاغات أسئلة بَديهة', text);
+    if (result === 'cancelled') return; // ألغى المستخدم ورقة المشاركة: لا رسالة نجاح
     toast(result === 'copied' ? 'تم نسخ البلاغات' : result === 'failed' ? 'تعذرت المشاركة على هذا الجهاز' : 'تمت المشاركة');
   };
   return (

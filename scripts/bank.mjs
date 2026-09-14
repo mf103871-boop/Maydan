@@ -1,9 +1,13 @@
 // بنك أسئلة «بَديهة»: تحقق وتقرير وترتيب.
 //
 //   node scripts/bank.mjs validate [<id>]   يفحص فئة واحدة أو البنك كله؛ exit 1 عند أي خطأ
+//                                           أو حشو. فحص الفئة الواحدة يطبّق أيضًا
+//                                           قواعد البنك العابرة مقابل بقية الفئات.
+//   node scripts/bank.mjs placeholders [<id>] [--json]  قائمة الحشو المُولَّد آليًا كاملة
 //   node scripts/bank.mjs report [--json]   جدول الفئات × الخانات مع الحالة والوسائط
 //   node scripts/bank.mjs sort <id>         يرتّب ملف الفئة (p ثم qid) ويعيد توليد index.js
 //   node scripts/bank.mjs index             يعيد توليد index.js فقط
+//   node scripts/bank.mjs status <id>       يعرض حالة الفئة وأعدادها
 //   node scripts/bank.mjs status <id> done|pending   يحدّث الحالة والأعداد من الملف الفعلي
 //
 // القواعد كلها في docs/bank/RUBRIC.md، وبنية الملفات في docs/bank/SCHEMA.md.
@@ -172,14 +176,106 @@ export function fabricatedContentReasons(question) {
   return reasons;
 }
 
+// ── حشو مُولَّد آليًا ───────────────────────────────────────────────────────
+// دفعات سابقة ملأت خانات كاملة بأسئلة من قالب: «ما المسمى الداخلي ق7؟» جوابها
+// «الوشاح ق7»، و«ما الرمز المعدود 3؟» جوابها «أثر الضبع 3». النص فريد، وعدد
+// الكلمات داخل الحد، وverified: true، فكل الفحوص القديمة تمرّ — بينما لا لاعب
+// يستطيع الإجابة لأن السؤال لا يحمل معلومة أصلًا. القاعدة في RUBRIC §6.
+//
+// الرصد شقّان: قوالب معروفة بنصّها، وقاعدة عامة — إجابة هي اسم يليه عدّاد
+// («خفير 600»، «خاتمة1»، «بقعة حمراء 12») مكرّرة كسلسلة داخل الفئة. شرط
+// السلسلة يمنع رفض إجابات حقيقية تنتهي برقم مثل «أبولو 11» أو «فوياجر 1».
+const PLACEHOLDER_TEMPLATES = [
+  [/المسمى الداخلي/, 'قالب «المسمى الداخلي»'],
+  [/المعدود/, 'قالب «المعدود»'],
+  [/تأكيدً?ا/, 'قالب «… تأكيدًا لا …» (صياغة مولَّدة بلا معنى)'],
+  [/الكلمة الجامعة رقم\s*\d+/, 'قالب «الكلمة الجامعة رقم N»'],
+  [/في شريحة\s*\d+/, 'قالب «في شريحة N»'],
+];
+const SOUND_NUMBER = /ما هذا الصوت رقم\s*\d+/;
+const ARABIC_LETTER = /[\u0600-\u06FF]/;
+// «اسم + عدّاد»: عدّاد اختياري السابقة (ق/رقم) وقد يحمل الخانة («رمز القايي 200-1»)
+const COUNTER_ANSWER = /^(.*?\S)\s*(?:ق|رقم)?\s*(?:\d+\s*[-–]\s*)?\d+$/;
+const DEFINITE = /^(?:وال|بال|فال|كال|ال)(?=.{3})/;
+
+function counterStem(answer) {
+  const m = COUNTER_ANSWER.exec(String(answer || '').trim());
+  if (!m) return null;
+  const stem = normalizeArabic(m[1]);
+  return stem && ARABIC_LETTER.test(stem) ? stem : null;
+}
+
+// كل كلمات جذر الإجابة مأخوذة من نص سؤالها نفسه: «ما اسم الخفير في شريحة 600؟»
+// → «خفير 600». الكلمات القصيرة تُستثنى كي لا تتطابق حروف الجر والسوابق.
+function echoesQuestion(stem, questionText) {
+  const words = new Set(normalizeArabic(questionText).split(/\s+/).filter(Boolean).map((w) => w.replace(DEFINITE, '')));
+  const parts = stem.split(/\s+/).map((w) => w.replace(DEFINITE, ''));
+  return parts.length > 0 && parts.every((w) => w.length > 2 && words.has(w));
+}
+
+// تُعطى أسئلة فئة واحدة، وتُعيد سطرًا لكل سؤال حشو مع سبب رصده.
+export function placeholderFindings(questions) {
+  const qs = (Array.isArray(questions) ? questions : []).filter((q) => q && typeof q === 'object');
+  const series = new Map();
+  for (const q of qs) {
+    const stem = counterStem(q.a);
+    if (stem) series.set(stem, (series.get(stem) || 0) + 1);
+  }
+  const findings = [];
+  for (const q of qs) {
+    const text = String(q.q || '').trim();
+    const answer = String(q.a || '').trim();
+    let reason = null;
+    for (const [re, label] of PLACEHOLDER_TEMPLATES) {
+      if (re.test(text) || re.test(answer)) { reason = label; break; }
+    }
+    const stem = reason ? null : counterStem(answer);
+    if (!reason && stem) {
+      const n = series.get(stem) || 0;
+      if (SOUND_NUMBER.test(text)) reason = 'قالب «ما هذا الصوت رقم N» بإجابة عدّاد';
+      else if (n >= 3) reason = `إجابة «اسم + عدّاد» متسلسلة (${n} مرة بالجذر «${stem}»)`;
+      else if (n >= 2 && echoesQuestion(stem, text)) reason = `إجابة هي اسم من نص السؤال يليه عدّاد (${n} مرة)`;
+    }
+    if (reason) findings.push({ qid: String(q.qid || '؟'), p: q.p, rule: reason, q: text, a: answer });
+  }
+  return findings;
+}
+
+// تقرير الحشو على البنك كله (أو فئة واحدة): سطر لكل فئة فيها حشو.
+export async function placeholderReport(root = ROOT, { only = null } = {}) {
+  const ids = (await listCategoryFiles(root)).map((f) => f.replace(/\.json$/, '')).filter((id) => !only || id === only);
+  const status = await readStatus(root);
+  const rows = [];
+  for (const id of ids) {
+    let pack;
+    try { pack = await readCategory(root, id); } catch { continue; }
+    const findings = placeholderFindings(pack.qs);
+    if (!findings.length) continue;
+    const byRule = new Map();
+    for (const f of findings) byRule.set(f.rule, (byRule.get(f.rule) || 0) + 1);
+    rows.push({
+      id,
+      name: pack.name || id,
+      status: status.categories[id] ? status.categories[id].status : 'unknown',
+      total: (pack.qs || []).length,
+      count: findings.length,
+      rules: [...byRule.entries()].sort((a, b) => b[1] - a[1]),
+      findings,
+    });
+  }
+  rows.sort((a, b) => b.count - a.count || a.id.localeCompare(b.id));
+  return { rows, categories: rows.length, questions: rows.reduce((n, r) => n + r.count, 0) };
+}
+
 // ── التحقق ────────────────────────────────────────────────────────────────
 export async function validateBank(root = ROOT, { only = null } = {}) {
   const errors = [];
   const warnings = [];
+  const placeholders = [];
   const status = await readStatus(root);
   let retiredQids;
   try { retiredQids = await readRetiredQids(root); }
-  catch (error) { return { errors: [`سجل المعرّفات المحذوفة: ${error.message}`], warnings, categories: [] }; }
+  catch (error) { return { errors: [`سجل المعرّفات المحذوفة: ${error.message}`], warnings, placeholders, categories: [] }; }
   const tiers = status.tiers || [200, 400, 600, 800, 1000];
   const tierMin = status.tierMin || 48;
   const maxQ = status.maxQuestionWords || 22;
@@ -190,30 +286,55 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
 
   if (only && !status.categories[only] && !ids.includes(only)) {
     errors.push(`${only}: فئة غير معروفة (ليست في bank-status.json ولا لها ملف)`);
-    return { errors, warnings, categories: [] };
+    return { errors, warnings, placeholders, categories: [] };
   }
   if (only && !ids.includes(only) && status.categories[only] && status.categories[only].status === 'done') {
     errors.push(`${only}: مسجّلة done ولا ملف لها`);
-    return { errors, warnings, categories: [] };
+    return { errors, warnings, placeholders, categories: [] };
   }
 
+  // القواعد العابرة للبنك (تكرار المعرّفات، تكرار نص السؤال، الإجابة المشتركة،
+  // وسلامة index.js) تحتاج البنك كله حتى حين يُطلب فحص فئة واحدة: قبل ذلك كان
+  // `validate <id>` يقرأ ملف الفئة وحده فيمرّ صامتًا على سؤال يكرّر نص سؤال في
+  // فئة أخرى. الآن تُقرأ كل الملفات، وتُسجَّل الفئات الأخرى في الجداول المشتركة
+  // دون أن تُفحص هي نفسها، فيبقى الإخراج مقتصرًا على الفئة المطلوبة.
   const packs = [];
+  const others = [];
   for (const id of ids) {
-    if (only && id !== only) continue;
     let pack;
     try {
       pack = await readCategory(root, id);
     } catch (e) {
-      errors.push(`${id}: JSON غير صالح — ${e.message}`);
+      if (!only || id === only) errors.push(`${id}: JSON غير صالح — ${e.message}`);
       continue;
     }
-    packs.push({ id, pack });
+    (only && id !== only ? others : packs).push({ id, pack });
   }
 
   const seenQid = new Map();
   const seenQ = new Map(); // نص السؤال المطبّع → أول موضع
   const seenA = new Map(); // الإجابة المطبّعة → الفئات التي وردت فيها
   const summaries = [];
+
+  for (const { id, pack } of others) {
+    for (const q of Array.isArray(pack.qs) ? pack.qs : []) {
+      if (!q || typeof q !== 'object') continue;
+      const qid = String(q.qid || '');
+      if (qid && !seenQid.has(qid)) seenQid.set(qid, id);
+      const text = String(q.q || '').trim();
+      if (text) {
+        const nq = normalizeArabic(text);
+        if (!seenQ.has(nq)) seenQ.set(nq, { cat: id, tag: qid || '؟' });
+      }
+      const answer = String(q.a || '').trim();
+      if (answer && !(q.type && (NO_WRITTEN_ANSWER.has(q.type) || FIXED_ANSWER.has(q.type)))) {
+        const na = normalizeArabic(answer);
+        const cats = seenA.get(na) || new Set();
+        cats.add(id);
+        seenA.set(na, cats);
+      }
+    }
+  }
 
   for (const { id, pack } of packs) {
     const err = (m) => errors.push(`${id}: ${m}`);
@@ -393,7 +514,11 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
     //   → خطأ. أما الكلمة المفردة الشائعة («الشمس» في سؤال فلكي آخر) فورودها
     //   عرضيّ لا يدل على شيء، ومنعها يعني حذف أسئلة سليمة → تحذير للمراجعة.
     for (const q of qs) {
-      if (!q || !q.a || q.type) continue;
+      // الاستثناء الوحيد هو الأنواع التي لا إجابة مكتوبة فيها أصلًا (order/odd/grid):
+      // إجابتها داخل عناصرها فلا نص يُسرَّب. أما الصورة والصوت والفيديو والاختيار
+      // والشفرة وسائر الأنواع فتحمل إجابة مكتوبة، وتسريبها يعطّل السؤال تمامًا كما
+      // يعطّل السؤال النصي (RUBRIC §6، SCHEMA §5) — ولا استثناء لها في القاعدة.
+      if (!q || !q.a || (q.type && NO_WRITTEN_ANSWER.has(q.type))) continue;
       const na = normalizeArabic(q.a);
       if (na.length < 4) continue;
       if (q.q && answerLeaks(na, normalizeArabic(q.q))) err(`${q.qid}: إجابته «${q.a}» مكتوبة داخل نص سؤالها`);
@@ -434,17 +559,34 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
     if (pack.style === 'story' && total && actorQuestions / total > 0.2 + 1e-9) err(`أسئلة الممثلين ${actorQuestions} من ${total} (${Math.round((actorQuestions / total) * 100)}%) والحد 20%`);
     if (mediaBytes > (budget.categoryMB || 4) * 1024 * 1024) err(`وسائط الفئة ${(mediaBytes / 1024 / 1024).toFixed(2)} MB والحد ${budget.categoryMB} MB`);
 
+    // حشو مُولَّد آليًا: يُبلَّغ في قناة مستقلة عن errors كي لا يُخلط تعطُّل
+    // محتوى قائم بالفعل بأخطاء البنية، ومع ذلك يُرسِب `bank:validate` (انظر main).
+    const fillers = placeholderFindings(qs);
+    if (fillers.length) {
+      const byRule = new Map();
+      for (const f of fillers) byRule.set(f.rule, (byRule.get(f.rule) || 0) + 1);
+      placeholders.push({
+        id,
+        name: pack.name,
+        count: fillers.length,
+        total: qs.length,
+        rules: [...byRule.entries()].sort((a, b) => b[1] - a[1]),
+        samples: fillers.slice(0, 3).map((f) => f.qid),
+      });
+    }
+
     summaries.push({ id, name: pack.name, status: meta ? meta.status : 'unknown', counts, total, topics: topics.size, mediaBytes, media: isMediaCat });
   }
 
-  // إجابات متكررة عبر الفئات: تحذير مجمّع
-  if (!only) {
-    const cross = [...seenA.entries()].filter(([, cats]) => cats.size > 1);
+  // إجابات متكررة عبر الفئات: تحذير مجمّع. في فحص فئة واحدة يقتصر على إجاباتها.
+  {
+    const cross = [...seenA.entries()].filter(([, cats]) => cats.size > 1 && (!only || cats.has(only)));
     if (cross.length) warnings.push(`${cross.length} إجابة تتكرر في أكثر من فئة (مقبول، للعلم): ${cross.slice(0, 8).map(([a, c]) => `«${a}» في ${[...c].join('،')}`).join(' · ')}${cross.length > 8 ? ' …' : ''}`);
   }
 
-  // index.js يستورد كل الملفات ولا يستورد ما لا وجود له
-  if (!only) {
+  // index.js يستورد كل الملفات ولا يستورد ما لا وجود له — فحص على مستوى البنك
+  // يجري حتى في وضع الفئة الواحدة، فالفهرس واحد للجميع.
+  {
     const indexPath = path.join(root, CATS_DIR, 'index.js');
     const src = (await exists(indexPath)) ? await readFile(indexPath, 'utf8') : '';
     const imported = [...src.matchAll(/from ['"]\.\/([a-z0-9]+)\.json['"]/g)].map((m) => m[1]);
@@ -454,7 +596,7 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
     for (const [id, meta] of Object.entries(status.categories)) if (meta.status === 'done' && !ids.includes(id)) errors.push(`${id}: مسجّلة done ولا ملف لها`);
   }
 
-  return { errors, warnings, categories: summaries };
+  return { errors, warnings, placeholders, categories: summaries };
 }
 
 // ── الترتيب وإعادة توليد الفهرس ────────────────────────────────────────────
@@ -545,11 +687,38 @@ async function main(argv) {
   const [cmd, ...rest] = argv;
   if (cmd === 'validate') {
     const only = rest.find((a) => !a.startsWith('--')) || null;
-    const { errors, warnings, categories } = await validateBank(ROOT, { only });
+    const { errors, warnings, placeholders, categories } = await validateBank(ROOT, { only });
     for (const c of categories) console.log(`${c.id.padEnd(16)} ${Object.values(c.counts).map((n) => String(n).padStart(3)).join(' ')} = ${String(c.total).padStart(4)}  ${c.status}${c.media ? ' · media' : ''}${c.topics ? ` · ${c.topics} مواضيع` : ''}`);
+    // النطاق معلن دائمًا: فحص فئة واحدة يفحصها وحدها، لكن قواعد البنك العابرة
+    // (تكرار المعرّفات والنصوص، الإجابة المشتركة، سلامة index.js) تُطبَّق مقابل البنك كله.
+    if (only) console.log(`\nالنطاق: الفئة ${only} · القواعد العابرة للبنك (تكرار المعرّف، تكرار النص، الإجابة المشتركة، index.js، done بلا ملف) مطبَّقة مقابل البنك كله`);
     if (warnings.length) { console.log(`\nتحذيرات (${warnings.length}):`); for (const w of warnings) console.log(`  ⚠ ${w}`); }
-    if (errors.length) { console.log(`\nأخطاء (${errors.length}):`); for (const e of errors) console.log(`  ✗ ${e}`); process.exit(1); }
+    if (placeholders.length) {
+      const n = placeholders.reduce((sum, r) => sum + r.count, 0);
+      console.log(`\nحشو مُولَّد آليًا (${n} سؤالًا في ${placeholders.length} فئة) — RUBRIC §6:`);
+      for (const r of placeholders.sort((a, b) => b.count - a.count)) {
+        console.log(`  ✗ ${r.id.padEnd(16)} ${String(r.count).padStart(4)}/${String(r.total).padEnd(4)} · ${r.rules.map(([rule, c]) => `${rule} ×${c}`).join(' · ')} · مثل ${r.samples.join('، ')}`);
+      }
+      console.log('  القائمة الكاملة: npm run bank:placeholders');
+    }
+    if (errors.length) { console.log(`\nأخطاء (${errors.length}):`); for (const e of errors) console.log(`  ✗ ${e}`); }
+    // exitCode لا process.exit: الخروج الفوري يبتر ما لم يُفرَغ من stdout عند
+    // التوجيه إلى أنبوب، وتقرير بآلاف الأسطر يُبتر فعلًا.
+    if (errors.length || placeholders.length) { process.exitCode = 1; return; }
     console.log(`\n✓ ${only ? `الفئة ${only}` : `البنك (${categories.length} ملفًا)`} سليمة`);
+    return;
+  }
+  if (cmd === 'placeholders') {
+    const only = rest.find((a) => !a.startsWith('--')) || null;
+    const r = await placeholderReport(ROOT, { only });
+    if (rest.includes('--json')) { console.log(JSON.stringify(r, null, 2)); return; }
+    for (const row of r.rows) {
+      console.log(`\n${row.id} — ${row.name} (${row.status}) · ${row.count} من ${row.total}`);
+      for (const [rule, n] of row.rules) console.log(`  ${String(n).padStart(4)} × ${rule}`);
+      for (const f of row.findings) console.log(`    ${f.qid.padEnd(20)} ${String(f.p ?? '').padStart(4)}  «${f.q}» ← «${f.a}»`);
+    }
+    console.log(`\n${r.questions} سؤال حشو في ${r.categories} فئة. القاعدة في docs/bank/RUBRIC.md §6 وdocs/bank/SCHEMA.md §5.`);
+    if (r.questions) process.exitCode = 1;
     return;
   }
   if (cmd === 'report') {
@@ -573,12 +742,35 @@ async function main(argv) {
   }
   if (cmd === 'status') {
     const [id, next] = rest;
-    if (!id || !next) { console.error('الاستعمال: bank status <id> done|pending'); process.exit(2); }
+    if (!id) { console.error('الاستعمال: bank status <id> [done|pending]'); process.exit(2); }
+    // بلا حالة: عرض فقط. README يذكر الأمر بين أوامر الاستعلام، وكان يطبع سطر
+    // الاستعمال ويخرج بـ2 لأنه يوجب حالة — فصار الاستعلام هو السلوك الافتراضي.
+    if (!next) {
+      const status = await readStatus(ROOT);
+      const meta = status.categories[id];
+      if (!meta) { console.error(`${id}: ليست في bank-status.json`); process.exit(2); }
+      const tiers = status.tiers || [200, 400, 600, 800, 1000];
+      let actual = null;
+      try {
+        const pack = await readCategory(ROOT, id);
+        actual = Object.fromEntries(tiers.map((t) => [t, (pack.qs || []).filter((q) => q.p === t).length]));
+      } catch { /* لا ملف بعد */ }
+      const counts = actual || meta.counts || {};
+      const total = Object.values(counts).reduce((n, v) => n + Number(v || 0), 0);
+      console.log(`${id} — ${meta.name}${meta.icon ? ` ${meta.icon}` : ''}`);
+      console.log(`  الحالة: ${meta.status}${meta.doneAt ? ` منذ ${meta.doneAt}` : ''}${actual ? '' : ' · لا ملف للفئة بعد'}`);
+      console.log(`  الخانات: ${tiers.map((t) => `${t}:${counts[t] ?? 0}`).join(' ')} · المجموع ${total} · الحد ${status.tierMin || 48}/خانة`);
+      console.log(`  الترتيب: ${meta.order} · وسائط: ${meta.media ? 'نعم' : 'لا'}${meta.style ? ` · نمط: ${meta.style}` : ''}${meta.note ? ` · ${meta.note}` : ''}`);
+      if (actual && meta.counts && tiers.some((t) => Number(meta.counts[t]) !== actual[t])) {
+        console.log('  ⚠ أعداد bank-status لا تطابق الملف — شغّل: npm run bank:status -- ' + id + ' ' + meta.status);
+      }
+      return;
+    }
     const r = await setStatus(ROOT, id, next);
     console.log(`${r.id}: ${r.status} · ${Object.entries(r.counts).map(([t, n]) => `${t}:${n}`).join(' ')}`);
     return;
   }
-  console.error('الأوامر: validate [<id>] · report [--json] · sort <id> · index · status <id> done|pending');
+  console.error('الأوامر: validate [<id>] · placeholders [<id>] [--json] · report [--json] · sort <id> · index · status <id> [done|pending]');
   process.exit(2);
 }
 

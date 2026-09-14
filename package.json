@@ -13,6 +13,7 @@
     "release": "node scripts/release.mjs",
     "bank:validate": "node scripts/bank.mjs validate",
     "bank:report": "node scripts/bank.mjs report",
+    "bank:placeholders": "node scripts/bank.mjs placeholders",
     "bank:sort": "node scripts/bank.mjs sort",
     "bank:status": "node scripts/bank.mjs status",
     "media:fetch": "node scripts/media-fetch.mjs",

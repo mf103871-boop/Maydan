@@ -62,7 +62,7 @@
 
 /* ── بداية غامرة، مع الشعار كنص حي فوق الرسم ── */
 .splash { position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: #48BFF0; cursor: pointer; }
-.splash-world { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+.splash .splash-world { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
 .splash::after { content: ''; position: absolute; inset: auto 0 0; height: 13%; pointer-events: none; background: linear-gradient(transparent, #FFF7E7 90%); }
 .splash-inner { position: absolute; top: calc(5% + var(--safe-top)); inset-inline: 16px; display: grid; justify-items: center; z-index: 1; animation: splash-mark .5s var(--ease-out) both; }
 .splash-sub { color: var(--plum); font-size: clamp(22px, 6vw, 32px); font-weight: 800; margin-top: -12px; }
@@ -70,7 +70,7 @@
 @keyframes splash-mark { from { opacity: 0; transform: translateY(-10px); } }
 .splash.is-leaving { animation: splash-out .25s ease-in forwards; }
 @keyframes splash-out { to { opacity: 0; } }
-@media (min-aspect-ratio: 1/1) { .splash-world { object-position: 25% bottom; } .splash-inner { inset-inline: 48% 2%; top: 25%; } .splash-inner .wordmark-art { font-size: clamp(76px, 12vw, 150px); } }
+@media (min-aspect-ratio: 1/1) { .splash .splash-world { object-position: 25% bottom; } .splash-inner { inset-inline: 48% 2%; top: 25%; } .splash-inner .wordmark-art { font-size: clamp(76px, 12vw, 150px); } }
 
 .about-list { display: grid; gap: 8px; }
 .about-list .row { padding: 10px 12px; border-radius: 14px; background: var(--surface); border: 1px solid var(--stroke); }

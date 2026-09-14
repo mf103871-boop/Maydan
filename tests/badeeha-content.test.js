@@ -61,15 +61,19 @@ test('المعرّفات فريدة عبر البنك كله، ولا سؤال �
 
 test('لا سؤال مكرر نصًا داخل الحزمة، ولا إجابة مكشوفة كشفًا فعليًا', () => {
   // التطبيع نفسه الذي يستعمله bank:validate، فلا يختلف الاثنان في حكم واحد.
-  const norm = normalizeArabic;
+  const NO_WRITTEN_ANSWER = new Set(['order', 'odd', 'grid']);
+const norm = normalizeArabic;
   for (const c of cats) {
     const texts = c.qs.filter((q) => q.q).map((q) => norm(q.q));
     // الفئات ذات النمط الواحد (مثل شبكات التركيز) تتعمّد تكرار نص الطلب
     if (!c.qs.some((q) => q.type)) {
       assert.equal(new Set(texts).size, texts.length, `${c.id}: سؤال مكرر نصًا`);
     }
+    // الاستثناء الوحيد أنواعٌ بلا إجابة مكتوبة تُخمَّن (شبكة، دخيل، ترتيب)؛
+    // أما بقية الأنواع فقاعدة «الإجابة لا تُكتب داخل سؤالها» تسري عليها كما
+    // تسري على النص العادي — نفس ما يفرضه scripts/bank.mjs.
     for (const q of c.qs) {
-      if (!q.a || q.type) continue;
+      if (!q.a || (q.type && NO_WRITTEN_ANSWER.has(q.type))) continue;
       const answer = norm(q.a);
       if (answer.length < 4) continue;
       // الإجابة داخل سؤالها: السؤال يحمل جوابه فلا شيء يبقى ليُخمَّن.

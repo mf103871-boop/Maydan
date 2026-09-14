@@ -1,7 +1,9 @@
 .meenfina { --game-accent: #A67A21; display: grid; gap: 14px; }
 .meen-statement { padding: 26px 20px; border-radius: 26px; background: linear-gradient(160deg, rgba(46,216,163,.18), var(--surface) 68%); border: 1px solid rgba(46,216,163,.45); text-align: center; font-size: clamp(26px, 7vw, 36px); font-weight: 900; line-height: 1.5; text-wrap: balance; animation: ui-modal-in .3s var(--ease-out) both; }
-.meen-count { position: fixed; inset: 0; z-index: 320; display: grid; place-items: center; background: radial-gradient(circle, rgba(46,216,163,.25), var(--bg) 70%); }
-.meen-count .num { font-size: 140px; font-weight: 900; color: var(--game-accent); line-height: 1; animation: meen-pop .95s var(--ease-out) both; }
+.meen-count { position: fixed; inset: 0; z-index: 320; display: grid; grid-template-rows: auto minmax(0, 1fr); align-content: center; justify-items: center; gap: 14px; overflow: auto; padding: calc(18px + var(--safe-top)) 16px calc(18px + var(--safe-bottom)); background: radial-gradient(circle, rgba(46,216,163,.25), var(--bg) 70%); }
+.meen-count .meen-statement { width: min(100%, 560px); }
+.meen-count-num { display: grid; place-items: center; min-height: 0; }
+.meen-count .num { font-size: clamp(72px, 26vw, 140px); font-weight: 900; color: var(--game-accent); line-height: 1; animation: meen-pop .95s var(--ease-out) both; }
 .meen-count .go { font-size: clamp(44px, 12vw, 76px); font-weight: 900; color: #fff; animation: ui-trophy .5s var(--ease-spring) both; }
 @keyframes meen-pop { 0% { transform: scale(2.2); opacity: 0; } 30% { transform: scale(1); opacity: 1; } 100% { transform: scale(.85); opacity: .25; } }
 .meen-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
@@ -19,7 +21,7 @@
 .meen-bar b { width: 26px; text-align: center; font-variant-numeric: tabular-nums; }
 .meen-winner { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 14px; }
 .meen-winner .faces { display: flex; gap: 8px; }
-.meen-winner .faces span { width: 68px; height: 68px; border-radius: 20px; display: grid; place-items: center; font-size: 38px; background: color-mix(in srgb, var(--game-accent) 25%, transparent); border: 1px solid color-mix(in srgb, var(--game-accent) 55%, transparent); animation: ui-trophy .6s var(--ease-spring) both; }
+.meen-winner .faces span { width: 68px; height: 68px; border-radius: 20px; display: grid; place-items: center; font-size: 38px; background-color: color-mix(in srgb, var(--game-accent) 25%, transparent); border: 1px solid color-mix(in srgb, var(--game-accent) 55%, transparent); animation: ui-trophy .6s var(--ease-spring) both; }
 .meen-winner h2 { font-size: clamp(24px, 6.5vw, 32px); font-weight: 900; }
 .meen-titles { display: grid; gap: 6px; }
 .meen-titles div { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--stroke); }

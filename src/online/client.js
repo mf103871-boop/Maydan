@@ -67,7 +67,9 @@ export class RoomClient {
       try { message = JSON.parse(event.data); } catch { return; }
       if (message.type === 'state') {
         const protocol = message.state.game === 'fabraka' ? FABRAKA_PROTOCOL : PROTOCOL;
-        if (message.state.protocol !== protocol) { this.onError('CONFIG'); this.stop(); return; }
+        // A version mismatch can never be retried: end the session so the screen
+        // offers the way out instead of a reconnect button that cannot work.
+        if (message.state.protocol !== protocol) { this.onError('CONFIG'); this.stop('ended'); return; }
         if (this.state && message.state.revision < this.state.revision) return;
         clearTimeout(this.openTimer); this.attempt = 0;
         this.state = message.state; this.clockOffset = message.state.serverNow - Date.now();

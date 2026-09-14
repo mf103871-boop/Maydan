@@ -6,7 +6,12 @@ import { Podium } from '../../shared/ui/components.jsx';
 import React from "react";
 import { CATS } from "../../data/categories/index.js";
 import MAYDAN_BETA_CSS from "./styles.css";
-import MaydanLogicBeta from "./logic.js";
+import MaydanLogicBeta, {
+  filterCategories,
+  pointsAfterHints,
+  modeTopTier,
+  HINT_COST_PERCENT,
+} from "./logic.js";
 import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
 import { mulberry32 } from "../../shared/lib/rng.js";
@@ -84,8 +89,6 @@ const TOOLS = [
   // مقطع الصوت يُسمع ثلاث مرات قبل كشف الإجابة، ثم بلا حدّ.
   MAX_AUDIO_PLAYS = 3,
   JUMBLE_TILES = 12,
-  // كل تلميح يُطلب يخصم من نقاط السؤال، ولا تقل أبدًا عن الربع.
-  HINT_COST_PERCENT = 25,
   shuffle = (arr) => {
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
@@ -825,10 +828,11 @@ function jumbleOrder(seed) {
 function MediaImage({ question, url, effect, revealed, onSfx }) {
   const [tiles, setTiles] = useState(() => (effect === "reveal" ? Array.from({ length: 12 }, (_, i) => i) : []));
   const [enlarged, setEnlarged] = useState(false);
+  const [zoomed, setZoomed] = useState(false);
   // شبكة القطع تأخذ نسبة الصورة الحقيقية، وإلا مطّت صورةً مربّعة داخل إطار 4:3
   const [ratio, setRatio] = useState(null);
-  useEffect(() => { if (effect === "reveal") setTiles(Array.from({ length: 12 }, (_, i) => i)); setEnlarged(false); setRatio(null); }, [url, effect]);
-  useEffect(() => { if (!enlarged) return undefined; const onKey = (e) => { if (e.key === "Escape") setEnlarged(false); }; window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey); }, [enlarged]);
+  useEffect(() => { if (effect === "reveal") setTiles(Array.from({ length: 12 }, (_, i) => i)); setEnlarged(false); setZoomed(false); setRatio(null); }, [url, effect]);
+  useEffect(() => { if (!enlarged) return undefined; const onKey = (e) => { if (e.key === "Escape") { setEnlarged(false); setZoomed(false); } }; window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey); }, [enlarged]);
   const shown = revealed ? [] : tiles;
   const cls = ["m-media-img", `fx-${effect}`, revealed ? "is-revealed" : ""].join(" ");
   // التكبير باللمس لا يكشف ما يخفيه المؤثّر: يُتاح للصورة العادية دائمًا، وللبقية بعد الكشف.
@@ -879,11 +883,47 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
             "div",
             {
               className: "m-lightbox",
+              // اتجاه لاتيني للغلاف وحده: التمرير الأفقي عند التكبير يبدأ من الوسط
+              // بحساب واحد، بلا اختلاف دلالة scrollLeft بين الاتجاهين.
+              dir: "ltr",
               role: "dialog",
-              "aria-label": "الصورة مكبّرة — اضغط للإغلاق",
-              onClick: (e) => { e.stopPropagation(); setEnlarged(false); },
+              "aria-label": "الصورة مكبّرة — اضغط خارج الصورة للإغلاق",
+              onClick: (e) => { e.stopPropagation(); setEnlarged(false); setZoomed(false); },
             },
-            hBeta("img", { src: url, alt: revealed ? question.a || "صورة السؤال" : "صورة السؤال", className: cls, draggable: false }),
+            hBeta(
+              "button",
+              {
+                type: "button",
+                className: "m-icon-btn m-lightbox-close",
+                "aria-label": "إغلاق الصورة",
+                onClick: (e) => { e.stopPropagation(); setEnlarged(false); setZoomed(false); },
+              },
+              "✕",
+            ),
+            hBeta(
+              "div",
+              { className: "m-lightbox-stage" },
+              hBeta("img", {
+                src: url,
+                alt: revealed ? question.a || "صورة السؤال" : "صورة السؤال",
+                className: zoomed ? "is-zoomed" : "is-fit",
+                draggable: false,
+                // الضغط على الصورة نفسها يبدّل بين ملء الشاشة وتكبير ٣× قابل للسحب،
+                // بدل «تكبير» لم يكن يزيد الحجم أكثر من ١٪ حين كانت الشاشة هي المرجع.
+                onClick: (e) => {
+                  e.stopPropagation();
+                  const box = e.currentTarget.closest(".m-lightbox");
+                  setZoomed((v) => !v);
+                  onSfx && onSfx("click");
+                  box &&
+                    window.requestAnimationFrame(() => {
+                      ((box.scrollLeft = (box.scrollWidth - box.clientWidth) / 2),
+                        (box.scrollTop = (box.scrollHeight - box.clientHeight) / 2));
+                    });
+                },
+                "aria-label": zoomed ? "إرجاع الصورة إلى ملء الشاشة" : "تكبير الصورة ثلاث مرات",
+              }),
+            ),
           ),
         effect === "reveal" &&
           hBeta(
@@ -902,7 +942,13 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
               className: "m-secondary m-small m-reveal-tile-btn",
               disabled: shown.length === 0,
               onClick: () => {
-                setTiles((list) => list.filter((_, index) => index !== Math.floor(Math.random() * list.length)));
+                // القرعة تُسحب مرة واحدة خارج المرشِّح: استدعاء Math.random داخله
+                // كان يُعاد لكل قطعة، فتُكشف قطع بعدد عشوائي (ولا شيء أحيانًا).
+                setTiles((list) => {
+                  if (!list.length) return list;
+                  const drop = Math.floor(Math.random() * list.length);
+                  return list.filter((_, index) => index !== drop);
+                });
                 onSfx && onSfx("click");
               },
             },
@@ -1035,7 +1081,7 @@ function MediaVideo({ url }) {
 }
 
 
-function MaydanBeta() {
+function MaydanBeta({ api } = {}) {
   const logic = MaydanLogicBeta,
     [hydrated, setHydrated] = useState(!1),
     [screen, setScreen] = useState("home"),
@@ -1083,9 +1129,15 @@ function MaydanBeta() {
     activeMode = logic.MODES[mode] || logic.MODES.expert,
     currentQuestion =
       current && deck[current.categoryId] ? deck[current.categoryId][current.index] : null,
-    currentCategory = current ? CATS.find((category) => category.id === current.categoryId) : null;
+    currentCategory = current ? CATS.find((category) => category.id === current.categoryId) : null,
+    // إعدادات المنصة هي المرجع حين تُمرَّر: زر الكتم في شريط اللعبة يتحكم بصوت
+    // بَديهة أيضًا، فلا يبقى زرّا كتم متناقضان، والاهتزاز و«حركة أقل» يُحترمان.
+    platformSettings = (api && api.settings) || null,
+    effectiveSoundOn = platformSettings ? platformSettings.soundOn !== !1 : soundOn,
+    hapticsOn = platformSettings ? platformSettings.hapticsOn !== !1 : !0,
+    reducedMotion = platformSettings ? !!platformSettings.reducedMotion : !1;
   function playSfx(name) {
-    if (!soundOn || !SFX[name]) return;
+    if (!effectiveSoundOn || !SFX[name]) return;
     const context = getCtx();
     if (context)
       try {
@@ -1093,7 +1145,7 @@ function MaydanBeta() {
       } catch (error) {}
   }
   function playQuestionSound(recipe) {
-    if (!soundOn || !SOUND_RECIPES[recipe]) return;
+    if (!effectiveSoundOn || !SOUND_RECIPES[recipe]) return;
     const now = Date.now();
     if (now - lastQuestionSoundRef.current < 450) return;
     lastQuestionSoundRef.current = now;
@@ -1104,6 +1156,7 @@ function MaydanBeta() {
       } catch (error) {}
   }
   function haptic(kind) {
+    if (!hapticsOn) return;
     const presets = {
         selection: { style: "selection", pattern: 12 },
         light: { style: "light", pattern: 18 },
@@ -1184,13 +1237,13 @@ function MaydanBeta() {
         saveKey(MAYDAN_BETA_KEYS.settings, { soundOn, timerLength, mode, roundSize, favorites });
     }, [hydrated, soundOn, timerLength, mode, roundSize, favorites]),
     useEffect(() => {
-      if (!soundOn) {
+      if (!effectiveSoundOn) {
         closeQuestionSoundTimer();
         try {
           _ctx && _ctx.state === "running" && _ctx.suspend();
         } catch (error) {}
       }
-    }, [soundOn]),
+    }, [effectiveSoundOn]),
     useEffect(() => {
       if (!hydrated || (screen !== "board" && screen !== "question")) return;
       const session = {
@@ -1212,6 +1265,8 @@ function MaydanBeta() {
         mixedItems: [...mixedItems],
         effect: { ...effect },
         questionBaseTeams: questionBaseTeams ? betaCloneTeams(questionBaseTeams) : null,
+        // بدون هذا كان خصم التلميحات يضيع عند استئناف المباراة فيُمنح السؤال كاملًا.
+        hintsUsed,
         lastAction,
       };
       return (
@@ -1243,8 +1298,16 @@ function MaydanBeta() {
       mixedItems,
       effect,
       questionBaseTeams,
+      hintsUsed,
       lastAction,
     ]),
+    useEffect(() => {
+      // شاشة اللعب تفترض inGame=true لألعاب setup:'self'، فكان تأكيد الخروج يظهر
+      // على الشاشة الأولى قبل بدء أي مباراة. اللعبة وحدها تعرف متى بدأت المباراة.
+      if (!api || typeof api.setInGame != "function") return undefined;
+      const playing = screen === "board" || screen === "question";
+      return (api.setInGame(playing), () => api.setInGame(!1));
+    }, [api, screen]),
     useEffect(() => {
       const saveOnLeave = () => {
         activeSnapshotRef.current && saveKey(MAYDAN_BETA_KEYS.active, activeSnapshotRef.current);
@@ -1279,7 +1342,7 @@ function MaydanBeta() {
       tick();
       const interval = window.setInterval(tick, 250);
       return () => window.clearInterval(interval);
-    }, [screen, current && `${current.categoryId}:${current.index}`, revealed, paused, soundOn]),
+    }, [screen, current && `${current.categoryId}:${current.index}`, revealed, paused, effectiveSoundOn]),
     useEffect(() => {
       const onVisibility = () => {
         document.hidden &&
@@ -1366,19 +1429,11 @@ function MaydanBeta() {
     ),
       playSfx("click"));
   }
-  const visibleCategories = CATS.filter((category) =>
-    !categorySearch.trim() || category.name.includes(categorySearch.trim())
-      ? categoryFilter === "special"
-        ? !!category.special
-        : categoryFilter === "pack"
-          ? !!category.pack
-          : categoryFilter === "info"
-            ? !category.special && !category.pack
-            : categoryFilter === "favorites"
-              ? favorites.includes(category.id)
-              : !0
-      : !1,
-  );
+  const visibleCategories = filterCategories(CATS, {
+    filter: categoryFilter,
+    search: categorySearch,
+    favorites,
+  });
   function randomCategories() {
     if (visibleCategories.length < 6) {
       setSetupError("وسّع التصفية أولًا؛ النتائج الحالية أقل من ست فئات");
@@ -1457,6 +1512,7 @@ function MaydanBeta() {
       setRevealed(!!savedActive.revealed),
       setMixedItems(Array.isArray(savedActive.mixedItems) ? [...savedActive.mixedItems] : []),
       setEffect(savedActive.effect ? { ...savedActive.effect } : { double: !1, two: !1 }),
+      setHintsUsed(Number.isFinite(savedActive.hintsUsed) ? savedActive.hintsUsed : 0),
       setQuestionBaseTeams(
         savedActive.questionBaseTeams ? betaCloneTeams(savedActive.questionBaseTeams) : null,
       ),
@@ -1592,12 +1648,7 @@ function MaydanBeta() {
     let nextTeams = betaCloneTeams(teams);
     if (winnerIndex !== null) {
       const sameTeam = winnerIndex === turn,
-        base = hintsUsed > 0
-          ? Math.max(
-              Math.round(question.p * 0.25),
-              Math.round((question.p * (100 - hintsUsed * HINT_COST_PERCENT)) / 100),
-            )
-          : question.p,
+        base = pointsAfterHints(question.p, hintsUsed),
         points = sameTeam && effect.double ? base * 2 : base,
         isSteal = question.type !== "closest" && !sameTeam;
       ((nextTeams = nextTeams.map((team, index) =>
@@ -1714,6 +1765,8 @@ ${record.answered} من ${record.total} سؤالًا`,
       (setResults([]), saveKey(MAYDAN_BETA_KEYS.results, []), toast("تم مسح سجل النتائج"));
   }
   function SoundButton() {
+    // شريط المنصة يعرض زر كتم يتحكم بالإعداد نفسه؛ زر ثانٍ هنا كان يناقضه.
+    if (platformSettings) return null;
     return hBeta(
       "button",
       {
@@ -1865,16 +1918,24 @@ ${record.answered} من ${record.total} سؤالًا`,
             hBeta(
               "div",
               { key: one, className: "m-diff-side" },
+              // العلامة ابنة إطار يطابق صندوق الصورة المرسوم تمامًا (لا صندوق الوسائط
+              // الذي يفرض min-height:180px)، وتُوضع بـ left الفيزيائية: قياس spot.x في
+              // البنك من الحافة اليسرى للصورة، بينما insetInlineStart تصير right داخل dir=rtl
+              // فتقلب الموضع إلى (100 − x)%.
               hBeta(MediaBox, { url: one }, ({ onReady, onError }) =>
-                hBeta("img", { src: one, alt: `الصورة ${index + 1}`, className: "m-media-img", onLoad: onReady, onError }),
+                hBeta(
+                  "span",
+                  { className: "m-diff-frame" },
+                  hBeta("img", { src: one, alt: `الصورة ${index + 1}`, className: "m-media-img", onLoad: onReady, onError }),
+                  revealed &&
+                    question.spot &&
+                    hBeta("span", {
+                      className: "m-diff-spot",
+                      style: { left: `${question.spot.x}%`, top: `${question.spot.y}%`, width: `${question.spot.r * 2}%` },
+                      "aria-hidden": "true",
+                    }),
+                ),
               ),
-              revealed &&
-                question.spot &&
-                hBeta("span", {
-                  className: "m-diff-spot",
-                  style: { insetInlineStart: `${question.spot.x}%`, top: `${question.spot.y}%`, width: `${question.spot.r * 2}%` },
-                  "aria-hidden": "true",
-                }),
             ),
           ),
         ),
@@ -2075,11 +2136,11 @@ ${record.answered} من ${record.total} سؤالًا`,
                   type: "button",
                   className: "m-sound-play",
                   onClick: () => playQuestionSound(question.sound),
-                  disabled: !soundOn,
+                  disabled: !effectiveSoundOn,
                   "aria-label": "تشغيل صوت السؤال",
                 },
-                hBeta("span", { "aria-hidden": "true" }, soundOn ? "🔊" : "🔇"),
-                hBeta("b", null, soundOn ? "شغّل الصوت" : "الصوت مكتوم"),
+                hBeta("span", { "aria-hidden": "true" }, effectiveSoundOn ? "🔊" : "🔇"),
+                hBeta("b", null, effectiveSoundOn ? "شغّل الصوت" : "الصوت مكتوم"),
               )
             : hBeta("p", { className: "m-question-text" }, question.q);
   }
@@ -2201,11 +2262,12 @@ ${record.answered} من ${record.total} سؤالًا`,
     );
   }
   function SetupScreen() {
+    // المجموعات مشتقة من أنواع أسئلة الحزمة نفسها (79 حزمة = 61 معلومات + 7 خاصة + 11 وسائط).
     const filters = [
       ["all", "الكل"],
       ["info", "معلومات"],
       ["special", "خاصة"],
-      ["pack", "الحزم"],
+      ["media", "وسائط"],
       ["favorites", "المفضلة"],
     ];
     return hBeta(
@@ -2410,7 +2472,7 @@ ${record.answered} من ${record.total} سؤالًا`,
                   category.icon,
                 ),
                 hBeta("b", null, category.name),
-                hBeta("small", null, activeMode.tiers.length > 3 ? "حتى 1000" : "حتى 600"),
+                hBeta("small", null, `حتى ${modeTopTier(activeMode)}`),
               ),
               hBeta(
                 "button",
@@ -2649,6 +2711,7 @@ ${record.answered} من ${record.total} سؤالًا`,
   function QuestionScreen() {
     if (!currentQuestion || !currentCategory) return null;
     const prompt = TYPE_PROMPT[currentQuestion.type],
+      questionAward = pointsAfterHints(currentQuestion.p, hintsUsed),
       fraction = Math.max(0, Math.min(1, timeLeft / timerLength)),
       danger = timeLeft <= 10;
     return hBeta(
@@ -2674,16 +2737,18 @@ ${record.answered} من ${record.total} سؤالًا`,
           hBeta(
             "b",
             { className: `m-tier-text m-tier-text-${currentQuestion.p}` },
-            hBeta(
-              "span",
-              { dir: "ltr" },
-              effect.double ? currentQuestion.p * 2 : currentQuestion.p,
-            ),
+            hBeta("span", { dir: "ltr" }, questionAward),
             " نقطة",
             hBeta(
               "small",
               null,
-              effect.double ? "×2 مفعّل" : MAYDAN_TIER_LABELS[currentQuestion.p],
+              // «×2» لا تنطبق على السرقة، والتلميحات تخصم ٢٥٪ لكل واحد: الرقم أعلاه
+              // هو ما سيُمنح فعلًا لفريق الدور، والتفصيل هنا.
+              effect.double
+                ? `×2 لصاحب الدور · ${questionAward * 2}`
+                : hintsUsed > 0
+                  ? `بعد ${hintsUsed === 1 ? "تلميح" : hintsUsed === 2 ? "تلميحين" : `${hintsUsed} تلاميح`} · الأصل ${currentQuestion.p}`
+                  : MAYDAN_TIER_LABELS[currentQuestion.p],
             ),
           ),
         ),
@@ -2853,13 +2918,14 @@ ${record.answered} من ${record.total} سؤالًا`,
     return hBeta(
       "section",
       { className: "m-result" },
-      hBeta(
-        "div",
-        { className: "m-confetti", "aria-hidden": "true" },
-        Array.from({ length: 28 }, (_, index) =>
-          hBeta("i", { key: index, style: { "--i": index } }),
+      !reducedMotion &&
+        hBeta(
+          "div",
+          { className: "m-confetti", "aria-hidden": "true" },
+          Array.from({ length: 28 }, (_, index) =>
+            hBeta("i", { key: index, style: { "--i": index } }),
+          ),
         ),
-      ),
       hBeta(Podium, { entries: record.teams, title: record.winner ? `فاز ${winners[0]}` : "تعادل جميل!" }),
       hBeta("p", { className: "m-kicker" }, record.early ? "انتهت المباراة مبكرًا" : "اكتملت الجولة"),
       hBeta("div", { className: "m-result-statistics" }, record.teams.map((team) =>

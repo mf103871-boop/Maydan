@@ -15,8 +15,11 @@ const CACHE = 'maydan-platform-__BUILD_ID__';
 const MEDIA_CACHE = 'maydan-media-v1';
 const MEDIA_PATH = /\/media\//;
 
+// './' and './index.html' are the same 6.9 MB document. Precaching both fetched
+// it twice on install (on top of the page's own load) and stored it twice, and
+// the './' copy was never read back: the navigation handler below looks up
+// './index.html'. One entry, one download, one copy.
 const ASSETS = [
-  './',
   './index.html',
   './manifest.webmanifest',
   './icons/icon-192.png',

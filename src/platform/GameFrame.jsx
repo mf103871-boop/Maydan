@@ -1,9 +1,10 @@
 // إطار كل لعبة: شريط علوي بلون اللعبة، زر خروج مع تأكيد أثناء اللعب، وحارس زر الرجوع.
 import React, { useEffect, useState, useCallback } from 'react';
-import { IconButton, ConfirmModal } from '../shared/ui/components.jsx';
+import { IconButton, ConfirmModal, ErrorBoundary } from '../shared/ui/components.jsx';
 import { IconHome, IconVolume, IconVolumeOff } from '../shared/ui/icons.jsx';
 import { setExitGuard, navigate } from './router.js';
 import { usePlatform } from './context.js';
+import { createStorage } from '../shared/lib/storage.js';
 
 export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onExit }) {
   const platform = usePlatform();
@@ -44,7 +45,19 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
           {platform.settings.soundOn ? <IconVolume /> : <IconVolumeOff />}
         </IconButton>
       </div>
-      <div className="game-body">{children}</div>
+      <div className="game-body">
+        {/* لعبة تتعطّل لا تُسقط المنصة: رسالة، عودة للرئيسية، ومسح بيانات اللعبة. */}
+        <ErrorBoundary
+          resetKey={game.id}
+          title="تعطّلت اللعبة"
+          message={`حدث خطأ غير متوقع في ${game.name}. يمكنك العودة إلى الرئيسية، أو مسح بيانات هذه اللعبة إن تكرّر الخطأ.`}
+          clearLabel="مسح بيانات هذه اللعبة"
+          onHome={() => leave('/')}
+          onClear={() => { try { createStorage(game.id).clear(); } catch (error) { /* ignore */ } leave('/'); }}
+        >
+          {children}
+        </ErrorBoundary>
+      </div>
       {confirming && (
         <ConfirmModal title="الخروج من اللعبة؟" danger message={exitMessage || 'سيضيع تقدّم الجولة الحالية.'} confirmLabel="خروج" cancelLabel="متابعة اللعب"
           onConfirm={() => { setConfirming(null); leave(confirming); }} onCancel={() => setConfirming(null)} />

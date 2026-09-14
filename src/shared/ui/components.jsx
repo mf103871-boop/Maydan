@@ -92,6 +92,7 @@ function trapTab(node, event) {
 // ما خلف الحوار يصبح خارج الوصول (Tab وقارئ الشاشة والنقر)، ويعود كما كان عند الإغلاق.
 function deactivateBackground(except) {
   if (typeof document === 'undefined' || !document.body) return () => {};
+  if (except && except.inert) except.inert = false; // حوار فوق حوار: الأعلى يبقى فعّالًا
   const changed = [];
   for (const el of Array.from(document.body.children)) {
     if (el === except || (except && el.contains(except)) || el.inert) continue;
@@ -101,8 +102,13 @@ function deactivateBackground(except) {
   return () => { changed.forEach((el) => { el.inert = false; }); };
 }
 
+// متغيّرات موروثة تهمّ داخل الحوار (لون اللعبة الحالية مثلًا): الحوار يخرج من
+// شجرة الشاشة فلا يرثها تلقائيًا، فننسخها إلى حاويته.
+const INHERITED_VARS = ['--game-accent', '--pass-color', '--team-color'];
+
 // الحوار يُصيَّر خارج شجرة الشاشة حتى يمكن تعطيل الشاشة كاملة خلفه.
 function useDialogHost() {
+  const anchor = useRef(null);
   const [host] = useState(() => {
     if (typeof document === 'undefined') return null;
     const el = document.createElement('div');
@@ -114,20 +120,35 @@ function useDialogHost() {
     document.body.appendChild(host);
     return () => { host.remove(); };
   }, [host]);
-  return host;
+  // تُنادى عند الفتح: المرساة موجودة في مكان الحوار الأصلي داخل الشاشة.
+  const syncVars = useCallback(() => {
+    try {
+      const source = anchor.current && anchor.current.parentElement;
+      if (!host || !source) return;
+      const styles = getComputedStyle(source);
+      for (const name of INHERITED_VARS) {
+        const value = styles.getPropertyValue(name);
+        if (value && value.trim()) host.style.setProperty(name, value.trim());
+      }
+    } catch (error) {
+      // الألوان الافتراضية تكفي
+    }
+  }, [host]);
+  return [host, anchor, syncVars];
 }
 
 // ── Modal ────────────────────────────────────────────────────
 export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق' }) {
   const ref = useRef(null);
   const closeRef = useRef(onClose);
-  const host = useDialogHost();
+  const [host, anchor, syncVars] = useDialogHost();
   useEffect(() => { closeRef.current = onClose; });
   // عند الفتح فقط: كل تصيير يمرّر onClose جديدة، فلو اعتمد التأثير عليها لسُحب
   // التركيز من الحقل بعد كل حرف يُكتب.
   useEffect(() => {
     const node = ref.current;
     const previous = document.activeElement;
+    syncVars();
     const restore = deactivateBackground(host);
     focusFirst(node);
     const onKey = (e) => {
@@ -140,7 +161,7 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
       restore();
       if (previous && previous.focus) previous.focus();
     };
-  }, [host]);
+  }, [host, syncVars]);
   const tree = (
     <div className="modal-layer" role="presentation" onClick={onClose}>
       <section ref={ref} className="modal" role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()}>
@@ -153,7 +174,7 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
       </section>
     </div>
   );
-  return host ? createPortal(tree, host) : tree;
+  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(tree, host) : tree}</>;
 }
 
 export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel }) {
@@ -172,7 +193,7 @@ export function Sheet({ open, onClose, title, children }) {
   const [closing, setClosing] = useState(false);
   const drag = useRef({ y: 0, dy: 0, active: false });
   const ref = useRef(null);
-  const host = useDialogHost();
+  const [host, anchor, syncVars] = useDialogHost();
   const close = useCallback(() => {
     setClosing(true);
     setTimeout(() => { setClosing(false); onClose && onClose(); }, 210);
@@ -183,6 +204,7 @@ export function Sheet({ open, onClose, title, children }) {
     if (!open) return undefined;
     const node = ref.current;
     const previous = document.activeElement;
+    syncVars();
     const restore = deactivateBackground(host);
     focusFirst(node);
     const onKey = (e) => {
@@ -195,7 +217,7 @@ export function Sheet({ open, onClose, title, children }) {
       restore();
       if (previous && previous.focus) previous.focus();
     };
-  }, [open, host]);
+  }, [open, host, syncVars]);
   if (!open) return null;
   const onStart = (e) => { drag.current = { y: e.touches ? e.touches[0].clientY : e.clientY, dy: 0, active: ref.current.scrollTop <= 0 }; };
   const onMove = (e) => {
@@ -221,7 +243,7 @@ export function Sheet({ open, onClose, title, children }) {
       </section>
     </div>
   );
-  return host ? createPortal(tree, host) : tree;
+  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(tree, host) : tree}</>;
 }
 
 // ── ErrorBoundary ────────────────────────────────────────────

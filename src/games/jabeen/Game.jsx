@@ -32,34 +32,23 @@ export function SetupOptions({ storage, api }) {
   );
 }
 
-function Stage({ state, dispatch, api, source, timer }) {
-  const [flash, setFlash] = useState('');
-  const answer = (ok) => {
-    api.sound.play(ok ? 'correct' : 'wrong');
-    api.haptics.vibrate(ok ? 'success' : 'light');
-    setFlash(ok ? 'is-good' : 'is-skip');
-    setTimeout(() => setFlash(''), 420);
-    dispatch({ type: 'ANSWER', ok, item: source.next() });
-  };
-  const tilt = useTilt({ enabled: state.control === 'auto' && state.phase === 'play', onDecision: (d) => answer(d === 'correct') });
-  const useTouch = state.control === 'touch' || !tilt.supported;
-  const danger = timer.left <= 10;
+function Stage({ state, timer, tilt, onAnswer, onEnd, flash }) {
+  const tiltLive = state.control === 'auto' && tilt.supported;
   return (
     <div className={`jabeen-stage ${flash}`} role="group" aria-label="جولة على جبينك">
       <div className="jabeen-stage-top">
-        <span className={`num ${danger ? 'is-danger' : ''}`} dir="ltr">{timer.left}</span>
+        <span className={`num ${timer.left <= 10 ? 'is-danger' : ''}`} dir="ltr">{timer.left}</span>
         <span className="muted">✅ {state.results.filter((r) => r.ok).length}</span>
-        <Button size="sm" variant="ghost" onClick={() => { timer.pause(); dispatch({ type: 'TIME_UP' }); }}>إنهاء</Button>
+        <Button size="sm" variant="ghost" onClick={onEnd}>إنهاء</Button>
       </div>
       <div className="jabeen-word">{state.item ? state.item.text : '…'}</div>
-      {useTouch ? (
+      <div className="jabeen-controls">
+        {tiltLive && <p className="jabeen-hint">أَمِل للأسفل = صح · للأعلى = تخطي — أو استخدم الزرين.</p>}
         <div className="jabeen-touch">
-          <button type="button" className="ok" onClick={() => answer(true)}><span aria-hidden="true">✅</span>صح</button>
-          <button type="button" className="skip" onClick={() => answer(false)}><span aria-hidden="true">⏭</span>تخطي</button>
+          <button type="button" className="ok" onClick={() => onAnswer(true)}><span aria-hidden="true">✅</span>صح</button>
+          <button type="button" className="skip" onClick={() => onAnswer(false)}><span aria-hidden="true">⏭</span>تخطي</button>
         </div>
-      ) : (
-        <div className="jabeen-touch"><button type="button" className="ok" style={{ gridColumn: '1 / -1', minHeight: 64 }} onClick={() => answer(true)}>أَمِل للأسفل = صح · للأعلى = تخطي</button></div>
-      )}
+      </div>
     </div>
   );
 }
@@ -72,10 +61,33 @@ export function Game({ api, players, onExit }) {
   const source = useMemo(() => createItemSource(category, { random, seen: api.storage.get(SEEN_KEY, {}) || {} }), [category, random, api.storage]);
   const [state, dispatch] = useReducer(reduce, undefined, () => initialState(players, category, options));
   const [landscape, setLandscape] = useState(true);
+  const [flash, setFlash] = useState('');
+  const flashTimer = useRef(null);
   const timer = useTimer({ seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('warning'); dispatch({ type: 'TIME_UP' }); } });
-  const tilt = useTilt({ enabled: false, onDecision: () => {} });
+
+  // الفئة الواحدة لا تكفي عشرة لاعبين؛ عند نفادها نعيد خلطها بدل إنهاء المباراة.
+  const exhausted = source.remaining === 0;
+  const drawForTurn = () => {
+    let item = source.next();
+    let recycled = false;
+    if (!item) { source.reset(); recycled = true; item = source.next(); }
+    return { item, recycled };
+  };
+
+  const answer = (ok) => {
+    api.sound.play(ok ? 'correct' : 'wrong');
+    api.haptics.vibrate(ok ? 'success' : 'light');
+    setFlash(ok ? 'is-good' : 'is-skip');
+    clearTimeout(flashTimer.current);
+    flashTimer.current = setTimeout(() => setFlash(''), 420);
+    dispatch({ type: 'ANSWER', ok, item: source.next() });
+  };
+
+  // نسخة واحدة من مستشعر الميلان: الإذن والقراءة في المكان نفسه.
+  const tilt = useTilt({ enabled: state.control === 'auto' && state.phase === 'play', onDecision: (d) => answer(d === 'correct') });
 
   useEffect(() => { api.setInGame(state.phase !== 'over'); }, [state.phase, api]);
+  useEffect(() => () => clearTimeout(flashTimer.current), []);
   useEffect(() => {
     const check = () => setLandscape(window.innerWidth >= window.innerHeight || window.innerWidth >= 700);
     check();
@@ -102,13 +114,14 @@ export function Game({ api, players, onExit }) {
           <p className="muted">فئة «{state.categoryName}» · {state.seconds} ثانية</p>
           <p className="muted">ضع الجوال على جبينك والشاشة نحو الآخرين. هم يصفون وأنت تخمّن.</p>
           {tilt.needsPermission && <p className="jabeen-perm">سيطلب سفاري إذن استخدام مستشعر الحركة عند الضغط. إن رفضت، ستعمل اللعبة باللمس.</p>}
-          <Button variant="accent" size="lg" full onClick={async () => { await tilt.request(); api.sound.play('whoosh'); dispatch({ type: 'BEGIN', item: source.next() }); }}>ابدأ الجولة</Button>
+          {exhausted && <p className="jabeen-perm">انتهت كلمات «{state.categoryName}» — سنعيد خلطها من جديد ليكمل كل لاعب دوره.</p>}
+          <Button variant="accent" size="lg" full onClick={async () => { await tilt.request(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
         </div>
       )}
       {state.phase === 'play' && (
         <>
           {!landscape && <div className="jabeen-rotate"><div><div className="big" aria-hidden="true">📱</div><p style={{ marginTop: 14, fontWeight: 800 }}>أدر الجوال أفقيًا</p><p className="muted">أسهل في القراءة من بعيد.</p><Button variant="ghost" onClick={() => setLandscape(true)}>تخطي هذا التنبيه</Button></div></div>}
-          <Stage state={state} dispatch={dispatch} api={api} source={source} timer={timer} />
+          <Stage state={state} timer={timer} tilt={tilt} flash={flash} onAnswer={answer} onEnd={() => { timer.pause(); dispatch({ type: 'TIME_UP' }); }} />
         </>
       )}
       {state.phase === 'review' && (
@@ -123,6 +136,7 @@ export function Game({ api, players, onExit }) {
             ))}
             {state.results.length === 0 && <p className="muted center">لم تُعرض كلمات في هذه الجولة.</p>}
           </div>
+          {state.recycled && <p className="center muted">أُعيد خلط كلمات «{state.categoryName}» بعد نفادها، فقد تتكرر كلمة مع لاعب سابق.</p>}
           <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pop'); dispatch({ type: 'CONFIRM' }); }}>{state.turn === state.entrants.length - 1 ? 'النتائج النهائية' : 'اللاعب التالي'}</Button>
         </div>
       )}

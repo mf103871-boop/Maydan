@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Wordmark, WorldArtwork } from '../../shared/brand/art.jsx';
 
-export function Splash({ onDone, duration = 2200 }) {
+// reducedMotion يأتي كخاصية: قراءته من dataset هنا تسبق كتابته في تأثير الأب
+// (تأثيرات الأبناء تعمل أولًا) فكان دائمًا غائبًا.
+export function Splash({ onDone, duration = 2200, reducedMotion = false }) {
   const [leaving, setLeaving] = useState(false);
   const done = useRef(false);
   const exitTimer = useRef(null);
@@ -13,10 +15,12 @@ export function Splash({ onDone, duration = 2200 }) {
   }, [onDone]);
 
   useEffect(() => {
-    const reduced = document.documentElement.dataset.reducedMotion === 'true' || matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = reducedMotion
+      || document.documentElement.dataset.reducedMotion === 'true'
+      || (typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches);
     const timer = setTimeout(finish, reduced ? 600 : duration);
     return () => { clearTimeout(timer); clearTimeout(exitTimer.current); };
-  }, [duration, finish]);
+  }, [duration, finish, reducedMotion]);
 
   return <div className={`splash ${leaving ? 'is-leaving' : ''}`} onClick={finish} role="button" tabIndex={0} aria-label="تخطي شاشة البداية" onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); finish(); } }}>
     <WorldArtwork className="splash-world" />

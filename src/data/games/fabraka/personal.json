@@ -3,7 +3,7 @@
     "id": "fabraka-friend-comfort-food",
     "factId": "fabraka-friend-comfort-food",
     "kind": "friend",
-    "text": "لو أكل {name} وجبة واحدة طوال أسبوع، فسيختار ___.",
+    "text": "وجبة {name} المفضّلة لو تكرّرت أسبوعًا كاملًا: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -23,7 +23,7 @@
     "id": "fabraka-friend-free-hour",
     "factId": "fabraka-friend-free-hour",
     "kind": "friend",
-    "text": "لو حصل {name} على ساعة فراغ مفاجئة، فسيختار ___.",
+    "text": "خيار {name} في ساعة فراغ مفاجئة: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -43,7 +43,7 @@
     "id": "fabraka-friend-superpower",
     "factId": "fabraka-friend-superpower",
     "kind": "friend",
-    "text": "القوة الخارقة التي يختارها {name} ليوم واحد هي ___.",
+    "text": "القوة الخارقة التي تناسب {name} ليوم واحد: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -63,7 +63,7 @@
     "id": "fabraka-friend-shop",
     "factId": "fabraka-friend-shop",
     "kind": "friend",
-    "text": "لو افتتح {name} محلًا صغيرًا، فسيبيع فيه ___.",
+    "text": "بضاعة محل صغير باسم {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -83,7 +83,7 @@
     "id": "fabraka-friend-trip",
     "factId": "fabraka-friend-trip",
     "kind": "friend",
-    "text": "الشيء الذي يأخذه {name} دائمًا في رحلة قصيرة هو ___.",
+    "text": "الشيء الذي لا تخلو منه حقيبة {name} في رحلة قصيرة: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -103,7 +103,7 @@
     "id": "fabraka-friend-skill",
     "factId": "fabraka-friend-skill",
     "kind": "friend",
-    "text": "المهارة التي يتمنى {name} إتقانها فورًا هي ___.",
+    "text": "المهارة التي تتصدّر قائمة أمنيات {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -123,7 +123,7 @@
     "id": "fabraka-friend-robot",
     "factId": "fabraka-friend-robot",
     "kind": "friend",
-    "text": "أول مهمة سيعطيها {name} لروبوت منزلي هي ___.",
+    "text": "أول مهمة لروبوت منزلي في بيت {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -143,7 +143,7 @@
     "id": "fabraka-friend-snack",
     "factId": "fabraka-friend-snack",
     "kind": "friend",
-    "text": "وجبة {name} الخفيفة المفضلة في ليلة ألعاب هي ___.",
+    "text": "وجبة {name} الخفيفة المفضّلة في ليلة ألعاب: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -163,7 +163,7 @@
     "id": "fabraka-friend-animal",
     "factId": "fabraka-friend-animal",
     "kind": "friend",
-    "text": "لو أمكن لـ {name} التحدث مع حيوان واحد، فسيختار ___.",
+    "text": "الحيوان الذي تستحق محادثته دقيقة من وقت {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -183,7 +183,7 @@
     "id": "fabraka-friend-weather",
     "factId": "fabraka-friend-weather",
     "kind": "friend",
-    "text": "الجو الذي يجعل {name} يقرر الخروج فورًا هو ___.",
+    "text": "الجو الذي يستحق خروج {name} فورًا: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -203,7 +203,7 @@
     "id": "fabraka-friend-collection",
     "factId": "fabraka-friend-collection",
     "kind": "friend",
-    "text": "لو بدأ {name} هواية جمع أشياء، فسيجمع ___.",
+    "text": "الأشياء التي تليق بمجموعة باسم {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -223,7 +223,7 @@
     "id": "fabraka-friend-cartoon",
     "factId": "fabraka-friend-cartoon",
     "kind": "friend",
-    "text": "لو كان {name} شخصية كرتونية، لكان عمله ___.",
+    "text": "مهنة {name} في مسلسل كرتوني: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -243,7 +243,7 @@
     "id": "fabraka-friend-gift",
     "factId": "fabraka-friend-gift",
     "kind": "friend",
-    "text": "الهدية البسيطة التي تفرح {name} هي ___.",
+    "text": "الهدية البسيطة التي تفرح {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -263,7 +263,7 @@
     "id": "fabraka-friend-morning",
     "factId": "fabraka-friend-morning",
     "kind": "friend",
-    "text": "أول شيء يفعله {name} عادة بعد الاستيقاظ هو ___.",
+    "text": "أول شيء في صباح {name} بعد الاستيقاظ: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -283,7 +283,7 @@
     "id": "fabraka-friend-menu",
     "factId": "fabraka-friend-menu",
     "kind": "friend",
-    "text": "لو سمّى {name} مشروبًا جديدًا باسمه، فسيكون بطعم ___.",
+    "text": "طعم مشروب جديد يحمل اسم {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -303,7 +303,7 @@
     "id": "fabraka-friend-learn-language",
     "factId": "fabraka-friend-learn-language",
     "kind": "friend",
-    "text": "اللغة التي يختار {name} تعلمها في إجازة هي ___.",
+    "text": "اللغة الجديدة في قائمة {name} للإجازة: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -323,7 +323,7 @@
     "id": "fabraka-friend-board-game",
     "factId": "fabraka-friend-board-game",
     "kind": "friend",
-    "text": "الشيء الذي يحبه {name} أكثر في ليلة الألعاب هو ___.",
+    "text": "أحب ما في ليلة الألعاب إلى {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -343,7 +343,7 @@
     "id": "fabraka-friend-weekend",
     "factId": "fabraka-friend-weekend",
     "kind": "friend",
-    "text": "النشاط الذي يختاره {name} ليوم إجازة بلا التزامات هو ___.",
+    "text": "برنامج {name} في يوم إجازة بلا التزامات: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -363,7 +363,7 @@
     "id": "fabraka-friend-invention",
     "factId": "fabraka-friend-invention",
     "kind": "friend",
-    "text": "الاختراع الصغير الذي يتمنى {name} امتلاكه هو ___.",
+    "text": "الاختراع الصغير الذي يستحق مكانًا في بيت {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -383,7 +383,7 @@
     "id": "fabraka-friend-mascot",
     "factId": "fabraka-friend-mascot",
     "kind": "friend",
-    "text": "لو اختار {name} شعارًا حيوانيًا لفريقه، فسيختار ___.",
+    "text": "شعار حيواني لفريق {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -403,7 +403,7 @@
     "id": "fabraka-friend-room",
     "factId": "fabraka-friend-room",
     "kind": "friend",
-    "text": "الشيء الذي سيضيفه {name} إلى غرفته لو اتسعت هو ___.",
+    "text": "الإضافة الأولى إلى غرفة {name} لو اتسعت: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -423,7 +423,7 @@
     "id": "fabraka-friend-sound",
     "factId": "fabraka-friend-sound",
     "kind": "friend",
-    "text": "الصوت الذي يحب {name} سماعه للاسترخاء هو ___.",
+    "text": "الصوت الذي يريح {name} أكثر من غيره: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -443,7 +443,7 @@
     "id": "fabraka-friend-dessert",
     "factId": "fabraka-friend-dessert",
     "kind": "friend",
-    "text": "الحلوى التي يختارها {name} للاحتفال بفوزه هي ___.",
+    "text": "حلوى الاحتفال بفوز {name}: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [
@@ -463,7 +463,7 @@
     "id": "fabraka-friend-transport",
     "factId": "fabraka-friend-transport",
     "kind": "friend",
-    "text": "وسيلة التنقل التي يريد {name} تجربتها للمتعة هي ___.",
+    "text": "وسيلة التنقل التي تغري {name} بالتجربة: ___.",
     "answer": "",
     "aliases": [],
     "decoys": [

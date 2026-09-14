@@ -5,13 +5,13 @@ import { Screen, TopBar, Button, Card, ConfirmModal, Podium, Scoreboard } from '
 import { Avatar, AvatarPicker, GameArtwork } from '../shared/brand/art.jsx';
 import { navigate, setExitGuard } from '../platform/router.js';
 import { usePlatform } from '../platform/context.js';
-import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, ONLINE_GAMES, normalizeCode, validCode, resolveServerUrl, errorText } from './shared.js';
+import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, ONLINE_GAMES, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession } from './client.js';
 import { normalizeOptions } from '../games/fabraka/logic.js';
-import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES } from './Fabraka.jsx';
+import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES, fabrakaTopics } from './Fabraka.jsx';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
-const arabic = (number) => Number(number).toLocaleString('ar');
+const arabic = arabicNumber;
 const inviteUrl = (code) => { const url = new URL(location.href); url.search = ''; url.hash = `/room/${code}`; return url.toString(); };
 function ErrorNotice({ code }) { return code ? <p className="online-notice error" role="alert">{errorText(code)}</p> : null; }
 
@@ -27,6 +27,8 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
   const [error, setError] = useState('');
   const credentialsRef = useRef(null);
   const lastRoom = readSaved(SERVER, 'lastRoom');
+  // The server rejects these settings with QUESTIONS; keep the button honest instead.
+  const topicsReady = !(mode === 'create' && game === 'fabraka') || fabrakaTopics(fabrakaSettings).enough;
   async function submit(event) {
     event.preventDefault(); if (busy) return;
     setError('');
@@ -72,7 +74,7 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
           : <label className="online-field">عدد الجولات<select value={rounds} onChange={(e) => setRounds(Number(e.target.value))}>{ROUND_OPTIONS.map((n) => <option key={n} value={n}>{arabic(n)} جولات</option>)}</select></label>}
         {mode === 'create' && game === 'fabraka' && <FabrakaRules />}
         <ErrorNotice code={error} />
-        <Button type="submit" variant="primary" size="lg" full disabled={!SERVER || busy} loading={busy}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
+        <Button type="submit" variant="primary" size="lg" full disabled={!SERVER || busy || !topicsReady} loading={busy}>{mode === 'create' ? 'أنشئ الغرفة' : 'ادخل الغرفة'}</Button>
       </form>
     </Card>
     <p className="online-footnote">تحتاج الغرف اتصالًا بالإنترنت على كل هاتف. تنتهي الغرفة بعد ساعتين.</p>
@@ -99,7 +101,8 @@ function Invite({ code }) {
     {showLink && <label className="online-field online-invite-link">رابط الدعوة<input readOnly value={url} dir="ltr" onFocus={(e) => e.target.select()} /></label>}
   </Card>;
 }
-function Lobby({ state, me, isHost, disabled, act }) {
+// Exported for the rooms regression tests, which render the waiting room from a snapshot.
+export function Lobby({ state, me, isHost, disabled, act }) {
   const players = state.members.filter((m) => !m.left);
   const canStart = players.length >= MIN_PLAYERS && players.every((m) => m.connected && m.ready);
   return <>
@@ -115,7 +118,7 @@ function Lobby({ state, me, isHost, disabled, act }) {
       {isHost ? <Button full variant="primary" size="lg" disabled={disabled || !canStart} onClick={() => act('start')}>ابدأ اللعب</Button> : <p className="online-footnote">المضيف يبدأ الجولة عندما يجهز الجميع.</p>}
       {!canStart && isHost && <p className="online-footnote">نحتاج ٣ لاعبين على الأقل، متصلين وجاهزين جميعًا. تقدر تزيل مقعدًا منقطعًا من الانتظار.</p>}
     </Card>
-    {state.game === 'fabraka' ? <Card className="stack"><h2>فبركة · {FABRAKA_MODES[state.settings.mode]}</h2><p>{arabic(state.rounds)} جولات · {state.settings.writeSeconds ? `${arabic(state.settings.writeSeconds)} ثانية للكتابة` : 'كتابة براحتنا'} · {arabic(state.settings.discussionSeconds)} ثانية للنقاش · ٣٠ ثانية للتصويت.</p><FabrakaRules /></Card>
+    {state.game === 'fabraka' ? <Card className="stack"><h2>فبركة · {FABRAKA_MODES[state.settings.mode]}</h2><p>{arabic(state.rounds)} جولات · {state.settings.writeSeconds ? `${arabic(state.settings.writeSeconds)} ثانية للكتابة` : 'كتابة براحتنا'} · {state.settings.discussionSeconds ? `${arabic(state.settings.discussionSeconds)} ثانية للنقاش` : 'بدون نقاش'} · ٣٠ ثانية للتصويت.</p><FabrakaRules /></Card>
       : <p className="online-footnote">{arabic(state.rounds)} جولات · ٣٠ ثانية لكل تصويت · الأعلى أصواتًا يكسب نقطة، والتعادل يحتسب للجميع.</p>}
   </>;
 }

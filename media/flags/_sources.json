@@ -1006,7 +1006,7 @@
     "file": "flags-400-013.webp",
     "kind": "image",
     "provider": "commons",
-    "query": "Flag of Colombia",
+    "query": "flag of Colombia",
     "title": "The flag of Colombia.",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Colombia.svg",
     "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg",
@@ -1017,7 +1017,7 @@
     "width": 640,
     "height": 427,
     "durationSec": null,
-    "fetchedAt": "2026-09-09T11:43:52.342Z"
+    "fetchedAt": "2026-09-14T08:14:43.881Z"
   },
   {
     "file": "flags-400-014.webp",
@@ -3776,19 +3776,19 @@
   {
     "file": "flags-1000-018.webp",
     "kind": "image",
-    "provider": "commons",
-    "query": "Flag of Cocos Islands",
-    "title": "Flag of Australia, when congruence with this colour chart is required (i.e. when a \"less bright\" version is needed). Se…",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Australia_(converted).svg",
-    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
-    "author": "Unknown (Vector graphics image by Ian Fieggen) (only minor code changes by uploader.)",
-    "license": "Public Domain",
-    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
-    "bytes": 7316,
-    "width": 640,
-    "height": 320,
+    "provider": "openverse/wikimedia",
+    "query": "Cocos Keeling Islands flag",
+    "title": "Flag of the Cocos (Keeling) Island",
+    "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=183769533",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Flag_of_the_Cocos_%28Keeling%29_Island.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "author": "Original: Mohammed Minkom Vector: SpinnerLaserzthe2nd",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "bytes": 4224,
+    "width": 447,
+    "height": 224,
     "durationSec": null,
-    "fetchedAt": "2026-09-09T11:51:46.281Z"
+    "fetchedAt": "2026-09-14T08:28:03.619Z"
   },
   {
     "file": "flags-1000-045.webp",

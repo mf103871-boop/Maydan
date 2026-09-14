@@ -9,6 +9,7 @@ import { usePlatform } from '../context.js';
 import { navigate, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 import { GameFrame } from '../GameFrame.jsx';
+import { MissingGame } from './GameDetails.jsx';
 
 export function Play({ id }) {
   const game = getGame(id);
@@ -61,7 +62,7 @@ export function Play({ id }) {
     platform.sound.play('whoosh');
   }, [mode, platform.sound]);
 
-  if (!game) { navigate('/', { replace: true }); return null; }
+  if (!game) return <MissingGame id={id} />;
   const Component = game.Component;
 
   return (

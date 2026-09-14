@@ -174,7 +174,10 @@ export class Room {
           await this.commit(candidate);
           return;
         }
-        if (!a.id || !requestId) fail('AUTH', 401);
+        // A malformed requestId on an authenticated seat is a bad command, not a
+        // failed login: answering with INVALID keeps the player's session alive.
+        if (!a.id) fail('AUTH', 401);
+        if (!requestId) fail('INVALID');
         const candidate = structuredClone(this.room);
         const deck = command.type === 'start' ? (candidate.game === 'fabraka' ? buildFabrakaDeck(candidate) : shuffled(statements)) : [];
         action(candidate, a.id, command, now, deck);
@@ -183,7 +186,11 @@ export class Room {
       } catch (error) {
         const code = error instanceof RoomError ? error.code : 'INTERNAL';
         this.send(ws, { type: requestId ? 'ack' : 'error', requestId, ok: false, error: code });
-        if (['AUTH', 'NOT_FOUND', 'EXPIRED'].includes(code)) this.close(ws, 4401, code);
+        // Only end the session when the failure is about this socket's own seat;
+        // an error about another player (a kick target) must not sign the host out.
+        const seat = this.attachment(ws).id;
+        const seated = Boolean(seat) && Boolean(this.room?.members.some((m) => m.id === seat && !m.left));
+        if (['NOT_FOUND', 'EXPIRED'].includes(code) || (code === 'AUTH' && !seated)) this.close(ws, 4401, code);
       }
     });
   }

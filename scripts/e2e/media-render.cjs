@@ -31,14 +31,55 @@ const server = http.createServer((req, res) => {
   fs.createReadStream(f).pipe(res);
 });
 
-// خريطة qid → النوع المتوقّع، تُقرأ من نفس ملفات الحزم التي بُني منها الموقع
+// الحزم التجريبية تُسجَّل في bank-status.json بـ order: 9000+ بينما أعلى ترتيب
+// حقيقي 79، وindex.js يُولَّد مرتّبًا بذلك الحقل — فهي تقع في آخر شاشة الاختيار.
+// اختيار «أول ست بطاقات» كان يلتقط فئات البنك النصية فتُعرض الثلاثون خانة كلها
+// «plain». الاختيار هنا بالاسم المقروء من ملفات الحزم نفسها، مع تحقق بعده.
+const DEMO_IDS = ['demoa', 'demob', 'democ', 'demod', 'demoe', 'demof'];
+const demoPacks = DEMO_IDS.map((id) => {
+  const file = path.join(CATS, `${id}.json`);
+  if (!fs.existsSync(file)) {
+    console.error(`الحزم التجريبية غير مركّبة (${id}.json مفقود). شغّل أولًا: node scripts/demo-packs.mjs && npm run build`);
+    process.exit(2);
+  }
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
+});
+const DEMO_NAMES = demoPacks.map((pack) => pack.name);
+
+// خريطة qid → النوع المتوقّع، من الحزم التجريبية وحدها: البنك الحقيقي فيه
+// أسئلة من الأنواع نفسها، فالبحث في الجميع كان يعيد سؤالًا لا يُلعب في الجولة.
 const expect = new Map();
-for (const f of fs.readdirSync(CATS).filter((n) => n.endsWith('.json'))) {
-  const pack = JSON.parse(fs.readFileSync(path.join(CATS, f), 'utf8'));
+for (const pack of demoPacks) {
   for (const q of pack.qs) {
     const kind = q.type ? (q.type === 'image' ? `image-${q.effect || 'none'}` : q.type) : 'plain';
     expect.set(q.qid, { kind, p: q.p, a: q.a, pack: pack.id });
   }
+}
+
+// يضغط بطاقات الحزم التجريبية بأسمائها، ثم يتحقق أن المختار هو الطقم التجريبي
+// بالضبط — فلو تغيّر ترتيب الفئات أو أسماؤها يسقط الاختبار بدل أن يلعب جولة
+// نصية صامتة ويبلّغ عن أنواع «مفقودة» لم تُطلب أصلًا.
+async function pickDemoCategories(page, check) {
+  const picked = await page.evaluate((names) => {
+    const wanted = new Set(names);
+    const chosen = [];
+    for (const card of document.querySelectorAll('.m-category-pick .m-category-main')) {
+      const label = ((card.querySelector('b') || {}).textContent || '').trim();
+      if (!wanted.has(label)) continue;
+      card.click();
+      chosen.push(label);
+    }
+    return chosen;
+  }, DEMO_NAMES);
+  await page.waitForTimeout(200);
+  const selected = await page.$$eval('.m-category-pick.selected .m-category-main b', (els) => els.map((el) => el.textContent.trim()));
+  const same = (a, b) => a.length === b.length && [...a].sort().join('|') === [...b].sort().join('|');
+  if (!same(picked, DEMO_NAMES) || !same(selected, DEMO_NAMES)) {
+    console.error(`لم تُختَر الحزم التجريبية: ضُغط [${picked.join('، ')}] والمحدّد [${selected.join('، ')}] والمطلوب [${DEMO_NAMES.join('، ')}]`);
+    process.exit(2);
+  }
+  if (check) check(true, 'الحزم التجريبية الست هي المختارة');
+  console.log('الفئات المختارة:', selected.join('، '));
 }
 
 (async () => {
@@ -79,8 +120,7 @@ for (const f of fs.readdirSync(CATS).filter((n) => n.endsWith('.json'))) {
   await p.waitForSelector('.game-frame .m-root .m-home');
   await tap('.m-hero-cta');
   await p.waitForSelector('.m-category-pick');
-  await p.evaluate(() => { [...document.querySelectorAll('.m-category-pick .m-category-main')].slice(0, 6).forEach((el) => el.click()); });
-  await p.waitForTimeout(150);
+  await pickDemoCategories(p, check);
   await tap('.m-sticky-action');
   await p.waitForSelector('.m-board-grid');
   const cells = await p.$$eval('.m-tier', (e) => e.length);
@@ -303,12 +343,20 @@ for (const f of fs.readdirSync(CATS).filter((n) => n.endsWith('.json'))) {
   });
   await p.waitForTimeout(200);
   const creditRows = await p.$$eval('.credits-list li', (e) => e.length);
-  // المتوقع = عدد الملفات المميزة التي تشير إليها الحزم المركّبة فعلًا
+  // المتوقع = عدد الملفات المميزة التي تشير إليها الحزم المركّبة فعلًا. المفتاح
+  // هو المسار بعد الحلّ لا نص src، تمامًا كما يفعل collectCredits: اسم ملف واحد
+  // في حزمتين مختلفتين ملفان، وكان عدّه واحدًا يجعل الصفوف المتوقَّعة أقل.
   const distinct = new Set();
   for (const f of fs.readdirSync(CATS).filter((n) => n.endsWith('.json'))) {
-    for (const q of JSON.parse(fs.readFileSync(path.join(CATS, f), 'utf8')).qs) {
+    const pack = JSON.parse(fs.readFileSync(path.join(CATS, f), 'utf8'));
+    for (const q of pack.qs) {
       const list = q.media == null ? [] : Array.isArray(q.media) ? q.media : [q.media];
-      for (const m of list) if (m && typeof m === 'object' && m.src) distinct.add(m.src);
+      for (const m of list) {
+        if (!m || typeof m !== 'object' || !m.src) continue;
+        const src = String(m.src).trim();
+        const external = /^(https?:)?\/\//i.test(src) || /^data:/i.test(src);
+        distinct.add(external || src.startsWith('media/') ? src : `media/${pack.id}/${src.replace(/^\/+/, '')}`);
+      }
     }
   }
   check(credits.found, 'شاشة المصادر والتراخيص غير موجودة في «حول»');

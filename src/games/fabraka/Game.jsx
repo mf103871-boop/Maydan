@@ -2,7 +2,7 @@ import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard, Modal } from '../../shared/ui/components.jsx';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
-import { questions, pictures, personal, categories } from './content.js';
+import { questions, pictures, personal, categories, categoryCount } from './content.js';
 import { Illustration } from './Illustration.jsx';
 import { OPTIONS_KEY, SEEN_KEY, loadSession, loadResult, saveSession } from './persistence.js';
 import { initialState, reduce, currentActor, currentHost, standings, normalizeOptions, validateLie, votersFor, TRUTH_ID, ROUNDS, buildDeck, questionPool, turnKey, isSecret, multiplier, canVoteFor, restoreSession, awards, bestLies, factId } from './logic.js';
@@ -24,6 +24,8 @@ export function SetupOptions({ storage, api }) {
   const valid = !['classic', 'mixed'].includes(opts.mode) || pool.length >= textNeeded;
   const update = (patch) => {
     const next = normalizeOptions({ ...opts, ...patch });
+    // موضوع بلا أسئلة في النمط المختار تركيبة مسدودة، فلا نبقيه محددًا بعد تبديل النمط.
+    next.categories = next.categories.filter((c) => categoryCount(c, next.style) > 0);
     setOpts(next); storage.set(OPTIONS_KEY, next); api.setGameOptions?.(next); api.sound.play('click');
   };
   useEffect(() => { api.setSetupValid?.(valid); return () => api.setSetupValid?.(true); }, [api, valid]);
@@ -52,7 +54,7 @@ export function SetupOptions({ storage, api }) {
         <details className="fab-details"><summary>المواضيع · {opts.categories.length ? `${opts.categories.length} مختارة` : 'الكل'}</summary>
           <div className="fab-categories">
             <button type="button" className="chip" aria-pressed={!opts.categories.length} onClick={() => update({ categories: [] })}>كل المواضيع</button>
-            {categories.map((category) => <button key={category} type="button" className={`chip ${opts.categories.includes(category) ? 'selected' : ''}`} aria-pressed={opts.categories.includes(category)} onClick={() => update({ categories: opts.categories.includes(category) ? opts.categories.filter((c) => c !== category) : [...opts.categories, category] })}>{category}</button>)}
+            {categories.map((category) => { const count = categoryCount(category, opts.style); return <button key={category} type="button" className={`chip ${opts.categories.includes(category) ? 'selected' : ''}`} disabled={count === 0} aria-pressed={opts.categories.includes(category)} title={count === 0 ? 'لا غرائب في هذا الموضوع؛ اختر «كل الأسئلة»' : `${count} سؤالًا`} onClick={() => update({ categories: opts.categories.includes(category) ? opts.categories.filter((c) => c !== category) : [...opts.categories, category] })}>{category} <small>{count}</small></button>; })}
           </div>
         </details>
         <p className={valid ? 'fab-hint' : 'setup-error'} role={valid ? undefined : 'alert'}>{valid ? `${pool.length} سؤالًا متاحًا؛ الأولوية لما لم تلعبوه.` : `المتاح ${pool.length} أسئلة فقط. أضف موضوعًا أو اختر «كل الأسئلة» أو قلّل الجولات.`}</p>
@@ -192,13 +194,13 @@ function Reveal({ state, act }) {
   </div>;
 }
 
-function Results({ state }) {
+export function Results({ state }) {
   const honors = awards(state), highlights = bestLies(state);
   return <div className="fabraka stack">
     <Podium entries={standings(state)} />
     {honors.length > 0 && <div className="fab-awards">{honors.map((award) => <Card key={award.stat}><span className="fab-award-icon" aria-hidden="true">{award.emoji}</span><h3>{award.title}</h3><p>{award.players.map((p) => p.name).join('، ')}</p><small>{award.value} {award.stat === 'fooled' ? 'خدعات ناجحة' : award.stat === 'truths' ? 'حقائق مكتشفة' : 'أصوات ضحك'}</small></Card>)}</div>}
     <div className="fab-table-wrap"><table className="fab-stats"><caption>حصيلة الجلسة</caption><thead><tr><th scope="col">اللاعب</th><th scope="col">حقيقة</th><th scope="col">خداع</th>{state.settings.funnyVote && <th scope="col">ضحك</th>}<th scope="col">النقاط</th></tr></thead><tbody>{standings(state).map((p) => <tr key={p.id}><th scope="row"><Avatar player={p} /> {p.name}</th><td>{p.truths}</td><td>{p.fooled}</td>{state.settings.funnyVote && <td>{p.laughs}</td>}<td><b>{p.score}</b></td></tr>)}</tbody></table></div>
-    {highlights.length > 0 && <div className="stack"><h2 className="fab-heading">فبركات تستحق التذكّر</h2>{highlights.map((h, i) => <Card key={`${h.round}-${i}`} className="stack"><small className="muted">الجولة {h.round} · {names(state, h.owners)}</small><p>{h.question}</p><blockquote>«{h.text}»</blockquote><p className="fab-hint">🎭 خدعت {h.fooled}{state.settings.funnyVote && ` · 😂 أضحكت ${h.laughs}`}</p></Card>)}</div>}
+    {highlights.length > 0 && <div className="stack"><h2 className="fab-heading">فبركات تستحق التذكّر</h2>{highlights.map((h, i) => <Card key={`${h.round}-${i}`} className="stack"><small className="muted">الجولة {h.round} · {names(state, h.owners)}</small><QuestionText question={{ text: h.question }} filled={h.answer} /><blockquote>«{h.text}»</blockquote><p className="fab-hint">🎭 خدعت {h.fooled}{state.settings.funnyVote && ` · 😂 أضحكت ${h.laughs}`}</p></Card>)}</div>}
   </div>;
 }
 

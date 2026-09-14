@@ -16,6 +16,7 @@ try { ({ chromium } = require('playwright')); } catch { console.error('يلزم 
 const http = require('http'), fs = require('fs'), path = require('path'), url = require('url');
 const REPO = path.resolve(__dirname, '..', '..');
 const ROOT = path.join(REPO, 'dist');
+const CATS = path.join(REPO, 'src/data/categories');
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png',
   '.webmanifest': 'application/manifest+json; charset=utf-8', '.wav': 'audio/wav', '.webm': 'video/webm', '.webp': 'image/webp' };
 const PORT = Number(process.env.E2E_PORT || 8099);
@@ -29,6 +30,42 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': TYPES[path.extname(f)] || 'application/octet-stream' });
   fs.createReadStream(f).pipe(res);
 });
+
+// الحزم التجريبية تُسجَّل بـ order: 9000+ بينما أعلى ترتيب حقيقي 79، وindex.js
+// يُولَّد مرتّبًا بذلك الحقل — فهي في آخر شاشة الاختيار. اختيار «أول ست بطاقات»
+// كان يلتقط فئات نصية بلا وسائط، فلا يظهر صف التجهيز للعب دون إنترنت أصلًا.
+// الاختيار هنا بالاسم المقروء من ملفات الحزم نفسها، مع تحقق بعده.
+const DEMO_IDS = ['demoa', 'demob', 'democ', 'demod', 'demoe', 'demof'];
+const DEMO_NAMES = DEMO_IDS.map((id) => {
+  const file = path.join(CATS, `${id}.json`);
+  if (!fs.existsSync(file)) {
+    console.error(`الحزم التجريبية غير مركّبة (${id}.json مفقود). شغّل أولًا: node scripts/demo-packs.mjs && npm run build`);
+    process.exit(2);
+  }
+  return JSON.parse(fs.readFileSync(file, 'utf8')).name;
+});
+
+async function pickDemoCategories(page) {
+  const picked = await page.evaluate((names) => {
+    const wanted = new Set(names);
+    const chosen = [];
+    for (const card of document.querySelectorAll('.m-category-pick .m-category-main')) {
+      const label = ((card.querySelector('b') || {}).textContent || '').trim();
+      if (!wanted.has(label)) continue;
+      card.click();
+      chosen.push(label);
+    }
+    return chosen;
+  }, DEMO_NAMES);
+  await page.waitForTimeout(250);
+  const selected = await page.$$eval('.m-category-pick.selected .m-category-main b', (els) => els.map((el) => el.textContent.trim()));
+  const same = (a, b) => a.length === b.length && [...a].sort().join('|') === [...b].sort().join('|');
+  if (!same(picked, DEMO_NAMES) || !same(selected, DEMO_NAMES)) {
+    console.error(`لم تُختَر الحزم التجريبية: ضُغط [${picked.join('، ')}] والمحدّد [${selected.join('، ')}] والمطلوب [${DEMO_NAMES.join('، ')}]`);
+    process.exit(2);
+  }
+  return selected;
+}
 
 (async () => {
   await new Promise((r) => server.listen(PORT, r));
@@ -57,8 +94,8 @@ const server = http.createServer((req, res) => {
   await p.waitForSelector('.game-frame .m-root .m-home');
   await p.click('.m-hero-cta');
   await p.waitForSelector('.m-category-pick');
-  await p.evaluate(() => { [...document.querySelectorAll('.m-category-pick .m-category-main')].slice(0, 6).forEach((el) => el.click()); });
-  await p.waitForTimeout(200);
+  const chosen = await pickDemoCategories(p);
+  check(true, `الحزم التجريبية الست هي المختارة: ${chosen.join('، ')}`);
 
   const row = await p.$('.m-offline-row');
   check(!!row, 'صف تجهيز الوسائط ظهر للفئات ذات الوسائط');

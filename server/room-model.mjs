@@ -13,7 +13,10 @@ export function profile(value) {
   return { name, avatar: value.avatar };
 }
 export function active(room) { return room.members.filter((m) => !m.left); }
-export function member(room, id) { return room.members.find((m) => m.id === id && !m.left) || fail('AUTH', 401); }
+// Looking up another player must never be confused with failing authentication:
+// the caller decides whether a missing seat is an auth failure or a stale target.
+export function memberOrNull(room, id) { return room.members.find((m) => m.id === id && !m.left) || null; }
+export function member(room, id) { return memberOrNull(room, id) || fail('AUTH', 401); }
 function newMember(input, now, host = false) {
   return { id: input.id, tokenHash: input.tokenHash, ...profile(input), joinedAt: now, connected: false, ready: host, left: false };
 }
@@ -106,12 +109,17 @@ export function action(room, actorId, command, now, deck = []) {
       if (room.phase !== 'lobby' || typeof command.ready !== 'boolean') fail('PHASE', 409);
       actor.ready = command.ready;
       break;
-    case 'kick':
+    case 'kick': {
       isHost();
       if (room.phase !== 'lobby') fail('PHASE', 409);
-      if (command.targetId === actorId || member(room, command.targetId).connected) fail('INVALID');
+      if (command.targetId === actorId) fail('INVALID');
+      // A seat that already left is not an authentication failure for the host.
+      const target = memberOrNull(room, command.targetId);
+      if (!target) fail('TARGET_GONE', 409);
+      if (target.connected) fail('INVALID');
       leaveRoom(room, command.targetId, now);
       break;
+    }
     case 'start':
       isHost();
       if (room.phase !== 'lobby') fail('PHASE', 409);

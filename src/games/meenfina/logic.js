@@ -10,6 +10,8 @@ export const MODES = ['point', 'secret'];
 export const DEFAULT_OPTIONS = Object.freeze({ mode: 'point', rounds: 8 });
 
 // ألقاب تُمنح بحسب الوسم الذي فاز به اللاعب أكثر من غيره.
+// لكل وسم في statements.json لقبٌ هنا، ولكل لقب هنا عبارةٌ تمنحه —
+// يحرس ذلك اختبارُ «كل وسم له لقب» في tests/jabeen-meenfina-regression.test.js.
 export const TITLES = {
   نوم: 'سفير النوم',
   جوال: 'حارس الشاشة',
@@ -35,8 +37,23 @@ export const TITLES = {
   حفلات: 'روح الحفلة',
   تقنية: 'خبير الأجهزة',
   موسيقى: 'دي جي المجموعة',
+  فوضى: 'فنان الفوضى',
+  شاي: 'سلطان الشاي',
+  ذاكرة: 'أرشيف المجموعة',
+  مواعيد: 'حارس المواعيد',
+  قصص: 'راوي الحكايات',
+  تشجيع: 'كابتن التشجيع',
+  إبداع: 'صانع الأشياء',
 };
 export const DEFAULT_TITLE = 'نجم الجلسة';
+
+// العربية تجمع 3–10 وتفرد ما بعدها: «5 عبارات» لكن «12 عبارة».
+export function statementsLabel(count) {
+  const n = Math.abs(Number(count) || 0);
+  if (n === 1) return 'عبارة واحدة';
+  if (n === 2) return 'عبارتان';
+  return `${count} ${n >= 3 && n <= 10 ? 'عبارات' : 'عبارة'}`;
+}
 
 export function normalizeOptions(raw) {
   const o = { ...DEFAULT_OPTIONS, ...(raw || {}) };

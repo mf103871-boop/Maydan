@@ -12,7 +12,7 @@ const root=process.cwd();
 mkdirSync(path.join(root,'.cache'),{recursive:true});
 const temp=mkdtempSync(path.join(root,'.cache','fabraka-ui-'));
 after(()=>rmSync(temp,{recursive:true,force:true}));
-await build({stdin:{contents:`import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {Game,SetupOptions} from './src/games/fabraka/Game.jsx'; import {Illustration,illustrationIds} from './src/games/fabraka/Illustration.jsx'; export {illustrationIds}; export const game=p=>renderToStaticMarkup(React.createElement(Game,p)); export const setup=p=>renderToStaticMarkup(React.createElement(SetupOptions,p)); export const picture=q=>renderToStaticMarkup(React.createElement(Illustration,{question:q}));`,resolveDir:root,loader:'jsx'},outfile:path.join(temp,'render.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',loader:{'.css':'text','.webp':'dataurl','.woff2':'dataurl'},logLevel:'silent'});
+await build({stdin:{contents:`import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {Game,SetupOptions,Results} from './src/games/fabraka/Game.jsx'; import {Illustration,illustrationIds} from './src/games/fabraka/Illustration.jsx'; export {illustrationIds}; export const game=p=>renderToStaticMarkup(React.createElement(Game,p)); export const setup=p=>renderToStaticMarkup(React.createElement(SetupOptions,p)); export const results=p=>renderToStaticMarkup(React.createElement(Results,p)); export const picture=q=>renderToStaticMarkup(React.createElement(Illustration,{question:q}));`,resolveDir:root,loader:'jsx'},outfile:path.join(temp,'render.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',loader:{'.css':'text','.webp':'dataurl','.woff2':'dataurl'},logLevel:'silent'});
 const render=await import(pathToFileURL(path.join(temp,'render.mjs')));
 const noop=()=>{};
 const api={storage:{get:(_k,fallback)=>fallback,set:()=>true},sound:{play:noop},haptics:{vibrate:noop},confetti:{fire:noop},setInGame:noop};
@@ -59,4 +59,16 @@ test('every picture is an embedded accessible illustration without an answer lab
 test('setup exposes all modes, timing, categories, laugh award, and the tutorial',()=>{
   const markup=render.setup({storage:api.storage,api});
   for(const value of ['حقائق','مزيج','صور','أصحابنا','وقت الكتابة','وقت النقاش','أكثر كذبة مضحكة','تعليمية','المواضيع']) assert.ok(markup.includes(value),value);
+});
+
+test('the results screen fills the blank instead of printing the ___ placeholder',()=>{
+  const state={players,settings:{funnyVote:true},
+    scores:{a:1500,b:500,c:0},
+    stats:{a:{truths:1,fooled:1,laughs:0},b:{truths:0,fooled:1,laughs:1},c:{truths:0,fooled:0,laughs:0}},
+    history:[{round:1,question:'يبلغ العدد ___ وحدة.',answer:'ANSWER_TOKEN',
+      highlights:[{text:'LIE_TOKEN',owners:['b'],fooled:1,laughs:1}]}]};
+  const markup=render.results({state});
+  assert.match(markup,/LIE_TOKEN/);
+  assert.match(markup,/class="blank">ANSWER_TOKEN</);
+  assert.doesNotMatch(markup,/___/);
 });

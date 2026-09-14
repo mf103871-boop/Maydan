@@ -53,20 +53,28 @@ export function createHaptics({ enabled = true } = {}) {
   };
 }
 
-// المشاركة عبر الجسر الأصلي أو Web Share أو الحافظة. تعيد 'shared' | 'copied' | 'failed'.
+// المشاركة عبر الجسر الأصلي أو Web Share أو الحافظة.
+// تعيد 'shared' | 'cancelled' | 'copied' | 'failed':
+// إلغاء المستخدم لورقة المشاركة (AbortError) ليس نجاحًا، وفشل المشاركة لأي سبب
+// آخر يجب أن يجرّب الحافظة بدل أن ينتهي بـ 'failed' فورًا.
 export async function shareText(title, text) {
   if (nativeMessage({ type: 'share', title, text })) return 'shared';
-  try {
-    if (typeof navigator !== 'undefined' && navigator.share) {
+  if (typeof navigator !== 'undefined' && navigator.share) {
+    try {
       await navigator.share({ title, text });
       return 'shared';
+    } catch (error) {
+      if (error && error.name === 'AbortError') return 'cancelled';
+      // أي فشل آخر: نتابع إلى الحافظة.
     }
+  }
+  try {
     if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
       await navigator.clipboard.writeText(text);
       return 'copied';
     }
   } catch (error) {
-    if (error && error.name === 'AbortError') return 'shared';
+    // ignore
   }
   return 'failed';
 }

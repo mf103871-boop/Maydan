@@ -190,4 +190,57 @@ const MaydanLogicBeta = (() => {
     };
   })();
 
+// ── دوال خالصة يشاركها App.js، مجموعة هنا كي تُختبر في Node بلا React ──────
+
+// كل تلميح يُطلب يخصم من نقاط السؤال، ولا تقل أبدًا عن الربع.
+export const HINT_COST_PERCENT = 25;
+
+// أنواع الأسئلة التي تحتاج ملف وسائط؛ تُشتق منها مجموعة الفئة في شاشة الإعداد.
+export const MEDIA_QUESTION_TYPES = Object.freeze(["image", "audio", "diff", "video"]);
+const MEDIA_TYPE_SET = new Set(MEDIA_QUESTION_TYPES),
+  CATEGORY_GROUP_CACHE = new WeakMap();
+
+// «وسائط» لحزمة فيها صور/أصوات، «خاصة» لحزم الألغاز (إيموجي، شفرة، تلميحات…)،
+// و«معلومات» لما تبقّى: أسئلة نصية بحتة. كل هذه المفاتيح موجودة فعلًا في البنك،
+// بخلاف category.special و category.pack اللتين لم تكونا على أي حزمة.
+export function categoryGroup(category) {
+  if (!category || !Array.isArray(category.qs)) return "info";
+  const cached = CATEGORY_GROUP_CACHE.get(category);
+  if (cached) return cached;
+  let media = !1,
+    special = !1;
+  for (const question of category.qs) {
+    const type = question && question.type;
+    if (!type || type === "plain") continue;
+    if (MEDIA_TYPE_SET.has(type)) media = !0;
+    else special = !0;
+  }
+  const group = media ? "media" : special ? "special" : "info";
+  return (CATEGORY_GROUP_CACHE.set(category, group), group);
+}
+
+export function filterCategories(categories, { filter = "all", search = "", favorites = [] } = {}) {
+  const term = String(search || "").trim();
+  return (categories || []).filter((category) => {
+    if (term && !String(category.name || "").includes(term)) return !1;
+    if (filter === "favorites") return favorites.includes(category.id);
+    if (filter === "all") return !0;
+    return categoryGroup(category) === filter;
+  });
+}
+
+// النقاط التي ستُمنح فعلًا بعد التلميحات — يستعملها الحَكم وترويسة السؤال معًا
+// كي لا تَعِد الترويسة بألف ثم يُمنح خمسمئة.
+export function pointsAfterHints(points, hintsUsed, costPercent = HINT_COST_PERCENT) {
+  const used = Math.max(0, Math.floor(Number(hintsUsed) || 0));
+  if (!used) return points;
+  return Math.max(Math.round(points * 0.25), Math.round((points * (100 - used * costPercent)) / 100));
+}
+
+// أعلى شريحة في وضع اللعب — «حتى 1000» كانت تُطبع لوضع «تحدّي» الذي يقف عند 800.
+export function modeTopTier(mode) {
+  const tiers = (mode && mode.tiers) || [];
+  return tiers.length ? tiers[tiers.length - 1] : 0;
+}
+
 export default MaydanLogicBeta;
