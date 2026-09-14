@@ -6,2401 +6,2982 @@
   "qs": [
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، من الطالب صاحب المذكرة؟",
-      "a": "لايت",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ما اسم الدفتر الذي يموت كل من يُكتب اسمه فيه؟",
+      "a": "مذكرة الموت",
+      "alt": [
+        "ديث نوت",
+        "الدفتر الأسود"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Death_Note_(object)",
       "verified": true,
       "qid": "deathnote-200-049"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، من المحقق الجالس؟",
-      "a": "إل",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ما سبب الوفاة الافتراضي إن لم يحدّد الكاتب شيئًا؟",
+      "a": "نوبة قلبية",
+      "alt": [
+        "أزمة قلبية",
+        "سكتة قلبية"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note",
       "verified": true,
       "qid": "deathnote-200-050"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، من الفتاة المكلفة؟",
-      "a": "ميسا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ماذا يجب أن يستحضر الكاتب في ذهنه ليقتل بالدفتر؟",
+      "a": "وجه الشخص",
+      "alt": [
+        "وجه الضحية",
+        "الوجه"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note",
       "verified": true,
       "qid": "deathnote-200-051"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، من إله الموت الضاحك؟",
-      "a": "ريوك",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "من أي عالم جاء الدفتر قبل أن يسقط عند البشر؟",
+      "a": "عالم الشينيغامي",
+      "alt": [
+        "عالم آلهة الموت"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Shinigami_Realm",
       "verified": true,
       "qid": "deathnote-200-052"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، من إله الموت الأنثى؟",
-      "a": "ريم",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "أين رأى لايت الدفتر ملقًى أول مرة؟",
+      "a": "ساحة مدرسته",
+      "alt": [
+        "فناء المدرسة",
+        "أمام مدرسته"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-200-053"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، من الوريث الأبيض؟",
-      "a": "نير",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ما لون غلاف الدفتر الذي التقطه لايت؟",
+      "a": "أسود",
+      "alt": [
+        "اللون الأسود"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Death_Note_(object)",
       "verified": true,
       "qid": "deathnote-200-054"
     },
     {
       "p": 200,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المدينة؟",
-      "a": "طوكيو المذكرة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما اللقب الذي أطلقه الناس على قاتل المجرمين الغامض؟",
+      "a": "كيرا",
+      "alt": [
+        "Kira"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-200-055"
     },
     {
       "p": 200,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما غرفة الطالب؟",
-      "a": "غرفة لايت",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "من الطالب الذي التقط الدفتر وصار يقتل به؟",
+      "a": "لايت ياغامي",
+      "alt": [
+        "لايت",
+        "لايت ياجامي",
+        "رايتو ياغامي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-200-056"
     },
     {
       "p": 200,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المقر السري؟",
-      "a": "مقر التحقيق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "أي صنف من الناس بدأ كيرا بقتلهم؟",
+      "a": "المجرمون",
+      "alt": [
+        "المجرمين",
+        "مجرمون"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-200-057"
     },
     {
       "p": 200,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما الجامعة؟",
-      "a": "جامعة لايت",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما مهنة والد لايت؟",
+      "a": "ضابط شرطة",
+      "alt": [
+        "شرطي",
+        "محقق شرطة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Japanese_Task_Force",
       "verified": true,
       "qid": "deathnote-200-058"
     },
     {
       "p": 200,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المخزن؟",
-      "a": "مخزن المذكرة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما اسم شقيقة لايت الصغرى؟",
+      "a": "سايو",
+      "alt": [
+        "سايو ياغامي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-200-059"
     },
     {
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما الامتحان الذهني؟",
-      "a": "امتحان البطاطس",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما الصفة التي أراد لايت أن يصير عليها في عالمه الجديد؟",
+      "a": "إلهًا",
+      "alt": [
+        "إله",
+        "إله العالم الجديد"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-200-060"
     },
     {
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما بث الإعلانات؟",
-      "a": "بث كيرا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما الحرف الذي يُعرف به ألمع محقق في العالم؟",
+      "a": "إل",
+      "alt": [
+        "L",
+        "حرف L"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-200-061"
     },
     {
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المواجهة في المقر؟",
-      "a": "مواجهة المقر",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "كيف يجلس إل على الكرسي دائمًا؟",
+      "a": "القرفصاء",
+      "alt": [
+        "يجلس القرفصاء",
+        "بقدميه على الكرسي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-200-062"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، من الأب الشرطي؟",
-      "a": "سويتشيرو",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "أي نوع من الطعام يدمنه إل؟",
+      "a": "الحلويات",
+      "alt": [
+        "الحلوى",
+        "السكاكر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-200-063"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، من الزميل المتحمس؟",
-      "a": "ماتسودا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما الاسم المستعار الذي طلب إل من الفريق أن يناديه به؟",
+      "a": "ريوزاكي",
+      "alt": [
+        "Ryuzaki"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-200-064"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، من المذيع؟",
-      "a": "تاكادا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "من الرجل المسنّ الذي يرافق إل ويتكلم باسمه؟",
+      "a": "واتاري",
+      "alt": [
+        "Watari"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Watari",
       "verified": true,
       "qid": "deathnote-200-065"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، من المدعي؟",
-      "a": "ميكامي",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "كيف يمشي إل عادةً حتى في الأماكن العامة؟",
+      "a": "حافي القدمين",
+      "alt": [
+        "حافيًا",
+        "بلا حذاء"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-200-066"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، من الوريث الثاني؟",
-      "a": "ميلو",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما اسم إله الموت الذي أسقط الدفتر ورافق لايت؟",
+      "a": "ريوك",
+      "alt": [
+        "Ryuk"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-200-067"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، من الشقيقة؟",
-      "a": "سايو",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما الفاكهة التي يعشقها ريوك؟",
+      "a": "التفاح",
+      "alt": [
+        "تفاح",
+        "التفاحة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-200-068"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما لقب الطالب السري؟",
-      "a": "كيرا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما اسم إلهة الموت التي رافقت ميسا؟",
+      "a": "ريم",
+      "alt": [
+        "Rem"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rem",
       "verified": true,
       "qid": "deathnote-200-069"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما لقب الجالس؟",
-      "a": "إل لقب",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "بماذا يطير ريوك؟",
+      "a": "بجناحيه",
+      "alt": [
+        "جناحاه",
+        "أجنحته"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-200-070"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما نداء إله الموت؟",
-      "a": "يا ريوك",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "لماذا أسقط ريوك دفتره في عالم البشر؟",
+      "a": "من الملل",
+      "alt": [
+        "لأنه ملّ",
+        "الملل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-200-071"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما جملة التفاحة؟",
-      "a": "هات التفاحة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "بأي اسم ياباني تُعرف آلهة الموت في هذا الأنمي؟",
+      "a": "شينيغامي",
+      "alt": [
+        "Shinigami",
+        "شنيغامي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Shinigami_Realm",
       "verified": true,
       "qid": "deathnote-200-072"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما نداء الفتاة؟",
-      "a": "يا ميسا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما اسم الفتاة المشهورة التي صارت كيرا الثانية؟",
+      "a": "ميسا أماني",
+      "alt": [
+        "ميسا",
+        "أماني ميسا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-200-073"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما لقب الوريث؟",
-      "a": "نير لقب",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما مهنة ميسا حين ظهرت أول مرة؟",
+      "a": "عارضة أزياء",
+      "alt": [
+        "عارضة",
+        "موديل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-200-074"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما الدفتر؟",
-      "a": "المذكرة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما اللقب الذي تحب ميسا أن ينادوها به؟",
+      "a": "ميسا ميسا",
+      "alt": [
+        "Misa Misa"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-200-075"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما الفاكهة؟",
-      "a": "التفاحة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما اسم الشركة التي ظهر فيها كيرا الثالث؟",
+      "a": "يوتسوبا",
+      "alt": [
+        "مجموعة يوتسوبا",
+        "Yotsuba"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-200-076"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما الحلوى؟",
-      "a": "حلوى إل",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما القدرة التي حصلت عليها ميسا من إلهة الموت؟",
+      "a": "عينا الشينيغامي",
+      "alt": [
+        "عيون إله الموت",
+        "عيون الشينيغامي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-200-077"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما الجرس؟",
-      "a": "جرس الباب",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "كيف عرفت ميسا هوية كيرا الحقيقية؟",
+      "a": "بعينيها",
+      "alt": [
+        "برؤية اسمه",
+        "بقدرة عينيها"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-200-078"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما الساعة؟",
-      "a": "ساعة لايت",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "من الصبي ذو الشعر الأبيض الذي خلف إل في مطاردة كيرا؟",
+      "a": "نير",
+      "alt": [
+        "Near"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-200-079"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما القلم؟",
-      "a": "قلم المذكرة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الحلوى التي لا يفارقها ميلو؟",
+      "a": "الشوكولاتة",
+      "alt": [
+        "الشوكولا",
+        "شوكولاتة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-200-080"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما سقوط الجالس؟",
-      "a": "سقوط إل",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "بماذا يلهو نير دائمًا وهو يفكر؟",
+      "a": "بالدمى",
+      "alt": [
+        "الدمى",
+        "الألعاب",
+        "ألعاب الأطفال"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-200-081"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما سقوط الفتاة؟",
-      "a": "سقوط ميسا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما لون ثياب نير في كل مشاهده؟",
+      "a": "أبيض",
+      "alt": [
+        "اللون الأبيض"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-200-082"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما سقوط المدعي؟",
-      "a": "سقوط ميكامي",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "أين نشأ نير وميلو معًا؟",
+      "a": "دار وامي",
+      "alt": [
+        "ميتم وامي",
+        "بيت وامي",
+        "وامي هاوس"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/The_Wammy%27s_House",
       "verified": true,
       "qid": "deathnote-200-083"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما نهاية الطالب؟",
-      "a": "نهاية لايت",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الحرف الذي يمثّل نير في مراسلاته؟",
+      "a": "حرف N",
+      "alt": [
+        "N",
+        "حرف إن"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-200-084"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما رحيل إله الموت؟",
-      "a": "رحيل ريوك",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما اسم والد لايت الذي قاد فرقة التحقيق؟",
+      "a": "سويتشيرو",
+      "alt": [
+        "سويتشيرو ياغامي",
+        "سوئيتشيرو"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-200-085"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما بيت الطالب؟",
-      "a": "آل ياجامي",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "من أصغر أعضاء فرقة التحقيق وأكثرهم حماسة؟",
+      "a": "ماتسودا",
+      "alt": [
+        "توتا ماتسودا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-200-086"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما بيت الوريث؟",
-      "a": "آل نير",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "في أي مدينة تدور أحداث مطاردة كيرا؟",
+      "a": "طوكيو",
+      "alt": [
+        "Tokyo"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Japanese_Task_Force",
       "verified": true,
       "qid": "deathnote-200-087"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما عصبة الثاني؟",
-      "a": "عصبة ميلو",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما الأجهزة التي زرعها إل في بيت عائلة ياغامي؟",
+      "a": "كاميرات المراقبة",
+      "alt": [
+        "كاميرات خفية",
+        "كاميرات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-200-088"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما شبكة البث؟",
-      "a": "شبكة كيرا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "من العضو صاحب الشعر الأجعد الذي ترك الفريق ثم عاد؟",
+      "a": "أيزاوا",
+      "alt": [
+        "شويتشي أيزاوا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-200-089"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما آلهة الموت؟",
-      "a": "شينيغامي",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما اسم العضو الصامت الطويل في الفريق؟",
+      "a": "موغي",
+      "alt": [
+        "كانزو موغي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-200-090"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، من الضابط الهادئ؟",
-      "a": "موغي",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما اسم القناة التي بثّت أشرطة كيرا الثانية؟",
+      "a": "ساكورا تي في",
+      "alt": [
+        "قناة ساكورا",
+        "ساكورا تيفي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Sakura_TV",
       "verified": true,
       "qid": "deathnote-200-091"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، من الضابط الصارم؟",
-      "a": "أيزاوا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "بأي شيء ربط إل نفسه بلايت ليراقبه ليل نهار؟",
+      "a": "بالأصفاد",
+      "alt": [
+        "أصفاد",
+        "قيود",
+        "كلبشات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-200-092"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما الجوارب؟",
-      "a": "جوارب إل",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما اللعبة التي تبارى فيها لايت وإل أمام الطلاب؟",
+      "a": "التنس",
+      "alt": [
+        "كرة المضرب",
+        "التنس الأرضي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/To-Oh_University",
       "verified": true,
       "qid": "deathnote-200-093"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما سقوط الثاني؟",
-      "a": "سقوط ميلو",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "أين دارت المواجهة الأخيرة بين كيرا ونير؟",
+      "a": "المستودع الأصفر",
+      "alt": [
+        "مستودع الصندوق الأصفر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Japanese_Task_Force",
       "verified": true,
       "qid": "deathnote-200-094"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما بيت الأب؟",
-      "a": "بيت الشرطة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ماذا كان لايت يخبّئ داخل كيس رقائق البطاطس؟",
+      "a": "تلفازًا صغيرًا",
+      "alt": [
+        "تلفاز صغير",
+        "شاشة صغيرة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Trash",
       "verified": true,
       "qid": "deathnote-200-095"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، من الحارس؟",
-      "a": "حارس المقر",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما الهدية التي أهداها الأب لابنه عند دخول الجامعة؟",
+      "a": "ساعة يد",
+      "alt": [
+        "ساعة",
+        "ساعة معصم"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light%27s_watch",
       "verified": true,
       "qid": "deathnote-200-096"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق1؟",
-      "a": "أثر المذكرة ق1",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم ثانية أمام الكاتب ليحدّد سبب الموت بعد كتابة الاسم؟",
+      "a": "أربعون ثانية",
+      "alt": [
+        "40 ثانية"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note",
       "verified": true,
       "qid": "deathnote-400-049"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق2؟",
-      "a": "أثر المذكرة ق2",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ماذا يفقد الإنسان إن تخلّى عن ملكية الدفتر؟",
+      "a": "ذكرياته عنه",
+      "alt": [
+        "ذاكرته عن الدفتر",
+        "كل ما يتعلق به"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-400-050"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق3؟",
-      "a": "أثر المذكرة ق3",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ما ثمن الحصول على عيني إله الموت؟",
+      "a": "نصف العمر المتبقي",
+      "alt": [
+        "نصف عمره",
+        "نصف ما بقي من عمره"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-400-051"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق4؟",
-      "a": "أثر المذكرة ق4",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ماذا ترى عينا إله الموت في وجه أي إنسان؟",
+      "a": "اسمه وعمره",
+      "alt": [
+        "الاسم والعمر المتبقي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-400-052"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق5؟",
-      "a": "أثر المذكرة ق5",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "بأي سائل يمكن الكتابة في الدفتر إن غاب الحبر؟",
+      "a": "بالدم",
+      "alt": [
+        "الدم"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-400-053"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق6؟",
-      "a": "أثر المذكرة ق6",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "بأي لغة كتب ريوك التعليمات داخل غلاف دفتره؟",
+      "a": "الإنجليزية",
+      "alt": [
+        "اللغة الإنجليزية"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-400-054"
     },
     {
       "p": 400,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق7؟",
-      "a": "أثر المذكرة ق7",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما اسم أول مجرم كتب لايت اسمه في الدفتر؟",
+      "a": "كورو أوتوهارادا",
+      "alt": [
+        "أوتوهارادا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Kurou_Otoharada",
       "verified": true,
       "qid": "deathnote-400-055"
     },
     {
       "p": 400,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق8؟",
-      "a": "أثر المذكرة ق8",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "كيف مات الشاب الثاني الذي كتب لايت اسمه؟",
+      "a": "صدمته شاحنة",
+      "alt": [
+        "حادث شاحنة",
+        "دهسته شاحنة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Takuo_Shibuimaru",
       "verified": true,
       "qid": "deathnote-400-056"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق9؟",
-      "a": "أثر المذكرة ق9",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "في أي جامعة التحق لايت بعد الثانوية؟",
+      "a": "جامعة تو-أوه",
+      "alt": [
+        "تو-أوه",
+        "توو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/To-Oh_University",
       "verified": true,
       "qid": "deathnote-400-057"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق10؟",
-      "a": "أثر المذكرة ق10",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ماذا يحدث للدفتر لو فتح أحد غير لايت درج مكتبه؟",
+      "a": "يحترق",
+      "alt": [
+        "يشتعل",
+        "يحترق فورًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Current",
       "verified": true,
       "qid": "deathnote-400-058"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق11؟",
-      "a": "أثر المذكرة ق11",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما وصف العالم الذي وعد لايت ببنائه بعد قتل المجرمين؟",
+      "a": "عالم جديد",
+      "alt": [
+        "العالم الجديد",
+        "عالم بلا شر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-400-059"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق12؟",
-      "a": "أثر المذكرة ق12",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما اسم عائلة لايت؟",
+      "a": "ياغامي",
+      "alt": [
+        "ياجامي",
+        "Yagami"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-400-060"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق13؟",
-      "a": "أثر المذكرة ق13",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما الاسم المستعار الذي التحق به إل بالجامعة؟",
+      "a": "هيديكي ريوغا",
+      "alt": [
+        "هيديكي ريوجا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/To-Oh_University",
       "verified": true,
       "qid": "deathnote-400-061"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق14؟",
-      "a": "أثر المذكرة ق14",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "كيف يمسك إل الأشياء عادةً؟",
+      "a": "بإصبعين",
+      "alt": [
+        "بإصبعين فقط",
+        "بطرفي إصبعيه"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-062"
     },
     {
       "p": 400,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق15؟",
-      "a": "أثر المذكرة ق15",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "أي فئة استنتج إل أن كيرا منها من مواعيد جرائمه؟",
+      "a": "طالب مدرسة",
+      "alt": [
+        "طالب",
+        "تلميذ"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-063"
     },
     {
       "p": 400,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق16؟",
-      "a": "أثر المذكرة ق16",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما سبب الهالات السوداء تحت عيني إل؟",
+      "a": "الأرق",
+      "alt": [
+        "قلة النوم",
+        "السهر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-064"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق17؟",
-      "a": "أثر المذكرة ق17",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما نتيجة لايت وإل في امتحان دخول الجامعة؟",
+      "a": "الدرجة الكاملة",
+      "alt": [
+        "العلامة الكاملة",
+        "درجة كاملة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/To-Oh_University",
       "verified": true,
       "qid": "deathnote-400-065"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق18؟",
-      "a": "أثر المذكرة ق18",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما الحيلة التي حمى بها إل نفسه بعد أن عرف لايت وجهه؟",
+      "a": "جعل واتاري يمثّل دوره",
+      "alt": [
+        "أظهر واتاري بدلًا منه"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-066"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق19؟",
-      "a": "أثر المذكرة ق19",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما طعم التفاح في عالم آلهة الموت؟",
+      "a": "كالرمل",
+      "alt": [
+        "طعم الرمل",
+        "رمل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-400-067"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق20؟",
-      "a": "أثر المذكرة ق20",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما اسم إله الموت الذي مات ليحمي ميسا؟",
+      "a": "جيلوس",
+      "alt": [
+        "غيلوس",
+        "Gelus"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-400-068"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق21؟",
-      "a": "أثر المذكرة ق21",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما مصير إله الموت الذي يقتل ليطيل عمر إنسان؟",
+      "a": "يتحول إلى رماد",
+      "alt": [
+        "يموت ويتلاشى",
+        "يصير رمادًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-400-069"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق22؟",
-      "a": "أثر المذكرة ق22",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "لماذا ضحّت ريم بنفسها في النهاية؟",
+      "a": "لتنقذ ميسا",
+      "alt": [
+        "حبًّا لميسا",
+        "لحماية ميسا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rem",
       "verified": true,
       "qid": "deathnote-400-070"
     },
     {
       "p": 400,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق23؟",
-      "a": "أثر المذكرة ق23",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "كيف يرى آلهة الموت البشر وهم في عالمهم؟",
+      "a": "من فتحات مراقبة",
+      "alt": [
+        "ثقوب مراقبة",
+        "فتحات في الأرض"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Shinigami_Realm",
       "verified": true,
       "qid": "deathnote-400-071"
     },
     {
       "p": 400,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق24؟",
-      "a": "أثر المذكرة ق24",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما الذي يفعله آلهة الموت بأعمار من يقتلونهم؟",
+      "a": "يضيفونها إلى أعمارهم",
+      "alt": [
+        "يطيلون بها أعمارهم"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Death_Note_(object)",
       "verified": true,
       "qid": "deathnote-400-072"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق25؟",
-      "a": "أثر المذكرة ق25",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما اسم كيرا الثالث الذي ظهر في شركة يوتسوبا؟",
+      "a": "هيغوتشي",
+      "alt": [
+        "كيوسكي هيغوتشي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-400-073"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق26؟",
-      "a": "أثر المذكرة ق26",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "لماذا صارت ميسا من أشد المؤمنين بكيرا؟",
+      "a": "لأنه قتل قاتل عائلتها",
+      "alt": [
+        "انتقم لوالديها"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-400-074"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق27؟",
-      "a": "أثر المذكرة ق27",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما اسم الاجتماعات الأسبوعية لمديري يوتسوبا؟",
+      "a": "اجتماعات الموت",
+      "alt": [
+        "اجتماع الموت"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-400-075"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق28؟",
-      "a": "أثر المذكرة ق28",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "كيف أرسلت كيرا الثانية رسائلها إلى كيرا الأول؟",
+      "a": "بأشرطة مصوّرة",
+      "alt": [
+        "أشرطة فيديو",
+        "شرائط مصورة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Sakura_TV",
       "verified": true,
       "qid": "deathnote-400-076"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق29؟",
-      "a": "أثر المذكرة ق29",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "كم مرة عقدت ميسا صفقة العيون؟",
+      "a": "مرتين",
+      "alt": [
+        "مرتان",
+        "2"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-400-077"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق30؟",
-      "a": "أثر المذكرة ق30",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "بأي صيغة تتحدث ميسا عن نفسها غالبًا؟",
+      "a": "بصيغة الغائب",
+      "alt": [
+        "تنادي نفسها باسمها"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-400-078"
     },
     {
       "p": 400,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق31؟",
-      "a": "أثر المذكرة ق31",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "في أي بلد يقع الميتم الذي نشأ فيه نير وميلو؟",
+      "a": "إنجلترا",
+      "alt": [
+        "بريطانيا",
+        "المملكة المتحدة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/The_Wammy%27s_House",
       "verified": true,
       "qid": "deathnote-400-079"
     },
     {
       "p": 400,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق32؟",
-      "a": "أثر المذكرة ق32",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "إلى أي جماعة انضم ميلو في أمريكا ليصل إلى الدفتر؟",
+      "a": "المافيا",
+      "alt": [
+        "عصابة المافيا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-400-080"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق33؟",
-      "a": "أثر المذكرة ق33",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما اسم المنظمة التي قادها نير لملاحقة كيرا؟",
+      "a": "SPK",
+      "alt": [
+        "إس بي كيه",
+        "وحدة مكافحة كيرا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-400-081"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق34؟",
-      "a": "أثر المذكرة ق34",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الأثر الذي بقي على وجه ميلو بعد الانفجار؟",
+      "a": "ندبة حرق",
+      "alt": [
+        "حرق",
+        "ندبة كبيرة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-400-082"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق35؟",
-      "a": "أثر المذكرة ق35",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما اللعبة التي كان نير يركّبها حين علم بموت إل؟",
+      "a": "أُحجية",
+      "alt": [
+        "بازل",
+        "أحجية بيضاء",
+        "لغز مركّب"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-400-083"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق36؟",
-      "a": "أثر المذكرة ق36",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "بأي شعور كان ميلو ينظر إلى نير طوال حياته؟",
+      "a": "بالغيرة",
+      "alt": [
+        "الغيرة",
+        "الحسد",
+        "عقدة النقص"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-400-084"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق37؟",
-      "a": "أثر المذكرة ق37",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "من العميل الأمريكي الذي كُلّف بمراقبة عائلة لايت؟",
+      "a": "راي بنبر",
+      "alt": [
+        "راي بينبر"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-400-085"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق38؟",
-      "a": "أثر المذكرة ق38",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما اسم خطيبة ذلك العميل التي حقّقت في مقتله؟",
+      "a": "ناومي ميسورا",
+      "alt": [
+        "ناومي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Naomi_Misora",
       "verified": true,
       "qid": "deathnote-400-086"
     },
     {
       "p": 400,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق39؟",
-      "a": "أثر المذكرة ق39",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "كم عميلًا فدراليًّا قتلهم كيرا دفعة واحدة؟",
+      "a": "اثنا عشر",
+      "alt": [
+        "12",
+        "اثني عشر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-087"
     },
     {
       "p": 400,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق40؟",
-      "a": "أثر المذكرة ق40",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "أين كان الفريق يجتمع قبل بناء مقرّهم؟",
+      "a": "في الفنادق",
+      "alt": [
+        "فنادق",
+        "غرف فنادق"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Japanese_Task_Force",
       "verified": true,
       "qid": "deathnote-400-088"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق41؟",
-      "a": "أثر المذكرة ق41",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "من العضو الذي بقي إلى جانب سويتشيرو ورفض أسلوب إل؟",
+      "a": "إيدي",
+      "alt": [
+        "هيديكي إيدي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-400-089"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق42؟",
-      "a": "أثر المذكرة ق42",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ماذا فعل والد لايت ليوقف البث في مبنى القناة؟",
+      "a": "اقتحمه بشاحنة",
+      "alt": [
+        "بشاحنة",
+        "اقتحم المبنى بشاحنة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-090"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق43؟",
-      "a": "أثر المذكرة ق43",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما اسم البرنامج الذي كرّسته قناة ساكورا لتمجيد كيرا؟",
+      "a": "مملكة كيرا",
+      "alt": [
+        "Kira's Kingdom"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Sakura_TV",
       "verified": true,
       "qid": "deathnote-400-091"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق44؟",
-      "a": "أثر المذكرة ق44",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "كم يومًا حبس إل لايت للتأكد من براءته؟",
+      "a": "خمسون يومًا",
+      "alt": [
+        "50 يومًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-092"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق45؟",
-      "a": "أثر المذكرة ق45",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما الجملة الأخيرة التي قالها ريوك للايت وهو يموت؟",
+      "a": "كان ممتعًا",
+      "alt": [
+        "لقد كان ممتعًا",
+        "كان الأمر ممتعًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-400-093"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق46؟",
-      "a": "أثر المذكرة ق46",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "بمَ ردّ لايت على أول بث ظهر فيه بديل إل؟",
+      "a": "قتله على الهواء",
+      "alt": [
+        "كتب اسمه فمات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-094"
     },
     {
       "p": 400,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق47؟",
-      "a": "أثر المذكرة ق47",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما القاعدة الزائفة التي برّأت لايت أمام الفريق؟",
+      "a": "قاعدة الثلاثة عشر يومًا",
+      "alt": [
+        "قاعدة 13 يومًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note",
       "verified": true,
       "qid": "deathnote-400-095"
     },
     {
       "p": 400,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ق48؟",
-      "a": "أثر المذكرة ق48",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما الذي يضعه إل في فنجانه بكثرة مبالغ فيها؟",
+      "a": "مكعبات السكر",
+      "alt": [
+        "السكر",
+        "قوالب سكر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-400-096"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س1؟",
-      "a": "أثر المذكرة س1",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم دقيقة وثانية تُتاح لكتابة تفاصيل الموت بعد كتابة سببه؟",
+      "a": "ست دقائق وأربعون ثانية",
+      "alt": [
+        "6 دقائق و40 ثانية"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-600-049"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س2؟",
-      "a": "أثر المذكرة س2",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم خطأً في كتابة الاسم يُنجي الضحية من الدفتر؟",
+      "a": "أربعة أخطاء",
+      "alt": [
+        "أربع مرات",
+        "4 أخطاء"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-600-050"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س3؟",
-      "a": "أثر المذكرة س3",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "من يستطيع رؤية إله الموت غير صاحب الدفتر؟",
+      "a": "كل من لمسه",
+      "alt": [
+        "من يلمس الدفتر",
+        "لامس الدفتر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-600-051"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س4؟",
-      "a": "أثر المذكرة س4",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ما مصير من استعمل الدفتر في الآخرة وفق قواعده؟",
+      "a": "لا جنة ولا نار",
+      "alt": [
+        "لا يدخل الجنة ولا النار"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-600-052"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س5؟",
-      "a": "أثر المذكرة س5",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "من الذي يستطيع إطالة عمره بالكتابة في الدفتر؟",
+      "a": "إله الموت وحده",
+      "alt": [
+        "الشينيغامي فقط",
+        "آلهة الموت"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-600-053"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س6؟",
-      "a": "أثر المذكرة س6",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم يومًا أقصى مهلة يستطيع الدفتر أن يؤخّر فيها الموت؟",
+      "a": "ثلاثة وعشرون يومًا",
+      "alt": [
+        "23 يومًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-600-054"
     },
     {
       "p": 600,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س7؟",
-      "a": "أثر المذكرة س7",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ماذا فعل لايت بملكية الدفتر كي يفقد ذاكرته ويخدع المحقق؟",
+      "a": "تخلّى عنها",
+      "alt": [
+        "تنازل عنها"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-600-055"
     },
     {
       "p": 600,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س8؟",
-      "a": "أثر المذكرة س8",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما اسم زميلة لايت الجامعية التي صارت الناطقة باسم كيرا؟",
+      "a": "كيومي تاكادا",
+      "alt": [
+        "تاكادا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Kiyomi_Takada",
       "verified": true,
       "qid": "deathnote-600-056"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س9؟",
-      "a": "أثر المذكرة س9",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "كيف قتل لايت كيرا الثالث بعد القبض عليه؟",
+      "a": "بقصاصة في ساعته",
+      "alt": [
+        "بورقة مخبأة في ساعته"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light%27s_watch",
       "verified": true,
       "qid": "deathnote-600-057"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س10؟",
-      "a": "أثر المذكرة س10",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما اللقب الذي تولّاه لايت بعد موت المحقق العظيم؟",
+      "a": "لقب إل",
+      "alt": [
+        "إل الثاني",
+        "خليفة إل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Japanese_Task_Force",
       "verified": true,
       "qid": "deathnote-600-058"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س11؟",
-      "a": "أثر المذكرة س11",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ماذا طلب لايت من ريوك أن يضيف إلى الدفتر ليبرّئ نفسه؟",
+      "a": "قاعدتين زائفتين",
+      "alt": [
+        "قواعد زائفة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note",
       "verified": true,
       "qid": "deathnote-600-059"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س12؟",
-      "a": "أثر المذكرة س12",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "من الذي اختاره لايت ليكون كيرا الرابع وينفّذ القتل عنه؟",
+      "a": "تيرو ميكامي",
+      "alt": [
+        "ميكامي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Teru_Mikami",
       "verified": true,
       "qid": "deathnote-600-060"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س13؟",
-      "a": "أثر المذكرة س13",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما اسم السجين الذي ظهر على الشاشة منتحلًا شخصية إل؟",
+      "a": "ليند إل تايلر",
+      "alt": [
+        "ليند تايلر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-600-061"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س14؟",
-      "a": "أثر المذكرة س14",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "في أي منطقة يابانية بُثّ ذلك الظهور ليحدّد موقع كيرا؟",
+      "a": "كانتو",
+      "alt": [
+        "منطقة كانتو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Kurou_Otoharada",
       "verified": true,
       "qid": "deathnote-600-062"
     },
     {
       "p": 600,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س15؟",
-      "a": "أثر المذكرة س15",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "كم تنخفض قدرة إل على الاستنتاج لو جلس جلسة عادية؟",
+      "a": "أربعين بالمئة",
+      "alt": [
+        "40%"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-600-063"
     },
     {
       "p": 600,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س16؟",
-      "a": "أثر المذكرة س16",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما اسم المحتال الذي استعان به إل في قضية يوتسوبا؟",
+      "a": "آيبر",
+      "alt": [
+        "أيبر",
+        "Aiber"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-600-064"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س17؟",
-      "a": "أثر المذكرة س17",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما اسم اللصة المحترفة التي استعان بها إل؟",
+      "a": "ويدي",
+      "alt": [
+        "Wedy"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-600-065"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س18؟",
-      "a": "أثر المذكرة س18",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ماذا قال إل إنه يسمعه على السطح تحت المطر قبل موته؟",
+      "a": "أجراسًا",
+      "alt": [
+        "أجراس",
+        "رنين أجراس"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-600-066"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س19؟",
-      "a": "أثر المذكرة س19",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما اسم إله الموت الذي سُرق دفتره وظل يبحث عنه؟",
+      "a": "سيدو",
+      "alt": [
+        "شيدو",
+        "Sidoh"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Sidoh",
       "verified": true,
       "qid": "deathnote-600-067"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س20؟",
-      "a": "أثر المذكرة س20",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "كم دفترًا للموت وُجد في عالم البشر خلال القصة؟",
+      "a": "أربعة",
+      "alt": [
+        "4 دفاتر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Death_Note_(object)",
       "verified": true,
       "qid": "deathnote-600-068"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س21؟",
-      "a": "أثر المذكرة س21",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما الذي يمنع آلهة الموت من إخبار البشر بأعمارهم؟",
+      "a": "قوانين عالمهم",
+      "alt": [
+        "قواعد الشينيغامي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-600-069"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س22؟",
-      "a": "أثر المذكرة س22",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ماذا يفعل ريوك حين يُحرم من التفاح مدة طويلة؟",
+      "a": "يلتوي جسده",
+      "alt": [
+        "يتلوّى",
+        "يقف على رأسه"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-600-070"
     },
     {
       "p": 600,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س23؟",
-      "a": "أثر المذكرة س23",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "من الذي يضع قواعد الدفتر ويملك تغييرها؟",
+      "a": "ملك آلهة الموت",
+      "alt": [
+        "الملك",
+        "ملك الشينيغامي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Death_Note_(object)",
       "verified": true,
       "qid": "deathnote-600-071"
     },
     {
       "p": 600,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س24؟",
-      "a": "أثر المذكرة س24",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "كيف ينتقل ريوك من عالمه إلى عالم البشر؟",
+      "a": "عبر بوابة",
+      "alt": [
+        "من بوابة",
+        "من ممر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Shinigami_Realm",
       "verified": true,
       "qid": "deathnote-600-072"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س25؟",
-      "a": "أثر المذكرة س25",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "كم مديرًا كان يحضر اجتماعات يوتسوبا؟",
+      "a": "ثمانية",
+      "alt": [
+        "8"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-600-073"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س26؟",
-      "a": "أثر المذكرة س26",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "كيف أوقعت ميسا بكيرا الثالث ودفعته للاعتراف؟",
+      "a": "سجّلت اعترافه سرًّا",
+      "alt": [
+        "بتسجيل صوتي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-600-074"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س27؟",
-      "a": "أثر المذكرة س27",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ماذا فقدت ميسا حين تخلّت عن دفترها؟",
+      "a": "قدرة عينيها",
+      "alt": [
+        "قوة العيون"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-600-075"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س28؟",
-      "a": "أثر المذكرة س28",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما اسم الحي الذي واعدت فيه كيرا الثانية كيرا الأول؟",
+      "a": "أوياما",
+      "alt": [
+        "آوياما",
+        "Aoyama"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-600-076"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س29؟",
-      "a": "أثر المذكرة س29",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما مهنة ميسا بعد انقطاع السنوات الخمس؟",
+      "a": "ممثلة",
+      "alt": [
+        "نجمة تمثيل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-600-077"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س30؟",
-      "a": "أثر المذكرة س30",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما الأثر الذي قاد إل إلى ميسا على أظرف الأشرطة؟",
+      "a": "شعرة وألياف",
+      "alt": [
+        "شعر وألياف ملابس"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-600-078"
     },
     {
       "p": 600,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س31؟",
-      "a": "أثر المذكرة س31",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الحرف الذي يمثّل ميلو؟",
+      "a": "حرف M",
+      "alt": [
+        "M",
+        "حرف إم"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-600-079"
     },
     {
       "p": 600,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س32؟",
-      "a": "أثر المذكرة س32",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "من خطف أخت لايت لمساومة الفريق على الدفتر؟",
+      "a": "ميلو",
+      "alt": [
+        "Mello"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-600-080"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س33؟",
-      "a": "أثر المذكرة س33",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الشيء الوحيد الذي طلبه ميلو من نير حين التقيا؟",
+      "a": "صورته الوحيدة",
+      "alt": [
+        "الصورة الوحيدة له"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/The_Wammy%27s_House",
       "verified": true,
       "qid": "deathnote-600-081"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س34؟",
-      "a": "أثر المذكرة س34",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "من سرّب أخبار نير إلى ميلو من داخل وحدته؟",
+      "a": "هالي ليدنر",
+      "alt": [
+        "ليدنر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-600-082"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س35؟",
-      "a": "أثر المذكرة س35",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ماذا فعل ميلو بمخبأ المافيا حين حاصره الفريق؟",
+      "a": "فجّره",
+      "alt": [
+        "نسفه",
+        "فجّر المكان"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-600-083"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س36؟",
-      "a": "أثر المذكرة س36",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "كيف علم ميلو أن قاعدة الأيام الثلاثة عشر زائفة؟",
+      "a": "أخبره إله الموت",
+      "alt": [
+        "من سيدو",
+        "من الشينيغامي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-600-084"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س37؟",
-      "a": "أثر المذكرة س37",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما اسم الشرطي الذي مات وهو يقتحم مبنى قناة ساكورا؟",
+      "a": "أوكيتا",
+      "alt": [
+        "هيروكازو أوكيتا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-600-085"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س38؟",
-      "a": "أثر المذكرة س38",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما الوثائق المزيفة التي وزّعها إل على أعضاء الفريق؟",
+      "a": "شارات شرطة مزيفة",
+      "alt": [
+        "شارات مزورة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-600-086"
     },
     {
       "p": 600,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س39؟",
-      "a": "أثر المذكرة س39",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ماذا حدث لوالد لايت في اقتحام مخبأ المافيا؟",
+      "a": "أُصيب إصابة قاتلة",
+      "alt": [
+        "جُرح جرحًا مميتًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-600-087"
     },
     {
       "p": 600,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س40؟",
-      "a": "أثر المذكرة س40",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ماذا ضحّى به والد لايت ليرى أسماء رجال المافيا؟",
+      "a": "بنصف عمره",
+      "alt": [
+        "نصف عمره"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-600-088"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س41؟",
-      "a": "أثر المذكرة س41",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ماذا محا واتاري من الحواسيب قبل أن يموت؟",
+      "a": "كل بيانات القضية",
+      "alt": [
+        "ملفات التحقيق"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-600-089"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س42؟",
-      "a": "أثر المذكرة س42",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "أي دولة أنشأت وحدة SPK لملاحقة كيرا؟",
+      "a": "الولايات المتحدة",
+      "alt": [
+        "أمريكا",
+        "أميركا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-600-090"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س43؟",
-      "a": "أثر المذكرة س43",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ماذا يحدث لكل من لمس الدفتر لو أُحرق، وفق القاعدة الزائفة الثانية؟",
+      "a": "يموتون جميعًا",
+      "alt": [
+        "يموت كل من لمسه"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note",
       "verified": true,
       "qid": "deathnote-600-091"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س44؟",
-      "a": "أثر المذكرة س44",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "كيف كان لايت يكتب الأسماء وهو تحت الكاميرات؟",
+      "a": "في زاوية عمياء",
+      "alt": [
+        "في نقطة عمياء",
+        "بعيدًا عن الكاميرات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Trash",
       "verified": true,
       "qid": "deathnote-600-092"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س45؟",
-      "a": "أثر المذكرة س45",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "أين كان ميكامي يحتفظ بالدفتر الحقيقي؟",
+      "a": "في خزنة مصرف",
+      "alt": [
+        "صندوق أمانات في بنك",
+        "خزينة بنك"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Answer",
       "verified": true,
       "qid": "deathnote-600-093"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س46؟",
-      "a": "أثر المذكرة س46",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما الذي كشف أن لايت هو كيرا في المواجهة الأخيرة؟",
+      "a": "الدفتر المزيّف",
+      "alt": [
+        "النسخة المزيفة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Teru_Mikami",
       "verified": true,
       "qid": "deathnote-600-094"
     },
     {
       "p": 600,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س47؟",
-      "a": "أثر المذكرة س47",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "من دوّنت اسم ميلو في قصاصة الدفتر فقتلته؟",
+      "a": "تاكادا",
+      "alt": [
+        "كيومي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Kiyomi_Takada",
       "verified": true,
       "qid": "deathnote-600-095"
     },
     {
       "p": 600,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود س48؟",
-      "a": "أثر المذكرة س48",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما الذي رآه لايت أمامه في لحظة موته في الأنمي؟",
+      "a": "طيف إل",
+      "alt": [
+        "شبح إل",
+        "خيال إل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-600-096"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث1؟",
-      "a": "أثر المذكرة ث1",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم دفتر موت مسموح بوجودها في عالم البشر معًا؟",
+      "a": "ستة",
+      "alt": [
+        "6",
+        "ست مذكرات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-800-049"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث2؟",
-      "a": "أثر المذكرة ث2",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ما أقصى عمر لا يستطيع الدفتر قتل من تجاوزه؟",
+      "a": "مئة وأربعة وعشرون عامًا",
+      "alt": [
+        "124 عامًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-800-050"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث3؟",
-      "a": "أثر المذكرة ث3",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم دقيقة على الأقل يجب أن تبقى من عمر الضحية ليعمل الدفتر؟",
+      "a": "اثنتا عشرة دقيقة",
+      "alt": [
+        "12 دقيقة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-800-051"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث4؟",
-      "a": "أثر المذكرة ث4",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "دون أي سنّ بالأيام لا يؤثر الدفتر في الطفل؟",
+      "a": "780 يومًا",
+      "alt": [
+        "سبعمئة وثمانين يومًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-800-052"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث5؟",
-      "a": "أثر المذكرة ث5",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم مرة يمكن أن تعود ذكريات الدفتر إلى صاحبه؟",
+      "a": "ست مرات",
+      "alt": [
+        "6 مرات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-800-053"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث6؟",
-      "a": "أثر المذكرة ث6",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "خلال كم يومًا يجب أن يظهر إله الموت أمام من استعمل دفتره؟",
+      "a": "تسعة وثلاثين يومًا",
+      "alt": [
+        "39 يومًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-800-054"
     },
     {
       "p": 800,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث7؟",
-      "a": "أثر المذكرة ث7",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "بأي صفة عرّف لايت نفسه لناومي ليكسب ثقتها؟",
+      "a": "ابن مدير الشرطة",
+      "alt": [
+        "ابن رئيس التحقيق"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Naomi_Misora",
       "verified": true,
       "qid": "deathnote-800-055"
     },
     {
       "p": 800,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث8؟",
-      "a": "أثر المذكرة ث8",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما الشيء الذي مكّن لايت من القتل وهو محاط بالمراقبين؟",
+      "a": "ساعته",
+      "alt": [
+        "ساعة يده"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light%27s_watch",
       "verified": true,
       "qid": "deathnote-800-056"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث9؟",
-      "a": "أثر المذكرة ث9",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما اللقب الذي يطلقه ميكامي على لايت؟",
+      "a": "إلهي",
+      "alt": [
+        "الإله",
+        "إلهنا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Teru_Mikami",
       "verified": true,
       "qid": "deathnote-800-057"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث10؟",
-      "a": "أثر المذكرة ث10",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "كم كان عمر لايت حين وجد الدفتر؟",
+      "a": "سبعة عشر عامًا",
+      "alt": [
+        "17 سنة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-800-058"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث11؟",
-      "a": "أثر المذكرة ث11",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "إلى من كان لايت يمرّر أوامره عبر تاكادا؟",
+      "a": "ميكامي",
+      "alt": [
+        "تيرو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Teru_Mikami",
       "verified": true,
       "qid": "deathnote-800-059"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث12؟",
-      "a": "أثر المذكرة ث12",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "كم كاميرا زرع إل في غرفة لايت وحدها؟",
+      "a": "أربعًا وستين",
+      "alt": [
+        "64 كاميرا",
+        "64"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-060"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث13؟",
-      "a": "أثر المذكرة ث13",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما الاسم المستعار الذي كان إل يعمل به كمحقق منافس لنفسه؟",
+      "a": "إيرالدو كويل",
+      "alt": [
+        "كويل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-061"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث14؟",
-      "a": "أثر المذكرة ث14",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "في أي بطولة تنس فاز إل في صباه بإنجلترا؟",
+      "a": "كأس إنجلترا للناشئين",
+      "alt": [
+        "بطولة الناشئين الإنجليزية"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-062"
     },
     {
       "p": 800,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث15؟",
-      "a": "أثر المذكرة ث15",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "كم كان عمر إل حين عثر عليه واتاري وضمّه إلى الميتم؟",
+      "a": "ثماني سنوات",
+      "alt": [
+        "8 سنوات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-063"
     },
     {
       "p": 800,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث16؟",
-      "a": "أثر المذكرة ث16",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ماذا فعل إل بقدمي لايت على السطح بعد المطر؟",
+      "a": "جفّفهما ودلّكهما",
+      "alt": [
+        "دلّك قدميه"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-064"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث17؟",
-      "a": "أثر المذكرة ث17",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما الاسم المستعار الآخر الذي كان إل ينتحله كمحقق في أوروبا؟",
+      "a": "دونوف",
+      "alt": [
+        "دنوف",
+        "Deneuve"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-065"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث18؟",
-      "a": "أثر المذكرة ث18",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ماذا يحدث لإله موت يقتل إنسانًا بغير الدفتر؟",
+      "a": "يُعدم",
+      "alt": [
+        "يُقتل",
+        "أقسى عقوبة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-800-066"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث19؟",
-      "a": "أثر المذكرة ث19",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "لماذا كان سيدو مستعجلًا في استعادة دفتره؟",
+      "a": "لأن عمره أوشك",
+      "alt": [
+        "عمره كاد ينتهي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Sidoh",
       "verified": true,
       "qid": "deathnote-800-067"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث20؟",
-      "a": "أثر المذكرة ث20",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "بمَ يلفّ سيدو رأسه ووجهه؟",
+      "a": "بالضمادات",
+      "alt": [
+        "ضمادات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Sidoh",
       "verified": true,
       "qid": "deathnote-800-068"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث21؟",
-      "a": "أثر المذكرة ث21",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ممّن أنقذ جيلوس ميسا حين ضحّى بنفسه؟",
+      "a": "من مطارد مهووس",
+      "alt": [
+        "من ملاحق مهووس"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-800-069"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث22؟",
-      "a": "أثر المذكرة ث22",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما الشيء الذي يملكه كل إله موت ولا يجوز لإنسان أن يكتب فيه؟",
+      "a": "دفتره الشخصي",
+      "alt": [
+        "الدفتر الخاص به"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-800-070"
     },
     {
       "p": 800,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث23؟",
-      "a": "أثر المذكرة ث23",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما الاسم المستعار الذي عمل به ماتسودا مديرًا لأعمال ميسا؟",
+      "a": "تارو ماتسوي",
+      "alt": [
+        "ماتسوي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-800-071"
     },
     {
       "p": 800,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث24؟",
-      "a": "أثر المذكرة ث24",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "في أي يوم من الأسبوع كان مديرو يوتسوبا يجتمعون؟",
+      "a": "الجمعة",
+      "alt": [
+        "يوم الجمعة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-800-072"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث25؟",
-      "a": "أثر المذكرة ث25",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما المنصب الذي شغله كيرا الثالث في شركته؟",
+      "a": "مدير تطوير التقنية",
+      "alt": [
+        "رئيس قسم التقنية"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-800-073"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث26؟",
-      "a": "أثر المذكرة ث26",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "كيف انتهى بقية مديري يوتسوبا بعد انكشاف أمرهم؟",
+      "a": "ماتوا بنوبات قلبية",
+      "alt": [
+        "قتلهم كيرا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-800-074"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث27؟",
-      "a": "أثر المذكرة ث27",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "بأي حيلة استدرج الفريق كيرا الثالث عبر التلفاز؟",
+      "a": "جعلوا ماتسودا طُعمًا",
+      "alt": [
+        "استعملوا ماتسودا طعمًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-075"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث28؟",
-      "a": "أثر المذكرة ث28",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الاسم الحقيقي لنير؟",
+      "a": "نيت ريفر",
+      "alt": [
+        "Nate River"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-800-076"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث29؟",
-      "a": "أثر المذكرة ث29",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الاسم الحقيقي لميلو؟",
+      "a": "ميهايل كيل",
+      "alt": [
+        "ميهائيل كيل"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-800-077"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث30؟",
-      "a": "أثر المذكرة ث30",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الاسم الحقيقي لواتاري؟",
+      "a": "كويلش وامي",
+      "alt": [
+        "كويلش ويمي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Watari",
       "verified": true,
       "qid": "deathnote-800-078"
     },
     {
       "p": 800,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث31؟",
-      "a": "أثر المذكرة ث31",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "من بدّل دفتر ميكامي بنسخة مزيّفة؟",
+      "a": "جيفاني",
+      "alt": [
+        "ستيفن جيفاني"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Teru_Mikami",
       "verified": true,
       "qid": "deathnote-800-079"
     },
     {
       "p": 800,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث32؟",
-      "a": "أثر المذكرة ث32",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما اسم صديق ميلو الذي شاركه خطف الناطقة باسم كيرا؟",
+      "a": "مات",
+      "alt": [
+        "Matt"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/The_Wammy%27s_House",
       "verified": true,
       "qid": "deathnote-800-080"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث33؟",
-      "a": "أثر المذكرة ث33",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "من تولّى دور واتاري ليخدم نير بعد ذلك؟",
+      "a": "روجر",
+      "alt": [
+        "روجر روفي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/The_Wammy%27s_House",
       "verified": true,
       "qid": "deathnote-800-081"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث34؟",
-      "a": "أثر المذكرة ث34",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما اسم مدير الشرطة اليابانية الذي خُطف أولًا؟",
+      "a": "تاكيمورا",
+      "alt": [
+        "كانيتشي تاكيمورا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-800-082"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث35؟",
-      "a": "أثر المذكرة ث35",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ماذا أعطى إل لأعضاء الفريق ليستنجدوا به عند الخطر؟",
+      "a": "إبزيم حزام",
+      "alt": [
+        "مشبك حزام",
+        "أبازيم"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-083"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث36؟",
-      "a": "أثر المذكرة ث36",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "بمن أوهم الفريق ميلو ليحموا لايت؟",
+      "a": "بأن ماتسودا هو إل",
+      "alt": [
+        "قالوا إن ماتسودا هو إل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-800-084"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث37؟",
-      "a": "أثر المذكرة ث37",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "كم ضابطًا بقي مع إل بعد انسحاب معظم رجال الشرطة؟",
+      "a": "خمسة ضباط",
+      "alt": [
+        "خمسة",
+        "5"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-085"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث38؟",
-      "a": "أثر المذكرة ث38",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "من احتجزت وحدة نير من الفريق الياباني مع ميسا؟",
+      "a": "موغي وميسا",
+      "alt": [
+        "موغي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Japanese_Task_Force",
       "verified": true,
       "qid": "deathnote-800-086"
     },
     {
       "p": 800,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث39؟",
-      "a": "أثر المذكرة ث39",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما اسم الجهاز الأمني الياباني الذي ينتمي إليه أفراد الفريق؟",
+      "a": "الوكالة الوطنية للشرطة",
+      "alt": [
+        "شرطة اليابان الوطنية",
+        "NPA"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Japanese_Task_Force",
       "verified": true,
       "qid": "deathnote-800-087"
     },
     {
       "p": 800,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث40؟",
-      "a": "أثر المذكرة ث40",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "بأي أداة كان ميكامي يفحص دفتره كل يوم؟",
+      "a": "بالمجهر",
+      "alt": [
+        "مجهر",
+        "ميكروسكوب"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Teru_Mikami",
       "verified": true,
       "qid": "deathnote-800-088"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث41؟",
-      "a": "أثر المذكرة ث41",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما الكلمة التي يردّدها ميكامي كلما كتب اسمًا؟",
+      "a": "حذف",
+      "alt": [
+        "ساكوجو",
+        "sakujo"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Delete",
       "verified": true,
       "qid": "deathnote-800-089"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث42؟",
-      "a": "أثر المذكرة ث42",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما الاسم الذي أعطته ناومي للايت بدل اسمها الحقيقي؟",
+      "a": "شوكو ماكي",
+      "alt": [
+        "شوكو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Naomi_Misora",
       "verified": true,
       "qid": "deathnote-800-090"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث43؟",
-      "a": "أثر المذكرة ث43",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "كم رصاصة أطلقها ماتسودا على لايت؟",
+      "a": "أربع رصاصات",
+      "alt": [
+        "4 رصاصات"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-800-091"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث44؟",
-      "a": "أثر المذكرة ث44",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ما اللقب الذي عُرفت به تاكادا في جامعتها؟",
+      "a": "آنسة تو-أوه",
+      "alt": [
+        "مس تو-أوه",
+        "ملكة الجامعة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Kiyomi_Takada",
       "verified": true,
       "qid": "deathnote-800-092"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث45؟",
-      "a": "أثر المذكرة ث45",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أصوات الشخصيات",
+      "q": "من مؤدي صوت لايت في الأنمي الياباني؟",
+      "a": "مامورو ميانو",
+      "alt": [
+        "ميانو مامورو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-800-093"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث46؟",
-      "a": "أثر المذكرة ث46",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أصوات الشخصيات",
+      "q": "من مؤدي صوت إل في الأنمي الياباني؟",
+      "a": "كابي ياماغوتشي",
+      "alt": [
+        "ياماغوتشي كابي",
+        "كابي ياماجوتشي"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-800-094"
     },
     {
       "p": 800,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث47؟",
-      "a": "أثر المذكرة ث47",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أصوات الشخصيات",
+      "q": "من مؤدية صوت ميسا في الأنمي الياباني؟",
+      "a": "آيا هيرانو",
+      "alt": [
+        "أيا هيرانو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-800-095"
     },
     {
       "p": 800,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ث48؟",
-      "a": "أثر المذكرة ث48",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أصوات الشخصيات",
+      "q": "من مؤدي صوت ريوك في الأنمي الياباني؟",
+      "a": "شيدو ناكامورا",
+      "alt": [
+        "ناكامورا شيدو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-800-096"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص1؟",
-      "a": "أثر المذكرة ص1",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم يومًا يملك صاحب الدفتر لاستعادته إن سُرق قبل أن يفقد ملكيته؟",
+      "a": "490 يومًا",
+      "alt": [
+        "أربعمئة وتسعين يومًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-1000-049"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص2؟",
-      "a": "أثر المذكرة ص2",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "ما الفارق الزمني الذي يجعل الكتابة في دفترين متزامنة فلا يموت أحد؟",
+      "a": "0.06 ثانية",
+      "alt": [
+        "ست من مئة من الثانية"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-1000-050"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص3؟",
-      "a": "أثر المذكرة ص3",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم إنسانًا يحقّ لإله موت واحد أن يسلّمهم دفاتر في وقت واحد؟",
+      "a": "ثلاثة بشر",
+      "alt": [
+        "ثلاثة",
+        "3"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-1000-051"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص4؟",
-      "a": "أثر المذكرة ص4",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم درجة عقوبة في قوانين عالم آلهة الموت؟",
+      "a": "تسع درجات",
+      "alt": [
+        "9 درجات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-1000-052"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص5؟",
-      "a": "أثر المذكرة ص5",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "إلى كم ترتفع حدّة إبصار من نال عيني إله الموت؟",
+      "a": "3.6",
+      "alt": [
+        "أكثر من 3.6"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-1000-053"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص6؟",
-      "a": "أثر المذكرة ص6",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "المذكرة وقواعدها",
+      "q": "كم يومًا تقريبًا يمكن كتابة سبب الموت قبل كتابة الاسم؟",
+      "a": "تسعة عشر يومًا",
+      "alt": [
+        "19 يومًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-1000-054"
     },
     {
       "p": 1000,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص7؟",
-      "a": "أثر المذكرة ص7",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "كم مرة يجب سحب تاج ساعة لايت ليُفتح تجويفها السري؟",
+      "a": "أربع مرات",
+      "alt": [
+        "4 مرات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light%27s_watch",
       "verified": true,
       "qid": "deathnote-1000-055"
     },
     {
       "p": 1000,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص8؟",
-      "a": "أثر المذكرة ص8",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "كم كلّف التلفاز الصغير الذي أخفاه لايت في كيس الرقائق؟",
+      "a": "نحو أربعين ألف ين",
+      "alt": [
+        "39,800 ين"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Trash",
       "verified": true,
       "qid": "deathnote-1000-056"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص9؟",
-      "a": "أثر المذكرة ص9",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "كم كان عمر لايت في المواجهة الأخيرة؟",
+      "a": "ثلاثة وعشرون عامًا",
+      "alt": [
+        "23 عامًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light_Yagami",
       "verified": true,
       "qid": "deathnote-1000-057"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص10؟",
-      "a": "أثر المذكرة ص10",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "لمن أعاد لايت الدفتر المسروق ليكفّ عن التدخل؟",
+      "a": "لسيدو",
+      "alt": [
+        "إلى سيدو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Sidoh",
       "verified": true,
       "qid": "deathnote-1000-058"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص11؟",
-      "a": "أثر المذكرة ص11",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "لايت وكيرا",
+      "q": "ما الشيء الذي وضعه لايت مع القصاصة داخل ساعته ليستخرج دمه؟",
+      "a": "إبرة",
+      "alt": [
+        "إبرة صغيرة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Light%27s_watch",
       "verified": true,
       "qid": "deathnote-1000-059"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص12؟",
-      "a": "أثر المذكرة ص12",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما الاسم الحقيقي لإل؟",
+      "a": "إل لاولييت",
+      "alt": [
+        "لاولييت",
+        "L Lawliet"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-1000-060"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص13؟",
-      "a": "أثر المذكرة ص13",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ماذا يستطيع إل أن يفعل بعودَي كرز داخل فمه؟",
+      "a": "يعقدهما",
+      "alt": [
+        "يربطهما عقدة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-1000-061"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص14؟",
-      "a": "أثر المذكرة ص14",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "بأي أسلوب قتالي شُبّهت ركلات إل؟",
+      "a": "الكابويرا",
+      "alt": [
+        "كابويرا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-1000-062"
     },
     {
       "p": 1000,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص15؟",
-      "a": "أثر المذكرة ص15",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ما نسبة الشك التي أعلنها إل تجاه لايت في أول مواجهة؟",
+      "a": "واحد بالمئة",
+      "alt": [
+        "1%"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-1000-063"
     },
     {
       "p": 1000,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص16؟",
-      "a": "أثر المذكرة ص16",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "ماذا كان إل يصنع بقطع السكر وحلوياته وهو يفكر؟",
+      "a": "يرصفها أبراجًا",
+      "alt": [
+        "يبني بها أبراجًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-1000-064"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص17؟",
-      "a": "أثر المذكرة ص17",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "إل والتحقيق",
+      "q": "كم سنة أمضى إل في إنجلترا في صباه؟",
+      "a": "خمس سنوات",
+      "alt": [
+        "5 سنوات"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-1000-065"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص18؟",
-      "a": "أثر المذكرة ص18",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ما اسم إله الموت الذي يقف عن يمين ملكهم؟",
+      "a": "أرمونيا جاستن",
+      "alt": [
+        "أرمونيا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-1000-066"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص19؟",
-      "a": "أثر المذكرة ص19",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ماذا يجب أن يكتب إله الموت في دفتره ليعود إلى عالمه؟",
+      "a": "اسم صاحب الدفتر الأول",
+      "alt": [
+        "اسم أول صاحب للدفتر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-1000-067"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص20؟",
-      "a": "أثر المذكرة ص20",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ماذا طلب ريوك من لايت هدية في عيد الميلاد؟",
+      "a": "جهاز ألعاب محمول",
+      "alt": [
+        "غيم بوي",
+        "جهاز ألعاب"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-1000-068"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص21؟",
-      "a": "أثر المذكرة ص21",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "كم ساعة يُسمح لإله الموت بالبقاء بين البشر وهو يترصّد إنسانًا؟",
+      "a": "82 ساعة",
+      "alt": [
+        "اثنتين وثمانين ساعة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rules_of_the_Death_Note/How_to_Read_Rules",
       "verified": true,
       "qid": "deathnote-1000-069"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص22؟",
-      "a": "أثر المذكرة ص22",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "آلهة الموت",
+      "q": "ممّن يخجل ريوك على غير عادته؟",
+      "a": "من الفتيات",
+      "alt": [
+        "من النساء"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Ryuk",
       "verified": true,
       "qid": "deathnote-1000-070"
     },
     {
       "p": 1000,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص23؟",
-      "a": "أثر المذكرة ص23",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "في أي طابق من مقر يوتسوبا كانت الاجتماعات تُعقد؟",
+      "a": "الطابق التاسع عشر",
+      "alt": [
+        "الطابق 19"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-1000-071"
     },
     {
       "p": 1000,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص24؟",
-      "a": "أثر المذكرة ص24",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "من مدير يوتسوبا الذي يجيد الشوغي بدرجة احتراف؟",
+      "a": "ناميكاوا",
+      "alt": [
+        "ريجي ناميكاوا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-1000-072"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص25؟",
-      "a": "أثر المذكرة ص25",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "من مدير يوتسوبا الذي قتله كيرا الثالث داخل الاجتماع؟",
+      "a": "هاتوري",
+      "alt": [
+        "آرايوشي هاتوري"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Yotsuba_Group",
       "verified": true,
       "qid": "deathnote-1000-073"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص26؟",
-      "a": "أثر المذكرة ص26",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما أسلوب الأزياء الذي ظهرت به ميسا فصار علامتها؟",
+      "a": "القوطي اللوليتا",
+      "alt": [
+        "غوثيك لوليتا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Misa_Amane",
       "verified": true,
       "qid": "deathnote-1000-074"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص27؟",
-      "a": "أثر المذكرة ص27",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "ميسا ويوتسوبا",
+      "q": "ما اسم الفتاة التي بادلت ميسا ملابسها لتفلت من الرقابة؟",
+      "a": "نوري",
+      "alt": [
+        "Nori"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/To-Oh_University",
       "verified": true,
       "qid": "deathnote-1000-075"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص28؟",
-      "a": "أثر المذكرة ص28",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "في أي مدينة إنجليزية يقع ميتم خلفاء إل؟",
+      "a": "ونشستر",
+      "alt": [
+        "وينشستر"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/The_Wammy%27s_House",
       "verified": true,
       "qid": "deathnote-1000-076"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص29؟",
-      "a": "أثر المذكرة ص29",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "من الرسّامة التي رسمت صورتي نير وميلو للفريق؟",
+      "a": "ليندا",
+      "alt": [
+        "Linda"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/The_Wammy%27s_House",
       "verified": true,
       "qid": "deathnote-1000-077"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص30؟",
-      "a": "أثر المذكرة ص30",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الاسم الحقيقي لمات صديق ميلو؟",
+      "a": "مايل جيفاس",
+      "alt": [
+        "Mail Jeevas"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-1000-078"
     },
     {
       "p": 1000,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص31؟",
-      "a": "أثر المذكرة ص31",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "داخل أي شيء وُضع الدفتر حين سُلّم لميلو؟",
+      "a": "داخل صاروخ",
+      "alt": [
+        "في صاروخ"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-1000-079"
     },
     {
       "p": 1000,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص32؟",
-      "a": "أثر المذكرة ص32",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما اسم زعيم المافيا الذي عمل معه ميلو؟",
+      "a": "رود روس",
+      "alt": [
+        "رود"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-1000-080"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص33؟",
-      "a": "أثر المذكرة ص33",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "نير وميلو",
+      "q": "ما الشيء الذي رماه نير من نوافذ مقرّه لينجو من الحشد؟",
+      "a": "النقود",
+      "alt": [
+        "المال",
+        "الأموال"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Sakura_TV",
       "verified": true,
       "qid": "deathnote-1000-081"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص34؟",
-      "a": "أثر المذكرة ص34",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما الاسم الحقيقي للمحتال آيبر؟",
+      "a": "تيري موريلو",
+      "alt": [
+        "تييري موريلو"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-1000-082"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص35؟",
-      "a": "أثر المذكرة ص35",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما الاسم الحقيقي للصة ويدي؟",
+      "a": "ماري كينوود",
+      "alt": [
+        "ماري كنوود"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-1000-083"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص36؟",
-      "a": "أثر المذكرة ص36",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما الاسم المستعار الذي استعمله موغي في التحقيق؟",
+      "a": "كانيتشي موجي",
+      "alt": [
+        "موجي كانيتشي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-1000-084"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص37؟",
-      "a": "أثر المذكرة ص37",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما الاسم المستعار الذي استعمله أيزاوا في التحقيق؟",
+      "a": "آيهارا",
+      "alt": [
+        "أيهارا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-1000-085"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص38؟",
-      "a": "أثر المذكرة ص38",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ماذا فعل إل لتغطية خطأ ماتسودا داخل مقر يوتسوبا؟",
+      "a": "زيّف موته",
+      "alt": [
+        "جعله يزيّف موته"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/L_(character)",
       "verified": true,
       "qid": "deathnote-1000-086"
     },
     {
       "p": 1000,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص39؟",
-      "a": "أثر المذكرة ص39",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "فرقة التحقيق",
+      "q": "ما الاسم المستعار الذي استعمله والد لايت؟",
+      "a": "يونجورو آساهي",
+      "alt": [
+        "آساهي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters",
       "verified": true,
       "qid": "deathnote-1000-087"
     },
     {
       "p": 1000,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص40؟",
-      "a": "أثر المذكرة ص40",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ماذا دوّن ميكامي في النسخة التي ظنّها حقيقية داخل المستودع؟",
+      "a": "أسماء الحاضرين",
+      "alt": [
+        "أسماء كل الحاضرين"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Teru_Mikami",
       "verified": true,
       "qid": "deathnote-1000-088"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص41؟",
-      "a": "أثر المذكرة ص41",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "ماذا فعلت تاكادا بكل ما حولها قبل أن تموت؟",
+      "a": "أضرمت النار",
+      "alt": [
+        "أشعلت حريقًا"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Teru_Mikami",
       "verified": true,
       "qid": "deathnote-1000-089"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص42؟",
-      "a": "أثر المذكرة ص42",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "كم دقيقة استغرق حصار سيارة كيرا الثالث حتى القبض عليه؟",
+      "a": "أربعون دقيقة",
+      "alt": [
+        "40 دقيقة"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-1000-090"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص43؟",
-      "a": "أثر المذكرة ص43",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "أين أحرق لايت ما يخصّ الدفتر بعيدًا عن بيته؟",
+      "a": "في مبنى مهجور",
+      "alt": [
+        "مبنى خرب"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Current",
       "verified": true,
       "qid": "deathnote-1000-091"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص44؟",
-      "a": "أثر المذكرة ص44",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "مشاهد ونهايات",
+      "q": "بمَ وصف نير الدفتر في المواجهة الأخيرة؟",
+      "a": "أسوأ سلاح في التاريخ",
+      "alt": [
+        "أسوأ سلاح قتل"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Death_Note_(object)",
       "verified": true,
       "qid": "deathnote-1000-092"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص45؟",
-      "a": "أثر المذكرة ص45",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أصوات الشخصيات",
+      "q": "من مؤدية صوت نير في الأنمي الياباني؟",
+      "a": "نوريكو هيداكا",
+      "alt": [
+        "هيداكا نوريكو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Near",
       "verified": true,
       "qid": "deathnote-1000-093"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص46؟",
-      "a": "أثر المذكرة ص46",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أصوات الشخصيات",
+      "q": "من مؤدي صوت ميلو في الأنمي الياباني؟",
+      "a": "نوزومو ساساكي",
+      "alt": [
+        "ساساكي نوزومو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Mello",
       "verified": true,
       "qid": "deathnote-1000-094"
     },
     {
       "p": 1000,
-      "topic": "نهايات مواسم",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص47؟",
-      "a": "أثر المذكرة ص47",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أصوات الشخصيات",
+      "q": "من مؤدية صوت ريم في الأنمي الياباني؟",
+      "a": "كيميكو سايتو",
+      "alt": [
+        "سايتو كيميكو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Rem",
       "verified": true,
       "qid": "deathnote-1000-095"
     },
     {
       "p": 1000,
-      "topic": "عائلات وعشائر",
-      "q": "في «ديث نوت»، ما المسمى الداخلي المعدود ص48؟",
-      "a": "أثر المذكرة ص48",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أصوات الشخصيات",
+      "q": "من مؤدية صوت تاكادا في الأنمي الياباني؟",
+      "a": "مايا ساكاموتو",
+      "alt": [
+        "ساكاموتو مايا",
+        "ماآيا ساكاموتو"
+      ],
+      "sourceUrl": "https://deathnote.fandom.com/wiki/Kiyomi_Takada",
       "verified": true,
       "qid": "deathnote-1000-096"
     }
