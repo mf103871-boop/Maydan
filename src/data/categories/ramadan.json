@@ -5,2401 +5,2776 @@
   "qs": [
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الإمساك عن الطعام والشراب من الفجر إلى المغرب؟",
-      "a": "الصيام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ما اسم الوجبة التي يتناولها المسلمون قبل أذان الفجر في رمضان؟",
+      "a": "السحور",
+      "alt": [
+        "سحور"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AD%D9%88%D8%B1",
       "verified": true,
       "qid": "ramadan-200-001"
     },
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم وجبة ما قبل الفجر؟",
-      "a": "السحور",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ما اسم الوجبة التي تُفتتح بها ليلة رمضان بعد غروب الشمس؟",
+      "a": "الإفطار",
+      "alt": [
+        "إفطار"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-002"
     },
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم وجبة ما بعد المغرب؟",
-      "a": "الإفطار",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ما اسم صلاة الليل الجماعية التي تُقام في المساجد طوال ليالي رمضان؟",
+      "a": "التراويح",
+      "alt": [
+        "صلاة التراويح"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D9%88%D9%8A%D8%AD",
       "verified": true,
       "qid": "ramadan-200-003"
     },
     {
       "p": 200,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم العشر الأخيرة من الشهر؟",
-      "a": "العشر الأواخر",
+      "topic": "مفردات الشهر",
+      "q": "ماذا نسمي الامتناع عن الطعام والشراب من طلوع الفجر إلى غروب الشمس؟",
+      "a": "الصوم",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-004"
     },
     {
       "p": 200,
-      "topic": "مساجد ومدن",
-      "q": "ما المسجد الذي تقام فيه صلاة التراويح الكبرى في مكة؟",
-      "a": "الحرم المكي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ماذا نسمي من يمسك عن الطعام والشراب في نهار رمضان؟",
+      "a": "الصائم",
+      "alt": [
+        "صائم"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-005"
     },
     {
       "p": 200,
-      "topic": "مساجد ومدن",
-      "q": "ما المسجد الذي تقام فيه التراويح الكبرى في المدينة؟",
-      "a": "الحرم النبوي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "بأي عبارة شهيرة يهنّئ الناس بعضهم بعضًا عند دخول الشهر؟",
+      "a": "رمضان كريم",
+      "alt": [
+        "رمضان مبارك"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-006"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما الحساء الشامي الأشهر على المائدة؟",
-      "a": "شوربة العدس",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان نسبةً إلى الكتاب الذي بدأ نزوله فيه؟",
+      "a": "شهر القرآن",
+      "alt": [
+        "شهر نزول القرآن"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-007"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما المشروب الخشبي الشهير؟",
-      "a": "قمر الدين",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ما اسم لزوم المسجد في أواخر رمضان انقطاعًا للعبادة؟",
+      "a": "الاعتكاف",
+      "alt": [
+        "اعتكاف"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D8%B9%D8%AA%D9%83%D8%A7%D9%81",
       "verified": true,
       "qid": "ramadan-200-008"
     },
     {
       "p": 200,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل الفوانيس الشهير للأطفال؟",
-      "a": "بوجي وطمطم",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم المصباح المزخرف الذي يُعلَّق زينةً في الشوارع والبيوت في رمضان؟",
+      "a": "الفانوس",
+      "alt": [
+        "فانوس رمضان"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-009"
     },
     {
       "p": 200,
-      "topic": "إذاعة وشاشة",
-      "q": "ما برنامج المقالب الرمضاني القديم؟",
-      "a": "الكاميرا الخفية",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم الموائد المجانية التي تُقام في الشوارع لإطعام العابرين والمحتاجين؟",
+      "a": "موائد الرحمن",
+      "alt": [
+        "مائدة الرحمن"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%A6%D8%AF%D8%A9_%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86",
       "verified": true,
       "qid": "ramadan-200-010"
     },
     {
       "p": 200,
-      "topic": "تقاليد شعبية",
-      "q": "ما المصباح الزجاجي المعلق في الشوارع؟",
-      "a": "فانوس",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما الذي يُطلق صوته عند الغروب في عواصم عربية إيذانًا بانتهاء نهار رمضان؟",
+      "a": "مدفع رمضان",
+      "alt": [
+        "مدفع الإفطار",
+        "المدفع"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D9%81%D8%B9_%D8%A7%D9%84%D8%A5%D9%81%D8%B7%D8%A7%D8%B1",
       "verified": true,
       "qid": "ramadan-200-011"
     },
     {
       "p": 200,
-      "topic": "تقاليد شعبية",
-      "q": "ما الطبل الليلي الذي يوقظ الناس؟",
-      "a": "مسحر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ماذا يسمى المبلغ الذي يأخذه الأطفال من الكبار صبيحة العيد؟",
+      "a": "العيدية",
+      "alt": [
+        "عيدية"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%8A%D8%AF_%D8%A7%D9%84%D9%81%D8%B7%D8%B1",
       "verified": true,
       "qid": "ramadan-200-012"
     },
     {
       "p": 200,
-      "topic": "شخصيات وأحداث",
-      "q": "ما اسم أول صيام مفروض بعد الهجرة؟",
-      "a": "صيام السنة الثانية",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما لقب من يطوف بالحارات ليلًا قارعًا طبلته ليوقظ الناس قبل الفجر؟",
+      "a": "المسحراتي",
+      "alt": [
+        "المسحّر",
+        "المسحر"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AD%D8%B1%D8%A7%D8%AA%D9%8A",
       "verified": true,
       "qid": "ramadan-200-013"
     },
     {
       "p": 200,
-      "topic": "شخصيات وأحداث",
-      "q": "من الخليفة الذي جمع الناس على إمام واحد في التراويح؟",
-      "a": "عمر بن الخطاب",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما لقب راوي القصص الشعبية الذي يعود إلى المقاهي في ليالي رمضان؟",
+      "a": "الحكواتي",
+      "alt": [
+        "حكواتي",
+        "القصّاص"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%83%D9%88%D8%A7%D8%AA%D9%8A",
       "verified": true,
       "qid": "ramadan-200-014"
     },
     {
       "p": 200,
-      "topic": "تقاويم وأعداد",
-      "q": "كم يوما في الشهر القمري غالبا؟",
-      "a": "ثلاثون",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما الآلة التي يقرع عليها موقظ الناس للسحور وهو يجوب الحارات؟",
+      "a": "الطبل",
+      "alt": [
+        "الطبلة",
+        "طبل"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AD%D8%B1%D8%A7%D8%AA%D9%8A",
       "verified": true,
       "qid": "ramadan-200-015"
     },
     {
       "p": 200,
-      "topic": "تقاويم وأعداد",
-      "q": "ما أول أيام العيد بعد انتهاء الشهر؟",
-      "a": "عيد الفطر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الثمرة التي جرت العادة أن يبدأ بها الناس فطورهم في رمضان؟",
+      "a": "التمر",
+      "alt": [
+        "البلح",
+        "الرطب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%85%D8%B1",
       "verified": true,
       "qid": "ramadan-200-016"
     },
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الصلاة الليلية الجماعية في الشهر؟",
-      "a": "التراويح",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الحساء الأصفر الذي لا تكاد تخلو منه موائد رمضان في الشام ومصر؟",
+      "a": "شوربة العدس",
+      "alt": [
+        "حساء العدس",
+        "شوربة عدس"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%AF%D8%B3",
       "verified": true,
       "qid": "ramadan-200-017"
     },
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الزكاة الخاصة بنهاية الشهر؟",
-      "a": "زكاة الفطر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم الفطائر المثلثة المقلية التي تُحشى باللحم أو الجبن على مائدة رمضان؟",
+      "a": "السمبوسك",
+      "alt": [
+        "سمبوسة",
+        "السمبوسة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%85%D8%A8%D9%88%D8%B3%D8%A9",
       "verified": true,
       "qid": "ramadan-200-018"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما الحلوى السميدية الشامية؟",
-      "a": "قطايف",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق المصري الأخضر الذي يُفرم ورقه ويُطبخ بالثوم والكزبرة؟",
+      "a": "الملوخية",
+      "alt": [
+        "ملوخية"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%88%D8%AE%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-200-019"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما المشروب اللبني بالورد؟",
-      "a": "سحلب",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الحبّ الذي يُدمَّس ويكثر على موائد رمضان في البيوت المصرية؟",
+      "a": "الفول",
+      "alt": [
+        "الفول المدمس"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%88%D9%84_%D9%85%D8%AF%D9%85%D8%B3",
       "verified": true,
       "qid": "ramadan-200-020"
     },
     {
       "p": 200,
-      "topic": "إذاعة وشاشة",
-      "q": "ما برنامج المقالب المصري الأشهر؟",
-      "a": "الراجل ده جوزي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم الأطباق التي يُحشى فيها ورق العنب والكوسا بالأرز واللحم؟",
+      "a": "المحشي",
+      "alt": [
+        "محشي",
+        "المحاشي"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%B4%D9%8A",
       "verified": true,
       "qid": "ramadan-200-021"
     },
     {
       "p": 200,
-      "topic": "شخصيات وأحداث",
-      "q": "من مؤذن المسجد النبوي التاريخي الأشهر؟",
-      "a": "بلال",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق العربي القديم المصنوع من الخبز المفتوت واللحم والمرق؟",
+      "a": "الثريد",
+      "alt": [
+        "ثريد"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-200-022"
     },
     {
       "p": 200,
-      "topic": "تقاليد شعبية",
-      "q": "ما مدفع الإعلان عن المغرب في بعض العواصم؟",
-      "a": "مدفع الإفطار",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الحساء المغربي الذي يفتتح به المغاربة إفطارهم في رمضان؟",
+      "a": "الحريرة",
+      "alt": [
+        "حريرة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B1%D9%8A%D8%B1%D8%A9_%28%D8%B4%D9%88%D8%B1%D8%A8%D8%A9%29",
       "verified": true,
       "qid": "ramadan-200-023"
     },
     {
       "p": 200,
-      "topic": "تقاويم وأعداد",
-      "q": "ما اسم التقويم المعتمد للشهر؟",
-      "a": "التقويم الهجري",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق الخليجي المشهور من الأرز واللحم أو الدجاج على موائد العزائم؟",
+      "a": "الكبسة",
+      "alt": [
+        "كبسة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A8%D8%B3%D8%A9",
       "verified": true,
       "qid": "ramadan-200-024"
     },
     {
       "p": 200,
-      "topic": "تقاليد شعبية",
-      "q": "ما الطبق الجماعي في بعض الأزقة؟",
-      "a": "موائد الرحمن",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى الرمضانية التي تُصنع من عجين يُحشى بالقشطة أو الجوز ثم يُطوى؟",
+      "a": "القطايف",
+      "alt": [
+        "قطايف",
+        "القطائف"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B7%D8%A7%D9%8A%D9%81",
       "verified": true,
       "qid": "ramadan-200-025"
     },
     {
       "p": 200,
-      "topic": "شخصيات وأحداث",
-      "q": "ما غزوة وقعت في الشهر الثاني للهجرة خلال رمضان؟",
-      "a": "بدر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى المصنوعة من خيوط عجين رفيعة تُحشى بالجبن أو القشطة وتُسقى بالشيرة؟",
+      "a": "الكنافة",
+      "alt": [
+        "كنافة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%86%D8%A7%D9%81%D8%A9",
       "verified": true,
       "qid": "ramadan-200-026"
     },
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الدعاء عند كسر الصيام؟",
-      "a": "دعاء الإفطار",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما المشروب البرتقالي الذي يُصنع من المشمش المجفف ولا يغيب عن رمضان؟",
+      "a": "قمر الدين",
+      "alt": [
+        "قمر دين"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%85%D8%B1_%D8%A7%D9%84%D8%AF%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-200-027"
     },
     {
       "p": 200,
-      "topic": "تقاليد شعبية",
-      "q": "ما كلمة المسحر التقليدية؟",
-      "a": "قومي صحري",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما المشروب الأحمر الذي يُنقع من أزهار مجففة ويُشرب باردًا أو ساخنًا؟",
+      "a": "الكركديه",
+      "alt": [
+        "كركديه"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D9%83%D8%AF%D9%8A%D9%87",
       "verified": true,
       "qid": "ramadan-200-028"
     },
     {
       "p": 200,
-      "topic": "تقاويم وأعداد",
-      "q": "كم ركعة التراويح الأشهر في الحرمين حديثا؟",
-      "a": "عشرون",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الكعك المحشو بعجوة أو جوز الذي تصنعه البيوت استعدادًا للعيد؟",
+      "a": "المعمول",
+      "alt": [
+        "معمول",
+        "كعك بعجوة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D9%85%D9%88%D9%84",
       "verified": true,
       "qid": "ramadan-200-029"
     },
     {
       "p": 200,
-      "topic": "مساجد ومدن",
-      "q": "ما مدينة الأقصى؟",
-      "a": "القدس",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما المشروب الأسود الذي يُستخرج من جذور نبتة ويُباع في عربات رمضان؟",
+      "a": "العرقسوس",
+      "alt": [
+        "عرقسوس",
+        "عرق سوس"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B1%D9%82%D8%B3%D9%88%D8%B3",
       "verified": true,
       "qid": "ramadan-200-030"
     },
     {
       "p": 200,
-      "topic": "إذاعة وشاشة",
-      "q": "ما شخصية فوازير شريهان؟",
-      "a": "فطوطة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى المصنوعة من طبقات عجين رقيقة محشوة بالفستق والجوز؟",
+      "a": "البقلاوة",
+      "alt": [
+        "بقلاوة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%82%D9%84%D8%A7%D9%88%D8%A9",
       "verified": true,
       "qid": "ramadan-200-031"
     },
     {
       "p": 200,
-      "topic": "شخصيات وأحداث",
-      "q": "ما فتح مكة في أي شهر هجري شهير؟",
-      "a": "فتح رمضان",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى المصرية المصنوعة من رقائق العجين واللبن والقشطة والمكسرات؟",
+      "a": "أم علي",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%85_%D8%B9%D9%84%D9%8A_%28%D8%AD%D9%84%D9%88%D9%89%29",
       "verified": true,
       "qid": "ramadan-200-032"
     },
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الأذان الثاني للمغرب؟",
-      "a": "أذان المغرب",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى الحلزونية المقلية التي تُوزَّع صدقةً وتُرى صوانيها في المساجد؟",
+      "a": "الزلابية",
+      "alt": [
+        "زلابيا",
+        "الزلابيا"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%84%D8%A7%D8%A8%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-200-033"
     },
     {
       "p": 200,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق العيش بالسمن؟",
-      "a": "عيش سمن",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى المقلية المسقيّة بالشيرة التي تشبه ثمرة النخل في شكلها؟",
+      "a": "بلح الشام",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%84%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%85",
       "verified": true,
       "qid": "ramadan-200-034"
     },
     {
       "p": 200,
-      "topic": "تقاويم وأعداد",
-      "q": "ما عدد أيام الشهر إن تم؟",
-      "a": "تمام الشهر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "التقويم الهجري",
+      "q": "ما ترتيب رمضان بين شهور السنة الهجرية؟",
+      "a": "التاسع",
+      "alt": [
+        "تسعة",
+        "9"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-035"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب التمر الهندي الشامي؟",
-      "a": "تمر هندي شام",
+      "topic": "التقويم الهجري",
+      "q": "ما اسم الشهر الذي يأتي بعد رمضان مباشرة؟",
+      "a": "شوال",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%88%D8%A7%D9%84",
       "verified": true,
       "qid": "ramadan-200-036"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب الخروب الشامي؟",
-      "a": "خروب شام",
+      "topic": "التقويم الهجري",
+      "q": "ما اسم الشهر الذي يسبق رمضان؟",
+      "a": "شعبان",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%B9%D8%A8%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-037"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب العرقسوس الشامي؟",
-      "a": "عرقسوس شام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "التقويم الهجري",
+      "q": "ما اسم القمر في أول ليلة يُتحرّى فيها دخول الشهر الجديد؟",
+      "a": "الهلال",
+      "alt": [
+        "هلال"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D9%84%D8%A7%D9%84",
       "verified": true,
       "qid": "ramadan-200-038"
     },
     {
       "p": 200,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري الحادية؟",
-      "a": "تحري حادية",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "التقويم الهجري",
+      "q": "كم يومًا في شهر رمضان إذا تمّ الشهر؟",
+      "a": "ثلاثون",
+      "alt": [
+        "30"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-039"
     },
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم السحور المتأخر جدا؟",
-      "a": "سحور متأخر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "التقويم الهجري",
+      "q": "كم يومًا في شهر رمضان إذا نقص الشهر؟",
+      "a": "تسعة وعشرون",
+      "alt": [
+        "29"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-200-040"
     },
     {
       "p": 200,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام تبوك المدينة لا الغزوة؟",
-      "a": "تبوك مدينة عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أعظم مساجد المسلمين ويقع في مكة المكرمة؟",
+      "a": "المسجد الحرام",
+      "alt": [
+        "الحرم المكي"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%AD%D8%B1%D8%A7%D9%85",
       "verified": true,
       "qid": "ramadan-200-041"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب اللبن الرائب؟",
-      "a": "لبن رايب",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما اسم العيد الذي يأتي مباشرة بعد انقضاء رمضان؟",
+      "a": "عيد الفطر",
+      "alt": [
+        "الفطر"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%8A%D8%AF_%D8%A7%D9%84%D9%81%D8%B7%D8%B1",
       "verified": true,
       "qid": "ramadan-200-042"
     },
     {
       "p": 200,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى الزلابيا الشامية؟",
-      "a": "زلابيا شام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما اسم الليالي العشر الأخيرة من رمضان؟",
+      "a": "العشر الأواخر",
+      "alt": [
+        "العشر الأخيرة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%84%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
       "verified": true,
       "qid": "ramadan-200-043"
     },
     {
       "p": 200,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري الحادية تأكيدا لا؟",
-      "a": "حادية وتر",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما اسم أعظم ليالي رمضان وقد ذُكرت في سورة كاملة؟",
+      "a": "ليلة القدر",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%84%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
       "verified": true,
       "qid": "ramadan-200-044"
     },
     {
       "p": 200,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الفجر الفلكي؟",
-      "a": "فجر فلكي",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما اسم الصلاة التي تُقام في صباح أول أيام العيد؟",
+      "a": "صلاة العيد",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B9%D9%8A%D8%AF%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-200-045"
     },
     {
       "p": 200,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب التمر باللبن تأكيدا لا؟",
-      "a": "لبن تمر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما اسم الحلوى المستديرة المرشوشة بالسكر التي تُخبز في مصر للعيد؟",
+      "a": "كعك العيد",
+      "alt": [
+        "الكحك",
+        "كحك"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B9%D9%83_%D8%A7%D9%84%D8%B9%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-200-046"
     },
     {
       "p": 200,
-      "topic": "مساجد ومدن",
-      "q": "ما مدينة أملج تأكيدا لا؟",
-      "a": "أملج بحر",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما اسم الصدقة التي تُخرج في ختام رمضان وتُعرف بزكاة الأبدان؟",
+      "a": "زكاة الفطر",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%83%D8%A7%D8%A9_%D8%A7%D9%84%D9%81%D8%B7%D8%B1",
       "verified": true,
       "qid": "ramadan-200-047"
     },
     {
       "p": 200,
-      "topic": "تقاويم وأعداد",
-      "q": "ما جدول الهلال في سورينام؟",
-      "a": "جدول سورينام",
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ماذا يردد المسلمون في طريقهم إلى مصلى العيد؟",
+      "a": "التكبير",
+      "alt": [
+        "تكبيرات العيد"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%8A%D8%AF_%D8%A7%D9%84%D9%81%D8%B7%D8%B1",
       "verified": true,
-      "alt": [],
       "qid": "ramadan-200-048"
     },
     {
       "p": 400,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم السحور النبوي المستحب تأخيره؟",
-      "a": "تأخير السحور",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان نسبةً إلى حبس النفس عن الشهوات؟",
+      "a": "شهر الصبر",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-400-001"
     },
     {
       "p": 400,
-      "topic": "مائدة رمضان",
-      "q": "ما الحساء المغربي بالحمص؟",
-      "a": "الحريرة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ما اسم إحياء جزء من الليل بالصلاة وتلاوة القرآن؟",
+      "a": "قيام الليل",
+      "alt": [
+        "القيام"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%8A%D8%A7%D9%85_%D8%A7%D9%84%D9%84%D9%8A%D9%84",
       "verified": true,
       "qid": "ramadan-400-002"
     },
     {
       "p": 400,
-      "topic": "مائدة رمضان",
-      "q": "ما المشروب التمري العراقي؟",
-      "a": "شراب التمر",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان لكثرة العطاء والكرم فيه؟",
+      "a": "شهر الجود",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-400-003"
     },
     {
       "p": 400,
-      "topic": "تقاليد شعبية",
-      "q": "ما المدفع القاهري التاريخي؟",
-      "a": "مدفع القلعة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ما اسم الوقت الذي يسبق الفجر وسُمِّيت به وجبة رمضان الليلية؟",
+      "a": "السَّحَر",
+      "alt": [
+        "السحر"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AD%D9%88%D8%B1",
       "verified": true,
       "qid": "ramadan-400-004"
     },
     {
       "p": 400,
-      "topic": "شخصيات وأحداث",
-      "q": "ما غزوة أحد ليست في هذا الشهر غالبا بل بدر هي؟",
-      "a": "غزوة بدر",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان نسبةً إلى العبادة التي فُرضت فيه؟",
+      "a": "شهر الصيام",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-400-005"
     },
     {
       "p": 400,
-      "topic": "شخصيات وأحداث",
-      "q": "ما صلح الحديبية في ذي القعدة لا هذا الشهر؟",
-      "a": "الحديبية خارج",
+      "topic": "مفردات الشهر",
+      "q": "ماذا يسمى الكفّ عن الطعام والشراب مع دخول وقت الفجر في جداول رمضان؟",
+      "a": "الإمساك",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D9%81%D8%B9_%D8%A7%D9%84%D8%A5%D9%81%D8%B7%D8%A7%D8%B1",
       "verified": true,
       "qid": "ramadan-400-006"
     },
     {
       "p": 400,
-      "topic": "تقاويم وأعداد",
-      "q": "ما حساب أهل المدينة لبداية الشهر قديما؟",
-      "a": "حساب المدينة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم السهرة الاجتماعية على مائدة متأخرة يقيمها أهل الخليج في ليالي رمضان؟",
+      "a": "الغبقة",
+      "alt": [
+        "غبقة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%A8%D9%82%D8%A9",
       "verified": true,
       "qid": "ramadan-400-007"
     },
     {
       "p": 400,
-      "topic": "تقاويم وأعداد",
-      "q": "ما لجنة الاستطلاع الرسمية للهلال؟",
-      "a": "لجنة الهلال",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم احتفال أطفال الخليج في منتصف رمضان بجمع الحلوى والمكسرات؟",
+      "a": "القرقيعان",
+      "alt": [
+        "قرقيعان",
+        "كركيعان"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-400-008"
     },
     {
       "p": 400,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الصيام المتتابع طوال الشهر؟",
-      "a": "صيام الشهر",
+      "topic": "عادات وتقاليد",
+      "q": "في أي مدينة أُطلق أول مدفع لإعلان موعد كسر الصيام في رمضان؟",
+      "a": "القاهرة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D9%81%D8%B9_%D8%A7%D9%84%D8%A5%D9%81%D8%B7%D8%A7%D8%B1",
       "verified": true,
       "qid": "ramadan-400-009"
     },
     {
       "p": 400,
-      "topic": "مائدة رمضان",
-      "q": "ما الحساء اللبناني بالعدس الأصفر؟",
-      "a": "عدسية",
+      "topic": "عادات وتقاليد",
+      "q": "في أي بلد عربي نشأ تقليد فانوس رمضان؟",
+      "a": "مصر",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-400-010"
     },
     {
       "p": 400,
-      "topic": "شخصيات وأحداث",
-      "q": "من قائد جيش بدر من الصحابة؟",
-      "a": "حمزة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم الخبز التركي الهشّ الذي يُخبز خصيصًا في شهر رمضان؟",
+      "a": "خبز رمضان",
+      "alt": [
+        "رمضان بيدسي"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%A8%D8%B2_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-400-011"
     },
     {
       "p": 400,
-      "topic": "تقاويم وأعداد",
-      "q": "كم يوما إن نقص الشهر؟",
-      "a": "تسعة وعشرون",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم المدفع الذي أُضيف بعد مدفع الغروب ليؤذن بانتهاء وقت الأكل؟",
+      "a": "مدفع الإمساك",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D9%81%D8%B9_%D8%A7%D9%84%D8%A5%D9%81%D8%B7%D8%A7%D8%B1",
       "verified": true,
       "qid": "ramadan-400-012"
     },
     {
       "p": 400,
-      "topic": "شخصيات وأحداث",
-      "q": "ما سرية عبد الله بن جحش قبل بدر؟",
-      "a": "نخلة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق الخليجي من القمح المهروس مع اللحم ويكثر في رمضان؟",
+      "a": "الهريس",
+      "alt": [
+        "هريس",
+        "الهريسة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%B1%D9%8A%D8%B3",
       "verified": true,
       "qid": "ramadan-400-013"
     },
     {
       "p": 400,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم تعجيل كسر الصيام؟",
-      "a": "تعجيل الإفطار",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق المصري من الخبز والأرز واللحم المسقيّ بصلصة الخل والثوم؟",
+      "a": "الفتة",
+      "alt": [
+        "فتة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%AA%D8%A9",
       "verified": true,
       "qid": "ramadan-400-014"
     },
     {
       "p": 400,
-      "topic": "تقاويم وأعداد",
-      "q": "ما تقويم هيئة المساحة المصرية؟",
-      "a": "تقويم المساحة",
+      "topic": "مائدة الإفطار",
+      "q": "ما نوع المعكرونة الصغيرة التي تُطبخ حساءً وسُمِّيت باسم جزء من طائر؟",
+      "a": "لسان العصفور",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%B3%D8%A7%D9%86_%D8%A7%D9%84%D8%B9%D8%B5%D9%81%D9%88%D8%B1",
       "verified": true,
       "qid": "ramadan-400-015"
     },
     {
       "p": 400,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد أحمد بن طولون في القاهرة؟",
-      "a": "ابن طولون",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الفطيرة التونسية المقلية المحشوة بالبيض التي لا تغيب عن مائدة رمضان؟",
+      "a": "البريك",
+      "alt": [
+        "بريك",
+        "بريكة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%8A%D9%83_%28%D8%B7%D8%A8%D9%82%29",
       "verified": true,
       "qid": "ramadan-400-016"
     },
     {
       "p": 400,
-      "topic": "تقاويم وأعداد",
-      "q": "ما تقويم أم القرى المعتمد في السعودية؟",
-      "a": "تقويم السعودية",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق الفلسطيني الذي يُقلب على الصحن عند تقديمه؟",
+      "a": "المقلوبة",
+      "alt": [
+        "مقلوبة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%82%D9%84%D9%88%D8%A8%D8%A9",
       "verified": true,
       "qid": "ramadan-400-017"
     },
     {
       "p": 400,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الأرز باللبن؟",
-      "a": "أرز بلبن",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما كرات البرغل المحشوة باللحم المفروم في المطبخ الشامي؟",
+      "a": "الكبة",
+      "alt": [
+        "كبة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A8%D8%A9",
       "verified": true,
       "qid": "ramadan-400-018"
     },
     {
       "p": 400,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الغروب المدني في الجداول؟",
-      "a": "غروب مدني",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق المغاربي المصنوع من حبيبات السميد المفتّلة على البخار؟",
+      "a": "الكسكس",
+      "alt": [
+        "كسكسي",
+        "الكسكسي"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B3%D9%83%D8%B3",
       "verified": true,
       "qid": "ramadan-400-019"
     },
     {
       "p": 400,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الملوخية تأكيدا لا؟",
-      "a": "ملوخية مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق اليمني المصنوع من خبز مغمور باللبن والأعشاب ويكثر في رمضان؟",
+      "a": "الشفوت",
+      "alt": [
+        "شفوت"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B4%D9%81%D9%88%D8%AA",
       "verified": true,
       "qid": "ramadan-400-020"
     },
     {
       "p": 400,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل الكامل أوي تأكيدا لا؟",
-      "a": "كامل أوي ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى المصنوعة من السميد والمسقيّة بالشيرة وتُزيَّن باللوز؟",
+      "a": "البسبوسة",
+      "alt": [
+        "بسبوسة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B3%D8%A8%D9%88%D8%B3%D8%A9",
       "verified": true,
       "qid": "ramadan-400-021"
     },
     {
       "p": 400,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الكنافة تأكيدا لا؟",
-      "a": "كنافة مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الشراب الشامي الذي يُزيَّن بالصنوبر والزبيب ويكثر في رمضان؟",
+      "a": "الجلاب",
+      "alt": [
+        "جلاب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%84%D8%A7%D8%A8",
       "verified": true,
       "qid": "ramadan-400-022"
     },
     {
       "p": 400,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق العسل الأبيض؟",
-      "a": "عسل أبيض",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما المشروب الحجازي البارد الذي يُصنع من الشعير أو الزبيب المنقوع؟",
+      "a": "السوبيا",
+      "alt": [
+        "سوبيا"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%A8%D9%8A%D8%A7",
       "verified": true,
       "qid": "ramadan-400-023"
     },
     {
       "p": 400,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام تبوك تأكيدا لا؟",
-      "a": "تبوك خارج",
+      "topic": "حلويات ومشروبات",
+      "q": "ما المشروب البني الحامض الذي يُنقع من ثمار شجرة استوائية ويُباع في رمضان؟",
+      "a": "التمر الهندي",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%85%D8%B1_%D9%87%D9%86%D8%AF%D9%8A",
       "verified": true,
       "qid": "ramadan-400-024"
     },
     {
       "p": 400,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب السحلب الشامي؟",
-      "a": "سحلب شام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى الخليجية من كرات العجين المقلية المغموسة بالشيرة؟",
+      "a": "اللقيمات",
+      "alt": [
+        "لقيمات",
+        "العوامة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%82%D9%8A%D9%85%D8%A7%D8%AA",
       "verified": true,
       "qid": "ramadan-400-025"
     },
     {
       "p": 400,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري الثالثة؟",
-      "a": "تحري ثالثة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما العصير الأخضر الذي يُعصر من نبات السكر ويُباع في عربات الشوارع؟",
+      "a": "عصير القصب",
+      "alt": [
+        "قصب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B5%D9%8A%D8%B1_%D9%82%D8%B5%D8%A8",
       "verified": true,
       "qid": "ramadan-400-026"
     },
     {
       "p": 400,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الإفطار المبكر جدا اسما؟",
-      "a": "إفطار مبكر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما رقائق العجين المقلية المحشوة التي تُنطق في اللهجة المصرية جلاش؟",
+      "a": "الكلاج",
+      "alt": [
+        "كلاج"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%84%D8%A7%D8%AC",
       "verified": true,
       "qid": "ramadan-400-027"
     },
     {
       "p": 400,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام حائل لا الغزوة؟",
-      "a": "حائل عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما المشروب البني الحلو الذي يُصنع من ثمار شجرة معمّرة ويُباع في رمضان؟",
+      "a": "الخروب",
+      "alt": [
+        "خروب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%B1%D9%88%D8%A8",
       "verified": true,
       "qid": "ramadan-400-028"
     },
     {
       "p": 400,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب التوت الشامي؟",
-      "a": "توت شام",
+      "topic": "أحداث في رمضان",
+      "q": "ما المعركة التي هزم فيها المماليك المغول في الخامس والعشرين من رمضان؟",
+      "a": "عين جالوت",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B9%D9%8A%D9%86_%D8%AC%D8%A7%D9%84%D9%88%D8%AA",
       "verified": true,
       "qid": "ramadan-400-029"
     },
     {
       "p": 400,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب الليمون بالنعناع؟",
-      "a": "ليمون نعناع",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من سلطان مصر الذي قاد جيش المماليك إلى النصر على المغول في رمضان؟",
+      "a": "سيف الدين قطز",
+      "alt": [
+        "قطز"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%8A%D9%81_%D8%A7%D9%84%D8%AF%D9%8A%D9%86_%D9%82%D8%B7%D8%B2",
       "verified": true,
       "qid": "ramadan-400-030"
     },
     {
       "p": 400,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى البسبوسة الشامية؟",
-      "a": "بسبوسة شام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من القائد الذي عبر بجيشه إلى الأندلس وهزم القوط في رمضان 92 هـ؟",
+      "a": "طارق بن زياد",
+      "alt": [
+        "طارق"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%88%D8%A7%D8%AF%D9%8A_%D9%84%D9%83%D8%A9",
       "verified": true,
       "qid": "ramadan-400-031"
     },
     {
       "p": 400,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى الهريسة الشامية؟",
-      "a": "هريسة شام",
+      "topic": "أحداث في رمضان",
+      "q": "بأي اسم يُعرف فتح مكة الذي وقع في رمضان من السنة الثامنة للهجرة؟",
+      "a": "الفتح الأعظم",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD_%D9%85%D9%83%D8%A9",
       "verified": true,
       "qid": "ramadan-400-032"
     },
     {
       "p": 400,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى الغريبة المصرية؟",
-      "a": "غريبة مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من الخليفة العباسي الذي قاد جيشه بنفسه لفتح مدينة الروم في رمضان 223 هـ؟",
+      "a": "المعتصم بالله",
+      "alt": [
+        "المعتصم"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B9%D9%85%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-400-033"
     },
     {
       "p": 400,
-      "topic": "مساجد ومدن",
-      "q": "ما مدينة ينبع تأكيدا لا؟",
-      "a": "ينبع بحر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من والي الأندلس الذي استُشهد في معركة الفرنجة سنة 114 هـ؟",
+      "a": "عبد الرحمن الغافقي",
+      "alt": [
+        "الغافقي"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%A8%D9%84%D8%A7%D8%B7_%D8%A7%D9%84%D8%B4%D9%87%D8%AF%D8%A7%D8%A1",
       "verified": true,
       "qid": "ramadan-400-034"
     },
     {
       "p": 400,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري الثالثة تأكيدا لا؟",
-      "a": "ثالثة وتر",
+      "topic": "أحداث في رمضان",
+      "q": "من زعيم المغول الذي خضعت له مدن الشام قبل هزيمتهم في رمضان؟",
+      "a": "هولاكو",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B9%D9%8A%D9%86_%D8%AC%D8%A7%D9%84%D9%88%D8%AA",
       "verified": true,
       "qid": "ramadan-400-035"
     },
     {
       "p": 400,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري الخامسة تأكيدا لا؟",
-      "a": "خامسة وتر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من آخر الخلفاء العباسيين الذي قتله المغول قبل هزيمتهم في رمضان؟",
+      "a": "المستعصم بالله",
+      "alt": [
+        "المستعصم"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B9%D9%8A%D9%86_%D8%AC%D8%A7%D9%84%D9%88%D8%AA",
       "verified": true,
       "qid": "ramadan-400-036"
     },
     {
       "p": 400,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم العشاء الفلكي؟",
-      "a": "عشاء فلكي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أشهر الجوامع الأثرية الذي بناه الفاطميون عند تأسيس عاصمتهم؟",
+      "a": "الجامع الأزهر",
+      "alt": [
+        "الأزهر"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%A3%D8%B2%D9%87%D8%B1",
       "verified": true,
       "qid": "ramadan-400-037"
     },
     {
       "p": 400,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم المغرب الفلكي تأكيدا لا؟",
-      "a": "مغرب فلكي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أعظم مساجد دمشق الذي بناه الأمويون؟",
+      "a": "الجامع الأموي",
+      "alt": [
+        "المسجد الأموي"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%A3%D9%85%D9%88%D9%8A_%28%D8%AF%D9%85%D8%B4%D9%82%29",
       "verified": true,
       "qid": "ramadan-400-038"
     },
     {
       "p": 400,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام رابغ لا الغزوة؟",
-      "a": "رابغ عام",
+      "topic": "مساجد ومدن",
+      "q": "في أي مدينة تونسية يقوم أقدم جوامع المغرب الإسلامي؟",
+      "a": "القيروان",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%B9%D9%82%D8%A8%D8%A9_%D8%A8%D9%86_%D9%86%D8%A7%D9%81%D8%B9",
       "verified": true,
       "qid": "ramadan-400-039"
     },
     {
       "p": 400,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام الليث لا الغزوة؟",
-      "a": "الليث عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أقدم جامع في مصر وقد بناه فاتحها؟",
+      "a": "جامع عمرو بن العاص",
+      "alt": [
+        "مسجد عمرو بن العاص"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%B9%D9%85%D8%B1%D9%88_%D8%A8%D9%86_%D8%A7%D9%84%D8%B9%D8%A7%D8%B5_%28%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29",
       "verified": true,
       "qid": "ramadan-400-040"
     },
     {
       "p": 400,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى المشمشية المجففة؟",
-      "a": "قمر مشمش",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أكبر مساجد الإمارات ويقع في أبوظبي؟",
+      "a": "جامع الشيخ زايد الكبير",
+      "alt": [
+        "مسجد الشيخ زايد"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%B4%D9%8A%D8%AE_%D8%B2%D8%A7%D9%8A%D8%AF_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1",
       "verified": true,
       "qid": "ramadan-400-041"
     },
     {
       "p": 400,
       "topic": "مساجد ومدن",
-      "q": "ما مدينة الوجه الثالثة لا؟",
-      "a": "الوجه بر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "q": "ما اسم المسجد العثماني في إسطنبول الذي يُعرف بالمسجد الأزرق؟",
+      "a": "جامع السلطان أحمد",
+      "alt": [
+        "مسجد السلطان أحمد"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D8%B2%D8%B1%D9%82",
       "verified": true,
       "qid": "ramadan-400-042"
     },
     {
       "p": 400,
       "topic": "مساجد ومدن",
-      "q": "ما مدينة ضبا تأكيدا لا؟",
-      "a": "ضبا بحر",
+      "q": "ما اسم أكبر مساجد المغرب الذي بُني جزء منه فوق مياه المحيط؟",
+      "a": "مسجد الحسن الثاني",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
       "verified": true,
       "qid": "ramadan-400-043"
     },
     {
       "p": 400,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل جنى تأكيدا لا؟",
-      "a": "جنى ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أول مسجد شُيّد خارج مكة والمدينة بأمر النبي محمد؟",
+      "a": "الجامع الكبير بصنعاء",
+      "alt": [
+        "جامع صنعاء"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1_%28%D8%B5%D9%86%D8%B9%D8%A7%D8%A1%29",
       "verified": true,
       "qid": "ramadan-400-044"
     },
     {
       "p": 400,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم قيام الأفراد؟",
-      "a": "قيام أفراد",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "بأي اسم يُعرف عيد رمضان في مقابل عيد الأضحى؟",
+      "a": "العيد الأصغر",
+      "alt": [
+        "العيد الصغير"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%8A%D8%AF_%D8%A7%D9%84%D9%81%D8%B7%D8%B1",
       "verified": true,
       "qid": "ramadan-400-045"
     },
     {
       "p": 400,
-      "topic": "مساجد ومدن",
-      "q": "ما مدينة الليث تأكيدا لا؟",
-      "a": "الليث بحر",
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "في أي سنة هجرية احتفل المسلمون بأول عيد فطر في الإسلام؟",
+      "a": "السنة الثانية",
+      "alt": [
+        "الثانية للهجرة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%8A%D8%AF_%D8%A7%D9%84%D9%81%D8%B7%D8%B1",
       "verified": true,
-      "alt": [],
       "qid": "ramadan-400-046"
     },
     {
       "p": 400,
-      "topic": "مائدة رمضان",
-      "q": "ما شراب الخوخ على المائدة؟",
-      "a": "شراب خوخ",
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ماذا يسمى من يلزم المسجد في العشر الأخيرة من رمضان؟",
+      "a": "المعتكف",
+      "alt": [
+        "معتكف"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D8%B9%D8%AA%D9%83%D8%A7%D9%81",
       "verified": true,
-      "alt": [],
       "qid": "ramadan-400-047"
     },
     {
       "p": 400,
-      "topic": "تقاويم وأعداد",
-      "q": "ما جدول الهلال في بوليفيا؟",
-      "a": "جدول بوليفيا",
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما اسم الساحة المفتوحة التي يُصلّي فيها الناس صباح العيد؟",
+      "a": "المصلى",
+      "alt": [
+        "مصلى العيد"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D9%84%D8%A7%D8%A9_%D8%A7%D9%84%D8%B9%D9%8A%D8%AF%D9%8A%D9%86",
       "verified": true,
-      "alt": [],
       "qid": "ramadan-400-048"
     },
     {
       "p": 600,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الصيام في السفر رخصة لا سؤالا فقهيا هنا بل اسما؟",
-      "a": "صيام المسافر اسما",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان نسبةً إلى ما يناله المحتاجون فيه من خير؟",
+      "a": "ربيع الفقراء",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-001"
     },
     {
       "p": 600,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم الختمة في الحرم؟",
-      "a": "ختمة الحرم",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "إلى أي معنى يعود اسم شهر رمضان في أصله اللغوي؟",
+      "a": "شدة الحر",
+      "alt": [
+        "الحر الشديد"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-002"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة التركية على المائدة؟",
-      "a": "شوربة تركية",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان نسبةً إلى إحياء لياليه بالصلاة؟",
+      "a": "شهر القيام",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-003"
     },
     {
       "p": 600,
-      "topic": "إذاعة وشاشة",
-      "q": "ما برنامج القرآن على الشاشة في العشر؟",
-      "a": "تلاوة العشر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "بأي اسم يُعرف موقظ الناس للسحور في بلاد المغرب العربي؟",
+      "a": "النفار",
+      "alt": [
+        "نفار"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AD%D8%B1%D8%A7%D8%AA%D9%8A",
       "verified": true,
       "qid": "ramadan-600-004"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الهريسة التونسية الحلوة؟",
-      "a": "هريسة حلوة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "بأي اسم يُعرف احتفال الأطفال في منتصف رمضان عند أهل قطر؟",
+      "a": "قرنقعوه",
+      "alt": [
+        "قرنقعوة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-005"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما سرية مؤتة ليست في هذا الشهر غالبا؟",
-      "a": "مؤتة خارج",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "بأي اسم يُعرف احتفال الأطفال في منتصف رمضان في البحرين؟",
+      "a": "الناصفة",
+      "alt": [
+        "قرقاعون",
+        "ناصفة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-006"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام حجة الوداع خارج هذا الشهر؟",
-      "a": "حجة خارج",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "بأي اسم يُعرف احتفال الأطفال في منتصف رمضان ببغداد؟",
+      "a": "ماجينا",
+      "alt": [
+        "ما جينا"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-007"
     },
     {
       "p": 600,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري القدر في الأفراد؟",
-      "a": "تحري الأفراد",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما الآلة النفخية التي كان يستعملها بعض الموقظين للسحور بدل القرع؟",
+      "a": "المزمار",
+      "alt": [
+        "مزمار"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AD%D8%B1%D8%A7%D8%AA%D9%8A",
       "verified": true,
       "qid": "ramadan-600-008"
     },
     {
       "p": 600,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم المغرب الفلكي في الجداول؟",
-      "a": "غروب الشمس",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "إلى أي بلاد انتقل تقليد إطلاق المدفع عند الغروب أول ما خرج من مصر؟",
+      "a": "بلاد الشام",
+      "alt": [
+        "الشام"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D9%81%D8%B9_%D8%A7%D9%84%D8%A5%D9%81%D8%B7%D8%A7%D8%B1",
       "verified": true,
       "qid": "ramadan-600-009"
     },
     {
       "p": 600,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم العكوف في مصلى النساء؟",
-      "a": "عكوف النساء",
+      "topic": "عادات وتقاليد",
+      "q": "في أي بلد آسيوي بدأ العمل بمدفع الغروب سنة 1944؟",
+      "a": "إندونيسيا",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D9%81%D8%B9_%D8%A7%D9%84%D8%A5%D9%81%D8%B7%D8%A7%D8%B1",
       "verified": true,
       "qid": "ramadan-600-010"
     },
     {
       "p": 600,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم ختمة التراويح؟",
-      "a": "ختمة تراويح",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم الثوب الملوّن المطرّز الذي تلبسه بنات الخليج ليلة منتصف رمضان؟",
+      "a": "الدراعة",
+      "alt": [
+        "دراعة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-011"
     },
     {
       "p": 600,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل جعفر العمدة تأكيدا لا؟",
-      "a": "جعفر ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم يُعرف طبق الخبز المفتوت بالمرق في بلاد الخليج؟",
+      "a": "التشريب",
+      "alt": [
+        "تشريب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-600-012"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق القطايف تأكيدا لا؟",
-      "a": "قطايف مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم يُعرف طبق الخبز المفتوت بالمرق في المغرب؟",
+      "a": "الرفيسة",
+      "alt": [
+        "رفيسة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-600-013"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام القادسية تأكيدا لا؟",
-      "a": "قادسية خارج",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم يُعرف طبق الخبز المفتوت بالمرق في الجزائر؟",
+      "a": "الشخشوخة",
+      "alt": [
+        "شخشوخة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-600-014"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة باللسان؟",
-      "a": "لسان عصفور",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم الخبز اليمني الرقيق المسامي الذي يُغمر باللبن؟",
+      "a": "اللحوح",
+      "alt": [
+        "لحوح"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%AD%D9%88%D8%AD",
       "verified": true,
       "qid": "ramadan-600-015"
     },
     {
       "p": 600,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل رسالة الإمام تأكيدا لا؟",
-      "a": "رسالة ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم يُعرف الخبز التركي الهشّ عند السوريين؟",
+      "a": "المشطاح",
+      "alt": [
+        "مشطاح"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%A8%D8%B2_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-016"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق البسبوسة تأكيدا لا؟",
-      "a": "بسبوسة مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق السوداني المصنوع من الدقيق المخلوط بالماء ويؤكل بالمرق؟",
+      "a": "العصيدة",
+      "alt": [
+        "عصيدة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B5%D9%8A%D8%AF%D8%A9",
       "verified": true,
       "qid": "ramadan-600-017"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام نهاوند تأكيدا لا؟",
-      "a": "نهاوند خارج",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم القمح الأخضر المحمّص الذي تُطبخ منه شوربة رمضان في الجزائر؟",
+      "a": "الفريك",
+      "alt": [
+        "فريكة",
+        "فريك"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D9%8A%D9%83%D8%A9",
       "verified": true,
       "qid": "ramadan-600-018"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالكريمة؟",
-      "a": "شوربة كريمة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم الخبز الرقيق الذي يُخبز على الصاج ويُفتّ في المرق؟",
+      "a": "خبز الرقاق",
+      "alt": [
+        "خبز الصاج"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%A8%D8%B2_%D8%A7%D9%84%D8%B5%D8%A7%D8%AC",
       "verified": true,
       "qid": "ramadan-600-019"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق السمبوسك تأكيدا لا؟",
-      "a": "سمبوسك مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي وصف تُعرف أشهر أنواع حلوى الخيوط نسبةً إلى مدينة فلسطينية؟",
+      "a": "النابلسية",
+      "alt": [
+        "نابلسية"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%86%D8%A7%D9%81%D8%A9_%D9%86%D8%A7%D8%A8%D9%84%D8%B3%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-600-020"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام أجنادين تأكيدا لا؟",
-      "a": "أجنادين خارج",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما اسم الشراب السكري المركّز الذي تُسقى به حلويات رمضان؟",
+      "a": "القطر",
+      "alt": [
+        "الشيرة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%B1%D8%A7%D8%A8_%D8%A7%D9%84%D9%82%D8%B7%D8%B1",
       "verified": true,
       "qid": "ramadan-600-021"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق البقلاوة تأكيدا لا؟",
-      "a": "بقلاوة مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما اسم العسل الأسود المستخرج من ثمر النخيل في المطبخ الخليجي؟",
+      "a": "الدبس",
+      "alt": [
+        "دبس"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%A8%D8%B3",
       "verified": true,
       "qid": "ramadan-600-022"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام حطين لا التأكيد السابق؟",
-      "a": "حطين عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى البيضاء المصنوعة من الحليب والنشا وتُزيَّن بالفستق؟",
+      "a": "المهلبية",
+      "alt": [
+        "مهلبية"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%87%D9%84%D8%A8%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-600-023"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالخضار؟",
-      "a": "شوربة خضار",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي اسم تُعرف الحلوى السورية المقلية الشبيهة بثمرة النخل في تركيا؟",
+      "a": "التولومبا",
+      "alt": [
+        "طرمبة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%84%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%85",
       "verified": true,
       "qid": "ramadan-600-024"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الكشري تأكيدا لا؟",
-      "a": "كشري مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الحلوى الهشّة التي تُعدّ للعيد وتذوب في الفم من الطحين والسمن؟",
+      "a": "الغريبة",
+      "alt": [
+        "غريبة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%84%D9%88%D9%89_%D8%BA%D8%B1%D9%8A%D8%A8%D8%A9",
       "verified": true,
       "qid": "ramadan-600-025"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام الزلاقة لا التأكيد؟",
-      "a": "زلاقة عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الاسم الآخر لحلوى العجين المقلي الحلزوني التي تُوزَّع في رمضان؟",
+      "a": "المشبك",
+      "alt": [
+        "مشبك"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%84%D8%A7%D8%A8%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-600-026"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالدجاج؟",
-      "a": "شوربة دجاج",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "التقويم الهجري",
+      "q": "إلى أي معنى يعود اسم الشهر الذي يعقب رمضان؟",
+      "a": "شولان الإبل",
+      "alt": [
+        "رفع الإبل أذنابها"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%88%D8%A7%D9%84",
       "verified": true,
       "qid": "ramadan-600-027"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى الرز بحليب الشامي؟",
-      "a": "رز بحليب شام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "التقويم الهجري",
+      "q": "إلى أي معنى يعود اسم الشهر الذي يسبق رمضان؟",
+      "a": "تشعب القبائل",
+      "alt": [
+        "التشعب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%B9%D8%A8%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-028"
     },
     {
       "p": 600,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري الخامسة؟",
-      "a": "تحري خامسة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "في أي يوم من رمضان وقعت المعركة الفاصلة الأولى في تاريخ الإسلام؟",
+      "a": "السابع عشر",
+      "alt": [
+        "17"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%B2%D9%88%D8%A9_%D8%A8%D8%AF%D8%B1",
       "verified": true,
       "qid": "ramadan-600-029"
     },
     {
       "p": 600,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الإمساك المبكر جدا؟",
-      "a": "إمساك مبكر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "في أي يوم من رمضان دخل المسلمون مكة فاتحين؟",
+      "a": "العشرون",
+      "alt": [
+        "20"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD_%D9%85%D9%83%D8%A9",
       "verified": true,
       "qid": "ramadan-600-030"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام نجران لا الغزوة؟",
-      "a": "نجران عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "ما اسم المعركة التي سقطت بها دولة القوط ووقعت في رمضان 92 هـ؟",
+      "a": "وادي لكة",
+      "alt": [
+        "شذونة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%88%D8%A7%D8%AF%D9%8A_%D9%84%D9%83%D8%A9",
       "verified": true,
       "qid": "ramadan-600-031"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب التوت البري؟",
-      "a": "توت بري",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "ما المعركة التي دارت في رمضان 114 هـ بين المسلمين والفرنجة؟",
+      "a": "بلاط الشهداء",
+      "alt": [
+        "بواتييه",
+        "تور"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%A8%D9%84%D8%A7%D8%B7_%D8%A7%D9%84%D8%B4%D9%87%D8%AF%D8%A7%D8%A1",
       "verified": true,
       "qid": "ramadan-600-032"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب التين؟",
-      "a": "تين شراب",
+      "topic": "أحداث في رمضان",
+      "q": "ما المدينة البيزنطية التي فتحها المعتصم في رمضان 223 هـ؟",
+      "a": "عمورية",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B9%D9%85%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-600-033"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى البرازق الشامية؟",
-      "a": "برازق شام",
+      "topic": "أحداث في رمضان",
+      "q": "من ملك القوط الذي هُزم أمام المسلمين في رمضان 92 هـ؟",
+      "a": "لذريق",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%88%D8%A7%D8%AF%D9%8A_%D9%84%D9%83%D8%A9",
       "verified": true,
       "qid": "ramadan-600-034"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى الكاهي البغدادي؟",
-      "a": "كاهي بغداد",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من قائد الفرنجة في المعركة التي دارت في رمضان 114 هـ؟",
+      "a": "شارل مارتل",
+      "alt": [
+        "شارل مارتيل"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%A8%D9%84%D8%A7%D8%B7_%D8%A7%D9%84%D8%B4%D9%87%D8%AF%D8%A7%D8%A1",
       "verified": true,
       "qid": "ramadan-600-035"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى الكلجا تأكيدا لا؟",
-      "a": "كلجا بغداد",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أكبر مساجد جنوب شرق آسيا ويقوم في العاصمة الإندونيسية؟",
+      "a": "مسجد الاستقلال",
+      "alt": [
+        "الاستقلال"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84",
       "verified": true,
       "qid": "ramadan-600-036"
     },
     {
       "p": 600,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري السابعة تأكيدا لا؟",
-      "a": "سابعة وتر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما أقدم مساجد مصر الباقية بهيئته الأصلية؟",
+      "a": "مسجد ابن طولون",
+      "alt": [
+        "المسجد الطولوني"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D8%A8%D9%86_%D8%B7%D9%88%D9%84%D9%88%D9%86",
       "verified": true,
       "qid": "ramadan-600-037"
     },
     {
       "p": 600,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري التاسعة تأكيدا لا؟",
-      "a": "تاسعة وتر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم الجامع الأعظم في مدينة تونس العتيقة؟",
+      "a": "جامع الزيتونة",
+      "alt": [
+        "الزيتونة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%B2%D9%8A%D8%AA%D9%88%D9%86%D8%A9",
       "verified": true,
       "qid": "ramadan-600-038"
     },
     {
       "p": 600,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الزوال الفلكي؟",
-      "a": "زوال فلكي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أشهر جوامع مدينة فاس المغربية؟",
+      "a": "جامع القرويين",
+      "alt": [
+        "القرويين"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%82%D8%B1%D9%88%D9%8A%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-600-039"
     },
     {
       "p": 600,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم العصر الفلكي؟",
-      "a": "عصر فلكي",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم المدينة الصناعية المصرية التي تحمل اسم يوم من أيام الشهر الكريم؟",
+      "a": "العاشر من رمضان",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B9%D8%A7%D8%B4%D8%B1_%D9%85%D9%86_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-600-040"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام الوجه لا الغزوة؟",
-      "a": "الوجه عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أول جامع بُني في بلاد المغرب الإسلامي؟",
+      "a": "جامع عقبة بن نافع",
+      "alt": [
+        "جامع القيروان الكبير"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%B9%D9%82%D8%A8%D8%A9_%D8%A8%D9%86_%D9%86%D8%A7%D9%81%D8%B9",
       "verified": true,
       "qid": "ramadan-600-041"
     },
     {
       "p": 600,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام ضبا لا الغزوة؟",
-      "a": "ضبا عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أكبر مساجد مدينة مراكش؟",
+      "a": "جامع الكتبية",
+      "alt": [
+        "الكتبية"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%83%D8%AA%D8%A8%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-600-042"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب التوت الشامي تأكيدا لا؟",
-      "a": "توت حلب",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "في أي سنة هجرية شُيّد أول مسجد خارج مكة والمدينة؟",
+      "a": "السنة السادسة",
+      "alt": [
+        "6 هـ"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1_%28%D8%B5%D9%86%D8%B9%D8%A7%D8%A1%29",
       "verified": true,
       "qid": "ramadan-600-043"
     },
     {
       "p": 600,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب الكركديه البارد؟",
-      "a": "كركديه بارد",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "في أي سنة افتُتح أكبر مساجد المغرب على شاطئ الأطلسي؟",
+      "a": "ألف وتسعمئة وثلاثة وتسعون",
+      "alt": [
+        "1993"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
       "verified": true,
       "qid": "ramadan-600-044"
     },
     {
       "p": 600,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى المشمش المجفف؟",
-      "a": "مشمش مجفف",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "في أي ليالي العشر الأخيرة يُكثر الناس تحرّي الليلة المباركة؟",
+      "a": "الليالي الوتر",
+      "alt": [
+        "الوتر",
+        "الليالي الفردية"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%84%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
       "verified": true,
       "qid": "ramadan-600-045"
     },
     {
       "p": 600,
-      "topic": "مساجد ومدن",
-      "q": "ما مدينة حقل تأكيدا لا؟",
-      "a": "حقل بحر",
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما السورة القرآنية التي حملت اسم أعظم ليالي رمضان؟",
+      "a": "سورة القدر",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%B1%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
       "verified": true,
       "qid": "ramadan-600-046"
     },
     {
       "p": 600,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل ندى تأكيدا لا؟",
-      "a": "ندى ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "كم آية في السورة التي حملت اسم أعظم ليالي رمضان؟",
+      "a": "خمس آيات",
+      "alt": [
+        "5"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%B1%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
       "verified": true,
       "qid": "ramadan-600-047"
     },
     {
       "p": 600,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم ختمة الحي تأكيدا لا؟",
-      "a": "ختم زقاق",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "كم مرة ذُكر اسم الليلة المباركة في السورة التي حملت اسمها؟",
+      "a": "ثلاث مرات",
+      "alt": [
+        "3"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%B1%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
       "verified": true,
       "qid": "ramadan-600-048"
     },
     {
       "p": 800,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم السحور في اللهجة الحجازية القديمة؟",
-      "a": "تسحيرة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ما اسم الحجارة المُحماة بالشمس التي رُبط بها اسم شهر رمضان؟",
+      "a": "الرمضاء",
+      "alt": [
+        "رمضاء"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-001"
     },
     {
       "p": 800,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الإفطار في بعض اللهجات المغاربية؟",
-      "a": "الفطور",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "ما المعنى الأصلي لكلمة فانوس كما ذكر صاحب القاموس المحيط؟",
+      "a": "النمّام",
+      "alt": [
+        "النمام"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-002"
     },
     {
       "p": 800,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم القدر في الشعر الجاهلي قبل الإسلام؟",
-      "a": "القدر شعرا",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "من أي لغة دخلت كلمة فانوس إلى العربية؟",
+      "a": "اليونانية",
+      "alt": [
+        "الإغريقية"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-003"
     },
     {
       "p": 800,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم العشر في النقوش النبطية لاحقا؟",
-      "a": "عشر نقوش",
+      "topic": "مفردات الشهر",
+      "q": "ما جمع كلمة رمضان في اللغة العربية؟",
+      "a": "رمضانات",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-004"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الحريرة الفاسية تأكيدا؟",
-      "a": "حريرة فاس",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان نسبةً إلى تطهير النفس فيه؟",
+      "a": "شهر الطهور",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-005"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق البسطيلة الحلوة؟",
-      "a": "بسطيلة حلوة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "من الخليفة الفاطمي الذي استقبله أهل مصر بالفوانيس عند دخوله عاصمته الجديدة؟",
+      "a": "المعز لدين الله",
+      "alt": [
+        "المعز"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-006"
     },
     {
       "p": 800,
-      "topic": "إذاعة وشاشة",
-      "q": "ما برنامج القرآن المرتل في الإذاعة المصرية؟",
-      "a": "المصحف المرتل",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "بأي اسم يُعرف احتفال الأطفال في منتصف رمضان في سلطنة عمان؟",
+      "a": "القرنقشوه",
+      "alt": [
+        "قرنقشوه"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-007"
     },
     {
       "p": 800,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الإمساك في الجداول المغربية؟",
-      "a": "إمساك مغرب",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم آخر خميس من رمضان في السودان يطوف فيه الأطفال طلبًا للصدقة؟",
+      "a": "يوم الحارة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-008"
     },
     {
       "p": 800,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم ختم القرآن في المساجد الصغرى؟",
-      "a": "ختم الحي",
+      "topic": "عادات وتقاليد",
+      "q": "في أي مدينة عراقية يُعرف احتفال منتصف رمضان بالاسم الخليجي نفسه؟",
+      "a": "البصرة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-009"
     },
     {
       "p": 800,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام اليرموك تأكيدا لا؟",
-      "a": "يرموك خارج",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم الثوب الذي يلبسه أولاد الخليج ليلة منتصف رمضان؟",
+      "a": "الدشداشة",
+      "alt": [
+        "دشداشة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-010"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق البسبوسة بالقشطة؟",
-      "a": "بسبوسة قشطة",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم الحيّ القاهري الذي تخصّص في صناعة فوانيس رمضان؟",
+      "a": "تحت الربع",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-011"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الكعك بالعجوة؟",
-      "a": "كعك عجوة",
+      "topic": "مائدة الإفطار",
+      "q": "بأي لقب يُعرف الطبق الخليجي المصنوع من القمح المهروس واللحم؟",
+      "a": "سيد المائدة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%B1%D9%8A%D8%B3",
       "verified": true,
       "qid": "ramadan-800-012"
     },
     {
       "p": 800,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام اليرموك الثاني لا؟",
-      "a": "يرموك ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الطبق الليبي المصنوع من دقيق الشعير ويُقدَّم بالمرق؟",
+      "a": "البازين",
+      "alt": [
+        "بازين"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B2%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-800-013"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الكنافة النابلسية؟",
-      "a": "كنافة نابلسية",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم الخبز النجدي الرقيق الذي يُفتّ في المرق باللحم؟",
+      "a": "القرصان",
+      "alt": [
+        "قرصان"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%82%D8%B1%D8%B5%D8%A7%D9%86_%28%D8%AE%D8%A8%D8%B2%29",
       "verified": true,
       "qid": "ramadan-800-014"
     },
     {
       "p": 800,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل موسى؟",
-      "a": "موسى مسلسل",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "من أي لغة عُرِّبت كلمة سمبوسك؟",
+      "a": "الفارسية",
+      "alt": [
+        "الفارسية القديمة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%85%D8%A8%D9%88%D8%B3%D8%A9",
       "verified": true,
       "qid": "ramadan-800-015"
     },
     {
       "p": 800,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد بيونس آيرس؟",
-      "a": "مسجد الأرجنتين",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الإناء الطيني المخروطي الغطاء الذي تحمل الأكلة المغربية اسمه؟",
+      "a": "الطاجين",
+      "alt": [
+        "طاجين",
+        "الطاجن"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B7%D8%A7%D8%AC%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-800-016"
     },
     {
       "p": 800,
-      "topic": "تقاويم وأعداد",
-      "q": "ما تقويم جزر القمر للهلال؟",
-      "a": "تقويم القمر",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم يُعرف طبق الخبز المفتوت بالمرق في شرق ليبيا؟",
+      "a": "مثرودة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-800-017"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة باللحم؟",
-      "a": "شوربة لحم",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم يُعرف طبق الخبز المفتوت بالمرق في تونس وغرب ليبيا؟",
+      "a": "الفتات",
+      "alt": [
+        "فتات"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-800-018"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الفول تأكيدا لا؟",
-      "a": "فول مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم آخر يُعرف الطبق الخليجي المصنوع من القمح المسلوق المهروس؟",
+      "a": "الحنطية",
+      "alt": [
+        "القمحية"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%B1%D9%8A%D8%B3",
       "verified": true,
       "qid": "ramadan-800-019"
     },
     {
       "p": 800,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام العقاب لا التأكيد؟",
-      "a": "عقاب عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما الاسم الخليجي الثالث لطبق الخبز المفتوت بالمرق؟",
+      "a": "الصالونة",
+      "alt": [
+        "صالونة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-800-020"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالسمك؟",
-      "a": "شوربة سمك",
+      "topic": "حلويات ومشروبات",
+      "q": "في أي منطقة سورية أُنتج عصير المشمش المجفف الرمضاني أول مرة؟",
+      "a": "الغوطة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%85%D8%B1_%D8%A7%D9%84%D8%AF%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-800-021"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الطعمية تأكيدا لا؟",
-      "a": "طعمية مصر",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي اسم وصف الطباخ البغدادي كرات العجين المقلية في القرن الثالث عشر؟",
+      "a": "لقمة القاضي",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%82%D9%8A%D9%85%D8%A7%D8%AA",
       "verified": true,
       "qid": "ramadan-800-022"
     },
     {
       "p": 800,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام ملاذكرد لا التأكيد؟",
-      "a": "ملاذكرد عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي اسم تُعرف حلوى السميد المحلاة عند أهل الشام؟",
+      "a": "النمّورة",
+      "alt": [
+        "النمورة",
+        "البسيمة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B3%D8%A8%D9%88%D8%B3%D8%A9",
       "verified": true,
       "qid": "ramadan-800-023"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالجمبري؟",
-      "a": "شوربة جمبري",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي اسم يُعرف المشروب الحامض المصنوع من ثمار شجرة استوائية في السودان؟",
+      "a": "العرديب",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%85%D8%B1_%D9%87%D9%86%D8%AF%D9%8A",
       "verified": true,
       "qid": "ramadan-800-024"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الفتة تأكيدا لا؟",
-      "a": "فتة مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "من أي حَبٍّ تُصنع غريبة الدرع المعروفة في الموائد العربية؟",
+      "a": "الذرة البيضاء",
+      "alt": [
+        "الذرة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%84%D9%88%D9%89_%D8%BA%D8%B1%D9%8A%D8%A8%D8%A9",
       "verified": true,
       "qid": "ramadan-800-025"
     },
     {
       "p": 800,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام اليرموك لا التأكيد؟",
-      "a": "يرموك عام",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم الحيّ القاهري الآخر الذي اشتهر بصناعة الفوانيس؟",
+      "a": "الغورية",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-026"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالفطر؟",
-      "a": "شوربة فطر",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي اسم تُعرف الحلوى السورية المقلية الشبيهة بثمرة النخل في العراق؟",
+      "a": "الداطلي",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%84%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%85",
       "verified": true,
       "qid": "ramadan-800-027"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق المحشي تأكيدا لا؟",
-      "a": "محشي مصر",
+      "topic": "حلويات ومشروبات",
+      "q": "إلى أي بلد أفريقي انتشرت صناعة عصير المشمش المجفف الرمضاني؟",
+      "a": "الصومال",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%85%D8%B1_%D8%A7%D9%84%D8%AF%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-800-028"
     },
     {
       "p": 800,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام بدر لا التأكيد؟",
-      "a": "بدر عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "التقويم الهجري",
+      "q": "ما المعنى الثاني الذي قيل في تسمية الشهر الذي يعقب رمضان؟",
+      "a": "نقصان ألبان الإبل",
+      "alt": [
+        "جفاف ألبان الإبل"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%88%D8%A7%D9%84",
       "verified": true,
       "qid": "ramadan-800-029"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالذرة؟",
-      "a": "شوربة ذرة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من إمبراطور الروم الذي هزمه المعتصم في رمضان 223 هـ؟",
+      "a": "توفيل",
+      "alt": [
+        "ثيوفيلوس"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B9%D9%85%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-800-030"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب الشاي الأخضر؟",
-      "a": "شاي أخضر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "ما المعركة التي هزم فيها المماليك المغول قرب دمشق في رمضان 702 هـ؟",
+      "a": "شقحب",
+      "alt": [
+        "معركة شقحب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B4%D9%82%D8%AD%D8%A8",
       "verified": true,
       "qid": "ramadan-800-031"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب الشاي الأحمر؟",
-      "a": "شاي أحمر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من قائد المغول الذي هُزم قرب دمشق في رمضان 702 هـ؟",
+      "a": "قتلغ شاه",
+      "alt": [
+        "قطلوشاه"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B4%D9%82%D8%AD%D8%A8",
       "verified": true,
       "qid": "ramadan-800-032"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى المعمول بالتمر؟",
-      "a": "معمول تمر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "في أي سنة هجرية عبر المسلمون إلى الأندلس وهزموا القوط؟",
+      "a": "اثنتان وتسعون",
+      "alt": [
+        "92"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%88%D8%A7%D8%AF%D9%8A_%D9%84%D9%83%D8%A9",
       "verified": true,
       "qid": "ramadan-800-033"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى المعمول بالفستق؟",
-      "a": "معمول فستق",
+      "topic": "أحداث في رمضان",
+      "q": "من قائد المغول الذي قُتل في معركة رمضان 658 هـ؟",
+      "a": "كتبغا",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B9%D9%8A%D9%86_%D8%AC%D8%A7%D9%84%D9%88%D8%AA",
       "verified": true,
       "qid": "ramadan-800-034"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى المعمول بالجوز؟",
-      "a": "معمول جوز",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من سلطان المماليك الذي قاد النصر على المغول في رمضان 702 هـ؟",
+      "a": "الناصر محمد بن قلاوون",
+      "alt": [
+        "الناصر محمد"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B4%D9%82%D8%AD%D8%A8",
       "verified": true,
       "qid": "ramadan-800-035"
     },
     {
       "p": 800,
       "topic": "مساجد ومدن",
-      "q": "ما جامع النور في مكة؟",
-      "a": "النور مكة",
+      "q": "من القائد الذي أسس الجامع الأعظم بمدينة تونس؟",
+      "a": "حسان بن النعمان",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%B2%D9%8A%D8%AA%D9%88%D9%86%D8%A9",
       "verified": true,
       "qid": "ramadan-800-036"
     },
     {
       "p": 800,
       "topic": "مساجد ومدن",
-      "q": "ما جامع السلام في جدة؟",
-      "a": "السلام جدة",
+      "q": "ما اسم المدينة التي بناها أحمد بن طولون وأقام فيها جامعه؟",
+      "a": "القطائع",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D8%A8%D9%86_%D8%B7%D9%88%D9%84%D9%88%D9%86",
       "verified": true,
       "qid": "ramadan-800-037"
     },
     {
       "p": 800,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري السابعة؟",
-      "a": "تحري سابعة",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم المبنى المسقوف ذي القبة الرصاصية داخل ساحة الأقصى؟",
+      "a": "المسجد القبلي",
+      "alt": [
+        "الجامع القبلي"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89",
       "verified": true,
       "qid": "ramadan-800-038"
     },
     {
       "p": 800,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الغروب الفلكي؟",
-      "a": "غروب فلكي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم المسجد الذي بنته فرنسا تكريمًا لجنودها المسلمين بعد الحرب العالمية الأولى؟",
+      "a": "مسجد باريس الكبير",
+      "alt": [
+        "الجامع الكبير بباريس"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A8%D8%A7%D8%B1%D9%8A%D8%B3_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1",
       "verified": true,
       "qid": "ramadan-800-039"
     },
     {
       "p": 800,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام بريدة لا الغزوة؟",
-      "a": "بريدة عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "كم مترًا يبعد بئر زمزم عن البيت الحرام؟",
+      "a": "واحد وعشرون مترًا",
+      "alt": [
+        "21 متر"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%85%D8%B2%D9%85",
       "verified": true,
       "qid": "ramadan-800-040"
     },
     {
       "p": 800,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب التين المجفف؟",
-      "a": "تين مجفف",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "كم يبلغ ارتفاع مئذنة أكبر مساجد المغرب؟",
+      "a": "مئتان وعشرة أمتار",
+      "alt": [
+        "210 متر"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
       "verified": true,
       "qid": "ramadan-800-041"
     },
     {
       "p": 800,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى المشبك المصري؟",
-      "a": "مشبك مصر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم أكبر وأقدم المساجد في الصين؟",
+      "a": "مسجد شيان الكبير",
+      "alt": [
+        "مسجد شيان"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%B4%D9%8A%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-800-042"
     },
     {
       "p": 800,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تهجد الأفراد تأكيدا لا؟",
-      "a": "أفراد تهجد",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم القاعة الواقعة تحت الزاوية الجنوبية الشرقية من ساحة الأقصى؟",
+      "a": "المصلى المرواني",
+      "alt": [
+        "المرواني"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89",
       "verified": true,
       "qid": "ramadan-800-043"
     },
     {
       "p": 800,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الغسق الأحمر؟",
-      "a": "غسق أحمر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "كم مترًا مربعًا تبلغ مساحة ساحة الأقصى تقريبًا؟",
+      "a": "مئة وأربعة وأربعون ألفًا",
+      "alt": [
+        "144000"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89",
       "verified": true,
       "qid": "ramadan-800-044"
     },
     {
       "p": 800,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام أملج لا الغزوة؟",
-      "a": "أملج عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "من المهندس الفرنسي الذي صمّم أكبر مساجد المغرب؟",
+      "a": "ميشيل بينسو",
+      "alt": [
+        "بينسو"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A",
       "verified": true,
       "qid": "ramadan-800-045"
     },
     {
       "p": 800,
-      "topic": "مساجد ومدن",
-      "q": "ما مدينة رابغ تأكيدا لا؟",
-      "a": "رابغ بحر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "إلى أي حضارة قديمة يعود أصل عادة خبز الكعك في الأعياد؟",
+      "a": "المصريون القدماء",
+      "alt": [
+        "الفراعنة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B9%D9%83_%D8%A7%D9%84%D8%B9%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-800-046"
     },
     {
       "p": 800,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل لينا تأكيدا لا؟",
-      "a": "لينا ثان",
+      "topic": "العشر الأواخر والعيد",
+      "q": "بأي اسم آخر تُعرف الزكاة التي تُخرج في ختام الصيام؟",
+      "a": "صدقة الفطر",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%83%D8%A7%D8%A9_%D8%A7%D9%84%D9%81%D8%B7%D8%B1",
       "verified": true,
       "qid": "ramadan-800-047"
     },
     {
       "p": 800,
-      "topic": "تقاويم وأعداد",
-      "q": "ما جدول الهلال في أوروغواي؟",
-      "a": "جدول أوروغواي",
-      "sourceUrl": "https://www.aljazeera.net/",
-      "verified": true,
+      "topic": "العشر الأواخر والعيد",
+      "q": "ما اسم الموضع في السماء الدنيا الذي نزل إليه القرآن جملةً في ليلة رمضان؟",
+      "a": "بيت العزة",
       "alt": [],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
+      "verified": true,
       "qid": "ramadan-800-048"
     },
     {
       "p": 1000,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم القدر في كتب السيرة بابا؟",
-      "a": "باب القدر",
+      "topic": "مفردات الشهر",
+      "q": "بأي لفظ تُنطق كلمة فانوس في بعض اللغات السامية؟",
+      "a": "فناس",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-001"
     },
     {
       "p": 1000,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم العشر في وثائق الوقف؟",
-      "a": "عشر وقف",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مفردات الشهر",
+      "q": "بأي حرف تُنطق الضاد من اسم الشهر في تركيا وإيران وباكستان؟",
+      "a": "الظاء",
+      "alt": [
+        "ظ"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-002"
     },
     {
       "p": 1000,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد واشنطن الإسلامي تأكيدا لا؟",
-      "a": "إسلامي واشنطن",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان نسبةً إلى اختبار النفس وابتلائها؟",
+      "a": "شهر التمحيص",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-003"
     },
     {
       "p": 1000,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد باريس تأكيدا لا؟",
-      "a": "باريس الكبير",
+      "topic": "مفردات الشهر",
+      "q": "بأي لقب يُعرف رمضان منسوبًا إلى الدين كله لا إلى الصيام وحده؟",
+      "a": "شهر الإسلام",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-004"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق البغرير تأكيدا لا؟",
-      "a": "بغرير ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "في أي يوم من رمضان دخل الخليفة الفاطمي عاصمته الجديدة مستقبَلًا بالفوانيس؟",
+      "a": "الخامس من رمضان",
+      "alt": [
+        "الخامس"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-005"
     },
     {
       "p": 1000,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم الاعتكاف في مصطبة الحرم؟",
-      "a": "اعتكاف مصطبة",
+      "topic": "عادات وتقاليد",
+      "q": "بأي اسم يُعرف توزيع الصدقة على الأطفال في آخر خميس من رمضان بالسودان؟",
+      "a": "الرحمتات",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-006"
     },
     {
       "p": 1000,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد كيب تاون تأكيدا لا؟",
-      "a": "كيب تاون جامع",
+      "topic": "عادات وتقاليد",
+      "q": "من أي ناحية خرج أهل مصر لاستقبال الخليفة الفاطمي حاملين الفوانيس؟",
+      "a": "الجيزة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-007"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الكعك العراقي؟",
-      "a": "كعك عراقي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "في أي سنة بدأ العمل بمدفع الغروب في جنوب شرق آسيا؟",
+      "a": "ألف وتسعمئة وأربعة وأربعون",
+      "alt": [
+        "1944"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D9%81%D8%B9_%D8%A7%D9%84%D8%A5%D9%81%D8%B7%D8%A7%D8%B1",
       "verified": true,
       "qid": "ramadan-1000-008"
     },
     {
       "p": 1000,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل المداح تأكيدا لا؟",
-      "a": "مداح ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "عادات وتقاليد",
+      "q": "ما اسم غطاء الرأس المطرّز الذي تلبسه بنات الخليج ليلة منتصف رمضان؟",
+      "a": "البخنق",
+      "alt": [
+        "بخنق"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-009"
     },
     {
       "p": 1000,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الباميا الموصلية؟",
-      "a": "بامية موصل",
+      "topic": "عادات وتقاليد",
+      "q": "من أول من عرف فانوس رمضان من الشعوب؟",
+      "a": "المصريون",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-010"
     },
     {
       "p": 1000,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد طوكيو تأكيدا لا؟",
-      "a": "طوكيو جامع",
+      "topic": "عادات وتقاليد",
+      "q": "إلى أي مدينة سورية شمالية انتقل تقليد فانوس رمضان المصري؟",
+      "a": "حلب",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3_%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-011"
     },
     {
       "p": 1000,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل الاختيار تأكيدا لا؟",
-      "a": "اختيار ثان",
+      "topic": "عادات وتقاليد",
+      "q": "في أي إقليم غير عربي يُحتفل باحتفال منتصف رمضان الخليجي؟",
+      "a": "الأحواز",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-012"
     },
     {
       "p": 1000,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام حطين تأكيدا لا؟",
-      "a": "حطين خارج",
+      "topic": "عادات وتقاليد",
+      "q": "في أي منطقة سعودية يشتهر احتفال الأطفال في منتصف رمضان؟",
+      "a": "المنطقة الشرقية",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%82%D9%8A%D8%B9%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-013"
     },
     {
       "p": 1000,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد دلهي تأكيدا لا؟",
-      "a": "دلهي جامع",
+      "topic": "مائدة الإفطار",
+      "q": "في أي مدينة سورية يُسمّى طبق الخبز بالمرق «ثرود»؟",
+      "a": "دير الزور",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
       "verified": true,
       "qid": "ramadan-1000-014"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق البقلاوة الموصلي؟",
-      "a": "بقلاوة موصل",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم آخر يُعرف طبق دقيق الشعير الليبي؟",
+      "a": "العيش",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B2%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-1000-015"
     },
     {
       "p": 1000,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل العاصوف تأكيدا لا؟",
-      "a": "عاصوف ثان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم الصاج الكبير الذي يُخبز عليه الخبز النجدي الرقيق؟",
+      "a": "المقرصة",
+      "alt": [
+        "مقرصة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%82%D8%B1%D8%B5%D8%A7%D9%86_%28%D8%AE%D8%A8%D8%B2%29",
       "verified": true,
       "qid": "ramadan-1000-016"
     },
     {
       "p": 1000,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الكنافة الموصلي؟",
-      "a": "كنافة موصل",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم كانت كتب الطبخ العربية القديمة تسمّي الفطائر المثلثة المحشوة؟",
+      "a": "السنبوسج",
+      "alt": [
+        "سنبوسج"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%85%D8%A8%D9%88%D8%B3%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-017"
     },
     {
       "p": 1000,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام عين جالوت تأكيدا لا؟",
-      "a": "جالوت خارج",
+      "topic": "مائدة الإفطار",
+      "q": "من أي دقيق تُصنع عصيدة بعض مناطق السودان؟",
+      "a": "دقيق الذرة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B5%D9%8A%D8%AF%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-018"
     },
     {
       "p": 1000,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد شيان تأكيدا لا؟",
-      "a": "شيان جامع",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مائدة الإفطار",
+      "q": "بأي اسم يُعرف نوع من عصيدة جنوب السعودية؟",
+      "a": "المطيط",
+      "alt": [
+        "الزوم"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B5%D9%8A%D8%AF%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-019"
     },
     {
       "p": 1000,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل طاش تأكيدا لا؟",
-      "a": "طاش ثان",
+      "topic": "مائدة الإفطار",
+      "q": "ما اسم رقائق الخبز المصري التي تُصنع منها الحلوى الوطنية المصرية؟",
+      "a": "الرقاق",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%85_%D8%B9%D9%84%D9%8A_%28%D8%AD%D9%84%D9%88%D9%89%29",
       "verified": true,
       "qid": "ramadan-1000-020"
     },
     {
       "p": 1000,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام الزلاقة تأكيدا لا؟",
-      "a": "زلاقة خارج",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي اسم تُعرف رقائق المشمش المجفف في إيران؟",
+      "a": "لواشك",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%85%D8%B1_%D8%A7%D9%84%D8%AF%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-1000-021"
     },
     {
       "p": 1000,
-      "topic": "مساجد ومدن",
-      "q": "ما مسجد كراكاس تأكيدا لا؟",
-      "a": "كراكاس جامع",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما الفطيرة المغاربية المثقّبة كخلية النحل التي تُقدَّم في رمضان؟",
+      "a": "البغرير",
+      "alt": [
+        "بغرير",
+        "خرينكو"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%BA%D8%B1%D9%8A%D8%B1",
       "verified": true,
       "qid": "ramadan-1000-022"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الغريبة تأكيدا لا؟",
-      "a": "غريبة شام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "ما المشروب الساخن الأبيض الذي يُصنع من مسحوق درنات زهرة ويُرشّ بالقرفة؟",
+      "a": "السحلب",
+      "alt": [
+        "سحلب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B4%D8%B1%D9%88%D8%A8_%D8%A7%D9%84%D8%B3%D8%AD%D9%84%D8%A8",
       "verified": true,
       "qid": "ramadan-1000-023"
     },
     {
       "p": 1000,
-      "topic": "إذاعة وشاشة",
-      "q": "ما مسلسل باب الحارة تأكيدا لا؟",
-      "a": "حارة ثان",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي اسم تُعرف الحلوى السورية المقلية الشبيهة بثمرة النخل في إيران؟",
+      "a": "حلوى البامية",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%84%D8%AD_%D8%A7%D9%84%D8%B4%D8%A7%D9%85",
       "verified": true,
       "qid": "ramadan-1000-024"
     },
     {
       "p": 1000,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الكعك الشامي بالتمر؟",
-      "a": "كعك شامي",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "بأي اسم تُعرف الحلوى الهشّة التي تُعدّ للعيد في العراق؟",
+      "a": "الشكرلمة",
+      "alt": [
+        "البادم"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%84%D9%88%D9%89_%D8%BA%D8%B1%D9%8A%D8%A8%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-025"
     },
     {
       "p": 1000,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام العقاب تأكيدا لا؟",
-      "a": "عقاب خارج",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "حلويات ومشروبات",
+      "q": "إلى أي عصر يعود اسم الحلوى الوطنية المصرية المصنوعة من الرقائق واللبن؟",
+      "a": "العصر الأيوبي",
+      "alt": [
+        "الأيوبي"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%85_%D8%B9%D9%84%D9%8A_%28%D8%AD%D9%84%D9%88%D9%89%29",
       "verified": true,
       "qid": "ramadan-1000-026"
     },
     {
       "p": 1000,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تهجد الأفراد؟",
-      "a": "تهجد أفراد",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "بأي اسم آخر تُعرف معركة المماليك والمغول قرب دمشق سنة 702 هـ؟",
+      "a": "مرج الصُفَّر",
+      "alt": [
+        "مرج الصفر"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B4%D9%82%D8%AD%D8%A8",
       "verified": true,
       "qid": "ramadan-1000-027"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالشوفان؟",
-      "a": "شوربة شوفان",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "في أي يوم من رمضان وقعت المعركة التي فتحت الأندلس؟",
+      "a": "الثامن والعشرون",
+      "alt": [
+        "28"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%88%D8%A7%D8%AF%D9%8A_%D9%84%D9%83%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-028"
     },
     {
       "p": 1000,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق الملوخية الثانية؟",
-      "a": "ملوخية شام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "من حاكم مغول فارس الذي انهارت أطماعه في الشام بعد هزيمة رمضان 702 هـ؟",
+      "a": "محمود غازان",
+      "alt": [
+        "غازان"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B4%D9%82%D8%AD%D8%A8",
       "verified": true,
       "qid": "ramadan-1000-029"
     },
     {
       "p": 1000,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام أحد لا التأكيد؟",
-      "a": "أحد عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "في أي شهر ميلادي وقعت معركة رمضان 658 هـ بين المماليك والمغول؟",
+      "a": "سبتمبر",
+      "alt": [
+        "أيلول"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B9%D9%8A%D9%86_%D8%AC%D8%A7%D9%84%D9%88%D8%AA",
       "verified": true,
       "qid": "ramadan-1000-030"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة باليقطين؟",
-      "a": "شوربة يقطين",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "في أي سنة ميلادية وقعت معركة المسلمين والفرنجة في رمضان 114 هـ؟",
+      "a": "سبعمئة واثنتان وثلاثون",
+      "alt": [
+        "732"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%A8%D9%84%D8%A7%D8%B7_%D8%A7%D9%84%D8%B4%D9%87%D8%AF%D8%A7%D8%A1",
       "verified": true,
       "qid": "ramadan-1000-031"
     },
     {
       "p": 1000,
-      "topic": "تقاليد شعبية",
-      "q": "ما طبق العدسية تأكيدا لا؟",
-      "a": "عدسية شام",
+      "topic": "أحداث في رمضان",
+      "q": "ماذا يعني لقب قائد الفرنجة الذي اكتسبه بعد معركة رمضان 114 هـ؟",
+      "a": "المطرقة",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%A8%D9%84%D8%A7%D8%B7_%D8%A7%D9%84%D8%B4%D9%87%D8%AF%D8%A7%D8%A1",
       "verified": true,
       "qid": "ramadan-1000-032"
     },
     {
       "p": 1000,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام الخندق لا التأكيد؟",
-      "a": "خندق عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "أحداث في رمضان",
+      "q": "في أي سنة هجرية هزم المماليك المغول قرب دمشق؟",
+      "a": "اثنتان وسبعمئة",
+      "alt": [
+        "702"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B4%D9%82%D8%AD%D8%A8",
       "verified": true,
       "qid": "ramadan-1000-033"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما طبق الشوربة بالشمندر؟",
-      "a": "شوربة شمندر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "من السلطان المغولي الذي بنى أكبر مساجد لاهور؟",
+      "a": "أورنكزيب",
+      "alt": [
+        "أورنكزيب عالمكير"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A8%D8%A7%D8%AF%D8%B4%D8%A7%D9%87%D9%8A",
       "verified": true,
       "qid": "ramadan-1000-034"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب القهوة العربية؟",
-      "a": "قهوة عربية",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "في أي سنة أُضيء مسجد النبي بالمصابيح الكهربائية لأول مرة؟",
+      "a": "ألف وتسعمئة وتسعة",
+      "alt": [
+        "1909"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D9%86%D8%A8%D9%88%D9%8A",
       "verified": true,
       "qid": "ramadan-1000-035"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب القهوة التركية؟",
-      "a": "قهوة تركية",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "من الوالي الذي أتمّ بناء الجامع الأعظم بمدينة تونس؟",
+      "a": "عبيد الله بن الحبحاب",
+      "alt": [
+        "ابن الحبحاب"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%B2%D9%8A%D8%AA%D9%88%D9%86%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-036"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب القهوة السعودية؟",
-      "a": "قهوة سعودية",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم الربوة الصخرية التي شُيّد عليها المسجد الطولوني؟",
+      "a": "جبل يشكر",
+      "alt": [
+        "يشكر"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D8%A8%D9%86_%D8%B7%D9%88%D9%84%D9%88%D9%86",
       "verified": true,
       "qid": "ramadan-1000-037"
     },
     {
       "p": 1000,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى الغريبة بالجوز؟",
-      "a": "غريبة جوز",
+      "topic": "مساجد ومدن",
+      "q": "في أي يوم من السنة الهجرية شُرع في بناء أقدم جوامع فاس سنة 245 هـ؟",
+      "a": "أول رمضان",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%82%D8%B1%D9%88%D9%8A%D9%8A%D9%86",
       "verified": true,
       "qid": "ramadan-1000-038"
     },
     {
       "p": 1000,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى المشبك الشامي؟",
-      "a": "مشبك شام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "كم عمودًا في القاعة الداخلية للجامع الأعظم بتونس؟",
+      "a": "مئة وأربعة وثمانون عمودًا",
+      "alt": [
+        "184"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%B2%D9%8A%D8%AA%D9%88%D9%86%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-039"
     },
     {
       "p": 1000,
       "topic": "مساجد ومدن",
-      "q": "ما جامع الراجحي في الرياض؟",
-      "a": "الراجحي رياض",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "q": "إلى أي سوق يعود اسم أكبر مساجد مراكش؟",
+      "a": "سوق الكتب",
+      "alt": [
+        "الكتبيون"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%83%D8%AA%D8%A8%D9%8A%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-040"
     },
     {
       "p": 1000,
       "topic": "مساجد ومدن",
-      "q": "ما جامع الراجحي في الدمام؟",
-      "a": "الراجحي دمام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "q": "في أي سنة ميلادية أُسس أقدم مساجد الصين؟",
+      "a": "سبعمئة واثنان وأربعون",
+      "alt": [
+        "742"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D8%B4%D9%8A%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-041"
     },
     {
       "p": 1000,
-      "topic": "ليالي وعشر",
-      "q": "ما اسم تحري التاسعة؟",
-      "a": "تحري تاسعة",
+      "topic": "مساجد ومدن",
+      "q": "من الوالي الفارسي الذي بُني في بستانه أول مسجد خارج مكة والمدينة؟",
+      "a": "باذان",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1_%28%D8%B5%D9%86%D8%B9%D8%A7%D8%A1%29",
       "verified": true,
       "qid": "ramadan-1000-042"
     },
     {
       "p": 1000,
-      "topic": "أركان ومفاهيم",
-      "q": "ما اسم الشفق الأحمر؟",
-      "a": "شفق أحمر",
+      "topic": "مساجد ومدن",
+      "q": "من أي موقع أثري جُلبت أعمدة الجامع الأعظم بتونس؟",
+      "a": "قرطاج",
       "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%B2%D9%8A%D8%AA%D9%88%D9%86%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-043"
     },
     {
       "p": 1000,
-      "topic": "شخصيات وأحداث",
-      "q": "ما عام عنيزة لا الغزوة؟",
-      "a": "عنيزة عام",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "مساجد ومدن",
+      "q": "ما اسم المعلم البيزنطي الذي يقابل المسجد المعروف بالأزرق في إسطنبول؟",
+      "a": "آيا صوفيا",
+      "alt": [
+        "أيا صوفيا"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85%D8%B9_%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D9%86_%D8%A3%D8%AD%D9%85%D8%AF",
       "verified": true,
       "qid": "ramadan-1000-044"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب التمر باللبن؟",
-      "a": "تمر لبن",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "في أي سورة أخرى وُصفت الليلة المباركة بأنها ليلة مباركة؟",
+      "a": "الدخان",
+      "alt": [
+        "سورة الدخان"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%84%D8%A9_%D8%A7%D9%84%D9%82%D8%AF%D8%B1",
       "verified": true,
       "qid": "ramadan-1000-045"
     },
     {
       "p": 1000,
-      "topic": "تقاليد شعبية",
-      "q": "ما حلوى الكعك العراقي تأكيدا لا؟",
-      "a": "كعك بغداد",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "كم مرة ورد لفظ رمضان في القرآن الكريم؟",
+      "a": "مرة واحدة",
+      "alt": [
+        "واحدة",
+        "1"
+      ],
+      "sourceUrl": "https://quran.com/2/185",
       "verified": true,
       "qid": "ramadan-1000-046"
     },
     {
       "p": 1000,
-      "topic": "مساجد ومدن",
-      "q": "ما مدينة الوجه تأكيدا لا؟",
-      "a": "الوجه بحر",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "في أي سورة ورد اسم شهر رمضان؟",
+      "a": "البقرة",
+      "alt": [
+        "سورة البقرة"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%B1%D8%A9_%D8%A7%D9%84%D8%A8%D9%82%D8%B1%D8%A9",
       "verified": true,
       "qid": "ramadan-1000-047"
     },
     {
       "p": 1000,
-      "topic": "مائدة رمضان",
-      "q": "ما مشروب الرمان؟",
-      "a": "رمان شراب",
-      "alt": [],
-      "sourceUrl": "https://www.aljazeera.net/",
+      "topic": "العشر الأواخر والعيد",
+      "q": "في كم سنة نزل القرآن منجَّمًا بعد ليلة رمضان المباركة؟",
+      "a": "ثلاث وعشرون سنة",
+      "alt": [
+        "23"
+      ],
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86",
       "verified": true,
       "qid": "ramadan-1000-048"
     }
