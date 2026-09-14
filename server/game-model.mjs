@@ -1,7 +1,7 @@
 // Missing game IDs belong to the original rooms. Their state and protocol stay valid.
 import * as meenfina from './room-model.mjs';
 import * as fabraka from './fabraka-model.mjs';
-export { member, RoomError, fail, connected } from './room-model.mjs';
+export { member, memberOrNull, RoomError, fail, connected } from './room-model.mjs';
 const model = (room) => room.game === 'fabraka' ? fabraka : meenfina;
 export function createRoom(code, input, now) {
   const game = input.game ?? 'meenfina';

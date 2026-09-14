@@ -13,6 +13,17 @@ export const ROOM_TTL = 2 * 60 * 60 * 1000;
 export const HOST_GRACE = 20_000;
 export const AVATARS = ['😎', '🦋', '🌟', '🚀'];
 export const COLORS = ['#118D96', '#9250BD', '#8651AD', '#A67A21'];
+// CLDR now gives the bare `ar` locale Latin digits, so generated numbers used to
+// sit next to the hand-written Arabic-Indic ones. Ask for the arab numbering
+// system explicitly, and map anything a reduced-ICU build still returns.
+const ARABIC_DIGITS = '\u0660\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669';
+export function arabicNumber(value) {
+  const amount = Number(value);
+  if (!Number.isFinite(amount)) return '';
+  let text;
+  try { text = amount.toLocaleString('ar-EG-u-nu-arab'); } catch { text = String(amount); }
+  return text.replace(/[0-9]/g, (digit) => ARABIC_DIGITS[Number(digit)]);
+}
 export function normalizeCode(value) {
   return String(value ?? '').replace(/[٠-٩۰-۹]/g, (c) => String(c.charCodeAt(0) - (c <= '٩' ? 0x660 : 0x6f0))).replace(/\s/g, '');
 }
@@ -44,7 +55,7 @@ export const ERRORS = {
   NO_HELP: 'لا توجد مساعدة متاحة لهذا السؤال.',
   TRUTH_OWNER: 'هذه الخطوة متاحة لصاحب الحقيقة في هذه الجولة.',
   NO_PROMPT: 'لا توجد أسئلة إضافية للتبديل.',
-  QUESTIONS: 'الأسئلة المتاحة لا تكفي. وسّع المواضيع أو قلّل عدد الجولات.',
+  QUESTIONS: 'الأسئلة المتاحة لا تكفي لهذه الجولات. وسّع المواضيع المختارة أو اختر «كل الأسئلة».',
   STARTED: 'بدأت اللعبة. يمكنك الانضمام بعد العودة إلى غرفة الانتظار.',
   NOT_FOUND: 'الغرفة غير موجودة أو انتهت. تحقق من الرمز.',
   EXPIRED: 'انتهت صلاحية الغرفة. أنشئ غرفة جديدة.',
@@ -55,7 +66,10 @@ export const ERRORS = {
   STALE: 'انتهت هذه الجولة. انتظر تحديث الشاشة.',
   VOTED: 'تم اعتماد تصويتك لهذه الجولة بالفعل.',
   TARGET: 'اختر لاعبًا موجودًا في الجولة.',
-  RATE_LIMIT: 'طلبات كثيرة خلال وقت قصير. انتظر قليلًا وحاول مجددًا.',
+  RATE_LIMIT: 'طلبات كثيرة خلال وقت قصير. انتظر دقيقة واحدة ثم حاول مجددًا.',
+  CREATE_LIMIT: 'أنشأت غرفًا كثيرة من هذا الجهاز. انتظر ١٠ دقائق ثم أنشئ غرفة جديدة، أو ادخل برمز غرفة جاهزة.',
+  COLLISION: 'تعذر حجز رمز غرفة فارغ الآن. حاول مرة ثانية بعد لحظات.',
+  TARGET_GONE: 'غادر هذا المقعد الغرفة بالفعل. حدّثت القائمة تلقائيًا.',
   ORIGIN: 'رابط اللعبة غير مفعّل للاتصال بالغرف.',
   CONFIG: 'حدّث صفحة اللعبة للحصول على أحدث نسخة من الغرف.',
   NETWORK: 'تعذر الاتصال. تحقق من الإنترنت وحاول مجددًا.',

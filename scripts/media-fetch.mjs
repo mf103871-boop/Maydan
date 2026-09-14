@@ -341,10 +341,31 @@ async function searchCommons(query, kind) {
   return pages.map((page) => commonsCandidate(page, kind));
 }
 
+// اسم الملف كما يظهر في descriptionurl، فهو الملف الذي نزّلناه فعلًا لا الاسم المطلوب.
+export function commonsFileTitle(info) {
+  const url = info && info.descriptionurl;
+  if (!url) return null;
+  const m = String(url).match(/\/wiki\/(File:.+)$/i);
+  return m ? decodeURIComponent(m[1]).replace(/_/g, ' ') : null;
+}
+
+// ترجع رسالة الرفض إذا كان الاسم المطلوب تحويلة إلى ملف آخر، وإلا null.
+export function commonsRedirect(title, info) {
+  const actual = commonsFileTitle(info);
+  const asked = String(title).replace(/_/g, ' ').trim();
+  if (!actual || actual.toLowerCase() === asked.toLowerCase()) return null;
+  return `«${asked}» تحويلة في كومنز إلى ملف آخر: «${actual}» — أعد الأمر بالاسم الحقيقي إن كان هو المقصود`;
+}
+
 async function fetchCommonsFile(title, kind) {
   const data = await fetchJson(commonsUrl({ titles: title }), 'كومنز');
   const page = data.query?.pages?.[0];
   if (!page || page.missing || !page.imageinfo) throw new NoCandidateError(`لا يوجد ملف بهذا الاسم في كومنز: ${title}`);
+  // صفحة التحويلة في كومنز تُرجع بيانات الملف الهدف تحت الاسم المطلوب، فينزل
+  // ملف مختلف تمامًا بصمت وبإسناد باسم غير اسمه. ‏--from تعني «هذا العنصر بعينه»،
+  // فنرفض ونذكر الاسم الحقيقي بدل أن نحفظ صورة لا علاقة لها بالسؤال.
+  const redirect = commonsRedirect(title, page.imageinfo[0]);
+  if (redirect) throw new NoCandidateError(redirect);
   return commonsCandidate(page, kind);
 }
 

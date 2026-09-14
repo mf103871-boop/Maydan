@@ -1,11 +1,17 @@
 // حزم تجريبية للتحقق من مسار الوسائط محليًا — ليست محتوى للّعبة.
 //
 //   node scripts/demo-packs.mjs            ← ينسخ وسائط الاختبار ويكتب ست حزم
-//   node scripts/demo-packs.mjs --remove   ← يمسحها ويعيد بنك الأسئلة فارغًا
+//   node scripts/demo-packs.mjs --remove   ← يزيل ملفات demo[a-f].json وmedia/demo
+//                                            وسجلّها في bank-status.json، ويعيد
+//                                            توليد index.js. بنك الأسئلة الحقيقي
+//                                            يبقى كما هو ولا يُمسّ.
 //
 // الحزم الست تغطي كل نوع سؤال يدعمه «بَديهة»، وأول سؤال في كل شريحة هو النوع
 // المقصود، فتُنتج لوحة الثلاثين خانة كل الأنواع بترتيب معلوم. مخرجاتها
 // مُستثناة في .gitignore ولا تُنشر أبدًا.
+//
+// ترتيبها 9000+ بينما أعلى ترتيب في البنك 79، فتظهر في **آخر** شاشة اختيار
+// الفئات لا أولها؛ اختبارا e2e يختارانها بالاسم لهذا السبب.
 import { readdir, readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';

@@ -301,9 +301,9 @@ test('question sources deduplicate facts, migrate retired IDs, and prefer unseen
 
 test('all content has distinct facts, usable aliases/decoys, accessible images, and spare friend prompts', () => {
   const q=data('questions'),p=data('pictures'),f=data('personal'),all=[...q,...p,...f];
-  assert.ok(q.length>=149);assert.ok(q.filter(x=>x.curious).length>=79);assert.ok(p.length>=12);assert.ok(f.length>16);
+  assert.ok(q.length>=154);assert.ok(q.filter(x=>x.curious).length>=86);assert.ok(p.length>=12);assert.ok(f.length>16);
   assert.equal(new Set(all.map(x=>x.id)).size,all.length);assert.equal(new Set(all.map(x=>x.factId)).size,all.length);
-  assert.equal(q.flatMap(x=>x.previousIds||[]).length,11);
+  assert.equal(q.flatMap(x=>x.previousIds||[]).length,13);
   for(const item of all){
     assert.equal(item.text.split('___').length,2,item.id);
     assert.ok(item.aliases.every(x=>validateLie(x).ok),item.id);

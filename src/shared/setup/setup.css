@@ -13,6 +13,11 @@
 .team-input .input:focus { box-shadow: none; }
 .setup-error { color: #FFB4B4; font-weight: 800; font-size: 14px; }
 .setup-sticky { position: sticky; bottom: max(10px, var(--safe-bottom)); z-index: 5; }
+/* الشريط اللاصق يطفو فوق آخر المحتوى ما لم تحجز له الشاشة مكانًا، وزره الثانوي
+   كان شبه شفاف (‎#F9EFDDF0‎) فيظهر النص من تحته. */
+.screen:has(.setup-sticky) { --screen-bottom-reserve: 84px; }
+.screen:has(.setup-sticky .btn + .btn) { --screen-bottom-reserve: 150px; }
+.setup-sticky .btn-secondary { --btn-bg: linear-gradient(180deg, #FFFEF8, #F9EFDD); }
 .pass-screen { position: fixed; inset: 0; z-index: 320; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 28px; text-align: center; background: radial-gradient(600px 400px at 50% 30%, color-mix(in srgb, var(--pass-color, var(--accent)) 30%, var(--bg)), var(--bg) 70%); animation: ui-fade .25s ease-out both; }
 .pass-avatar { width: 120px; height: 120px; border-radius: 36px; display: grid; place-items: center; font-size: 64px; background: color-mix(in srgb, var(--pass-color, var(--accent)) 28%, transparent); border: 2px solid var(--pass-color, var(--accent)); box-shadow: 0 20px 50px rgba(0,0,0,.4); animation: ui-trophy .7s var(--ease-spring) both; }
 .pass-title { font-size: 16px; color: var(--muted); font-weight: 800; }

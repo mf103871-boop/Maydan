@@ -104,7 +104,7 @@
 .podium-rest { width: 100%; }
 
 /* screens */
-.screen { width: min(100%, 720px); margin: 0 auto; padding: calc(10px + var(--safe-top)) max(14px, var(--safe-right)) calc(28px + var(--safe-bottom)) max(14px, var(--safe-left)); min-height: 100dvh; animation: screen-in var(--dur) var(--ease-out) both; }
+.screen { width: min(100%, 720px); margin: 0 auto; padding: calc(10px + var(--safe-top)) max(14px, var(--safe-right)) calc(28px + var(--safe-bottom) + var(--screen-bottom-reserve, 0px)) max(14px, var(--safe-left)); min-height: 100dvh; animation: screen-in var(--dur) var(--ease-out) both; }
 .screen[data-dir="back"] { animation-name: screen-in-back; }
 @keyframes screen-in { from { opacity: 0; transform: translateX(-28px); } }
 @keyframes screen-in-back { from { opacity: 0; transform: translateX(28px); } }
@@ -139,3 +139,9 @@
 .shake { animation: flash-bad .5s ease-out; }
 .count-up { font-variant-numeric: tabular-nums; }
 @media (hover: hover) { .btn:hover:not(:disabled) { filter: brightness(1.08); } }
+
+/* حدّ الخطأ: بديل الشاشة البيضاء */
+.error-boundary { min-height: 100dvh; display: grid; place-items: center; padding: calc(18px + var(--safe-top)) 16px calc(18px + var(--safe-bottom)); }
+.error-card { width: min(100%, 460px); display: grid; gap: 12px; padding: 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--stroke-strong); box-shadow: var(--shadow); text-align: start; }
+.error-card h2 { font-size: 22px; font-weight: 900; }
+.error-detail { font-size: 13px; line-height: 1.8; color: var(--danger); word-break: break-word; background: rgba(174,52,62,.08); border-radius: var(--radius-sm); padding: 10px 12px; }

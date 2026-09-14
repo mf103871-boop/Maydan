@@ -8,7 +8,14 @@ export const meta = {
   ],
 }
 
-const SPEC = '/home/user/-/.cache/fill-spec.json'
+// ملف المواصفات الذي يكتبه `node scripts/bank/gen-fill-spec.mjs` في `.cache/`
+// داخل جذر المستودع. كان هنا مسارًا مطلقًا على جهاز كاتب سابق
+// (/home/user/-/.cache/fill-spec.json) لا وجود له عند أحد غيره، فكانت مرحلة
+// Fill تطلب من كل وكيل قراءة ملف غير موجود. سكربتات سير العمل لا تملك وصولًا
+// إلى نظام الملفات، فالجذر يأتي من `args.repoRoot` إن مُرِّر، وإلا فالمسار
+// نسبي إلى جذر المستودع — وهو مجلد تشغيل الوكلاء ومجلد تشغيل gen-fill-spec.
+const REPO = args && args.repoRoot ? String(args.repoRoot).replace(/\/+$/, '') : '.'
+const SPEC = `${REPO}/.cache/fill-spec.json`
 const TIERS = [
   { p: 200, name: 'سهل', who: '~90% من أفراد العائلة، حتى طفل في العاشرة', ex: '«ما عاصمة مصر؟» → القاهرة' },
   { p: 400, name: 'متوسط', who: '~60% من البالغين', ex: '«ما أعلى جبل في أفريقيا؟» → كليمنجارو' },

@@ -1,13 +1,16 @@
 .jabeen { --game-accent: #078C97; display: grid; gap: 14px; }
-.jabeen-stage { position: fixed; inset: 0; z-index: 300; display: grid; grid-template-rows: auto 1fr auto; background: var(--bg); }
-.jabeen-word { display: grid; place-items: center; text-align: center; padding: 16px; font-size: clamp(44px, 13vw, 92px); font-weight: 900; line-height: 1.15; color: #fff; text-wrap: balance; }
+.jabeen-stage { position: fixed; inset: 0; z-index: 300; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: var(--bg); overflow: hidden; }
+.jabeen-word { display: grid; place-items: center; text-align: center; padding: 10px 16px; min-height: 0; overflow: auto; font-size: clamp(24px, min(11vw, 12vh), 92px); font-weight: 900; line-height: 1.15; color: #fff; text-wrap: balance; overflow-wrap: anywhere; }
+.jabeen-word > * { max-width: 100%; }
 .jabeen-stage.is-good { background: radial-gradient(circle, #147a52, var(--bg) 75%); animation: flash-good .5s ease-out; }
 .jabeen-stage.is-skip { background: radial-gradient(circle, #7a1414, var(--bg) 75%); animation: flash-bad .45s ease-out; }
 .jabeen-stage-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: calc(8px + var(--safe-top)) 14px 8px; font-weight: 800; }
 .jabeen-stage-top .num { font-size: 30px; font-variant-numeric: tabular-nums; color: var(--game-accent); }
 .jabeen-stage-top .num.is-danger { color: var(--danger); animation: ui-pulse .8s ease-in-out infinite; }
-.jabeen-touch { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding: 0 0 var(--safe-bottom); }
-.jabeen-touch button { min-height: 96px; border-radius: 0; font-size: 20px; font-weight: 900; display: grid; place-items: center; gap: 4px; }
+.jabeen-controls { display: grid; gap: 6px; padding: 0 0 var(--safe-bottom); }
+.jabeen-hint { text-align: center; font-size: 13px; font-weight: 700; color: var(--muted); padding: 0 12px; }
+.jabeen-touch { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.jabeen-touch button { min-height: min(96px, 22vh); border-radius: 0; font-size: 20px; font-weight: 900; display: grid; place-items: center; gap: 4px; }
 .jabeen-touch .ok { background: rgba(46,216,163,.2); color: #BFFFE8; }
 .jabeen-touch .skip { background: rgba(255,77,77,.18); color: #FFC9C9; }
 .jabeen-touch span { font-size: 30px; }
@@ -29,3 +32,5 @@
 .jabeen-review button.ok .mark { background: var(--success); color: #04231a; }
 .jabeen-review .grow { flex: 1; min-width: 0; }
 .jabeen-perm { padding: 12px 14px; border-radius: 14px; background: rgba(77,163,255,.12); border: 1px solid rgba(77,163,255,.4); font-size: 14px; line-height: 1.7; color: #CFE6FF; }
+/* الوضع الأفقي على جوال: شريط تحكّم مضغوط ليبقى للكلمة مكان. */
+@media (max-height: 520px) { .jabeen-touch button { min-height: 56px; font-size: 17px; padding: 4px; } .jabeen-touch span { font-size: 21px; } .jabeen-hint { font-size: 12px; } .jabeen-stage-top { padding: calc(4px + var(--safe-top)) 14px 4px; } .jabeen-stage-top .num { font-size: 24px; } }

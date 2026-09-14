@@ -1,0 +1,20 @@
+# Security headers for every statically served file.
+#
+# server/full-worker.mjs wraps its responses with the same policy, but
+# wrangler.jsonc limits `assets.run_worker_first` to /api and /health, so
+# Cloudflare serves the document, the icons and the media straight from static
+# assets and the worker never runs for them. This file is the copy that does
+# apply to those responses — Cloudflare Workers static assets (and Pages) read
+# `_headers` from the deployed directory, and the build copies public/ into
+# dist/ as-is. Keep it identical to CONTENT_SECURITY_POLICY in
+# server/full-worker.mjs so the two paths cannot drift.
+#
+# The page is one self-contained document: inline <script> and <style> (hence
+# 'unsafe-inline'), fonts embedded as data: URIs, images and audio from this
+# origin plus data:/blob:, question media that may be hosted elsewhere over
+# https, and a rooms WebSocket that may live on another host (wss:).
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https: wss:; worker-src 'self'; manifest-src 'self'; base-uri 'none'; object-src 'none'; form-action 'self'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: same-origin

@@ -1,15 +1,30 @@
 // تفاصيل لعبة: «كيف تلعب» بخطوات متحركة، عدد اللاعبين والمدة، وزر العب.
 import React from 'react';
-import { Screen, TopBar, IconButton, Button } from '../../shared/ui/components.jsx';
+import { Screen, TopBar, IconButton, Button, Card } from '../../shared/ui/components.jsx';
 import { IconBack, IconUsers, IconClock, IconPlay } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { navigate, back, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 
+// معرّف غير معروف في الرابط: الملاحة أثناء التصيير تضيع لأن مستمعي الموجّه لم
+// يشتركوا بعد، فتبقى الصفحة بيضاء إلى الأبد. نعرض رسالة وزر عودة بدلًا منها.
+export function MissingGame({ id }) {
+  return (
+    <Screen dir={getDirection()} className="stack" aria-label="لعبة غير موجودة">
+      <TopBar title="لعبة غير موجودة" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
+      <Card className="stack">
+        <span className="card-title">لا توجد لعبة بهذا المعرّف</span>
+        <p className="card-muted">الرابط يشير إلى «<bdi>{id}</bdi>» ولا توجد لعبة بهذا الاسم في ميدان.</p>
+        <Button variant="accent" size="lg" full onClick={() => navigate('/', { replace: true })}>العودة إلى الرئيسية</Button>
+      </Card>
+    </Screen>
+  );
+}
+
 export function GameDetails({ id }) {
   const game = getGame(id);
   const { sound, haptics } = usePlatform();
-  if (!game) { navigate('/', { replace: true }); return null; }
+  if (!game) return <MissingGame id={id} />;
   const Icon = game.icon;
   const modeLabel = game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
   return (

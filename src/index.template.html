@@ -24,17 +24,46 @@
 #boot .ring{width:28px;height:28px;border:3px solid rgba(245,184,46,.2);border-top-color:#087D89;border-radius:50%;animation:boot-spin .85s linear infinite}
 #boot small{color:#77677C;font-size:13px}
 @keyframes boot-spin{to{transform:rotate(360deg)}}
-#fatal{position:fixed;inset:0;display:none;padding:24px;background:#FFFCF4;color:#A52C37;font-size:14px;line-height:2;white-space:pre-wrap;overflow:auto;z-index:9999}
+#fatal{position:fixed;inset:0;display:none;padding:24px;background:#FFFCF4;color:#A52C37;font-size:14px;line-height:2;overflow:auto;z-index:9999}
+#fatal pre{margin:0 0 18px;font:inherit;white-space:pre-wrap;word-break:break-word}
+#fatal .acts{display:grid;gap:10px;max-width:420px}
+#fatal button{min-height:52px;padding:0 16px;border-radius:18px;border:1px solid #CFB599;background:#FFFEF8;color:#352547;font:inherit;font-weight:800;cursor:pointer}
+#fatal button.danger{border-color:#EDB1AA;background:#FCE9E3;color:#A42F32}
 </style>
 </head>
 <body>
 <div id="root"><div id="boot"><img class="mark" src="icons/icon-192.png" width="112" height="112" alt=""><p class="name">ميدان</p><small>ألعاب جمعتنا</small><div class="ring"></div><small>تجهز الساحة…</small></div></div>
-<div id="fatal" role="alert"></div>
+<div id="fatal" role="alert">
+<pre id="fatal-detail"></pre>
+<div class="acts">
+<button type="button" id="fatal-reload">إعادة المحاولة</button>
+<button type="button" id="fatal-home">العودة إلى الرئيسية</button>
+<button type="button" id="fatal-clear" class="danger">مسح البيانات وإعادة التشغيل</button>
+</div>
+</div>
 <script>
 window.onerror = function (msg, src, line, col) {
   var f = document.getElementById('fatal');
-  if (f) { f.style.display = 'block'; f.textContent = 'خطأ في تشغيل المنصة:\n' + msg + '\nسطر ' + line + ':' + col; }
+  var d = document.getElementById('fatal-detail');
+  if (f) { f.style.display = 'block'; if (d) { d.textContent = 'خطأ في تشغيل المنصة:\n' + msg + '\nسطر ' + line + ':' + col; } }
 };
+// لوحة العطل لم يكن فيها مخرج: هذه الأزرار تعيد المحاولة أو تمسح البيانات
+// المعطوبة، فلا يبقى اللاعب أمام شاشة ميتة في كل فتح.
+(function () {
+  function on(id, fn) { var el = document.getElementById(id); if (el) { el.addEventListener('click', fn); } }
+  function home() { location.hash = '#/'; location.reload(); }
+  on('fatal-reload', function () { location.reload(); });
+  on('fatal-home', home);
+  on('fatal-clear', function () {
+    try {
+      for (var i = localStorage.length - 1; i >= 0; i--) {
+        var k = localStorage.key(i);
+        if (k && (k.indexOf('maydan:') === 0 || k.indexOf('maydan-') === 0)) { localStorage.removeItem(k); }
+      }
+    } catch (e) { /* ignore */ }
+    home();
+  });
+})();
 </script>
 <script>
 <!--BUNDLE_JS-->

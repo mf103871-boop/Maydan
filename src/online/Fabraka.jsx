@@ -5,8 +5,18 @@ import { Illustration } from '../games/fabraka/Illustration.jsx';
 import { pictures, questions, categories } from '../games/fabraka/content.js';
 import { normalizeOptions, questionPool, ROUNDS, validateLie, awards, bestLies } from '../games/fabraka/logic.js';
 import css from '../games/fabraka/fabraka.css';
+import { arabicNumber } from './shared.js';
 
-const number = (n) => Number(n).toLocaleString('ar');
+const number = arabicNumber;
+// Mirrors the single-device setup check in src/games/fabraka/Game.jsx: only the
+// text modes draw from the question pool, and mixed spends every third round on a picture.
+export function fabrakaTopics(value) {
+  const options = normalizeOptions(value);
+  const counted = ['classic', 'mixed'].includes(options.mode);
+  const needed = options.mode === 'mixed' ? options.rounds - Math.floor(options.rounds / 3) : options.rounds;
+  const count = questionPool(questions, options).length;
+  return { count, needed: counted ? needed : 0, enough: !counted || count >= needed };
+}
 export const FABRAKA_MODES = { classic: 'حقائق', mixed: 'مزيج', pictures: 'صور', friends: 'أصحابنا' };
 const modeHints = {
   classic: 'فبرك إجابة مقنعة لسؤال حقيقي، ثم اكتشف الحقيقة بين إجابات أصحابك.',
@@ -16,7 +26,7 @@ const modeHints = {
 };
 export function FabrakaSettings({ value, onChange, disabled }) {
   const update = (patch) => onChange(normalizeOptions({ ...value, ...patch }));
-  const count = questionPool(questions, value).length;
+  const topics = fabrakaTopics(value);
   return <fieldset className="online-fab-settings stack" disabled={disabled}>
     <legend>إعدادات فبركة</legend>
     <label className="online-field">نمط فبركة<select value={value.mode} onChange={(e) => update({ mode: e.target.value })}>
@@ -36,8 +46,10 @@ export function FabrakaSettings({ value, onChange, disabled }) {
         <div className="online-fab-categories" role="group" aria-label="مواضيع فبركة">
           <Button size="sm" aria-pressed={!value.categories.length} onClick={() => update({ categories: [] })}>كل المواضيع</Button>
           {categories.map((category) => <Button size="sm" key={category} aria-pressed={value.categories.includes(category)} onClick={() => update({ categories: value.categories.includes(category) ? value.categories.filter((c) => c !== category) : [...value.categories, category] })}>{category}</Button>)}
-        </div><p className="online-footnote">{number(count)} سؤالًا متاحًا في المواضيع المختارة.</p>
+        </div><p className="online-footnote">{number(topics.count)} سؤالًا متاحًا في المواضيع المختارة.</p>
       </details>
+      {/* The warning has to sit outside the collapsed block, or the host never sees why creating fails. */}
+      {!topics.enough && <p className="online-notice error" role="alert">الأسئلة المتاحة ({number(topics.count)}) لا تكفي {number(topics.needed)} جولة. وسّع المواضيع المختارة أو اختر «كل الأسئلة».</p>}
     </>}
     <div className="online-fab-settings-grid">
       <label className="online-field">وقت الكتابة<select value={value.writeSeconds} onChange={(e) => update({ writeSeconds: Number(e.target.value) })}>

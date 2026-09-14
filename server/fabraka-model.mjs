@@ -1,7 +1,7 @@
 // Authoritative simultaneous Fabraka. Only snapshot() may leave the room server.
 import { FABRAKA_PROTOCOL, ROOM_TTL, HOST_GRACE, AVATARS, COLORS, VOTE_SECONDS } from '../src/online/shared.js';
-import { normalizeOptions, validateLie, matchesTruth, sameAnswer, roundBreakdown, TRUTH_ID } from '../src/games/fabraka/logic.js';
-import { active, member, profile, transferHost, joinRoom as joinMember, fail } from './room-model.mjs';
+import { normalizeOptions, validateLie, matchesTruth, sameAnswer, roundBreakdown, fillName, TRUTH_ID } from '../src/games/fabraka/logic.js';
+import { active, member, memberOrNull, profile, transferHost, joinRoom as joinMember, fail } from './room-model.mjs';
 import { shuffled } from './protocol.mjs';
 
 const TIMED = ['host', 'write', 'discussion', 'vote'];
@@ -22,11 +22,27 @@ function presentWriters(room) {
   return room.fab.writers.filter((id) => room.members.some((m) => m.id === id && !m.left));
 }
 function question(room) { return room.fab?.question; }
+// صاحب الحقيقة يدور على المشاركين الحاضرين. ownerShift يعوّض من غادر في المنتصف
+// كي يبقى صاحب الجولة الجارية نفسه، ويكمل الدور من بعده بلا جولات ميتة.
+function friendOwner(room, round) {
+  const size = room.participants.length;
+  return size ? room.participants[(((round - 1 - (room.ownerShift || 0)) % size) + size) % size] : null;
+}
+function dropParticipant(room, id) {
+  const index = room.participants.indexOf(id);
+  if (index < 0 || room.settings.mode !== 'friends' || !PLAYING.includes(room.phase)) return;
+  const size = room.participants.length;
+  const current = (((room.round - 1 - (room.ownerShift || 0)) % size) + size) % size;
+  room.participants = room.participants.filter((p) => p !== id);
+  if (!room.participants.length) return;
+  room.ownerShift = room.round - 1 - current + (index <= current ? 1 : 0);
+  room.rounds = Math.max(room.round, room.participants.length * room.settings.friendCycles);
+}
 
 export function createRoom(code, input, now) {
   const settings = normalizeOptions(input.settings);
   return { game: 'fabraka', code, revision: 0, createdAt: now, expiresAt: now + ROOM_TTL,
-    hostId: input.id, hostMissingSince: now, phase: 'lobby', matchId: 0, round: 0,
+    hostId: input.id, hostMissingSince: now, phase: 'lobby', matchId: 0, round: 0, ownerShift: 0,
     rounds: settings.rounds, settings, voteSeconds: VOTE_SECONDS, deadlineAt: null, reason: null,
     members: [{ id: input.id, tokenHash: input.tokenHash, ...profile(input), joinedAt: now, connected: false, ready: true, left: false }],
     participants: [], scores: {}, stats: {}, seenFacts: [], fab: null, history: [] };
@@ -43,9 +59,9 @@ function beginRound(room, now) {
   const f = room.fab;
   const raw = f.deck[f.cursor++];
   if (!raw) fail('QUESTIONS');
-  const truthHostId = room.settings.mode === 'friends' ? room.participants[(room.round - 1) % room.participants.length] : null;
+  const truthHostId = room.settings.mode === 'friends' ? friendOwner(room, room.round) : null;
   const owner = room.members.find((m) => m.id === truthHostId);
-  Object.assign(f, { question: truthHostId ? { ...raw, text: raw.text.replace('{name}', owner.name), answer: '', aliases: [] } : raw,
+  Object.assign(f, { question: truthHostId ? { ...raw, text: fillName(raw.text, owner.name), answer: '', aliases: [] } : raw,
     truthHostId, writers: active(room).map((m) => m.id).filter((id) => id !== truthHostId),
     submissions: {}, options: [], votes: {}, truthWriters: [], helped: {}, revealGroups: [], revealIndex: 0,
     revealedIds: [], groupShown: false, scored: false, aborted: null, breakdown: {} });
@@ -124,6 +140,7 @@ export function leaveRoom(room, id, now) {
   const m = member(room, id); m.left = true; m.connected = false; m.ready = false;
   transferHost(room, now, room.hostId === id);
   if (!active(room).length) { room.phase = 'closed'; room.deadlineAt = null; return; }
+  dropParticipant(room, id);
   if (PLAYING.includes(room.phase) && active(room).length < 3) {
     room.phase = 'over'; room.reason = 'players_left'; room.deadlineAt = null;
   } else if (room.phase === 'host' && room.fab.truthHostId === id) abortRound(room, 'owner_left');
@@ -157,17 +174,21 @@ export function action(room, actorId, command, now, deck = []) {
   switch (command.type) {
     case 'ready':
       phase('lobby'); if (typeof command.ready !== 'boolean') fail('INVALID'); actor.ready = command.ready; break;
-    case 'kick':
+    case 'kick': {
       host(); phase('lobby');
-      if (command.targetId === actorId || member(room, command.targetId).connected) fail('INVALID');
+      if (command.targetId === actorId) fail('INVALID');
+      const target = memberOrNull(room, command.targetId);
+      if (!target) fail('TARGET_GONE', 409);
+      if (target.connected) fail('INVALID');
       leaveRoom(room, command.targetId, now); break;
+    }
     case 'start': {
       host(); phase('lobby');
       const players = active(room);
       if (players.length < 3 || players.length > 8 || !players.every((m) => m.connected && m.ready)) fail('NOT_READY', 409);
       const rounds = room.settings.mode === 'friends' ? players.length * room.settings.friendCycles : room.settings.rounds;
       if (deck.length < rounds) fail('QUESTIONS');
-      room.matchId++; room.round = 1; room.rounds = rounds; room.reason = null;
+      room.matchId++; room.round = 1; room.rounds = rounds; room.reason = null; room.ownerShift = 0;
       room.participants = players.map((m) => m.id);
       room.scores = Object.fromEntries(room.participants.map((id) => [id, 0]));
       room.stats = Object.fromEntries(room.participants.map((id) => [id, zeroStats()])); room.history = [];
@@ -186,7 +207,7 @@ export function action(room, actorId, command, now, deck = []) {
       phase('host'); if (f.truthHostId !== actorId) fail('TRUTH_OWNER', 403);
       if (f.deck.length - f.cursor <= room.rounds - room.round) fail('NO_PROMPT');
       const raw = f.deck[f.cursor++];
-      f.question = { ...raw, text: raw.text.replace('{name}', actor.name), answer: '', aliases: [] };
+      f.question = { ...raw, text: fillName(raw.text, actor.name), answer: '', aliases: [] };
       const fact = raw.factId || raw.id;
       room.seenFacts = [...room.seenFacts.filter((id) => id !== fact), fact].slice(-256);
       // Keeping the original deadline prevents an absent owner from stalling the room.
@@ -249,7 +270,7 @@ export function action(room, actorId, command, now, deck = []) {
     case 'restart':
       host(); phase('over'); room.matchId++; room.phase = 'lobby'; room.round = 0; room.reason = null;
       room.members = active(room); room.members.forEach((m) => { m.ready = m.id === room.hostId; });
-      room.participants = []; room.scores = {}; room.stats = {}; room.history = []; room.fab = null; room.deadlineAt = null;
+      room.participants = []; room.ownerShift = 0; room.scores = {}; room.stats = {}; room.history = []; room.fab = null; room.deadlineAt = null;
       break;
     default: fail('INVALID');
   }

@@ -111,21 +111,29 @@ function writtenNumber(value) {
 // also merge when they are WRONG answers, not just when listed as truth aliases.
 export function numericValue(text) {
   const s = String(text).trim().replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x660)).replace(/[۰-۹]/g, (d) => String(d.charCodeAt(0) - 0x6f0)).replace(/٫/g, '.').replace(/٬/g, '');
-  if (/^[+-]?\d+(?:\.\d+)?$/.test(s)) {
-    const n = Number(s); return Number.isFinite(n) ? n : null;
+  // The written sign is stripped first so «ناقص ٥» is a number just like «ناقص خمسة».
+  const sign = /^(سالب|ناقص)\s+/.test(s) ? -1 : 1;
+  const rest = s.replace(/^(سالب|ناقص)\s+/, '');
+  if (/^[+-]?\d+(?:\.\d+)?$/.test(rest)) {
+    const n = Number(rest); return Number.isFinite(n) ? n * sign : null;
   }
-  if (!/^[\p{Script=Arabic}\s]+$/u.test(s)) return null;
-  const negative = /^(سالب|ناقص)\s/.test(s);
-  const n = writtenNumber(s.replace(/^(سالب|ناقص)\s+/, ''));
-  return n === null ? null : n * (negative ? -1 : 1);
+  if (!/^[\p{Script=Arabic}\s]+$/u.test(rest)) return null;
+  const n = writtenNumber(rest);
+  return n === null ? null : n * sign;
 }
 export function sameAnswer(a, b) {
   const x = numericValue(a), y = numericValue(b);
-  if (x !== null || y !== null) return x !== null && y !== null && x === y;
+  // Numbers only DECIDE when both sides are numbers; otherwise «78%» and «٧٨٪»
+  // still have to meet «78» through the normalised text comparison below.
+  if (x !== null && y !== null) return x === y;
   const n = arabicNormalizeLoose(a);
   return Boolean(n) && n === arabicNormalizeLoose(b);
 }
 export function matchesTruth(text, question) { return [question.answer, ...(question.aliases || [])].some((answer) => sameAnswer(text, answer)); }
+
+// A replacer FUNCTION is required: a plain string replacement would let a name
+// containing $&, $` , $' or $$ rewrite the question text for the whole table.
+export function fillName(text, name) { return String(text).replace('{name}', () => String(name)); }
 
 export function initialState(players, options, { deck = [], seed = 1, sessionId = `fab-${Date.now()}` } = {}) {
   if (!Array.isArray(players) || players.length < 3 || players.length > 8 || players.some((p) => !validId(p.id) || typeof p.name !== 'string' || !p.name.trim() || p.name.length > 40 || (p.emoji !== undefined && (typeof p.emoji !== 'string' || p.emoji.length > 32)) || (p.color !== undefined && (typeof p.color !== 'string' || p.color.length > 80))) || new Set(players.map((p) => p.id)).size !== players.length) throw new Error('فبركة تحتاج 3–8 لاعبين مختلفين');
@@ -159,7 +167,7 @@ function begin(state) {
   const hostId = state.settings.mode === 'friends' ? state.players[(state.round - 1) % state.players.length].id : null;
   const start = (state.round - 1 + (hostId ? 1 : 0)) % state.players.length;
   const order = Array.from({ length: state.players.length }, (_, i) => state.players[(start + i) % state.players.length].id).filter((id) => id !== hostId);
-  const question = hostId ? { ...raw, text: raw.text.replace('{name}', state.players.find((p) => p.id === hostId).name), answer: '', aliases: [] } : raw;
+  const question = hostId ? { ...raw, text: fillName(raw.text, state.players.find((p) => p.id === hostId).name), answer: '', aliases: [] } : raw;
   return { ...state, question, hostId, order, deckCursor: state.deckCursor + 1,
     usedQuestions: [...state.usedQuestions, raw.id], usedFacts: [...state.usedFacts, factId(raw)],
     phase: hostId ? 'host' : 'question', ready: false, draft: '', aliasesDraft: '', remaining: state.settings.writeSeconds };
@@ -277,7 +285,7 @@ export function reduce(state, action) {
       if (!replacement) return state;
       const at = state.deck.findIndex((q) => q.id === replacement.id), deck = [...state.deck];
       deck[at] = state.deck[state.deckCursor - 1]; deck[state.deckCursor - 1] = replacement;
-      return { ...state, deck, draft: '', aliasesDraft: '', question: { ...replacement, text: replacement.text.replace('{name}', actor.name), answer: '', aliases: [] },
+      return { ...state, deck, draft: '', aliasesDraft: '', question: { ...replacement, text: fillName(replacement.text, actor.name), answer: '', aliases: [] },
         usedQuestions: [...state.usedQuestions, replacement.id], usedFacts: [...state.usedFacts, factId(replacement)] };
     }
     case 'START_WRITING': return state.phase === 'question' ? { ...state, phase: 'write', ready: false, remaining: state.settings.writeSeconds } : state;
@@ -335,7 +343,7 @@ export function awards(state) {
   }).filter((a) => a.value > 0);
 }
 export function bestLies(state) {
-  const all = state.history.flatMap((r) => r.highlights.map((h) => ({ ...h, question: r.question, round: r.round })))
+  const all = state.history.flatMap((r) => r.highlights.map((h) => ({ ...h, question: r.question, answer: r.answer, round: r.round })))
     .filter((h) => h.fooled || h.laughs).sort((a, b) => b.fooled - a.fooled || b.laughs - a.laughs);
   const top = all.slice(0, 3), funniest = [...all].sort((a, b) => b.laughs - a.laughs)[0];
   if (funniest?.laughs && !top.includes(funniest)) top[top.length - 1] = funniest;
@@ -361,6 +369,9 @@ export function restoreSession(raw, { includeOver = false } = {}) {
     if (!Array.isArray(raw.usedFacts) || !Array.isArray(raw.usedQuestions) || !raw.usedFacts.every((id) => typeof id === 'string') || !raw.usedQuestions.every((id) => typeof id === 'string')) return null;
     if (raw.hostId !== null && !ids.includes(raw.hostId)) return null;
     if (raw.hostId && raw.order.includes(raw.hostId)) return null;
+    // The truth-owner phase exists only in «أصحابنا»; anywhere else currentActor
+    // would resolve to undefined and take the whole screen down on resume.
+    if (raw.phase === 'host' && raw.settings.mode !== 'friends') return null;
     if (!['intro', 'over'].includes(raw.phase) && raw.hostId !== (raw.settings.mode === 'friends' ? players[(raw.round - 1) % players.length].id : null)) return null;
     if (!['intro', 'over'].includes(raw.phase) && raw.order.length !== players.length - (raw.hostId ? 1 : 0)) return null;
     if (!Number.isInteger(raw.writer) || !Number.isInteger(raw.voter) || raw.writer < 0 || raw.voter < 0 || (raw.order.length && (raw.writer >= raw.order.length || raw.voter >= raw.order.length))) return null;

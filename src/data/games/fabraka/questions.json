@@ -75,7 +75,9 @@
     "category": "جغرافيا وطبيعة",
     "sourceHint": "NOAA / Guinness World Records",
     "factId": "fabraka-w1-004",
-    "previousIds": [],
+    "previousIds": [
+      "fabraka-w2-006"
+    ],
     "curious": true,
     "aliases": [
       "تشالينجر",
@@ -633,7 +635,9 @@
     "category": "فضاء",
     "sourceHint": "NASA Solar System Exploration",
     "factId": "fabraka-w1-031",
-    "previousIds": [],
+    "previousIds": [
+      "fabraka-w2-012"
+    ],
     "curious": true,
     "aliases": [],
     "kind": "text",
@@ -908,27 +912,6 @@
     ]
   },
   {
-    "id": "fabraka-w2-006",
-    "text": "أعمق نقطة معروفة في محيطات الأرض تقع في خندق ___.",
-    "answer": "ماريانا",
-    "explanation": "منطقة تشالنجر ديب في خندق ماريانا بالمحيط الهادئ يبلغ عمقها نحو 11 كيلومترًا، ولو وضعنا فيها إيفرست لبقيت قمته تحت الماء.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "NOAA / Britannica",
-    "factId": "fabraka-w2-006",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ماريانـا"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "تونغا",
-      "كوريل",
-      "بورتوريكو"
-    ]
-  },
-  {
     "id": "fabraka-w2-007",
     "text": "النهر الذي يصب أكبر كمية من المياه في العالم هو نهر ___.",
     "answer": "الأمازون",
@@ -989,27 +972,6 @@
       "56.3",
       "57.0",
       "57.5"
-    ]
-  },
-  {
-    "id": "fabraka-w2-012",
-    "text": "يستغرق كوكب الزهرة نحو ___ يومًا أرضيًا ليدور دورة واحدة حول نفسه.",
-    "answer": "243",
-    "explanation": "يوم الزهرة أطول من سنته: يدور حول نفسه في نحو 243 يومًا أرضيًا، بينما يكمل دورته حول الشمس في نحو 225 يومًا فقط.",
-    "category": "فضاء",
-    "sourceHint": "NASA Solar System Exploration - Venus",
-    "factId": "fabraka-w2-012",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "مئتان وثلاثة وأربعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "231",
-      "255",
-      "267"
     ]
   },
   {
@@ -2234,7 +2196,7 @@
   },
   {
     "id": "fabraka-w3-035",
-    "text": "كلمة «خوارزمية» في علوم الحاسوب مشتقة من اسم العالم ___.",
+    "text": "مصطلح algorithm في علوم الحاسوب جاء من اسم عالم رياضيات مسلم هو ___.",
     "answer": "الخوارزمي",
     "explanation": "محمد بن موسى الخوارزمي، عالم الرياضيات في القرن التاسع الميلادي، تحوّل اسمه في اللاتينية إلى Algoritmi ومنه جاءت كلمة algorithm.",
     "category": "تاريخ العلوم",
@@ -2583,7 +2545,7 @@
     "id": "fabraka-w4-017",
     "text": "كلمة Algebra في اللغات الأوروبية مأخوذة من الكلمة العربية ___.",
     "answer": "الجبر",
-    "explanation": "انتقلت الكلمة إلى اللاتينية من عنوان كتاب الخوارزمي «الجبر والمقابلة» في القرن التاسع الميلادي.",
+    "explanation": "انتقلت الكلمة إلى اللاتينية من عنوان كتاب «الجبر والمقابلة» الذي ألّفه عالم رياضيات مسلم في القرن التاسع الميلادي.",
     "category": "لغة",
     "sourceHint": "Britannica: Algebra / Merriam-Webster etymology",
     "factId": "fabraka-w4-017",
@@ -3226,5 +3188,153 @@
     "sourceHint": "NASA Science",
     "sourceUrl": "https://science.nasa.gov/uranus/facts/",
     "verifiedAt": "2026-09-12"
+  },
+  {
+    "id": "fabraka-w5-001",
+    "text": "الفلز الوحيد الذي يبقى سائلًا في درجة حرارة الغرفة هو ___.",
+    "answer": "الزئبق",
+    "explanation": "درجة انصهار الزئبق نحو 39 درجة مئوية تحت الصفر، ولذلك يبقى سائلًا في درجة حرارة الغرفة بينما تبقى بقية الفلزات صلبة.",
+    "category": "الكيمياء والفيزياء",
+    "sourceHint": "Royal Society of Chemistry - Mercury / Encyclopaedia Britannica",
+    "factId": "fabraka-w5-001",
+    "previousIds": [],
+    "curious": true,
+    "aliases": [],
+    "kind": "text",
+    "answerType": "text",
+    "decoys": [
+      "الرصاص",
+      "الصوديوم",
+      "القصدير",
+      "الغاليوم"
+    ]
+  },
+  {
+    "id": "fabraka-w5-002",
+    "text": "عند التجمّد يزداد حجم الماء بنحو ___ بالمئة، ولهذا يطفو الجليد.",
+    "answer": "9",
+    "explanation": "الماء من المواد النادرة التي تتمدّد عند التجمّد؛ يزيد حجمه نحو 9 بالمئة فتقل كثافته ويطفو الجليد فوق الماء السائل.",
+    "category": "الكيمياء والفيزياء",
+    "sourceHint": "USGS Water Science School / Encyclopaedia Britannica - Ice",
+    "factId": "fabraka-w5-002",
+    "previousIds": [],
+    "curious": true,
+    "aliases": [
+      "تسعة"
+    ],
+    "kind": "text",
+    "answerType": "number",
+    "decoys": [
+      "2",
+      "4",
+      "15",
+      "25"
+    ]
+  },
+  {
+    "id": "fabraka-w5-003",
+    "text": "ينتقل الصوت في الماء أسرع من انتقاله في الهواء بنحو ___ أضعاف.",
+    "answer": "4",
+    "explanation": "سرعة الصوت في الماء نحو 1480 مترًا في الثانية، أي أكثر من أربعة أضعاف سرعته في الهواء، لأن جزيئات الماء أقرب إلى بعضها.",
+    "category": "الكيمياء والفيزياء",
+    "sourceHint": "NOAA Ocean Explorer / Encyclopaedia Britannica",
+    "factId": "fabraka-w5-003",
+    "previousIds": [],
+    "curious": true,
+    "aliases": [
+      "أربعة"
+    ],
+    "kind": "text",
+    "answerType": "number",
+    "decoys": [
+      "2",
+      "3",
+      "10",
+      "20"
+    ]
+  },
+  {
+    "id": "fabraka-w5-004",
+    "text": "في قدم الإنسان الواحدة ___ عظمة، أي نحو ربع عظام الجسم في القدمين معًا.",
+    "answer": "26",
+    "explanation": "قدم الإنسان الواحدة تضم 26 عظمة، فالقدمان معًا تحويان نحو ربع عظام الجسم كله.",
+    "category": "جسم الإنسان",
+    "sourceHint": "American Academy of Orthopaedic Surgeons / Gray’s Anatomy",
+    "factId": "fabraka-w5-004",
+    "previousIds": [],
+    "curious": true,
+    "aliases": [
+      "ستة وعشرون"
+    ],
+    "kind": "text",
+    "answerType": "number",
+    "decoys": [
+      "14",
+      "19",
+      "38",
+      "44"
+    ]
+  },
+  {
+    "id": "fabraka-w5-005",
+    "text": "حاسة ___ هي الحاسة الوحيدة التي تصل إشاراتها إلى مراكز الذاكرة والعاطفة مباشرة دون محطة وسيطة.",
+    "answer": "الشم",
+    "explanation": "تنتقل إشارات الرائحة من البصلة الشمية إلى اللوزة والحُصين دون المرور بالمهاد كبقية الحواس، ولذلك ترتبط الروائح بالذكريات بقوة.",
+    "category": "جسم الإنسان",
+    "sourceHint": "Harvard Medical School / Nature Reviews Neuroscience",
+    "factId": "fabraka-w5-005",
+    "previousIds": [],
+    "curious": true,
+    "aliases": [],
+    "kind": "text",
+    "answerType": "text",
+    "decoys": [
+      "البصر",
+      "السمع",
+      "اللمس",
+      "التذوق"
+    ]
+  },
+  {
+    "id": "fabraka-w5-006",
+    "text": "الحرف الوحيد في الأبجدية الإنجليزية الذي لا يظهر في اسم أي ولاية أمريكية هو ___.",
+    "answer": "Q",
+    "explanation": "من بين حروف الأبجدية الإنجليزية الستة والعشرين، هذا الحرف وحده لا يرد في اسم أي ولاية من الولايات الخمسين.",
+    "category": "لغة",
+    "sourceHint": "U.S. Census Bureau state names / Merriam-Webster",
+    "factId": "fabraka-w5-006",
+    "previousIds": [],
+    "curious": true,
+    "aliases": [],
+    "kind": "text",
+    "answerType": "text",
+    "decoys": [
+      "Z",
+      "X",
+      "J",
+      "W"
+    ]
+  },
+  {
+    "id": "fabraka-w5-007",
+    "text": "كلمة Cotton في الإنجليزية مأخوذة من الكلمة العربية ___.",
+    "answer": "قطن",
+    "explanation": "انتقلت الكلمة العربية إلى الإسبانية ثم إلى الإنجليزية في القرون الوسطى مع تجارة الأقمشة، فصارت cotton.",
+    "category": "لغة",
+    "sourceHint": "Oxford English Dictionary - cotton / Merriam-Webster etymology",
+    "factId": "fabraka-w5-007",
+    "previousIds": [],
+    "curious": true,
+    "aliases": [
+      "القطن"
+    ],
+    "kind": "text",
+    "answerType": "text",
+    "decoys": [
+      "كتان",
+      "قماش",
+      "خيط",
+      "نسيج"
+    ]
   }
 ]

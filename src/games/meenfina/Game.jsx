@@ -6,7 +6,7 @@ import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import statements from '../../data/games/meenfina/statements.json';
 import css from './meenfina.css';
-import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, ROUNDS } from './logic.js';
+import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, statementsLabel, ROUNDS } from './logic.js';
 
 const OPTIONS_KEY = 'options';
 const SEEN_KEY = 'seen';
@@ -19,14 +19,15 @@ export function SetupOptions({ storage, api }) {
       <span className="card-title">الوضع والجولات</span>
       <Segment accent label="الوضع" value={opts.mode} onChange={(v) => update({ mode: v })} options={[{ value: 'point', label: '👉 أشّر!' }, { value: 'secret', label: '🤫 تصويت سري' }]} />
       <div className="field"><span>عدد العبارات</span>
-        <Segment accent label="الجولات" value={opts.rounds} onChange={(v) => update({ rounds: v })} options={ROUNDS.map((r) => ({ value: r, label: `${r} عبارة` }))} />
+        <Segment accent label="الجولات" value={opts.rounds} onChange={(v) => update({ rounds: v })} options={ROUNDS.map((r) => ({ value: r, label: statementsLabel(r) }))} />
       </div>
       <p className="card-muted">{opts.mode === 'point' ? 'الجميع يشيرون في اللحظة نفسها بعد عدّ 3-2-1.' : 'يمرّ الجوال على كل لاعب ليصوّت سرًا، ثم تُكشف النتائج.'}</p>
     </Card>
   );
 }
 
-function Countdown({ api, onDone }) {
+// طبقة العدّ تغطي الشاشة، فالعبارة تُرسم داخلها — وإلا أُشير قبل أن تُقرأ.
+function Countdown({ api, statement, onDone }) {
   const [n, setN] = useState(3);
   useEffect(() => {
     if (n > 0) { api.sound.play('countdown'); api.haptics.vibrate('light'); }
@@ -34,7 +35,14 @@ function Countdown({ api, onDone }) {
     const t = setTimeout(() => (n > 0 ? setN(n - 1) : onDone()), n > 0 ? 900 : 650);
     return () => clearTimeout(t);
   }, [n]); // eslint-disable-line react-hooks/exhaustive-deps
-  return <div className="meen-count" role="status" aria-live="assertive">{n > 0 ? <div className="num" key={n}>{n}</div> : <div className="go">أشّر الآن!</div>}</div>;
+  return (
+    <div className="meen-count">
+      <div className="meen-statement">{statement}</div>
+      <div className="meen-count-num" role="status" aria-live="assertive">
+        {n > 0 ? <div className="num" key={n}>{n}</div> : <div className="go">أشّر الآن!</div>}
+      </div>
+    </div>
+  );
 }
 
 export function Game({ api, players, onExit }) {
@@ -91,10 +99,7 @@ export function Game({ api, players, onExit }) {
       )}
 
       {state.phase === 'countdown' && (
-        <>
-          <div className="meen-statement">{state.statement.text}</div>
-          <Countdown api={api} onDone={() => dispatch({ type: 'COUNTDOWN_DONE' })} />
-        </>
+        <Countdown api={api} statement={state.statement.text} onDone={() => dispatch({ type: 'COUNTDOWN_DONE' })} />
       )}
 
       {state.phase === 'pick' && (

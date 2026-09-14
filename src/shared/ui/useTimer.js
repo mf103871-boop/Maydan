@@ -27,11 +27,17 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
   }, [seconds]);
 
   const start = useCallback(() => {
+    // بعد انتهاء العدّ تبقى remaining صفرًا؛ نبدأ من المدة الكاملة بدل انتهاء فوري.
+    if (!(remaining.current > 0)) {
+      remaining.current = seconds;
+      lastSecond.current = seconds;
+      setLeft(seconds);
+    }
     deadline.current = Date.now() + remaining.current * 1000;
     setRunning(true);
     setPaused(false);
     setResuming(null);
-  }, []);
+  }, [seconds]);
 
   const pause = useCallback(() => {
     if (!deadline.current) return;
@@ -53,6 +59,20 @@ export function useTimer({ seconds, onEnd, onSecond, autoStart = false, resumeCo
     else remaining.current += extra;
     setLeft((v) => v + extra);
   }, []);
+
+  // إن تغيّرت المدة (مثل قنبلة جديدة بمؤقت عشوائي) والمؤقت متوقف، يتبع العرض المدة الجديدة
+  // بدل أن يبقى عالقًا على مدة الجولة السابقة أو على صفر بعد انتهاء العدّ.
+  const syncedSeconds = useRef(seconds);
+  useEffect(() => {
+    if (syncedSeconds.current === seconds) return;
+    syncedSeconds.current = seconds;
+    if (running || paused || resuming !== null) return; // لا نقاطع عدًّا جاريًا أو متوقفًا مؤقتًا
+    deadline.current = null;
+    remaining.current = seconds;
+    lastSecond.current = seconds;
+    setLeft(seconds);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [seconds]);
 
   // the 3-2-1 overlay drives itself down to zero, then starts
   useEffect(() => {

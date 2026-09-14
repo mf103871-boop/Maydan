@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, titleFor, TITLES, DEFAULT_TITLE } from '../src/games/meenfina/logic.js';
+import { initialState, reduce, currentVoter, standings, createStatementSource, normalizeOptions, tallyVotes, titleFor, statementsLabel, TITLES, DEFAULT_TITLE } from '../src/games/meenfina/logic.js';
 import { seeded } from './helpers.js';
 
 const players = [
@@ -97,4 +97,13 @@ test('اللعبة تنتهي بعد آخر عبارة، ونفاد العبار
   assert.equal(s.phase, 'over');
   assert.equal(s.scores.a, 5);
   assert.equal(reduce(initialState(players, {}), { type: 'BEGIN', statement: null }).phase, 'over');
+});
+
+test('عدد العبارات يُصاغ بجمع القلة 3–10 وإفراد ما بعدها', () => {
+  assert.equal(statementsLabel(5), '5 عبارات');
+  assert.equal(statementsLabel(8), '8 عبارات');
+  assert.equal(statementsLabel(10), '10 عبارات');
+  assert.equal(statementsLabel(12), '12 عبارة');
+  assert.equal(statementsLabel(1), 'عبارة واحدة');
+  assert.equal(statementsLabel(2), 'عبارتان');
 });

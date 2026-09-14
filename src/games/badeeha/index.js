@@ -10,8 +10,11 @@ import { collectCredits } from '../../shared/media/resolve.js';
 // ترحيل مفاتيح نسخة «ميدان» التجريبية عند أول تحميل، قبل أن تقرأ اللعبة مخزنها.
 migrateLegacyKeys();
 
-function Game() {
-  return React.createElement(MaydanBeta);
+// تُمرَّر كامل خصائص شاشة اللعب (وأهمها api) إلى اللعبة: بدونها كانت إعدادات
+// الصوت والاهتزاز و«حركة أقل» في المنصة لا تصل إلى بَديهة، ولم تستطع اللعبة
+// إخبار المنصة متى تكون مباراة جارية.
+function Game(props) {
+  return React.createElement(MaydanBeta, props);
 }
 
 export default {

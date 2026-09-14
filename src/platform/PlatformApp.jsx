@@ -1,12 +1,12 @@
 // غلاف المنصة: المزوّدون (صوت/اهتزاز/تخزين/دفتر اللاعبين/إعدادات)، الموجّه، وانتقالات الشاشات.
 import React, { useEffect, useMemo, useState, useCallback } from 'react';
-import { PlatformContext } from './context.js';
+import { PlatformContext, usePlatform } from './context.js';
 import { useRoute, navigate, getDirection } from './router.js';
-import { createStorage } from '../shared/lib/storage.js';
+import { createStorage, clearAllPlatformData } from '../shared/lib/storage.js';
 import { createSound } from '../shared/fx/sound.js';
 import { createHaptics } from '../shared/fx/haptics.js';
 import { confetti } from '../shared/fx/confetti.js';
-import { ToastProvider, useToast } from '../shared/ui/components.jsx';
+import { ToastProvider, useToast, ErrorBoundary } from '../shared/ui/components.jsx';
 import uiCss from '../shared/ui/ui.css';
 import setupCss from '../shared/setup/setup.css';
 import platformCss from './platform.css';
@@ -74,15 +74,31 @@ function Providers({ children }) {
 
 function Shell() {
   const route = useRoute();
+  const { settings, setSettings } = usePlatform();
   const [booted, setBooted] = useState(false);
+  // splashSeen كان يُكتب ولا يُقرأ: الافتتاحية الكاملة تُعرض مرة واحدة، ثم تقصر.
+  const finishSplash = useCallback(() => {
+    setBooted(true);
+    if (!settings.splashSeen) setSettings({ splashSeen: true });
+  }, [settings.splashSeen, setSettings]);
   return (
     <>
       <BrandFonts />
       <style>{uiCss}</style>
       <style>{setupCss}</style>
       <style>{platformCss}</style>
-      {!booted && <Splash onDone={() => setBooted(true)} />}
-      <ScreenHost route={route} />
+      {!booted && <Splash onDone={finishSplash} reducedMotion={settings.reducedMotion} duration={settings.splashSeen ? 900 : 2200} />}
+      {/* حدّ خطأ حول الشاشات: خطأ تصيير واحد كان يُفرغ الصفحة بلا رجعة. */}
+      <ErrorBoundary
+        resetKey={route.path}
+        title="تعطّلت هذه الشاشة"
+        message="حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ عند كل فتح."
+        clearLabel="مسح كل البيانات وإعادة التشغيل"
+        onHome={() => navigate('/', { replace: true })}
+        onClear={() => { clearAllPlatformData(); location.reload(); }}
+      >
+        <ScreenHost route={route} />
+      </ErrorBoundary>
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
     </>

@@ -1,6 +1,7 @@
 import { Avatar, TrophyArtwork } from '../brand/art.jsx';
 // المكونات المشتركة: زر، بطاقة، شارة، نافذة، ورقة سفلية، تنبيه، حلقة تقدم، لوحة نتائج، منصة تتويج، شاشة.
 import React, { useEffect, useRef, useState, useCallback, createContext, useContext } from 'react';
+import { createPortal } from 'react-dom';
 import { IconClose } from './icons.jsx';
 
 // ── ripple ───────────────────────────────────────────────────
@@ -57,25 +58,113 @@ export function Badge({ variant = '', children }) {
   return <span className={`badge ${variant ? `badge-${variant}` : ''}`}>{children}</span>;
 }
 
+// ── حوارات: تركيز محبوس وخلفية معطّلة ───────────────────────
+const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function focusables(node) {
+  if (!node) return [];
+  return Array.from(node.querySelectorAll(FOCUSABLE)).filter((el) => el.getClientRects().length > 0);
+}
+
+// التركيز الأول يذهب إلى أول عنصر داخل جسم الحوار (حقل الكتابة عادة) لا إلى
+// زر الإغلاق في الترويسة.
+function focusFirst(node) {
+  if (!node) return;
+  const marked = node.querySelector('[autofocus], [data-autofocus]');
+  const body = node.querySelector('.modal-body');
+  const target = marked || focusables(body)[0] || focusables(node)[0] || node;
+  try { target.focus({ preventScroll: true }); } catch (error) { /* ignore */ }
+}
+
+// Tab وShift+Tab يدوران داخل الحوار فقط.
+function trapTab(node, event) {
+  if (!node) return;
+  const list = focusables(node);
+  if (!list.length) { event.preventDefault(); return; }
+  const first = list[0];
+  const last = list[list.length - 1];
+  const active = document.activeElement;
+  if (!node.contains(active)) { event.preventDefault(); (event.shiftKey ? last : first).focus(); return; }
+  if (event.shiftKey && active === first) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && active === last) { event.preventDefault(); first.focus(); }
+}
+
+// ما خلف الحوار يصبح خارج الوصول (Tab وقارئ الشاشة والنقر)، ويعود كما كان عند الإغلاق.
+function deactivateBackground(except) {
+  if (typeof document === 'undefined' || !document.body) return () => {};
+  if (except && except.inert) except.inert = false; // حوار فوق حوار: الأعلى يبقى فعّالًا
+  const changed = [];
+  for (const el of Array.from(document.body.children)) {
+    if (el === except || (except && el.contains(except)) || el.inert) continue;
+    el.inert = true;
+    changed.push(el);
+  }
+  return () => { changed.forEach((el) => { el.inert = false; }); };
+}
+
+// متغيّرات موروثة تهمّ داخل الحوار (لون اللعبة الحالية مثلًا): الحوار يخرج من
+// شجرة الشاشة فلا يرثها تلقائيًا، فننسخها إلى حاويته.
+const INHERITED_VARS = ['--game-accent', '--pass-color', '--team-color'];
+
+// الحوار يُصيَّر خارج شجرة الشاشة حتى يمكن تعطيل الشاشة كاملة خلفه.
+function useDialogHost() {
+  const anchor = useRef(null);
+  const [host] = useState(() => {
+    if (typeof document === 'undefined') return null;
+    const el = document.createElement('div');
+    el.className = 'dialog-host';
+    return el;
+  });
+  useEffect(() => {
+    if (!host) return undefined;
+    document.body.appendChild(host);
+    return () => { host.remove(); };
+  }, [host]);
+  // تُنادى عند الفتح: المرساة موجودة في مكان الحوار الأصلي داخل الشاشة.
+  const syncVars = useCallback(() => {
+    try {
+      const source = anchor.current && anchor.current.parentElement;
+      if (!host || !source) return;
+      const styles = getComputedStyle(source);
+      for (const name of INHERITED_VARS) {
+        const value = styles.getPropertyValue(name);
+        if (value && value.trim()) host.style.setProperty(name, value.trim());
+      }
+    } catch (error) {
+      // الألوان الافتراضية تكفي
+    }
+  }, [host]);
+  return [host, anchor, syncVars];
+}
+
 // ── Modal ────────────────────────────────────────────────────
 export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق' }) {
   const ref = useRef(null);
+  const closeRef = useRef(onClose);
+  const [host, anchor, syncVars] = useDialogHost();
+  useEffect(() => { closeRef.current = onClose; });
+  // عند الفتح فقط: كل تصيير يمرّر onClose جديدة، فلو اعتمد التأثير عليها لسُحب
+  // التركيز من الحقل بعد كل حرف يُكتب.
   useEffect(() => {
+    const node = ref.current;
     const previous = document.activeElement;
-    const first = ref.current && ref.current.querySelector('button, input, [tabindex]:not([tabindex="-1"])');
-    if (first) setTimeout(() => first.focus(), 0);
+    syncVars();
+    const restore = deactivateBackground(host);
+    focusFirst(node);
     const onKey = (e) => {
-      if (e.key === 'Escape') { e.preventDefault(); onClose && onClose(); }
+      if (e.key === 'Escape') { e.preventDefault(); closeRef.current && closeRef.current(); }
+      else if (e.key === 'Tab') trapTab(node, e);
     };
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('keydown', onKey);
+      restore();
       if (previous && previous.focus) previous.focus();
     };
-  }, [onClose]);
-  return (
+  }, [host, syncVars]);
+  const tree = (
     <div className="modal-layer" role="presentation" onClick={onClose}>
-      <section ref={ref} className="modal" role="dialog" aria-modal="true" aria-label={title} onClick={(e) => e.stopPropagation()}>
+      <section ref={ref} className="modal" role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()}>
         <div className="modal-head">
           <h2>{title}</h2>
           {onClose && <IconButton label={closeLabel} onClick={onClose}><IconClose /></IconButton>}
@@ -85,6 +174,7 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
       </section>
     </div>
   );
+  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(tree, host) : tree}</>;
 }
 
 export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel }) {
@@ -103,16 +193,31 @@ export function Sheet({ open, onClose, title, children }) {
   const [closing, setClosing] = useState(false);
   const drag = useRef({ y: 0, dy: 0, active: false });
   const ref = useRef(null);
+  const [host, anchor, syncVars] = useDialogHost();
   const close = useCallback(() => {
     setClosing(true);
     setTimeout(() => { setClosing(false); onClose && onClose(); }, 210);
   }, [onClose]);
+  const closeRef = useRef(close);
+  useEffect(() => { closeRef.current = close; });
   useEffect(() => {
     if (!open) return undefined;
-    const onKey = (e) => { if (e.key === 'Escape') close(); };
+    const node = ref.current;
+    const previous = document.activeElement;
+    syncVars();
+    const restore = deactivateBackground(host);
+    focusFirst(node);
+    const onKey = (e) => {
+      if (e.key === 'Escape') { e.preventDefault(); closeRef.current(); }
+      else if (e.key === 'Tab') trapTab(node, e);
+    };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open, close]);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      restore();
+      if (previous && previous.focus) previous.focus();
+    };
+  }, [open, host, syncVars]);
   if (!open) return null;
   const onStart = (e) => { drag.current = { y: e.touches ? e.touches[0].clientY : e.clientY, dy: 0, active: ref.current.scrollTop <= 0 }; };
   const onMove = (e) => {
@@ -127,9 +232,9 @@ export function Sheet({ open, onClose, title, children }) {
     if (drag.current.dy > 80) close();
     drag.current.active = false;
   };
-  return (
+  const tree = (
     <div className="modal-layer is-sheet" role="presentation" onClick={close}>
-      <section ref={ref} className={`sheet ${closing ? 'is-closing' : ''}`} role="dialog" aria-modal="true" aria-label={title}
+      <section ref={ref} className={`sheet ${closing ? 'is-closing' : ''}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
         onTouchStart={onStart} onTouchMove={onMove} onTouchEnd={onEnd}>
         <div className="sheet-handle" aria-hidden="true" />
@@ -138,6 +243,45 @@ export function Sheet({ open, onClose, title, children }) {
       </section>
     </div>
   );
+  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(tree, host) : tree}</>;
+}
+
+// ── ErrorBoundary ────────────────────────────────────────────
+// خطأ تصيير في أي لعبة كان يُفرغ الصفحة كلها بلا رجعة. الحدّ هنا يعرض رسالة
+// عربية مع «العودة إلى الرئيسية» وزر مسح البيانات المحفوظة (سبب الأعطال
+// المتكررة عادة)، فلا تُسقط لعبة واحدة المنصة كلها.
+export class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+    this.reset = this.reset.bind(this);
+  }
+  static getDerivedStateFromError(error) { return { error }; }
+  componentDidCatch(error, info) {
+    try { console.error('[ميدان] خطأ في التصيير:', error, info && info.componentStack); } catch (e) { /* ignore */ }
+  }
+  componentDidUpdate(previous) {
+    // تغيّر المسار (أو أي مفتاح يمرّره المستدعي) يعيد المحاولة تلقائيًا.
+    if (this.state.error && previous.resetKey !== this.props.resetKey) this.reset();
+  }
+  reset() { this.setState({ error: null }); }
+  render() {
+    const { error } = this.state;
+    const { children, fallback, title = 'تعطّلت هذه الشاشة', message = 'حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ.', homeLabel = 'العودة إلى الرئيسية', clearLabel = 'مسح البيانات المحفوظة', onHome, onClear } = this.props;
+    if (!error) return children;
+    if (typeof fallback === 'function') return fallback(error, this.reset);
+    return (
+      <div className="error-boundary" role="alert">
+        <div className="error-card">
+          <h2>{title}</h2>
+          <p className="muted">{message}</p>
+          <p className="error-detail">{String((error && error.message) || error)}</p>
+          <Button variant="primary" size="lg" full onClick={() => { if (onHome) onHome(); this.reset(); }}>{homeLabel}</Button>
+          {onClear && <Button variant="danger" full onClick={() => { onClear(); }}>{clearLabel}</Button>}
+        </div>
+      </div>
+    );
+  }
 }
 
 // ── Toast ────────────────────────────────────────────────────
