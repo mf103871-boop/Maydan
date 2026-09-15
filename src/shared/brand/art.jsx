@@ -26,7 +26,7 @@ export function BrandFonts() {
 
 export function GameArtwork({ game, className = '', style = {} }) {
   const [column, row] = GAMES[game] || GAMES.badeeha;
-  return <span className={`clay-art ${className}`} aria-hidden="true" style={{ backgroundImage: `url(${gameIcons})`, backgroundPosition: `${column * 50}% ${row * 100}%`, ...style }} />;
+  return <span className={`clay-art ${className}`} data-game={game} aria-hidden="true" style={{ backgroundImage: `url(${gameIcons})`, backgroundPosition: `${column * 50}% ${row * 100}%`, ...style }} />;
 }
 
 export function Avatar({ player, emoji, index, className = '', style = {} }) {
@@ -35,13 +35,21 @@ export function Avatar({ player, emoji, index, className = '', style = {} }) {
   // Older saved players keep their stored identity; their portrait is stable.
   const fallback = Array.from(value || player?.id || '0').reduce((sum, char) => sum + char.codePointAt(0), 0) % 4;
   const position = index ?? selected?.index ?? fallback;
-  return <span className={`clay-avatar ${className}`} aria-hidden="true" style={{ backgroundImage: `url(${avatarSheet})`, backgroundPosition: `${position % 2 * 100}% ${Math.floor(position / 2) * 100}%`, ...style }} />;
+  return <span className={`clay-avatar ${className}`} data-index={position} aria-hidden="true" style={{ backgroundImage: `url(${avatarSheet})`, backgroundPosition: `${position % 2 * 100}% ${Math.floor(position / 2) * 100}%`, ...style }} />;
+}
+
+// حامل الرسم: يملك ظل التلامس (::after) ويحرّك الغلاف الداخلي لا الرسم نفسه.
+// idle: طفو خفيف بعد الهبوط. react: 'clay-jump' | 'clay-wiggle' | 'clay-squash' (يُدار بـ useReaction).
+export function ClayStage({ className = '', idle = false, react = '', as: Tag = 'span', style, children, ...rest }) {
+  return <Tag className={`clay-stage ${idle ? 'clay-idle' : ''} ${react} ${className}`.trim()} style={style} {...rest}>
+    <span className="clay-lift">{children}</span>
+  </Tag>;
 }
 
 export function AvatarPicker({ value, onChange }) {
   return <div className="avatar-picker" role="group" aria-label="اختر شخصيتك">{AVATAR_OPTIONS.map((option) => (
     <button key={option.emoji} type="button" className={`avatar-choice ${value === option.emoji ? 'selected' : ''}`} aria-label={option.label} aria-pressed={value === option.emoji} onClick={() => onChange(option.emoji)}>
-      <Avatar index={option.index} />
+      <ClayStage className="clay-static"><Avatar index={option.index} /></ClayStage>
     </button>
   ))}</div>;
 }

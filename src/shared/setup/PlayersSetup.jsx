@@ -1,4 +1,4 @@
-import { Avatar, AvatarPicker } from '../brand/art.jsx';
+import { Avatar, AvatarPicker, ClayStage } from '../brand/art.jsx';
 // اختيار اللاعبين من دفتر اللاعبين (أو إضافة لاعب سريع)، بترتيب الاختيار.
 import React, { useState } from 'react';
 import { Button, Card, Modal } from '../ui/components.jsx';
@@ -42,7 +42,7 @@ export function PlayersSetup({ roster, setRoster, min = 2, max = 10, accent, onS
             return (
               <button key={p.id} type="button" className={`chip ${order >= 0 ? 'selected' : ''}`} style={{ '--chip-color': p.color }} aria-pressed={order >= 0} onClick={() => toggle(p.id)}>
                 {order >= 0 && <span className="order" aria-hidden="true">{order + 1}</span>}
-                <Avatar player={p} className="avatar" />{p.name}
+                <ClayStage className="clay-static no-contact"><Avatar player={p} className="avatar" /></ClayStage>{p.name}
               </button>
             );
           })}

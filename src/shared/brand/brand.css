@@ -1,65 +1,131 @@
-/* الهوية المعتمدة: صلصال ناعم، عاجي، فيروزي، بنفسجي وذهبي. */
-.clay-art { display: inline-block; width: 112px; height: auto; aspect-ratio: 1; background-size: 300% 200%; background-repeat: no-repeat; flex: 0 0 auto; mix-blend-mode: multiply; vertical-align: middle; }
-.clay-avatar { display: inline-block; width: 44px; height: 44px; background-size: 200% 200%; background-repeat: no-repeat; border-radius: 50%; flex: 0 0 auto; vertical-align: middle; box-shadow: 0 3px 5px #59363918; }
-.clay-trophy { display: block; width: 200px; height: auto; object-fit: contain; mix-blend-mode: multiply; margin-inline: auto; }
-.clay-world { display: block; width: 100%; height: auto; user-select: none; pointer-events: none; }
-.brand-mark { width: 52px; height: 52px; border-radius: 17px; flex: 0 0 auto; box-shadow: 0 4px 9px #63377829; }
+/* الهوية المعتمدة: صلصال ناعم، عاجي، فيروزي، بنفسجي وذهبي.
+   يُحقن هذا الملف آخر الأنماط (PlatformApp) فتغلب قواعده ui.css/setup.css/platform.css عند تساوي الخصوصية،
+   والإطارات المفتاحية clay-* هنا على مستوى المستند فتستعملها الألعاب بالاسم. */
+
+/* ═══ نظام الرسوم: كل رسمة جسم صلصالي حرّ — ظل صورة ثابت + ظل تلامس على الحامل ═══
+   القاعدة: لا يُحرَّك .clay-art/.clay-avatar/.clay-trophy أبدًا (يحملون filter ثابتًا)؛
+   الحركة على .clay-lift (الداخل) أو على الحامل .clay-stage (ردود الفعل). */
+.clay-art, .clay-avatar {
+  position: relative; display: inline-block; flex: 0 0 auto; vertical-align: middle;
+  background-repeat: no-repeat; background-color: transparent;
+  mix-blend-mode: normal; border-radius: 0; border: 0; box-shadow: none;
+  filter: var(--art-shadow);
+  -webkit-user-select: none; user-select: none; pointer-events: none;
+}
+.clay-art    { width: 112px; height: 112px; background-size: 300% 200%; }
+.clay-avatar { width: 44px;  height: 44px;  background-size: 200% 200%; }
+.clay-trophy { display: block; width: 200px; height: auto; object-fit: contain; margin-inline: auto; mix-blend-mode: normal; filter: var(--art-shadow-trophy); pointer-events: none; }
+.clay-world  { display: block; width: 100%; height: auto; user-select: none; pointer-events: none; }
+.brand-mark  { width: 52px; height: 52px; border-radius: 17px; flex: 0 0 auto; box-shadow: inset 0 1px 0 #FFFFFF55, 0 3px 0 #6A3A8A, 0 7px 14px rgba(var(--clay-ink), .16); }
 .brand-name { display: block; font-size: 36px; font-weight: 800; color: var(--plum); line-height: 1.12; }
 .brand-sub { font-size: 14px; font-weight: 700; color: var(--plum); }
-.wordmark-art { display: block; font-weight: 800; font-size: clamp(86px, 24vw, 150px); line-height: 1.35; color: #FFF3DA; -webkit-text-stroke: 9px #9250BD; paint-order: stroke fill; text-shadow: 0 5px #683493, 0 8px #683493, 0 -2px #fff; filter: drop-shadow(0 5px 2px #51327330); }
-.avatar-picker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-.avatar-choice { display: grid; place-items: center; padding: 5px; min-height: 68px; border: 2px solid transparent; border-radius: 22px; background: var(--surface); transition: border-color .15s, transform .15s; }
-.avatar-choice .clay-avatar { width: min(100%, 66px); height: auto; aspect-ratio: 1; }
-.avatar-choice.selected { border-color: var(--purple); background: #F2E4FB; box-shadow: 0 3px 0 #CBA9E0; }
-.avatar-choice:active { transform: translateY(2px); }
 
-/* Raised controls with readable labels; the pictograms carry the rich detail. */
-.btn { border-radius: 20px; font-weight: 800; border-width: 1px; box-shadow: inset 0 2px 1px #fff9, 0 3px 0 #D9C5AB, 0 5px 10px #63432F12; }
-.btn-primary, .btn-accent { --btn-bg: linear-gradient(180deg, #149EA8, #087C8B); --btn-fg: #fff; --btn-border: #6DD5D8; font-size: 20px; box-shadow: inset 0 2px 1px #FFFFFF80, 0 4px 0 #066A77, 0 7px 13px #106F7C25; }
-.btn-secondary { --btn-bg: linear-gradient(180deg, #FFFEF8, #F9EFDDF0); --btn-fg: var(--plum); --btn-border: #E5D3B9; }
-.btn-danger { --btn-bg: #FCE9E3; --btn-fg: #A42F32; --btn-border: #EDB1AA; box-shadow: inset 0 2px #fff9, 0 3px 0 #DEB4A9; }
-.btn-success { --btn-bg: #DEF2E9; --btn-fg: #165F4D; --btn-border: #8EC6B2; box-shadow: inset 0 2px #fff9, 0 3px 0 #A1CCBC; }
-.btn-ghost { box-shadow: none; }
-.btn:disabled { opacity: .5; }
-.btn-lg { min-height: 60px; font-size: 23px; }
-.btn-sm { font-size: 15px; }
-.btn-icon { border-radius: 17px; }
-.card { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; border-color: var(--stroke); box-shadow: inset 0 2px #fff, var(--shadow-soft); }
-.badge-new { background: var(--purple); box-shadow: none; }
-.badge-accent { color: var(--plum); }
-.input { background: #FFFDF6; border-color: #DCC7B1; box-shadow: inset 0 2px 3px #7356310D; }
-.input::placeholder { color: #82748B; opacity: 1; }
-.input:focus { border-color: var(--purple); box-shadow: 0 0 0 3px #9250BD1F; }
-.segment { background: #EEE4D8; }
-.segment button.selected { box-shadow: 0 2px 4px #5B3C2620; background: #FFFCF4; }
-.segment button.selected.accent { color: #fff; background: var(--purple); }
-.sheet-handle { background: #BFA7CC; }
-.toast { color: var(--text); background: #FFFCF2; }
-.ring-track { stroke: #DFD0E4; }
-.timer-resume { background: #FCF4E9ED; color: var(--purple); }
-.score-row .score { color: var(--plum); }
-.score-row .clay-avatar, .chip .clay-avatar { border-radius: 50%; }
-.chip.selected .order { z-index: 1; color: var(--plum); background: #FFE8A1; }
-.setup-error { color: #A52C37; }
-.pass-name { color: var(--plum); }
-.pass-avatar { background: transparent; border: 0; box-shadow: none; }
-.pass-avatar .clay-avatar { width: 130px; height: 130px; }
-.podium { gap: 14px; padding-block: 8px 20px; }
-.podium-title { color: var(--plum); font-weight: 800; }
-.podium-trophy { filter: none; }
-.podium-trophy .clay-trophy { width: min(210px, 50vw); }
-.podium-stage { gap: 8px; min-height: 210px; direction: ltr; }
-.podium-col { min-width: 0; gap: 5px; }
-.podium-col .clay-avatar { width: clamp(55px, 18vw, 85px); height: auto; aspect-ratio: 1; border: 0; background-color: transparent; }
-.podium-col .name { font-size: 17px; white-space: normal; overflow-wrap: anywhere; direction: rtl; }
-.podium-col .block { height: calc(var(--h, 60px) + 30px); min-height: 70px; border-radius: 19px 19px 10px 10px; background: linear-gradient(155deg, #B782D9, #8A4FAD); border: 1px solid #D3A7EE; color: #fff; box-shadow: inset 0 3px 2px #fff8, 0 4px 0 #61347C; text-shadow: none; font-size: 28px; }
-.podium-col[data-rank="1"] .block { background: linear-gradient(145deg, #FFDE7A, #F8BA37); border-color: #FFE8A1; color: var(--plum); box-shadow: inset 0 3px 2px #fff9, 0 4px 0 #C6902F; }
-.podium-col[data-rank="3"] .block { background: linear-gradient(145deg, #60D5D5, #1598A7); border-color: #83DFDF; box-shadow: inset 0 3px 2px #fff8, 0 4px 0 #087985; }
-.podium-col .rank { font-size: 18px; line-height: 1; opacity: .85; }
+/* ── الحامل ── */
+.clay-stage { position: relative; isolation: isolate; display: inline-grid; place-items: center; }
+.clay-stage > .clay-lift { display: grid; place-items: center; width: 100%; height: 100%; transform-origin: 50% 90%; }
+.clay-stage::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  inset-inline: var(--contact-inset, 14%); bottom: var(--contact-y, -4%); height: var(--contact-h, 12%);
+  border-radius: 50%; transform-origin: 50% 50%;
+  background: radial-gradient(closest-side, var(--clay-contact), rgba(var(--clay-ink), 0) 72%);
+}
+.clay-stage.no-contact::after { content: none; }
+
+/* هبوط + طفو (idle): الحركة على .clay-lift والظل يتنفس عكسها؛ الرسم نفسه ساكن */
+.clay-stage > .clay-lift { animation: clay-drop .7s var(--ease-spring) both; }
+.clay-stage::after        { animation: clay-shadow-land .7s var(--ease-spring) both; }
+.clay-stage.clay-idle > .clay-lift { animation: clay-drop .7s var(--ease-spring) both, clay-float 3.4s ease-in-out .8s infinite; }
+.clay-stage.clay-idle::after       { animation: clay-shadow-land .7s var(--ease-spring) both, clay-shadow-breathe 3.4s ease-in-out .8s infinite; }
+.clay-stage.clay-static > .clay-lift, .clay-stage.clay-static::after { animation: none; }   /* قوائم وبطاقات صامتة */
+
+/* ردود الفعل: الصنف يُضاف ≤700ms عبر useReaction ويُزال بـ setTimeout */
+.clay-stage.clay-jump   > .clay-lift { animation: clay-jump .6s var(--ease-out) both; }
+.clay-stage.clay-wiggle > .clay-lift { animation: clay-wiggle .55s ease-in-out both; }
+.clay-stage.clay-squash > .clay-lift { animation: clay-squash .42s var(--ease-spring) both; }
+.clay-stage.clay-jump::after, .clay-stage.clay-squash::after { animation: clay-shadow-react .6s ease-out both; }
+
+/* ضغط: أي زر يحوي حاملًا */
+button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { transform: scale(1.06, .94) translateY(2px); transition: transform .12s var(--ease-out); }
+
+@keyframes clay-drop { 0% { opacity: 0; transform: translateY(-44px) scale(.6); } 55% { opacity: 1; transform: translateY(6px) scale(1.08, .92); } 78% { transform: translateY(-3px) scale(.98, 1.03); } 100% { transform: none; } }
+@keyframes clay-shadow-land { 0% { opacity: 0; transform: scale(.35); } 55% { opacity: 1; transform: scale(1.15); } 100% { opacity: 1; transform: none; } }
+@keyframes clay-float { 0%, 100% { transform: none; } 50% { transform: translateY(-6px) rotate(-1.5deg); } }
+@keyframes clay-shadow-breathe { 0%, 100% { transform: none; opacity: 1; } 50% { transform: scaleX(.86); opacity: .62; } }
+@keyframes clay-jump { 0% { transform: none; } 28% { transform: translateY(-20px) scale(.92, 1.1); } 55% { transform: translateY(0) scale(1.1, .9); } 75% { transform: translateY(-7px); } 100% { transform: none; } }
+@keyframes clay-wiggle { 0%, 100% { transform: none; } 20% { transform: rotate(-8deg); } 40% { transform: rotate(7deg); } 60% { transform: rotate(-4deg); } 80% { transform: rotate(3deg); } }
+@keyframes clay-squash { 0% { transform: none; } 40% { transform: scale(1.18, .82); } 70% { transform: scale(.94, 1.06); } 100% { transform: none; } }
+@keyframes clay-shadow-react { 0%, 100% { transform: none; opacity: 1; } 30% { transform: scaleX(.7); opacity: .5; } 55% { transform: scaleX(1.12); } }
+@keyframes clay-spark { 0% { opacity: 1; transform: scale(.4); } 100% { opacity: 0; transform: scale(1.7); } }
+@keyframes hero-lift { to { transform: translateY(-10px) rotate(-8deg); } }
+
+/* ── طبقات الحجم: ظل أصغر للصغير، لا ظل للرقائق ── */
+.roster-faces .clay-avatar, .score-row .clay-avatar, .chip .clay-avatar, .team-input .clay-avatar,
+.fab-round-scores .clay-avatar, .online-players .clay-avatar, .online-fab-total .clay-avatar,
+.m-result-statistics .clay-avatar, .meen-titles .clay-avatar, .about-list .clay-art, .roster-empty .clay-avatar { filter: var(--art-shadow-sm); }
+.beep-chip .clay-avatar, .meen-bar .clay-avatar, .fab-stats .clay-avatar { filter: none; }
+.details-hero .clay-art, .m-logo .clay-art, .beep-intro .clay-avatar, .jabeen-intro .clay-avatar, .fab-avatar .clay-avatar,
+.pass-avatar .clay-avatar, .fab-big .clay-art, .big-emoji .clay-art, .meen-intro .clay-art, .online-intro .clay-art,
+.game-curtain .clay-art { filter: var(--art-shadow-lg); }
+/* داخل قرص/بلاطة تحمل حافتها (plinth): بلا ظل صورة، يبقى ظل التلامس */
+.beep-bomb .clay-art, .avatar-choice .clay-avatar, .meen-pick .clay-avatar, .online-vote-choice .clay-avatar, .podium-col .clay-avatar { filter: none; }
+
+/* ── ظل تلامس ملوّن حيث يملك المضيف لونًا ── */
+.score-row .clay-stage   { --clay-contact: color-mix(in srgb, var(--row-color, var(--accent)) 50%, rgba(var(--clay-ink), .3)); }
+.chip .clay-stage        { --clay-contact: color-mix(in srgb, var(--chip-color) 50%, rgba(var(--clay-ink), .3)); }
+.pass-avatar             { --clay-contact: color-mix(in srgb, var(--pass-color, var(--accent)) 45%, rgba(var(--clay-ink), .35)); }
+.beep-turn .clay-stage   { --clay-contact: color-mix(in srgb, var(--p-color) 45%, rgba(var(--clay-ink), .35)); }
+.game-card .icon         { --clay-contact: color-mix(in srgb, var(--ga) 35%, rgba(var(--clay-ink), .30)); }
+.podium-col .avatar-wrap { --clay-contact: color-mix(in srgb, var(--col-color, var(--accent)) 45%, rgba(var(--clay-ink), .35)); }
+.meen-pick .clay-stage   { --clay-contact: color-mix(in srgb, var(--pick-color, var(--accent)) 45%, rgba(var(--clay-ink), .30)); }
+
+/* ── مقاسات حسب المضيف (تبقى كما هي؛ الحامل يرث المقاس) ── */
+.game-card .icon .clay-art, .details-hero .icon .clay-art { width: 100%; height: 100%; }
 .beep-turn .clay-avatar { width: 52px; height: 52px; }
 .beep-intro .clay-avatar, .jabeen-intro .clay-avatar { width: 115px; height: 115px; }
-.beep-bomb .clay-art { width: 158px; }
-.beep-bomb { background: #F1E3F8; border-color: #C49CDD; box-shadow: 0 0 0 8px #EAD9F67A, var(--shadow-soft); }
+.beep-bomb .clay-art { width: 128px; height: 128px; }
+.fab-avatar .clay-avatar { width: 110px; height: 110px; }
+.fab-round-scores .clay-avatar { width: 40px; height: 40px; }
+.fab-stats .clay-avatar { width: 24px; height: 24px; margin-inline-end: 5px; }
+.fab-big .clay-art, .big-emoji .clay-art, .meen-intro .clay-art { width: 120px; height: 120px; }
+.meen-pick .clay-avatar { width: 64px; height: 64px; }
+.meen-winner .faces .clay-avatar { width: 78px; height: 78px; }
+.meen-bar .clay-avatar, .beep-chip .clay-avatar { width: 26px; height: 26px; }
+.pass-avatar .clay-avatar { width: 130px; height: 130px; }
+.podium-col .clay-avatar { width: clamp(55px, 18vw, 85px); height: clamp(55px, 18vw, 85px); }
+.avatar-choice .clay-avatar { width: min(100%, 66px); height: auto; aspect-ratio: 1; }
+.roster-faces .clay-avatar { width: 40px; height: 40px; margin-inline-end: -7px; }
+.score-row .clay-avatar { width: 38px; height: 38px; }
+.chip .clay-avatar { width: 32px; height: 32px; }
+.online-intro .clay-art { width: 108px; height: 108px; }
+.online-game-picker .clay-art { width: 64px; height: 64px; }
+.online-question .clay-art { width: 78px; height: 78px; }
+.online-home-card .clay-art { width: 76px; height: 76px; }
+.about-list .clay-art { width: 28px; height: 28px; }
+.game-curtain .clay-art { width: 96px; height: 96px; }
+@media (max-width: 400px) { .online-home-card .clay-art { width: 58px; height: 58px; } }
+@media (max-width: 350px) { .roster-faces .clay-avatar { width: 33px; height: 33px; } }
+
+/* ── إلغاء كل قرص/إطار زائف كان يخفي الخلفية العاجية ──
+   لا background: none هنا: بعض هذه الأصناف على عنصر الرسمة نفسه (Avatar className="avatar")
+   والاختصار يعيد background-size إلى auto فتختفي الرسمة؛ اللون والصورة فقط. */
+.score-row .avatar, .chip .avatar, .podium-col .avatar, .beep-turn .avatar, .meen-winner .faces span,
+.pass-avatar, .fab-avatar { background-color: transparent; background-image: none; border: 0; box-shadow: none; border-radius: 0; }
+.beep-turn .avatar { width: 52px; height: 52px; }
+
+/* ── الكأس (img بلا pseudo → ظل التلامس على .podium-trophy وهو حامل) ──
+   animation: none يلغي ui-trophy القديمة على الحامل نفسه؛ الهبوط والطفو على .clay-lift (ui.css §4.4) */
+.podium-trophy { --contact-inset: 22%; --contact-y: -6px; --contact-h: 18px; filter: none; animation: none; }
+.podium-trophy .clay-trophy { width: min(210px, 50vw); }
+.podium-trophy::before { content: ""; position: absolute; z-index: 2; top: 22%; inset-inline-start: 30%; width: 14px; height: 14px; border-radius: 50%; background: radial-gradient(circle, #fff 0 30%, #fff0 70%); opacity: 0; pointer-events: none; animation: ui-sparkle 2.4s ease-in-out 1.8s 3; }
+
+/* ── الشعار المنحوت (يبقى الفلتر تحت تقليل الحركة: ظل ثابت لا حركة) ── */
+.wordmark-art { display: block; font-weight: 800; font-size: clamp(86px, 24vw, 150px); line-height: 1.35; color: #FFF3DA; -webkit-text-stroke: 9px #9250BD; paint-order: stroke fill; text-shadow: 0 5px #683493, 0 8px #683493, 0 -2px #fff; filter: drop-shadow(0 6px 3px #51327340); }
+
+/* ── الأقراص/البلاطات الحاملة (plinths) ── */
+.beep-bomb { position: relative; width: 150px; height: 150px; margin: 0 auto; display: grid; place-items: center; border-radius: 50%;
+  background: radial-gradient(120% 120% at 50% 18%, #FBF3FF, #F1E3F8 55%, #E5D0F1); border: 1px solid #D8B7EE;
+  box-shadow: inset 0 3px 2px #fff, inset 0 -6px 10px #C9A6E033, 0 6px 0 #C49CDD, 0 14px 24px rgba(var(--clay-ink), .16); }
+.beep-bomb.is-hot { border-color: #F2A19B; box-shadow: inset 0 3px 2px #fff, 0 6px 0 #D9837B, 0 14px 24px rgba(197,69,67,.28); }
 .beep-boom { background: radial-gradient(circle, #FFD3AB, #FBE5E0); }
 .beep-boom h2, .beep-boom p { color: var(--plum); }
 .beep-question, .mamnoo-word, .jabeen-word, .meen-count .go { color: var(--plum); }
@@ -68,12 +134,89 @@
 .jabeen-touch .ok { color: #165F4D; }
 .jabeen-touch .skip, .mamnoo-forbidden span { color: #A42F32; }
 .jabeen-perm { color: #145B71; }
-.fab-avatar { border-radius: 50%; background: none; border: 0; }
-.fab-avatar .clay-avatar { width: 110px; height: 110px; }
-.fab-round-scores .clay-avatar { width: 40px; height: 40px; }
-.fab-stats .clay-avatar { width: 24px; height: 24px; margin-inline-end: 5px; }
-.fab-big .clay-art, .big-emoji .clay-art, .meen-intro .clay-art { width: 120px; }
-.meen-pick .clay-avatar { width: 64px; height: 64px; }
-.meen-winner .faces .clay-avatar { border: 0; border-radius: 50%; width: 78px; height: 78px; }
-.meen-bar .clay-avatar, .beep-chip .clay-avatar { width: 26px; height: 26px; }
-@media (prefers-reduced-motion: reduce) { .wordmark-art { filter: none; } }
+
+/* ── الحالة الفارغة للاعبين + قائمة «عن المنصة» ── */
+.roster-empty { display: flex; justify-content: center; gap: 6px; padding: 10px 0 4px; }
+.roster-empty .clay-stage { --contact-inset: 20%; }
+.roster-empty .clay-stage > .clay-lift { animation: clay-drop .6s var(--ease-spring) both, clay-float 3.4s ease-in-out calc(.6s + var(--i, 0) * 260ms) infinite; }
+.roster-empty .clay-stage::after { animation: clay-shadow-land .6s both, clay-shadow-breathe 3.4s ease-in-out calc(.6s + var(--i, 0) * 260ms) infinite; }
+
+/* ═══ الأسطح: لغة حافة صلصالية واحدة — ضوء علوي، حافة صلبة 3–5px، ظل محيط ناعم ═══ */
+
+/* ── الأزرار: يهبط الجسم بمقدار الحافة وتنطوي الحافة ── */
+.btn { border-radius: 20px; font-weight: 800; border-width: 1px; padding-bottom: calc(10px + 0px);
+  background-image: var(--top-light), var(--btn-bg);
+  box-shadow: inset 0 2px 1px #fff9, 0 var(--ledge) 0 var(--clay-ledge), 0 6px 12px #63432F14;
+  transition: transform .22s var(--ease-spring), box-shadow .22s var(--ease-spring), filter .15s ease, background-color .15s ease, border-color .15s ease, opacity .15s ease; }
+.btn:active:not(:disabled) { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: inset 0 2px 3px rgba(91,61,36,.14), 0 0 0 var(--clay-ledge), 0 1px 2px #63432F14; }
+.btn-primary, .btn-accent { --ledge: var(--ledge-lg); --btn-bg: linear-gradient(180deg, #149EA8, #087C8B); --btn-fg: #fff; --btn-border: #6DD5D8; font-size: 20px;
+  box-shadow: inset 0 2px 1px #FFFFFF80, 0 var(--ledge-lg) 0 #066A77, 0 9px 18px #106F7C2E; }
+.btn-primary:active:not(:disabled), .btn-accent:active:not(:disabled) { box-shadow: inset 0 2px 4px #04525C55, 0 0 0 #066A77, 0 1px 2px #106F7C2E; }
+.btn-lg:active:not(:disabled) { transform: perspective(520px) rotateX(5deg) translateY(var(--ledge-lg)); transform-origin: 50% 100%; }
+.btn-secondary { --btn-bg: linear-gradient(180deg, #FFFEF8, #F9EFDDF0); --btn-fg: var(--plum); --btn-border: #E5D3B9; }
+.btn-danger  { --btn-bg: #FCE9E3; --btn-fg: #A42F32; --btn-border: #EDB1AA; box-shadow: inset 0 2px #fff9, 0 var(--ledge) 0 #DEB4A9, 0 6px 12px #63432F14; }
+.btn-danger:active:not(:disabled)  { box-shadow: inset 0 2px 3px #A42F3222, 0 0 0 #DEB4A9; }
+.btn-success { --btn-bg: #DEF2E9; --btn-fg: #165F4D; --btn-border: #8EC6B2; box-shadow: inset 0 2px #fff9, 0 var(--ledge) 0 #A1CCBC, 0 6px 12px #63432F14; }
+.btn-success:active:not(:disabled) { box-shadow: inset 0 2px 3px #165F4D22, 0 0 0 #A1CCBC; }
+.btn-ghost, .btn-ghost:active { box-shadow: none; transform: none; background-image: none; }
+.btn:disabled { opacity: .55; transform: none; box-shadow: inset 0 2px 1px #fff9, 0 0 0 var(--clay-ledge); background-image: var(--btn-bg); }
+.btn-lg { min-height: 60px; font-size: 23px; }
+.btn-sm { font-size: 15px; }
+.btn-icon { border-radius: 17px; }
+/* الزر المسلّح (مفعّل للتو): وهج ×2 + تنفّس ×3 — الصنف .is-armed يضيفه JSX عند التفعيل.
+   الوهج حلقة داخلية (inset) لأن .btn يقصّ ما يتجاوزه (overflow: hidden لأجل التموّج). */
+.btn.is-armed:not(:disabled) { animation: ui-breathe 1.8s ease-in-out .3s 3; }
+.btn.is-armed:not(:disabled)::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1; box-shadow: inset 0 0 0 3px #FFFFFFB8, inset 0 0 22px #18B7BE99; opacity: 0; animation: ui-glow 2.6s ease-in-out .6s 2; }
+
+/* ── البطاقات ── */
+.card { background: var(--top-light), var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; border-color: var(--stroke); box-shadow: var(--shadow-lift-1); }
+button.card { transition: transform .22s var(--ease-spring), box-shadow .22s var(--ease-spring); }
+button.card:active { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: var(--shadow-press); }
+.badge-new { background: var(--purple); box-shadow: none; }
+.badge-accent { color: var(--plum); }
+.input { background: #FFFDF6; border-color: #DCC7B1; box-shadow: inset 0 2px 3px #7356311A, 0 1px 0 #fff; }
+.input::placeholder { color: #82748B; opacity: 1; }
+.input:focus { border-color: var(--purple); box-shadow: inset 0 2px 3px #7356311A, 0 0 0 3px #9250BD1F; }
+
+/* ── المقطع ── */
+.segment { background: #EEE4D8; box-shadow: inset 0 2px 3px rgba(91,61,36,.10); }
+.segment button { transition: color .15s; }
+.segment button.selected { background: var(--top-light), #FFFCF4; box-shadow: inset 0 1px 0 #fff, 0 2px 0 var(--clay-ledge), 0 3px 6px #5B3C2620; animation: ui-pop-select .28s var(--ease-spring); }
+.segment button.selected.accent { color: #fff; background: var(--top-light), var(--purple); box-shadow: inset 0 1px 0 #ffffff66, 0 2px 0 #61347C, 0 4px 8px #9250BD33; }
+
+/* ── الحوارات والتنبيهات ── */
+.sheet-handle { background: #BFA7CC; }
+.modal { background: var(--top-light), var(--bg-2); border: 1px solid var(--stroke-strong); border-radius: 26px; box-shadow: inset 0 2px 1px #fff, 0 5px 0 var(--clay-ledge), 0 24px 48px rgba(91,61,36,.20); }
+.sheet { background: var(--top-light), var(--bg-2); box-shadow: 0 -2px 0 #fff, 0 -12px 32px rgba(91,61,36,.16); }
+.toast { color: var(--text); background: var(--top-light), #FFFCF2; box-shadow: inset 0 1px 0 #fff, 0 3px 0 var(--clay-ledge), 0 10px 22px rgba(91,61,36,.16); }
+.toast.is-success { border-inline-start: 4px solid var(--success); }
+.toast.is-danger  { border-inline-start: 4px solid var(--danger); }
+.ring-track { stroke: #DFD0E4; }
+.timer-resume { background: #FCF4E9F5; color: var(--purple); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.score-row .score { color: var(--plum); }
+.chip.selected .order { z-index: 1; color: var(--plum); background: #FFE8A1; }
+.setup-error { color: #A52C37; }
+.pass-name { color: var(--plum); }
+
+/* ── بلاطة الشخصية ── */
+.avatar-picker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.avatar-choice { position: relative; display: grid; place-items: center; padding: 5px; min-height: 68px; border: 2px solid transparent; border-radius: 22px;
+  background: var(--top-light), var(--surface); box-shadow: var(--shadow-tile);
+  transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), background-color .18s, border-color .18s, opacity .2s; }
+.avatar-choice:active { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: var(--shadow-press); }
+.avatar-choice.selected { border-color: var(--purple); background: var(--top-light), #F2E4FB; box-shadow: inset 0 2px 1px #fff, 0 var(--ledge) 0 #CBA9E0, 0 8px 14px #9250BD22; animation: ui-pop-select .32s var(--ease-spring); }
+.avatar-choice .clay-stage { display: grid; width: 100%; }   /* الحامل يملأ البلاطة فتُحلّ نسبة عرض الرسمة (min(100%, 66px)) */
+.avatar-choice.selected .clay-lift { animation: clay-squash .45s var(--ease-spring); }
+.avatar-picker:has(.selected) .avatar-choice:not(.selected) { opacity: .8; }
+
+/* ── منصة التتويج: حواف كل مرتبة كما كانت + ضوء علوي + ظل محيط ── */
+.podium { gap: 14px; padding-block: 8px 20px; }
+.podium-title { color: var(--plum); font-weight: 800; }
+.podium-stage { gap: 8px; min-height: 210px; direction: ltr; }
+.podium-col { min-width: 0; gap: 5px; }
+.podium-col .name { font-size: 17px; white-space: normal; overflow-wrap: anywhere; direction: rtl; }
+.podium-col .block { position: relative; transform-origin: 50% 100%; height: calc(var(--h, 60px) + 30px); min-height: 70px; border-radius: 19px 19px 10px 10px; background: var(--top-light), linear-gradient(155deg, #B782D9, #8A4FAD); border: 1px solid #D3A7EE; color: #fff; box-shadow: inset 0 3px 2px #fff8, 0 5px 0 #61347C, 0 10px 18px rgba(var(--clay-ink), .16); text-shadow: none; font-size: 28px; }
+.podium-col[data-rank="1"] .block { background: var(--top-light), linear-gradient(145deg, #FFDE7A, #F8BA37); border-color: #FFE8A1; color: var(--plum); box-shadow: inset 0 3px 2px #fff9, 0 5px 0 #C6902F, 0 12px 20px #C6902F33; }
+.podium-col[data-rank="3"] .block { background: var(--top-light), linear-gradient(145deg, #60D5D5, #1598A7); border-color: #83DFDF; box-shadow: inset 0 3px 2px #fff8, 0 5px 0 #087985, 0 10px 18px #08798533; }
+.podium-col[data-rank="1"] .block::after { content: ""; position: absolute; inset: -8px; border-radius: inherit; box-shadow: 0 0 0 8px #FFC94D3A, 0 0 24px #FFC94D66; opacity: 0; pointer-events: none; animation: ui-glow 2.2s ease-in-out 1.6s 3; }
+.podium-col .rank { font-size: 18px; line-height: 1; opacity: .85; }

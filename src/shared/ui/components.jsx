@@ -1,8 +1,10 @@
-import { Avatar, TrophyArtwork } from '../brand/art.jsx';
+import { Avatar, TrophyArtwork, ClayStage } from '../brand/art.jsx';
 // المكونات المشتركة: زر، بطاقة، شارة، نافذة، ورقة سفلية، تنبيه، حلقة تقدم، لوحة نتائج، منصة تتويج، شاشة.
 import React, { useEffect, useRef, useState, useCallback, createContext, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { IconClose } from './icons.jsx';
+import { burstConfetti } from '../fx/confetti.js';
+import { prefersReducedMotion, wait } from '../fx/screen.js';
 
 // ── ripple ───────────────────────────────────────────────────
 export function ripple(event) {
@@ -18,7 +20,7 @@ export function ripple(event) {
     span.style.left = `${(event.clientX || rect.left + rect.width / 2) - rect.left - size / 2}px`;
     span.style.top = `${(event.clientY || rect.top + rect.height / 2) - rect.top - size / 2}px`;
     host.appendChild(span);
-    setTimeout(() => span.remove(), 600);
+    setTimeout(() => span.remove(), wait(600));
   } catch (error) {
     // decorative only
   }
@@ -138,11 +140,20 @@ function useDialogHost() {
 }
 
 // ── Modal ────────────────────────────────────────────────────
-export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق' }) {
+export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '' }) {
   const ref = useRef(null);
   const closeRef = useRef(onClose);
   const [host, anchor, syncVars] = useDialogHost();
-  useEffect(() => { closeRef.current = onClose; });
+  // الإغلاق يمرّ بحالة is-closing (خروج قصير) ثم يستدعي onClose؛ صفر مهلة تحت تقليل الحركة.
+  const [closing, setClosing] = useState(false);
+  const closingRef = useRef(false);
+  const requestClose = () => {
+    if (!onClose || closingRef.current) return;
+    closingRef.current = true;
+    setClosing(true);
+    setTimeout(() => { closingRef.current = false; setClosing(false); onClose(); }, wait(180));
+  };
+  useEffect(() => { closeRef.current = requestClose; });
   // عند الفتح فقط: كل تصيير يمرّر onClose جديدة، فلو اعتمد التأثير عليها لسُحب
   // التركيز من الحقل بعد كل حرف يُكتب.
   useEffect(() => {
@@ -163,11 +174,11 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
     };
   }, [host, syncVars]);
   const tree = (
-    <div className="modal-layer" role="presentation" onClick={onClose}>
-      <section ref={ref} className="modal" role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()}>
+    <div className={`modal-layer ${closing ? 'is-closing' : ''}`} role="presentation" onClick={requestClose}>
+      <section ref={ref} className={`modal ${className}`} role="dialog" aria-modal="true" aria-label={title} tabIndex={-1} onClick={(e) => e.stopPropagation()}>
         <div className="modal-head">
           <h2>{title}</h2>
-          {onClose && <IconButton label={closeLabel} onClick={onClose}><IconClose /></IconButton>}
+          {onClose && <IconButton label={closeLabel} onClick={requestClose}><IconClose /></IconButton>}
         </div>
         <div className="modal-body">{children}</div>
         {footer && <div className="modal-foot">{footer}</div>}
@@ -179,7 +190,7 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
 
 export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel }) {
   return (
-    <Modal title={title} onClose={onCancel} footer={<>
+    <Modal title={title} onClose={onCancel} className={danger ? 'is-danger' : ''} footer={<>
       <Button variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
       <Button variant="ghost" full onClick={onCancel}>{cancelLabel}</Button>
     </>}>
@@ -196,7 +207,7 @@ export function Sheet({ open, onClose, title, children }) {
   const [host, anchor, syncVars] = useDialogHost();
   const close = useCallback(() => {
     setClosing(true);
-    setTimeout(() => { setClosing(false); onClose && onClose(); }, 210);
+    setTimeout(() => { setClosing(false); onClose && onClose(); }, wait(210));
   }, [onClose]);
   const closeRef = useRef(close);
   useEffect(() => { closeRef.current = close; });
@@ -292,13 +303,15 @@ export function ToastProvider({ children }) {
   const toast = useCallback((message, { kind = '', duration = 2400 } = {}) => {
     const id = Date.now() + Math.random();
     setItems((list) => [...list.slice(-2), { id, message, kind }]);
+    // خروج قصير (is-leaving) قبل الإزالة؛ تحت تقليل الحركة يتزامنان.
+    setTimeout(() => setItems((list) => list.map((t) => (t.id === id ? { ...t, leaving: true } : t))), Math.max(0, duration - wait(200)));
     setTimeout(() => setItems((list) => list.filter((t) => t.id !== id)), duration);
   }, []);
   return (
     <ToastContext.Provider value={toast}>
       {children}
       <div className="toast-host" aria-live="polite">
-        {items.map((t) => <div key={t.id} className={`toast ${t.kind ? `is-${t.kind}` : ''}`} role="status">{t.message}</div>)}
+        {items.map((t) => <div key={t.id} className={`toast ${t.kind ? `is-${t.kind}` : ''} ${t.leaving ? 'is-leaving' : ''}`} role="status">{t.message}</div>)}
       </div>
     </ToastContext.Provider>
   );
@@ -322,40 +335,53 @@ export function ProgressRing({ value, max = 1, size = 132, stroke = 10, color = 
 }
 
 // ── Scoreboard ───────────────────────────────────────────────
+// النقاط تُعدّ من القيمة السابقة (مرجع يحفظ آخر نقاط كل صف) وتُلكم عند التغيّر؛ +N يطير للأعلى.
 export function Scoreboard({ entries, unit = '' }) {
   const max = Math.max(...entries.map((e) => e.score), -Infinity);
+  const prev = useRef(new Map());
+  const bumps = useRef(new Map());
+  useEffect(() => { entries.forEach((e) => prev.current.set(e.id, e.score)); });
+  const now = Date.now();
   return (
     <div className="scoreboard">
-      {entries.map((e) => (
-        <div key={e.id} className={`score-row ${e.score === max && max > 0 ? 'is-leader' : ''}`} style={{ '--row-color': e.color }}>
-          <Avatar player={e} className="avatar" />
-          <span className="name">{e.name}</span>
-          {e.delta ? <span className="delta">+{e.delta}</span> : null}
-          <span className="score">{e.score}{unit}</span>
-        </div>
-      ))}
+      {entries.map((e, i) => {
+        const from = prev.current.get(e.id) ?? e.score;
+        if (from !== e.score) bumps.current.set(e.id, now);
+        const bumped = (bumps.current.get(e.id) || 0) > now - 600;
+        return (
+          <div key={e.id} className={`score-row ${e.score === max && max > 0 ? 'is-leader' : ''}`} style={{ '--row-color': e.color, '--n': i }}>
+            <ClayStage className="clay-static no-contact"><Avatar player={e} className="avatar" /></ClayStage>
+            <span className="name">{e.name}</span>
+            {e.delta ? <span className="delta" key={`${e.score}-${e.delta}`}>+{e.delta}</span> : null}
+            <span className={`score ${bumped ? 'is-bumped' : ''}`} key={e.score}><CountUp value={e.score} from={from} duration={600} />{unit}</span>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
 // ── count-up number ──────────────────────────────────────────
-export function CountUp({ value, duration = 900, className = '' }) {
-  const [shown, setShown] = useState(0);
+// from: نقطة البداية (0 افتراضًا)، delay: تأخير قبل العدّ؛ تحت تقليل الحركة يقفز للقيمة فورًا.
+export function CountUp({ value, from = 0, duration = 900, delay = 0, className = '' }) {
+  const [shown, setShown] = useState(() => (prefersReducedMotion() ? value : from));
+  const current = useRef(prefersReducedMotion() ? value : from); // آخر رقم معروض: تغيّر القيمة لاحقًا يعدّ منه لا من from
   useEffect(() => {
+    const base = current.current;
+    const show = (n) => { current.current = n; setShown(n); };
+    if (prefersReducedMotion() || base === value) { show(value); return undefined; }
     let raf = 0;
-    const start = performance.now();
-    const from = 0;
-    const reduced = document.documentElement.dataset.reducedMotion === 'true';
-    if (reduced) { setShown(value); return undefined; }
+    let start = 0;
     const step = (now) => {
+      if (!start) start = now;
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);
-      setShown(Math.round(from + (value - from) * eased));
+      show(Math.round(base + (value - base) * eased));
       if (t < 1) raf = requestAnimationFrame(step);
     };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [value, duration]);
+    const timer = setTimeout(() => { raf = requestAnimationFrame(step); }, wait(delay));
+    return () => { clearTimeout(timer); cancelAnimationFrame(raf); };
+  }, [value, duration, delay]);
   return <span className={`count-up ${className}`}>{shown}</span>;
 }
 
@@ -368,18 +394,27 @@ export function Podium({ entries, title, unit = '' }) {
   const heights = { 0: 92, 1: 66, 2: 48 };
   const winners = sorted.filter((e) => e.score === sorted[0].score);
   const heading = title || (winners.length > 1 ? 'تعادل جميل!' : `فاز ${sorted[0].name}`);
+  // التسلسل: الأعمدة تصعد 3→2→1 (الفائز آخرًا)، ثم دفعة قصاصات صغيرة عند عمود الفائز (~1.1s).
+  const winnerRef = useRef(null);
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const r = winnerRef.current?.getBoundingClientRect();
+      if (r) burstConfetti({ x: r.left + r.width / 2, y: r.top + 20, count: 40 });
+    }, wait(1100));
+    return () => clearTimeout(t);
+  }, []);
   return (
     <div className="podium">
-      <div className="podium-trophy" aria-hidden="true"><TrophyArtwork /></div>
+      <div className="podium-trophy clay-stage clay-idle" aria-hidden="true"><span className="clay-lift"><TrophyArtwork /></span></div>
       <h1 className="podium-title">{heading}</h1>
       <div className="podium-stage">
         {order.map((e) => {
           const rank = sorted.indexOf(e);
           return (
-            <div key={e.id} data-rank={sorted.findIndex((entry) => entry.score === e.score) + 1} className="podium-col" style={{ '--col-color': e.color, '--delay': `${rank * 160 + 200}ms`, '--h': `${heights[rank]}px` }}>
-              <Avatar player={e} className="avatar" />
+            <div key={e.id} ref={rank === 0 ? winnerRef : null} data-rank={sorted.findIndex((entry) => entry.score === e.score) + 1} className="podium-col" style={{ '--col-color': e.color, '--delay': `${(2 - rank) * 260 + 300}ms`, '--h': `${heights[rank]}px` }}>
+              <ClayStage className="avatar-wrap"><Avatar player={e} className="avatar" /></ClayStage>
               <span className="name">{e.name}</span>
-              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => entry.score === e.score) + 1}</span><span><CountUp value={e.score} />{unit}</span></div>
+              <div className="block"><span className="rank" aria-label="الترتيب">{sorted.findIndex((entry) => entry.score === e.score) + 1}</span><span><CountUp value={e.score} delay={(2 - rank) * 260 + 600} />{unit}</span></div>
             </div>
           );
         })}

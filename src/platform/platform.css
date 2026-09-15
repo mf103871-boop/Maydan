@@ -40,7 +40,7 @@
 
 /* ── إطار اللعبة ── */
 .game-frame { --game-accent: var(--accent); min-height: 100dvh; display: flex; flex-direction: column; }
-.game-bar { position: sticky; top: 0; z-index: 210; display: flex; align-items: center; gap: 10px; min-height: calc(52px + var(--safe-top)); padding: var(--safe-top) max(10px, var(--safe-right)) 0 max(10px, var(--safe-left)); background: linear-gradient(180deg, color-mix(in srgb, var(--game-accent) 22%, var(--bg)), color-mix(in srgb, var(--game-accent) 8%, var(--bg))); border-bottom: 1px solid color-mix(in srgb, var(--game-accent) 35%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.game-bar { position: sticky; top: 0; z-index: 210; display: flex; align-items: center; gap: 10px; min-height: calc(52px + var(--safe-top)); padding: var(--safe-top) max(10px, var(--safe-right)) 0 max(10px, var(--safe-left)); background: linear-gradient(180deg, color-mix(in srgb, var(--game-accent) 22%, var(--bg)), color-mix(in srgb, var(--game-accent) 8%, var(--bg))); border-bottom: 1px solid color-mix(in srgb, var(--game-accent) 35%, transparent); backdrop-filter: none; -webkit-backdrop-filter: none; }
 .game-bar .title { flex: 1; min-width: 0; font-weight: 900; font-size: 16px; color: var(--game-accent); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .game-bar .btn-icon { width: 48px; height: 48px; min-height: 48px; }
 .game-body { flex: 1; display: flex; flex-direction: column; }
