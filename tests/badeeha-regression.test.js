@@ -77,8 +77,8 @@ test('categoryGroup: كل حزمة تقع في مجموعة واحدة مشتق�
   const groups = { info: 0, special: 0, media: 0 };
   for (const category of CATS) groups[categoryGroup(category)] += 1;
   assert.equal(groups.info + groups.special + groups.media, CATS.length);
-  assert.equal(CATS.length, 79);
-  assert.deepEqual(groups, { info: 61, special: 7, media: 11 });
+  assert.equal(CATS.length, 78);
+  assert.deepEqual(groups, { info: 61, special: 7, media: 10 });
   // مثال من كل مجموعة
   assert.equal(categoryGroup(CATS.find((c) => c.id === 'general')), 'info');
   assert.equal(categoryGroup(CATS.find((c) => c.id === 'emoji')), 'special');
@@ -132,7 +132,7 @@ test('البنك خالٍ من أسئلة الفيديو، والوصف لا ي�
     }
   }
   assert.equal(types.get('video') || 0, 0, 'لا أسئلة فيديو في البنك');
-  assert.equal([...types.values()].reduce((a, b) => a + b, 0), 18960);
+  assert.equal([...types.values()].reduce((a, b) => a + b, 0), 18720);
   assert.ok(!/مقاطع|فيديو/.test(meta.description), `الوصف ما زال يَعِد بالمقاطع: ${meta.description}`);
   assert.ok(/صور/.test(meta.description) && /أصوات/.test(meta.description));
   // النوع «video» يبقى معروفًا في MEDIA_QUESTION_TYPES لأن العارض يدعمه.

@@ -14,8 +14,7 @@ const mediaRoot = path.resolve('media');
 const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
 const cats = files.map((f) => JSON.parse(readFileSync(path.join(dir, f), 'utf8')));
 
-// حزم الصور المفحوصة. fourpics مستثناة عمدًا: تصميمها يسحب أربع صور من مجمّع
-// مشترك، فالتكرار فيها بنيوي لا خطأ، وقرار إعادة بنائها ليس قرار هذا الاختبار.
+// حزم الصور المفحوصة (كل حزم الصور بعد سحب fourpics في 2026-09-15).
 const IMAGE_PACKS = ['reveal', 'placefinder', 'spotdiff', 'flags', 'blur', 'silhouette', 'guesscar', 'zoom', 'tilepuzzle'];
 
 // أزواج يُسمح لها بتقاسم الملف نفسه رغم اختلاف الإجابة. تُضاف هنا بمبرر مكتوب

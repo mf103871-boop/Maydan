@@ -145,9 +145,11 @@ export default {
 - **صفر طلبات شبكة في المنصة والألعاب**: لا CDN ولا خطوط خارجية. الأيقونات SVG
   مضمّنة، وأصوات الواجهة مُصنَّعة بـ WebAudio. الاستثناء وسائط حزم بَديهة، تُخدَم
   من `media/` في الموقع نفسه وتُحفظ في مخزن العامل الخدمي.
-- **بنك بَديهة**: يُبنى فئةً فئة (79 فئة، منها 11 فئة وسائط؛ 78 مكتملة و`beforeafter`
+- **بنك بَديهة**: يُبنى فئةً فئة (78 فئة، منها 10 فئات وسائط؛ 77 مكتملة و`beforeafter`
   قيد العمل؛ 48 سؤالًا في كل شريحة من 200 إلى 1000). `childhood` أُسقطت لتعذّر
-  ترخيص صور الطفولة ([`docs/bank/review-childhood-removed-2026-09-09.md`](docs/bank/review-childhood-removed-2026-09-09.md)).
+  ترخيص صور الطفولة ([`docs/bank/review-childhood-removed-2026-09-09.md`](docs/bank/review-childhood-removed-2026-09-09.md))،
+  و`fourpics` سُحبت لأن صورها من مجمّع مشترك لا يخصّ إجاباتها
+  ([`docs/bank/review-fourpics-removed-2026-09-15.md`](docs/bank/review-fourpics-removed-2026-09-15.md)).
   القواعد في [`docs/bank/RUBRIC.md`](docs/bank/RUBRIC.md)، والبنية في
   [`docs/bank/SCHEMA.md`](docs/bank/SCHEMA.md)، والحالة في `src/data/bank-status.json`.
   `npm run bank:validate` يرسب على أي مخالفة: تكرار بعد التطبيع العربي، تجاوز حدود
