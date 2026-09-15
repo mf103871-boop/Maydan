@@ -214,10 +214,10 @@ test('الحشو يرسب المدقّق في قناة مستقلة عن errors'
   assert.equal(placeholders[0].id, 'fill');
   assert.equal(placeholders[0].count, 1);
   assert.deepEqual(placeholders[0].samples, ['fill-200-901']);
-  // سطر الأوامر يخرج بـ1 على الحشو وحده
+  // البنك الحقيقي خالٍ من الحشو منذ إعادة بناء sound وspotdiff (2026-09-15)، فالأمر ينجح
   const cli = spawnSync(process.execPath, [path.join(ROOT, 'scripts/bank.mjs'), 'placeholders'], { cwd: ROOT, encoding: 'utf8' });
-  assert.equal(cli.status, 1, 'البنك الحقيقي فيه حشو، فالأمر يرسب');
-  assert.match(cli.stdout, /سؤال حشو في \d+ فئة/);
+  assert.equal(cli.status, 0, `البنك الحقيقي عاد إليه حشو:\n${cli.stdout}`);
+  assert.match(cli.stdout, /^0 سؤال حشو في 0 فئة/m);
 });
 
 test('bank:status بمعرّف وحده يعرض الحالة بدل سطر الاستعمال', () => {
