@@ -1097,6 +1097,8 @@ function MaydanBeta({ api } = {}) {
     [timeLeft, setTimeLeft] = useState(60),
     [paused, setPaused] = useState(!1),
     [revealed, setRevealed] = useState(!1),
+    // المضيف يخفي الإجابة بعد كشفها (كي لا يراها فريق يقرأ الشاشة) ثم يظهرها عند الحسم.
+    [answerHidden, setAnswerHidden] = useState(!1),
     [mixedItems, setMixedItems] = useState([]),
     [effect, setEffect] = useState({ double: !1, two: !1 }),
     [hintsUsed, setHintsUsed] = useState(0),
@@ -1262,6 +1264,7 @@ function MaydanBeta({ api } = {}) {
         timeLeft,
         paused: screen === "question" ? !0 : paused,
         revealed,
+        answerHidden,
         mixedItems: [...mixedItems],
         effect: { ...effect },
         questionBaseTeams: questionBaseTeams ? betaCloneTeams(questionBaseTeams) : null,
@@ -1295,6 +1298,7 @@ function MaydanBeta({ api } = {}) {
       timeLeft,
       paused,
       revealed,
+      answerHidden,
       mixedItems,
       effect,
       questionBaseTeams,
@@ -1510,6 +1514,7 @@ function MaydanBeta({ api } = {}) {
       ),
       setPaused(!0),
       setRevealed(!!savedActive.revealed),
+      setAnswerHidden(!!savedActive.answerHidden),
       setMixedItems(Array.isArray(savedActive.mixedItems) ? [...savedActive.mixedItems] : []),
       setEffect(savedActive.effect ? { ...savedActive.effect } : { double: !1, two: !1 }),
       setHintsUsed(Number.isFinite(savedActive.hintsUsed) ? savedActive.hintsUsed : 0),
@@ -1587,9 +1592,13 @@ function MaydanBeta({ api } = {}) {
     (closeQuestionSoundTimer(),
       (deadlineRef.current = null),
       setRevealed(!0),
+      setAnswerHidden(!1),
       setPaused(!1),
       playSfx("reveal"),
       haptic("light"));
+  }
+  function toggleAnswerHidden() {
+    (setAnswerHidden((value) => !value), playSfx("click"), haptic("light"));
   }
   function snapshotAction(label) {
     return {
@@ -1857,7 +1866,10 @@ ${record.answered} من ${record.total} سؤالًا`,
       }),
     );
   }
+  // الإجابة «معروضة» فقط حين كُشفت ولم يخفها المضيف؛ الوسائط والتلميحات تتبع الحالة نفسها.
+  const answerShown = revealed && !answerHidden;
   function QuestionVisual({ question }) {
+    const revealed = answerShown;
     const packId = current ? current.categoryId : null;
     const urls = questionMedia(question, packId),
       url = urls[0] || null,
@@ -2708,6 +2720,20 @@ ${record.answered} من ${record.total} سؤالًا`,
       ),
     );
   }
+  // زر إخفاء/إظهار الإجابة بعد كشفها؛ لوحة الحسم تبقى ظاهرة في الحالتين.
+  function AnswerToggle() {
+    return hBeta(
+      "button",
+      {
+        type: "button",
+        className: "m-secondary m-small m-answer-toggle",
+        onClick: toggleAnswerHidden,
+        "aria-pressed": answerHidden,
+      },
+      hBeta("span", { "aria-hidden": "true" }, answerHidden ? "👁" : "🙈"),
+      answerHidden ? " إظهار الإجابة" : " إخفاء الإجابة",
+    );
+  }
   function QuestionScreen() {
     if (!currentQuestion || !currentCategory) return null;
     const prompt = TYPE_PROMPT[currentQuestion.type],
@@ -2795,16 +2821,25 @@ ${record.answered} من ${record.total} سؤالًا`,
         prompt && hBeta("p", { className: "m-prompt" }, prompt),
         QuestionVisual({ question: currentQuestion }),
         revealed &&
-          hBeta(
-            "div",
-            { className: "m-answer", role: "status" },
-            hBeta("small", null, "الإجابة"),
-            hBeta("strong", null, answerText(currentQuestion)),
-            // الصيغ المقبولة الأخرى (اسم بلغتين، لقب) تظهر للمضيف كي لا يظلم إجابة صحيحة بصياغة مختلفة
-            Array.isArray(currentQuestion.alt) &&
-              currentQuestion.alt.length > 0 &&
-              hBeta("span", { className: "m-answer-alt" }, `يُقبل أيضًا: ${currentQuestion.alt.join(" · ")}`),
-          ),
+          (answerShown
+            ? hBeta(
+                "div",
+                { className: "m-answer", role: "status" },
+                hBeta("small", null, "الإجابة"),
+                hBeta("strong", null, answerText(currentQuestion)),
+                // الصيغ المقبولة الأخرى (اسم بلغتين، لقب) تظهر للمضيف كي لا يظلم إجابة صحيحة بصياغة مختلفة
+                Array.isArray(currentQuestion.alt) &&
+                  currentQuestion.alt.length > 0 &&
+                  hBeta("span", { className: "m-answer-alt" }, `يُقبل أيضًا: ${currentQuestion.alt.join(" · ")}`),
+                AnswerToggle(),
+              )
+            : hBeta(
+                "div",
+                { className: "m-answer is-hidden", role: "status" },
+                hBeta("small", null, "الإجابة مخفية"),
+                hBeta("strong", { "aria-hidden": "true" }, "• • •"),
+                AnswerToggle(),
+              )),
       ),
       !revealed &&
         hBeta(
@@ -3091,7 +3126,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         hBeta(
           "li",
           null,
-          "بعد كشف الإجابة، اختر الفريق الذي أجاب. في «الأقرب» لا تُحسب الإجابة سرقة.",
+          "بعد كشف الإجابة، اختر الفريق الذي أجاب، ويمكنك إخفاء الإجابة وإظهارها متى شئت. في «الأقرب» لا تُحسب الإجابة سرقة.",
         ),
         hBeta("li", null, "لكل فريق: مضاعفة النقاط، جوابان، و30 ثانية إضافية؛ كل أداة مرة واحدة."),
         hBeta(
