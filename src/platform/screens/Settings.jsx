@@ -7,9 +7,10 @@ import { shareText } from '../../shared/fx/haptics.js';
 import { usePlatform } from '../context.js';
 import { back, getDirection } from '../router.js';
 
-function Toggle({ icon, title, sub, checked, onChange }) {
+// index: تدرّج دخول الصفوف (45ms لكل صف) عبر --delay
+function Toggle({ icon, title, sub, checked, onChange, index = 0 }) {
   return (
-    <div className="setting">
+    <div className="setting" style={{ '--delay': `${index * 45}ms` }}>
       <span className="icon" aria-hidden="true">{icon}</span>
       <span className="text"><b>{title}</b><small>{sub}</small></span>
       <button type="button" className="switch" role="switch" aria-checked={checked} aria-label={title} onClick={() => onChange(!checked)} />
@@ -31,9 +32,9 @@ export function Settings() {
     <Screen dir={getDirection()} className="stack" aria-label="الإعدادات">
       <TopBar title="الإعدادات" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <div className="stack">
-        <Toggle icon={<IconVolume />} title="الصوت" sub="مؤثرات اللعب والمؤقت" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
-        <Toggle icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
-        <Toggle icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
+        <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="مؤثرات اللعب والمؤقت" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
+        <Toggle index={1} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
+        <Toggle index={2} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
       </div>
       <Card className="stack">
         <div className="row"><IconFlag style={{ color: 'var(--accent)' }} /><span className="card-title">الإبلاغ عن سؤال</span></div>

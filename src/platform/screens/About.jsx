@@ -1,4 +1,4 @@
-import { BrandMark } from '../../shared/brand/art.jsx';
+import { BrandMark, GameArtwork } from '../../shared/brand/art.jsx';
 import React from 'react';
 import { Screen, TopBar, IconButton, Card } from '../../shared/ui/components.jsx';
 import { IconBack } from '../../shared/ui/icons.jsx';
@@ -53,7 +53,8 @@ export function About() {
         </div>
         <p className="card-muted" style={{ fontSize: 15 }}>ألعاب عربية للأصدقاء والعائلة على جهاز واحد، وغرف «مين فينا؟» ليلعب كل واحد من هاتفه. ألعاب الجهاز الواحد تعمل دون إنترنت بعد تنزيل المحتوى؛ والغرف تحتاج اتصالًا على كل هاتف.</p>
         <div className="about-list">
-          {GAMES.map((g) => <div key={g.id} className="row" style={{ '--c': g.accent }}><span className="dot" aria-hidden="true" /><b>{g.name}</b><span className="muted" style={{ fontSize: 13 }}>{g.tagline}</span></div>)}
+          {/* رسمة كل لعبة (28px، بلا حامل) بدل النقطة الملوّنة؛ الصفوف تدخل بتدرّج 45ms */}
+          {GAMES.map((g, n) => <div key={g.id} className="row" style={{ '--c': g.accent, '--delay': `${n * 45}ms` }}><GameArtwork game={g.id} /><b>{g.name}</b><span className="muted" style={{ fontSize: 13 }}>{g.tagline}</span></div>)}
         </div>
       </Card>
       <Card className="stack">

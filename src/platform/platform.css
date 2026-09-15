@@ -3,16 +3,47 @@
 .home-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 62px; }
 .brand { display: flex; align-items: center; gap: 10px; }
 .home-head .row { gap: 8px; }
+.online-home-card, .roster-card { position: relative; overflow: hidden; }
+.online-home-card .clay-stage { flex: 0 0 auto; }
 .roster-card { display: flex; align-items: center; gap: 12px; padding: 12px 14px; }
 .roster-card .card-title { font-size: 18px; }
-.roster-card .card-muted { font-size: 12px; }
+/* عدّاد اللاعبين مفتاحه roster.length: يلكم عند التغيّر */
+.roster-card .card-muted { display: block; font-size: 12px; transform-origin: 0 50%; animation: ui-punch .3s var(--ease-spring) both; }
 .roster-faces { display: flex; flex-shrink: 0; padding-inline-end: 6px; }
-.roster-faces .clay-avatar { width: 40px; height: 40px; margin-inline-end: -7px; }
+.roster-faces .clay-stage { margin-inline-end: -7px; }
+.roster-faces .clay-stage .clay-avatar { margin: 0; }
+.roster-faces .clay-stage > .clay-lift { transition: transform .18s var(--ease-spring); }
+/* لمسة الدفتر: الوجوه تقفز واحدًا تلو الآخر */
+.roster-card:active .roster-faces .clay-stage > .clay-lift { transform: translateY(-4px); }
+.roster-card:active .roster-faces .clay-stage:nth-child(2) > .clay-lift { transition-delay: 30ms; }
+.roster-card:active .roster-faces .clay-stage:nth-child(3) > .clay-lift { transition-delay: 60ms; }
+.roster-card:active .roster-faces .clay-stage:nth-child(4) > .clay-lift { transition-delay: 90ms; }
 .games-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.game-card { --ga: var(--game-accent); position: relative; display: grid; justify-items: center; align-content: start; gap: 3px; text-align: center; padding: 9px 8px 12px; min-height: 179px; border-radius: 23px; background: linear-gradient(155deg, #FFFEF7, color-mix(in srgb, var(--ga) 9%, #FFF9ED)); border: 1px solid color-mix(in srgb, var(--ga) 24%, #EADFCF); box-shadow: inset 0 2px 1px #FFFFFF, 0 3px 0 #D5C3B258, 0 5px 9px #6E4C3010; overflow: hidden; isolation: isolate; transition: transform .16s var(--ease-out), box-shadow .2s ease; animation: card-in .45s var(--ease-out) both; animation-delay: var(--delay, 0ms); }
-.game-card:active { box-shadow: inset 0 2px 4px #64483618; }
+
+/* بطاقات الألعاب */
+.game-card { --ga: var(--game-accent); position: relative; display: grid; justify-items: center; align-content: start; gap: 3px; text-align: center; padding: 9px 8px 12px; min-height: 179px; border-radius: 23px;
+  background: var(--top-light), linear-gradient(155deg, #FFFEF7, color-mix(in srgb, var(--ga) 9%, #FFF9ED));
+  border: 1px solid color-mix(in srgb, var(--ga) 24%, #EADFCF);
+  box-shadow: inset 0 2px 1px #FFFFFF, 0 4px 0 color-mix(in srgb, var(--ga) 22%, #D5C3B2), 0 10px 18px color-mix(in srgb, var(--ga) 12%, #6E4C3012);
+  overflow: hidden; isolation: isolate; transition: transform .18s var(--ease-out), box-shadow .2s ease;
+  animation: ui-card-pop .5s var(--ease-spring) backwards; animation-delay: var(--delay, 0ms); }
+/* backwards لا both: الإطار الأخير الصريح (transform: none) مع both يبقى مطبَّقًا ويطمس ميل tilt() والبارالاكس */
+.game-card:active { box-shadow: inset 0 2px 4px #64483618, 0 0 0 color-mix(in srgb, var(--ga) 22%, #D5C3B2), 0 2px 4px #6E4C3012; }
+.game-card.is-soon { opacity: .6; filter: saturate(.6); }
 .game-card .icon { width: 86px; height: 86px; display: grid; place-items: center; }
-.game-card .icon .clay-art { width: 100%; height: 100%; }
+/* بارالاكس ثنائي الأبعاد (كل المتصفحات): tilt() يكتب --tx/--ty في [-1,1].
+   الحامل clay-static يلغي حركة الرسم في brand.css (يُحقن لاحقًا) فترفع هذه القواعد خصوصيتها بـ .icon.clay-stage */
+.game-card .icon.clay-stage > .clay-lift { transform: translate(calc(var(--tx, 0) * -5px), calc(var(--ty, 0) * -5px)); transition: transform .16s var(--ease-out); animation: ui-pop-in .45s var(--ease-spring) backwards; animation-delay: calc(var(--delay, 0ms) + 120ms); }
+.game-card .icon.clay-stage::after { animation: clay-shadow-land .5s var(--ease-spring) both; animation-delay: calc(var(--delay, 0ms) + 120ms); }
+/* الطبقة الثلاثية حيث تُدعم overflow: clip (Safari 16+): isolation تُسطّح preserve-3d فتُستبدل بـ z-index */
+@supports (overflow: clip) {
+  .game-card { overflow: clip; isolation: auto; z-index: 0; transform-style: preserve-3d; }
+  .game-card .icon { transform: translateZ(22px); }
+}
+.game-card.is-launch { animation: ui-launch .16s ease-in forwards; }
+.game-card.is-launch .icon.clay-stage > .clay-lift { transform: scale(1.15); }
+@keyframes ui-card-pop { 0% { opacity: 0; transform: translateY(20px) scale(.94); } 70% { opacity: 1; transform: translateY(-3px) scale(1.01); } 100% { transform: none; } }
+@keyframes ui-launch { to { transform: scale(1.05); opacity: .9; } }
 .game-card .name { font-size: 23px; font-weight: 800; line-height: 1.25; color: var(--plum); }
 .game-card .tagline { font-size: 12px; color: var(--muted); line-height: 1.4; }
 .game-card .meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; column-gap: 8px; font-size: 11px; color: var(--muted); font-weight: 600; margin-top: 4px; }
@@ -21,60 +52,114 @@
 .home-screen .section-title { color: var(--plum); font-size: 23px; }
 .home-footer { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; color: var(--muted); padding: 3px 0; }
 .home-footer span { padding-inline-start: 8px; border-inline-start: 1px solid var(--stroke); font-size: 11px; }
-@keyframes card-in { from { opacity: 0; transform: translateY(12px); } }
 @media (min-width: 620px) { .home-screen { padding-top: calc(30px + var(--safe-top)); gap: 22px; } .games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; } .game-card { min-height: 235px; padding-block: 18px; } .game-card .icon { width: 122px; height: 122px; } .game-card .name { font-size: 26px; } .game-card .tagline { font-size: 14px; } .game-card .meta { font-size: 13px; } }
-@media (max-width: 350px) { .home-head .row { gap: 6px; } .home-head .brand { gap: 6px; } .home-head .brand-mark { width: 40px; height: 40px; } .home-head .brand-name { font-size: 30px; } .home-head .brand-sub { font-size: 12px; } .roster-faces .clay-avatar { width: 33px; height: 33px; } .game-card .name { font-size: 21px; } .game-card .tagline { font-size: 11px; } .game-card .meta { font-size: 10px; } .games-grid { gap: 9px; } }
+@media (max-width: 350px) { .home-head .row { gap: 6px; } .home-head .brand { gap: 6px; } .home-head .brand-mark { width: 40px; height: 40px; } .home-head .brand-name { font-size: 30px; } .home-head .brand-sub { font-size: 12px; } .game-card .name { font-size: 21px; } .game-card .tagline { font-size: 11px; } .game-card .meta { font-size: 10px; } .games-grid { gap: 9px; } }
 
 /* ── تفاصيل اللعبة ── */
 .details-hero { display: grid; justify-items: center; gap: 12px; text-align: center; padding: 18px 12px 8px; }
-.details-hero .icon { width: 148px; height: 148px; display: grid; place-items: center; background: transparent; animation: ui-trophy .7s var(--ease-spring) both; }
-.details-hero .icon .clay-art { width: 100%; height: 100%; }
-.details-hero h1 { font-size: clamp(30px, 8vw, 40px); font-weight: 800; color: var(--plum); }
-.details-hero p { color: var(--muted); max-width: 440px; line-height: 1.7; }
+.details-hero .icon { width: 148px; height: 148px; display: grid; place-items: center; background: transparent; }
+.details-hero h1 { font-size: clamp(30px, 8vw, 40px); font-weight: 800; color: var(--plum); animation: ui-lift-in .4s var(--ease-out) .12s both; }
+.details-hero p { color: var(--muted); max-width: 440px; line-height: 1.7; animation: ui-lift-in .4s var(--ease-out) .2s both; }
 .steps { display: grid; gap: 10px; counter-reset: step; }
-.step { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; background: var(--surface); border: 1px solid var(--stroke); animation: card-in .5s var(--ease-out) both; animation-delay: var(--delay, 0ms); line-height: 1.6; }
-.step::before { counter-increment: step; content: counter(step); flex: 0 0 auto; width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font-weight: 900; color: var(--plum); background: #EAD9F5; }
+.step { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); animation: ui-lift-in .45s var(--ease-out) both; animation-delay: var(--delay, 0ms); line-height: 1.6; }
+.step::before { counter-increment: step; content: counter(step); flex: 0 0 auto; width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font-weight: 900; color: var(--plum); background: #EAD9F5; box-shadow: inset 0 2px 0 #fff8, 0 2px 0 #C9A9E0; animation: ui-pop-in .4s var(--ease-spring) both; animation-delay: calc(var(--delay, 0ms) + 140ms); }
 .facts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-.fact { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--stroke); font-size: 14px; font-weight: 700; color: var(--muted); }
+.fact { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); font-size: 14px; font-weight: 700; color: var(--muted); animation: ui-lift-in .35s var(--ease-out) both; animation-delay: var(--delay, 0ms); }
 .fact svg { width: 16px; height: 16px; color: var(--game-accent); }
 
 /* ── إطار اللعبة ── */
 .game-frame { --game-accent: var(--accent); min-height: 100dvh; display: flex; flex-direction: column; }
-.game-bar { position: sticky; top: 0; z-index: 210; display: flex; align-items: center; gap: 10px; min-height: calc(52px + var(--safe-top)); padding: var(--safe-top) max(10px, var(--safe-right)) 0 max(10px, var(--safe-left)); background: linear-gradient(180deg, color-mix(in srgb, var(--game-accent) 22%, var(--bg)), color-mix(in srgb, var(--game-accent) 8%, var(--bg))); border-bottom: 1px solid color-mix(in srgb, var(--game-accent) 35%, transparent); backdrop-filter: none; -webkit-backdrop-filter: none; }
-.game-bar .title { flex: 1; min-width: 0; font-weight: 900; font-size: 16px; color: var(--game-accent); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* شريط اللعبة: بلا backdrop-filter؛ حافة بلون اللعبة؛ لا transform دائم (ui-bar-in ينتهي عند none) */
+.game-bar { position: sticky; top: 0; z-index: 210; display: flex; align-items: center; gap: 10px; min-height: calc(52px + var(--safe-top)); padding: var(--safe-top) max(10px, var(--safe-right)) 0 max(10px, var(--safe-left));
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--game-accent) 22%, var(--bg)), color-mix(in srgb, var(--game-accent) 8%, var(--bg)) 70%, color-mix(in srgb, var(--game-accent) 8%, var(--bg)));
+  border-bottom: 1px solid color-mix(in srgb, var(--game-accent) 35%, transparent);
+  box-shadow: inset 0 1px 0 #fff8, 0 2px 0 color-mix(in srgb, var(--game-accent) 25%, var(--clay-ledge)), 0 6px 14px color-mix(in srgb, var(--game-accent) 12%, transparent);
+  animation: ui-bar-in .32s var(--ease-out) both; }
+.game-bar .title { flex: 1; min-width: 0; font-weight: 900; font-size: 16px; color: var(--game-accent); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; animation: ui-lift-in .3s var(--ease-out) .12s both; }
+/* توهّج بلون اللعبة يتلاشى عند الدخول (opacity فقط، خلف الأزرار) */
+.game-bar::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: color-mix(in srgb, var(--game-accent) 30%, transparent); animation: ui-fade-out .6s ease-out both; }
 .game-bar .btn-icon { width: 48px; height: 48px; min-height: 48px; }
+.game-bar .icon-swap { display: grid; place-items: center; animation: ui-pop-in .3s var(--ease-spring) both; }
 .game-body { flex: 1; display: flex; flex-direction: column; }
 .game-body > .screen { min-height: 0; padding-top: 12px; flex: 1; }
 /* رأس «بَديهة» اللاصق يلتصق تحت شريط المنصة لا فوقه */
 .game-frame .m-root .m-header { top: calc(52px + var(--safe-top)); }
 .game-frame .m-root { padding-top: 10px; min-height: calc(100dvh - 52px - var(--safe-top)); }
 
+/* الستار عند بدء/إعادة اللعبة (Play.jsx): ثابت، بلا لمس، يُزال بمؤقّت ولا يُصيَّر تحت تقليل الحركة */
+.game-curtain { position: fixed; inset: 0; z-index: 315; pointer-events: none; display: grid; place-items: center;
+  background: var(--game-accent); background: color-mix(in srgb, var(--game-accent) 85%, #fff);
+  transform-origin: 50% 100%; animation: curtain-wipe .48s var(--ease-snap) both; }
+.game-curtain .clay-stage > .clay-lift { animation: ui-wobble .48s ease-in-out both; }
+.game-curtain .clay-stage::after { animation: none; --clay-contact: rgba(var(--clay-ink), .38); }
+@keyframes curtain-wipe { 0% { transform: translateY(100%); } 35% { transform: translateY(0); } 60% { transform: translateY(0); } 100% { transform: translateY(-100%); } }
+
 /* ── الإعدادات ── */
-.setting { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: var(--surface); border: 1px solid var(--stroke); }
-.setting .icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--surface-2); color: var(--accent); flex: 0 0 auto; }
+.setting { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); animation: ui-lift-in .38s var(--ease-out) both; animation-delay: var(--delay, 0ms); }
+.setting .icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(180deg, #F7EEE2, #EFE3D4); box-shadow: inset 0 2px 0 #fff, 0 2px 0 var(--clay-ledge-soft); color: var(--accent); flex: 0 0 auto; }
 .setting .text { flex: 1; min-width: 0; }
 .setting .text b { display: block; font-size: 16px; }
 .setting .text small { color: var(--muted); font-size: 13px; }
-.switch { width: 54px; height: 32px; border-radius: 999px; background: #DCCAE6; border: 1px solid var(--stroke-strong); position: relative; flex: 0 0 auto; transition: background-color .2s ease; min-height: 32px; }
-.switch::after { content: ""; position: absolute; top: 3px; inset-inline-start: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; transition: transform .2s var(--ease-out); }
-.switch[aria-checked="true"] { background: var(--success); }
-.switch[aria-checked="true"]::after { transform: translateX(-22px); }
+/* المفتاح (منطقي: --flow) */
+.switch { width: 54px; height: 32px; border-radius: 999px; background: #DCCAE6; border: 1px solid var(--stroke-strong); position: relative; flex: 0 0 auto; box-shadow: inset 0 2px 3px rgba(53,37,71,.18); transition: background-color .2s ease; min-height: 32px; }
+.switch::after { content: ""; position: absolute; top: 3px; inset-inline-start: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 2px 3px rgba(53,37,71,.28), inset 0 -2px 0 #EFE6F2; transition: transform .28s var(--ease-spring); transform-origin: 50% 50%; }
+.switch[aria-checked="true"] { background: var(--success); box-shadow: inset 0 2px 3px rgba(0,0,0,.18); }
+.switch[aria-checked="true"]::after { transform: translateX(calc(var(--flow) * 22px)); animation: ui-knob .32s var(--ease-out); }
+.switch:active::after { transform: scaleX(1.25); }
+.switch[aria-checked="true"]:active::after { transform: translateX(calc(var(--flow) * 22px)) scaleX(1.25); }
+/* خطأ الإضافة في دفتر اللاعبين: ظهور + هزّة */
+.setup-error[role="alert"] { animation: ui-fade .2s ease-out both, ui-nudge .4s ease-out; }
 
-/* ── بداية غامرة، مع الشعار كنص حي فوق الرسم ── */
-.splash { position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: #48BFF0; cursor: pointer; }
-.splash .splash-world { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
-.splash::after { content: ''; position: absolute; inset: auto 0 0; height: 13%; pointer-events: none; background: linear-gradient(transparent, #FFF7E7 90%); }
-.splash-inner { position: absolute; top: calc(5% + var(--safe-top)); inset-inline: 16px; display: grid; justify-items: center; z-index: 1; animation: splash-mark .5s var(--ease-out) both; }
-.splash-sub { color: var(--plum); font-size: clamp(22px, 6vw, 32px); font-weight: 800; margin-top: -12px; }
-.splash-skip { position: absolute; z-index: 2; bottom: calc(18px + var(--safe-bottom)); inset-inline: 12px; text-align: center; color: var(--plum); font-size: 15px; font-weight: 600; }
-@keyframes splash-mark { from { opacity: 0; transform: translateY(-10px); } }
+/* ── البداية: سماء تطابق أعلى الصورة (#41B9FA) وتتعمّق فوقها؛ لا خط فاصل ── */
+.splash { position: fixed; inset: 0; z-index: 1000; overflow: hidden; cursor: pointer;
+  background: linear-gradient(180deg, #2E9FF0 0%, #41B9FA max(0px, calc(100% - 150vw)), #41B9FA 100%); }
+.splash .splash-world { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; z-index: 1; transform-origin: 50% 100%; will-change: transform; animation: splash-world-in 1.6s var(--ease-out) both; }
+/* ريش لحافة الصورة العلوية (تُخفي الغيوم المقطوعة وأي فرق باقٍ) */
+.splash::before { content: ""; position: absolute; inset-inline: 0; top: max(0px, calc(100% - 150vw)); height: 14vw; z-index: 2; pointer-events: none; background: linear-gradient(180deg, #41B9FA, #41B9FA00); }
+.splash::after { content: ""; position: absolute; inset: auto 0 0; height: 14%; z-index: 2; pointer-events: none; background: linear-gradient(transparent, #FFF7E7 90%); }
+.splash-sky { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.splash-cloud { position: absolute; width: 34vw; height: 11vw; border-radius: 999px; opacity: .88; will-change: transform;
+  background: radial-gradient(closest-side, #fff 0 60%, #fff0 100%) 30% 40% / 60% 100% no-repeat, radial-gradient(closest-side, #fff 0 60%, #fff0) 70% 60% / 55% 90% no-repeat, radial-gradient(closest-side, #fff 0 60%, #fff0) 50% 70% / 90% 70% no-repeat;
+  animation: splash-drift 70s linear infinite alternate; }
+.splash-cloud[style*="--i: 0"], .splash-cloud:nth-child(1) { top: calc(5% + var(--safe-top)); inset-inline-start: -6vw; }
+.splash-cloud:nth-child(2) { top: 17%; inset-inline-end: -8vw; animation-name: splash-drift-sm; animation-delay: -25s; opacity: .8; }
+@keyframes splash-drift { to { transform: translateX(calc(var(--flow) * -14vw)); } }
+@keyframes splash-drift-sm { from { transform: scale(.7); } to { transform: translateX(calc(var(--flow) * 12vw)) scale(.7); } }
+/* بالونان بخطوط الهوية وسلّة ذهبية */
+.splash-balloon { position: absolute; width: 14vw; height: 17vw; max-width: 64px; max-height: 78px; border-radius: 50% 50% 48% 48% / 60% 60% 40% 40%; will-change: transform;
+  background: repeating-linear-gradient(90deg, #9250BD 0 12%, #FFF3DA 12% 24%); box-shadow: inset -6px -8px 0 #00000014, 0 6px 8px rgba(var(--clay-ink), .18);
+  animation: splash-bob 4.2s ease-in-out infinite; }
+.splash-balloon::after { content: ""; position: absolute; left: 50%; bottom: -26%; width: 34%; height: 22%; transform: translateX(-50%); border-radius: 3px 3px 5px 5px; background: #C6902F; box-shadow: inset 0 2px 0 #FFE8A1; }
+.splash-balloon::before { content: ""; position: absolute; left: 50%; bottom: -12%; width: 2px; height: 14%; transform: translateX(-50%); background: #6A3A8A; }
+.splash-balloon:nth-child(3) { top: 8%; inset-inline-start: 7%; }
+.splash-balloon:nth-child(4) { top: 13%; inset-inline-end: 8%; background: repeating-linear-gradient(90deg, #18B7BE 0 12%, #FFF3DA 12% 24%); animation-delay: -2.1s; transform: scale(.8); }
+@keyframes splash-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+/* أربع نجوم ذهبية */
+.splash-star { position: absolute; width: 14px; height: 14px; background: #FFC94D; clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); animation: ui-sparkle 2.2s ease-in-out infinite; }
+.splash-star:nth-child(5) { top: 12%; inset-inline-start: 22%; }
+.splash-star:nth-child(6) { top: 24%; inset-inline-end: 24%; animation-delay: .5s; }
+.splash-star:nth-child(7) { top: 6%; inset-inline-end: 14%; transform: scale(.7); animation-delay: .9s; }
+.splash-star:nth-child(8) { top: 30%; inset-inline-start: 10%; transform: scale(.8); animation-delay: 1.4s; }
+/* الشعار: هبوط بنابض فوق وهج شمس */
+.splash-inner { position: absolute; top: calc(5% + var(--safe-top)); inset-inline: 16px; display: grid; justify-items: center; z-index: 3; isolation: isolate; animation: splash-mark .55s var(--ease-spring) both; }
+.splash-inner::before { content: ""; position: absolute; inset: -30% -20%; z-index: -1; pointer-events: none; background: radial-gradient(60% 55% at 50% 45%, #FFFFFF66, #FFFFFF00 70%); }
+.splash-sub { color: var(--plum); font-size: clamp(22px, 6vw, 32px); font-weight: 800; margin-top: -12px; animation: ui-lift-in .4s var(--ease-out) .22s both; }
+.splash-skip { position: absolute; z-index: 3; bottom: calc(18px + var(--safe-bottom)); inset-inline: 12px; text-align: center; color: var(--plum); font-size: 15px; font-weight: 600; animation: ui-fade .5s ease-out .8s both; }
+@keyframes splash-world-in { from { transform: scale(1.06) translateY(1.5%); } }
+@keyframes splash-mark { from { opacity: 0; transform: translateY(-26px) scale(.9); } }
 .splash.is-leaving { animation: splash-out .25s ease-in forwards; }
+.splash.is-leaving .splash-world { animation: splash-zoom .25s ease-in forwards; }
+.splash.is-leaving .splash-inner { animation: splash-lift .25s ease-in forwards; }
 @keyframes splash-out { to { opacity: 0; } }
-@media (min-aspect-ratio: 1/1) { .splash .splash-world { object-position: 25% bottom; } .splash-inner { inset-inline: 48% 2%; top: 25%; } .splash-inner .wordmark-art { font-size: clamp(76px, 12vw, 150px); } }
+@keyframes splash-zoom { to { transform: scale(1.04); } }
+@keyframes splash-lift { to { opacity: 0; transform: translateY(-14px); } }
+/* عرضي: الصورة في نصف والشعار في النصف المقابل، يتبادلان مع اتجاه الكتابة (--flow) */
+@media (min-aspect-ratio: 1/1) { .splash { background: linear-gradient(180deg, #2E9FF0, #41B9FA 30%); } .splash::before { display: none; } .splash .splash-world { object-position: calc(50% + var(--flow) * 25%) bottom; } .splash-inner { inset-inline: 2% 48%; top: 25%; } .splash-inner .wordmark-art { font-size: clamp(76px, 12vw, 150px); } .splash-balloon:nth-child(3) { inset-inline-start: 4%; } .splash-cloud:nth-child(1) { inset-inline-start: 2%; } }
 
+/* ── عن المنصة ── */
 .about-list { display: grid; gap: 8px; }
-.about-list .row { padding: 10px 12px; border-radius: 14px; background: var(--surface); border: 1px solid var(--stroke); }
-.about-list .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--c); }
-.credits-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; line-height: 1.7; max-height: 50vh; overflow: auto; }
-.credits-list li { padding: 8px 10px; border-radius: 12px; background: var(--surface); border: 1px solid var(--stroke); overflow-wrap: anywhere; }
+.about-list .row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); animation: ui-lift-in .35s var(--ease-out) both; animation-delay: var(--delay, 0ms); }
+.credits-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; line-height: 1.7; max-height: 50vh; overflow: auto; transform-origin: 50% 0; animation: ui-unfold .3s var(--ease-out) both; }
+.credits-list li { padding: 8px 10px; border-radius: 12px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); overflow-wrap: anywhere; }
 .credits-list a { color: var(--accent, inherit); text-decoration: underline; }

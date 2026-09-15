@@ -22,7 +22,13 @@ export function Splash({ onDone, duration = 2200, reducedMotion = false }) {
     return () => { clearTimeout(timer); clearTimeout(exitTimer.current); };
   }, [duration, finish, reducedMotion]);
 
+  // السماء: غيمتان وبالونان وأربع نجوم CSS فوق تدرّج يطابق أعلى الصورة؛ كلها زينة (aria-hidden) وتُزال مع الشاشة.
   return <div className={`splash ${leaving ? 'is-leaving' : ''}`} onClick={finish} role="button" tabIndex={0} aria-label="تخطي شاشة البداية" onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); finish(); } }}>
+    <div className="splash-sky" aria-hidden="true">
+      <i className="splash-cloud" style={{ '--i': 0 }} /><i className="splash-cloud" style={{ '--i': 1 }} />
+      <i className="splash-balloon" style={{ '--i': 0 }} /><i className="splash-balloon" style={{ '--i': 1 }} />
+      <i className="splash-star" /><i className="splash-star" /><i className="splash-star" /><i className="splash-star" />
+    </div>
     <WorldArtwork className="splash-world" />
     <div className="splash-inner"><Wordmark sculpted /><div className="splash-sub">ألعاب جمعتنا</div></div>
     <div className="splash-skip">المس الشاشة للتخطي</div>

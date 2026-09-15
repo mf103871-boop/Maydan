@@ -42,7 +42,8 @@ export function GameFrame({ game, inGame, exitMessage, beforeExit, children, onE
         <IconButton label="العودة إلى المنصة" onClick={() => requestExit('/')}><IconHome /></IconButton>
         <span className="title">{game.name}</span>
         <IconButton label={platform.settings.soundOn ? 'كتم الصوت' : 'تشغيل الصوت'} aria-pressed={!platform.settings.soundOn} onClick={() => { platform.setSettings({ soundOn: !platform.settings.soundOn }); platform.sound.play('click'); }}>
-          {platform.settings.soundOn ? <IconVolume /> : <IconVolumeOff />}
+          {/* الأيقونة مفتاحها حالة الصوت: تنبثق عند التبديل */}
+          <span key={String(platform.settings.soundOn)} className="icon-swap">{platform.settings.soundOn ? <IconVolume /> : <IconVolumeOff />}</span>
         </IconButton>
       </div>
       <div className="game-body">

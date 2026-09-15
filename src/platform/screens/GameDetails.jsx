@@ -27,17 +27,20 @@ export function GameDetails({ id }) {
   if (!game) return <MissingGame id={id} />;
   const Icon = game.icon;
   const modeLabel = game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
+  const online = ['meenfina', 'fabraka'].includes(game.id);
+  const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
   return (
     <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={game.name}>
       <TopBar title={game.name} eyebrow="لعبة" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <div className="details-hero">
-        <div className="icon" aria-hidden="true">{Icon ? <Icon /> : '🎮'}</div>
+        {/* الحامل: الرسم يهبط ثم يطفو (clay-idle)؛ الحركة على .clay-lift لا على الرسم */}
+        <div className="icon clay-stage clay-idle" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></div>
         <h1>{game.name}</h1>
         <p><b style={{ color: 'var(--text)' }}>{game.tagline}</b><br />{game.description}</p>
         <div className="facts">
-          <span className="fact"><IconUsers /> {game.players.min}–{game.players.max} · {modeLabel}</span>
-          <span className="fact"><IconClock /> {game.duration}</span>
-          {game.tags.map((t) => <span key={t} className="fact">#{t}</span>)}
+          <span className="fact" style={factDelay(0)}><IconUsers /> {game.players.min}–{game.players.max} · {modeLabel}</span>
+          <span className="fact" style={factDelay(1)}><IconClock /> {game.duration}</span>
+          {game.tags.map((t, i) => <span key={t} className="fact" style={factDelay(2 + i)}>#{t}</span>)}
         </div>
       </div>
       <div>
@@ -45,8 +48,9 @@ export function GameDetails({ id }) {
         <ol className="steps">{game.howToPlay.map((s, i) => <li key={i} className="step" style={{ '--delay': `${120 + i * 90}ms` }}>{s}</li>)}</ol>
       </div>
       <div className="setup-sticky stack">
-        {['meenfina', 'fabraka'].includes(game.id) && <Button variant="accent" size="lg" full onClick={() => navigate(`/online/${game.id}`)}>العب من كل جوال · غرف جماعية</Button>}
-        <Button variant={['meenfina', 'fabraka'].includes(game.id) ? 'secondary' : 'accent'} size="lg" full icon={<IconPlay />} onClick={() => { sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`); }}>{['meenfina', 'fabraka'].includes(game.id) ? 'العب على جهاز واحد' : 'العب'}</Button>
+        {/* الزر الرئيسي «مسلّح» (is-armed): تنفّس ×3 ووهج ×2 من brand.css */}
+        {online && <Button variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>العب من كل جوال · غرف جماعية</Button>}
+        <Button variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={() => { sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`); }}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>
       </div>
     </Screen>
   );

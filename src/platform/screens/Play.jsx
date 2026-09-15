@@ -1,15 +1,20 @@
 // شاشة اللعب: إعداد اللاعبين/الفرق (للألعاب التي لا تدير إعدادها بنفسها) ثم مكوّن اللعبة داخل الإطار.
-import React, { useMemo, useState, useCallback, useEffect } from 'react';
+import React, { useMemo, useState, useCallback, useEffect, useRef } from 'react';
 import { Screen, TopBar, Segment } from '../../shared/ui/components.jsx';
 import { PlayersSetup } from '../../shared/setup/PlayersSetup.jsx';
 import { TeamsSetup } from '../../shared/setup/TeamsSetup.jsx';
 import { createStorage } from '../../shared/lib/storage.js';
 import { createWakeLock } from '../../shared/lib/wakeLock.js';
+import { flashScreen, stampScreen, vignette, prefersReducedMotion, wait } from '../../shared/fx/index.js';
+import { GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
 import { usePlatform } from '../context.js';
 import { navigate, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 import { GameFrame } from '../GameFrame.jsx';
 import { MissingGame } from './GameDetails.jsx';
+
+// طبقات التأثير المشتركة تُمرَّر للألعاب عبر api.fx (اختصار؛ الاستيراد المباشر من shared/fx هو العقد).
+const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersReducedMotion, wait };
 
 export function Play({ id }) {
   const game = getGame(id);
@@ -25,6 +30,16 @@ export function Play({ id }) {
   const [setupValid, setSetupValid] = useState(true);
   const [exitMessage, setExitMessage] = useState(null);
   const [beforeExit, setBeforeExit] = useState(null);
+  // ستار بلون اللعبة عند البدء/الإعادة/الاستئناف/العودة للإعداد: زينة فقط، الحالة تتبدّل فورًا ولا يُصيَّر تحت تقليل الحركة.
+  const [curtain, setCurtain] = useState(0);
+  const curtainTimer = useRef(0);
+  const raiseCurtain = useCallback(() => {
+    if (prefersReducedMotion()) return;
+    setCurtain((c) => c + 1);
+    clearTimeout(curtainTimer.current);
+    curtainTimer.current = setTimeout(() => setCurtain(0), wait(480));
+  }, []);
+  useEffect(() => () => clearTimeout(curtainTimer.current), []);
 
   const storage = useMemo(() => createStorage(id), [id]);
   const wakeLock = useMemo(() => createWakeLock(), []);
@@ -35,6 +50,7 @@ export function Play({ id }) {
     haptics: platform.haptics,
     confetti: platform.confetti,
     toast: platform.toast,
+    fx: FX,
     storage,
     roster: platform.roster,
     settings: platform.settings,
@@ -47,11 +63,12 @@ export function Play({ id }) {
     resumeGame: (saved) => {
       setPlayers(saved.players); setGameOptions(saved.settings || null); setSavedSession(saved); setInGame(true);
       setStage('play'); setSession((s) => s + 1);
+      raiseCurtain();
     },
     requestExit: () => { setInGame(false); navigate('/', { replace: true }); },
-    restart: () => { setSavedSession(null); setSession((s) => s + 1); },
-    backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); },
-  }), [platform, storage]);
+    restart: () => { setSavedSession(null); setSession((s) => s + 1); raiseCurtain(); },
+    backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
+  }), [platform, storage, raiseCurtain]);
 
   const start = useCallback((list) => {
     setSavedSession(null);
@@ -60,7 +77,8 @@ export function Play({ id }) {
     setStage('play');
     setSession((s) => s + 1);
     platform.sound.play('whoosh');
-  }, [mode, platform.sound]);
+    raiseCurtain();
+  }, [mode, platform.sound, raiseCurtain]);
 
   if (!game) return <MissingGame id={id} />;
   const Component = game.Component;
@@ -86,6 +104,7 @@ export function Play({ id }) {
       ) : (
         <Component key={session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
       )}
+      {curtain > 0 && <div key={curtain} className="game-curtain" aria-hidden="true"><ClayStage><GameArtwork game={game.id} /></ClayStage></div>}
     </GameFrame>
   );
 }
