@@ -215,6 +215,7 @@ SESSION_SECRET=dev-secret
 
 ## الأمان
 
+- **فحص Origin**: كل طلب يحمل `Origin` يجب أن يكون ضمن `ALLOWED_ORIGINS`. في النشر الكامل (الصفحة والـAPI على الأصل نفسه) لا يرسل المتصفح `Origin` مع GET من الصفحة، فيُقبل GET/HEAD بلا `Origin` حين يثبت المتصفح أنه من الأصل نفسه (`Sec-Fetch-Site: same-origin`، أو `Referer` بالأصل نفسه للمتصفحات الأقدم) وكان ذلك الأصل مسموحًا. الكتابة (POST/DELETE) تحمل `Origin` دائمًا فتبقى مشروطة به.
 - الخادم مصدر الحقيقة: لا يُكتب استحقاق من حمولة يرسلها العميل.
 - `PRIMARY KEY (source, external_id)` يمنع ربط معاملة واحدة بحسابين.
 - `appAccountToken` يجب أن يطابق الحساب الطالب، وإلا `ALREADY_LINKED`.

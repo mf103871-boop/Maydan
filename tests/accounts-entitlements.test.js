@@ -142,3 +142,20 @@ test('بلا DB: مسارات الحسابات تردّ 404 و/health يعلن a
     assert.equal((await response.json()).error, 'NOT_FOUND', path);
   }
 });
+
+// النشر الكامل: الصفحة والـAPI على الأصل نفسه، وGET من الصفحة لا يحمل Origin.
+test('GET من الأصل نفسه بلا Origin يُقبل بـSec-Fetch-Site أو Referer، والغريب يُرفض', async () => {
+  const env = { ALLOWED_ORIGINS: 'https://maydan.test' };
+  const status = async (path, headers, method = 'GET') => (await routeRequest(new Request(`https://maydan.test${path}`, { method, headers }), env)).status;
+  // بلا DB يردّ /api/me بـ404 لا 403: الأصل قُبل.
+  assert.equal(await status('/api/me', { 'sec-fetch-site': 'same-origin' }), 404);
+  assert.equal(await status('/api/me', { referer: 'https://maydan.test/#/settings' }), 404);
+  assert.equal(await status('/api/me', {}), 403, 'بلا أي دليل على الأصل');
+  assert.equal(await status('/api/me', { 'sec-fetch-site': 'cross-site' }), 403);
+  assert.equal(await status('/api/me', { referer: 'https://evil.test/' }), 403);
+  assert.equal(await status('/api/me', { origin: 'https://evil.test', 'sec-fetch-site': 'same-origin' }), 403, 'Origin صريح غير مسموح يغلب');
+  assert.equal(await status('/api/trials/beep', { 'sec-fetch-site': 'same-origin' }, 'POST'), 403, 'الكتابة تحتاج Origin');
+  // أصل غير مسموح أصلًا (عامل الغرف وحده مع صفحة على مضيف آخر) لا يُقبل ولو كان الطلب من صفحته.
+  const other = await routeRequest(new Request('https://rooms.test/api/me', { headers: { 'sec-fetch-site': 'same-origin' } }), env);
+  assert.equal(other.status, 403);
+});

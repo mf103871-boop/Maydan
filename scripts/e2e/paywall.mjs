@@ -11,7 +11,8 @@
 // ملاحظة: بعد كل تعديل يجريه الفحص على الخادم مباشرةً (منح/تجربة) يحذف النسخة
 // المخزّنة من /api/me قبل إعادة التحميل، لأن الواجهة تحدّثها كل عشر دقائق فقط.
 const API_PORT = Number(process.env.E2E_API_PORT || 8790); const WEB_PORT = Number(process.env.E2E_PORT || 3000);
-process.env.MAYDAN_ROOMS_URL = `http://127.0.0.1:${API_PORT}`;
+// كما في النشر الكامل على Cloudflare: الـAPI على أصل الصفحة نفسه (خادم الصفحة يمرّر /api و/health).
+process.env.MAYDAN_ROOMS_URL = 'same-origin';
 import { build as esbuildBuild } from 'esbuild';
 import { esbuildOptions, renderHtml, readPkg, mediaVersions } from '../lib.mjs';
 import { startLocalServer } from '../../server/local.mjs';
@@ -21,12 +22,21 @@ const require = createRequire(import.meta.url);
 let chromium;
 try { ({ chromium } = require('playwright')); } catch { console.error('يلزم Playwright: npm i -D playwright'); process.exit(2); }
 const OUT = process.argv[2] || path.join(os.tmpdir(), 'maydan-e2e', 'paywall'); fs.mkdirSync(OUT, { recursive: true });
-const API = `http://127.0.0.1:${API_PORT}`;
+const API = ''; // نداءات الصفحة نسبية: GET بلا Origin كما يفعل المتصفح فعلًا
 const app = await startLocalServer({ port: API_PORT, origins: `http://localhost:${WEB_PORT}`, vars: { AUTH_DEV_FAKE: '1', SESSION_SECRET: 'e2e-secret' } });
 const pkg = await readPkg(); const media = await mediaVersions();
 const result = await esbuildBuild(esbuildOptions({ minify: false, version: pkg.version, media }));
 const html = await renderHtml(result.outputFiles[0].text, { version: pkg.version });
-const web = http.createServer((req, res) => { res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' }); res.end(html); });
+const web = http.createServer((req, res) => {
+  const { pathname } = new URL(req.url, 'http://localhost');
+  if (pathname === '/health' || pathname === '/api' || pathname.startsWith('/api/')) {
+    // تمرير شفاف يحفظ ترويسات المتصفح (Origin إن وُجد، Sec-Fetch-Site، Referer، Authorization).
+    const upstream = http.request({ host: '127.0.0.1', port: API_PORT, method: req.method, path: req.url, headers: req.headers }, (r) => { res.writeHead(r.statusCode, r.headers); r.pipe(res); });
+    upstream.on('error', () => { res.writeHead(502); res.end(); });
+    req.pipe(upstream); return;
+  }
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' }); res.end(html);
+});
 await new Promise((r) => web.listen(WEB_PORT, r));
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, locale: 'ar', isMobile: true, hasTouch: true });

@@ -42,9 +42,18 @@ export class RequestLimiter {
   async alarm() { await this.ctx.storage.deleteAll(); }
 }
 function allowedOrigin(request, env) {
-  const origin = request.headers.get('origin');
   const allowed = String(env.ALLOWED_ORIGINS || '').split(',').map((s) => s.trim()).filter(Boolean);
-  return origin && allowed.includes(origin) ? origin : null;
+  const origin = request.headers.get('origin');
+  if (origin) return allowed.includes(origin) ? origin : null;
+  // طلبات GET من الصفحة نفسها (النشر الكامل على Cloudflare) لا تحمل Origin أصلًا:
+  // تُقبل حين يثبت المتصفح أنها من الأصل نفسه (Sec-Fetch-Site، أو Referer للمتصفحات
+  // الأقدم) وكان هذا الأصل مسموحًا. الكتابة (POST/DELETE) تحمل Origin دائمًا فتبقى كما هي.
+  if (request.method !== 'GET' && request.method !== 'HEAD') return null;
+  const self = new URL(request.url).origin;
+  if (!allowed.includes(self)) return null;
+  if (request.headers.get('sec-fetch-site') === 'same-origin') return self;
+  try { const referer = request.headers.get('referer'); if (referer && new URL(referer).origin === self) return self; } catch { /* مرجع تالف */ }
+  return null;
 }
 export async function routeRequest(request, env) {
   const url = new URL(request.url);

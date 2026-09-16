@@ -98,7 +98,8 @@ export async function startLocalServer({ port = 8787, host = '127.0.0.1', origin
     const headers = new Headers();
     for (const [key, value] of Object.entries(req.headers)) if (value !== undefined) headers.set(key, Array.isArray(value) ? value.join(',') : value);
     headers.set('cf-connecting-ip', req.socket.remoteAddress || 'local');
-    return new Request(`http://localhost${req.url}`, { method: req.method, headers,
+    // أصل الطلب من ترويسة Host كما يراه المتصفح، فيطابق فحص الأصل نفسه في worker.mjs.
+    return new Request(`http://${req.headers.host || 'localhost'}${req.url}`, { method: req.method, headers,
       ...(req.method === 'GET' || req.method === 'HEAD' ? {} : { body: Readable.toWeb(req), duplex: 'half' }) });
   }
   const server = http.createServer(async (req, res) => {
