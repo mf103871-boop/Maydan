@@ -7,8 +7,10 @@ import { useAccount } from './context.js';
 import { PLUS_NAME } from './config.js';
 import { accountErrorText } from './errors.js';
 import { SignInSheet } from './SignInSheet.jsx';
+import { RedeemSheet, REDEEM_PROMPT } from './RedeemSheet.jsx';
+import { REDEEM_ON_IOS } from './config.js';
 
-const SOURCE_TEXT = { apple: 'عبر App Store', paddle: 'عبر الويب' };
+const SOURCE_TEXT = { apple: 'عبر App Store', paddle: 'عبر الويب', promo: 'برمز هدية' };
 
 export function formatUntil(value) {
   const stamp = Number(value);
@@ -17,20 +19,26 @@ export function formatUntil(value) {
   catch (error) { return new Date(stamp).toISOString().slice(0, 10); }
 }
 
-export function subscriptionLine(me, premium) {
+export function subscriptionLine(me, premium, promo = null) {
   if (!premium) return 'غير مشترك';
   const info = (me && me.premium) || {};
-  const until = formatUntil(info.until);
-  const source = SOURCE_TEXT[info.source] || '';
-  return `${PLUS_NAME} فعّال${until ? ` حتى ${until}` : ''}${source ? ` · ${source}` : ''}`;
+  const serverActive = Number(info.until) > 0;
+  const source = serverActive ? info.source : (promo ? 'promo' : null);
+  // رمز الهدية دائم عمليًا: لا يُعرض له تاريخ انتهاء.
+  const until = source === 'promo' ? '' : formatUntil(info.until);
+  const sourceText = SOURCE_TEXT[source] || '';
+  return `${PLUS_NAME} فعّال${until ? ` حتى ${until}` : ''}${sourceText ? ` · ${sourceText}` : ''}`;
 }
 
 export function AccountCard() {
   const account = useAccount();
   const [signIn, setSignIn] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [redeem, setRedeem] = useState(false);
   const user = account.user;
   const ios = account.platform === 'ios';
+  const canRedeem = !account.premium && (!ios || REDEEM_ON_IOS);
+  const managed = account.premium && account.me && account.me.premium && Number(account.me.premium.until) > 0 && account.me.premium.source !== 'promo';
 
   return (
     <Card className="stack account-card" aria-label="الحساب">
@@ -38,6 +46,7 @@ export function AccountCard() {
       {!user ? (
         <>
           <p className="card-muted">الحساب: غير مسجّل</p>
+          {account.promo && <p className="account-plan is-plus">{subscriptionLine(account.me, account.premium, account.promo)} · على هذا الجهاز</p>}
           <p className="card-muted">سجّل الدخول ليعمل اشتراك {PLUS_NAME} على كل أجهزتك.</p>
           {account.offline
             ? <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>
@@ -49,11 +58,11 @@ export function AccountCard() {
             <b>{user.name || 'لاعب ميدان'}</b>
             {user.email && <small className="muted">{user.email}</small>}
           </div>
-          <p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium)}</p>
+          <p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium, account.promo)}</p>
           {!account.premium && (
             <Button variant="primary" icon={<IconStar />} onClick={() => account.openPaywall({ reason: 'settings' })}>اشترك في {PLUS_NAME}</Button>
           )}
-          {account.premium && (
+          {managed && (
             <Button variant="secondary" onClick={() => account.manageSubscription()}>إدارة الاشتراك</Button>
           )}
           {ios && (
@@ -63,8 +72,10 @@ export function AccountCard() {
           <Button variant="danger" icon={<IconTrash />} onClick={() => setConfirmDelete(true)}>حذف الحساب</Button>
         </>
       )}
+      {canRedeem && <Button variant="ghost" onClick={() => setRedeem(true)}>{REDEEM_PROMPT}</Button>}
       {account.error && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
       <SignInSheet open={signIn} onClose={() => setSignIn(false)} />
+      <RedeemSheet open={redeem} onClose={() => setRedeem(false)} />
       {confirmDelete && (
         <ConfirmModal title="حذف الحساب؟" danger
           message="سيُحذف حسابك وسجل اشتراكك من خوادمنا نهائيًا ولا يمكن التراجع. إن كان اشتراكك عبر App Store فألغِه من إعدادات جهازك أيضًا."

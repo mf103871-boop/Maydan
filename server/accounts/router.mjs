@@ -1,6 +1,7 @@
 // موجّه مسارات الحسابات: يُستدعى من routeRequest قبل مسارات الغرف.
 // يُعيد Response إن كان المسار له، أو null ليكمل الموجّه الأصلي طريقه.
-import { TRIAL_GAMES, PRODUCTS } from '../../src/shared/account/config.js';
+import { TRIAL_GAMES, PRODUCTS, REDEEM_CODE_HASHES, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
+import { codeHash, isValidCode } from '../../src/shared/account/redeem.js';
 import { json, readJson } from '../protocol.mjs';
 import { failure, RoomError } from './errors.mjs';
 import * as db from './db.mjs';
@@ -21,7 +22,7 @@ export const PUBLIC_PATHS = new Set([
   '/api/apple/notifications', '/api/paddle/webhook',
 ]);
 const PREFIXES = ['/api/auth/', '/api/trials/', '/api/apple/', '/api/paddle/', '/api/billing/', '/api/dev/'];
-const EXACT = new Set(['/api/me', '/api/account']);
+const EXACT = new Set(['/api/me', '/api/account', '/api/redeem']);
 export const isAccountPath = (pathname) => EXACT.has(pathname) || PREFIXES.some((prefix) => pathname.startsWith(prefix));
 export const isPublicAccountPath = (pathname) => PUBLIC_PATHS.has(pathname);
 
@@ -31,7 +32,7 @@ const MAX_BODY = 32_768; // JWS آبل وإشعاراتها أكبر بكثير 
 function limitKind(pathname) {
   if (pathname === '/api/me') return 'me';
   if (pathname.startsWith('/api/trials/')) return 'trial';
-  if (pathname.startsWith('/api/billing/') || pathname.startsWith('/api/paddle/') || pathname === '/api/apple/transactions') return 'billing';
+  if (pathname.startsWith('/api/billing/') || pathname.startsWith('/api/paddle/') || pathname === '/api/apple/transactions' || pathname === '/api/redeem') return 'billing';
   return 'auth';
 }
 
@@ -64,6 +65,7 @@ export async function routeAccounts(request, env, url, charge) {
   if (path === '/api/paddle/webhook' && method === 'POST') return paddleWebhook(request, env, now);
   if (path === '/api/paddle/portal' && method === 'GET') return paddlePortal(request, env, now);
   if (path === '/api/account' && method === 'DELETE') return deleteAccount(request, env, now);
+  if (path === '/api/redeem' && method === 'POST') return redeem(request, env, now);
   return failure('NOT_FOUND');
 }
 
@@ -282,6 +284,27 @@ async function deleteAccount(request, env, now) {
   }
   await db.deleteUser(env, user.id);
   return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } });
+}
+
+// ── رموز الهدايا ────────────────────────────────────────────────────────────
+// التطبيع والتجزئة نفسهما في العميل (src/shared/account/redeem.js). بصمات إضافية
+// تأتي من السرّ REDEEM_CODE_HASHES بلا نشر جديد. الرمز الصحيح يمنح صف اشتراك
+// مصدره promo (دائم عمليًا) فيراه /api/me على كل أجهزة الحساب.
+export function redeemHashes(env) {
+  const extra = String(env.REDEEM_CODE_HASHES || '').split(',').map((entry) => entry.trim().toLowerCase()).filter(Boolean);
+  return [...REDEEM_CODE_HASHES, ...extra];
+}
+async function redeem(request, env, now) {
+  const { user, rotated } = await requireSession(env, request, { now });
+  const body = await readJson(request);
+  const code = typeof body.code === 'string' ? body.code : '';
+  if (!isValidCode(code, redeemHashes(env))) failure('REDEEM_INVALID');
+  await db.upsertSubscription(env, {
+    source: 'promo', external_id: `promo:${codeHash(code).slice(0, 16)}:${user.id}`, user_id: user.id,
+    product: PRODUCTS.yearly, status: 'active', until: now + PROMO_DURATION_MS, will_renew: false,
+    environment: 'promo', occurred_at: now,
+  });
+  return withRotation(json(await meOf(env, user, now)), rotated);
 }
 
 // ── بوابة إنشاء الغرف ───────────────────────────────────────────────────────

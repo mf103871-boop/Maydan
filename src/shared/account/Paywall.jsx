@@ -7,6 +7,8 @@ import { useAccount } from './context.js';
 import { accountErrorText } from './errors.js';
 import { PLUS_NAME, LEGAL_ROUTES } from './config.js';
 import { SignInButtons, SIGN_IN_NOTE } from './SignInSheet.jsx';
+import { RedeemForm, REDEEM_PROMPT } from './RedeemSheet.jsx';
+import { REDEEM_ON_IOS } from './config.js';
 import beepMeta from '../../games/beep/meta.js';
 import mamnooMeta from '../../games/mamnoo/meta.js';
 import jabeenMeta from '../../games/jabeen/meta.js';
@@ -41,14 +43,19 @@ const PLANS = [
 export function Paywall({ open = true, reason = 'settings', game = null, pack = null, onClose }) {
   const account = useAccount();
   const [plan, setPlan] = useState('yearly');
+  const [redeeming, setRedeeming] = useState(false);
   const loadProducts = account.loadProducts;
   useEffect(() => { if (open && loadProducts) loadProducts(); }, [open, loadProducts]);
+  // كل فتح يبدأ بالخطط لا بنموذج الرمز: المكوّن يبقى مركّبًا بين فتحتين.
+  useEffect(() => { if (open) setRedeeming(false); }, [open]);
   if (!open) return null;
 
   const reasonText = paywallReason(reason, game);
   const products = account.products || null;
   const needsSignIn = account.platform !== 'ios' && !account.signedIn;
   const busy = account.busy;
+  // قواعد App Store تمنع فتح المحتوى بمفاتيح داخل التطبيق: الرابط للويب فقط.
+  const canRedeem = account.platform !== 'ios' || REDEEM_ON_IOS;
 
   return (
     <Sheet open={open} onClose={onClose} title={null}>
@@ -56,6 +63,10 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         <ClayStage className="paywall-hero clay-idle" aria-hidden="true"><TrophyArtwork /></ClayStage>
         <h2 className="paywall-title">افتح كل ميدان مع {PLUS_NAME}</h2>
         {reasonText && <p className="paywall-reason">{reasonText}</p>}
+        {redeeming ? (
+          <RedeemForm onDone={onClose} onCancel={() => setRedeeming(false)} />
+        ) : (
+          <>
         <ul className="paywall-bullets">
           {PAYWALL_BULLETS.map((text, i) => <li key={text} style={{ '--n': i }}>{text}</li>)}
         </ul>
@@ -96,6 +107,9 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
             <a data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>سياسة الخصوصية</a>
           </span>
         </p>
+        {canRedeem && <button type="button" className="paywall-redeem" onClick={() => setRedeeming(true)}>{REDEEM_PROMPT}</button>}
+          </>
+        )}
       </section>
     </Sheet>
   );

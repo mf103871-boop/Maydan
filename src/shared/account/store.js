@@ -1,11 +1,11 @@
 // تخزين الحساب على الجهاز: رمز الجلسة، نسخة /api/me المخزّنة، وعلامات التجارب.
 // كل قراءة تُطبّع الشكل كي لا تُسقط بياناتٌ تالفة الواجهةَ (JSON آمن دائمًا).
 import { createStorage } from '../lib/storage.js';
-import { TRIAL_GAMES } from './config.js';
+import { TRIAL_GAMES, REDEEM_CODE_HASHES } from './config.js';
 
 // البادئة التي يحميها «مسح البيانات» في الإعدادات (keep).
 export const ACCOUNT_PREFIX = 'maydan:account:';
-export const KEYS = { session: 'session', me: 'me', trials: 'trials' };
+export const KEYS = { session: 'session', me: 'me', trials: 'trials', promo: 'promo' };
 
 function normalizeTrials(value) {
   const raw = value && typeof value === 'object' ? value : {};
@@ -70,7 +70,23 @@ export function createAccountStore(backend) {
       const drop = Array.isArray(games) ? new Set(games) : null;
       return api.writeTrials({ marks: trials.marks, pending: drop ? trials.pending.filter((g) => !drop.has(g)) : [] });
     },
-    // الخروج يمسح الجلسة والنسخة المخزّنة فقط: علامات التجارب خاصة بالجهاز فتبقى.
+    // ── رمز الهدية: { code, hash, redeemedAt } ─────────────────
+    // بصمة لم تعد ضمن REDEEM_CODE_HASHES (رمز أُلغي بنشر جديد) تُعامل كأن لا رمز.
+    readPromo() {
+      const raw = storage.get(KEYS.promo, null);
+      if (!raw || typeof raw !== 'object' || typeof raw.hash !== 'string') return null;
+      const hash = raw.hash.toLowerCase();
+      if (!REDEEM_CODE_HASHES.some((known) => String(known).toLowerCase() === hash)) return null;
+      const redeemedAt = Number(raw.redeemedAt);
+      return { code: typeof raw.code === 'string' ? raw.code : '', hash, redeemedAt: Number.isFinite(redeemedAt) ? redeemedAt : 0 };
+    },
+    writePromo(code, hash, redeemedAt = Date.now()) {
+      if (typeof hash !== 'string' || !hash) { storage.remove(KEYS.promo); return null; }
+      storage.set(KEYS.promo, { code: String(code || ''), hash: hash.toLowerCase(), redeemedAt });
+      return api.readPromo();
+    },
+    clearPromo() { storage.remove(KEYS.promo); },
+    // الخروج يمسح الجلسة والنسخة المخزّنة فقط: علامات التجارب ورمز الهدية خاصان بالجهاز فيبقيان.
     clearAuth() { api.clearSession(); api.clearMe(); },
     clear() { storage.clear(); },
   };

@@ -2,6 +2,7 @@
 // كل مزوّد خارجي (آبل، جوجل، Paddle، App Store Server API) يُستبدل بخادم node
 // عبر متغيّرات الروابط، فالاختبار لا يلمس الإنترنت ولا يحتاج أسرارًا حقيقية.
 import test, { after, before } from 'node:test';
+import { createHash } from 'node:crypto';
 import { appleChain } from './helpers-apple.js';
 import assert from 'node:assert/strict';
 import http from 'node:http';
@@ -128,6 +129,7 @@ before(async () => {
       APPLE_AUTH_URL: `${providers.url}/apple/authorize`, APPLE_TOKEN_URL: `${providers.url}/apple/token`,
       APPLE_JWKS_URL: `${providers.url}/apple/keys`, APPLE_REVOKE_URL: `${providers.url}/apple/revoke`,
       APPLE_STORE_API_URL: `${providers.url}/appstore`, APPLE_ROOT_CA_SHA256: appleChainSigner.rootSha256,
+      REDEEM_CODE_HASHES: createHash('sha256').update('EXTRACODE').digest('hex'),
       GOOGLE_CLIENT_ID: 'google-client-id', GOOGLE_CLIENT_SECRET: 'google-client-secret',
       GOOGLE_AUTH_URL: `${providers.url}/google/authorize`, GOOGLE_TOKEN_URL: `${providers.url}/google/token`,
       GOOGLE_JWKS_URL: `${providers.url}/google/keys`,
@@ -545,6 +547,32 @@ test('معاملات آبل: ربط، تكرار، وحساب آخر يُرفض 
   const unrelated = hintJws({ notificationType: 'SUBSCRIBED', notificationUUID: 'uuid-2',
     data: { signedTransactionInfo: hintJws({ originalTransactionId: '7777777' }) } });
   assert.equal((await hook.post('/api/apple/notifications', { signedPayload: unrelated })).status, 202);
+});
+
+test('رمز الهدية: يفعّل بلس للمسجّل ويفتح الغرف، ويرفض الخطأ والمجهول', { timeout: 30_000 }, async () => {
+  const { api } = await signInDev('redeem-1', 'هدية');
+  const wrong = await api.post('/api/redeem', { code: '0000000' });
+  assert.equal(wrong.status, 400);
+  assert.equal(wrong.data.error, 'REDEEM_INVALID');
+  const anonymous = await client().post('/api/redeem', { code: '1121998' });
+  assert.equal(anonymous.status, 401);
+  const ok = await api.post('/api/redeem', { code: ' ١١٢١٩٩٨ ' });
+  assert.equal(ok.status, 200, JSON.stringify(ok.data));
+  assert.equal(ok.data.premium.active, true);
+  assert.equal(ok.data.premium.source, 'promo');
+  assert.equal(ok.data.premium.willRenew, false);
+  assert.ok(ok.data.premium.until > Date.now() + 50 * 365 * 86_400_000, 'دائم عمليًا');
+  const again = await api.post('/api/redeem', { code: '1121998' });
+  assert.equal(again.status, 200, 'إعادة التفعيل آمنة');
+  const me = await api.get('/api/me');
+  assert.equal(me.data.premium.source, 'promo');
+  // بصمة إضافية من البيئة تُقبل أيضًا (سرّ REDEEM_CODE_HASHES).
+  const extra = await api.post('/api/redeem', { code: 'extra-code' });
+  assert.equal(extra.status, 200, JSON.stringify(extra.data));
+  // المشترك بالرمز ينشئ غرفًا بلا حدود حتى بعد استهلاك التجربة.
+  await api.post('/api/trials/fabraka', {});
+  const room = await api.post('/api/rooms', { ...credentials(), game: 'fabraka', name: 'هدية', avatar: 0, rounds: 6 });
+  assert.equal(room.status, 201, JSON.stringify(room.data));
 });
 
 test('حذف الحساب يُبطل رمز آبل ويمسح كل صفوفه', { timeout: 30_000 }, async () => {

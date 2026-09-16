@@ -15,3 +15,12 @@ export const AUTH_CODE_TTL_S = 60;
 export const SUPPORT_EMAIL = 'mf103871@gmail.com';
 export const LEGAL_UPDATED = '2026-09-16';
 export const LEGAL_ROUTES = { terms: '#/terms', privacy: '#/privacy' };
+
+// رموز الهدايا: بصمات SHA-256 للرموز بعد التطبيع (src/shared/account/redeem.js)، لا الرموز نفسها.
+// الخادم يقبل بصمات إضافية من السرّ REDEEM_CODE_HASHES (قائمة مفصولة بفواصل) دون نشر جديد.
+export const REDEEM_CODE_HASHES = ['548e90ecbc3856ce0006f82a5a2127625ddcebb85a72827cf9bb0c223b28fc2e'];
+// مدة التفعيل بالرمز على الحساب (فعليًا دائم).
+export const PROMO_DURATION_MS = 100 * 365 * 86_400_000;
+// قواعد App Store (3.1.1) تمنع فتح المحتوى بمفاتيح داخل التطبيق، فالزر مخفي على iOS؛
+// الحساب المفعَّل بالرمز على الويب يفتح المحتوى على iOS عبر /api/me كأي اشتراك آخر.
+export const REDEEM_ON_IOS = false;

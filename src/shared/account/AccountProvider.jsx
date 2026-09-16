@@ -4,14 +4,15 @@
 // لا اشتراك ولا دخول، والتجارب تُسجَّل محليًا فقط.
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AccountContext } from './context.js';
-import { PRODUCTS, TRIAL_GAMES } from './config.js';
+import { PLUS_NAME, PRODUCTS, TRIAL_GAMES } from './config.js';
 import { isPremium, lockedPack as lockedPackOf, trialAvailable as trialAvailableOf, gameAccess as gameAccessOf, mergeTrials, shouldRefresh } from './entitlements.js';
 import { accountErrorText } from './errors.js';
 import { accountStore } from './store.js';
 import {
   ClientError, accountOffline, authStartUrl, appleNative, createPaddleCheckout, deleteAccountRequest,
-  exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, signout,
+  exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout,
 } from './api.js';
+import { codeHash, isValidCode } from './redeem.js';
 import { callNative, isNativeShell, onNativeEvent } from './native.js';
 import { openCheckout, previewPrices } from './paddle.js';
 import { usePlatform } from '../../platform/context.js';
@@ -46,6 +47,8 @@ export function AccountProvider({ children }) {
   const [me, setMe] = useState(cached.data);
   const [fetchedAt, setFetchedAt] = useState(cached.fetchedAt);
   const [localTrials, setLocalTrials] = useState(() => accountStore.readTrials());
+  // رمز هدية مفعَّل على هذا الجهاز: يفتح كل شيء محليًا ويُربط بالحساب عند توفره.
+  const [promo, setPromo] = useState(() => accountStore.readPromo());
   const [ready, setReady] = useState(() => !(accountStore.readSession() && !cached.data));
   const [products, setProducts] = useState(null);
   const [billing, setBilling] = useState(null);
@@ -145,6 +148,11 @@ export function AccountProvider({ children }) {
         setLocalTrials(accountStore.clearPending(games));
         applyTrials(merged && merged.trials);
       } catch (err) { /* تبقى محليًا وتُدمج لاحقًا */ }
+    }
+    const promoOnDevice = accountStore.readPromo();
+    if (promoOnDevice && promoOnDevice.code) {
+      try { applyMe(await redeemRequest(promoOnDevice.code, options())); }
+      catch (err) { /* يبقى مفعّلًا على الجهاز ويُعاد الربط في تفعيل لاحق */ }
     }
     const name = (result.me && result.me.user && result.me.user.name) || '';
     toast(name ? `أهلًا ${name}` : 'أهلًا بك');
@@ -347,6 +355,22 @@ export function AccountProvider({ children }) {
     }
   }, [native, options, handleError, toast]);
 
+  // رمز الهدية: التحقق محلي ببصمة الرمز، والخادم يربطه بالحساب إن كانت هناك جلسة.
+  const redeem = useCallback(async (code) => {
+    setError(null);
+    if (!isValidCode(code)) { setError('REDEEM_INVALID'); return false; }
+    const entry = accountStore.writePromo(String(code).trim(), codeHash(code));
+    setPromo(entry);
+    closePaywall();
+    toast(`فُعِّل ${PLUS_NAME} 🎉`);
+    if (sessionRef.current && !accountOffline()) {
+      redeemRequest(code, options())
+        .then((next) => { if (next) applyMe(next); })
+        .catch((err) => { if (isAuthError(codeOf(err))) clearLocalAuth(); });
+    }
+    return true;
+  }, [options, applyMe, clearLocalAuth, closePaywall, toast]);
+
   const deleteAccount = useCallback(async () => {
     setBusy('delete');
     try {
@@ -438,13 +462,14 @@ export function AccountProvider({ children }) {
   }, [authCode, native, consumeCode, handleError, toast]);
 
   // ── القيمة ──────────────────────────────────────────────────────────────
-  const premium = isPremium(me);
+  const premium = isPremium(me) || !!promo;
   const trials = useMemo(() => mergeTrials(localTrials.marks, (me && me.trials) || EMPTY), [localTrials, me]);
   const user = (me && me.user) || null;
 
   const value = useMemo(() => ({
-    ready, user, me, premium, trials, platform, products,
+    ready, user, me, premium, promo, trials, platform, products,
     offline, signedIn: !!session, busy, error, paywall, billing,
+    redeem,
     signIn, signOut, refresh,
     markTrial,
     trialAvailable: (game) => trialAvailableOf(me, localTrials.marks, game, premium),
@@ -454,8 +479,8 @@ export function AccountProvider({ children }) {
     purchase, manageSubscription, loadProducts,
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
-  }), [ready, user, me, premium, trials, platform, products, offline, session, busy, error, paywall, billing,
-    signIn, signOut, refresh, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts]);
+  }), [ready, user, me, premium, promo, trials, platform, products, offline, session, busy, error, paywall, billing,
+    signIn, signOut, refresh, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, redeem]);
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
 }

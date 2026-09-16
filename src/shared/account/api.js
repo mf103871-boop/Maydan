@@ -91,6 +91,7 @@ export const postAppleTransaction = (jws, options) => request('/api/apple/transa
 export const createPaddleCheckout = (plan, options) => request('/api/paddle/checkout', { ...options, method: 'POST', body: { plan } });
 export const getPaddlePortal = (options) => request('/api/paddle/portal', options);
 export const deleteAccountRequest = (options) => request('/api/account', { ...options, method: 'DELETE', raw: true });
+export const redeemRequest = (code, options) => request('/api/redeem', { ...options, method: 'POST', body: { code } });
 
 // رابط بدء الدخول على الويب: الخادم يعيد التوجيه إلى المزوّد ثم إلى return#/auth?code=
 export function authStartUrl(provider, { client = 'web', returnUrl, server } = {}) {

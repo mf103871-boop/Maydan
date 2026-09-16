@@ -1,5 +1,5 @@
 // نقطة دخول واحدة لوحدة الحساب: ما تستورده الشاشات والألعاب.
-export { FREE_PACKS, TRIAL_GAMES, PRODUCTS, PLUS_NAME, GRACE_MS, REFRESH_MS, AUTH_CODE_TTL_S } from './config.js';
+export { FREE_PACKS, TRIAL_GAMES, PRODUCTS, PLUS_NAME, GRACE_MS, REFRESH_MS, AUTH_CODE_TTL_S, REDEEM_CODE_HASHES, REDEEM_ON_IOS } from './config.js';
 export { isPremium, lockedPack, trialAvailable, mergeTrials, shouldRefresh, gameAccess } from './entitlements.js';
 export { AccountContext, useAccount, NULL_ACCOUNT } from './context.js';
 export { ACCOUNT_ERRORS, accountErrorText } from './errors.js';
@@ -12,3 +12,5 @@ export { Paywall, paywallReason } from './Paywall.jsx';
 export { PaywallHost } from './PaywallHost.jsx';
 export { SignInSheet, SignInButtons } from './SignInSheet.jsx';
 export { AccountCard } from './AccountCard.jsx';
+export { RedeemSheet, RedeemForm } from './RedeemSheet.jsx';
+export { normalizeCode, codeHash, isValidCode } from './redeem.js';

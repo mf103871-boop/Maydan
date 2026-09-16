@@ -48,3 +48,9 @@
 @media (min-width: 520px) {
   .paywall-bullets { grid-template-columns: 1fr 1fr; }
 }
+
+/* رمز الهدية: رابط نصّي أسفل الجدار، ونموذج داخل الورقة */
+.paywall-redeem { background: none; border: 0; padding: 6px 0 0; font: inherit; font-size: .88rem; font-weight: 800; color: #087D89; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; justify-self: center; }
+.account-redeem { display: grid; gap: 12px; }
+.account-redeem .input { text-align: center; letter-spacing: .12em; font-weight: 800; font-size: 1.15rem; }
+.paywall .account-redeem { margin-top: 4px; }

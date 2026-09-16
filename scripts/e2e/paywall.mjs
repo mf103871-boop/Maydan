@@ -71,6 +71,18 @@ check('anon paywall opens reason=pack', pw.open && pw.reason === 'pack', pw.reas
 check('paywall online (no offline notice)', !/دون اتصال/.test(pw.text));
 check('paywall shows sign-in block (providers unconfigured in dev → note only)', await page.evaluate(() => !!document.querySelector('.paywall-auth .paywall-note')));
 
+// رمز الهدية من الجدار (أرقام عربية لاختبار التطبيع): يفتح كل شيء على الجهاز فورًا، ثم نزيله لنكمل الرحلة.
+await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
+await page.fill('.paywall input[aria-label="رمز الهدية"]', '٠٠٠٠');
+await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(400);
+check('wrong code shows error and keeps lock', await page.evaluate(() => !!document.querySelector('.paywall .online-notice.error')));
+await page.fill('.paywall input[aria-label="رمز الهدية"]', '١١٢١٩٩٨');
+await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(900); await shot('01b-redeemed');
+check('paywall closes after redeem', await page.evaluate(() => !document.querySelector('.paywall')));
+c = await lockedCounts(); check('redeem code unlocks all packs', c.locked === 0, JSON.stringify(c));
+await page.evaluate(() => localStorage.removeItem('maydan:account:promo')); await reload();
+c = await lockedCounts(); check('promo removed → locked again', c.locked === 68, JSON.stringify(c));
+
 // ٢) دخول وهمي عبر الخادم ثم حقن الجلسة.
 const signin = await apiCall('/api/auth/dev', { subject: 'e2e-user', name: 'مختبر', client: 'web' });
 check('dev sign-in 200', signin.status === 200 && !!signin.body?.session?.token, String(signin.status));
@@ -81,6 +93,14 @@ await go('#/settings'); await page.waitForTimeout(800); await shot('02-settings-
 const settingsText = await page.evaluate(() => document.body.textContent);
 check('settings shows user name', settingsText.includes('مختبر'));
 c = await lockedCounts(); check('signed-in free still locked 68', c.locked === 68, JSON.stringify(c));
+// رمز على حساب مسجَّل: يُربط بالحساب على الخادم فيصبح /api/me مشتركًا (source promo)، ثم نزيله من الجهاز والخادم لنكمل.
+await reload(); await go('#/settings'); await page.waitForTimeout(500); // الخروج من اللعبة أولًا وإلا اعترض حارس الخروج التنقل
+await tap('لديك رمز هدية؟'); await page.waitForTimeout(300);
+await page.fill('input[aria-label="رمز الهدية"]', '1121998');
+await page.evaluate(() => [...document.querySelectorAll('.account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(1200);
+const meAfter = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem('maydan:account:session'))}` } })).json());
+check('redeem on signed-in account → server premium source promo', meAfter.premium && meAfter.premium.active && meAfter.premium.source === 'promo', JSON.stringify(meAfter.premium));
+await page.evaluate(() => localStorage.removeItem('maydan:account:promo')); // صف promo يبقى على الحساب الأول، وبقية الرحلة على حساب ثانٍ
 
 // ٣) منح اشتراك → صفر مقفول، وتفاصيل اللعبة بلا ملاحظة.
 const grant = await apiCall('/api/dev/grant', { until: Date.now() + 30 * 86400e3, product: 'plus.yearly' }, token);
