@@ -116,7 +116,7 @@
   background: linear-gradient(180deg, #2E9FF0 0%, #41B9FA max(0px, calc(100% - 150vw)), #41B9FA 100%); }
 .splash .splash-world { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; z-index: 1; transform-origin: 50% 100%; will-change: transform; animation: splash-world-in 1.6s var(--ease-out) both; }
 /* ريش لحافة الصورة العلوية (تُخفي الغيوم المقطوعة وأي فرق باقٍ) */
-.splash::before { content: ""; position: absolute; inset-inline: 0; top: max(0px, calc(100% - 150vw)); height: 14vw; z-index: 2; pointer-events: none; background: linear-gradient(180deg, #41B9FA, #41B9FA00); }
+.splash::before { content: ""; position: absolute; inset-inline: 0; top: max(0px, calc(100% - 160vw)); height: 24vw; z-index: 2; pointer-events: none; background: linear-gradient(180deg, #41B9FA, #41B9FA00); }
 .splash::after { content: ""; position: absolute; inset: auto 0 0; height: 14%; z-index: 2; pointer-events: none; background: linear-gradient(transparent, #FFF7E7 90%); }
 .splash-sky { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .splash-cloud { position: absolute; width: 34vw; height: 11vw; border-radius: 999px; opacity: .88; will-change: transform;

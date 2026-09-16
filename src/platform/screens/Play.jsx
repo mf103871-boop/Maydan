@@ -104,7 +104,7 @@ export function Play({ id }) {
       ) : (
         <Component key={session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
       )}
-      {curtain > 0 && <div key={curtain} className="game-curtain" aria-hidden="true"><ClayStage><GameArtwork game={game.id} /></ClayStage></div>}
+      {curtain > 0 && <div key={`curtain-${curtain}`} className="game-curtain" aria-hidden="true"><ClayStage><GameArtwork game={game.id} /></ClayStage></div>}
     </GameFrame>
   );
 }

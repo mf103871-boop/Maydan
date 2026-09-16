@@ -126,6 +126,7 @@
   .m-rank { text-align:center; }
   .m-score-main { min-width:0; display:flex; flex-direction:column; }
   .m-team-name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  @media (max-width:420px) { .m-team-name { white-space:normal; overflow-wrap:anywhere; line-height:1.25; } }
   .m-score-main small { color:var(--muted); font-size:12px; }
   .m-score-main .m-now-label { color:var(--team-color); font-weight:800; }
   .m-points { color:var(--team-color); font-size:23px; font-weight:900; unicode-bidi:isolate; }

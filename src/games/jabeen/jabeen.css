@@ -19,8 +19,8 @@
 .jabeen-touch { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
 .jabeen-touch button { min-height: min(96px, 22vh); border-radius: 0; font-size: 20px; font-weight: 900; display: grid; place-items: center; gap: 4px; transition: transform .1s var(--ease-out), background-color .15s ease; }
 .jabeen-touch button:active { transform: scale(.96); }
-.jabeen-touch .ok { background: rgba(46,216,163,.2); color: #165F4D; }
-.jabeen-touch .skip { background: rgba(255,77,77,.18); color: #A42F32; }
+.jabeen-touch .ok { background: #DDF3EA; color: #165F4D; }
+.jabeen-touch .skip { background: #FBE1DC; color: #A42F32; }
 .jabeen-touch span { font-size: 30px; }
 .jabeen-rotate { position: fixed; inset: 0; z-index: 340; display: grid; place-items: center; text-align: center; background: var(--bg); padding: 30px; }
 .jabeen-rotate .big { font-size: 80px; animation: jabeen-rot 1.6s ease-in-out infinite; }

@@ -140,6 +140,13 @@ function useDialogHost() {
 }
 
 // ── Modal ────────────────────────────────────────────────────
+// يصل زر «إلغاء» في التذييل إلى إغلاق الحوار المتحرك نفسه الذي يستعمله زر X والنقر خارج الحوار.
+const ModalCloseContext = createContext(null);
+export function ModalCloseButton({ onClick, ...props }) {
+  const requestClose = useContext(ModalCloseContext);
+  return <Button {...props} onClick={(e) => { if (requestClose) requestClose(); else if (onClick) onClick(e); }} />;
+}
+
 export function Modal({ title, onClose, children, footer = null, closeLabel = 'إغلاق', className = '' }) {
   const ref = useRef(null);
   const closeRef = useRef(onClose);
@@ -185,14 +192,15 @@ export function Modal({ title, onClose, children, footer = null, closeLabel = '�
       </section>
     </div>
   );
-  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(tree, host) : tree}</>;
+  const provided = <ModalCloseContext.Provider value={requestClose}>{tree}</ModalCloseContext.Provider>;
+  return <><span ref={anchor} hidden aria-hidden="true" />{host ? createPortal(provided, host) : provided}</>;
 }
 
 export function ConfirmModal({ title, message, confirmLabel = 'نعم', cancelLabel = 'لا', danger = false, onConfirm, onCancel }) {
   return (
     <Modal title={title} onClose={onCancel} className={danger ? 'is-danger' : ''} footer={<>
       <Button variant={danger ? 'danger' : 'primary'} size="lg" full onClick={onConfirm}>{confirmLabel}</Button>
-      <Button variant="ghost" full onClick={onCancel}>{cancelLabel}</Button>
+      <ModalCloseButton variant="ghost" full onClick={onCancel}>{cancelLabel}</ModalCloseButton>
     </>}>
       <p className="muted" style={{ lineHeight: 1.7 }}>{message}</p>
     </Modal>

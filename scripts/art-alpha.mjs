@@ -17,6 +17,9 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'src/shared/brand/assets');
 export const SHEETS = ['avatars', 'game-icons', 'trophy'];
+// شبكة الخلايا لكل لوحة (أعمدة × صفوف): أي كتلة متصلة تتجاوز حدود خليتها تُقصّ من الخلايا المجاورة
+// (شعر عائلة «مين فينا؟» كان يتسرب إلى خلية قناع «فبركة» فيظهر شريطًا داكنًا بجانب القناع).
+export const CELLS = { avatars: [2, 2], 'game-icons': [3, 2], trophy: [1, 1] };
 const T_BG = 42;   // مسافة لونية أقل من هذا = خلفية صرفة (تشمل الظلال الباهتة)
 const T_FG = 110;  // أكثر من هذا = رسم صرف؛ بينهما ألفا متدرجة
 
@@ -53,14 +56,45 @@ export function keyBackground(data, width, height, { tBg = T_BG, tFg = T_FG } = 
   return { out, bg, removed: removed / N };
 }
 
+// يصنّف الكتل المتصلة من البكسلات غير الشفافة، ويُسند كل كتلة إلى خلية مركز ثقلها، ويمسح ما
+// تجاوز منها إلى خلايا أخرى. يعيد عدد البكسلات الممسوحة.
+export function clipToCells(data, width, height, [cols, rows]) {
+  if (cols * rows <= 1) return 0;
+  const N = width * height, cw = width / cols, ch = height / rows;
+  const label = new Int32Array(N).fill(-1); const comps = []; const stack = [];
+  for (let p = 0; p < N; p++) {
+    if (label[p] !== -1 || data[p * 4 + 3] === 0) continue;
+    const id = comps.length; const comp = { pixels: [], sx: 0, sy: 0 }; comps.push(comp);
+    label[p] = id; stack.push(p);
+    while (stack.length) {
+      const q = stack.pop(); const x = q % width, y = (q / width) | 0;
+      comp.pixels.push(q); comp.sx += x; comp.sy += y;
+      for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+        const nx = x + dx, ny = y + dy; if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+        const n = ny * width + nx; if (label[n] !== -1 || data[n * 4 + 3] === 0) continue; label[n] = id; stack.push(n);
+      }
+    }
+  }
+  let erased = 0;
+  for (const comp of comps) {
+    const n = comp.pixels.length; const cx = Math.floor(comp.sx / n / cw), cy = Math.floor(comp.sy / n / ch);
+    for (const q of comp.pixels) {
+      const x = q % width, y = (q / width) | 0;
+      if (Math.floor(x / cw) !== cx || Math.floor(y / ch) !== cy) { data[q * 4 + 3] = 0; erased++; }
+    }
+  }
+  return erased;
+}
+
 async function process_(sharp) {
   for (const name of SHEETS) {
     const input = path.join(DIR, 'flat', `${name}.webp`), output = path.join(DIR, `${name}.webp`);
     const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
     const { out, bg, removed } = keyBackground(data, info.width, info.height);
+    const erased = clipToCells(out, info.width, info.height, CELLS[name] || [1, 1]);
     await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } }).webp({ quality: 88, alphaQuality: 90, effort: 5 }).toFile(output);
     const bytes = (await stat(output)).size;
-    console.log(`${name}: خلفية ${bg.map(Math.round).join(',')} · أُزيل ${(removed * 100).toFixed(1)}% · ${(bytes / 1024).toFixed(0)} ك.ب`);
+    console.log(`${name}: خلفية ${bg.map(Math.round).join(',')} · أُزيل ${(removed * 100).toFixed(1)}% · قُصّ ${erased} بكسل عبر حدود الخلايا · ${(bytes / 1024).toFixed(0)} ك.ب`);
   }
 }
 
