@@ -1,3 +1,5 @@
+import AuthenticationServices
+import StoreKit
 import UIKit
 import WebKit
 
@@ -17,6 +19,16 @@ private final class WeakScriptMessageHandler: NSObject, WKScriptMessageHandler {
     }
 }
 
+/// أكواد الرفض التي يفهمها الويب (`ACCOUNT_ERRORS` في `src/shared/account/errors.js`).
+enum BridgeError: String {
+    case cancelled = "PURCHASE_CANCELLED"
+    case pending = "PURCHASE_PENDING"
+    case provider = "PROVIDER"
+    case network = "NETWORK"
+    case notEligible = "NOT_ELIGIBLE"
+    case invalid = "SIGNATURE"
+}
+
 final class GameViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
     private enum Constants {
         static let bridgeName = "maydan"
@@ -33,9 +45,21 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
 
     private static let sharedProcessPool = WKProcessPool()
 
+    /// مجلد `www` داخل الحزمة (يولّده `npm run ios:prepare`).
+    private static var gameDirectory: URL? {
+        Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "www")?
+            .deletingLastPathComponent()
+            .standardizedFileURL
+    }
+
     private var webView: WKWebView!
     private var bridgeProxy: WeakScriptMessageHandler?
     private var isRecoveringWebContent = false
+    private var migration: StorageMigration?
+    private var isCommittingMigration = false
+    private lazy var auth = AuthCoordinator(anchor: { [weak self] in
+        self?.view.window ?? ASPresentationAnchor()
+    })
 
     override func loadView() {
         let containerView = UIView(frame: .zero)
@@ -48,6 +72,9 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
         configuration.mediaTypesRequiringUserActionForPlayback = []
         configuration.suppressesIncrementalRendering = false
+        if let directory = Self.gameDirectory {
+            configuration.setURLSchemeHandler(AppSchemeHandler(directory: directory), forURLScheme: AppSchemeHandler.scheme)
+        }
 
         let bridgeProxy = WeakScriptMessageHandler(delegate: self)
         self.bridgeProxy = bridgeProxy
@@ -86,6 +113,11 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // تجديدات الاشتراك والمشتريات المعلّقة تصل هنا خارج الشراء المباشر؛ الويب يرسل توقيعها للخادم.
+        StoreManager.shared.onTransaction = { [weak self] jws in
+            self?.emit(event: "transaction", payload: ["jws": jws])
+        }
+        StoreManager.shared.startListening()
         loadBundledGame()
     }
 
@@ -105,18 +137,34 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
         return true
     }
 
+    // MARK: - Loading
+
     private func loadBundledGame() {
-        guard let url = Bundle.main.url(
-            forResource: "index",
-            withExtension: "html",
-            subdirectory: "www"
-        ) else {
+        guard let directory = Self.gameDirectory else {
             assertionFailure("Bundled game file is missing")
             showBundledGameMissingMessage()
             return
         }
-
-        webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+        if migration == nil {
+            migration = StorageMigration(directory: directory, processPool: Self.sharedProcessPool)
+        }
+        guard let migration, !migration.isDone else {
+            webView.load(URLRequest(url: AppSchemeHandler.entryURL))
+            return
+        }
+        // أول تشغيل بعد التحديث: انقل محفوظات file:// إلى الأصل الجديد قبل بدء اللعبة.
+        migration.collect(in: view) { [weak self] result in
+            guard let self else { return }
+            if result.succeeded {
+                if let script = StorageMigration.seedScript(entries: result.entries) {
+                    self.webView.configuration.userContentController.addUserScript(script)
+                    self.isCommittingMigration = true
+                } else {
+                    migration.markDone()
+                }
+            }
+            self.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
+        }
     }
 
     private func showBundledGameMissingMessage() {
@@ -157,12 +205,34 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
             return
         }
 
-        // The game is fully bundled. Only its own local directory may navigate.
-        decisionHandler(isTrustedGameURL(url) ? .allow : .cancel)
+        // اللعبة مدمجة كاملة: أصلها وحده يتنقّل داخل العرض.
+        if isTrustedGameURL(url) {
+            decisionHandler(.allow)
+            return
+        }
+        // عودة مصادقة وصلت كتنقّل (لا كرابط عودة للجلسة): سلّم الرمز ولا تغادر.
+        if let code = NativeConfig.authCode(from: url) {
+            deliverAuthCode(code)
+            decisionHandler(.cancel)
+            return
+        }
+        // رابط خارجي نقره اللاعب (المصادر والتراخيص مثلًا) يُفتح في Safari لا داخل اللعبة.
+        if navigationAction.navigationType == .linkActivated,
+           let scheme = url.scheme?.lowercased(),
+           scheme == "https" || scheme == "mailto" {
+            UIApplication.shared.open(url)
+        }
+        decisionHandler(.cancel)
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         isRecoveringWebContent = false
+        if isCommittingMigration {
+            // زُرعت المحفوظات في الأصل الجديد وبدأت اللعبة بها: الانتقال منجز ولا يُعاد.
+            isCommittingMigration = false
+            migration?.markDone()
+            webView.configuration.userContentController.removeAllUserScripts()
+        }
     }
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
@@ -172,7 +242,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
         // Loading the bundled entry point recreates the UI; localStorage remains available so
         // the web app can offer to resume the saved match.
         DispatchQueue.main.async { [weak self] in
-            self?.loadBundledGame()
+            self?.webView.load(URLRequest(url: AppSchemeHandler.entryURL))
         }
     }
 
@@ -199,24 +269,144 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
             guard let text = payload["text"] as? String else { return }
             presentShareSheet(text: text)
         default:
-            // No generic command execution, URL opening, file access, or arbitrary selectors.
-            return
+            // أوامر بوعد: كل رسالة تحمل معرّفًا ويُردّ عليها عبر window.maydanNative.resolve.
+            guard let id = payload["id"] as? String, !id.isEmpty, id.count <= 64 else { return }
+            handle(command: type, id: id, payload: payload)
         }
     }
 
     private func isTrustedGameURL(_ url: URL) -> Bool {
-        guard url.isFileURL,
-              let directory = Bundle.main.url(
-                forResource: "index",
-                withExtension: "html",
-                subdirectory: "www"
-              )?.deletingLastPathComponent().standardizedFileURL else {
-            return false
-        }
-        let candidate = url.standardizedFileURL.path
-        let trustedPrefix = directory.path.hasSuffix("/") ? directory.path : directory.path + "/"
-        return candidate.hasPrefix(trustedPrefix)
+        AppSchemeHandler.isAppURL(url)
     }
+
+    // MARK: - Account and store commands
+
+    private func handle(command: String, id: String, payload: [String: Any]) {
+        switch command {
+        case "products":
+            run(id) {
+                let list = try await StoreManager.shared.products(ids: NativeConfig.shared.productIds)
+                return list.map(\.json) as [[String: Any]]
+            }
+        case "purchase":
+            guard let productId = payload["productId"] as? String,
+                  NativeConfig.shared.productIds.contains(productId) else {
+                reply(id, error: .notEligible)
+                return
+            }
+            // appAccountToken = معرّف مستخدم ميدان (UUID) فيربط الخادم المعاملة بالحساب الصحيح.
+            let token = (payload["userId"] as? String).flatMap { UUID(uuidString: $0) }
+            run(id) { [weak self] in
+                guard let self else { throw StoreError.failed }
+                let jws = try await StoreManager.shared.purchase(productId: productId, appAccountToken: token, from: self)
+                return ["jws": jws] as [String: Any]
+            }
+        case "restore":
+            run(id) {
+                let transactions = try await StoreManager.shared.restore()
+                return ["transactions": transactions] as [String: Any]
+            }
+        case "manageSubscriptions":
+            run(id) { [weak self] in
+                guard let self, let scene = self.view.window?.windowScene else { throw StoreError.failed }
+                try await StoreManager.shared.manageSubscriptions(in: scene)
+                return ["shown": true] as [String: Any]
+            }
+        case "signInApple":
+            run(id) { [weak self] in
+                guard let self else { throw AuthError.failed }
+                return try await self.auth.signInWithApple() as [String: Any]
+            }
+        case "openAuth":
+            // صفحة بدء الدخول على مضيف الـAPI فقط. الوعد يُحلّ فور فتح المتصفح، والرمز
+            // (أو الإلغاء) يصل لاحقًا كحدث authReturn لأن الدخول قد يطول.
+            guard let raw = payload["url"] as? String,
+                  let url = URL(string: raw),
+                  NativeConfig.shared.isTrustedAuthURL(url) else {
+                reply(id, error: .notEligible)
+                return
+            }
+            reply(id, result: ["started": true])
+            Task { @MainActor [weak self] in
+                guard let self else { return }
+                do {
+                    let callback = try await self.auth.openAuth(url: url)
+                    if let code = NativeConfig.authCode(from: callback) {
+                        self.deliverAuthCode(code)
+                    } else {
+                        self.emit(event: "authReturn", payload: ["error": BridgeError.provider.rawValue])
+                    }
+                } catch {
+                    self.emit(event: "authReturn", payload: ["error": Self.bridgeError(for: error).rawValue])
+                }
+            }
+        default:
+            // No generic command execution, URL opening, file access, or arbitrary selectors.
+            reply(id, error: .invalid)
+        }
+    }
+
+    /// عودة المصادقة (من متصفح الجلسة أو من رابط `maydan://auth` خارجي).
+    func deliverAuthCode(_ code: String) {
+        emit(event: "authReturn", payload: ["code": code])
+    }
+
+    private func run(_ id: String, _ work: @escaping () async throws -> Any) {
+        Task { @MainActor [weak self] in
+            do {
+                let result = try await work()
+                self?.reply(id, result: result)
+            } catch {
+                self?.reply(id, error: Self.bridgeError(for: error))
+            }
+        }
+    }
+
+    private static func bridgeError(for error: Error) -> BridgeError {
+        switch error {
+        case StoreError.cancelled, AuthError.cancelled:
+            return .cancelled
+        case StoreError.pending:
+            return .pending
+        case StoreError.unknownProduct:
+            return .notEligible
+        case AuthError.failed, AuthError.busy:
+            return .provider
+        default:
+            return .network
+        }
+    }
+
+    private func reply(_ id: String, result: Any? = nil, error: BridgeError? = nil) {
+        var body: [String: Any] = ["ok": error == nil]
+        if let result {
+            body["result"] = result
+        }
+        if let error {
+            body["error"] = error.rawValue
+        }
+        evaluate("window.maydanNative && window.maydanNative.resolve(\(Self.json([id]))[0], \(Self.json(body)));")
+    }
+
+    private func emit(event name: String, payload: [String: Any]) {
+        evaluate("window.maydanNative && window.maydanNative.event(\(Self.json([name]))[0], \(Self.json(payload)));")
+    }
+
+    private func evaluate(_ script: String) {
+        webView.evaluateJavaScript(script) { _, _ in }
+    }
+
+    /// JSON آمن للحقن في JavaScript: المصفوفة تلفّ النص كي لا يُحقن شيء خارج سلسلة.
+    private static func json(_ object: Any) -> String {
+        guard JSONSerialization.isValidJSONObject(object),
+              let data = try? JSONSerialization.data(withJSONObject: object),
+              let text = String(data: data, encoding: .utf8) else {
+            return "null"
+        }
+        return text
+    }
+
+    // MARK: - Haptics and sharing
 
     private func performHaptic(style: String?) {
         switch style?.lowercased() ?? "medium" {

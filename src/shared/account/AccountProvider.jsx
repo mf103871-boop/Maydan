@@ -18,6 +18,8 @@ import { usePlatform } from '../../platform/context.js';
 import { navigate, useRoute } from '../../platform/router.js';
 
 const EMPTY = Object.freeze({});
+// أوراق النظام (Apple، المتجر) قد تنتظر المستخدم طويلًا: مهلة أطول من مهلة الجسر الافتراضية.
+const NATIVE_SHEET_TIMEOUT = 10 * 60_000;
 const codeOf = (error) => (error && error.code) || 'NETWORK';
 const isAuthError = (code) => code === 'AUTH_EXPIRED' || code === 'AUTH_REQUIRED';
 // خادم بلا قاعدة D1 يردّ 404 على مسارات الحسابات كلها: نعامله كغياب الخادم.
@@ -52,6 +54,8 @@ export function AccountProvider({ children }) {
   const [paywall, setPaywall] = useState({ open: false, reason: 'settings', game: null, pack: null });
 
   const sessionRef = useRef(session);
+  const meRef = useRef(me);
+  meRef.current = me;
   const fetchedRef = useRef(cached.fetchedAt);
   const consumedRef = useRef(new Set());
   const authWaiterRef = useRef(null);
@@ -208,9 +212,14 @@ export function AccountProvider({ children }) {
       });
   }, [options, applyTrials, clearLocalAuth]);
 
+  // الغلاف يبثّ authReturn بالرمز، أو بخطأ (إلغاء المستخدم مثلًا) فيُرفض الانتظار فورًا.
   const waitForAuthReturn = useCallback((timeout = 5 * 60_000) => new Promise((resolve, reject) => {
     const timer = setTimeout(() => { authWaiterRef.current = null; reject(new ClientError('NETWORK')); }, timeout);
-    authWaiterRef.current = (code) => { clearTimeout(timer); authWaiterRef.current = null; resolve(code); };
+    authWaiterRef.current = (code, error) => {
+      clearTimeout(timer);
+      authWaiterRef.current = null;
+      if (error) reject(new ClientError(error)); else resolve(code);
+    };
   }), []);
 
   const signIn = useCallback(async (provider = 'apple') => {
@@ -231,7 +240,7 @@ export function AccountProvider({ children }) {
         return null;
       }
       if (provider === 'apple') {
-        const payload = await callNative('signInApple');
+        const payload = await callNative('signInApple', {}, { timeout: NATIVE_SHEET_TIMEOUT });
         const result = await appleNative(payload || {}, { onSession: applySession });
         return await afterSignIn(result);
       }
@@ -265,10 +274,19 @@ export function AccountProvider({ children }) {
   const purchase = useCallback(async (plan = 'monthly') => {
     setError(null);
     if (accountOffline()) { setError('OFFLINE'); return null; }
+    // داخل التطبيق: الاشتراك يُربط بحساب ليعمل على كل الأجهزة، فالدخول بحساب Apple
+    // (ورقة واحدة) يسبق ورقة المتجر حين لا جلسة.
+    if (native && !sessionRef.current) {
+      const signed = await signIn('apple');
+      if (!signed || !sessionRef.current) return null;
+    }
     setBusy('purchase');
     try {
       if (native) {
-        const result = await callNative('purchase', { productId: PRODUCTS[plan] || PRODUCTS.monthly, plan });
+        // appAccountToken = معرّف المستخدم: الخادم يرفض ربط المعاملة بحساب آخر.
+        const userId = (meRef.current && meRef.current.user && meRef.current.user.id) || null;
+        if (!sessionRef.current || !userId) throw new ClientError('AUTH_REQUIRED');
+        const result = await callNative('purchase', { productId: PRODUCTS[plan] || PRODUCTS.monthly, plan, userId }, { timeout: NATIVE_SHEET_TIMEOUT });
         const jws = (result && (result.jws || result.transaction)) || null;
         if (!jws) throw new ClientError('PURCHASE_PENDING');
         const next = await postAppleTransaction(jws, options());
@@ -291,7 +309,7 @@ export function AccountProvider({ children }) {
     } finally {
       setBusy(false);
     }
-  }, [native, options, applyMe, refresh, handleError, closePaywall, toast]);
+  }, [native, options, applyMe, refresh, handleError, closePaywall, toast, signIn]);
 
   const restore = useCallback(async () => {
     setError(null);
@@ -299,7 +317,7 @@ export function AccountProvider({ children }) {
     if (!sessionRef.current) { setError('AUTH_REQUIRED'); toast(accountErrorText('AUTH_REQUIRED')); return null; }
     setBusy('restore');
     try {
-      const jwsList = listOf(await callNative('restore'), 'transactions').filter((value) => typeof value === 'string' && value);
+      const jwsList = listOf(await callNative('restore', {}, { timeout: NATIVE_SHEET_TIMEOUT }), 'transactions').filter((value) => typeof value === 'string' && value);
       if (!jwsList.length) throw new ClientError('RESTORE_EMPTY');
       let next = null;
       for (const jws of jwsList) next = await postAppleTransaction(jws, options());
@@ -365,6 +383,8 @@ export function AccountProvider({ children }) {
 
   // عودة الغلاف من متصفح المصادقة (maydan://auth?code=…).
   useEffect(() => onNativeEvent('authReturn', (payload) => {
+    const failure = payload && typeof payload === 'object' && payload.error ? String(payload.error) : null;
+    if (failure) { if (authWaiterRef.current) authWaiterRef.current(null, failure); return; }
     const code = (payload && (payload.code || payload)) || null;
     if (typeof code !== 'string' || !code) return;
     if (authWaiterRef.current) { authWaiterRef.current(code); return; }
@@ -372,6 +392,15 @@ export function AccountProvider({ children }) {
     consumedRef.current.add(code);
     consumeCode(code, 'ios').catch((err) => { const c = handleError(err); toast(accountErrorText(c)); });
   }), [consumeCode, handleError, toast]);
+
+  // معاملة من المتجر خارج الشراء المباشر (تجديد، شراء معلّق اكتمل): الخادم يتحقق ويحدّث الاستحقاق.
+  useEffect(() => onNativeEvent('transaction', (payload) => {
+    const jws = payload && typeof payload === 'object' ? payload.jws : null;
+    if (typeof jws !== 'string' || !jws || !sessionRef.current || accountOffline()) return;
+    postAppleTransaction(jws, options())
+      .then((next) => { if (next) applyMe(next); })
+      .catch((err) => { if (isAuthError(codeOf(err))) clearLocalAuth(); });
+  }), [options, applyMe, clearLocalAuth]);
 
   // عودة الويب: #/auth?code=… رمز لمرة واحدة عمره 60 ثانية.
   const authCode = route && route.name === 'auth' ? (route.params && route.params.code) || '' : '';

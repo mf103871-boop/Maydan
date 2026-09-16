@@ -3,12 +3,12 @@
   "displayName": "ميدان",
   "publishedName": "منصه ميدان",
   "subtitle": "تحديات وضحك للأصدقاء والعائلة",
-  "whatsNew": "تصميم جديد لميدان بخامات صلصالية وألوان فيروزية وبنفسجية وذهبية. شخصيات وصور لاعبين جديدة، بطاقات موحّدة للألعاب الست، وخط عربي واضح وشاشات فوز جديدة. الرسومات والخط مضمّنان للعب دون إنترنت.",
+  "whatsNew": "ميدان بلس: اشتراك شهري أو سنوي يفتح كل فئات بَديهة ومباريات وغرفًا بلا حدود. عشر فئات تبقى مجانية، وكل لعبة تُجرَّب مباراة كاملة مجانًا. تسجيل الدخول بحساب Apple أو Google لتعمل مشترياتك على كل أجهزتك، واستعادة المشتريات من الإعدادات.",
   "appleId": "6808385717",
   "bundleId": "Maydan",
   "teamId": "96WJBK2MB2",
   "publishedVersion": "1.0",
-  "preparedVersion": "1.2",
+  "preparedVersion": "1.5",
   "preparedBuild": "1",
   "minimumOsVersion": "16.4",
   "verifiedAt": "2026-09-08",
@@ -17,5 +17,30 @@
   "teamSource": "Previously supplied Apple Developer account PDF for Abdallah Alsadog, showing Maydan and Team ID 96WJBK2MB2",
   "iconSource": "public/icons/icon-1024.png",
   "brandingSource": "docs/branding.md",
-  "releaseStatus": "awaiting-signing-and-device-testing"
+  "releaseStatus": "awaiting-signing-and-device-testing",
+  "inAppPurchases": {
+    "subscriptionGroup": "ميدان بلس",
+    "products": [
+      {
+        "id": "plus.monthly",
+        "type": "auto-renewable",
+        "period": "P1M",
+        "referencePrice": "USD 2.99"
+      },
+      {
+        "id": "plus.yearly",
+        "type": "auto-renewable",
+        "period": "P1Y",
+        "referencePrice": "USD 19.99"
+      }
+    ],
+    "note": "الأسعار تُضبط في App Store Connect لا في الكود؛ المعرّفان يطابقان PRODUCTS في src/shared/account/config.js."
+  },
+  "capabilities": [
+    "In-App Purchase",
+    "Sign in with Apple"
+  ],
+  "urlSchemes": [
+    "maydan"
+  ]
 }

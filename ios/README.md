@@ -14,12 +14,26 @@
 
 يشغّل `iOS build` على GitHub فحوص اللعبة ثم يبني تطبيقًا لمحاكي iPhone باستخدام Xcode 26 أو أحدث. الملف الناتج مخصص للمحاكي، ولا يمكن تثبيته على هاتف حقيقي أو إرساله إلى App Store. هذا يثبت قابلية الترجمة فقط، ولا يغني عن تجربة التطبيق على جهاز حقيقي.
 
+## الحسابات وميدان بلس داخل التطبيق
+
+منذ الإصدار 1.5 تُحمَّل اللعبة من الأصل `maydan://app` (يخدمه `AppSchemeHandler.swift` من مجلد `www`) بدل `file://`، فيحمل التطبيق أصلًا حقيقيًا يقبله خادم الغرف والحسابات في CORS (`EXTRA_ORIGINS` يحتوي `maydan://app`). عند أول تشغيل بعد التحديث تنتقل محفوظات `localStorage` القديمة تلقائيًا (`StorageMigration.swift` + `www/migrate.html`) قبل بدء اللعبة، دون الكتابة فوق أي مفتاح موجود.
+
+- **الإعداد**: `npm run ios:prepare` يبني اللعبة وهي تشير إلى `MAYDAN_ROOMS_URL` (الافتراضي عامل Cloudflare المنشور) ويكتب `www/native-config.json` بأصل الـAPI ومعرّفي المنتجين. متصفح المصادقة لا يفتح إلا روابط https على هذا المضيف.
+- **الجسر** (`GameViewController.swift`): إلى جانب `haptic` و`share`، أوامر بوعد تحمل `id` ويُردّ عليها عبر `window.maydanNative.resolve`: `products`، `purchase` (مع `userId` يصبح `appAccountToken`)، `restore`، `manageSubscriptions`، `signInApple`، `openAuth`. أحداث من الغلاف عبر `window.maydanNative.event`: `authReturn` (رمز الدخول أو خطأ) و`transaction` (معاملة موثّقة من StoreKit خارج الشراء المباشر).
+- **الدخول**: Apple أصليًا (`AuthCoordinator.swift`، يحتاج استحقاق Sign in with Apple في `Maydan.entitlements` وتفعيله في App ID)، وGoogle عبر `ASWebAuthenticationSession` تبدأ من `/api/auth/google/start?client=ios` وتعود إلى `maydan://auth?code=…` (المخطط مسجّل في `Info.plist`).
+- **الشراء** (`StoreManager.swift`، StoreKit 2): المنتجان `plus.monthly` و`plus.yearly` من App Store Connect. المعاملة تُنهى بعد تسليم توقيعها (JWS) للويب، والخادم يتحقق منها بإعادة الجلب من App Store Server API. «استعادة المشتريات» تزامن مع المتجر وترسل كل الاستحقاقات الحالية.
+- **الاختبار في المحاكي**: أضف ملف StoreKit Configuration في Xcode بالمنتجين نفسيهما (Product → Scheme → Edit Scheme → Options → StoreKit Configuration). على جهاز حقيقي استعمل حساب Sandbox Tester، واضبط `APPLE_STORE_API_URL` على الخادم إلى بيئة sandbox. تفاصيل الخادم والأسرار في `docs/ACCOUNTS.md`.
+- **قواعد المتجر**: داخل التطبيق لا شراء عبر الويب ولا روابط له (الخادم يرفض `paddle/checkout` من أصل `maydan:`)، وزرا «استعادة المشتريات» و«حذف الحساب» موجودان في الجدار والإعدادات.
+
+`tests/account-native.test.js` يثبّت عقد الجسر بين الويب وSwift وإعدادات Xcode؛ الترجمة الفعلية على سير `iOS build` (macOS) عبر `workflow_dispatch` أو أي Pull Request يلمس `ios/`.
+
 ## قبل إنشاء تحديث المتجر
 
 1. استخدم سجل التطبيق الحالي `6808385717`؛ لا تنشئ سجل تطبيق جديد. المعرّف والفريق والإصدار العام صارت مؤكدة؛ راجع فقط أي بناء تجريبي غير منشور عند تحديد رقم البناء النهائي.
 2. جهّز شهادة التوقيع وملف provisioning اللذين يطابقان `96WJBK2MB2` و`Maydan`، وبيانات الرفع الآمن إلى App Store Connect.
 3. افتح المشروع في Xcode 26 أو أحدث، وحدّد فريق التوقيع، وابنِ Archive، ثم اختبر النسخة عبر TestFlight، خصوصًا التحديث فوق التطبيق القديم والحفظ والوسائط والحركة والاتجاهين.
-4. ارفع البناء إلى سجل التطبيق الحالي، وأنشئ إصدارًا مطابقًا له في App Store Connect. طبّق الاسم والعنوان الفرعي ونص «ما الجديد» من `ios/app-store.json` على الترجمة المناسبة، ثم اختر البناء وأرسل الإصدار لمراجعة Apple. تغيير ملف JSON وحده لا يحدّث صفحة المتجر.
+4. في App Store Connect فعّل **In-App Purchase** و**Sign in with Apple** على App ID `Maydan`، وأنشئ مجموعة الاشتراك بالمنتجين المذكورين في `ios/app-store.json`، وأرفق ملف الشروط والخصوصية للاشتراكات.
+5. ارفع البناء إلى سجل التطبيق الحالي، وأنشئ إصدارًا مطابقًا له في App Store Connect. طبّق الاسم والعنوان الفرعي ونص «ما الجديد» من `ios/app-store.json` على الترجمة المناسبة، ثم اختر البناء وأرسل الإصدار لمراجعة Apple. تغيير ملف JSON وحده لا يحدّث صفحة المتجر.
 
 يمكن تشغيل التوقيع والرفع أيضًا على macOS في GitHub Actions بعد تجهيز شهادة التوزيع وملف provisioning وحساب App Store Connect. هذه البيانات غير متاحة في المشروع ولا تُحفظ في Git. تستخدم GitHub Secrets عند تفعيل هذه الخطوة؛ لا ترسل كلمات المرور أو المفاتيح الخاصة في المحادثة.
 

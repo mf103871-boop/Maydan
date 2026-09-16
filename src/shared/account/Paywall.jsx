@@ -79,7 +79,10 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
             <SignInButtons />
           </div>
         ) : (
-          <Button variant="primary" size="lg" full loading={busy === 'purchase'} onClick={() => account.purchase && account.purchase(plan)}>اشترك</Button>
+          <>
+            {account.platform === 'ios' && !account.signedIn && <p className="paywall-note">{SIGN_IN_NOTE}</p>}
+            <Button variant="primary" size="lg" full loading={busy === 'purchase' || busy === 'signin'} onClick={() => account.purchase && account.purchase(plan)}>اشترك</Button>
+          </>
         )}
         {account.platform === 'ios' && (
           <Button variant="ghost" full loading={busy === 'restore'} onClick={() => account.restore && account.restore()}>استعادة المشتريات</Button>

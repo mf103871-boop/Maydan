@@ -1,8 +1,14 @@
-import { cp, mkdir, readdir, readFile, rm } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
-import { buildOnce, ROOT, DIST } from '../lib.mjs';
+import { DEFAULT_API_ORIGIN, migrateHtml, nativeConfig, normalizeApiOrigin } from './native.mjs';
+
+// الغلاف يتصل بخادم الغرف والحسابات المنشور (يُبدَّل بـ MAYDAN_ROOMS_URL)؛ يُضبط قبل
+// استيراد أدوات البناء لأن esbuild يقرأ المتغير عند إعداد الخيارات.
+const apiOrigin = normalizeApiOrigin(process.env.MAYDAN_ROOMS_URL || DEFAULT_API_ORIGIN);
+process.env.MAYDAN_ROOMS_URL = apiOrigin;
+const { buildOnce, ROOT, DIST } = await import('../lib.mjs');
 
 // Build from this checkout on every invocation; never ship a stale copied bank.
 const build = await buildOnce({ minify: true });
@@ -27,6 +33,9 @@ async function verifyDirectory(source, target) {
 }
 
 const files = await verifyDirectory(DIST, destination);
+// ملفان خاصان بالغلاف لا يوجدان في dist: إعداد الغلاف وصفحة انتقال المحفوظات.
+await writeFile(path.join(destination, 'native-config.json'), `${JSON.stringify(nativeConfig({ apiOrigin }), null, 2)}\n`, 'utf8');
+await writeFile(path.join(destination, 'migrate.html'), migrateHtml(), 'utf8');
 // Derive Xcode's required slots from the approved release artwork.
 const iconDirectory = path.join(ROOT, 'ios/Maydan/Assets.xcassets/AppIcon.appiconset');
 const sourceIcon = await readFile(path.join(iconDirectory, 'icon-1024.png'));
@@ -41,4 +50,4 @@ for (const slot of catalog.images) {
   generated.set(slot.filename, side);
 }
 const hash = createHash('sha256').update(await readFile(path.join(destination, 'index.html'))).digest('hex');
-console.log(`iOS resources ready: ${files} files; ${build.buildId}; HTML SHA-256 ${hash}`);
+console.log(`iOS resources ready: ${files} files; ${build.buildId}; HTML SHA-256 ${hash}; API ${apiOrigin}`);

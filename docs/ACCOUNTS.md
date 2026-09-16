@@ -166,6 +166,12 @@ SESSION_SECRET=dev-secret
 
 عند الشراء داخل التطبيق يمرّر StoreKit **`appAccountToken` = معرّف المستخدم عندنا**، فيتحقق الخادم أن المعاملة تخص هذا الحساب فعلًا. معاملة مرتبطة بحساب آخر تُرفض بـ`ALREADY_LINKED`.
 
+### داخل تطبيق iOS
+
+- `APPLE_BUNDLE_ID` يجب أن يساوي معرّف حزمة التطبيق (`Maydan` في `ios/Maydan.xcodeproj`)؛ هو الجمهور (`aud`) في identityToken الذي يرسله الدخول الأصلي إلى `POST /api/auth/apple/native`.
+- الغلاف يبني اللعبة على أصل `maydan://app` (موجود في `EXTRA_ORIGINS`) ويقصر متصفح المصادقة على مضيف `MAYDAN_ROOMS_URL` الذي بُنيت به الحزمة (`www/native-config.json`).
+- الشراء عبر StoreKit 2 يمرّر `appAccountToken` = معرّف المستخدم، ثم يرسل الويب توقيع المعاملة إلى `POST /api/apple/transactions`؛ التجديدات والمشتريات المعلّقة تصل من `Transaction.updates` كحدث `transaction` وتُرسل بالطريقة نفسها. تفاصيل الغلاف في `ios/README.md`.
+
 ### sandbox مقابل الإنتاج
 
 | | Sandbox | الإنتاج |
