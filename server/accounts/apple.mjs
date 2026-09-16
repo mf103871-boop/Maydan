@@ -4,6 +4,7 @@ import { PRODUCTS } from '../../src/shared/account/config.js';
 import { json } from '../protocol.mjs';
 import { failure } from './errors.mjs';
 import { decodeJws, providerFetch, signEs256, verifyJwt } from './jwt.mjs';
+import { rootFingerprint, verifyAppleJws } from './x509.mjs';
 import * as db from './db.mjs';
 
 export const ISSUER = 'https://appleid.apple.com';
@@ -90,8 +91,11 @@ export async function fetchSubscription(env, originalTransactionId, now = Date.n
   if (!result.ok || !result.data) failure('PROVIDER');
   return result.data;
 }
+// كل JWS من آبل (معاملة، تجديد، إشعار) يُتحقق من توقيعه وسلسلة x5c حتى الجذر المثبّت.
+export const verifySigned = (env, token, now = Date.now()) => verifyAppleJws(token, { now, rootSha256: rootFingerprint(env) });
+
 // يستخرج آخر معاملة للاشتراك ويحوّلها إلى صف قابل للتخزين بعد كل الفحوص.
-export function readSubscriptionStatus(env, status, originalTransactionId, now = Date.now()) {
+export async function readSubscriptionStatus(env, status, originalTransactionId, now = Date.now()) {
   const groups = Array.isArray(status?.data) ? status.data : [];
   let entry = null;
   for (const group of groups) {
@@ -101,8 +105,8 @@ export function readSubscriptionStatus(env, status, originalTransactionId, now =
     if (entry) break;
   }
   if (!entry || !entry.signedTransactionInfo) failure('NOT_ELIGIBLE');
-  const info = decodeJws(entry.signedTransactionInfo).payload;
-  const renewal = entry.signedRenewalInfo ? decodeJws(entry.signedRenewalInfo).payload : {};
+  const info = await verifySigned(env, entry.signedTransactionInfo, now);
+  const renewal = entry.signedRenewalInfo ? await verifySigned(env, entry.signedRenewalInfo, now) : {};
   const bundleId = info.bundleId || status.bundleId;
   if (env.APPLE_BUNDLE_ID && bundleId !== env.APPLE_BUNDLE_ID) failure('NOT_ELIGIBLE');
   if (!Object.values(PRODUCTS).includes(info.productId)) failure('NOT_ELIGIBLE');
@@ -121,11 +125,12 @@ export function readSubscriptionStatus(env, status, originalTransactionId, now =
 
 // ربط معاملة بحساب: appAccountToken هو معرّف المستخدم، فالعميل لا يستطيع ادّعاء معاملة غيره.
 export async function bindTransaction(env, user, jws, now = Date.now()) {
-  const hint = decodeJws(jws).payload;
+  // توقيع الجهاز (jwsRepresentation من StoreKit) يُتحقق منه قبل أن نسأل آبل عنه.
+  const hint = await verifySigned(env, jws, now);
   const originalTransactionId = hint.originalTransactionId || hint.transactionId;
   if (!originalTransactionId) failure('INVALID');
   const status = await fetchSubscription(env, String(originalTransactionId), now);
-  const row = readSubscriptionStatus(env, status, String(originalTransactionId), now);
+  const row = await readSubscriptionStatus(env, status, String(originalTransactionId), now);
   if (row.appAccountToken && row.appAccountToken !== String(user.id).toLowerCase()) failure('ALREADY_LINKED');
   const existing = await db.subscriptionByExternal(env, 'apple', row.external_id);
   if (existing && existing.user_id !== user.id) failure('ALREADY_LINKED');
@@ -133,20 +138,21 @@ export async function bindTransaction(env, user, jws, now = Date.now()) {
   return row;
 }
 
-// إشعارات App Store V2: تُقبل بلا مصادقة، فالتكرار يُرفض بـnotificationUUID ثم نسأل آبل.
+// إشعارات App Store V2: تصل بلا مصادقة، فالتوقيع وسلسلة x5c يُفحصان أولًا (وإلا استطاع
+// أي طرف إسقاط إشعار حقيقي بتكرار notificationUUID)، ثم التكرار، ثم نسأل آبل.
 export async function handleNotification(env, signedPayload, now = Date.now()) {
-  const payload = decodeJws(signedPayload).payload;
+  const payload = await verifySigned(env, signedPayload, now);
   const uuid = payload.notificationUUID;
   if (!uuid) failure('INVALID');
   if (!(await db.markWebhookEvent(env, `apple:${uuid}`, now))) return json({ ok: true, duplicate: true });
   const data = payload.data || {};
-  const info = data.signedTransactionInfo ? decodeJws(data.signedTransactionInfo).payload : {};
+  const info = data.signedTransactionInfo ? await verifySigned(env, data.signedTransactionInfo, now) : {};
   const originalTransactionId = info.originalTransactionId || data.originalTransactionId;
   if (!originalTransactionId) return json({ ok: true, ignored: 'no-transaction' }, 202);
   const existing = await db.subscriptionByExternal(env, 'apple', String(originalTransactionId));
   if (!existing) return json({ ok: true, ignored: 'unknown-transaction' }, 202);
   const status = await fetchSubscription(env, String(originalTransactionId), now);
-  const row = readSubscriptionStatus(env, status, String(originalTransactionId), now);
+  const row = await readSubscriptionStatus(env, status, String(originalTransactionId), now);
   await db.upsertSubscription(env, { ...row, user_id: existing.user_id });
   return json({ ok: true });
 }

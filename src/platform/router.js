@@ -1,4 +1,4 @@
-// موجّه بسيط على الـ hash: #/ ، #/game/:id ، #/play/:id ، #/players ، #/settings ، #/about
+// موجّه بسيط على الـ hash: #/ ، #/game/:id ، #/play/:id ، #/players ، #/settings ، #/about ، #/terms ، #/privacy
 // مع زر رجوع (popstate) وحارس خروج أثناء اللعب.
 import { useEffect, useState } from 'react';
 
@@ -11,6 +11,8 @@ const ROUTES = [
   ['players', /^\/players$/],
   ['settings', /^\/settings$/],
   ['about', /^\/about$/],
+  ['terms', /^\/terms$/],
+  ['privacy', /^\/privacy$/],
   ['auth', /^\/auth$/],
 ];
 

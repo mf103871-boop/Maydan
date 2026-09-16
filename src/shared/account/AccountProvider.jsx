@@ -203,6 +203,8 @@ export function AccountProvider({ children }) {
   const markTrial = useCallback((game) => {
     if (!TRIAL_GAMES.includes(game)) return;
     setLocalTrials(accountStore.addMark(game));
+    // مرآة الغلاف (UserDefaults): تصمد أمام مسح بيانات WebKit.
+    if (native) callNative('markTrial', { game }, { timeout: 5_000 }).catch(() => {});
     if (!sessionRef.current || accountOffline()) return;
     postTrial(game, options())
       .then((result) => applyTrials(result && result.trials))
@@ -210,7 +212,7 @@ export function AccountProvider({ children }) {
         if (isAuthError(codeOf(err))) clearLocalAuth();
         setLocalTrials(accountStore.addPending(game));
       });
-  }, [options, applyTrials, clearLocalAuth]);
+  }, [native, options, applyTrials, clearLocalAuth]);
 
   // الغلاف يبثّ authReturn بالرمز، أو بخطأ (إلغاء المستخدم مثلًا) فيُرفض الانتظار فورًا.
   const waitForAuthReturn = useCallback((timeout = 5 * 60_000) => new Promise((resolve, reject) => {
@@ -372,6 +374,21 @@ export function AccountProvider({ children }) {
     })();
     return () => { alive = false; };
   }, [refresh]);
+
+  // إقلاع الغلاف: علامات التجارب المحفوظة في UserDefaults تُدمج (اتحاد) مع علامات WebKit.
+  useEffect(() => {
+    if (!native) return undefined;
+    let alive = true;
+    callNative('getTrials', {}, { timeout: 5_000 }).then((result) => {
+      const marks = result && typeof result === 'object' && result.marks && typeof result.marks === 'object' ? result.marks : {};
+      const games = Object.keys(marks).filter((game) => marks[game] && TRIAL_GAMES.includes(game));
+      if (!alive || !games.length) return;
+      let next = accountStore.readTrials();
+      for (const game of games) next = accountStore.addMark(game);
+      setLocalTrials(next);
+    }).catch(() => {});
+    return () => { alive = false; };
+  }, [native]);
 
   // العودة إلى التطبيق: الاشتراك قد يكون تغيّر على جهاز آخر.
   useEffect(() => {

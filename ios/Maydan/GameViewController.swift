@@ -19,6 +19,32 @@ private final class WeakScriptMessageHandler: NSObject, WKScriptMessageHandler {
     }
 }
 
+/// مرآة المباريات المجانية المستهلكة في UserDefaults: مسح بيانات WebKit لا يعيد التجربة.
+/// الخادم يبقى مصدر الحقيقة للمسجَّلين؛ هذه للمجهول على هذا الجهاز.
+enum TrialMirror {
+    private static let key = "maydan.trials.marks"
+    private static let maximumEntries = 32
+
+    static func isValidGame(_ game: String) -> Bool {
+        (1...32).contains(game.count) && game.allSatisfy { $0.isLetter && $0.isASCII && $0.isLowercase }
+    }
+
+    static func marks() -> [String: Bool] {
+        let stored = UserDefaults.standard.dictionary(forKey: key) as? [String: Bool] ?? [:]
+        return stored.filter { $0.value && isValidGame($0.key) }
+    }
+
+    @discardableResult
+    static func mark(_ game: String) -> [String: Bool] {
+        var current = marks()
+        guard current[game] != true else { return current }
+        guard current.count < maximumEntries else { return current }
+        current[game] = true
+        UserDefaults.standard.set(current, forKey: key)
+        return current
+    }
+}
+
 /// أكواد الرفض التي يفهمها الويب (`ACCOUNT_ERRORS` في `src/shared/account/errors.js`).
 enum BridgeError: String {
     case cancelled = "PURCHASE_CANCELLED"
@@ -317,6 +343,14 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
                 guard let self else { throw AuthError.failed }
                 return try await self.auth.signInWithApple() as [String: Any]
             }
+        case "getTrials":
+            reply(id, result: ["marks": TrialMirror.marks()])
+        case "markTrial":
+            guard let game = payload["game"] as? String, TrialMirror.isValidGame(game) else {
+                reply(id, error: .invalid)
+                return
+            }
+            reply(id, result: ["marks": TrialMirror.mark(game)])
         case "openAuth":
             // صفحة بدء الدخول على مضيف الـAPI فقط. الوعد يُحلّ فور فتح المتصفح، والرمز
             // (أو الإلغاء) يصل لاحقًا كحدث authReturn لأن الدخول قد يطول.

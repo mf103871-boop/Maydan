@@ -2,6 +2,7 @@
 // كل مزوّد خارجي (آبل، جوجل، Paddle، App Store Server API) يُستبدل بخادم node
 // عبر متغيّرات الروابط، فالاختبار لا يلمس الإنترنت ولا يحتاج أسرارًا حقيقية.
 import test, { after, before } from 'node:test';
+import { appleChain } from './helpers-apple.js';
 import assert from 'node:assert/strict';
 import http from 'node:http';
 import { mkdtemp, rm } from 'node:fs/promises';
@@ -18,7 +19,9 @@ const b64u = (value) => Buffer.from(value).toString('base64url');
 const encoder = new TextEncoder();
 
 // JWS بلا توقيع معتبر: الخادم يفكّه كتلميح فقط ثم يسأل آبل عن الحقيقة.
-const hintJws = (payload) => `${b64u(JSON.stringify({ alg: 'ES256' }))}.${b64u(JSON.stringify(payload))}.${b64u('signature')}`;
+// JWS آبل موقّعة بسلسلة الاختبار (x5c حتى جذر وهمي مثبّت في APPLE_ROOT_CA_SHA256).
+const appleChainSigner = appleChain();
+const hintJws = (payload) => appleChainSigner.sign(payload);
 
 async function rsaSigner(kid) {
   const pair = await crypto.subtle.generateKey(
@@ -124,7 +127,7 @@ before(async () => {
       APPLE_IAP_ISSUER_ID: 'issuer-0000', APPLE_IAP_KEY_ID: 'IAPKEY1', APPLE_IAP_PRIVATE_KEY: iapPem,
       APPLE_AUTH_URL: `${providers.url}/apple/authorize`, APPLE_TOKEN_URL: `${providers.url}/apple/token`,
       APPLE_JWKS_URL: `${providers.url}/apple/keys`, APPLE_REVOKE_URL: `${providers.url}/apple/revoke`,
-      APPLE_STORE_API_URL: `${providers.url}/appstore`,
+      APPLE_STORE_API_URL: `${providers.url}/appstore`, APPLE_ROOT_CA_SHA256: appleChainSigner.rootSha256,
       GOOGLE_CLIENT_ID: 'google-client-id', GOOGLE_CLIENT_SECRET: 'google-client-secret',
       GOOGLE_AUTH_URL: `${providers.url}/google/authorize`, GOOGLE_TOKEN_URL: `${providers.url}/google/token`,
       GOOGLE_JWKS_URL: `${providers.url}/google/keys`,

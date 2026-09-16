@@ -5,6 +5,7 @@ import { IconBack } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { back, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
+import { LEGAL_ROUTES } from '../../shared/account/config.js';
 
 // «المصادر والتراخيص»: كل صورة أو مقطع صوت في حزم الأسئلة مأخوذ من مصدر مفتوح
 // (Wikimedia Commons وأمثاله) بترخيص يسمح بإعادة النشر، وبعض التراخيص (CC BY)
@@ -66,6 +67,9 @@ export function About() {
         <p className="card-muted">اختر لعبة لجهاز واحد، أو أنشئ غرفة «مين فينا؟» وشارك رمزها مع أصحابك. تحديات معلومات وسرعة وتمثيل وضحك، في مكان واحد.</p>
       </Card>
       <Credits />
+      <p className="muted center legal-links" style={{ fontSize: 13 }}>
+        <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+      </p>
       <p className="muted center" style={{ fontSize: 13 }}>الإصدار {version} · صُنعت بحب للجلسات العائلية</p>
     </Screen>
   );

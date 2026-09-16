@@ -40,5 +40,7 @@
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
   ],
+  // تنظيف يومي للجلسات المنتهية ورموز الدخول وسجل webhooks (server/accounts/cleanup.mjs).
+  "triggers": { "crons": ["17 3 * * *"] },
   "observability": { "enabled": false }
 }

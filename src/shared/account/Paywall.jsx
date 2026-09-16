@@ -5,7 +5,7 @@ import { Sheet, Button } from '../ui/components.jsx';
 import { ClayStage, TrophyArtwork } from '../brand/art.jsx';
 import { useAccount } from './context.js';
 import { accountErrorText } from './errors.js';
-import { PLUS_NAME } from './config.js';
+import { PLUS_NAME, LEGAL_ROUTES } from './config.js';
 import { SignInButtons, SIGN_IN_NOTE } from './SignInSheet.jsx';
 import beepMeta from '../../games/beep/meta.js';
 import mamnooMeta from '../../games/mamnoo/meta.js';
@@ -91,10 +91,9 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         <p className="paywall-legal">
           {PAYWALL_LEGAL}
           <span className="paywall-legal-links">
-            {/* المرحلة 3 تستبدل الوجهة بصفحات حقيقية؛ data-legal يثبّت نقطة الوصل. */}
-            <a data-legal="terms" href="#/about">شروط الاستخدام</a>
+            <a data-legal="terms" href={LEGAL_ROUTES.terms} onClick={onClose}>شروط الاستخدام</a>
             <span aria-hidden="true"> · </span>
-            <a data-legal="privacy" href="#/about">سياسة الخصوصية</a>
+            <a data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>سياسة الخصوصية</a>
           </span>
         </p>
       </section>

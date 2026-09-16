@@ -167,3 +167,8 @@
 
 /* دخول الشاشة لا يُستهلك خلف شاشة البداية: يتوقف حتى تزول */
 body:has(.splash) .screen, body:has(.splash) .screen * { animation-play-state: paused; }
+
+/* الصفحات القانونية وروابطها */
+.legal-links a { color: #087D89; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.legal .legal-section p { margin: 0; line-height: 1.85; }
+.legal .legal-section b { color: var(--text); }

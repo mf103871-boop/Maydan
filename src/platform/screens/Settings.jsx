@@ -4,6 +4,7 @@ import { Screen, TopBar, IconButton, Button, Card, ConfirmModal } from '../../sh
 import { IconBack, IconVolume, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare } from '../../shared/ui/icons.jsx';
 import { clearAllPlatformData, createStorage } from '../../shared/lib/storage.js';
 import { AccountCard } from '../../shared/account/AccountCard.jsx';
+import { LEGAL_ROUTES } from '../../shared/account/config.js';
 import { ACCOUNT_PREFIX } from '../../shared/account/store.js';
 import { shareText } from '../../shared/fx/haptics.js';
 import { usePlatform } from '../context.js';
@@ -49,6 +50,9 @@ export function Settings() {
         <p className="card-muted">يحذف دفتر اللاعبين، والإعدادات، وسجلات الألعاب، ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك.</p>
         <Button variant="danger" icon={<IconTrash />} onClick={() => setConfirmClear(true)}>مسح كل البيانات</Button>
       </Card>
+      <p className="muted center legal-links" style={{ fontSize: 13 }}>
+        <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+      </p>
       <p className="muted center" style={{ fontSize: 13 }}>ميدان: ألعاب جمعتنا · الإصدار {version}</p>
       {confirmClear && (
         <ConfirmModal title="مسح كل البيانات؟" danger message="لا يمكن التراجع. ستُحذف أسماء اللاعبين والنتائج والمباريات المحفوظة ومفاتيح العودة للغرف من هذا الجهاز. يبقى حسابك واشتراكك." confirmLabel="نعم، امسح" cancelLabel="إلغاء"

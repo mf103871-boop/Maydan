@@ -10,3 +10,8 @@ export const GRACE_MS = 3 * 24 * 60 * 60 * 1000;
 export const REFRESH_MS = 10 * 60 * 1000;
 // مهلة مصادقة رمز الدخول لمرة واحدة (ثوانٍ) — تُطابق الخادم.
 export const AUTH_CODE_TTL_S = 60;
+
+// الصفحات القانونية: بريد الدعم (فارغ = الإحالة إلى صفحة الدعم في المتجر) وتاريخ آخر تحديث.
+export const SUPPORT_EMAIL = '';
+export const LEGAL_UPDATED = '2026-09-16';
+export const LEGAL_ROUTES = { terms: '#/terms', privacy: '#/privacy' };

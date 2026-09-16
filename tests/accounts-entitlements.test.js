@@ -7,6 +7,10 @@ import { isPremium } from '../src/shared/account/entitlements.js';
 import { GRACE_MS, PRODUCTS, TRIAL_GAMES } from '../src/shared/account/config.js';
 import { parseSignature, productOf, subscriptionRow } from '../server/accounts/paddle.mjs';
 import { readSubscriptionStatus } from '../server/accounts/apple.mjs';
+import { verifyAppleJws, verifyChain, parseCertificate, APPLE_ROOT_CA_G3_SHA256, APPLE_LEAF_OID, APPLE_INTERMEDIATE_OID } from '../server/accounts/x509.mjs';
+import { cleanup } from '../server/accounts/cleanup.mjs';
+import { createLocalD1 } from '../server/local-d1.mjs';
+import { appleChain } from './helpers-apple.js';
 import { migrationStatements } from '../server/local-d1.mjs';
 import { routeRequest } from '../server/worker.mjs';
 
@@ -88,13 +92,13 @@ test('ترويسة توقيع Paddle تُفكَّك، والقيم الناقص�
   assert.deepEqual(parseSignature('garbage'), { ts: undefined, h1: undefined });
 });
 
-test('قراءة حالة آبل ترفض الحزمة والمنتج الغريبين', () => {
-  const b64u = (value) => Buffer.from(value).toString('base64url');
-  const jws = (payload) => `${b64u('{"alg":"ES256"}')}.${b64u(JSON.stringify(payload))}.${b64u('sig')}`;
-  const env = { APPLE_BUNDLE_ID: 'com.maydan.app' };
+test('قراءة حالة آبل ترفض الحزمة والمنتج الغريبين', async () => {
+  const chain = appleChain();
+  const jws = (payload) => chain.sign(payload);
+  const env = { APPLE_BUNDLE_ID: 'com.maydan.app', APPLE_ROOT_CA_SHA256: chain.rootSha256 };
   const status = (info, renewal = { autoRenewStatus: 1 }, entry = {}) => ({ environment: 'Sandbox', bundleId: 'com.maydan.app',
     data: [{ lastTransactions: [{ originalTransactionId: '2000', status: 1, signedTransactionInfo: jws(info), signedRenewalInfo: jws(renewal), ...entry }] }] });
-  const good = readSubscriptionStatus(env, status({ bundleId: 'com.maydan.app', productId: PRODUCTS.yearly,
+  const good = await readSubscriptionStatus(env, status({ bundleId: 'com.maydan.app', productId: PRODUCTS.yearly,
     originalTransactionId: '2000', expiresDate: NOW + 1000, signedDate: NOW, appAccountToken: 'ABC-DEF' }), '2000', NOW);
   assert.equal(good.external_id, '2000');
   assert.equal(good.product, PRODUCTS.yearly);
@@ -103,7 +107,7 @@ test('قراءة حالة آبل ترفض الحزمة والمنتج الغري
   assert.equal(good.will_renew, true);
   assert.equal(good.appAccountToken, 'abc-def'); // المقارنة بحالة موحّدة
   // فترة السماح تمدّ الاستحقاق وإن انتهى تاريخ الانتهاء.
-  const grace = readSubscriptionStatus(env, status({ bundleId: 'com.maydan.app', productId: PRODUCTS.monthly,
+  const grace = await readSubscriptionStatus(env, status({ bundleId: 'com.maydan.app', productId: PRODUCTS.monthly,
     originalTransactionId: '2000', expiresDate: NOW - 1000 }, { autoRenewStatus: 0, gracePeriodExpiresDate: NOW + 5000 }), '2000', NOW);
   assert.equal(grace.until, NOW + 5000);
   assert.equal(grace.will_renew, false);
@@ -111,7 +115,74 @@ test('قراءة حالة آبل ترفض الحزمة والمنتج الغري
     status({ bundleId: 'com.other.app', productId: PRODUCTS.monthly, originalTransactionId: '2000' }),
     status({ bundleId: 'com.maydan.app', productId: 'plus.lifetime', originalTransactionId: '2000' }),
     { data: [] },
-  ]) assert.throws(() => readSubscriptionStatus(env, bad, '2000', NOW), /NOT_ELIGIBLE/);
+  ]) await assert.rejects(readSubscriptionStatus(env, bad, '2000', NOW), /NOT_ELIGIBLE/);
+  // توقيع بسلسلة لا تنتهي بالجذر المثبّت يُرفض قبل أي قراءة.
+  const foreign = { ...env, APPLE_ROOT_CA_SHA256: APPLE_ROOT_CA_G3_SHA256 };
+  await assert.rejects(readSubscriptionStatus(foreign, status({ bundleId: 'com.maydan.app', productId: PRODUCTS.monthly, originalTransactionId: '2000' }), '2000', NOW), /SIGNATURE/);
+});
+
+// ── سلسلة x5c: توقيعات آبل تُقبل فقط بسلسلة صالحة حتى الجذر المثبّت ─────────
+test('x509: السلسلة الوهمية تُحلَّل وتُتحقق، والامتدادات في مكانها', async () => {
+  const chain = appleChain();
+  const leaf = parseCertificate(chain.leafDer);
+  assert.equal(leaf.curve, 'P-256');
+  assert.equal(leaf.hash, 'SHA-256');
+  assert.ok(leaf.extensions.has(APPLE_LEAF_OID));
+  const intermediate = parseCertificate(chain.intermediateDer);
+  assert.equal(intermediate.curve, 'P-384');
+  assert.equal(intermediate.hash, 'SHA-384');
+  assert.ok(intermediate.extensions.has(APPLE_INTERMEDIATE_OID));
+  assert.ok(leaf.notBefore < Date.now() && leaf.notAfter > Date.now());
+  const parsed = await verifyChain([chain.leafDer, chain.intermediateDer, chain.rootDer], { rootSha256: chain.rootSha256 });
+  assert.equal(parsed.length, 3);
+  // جذر مختلف، أو ترتيب معكوس، أو خارج فترة الصلاحية → SIGNATURE.
+  await assert.rejects(verifyChain([chain.leafDer, chain.intermediateDer, chain.rootDer], { rootSha256: APPLE_ROOT_CA_G3_SHA256 }), /SIGNATURE/);
+  const other = appleChain({ root: 'other-root.pem' });
+  await assert.rejects(verifyChain([chain.leafDer, chain.intermediateDer, other.rootDer], { rootSha256: other.rootSha256 }), /SIGNATURE/);
+  await assert.rejects(verifyChain([chain.rootDer, chain.intermediateDer, chain.leafDer], { rootSha256: chain.rootSha256 }), /SIGNATURE/);
+  await assert.rejects(verifyChain([chain.leafDer, chain.intermediateDer, chain.rootDer], { rootSha256: chain.rootSha256, now: Date.UTC(2090, 0, 1) }), /SIGNATURE/);
+  assert.equal(APPLE_ROOT_CA_G3_SHA256, '63343abfb89a6a03ebb57e9b3f5fa7be7c4f5c756f3017b3a8c488c3653e9179');
+});
+
+test('x509: JWS آبل يُقبل موقّعًا، ويُرفض معدَّلًا أو بلا x5c أو بخوارزمية أخرى', async () => {
+  const chain = appleChain();
+  const options = { rootSha256: chain.rootSha256 };
+  const token = chain.sign({ notificationUUID: 'n-1', data: { originalTransactionId: '42' } });
+  assert.deepEqual((await verifyAppleJws(token, options)).data, { originalTransactionId: '42' });
+  const [head, body, signature] = token.split('.');
+  const tampered = `${head}.${Buffer.from(JSON.stringify({ notificationUUID: 'n-2' })).toString('base64url')}.${signature}`;
+  await assert.rejects(verifyAppleJws(tampered, options), /SIGNATURE/);
+  await assert.rejects(verifyAppleJws(chain.sign({ a: 1 }, { header: { alg: 'ES256' } }), options), /SIGNATURE/);
+  await assert.rejects(verifyAppleJws(chain.sign({ a: 1 }, { header: { alg: 'RS256', x5c: chain.x5c } }), options), /SIGNATURE/);
+  await assert.rejects(verifyAppleJws(chain.sign({ a: 1 }, { x5c: chain.x5c.slice(1) }), options), /SIGNATURE/, 'الوسيط ليس ورقة توقيع');
+  await assert.rejects(verifyAppleJws(`${head}.${body}.${Buffer.from('short').toString('base64url')}`, options), /SIGNATURE/);
+  await assert.rejects(verifyAppleJws('garbage', options), /INVALID/);
+});
+
+// ── التنظيف الدوري ────────────────────────────────────────────────────────────
+test('cleanup يحذف الجلسات المنتهية قديمًا ورموز الدخول وأحداث webhooks القديمة فقط', async () => {
+  const db = createLocalD1();
+  const env = { DB: db };
+  const now = Date.UTC(2026, 8, 16);
+  const day = 86_400_000;
+  const session = (id, expires, revoked = null) => db.prepare('INSERT INTO sessions (id, user_id, secret_hash, client, created_at, last_seen, expires_at, revoked_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)').bind(id, 'u1', 'h', 'web', now - 200 * day, now, expires, revoked).run();
+  await session('live', now + 10 * day);
+  await session('just-expired', now - 5 * day);
+  await session('long-expired', now - 40 * day);
+  await session('revoked-recent', now + 10 * day, now - 2 * day);
+  await session('revoked-old', now + 10 * day, now - 45 * day);
+  await db.prepare('INSERT INTO auth_codes (code_hash, user_id, client, expires_at) VALUES (?, ?, ?, ?)').bind('fresh', 'u1', 'web', now + 60_000).run();
+  await db.prepare('INSERT INTO auth_codes (code_hash, user_id, client, expires_at) VALUES (?, ?, ?, ?)').bind('stale', 'u1', 'web', now - 2 * 3_600_000).run();
+  await db.prepare('INSERT INTO webhook_events (id, received_at) VALUES (?, ?)').bind('recent', now - day).run();
+  await db.prepare('INSERT INTO webhook_events (id, received_at) VALUES (?, ?)').bind('ancient', now - 100 * day).run();
+  const result = await cleanup(env, now);
+  assert.deepEqual(result, { sessions: 2, authCodes: 1, webhookEvents: 1 });
+  const ids = (await db.prepare('SELECT id FROM sessions ORDER BY id').all()).results.map((r) => r.id);
+  assert.deepEqual(ids, ['just-expired', 'live', 'revoked-recent']);
+  assert.equal((await db.prepare('SELECT count(*) AS n FROM auth_codes').first()).n, 1);
+  assert.equal((await db.prepare('SELECT id FROM webhook_events').first()).id, 'recent');
+  assert.deepEqual(await cleanup({}, now), { skipped: true });
+  db.close();
 });
 
 test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec', () => {

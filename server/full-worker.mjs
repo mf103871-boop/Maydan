@@ -1,5 +1,5 @@
 // One Cloudflare origin serves the game, assets, and room API.
-import { routeRequest } from './worker.mjs';
+import { routeRequest, scheduled } from './worker.mjs';
 export { Room, RequestLimiter } from './worker.mjs';
 
 // The page is one self-contained document: inline script and styles, images and
@@ -49,4 +49,5 @@ export default {
     }
     return secured(await env.ASSETS.fetch(request));
   },
+  scheduled,
 };

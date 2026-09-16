@@ -166,6 +166,10 @@ SESSION_SECRET=dev-secret
 
 عند الشراء داخل التطبيق يمرّر StoreKit **`appAccountToken` = معرّف المستخدم عندنا**، فيتحقق الخادم أن المعاملة تخص هذا الحساب فعلًا. معاملة مرتبطة بحساب آخر تُرفض بـ`ALREADY_LINKED`.
 
+### التحقق من توقيعات آبل (x5c)
+
+كل JWS يصل من آبل — `signedTransactionInfo` و`signedRenewalInfo` من App Store Server API، و`signedPayload` في الإشعارات، و`jwsRepresentation` الذي يرسله الجهاز — يُتحقق منه في `server/accounts/x509.mjs`: توقيع ES256 بمفتاح الورقة، ثم سلسلة `x5c` شهادةً شهادة حتى الجذر، وتثبيت الجذر ببصمة SHA-256 لـ**Apple Root CA - G3** (`APPLE_ROOT_CA_G3_SHA256`)، وفترات الصلاحية، وامتدادا آبل (`1.2.840.113635.100.6.11.1` في الورقة و`1.2.840.113635.100.6.2.1` في الوسيط). الإشعارات تُفحص **قبل** فحص التكرار، فلا يستطيع أحد إسقاط إشعار حقيقي بإرسال `notificationUUID` مسبقًا. للاختبارات تُبدَّل البصمة بـ`APPLE_ROOT_CA_SHA256` مع سلسلة وهمية في `tests/fixtures/apple-chain/`؛ لا تضبط هذا المتغيّر في الإنتاج.
+
 ### داخل تطبيق iOS
 
 - `APPLE_BUNDLE_ID` يجب أن يساوي معرّف حزمة التطبيق (`Maydan` في `ios/Maydan.xcodeproj`)؛ هو الجمهور (`aud`) في identityToken الذي يرسله الدخول الأصلي إلى `POST /api/auth/apple/native`.
@@ -218,6 +222,18 @@ SESSION_SECRET=dev-secret
 لإعادة الإرسال يدويًا: **Notifications → اختر الوجهة → Logs → Replay**. إشعارات آبل تُعاد بالطريقة نفسها عبر `Request a Test Notification` أو إعادة المحاولة التلقائية؛ التكرار محميّ بـ`notificationUUID`.
 
 ---
+
+## التنظيف الدوري
+
+`triggers.crons` في `wrangler.jsonc` و`wrangler.rooms.jsonc` يشغّل `scheduled` (server/accounts/cleanup.mjs) يوميًا: يحذف الجلسات التي انتهت أو أُبطلت قبل أكثر من 30 يومًا، ورموز الدخول المنتهية، وأحداث webhooks الأقدم من 90 يومًا. لا يمسّ المستخدمين ولا الاشتراكات ولا التجارب. للتشغيل اليدوي محليًا: `npx wrangler dev --test-scheduled` ثم `curl "http://localhost:8787/__scheduled?cron=17+3+*+*+*"`.
+
+## التشغيل
+
+- **إعادة إرسال webhook من Paddle**: لوحة Paddle → Notifications → اختر الإشعار → Replay. الخادم يمنع التكرار بـ`event_id` داخل نافذة 90 يومًا، فالإعادة آمنة. من آبل: App Store Connect → App Information → App Store Server Notifications → Request a Test Notification، أو أعد إرسال الإشعار من سجل الإشعارات؛ التكرار محمي بـ`notificationUUID`.
+- **نسخة احتياطية من D1**: `npx wrangler d1 export maydan-accounts --remote --output backup.sql` (أو `--no-data` للمخطط فقط)، والاستعادة بـ`npx wrangler d1 execute maydan-accounts --remote --file backup.sql`. D1 يحتفظ أيضًا بـTime Travel لمدة 30 يومًا: `npx wrangler d1 time-travel restore maydan-accounts --timestamp=<ISO>`.
+- **حذف الحساب**: `DELETE /api/account` يبطل رمز تحديث آبل، ويطلب إلغاء اشتراك Paddle عند نهاية الفترة، ثم يحذف كل صفوف المستخدم. اشتراك App Store لا يُلغى من الخادم؛ الجدار وبطاقة الحساب يذكّران المستخدم بإلغائه من إعدادات جهازه.
+- **الصفحات القانونية**: `#/terms` و`#/privacy` داخل التطبيق والموقع (`src/platform/screens/Legal.jsx`)؛ روابطهما العامة في `ios/app-store.json` تُستعمل في App Store Connect وPaddle. بريد الدعم في `SUPPORT_EMAIL` (`src/shared/account/config.js`)، وتاريخ آخر تحديث في `LEGAL_UPDATED`.
+- **مرآة التجارب على iOS**: علامات المباريات المجانية تُحفظ أيضًا في UserDefaults عبر الجسر (`getTrials`/`markTrial`) وتُدمج عند الإقلاع، فمسح بيانات WebKit لا يعيد التجربة للمجهول.
 
 ## الأمان
 

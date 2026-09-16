@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState, useCallback } from 'react';
 import { PlatformContext, usePlatform } from './context.js';
 import { useRoute, navigate, getDirection } from './router.js';
 import { createStorage, clearAllPlatformData } from '../shared/lib/storage.js';
+import { ACCOUNT_PREFIX } from '../shared/account/store.js';
 import { createSound } from '../shared/fx/sound.js';
 import { createHaptics } from '../shared/fx/haptics.js';
 import { confetti } from '../shared/fx/confetti.js';
@@ -19,6 +20,7 @@ import { Play } from './screens/Play.jsx';
 import { Players } from './screens/Players.jsx';
 import { Settings } from './screens/Settings.jsx';
 import { About } from './screens/About.jsx';
+import { Terms, Privacy } from './screens/Legal.jsx';
 import { Online } from '../online/Online.jsx';
 import onlineCss from '../online/online.css';
 import { AccountProvider } from '../shared/account/AccountProvider.jsx';
@@ -44,6 +46,8 @@ function ScreenHost({ route }) {
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'settings') screen = <Settings key="settings" />;
   else if (route.name === 'about') screen = <About key="about" />;
+  else if (route.name === 'terms') screen = <Terms key="terms" />;
+  else if (route.name === 'privacy') screen = <Privacy key="privacy" />;
   else if (route.name === 'online') screen = <Online key={`online-${route.params.id || 'meenfina'}`} game={route.params.id || 'meenfina'} />;
   else if (route.name === 'room') screen = <Online key={`room-${route.params.id}`} code={route.params.id} />;
   return screen;
@@ -86,6 +90,8 @@ function Shell() {
     setBooted(true);
     if (!settings.splashSeen) setSettings({ splashSeen: true });
   }, [settings.splashSeen, setSettings]);
+  // «مسح كل البيانات» من الشاشة الحمراء يبقي الحساب كما تفعل الإعدادات.
+  const resetKeepingAccount = () => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); location.reload(); };
   return (
     <>
       <BrandFonts />
@@ -100,7 +106,7 @@ function Shell() {
         message="حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ عند كل فتح."
         clearLabel="مسح كل البيانات وإعادة التشغيل"
         onHome={() => navigate('/', { replace: true })}
-        onClear={() => { clearAllPlatformData(); location.reload(); }}
+        onClear={resetKeepingAccount}
       >
         <ScreenHost route={route} />
       </ErrorBoundary>

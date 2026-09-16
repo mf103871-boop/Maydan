@@ -2,6 +2,7 @@ import { Room } from './room.mjs';
 import { readJson, json, errorResponse, sha256, credentials } from './protocol.mjs';
 import { fail } from './room-model.mjs';
 import { isPublicAccountPath, markRoomTrial, roomGate, routeAccounts } from './accounts/router.mjs';
+import { cleanup } from './accounts/cleanup.mjs';
 import packageInfo from '../package.json' with { type: 'json' };
 export { Room };
 
@@ -135,4 +136,9 @@ export async function routeRequest(request, env) {
   for (const [key, value] of Object.entries(headers)) allHeaders.set(key, value);
   return new Response(response.body, { status: response.status, headers: allHeaders });
 }
-export default { fetch: routeRequest };
+// Cron Trigger (wrangler triggers.crons): تنظيف الجلسات ورموز الدخول وسجل webhooks.
+export async function scheduled(event, env) {
+  const result = await cleanup(env, Date.now());
+  console.log('accounts cleanup', JSON.stringify(result));
+}
+export default { fetch: routeRequest, scheduled };
