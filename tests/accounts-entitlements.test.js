@@ -13,6 +13,7 @@ import { createLocalD1 } from '../server/local-d1.mjs';
 import { appleChain } from './helpers-apple.js';
 import { migrationStatements } from '../server/local-d1.mjs';
 import { routeRequest } from '../server/worker.mjs';
+import { limitKind } from '../server/accounts/router.mjs';
 
 const NOW = 1_800_000_000_000;
 const row = (extra) => ({ source: 'paddle', external_id: 'sub_1', product: PRODUCTS.monthly, status: 'active', until: NOW + 1000, will_renew: 1, ...extra });
@@ -32,6 +33,25 @@ test('premiumOf يختار الأبعد انتهاءً ويتجاهل الملغ
   assert.equal(expired.active, false);
   assert.equal(expired.until, NOW - 1);
   assert.equal(premiumOf([row({ will_renew: 0 })], NOW).willRenew, false);
+  // رمز هدية (100 سنة) مع اشتراك مدفوع سارٍ: المدفوع يبقى ظاهرًا (المصدر والتجديد) كي تظهر «إدارة الاشتراك»، والرمز احتياط بعد انقضائه.
+  const promo = { source: 'promo', external_id: 'promo:x:u1', status: 'active', until: NOW + 100 * 365 * 86_400_000, will_renew: 0 };
+  const withPaid = premiumOf([promo, row({ until: NOW + 1000 })], NOW);
+  assert.equal(withPaid.source, 'paddle');
+  assert.equal(withPaid.willRenew, true);
+  assert.equal(withPaid.until, NOW + 1000);
+  const lapsed = premiumOf([promo, row({ until: NOW - 1, will_renew: 0 })], NOW);
+  assert.equal(lapsed.source, 'promo');
+  assert.equal(lapsed.active, true);
+  // صف تجديد قديم لم يصل إشعاره لا يُفضَّل: لا يسحب الاستحقاق إلى الماضي.
+  assert.equal(premiumOf([promo, row({ until: NOW - 10 * 86_400_000, will_renew: 1 })], NOW).source, 'promo');
+  assert.equal(premiumOf([promo], NOW).source, 'promo');
+});
+
+test('limitKind: رمز الهدية ضمن حصة billing (حماية التخمين) لا حصة auth', () => {
+  assert.equal(limitKind('/api/redeem'), 'billing');
+  assert.equal(limitKind('/api/me'), 'me');
+  assert.equal(limitKind('/api/trials/beep'), 'trial');
+  assert.equal(limitKind('/api/auth/exchange'), 'auth');
 });
 
 test('السماح بعد الانتهاء يطابق ما يحسبه العميل', () => {

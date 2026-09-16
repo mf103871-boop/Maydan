@@ -5,12 +5,18 @@ import { GRACE_MS } from '../../src/shared/account/config.js';
 const REVOKED = new Set(['revoked', 'refunded']);
 
 // أفضل اشتراك = الأبعد انتهاءً بين ما لم يُلغَ قسرًا؛ صفّان (آبل وPaddle) لا يتزاحمان.
+// اشتراك مدفوع ما زال ساريًا يتقدّم على رمز الهدية (100 سنة) كي يبقى مصدره وتجديده
+// ظاهرين في /api/me وتظهر «إدارة الاشتراك»؛ الرمز احتياط حين ينقضي المدفوع.
 export function premiumOf(subscriptions = [], now = Date.now()) {
   let best = null;
+  let paid = null;
   for (const row of subscriptions) {
     if (REVOKED.has(String(row.status || '').toLowerCase())) continue;
-    if (!best || (Number(row.until) || 0) > (Number(best.until) || 0)) best = row;
+    const until = Number(row.until) || 0;
+    if (!best || until > (Number(best.until) || 0)) best = row;
+    if (row.source !== 'promo' && until > now && (!paid || until > (Number(paid.until) || 0))) paid = row;
   }
+  if (paid) best = paid;
   if (!best) return { active: false, until: 0, source: null, status: null, willRenew: false };
   const until = Number(best.until) || 0;
   return {

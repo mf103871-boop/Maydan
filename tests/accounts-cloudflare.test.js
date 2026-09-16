@@ -570,9 +570,18 @@ test('رمز الهدية: يفعّل بلس للمسجّل ويفتح الغر�
   const extra = await api.post('/api/redeem', { code: 'extra-code' });
   assert.equal(extra.status, 200, JSON.stringify(extra.data));
   // المشترك بالرمز ينشئ غرفًا بلا حدود حتى بعد استهلاك التجربة.
-  await api.post('/api/trials/fabraka', {});
+  const marked = await api.post('/api/trials/fabraka', {});
+  assert.equal(marked.status, 200, JSON.stringify(marked.data));
+  assert.equal(marked.data.trials.fabraka, true, 'التجربة مستهلكة فعلًا قبل فحص التجاوز');
   const room = await api.post('/api/rooms', { ...credentials(), game: 'fabraka', name: 'هدية', avatar: 0, rounds: 6 });
   assert.equal(room.status, 201, JSON.stringify(room.data));
+  // جسم غير نصي يُرفض، والرمز نفسه يفعّل حسابًا ثانيًا (المفتاح يضم معرّف المستخدم).
+  assert.equal((await api.post('/api/redeem', { code: 1121998 })).status, 400);
+  const second = await signInDev('redeem-2', 'ثانٍ');
+  const secondOk = await second.api.post('/api/redeem', { code: '1121998' });
+  assert.equal(secondOk.status, 200, JSON.stringify(secondOk.data));
+  assert.equal(secondOk.data.premium.source, 'promo');
+  assert.equal((await api.get('/api/me')).data.premium.active, true, 'الحساب الأول لم يتأثر');
 });
 
 test('حذف الحساب يُبطل رمز آبل ويمسح كل صفوفه', { timeout: 30_000 }, async () => {

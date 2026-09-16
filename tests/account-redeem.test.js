@@ -88,15 +88,32 @@ test('المخزن: الرمز يُحفظ ببصمته، وبصمة أُلغيت
   const store = createAccountStore(fakeStorage());
   assert.equal(store.readPromo(), null);
   const entry = store.writePromo(CODE, codeHash(CODE), 1000);
-  assert.deepEqual(entry, { code: CODE, hash: codeHash(CODE), redeemedAt: 1000 });
+  assert.deepEqual(entry, { code: CODE, hash: codeHash(CODE), redeemedAt: 1000, syncedFor: null });
   assert.deepEqual(store.readPromo(), entry);
   store.writePromo(CODE, 'deadbeef');
   assert.equal(store.readPromo(), null, 'بصمة غير معروفة');
   store.writePromo('x', codeHash(CODE));
   store.clearAuth();
   assert.ok(store.readPromo(), 'الخروج لا يمسح رمز الجهاز');
+  assert.equal(store.readPromo().syncedFor, null);
+  assert.equal(store.markPromoSynced('user-1').syncedFor, 'user-1');
+  assert.equal(store.markPromoSynced('').syncedFor, null);
   store.clearPromo();
   assert.equal(store.readPromo(), null);
+  assert.equal(store.markPromoSynced('user-1'), null, 'لا رمز = لا شيء يُعلَّم');
+  // أشكال تالفة أو غريبة لا تُسقط الواجهة.
+  for (const raw of ['nope', ['a'], { hash: 42 }, { code: CODE }, null]) {
+    store.storage.set('promo', raw);
+    assert.equal(store.readPromo(), null, JSON.stringify(raw));
+  }
+  store.storage.set('promo', { code: CODE, hash: codeHash(CODE).toUpperCase(), redeemedAt: 'x' });
+  assert.deepEqual(store.readPromo(), { code: CODE, hash: codeHash(CODE), redeemedAt: 0, syncedFor: null }, 'بصمة بأحرف كبيرة تُقبل والتاريخ التالف يصير صفرًا');
+  assert.equal(store.writePromo(CODE, ''), null, 'بصمة فارغة تمسح المفتاح');
+  assert.equal(store.readPromo(), null);
+  // حدود الطول والتطبيع.
+  assert.equal(isValidCode('a'.repeat(65), [sha256Hex('A'.repeat(65))]), false, 'أطول من CODE_MAX');
+  assert.equal(isValidCode('a'.repeat(64), [sha256Hex('A'.repeat(64))]), true);
+  assert.equal(normalizeCode('a_b.c d-e'), 'ABCDE');
 });
 
 test('المزوّد: رمز مفعَّل على الجهاز = مشترك، بلا جلسة وبلا شبكة', () => {
@@ -117,10 +134,14 @@ test('المزوّد: رمز مفعَّل على الجهاز = مشترك، ب�
 
 test('الجدار وبطاقة الحساب: رابط الرمز على الويب فقط، والسطر يذكر «برمز هدية»', () => {
   const web = mod.renderPaywall({ platform: 'web', signedIn: false });
-  assert.match(web, /class="paywall-redeem"/);
+  assert.match(web, /class="btn btn-ghost btn-full paywall-redeem"/);
+  assert.ok(web.indexOf('paywall-redeem') < web.indexOf('paywall-legal'), 'زر الرمز فوق النص القانوني لا تحته');
   assert.match(web, /لديك رمز هدية؟/);
+  // قواعد App Store 3.1.1: العلم مغلق والرابط غائب على iOS فعلًا (لا مقارنة بالعلم نفسه).
+  assert.equal(REDEEM_ON_IOS, false);
   const ios = mod.renderPaywall({ platform: 'ios', signedIn: true });
-  assert.equal(/paywall-redeem/.test(ios), REDEEM_ON_IOS, 'مخفي على iOS (قواعد المتجر)');
+  assert.doesNotMatch(ios, /paywall-redeem/);
+  assert.doesNotMatch(ios, /لديك رمز هدية؟/);
   const promo = { code: CODE, hash: codeHash(CODE), redeemedAt: 1 };
   assert.equal(mod.subscriptionLine(null, true, promo), 'ميدان بلس فعّال · برمز هدية');
   assert.match(mod.subscriptionLine({ premium: { until: 4102444800000, source: 'promo' } }, true, null), /برمز هدية$/);
@@ -131,5 +152,24 @@ test('الجدار وبطاقة الحساب: رابط الرمز على الو�
   const cardFree = mod.renderCard({ platform: 'web', user: { id: 'u', name: 'س' }, premium: false, promo: null, me: { user: { id: 'u' }, premium: { until: 0 } } });
   assert.match(cardFree, /لديك رمز هدية؟/);
   const cardIos = mod.renderCard({ platform: 'ios', user: { id: 'u', name: 'س' }, premium: false, promo: null });
-  assert.equal(/لديك رمز هدية؟/.test(cardIos), REDEEM_ON_IOS);
+  assert.doesNotMatch(cardIos, /لديك رمز هدية؟/);
+  // مسجَّل واشتراكه من الخادم برمز: لا «إدارة الاشتراك» ولا زر رمز؛ ومدفوع سارٍ: تظهر الإدارة.
+  const far = Date.now() + 50 * 365 * 86_400_000;
+  const cardPromo = mod.renderCard({ platform: 'web', user: { id: 'u', name: 'س' }, premium: true, promo: null, me: { user: { id: 'u' }, premium: { active: true, until: far, source: 'promo' } } });
+  assert.doesNotMatch(cardPromo, /إدارة الاشتراك/);
+  assert.doesNotMatch(cardPromo, /لديك رمز هدية؟/);
+  assert.match(cardPromo, /برمز هدية/);
+  const cardPaid = mod.renderCard({ platform: 'web', user: { id: 'u', name: 'س' }, premium: true, promo: null, me: { user: { id: 'u' }, premium: { active: true, until: Date.now() + 86_400_000, source: 'paddle', willRenew: true } } });
+  assert.match(cardPaid, /إدارة الاشتراك/);
+  assert.match(cardPaid, /عبر الويب/);
+  // اشتراك مدفوع منتهٍ (بعد سماح GRACE_MS) + رمز على الجهاز: السطر يذكر الرمز لا تاريخًا ماضيًا، ولا زر إدارة.
+  const lapsed = { user: { id: 'u' }, premium: { active: false, until: Date.now() - 10 * 86_400_000, source: 'paddle' } };
+  const inGrace = { user: { id: 'u' }, premium: { active: false, until: Date.now() - 86_400_000, source: 'paddle', willRenew: true } };
+  assert.match(mod.subscriptionLine(inGrace, true, promo), /عبر الويب/, 'داخل السماح ما زال المدفوع هو المعروض');
+  assert.equal(mod.subscriptionLine(lapsed, true, promo), 'ميدان بلس فعّال · برمز هدية');
+  assert.doesNotMatch(mod.renderCard({ platform: 'web', user: { id: 'u', name: 'س' }, premium: true, promo, me: lapsed }), /إدارة الاشتراك/);
+  // زر الرمز يجاور «اشترك» لا يلي «حذف الحساب».
+  const order = mod.renderCard({ platform: 'web', user: { id: 'u', name: 'س' }, premium: false, promo: null, me: { user: { id: 'u' }, premium: { until: 0 } } });
+  assert.ok(order.indexOf('لديك رمز هدية؟') < order.indexOf('تسجيل الخروج'), 'قبل الخروج والحذف');
+  assert.ok(order.indexOf('لديك رمز هدية؟') > order.indexOf('اشترك في'), 'بعد زر الاشتراك');
 });

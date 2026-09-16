@@ -120,12 +120,27 @@ export function AccountProvider({ children }) {
     }
   }, [options, applyTrials, clearLocalAuth]);
 
+  // رمز مفعَّل على الجهاز ولم يُربط بهذا الحساب بعد: يُرسل عند الإقلاع وعند كل تحديث حتى ينجح.
+  const syncPromo = useCallback(async (userId = null) => {
+    const stored = accountStore.readPromo();
+    if (!stored || !stored.code || !sessionRef.current || accountOffline()) return;
+    if (stored.syncedFor && (!userId || stored.syncedFor === userId)) return;
+    try {
+      const next = await redeemRequest(stored.code, options());
+      if (next) applyMe(next);
+      setPromo(accountStore.markPromoSynced((next && next.user && next.user.id) || userId));
+    } catch (err) {
+      if (isAuthError(codeOf(err))) clearLocalAuth();
+    }
+  }, [options, applyMe, clearLocalAuth]);
+
   const refresh = useCallback(async () => {
     if (!sessionRef.current || accountOffline()) return null;
     try {
       const next = await getMe(options());
       applyMe(next);
       flushPending();
+      syncPromo(next && next.user ? next.user.id : null);
       return next;
     } catch (err) {
       const code = codeOf(err);
@@ -133,7 +148,7 @@ export function AccountProvider({ children }) {
       if (isDisabled(code)) setOffline(true);
       return null;
     }
-  }, [options, applyMe, flushPending, clearLocalAuth]);
+  }, [options, applyMe, flushPending, clearLocalAuth, syncPromo]);
 
   // بعد أي دخول ناجح: خزّن الجلسة، ادمج علامات هذا الجهاز، ثم رحّب باللاعب.
   const afterSignIn = useCallback(async (result) => {
@@ -149,15 +164,11 @@ export function AccountProvider({ children }) {
         applyTrials(merged && merged.trials);
       } catch (err) { /* تبقى محليًا وتُدمج لاحقًا */ }
     }
-    const promoOnDevice = accountStore.readPromo();
-    if (promoOnDevice && promoOnDevice.code) {
-      try { applyMe(await redeemRequest(promoOnDevice.code, options())); }
-      catch (err) { /* يبقى مفعّلًا على الجهاز ويُعاد الربط في تفعيل لاحق */ }
-    }
+    await syncPromo(result.me && result.me.user ? result.me.user.id : null);
     const name = (result.me && result.me.user && result.me.user.name) || '';
     toast(name ? `أهلًا ${name}` : 'أهلًا بك');
     return result.me || null;
-  }, [applySession, applyMe, applyTrials, options, toast]);
+  }, [applySession, applyMe, applyTrials, options, toast, syncPromo]);
 
   const consumeCode = useCallback(async (code, client) => {
     const result = await exchangeCode(code, client, { onSession: applySession });
@@ -355,21 +366,32 @@ export function AccountProvider({ children }) {
     }
   }, [native, options, handleError, toast]);
 
-  // رمز الهدية: التحقق محلي ببصمة الرمز، والخادم يربطه بالحساب إن كانت هناك جلسة.
+  // رمز الهدية. يعيد true عند النجاح أو كود خطأ (REDEEM_INVALID/NETWORK…) يعرضه النموذج
+  // وحده؛ لا يلمس خطأ المزوّد العام كي لا يتكرر النص خارج النموذج.
   const redeem = useCallback(async (code) => {
-    setError(null);
-    if (!isValidCode(code)) { setError('REDEEM_INVALID'); return false; }
+    const online = !!sessionRef.current && !accountOffline();
+    if (!isValidCode(code)) {
+      // ليس في قائمة الحزمة: قد يكون رمزًا يعرفه الخادم وحده (السرّ REDEEM_CODE_HASHES).
+      if (!online) return 'REDEEM_INVALID';
+      try {
+        const next = await redeemRequest(code, options());
+        if (next) applyMe(next);
+      } catch (err) {
+        const failure = codeOf(err);
+        if (isAuthError(failure)) clearLocalAuth();
+        return failure === 'NOT_FOUND' ? 'REDEEM_INVALID' : failure;
+      }
+      closePaywall();
+      toast(`فُعِّل ${PLUS_NAME}`);
+      return true;
+    }
     const entry = accountStore.writePromo(String(code).trim(), codeHash(code));
     setPromo(entry);
     closePaywall();
-    toast(`فُعِّل ${PLUS_NAME} 🎉`);
-    if (sessionRef.current && !accountOffline()) {
-      redeemRequest(code, options())
-        .then((next) => { if (next) applyMe(next); })
-        .catch((err) => { if (isAuthError(codeOf(err))) clearLocalAuth(); });
-    }
+    toast(`فُعِّل ${PLUS_NAME}`);
+    if (online) syncPromo(meRef.current && meRef.current.user ? meRef.current.user.id : null);
     return true;
-  }, [options, applyMe, clearLocalAuth, closePaywall, toast]);
+  }, [options, applyMe, clearLocalAuth, closePaywall, toast, syncPromo]);
 
   const deleteAccount = useCallback(async () => {
     setBusy('delete');

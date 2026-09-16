@@ -5,6 +5,7 @@ import { Button, Card, ConfirmModal } from '../ui/components.jsx';
 import { IconUsers, IconStar, IconRotate, IconTrash, IconBack } from '../ui/icons.jsx';
 import { useAccount } from './context.js';
 import { PLUS_NAME } from './config.js';
+import { isPremium } from './entitlements.js';
 import { accountErrorText } from './errors.js';
 import { SignInSheet } from './SignInSheet.jsx';
 import { RedeemSheet, REDEEM_PROMPT } from './RedeemSheet.jsx';
@@ -19,10 +20,11 @@ export function formatUntil(value) {
   catch (error) { return new Date(stamp).toISOString().slice(0, 10); }
 }
 
-export function subscriptionLine(me, premium, promo = null) {
+export function subscriptionLine(me, premium, promo = null, now = Date.now()) {
   if (!premium) return 'غير مشترك';
   const info = (me && me.premium) || {};
-  const serverActive = Number(info.until) > 0;
+  // اشتراك الخادم يُذكر فقط إن كان ساريًا؛ منتهٍ + رمز على الجهاز = «برمز هدية».
+  const serverActive = isPremium(me, now);
   const source = serverActive ? info.source : (promo ? 'promo' : null);
   // رمز الهدية دائم عمليًا: لا يُعرض له تاريخ انتهاء.
   const until = source === 'promo' ? '' : formatUntil(info.until);
@@ -38,7 +40,8 @@ export function AccountCard() {
   const user = account.user;
   const ios = account.platform === 'ios';
   const canRedeem = !account.premium && (!ios || REDEEM_ON_IOS);
-  const managed = account.premium && account.me && account.me.premium && Number(account.me.premium.until) > 0 && account.me.premium.source !== 'promo';
+  const managed = account.premium && isPremium(account.me) && account.me.premium.source !== 'promo';
+  const redeemButton = canRedeem ? <Button variant="ghost" onClick={() => setRedeem(true)}>{REDEEM_PROMPT}</Button> : null;
 
   return (
     <Card className="stack account-card" aria-label="الحساب">
@@ -51,6 +54,7 @@ export function AccountCard() {
           {account.offline
             ? <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>
             : <Button variant="primary" onClick={() => setSignIn(true)}>تسجيل الدخول</Button>}
+          {redeemButton}
         </>
       ) : (
         <>
@@ -62,6 +66,7 @@ export function AccountCard() {
           {!account.premium && (
             <Button variant="primary" icon={<IconStar />} onClick={() => account.openPaywall({ reason: 'settings' })}>اشترك في {PLUS_NAME}</Button>
           )}
+          {redeemButton}
           {managed && (
             <Button variant="secondary" onClick={() => account.manageSubscription()}>إدارة الاشتراك</Button>
           )}
@@ -72,7 +77,6 @@ export function AccountCard() {
           <Button variant="danger" icon={<IconTrash />} onClick={() => setConfirmDelete(true)}>حذف الحساب</Button>
         </>
       )}
-      {canRedeem && <Button variant="ghost" onClick={() => setRedeem(true)}>{REDEEM_PROMPT}</Button>}
       {account.error && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
       <SignInSheet open={signIn} onClose={() => setSignIn(false)} />
       <RedeemSheet open={redeem} onClose={() => setRedeem(false)} />

@@ -1,6 +1,6 @@
 // جدار «ميدان بلس»: ورقة سفلية واحدة لكل أسباب القفل. لا خدع: السبب أولًا، ثم
 // ما يفتحه الاشتراك، ثم الخطتان بأسعار المتجر، ثم الشروط بوضوح.
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Sheet, Button } from '../ui/components.jsx';
 import { ClayStage, TrophyArtwork } from '../brand/art.jsx';
 import { useAccount } from './context.js';
@@ -44,6 +44,12 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
   const account = useAccount();
   const [plan, setPlan] = useState('yearly');
   const [redeeming, setRedeeming] = useState(false);
+  const redeemTrigger = useRef(null);
+  const cancelRedeem = () => {
+    setRedeeming(false);
+    // التركيز يعود إلى الزر الذي فتح النموذج بدل الضياع في body داخل الورقة.
+    setTimeout(() => { if (redeemTrigger.current) redeemTrigger.current.focus(); }, 0);
+  };
   const loadProducts = account.loadProducts;
   useEffect(() => { if (open && loadProducts) loadProducts(); }, [open, loadProducts]);
   // كل فتح يبدأ بالخطط لا بنموذج الرمز: المكوّن يبقى مركّبًا بين فتحتين.
@@ -64,7 +70,7 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         <h2 className="paywall-title">افتح كل ميدان مع {PLUS_NAME}</h2>
         {reasonText && <p className="paywall-reason">{reasonText}</p>}
         {redeeming ? (
-          <RedeemForm onDone={onClose} onCancel={() => setRedeeming(false)} />
+          <RedeemForm onDone={onClose} onCancel={cancelRedeem} />
         ) : (
           <>
         <ul className="paywall-bullets">
@@ -98,6 +104,9 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         {account.platform === 'ios' && (
           <Button variant="ghost" full loading={busy === 'restore'} onClick={() => account.restore && account.restore()}>استعادة المشتريات</Button>
         )}
+        {canRedeem && (
+          <button type="button" ref={redeemTrigger} className="btn btn-ghost btn-full paywall-redeem" onClick={() => setRedeeming(true)}>{REDEEM_PROMPT}</button>
+        )}
         {account.error && !needsSignIn && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
         <p className="paywall-legal">
           {PAYWALL_LEGAL}
@@ -107,7 +116,6 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
             <a data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>سياسة الخصوصية</a>
           </span>
         </p>
-        {canRedeem && <button type="button" className="paywall-redeem" onClick={() => setRedeeming(true)}>{REDEEM_PROMPT}</button>}
           </>
         )}
       </section>

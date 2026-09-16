@@ -70,19 +70,30 @@ export function createAccountStore(backend) {
       const drop = Array.isArray(games) ? new Set(games) : null;
       return api.writeTrials({ marks: trials.marks, pending: drop ? trials.pending.filter((g) => !drop.has(g)) : [] });
     },
-    // ── رمز الهدية: { code, hash, redeemedAt } ─────────────────
+    // ── رمز الهدية: { code, hash, redeemedAt, syncedFor } ──────
     // بصمة لم تعد ضمن REDEEM_CODE_HASHES (رمز أُلغي بنشر جديد) تُعامل كأن لا رمز.
+    // syncedFor = معرّف الحساب الذي رُبط به الرمز على الخادم (null قبل الربط).
     readPromo() {
       const raw = storage.get(KEYS.promo, null);
-      if (!raw || typeof raw !== 'object' || typeof raw.hash !== 'string') return null;
+      if (!raw || typeof raw !== 'object' || Array.isArray(raw) || typeof raw.hash !== 'string') return null;
       const hash = raw.hash.toLowerCase();
       if (!REDEEM_CODE_HASHES.some((known) => String(known).toLowerCase() === hash)) return null;
       const redeemedAt = Number(raw.redeemedAt);
-      return { code: typeof raw.code === 'string' ? raw.code : '', hash, redeemedAt: Number.isFinite(redeemedAt) ? redeemedAt : 0 };
+      return {
+        code: typeof raw.code === 'string' ? raw.code : '', hash,
+        redeemedAt: Number.isFinite(redeemedAt) ? redeemedAt : 0,
+        syncedFor: typeof raw.syncedFor === 'string' && raw.syncedFor ? raw.syncedFor : null,
+      };
     },
     writePromo(code, hash, redeemedAt = Date.now()) {
       if (typeof hash !== 'string' || !hash) { storage.remove(KEYS.promo); return null; }
-      storage.set(KEYS.promo, { code: String(code || ''), hash: hash.toLowerCase(), redeemedAt });
+      storage.set(KEYS.promo, { code: String(code || ''), hash: hash.toLowerCase(), redeemedAt, syncedFor: null });
+      return api.readPromo();
+    },
+    markPromoSynced(userId) {
+      const current = api.readPromo();
+      if (!current) return null;
+      storage.set(KEYS.promo, { ...current, syncedFor: typeof userId === 'string' && userId ? userId : null });
       return api.readPromo();
     },
     clearPromo() { storage.remove(KEYS.promo); },

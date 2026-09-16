@@ -29,7 +29,7 @@ export const isPublicAccountPath = (pathname) => PUBLIC_PATHS.has(pathname);
 const devFake = (env) => env.AUTH_DEV_FAKE === '1';
 const MAX_BODY = 32_768; // JWS آبل وإشعاراتها أكبر بكثير من أجسام الغرف.
 
-function limitKind(pathname) {
+export function limitKind(pathname) {
   if (pathname === '/api/me') return 'me';
   if (pathname.startsWith('/api/trials/')) return 'trial';
   if (pathname.startsWith('/api/billing/') || pathname.startsWith('/api/paddle/') || pathname === '/api/apple/transactions' || pathname === '/api/redeem') return 'billing';

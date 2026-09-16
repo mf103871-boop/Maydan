@@ -17,13 +17,14 @@ import { build as esbuildBuild } from 'esbuild';
 import { esbuildOptions, renderHtml, readPkg, mediaVersions } from '../lib.mjs';
 import { startLocalServer } from '../../server/local.mjs';
 import { createRequire } from 'node:module';
-import fs from 'node:fs'; import path from 'node:path'; import http from 'node:http'; import os from 'node:os';
+import fs from 'node:fs'; import path from 'node:path'; import http from 'node:http'; import os from 'node:os'; import { createHash } from 'node:crypto';
 const require = createRequire(import.meta.url);
 let chromium;
 try { ({ chromium } = require('playwright')); } catch { console.error('يلزم Playwright: npm i -D playwright'); process.exit(2); }
 const OUT = process.argv[2] || path.join(os.tmpdir(), 'maydan-e2e', 'paywall'); fs.mkdirSync(OUT, { recursive: true });
 const API = ''; // نداءات الصفحة نسبية: GET بلا Origin كما يفعل المتصفح فعلًا
-const app = await startLocalServer({ port: API_PORT, origins: `http://localhost:${WEB_PORT}`, vars: { AUTH_DEV_FAKE: '1', SESSION_SECRET: 'e2e-secret' } });
+const SECRET_CODE = 'EXTRACODE'; // رمز يعرفه الخادم وحده (السرّ REDEEM_CODE_HASHES)، ليس في حزمة الويب
+const app = await startLocalServer({ port: API_PORT, origins: `http://localhost:${WEB_PORT}`, vars: { AUTH_DEV_FAKE: '1', SESSION_SECRET: 'e2e-secret', REDEEM_CODE_HASHES: createHash('sha256').update(SECRET_CODE).digest('hex') } });
 const pkg = await readPkg(); const media = await mediaVersions();
 const result = await esbuildBuild(esbuildOptions({ minify: false, version: pkg.version, media }));
 const html = await renderHtml(result.outputFiles[0].text, { version: pkg.version });
@@ -75,7 +76,15 @@ check('paywall shows sign-in block (providers unconfigured in dev → note only)
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
 await page.fill('.paywall input[aria-label="رمز الهدية"]', '٠٠٠٠');
 await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(400);
-check('wrong code shows error and keeps lock', await page.evaluate(() => !!document.querySelector('.paywall .online-notice.error')));
+check('wrong code shows error and keeps lock', await page.evaluate(() => !!document.querySelector('.paywall .online-notice.error') && localStorage.getItem('maydan:account:promo') === null && !!document.querySelector('.paywall form')));
+// «رجوع» يعيد الخطط ويعيد التركيز إلى زر الرمز؛ وإغلاق الجدار ثم فتحه يبدأ بالخطط لا بالنموذج.
+await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('رجوع')).click()); await page.waitForTimeout(300); // زر النموذج لا زر رجوع اللعبة
+check('back returns to plans and focuses the redeem trigger', await page.evaluate(() => !document.querySelector('.paywall form') && !!document.querySelector('.paywall-plans') && document.activeElement && document.activeElement.classList.contains('paywall-redeem')));
+await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(200);
+await page.keyboard.press('Escape'); await page.waitForTimeout(600);
+await page.evaluate(() => document.querySelector('.m-category-pick.is-locked .m-category-main').click()); await page.waitForTimeout(600);
+check('reopened paywall starts on plans', await page.evaluate(() => !!document.querySelector('.paywall .paywall-plans') && !document.querySelector('.paywall form')));
+await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
 await page.fill('.paywall input[aria-label="رمز الهدية"]', '١١٢١٩٩٨');
 await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(900); await shot('01b-redeemed');
 check('paywall closes after redeem', await page.evaluate(() => !document.querySelector('.paywall')));
@@ -93,15 +102,6 @@ await go('#/settings'); await page.waitForTimeout(800); await shot('02-settings-
 const settingsText = await page.evaluate(() => document.body.textContent);
 check('settings shows user name', settingsText.includes('مختبر'));
 c = await lockedCounts(); check('signed-in free still locked 68', c.locked === 68, JSON.stringify(c));
-// رمز على حساب مسجَّل: يُربط بالحساب على الخادم فيصبح /api/me مشتركًا (source promo)، ثم نزيله من الجهاز والخادم لنكمل.
-await reload(); await go('#/settings'); await page.waitForTimeout(500); // الخروج من اللعبة أولًا وإلا اعترض حارس الخروج التنقل
-await tap('لديك رمز هدية؟'); await page.waitForTimeout(300);
-await page.fill('input[aria-label="رمز الهدية"]', '1121998');
-await page.evaluate(() => [...document.querySelectorAll('.account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(1200);
-const meAfter = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem('maydan:account:session'))}` } })).json());
-check('redeem on signed-in account → server premium source promo', meAfter.premium && meAfter.premium.active && meAfter.premium.source === 'promo', JSON.stringify(meAfter.premium));
-await page.evaluate(() => localStorage.removeItem('maydan:account:promo')); // صف promo يبقى على الحساب الأول، وبقية الرحلة على حساب ثانٍ
-
 // ٣) منح اشتراك → صفر مقفول، وتفاصيل اللعبة بلا ملاحظة.
 const grant = await apiCall('/api/dev/grant', { until: Date.now() + 30 * 86400e3, product: 'plus.yearly' }, token);
 check('dev grant 200 premium', grant.status === 200 && grant.body?.premium?.active === true, JSON.stringify(grant.body?.premium));
@@ -146,6 +146,36 @@ await page.waitForTimeout(800); const tokenAfter = await page.evaluate(() => loc
 check('sign-out clears session', tokenAfter === null, String(tokenAfter));
 const me401 = await page.evaluate(async ({ API, token2 }) => (await fetch(`${API}/api/me`, { headers: { authorization: `Bearer ${token2}` } })).status, { API, token2 });
 check('revoked token → 401', me401 === 401, String(me401));
+
+// ٧) رمز مفعَّل على الجهاز ثم دخول: يُربط بالحساب عند الإقلاع (refresh) فيصبح /api/me مشتركًا برمز.
+c = await lockedCounts(); await page.evaluate(() => document.querySelector('.m-category-pick.is-locked .m-category-main').click()); await page.waitForTimeout(500);
+await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
+await page.fill('.paywall input[aria-label="رمز الهدية"]', '1121998');
+await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(700);
+const s3 = await apiCall('/api/auth/dev', { subject: 'e2e-sync', name: 'مزامن', client: 'web' }); const token3 = s3.body?.session?.token;
+await page.evaluate((t) => localStorage.setItem('maydan:account:session', JSON.stringify(t)), token3);
+await reload(); await page.waitForTimeout(800);
+const meSync = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem('maydan:account:session'))}` } })).json());
+check('device promo synced to account at boot → server source promo', meSync.premium && meSync.premium.active && meSync.premium.source === 'promo', JSON.stringify(meSync.premium));
+check('promo marked synced for this user', await page.evaluate((id) => (JSON.parse(localStorage.getItem('maydan:account:promo') || '{}').syncedFor) === id, meSync.user.id));
+await go('#/settings'); await page.waitForTimeout(500); await shot('07-settings-promo');
+check('settings line says gift code, no manage button', await page.evaluate(() => /برمز هدية/.test(document.body.textContent) && ![...document.querySelectorAll('button')].some((b) => b.textContent.includes('إدارة الاشتراك'))));
+
+// ٨) رمز يعرفه الخادم وحده: ليس في الحزمة، ومع جلسة يُقبل عبر الواجهة نفسها.
+await page.evaluate(() => { localStorage.removeItem('maydan:account:promo'); localStorage.removeItem('maydan:account:me'); });
+const s4 = await apiCall('/api/auth/dev', { subject: 'e2e-secret', name: 'سرّي', client: 'web' }); const token4 = s4.body?.session?.token;
+await page.evaluate((t) => localStorage.setItem('maydan:account:session', JSON.stringify(t)), token4);
+await reload(); await go('#/settings'); await page.waitForTimeout(500);
+await tap('لديك رمز هدية؟'); await page.waitForTimeout(300);
+await page.fill('input[aria-label="رمز الهدية"]', 'wrong-secret');
+await page.evaluate(() => [...document.querySelectorAll('.account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(800);
+check('unknown code rejected by server too', await page.evaluate(() => !!document.querySelector('.account-redeem .online-notice.error')));
+await page.fill('input[aria-label="رمز الهدية"]', SECRET_CODE.toLowerCase());
+await page.evaluate(() => [...document.querySelectorAll('.account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(1000);
+const meSecret = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem('maydan:account:session'))}` } })).json());
+check('server-only code redeemed from the UI → premium', meSecret.premium && meSecret.premium.active && meSecret.premium.source === 'promo', JSON.stringify(meSecret.premium));
+check('server-only code leaves no device promo', await page.evaluate(() => localStorage.getItem('maydan:account:promo') === null));
+c = await lockedCounts(); check('server-only code unlocks packs', c.locked === 0, JSON.stringify(c));
 
 await browser.close(); web.close(); await app.close();
 if (errors.length) { console.log('أخطاء الصفحة:'); for (const e of errors) console.log(' -', e.slice(0, 300)); }
