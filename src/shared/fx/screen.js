@@ -19,6 +19,7 @@ let vig = null;
 // تظليل أحمر نابض عند آخر ثوانٍ من المؤقت؛ عنصر ثابت واحد يُعاد استعماله ويستريح عند opacity 0.
 export function vignette(on) {
   if (typeof document === 'undefined') return;
+  if (!on) { if (vig) vig.classList.remove('is-on'); return; }
   if (!vig || !vig.isConnected) { vig = document.createElement('div'); vig.className = 'fx-vignette'; vig.setAttribute('aria-hidden', 'true'); document.body.appendChild(vig); }
   vig.classList.toggle('is-on', !!on && !prefersReducedMotion());
 }

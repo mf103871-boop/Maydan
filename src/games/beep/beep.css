@@ -44,13 +44,17 @@
 .beep-bomb { --contact-inset: 24%; --contact-y: 14px; --contact-h: 12px; animation: beep-tick 1s ease-in-out infinite; }
 .beep-bomb.is-hot { animation-duration: .5s; }
 .beep-bomb.is-hot > .clay-lift { animation: ui-wobble .5s ease-in-out infinite; }
-.beep-bomb.is-hot::before { content: ""; position: absolute; z-index: 1; top: 16%; right: 17%; width: 18px; height: 18px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, #fff 0 25%, #FFC94D 60%, #FFC94D00); animation: clay-spark .3s linear infinite; }
+.beep-bomb.is-hot::before { content: ""; position: absolute; z-index: 2; top: 9%; right: 13%; width: 28px; height: 28px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, #fff 0 25%, #FFC94D 60%, #FFC94D00); box-shadow: 0 0 14px 4px #FFC94D88; animation: clay-spark .45s linear infinite; }
+.beep-bomb > .clay-lift { position: relative; z-index: 1; }
 @keyframes beep-tick { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
 /* ── الانفجار: الجذر ثابت بلا حركة (ui.css يستثنيه)؛ الاهتزاز على .inner، الوميض الأبيض من flashScreen، والمحتوى يرتفع بتدرّج ── */
 .beep-boom { position: fixed; inset: 0; z-index: 330; display: grid; place-items: center; text-align: center; padding: 24px; background: radial-gradient(circle, #FFD3AB, #FBE5E0); }
 .beep-boom .inner { display: grid; gap: 10px; justify-items: center; animation: flash-bad .6s ease-out both; }
-.beep-boom .big { font-size: 110px; line-height: 1; --contact-inset: 18%; --contact-y: -2%; }
+.beep-boom .big { position: relative; line-height: 1; --contact-inset: 18%; --contact-y: -2%; }
+.beep-boom .big .clay-art { width: 150px; height: 150px; }
+.beep-boom .big::before { content: ""; position: absolute; z-index: -2; inset: -30%; border-radius: 50%; background: radial-gradient(circle, #FFE08A, #FF8A5B 40%, #FF8A5B00 70%); animation: beep-burst .55s var(--ease-out) both; }
+@keyframes beep-burst { 0% { opacity: 0; transform: scale(.2); } 60% { opacity: 1; transform: scale(1.1); } 100% { opacity: .9; transform: scale(1); } }
 .beep-boom .big > .clay-lift { animation: clay-drop .5s var(--ease-spring) both; }
 .beep-boom h2 { font-size: clamp(28px, 8vw, 40px); font-weight: 900; color: var(--plum); animation: ui-lift-in .35s var(--ease-out) .2s both; }
 .beep-boom p { color: var(--plum); font-weight: 700; animation: ui-lift-in .35s var(--ease-out) .28s both; }

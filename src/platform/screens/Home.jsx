@@ -67,13 +67,15 @@ export function Home() {
   const { roster, sound, haptics, version } = usePlatform();
   // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
   const launching = useRef(false);
+  const launchTimer = useRef(0);
+  useEffect(() => () => clearTimeout(launchTimer.current), []);
   const [launchId, setLaunchId] = useState(null);
   const open = (game) => {
     if (launching.current) return;
     launching.current = true;
     setLaunchId(game.id);
     sound.play('pop'); haptics.vibrate('selection');
-    setTimeout(() => { navigate(`/game/${game.id}`); launching.current = false; }, wait(140));
+    launchTimer.current = setTimeout(() => { navigate(`/game/${game.id}`); launching.current = false; }, wait(140));
   };
   const cards = GAMES;
   return (

@@ -36,10 +36,7 @@
 .game-card .icon.clay-stage > .clay-lift { transform: translate(calc(var(--tx, 0) * -5px), calc(var(--ty, 0) * -5px)); transition: transform .16s var(--ease-out); animation: ui-pop-in .45s var(--ease-spring) backwards; animation-delay: calc(var(--delay, 0ms) + 120ms); }
 .game-card .icon.clay-stage::after { animation: clay-shadow-land .5s var(--ease-spring) both; animation-delay: calc(var(--delay, 0ms) + 120ms); }
 /* الطبقة الثلاثية حيث تُدعم overflow: clip (Safari 16+): isolation تُسطّح preserve-3d فتُستبدل بـ z-index */
-@supports (overflow: clip) {
-  .game-card { overflow: clip; isolation: auto; z-index: 0; transform-style: preserve-3d; }
-  .game-card .icon { transform: translateZ(22px); }
-}
+/* بارالاكس ثنائي الأبعاد فقط: طبقة preserve-3d كانت ترفع كل بطاقة وأيقونتها إلى طبقات تركيب دائمة (35 طبقة في السكون). */
 .game-card.is-launch { animation: ui-launch .16s ease-in forwards; }
 .game-card.is-launch .icon.clay-stage > .clay-lift { transform: scale(1.15); }
 @keyframes ui-card-pop { 0% { opacity: 0; transform: translateY(20px) scale(.94); } 70% { opacity: 1; transform: translateY(-3px) scale(1.01); } 100% { transform: none; } }
@@ -89,7 +86,7 @@
 
 /* الستار عند بدء/إعادة اللعبة (Play.jsx): ثابت، بلا لمس، يُزال بمؤقّت ولا يُصيَّر تحت تقليل الحركة */
 .game-curtain { position: fixed; inset: 0; z-index: 315; pointer-events: none; display: grid; place-items: center;
-  background: var(--game-accent); background: color-mix(in srgb, var(--game-accent) 85%, #fff);
+  background: radial-gradient(70% 45% at 50% 50%, #FFFFFF40, #FFFFFF00 70%), var(--top-light), color-mix(in srgb, var(--game-accent) 85%, #fff);
   transform-origin: 50% 100%; animation: curtain-wipe .48s var(--ease-snap) both; }
 .game-curtain .clay-stage > .clay-lift { animation: ui-wobble .48s ease-in-out both; }
 .game-curtain .clay-stage::after { animation: none; --clay-contact: rgba(var(--clay-ink), .38); }
@@ -102,6 +99,7 @@
 .setting .text b { display: block; font-size: 16px; }
 .setting .text small { color: var(--muted); font-size: 13px; }
 /* المفتاح (منطقي: --flow) */
+.switch::before { content: ""; position: absolute; inset: -6px 0; }   /* هدف لمس ≥44px دون تغيير الشكل */
 .switch { width: 54px; height: 32px; border-radius: 999px; background: #DCCAE6; border: 1px solid var(--stroke-strong); position: relative; flex: 0 0 auto; box-shadow: inset 0 2px 3px rgba(53,37,71,.18); transition: background-color .2s ease; min-height: 32px; }
 .switch::after { content: ""; position: absolute; top: 3px; inset-inline-start: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 2px 3px rgba(53,37,71,.28), inset 0 -2px 0 #EFE6F2; transition: transform .28s var(--ease-spring); transform-origin: 50% 50%; }
 .switch[aria-checked="true"] { background: var(--success); box-shadow: inset 0 2px 3px rgba(0,0,0,.18); }
@@ -128,12 +126,12 @@
 @keyframes splash-drift-sm { from { transform: scale(.7); } to { transform: translateX(calc(var(--flow) * 12vw)) scale(.7); } }
 /* بالونان بخطوط الهوية وسلّة ذهبية */
 .splash-balloon { position: absolute; width: 14vw; height: 17vw; max-width: 64px; max-height: 78px; border-radius: 50% 50% 48% 48% / 60% 60% 40% 40%; will-change: transform;
-  background: repeating-linear-gradient(90deg, #9250BD 0 12%, #FFF3DA 12% 24%); box-shadow: inset -6px -8px 0 #00000014, 0 6px 8px rgba(var(--clay-ink), .18);
+  background: radial-gradient(circle at 32% 26%, #FFFFFFB8, #FFFFFF00 42%), linear-gradient(90deg, #00000000 50%, #00000033), repeating-radial-gradient(ellipse 140% 120% at 50% 130%, #9250BD 0 5%, #FFF3DA 5% 10%); box-shadow: inset -6px -8px 0 #00000014; filter: drop-shadow(0 6px 4px rgba(var(--clay-ink), .22));
   animation: splash-bob 4.2s ease-in-out infinite; }
 .splash-balloon::after { content: ""; position: absolute; left: 50%; bottom: -26%; width: 34%; height: 22%; transform: translateX(-50%); border-radius: 3px 3px 5px 5px; background: #C6902F; box-shadow: inset 0 2px 0 #FFE8A1; }
 .splash-balloon::before { content: ""; position: absolute; left: 50%; bottom: -12%; width: 2px; height: 14%; transform: translateX(-50%); background: #6A3A8A; }
 .splash-balloon:nth-child(3) { top: 8%; inset-inline-start: 7%; }
-.splash-balloon:nth-child(4) { top: 13%; inset-inline-end: 8%; background: repeating-linear-gradient(90deg, #18B7BE 0 12%, #FFF3DA 12% 24%); animation-delay: -2.1s; transform: scale(.8); }
+.splash-balloon:nth-child(4) { top: 13%; inset-inline-end: 8%; background: radial-gradient(circle at 32% 26%, #FFFFFFB8, #FFFFFF00 42%), linear-gradient(90deg, #00000000 50%, #00000033), repeating-radial-gradient(ellipse 140% 120% at 50% 130%, #18B7BE 0 5%, #FFF3DA 5% 10%); animation-delay: -2.1s; transform: scale(.8); }
 @keyframes splash-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
 /* أربع نجوم ذهبية */
 .splash-star { position: absolute; width: 14px; height: 14px; background: #FFC94D; clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); animation: ui-sparkle 2.2s ease-in-out infinite; }
@@ -163,3 +161,6 @@
 .credits-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; line-height: 1.7; max-height: 50vh; overflow: auto; transform-origin: 50% 0; animation: ui-unfold .3s var(--ease-out) both; }
 .credits-list li { padding: 8px 10px; border-radius: 12px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); overflow-wrap: anywhere; }
 .credits-list a { color: var(--accent, inherit); text-decoration: underline; }
+
+/* دخول الشاشة لا يُستهلك خلف شاشة البداية: يتوقف حتى تزول */
+body:has(.splash) .screen, body:has(.splash) .screen * { animation-play-state: paused; }

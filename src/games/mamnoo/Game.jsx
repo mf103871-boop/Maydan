@@ -68,10 +68,12 @@ function Round({ state, dispatch, api, source }) {
           <div className="grow"><b style={{ color: team.color }}>{team.name}</b><small>صح {state.tally.correct} · ممنوع {state.tally.buzz} · تخطي {state.tally.skip}</small></div>
           <span className="badge"><b key={state.scores[team.id]}>{state.scores[team.id]}</b></span>
         </div>
-        <div className={`mamnoo-card ${flash}`} key={state.card.id}>
+        <div className={`mamnoo-judge ${flash}`}>
+        <div className="mamnoo-card" key={state.card.id}>
           <div className="mamnoo-word">{state.card.word}</div>
           <div className="mamnoo-cat">{state.card.category}</div>
           <div className="mamnoo-forbidden" aria-label="الكلمات الممنوعة">{state.card.forbidden.map((w) => <span key={w}>{w}</span>)}</div>
+        </div>
         </div>
         <div className="mamnoo-buttons">
           <Button variant="success" onClick={() => act('CORRECT', 'correct', 'success', 'flash-good')}>✅ صح +1</Button>

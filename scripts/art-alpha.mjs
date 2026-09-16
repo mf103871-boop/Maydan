@@ -20,6 +20,21 @@ export const SHEETS = ['avatars', 'game-icons', 'trophy'];
 // شبكة الخلايا لكل لوحة (أعمدة × صفوف): أي كتلة متصلة تتجاوز حدود خليتها تُقصّ من الخلايا المجاورة
 // (شعر عائلة «مين فينا؟» كان يتسرب إلى خلية قناع «فبركة» فيظهر شريطًا داكنًا بجانب القناع).
 export const CELLS = { avatars: [2, 2], 'game-icons': [3, 2], trophy: [1, 1] };
+// حواف تُريَّش بعد القصّ: عائلة «مين فينا؟» تلامس حدّ خليتها الأيسر (كان شعرها يتجاوزه)، فبدل قطع مستقيم
+// يتلاشى الشعر تدريجيًا على 28 بكسل. [عمود, صف, الحافة, العرض]
+export const FEATHER = { 'game-icons': [[2, 1, 'left', 28]] };
+
+export function featherEdges(data, width, height, [cols, rows], edges = []) {
+  const cw = width / cols, ch = height / rows;
+  for (const [cx, cy, edge, px] of edges) {
+    const x0 = Math.round(cx * cw), y0 = Math.round(cy * ch), x1 = Math.round((cx + 1) * cw), y1 = Math.round((cy + 1) * ch);
+    for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
+      const d = edge === 'left' ? x - x0 : edge === 'right' ? x1 - 1 - x : edge === 'top' ? y - y0 : y1 - 1 - y;
+      if (d >= px) continue;
+      const i = (y * width + x) * 4 + 3; data[i] = Math.round(data[i] * (d / px));
+    }
+  }
+}
 const T_BG = 42;   // مسافة لونية أقل من هذا = خلفية صرفة (تشمل الظلال الباهتة)
 const T_FG = 110;  // أكثر من هذا = رسم صرف؛ بينهما ألفا متدرجة
 
@@ -92,6 +107,7 @@ async function process_(sharp) {
     const { data, info } = await sharp(input).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
     const { out, bg, removed } = keyBackground(data, info.width, info.height);
     const erased = clipToCells(out, info.width, info.height, CELLS[name] || [1, 1]);
+    featherEdges(out, info.width, info.height, CELLS[name] || [1, 1], FEATHER[name] || []);
     await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } }).webp({ quality: 88, alphaQuality: 90, effort: 5 }).toFile(output);
     const bytes = (await stat(output)).size;
     console.log(`${name}: خلفية ${bg.map(Math.round).join(',')} · أُزيل ${(removed * 100).toFixed(1)}% · قُصّ ${erased} بكسل عبر حدود الخلايا · ${(bytes / 1024).toFixed(0)} ك.ب`);

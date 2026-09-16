@@ -4,7 +4,7 @@
 
 /* ── البطاقة: تنقلب من الأعلى عند كل بطاقة (key=card.id)؛ صح = غسلة خضراء (ui.css .flash-good::after) ، ممنوع = اهتزاز ── */
 .mamnoo-card { position: relative; border-radius: 26px; padding: 18px; background: var(--top-light), linear-gradient(160deg, rgba(255,92,138,.16), var(--surface) 65%); border: 1px solid rgba(255,92,138,.45); box-shadow: var(--shadow-lift-1); text-align: center; transform-origin: 50% 0; animation: ui-flip-in .4s var(--ease-out) both; }
-.mamnoo-card.shake { animation: flash-bad .5s ease-out both; }
+.mamnoo-judge.shake { animation: flash-bad .5s ease-out both; }
 .mamnoo-card.flash-good::after { border-radius: 26px; }
 .mamnoo-word { font-size: clamp(34px, 10vw, 48px); font-weight: 900; line-height: 1.2; color: var(--plum); animation: ui-pop-in .4s var(--ease-spring) .1s both; }
 .mamnoo-cat { font-size: 13px; color: var(--muted); font-weight: 800; margin-top: 4px; }
@@ -36,3 +36,5 @@
 .mamnoo-tally { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .mamnoo-tally span { padding: 8px 12px; border-radius: 12px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); font-weight: 800; animation: ui-pop-in .4s var(--ease-spring) both; animation-delay: calc(200ms + var(--k, 0) * 80ms); }
 .mamnoo-tally span:nth-child(2) { --k: 1; } .mamnoo-tally span:nth-child(3) { --k: 2; }
+
+.mamnoo-judge { position: relative; border-radius: 22px; }

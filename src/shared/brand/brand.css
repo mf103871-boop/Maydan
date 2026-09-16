@@ -101,7 +101,7 @@ button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { 
 .online-question .clay-art { width: 78px; height: 78px; }
 .online-home-card .clay-art { width: 76px; height: 76px; }
 .about-list .clay-art { width: 28px; height: 28px; }
-.game-curtain .clay-art { width: 96px; height: 96px; }
+.game-curtain .clay-art { width: 140px; height: 140px; }
 @media (max-width: 400px) { .online-home-card .clay-art { width: 58px; height: 58px; } }
 @media (max-width: 350px) { .roster-faces .clay-avatar { width: 33px; height: 33px; } }
 
@@ -131,6 +131,7 @@ button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { 
 .beep-question, .mamnoo-word, .jabeen-word, .meen-count .go { color: var(--plum); }
 .jabeen-stage.is-good { background: #D5F1E5; }
 .jabeen-stage.is-skip { background: #FADDD6; }
+.jabeen-stage.is-good .muted, .jabeen-stage.is-skip .muted { color: var(--plum); }   /* العدّاد يبقى ≥4.5:1 أثناء الومضة */
 .jabeen-touch .ok { color: #165F4D; }
 .jabeen-touch .skip, .mamnoo-forbidden span { color: #A42F32; }
 .jabeen-perm { color: #145B71; }
@@ -138,8 +139,8 @@ button:active > .clay-stage > .clay-lift, .clay-stage.is-pressed > .clay-lift { 
 /* ── الحالة الفارغة للاعبين + قائمة «عن المنصة» ── */
 .roster-empty { display: flex; justify-content: center; gap: 6px; padding: 10px 0 4px; }
 .roster-empty .clay-stage { --contact-inset: 20%; }
-.roster-empty .clay-stage > .clay-lift { animation: clay-drop .6s var(--ease-spring) both, clay-float 3.4s ease-in-out calc(.6s + var(--i, 0) * 260ms) infinite; }
-.roster-empty .clay-stage::after { animation: clay-shadow-land .6s both, clay-shadow-breathe 3.4s ease-in-out calc(.6s + var(--i, 0) * 260ms) infinite; }
+.roster-empty .clay-stage > .clay-lift { animation: clay-drop .6s var(--ease-spring) both, clay-float 3.4s ease-in-out calc(.6s + var(--i, 0) * 260ms) 2; }
+.roster-empty .clay-stage::after { animation: clay-shadow-land .6s both, clay-shadow-breathe 3.4s ease-in-out calc(.6s + var(--i, 0) * 260ms) 2; }
 
 /* ═══ الأسطح: لغة حافة صلصالية واحدة — ضوء علوي، حافة صلبة 3–5px، ظل محيط ناعم ═══ */
 
@@ -219,4 +220,6 @@ button.card:active { transform: translateY(var(--ledge)); transition-duration: .
 .podium-col[data-rank="1"] .block { background: var(--top-light), linear-gradient(145deg, #FFDE7A, #F8BA37); border-color: #FFE8A1; color: var(--plum); box-shadow: inset 0 3px 2px #fff9, 0 5px 0 #C6902F, 0 12px 20px #C6902F33; }
 .podium-col[data-rank="3"] .block { background: var(--top-light), linear-gradient(145deg, #60D5D5, #1598A7); border-color: #83DFDF; box-shadow: inset 0 3px 2px #fff8, 0 5px 0 #087985, 0 10px 18px #08798533; }
 .podium-col[data-rank="1"] .block::after { content: ""; position: absolute; inset: -8px; border-radius: inherit; box-shadow: 0 0 0 8px #FFC94D3A, 0 0 24px #FFC94D66; opacity: 0; pointer-events: none; animation: ui-glow 2.2s ease-in-out 1.6s 3; }
-.podium-col .rank { font-size: 18px; line-height: 1; opacity: .85; }
+.podium-col .rank { font-size: 18px; line-height: 1; opacity: 1; }
+.podium-col[data-rank="3"] .block { color: var(--plum); }   /* أبيض على الفيروزي الفاتح كان 1.45:1 */
+.podium-col[data-rank="2"] .block .rank { text-shadow: 0 1px 0 #61347C, 0 0 2px #61347C; }

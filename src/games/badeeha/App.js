@@ -1329,6 +1329,8 @@ function MaydanBeta({ api } = {}) {
     }, [effectiveSoundOn]),
     useEffect(() => {
       if (!hydrated || (screen !== "board" && screen !== "question")) return;
+      // أثناء مهلة الحسم (650ms) النقاط مُسجَّلة والسؤال ما زال مفتوحًا؛ لا تُحفظ لقطة بهذه الحالة المختلطة.
+      if (judgingRef.current) return;
       const session = {
         version: 2,
         updatedAt: Date.now(),

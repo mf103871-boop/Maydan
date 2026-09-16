@@ -132,7 +132,7 @@ function BombRound({ state, dispatch, api, source, random }) {
     return (
       <div className="beep-boom" role="alert">
         <div className="inner">
-          <div className="big clay-stage" aria-hidden="true"><span className="clay-lift">💥</span></div>
+          <div className="big clay-stage" aria-hidden="true"><span className="clay-lift"><GameArtwork game="beep" /></span></div>
           <h2>انفجرت بيد {victim.name}!</h2>
           <p>{livesLeft > 0 ? `بقي له ${livesLeft === 1 ? 'حياة واحدة' : `${livesLeft} أرواح`}` : 'خرج من اللعبة'}</p>
           <Hearts lives={livesLeft} broken={livesLeft} />
@@ -159,7 +159,7 @@ function PlayersStrip({ state, bump = null }) {
       {state.players.map((p, i) => (
         <span key={p.id} className={`beep-chip ${state.eliminated.includes(p.id) ? 'is-out' : ''} ${i === state.turn ? 'is-turn' : ''} ${bump === p.id ? 'is-bumped' : ''}`} style={{ '--i': Math.min(i, 9) }}>
           <Avatar player={p} /> {p.name}
-          {state.mode === 'three' ? <b key={state.scores[p.id]}>{state.scores[p.id]}</b> : <Hearts lives={state.lives[p.id]} broken={state.boomPlayerId === p.id ? state.lives[p.id] : -1} />}
+          {state.mode === 'three' ? <b key={state.scores[p.id]}>{state.scores[p.id]}</b> : <Hearts lives={state.lives[p.id]} broken={state.phase === 'boom' && state.boomPlayerId === p.id ? state.lives[p.id] : -1} />}
         </span>
       ))}
     </div>

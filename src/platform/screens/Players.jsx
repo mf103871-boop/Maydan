@@ -19,7 +19,9 @@ export function Players() {
   const rosterRef = useRef(roster);
   const leaveTimer = useRef(0);
   useEffect(() => { rosterRef.current = roster; }, [roster]);
-  useEffect(() => () => clearTimeout(leaveTimer.current), []);
+  const pendingRemove = useRef(null);
+  // مغادرة الشاشة أو حذف ثانٍ قبل انقضاء المهلة ينفّذ الحذف المعلّق بدل إلغائه.
+  useEffect(() => () => { clearTimeout(leaveTimer.current); if (pendingRemove.current) pendingRemove.current(); }, []);
   const add = () => {
     const r = addPlayer(roster, name, emoji);
     if (!r.ok) { setError(r.message); return; }
@@ -31,11 +33,19 @@ export function Players() {
     setRemoving(null);
     setLeavingId(player.id);
     clearTimeout(leaveTimer.current);
-    leaveTimer.current = setTimeout(() => {
-      setRoster(rosterRef.current.filter((p) => p.id !== player.id));
+    if (pendingRemove.current) pendingRemove.current();
+    const commit = () => {
+      pendingRemove.current = null;
+      const next = rosterRef.current.filter((p) => p.id !== player.id);
+      rosterRef.current = next;
+      setRoster(next);
       setLeavingId(null);
       toast(`حُذف ${player.name}`);
-    }, wait(220));
+      // التركيز يتبع القائمة بدل السقوط إلى body بعد زوال زر الحذف.
+      requestAnimationFrame(() => { const el = document.querySelector('.score-row button') || document.querySelector('.screen input.input'); if (el) el.focus(); });
+    };
+    pendingRemove.current = commit;
+    leaveTimer.current = setTimeout(commit, wait(220));
   };
   return (
     <Screen dir={getDirection()} className="stack" aria-label="دفتر اللاعبين">
