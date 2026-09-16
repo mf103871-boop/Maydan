@@ -13,9 +13,9 @@
     "APPLE_SERVICES_ID": "",
     "GOOGLE_CLIENT_ID": "",
     "PADDLE_ENV": "sandbox",
-    "PADDLE_CLIENT_TOKEN": "",
-    "PADDLE_PRICE_MONTHLY": "",
-    "PADDLE_PRICE_YEARLY": ""
+    "PADDLE_CLIENT_TOKEN": "test_9ce6eae313e37236bdd56ff84c0",
+    "PADDLE_PRICE_MONTHLY": "pri_01m2p9gbanyptbz5hdf350ktet",
+    "PADDLE_PRICE_YEARLY": "pri_01m2p9gbmv4tyx2q203e035ye9"
   },
   "durable_objects": {
     "bindings": [
