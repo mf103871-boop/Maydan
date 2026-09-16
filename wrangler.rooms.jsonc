@@ -25,9 +25,9 @@
   },
   // القاعدة نفسها التي يستعملها maydan-game (حساب واحد يخدم الواجهتين). اختيارية
   // حتى تُنشأ: أزل التعليق وضع المعرّف نفسه الذي وضعته في wrangler.jsonc.
-  // "d1_databases": [
-  //   { "binding": "DB", "database_name": "maydan-accounts", "database_id": "<database_id>", "migrations_dir": "server/migrations" }
-  // ],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "maydan-accounts", "database_id": "9d863a31-6a5c-45f1-91f5-79ad400c3f6e", "migrations_dir": "server/migrations" }
+  ],
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
   ],

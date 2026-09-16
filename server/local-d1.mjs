@@ -66,7 +66,7 @@ export function migrationStatements(directory = MIGRATIONS_DIR) {
   const statements = [];
   for (const name of files) {
     const text = readFileSync(path.join(directory, name), 'utf8')
-      .split('\n').map((line) => line.replace(/--.*$/, '')).join('\n');
+      .split(/\r?\n/).map((line) => line.replace(/--.*$/, '')).join('\n');
     for (const part of text.split(';')) {
       const statement = part.replace(/\s+/g, ' ').trim();
       if (statement) statements.push(`${statement};`);

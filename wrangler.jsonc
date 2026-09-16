@@ -34,9 +34,9 @@
   // أنشئها مرة واحدة بـ`npx wrangler d1 create maydan-accounts`، أزل التعليق عن
   // الكتلة التالية وضع المعرّف الذي يطبعه الأمر، ثم `npm run db:migrate`.
   // لا تنشر بمعرّف وهمي: Cloudflare يرفض النشر كله حين لا تُطابق القاعدة الحساب.
-  // "d1_databases": [
-  //   { "binding": "DB", "database_name": "maydan-accounts", "database_id": "<database_id>", "migrations_dir": "server/migrations" }
-  // ],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "maydan-accounts", "database_id": "9d863a31-6a5c-45f1-91f5-79ad400c3f6e", "migrations_dir": "server/migrations" }
+  ],
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
   ],
