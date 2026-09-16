@@ -8,6 +8,7 @@ import { GRACE_MS, PRODUCTS, TRIAL_GAMES } from '../src/shared/account/config.js
 import { parseSignature, productOf, subscriptionRow } from '../server/accounts/paddle.mjs';
 import { readSubscriptionStatus } from '../server/accounts/apple.mjs';
 import { migrationStatements } from '../server/local-d1.mjs';
+import { routeRequest } from '../server/worker.mjs';
 
 const NOW = 1_800_000_000_000;
 const row = (extra) => ({ source: 'paddle', external_id: 'sub_1', product: PRODUCTS.monthly, status: 'active', until: NOW + 1000, will_renew: 1, ...extra });
@@ -127,4 +128,17 @@ test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec'
   // معاملة آبل الواحدة لا تُربط بحسابين: المفتاح الأساسي يمنع ذلك.
   assert.ok(statements.some((s) => s.includes('subscriptions') && s.includes('PRIMARY KEY (source, external_id)')));
   assert.ok(TRIAL_GAMES.length === 5);
+});
+
+// بلا ربط D1 (قبل إنشاء القاعدة) ينشر العامل ويعمل: الحسابات 404 والغرف كما كانت.
+test('بلا DB: مسارات الحسابات تردّ 404 و/health يعلن accounts:false', async () => {
+  const env = { ALLOWED_ORIGINS: 'https://maydan.test' };
+  const headers = { origin: 'https://maydan.test' };
+  const health = await (await routeRequest(new Request('https://maydan.test/health'), env)).json();
+  assert.equal(health.accounts, false);
+  for (const path of ['/api/me', '/api/billing/config', '/api/auth/apple/start']) {
+    const response = await routeRequest(new Request(`https://maydan.test${path}`, { headers }), env);
+    assert.equal(response.status, 404, path);
+    assert.equal((await response.json()).error, 'NOT_FOUND', path);
+  }
 });

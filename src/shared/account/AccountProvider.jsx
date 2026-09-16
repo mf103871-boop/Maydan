@@ -20,6 +20,8 @@ import { navigate, useRoute } from '../../platform/router.js';
 const EMPTY = Object.freeze({});
 const codeOf = (error) => (error && error.code) || 'NETWORK';
 const isAuthError = (code) => code === 'AUTH_EXPIRED' || code === 'AUTH_REQUIRED';
+// خادم بلا قاعدة D1 يردّ 404 على مسارات الحسابات كلها: نعامله كغياب الخادم.
+const isDisabled = (code) => code === 'NOT_FOUND';
 
 // نتيجة الغلاف قد تصل كمصفوفة أو ككائن يلفّها: كلاهما مقبول.
 function listOf(result, key) {
@@ -119,7 +121,9 @@ export function AccountProvider({ children }) {
       flushPending();
       return next;
     } catch (err) {
-      if (isAuthError(codeOf(err))) clearLocalAuth();
+      const code = codeOf(err);
+      if (isAuthError(code)) clearLocalAuth();
+      if (isDisabled(code)) setOffline(true);
       return null;
     }
   }, [options, applyMe, flushPending, clearLocalAuth]);
@@ -180,6 +184,7 @@ export function AccountProvider({ children }) {
       });
     } catch (err) {
       productsRef.current = false; // محاولة أخرى ممكنة لاحقًا
+      if (isDisabled(codeOf(err))) setOffline(true);
     }
   }, [native, options]);
 
@@ -214,9 +219,14 @@ export function AccountProvider({ children }) {
     setBusy('signin');
     try {
       if (!native) {
-        // الويب: الخادم يتولّى المزوّد ثم يعيدنا إلى #/auth?code=
+        // الويب: الخادم يتولّى المزوّد ثم يعيدنا إلى #/auth?code=. قبل المغادرة
+        // نتأكد أن الحسابات مفعّلة على الخادم كي لا نهبط على صفحة 404.
         const url = authStartUrl(provider, { client: 'web' });
         if (!url) throw new ClientError('OFFLINE');
+        if (!billing) {
+          try { setBilling((await getBillingConfig(options())) || null); }
+          catch (err) { if (isDisabled(codeOf(err))) { setOffline(true); throw new ClientError('OFFLINE'); } }
+        }
         if (typeof location !== 'undefined') location.assign(url);
         return null;
       }
@@ -238,7 +248,7 @@ export function AccountProvider({ children }) {
     } finally {
       setBusy(false);
     }
-  }, [native, applySession, afterSignIn, consumeCode, waitForAuthReturn, handleError, toast]);
+  }, [native, billing, options, applySession, afterSignIn, consumeCode, waitForAuthReturn, handleError, toast]);
 
   const signOut = useCallback(async () => {
     setBusy('signout');

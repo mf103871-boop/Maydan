@@ -23,10 +23,11 @@
       { "name": "LIMITERS", "class_name": "RequestLimiter" }
     ]
   },
-  // القاعدة نفسها التي يستعملها maydan-game: حساب واحد يخدم الواجهتين.
-  "d1_databases": [
-    { "binding": "DB", "database_name": "maydan-accounts", "database_id": "REPLACE_WITH_D1_DATABASE_ID", "migrations_dir": "server/migrations" }
-  ],
+  // القاعدة نفسها التي يستعملها maydan-game (حساب واحد يخدم الواجهتين). اختيارية
+  // حتى تُنشأ: أزل التعليق وضع المعرّف نفسه الذي وضعته في wrangler.jsonc.
+  // "d1_databases": [
+  //   { "binding": "DB", "database_name": "maydan-accounts", "database_id": "<database_id>", "migrations_dir": "server/migrations" }
+  // ],
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
   ],

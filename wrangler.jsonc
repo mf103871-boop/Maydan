@@ -29,12 +29,14 @@
       { "name": "LIMITERS", "class_name": "RequestLimiter" }
     ]
   },
-  // قاعدة الحسابات. أنشئها مرة واحدة بـ`wrangler d1 create maydan-accounts` وضع
-  // المعرّف الذي يطبعه هنا، ثم `npm run db:migrate`. بدون الربط تعمل الغرف كما
-  // كانت وتردّ مسارات /api/auth و/api/me بـ404.
-  "d1_databases": [
-    { "binding": "DB", "database_name": "maydan-accounts", "database_id": "REPLACE_WITH_D1_DATABASE_ID", "migrations_dir": "server/migrations" }
-  ],
+  // قاعدة الحسابات (اختيارية حتى تُنشأ): بدون الربط ينشر العامل ويعمل، والغرف كما
+  // كانت، وتردّ مسارات الحسابات 404 فتعمل الواجهة «دون اتصال» (قفل بلا شراء).
+  // أنشئها مرة واحدة بـ`npx wrangler d1 create maydan-accounts`، أزل التعليق عن
+  // الكتلة التالية وضع المعرّف الذي يطبعه الأمر، ثم `npm run db:migrate`.
+  // لا تنشر بمعرّف وهمي: Cloudflare يرفض النشر كله حين لا تُطابق القاعدة الحساب.
+  // "d1_databases": [
+  //   { "binding": "DB", "database_name": "maydan-accounts", "database_id": "<database_id>", "migrations_dir": "server/migrations" }
+  // ],
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
   ],

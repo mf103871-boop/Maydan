@@ -63,7 +63,7 @@ npm run cloudflare:check
 
 ## الحسابات واشتراك «ميدان بلس»
 
-الحسابات تحتاج قاعدة **D1** بالربط `DB` وأسرارًا للمزوّدين. أنشئ القاعدة مرة واحدة بـ`npx wrangler d1 create maydan-accounts`، ضع المعرّف الذي يطبعه مكان `REPLACE_WITH_D1_DATABASE_ID` في `wrangler.jsonc`، ثم شغّل `npm run db:migrate`. الخطوات الكاملة — الأسرار، ولوحات آبل وجوجل وPaddle، وsandbox مقابل الإنتاج — في `docs/ACCOUNTS.md`.
+الحسابات تحتاج قاعدة **D1** بالربط `DB` وأسرارًا للمزوّدين. أنشئ القاعدة مرة واحدة بـ`npx wrangler d1 create maydan-accounts`، أزل التعليق عن كتلة `d1_databases` في `wrangler.jsonc` و`wrangler.rooms.jsonc` وضع المعرّف الذي يطبعه الأمر، ثم شغّل `npm run db:migrate`. الكتلة معلَّقة حتى ذلك الحين لأن Cloudflare يرفض النشر بمعرّف قاعدة غير موجودة. الخطوات الكاملة — الأسرار، ولوحات آبل وجوجل وPaddle، وsandbox مقابل الإنتاج — في `docs/ACCOUNTS.md`.
 
 بدون ربط `DB` يبقى كل ما سبق يعمل كما هو: الغرف والملفات والوسائط، وتردّ مسارات `/api/auth` و`/api/me` بـ404.
 
