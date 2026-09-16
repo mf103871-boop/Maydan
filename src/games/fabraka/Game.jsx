@@ -294,7 +294,7 @@ export function Game({ api, players, onExit, savedSession = null, gameOptions = 
     return () => document.removeEventListener('visibilitychange', hide);
   }, []);
   useEffect(() => {
-    if (state.phase === 'over') { api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire(); }
+    if (state.phase === 'over') { api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire(); api.matchOver?.(); }
     else if (state.phase === 'reveal') { api.sound.play(state.revealed ? 'reveal' : 'drumroll'); }
   }, [state.phase, state.revealIndex, state.revealed]);
   useEffect(() => {

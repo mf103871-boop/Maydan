@@ -11,12 +11,30 @@
     "run_worker_first": ["/api", "/api/*", "/health"],
     "not_found_handling": "single-page-application"
   },
+  // إعدادات عامة (غير سرّية). الأسرار عبر `wrangler secret put` — راجع docs/ACCOUNTS.md.
+  "vars": {
+    "APP_ORIGIN": "",
+    "EXTRA_ORIGINS": "maydan://app",
+    "APPLE_BUNDLE_ID": "",
+    "APPLE_SERVICES_ID": "",
+    "GOOGLE_CLIENT_ID": "",
+    "PADDLE_ENV": "sandbox",
+    "PADDLE_CLIENT_TOKEN": "",
+    "PADDLE_PRICE_MONTHLY": "",
+    "PADDLE_PRICE_YEARLY": ""
+  },
   "durable_objects": {
     "bindings": [
       { "name": "ROOMS", "class_name": "Room" },
       { "name": "LIMITERS", "class_name": "RequestLimiter" }
     ]
   },
+  // قاعدة الحسابات. أنشئها مرة واحدة بـ`wrangler d1 create maydan-accounts` وضع
+  // المعرّف الذي يطبعه هنا، ثم `npm run db:migrate`. بدون الربط تعمل الغرف كما
+  // كانت وتردّ مسارات /api/auth و/api/me بـ404.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "maydan-accounts", "database_id": "REPLACE_WITH_D1_DATABASE_ID", "migrations_dir": "server/migrations" }
+  ],
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
   ],

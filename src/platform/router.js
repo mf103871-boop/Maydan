@@ -11,14 +11,24 @@ const ROUTES = [
   ['players', /^\/players$/],
   ['settings', /^\/settings$/],
   ['about', /^\/about$/],
+  ['auth', /^\/auth$/],
 ];
 
+// عودة الدخول تصل كـ `#/auth?code=…`: الاستعلام يُفصل عن المسار (فيبقى المكدس
+// والمطابقة على المسار وحده) ثم يُدمج في params كي يقرأ AccountProvider الرمز.
 export function parseHash(hash) {
   const raw = String(hash || '').replace(/^#/, '') || '/';
-  const path = raw.startsWith('/') ? raw : `/${raw}`;
+  const full = raw.startsWith('/') ? raw : `/${raw}`;
+  const mark = full.indexOf('?');
+  const path = mark === -1 ? full : full.slice(0, mark) || '/';
+  const query = {};
+  if (mark !== -1) {
+    try { for (const [key, value] of new URLSearchParams(full.slice(mark + 1))) query[key] = value; }
+    catch (error) { /* استعلام تالف: يُتجاهل */ }
+  }
   for (const [name, re] of ROUTES) {
     const m = path.match(re);
-    if (m) return { name, path, params: m[1] ? { id: m[1] } : {} };
+    if (m) return { name, path, params: m[1] ? { id: m[1], ...query } : { ...query } };
   }
   return { name: 'home', path: '/', params: {} };
 }

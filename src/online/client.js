@@ -21,12 +21,17 @@ export function newCredentials() {
   const hex = (length) => Array.from(crypto.getRandomValues(new Uint8Array(length)), (b) => b.toString(16).padStart(2, '0')).join('');
   return { id: hex(16), token: hex(32) };
 }
-export async function post(server, path, data, fetchImpl = fetch) {
+// الوسيط الرابع يقبل دالة fetch (كما كان) أو { headers, fetchImpl }: الترويسات
+// تحمل Bearer الحساب لإنشاء الغرف والدخول إليها دون تغيير المستدعين القدامى.
+export async function post(server, path, data, options = fetch) {
+  const asFunction = typeof options === 'function';
+  const fetchImpl = asFunction ? options : (options && options.fetchImpl) || fetch;
+  const extraHeaders = asFunction ? null : options && options.headers;
   if (!validateServerUrl(server)) throw new ClientError('CONFIG');
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15_000);
   try {
-    const response = await fetchImpl(`${server}${path}`, { method: 'POST', headers: { 'content-type': 'application/json' },
+    const response = await fetchImpl(`${server}${path}`, { method: 'POST', headers: { 'content-type': 'application/json', ...(extraHeaders || {}) },
       body: JSON.stringify(data), signal: controller.signal, credentials: 'omit', cache: 'no-store' });
     let result;
     try { result = await response.json(); } catch { throw new ClientError('NETWORK'); }

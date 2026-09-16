@@ -21,6 +21,9 @@ import { Settings } from './screens/Settings.jsx';
 import { About } from './screens/About.jsx';
 import { Online } from '../online/Online.jsx';
 import onlineCss from '../online/online.css';
+import { AccountProvider } from '../shared/account/AccountProvider.jsx';
+import { PaywallHost } from '../shared/account/PaywallHost.jsx';
+import accountCss from '../shared/account/account.css';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
@@ -34,7 +37,8 @@ function ScreenHost({ route }) {
   // clicks can reach. The directional enter animation carries the transition
   // on its own.
   let screen = null;
-  if (route.name === 'home') screen = <Home key="home" />;
+  // عودة الدخول (#/auth?code=) تعرض الرئيسية بينما يبدّل AccountProvider الرمز بجلسة.
+  if (route.name === 'home' || route.name === 'auth') screen = <Home key="home" />;
   else if (route.name === 'game') screen = <GameDetails key={`game-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'play') screen = <Play key={`play-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'players') screen = <Players key="players" />;
@@ -69,7 +73,8 @@ function Providers({ children }) {
   useEffect(() => { document.documentElement.dataset.reducedMotion = settings.reducedMotion ? 'true' : 'false'; }, [settings.reducedMotion]);
 
   const value = useMemo(() => ({ sound, haptics, confetti, toast, settings, setSettings, roster, setRoster, navigate, storage: platformStorage, version: VERSION }), [sound, haptics, toast, settings, setSettings, roster, setRoster]);
-  return <PlatformContext.Provider value={value}>{children}</PlatformContext.Provider>;
+  // الحساب داخل مزوّد المنصة: يحتاج التنبيهات (toast) والإعدادات، وتحتاجه كل الشاشات.
+  return <PlatformContext.Provider value={value}><AccountProvider>{children}</AccountProvider></PlatformContext.Provider>;
 }
 
 function Shell() {
@@ -99,8 +104,10 @@ function Shell() {
       >
         <ScreenHost route={route} />
       </ErrorBoundary>
+      <PaywallHost />
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
+      <style>{accountCss}</style>
     </>
   );
 }

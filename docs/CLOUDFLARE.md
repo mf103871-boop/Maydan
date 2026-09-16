@@ -61,6 +61,12 @@ npm run cloudflare:check
 
 `cloudflare:check` يبني النسخة ويجري فحص Wrangler باستخدام `--dry-run`؛ لا يرفعها. يشمل الفحص مباريات كاملة لفبركة ومين فينا على محرك Cloudflare المحلي، مع SQLite وإسبات الغرف واستعادة الاتصال. تبقى تجربة الهواتف الفعلية مفيدة للتحقق من حجم الخط ولوحة المفاتيح والصوت.
 
+## الحسابات واشتراك «ميدان بلس»
+
+الحسابات تحتاج قاعدة **D1** بالربط `DB` وأسرارًا للمزوّدين. أنشئ القاعدة مرة واحدة بـ`npx wrangler d1 create maydan-accounts`، ضع المعرّف الذي يطبعه مكان `REPLACE_WITH_D1_DATABASE_ID` في `wrangler.jsonc`، ثم شغّل `npm run db:migrate`. الخطوات الكاملة — الأسرار، ولوحات آبل وجوجل وPaddle، وsandbox مقابل الإنتاج — في `docs/ACCOUNTS.md`.
+
+بدون ربط `DB` يبقى كل ما سبق يعمل كما هو: الغرف والملفات والوسائط، وتردّ مسارات `/api/auth` و`/api/me` بـ404.
+
 ## الخيار الموجود سابقًا: GitHub Pages مع خادم منفصل
 
 ما زال `npm run rooms:deploy` ينشر **خادم الغرف فقط** وفق `wrangler.rooms.jsonc`. بعده تضبط عنوان الخادم في `online.config.json` وترفع الواجهة بنفسك إلى GitHub Pages، كما في `docs/ONLINE.md`.

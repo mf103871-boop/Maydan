@@ -16,6 +16,7 @@ import MaydanLogicBeta, {
   HINT_COST_PERCENT,
 } from "./logic.js";
 import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
+import { FREE_PACKS } from "../../shared/account/config.js";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
 import { mulberry32 } from "../../shared/lib/rng.js";
 import { arabicNormalize } from "../../shared/lib/arabicNormalize.js";
@@ -1204,7 +1205,20 @@ function MaydanBeta({ api } = {}) {
     platformSettings = (api && api.settings) || null,
     effectiveSoundOn = platformSettings ? platformSettings.soundOn !== !1 : soundOn,
     hapticsOn = platformSettings ? platformSettings.hapticsOn !== !1 : !0,
-    reducedMotion = platformSettings ? !!platformSettings.reducedMotion : !1;
+    reducedMotion = platformSettings ? !!platformSettings.reducedMotion : !1,
+    // الاستحقاقات تصل من شاشة اللعب عبر api.account؛ بلا مزوّد لا قفل إطلاقًا.
+    account = (api && api.account) || null,
+    premium = !!(account && account.premium),
+    packLocked = (categoryId) => !!account && account.lockedPack(categoryId);
+  // سقوط الاشتراك (انتهاء أو خروج) يسحب الحزم المقفولة من الاختيار كي لا تبدأ مباراة بها.
+  useEffect(() => {
+    if (premium) return;
+    setSelectedCategories((existing) =>
+      existing.some((categoryId) => packLocked(categoryId))
+        ? existing.filter((categoryId) => !packLocked(categoryId))
+        : existing,
+    );
+  }, [premium]); // eslint-disable-line react-hooks/exhaustive-deps
   function setScreen(next, dir) {
     (setNavDir(dir || "forward"), setScreenState(next));
   }
@@ -1515,6 +1529,11 @@ function MaydanBeta({ api } = {}) {
       setSetupError(""));
   }
   function toggleCategory(categoryId) {
+    // حزمة مقفولة: النقر يفتح جدار «ميدان بلس» بدل أن يختارها (وإلغاء اختيار قديم يبقى ممكنًا).
+    if (packLocked(categoryId) && !selectedCategories.includes(categoryId)) {
+      (account.openPaywall({ reason: "pack", pack: categoryId }), playSfx("click"));
+      return;
+    }
     (setSetupError(""),
       setSelectedCategories((existing) =>
         existing.includes(categoryId)
@@ -1533,18 +1552,21 @@ function MaydanBeta({ api } = {}) {
     ),
       playSfx("click"));
   }
+  // مرشّح «مجاني» لا يعرفه logic.js (وهو لا يُمسّ): نمرّر "all" ثم نقصر النتيجة على الحزم المجانية.
   const visibleCategories = filterCategories(CATS, {
-    filter: categoryFilter,
+    filter: categoryFilter === "free" ? "all" : categoryFilter,
     search: categorySearch,
     favorites,
-  });
+  }).filter((category) => categoryFilter !== "free" || FREE_PACKS.includes(category.id));
   function randomCategories() {
-    if (visibleCategories.length < 6) {
-      setSetupError("وسّع التصفية أولًا؛ النتائج الحالية أقل من ست فئات");
+    // الاختيار العشوائي لا يسحب حزمة مقفولة أبدًا: نستبعدها من البركة قبل الخلط.
+    const pool = visibleCategories.filter((category) => !packLocked(category.id));
+    if (pool.length < 6) {
+      setSetupError("الفئات المتاحة أقل من ست؛ اشترك في ميدان بلس أو وسّع التصفية");
       return;
     }
     (setSelectedCategories(
-      logic.shuffled(visibleCategories.map((category) => category.id)).slice(0, 6),
+      logic.shuffled(pool.map((category) => category.id)).slice(0, 6),
     ),
       setSetupError(""),
       pulseFx("shuffle", setShuffled, !0, 600, !1),
@@ -1558,6 +1580,11 @@ function MaydanBeta({ api } = {}) {
     }
     if (selectedCategories.length !== 6) {
       setSetupError("اختر ست فئات بالضبط");
+      return;
+    }
+    // حزمة مقفولة بقيت في الاختيار (لقطة قديمة أو سقوط اشتراك): جدار قبل بناء اللوحة.
+    if (selectedCategories.some((categoryId) => packLocked(categoryId))) {
+      (setSetupError("بعض الفئات المختارة ضمن ميدان بلس"), account.openPaywall({ reason: "pack" }));
       return;
     }
     let nextDeck;
@@ -1598,6 +1625,11 @@ function MaydanBeta({ api } = {}) {
       (betaRemoveKey(MAYDAN_BETA_KEYS.active),
         setSavedActive(null),
         toast("تعذر استعادة المباراة القديمة"));
+      return;
+    }
+    // المباراة المحفوظة تبقى كما هي؛ الجدار فقط يمنع استئنافها بحزم صارت مقفولة.
+    if ((savedActive.selectedCategories || []).some((categoryId) => packLocked(categoryId))) {
+      account.openPaywall({ reason: "resume" });
       return;
     }
     const restoredDeck = logic.idsToDeck(CATS, savedActive.deck);
@@ -2434,6 +2466,7 @@ ${record.answered} من ${record.total} سؤالًا`,
     // المجموعات مشتقة من أنواع أسئلة الحزمة نفسها (79 حزمة = 61 معلومات + 7 خاصة + 11 وسائط).
     const filters = [
       ["all", "الكل"],
+      ["free", "مجاني"],
       ["info", "معلومات"],
       ["special", "خاصة"],
       ["media", "وسائط"],
@@ -2621,10 +2654,11 @@ ${record.answered} من ${record.total} سؤالًا`,
           visibleCategories.map((category, categoryIndex) => {
             const selected = selectedCategories.includes(category.id),
               favorite = favorites.includes(category.id),
+              locked = packLocked(category.id),
               order = selectedCategories.indexOf(category.id) + 1;
             return hBeta(
               "div",
-              { key: category.id, className: `m-category-pick ${selected ? "selected" : ""}`, style: { "--k": categoryIndex } },
+              { key: category.id, className: `m-category-pick ${selected ? "selected" : ""}${locked ? " is-locked" : ""}`, style: { "--k": categoryIndex } },
               hBeta(
                 "button",
                 {
@@ -2632,7 +2666,11 @@ ${record.answered} من ${record.total} سؤالًا`,
                   className: "m-category-main",
                   onClick: () => toggleCategory(category.id),
                   "aria-pressed": selected,
-                  "aria-label": `${selected ? "إلغاء" : "اختيار"} فئة ${category.name}`,
+                  // الزر يبقى قابلًا للنقر (النقر يفتح الجدار) لكنه يُعلن معطّلًا لقارئ الشاشة.
+                  "aria-disabled": locked ? "true" : undefined,
+                  "aria-label": locked
+                    ? `فئة ${category.name} ضمن ميدان بلس`
+                    : `${selected ? "إلغاء" : "اختيار"} فئة ${category.name}`,
                 },
                 selected && hBeta("span", { className: "m-order-badge" }, order),
                 hBeta(
@@ -2641,6 +2679,7 @@ ${record.answered} من ${record.total} سؤالًا`,
                   category.icon,
                 ),
                 hBeta("b", null, category.name),
+                locked && hBeta("span", { className: "m-lock" }, "🔒 بلس"),
                 hBeta("small", null, `حتى ${modeTopTier(activeMode)}`),
               ),
               hBeta(

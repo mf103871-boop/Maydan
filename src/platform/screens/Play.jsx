@@ -8,6 +8,7 @@ import { createWakeLock } from '../../shared/lib/wakeLock.js';
 import { flashScreen, stampScreen, vignette, prefersReducedMotion, wait } from '../../shared/fx/index.js';
 import { GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
 import { usePlatform } from '../context.js';
+import { useAccount } from '../../shared/account/context.js';
 import { navigate, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 import { GameFrame } from '../GameFrame.jsx';
@@ -19,6 +20,7 @@ const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersR
 export function Play({ id }) {
   const game = getGame(id);
   const platform = usePlatform();
+  const account = useAccount();
   const [stage, setStage] = useState(game && game.setup === 'self' ? 'play' : 'setup');
   const [players, setPlayers] = useState([]);
   const [teams, setTeams] = useState([]);
@@ -46,6 +48,9 @@ export function Play({ id }) {
   useEffect(() => { wakeLock.request(); return () => wakeLock.dispose(); }, [wakeLock]);
 
   const api = useMemo(() => ({
+    // الحساب والاستحقاقات: اللعبة تقرأ api.account، وتعلن انتهاء مباراة كاملة بـ api.matchOver().
+    account,
+    matchOver: () => account.markTrial(id),
     sound: platform.sound,
     haptics: platform.haptics,
     confetti: platform.confetti,
@@ -68,9 +73,12 @@ export function Play({ id }) {
     requestExit: () => { setInGame(false); navigate('/', { replace: true }); },
     restart: () => { setSavedSession(null); setSession((s) => s + 1); raiseCurtain(); },
     backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
-  }), [platform, storage, raiseCurtain]);
+  }), [platform, storage, raiseCurtain, account, id]);
 
   const start = useCallback((list) => {
+    // حراسة دفاعية: لعبة استُهلكت مباراتها المجانية لا تبدأ من الإعداد إلا بـ«ميدان بلس»
+    // (بَديهة setup:'self' لا تمرّ من هنا أصلًا، وقفلها في الحزم لا في المباراة).
+    if (account.gameAccess(id) === 'locked') { account.openPaywall({ reason: 'trial', game: id }); return; }
     setSavedSession(null);
     if (mode === 'teams') setTeams(list); else setPlayers(list);
     setInGame(true);
@@ -78,7 +86,7 @@ export function Play({ id }) {
     setSession((s) => s + 1);
     platform.sound.play('whoosh');
     raiseCurtain();
-  }, [mode, platform.sound, raiseCurtain]);
+  }, [mode, platform.sound, raiseCurtain, account, id]);
 
   if (!game) return <MissingGame id={id} />;
   const Component = game.Component;

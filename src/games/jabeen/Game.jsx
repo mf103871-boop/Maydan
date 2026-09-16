@@ -108,6 +108,7 @@ export function Game({ api, players, onExit }) {
     if (state.phase !== 'over') return;
     api.storage.set(SEEN_KEY, trimSeen(source.seen(), 1200));
     api.sound.play('fanfare'); api.haptics.vibrate('win'); api.confetti.fire();
+    api.matchOver?.();   // مباراة كاملة = تجربة «ميدان بلس» المجانية لهذه اللعبة
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const entrant = state.phase === 'over' ? null : currentEntrant(state);

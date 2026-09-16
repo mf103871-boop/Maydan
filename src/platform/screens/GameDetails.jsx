@@ -3,6 +3,7 @@ import React from 'react';
 import { Screen, TopBar, IconButton, Button, Card } from '../../shared/ui/components.jsx';
 import { IconBack, IconUsers, IconClock, IconPlay } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
+import { useAccount } from '../../shared/account/context.js';
 import { navigate, back, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 
@@ -24,11 +25,21 @@ export function MissingGame({ id }) {
 export function GameDetails({ id }) {
   const game = getGame(id);
   const { sound, haptics } = usePlatform();
+  const account = useAccount();
   if (!game) return <MissingGame id={id} />;
   const Icon = game.icon;
   const modeLabel = game.players.mode === 'teams' ? 'فرق' : game.players.mode === 'both' ? 'فردي أو فرق' : 'فردي';
   const online = ['meenfina', 'fabraka'].includes(game.id);
   const factDelay = (i) => ({ '--delay': `${250 + i * 50}ms` });
+  // القفل: بَديهة تُلعب دائمًا (القفل في حزمها) وبقية الألعاب مباراة واحدة مجانية ثم «ميدان بلس».
+  const packs = game.setup === 'self';
+  const locked = !packs && account.gameAccess(game.id) === 'locked';
+  const note = account.premium ? '' : packs ? '١٠ فئات مجانية، والباقي ضمن ميدان بلس'
+    : locked ? 'لعبت مباراتك المجانية — اشترك للمتابعة' : 'مباراة واحدة مجانية، ثم ميدان بلس';
+  const play = () => {
+    if (locked) { sound.play('click'); account.openPaywall({ reason: 'trial', game: game.id }); return; }
+    sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`);
+  };
   return (
     <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={game.name}>
       <TopBar title={game.name} eyebrow="لعبة" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
@@ -42,6 +53,7 @@ export function GameDetails({ id }) {
           <span className="fact" style={factDelay(1)}><IconClock /> {game.duration}</span>
           {game.tags.map((t, i) => <span key={t} className="fact" style={factDelay(2 + i)}>#{t}</span>)}
         </div>
+        {note && <p className="card-muted details-plus-note">{note}</p>}
       </div>
       <div>
         <div className="section-title" style={{ marginBottom: 10 }}>كيف تلعب؟</div>
@@ -50,7 +62,7 @@ export function GameDetails({ id }) {
       <div className="setup-sticky stack">
         {/* الزر الرئيسي «مسلّح» (is-armed): تنفّس ×3 ووهج ×2 من brand.css */}
         {online && <Button variant="accent" size="lg" full className="is-armed" onClick={() => navigate(`/online/${game.id}`)}>العب من كل جوال · غرف جماعية</Button>}
-        <Button variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={() => { sound.play('whoosh'); haptics.vibrate('medium'); navigate(`/play/${game.id}`); }}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>
+        <Button variant={online ? 'secondary' : 'accent'} size="lg" full className={online ? '' : 'is-armed'} icon={<IconPlay />} onClick={play}>{online ? 'العب على جهاز واحد' : 'العب'}</Button>
       </div>
     </Screen>
   );

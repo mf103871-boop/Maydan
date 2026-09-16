@@ -1,18 +1,23 @@
 import { Room } from './room.mjs';
 import { readJson, json, errorResponse, sha256, credentials } from './protocol.mjs';
 import { fail } from './room-model.mjs';
+import { isPublicAccountPath, markRoomTrial, roomGate, routeAccounts } from './accounts/router.mjs';
 import packageInfo from '../package.json' with { type: 'json' };
 export { Room };
 
 // Small per-IP limits for accidental floods and room-code guessing.
 // Keys contain only a digest; no raw address is persisted. These are not DDoS protection.
-export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000 };
+export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000,
+  auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000 };
+// حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
+export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
+  auth: 40, me: 120, billing: 30, trial: 60 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
   async fetch(request) {
     const { kind, refund = false } = await request.json();
     const windowMs = LIMIT_WINDOWS[kind] ?? 60_000;
-    const limit = kind === 'create' ? 8 : kind === 'join' ? 40 : 100;
+    const limit = LIMITS[kind] ?? 100;
     const now = Date.now();
     // A refund returns the reservation taken by an attempt the server itself
     // rejected, so a mistyped setting never costs the host their quota.
@@ -46,49 +51,68 @@ export async function routeRequest(request, env) {
   // HEAD keeps `curl -I` and uptime monitors working; it must not fall through
   // to the origin check and answer 403/404.
   if (url.pathname === '/health' && ['GET', 'HEAD'].includes(request.method)) {
-    const health = json({ ok: true, protocol: 1, game: 'meenfina', games: ['meenfina', 'fabraka'], version: packageInfo.version });
+    const health = json({ ok: true, protocol: 1, game: 'meenfina', games: ['meenfina', 'fabraka'], version: packageInfo.version, accounts: !!env.DB });
     return request.method === 'HEAD' ? new Response(null, { status: health.status, headers: health.headers }) : health;
   }
   const origin = allowedOrigin(request, env);
-  if (!origin) return json({ error: 'ORIGIN' }, 403);
-  const headers = { 'access-control-allow-origin': origin, vary: 'Origin',
-    'access-control-allow-methods': 'GET, POST, OPTIONS', 'access-control-allow-headers': 'Content-Type', 'access-control-max-age': '600' };
+  // إعادة توجيه المزوّدات وwebhooks تصل بلا Origin: فحص الأصل لا ينطبق عليها،
+  // وحمايتها هي توقيع المزوّد نفسه (state موقّع، HMAC، أو JWS من آبل).
+  if (!origin && !isPublicAccountPath(url.pathname)) return json({ error: 'ORIGIN' }, 403);
+  const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
+    'access-control-allow-methods': 'GET, POST, DELETE, OPTIONS',
+    'access-control-allow-headers': 'Content-Type, Authorization',
+    'access-control-expose-headers': 'x-maydan-session',
+    'access-control-max-age': '600' } : {};
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers });
   let response; let limiter = null; let charged = null;
-  try {
-    const create = request.method === 'POST' && url.pathname === '/api/rooms';
-    const match = url.pathname.match(/^\/api\/rooms\/(\d{6})\/(join|leave|socket)$/);
-    if (!create && (!match || (match[2] === 'socket' ? request.method !== 'GET' : request.method !== 'POST'))) fail('NOT_FOUND', 404);
-    const kind = create ? 'create' : match[2];
-    const address = request.headers.get('cf-connecting-ip') || 'local';
-    const key = await sha256(`${new Date().toISOString().slice(0, 10)}:${address}`);
-    limiter = env.LIMITERS.get(env.LIMITERS.idFromName(key));
+  // حصّة واحدة لكل عنوان يوميًا، تتفرّع بالنوع؛ المفتاح ملخّص فقط ولا يُخزَّن العنوان.
+  async function charge(kind, code = 'RATE_LIMIT') {
+    if (!limiter) {
+      const address = request.headers.get('cf-connecting-ip') || 'local';
+      const key = await sha256(`${new Date().toISOString().slice(0, 10)}:${address}`);
+      limiter = env.LIMITERS.get(env.LIMITERS.idFromName(key));
+    }
     const limited = await limiter.fetch(new Request('https://internal/limit', { method: 'POST', body: JSON.stringify({ kind }) }));
-    if (!limited.ok) fail(kind === 'create' ? 'CREATE_LIMIT' : 'RATE_LIMIT', 429);
-    // Only creation refunds: a wrong room code must still cost its join slot so
-    // the limiter keeps discouraging code guessing.
-    charged = create ? kind : null;
-    if (create) {
-      const input = await readJson(request);
-      await credentials(input); // Validate before allocating a room.
-      // Attempt 0 stays derived from the token so a retried creation is idempotent
-      // without a global directory; later attempts are random so a collision run
-      // never reproduces the same five codes.
-      for (let attempt = 0; attempt < 5; attempt++) {
-        const digest = await sha256(`${input.token}:${attempt === 0 ? 0 : `${attempt}:${crypto.randomUUID()}`}`);
-        const code = String(100000 + parseInt(digest.slice(0, 12), 16) % 900000);
-        const room = env.ROOMS.get(env.ROOMS.idFromName(code));
-        response = await room.fetch(new Request(`https://internal/create?code=${code}`, {
-          method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(input),
-        }));
-        if (response.status !== 409 || (await response.clone().json()).error !== 'COLLISION') break;
-        response = null;
+    if (!limited.ok) fail(code, 429);
+  }
+  try {
+    // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
+    response = await routeAccounts(request, env, url, charge);
+    if (!response) {
+      const create = request.method === 'POST' && url.pathname === '/api/rooms';
+      const match = url.pathname.match(/^\/api\/rooms\/(\d{6})\/(join|leave|socket)$/);
+      if (!create && (!match || (match[2] === 'socket' ? request.method !== 'GET' : request.method !== 'POST'))) fail('NOT_FOUND', 404);
+      const kind = create ? 'create' : match[2];
+      await charge(kind, kind === 'create' ? 'CREATE_LIMIT' : 'RATE_LIMIT');
+      // Only creation refunds: a wrong room code must still cost its join slot so
+      // the limiter keeps discouraging code guessing.
+      charged = create ? kind : null;
+      if (create) {
+        const input = await readJson(request);
+        await credentials(input); // Validate before allocating a room.
+        // إنشاء الغرفة يُحسب مباراة للّعبة: المسجّل غير المشترك يُرفض بـPLUS_REQUIRED
+        // بعد تجربته، والمجهول يبقى مسموحًا (علامته محلية عند العميل).
+        const gate = await roomGate(request, env, input);
+        // Attempt 0 stays derived from the token so a retried creation is idempotent
+        // without a global directory; later attempts are random so a collision run
+        // never reproduces the same five codes.
+        for (let attempt = 0; attempt < 5; attempt++) {
+          const digest = await sha256(`${input.token}:${attempt === 0 ? 0 : `${attempt}:${crypto.randomUUID()}`}`);
+          const code = String(100000 + parseInt(digest.slice(0, 12), 16) % 900000);
+          const room = env.ROOMS.get(env.ROOMS.idFromName(code));
+          response = await room.fetch(new Request(`https://internal/create?code=${code}`, {
+            method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(input),
+          }));
+          if (response.status !== 409 || (await response.clone().json()).error !== 'COLLISION') break;
+          response = null;
+        }
+        // Exhausted candidates are a code-space collision, not a flood by this phone.
+        if (!response) fail('COLLISION', 409);
+        if (response.status === 201) await markRoomTrial(env, gate);
+      } else {
+        const room = env.ROOMS.get(env.ROOMS.idFromName(match[1]));
+        response = await room.fetch(request);
       }
-      // Exhausted candidates are a code-space collision, not a flood by this phone.
-      if (!response) fail('COLLISION', 409);
-    } else {
-      const room = env.ROOMS.get(env.ROOMS.idFromName(match[1]));
-      response = await room.fetch(request);
     }
   } catch (error) { response = errorResponse(error); }
   // Only work the server actually performed keeps its slot: a 4xx we produced

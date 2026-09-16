@@ -1,10 +1,32 @@
 // Local-only transport adapter. Production uses Cloudflare's SQLite storage,
 // alarms and hibernating WebSockets; this adapter keeps data in memory.
 import http from 'node:http';
+import { existsSync, readFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Readable } from 'node:stream';
 import { WebSocketServer } from 'ws';
 import { Room, RequestLimiter, routeRequest } from './worker.mjs';
+import { createLocalD1 } from './local-d1.mjs';
 import { json } from './protocol.mjs';
+
+export const DEFAULT_ORIGINS = 'http://localhost:3000,http://127.0.0.1:3000';
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+// أسرار التطوير تُقرأ من .dev.vars (KEY=value في كل سطر) كما يفعل wrangler dev.
+// الملف مستثنى من git ومن أرشيف الإصدار، فلا تصل مفاتيح المزوّدين إلى المستودع.
+export function loadDevVars(file = path.join(ROOT, '.dev.vars')) {
+  if (!existsSync(file)) return {};
+  const vars = {};
+  for (const line of readFileSync(file, 'utf8').split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const index = trimmed.indexOf('=');
+    if (index < 1) continue;
+    const value = trimmed.slice(index + 1).trim();
+    vars[trimmed.slice(0, index).trim()] = value.replace(/^(['"])([\s\S]*)\1$/, '$2');
+  }
+  return vars;
+}
 
 export class MemoryStorage {
   constructor(onAlarm = () => {}) { this.data = new Map(); this.onAlarm = onAlarm; this.alarmAt = null; this.chain = Promise.resolve(); }
@@ -31,9 +53,10 @@ export class MemoryStorage {
   }
   dispose() { clearTimeout(this.timer); }
 }
-export function localEnvironment({ origins = 'http://localhost:3000,http://127.0.0.1:3000' } = {}) {
+export function localEnvironment({ origins, vars = loadDevVars(), db = createLocalD1() } = {}) {
   const rooms = new Map(); const limiters = new Map();
-  const env = { ALLOWED_ORIGINS: origins };
+  // قاعدة الحسابات محلية وفي الذاكرة: تبدأ فارغة عند كل تشغيل والترحيلات مطبّقة.
+  const env = { ...vars, ALLOWED_ORIGINS: origins || vars.ALLOWED_ORIGINS || DEFAULT_ORIGINS, DB: db };
   function record(map, id, Class) {
     if (!map.has(id)) {
       const item = { sockets: new Set() };
@@ -61,11 +84,14 @@ export function localEnvironment({ origins = 'http://localhost:3000,http://127.0
   env.LIMITERS = { idFromName: (name) => name, get: (id) => ({ fetch: (request) => record(limiters, id, RequestLimiter).instance.fetch(request) }) };
   return { env, rooms, limiters,
     rehydrate(code) { const item = rooms.get(code); item.instance = new Room(item.ctx, env); return item.instance.ready; },
-    dispose() { for (const item of [...rooms.values(), ...limiters.values()]) { item.storage.dispose(); for (const ws of item.sockets) ws.terminate(); } },
+    dispose() {
+      for (const item of [...rooms.values(), ...limiters.values()]) { item.storage.dispose(); for (const ws of item.sockets) ws.terminate(); }
+      try { db.close(); } catch { /* أُغلقت مسبقًا */ }
+    },
   };
 }
-export async function startLocalServer({ port = 8787, host = '127.0.0.1', origins } = {}) {
-  const runtime = localEnvironment({ origins });
+export async function startLocalServer({ port = 8787, host = '127.0.0.1', origins, vars, db } = {}) {
+  const runtime = localEnvironment({ origins, ...(vars ? { vars } : {}), ...(db ? { db } : {}) });
   const wss = new WebSocketServer({ noServer: true, maxPayload: 4096 });
   let closing = false;
   function requestOf(req) {

@@ -1,0 +1,50 @@
+/* الحساب و«ميدان بلس»: الجدار، أزرار الدخول، وبطاقة الإعدادات.
+   طين ميدان نفسه: حواف دافئة، حوافّ سفلية (ledge)، وحركة مقيسة تحترم «تقليل الحركة». */
+
+/* ── الجدار ───────────────────────────────────────────────────────── */
+.paywall { display: grid; gap: 14px; justify-items: stretch; text-align: center; }
+.paywall-hero { display: block; margin-inline: auto; --contact-inset: 20%; --contact-y: -2px; }
+.paywall-hero .clay-trophy { width: clamp(108px, 34vw, 148px); height: auto; }
+.paywall-title { font-size: clamp(1.35rem, 5.6vw, 1.75rem); font-weight: 900; line-height: 1.45; color: var(--text); text-wrap: balance; margin: 0; }
+.paywall-reason { margin: 0; font-size: .95rem; line-height: 1.75; color: #6c4f8a; background: var(--top-light), #F5E7FA; border: 1px solid #DCC3EA; border-radius: 18px; padding: 11px 14px; box-shadow: var(--shadow-row, inset 0 1px 0 #fff, 0 2px 0 #E3D3BE); }
+
+.paywall-bullets { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; text-align: start; }
+.paywall-bullets li { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: .95rem; color: var(--text);
+  padding: 10px 13px; border-radius: 16px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke);
+  box-shadow: var(--shadow-row, inset 0 1px 0 #fff, 0 2px 0 #E3D3BE, 0 4px 8px rgba(91,61,36,.06));
+  animation: ui-row-in .34s var(--ease-out) both; animation-delay: calc(var(--n, 0) * 55ms); }
+.paywall-bullets li::before { content: "✦"; color: var(--accent); font-size: 1rem; line-height: 1; flex: none; }
+
+.paywall-plans { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.paywall-plan { display: grid; gap: 4px; justify-items: center; align-content: center; min-height: 104px; padding: 14px 10px; font: inherit; cursor: pointer;
+  border-radius: 20px; border: 2px solid var(--stroke); background: var(--top-light), var(--surface); color: var(--text);
+  box-shadow: inset 0 2px 1px #fff9, 0 var(--ledge, 3px) 0 var(--clay-ledge, #E3D3BE), 0 6px 12px #63432F14;
+  transition: border-color .2s ease, background-color .2s ease, transform .12s ease; }
+.paywall-plan:active { transform: translateY(var(--ledge, 3px)); transition-duration: .08s; }
+.paywall-plan.is-selected { border-color: var(--purple, #9250BD); background: var(--top-light), #F4E6FB; animation: ui-pop-select .3s var(--ease-spring); }
+.paywall-plan-name { display: flex; align-items: center; gap: 6px; font-weight: 900; font-size: 1rem; }
+.paywall-plan-price { font-size: 1.15rem; font-weight: 900; color: #663385; font-variant-numeric: tabular-nums; line-height: 1.4; }
+.paywall-plan-period { font-size: .8rem; color: var(--muted); font-weight: 700; }
+
+.paywall-auth { display: grid; gap: 10px; }
+.paywall-note { margin: 0; font-size: .88rem; color: var(--muted); line-height: 1.7; }
+.paywall-legal { margin: 2px 0 0; font-size: .78rem; line-height: 1.85; color: var(--muted); }
+.paywall-legal-links { display: block; margin-top: 4px; }
+.paywall-legal-links a { color: #087D89; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── أزرار المزوّدين ──────────────────────────────────────────────── */
+.account-providers { display: grid; gap: 10px; }
+.account-providers .account-mark { width: 20px; height: 20px; flex: none; }
+.account-signin { display: grid; gap: 12px; text-align: start; }
+.account-fineprint { margin: 0; font-size: .8rem; color: var(--muted); line-height: 1.8; }
+
+/* ── بطاقة الإعدادات ─────────────────────────────────────────────── */
+.account-card .account-identity { display: grid; gap: 2px; }
+.account-card .account-identity b { font-size: 1.05rem; font-weight: 900; overflow-wrap: anywhere; }
+.account-card .account-identity small { font-size: .82rem; overflow-wrap: anywhere; }
+.account-plan { margin: 0; font-size: .92rem; font-weight: 800; line-height: 1.7; color: var(--muted); }
+.account-plan.is-plus { color: #165F4D; background: #DEF2E9; border: 1px solid #8EC6B2; border-radius: 16px; padding: 9px 13px; }
+
+@media (min-width: 520px) {
+  .paywall-bullets { grid-template-columns: 1fr 1fr; }
+}

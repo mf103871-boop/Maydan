@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Screen, IconButton, ripple } from '../../shared/ui/components.jsx';
 import { IconSettings, IconUsers, IconClock, IconInfo } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
+import { useAccount } from '../../shared/account/context.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
 import { Avatar, BrandMark, Wordmark, GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
@@ -16,7 +17,17 @@ export function gamesLabel(n) {
   return `${n} لعبة`;
 }
 
-function GameCard({ game, index, launching, onOpen }) {
+// شارة «ميدان بلس» على البطاقة: بَديهة تعلن حزمها المجانية، وبقية الألعاب مباراتها المجانية.
+// المشترك لا يرى شارة، والبطاقات تبقى مفعّلة في كل الحالات (القفل يظهر داخل اللعبة لا هنا).
+export function plusBadge(account, game) {
+  if (account.premium) return '';
+  if (game.setup === 'self') return '١٠ فئات مجانية';
+  const access = account.gameAccess(game.id);
+  if (access === 'premium') return '';
+  return access === 'locked' ? 'بلس' : 'مباراة مجانية';
+}
+
+function GameCard({ game, index, launching, badge, onOpen }) {
   const ref = useRef(null);
   const frame = useRef(0);
   const pointer = useRef(null);
@@ -52,6 +63,7 @@ function GameCard({ game, index, launching, onOpen }) {
     <button ref={ref} type="button" className={`game-card ${game.soon ? 'is-soon' : ''} ${launching ? 'is-launch' : ''}`} style={{ '--game-accent': game.accent, '--delay': `${index * 55}ms` }}
       onPointerDown={(e) => { tilt(e); ripple(e); }} onPointerMove={tilt} onPointerUp={untilt} onPointerLeave={untilt} onPointerCancel={untilt}
       onClick={() => onOpen(game)} aria-label={`${game.name}: ${game.tagline}`} disabled={!!game.soon}>
+      {badge && <span className="badge badge-accent card-badge">{badge}</span>}
       <span className="icon clay-stage clay-static" aria-hidden="true"><span className="clay-lift">{Icon ? <Icon /> : '🎮'}</span></span>
       <span className="name">{game.name}</span>
       <span className="tagline">{game.tagline}</span>
@@ -65,6 +77,7 @@ function GameCard({ game, index, launching, onOpen }) {
 
 export function Home() {
   const { roster, sound, haptics, version } = usePlatform();
+  const account = useAccount();
   // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
   const launching = useRef(false);
   const launchTimer = useRef(0);
@@ -115,7 +128,7 @@ export function Home() {
           <span className="badge"><IconClock style={{ width: 14, height: 14 }} /> {gamesLabel(GAMES.length)}</span>
         </div>
         <div className="games-grid">
-          {cards.map((g, i) => <GameCard key={g.id} game={g} index={i} launching={launchId === g.id} onOpen={open} />)}
+          {cards.map((g, i) => <GameCard key={g.id} game={g} index={i} launching={launchId === g.id} badge={plusBadge(account, g)} onOpen={open} />)}
         </div>
       </div>
       <p className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>

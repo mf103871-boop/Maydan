@@ -19,6 +19,7 @@
     "media:fetch": "node scripts/media-fetch.mjs",
     "e2e:media": "node scripts/e2e/media-render.cjs",
     "e2e:offline": "node scripts/e2e/media-offline.cjs",
+    "e2e:paywall": "node scripts/e2e/paywall.mjs",
     "rooms:dev": "node scripts/rooms-dev.mjs",
     "rooms:check": "wrangler deploy --config wrangler.rooms.jsonc --dry-run --outdir .wrangler/check",
     "rooms:deploy": "wrangler deploy --config wrangler.rooms.jsonc",
@@ -26,6 +27,8 @@
     "build:cloudflare": "node scripts/build-cloudflare.mjs",
     "cloudflare:check": "wrangler deploy --dry-run --outdir .wrangler/full-check",
     "cloudflare:deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply maydan-accounts --remote",
+    "db:migrate:local": "wrangler d1 migrations apply maydan-accounts --local",
     "art:alpha": "node scripts/art-alpha.mjs",
     "art:check": "node scripts/art-alpha.mjs --check"
   },

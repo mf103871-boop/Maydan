@@ -4,8 +4,18 @@
   "main": "server/worker.mjs",
   "compatibility_date": "2026-09-01",
   "workers_dev": true,
+  // إعدادات عامة (غير سرّية). الأسرار عبر `wrangler secret put` — راجع docs/ACCOUNTS.md.
   "vars": {
-    "ALLOWED_ORIGINS": "https://mf103871-boop.github.io"
+    "ALLOWED_ORIGINS": "https://mf103871-boop.github.io",
+    "APP_ORIGIN": "https://mf103871-boop.github.io",
+    "EXTRA_ORIGINS": "maydan://app",
+    "APPLE_BUNDLE_ID": "",
+    "APPLE_SERVICES_ID": "",
+    "GOOGLE_CLIENT_ID": "",
+    "PADDLE_ENV": "sandbox",
+    "PADDLE_CLIENT_TOKEN": "",
+    "PADDLE_PRICE_MONTHLY": "",
+    "PADDLE_PRICE_YEARLY": ""
   },
   "durable_objects": {
     "bindings": [
@@ -13,6 +23,10 @@
       { "name": "LIMITERS", "class_name": "RequestLimiter" }
     ]
   },
+  // القاعدة نفسها التي يستعملها maydan-game: حساب واحد يخدم الواجهتين.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "maydan-accounts", "database_id": "REPLACE_WITH_D1_DATABASE_ID", "migrations_dir": "server/migrations" }
+  ],
   "migrations": [
     { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
   ],

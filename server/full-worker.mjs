@@ -5,14 +5,17 @@ export { Room, RequestLimiter } from './worker.mjs';
 // The page is one self-contained document: inline script and styles, images and
 // audio from this origin, data:/blob: URLs, and question media that may be hosted
 // elsewhere over https. Everything else is refused, and the page may not be framed.
+// Paddle.js is the one third-party script (web checkout only, lazily loaded), and
+// it draws its checkout inside an iframe from buy.paddle.com / sandbox-buy.paddle.com.
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://cdn.paddle.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
   "media-src 'self' data: blob: https:",
   "font-src 'self' data:",
   "connect-src 'self' https: wss:",
+  "frame-src 'self' https://*.paddle.com",
   "worker-src 'self'",
   "manifest-src 'self'",
   "base-uri 'none'",
@@ -40,7 +43,9 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === '/api' || url.pathname.startsWith('/api/') || url.pathname === '/health') {
-      return routeRequest(request, { ...env, ALLOWED_ORIGINS: url.origin });
+      // أصل الموقع نفسه دائمًا مسموح، ويُضاف إليه EXTRA_ORIGINS (مخطط تطبيق iOS مثلًا).
+      const extra = String(env.EXTRA_ORIGINS || '').split(',').map((value) => value.trim()).filter(Boolean);
+      return routeRequest(request, { ...env, ALLOWED_ORIGINS: [url.origin, ...extra].join(',') });
     }
     return secured(await env.ASSETS.fetch(request));
   },

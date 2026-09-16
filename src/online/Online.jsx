@@ -6,6 +6,7 @@ import { Avatar, AvatarPicker, GameArtwork, ClayStage } from '../shared/brand/ar
 import { burstConfetti, vignette } from '../shared/fx/index.js';
 import { navigate, setExitGuard } from '../platform/router.js';
 import { usePlatform } from '../platform/context.js';
+import { useAccount } from '../shared/account/context.js';
 import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, ONLINE_GAMES, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession } from './client.js';
 import { normalizeOptions } from '../games/fabraka/logic.js';
@@ -17,6 +18,7 @@ const inviteUrl = (code) => { const url = new URL(location.href); url.search = '
 function ErrorNotice({ code }) { return code ? <p className="online-notice error" role="alert">{errorText(code)}</p> : null; }
 
 function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
+  const account = useAccount();
   const [mode, setMode] = useState(initialCode ? 'join' : 'create');
   const [game, setGame] = useState(ONLINE_GAMES[initialGame] ? initialGame : 'meenfina');
   const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeOptions(readSaved(SERVER, 'fabrakaSettings')));
@@ -36,6 +38,8 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
     if (!name.trim()) { setError('NAME'); return; }
     const normalized = normalizeCode(code);
     if (mode === 'join' && !validCode(normalized)) { setError('INVALID'); return; }
+    // إنشاء غرفة = مباراة لهذه اللعبة؛ الدخول برمز يبقى مجانيًا دائمًا.
+    if (mode === 'create' && account.gameAccess(game) === 'locked') { account.openPaywall({ reason: 'room', game }); return; }
     setBusy(true);
     try {
       const pendingKey = mode === 'create' ? (game === 'meenfina' ? 'pendingCreate' : `pendingCreate:${game}`) : `pendingJoin:${normalized}`;
@@ -44,12 +48,17 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
       credentialsRef.current = session;
       save(SERVER, pendingKey, session); // Persist before HTTP so a retry can reclaim the same seat.
       const result = await post(SERVER, mode === 'create' ? '/api/rooms' : `/api/rooms/${normalized}/join`, { ...session, name: name.trim(), avatar, rounds,
-        ...(mode === 'create' ? { game, ...(game === 'fabraka' ? { settings: fabrakaSettings } : {}) } : {}) });
+        ...(mode === 'create' ? { game, ...(game === 'fabraka' ? { settings: fabrakaSettings } : {}) } : {}) }, { headers: account.authHeaders() });
+      if (mode === 'create') account.markTrial(game);
       const stored = save(SERVER, result.code, session);
       save(SERVER, 'persistence', stored);
       save(SERVER, 'profile', { name: name.trim(), avatar }); save(SERVER, 'lastRoom', result.code); save(SERVER, pendingKey, null);
       onJoined(result.code, session, stored);
-    } catch (e) { setError(e.code || 'NETWORK'); }
+    } catch (e) {
+      // الخادم يردّ PLUS_REQUIRED لمسجّل غير مشترك استهلك تجربته: الجدار أوضح من تنبيه أحمر.
+      if (e.code === 'PLUS_REQUIRED') account.openPaywall({ reason: 'room', game });
+      else setError(e.code || 'NETWORK');
+    }
     finally { setBusy(false); }
   }
   return <>

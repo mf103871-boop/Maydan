@@ -83,10 +83,15 @@ test('public/_headers يحمل سياسة server/full-worker.mjs نفسها', as
   const got = lines['content-security-policy'].split(';').map((d) => d.trim()).filter(Boolean);
   assert.deepEqual(got, want, 'سياسة _headers تخالف سياسة full-worker.mjs');
 
-  // المستند يحمل شيفرته وأنماطه وخطوطه بداخله، فهذه التوجيهات شرط تشغيله
+  // المستند يحمل شيفرته وأنماطه وخطوطه بداخله، فهذه التوجيهات شرط تشغيله.
+  // المطابقة ببداية التوجيه: مصادر إضافية (Paddle على الويب) تُضاف بعدها دون كسر الشرط.
   for (const directive of ["script-src 'self' 'unsafe-inline'", "style-src 'self' 'unsafe-inline'", "font-src 'self' data:"]) {
-    assert.ok(want.includes(directive), `السياسة بلا ${directive} تكسر الصفحة`);
+    assert.ok(want.some((entry) => entry === directive || entry.startsWith(`${directive} `)), `السياسة بلا ${directive} تكسر الصفحة`);
   }
+
+  // دفع الويب يحتاج سكربت Paddle وإطاره؛ وبقية المصادر الخارجية تبقى ممنوعة.
+  assert.ok(want.some((entry) => entry.startsWith('script-src ') && entry.includes('https://cdn.paddle.com')), 'سكربت Paddle ممنوع فينكسر الدفع');
+  assert.ok(want.some((entry) => entry.startsWith('frame-src ') && entry.includes('https://*.paddle.com')), 'إطار Paddle ممنوع فلا تُفتح صفحة الدفع');
 });
 
 test('README لا يطلب رفع رقم المخزن يدويًا، وsw.js ما زال يحمل الوسم', async () => {
