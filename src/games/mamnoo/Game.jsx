@@ -2,6 +2,7 @@ import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card, Scoreboard } from '../../shared/ui/components.jsx';
 import { Timer, useTimer } from '../../shared/ui/index.js';
+import { flashScreen, stampScreen, wait } from '../../shared/fx/index.js';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import cards from '../../data/games/mamnoo/cards.json';
@@ -33,19 +34,24 @@ function Round({ state, dispatch, api, source }) {
   const timer = useTimer({ seconds: state.seconds, onEnd: () => { api.sound.play('buzzer'); api.haptics.vibrate('warning'); dispatch({ type: 'TIME_UP' }); } });
   // كل دور يبدأ بمؤقت جديد: نصفّره صراحةً ثم نشغّله، فلا نعتمد على مساواة هشّة مع قيمة سابقة.
   useEffect(() => { if (state.phase === 'play') { timer.reset(state.seconds); timer.start(); } else if (timer.running) timer.pause(); }, [state.phase, state.round, state.turn]); // eslint-disable-line react-hooks/exhaustive-deps
+  // الإرسال فوري؛ صنف الوميض يقع على البطاقة (لا على .stack الحاوي للمؤقت)، والختم/الوميض طبقات ثابتة في body.
   const act = (type, sound, haptic, cls) => {
     api.sound.play(sound); api.haptics.vibrate(haptic);
-    setFlash(cls); setTimeout(() => setFlash(''), 500);
+    setFlash(cls); setTimeout(() => setFlash(''), wait(500));
+    if (type === 'CORRECT') { flashScreen('good'); stampScreen({ text: 'صح!', tone: 'good', points: '+١' }); }
+    if (type === 'BUZZ') { flashScreen('bad'); stampScreen({ text: 'ممنوع!', tone: 'bad' }); }
     dispatch({ type, card: source.next() });
   };
-  const entries = state.teams.map((t) => ({ ...t, score: state.scores[t.id] }));
+  // في نهاية الجولة يُمرَّر فرق الجولة (+N يطير في لوحة النتائج) للفريق الذي لعب
+  const roundDelta = state.phase === 'roundEnd' ? Math.max(0, state.tally.correct - state.tally.buzz) : 0;
+  const entries = state.teams.map((t) => ({ ...t, score: state.scores[t.id], delta: t.id === team.id && roundDelta > 0 ? roundDelta : 0 }));
 
   if (state.phase === 'intro') {
     return (
       <div className="mamnoo-intro">
         <p className="muted">الجولة {state.round} من {state.rounds}</p>
         <h2 style={{ color: team.color }}>دور {team.name}</h2>
-        <div className="who">
+        <div className="who" style={{ '--team': team.color }}>
           <span>🗣 لاعب من <b style={{ color: 'var(--text)' }}>{team.name}</b> يصف، وبقية فريقه يخمّنون دون رؤية الشاشة.</span>
           <span>👀 لاعب من <b style={{ color: 'var(--text)' }}>{opponentLabel(state)}</b> يراقب الشاشة ويضغط «ممنوع!» عند المخالفة.</span>
         </div>
@@ -56,13 +62,13 @@ function Round({ state, dispatch, api, source }) {
   }
   if (state.phase === 'play' && state.card) {
     return (
-      <div className={`stack ${flash}`}>
+      <div className="stack">
         <div className="mamnoo-head">
           <Timer timer={timer} api={api} size={92} accent="#FF5C8A" />
           <div className="grow"><b style={{ color: team.color }}>{team.name}</b><small>صح {state.tally.correct} · ممنوع {state.tally.buzz} · تخطي {state.tally.skip}</small></div>
-          <span className="badge">{state.scores[team.id]}</span>
+          <span className="badge"><b key={state.scores[team.id]}>{state.scores[team.id]}</b></span>
         </div>
-        <div className="mamnoo-card" key={state.card.id}>
+        <div className={`mamnoo-card ${flash}`} key={state.card.id}>
           <div className="mamnoo-word">{state.card.word}</div>
           <div className="mamnoo-cat">{state.card.category}</div>
           <div className="mamnoo-forbidden" aria-label="الكلمات الممنوعة">{state.card.forbidden.map((w) => <span key={w}>{w}</span>)}</div>
@@ -78,7 +84,7 @@ function Round({ state, dispatch, api, source }) {
   if (state.phase === 'roundEnd') {
     return (
       <div className="mamnoo-intro">
-        <div className="big-emoji" aria-hidden="true"><GameArtwork game="beep" /></div>
+        <div className="big-emoji clay-stage clay-idle" aria-hidden="true"><span className="clay-lift"><GameArtwork game="mamnoo" /></span></div>
         <h2>انتهت جولة {team.name}</h2>
         <div className="mamnoo-tally"><span>✅ {state.tally.correct}</span><span>🚫 {state.tally.buzz}</span><span>⏭ {state.tally.skip}</span></div>
         <Scoreboard entries={entries} />

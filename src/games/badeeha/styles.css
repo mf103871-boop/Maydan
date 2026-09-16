@@ -21,7 +21,9 @@
   .m-root button:active:not(:disabled) { transform:translateY(2px) scale(.985); }
   .m-root button:focus-visible,.m-root input:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
   .m-root button:disabled { cursor:not-allowed; color:#8C7A91; background:#EDE2D5; border-color:rgba(148,163,184,.14); box-shadow:none; }
-  .m-screen,.m-home,.m-result { width:min(100%,900px); margin:0 auto; animation:m-screen-in .24s ease-out backwards; }
+  .m-screen,.m-home,.m-result { width:min(100%,900px); margin:0 auto; animation:m-screen-in .28s var(--ease-out,ease-out) backwards; }
+  /* الرجوع: الحركة على الشاشة نفسها لا على .m-root (يحمل الطبقات الثابتة) */
+  .m-root[data-dir="back"] .m-screen,.m-root[data-dir="back"] .m-home,.m-root[data-dir="back"] .m-result { animation-name:m-screen-back; }
   .m-screen { padding-bottom:30px; }
   .m-header,.m-board-header,.m-question-header { display:flex; align-items:center; justify-content:space-between; gap:12px; min-width:0; margin-bottom:16px; }
   .m-header { position:sticky; top:0; z-index:14; margin-inline:-4px; padding:7px 8px 11px; border-bottom:1px solid transparent; background:linear-gradient(180deg,rgba(255,249,237,.96),rgba(255,249,237,.78) 76%,transparent); backdrop-filter:none; }
@@ -50,10 +52,8 @@
   .m-home-eyebrow { min-height:30px; display:inline-flex; align-items:center; gap:8px; color:#426879; background:rgba(255,249,237,.66); border:1px solid var(--line); border-radius:999px; padding:5px 12px; font-size:13px; font-weight:800; backdrop-filter:none; }
   .m-home-eyebrow span { width:8px; height:8px; border-radius:50%; background:var(--success); box-shadow:0 0 12px var(--success); }
   .m-logo { width:138px; height:138px; border-radius:34px; transform:rotate(2deg); display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; color:var(--gold-soft); background:linear-gradient(145deg,rgba(255,249,237,.96),rgba(255,249,237,.96)); border:1px solid rgba(255,232,164,.72); box-shadow:inset 0 0 0 5px rgba(246,196,83,.06),0 0 0 9px rgba(56,189,248,.035),0 22px 65px rgba(91,61,36,0.144),0 0 48px rgba(37,99,235,.2); }
-  .m-logo::before,.m-logo::after { content:""; position:absolute; pointer-events:none; }
-  .m-logo::before { inset:10px; border:1px solid rgba(125,211,252,.25); border-radius:26px; }
-  .m-logo::after { width:36px; height:3px; bottom:28px; border-radius:99px; background:linear-gradient(90deg,transparent,var(--cyan),transparent); }
-  .m-logo span { transform:rotate(-2deg); font-size:42px; line-height:1; font-weight:900; letter-spacing:-.04em; }
+  .m-logo::before { content:none; }
+  .m-logo > span:last-child { transform:rotate(-2deg); font-size:42px; line-height:1; font-weight:900; letter-spacing:-.04em; }
   .m-logo small { transform:rotate(-2deg); margin-top:9px; color:#087D89; font-size:9px; font-weight:800; letter-spacing:.28em; }
   .m-home-copy { display:grid; gap:5px; }
   .m-home-title { margin:0; color:#352547; font-size:clamp(29px,8vw,46px); line-height:1.22; letter-spacing:-.035em; text-shadow:0 8px 28px rgba(91,61,36,0.114); }
@@ -146,7 +146,7 @@
   .m-tier.done::after { content:"✓"; position:absolute; inset-inline-end:5px; inset-block-start:3px; color:#86efac; font-size:12px; font-weight:900; }
   .m-progress-wrap { margin:14px 0; text-align:center; color:var(--muted); }
   .m-progress { height:10px; overflow:hidden; border:1px solid rgba(148,163,184,.1); border-radius:99px; background:#E7D9E9; }
-  .m-progress span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--cyan),#818cf8,var(--gold)); transition:width .35s ease; }
+  .m-progress span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--cyan),#818cf8,var(--gold)); transition:width .35s ease; transform-origin:calc(50% + var(--flow,-1) * 50%) 50%; animation:ui-grow-x .6s var(--ease-out,ease-out) .45s backwards; }
   .m-progress-wrap small { display:block; margin-top:5px; font-size:13px; }
   .m-board-actions { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
   .m-confirm-inline { display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
@@ -164,8 +164,8 @@
   .m-turn-banner > span { width:9px; height:9px; border-radius:50%; background:var(--team-color); box-shadow:0 0 10px var(--team-color); }
   .m-turn-banner b { color:var(--team-color); font-size:12px; }
   .m-timer { --timer-fill:360deg; width:102px; height:102px; margin:11px auto 5px; border-radius:50%; display:grid; place-items:center; background:conic-gradient(var(--gold) var(--timer-fill),#FFFBF2 0); padding:7px; box-shadow:0 0 0 1px rgba(246,196,83,.18),0 14px 34px rgba(91,61,36,0.095); }
-  .m-timer.danger { background:conic-gradient(var(--danger) var(--timer-fill),#FFFBF2 0); animation:m-pulse .82s ease-in-out infinite alternate; }
-  .m-timer.paused { animation:none; filter:saturate(.65); }
+  .m-timer.danger { background:conic-gradient(var(--danger) var(--timer-fill),#FFFBF2 0); }
+  .m-timer.paused { animation:none; }
   .m-timer-inner { width:100%; height:100%; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 35%,#F2E4F8,#FFF7E7 72%); color:var(--gold-soft); }
   .m-timer-inner b { font-size:35px; line-height:1; font-weight:900; unicode-bidi:isolate; }
   .m-timer-inner small { margin-top:3px; color:#386379; font-size:9px; font-weight:800; }
@@ -176,7 +176,7 @@
   .m-question-card.is-revealed { border-color:rgba(52,211,153,.68); box-shadow:0 0 0 3px rgba(52,211,153,.07),var(--shadow); }
   .m-prompt { margin:0; color:#8D6017; font-size:13px; font-weight:900; }
   .m-question-text { margin:0; font-size:clamp(21px,5vw,30px); font-weight:900; line-height:1.65; text-wrap:balance; }
-  .m-answer { width:100%; display:flex; flex-direction:column; gap:4px; margin-top:8px; padding-top:14px; border-top:1px solid rgba(52,211,153,.24); animation:m-answer-in .3s cubic-bezier(.2,.8,.2,1) both; }
+  .m-answer { width:100%; display:flex; flex-direction:column; gap:4px; margin-top:8px; padding-top:14px; border-top:1px solid rgba(52,211,153,.24); animation:ui-flip-in .45s var(--ease-out,ease-out) both; }
   .m-answer small { color:#92CBB6; font-size:13px; font-weight:800; }
   .m-answer strong { color:#CBEBDC; font-size:clamp(22px,6vw,34px); line-height:1.55; text-wrap:balance; }
   .m-answer-alt { color:var(--muted); font-size:13.5px; line-height:1.6; }
@@ -211,7 +211,7 @@
   .m-tools button span { font-size:22px; }
   .m-tools button b { font-size:12px; }
   .m-tools button small { color:inherit; font-size:10px; opacity:.75; }
-  .m-judge { display:grid; gap:9px; animation:m-answer-in .25s ease-out both; }
+  .m-judge { display:grid; gap:9px; animation:ui-lift-in .3s var(--ease-out,ease-out) both; }
   .m-judge h2 { margin:0; font-size:17px; }
   .m-judge-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
   .m-judge-grid button { min-height:66px; display:grid; grid-template-columns:28px minmax(0,1fr); grid-template-rows:auto auto; align-items:center; column-gap:7px; text-align:start; color:var(--text); background:linear-gradient(145deg,color-mix(in srgb,var(--team-color) 16%,#FFFCF4),#FFFBF2); border:1px solid color-mix(in srgb,var(--team-color) 72%,#fff 10%); border-inline-start:5px solid var(--team-color); border-radius:15px; padding:8px 10px; }
@@ -223,7 +223,7 @@
 
   .m-modal-layer { position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:max(14px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(14px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left)); background:rgba(255,249,237,.86); backdrop-filter:none; }
   .m-modal-layer.is-bottom { align-items:flex-end; padding-bottom:max(0px,env(safe-area-inset-bottom)); }
-  .m-modal { width:min(100%,620px); max-height:min(88vh,760px); max-height:min(88dvh,760px); overflow:auto; overscroll-behavior:contain; border:1px solid var(--line-strong); border-radius:23px; background:linear-gradient(155deg,#FFFCF4,#FFF4E4); padding:17px; box-shadow:0 28px 80px rgba(91,61,36,0.209); animation:m-modal-in .22s ease-out both; }
+  .m-modal { width:min(100%,620px); max-height:min(88vh,760px); max-height:min(88dvh,760px); overflow:auto; overscroll-behavior:contain; border:1px solid var(--line-strong); border-radius:23px; background:linear-gradient(155deg,#FFFCF4,#FFF4E4); padding:17px; box-shadow:0 28px 80px rgba(91,61,36,0.209); animation:ui-modal-in .34s var(--ease-spring,ease-out) both; }
   .is-bottom .m-modal { border-radius:23px 23px 0 0; }
   .m-modal-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:14px; }
   .m-modal-head h2 { margin:0; color:var(--gold-soft); font-size:22px; }
@@ -236,15 +236,13 @@
 
   .m-result { min-height:calc(100vh - 30px); min-height:calc(100dvh - 30px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:11px; text-align:center; position:relative; overflow-x:clip; padding-block:18px 12px; }
   .m-winner-spotlight { width:min(100%,520px); position:relative; display:flex; flex-direction:column; align-items:center; gap:4px; padding:17px 14px; border:1px solid rgba(246,196,83,.34); border-radius:26px; background:radial-gradient(circle at 50% 0,rgba(246,196,83,.2),transparent 58%),rgba(255,249,237,.66); box-shadow:0 20px 60px rgba(91,61,36,0.106); }
-  .m-result-icon { font-size:70px; line-height:1; filter:drop-shadow(0 14px 22px rgba(246,196,83,.24)); animation:m-trophy-in .55s cubic-bezier(.2,.9,.25,1.25) both; }
+  .m-result-icon { font-size:70px; line-height:1; filter:drop-shadow(0 14px 22px rgba(246,196,83,.24)); }
   .m-result-title { margin:0; color:#352547; font-size:clamp(35px,9vw,56px); line-height:1.25; text-shadow:0 9px 28px rgba(91,61,36,0.114); }
   .m-result-scores { width:min(100%,520px); display:grid; gap:8px; position:relative; z-index:2; }
   .m-result-scores > div { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; text-align:start; border:1px solid var(--line); border-radius:15px; background:rgba(255,249,237,.9); padding:10px 12px; }
   .m-result-scores strong { color:#8D6017; font-size:27px; grid-row:span 2; unicode-bidi:isolate; }
   .m-result-scores small { color:var(--muted); }
   .m-result-actions { width:min(100%,440px); display:grid; gap:9px; position:relative; z-index:2; }
-  .m-confetti { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
-  .m-confetti i { --x:calc((var(--i) * 37) % 100); position:absolute; top:-22px; left:calc(var(--x) * 1%); width:7px; height:13px; background:hsl(calc(var(--i) * 47) 82% 65%); animation:m-fall calc(2.4s + (var(--i) % 4) * .25s) ease-in 1 both; animation-delay:calc((var(--i) % 9) * .07s); }
   .m-honor,.m-games-list { display:grid; gap:8px; }
   .m-honor > div { display:grid; grid-template-columns:34px minmax(0,1fr) auto; align-items:center; gap:7px; padding:10px; border:1px solid var(--line); border-radius:13px; background:rgba(255,249,237,.82); }
   .m-honor small { color:var(--muted); grid-column:2; }
@@ -257,13 +255,10 @@
   .m-hydrating { position:fixed; inset-inline-start:10px; bottom:10px; color:#8C7A91; }
   .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-  @keyframes m-screen-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-  @keyframes m-answer-in { from { opacity:0; transform:translateY(9px) scale(.985); } to { opacity:1; transform:none; } }
-  @keyframes m-modal-in { from { opacity:0; transform:translateY(12px) scale(.98); } to { opacity:1; transform:none; } }
+  @keyframes m-screen-in { from { opacity:0; transform:translateY(12px) scale(.985); } to { opacity:1; transform:none; } }
+  @keyframes m-screen-back { from { opacity:0; transform:translateX(calc(var(--flow,-1) * -16px)) scale(.985); } to { opacity:1; transform:none; } }
   @keyframes m-toast-in { from { opacity:0; transform:translate(50%,10px); } to { opacity:1; transform:translate(50%,0); } }
-  @keyframes m-trophy-in { from { opacity:0; transform:translateY(-12px) scale(.7) rotate(-8deg); } to { opacity:1; transform:none; } }
-  @keyframes m-pulse { to { transform:scale(1.035); box-shadow:0 0 0 5px rgba(251,113,133,.08),0 14px 34px rgba(91,61,36,0.095); } }
-  @keyframes m-fall { to { transform:translateY(108vh) rotate(620deg); opacity:.15; } }
+  @keyframes m-toast-out { to { opacity:0; transform:translate(50%,8px); } }
 
   @media (hover:hover) {
     .m-primary:hover:not(:disabled) { filter:brightness(1.045); box-shadow:inset 0 1px rgba(255,255,255,.55),0 15px 32px rgba(246,196,83,.23); }
@@ -319,8 +314,7 @@
     .m-question-card { min-height:145px; margin-block:7px; }
   }
   @media (prefers-reduced-motion:reduce) {
-    .m-root * { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
-    .m-confetti { display:none; }
+    .m-root * { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; animation-delay:0ms!important; transition-duration:.01ms!important; transition-delay:0ms!important; }
   }
 
 
@@ -331,16 +325,18 @@
   .m-media-spinner { position:absolute; width:26px; height:26px; border:3px solid rgba(246,196,83,.25); border-top-color:#8D6017; border-radius:50%; animation:m-spin .8s linear infinite; pointer-events:none; }
   @keyframes m-spin { to { transform:rotate(360deg); } }
   .m-media-stage { position:relative; width:100%; display:grid; place-items:center; overflow:hidden; border-radius:18px; }
-  .m-media-img { width:100%; max-height:46vh; object-fit:contain; display:block; transition:transform .5s ease, filter .5s ease; }
+  .m-media-img { width:100%; max-height:46vh; object-fit:contain; display:block; transition:transform .5s ease; }
   .m-media-img.fx-zoom { transform:scale(3.4); }
   .m-media-img.fx-zoom.is-revealed { transform:scale(1); }
+  /* الضبابية/الظل: مرشّح ثابت على الصورة الأولى، والكشف تلاشٍ لصورة نظيفة فوقها (لا يُحرَّك filter) */
   .m-media-img.fx-blur { filter:blur(16px) saturate(1.3); }
-  .m-media-img.fx-blur.is-revealed { filter:none; }
   .m-media-img.fx-silhouette { filter:brightness(0) contrast(2); }
-  .m-media-img.fx-silhouette.is-revealed { filter:none; }
+  .m-media-img.m-media-clean { position:absolute; inset:0; width:100%; height:100%; max-height:none; object-fit:contain; opacity:0; pointer-events:none; transition:opacity .45s ease; }
+  .m-media-img.m-media-clean.is-revealed { opacity:1; }
   .m-reveal-tiles { position:absolute; inset:0; display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(3,1fr); }
-  .m-reveal-tiles i { background:#F7EDD9; border:1px solid rgba(255,249,237,.9); transition:opacity .35s ease, transform .35s ease; }
-  .m-reveal-tiles i.is-open { opacity:0; transform:scale(.85); pointer-events:none; }
+  .m-reveal-tiles i { background:#F7EDD9; border:1px solid rgba(255,249,237,.9); transform-origin:50% 100%; }
+  .m-reveal-tiles i.is-open { pointer-events:none; animation:m-tile-open .4s ease-in forwards; animation-delay:calc(var(--k,0) * 25ms); }
+  @keyframes m-tile-open { to { opacity:0; transform:perspective(500px) rotateX(75deg); } }
   .m-reveal-tile-btn { margin-top:10px; }
   .m-media-error { display:grid; justify-items:center; gap:6px; padding:22px 16px; text-align:center; color:var(--muted); }
   .m-media-error span { font-size:30px; }
@@ -363,8 +359,11 @@
 
   /* ركّبها صح: 12 قطعة من الصورة نفسها في مواضع مبدّلة، والصورة الأصلية مخفية تحتها لتحميلها فقط */
   .m-media-img.is-hidden-src { opacity:0; position:absolute; inset:0; pointer-events:none; }
-  .m-jumble { position:relative; width:100%; aspect-ratio:4/3; max-height:46vh; display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(3,1fr); gap:2px; background:#F7EDD9; }
-  .m-jumble i { display:block; background-size:400% 300%; background-repeat:no-repeat; }
+  .m-jumble,.m-jumble-ghost { position:relative; width:100%; aspect-ratio:4/3; max-height:46vh; display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(3,1fr); gap:2px; background:#F7EDD9; }
+  .m-jumble i,.m-jumble-ghost i { display:block; background-size:400% 300%; background-repeat:no-repeat; }
+  /* حلّ التركيب: نسخة شبحية من القطع تتلاشى فوق الصورة الأصلية ثم تُزال */
+  .m-jumble-ghost { position:absolute; inset:0; z-index:1; pointer-events:none; background:transparent; }
+  .m-jumble-ghost i { animation:ui-fade-out .35s ease-out forwards; animation-delay:calc(var(--k,0) * 20ms); }
   .m-media-stage.can-enlarge { cursor:zoom-in; }
   .m-lightbox { position:fixed; inset:0; z-index:60; overflow:auto; overscroll-behavior:contain; padding:0; background:#FFF9ED; cursor:zoom-out; animation:m-fade .18s ease; }
   .m-lightbox-stage { min-width:100%; min-height:100%; display:grid; place-items:center; }
@@ -376,7 +375,7 @@
   .m-fourpics { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
   .m-fourpics .m-media-box { min-height:120px; aspect-ratio:1; }
   .m-fourpics .m-media-img { width:100%; height:100%; object-fit:cover; max-height:none; }
-  .m-audio.is-spent .m-audio-btn { filter:grayscale(1); opacity:.55; }
+  .m-audio.is-spent { opacity:.55; filter:none; transition:opacity .3s; }
   /* خيارات السؤال (قبل ولا بعد…). ليست .m-choice: ذاك صنف أزرار اختيار النمط في شاشة الإعداد. */
   .m-options { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .m-options.is-long { grid-template-columns:1fr; }
@@ -416,8 +415,8 @@
   /* Clay treatment of the original question board and result screens. */
   .m-root { --surface-1:#FFFCF3; --line:#E2CEB5; --line-strong:#CDB297; --shadow:0 7px 20px #70462F13; }
   .m-home-orbit { display:none; }
-  .m-logo { width:auto; height:auto; background:none; border:0; box-shadow:none; transform:none; gap:0; }
-  .m-logo::before,.m-logo::after { content:none; }
+  .m-logo { width:auto; height:auto; background:none; border:0; box-shadow:none; transform:none; gap:0; --contact-inset:22%; --contact-y:44px; --contact-h:18px; }
+  .m-logo::before { content:none; }
   .m-logo .clay-art { width:150px; height:150px; }
   .m-logo > span:last-child { font-size:40px; color:var(--text); transform:none; }
   .m-home-title,.m-result-title { color:var(--text); text-shadow:none; }
@@ -454,3 +453,148 @@
   .m-result-statistics > div { display:flex; align-items:center; gap:10px; padding:9px 12px; border:1px solid var(--line); border-radius:17px; background:var(--surface-1); text-align:start; }
   .m-result-statistics b { flex:1; min-width:0; overflow-wrap:anywhere; }
   .m-result-statistics small { color:var(--muted); font-size:12px; }
+
+  /* ═══ الأسطح الصلصالية (spec §4.5): ضوء علوي + حافة صلبة تنضغط عند الضغط ═══ */
+  .m-root .m-header, .m-root .m-board-header, .m-root .m-panel, .m-root .m-home-eyebrow, .m-root .m-home-stats span, .m-root .m-modal-layer { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .m-root .m-panel, .m-root .m-question-card, .m-root .m-board-category, .m-root .m-saved-card { background: var(--top-light), linear-gradient(145deg, #FFFEF7, #FCF3E4); box-shadow: inset 0 2px #fff, 0 4px 0 #E3D3BE, 0 10px 20px #70462F14; }
+  .m-root .m-tier { box-shadow: inset 0 2px #FFFFFFA8, 0 4px 0 rgba(0,0,0,.18), 0 8px 14px #78533522; transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), filter .16s; }
+  .m-root .m-tier:active:not(:disabled) { transform: translateY(4px); transition-duration: .08s; box-shadow: inset 0 2px 3px #78533522, 0 0 0 rgba(0,0,0,.18); }
+  .m-root .m-tier.done { transform: translateY(3px); box-shadow: inset 0 2px 4px #78533522, 0 0 0 #EDE2D5; }
+  .m-root .m-primary { box-shadow: inset 0 2px 1px #FFFFFF80, 0 4px 0 #066A77, 0 9px 18px #106F7C2E; }
+  .m-root .m-primary:active:not(:disabled) { transform: translateY(4px); box-shadow: inset 0 2px 4px #04525C55, 0 0 0 #066A77; }
+  .m-root .m-secondary, .m-root .m-icon-btn { box-shadow: inset 0 2px #fff, 0 3px 0 #D9C5AB, 0 6px 12px #63432F14; }
+  .m-root .m-secondary:active:not(:disabled), .m-root .m-icon-btn:active:not(:disabled) { transform: translateY(3px); box-shadow: inset 0 2px 3px rgba(91,61,36,.14), 0 0 0 #D9C5AB; }
+  .m-root .m-tools button, .m-root .m-choice, .m-root .m-category-pick { box-shadow: var(--shadow-tile); transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), background-color .18s, border-color .18s, opacity .3s; }
+  .m-root .m-tools button:active:not(:disabled), .m-root .m-choice:active:not(:disabled), .m-root .m-category-pick:active { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: var(--shadow-press); }
+  .m-root .m-choice.selected, .m-root .m-category-pick.selected { box-shadow: inset 0 2px 1px #fff, 0 var(--ledge) 0 #CBA9E0, 0 8px 14px #9250BD22; animation: ui-pop-select .32s var(--ease-spring); }
+  .m-root .m-category-pick.selected { box-shadow: inset 0 2px 1px #fff, 0 var(--ledge) 0 #D49B25, 0 8px 14px #D49B2533; }
+  .m-root .m-timer { box-shadow: 0 0 0 1px #F5B82E, 0 6px 0 #E3C27A, 0 14px 30px #70462F22; }
+  .m-root .m-timer-inner { box-shadow: inset 0 3px 2px #fff; }
+  .m-root .m-score-card { box-shadow: var(--shadow-row); }
+  .m-root .m-score-card.is-turn { box-shadow: inset 0 1px 0 #fff, 0 3px 0 color-mix(in srgb, var(--team, var(--purple)) 45%, #5B3D24), 0 12px 24px color-mix(in srgb, var(--team, var(--purple)) 20%, transparent); }
+  .m-root .m-modal { box-shadow: inset 0 2px 1px #fff, 0 5px 0 #D9C5AB, 0 24px 48px rgba(91,61,36,.20); }
+  .m-root .m-media-box { box-shadow: inset 0 2px 0 #fff8, 0 2px 0 #E3D3BE; }
+  .m-root .m-score-card { --team: var(--team-color); }
+  .m-root .m-secondary:disabled, .m-root .m-icon-btn:disabled, .m-root .m-tools button:disabled { transform: none; }
+  /* ترويسة اللوحة تلتصق تحت شريط المنصة لا خلفه */
+  .game-frame .m-root .m-board-header { top: calc(52px + var(--safe-top, 0px)); }
+
+  /* ═══ كتالوج الحركة (spec §6.5) — كل الحركات transform/opacity، آخر إطار هو حالة الراحة ═══ */
+  /* الرئيسية: الشعار حامل صلصالي يهبط ثم يطفو، والزر الرئيسي «مسلّح» */
+  .m-root .m-home-eyebrow { animation: ui-lift-in .35s var(--ease-out) both; }
+  .m-root .m-home-title { animation: ui-pop-in .38s var(--ease-spring) .16s both; }
+  .m-root .m-home-copy .m-muted { animation: ui-lift-in .35s var(--ease-out) .3s both; }
+  .m-root .m-home-stats { animation: ui-lift-in .35s var(--ease-out) .36s both; }
+  .m-root .m-saved-card { animation: ui-lift-in .4s var(--ease-out) .48s both; }
+  .m-root .m-hero-cta { position: relative; isolation: isolate; animation: ui-rise-pop .42s var(--ease-spring) .38s both; }
+  .m-root .m-hero-cta.is-armed { animation: ui-rise-pop .42s var(--ease-spring) .38s both, ui-breathe 1.8s ease-in-out 1s 3; }
+  .m-root .m-hero-cta.is-armed::after, .m-root .m-sticky-action.is-armed:not(:disabled)::after { content: ""; position: absolute; inset: -6px; border-radius: inherit; pointer-events: none; z-index: -1; box-shadow: 0 0 0 6px #18B7BE33; opacity: 0; animation: ui-glow 2.6s ease-in-out 1.2s 2; }
+  .m-root .m-home-actions .m-two { animation: ui-lift-in .4s var(--ease-out) .6s both; }
+  .m-root .m-beta-badge { animation: ui-fade .5s ease-out .9s both; }
+  /* الإعداد: اللوحات تدخل متدرّجة، الاختيار ينبض، الشارة والنجمة والعدّاد تقفز، «عشوائي» يهزّ البلاطات */
+  .m-root .m-screen > .m-panel { animation: ui-lift-in .4s var(--ease-out) both; }
+  .m-root .m-screen > .m-panel:nth-child(3) { animation-delay: 70ms; }
+  .m-root .m-screen > .m-panel:nth-child(4) { animation-delay: 140ms; }
+  .m-root .m-choice.selected::after { animation: ui-pop-in .26s var(--ease-spring) both; }
+  .m-root .m-order-badge { animation: ui-pop-in .35s var(--ease-spring) both; }
+  .m-root .m-favorite span { display: inline-block; }
+  .m-root .m-favorite[aria-pressed="true"] span { animation: ui-bounce .4s var(--ease-spring); }
+  .m-root .m-count { animation: ui-bounce .45s var(--ease-spring); }
+  .m-root .m-category-picker.is-shuffled .m-category-pick { animation: ui-wobble .4s ease-in-out both; animation-delay: calc(min(var(--k, 0), 12) * 30ms); }
+  .m-root .m-sticky-action { isolation: isolate; }
+  .m-root .m-sticky-action.is-armed:not(:disabled) { animation: ui-pop-select .3s var(--ease-spring), ui-breathe 1.8s ease-in-out .3s 3; }
+  .m-root .m-empty { animation: ui-lift-in .3s var(--ease-out) both; }
+  .m-root .m-error { animation: ui-fade .2s ease-out both, ui-nudge .4s ease-out; }
+  /* اللوحة: الفئات ترتفع، البلاطات تنقلب متدرّجة ثم لمعة واحدة، البطاقات تصعد، شريط التقدّم ينمو من جهة البداية */
+  .m-root .m-board-category { animation: ui-lift-in .4s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 60ms); }
+  .m-root .m-tier { animation: ui-flip-in .45s var(--ease-out) backwards; animation-delay: calc(200ms + var(--i, 0) * 60ms + var(--n, 0) * 40ms); }
+  .m-root .m-tier::before { animation: m-tier-sheen .9s ease-out backwards; animation-delay: calc(900ms + var(--i, 0) * 60ms); }
+  @keyframes m-tier-sheen { 0% { transform: translateX(-170%) skewX(-18deg); } 60% { transform: translateX(20%) skewX(-18deg); } 100% { transform: translateX(58%); } }
+  .m-root .m-tier.is-launch { animation: ui-punch .18s var(--ease-out); }
+  .m-root .m-tier.done { animation: m-tier-sink .3s var(--ease-out) backwards; }
+  @keyframes m-tier-sink { from { transform: translateY(-3px); } }
+  .m-root .m-tier.done::after { animation: ui-pop-in .3s var(--ease-spring) .15s both; }
+  .m-root .m-score-card { position: relative; animation: ui-rise-pop .5s var(--ease-spring) backwards; animation-delay: calc(var(--n, 0) * 60ms); }
+  .m-root .m-score-card.is-turn { animation: ui-rise-pop .5s var(--ease-spring) backwards, ui-pop-select .32s var(--ease-spring); animation-delay: calc(var(--n, 0) * 60ms), calc(560ms + var(--n, 0) * 60ms); }
+  .m-root .m-score-card.is-bumped { animation: ui-bounce .4s var(--ease-spring); }
+  .m-root .m-score-card.is-undone { animation: ui-wobble .4s ease-in-out; }
+  .m-root .m-current-turn > span { position: relative; }
+  .m-root .m-current-turn > span::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--team-color); opacity: 0; pointer-events: none; animation: ui-ring-out 1.2s ease-out .4s 2; }
+  /* النقاط: الرقم الحقيقي في النص، والعدّ التصاعدي على ::before عبر عدّاد CSS ينتقل من القيمة السابقة */
+  @property --score { syntax: '<integer>'; inherits: false; initial-value: 0; }
+  .m-root .m-points { position: relative; --score: 0; counter-reset: score var(--score); transition: --score .6s cubic-bezier(.2,.8,.2,1); }
+  .m-root .m-points::before { content: counter(score); }
+  .m-root .m-points::before { content: counter(score) / ""; }
+  .m-root .m-points-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+  .m-root .m-delta { position: absolute; inset-inline-end: 10px; top: -4px; font-size: 14px; font-weight: 900; color: var(--success); pointer-events: none; animation: ui-fly-up .8s var(--ease-out) forwards; }
+  .m-root .m-delta.is-neg { color: var(--danger); }
+  /* السؤال: شارة الفريق تدخل مع لمعة، المؤقت يبرز، الأدوات تصعد متدرّجة، البطاقة تنبثق */
+  .m-root .m-turn-banner { position: relative; overflow: hidden; animation: ui-row-in .36s var(--ease-out) both; }
+  .m-root .m-turn-banner::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, transparent 30%, #FFFFFF73 50%, transparent 70%); animation: ui-sheen .9s ease-out .3s both; }
+  .m-root .m-question-card { position: relative; animation: ui-pop-in .45s var(--ease-spring) both; }
+  .m-root .m-question-card.is-revealed::before { content: ""; position: absolute; inset: -3px; border-radius: inherit; border: 3px solid #34D399; opacity: 0; pointer-events: none; animation: ui-glow .8s ease-in-out 1; }
+  .m-root .m-tools button { animation: ui-lift-in .3s var(--ease-out) .2s backwards; }
+  .m-root .m-tools button:nth-child(2) { animation-delay: .25s; }
+  .m-root .m-tools button:nth-child(3) { animation-delay: .3s; }
+  .m-root .m-tools button.used { opacity: .72; }
+  .m-root .m-tools.is-out button { opacity: .5; }
+  .m-root .m-tools button.active, .m-root .m-tools button.active:disabled { position: relative; opacity: 1; color: #166271; background: #DDF1F4; border-color: var(--cyan); animation: ui-pop-select .32s var(--ease-spring); }
+  .m-root .m-tools button.active::after { content: ""; position: absolute; inset: -4px; border-radius: inherit; border: 2px solid var(--cyan); opacity: 0; pointer-events: none; animation: ui-ring-out .8s ease-out 1 both; }
+  .m-root .m-tier-text small { display: inline-block; animation: ui-pop-in .4s var(--ease-spring) both; }
+  .m-root .m-award { display: inline-block; animation: ui-punch .3s var(--ease-out); }
+  .m-root .m-hints div.is-open { transform-origin: 50% 0; animation: ui-unfold .3s var(--ease-out) both; }
+  /* المؤقت: نبض القلب وحلقة تخرج في العشر الأخيرة (الظل الأحمر ثابت)، توقّف بلا مرشّح، استئناف ينبض، +30 يقفز، انتهاء يهتز */
+  @property --timer-fill { syntax: '<angle>'; inherits: false; initial-value: 360deg; }
+  .m-root .m-timer { position: relative; transition: --timer-fill .25s linear, opacity .25s ease, transform .25s ease; }
+  .m-root .m-timer-inner { animation: ui-pop-in .4s var(--ease-spring) .12s backwards; }
+  .m-root .m-timer-inner b > span { display: inline-block; animation: ui-punch .3s var(--ease-out); }
+  .m-root .m-timer.danger { box-shadow: 0 0 0 5px rgba(251,113,133,.16), 0 6px 0 #C9706F, 0 14px 30px rgba(197,69,67,.26); animation: ui-heartbeat 1s ease-in-out infinite; }
+  .m-root .m-timer.danger::after { content: ""; position: absolute; inset: -7px; border-radius: 50%; border: 3px solid #FF4D4D; opacity: 0; pointer-events: none; animation: ui-ring-out .9s ease-out infinite; }
+  .m-root .m-timer.paused { opacity: .75; transform: scale(.97); animation: none; filter: none; }
+  .m-root .m-timer.paused::after { animation: none; }
+  .m-root .m-timer.is-resumed { animation: ui-pop-select .3s var(--ease-spring); }
+  .m-root .m-timer.is-boost { animation: ui-bounce .5s var(--ease-spring); }
+  .m-root .m-timer.is-out { animation: ui-nudge .4s ease-out; }
+  .m-root .m-timeout { animation: ui-stamp .45s var(--ease-pop) both; }
+  /* الكشف: قطع تنقلب، بقعة الفرق تهبط مع حلقتين، الصور الأربع تصعد، الرقائق الصحيحة تنبض، أزرار الحكم تصعد */
+  @keyframes m-spot-land { 0% { opacity: 0; transform: translate(-50%,-50%) scale(.35); } 55% { opacity: 1; transform: translate(-50%,-50%) scale(1.15); } 100% { opacity: 1; transform: translate(-50%,-50%); } }
+  .m-root .m-diff-spot { animation: m-spot-land .5s var(--ease-spring) both; }
+  .m-root .m-diff-spot::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 3px solid var(--danger); opacity: 0; animation: ui-ring-out 1s ease-out .3s 2; }
+  .m-root .m-fourpics > .m-media-box { animation: ui-lift-in .35s var(--ease-out) both; }
+  .m-root .m-fourpics > .m-media-box:nth-child(2) { animation-delay: 70ms; }
+  .m-root .m-fourpics > .m-media-box:nth-child(3) { animation-delay: 140ms; }
+  .m-root .m-fourpics > .m-media-box:nth-child(4) { animation-delay: 210ms; }
+  .m-root .m-item-list span { display: inline-block; }
+  .m-root .is-answer { animation: ui-pop-select .35s var(--ease-spring) both; }
+  .m-root .is-answer:nth-child(2) { animation-delay: 80ms; }
+  .m-root .is-answer:nth-child(3) { animation-delay: 160ms; }
+  .m-root .is-answer:nth-child(4) { animation-delay: 240ms; }
+  .m-root .is-answer:nth-child(5) { animation-delay: 320ms; }
+  .m-root .is-answer:nth-child(6) { animation-delay: 400ms; }
+  .m-root .is-answer:nth-child(n+7) { animation-delay: 480ms; }
+  .m-root .m-judge-grid button { animation: ui-lift-in .3s var(--ease-out) backwards; }
+  .m-root .m-judge-grid button:nth-child(2) { animation-delay: 60ms; }
+  .m-root .m-judge-grid button:nth-child(3) { animation-delay: 120ms; }
+  .m-root .m-judge-grid button:nth-child(4) { animation-delay: 180ms; }
+  .m-root .m-judge > .m-nobody { animation: ui-lift-in .3s var(--ease-out) .24s backwards; }
+  .m-root .m-media-error { animation: ui-nudge .4s ease-out; }
+  /* النتيجة: صفوف الإحصاء تدخل بعد المنصة، ثم الأزرار */
+  .m-root .m-result > .m-kicker, .m-root .m-result > .m-muted { animation: ui-lift-in .35s var(--ease-out) .9s both; }
+  .m-root .m-result-statistics > div { animation: ui-row-in .35s var(--ease-out) .9s both; }
+  .m-root .m-result-statistics > div:nth-child(2) { animation-delay: .97s; }
+  .m-root .m-result-statistics > div:nth-child(3) { animation-delay: 1.04s; }
+  .m-root .m-result-statistics > div:nth-child(4) { animation-delay: 1.11s; }
+  .m-root .m-result-statistics .clay-stage { --contact-inset: 20%; }
+  .m-root .m-result-actions { animation: ui-lift-in .4s var(--ease-out) 1.2s both; }
+  /* الحوارات والتنبيه والعارض والصوت */
+  .m-root .m-modal-layer { animation: ui-fade .2s ease-out both; }
+  .m-root .m-modal-layer.is-closing { animation: ui-fade-out .18s ease-in both; }
+  .m-root .m-modal-layer.is-bottom .m-modal { animation: ui-sheet-in .28s var(--ease-spring) both; }
+  .m-root .m-modal-layer.is-closing .m-modal { animation: ui-modal-out .18s ease-in both; }
+  .m-root .m-modal-layer.is-closing.is-bottom .m-modal { animation: ui-sheet-out .18s ease-in both; }
+  .m-root .m-toast.is-leaving { animation: m-toast-out .2s ease-in both; }
+  .m-root .m-lightbox { animation: ui-fade .18s ease-out; }
+  .m-root .m-lightbox img { animation: ui-pop-in .3s var(--ease-spring); transition: transform .3s ease; }
+  .m-root .m-audio-btn { position: relative; }
+  .m-root .m-audio-btn.is-playing::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 3px solid var(--gold); opacity: 0; pointer-events: none; animation: ui-ring-out 1.1s ease-out infinite; }
+  :root[data-reduced-motion="true"] .m-root .m-tier::before, :root[data-reduced-motion="true"] .m-root .m-turn-banner::after { animation: none; }

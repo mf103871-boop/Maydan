@@ -6,6 +6,8 @@ import { pictures, questions, categories } from '../games/fabraka/content.js';
 import { normalizeOptions, questionPool, ROUNDS, validateLie, awards, bestLies } from '../games/fabraka/logic.js';
 import css from '../games/fabraka/fabraka.css';
 import { arabicNumber } from './shared.js';
+import { usePlatform } from '../platform/context.js';
+import { vignette } from '../shared/fx/index.js';
 
 const number = arabicNumber;
 // Mirrors the single-device setup check in src/games/fabraka/Game.jsx: only the
@@ -79,7 +81,7 @@ function Question({ value, answer = false }) {
   const [before, ...rest] = value.text.split('___');
   return <div className="fab-question online-fab-question">
     {value.kind === 'picture' && <Illustration question={{ illustration: pictures[value.visualIndex]?.illustration, imageDescription: value.imageDescription }} />}
-    <h1 className="fab-q">{before}{rest.length > 0 && <><span className="blank">{answer ? value.answer || '…' : '؟؟؟'}</span>{rest.join('___')}</>}</h1>
+    <h1 className={answer ? 'fab-q is-filled' : 'fab-q'}>{before}{rest.length > 0 && <><span className="blank">{answer ? value.answer || '…' : '؟؟؟'}</span>{rest.join('___')}</>}</h1>
   </div>;
 }
 function Draft({ state, me, disabled, expired, act, truth }) {
@@ -105,7 +107,7 @@ function Draft({ state, me, disabled, expired, act, truth }) {
       try { localStorage.removeItem(key); } catch { /* memory-only form */ }
     }
   }
-  return <form className="stack" onSubmit={submit}>
+  return <form className="stack fab-draft" onSubmit={submit}>
     <label className="online-field">{truth ? 'إجابتك الحقيقية عن نفسك' : 'فبركتك السرية'}
       <input autoComplete="off" maxLength={60} value={draft.text} disabled={disabled || expired} onChange={(e) => { setDraft({ ...draft, text: e.target.value }); setError(''); }} placeholder={truth ? 'اكتب الحقيقة هنا' : 'اكتب إجابة تبدو مقنعة'} />
     </label>
@@ -138,10 +140,10 @@ function Vote({ state, disabled, expired, act }) {
     <Button full size="lg" variant="primary" disabled={disabled || expired || choice === undefined} onClick={() => act('vote', { optionId: choice, funnyId: funny })}>ثبّت تصويتي</Button>
   </div>;
 }
-function AnswerCard({ option, members, multiplier }) {
+function AnswerCard({ option, members, multiplier, index = 0 }) {
   const names = (ids) => (ids || []).map((id) => members.find((m) => m.id === id)?.name).filter(Boolean).join('، ');
   const revealed = typeof option.truth === 'boolean';
-  return <article className={`fab-reveal-card ${revealed ? option.truth ? 'is-truth' : 'is-lie' : ''}`}>
+  return <article style={{ '--i': index }} className={`fab-reveal-card ${revealed ? option.truth ? 'is-truth' : 'is-lie' : ''}`}>
     <h3>{option.text}</h3>
     {revealed && <div className="stack fab-reveal-detail">
       <strong>{option.truth ? 'هذه هي الحقيقة!' : option.owners.length ? `كتبها: ${names(option.owners)}` : 'إجابة أضافتها اللعبة'}</strong>
@@ -161,12 +163,13 @@ function Final({ state, sorted, isHost, disabled, act }) {
     {state.reason === 'players_left' && <p className="online-notice">انتهت اللعبة لأن عدد اللاعبين أصبح أقل من ٣. هذه نقاط الجولات المكتملة.</p>}
     <Podium entries={sorted} />
     <div className="fab-awards">{honors.map((award) => <Card key={award.stat}><span className="fab-award-icon" aria-hidden="true">{award.emoji}</span><h3>{award.title}</h3><p>{award.players.map((p) => p.name).join('، ')}</p></Card>)}</div>
-    <Card className="stack"><h2>حصيلة الجلسة</h2>{sorted.map((p) => <div className="online-fab-total" key={p.id}><Avatar index={p.avatar} /><div className="grow"><b>{p.name}</b><small>{number(p.stats.truths)} حقائق · {number(p.stats.fooled)} خدعات{state.settings.funnyVote && ` · ${number(p.stats.laughs)} ضحكات`}</small></div><strong>{number(p.score)}</strong></div>)}</Card>
+    <Card className="stack"><h2>حصيلة الجلسة</h2>{sorted.map((p, i) => <div className="online-fab-total" key={p.id} style={{ '--i': i }}><Avatar index={p.avatar} /><div className="grow"><b>{p.name}</b><small>{number(p.stats.truths)} حقائق · {number(p.stats.fooled)} خدعات{state.settings.funnyVote && ` · ${number(p.stats.laughs)} ضحكات`}</small></div><strong>{number(p.score)}</strong></div>)}</Card>
     {highlights.length > 0 && <Card className="stack"><h2>فبركات تستحق التذكّر</h2>{highlights.map((h, i) => <div key={`${h.round}-${i}`}><blockquote>«{h.text}»</blockquote><p className="online-footnote">{names(h.owners)} · خدعت {number(h.fooled)}{state.settings.funnyVote && ` · أضحكت ${number(h.laughs)}`}</p></div>)}</Card>}
     {isHost ? <Button full size="lg" variant="primary" disabled={disabled} onClick={() => act('restart')}>العودة للانتظار ولعب مرة ثانية</Button> : <p className="online-footnote">بانتظار المضيف لبدء لعبة جديدة.</p>}
   </>;
 }
 export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) {
+  const platform = usePlatform();
   const [now, setNow] = useState(Date.now()), [confirmFinish, setConfirmFinish] = useState(false);
   useEffect(() => {
     if (!state.deadlineAt) return;
@@ -175,6 +178,16 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
   }, [state.deadlineAt]);
   const seconds = state.deadlineAt ? Math.max(0, Math.ceil((state.deadlineAt - (now + clockOffset)) / 1000)) : null;
   const expired = seconds === 0;
+  // الكشف: قرع طبول عند كل مجموعة جديدة، وصوت الكشف عند ظهور الحقيقة (صوت فقط، لا منطق).
+  const revealShown = state.phase === 'reveal' && Boolean(state.reveal?.shown);
+  const revealGroup = state.phase === 'reveal' ? (state.reveal?.options || []).map((o) => o.id).join(',') : '';
+  useEffect(() => { if (state.phase === 'reveal' && !state.reveal?.shown) platform?.sound?.play('drumroll'); }, [state.phase, revealGroup]);
+  useEffect(() => { if (revealShown) platform?.sound?.play(state.reveal.options.some((o) => o.truth) ? 'reveal' : 'pop'); }, [revealShown]);
+  // آخر ثلاث ثوانٍ: تظليل أحمر نابض (يُطفأ عند الخروج).
+  useEffect(() => {
+    vignette(seconds !== null && seconds > 0 && seconds <= 3);
+    return () => vignette(false);
+  }, [seconds]);
   const players = state.members.filter((m) => state.participants.includes(m.id));
   const sorted = [...players].sort((a, b) => b.score - a.score);
   const truthOwner = state.truthHostId === me?.id;
@@ -183,14 +196,14 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
   const roundKey = `${state.code}:${state.matchId}:${state.round}`;
   return <div className="fabraka stack online-fabraka"><style>{css}</style>
     {state.phase === 'over' ? <Final state={state} sorted={sorted} isHost={isHost} disabled={disabled} act={act} /> : <>
-      <div className="row-between"><b>الجولة {number(state.round)} من {number(state.rounds)}</b>{seconds !== null && <span className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} role="timer" aria-label={`متبقي ${seconds} ثانية`}><bdi>{number(seconds)}</bdi> ث</span>}</div>
-      {multiplier === 2 && <p className="online-notice">الجولة الأخيرة · نقاط الحقيقة والخداع مضاعفة!</p>}
+      <div className="row-between"><b>الجولة {number(state.round)} من {number(state.rounds)}</b>{seconds !== null && <span className={`online-timer ${seconds <= 5 ? 'urgent' : ''}`} role="timer" aria-label={`متبقي ${seconds} ثانية`}><b key={seconds <= 5 ? seconds : 'n'}><bdi>{number(seconds)}</bdi></b> ث</span>}</div>
+      {multiplier === 2 && <p className="online-notice online-double"><span className="fire" aria-hidden="true">🔥</span>الجولة الأخيرة · نقاط الحقيقة والخداع مضاعفة!</p>}
       <Card><Question value={state.question} answer={state.phase === 'result' && !state.roundReason} /></Card>
       {state.phase === 'host' && <Card className="stack">
-        {truthOwner ? <><h2>هذه جولتك يا {me.name}</h2><p className="online-footnote">اكتب الحقيقة عن نفسك. لن تشارك في الكتابة والتصويت أو تجمع نقاطًا في هذا الدور.</p><Draft key={`${roundKey}:truth:${state.question.text}`} state={state} me={me} truth disabled={disabled} expired={expired} act={act} /></> : <div role="status"><h2>بانتظار حقيقة {ownerName}</h2><p>يكتب صاحب الجولة إجابته سرًا، ثم تبدأون الفبركة معًا.</p></div>}
+        {truthOwner ? <><h2>هذه جولتك يا {me.name}</h2><p className="online-footnote">اكتب الحقيقة عن نفسك. لن تشارك في الكتابة والتصويت أو تجمع نقاطًا في هذا الدور.</p><Draft key={`${roundKey}:truth:${state.question.text}`} state={state} me={me} truth disabled={disabled} expired={expired} act={act} /></> : <div role="status" className="online-waiting"><h2>بانتظار حقيقة {ownerName}</h2><p>يكتب صاحب الجولة إجابته سرًا، ثم تبدأون الفبركة معًا.</p></div>}
       </Card>}
       {state.phase === 'write' && <Card className="stack">
-        {truthOwner ? <div role="status"><h2>أصحابك يفبركون الآن</h2><p>حقيقتك: {state.myTruth}. تابع الجولة دون تلميحات.</p></div>
+        {truthOwner ? <div role="status" className="online-waiting"><h2>أصحابك يفبركون الآن</h2><p>حقيقتك: {state.myTruth}. تابع الجولة دون تلميحات.</p></div>
           : state.mySubmission.submitted ? <div className="online-voted" role="status"><strong>وصلت إجابتك ✓</strong><p>{state.mySubmission.skipped ? 'مرّرت بدون إجابة.' : `إجابتك: ${state.mySubmission.text}`}</p><p>بانتظار الباقي…</p></div>
           : <Draft key={`${roundKey}:write`} state={state} me={me} disabled={disabled} expired={expired} act={act} />}
         <p className="online-footnote" role="status">ثبّت {number(state.writingCount)} من {number(state.writerCount)} إجاباتهم.</p>
@@ -201,20 +214,20 @@ export function FabrakaMatch({ state, me, isHost, disabled, act, clockOffset }) 
         {isHost && <Button full variant="primary" disabled={disabled || expired} onClick={() => act('start_vote')}>ابدأ التصويت</Button>}
         <p className="online-footnote">يبدأ التصويت تلقائيًا عند انتهاء النقاش.</p>
       </Card>}
-      {state.phase === 'vote' && <Card className="stack">{truthOwner ? <div role="status"><h2>أصحابك يصوّتون</h2><p>صاحب الحقيقة لا يصوّت في جولته.</p></div> : <Vote key={`${roundKey}:vote`} state={state} disabled={disabled} expired={expired} act={act} />}
+      {state.phase === 'vote' && <Card className="stack">{truthOwner ? <div role="status" className="online-waiting"><h2>أصحابك يصوّتون</h2><p>صاحب الحقيقة لا يصوّت في جولته.</p></div> : <Vote key={`${roundKey}:vote`} state={state} disabled={disabled} expired={expired} act={act} />}
         <p className="online-footnote" role="status">وصل {number(state.submittedCount)} من {number(state.writerCount)} أصوات.</p>
       </Card>}
       {state.phase === 'reveal' && <Card className="stack"><h2>{state.reveal.final ? 'الحقيقة… أم أقوى فبركة؟' : 'من كتبها؟ ومن صدّقها؟'}</h2>
-        {state.reveal.options.map((o) => <AnswerCard key={o.id} option={o} members={players} multiplier={multiplier} />)}
+        {state.reveal.options.map((o, i) => <AnswerCard key={o.id} index={i} option={o} members={players} multiplier={multiplier} />)}
         {isHost ? <Button full variant="primary" disabled={disabled} onClick={() => act(state.reveal.shown ? 'next_reveal' : 'reveal')}>{state.reveal.shown ? 'المجموعة التالية' : state.reveal.final ? 'اكشف الحقيقة!' : 'اكشف هذه الإجابات'}</Button> : <p className="online-footnote">المضيف يكشف الإجابات للجميع.</p>}
       </Card>}
       {state.phase === 'result' && <>
         <Card className="stack">{state.roundReason ? <p className="online-notice">{state.roundReason === 'owner_left' ? 'غادر صاحب الحقيقة قبل تثبيت إجابته.' : 'انتهى وقت كتابة الحقيقة.'} انتقلوا للجولة التالية؛ لا نقاط في هذه الجولة.</p> : <>
           <h2>الحقيقة: {state.question.answer}</h2><p>{state.question.explanation}</p>
           {state.question.sourceUrl && <a href={state.question.sourceUrl} target="_blank" rel="noreferrer">مصدر المعلومة</a>}
-          {state.options.map((o) => <AnswerCard key={o.id} option={o} members={players} multiplier={multiplier} />)}
+          {state.options.map((o, i) => <AnswerCard key={o.id} index={i} option={o} members={players} multiplier={multiplier} />)}
         </>}
-        <h2>حصيلة الجولة</h2>{players.map((p) => { const row = state.breakdown[p.id] || {}; return <div key={p.id} className="online-fab-total"><Avatar index={p.avatar} /><div className="grow"><b>{p.name}</b><small>{row.host ? 'صاحب الحقيقة' : row.byWriting ? 'عرف الحقيقة أثناء الكتابة' : `${row.truth ? 'اكتشف الحقيقة · ' : ''}${number(row.fooled || 0)} خدعات`}</small></div><strong>+{number(row.points || 0)}</strong></div>; })}
+        <h2>حصيلة الجولة</h2>{players.map((p, i) => { const row = state.breakdown[p.id] || {}; return <div key={p.id} className="online-fab-total" style={{ '--i': i }}><Avatar index={p.avatar} /><div className="grow"><b>{p.name}</b><small>{row.host ? 'صاحب الحقيقة' : row.byWriting ? 'عرف الحقيقة أثناء الكتابة' : `${row.truth ? 'اكتشف الحقيقة · ' : ''}${number(row.fooled || 0)} خدعات`}</small></div><strong>+{number(row.points || 0)}</strong></div>; })}
         {isHost ? <Button full size="lg" variant="primary" disabled={disabled} onClick={() => act('next')}>{state.round === state.rounds ? 'عرض النتيجة النهائية' : 'الجولة التالية'}</Button> : <p className="online-footnote">بانتظار المضيف للمتابعة.</p>}
         </Card>
       </>}

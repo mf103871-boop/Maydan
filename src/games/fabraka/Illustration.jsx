@@ -76,8 +76,9 @@ export function Illustration({ question }) {
   if (!drawings[question.illustration]) return null;
   return <figure className="fab-illustration">
     <svg viewBox="0 0 360 220" role="img" aria-label={question.imageDescription}>
-      <rect width="360" height="220" rx="22" fill="#f8f1e6" />
-      <ellipse cx="180" cy="198" rx="94" ry="7" fill="#e5d8c5" />
+      {/* اللوحة بلا تعبئة: الرسم جسم حرّ يحمل ظله (filter على svg من fabraka.css)؛ الأرضية بشفافية 45% */}
+      <rect width="360" height="220" rx="22" fill="none" stroke="none" />
+      <ellipse cx="180" cy="198" rx="94" ry="7" fill="#e5d8c5" fillOpacity=".45" stroke="none" />
       <g stroke="#564061" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">{drawings[question.illustration]}</g>
     </svg>
     <figcaption>رسم توضيحي لأداة حقيقية</figcaption>

@@ -1,36 +1,58 @@
-.jabeen { --game-accent: #078C97; display: grid; gap: 14px; }
-.jabeen-stage { position: fixed; inset: 0; z-index: 300; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: var(--bg); overflow: hidden; }
-.jabeen-word { display: grid; place-items: center; text-align: center; padding: 10px 16px; min-height: 0; overflow: auto; font-size: clamp(24px, min(11vw, 12vh), 92px); font-weight: 900; line-height: 1.15; color: #fff; text-wrap: balance; overflow-wrap: anywhere; }
+/* «على جبينك» — أنماط اللعبة. تُحقن من Game و من SetupOptions (بلاطات الفئات). brand.css يملك ألوان is-good/is-skip والأزرار.
+   align-content: start: الشاشة min-height 100dvh فلا تتمدد الصفوف. */
+.jabeen { --game-accent: #078C97; display: grid; gap: 14px; align-content: start; }
+
+/* ── المسرح: ثابت ملء الشاشة؛ يدخل بالشفافية فقط (لا transform على عنصر ثابت)، ولونه ينتقل مع صح/تخطي ── */
+.jabeen-stage { position: fixed; inset: 0; z-index: 300; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: var(--bg); overflow: hidden; transition: background-color .25s ease; }
+.screen > .jabeen-stage { animation: ui-fade .25s ease-out both; }
+.jabeen-stage.is-good { background: #D5F1E5; }
+.jabeen-stage.is-skip { background: #FADDD6; }
+.jabeen-word { display: grid; place-items: center; text-align: center; padding: 10px 16px; min-height: 0; overflow: auto; font-size: clamp(24px, min(11vw, 12vh), 92px); font-weight: 900; line-height: 1.15; color: var(--plum); text-wrap: balance; overflow-wrap: anywhere; }
 .jabeen-word > * { max-width: 100%; }
-.jabeen-stage.is-good { background: radial-gradient(circle, #147a52, var(--bg) 75%); animation: flash-good .5s ease-out; }
-.jabeen-stage.is-skip { background: radial-gradient(circle, #7a1414, var(--bg) 75%); animation: flash-bad .45s ease-out; }
+.jabeen-word > span { display: block; animation: ui-pop-in .35s var(--ease-spring) both; }
 .jabeen-stage-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: calc(8px + var(--safe-top)) 14px 8px; font-weight: 800; }
-.jabeen-stage-top .num { font-size: 30px; font-variant-numeric: tabular-nums; color: var(--game-accent); }
-.jabeen-stage-top .num.is-danger { color: var(--danger); animation: ui-pulse .8s ease-in-out infinite; }
+.jabeen-stage-top .num { display: inline-block; min-width: 2ch; text-align: center; font-size: 30px; font-variant-numeric: tabular-nums; color: var(--game-accent); }
+.jabeen-stage-top .num.is-danger { color: var(--danger); animation: ui-punch .3s var(--ease-out) both, ui-heartbeat 1s ease-in-out .3s infinite; }
+.jabeen-stage-top .count { display: inline-block; animation: ui-punch .3s var(--ease-out) both; }
 .jabeen-controls { display: grid; gap: 6px; padding: 0 0 var(--safe-bottom); }
 .jabeen-hint { text-align: center; font-size: 13px; font-weight: 700; color: var(--muted); padding: 0 12px; }
 .jabeen-touch { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.jabeen-touch button { min-height: min(96px, 22vh); border-radius: 0; font-size: 20px; font-weight: 900; display: grid; place-items: center; gap: 4px; }
-.jabeen-touch .ok { background: rgba(46,216,163,.2); color: #BFFFE8; }
-.jabeen-touch .skip { background: rgba(255,77,77,.18); color: #FFC9C9; }
+.jabeen-touch button { min-height: min(96px, 22vh); border-radius: 0; font-size: 20px; font-weight: 900; display: grid; place-items: center; gap: 4px; transition: transform .1s var(--ease-out), background-color .15s ease; }
+.jabeen-touch button:active { transform: scale(.96); }
+.jabeen-touch .ok { background: rgba(46,216,163,.2); color: #165F4D; }
+.jabeen-touch .skip { background: rgba(255,77,77,.18); color: #A42F32; }
 .jabeen-touch span { font-size: 30px; }
 .jabeen-rotate { position: fixed; inset: 0; z-index: 340; display: grid; place-items: center; text-align: center; background: var(--bg); padding: 30px; }
 .jabeen-rotate .big { font-size: 80px; animation: jabeen-rot 1.6s ease-in-out infinite; }
 @keyframes jabeen-rot { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-90deg); } }
+
+/* ── التمهيد: الرسم يهبط ثم «يرفع إلى الجبين» (hero-lift ذهابًا وإيابًا) والظل يتنفس؛ النصوص والزر بتدرّج والزر مسلّح ── */
 .jabeen-intro { display: grid; justify-items: center; gap: 12px; text-align: center; padding: 22px 12px; }
-.jabeen-intro .big { font-size: 72px; animation: ui-trophy .7s var(--ease-spring) both; }
+.jabeen-intro > * { animation: ui-lift-in .35s var(--ease-out) both; animation-delay: calc(80ms + var(--k, 0) * 70ms); }
+.jabeen-intro > :nth-child(2) { --k: 1; } .jabeen-intro > :nth-child(3) { --k: 2; } .jabeen-intro > :nth-child(4) { --k: 3; } .jabeen-intro > :nth-child(5) { --k: 4; } .jabeen-intro > :nth-child(6) { --k: 5; } .jabeen-intro > :nth-child(7) { --k: 6; }
+.jabeen-intro > .big { animation: none; --contact-inset: 16%; --contact-y: -2%; }
+.jabeen-intro .big > .clay-lift { animation: clay-drop .7s var(--ease-spring) both, hero-lift 2.4s ease-in-out .9s infinite alternate; }
+.jabeen-intro .big::after { animation: clay-shadow-land .7s var(--ease-spring) both, clay-shadow-breathe 4.8s ease-in-out .9s infinite; }
 .jabeen-intro h2 { font-size: clamp(26px, 7vw, 36px); font-weight: 900; }
+.jabeen-intro > .btn.is-armed:not(:disabled) { animation: ui-lift-in .35s var(--ease-out) both, ui-breathe 1.8s ease-in-out .9s 3; animation-delay: calc(80ms + var(--k, 0) * 70ms), .9s; }
+.jabeen-perm { padding: 12px 14px; border-radius: 14px; background: rgba(77,163,255,.12); border: 1px solid rgba(77,163,255,.4); box-shadow: var(--shadow-row); font-size: 14px; line-height: 1.7; color: #145B71; }
+
+/* ── بلاطات الفئات (الإعداد): وصفة البلاطة الصلصالية، حافة فيروزية عند الاختيار ── */
 .jabeen-cats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.jabeen-cat { display: grid; gap: 4px; padding: 12px; border-radius: 16px; background: var(--surface); border: 1px solid var(--stroke); text-align: center; font-weight: 800; }
-.jabeen-cat.selected { border-color: var(--game-accent); background: color-mix(in srgb, var(--game-accent) 18%, var(--surface)); }
+.jabeen-cat { display: grid; gap: 4px; padding: 12px; border-radius: 16px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-tile); text-align: center; font-weight: 800; transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), background-color .18s, border-color .18s; }
+.jabeen-cat:active { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: var(--shadow-press); }
+.jabeen-cat.selected { border-color: var(--game-accent); background: var(--top-light), color-mix(in srgb, var(--game-accent) 18%, var(--surface)); box-shadow: inset 0 2px 1px #fff, 0 3px 0 #0A6F78, 0 8px 14px #078C9722; animation: ui-pop-select .3s var(--ease-spring); }
 .jabeen-cat span { font-size: 26px; }
 .jabeen-cat small { color: var(--muted); font-size: 12px; font-weight: 700; }
+
+/* ── المراجعة: الصفوف تدخل من الجانب بتدرّج، العلامة تنبض عند التبديل (key) ── */
 .jabeen-review { display: grid; gap: 6px; }
-.jabeen-review button { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--stroke); text-align: start; font-weight: 700; min-height: 52px; }
-.jabeen-review button.ok { background: rgba(46,216,163,.14); border-color: rgba(46,216,163,.45); }
-.jabeen-review button .mark { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; flex: 0 0 auto; background: var(--surface-2); }
-.jabeen-review button.ok .mark { background: var(--success); color: #04231a; }
+.jabeen-review button { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-radius: 14px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-tile); text-align: start; font-weight: 700; min-height: 52px; transition: transform .2s var(--ease-spring), box-shadow .2s var(--ease-spring), background-color .18s, border-color .18s; animation: ui-row-in .35s var(--ease-out) both; animation-delay: calc(var(--k, 0) * 45ms); }
+.jabeen-review button:active { transform: translateY(var(--ledge)); transition-duration: .08s; box-shadow: var(--shadow-press); }
+.jabeen-review button:nth-child(2) { --k: 1; } .jabeen-review button:nth-child(3) { --k: 2; } .jabeen-review button:nth-child(4) { --k: 3; } .jabeen-review button:nth-child(5) { --k: 4; } .jabeen-review button:nth-child(6) { --k: 5; } .jabeen-review button:nth-child(7) { --k: 6; } .jabeen-review button:nth-child(8) { --k: 7; } .jabeen-review button:nth-child(9) { --k: 8; } .jabeen-review button:nth-child(10) { --k: 9; } .jabeen-review button:nth-child(11) { --k: 10; } .jabeen-review button:nth-child(n+12) { --k: 11; }
+.jabeen-review button.ok { background: var(--top-light), rgba(46,216,163,.14); border-color: rgba(46,216,163,.45); }
+.jabeen-review button .mark { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; flex: 0 0 auto; background: var(--surface-2); box-shadow: inset 0 1px 0 #fff, 0 2px 0 var(--clay-ledge-soft); animation: ui-pop-select .3s var(--ease-spring); }
+.jabeen-review button.ok .mark { background: var(--success); color: #fff; box-shadow: inset 0 1px 0 #ffffff66, 0 2px 0 #0F5A46; }
 .jabeen-review .grow { flex: 1; min-width: 0; }
-.jabeen-perm { padding: 12px 14px; border-radius: 14px; background: rgba(77,163,255,.12); border: 1px solid rgba(77,163,255,.4); font-size: 14px; line-height: 1.7; color: #CFE6FF; }
 /* الوضع الأفقي على جوال: شريط تحكّم مضغوط ليبقى للكلمة مكان. */
 @media (max-height: 520px) { .jabeen-touch button { min-height: 56px; font-size: 17px; padding: 4px; } .jabeen-touch span { font-size: 21px; } .jabeen-hint { font-size: 12px; } .jabeen-stage-top { padding: calc(4px + var(--safe-top)) 14px 4px; } .jabeen-stage-top .num { font-size: 24px; } }

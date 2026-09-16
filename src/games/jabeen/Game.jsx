@@ -2,6 +2,7 @@ import { Avatar, GameArtwork } from '../../shared/brand/art.jsx';
 import React, { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Screen, Button, Podium, Segment, Card } from '../../shared/ui/components.jsx';
 import { useTimer } from '../../shared/ui/useTimer.js';
+import { stampScreen, vignette, wait } from '../../shared/fx/index.js';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
 import categories from '../../data/games/jabeen/index.js';
@@ -17,6 +18,7 @@ export function SetupOptions({ storage, api }) {
   const update = (patch) => { const next = normalizeOptions({ ...opts, ...patch }, categories); setOpts(next); storage.set(OPTIONS_KEY, next); api.sound.play('click'); };
   return (
     <Card className="stack">
+      <style>{css}</style>
       <span className="card-title">الفئة والمدة</span>
       <div className="jabeen-cats">
         {categories.map((c) => (
@@ -34,14 +36,19 @@ export function SetupOptions({ storage, api }) {
 
 function Stage({ state, timer, tilt, onAnswer, onEnd, flash }) {
   const tiltLive = state.control === 'auto' && tilt.supported;
+  const danger = timer.left <= 10;
+  const okCount = state.results.filter((r) => r.ok).length;
+  // التظليل الأحمر في آخر 3 ثوانٍ: عنصر ثابت في body (fx.vignette) يُطفأ عند إزالة المسرح.
+  useEffect(() => { vignette(timer.running && timer.left > 0 && timer.left <= 3); return () => vignette(false); }, [timer.left, timer.running]);
   return (
     <div className={`jabeen-stage ${flash}`} role="group" aria-label="جولة على جبينك">
       <div className="jabeen-stage-top">
-        <span className={`num ${timer.left <= 10 ? 'is-danger' : ''}`} dir="ltr">{timer.left}</span>
-        <span className="muted">✅ {state.results.filter((r) => r.ok).length}</span>
+        {/* في ثواني الخطر يُعاد تركيب الرقم كل ثانية (key) فيُلكم ثم ينبض */}
+        <span className={`num ${danger ? 'is-danger' : ''}`} dir="ltr" key={danger ? `t${timer.left}` : 'n'}>{timer.left}</span>
+        <span className="muted count" key={`c${okCount}`}>✅ {okCount}</span>
         <Button size="sm" variant="ghost" onClick={onEnd}>إنهاء</Button>
       </div>
-      <div className="jabeen-word">{state.item ? state.item.text : '…'}</div>
+      <div className="jabeen-word"><span key={state.item ? state.item.id : 'none'}>{state.item ? state.item.text : '…'}</span></div>
       <div className="jabeen-controls">
         {tiltLive && <p className="jabeen-hint">أَمِل للأسفل = صح · للأعلى = تخطي — أو استخدم الزرين.</p>}
         <div className="jabeen-touch">
@@ -79,7 +86,8 @@ export function Game({ api, players, onExit }) {
     api.haptics.vibrate(ok ? 'success' : 'light');
     setFlash(ok ? 'is-good' : 'is-skip');
     clearTimeout(flashTimer.current);
-    flashTimer.current = setTimeout(() => setFlash(''), 420);
+    flashTimer.current = setTimeout(() => setFlash(''), wait(420));
+    stampScreen(ok ? { text: '✓', tone: 'good', ms: 420 } : { text: '⏭', tone: 'bad', ms: 420 });
     dispatch({ type: 'ANSWER', ok, item: source.next() });
   };
 
@@ -109,18 +117,18 @@ export function Game({ api, players, onExit }) {
       <style>{css}</style>
       {state.phase === 'intro' && (
         <div className="jabeen-intro">
-          <div className="big" aria-hidden="true"><Avatar player={entrant} /></div>
+          <div className="big clay-stage" aria-hidden="true"><span className="clay-lift"><Avatar player={entrant} /></span></div>
           <h2>دور {entrant.name}</h2>
           <p className="muted">فئة «{state.categoryName}» · {state.seconds} ثانية</p>
           <p className="muted">ضع الجوال على جبينك والشاشة نحو الآخرين. هم يصفون وأنت تخمّن.</p>
           {tilt.needsPermission && <p className="jabeen-perm">سيطلب سفاري إذن استخدام مستشعر الحركة عند الضغط. إن رفضت، ستعمل اللعبة باللمس.</p>}
           {exhausted && <p className="jabeen-perm">انتهت كلمات «{state.categoryName}» — سنعيد خلطها من جديد ليكمل كل لاعب دوره.</p>}
-          <Button variant="accent" size="lg" full onClick={async () => { await tilt.request(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
+          <Button variant="accent" size="lg" full className="is-armed" onClick={async () => { await tilt.request(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
         </div>
       )}
       {state.phase === 'play' && (
         <>
-          {!landscape && <div className="jabeen-rotate"><div><div className="big" aria-hidden="true">📱</div><p style={{ marginTop: 14, fontWeight: 800 }}>أدر الجوال أفقيًا</p><p className="muted">أسهل في القراءة من بعيد.</p><Button variant="ghost" onClick={() => setLandscape(true)}>تخطي هذا التنبيه</Button></div></div>}
+          {!landscape && <div className="jabeen-rotate" style={{ animation: 'none' }}><div><div className="big" aria-hidden="true">📱</div><p style={{ marginTop: 14, fontWeight: 800 }}>أدر الجوال أفقيًا</p><p className="muted">أسهل في القراءة من بعيد.</p><Button variant="ghost" onClick={() => setLandscape(true)}>تخطي هذا التنبيه</Button></div></div>}
           <Stage state={state} timer={timer} tilt={tilt} flash={flash} onAnswer={answer} onEnd={() => { timer.pause(); dispatch({ type: 'TIME_UP' }); }} />
         </>
       )}
@@ -131,13 +139,13 @@ export function Game({ api, players, onExit }) {
           <div className="jabeen-review">
             {state.results.map((r, i) => (
               <button key={`${r.itemId}-${i}`} type="button" className={r.ok ? 'ok' : ''} aria-pressed={r.ok} onClick={() => { api.sound.play('click'); dispatch({ type: 'TOGGLE_RESULT', index: i }); }}>
-                <span className="mark" aria-hidden="true">{r.ok ? '✓' : '—'}</span><span className="grow">{r.text}</span>
+                <span className="mark" aria-hidden="true" key={String(r.ok)}>{r.ok ? '✓' : '—'}</span><span className="grow">{r.text}</span>
               </button>
             ))}
             {state.results.length === 0 && <p className="muted center">لم تُعرض كلمات في هذه الجولة.</p>}
           </div>
           {state.recycled && <p className="center muted">أُعيد خلط كلمات «{state.categoryName}» بعد نفادها، فقد تتكرر كلمة مع لاعب سابق.</p>}
-          <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pop'); dispatch({ type: 'CONFIRM' }); }}>{state.turn === state.entrants.length - 1 ? 'النتائج النهائية' : 'اللاعب التالي'}</Button>
+          <Button variant="accent" size="lg" full onClick={() => { api.sound.play('pop'); const n = state.results.filter((r) => r.ok).length; if (api.toast) api.toast(`+${n} لـ ${entrant.name}`, { kind: 'success' }); dispatch({ type: 'CONFIRM' }); }}>{state.turn === state.entrants.length - 1 ? 'النتائج النهائية' : 'اللاعب التالي'}</Button>
         </div>
       )}
       {state.phase === 'over' && (
