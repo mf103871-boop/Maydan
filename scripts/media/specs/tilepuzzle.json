@@ -1,0 +1,2808 @@
+{
+  "id": "tilepuzzle",
+  "name": "ركّبها صح",
+  "icon": "🧩",
+  "defaultType": "image",
+  "kind": "image",
+  "effect": "jumble",
+  "subjects": [
+    {
+      "tier": 200,
+      "a": "الموناليزا",
+      "alt": [
+        "موناليزا",
+        "الجيوكندا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "موناليزا",
+      "en": "Mona Lisa",
+      "q": "ما هذه اللوحة؟",
+      "commons": "File:Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ليلة النجوم",
+      "alt": [
+        "ليلة مرصعة بالنجوم"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "ليلة النجوم (لوحة)",
+      "en": "The Starry Night",
+      "q": "لأي عمل فني هذه القطع؟",
+      "commons": "File:Van Gogh - Starry Night - Google Art Project.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الصرخة",
+      "alt": [
+        "صرخة مونك"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الصرخة (لوحة)",
+      "en": "The Scream",
+      "q": "قطعة بعد قطعة: ما هذه اللوحة؟",
+      "commons": "File:Edvard Munch, 1893, The Scream, oil, tempera and pastel on cardboard, 91 x 73 cm, National Gallery of Norway.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الفتاة ذات القرط اللؤلؤي",
+      "alt": [
+        "لؤلؤة القرط"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الفتاة ذات القرط اللؤلؤي (لوحة)",
+      "en": "Girl with a Pearl Earring",
+      "q": "من القطع المبعثرة: ما هذه اللوحة؟",
+      "commons": "File:1665 Girl with a Pearl Earring.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "خلق آدم",
+      "topic": "لوحات كلاسيكية",
+      "ar": "خلق آدم (لوحة)",
+      "en": "The Creation of Adam",
+      "q": "قطعة بعد قطعة: لأي عمل فني هذه القطع؟",
+      "commons": "File:Michelangelo - Creation of Adam (cropped).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "العشاء الأخير",
+      "topic": "لوحات كلاسيكية",
+      "ar": "العشاء الأخير (لوحة)",
+      "en": "The Last Supper (Leonardo)",
+      "q": "قبل أن تكتمل الصورة: ما هذه اللوحة؟",
+      "commons": "File:The Last Supper - Leonardo Da Vinci - High Resolution 32x16.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ولادة فينوس",
+      "alt": [
+        "مولد فينوس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "ولادة فينوس",
+      "en": "The Birth of Venus",
+      "q": "رتّب القطع في ذهنك: ما هذه اللوحة؟",
+      "commons": "File:Sandro Botticelli - La nascita di Venere - Google Art Project - edited.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الحرية تقود الشعب",
+      "topic": "لوحات كلاسيكية",
+      "ar": "الحرية تقود الشعب (لوحة)",
+      "en": "Liberty Leading the People",
+      "q": "من القطع المبعثرة: لأي عمل فني هذه القطع؟",
+      "commons": "File:La Liberté guidant le peuple - Eugène Delacroix - Musée du Louvre Peintures RF 129 - après restauration 2024.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "خفر الليل",
+      "alt": [
+        "حرس الليل",
+        "دورية الليل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "دورية الليل",
+      "en": "The Night Watch",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه اللوحة؟",
+      "commons": "File:La ronda de noche, por Rembrandt van Rijn.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الوصيفات",
+      "alt": [
+        "لاس مينيناس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "لاس مينيناس",
+      "en": "Las Meninas",
+      "q": "المواضع مبعثرة: ما هذه اللوحة؟",
+      "commons": "File:Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "حديقة المسرات الأرضية",
+      "topic": "لوحات كلاسيكية",
+      "ar": "حديقة المباهج الأرضية",
+      "en": "The Garden of Earthly Delights",
+      "q": "قبل أن تكتمل الصورة: لأي عمل فني هذه القطع؟",
+      "commons": "File:The Garden of earthly delights.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "عباد الشمس",
+      "alt": [
+        "زهور عباد الشمس"
+      ],
+      "topic": "فن حديث",
+      "ar": "دوار الشمس (سلسلة لوحات)",
+      "en": "Sunflowers (Van Gogh series)",
+      "q": "بلا ترتيب: ما هذه اللوحة؟",
+      "commons": "File:Vincent Willem van Gogh 127.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "القبلة",
+      "alt": [
+        "قبلة كليمت"
+      ],
+      "topic": "فن حديث",
+      "ar": "لوحة القبلة",
+      "en": "The Kiss (Klimt)",
+      "q": "القطع في غير أماكنها: ما هذه اللوحة؟",
+      "commons": "File:The Kiss - Gustav Klimt - Google Cultural Institute.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "انطباع شروق الشمس",
+      "alt": [
+        "انطباع، شروق الشمس"
+      ],
+      "topic": "فن حديث",
+      "ar": "انطباع، شروق الشمس",
+      "en": "Impression, Sunrise",
+      "q": "رتّب القطع في ذهنك: لأي عمل فني هذه القطع؟",
+      "commons": "File:Monet - Impression, Sunrise.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "زنابق الماء",
+      "alt": [
+        "زنبق الماء"
+      ],
+      "topic": "فن حديث",
+      "ar": "زنابق الماء (سلسلة مونيه)",
+      "en": "Water Lilies (Monet series)",
+      "q": "لمّ الشتات: ما هذه اللوحة؟",
+      "commons": "File:Reflections of Clouds on the Water-Lily Pond.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "مقهى ليلي",
+      "alt": [
+        "شرفة المقهى ليلًا"
+      ],
+      "topic": "فن حديث",
+      "ar": "شرفة مقهى في الليل",
+      "en": "Café Terrace at Night",
+      "q": "من الألوان والكتل: ما هذه اللوحة؟",
+      "commons": "File:Van Gogh - Terrace of a Café at Night (Place du Forum) 1888.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "غرفة النوم في آرل",
+      "alt": [
+        "غرفة النوم"
+      ],
+      "topic": "فن حديث",
+      "ar": "غرفة نوم في آرل",
+      "en": "Bedroom in Arles",
+      "q": "اثنتا عشرة قطعة مبدّلة: لأي عمل فني هذه القطع؟",
+      "commons": "File:Vincent van Gogh - De slaapkamer - Google Art Project.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أحد بعد الظهر في جزيرة لا غراند جات",
+      "alt": [
+        "لا غراند جات"
+      ],
+      "topic": "فن حديث",
+      "ar": "بعد ظهر يوم أحد على جزيرة لا غراند جات",
+      "en": "A Sunday Afternoon on the Island of La Grande Jatte",
+      "q": "قبل التركيب: ما هذه اللوحة؟",
+      "commons": "File:A Sunday on La Grande Jatte, Georges Seurat, 1884.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "المفكر",
+      "alt": [
+        "تمثال المفكر"
+      ],
+      "topic": "نحت",
+      "ar": "المفكر (منحوتة)",
+      "en": "The Thinker",
+      "q": "ما هذا التمثال؟",
+      "commons": "File:Le Penseur by Rodin (Kunsthalle Bielefeld) 2014-04-10.JPG"
+    },
+    {
+      "tier": 200,
+      "a": "تمثال داود",
+      "alt": [
+        "داود",
+        "داوود"
+      ],
+      "topic": "نحت",
+      "ar": "تمثال داود",
+      "en": "David (Michelangelo)",
+      "q": "قطعة بعد قطعة: ما هذا التمثال؟",
+      "commons": "File:'David' by Michelangelo Fir JBU004.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فينوس دي ميلو",
+      "alt": [
+        "زهرة ميلوس"
+      ],
+      "topic": "نحت",
+      "ar": "فينوس دي ميلو",
+      "en": "Venus de Milo",
+      "q": "من القطع المبعثرة: ما هذا التمثال؟",
+      "commons": "File:Front views of the Venus de Milo.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "البييتا",
+      "alt": [
+        "بييتا",
+        "الرثاء"
+      ],
+      "topic": "نحت",
+      "ar": "تمثال بيتتا",
+      "en": "Pietà (Michelangelo)",
+      "q": "قبل أن تكتمل الصورة: ما هذا التمثال؟",
+      "commons": "File:Pieta de Michelangelo - Vaticano.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نصر ساموثراكي المجنح",
+      "alt": [
+        "نايكي ساموثراكي"
+      ],
+      "topic": "نحت",
+      "ar": "النصر المجنح",
+      "en": "Winged Victory of Samothrace",
+      "q": "رتّب القطع في ذهنك: ما هذا التمثال؟",
+      "commons": "File:Victoire de Samothrace - Musee du Louvre - 20190812.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تمثال نفرتيتي",
+      "alt": [
+        "رأس نفرتيتي"
+      ],
+      "topic": "نحت",
+      "ar": "تمثال نفرتيتي",
+      "en": "Nefertiti Bust",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا التمثال؟",
+      "commons": "File:Nofretete Neues Museum.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "رامي القرص",
+      "alt": [
+        "الديسكوبولوس"
+      ],
+      "topic": "نحت",
+      "ar": "رامي القرص (تمثال)",
+      "en": "Discobolus",
+      "q": "المواضع مبعثرة: ما هذا التمثال؟",
+      "commons": "File:Roman bronze copy of Myron’s Discobolos, 2nd century CE (Glyptothek Munich).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الخط العربي",
+      "alt": [
+        "خط عربي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "فن الخط العربي",
+      "en": "Arabic calligraphy",
+      "q": "ما هذه الزخرفة؟",
+      "commons": "File:Ibn al-Bawwab - Qurʾan f. 278v-279r.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الأرابيسك",
+      "alt": [
+        "أرابيسك"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "زخرفة عربية",
+      "en": "Arabesque",
+      "q": "قطعة بعد قطعة: ما هذه الزخرفة؟",
+      "commons": "File:Flickr - jemasmith - Umayyad Mosque, Damascus, Detail..jpg"
+    },
+    {
+      "tier": 200,
+      "a": "المقرنصات",
+      "alt": [
+        "مقرنص"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "مقرنص",
+      "en": "Muqarnas",
+      "q": "من القطع المبعثرة: ما هذه الزخرفة؟",
+      "commons": "File:Alhambra (51949919755).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الزليج",
+      "alt": [
+        "زليج"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "زليج",
+      "en": "Zellij",
+      "q": "قبل أن تكتمل الصورة: ما هذه الزخرفة؟",
+      "commons": "File:نظرة مقربة للزليج في مدرسة ابن يوسف.jpeg"
+    },
+    {
+      "tier": 200,
+      "a": "السجاد الفارسي",
+      "alt": [
+        "سجاد فارسي",
+        "بساط فارسي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "سجاد إيراني",
+      "en": "Persian carpet",
+      "q": "المواضع مبعثرة: لأي عمل فني هذه القطع؟",
+      "commons": "File:Mantes carpet Louvre OA6610 detail1.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "المشربية",
+      "alt": [
+        "مشربية"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "مشربية",
+      "en": "Mashrabiya",
+      "q": "رتّب القطع في ذهنك: ما هذه الزخرفة؟",
+      "commons": "File:Al-Shafi’i Endowment, Historic Jeddah, Saudi Arabia (2026).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الموجة العظيمة قبالة كاناغاوا",
+      "alt": [
+        "موجة كاناغاوا",
+        "الموجة العظيمة"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "الموجة الكبيرة في كاناغاوا",
+      "en": "The Great Wave off Kanagawa",
+      "q": "بلا ترتيب: لأي عمل فني هذه القطع؟",
+      "commons": "File:Tsunami by hokusai 19th century.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جيش التيراكوتا",
+      "alt": [
+        "جيش الطين",
+        "محاربو التيراكوتا"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "ضريح الإمبراطور الأول تشين",
+      "en": "Terracotta Army",
+      "q": "القطع في غير أماكنها: لأي عمل فني هذه القطع؟",
+      "commons": "File:51714-Terracota-Army.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الخزف الأزرق والأبيض",
+      "alt": [
+        "الخزف الصيني الأزرق"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "الخزف الأزرق والأبيض",
+      "en": "Blue and white pottery",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه الزخرفة؟",
+      "commons": "File:清康熙 景德鎮窯青花五倫圖煨瓷瓶-Vase with auspicious animals MET DP-14359-001.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أوكييو إي",
+      "alt": [
+        "أوكييو-إي",
+        "الرسم الياباني الخشبي"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "أوكييو-إه",
+      "en": "Ukiyo-e",
+      "q": "المواضع مبعثرة: ما هذه الزخرفة؟",
+      "commons": "File:Shibai Ukie by Masanobu Okumura.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الخط الصيني",
+      "alt": [
+        "خط صيني"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "فن الخط بالأحرف الصينية",
+      "en": "Chinese calligraphy",
+      "q": "بلا ترتيب: ما هذه الزخرفة؟",
+      "commons": "File:Wang Xianzhi Imitation by Tang Dynasty.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "حجر رشيد",
+      "alt": [
+        "حجر الرشيد"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "حجر رشيد",
+      "en": "Rosetta Stone",
+      "q": "ما هذا النقش؟",
+      "commons": "File:Rosetta Stone.JPG"
+    },
+    {
+      "tier": 200,
+      "a": "مسلة حمورابي",
+      "alt": [
+        "شريعة حمورابي",
+        "قانون حمورابي"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "شريعة حمورابي",
+      "en": "Code of Hammurabi",
+      "q": "قطعة بعد قطعة: ما هذا النقش؟",
+      "commons": "File:P1050763 Louvre code Hammurabi face rwk.JPG"
+    },
+    {
+      "tier": 200,
+      "a": "بوابة عشتار",
+      "topic": "مخطوطات ونقوش",
+      "ar": "بوابة عشتار",
+      "en": "Ishtar Gate",
+      "q": "لمّ الشتات: لأي عمل فني هذه القطع؟",
+      "commons": "File:Berlín, Museo de Pérgamo 05.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نسيج بايو",
+      "alt": [
+        "مفرش بايو"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "نسيج بايو",
+      "en": "Bayeux Tapestry",
+      "q": "من الألوان والكتل: لأي عمل فني هذه القطع؟",
+      "commons": "File:Odo bayeux tapestry.png"
+    },
+    {
+      "tier": 200,
+      "a": "نستطيع فعلها",
+      "alt": [
+        "روزي المبرشمة",
+        "We Can Do It"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "نستطيع فعلها!",
+      "en": "We Can Do It!",
+      "q": "قبل التركيب: لأي عمل فني هذه القطع؟",
+      "commons": "File:We Can Do It! NARA 535413 - Restoration 2.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "العم سام",
+      "alt": [
+        "ملصق العم سام"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "العم سام",
+      "en": "Uncle Sam",
+      "q": "ما هذا الملصق؟",
+      "commons": "File:I Want You for U.S. Army by James Montgomery Flagg.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "صورة تشي جيفارا",
+      "alt": [
+        "المقاتل البطل",
+        "غيريليرو إيرويكو"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "غيريليرو هيروويكو",
+      "en": "Guerrillero Heroico",
+      "q": "قطعة بعد قطعة: ما هذا الملصق؟",
+      "commons": "File:Che Guevara - Guerrillero Heroico by Alberto Korda.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ملصق مولان روج",
+      "alt": [
+        "مولان روج لا غولو"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "ملصق مولان روج",
+      "en": "Moulin Rouge: La Goulue",
+      "q": "من القطع المبعثرة: ما هذا الملصق؟",
+      "commons": "File:Henri de Toulouse-Lautrec, Moulin Rouge - La Goulue, 1891 - The Metropolitan Museum of Art.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الرجل الفيتروفي",
+      "alt": [
+        "رجل فيتروفيوس"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "الرجل الفيتروفي",
+      "en": "Vitruvian Man",
+      "q": "ما هذا الرسم؟",
+      "commons": "File:Da Vinci Vitruve Luc Viatour.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "خريطة مركاتور",
+      "alt": [
+        "مسقط مركاتور"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "خريطة مركاتور",
+      "en": "Mercator 1569 world map",
+      "q": "ما هذه الخريطة؟",
+      "commons": "File:Gerardus Mercator 3.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "خريطة الإدريسي",
+      "alt": [
+        "نزهة المشتاق",
+        "لوح الترسيم"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "نزهة المشتاق في اختراق الآفاق",
+      "en": "Tabula Rogeriana",
+      "q": "قطعة بعد قطعة: ما هذه الخريطة؟",
+      "commons": "File:89v 90r نزهة المشتاق Arabe 2221 BNF.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الفسيفساء",
+      "alt": [
+        "موزاييك"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "فسيفساء",
+      "en": "Mosaic",
+      "q": "القطع في غير أماكنها: ما هذه الزخرفة؟",
+      "commons": "File:MosaicEpiphany-of-Dionysus.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "درس التشريح للدكتور تولب",
+      "alt": [
+        "درس التشريح"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "درس التشريح مع الدكتور تولب",
+      "en": "The Anatomy Lesson of Dr. Nicolaes Tulp",
+      "q": "خمّن قبل الكشف: ما هذه اللوحة؟",
+      "commons": "File:Rembrandt - The Anatomy Lesson of Dr Nicolaes Tulp.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "عربة القش",
+      "topic": "لوحات كلاسيكية",
+      "ar": "عربة القش",
+      "en": "The Hay Wain",
+      "q": "خمّن قبل الكشف: لأي عمل فني هذه القطع؟",
+      "commons": "File:John Constable - The Hay Wain (1821).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الأرجوحة",
+      "alt": [
+        "أرجوحة فراغونار"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الأرجوحة (جان هونوري فراغونارد)",
+      "en": "The Swing (Fragonard)",
+      "q": "الصورة مفكّكة: ما هذه اللوحة؟",
+      "commons": "File:The Swing (P430).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "نابليون يعبر الألب",
+      "alt": [
+        "نابليون على جبال الألب"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "نابليون عابرا جبال الألب (لوحة)",
+      "en": "Napoleon Crossing the Alps",
+      "q": "أعد الترتيب ذهنيًا: ما هذه اللوحة؟",
+      "commons": "File:David - Napoleon crossing the Alps - Malmaison2.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "طوف الميدوزا",
+      "alt": [
+        "طوف ميدوسا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "طوافة قنديل البحر",
+      "en": "The Raft of the Medusa",
+      "q": "الصورة مفكّكة: لأي عمل فني هذه القطع؟",
+      "commons": "File:JEAN LOUIS THÉODORE GÉRICAULT - La Balsa de la Medusa (Museo del Louvre, 1818-19).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الثالث من مايو 1808",
+      "alt": [
+        "إعدامات الثالث من مايو"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الثالث من مايو (لوحة)",
+      "en": "The Third of May 1808",
+      "q": "من شظايا الصورة: ما هذه اللوحة؟",
+      "commons": "File:El Tres de Mayo, by Francisco de Goya, from Prado thin black margin.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "زحل يلتهم أحد أبنائه",
+      "alt": [
+        "زحل يلتهم ابنه"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "ساتورن يلتهم ابنه (لوحة غويا)",
+      "en": "Saturn Devouring His Son",
+      "q": "الأحجية مقلوبة: ما هذه اللوحة؟",
+      "commons": "File:Francisco de Goya, Saturno devorando a su hijo (1819-1823).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "بورتريه آرنولفيني",
+      "alt": [
+        "زفاف آرنولفيني"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "بورتريه أرنولفيني",
+      "en": "Arnolfini Portrait",
+      "q": "أعد الترتيب ذهنيًا: لأي عمل فني هذه القطع؟",
+      "commons": "File:The Arnolfini portrait (1434).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الربيع",
+      "alt": [
+        "بريمافيرا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الربيع (لوحة)",
+      "en": "Primavera (Botticelli)",
+      "q": "ركّبها صح: ما هذه اللوحة؟",
+      "commons": "File:Botticelli-primavera.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مدرسة أثينا",
+      "topic": "لوحات كلاسيكية",
+      "ar": "مدرسة أثينا (لوحة)",
+      "en": "The School of Athens",
+      "q": "بنظرة إلى الألوان وحدها: ما هذه اللوحة؟",
+      "commons": "File:\"The School of Athens\" by Raffaello Sanzio da Urbino.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "حالبة اللبن",
+      "alt": [
+        "الخادمة الحالبة",
+        "ساكبة الحليب"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "ساقية الحليب",
+      "en": "The Milkmaid (Vermeer)",
+      "q": "من شظايا الصورة: لأي عمل فني هذه القطع؟",
+      "commons": "File:Johannes Vermeer - Het melkmeisje - Google Art Project.png"
+    },
+    {
+      "tier": 400,
+      "a": "ليلة النجوم فوق الرون",
+      "topic": "فن حديث",
+      "ar": "ليلة النجوم على نهر الرون (لوحة)",
+      "en": "Starry Night Over the Rhône",
+      "q": "مبعثرة على شبكة: ما هذه اللوحة؟",
+      "commons": "File:Vincent van Gogh - Starry Night - Google Art Project.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أم ويسلر",
+      "alt": [
+        "بورتريه أم الفنان"
+      ],
+      "topic": "فن حديث",
+      "ar": "والدة ويسلر (لوحة)",
+      "en": "Whistler's Mother",
+      "q": "الأحجية مقلوبة: لأي عمل فني هذه القطع؟",
+      "commons": "File:Whistlers Mother high res.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "غداء أهل القوارب",
+      "alt": [
+        "غداء حفلة التجديف"
+      ],
+      "topic": "فن حديث",
+      "ar": "مأدبة غداء لحفلة القوارب",
+      "en": "Luncheon of the Boating Party",
+      "q": "اثنتا عشرة قطعة فقط: ما هذه اللوحة؟",
+      "commons": "File:Pierre-Auguste Renoir - Luncheon of the Boating Party - Google Art Project.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "حصة الرقص",
+      "alt": [
+        "درس الرقص"
+      ],
+      "topic": "فن حديث",
+      "ar": "حصة الرقص",
+      "en": "The Dance Class",
+      "q": "القطع مخلوطة: ما هذه اللوحة؟",
+      "commons": "File:Edgar Degas - La Classe de danse.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الغداء على العشب",
+      "alt": [
+        "غداء على العشب"
+      ],
+      "topic": "فن حديث",
+      "ar": "طعام الغداء في الحقل (لوحة)",
+      "en": "Le Déjeuner sur l'herbe",
+      "q": "ركّبها صح: لأي عمل فني هذه القطع؟",
+      "commons": "File:Edouard Manet - Luncheon on the Grass - Google Art Project.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "رقصة في مولان دو لا غاليت",
+      "alt": [
+        "حفل في مولان دو لا غاليت"
+      ],
+      "topic": "فن حديث",
+      "ar": "بال أو مولا دو لاغاليت",
+      "en": "Bal du moulin de la Galette",
+      "q": "من الفسيفساء المبعثرة: ما هذه اللوحة؟",
+      "commons": "File:Renoir, Pierre-Auguste - Dance at Le Moulin de la Galette, 1876.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "لاوكون وأبناؤه",
+      "alt": [
+        "لاؤكون"
+      ],
+      "topic": "نحت",
+      "ar": "لاوكون وأبناؤه",
+      "en": "Laocoön and His Sons",
+      "q": "بلا ترتيب: ما هذا التمثال؟",
+      "commons": "File:Laocoön and his sons group.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تمثال موسى",
+      "alt": [
+        "موسى لمايكل أنجلو"
+      ],
+      "topic": "نحت",
+      "ar": "منحوتة قبر يوليوس الثاني",
+      "en": "Moses (Michelangelo)",
+      "q": "القطع في غير أماكنها: ما هذا التمثال؟",
+      "commons": "File:Michelangelo's Moses (Rome).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أغسطس بريما بورتا",
+      "alt": [
+        "تمثال أغسطس"
+      ],
+      "topic": "نحت",
+      "ar": "أغسطس بريما بورتا",
+      "en": "Augustus of Prima Porta",
+      "q": "لمّ الشتات: ما هذا التمثال؟",
+      "commons": "File:Augustus of Prima Porta.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "قناع توت عنخ آمون",
+      "alt": [
+        "القناع الذهبي"
+      ],
+      "topic": "نحت",
+      "ar": "قناع توت عنخ آمون",
+      "en": "Mask of Tutankhamun",
+      "q": "بنظرة إلى الألوان وحدها: لأي عمل فني هذه القطع؟",
+      "commons": "File:CairoEgMuseumTaaMaskMostlyPhotographed.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "القبلة لرودان",
+      "alt": [
+        "القبلة"
+      ],
+      "topic": "نحت",
+      "ar": "القبلة ( رودان)",
+      "en": "The Kiss (Rodin sculpture)",
+      "q": "من الألوان والكتل: ما هذا التمثال؟",
+      "commons": "File:Rodin - Le Baiser 06.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مانيكن بيس",
+      "alt": [
+        "الولد الصغير المتبول"
+      ],
+      "topic": "نحت",
+      "ar": "مانيكن بيس",
+      "en": "Manneken Pis",
+      "q": "قبل التركيب: ما هذا التمثال؟",
+      "commons": "File:Bruxelles Manneken Pis cropped.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الزخرفة الهندسية الإسلامية",
+      "alt": [
+        "الزخارف الهندسية"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "زخارف هندسية إسلامية",
+      "en": "Islamic geometric patterns",
+      "q": "لمّ الشتات: ما هذه الزخرفة؟",
+      "commons": "File:Doorway in Ben Youssef Madrasa.JPG"
+    },
+    {
+      "tier": 400,
+      "a": "خزف إزنيق",
+      "alt": [
+        "الخزف العثماني"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "فخار إزنيق",
+      "en": "İznik pottery",
+      "q": "من الألوان والكتل: ما هذه الزخرفة؟",
+      "commons": "File:Turkey; Iznik - Two Tiles - Google Art Project.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الطغراء",
+      "alt": [
+        "طغراء"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "طغراء",
+      "en": "Tughra",
+      "q": "قطعة بعد قطعة: ما هذا الرسم؟",
+      "commons": "File:Tughra Orhan I.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الخط الكوفي",
+      "alt": [
+        "كوفي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "خط كوفي",
+      "en": "Kufic",
+      "q": "ما هذا الخط؟",
+      "commons": "File:Unknown, North Africa or Southern Spain, 9th or 10th Century - Blue Qur'an Page - Google Art Project (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "المحراب",
+      "alt": [
+        "محراب"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "محراب",
+      "en": "Mihrab",
+      "q": "قبل التركيب: ما هذه الزخرفة؟",
+      "commons": "File:Mihrab Othmani.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "المنمنمات الإسلامية",
+      "alt": [
+        "المنمنمة",
+        "منمنمات"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "منمنمة فارسية",
+      "en": "Persian miniature",
+      "q": "خمّن قبل الكشف: ما هذه الزخرفة؟",
+      "commons": "File:Yusef Zuleykha.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ست وثلاثون منظرًا لجبل فوجي",
+      "alt": [
+        "مناظر جبل فوجي"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "مشاهد جبل فوجي الستة والثلاثون (هوكوساي)",
+      "en": "Thirty-six Views of Mount Fuji",
+      "q": "مبعثرة على شبكة: لأي عمل فني هذه القطع؟",
+      "commons": "File:Great Wave off Kanagawa2.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "خزف السيلادون",
+      "alt": [
+        "سيلادون"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "خزف السيلادون",
+      "en": "Celadon",
+      "q": "الصورة مفكّكة: ما هذه الزخرفة؟",
+      "commons": "File:Song Dynasty Celadon Vase.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "التانكا",
+      "alt": [
+        "تانكا"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "التانكا",
+      "en": "Thangka",
+      "q": "اثنتا عشرة قطعة فقط: لأي عمل فني هذه القطع؟",
+      "commons": "File:Buddha Vairocana - Google Art Project.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الرسم بالحبر",
+      "alt": [
+        "الرسم الحبري الصيني"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "لوحة غسيل الحبر",
+      "en": "Ink wash painting",
+      "q": "أعد الترتيب ذهنيًا: ما هذه الزخرفة؟",
+      "commons": "File:Immortal in Splashed Ink.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "راية أور",
+      "alt": [
+        "لوحة أور"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "لوحة الحرب والسلم السومرية",
+      "en": "Standard of Ur",
+      "q": "من القطع المبعثرة: ما هذا النقش؟",
+      "commons": "File:Denis Bourez - British Museum, London (8747049029) (2).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "نقش بيستون",
+      "alt": [
+        "نقش بهستون"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "نقش بيستون",
+      "en": "Behistun Inscription",
+      "q": "قبل أن تكتمل الصورة: ما هذا النقش؟",
+      "commons": "File:کتیبه داریوش ( بیستون(.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "لوحة نارمر",
+      "alt": [
+        "صلاية نارمر"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "لوحة نعرمر",
+      "en": "Narmer Palette",
+      "q": "رتّب القطع في ذهنك: ما هذا النقش؟",
+      "commons": "File:Narmer Palette.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ملصق كتشنر",
+      "alt": [
+        "بلدك بحاجة إليك"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "ملصق كتشنر",
+      "en": "Lord Kitchener Wants You",
+      "q": "القطع مخلوطة: لأي عمل فني هذه القطع؟",
+      "commons": "File:30a Sammlung Eybl Großbritannien. Alfred Leete (1882–1933) Britons (Kitchener) wants you (Briten Kitchener braucht Euch). 1914 (Nachdruck), 74 x 50 cm. (Slg.Nr. 552).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "القط الأسود",
+      "alt": [
+        "لو شا نوار"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "ملهى القط الأسود",
+      "en": "Le Chat Noir",
+      "q": "قبل أن تكتمل الصورة: ما هذا الملصق؟",
+      "commons": "File:Le Chat noir 1929.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "صوت سيده",
+      "alt": [
+        "نيبر",
+        "الكلب والغرامافون"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "صوت سيده",
+      "en": "His Master's Voice",
+      "q": "قبل أن تعود لمكانها: ما هذه اللوحة؟",
+      "commons": "File:His Master's Voice.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "خريطة بيري ريس",
+      "alt": [
+        "بيري ريس"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "خريطة بيري ريس",
+      "en": "Piri Reis map",
+      "q": "من القطع المبعثرة: ما هذه الخريطة؟",
+      "commons": "File:Piri reis world map 01.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "خريطة فالدزيمولر",
+      "topic": "خرائط ورسوم علمية",
+      "ar": "خريطة فالدسيمولير",
+      "en": "Waldseemüller map",
+      "q": "قبل أن تكتمل الصورة: ما هذه الخريطة؟",
+      "commons": "File:Waldseemuller map 2.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تشريح جسم الإنسان لفيزاليوس",
+      "alt": [
+        "فابريكا",
+        "رسوم فيزاليوس"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "بنية جسم الإنسان (كتاب)",
+      "en": "De humani corporis fabrica",
+      "q": "من القطع المبعثرة: ما هذا الرسم؟",
+      "commons": "File:Vesalius Fabrica fronticepiece.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "العاصفة",
+      "alt": [
+        "البحر العاصف"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "العاصفة (جورجوني)",
+      "en": "The Tempest (Giorgione)",
+      "q": "لوحة مبعثرة: ما هذه اللوحة؟",
+      "commons": "File:Giorgione - Das Gewitter.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الذئبة الكابيتولية",
+      "alt": [
+        "ذئبة روما"
+      ],
+      "topic": "نحت",
+      "ar": "لوبا كابيتولينا",
+      "en": "Capitoline Wolf",
+      "q": "خمّن قبل الكشف: ما هذا التمثال؟",
+      "commons": "File:Lupa Capitolina, Rome.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أزهار اللوز",
+      "topic": "فن حديث",
+      "ar": "أزهار اللوز",
+      "en": "Almond Blossoms",
+      "q": "الترتيب مغلوط: ما هذه اللوحة؟",
+      "commons": "File:Vincent van Gogh - Almond blossom - Google Art Project.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مسلة أخيرام",
+      "alt": [
+        "تابوت أحيرام"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "نقش أحيروم",
+      "en": "Ahiram sarcophagus",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا النقش؟",
+      "commons": "File:Ahiram sarcophag from Biblos XIII-XBC.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تمثال زيوس في أولمبيا",
+      "alt": [
+        "زيوس أرتيميسيون"
+      ],
+      "topic": "نحت",
+      "ar": "تمثال زيوس في أولمبيا",
+      "en": "Artemision Bronze",
+      "q": "الصورة مفكّكة: ما هذا التمثال؟",
+      "commons": "File:Artemision in Museum.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "المرأة ذات المظلة",
+      "alt": [
+        "مدام مونيه وابنها"
+      ],
+      "topic": "فن حديث",
+      "ar": "النزهة (لوحة)",
+      "en": "Woman with a Parasol – Madame Monet and Her Son",
+      "q": "رتّبها ثم أجب: ما هذه اللوحة؟",
+      "commons": "File:Claude Monet - Woman with a Parasol - Madame Monet and Her Son - Google Art Project.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "السفيران",
+      "alt": [
+        "السفراء"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "السفراء (هولباين)",
+      "en": "The Ambassadors (Holbein)",
+      "q": "من المربعات المبدّلة: ما هذه اللوحة؟",
+      "commons": "File:Hans Holbein the Younger - The Ambassadors - Google Art Project.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "دعوة القديس متى",
+      "topic": "لوحات كلاسيكية",
+      "ar": "دعوة القديس متى",
+      "en": "The Calling of Saint Matthew",
+      "q": "من الفسيفساء المبعثرة: لأي عمل فني هذه القطع؟",
+      "commons": "File:Caravaggio — The Calling of Saint Matthew.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "المحاربة تيميرير",
+      "alt": [
+        "السفينة تيميرير"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "سحب المقاتلة تيميراير إلى مثواها الأخير (لوحة)",
+      "en": "The Fighting Temeraire",
+      "q": "قبل أن تستقيم الصورة: ما هذه اللوحة؟",
+      "commons": "File:The Fighting Temeraire, JMW Turner, National Gallery.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "المتجول فوق بحر الضباب",
+      "alt": [
+        "الرحالة فوق بحر الضباب"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "متجول فوق بحر من الضباب",
+      "en": "Wanderer above the Sea of Fog",
+      "q": "بالألوان فقط: ما هذه اللوحة؟",
+      "commons": "File:Caspar David Friedrich - Wanderer above the Sea of Fog.jpeg"
+    },
+    {
+      "tier": 600,
+      "a": "اللاقطات",
+      "alt": [
+        "جامعات السنابل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "اللاقطات",
+      "en": "The Gleaners",
+      "q": "قبل أن تعود لمكانها: لأي عمل فني هذه القطع؟",
+      "commons": "File:Jean-François Millet - Gleaners - Google Art Project 2.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "صلاة الملاك",
+      "alt": [
+        "الأنجيلوس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "صلاة الملاك",
+      "en": "The Angelus (painting)",
+      "q": "ما اسم هذه اللوحة؟",
+      "commons": "File:JEAN-FRANÇOIS MILLET - El Ángelus (Museo de Orsay, 1857-1859. Óleo sobre lienzo, 55.5 x 66 cm).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سيدة شالوت",
+      "alt": [
+        "ليدي شالوت"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "السيدة شالوت (لوحة)",
+      "en": "The Lady of Shalott (painting)",
+      "q": "لوحة مبعثرة: لأي عمل فني هذه القطع؟",
+      "commons": "File:John William Waterhouse - The Lady of Shalott - Google Art Project edit.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "موت سقراط",
+      "topic": "لوحات كلاسيكية",
+      "ar": "موت سقراط",
+      "en": "The Death of Socrates",
+      "q": "قطعة بعد قطعة: ما اسم هذه اللوحة؟",
+      "commons": "File:David - The Death of Socrates.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "قسم الهوراتيين",
+      "alt": [
+        "يمين الهوراتيين"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "قسم الإخوة هوراس",
+      "en": "Oath of the Horatii",
+      "q": "من القطع المبعثرة: ما اسم هذه اللوحة؟",
+      "commons": "File:Le Serment des Horaces - Jacques-Louis David - Musée du Louvre Peintures INV 3692 ; MR 1432.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "يهوديت تقطع رأس هولوفرنيس",
+      "alt": [
+        "يهوديت وهولوفرنيس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "يهوديت تقطع رأس هولوفيرنوس (كارافاجيو)",
+      "en": "Judith Beheading Holofernes (Caravaggio)",
+      "q": "الترتيب مغلوط: لأي عمل فني هذه القطع؟",
+      "commons": "File:Caravaggio - Giuditta e Oloferne (ca. 1599).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "البيت الأصفر",
+      "topic": "فن حديث",
+      "ar": "البيت الأصفر",
+      "en": "The Yellow House",
+      "q": "قبل أن تكتمل الصورة: ما اسم هذه اللوحة؟",
+      "commons": "File:Vincent van Gogh - The yellow house ('The street').jpg"
+    },
+    {
+      "tier": 600,
+      "a": "آكلو البطاطس",
+      "topic": "فن حديث",
+      "ar": "آكلو البطاطا (لوحة)",
+      "en": "The Potato Eaters",
+      "q": "رتّبها ثم أجب: لأي عمل فني هذه القطع؟",
+      "commons": "File:De aardappeleters - s0005V1962 - Van Gogh Museum.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "في مولان روج",
+      "alt": [
+        "في المولان روج"
+      ],
+      "topic": "فن حديث",
+      "ar": "في مولان روج",
+      "en": "At the Moulin Rouge",
+      "q": "رتّب القطع في ذهنك: ما اسم هذه اللوحة؟",
+      "commons": "File:Henri de Toulouse-Lautrec, At the Moulin Rouge.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أولمبيا",
+      "topic": "فن حديث",
+      "ar": "أوليمبيا (لوحة)",
+      "en": "Olympia (Manet)",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما اسم هذه اللوحة؟",
+      "commons": "File:Edouard Manet - Olympia - Google Art ProjectFXD.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "حانة في الفولي برجير",
+      "alt": [
+        "بار في الفولي برجير"
+      ],
+      "topic": "فن حديث",
+      "ar": "حانة في الفولي برجير",
+      "en": "A Bar at the Folies-Bergère",
+      "q": "من المربعات المبدّلة: لأي عمل فني هذه القطع؟",
+      "commons": "File:\"Un Bar aux Folies-Bergère\" by Édouard Manet (1882).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "حقل قمح مع غربان",
+      "alt": [
+        "حقل القمح والغربان"
+      ],
+      "topic": "فن حديث",
+      "ar": "حقل قمح مع غربان (لوحة)",
+      "en": "Wheatfield with Crows",
+      "q": "المواضع مبعثرة: ما اسم هذه اللوحة؟",
+      "commons": "File:Korenveld met kraaien - s0149V1962 - Van Gogh Museum.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "فينوس فيلندورف",
+      "alt": [
+        "زهرة فيلندورف"
+      ],
+      "topic": "نحت",
+      "ar": "فينوس ولندورف",
+      "en": "Venus of Willendorf",
+      "q": "أعد الترتيب ذهنيًا: ما هذا التمثال؟",
+      "commons": "File:Venus von Willendorf 01.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "لاماسو",
+      "alt": [
+        "الثور المجنح"
+      ],
+      "topic": "نحت",
+      "ar": "الثور المجنح",
+      "en": "Lamassu",
+      "q": "من شظايا الصورة: ما هذا التمثال؟",
+      "commons": "File:Iraqi Museum.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "برونزيات رياتشي",
+      "alt": [
+        "محاربو رياتشي"
+      ],
+      "topic": "نحت",
+      "ar": "تماثيل رياتشي",
+      "en": "Riace bronzes",
+      "q": "الأحجية مقلوبة: ما هذا التمثال؟",
+      "commons": "File:Reggio calabria museo nazionale bronzi di riace.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "نشوة القديسة تريزا",
+      "alt": [
+        "وجد القديسة تريزا"
+      ],
+      "topic": "نحت",
+      "ar": "نشوة القديسة تريزا",
+      "en": "Ecstasy of Saint Teresa",
+      "q": "ركّبها صح: ما هذا التمثال؟",
+      "commons": "File:Ecstasy of St. Teresa HDR.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أبولو ودافني",
+      "topic": "نحت",
+      "ar": "أبولو ودافني (برنيني)",
+      "en": "Apollo and Daphne (Bernini)",
+      "q": "بنظرة إلى الألوان وحدها: ما هذا التمثال؟",
+      "commons": "File:Apollo and Daphne (Bernini) (cropped).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "قناع أغاممنون",
+      "topic": "نحت",
+      "ar": "قناع أغاميمنون",
+      "en": "Mask of Agamemnon",
+      "q": "ما هذه القطعة؟",
+      "commons": "File:Athens — Mask of Agamemnon.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "قرص نبرا السماوي",
+      "alt": [
+        "قرص نبرا"
+      ],
+      "topic": "نحت",
+      "ar": "قرص نيبرا السماوي",
+      "en": "Nebra sky disc",
+      "q": "قطعة بعد قطعة: ما هذه القطعة؟",
+      "commons": "File:Nebra disc 1.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سجادة أردبيل",
+      "topic": "فن إسلامي",
+      "ar": "سجادة أردبيل",
+      "en": "Ardabil Carpet",
+      "q": "قبل أن تستقيم الصورة: لأي عمل فني هذه القطع؟",
+      "commons": "File:The Ardabil Carpet - Google Art Project.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مطهر القديس لويس",
+      "alt": [
+        "طست القديس لويس"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "معمودية سانت لويس",
+      "en": "Baptistère de Saint Louis",
+      "q": "من القطع المبعثرة: ما هذه القطعة؟",
+      "commons": "File:Baptistère de Saint Louis - Musée du Louvre Arts de l'Islam LP 16.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مقامات الحريري",
+      "alt": [
+        "منمنمات الواسطي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "مقامات الحريري",
+      "en": "Maqamat al-Hariri",
+      "q": "ما هذه المخطوطة؟",
+      "commons": "File:Maqama 43 Abu Zayd travelling on horse.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "المصحف الأزرق",
+      "topic": "فن إسلامي",
+      "ar": "المصحف الأزرق",
+      "en": "Blue Qur'an",
+      "q": "قطعة بعد قطعة: ما هذه المخطوطة؟",
+      "commons": "File:Folio Blue Quran Met 2004.88.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "علبة المغيرة",
+      "alt": [
+        "مبخرة المغيرة"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "صندوق جواهر المغيرة",
+      "en": "Pyxis of al-Mughira",
+      "q": "قبل أن تكتمل الصورة: ما هذه القطعة؟",
+      "commons": "File:Pyxid Al Mughira OA 4068.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "واجهة المشتى",
+      "alt": [
+        "قصر المشتى"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "واجهة المشتى",
+      "en": "Mshatta Facade",
+      "q": "المواضع مبعثرة: ما هذا النقش؟",
+      "commons": "File:Mschatta-Fassade (Pergamonmuseum).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "على ضفة النهر في عيد تشينغمينغ",
+      "alt": [
+        "لوحة تشينغمينغ"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "على ضفة النهر في عيد تشينغمينغ",
+      "en": "Along the River During the Qingming Festival",
+      "q": "بالألوان فقط: لأي عمل فني هذه القطع؟",
+      "commons": "File:Bianjing city gate.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "أزهار البرقوق الحمراء والبيضاء",
+      "topic": "فن آسيوي",
+      "ar": "أزهار البرقوق الحمراء والبيضاء",
+      "en": "Red and White Plum Blossoms",
+      "q": "ما هذا العمل الفني؟",
+      "commons": "File:Ogata Korin - RED AND WHITE PLUM BLOSSOMS (National Treasure) - Google Art Project.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "كهوف موغاو",
+      "alt": [
+        "جداريات دونهوانغ"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "كهوف موغاو",
+      "en": "Mogao Caves",
+      "q": "قطعة بعد قطعة: ما هذا العمل الفني؟",
+      "commons": "File:Mogao Caves (54376969262).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "التصوير الراجبوتي",
+      "alt": [
+        "الرسم الراجبوتي"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "التصوير الراجبوتي",
+      "en": "Rajput painting",
+      "q": "من شظايا الصورة: ما هذه الزخرفة؟",
+      "commons": "File:Shahadin 001.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بدلة الدفن اليشمية",
+      "alt": [
+        "بدلة اليشم"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "بدلة الدفن اليشمية",
+      "en": "Jade burial suit",
+      "q": "رتّب القطع في ذهنك: ما هذه القطعة؟",
+      "commons": "File:Xihan Tomb 1 Jade Burial Suit.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "أناجيل لينديسفارن",
+      "topic": "مخطوطات ونقوش",
+      "ar": "أناجيل ليندسفارن",
+      "en": "Lindisfarne Gospels",
+      "q": "من القطع المبعثرة: ما هذه المخطوطة؟",
+      "commons": "File:LindisfarneFol27rIncipitMatt.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مخطوطة فوينيتش",
+      "topic": "مخطوطات ونقوش",
+      "ar": "مخطوطة فوينيتش",
+      "en": "Voynich manuscript",
+      "q": "قبل أن تكتمل الصورة: ما هذه المخطوطة؟",
+      "commons": "File:Voynich Manuscript (32).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ساعات دوق بيري",
+      "alt": [
+        "كتاب ساعات دوق بيري"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "ساعات دوق بيري الغنية (كتاب)",
+      "en": "Très Riches Heures du Duc de Berry",
+      "q": "رتّب القطع في ذهنك: ما هذه المخطوطة؟",
+      "commons": "File:Anatomical Man.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أسطوانة كورش",
+      "alt": [
+        "اسطوانة قورش"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "أسطوانة قورش",
+      "en": "Cyrus Cylinder",
+      "q": "بلا ترتيب: ما هذا النقش؟",
+      "commons": "File:Cyrus Cylinder front.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "اضرب البيض بالإسفين الأحمر",
+      "alt": [
+        "الإسفين الأحمر"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "اضرب البيض بالإسفين الأحمر",
+      "en": "Beat the Whites with the Red Wedge",
+      "q": "رتّب القطع في ذهنك: ما هذا الملصق؟",
+      "commons": "File:Klinom Krasnym Bej Belych.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "حافظ على هدوئك وواصل",
+      "alt": [
+        "كيب كام"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "حافظ على هدوئك واستمر",
+      "en": "Keep Calm and Carry On",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا الملصق؟",
+      "commons": "File:Keep-calm-and-carry-on-scan.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ملصقات موشا",
+      "alt": [
+        "ألفونس موشا"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "ألفونس موتشا",
+      "en": "Alphonse Mucha",
+      "q": "المواضع مبعثرة: ما هذا الملصق؟",
+      "commons": "File:Photographic selfportrait of Alfons Mucha, 1928 (2).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "الأطلس الكتالوني",
+      "topic": "خرائط ورسوم علمية",
+      "ar": "أطلس كتالوني",
+      "en": "Catalan Atlas",
+      "q": "رتّب القطع في ذهنك: ما هذه الخريطة؟",
+      "commons": "File:Compass rose from Catalan Atlas (1375).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "خريطة هيريفورد",
+      "alt": [
+        "مابا موندي هيريفورد"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "مابا موندي هيرفورد",
+      "en": "Hereford Mappa Mundi",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه الخريطة؟",
+      "commons": "File:Hereford-Karte.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ميكروغرافيا",
+      "alt": [
+        "كتاب ميكروغرافيا",
+        "رسوم هوك"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "الفحص المجهري (كتاب)",
+      "en": "Micrographia",
+      "q": "قبل أن تكتمل الصورة: ما هذا الرسم؟",
+      "commons": "File:Micrographia title page.gif"
+    },
+    {
+      "tier": 600,
+      "a": "عاشقان",
+      "alt": [
+        "الغرفة الصينية"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "المظلات (رينوار)",
+      "en": "The Umbrellas (Renoir)",
+      "q": "بلا ترتيب: ما اسم هذه اللوحة؟",
+      "commons": "File:Pierre-Auguste Renoir, The Umbrellas, ca. 1881-86.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "جسر لانغلوا",
+      "alt": [
+        "الجسر في آرل"
+      ],
+      "topic": "فن حديث",
+      "ar": "جسر لانغلوا",
+      "en": "Langlois Bridge at Arles",
+      "q": "القطع في غير أماكنها: ما اسم هذه اللوحة؟",
+      "commons": "File:Vincent Van Gogh 0014.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "عربة الشمس",
+      "alt": [
+        "عربة ترونهولم"
+      ],
+      "topic": "نحت",
+      "ar": "عربة الشمس",
+      "en": "Trundholm sun chariot",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه القطعة؟",
+      "commons": "File:Trundholm sun chariot animation.gif"
+    },
+    {
+      "tier": 600,
+      "a": "مزامير أوترخت الرومانية",
+      "alt": [
+        "مزامير شتوتغارت"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "مزامير أوترخت الرومانية",
+      "en": "Stuttgart Psalter",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه المخطوطة؟",
+      "commons": "File:Stuttgarter Psalter f2r.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مذبح إيزنهايم",
+      "topic": "لوحات كلاسيكية",
+      "ar": "مذبح إيزنهايم",
+      "en": "Isenheim Altarpiece",
+      "q": "من القطع المبعثرة: ما هذا العمل الفني؟",
+      "commons": "File:Isenheim Altarpiece - In situ (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مذبح غنت",
+      "alt": [
+        "عبادة الحمل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "تقديس الحمل",
+      "en": "Ghent Altarpiece",
+      "q": "قبل أن تكتمل الصورة: ما هذا العمل الفني؟",
+      "commons": "File:Ghent Altarpiece Google Art Project.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "برج بابل",
+      "alt": [
+        "برج بابل لبروغل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "برج بابل (لوحة)",
+      "en": "The Tower of Babel (Bruegel)",
+      "q": "لمّ الشتات: ما اسم هذه اللوحة؟",
+      "commons": "File:Pieter Bruegel the Elder - The Tower of Babel (Vienna) - Google Art Project - edited.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "الصيادون في الثلج",
+      "alt": [
+        "صيادون في الثلج"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الصيادون في الثلج",
+      "en": "The Hunters in the Snow",
+      "q": "رتّب القطع في ذهنك: ما هذا العمل الفني؟",
+      "commons": "File:Pieter Bruegel the Elder - Hunters in the Snow (Winter) - Google Art Project.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "الأمثال الهولندية",
+      "alt": [
+        "أمثال بروغل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "أمثال هولندية",
+      "en": "Netherlandish Proverbs",
+      "q": "من الألوان والكتل: ما اسم هذه اللوحة؟",
+      "commons": "File:Pieter Brueghel the Elder - The Dutch Proverbs - Google Art Project.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "منظر مع سقوط إيكاروس",
+      "alt": [
+        "سقوط إيكاروس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "مشهد سقوط إيكاروس",
+      "en": "Landscape with the Fall of Icarus",
+      "q": "قبل التركيب: ما اسم هذه اللوحة؟",
+      "commons": "File:Pieter Bruegel the Elder - Landscape with the Fall of Icarus - Brussels, Royal Museums of Fine Arts of Belgium - Google Arts & Culture.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "انتصار الموت",
+      "topic": "لوحات كلاسيكية",
+      "ar": "انتصار الموت",
+      "en": "The Triumph of Death",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا العمل الفني؟",
+      "commons": "File:Triumph of Death Brueghel.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "دفن الكونت أورغاز",
+      "topic": "لوحات كلاسيكية",
+      "ar": "دفن الكونت أورغاز",
+      "en": "The Burial of the Count of Orgaz",
+      "q": "خمّن قبل الكشف: ما اسم هذه اللوحة؟",
+      "commons": "File:El Greco - The Burial of the Count of Orgaz.JPG"
+    },
+    {
+      "tier": 800,
+      "a": "استسلام بريدا",
+      "alt": [
+        "الرماح"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "استسلام بريدا",
+      "en": "The Surrender of Breda",
+      "q": "الصورة مفكّكة: ما اسم هذه اللوحة؟",
+      "commons": "File:Velazquez-The Surrender of Breda.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "الإبحار إلى سيثيرا",
+      "alt": [
+        "الرحيل إلى سيثيرا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الإبحار إلى سيثيرا",
+      "en": "The Embarkation for Cythera",
+      "q": "المواضع مبعثرة: ما هذا العمل الفني؟",
+      "commons": "File:L'Embarquement pour Cythère, by Antoine Watteau, from C2RMF retouched.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لاعبو الورق",
+      "alt": [
+        "لاعبو الكوتشينة"
+      ],
+      "topic": "فن حديث",
+      "ar": "لاعبو الورق (لوحة)",
+      "en": "The Card Players",
+      "q": "أعد الترتيب ذهنيًا: ما اسم هذه اللوحة؟",
+      "commons": "File:Les Joueurs de cartes, par Paul Cézanne.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جبل سانت فيكتوار",
+      "topic": "فن حديث",
+      "ar": "جبل سانت فيكتوار (سيزان)",
+      "en": "Mont Sainte-Victoire (Cézanne)",
+      "q": "بلا ترتيب: ما هذا العمل الفني؟",
+      "commons": "File:Paul Cézanne - Montagne Saint-victoire - Google Art Project.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "من أين أتينا",
+      "alt": [
+        "من أين أتينا؟ من نحن؟ إلى أين نمضي؟"
+      ],
+      "topic": "فن حديث",
+      "ar": "من أين نأتي؟ ما نحن؟ إلى أين نحن ذاهبون؟",
+      "en": "Where Do We Come From? What Are We? Where Are We Going?",
+      "q": "من شظايا الصورة: ما اسم هذه اللوحة؟",
+      "commons": "File:Gauguin - Where Do We Come From? What Are We? Where Are We Going? (1897-98).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "العيادة الكبرى",
+      "alt": [
+        "عيادة غروس"
+      ],
+      "topic": "فن حديث",
+      "ar": "عيادة غروس (لوحة)",
+      "en": "The Gross Clinic",
+      "q": "القطع في غير أماكنها: ما هذا العمل الفني؟",
+      "commons": "File:Thomas Eakins, American - Portrait of Dr. Samuel D. Gross (The Gross Clinic) - Google Art Project.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "شارع باريس في يوم ممطر",
+      "alt": [
+        "يوم ممطر في باريس"
+      ],
+      "topic": "فن حديث",
+      "ar": "شارع باريسي في يوم ماطر",
+      "en": "Paris Street; Rainy Day",
+      "q": "الأحجية مقلوبة: ما اسم هذه اللوحة؟",
+      "commons": "File:Gustave Caillebotte - Paris Street; Rainy Day - Google Art Project.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "رؤيا بعد العظة",
+      "alt": [
+        "الرؤيا بعد الموعظة"
+      ],
+      "topic": "فن حديث",
+      "ar": "رؤيا بعد العظة",
+      "en": "Vision After the Sermon",
+      "q": "ركّبها صح: ما اسم هذه اللوحة؟",
+      "commons": "File:La vision après le sermon (Paul Gauguin).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "الكاتب الجالس",
+      "alt": [
+        "تمثال الكاتب المصري"
+      ],
+      "topic": "نحت",
+      "ar": "الكاتب الجالس",
+      "en": "Seated Scribe",
+      "q": "مبعثرة على شبكة: ما هذا التمثال؟",
+      "commons": "File:Le Scribe accroupi - Musée du Louvre Antiquités égyptiennes E 3023.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "تمثال خفرع",
+      "alt": [
+        "خفرع على العرش"
+      ],
+      "topic": "نحت",
+      "ar": "خفرع متوج",
+      "en": "Khafre Enthroned",
+      "q": "اثنتا عشرة قطعة فقط: ما هذا التمثال؟",
+      "commons": "File:Kairo Museum Sitzstatue Chephren 06.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "برسيوس ورأس ميدوسا",
+      "alt": [
+        "برسيوس لتشيليني"
+      ],
+      "topic": "نحت",
+      "ar": "برسيوس ورأس ميدوسا",
+      "en": "Perseus with the Head of Medusa",
+      "q": "القطع مخلوطة: ما هذا التمثال؟",
+      "commons": "File:Perseus (Benvenuto Cellini) 2013 February.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "اختطاف بروسربينا",
+      "alt": [
+        "خطف بروسربين"
+      ],
+      "topic": "نحت",
+      "ar": "اغتصاب بروسربينا",
+      "en": "The Rape of Proserpina",
+      "q": "من الفسيفساء المبعثرة: ما هذا التمثال؟",
+      "commons": "File:Rape of Prosepina September 2015-3a.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بورجوازيو كاليه",
+      "alt": [
+        "أعيان كاليه"
+      ],
+      "topic": "نحت",
+      "ar": "مواطني كاليه",
+      "en": "The Burghers of Calais",
+      "q": "قبل أن تعود لمكانها: ما هذا التمثال؟",
+      "commons": "File:Statue bourgeois calais rodin.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سائق عربة دلفي",
+      "alt": [
+        "حوذي دلفي"
+      ],
+      "topic": "نحت",
+      "ar": "سائق عربة دلفي",
+      "en": "Charioteer of Delphi",
+      "q": "لوحة مبعثرة: ما هذا التمثال؟",
+      "commons": "File:Vognstyreren-fra Delfi2.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "شاهنامه طهماسب",
+      "alt": [
+        "شاهنامه الشاه طهماسب"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "الشاهنامه الطهماسبية",
+      "en": "Shahnameh of Shah Tahmasp",
+      "q": "المواضع مبعثرة: ما هذه المخطوطة؟",
+      "commons": "File:The Court of Gayumars.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لفيفة طوبكابي",
+      "alt": [
+        "مخطوط طوبقابي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "طومار طوب قابي",
+      "en": "Topkapı Scroll",
+      "q": "لمّ الشتات: ما هذا العمل الفني؟",
+      "commons": "File:Topkapı Scroll P306.JPG"
+    },
+    {
+      "tier": 800,
+      "a": "كأس إيدنهول",
+      "alt": [
+        "حظ إيدنهول"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "حظ إيدن هول",
+      "en": "Luck of Edenhall",
+      "q": "المواضع مبعثرة: ما هذه القطعة؟",
+      "commons": "File:Luck of Edenhall VandA C.1toB-1959.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "خمسة نظامي",
+      "alt": [
+        "خمسة النظامي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "خمسة نظامي",
+      "en": "Khamsa of Nizami",
+      "q": "بلا ترتيب: ما هذه المخطوطة؟",
+      "commons": "File:Khusraw arriving at Shirin's castle (f.80). Khamsa of Nizami, Jalayirid style, 1386-88, Baghdad (British Library, Or.13297).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لفيفة حكاية غينجي",
+      "alt": [
+        "غينجي مونوغاتاري إيماكي"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "لفيفة حكاية غينجي",
+      "en": "Genji Monogatari Emaki",
+      "q": "من الألوان والكتل: ما هذا العمل الفني؟",
+      "commons": "File:Genji emaki azumaya.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "تشوجو جيغا",
+      "alt": [
+        "لفائف الحيوانات الهزلية"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "تشوجو جيغا",
+      "en": "Chōjū-jinbutsu-giga",
+      "q": "قبل التركيب: ما هذا العمل الفني؟",
+      "commons": "File:Chouju sumo2.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "التنانين التسعة",
+      "alt": [
+        "تسعة تنانين"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "التنانين التسعة",
+      "en": "Nine Dragons (painting)",
+      "q": "خمّن قبل الكشف: ما هذا العمل الفني؟",
+      "commons": "File:Nine-Dragons1.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "التصوير البهاري",
+      "alt": [
+        "الرسم البهاري"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "لوحة بهاري",
+      "en": "Pahari painting",
+      "q": "الأحجية مقلوبة: ما هذه الزخرفة؟",
+      "commons": "File:Krishna and Radha looking into a mirror. - Google Art Project.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "دائرة بروج دندرة",
+      "alt": [
+        "زودياك دندرة"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "برج دندرة",
+      "en": "Dendera zodiac",
+      "q": "القطع في غير أماكنها: ما هذا النقش؟",
+      "commons": "File:Zodiaque de Dendéra - Musée du Louvre Antiquités Egyptiennes D 38 ; E 13482.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "كتاب الموتى",
+      "alt": [
+        "كتاب الموتى المصري"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "كتاب الموتى",
+      "en": "Book of the Dead",
+      "q": "القطع في غير أماكنها: ما هذه المخطوطة؟",
+      "commons": "File:El pesado del corazón en el Papiro de Hunefer.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مخطوط مندوزا",
+      "alt": [
+        "كودكس مندوزا"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "مخطوطة مندوزا",
+      "en": "Codex Mendoza",
+      "q": "لمّ الشتات: ما هذه المخطوطة؟",
+      "commons": "File:CodexMendoza01.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مخطوط درسدن",
+      "alt": [
+        "كودكس درسدن"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "مخطوطات درسدن",
+      "en": "Dresden Codex",
+      "q": "من الألوان والكتل: ما هذه المخطوطة؟",
+      "commons": "File:Dresden Codex pp.58-62 78.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مسلة مرنبتاح",
+      "alt": [
+        "لوح مرنبتاح"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "لوحة مرنبتاح",
+      "en": "Merneptah Stele",
+      "q": "لمّ الشتات: ما هذا النقش؟",
+      "commons": "File:Merneptah Steli (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "عيادة الدكتور كاليغاري",
+      "alt": [
+        "كابينة الدكتور كاليغاري"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "كابينة الدكتور كاليجاري",
+      "en": "The Cabinet of Dr. Caligari",
+      "q": "الصورة مفكّكة: ما هذا العمل الفني؟",
+      "commons": "File:Das Cabinet des Dr. Caligari.JPG"
+    },
+    {
+      "tier": 800,
+      "a": "البارجة بوتيمكين",
+      "alt": [
+        "المدرعة بوتمكين"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "المدمرة بوتمكين (فلم)",
+      "en": "Battleship Potemkin",
+      "q": "بلا ترتيب: ما هذا الملصق؟",
+      "commons": "File:Vintage Potemkin.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "روزي المبرشمة",
+      "alt": [
+        "روزي عاملة البرشام"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "روزي المبرشمة",
+      "en": "Rosie the Riveter",
+      "q": "رتّب القطع في ذهنك: ما هذا الرسم؟",
+      "commons": "File:Rosie the Riveter (Vultee) DS.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "الأم المهاجرة",
+      "alt": [
+        "مهاجرة"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "الأم المهاجرة",
+      "en": "Migrant Mother",
+      "q": "أعد الترتيب ذهنيًا: ما هذا العمل الفني؟",
+      "commons": "File:Lange-MigrantMother02.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "خريطة كانتينو",
+      "alt": [
+        "كانتينو"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "خريطة كانتينو",
+      "en": "Cantino planisphere",
+      "q": "المواضع مبعثرة: ما هذه الخريطة؟",
+      "commons": "File:Cantino planisphere (1502).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "طيور أمريكا",
+      "alt": [
+        "كتاب طيور أمريكا"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "طيور أمريكا",
+      "en": "The Birds of America",
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا الرسم؟",
+      "commons": "File:Audubon Birds of America.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "عربة القش لبوش",
+      "alt": [
+        "عربة التبن"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "عربة القش لبوش",
+      "en": "The Haywain Triptych",
+      "q": "بنظرة إلى الألوان وحدها: ما اسم هذه اللوحة؟",
+      "commons": "File:Bosch - Haywain Triptych.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "ثور فارنيزي",
+      "topic": "نحت",
+      "ar": "ثور فارنيزي",
+      "en": "Farnese Bull",
+      "q": "الترتيب مغلوط: ما هذا التمثال؟",
+      "commons": "File:Farnese Bull MAN Napoli Inv6002 n01.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مبخرة الأسد",
+      "alt": [
+        "أسد البرونز"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "فتخاء بيزا",
+      "en": "Pisa Griffin",
+      "q": "بلا ترتيب: ما هذه القطعة؟",
+      "commons": "File:Grifo-museo-opera-duomo (cropped) (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "قنديل المسجد",
+      "alt": [
+        "مشكاة المسجد",
+        "قنديل زجاجي مملوكي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "مصباح المسجد",
+      "en": "Mosque lamp",
+      "q": "القطع في غير أماكنها: ما هذه القطعة؟",
+      "commons": "File:Mosque Lamp of Amir Qawsun.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "دلو بوبرينسكي",
+      "alt": [
+        "الدلو الهروي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "دلو بوبرينسكي",
+      "en": "Bobrinski Bucket",
+      "q": "لمّ الشتات: ما هذه القطعة؟",
+      "commons": "File:Bobrinsky Bronzekessel.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "شاهنامه بايسنغر",
+      "alt": [
+        "شاهنامه بايسنغري"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "مخطوطة بايسنقر للشاهنامه",
+      "en": "Baysonghori Shahnameh",
+      "q": "قبل التركيب: ما هذه المخطوطة؟",
+      "commons": "File:Baysunghur attending a hunt. Shahnama (Baysunghur) (Gulistan Museum Ms 716) Frontispiece, 1430 painting.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جامع التواريخ",
+      "alt": [
+        "منمنمات جامع التواريخ"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "جامع التواريخ",
+      "en": "Jami' al-tawarikh",
+      "q": "خمّن قبل الكشف: ما هذه المخطوطة؟",
+      "commons": "File:Mongol soldiers by Rashid al-Din 1305.JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "ميلانكوليا الأولى",
+      "alt": [
+        "الكآبة الأولى"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الحزن 1 (نقش)",
+      "en": "Melencolia I",
+      "q": "من شظايا الصورة: ما هذا العمل الفني؟",
+      "commons": "File:Albrecht Dürer - Melencolia I - Google Art Project ( AGDdr3EHmNGyA).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الأرنب الصغير",
+      "alt": [
+        "أرنب دورر"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الأرنب الصغير",
+      "en": "Young Hare",
+      "q": "المواضع مبعثرة: ما هذا الرسم؟",
+      "commons": "File:Albrecht Dürer - Hare, 1502 - Google Art Project.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "وحيد قرن دورر",
+      "alt": [
+        "كركدن دورر"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "لوحة وحيد القرن",
+      "en": "Dürer's Rhinoceros",
+      "q": "بلا ترتيب: ما هذا الرسم؟",
+      "commons": "File:The Rhinoceros (NGA 1964.8.697) enhanced.png"
+    },
+    {
+      "tier": 1000,
+      "a": "الفارس والموت والشيطان",
+      "topic": "لوحات كلاسيكية",
+      "ar": "الفارس والموت والشيطان (نقش)",
+      "en": "Knight, Death and the Devil",
+      "q": "الأحجية مقلوبة: ما هذا العمل الفني؟",
+      "commons": "File:Albrecht Dürer, Knight, Death and Devil, 1513, NGA 6637.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "فينوس أوربينو",
+      "alt": [
+        "زهرة أوربينو"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "فينوس أوربينو",
+      "en": "Venus of Urbino",
+      "q": "مبعثرة على شبكة: ما اسم هذه اللوحة؟",
+      "commons": "File:Tiziano - Venere di Urbino - Google Art Project.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "باخوس وأريادني",
+      "topic": "لوحات كلاسيكية",
+      "ar": "باخوس وأريادني",
+      "en": "Bacchus and Ariadne",
+      "q": "اثنتا عشرة قطعة فقط: ما اسم هذه اللوحة؟",
+      "commons": "File:Titian Bacchus and Ariadne.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "موت مارا",
+      "alt": [
+        "مقتل مارا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "لوحة وفاة مارا",
+      "en": "The Death of Marat",
+      "q": "ركّبها صح: ما هذا العمل الفني؟",
+      "commons": "File:Death of Marat by David.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الكابوس",
+      "alt": [
+        "كابوس فوسلي"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "الكابوس (لوحة)",
+      "en": "The Nightmare",
+      "q": "القطع مخلوطة: ما اسم هذه اللوحة؟",
+      "commons": "File:Johann Heinrich Füssli - The Nightmare 55.5.A-d1-2019-04-15.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "تجربة على طائر في مضخة هواء",
+      "alt": [
+        "تجربة مضخة الهواء"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "تجربة على طائر في المضخة الهوائية",
+      "en": "An Experiment on a Bird in the Air Pump",
+      "q": "من الفسيفساء المبعثرة: ما اسم هذه اللوحة؟",
+      "commons": "File:An Experiment on a Bird in an Air Pump by Joseph Wright of Derby, 1768.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الغزّالات",
+      "alt": [
+        "أسطورة أراكني"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "أسطورة أراكني (لوحة)",
+      "en": "Las Hilanderas",
+      "q": "قبل أن تعود لمكانها: ما اسم هذه اللوحة؟",
+      "commons": "File:Velazquez-las hilanderas.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "حمّام الطفل",
+      "alt": [
+        "الاستحمام"
+      ],
+      "topic": "فن حديث",
+      "ar": "حمام الطفل",
+      "en": "The Child's Bath",
+      "q": "لوحة مبعثرة: ما اسم هذه اللوحة؟",
+      "commons": "File:Mary Cassatt - The Child's Bath - Google Art Project.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الأبسنت",
+      "alt": [
+        "شاربة الأبسنت"
+      ],
+      "topic": "فن حديث",
+      "ar": "الأبسنت",
+      "en": "L'Absinthe",
+      "q": "الترتيب مغلوط: ما اسم هذه اللوحة؟",
+      "commons": "File:Edgar Degas - In a Café - Google Art Project 2.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "كاشطو الأرضية",
+      "alt": [
+        "مقشرو الأرضيات"
+      ],
+      "topic": "فن حديث",
+      "ar": "كاشطو الأرضية",
+      "en": "The Floor Scrapers",
+      "q": "رتّبها ثم أجب: ما اسم هذه اللوحة؟",
+      "commons": "File:Gustave Caillebotte - The Floor Planers - Google Art Project.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جزيرة الموتى",
+      "alt": [
+        "جزيرة الأموات"
+      ],
+      "topic": "فن حديث",
+      "ar": "جزيرة الموتى",
+      "en": "Isle of the Dead (painting)",
+      "q": "بنظرة إلى الألوان وحدها: ما هذا العمل الفني؟",
+      "commons": "File:Arnold Böcklin - Die Toteninsel I (Basel, Kunstmuseum).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الغجرية النائمة",
+      "alt": [
+        "الغجري النائم"
+      ],
+      "topic": "فن حديث",
+      "ar": "الغجرية النائمة",
+      "en": "The Sleeping Gypsy",
+      "q": "من المربعات المبدّلة: ما اسم هذه اللوحة؟",
+      "commons": "File:La Bohémienne endormie.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جوبيتر وسيميلي",
+      "topic": "فن حديث",
+      "ar": "جوبيتر وسيميلي",
+      "en": "Jupiter and Semele",
+      "q": "قبل أن تستقيم الصورة: ما اسم هذه اللوحة؟",
+      "commons": "File:Jupiter and Semele by Gustave Moreau.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سيدة إلتشي",
+      "alt": [
+        "ليدي إلتشي"
+      ],
+      "topic": "نحت",
+      "ar": "سيدة إلتشي",
+      "en": "Lady of Elche",
+      "q": "رتّبها ثم أجب: ما هذا التمثال؟",
+      "commons": "File:Dama de Elche - MAN - 20241220e.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "فتى كريتيوس",
+      "topic": "نحت",
+      "ar": "فتى كريتيوس",
+      "en": "Kritios Boy",
+      "q": "من المربعات المبدّلة: ما هذا التمثال؟",
+      "commons": "File:009MA Kritios.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الغالي المحتضر",
+      "alt": [
+        "الغالي الجريح"
+      ],
+      "topic": "نحت",
+      "ar": "الغالي المحتضر",
+      "en": "Dying Gaul",
+      "q": "قبل أن تستقيم الصورة: ما هذا التمثال؟",
+      "commons": "File:Dying gaul.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "فاون بربريني",
+      "alt": [
+        "الساتير النائم"
+      ],
+      "topic": "نحت",
+      "ar": "فاون بربريني",
+      "en": "Barberini Faun",
+      "q": "بالألوان فقط: ما هذا التمثال؟",
+      "commons": "File:Barberini Faun front Glyptothek Munich 218 n2.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "هرمس وديونيسوس الرضيع",
+      "alt": [
+        "هرمس براكسيتيليس"
+      ],
+      "topic": "نحت",
+      "ar": "هرمس وديونيسوس الرضيع",
+      "en": "Hermes and the Infant Dionysus",
+      "q": "لأي منحوتة هذه القطع؟",
+      "commons": "File:Hermes and the infant Dionysus by Praxiteles.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ناووس الزوجين",
+      "alt": [
+        "تابوت الزوجين"
+      ],
+      "topic": "نحت",
+      "ar": "ناووس الزوجين",
+      "en": "Sarcophagus of the Spouses",
+      "q": "من الألوان والكتل: ما هذه القطعة؟",
+      "commons": "File:Sarcophagus of the Spouses from Villa Giulia in Rome.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "رؤوس الأولمك العملاقة",
+      "alt": [
+        "رؤوس الأولمك"
+      ],
+      "topic": "نحت",
+      "ar": "رؤوس الأولمك الضخمة",
+      "en": "Olmec colossal heads",
+      "q": "قطعة بعد قطعة: لأي منحوتة هذه القطع؟",
+      "commons": "File:San Lorenzo Monument 4 crop.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الخزف ذو البريق المعدني",
+      "alt": [
+        "اللسترواير",
+        "الخزف المذهّب"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "خزف مصقول",
+      "en": "Lustreware",
+      "q": "ركّبها صح: ما هذه الزخرفة؟",
+      "commons": "File:Jug MET DP-1239-049 (cropped).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الطراز",
+      "alt": [
+        "نسيج الطراز"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "طراز (نسيج)",
+      "en": "Tiraz",
+      "q": "مبعثرة على شبكة: ما هذا العمل الفني؟",
+      "commons": "File:Badr al-Din Lu'lu'.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "كسوة الكعبة",
+      "alt": [
+        "الكسوة"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "كسوة الكعبة",
+      "en": "Kiswah",
+      "q": "اثنتا عشرة قطعة فقط: ما هذا العمل الفني؟",
+      "commons": "File:The Kabah in the Grand Mosque of Makkah, Saudi Arabia (52501405646).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "لفيفة النصائح",
+      "alt": [
+        "لفيفة المواعظ"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "لفيفة النصائح",
+      "en": "Admonitions Scroll",
+      "q": "القطع مخلوطة: ما هذا العمل الفني؟",
+      "commons": "File:Ku K'ai-chih 001.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الربيع المبكر",
+      "topic": "فن آسيوي",
+      "ar": "الربيع المبكر",
+      "en": "Early Spring (painting)",
+      "q": "بالألوان فقط: ما اسم هذه اللوحة؟",
+      "commons": "File:Guo Xi - Early Spring (large).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "التصوير الكانغري",
+      "alt": [
+        "الرسم الكانغري"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "التصوير الكانغري",
+      "en": "Kangra painting",
+      "q": "بنظرة إلى الألوان وحدها: ما هذه الزخرفة؟",
+      "commons": "File:Attributed to Khushala, Indian, active late 18th century - The Gods Sing and Dance for Shiva and Parvati - Google Art Project.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مخطوط أميانتينوس",
+      "alt": [
+        "كودكس أميانتينوس"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "مخطوط أميانتينوس",
+      "en": "Codex Amiatinus",
+      "q": "الصورة مفكّكة: ما هذه المخطوطة؟",
+      "commons": "File:CodxAmiatinusFolio5rEzra.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مزامير أوترخت",
+      "alt": [
+        "سفر المزامير الأوترختي"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "مزامير أوترخت",
+      "en": "Utrecht Psalter",
+      "q": "أعد الترتيب ذهنيًا: ما هذه المخطوطة؟",
+      "commons": "File:Utrecht104.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "تكوين فيينا",
+      "alt": [
+        "سفر التكوين الفييني"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "تكوين فيينا",
+      "en": "Vienna Genesis",
+      "q": "من شظايا الصورة: ما هذه المخطوطة؟",
+      "commons": "File:ViennGenFol12vJacob.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مسلة نارام سين",
+      "alt": [
+        "مسلة النصر"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "مسلة النصر لنارام سين",
+      "en": "Victory Stele of Naram-Sin",
+      "q": "من الألوان والكتل: ما هذا النقش؟",
+      "commons": "File:Stèle de Naram-Sin - Musée du Louvre Antiquités orientales SB 4 ; AS 6065.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "قرص فيستوس",
+      "alt": [
+        "قرص فايستوس"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "قرص فستوس",
+      "en": "Phaistos Disc",
+      "q": "قبل التركيب: ما هذه القطعة؟",
+      "commons": "File:Phaistos Disc — Side A.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "رجل ميشلان",
+      "alt": [
+        "بيبندوم"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "بيبندوم",
+      "en": "Michelin Man",
+      "q": "القطع في غير أماكنها: ما هذا الرسم؟",
+      "commons": "File:Sign for Michelin tyres.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "فقاعات",
+      "alt": [
+        "لوحة الفقاعات"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "فقاعات",
+      "en": "Bubbles (painting)",
+      "q": "لأي لوحة هذه القطع؟",
+      "commons": "File:Bubbles by John Everett Millais.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "رحلة إلى القمر",
+      "alt": [
+        "الرحلة إلى القمر"
+      ],
+      "topic": "ملصقات ورسوم",
+      "ar": "رحلة إلى القمر (فلم فرنسي)",
+      "en": "A Trip to the Moon",
+      "q": "القطع في غير أماكنها: ما هذا الملصق؟",
+      "commons": "File:Le Voyage dans la lune.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "خريطة فرا ماورو",
+      "topic": "خرائط ورسوم علمية",
+      "ar": "خريطة فرا ماورو",
+      "en": "Fra Mauro map",
+      "q": "بلا ترتيب: ما هذه الخريطة؟",
+      "commons": "File:Fra Mauro Map FactumArte.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "خريطة العالم البابلية",
+      "alt": [
+        "إيماغو موندي"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "خريطة العالم البابلية",
+      "en": "Babylonian Map of the World",
+      "q": "القطع في غير أماكنها: ما هذه الخريطة؟",
+      "commons": "File:The Babylonian map of the world, from Sippar, Mesopotamia..JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "لوحة بويتنغر",
+      "alt": [
+        "خريطة بويتنغر"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "خريطة بيوتينجر",
+      "en": "Tabula Peutingeriana",
+      "q": "لمّ الشتات: ما هذه الخريطة؟",
+      "commons": "File:Part of Tabula Peutingeriana.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بورتريه إيزابيلا ديستي",
+      "alt": [
+        "إيزابيلا ديستي"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "ar": "إيزابيلا ديستي",
+      "en": "Isabella d'Este",
+      "q": "لمّ الشتات: ما هذا الرسم؟",
+      "commons": "File:Leonardo da Vinci, Portrait of Isabella d'Este.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أبو الهول الناكسي",
+      "alt": [
+        "أبو الهول اليوناني"
+      ],
+      "topic": "نحت",
+      "ar": "أبو الهول الناكسي",
+      "en": "Sphinx of Naxos",
+      "q": "من القطع المبعثرة: لأي منحوتة هذه القطع؟",
+      "commons": "File:028MAD Sphinx.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بلاطات الجيريه",
+      "alt": [
+        "الجيريه",
+        "التبليط الجيري"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "بلاط الجيرة",
+      "en": "Girih tiles",
+      "q": "مبعثرة على شبكة: ما هذه الزخرفة؟",
+      "commons": "File:Girih tiles.svg"
+    },
+    {
+      "tier": 1000,
+      "a": "الفن الفاطمي",
+      "alt": [
+        "فنون الفاطميين"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "الفن الفاطمي",
+      "en": "Fatimid art",
+      "q": "اثنتا عشرة قطعة فقط: ما هذه الزخرفة؟",
+      "commons": "File:Cairo, moschea di al-aqmar, 04.JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "الزجاج الإسلامي",
+      "alt": [
+        "زجاج إسلامي"
+      ],
+      "topic": "فن إسلامي",
+      "ar": "زجاج إسلامي",
+      "en": "Islamic glass",
+      "q": "القطع مخلوطة: ما هذه الزخرفة؟",
+      "commons": "File:Lamp, Egypt, c. 1360 AD, glass painted with enamel and gold - Freer Gallery of Art - DSC04603.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مدرسة كانو",
+      "alt": [
+        "كانو"
+      ],
+      "topic": "فن آسيوي",
+      "ar": "مدرسة كانو",
+      "en": "Kanō school",
+      "q": "من الفسيفساء المبعثرة: ما هذه الزخرفة؟",
+      "commons": "File:Kano Eino - Birds and Flowers of Spring and Summer - Google Art Project.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "كارتا مارينا",
+      "alt": [
+        "خريطة البحر"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "ar": "كارتا مارينا",
+      "en": "Carta marina",
+      "q": "من الألوان والكتل: ما هذه الخريطة؟",
+      "commons": "File:Carta Marina.jpeg"
+    },
+    {
+      "tier": 1000,
+      "a": "مخطوط بورجيا",
+      "alt": [
+        "كودكس بورجيا"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "ar": "مخطوط بورجيا",
+      "en": "Codex Borgia",
+      "q": "الأحجية مقلوبة: ما هذه المخطوطة؟",
+      "commons": "File:Codex Borgia page 71.jpg"
+    }
+  ]
+}

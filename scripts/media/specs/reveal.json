@@ -1,0 +1,2545 @@
+{
+  "id": "reveal",
+  "name": "إكشفني",
+  "icon": "🪟",
+  "defaultType": "image",
+  "kind": "image",
+  "effect": "reveal",
+  "subjects": [
+    {
+      "tier": 200,
+      "a": "جمال عبد الناصر",
+      "alt": [
+        "عبد الناصر"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "جمال عبد الناصر",
+      "en": "Gamal Abdel Nasser",
+      "q": "من الذي تكشفه البلاطات؟",
+      "commons": "File:Nasser in 1969.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ليوناردو دا فينشي",
+      "alt": [
+        "دافنشي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "ليوناردو دا فينشي",
+      "en": "Leonardo da Vinci",
+      "q": "ما اسم هذا الشخص؟",
+      "commons": "File:Leonardo self.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ألبرت أينشتاين",
+      "alt": [
+        "اينشتاين"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "ألبرت أينشتاين",
+      "en": "Albert Einstein",
+      "q": "كم بلاطة تحتاجون لتعرفوه؟",
+      "commons": "File:Einstein 1921 by F Schmutzer - restoration.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ويليام شكسبير",
+      "alt": [
+        "شكسبير"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "ويليام شكسبير",
+      "en": "William Shakespeare",
+      "q": "من ينكشف بلاطة بعد بلاطة؟",
+      "commons": "File:Shakespeare.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ابن بطوطة",
+      "topic": "مستكشفون",
+      "ar": "ابن بطوطة",
+      "en": "Ibn Battuta",
+      "q": "من هذا الذي ينكشف؟",
+      "commons": "File:Bust of Ibn Battuta at Ibn Battuta museum.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أرسطو",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "أرسطو",
+      "en": "Aristotle",
+      "q": "لمن هذه الملامح؟",
+      "commons": "File:Aristotle Altemps Inv8575.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "بيليه",
+      "topic": "رياضيون",
+      "ar": "بيليه",
+      "en": "Pelé",
+      "q": "من الذي في الصورة؟",
+      "commons": "File:Pele con brasil (cropped).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ابن سينا",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "ابن سينا",
+      "en": "Avicenna",
+      "q": "من في الصورة؟",
+      "commons": "File:Avicenna Portrait on Silver Vase - Museum at BuAli Sina (Avicenna) Mausoleum - Hamadan - Western Iran (7423560860).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أنور السادات",
+      "alt": [
+        "السادات"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "أنور السادات",
+      "en": "Anwar Sadat",
+      "q": "من هذا؟",
+      "commons": "File:Official Portrait - Anwar Sadat.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فنسنت فان جوخ",
+      "alt": [
+        "فان كوخ"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "فينسنت فان جوخ",
+      "en": "Vincent van Gogh",
+      "q": "من هذا الوجه المألوف؟",
+      "commons": "File:Self-portrait - Vincent van Gogh.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "إسحاق نيوتن",
+      "alt": [
+        "نيوتن"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "إسحاق نيوتن",
+      "en": "Isaac Newton",
+      "q": "من هذا الشخص؟",
+      "commons": "File:GodfreyKneller-IsaacNewton-1689.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نجيب محفوظ",
+      "topic": "أدباء وشعراء",
+      "ar": "نجيب محفوظ",
+      "en": "Naguib Mahfouz",
+      "q": "لمن هذه الصورة؟",
+      "commons": "File:Naguib Mahfouz HR.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "كريستوفر كولومبوس",
+      "alt": [
+        "كولومبوس"
+      ],
+      "topic": "مستكشفون",
+      "ar": "كريستوفر كولومبوس",
+      "en": "Christopher Columbus",
+      "q": "من صاحب هذه الملامح؟",
+      "commons": "File:Ridolfo del Ghirlandaio - Ritratto di Cristoforo Colombo (1520).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أفلاطون",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "أفلاطون",
+      "en": "Plato",
+      "q": "من يكون هذا؟",
+      "commons": "File:Platon- Samir Terkih.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "دييغو مارادونا",
+      "alt": [
+        "مارادونا"
+      ],
+      "topic": "رياضيون",
+      "ar": "دييغو مارادونا",
+      "en": "Diego Maradona",
+      "q": "من يختبئ خلف البلاطات؟",
+      "commons": "File:Argentina celebrando copa (cropped).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الخوارزمي",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "الخوارزمي",
+      "en": "Muhammad ibn Musa al-Khwarizmi",
+      "q": "هل عرفتم من هذا؟",
+      "commons": "File:Al-Khwarizmi portrait.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "صلاح الدين الأيوبي",
+      "alt": [
+        "صلاح الدين"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "صلاح الدين الأيوبي",
+      "en": "Saladin",
+      "q": "من هذا يا ترى؟",
+      "commons": "File:Saladin's imaginary portrait.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "بابلو بيكاسو",
+      "alt": [
+        "بيكاسو"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "بابلو بيكاسو",
+      "en": "Pablo Picasso",
+      "q": "من تعرفون في هذه الصورة؟",
+      "commons": "File:Pablo picasso 1.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ماري كوري",
+      "topic": "علماء ومخترعون",
+      "ar": "ماري كوري",
+      "en": "Marie Curie",
+      "q": "من صاحبة هذا الوجه؟",
+      "commons": "File:Mariecurie.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "طه حسين",
+      "topic": "أدباء وشعراء",
+      "ar": "طه حسين",
+      "en": "Taha Hussein",
+      "q": "من هذا خلف البلاطات؟",
+      "commons": "File:TahaHussein.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نيل أرمسترونغ",
+      "alt": [
+        "ارمسترونج"
+      ],
+      "topic": "مستكشفون",
+      "ar": "نيل أرمسترونغ",
+      "en": "Neil Armstrong",
+      "q": "من صاحب هذه الصورة؟",
+      "commons": "File:Neil Armstrong pose.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "سقراط",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "سقراط",
+      "en": "Socrates",
+      "q": "لمن هذا الوجه؟",
+      "commons": "File:Socrates Louvre.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "محمد علي كلاي",
+      "alt": [
+        "كاسيوس كلاي"
+      ],
+      "topic": "رياضيون",
+      "ar": "محمد علي كلاي",
+      "en": "Muhammad Ali",
+      "q": "من هذا المطلّ من الصورة؟",
+      "commons": "File:Muhammad Ali NYWTS.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ابن خلدون",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "ابن خلدون",
+      "en": "Ibn Khaldun",
+      "q": "من ترون في الصورة؟",
+      "commons": "File:Ibn Khaldūn, Sayr mulhimah min al-Sharq wa-al-Gharb.png"
+    },
+    {
+      "tier": 200,
+      "a": "عمر المختار",
+      "topic": "قادة وزعماء",
+      "ar": "عمر المختار",
+      "en": "Omar Mukhtar",
+      "q": "من يظهر خلف البلاطات؟",
+      "commons": "File:Omar Mukhtar 13.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "لودفيغ فان بيتهوفن",
+      "alt": [
+        "بيتهوفن"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "لودفيغ فان بيتهوفن",
+      "en": "Ludwig van Beethoven",
+      "q": "من صاحب هذا الوجه؟",
+      "commons": "File:Joseph Karl Stieler's Beethoven mit dem Manuskript der Missa solemnis.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "توماس إديسون",
+      "alt": [
+        "اديسون"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "توماس إديسون",
+      "en": "Thomas Edison",
+      "q": "ما اسم من في الصورة؟",
+      "commons": "File:Thomas Edison2.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جبران خليل جبران",
+      "alt": [
+        "جبران"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "جبران خليل جبران",
+      "en": "Kahlil Gibran",
+      "q": "انظروا جيدًا: من في الصورة؟",
+      "commons": "File:Kahlil Gibran 1913.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "يوري غاغارين",
+      "alt": [
+        "جاجارين"
+      ],
+      "topic": "مستكشفون",
+      "ar": "يوري غاغارين",
+      "en": "Yuri Gagarin",
+      "q": "بنصف الصورة فقط: من هذا الشخص؟",
+      "commons": "File:Yuri Gagarin portrait.png"
+    },
+    {
+      "tier": 200,
+      "a": "سيغموند فرويد",
+      "alt": [
+        "فرويد"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "سيغموند فرويد",
+      "en": "Sigmund Freud",
+      "q": "بنصف الصورة فقط: من هذا؟",
+      "commons": "File:Sigmund Freud, by Max Halberstadt (cropped).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "مايكل جوردان",
+      "topic": "رياضيون",
+      "ar": "مايكل جوردان",
+      "en": "Michael Jordan",
+      "q": "لا تنتظروا كل البلاطات: من في الصورة؟",
+      "commons": "File:Michael Jordan in 2014.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نابليون بونابرت",
+      "alt": [
+        "نابليون"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "نابليون بونابرت",
+      "en": "Napoleon",
+      "q": "بلاطة بعد بلاطة: من ترون في الصورة؟",
+      "commons": "File:Painting of Napoleon Bonaparte by Jacques-Louis David, 1813.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "موتسارت",
+      "alt": [
+        "موزارت"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "فولفغانغ أماديوس موتسارت",
+      "en": "Wolfgang Amadeus Mozart",
+      "q": "قبل أن تنتهي البلاطات: لمن هذا الوجه؟",
+      "commons": "File:The Mozart Family - Wolfgang Amadeus Mozart headshot.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "غاليليو غاليلي",
+      "alt": [
+        "جاليليو"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "غاليليو غاليلي",
+      "en": "Galileo Galilei",
+      "q": "من أول بلاطة: من صاحب هذه الصورة؟",
+      "commons": "File:Galileo Galilei (1564-1642) RMG BHC2700.tiff"
+    },
+    {
+      "tier": 200,
+      "a": "محمود درويش",
+      "topic": "أدباء وشعراء",
+      "ar": "محمود درويش",
+      "en": "Mahmoud Darwish",
+      "q": "شيئًا فشيئًا: من هذا الشخص؟",
+      "commons": "File:MahmoudDarwish.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ونستون تشرشل",
+      "alt": [
+        "تشرشل"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "ونستون تشرشل",
+      "en": "Winston Churchill",
+      "q": "بنصف الصورة فقط: من صاحب هذه الملامح؟",
+      "commons": "File:Sir Winston Churchill - 19086236948.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تشارلي تشابلن",
+      "alt": [
+        "شارلي شابلن"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "تشارلي تشابلن",
+      "en": "Charlie Chaplin",
+      "q": "لا تنتظروا كل البلاطات: من تعرفون في هذه الصورة؟",
+      "commons": "File:Charlie Chaplin portrait Getty 1739411952.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تشارلز داروين",
+      "alt": [
+        "داروين"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "تشارلز داروين",
+      "en": "Charles Darwin",
+      "q": "قبل أن تكتمل الصورة: من صاحب هذه الملامح؟",
+      "commons": "File:Charles Darwin portrait.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أحمد شوقي",
+      "topic": "أدباء وشعراء",
+      "ar": "أحمد شوقي",
+      "en": "Ahmed Shawqi",
+      "q": "مع كل بلاطة تنكشف: ما اسم هذا الشخص؟",
+      "commons": "File:Ahmad shawqy.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أبراهام لينكون",
+      "alt": [
+        "لينكولن"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "أبراهام لينكون",
+      "en": "Abraham Lincoln",
+      "q": "بلاطة بعد بلاطة: من هذا؟",
+      "commons": "File:Abraham Lincoln O-77 matte collodion print.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "والت ديزني",
+      "topic": "فنانون وموسيقيون",
+      "ar": "والت ديزني",
+      "en": "Walt Disney",
+      "q": "قبل أن تنتهي البلاطات: من الذي في الصورة؟",
+      "commons": "File:Walt disney portrait.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نيكولا تسلا",
+      "alt": [
+        "تيسلا"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "نيكولا تسلا",
+      "en": "Nikola Tesla",
+      "q": "قبل أن تنتهي البلاطات: من هذا يا ترى؟",
+      "commons": "File:Tesla circa 1890.jpeg"
+    },
+    {
+      "tier": 200,
+      "a": "نزار قباني",
+      "topic": "أدباء وشعراء",
+      "ar": "نزار قباني",
+      "en": "Nizar Qabbani",
+      "q": "بأقل عدد من البلاطات: من الذي في الصورة؟",
+      "commons": "File:Nizar qabbani 01.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جورج واشنطن",
+      "topic": "قادة وزعماء",
+      "ar": "جورج واشنطن",
+      "en": "George Washington",
+      "q": "بأقل عدد من البلاطات: من ترون في الصورة؟",
+      "commons": "File:Gilbert Stuart Williamstown Portrait of George Washington.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "مارلين مونرو",
+      "topic": "فنانون وموسيقيون",
+      "ar": "مارلين مونرو",
+      "en": "Marilyn Monroe",
+      "q": "من هذه في الصورة؟",
+      "commons": "File:Monroecirca1953.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أحمد زويل",
+      "topic": "علماء ومخترعون",
+      "ar": "أحمد زويل",
+      "en": "Ahmed Zewail",
+      "q": "قبل أن تكتمل الصورة: من في الصورة؟",
+      "commons": "File:Ahmed Zewail HD2009 Othmer Gold Medal portrait.JPG"
+    },
+    {
+      "tier": 200,
+      "a": "المهاتما غاندي",
+      "alt": [
+        "غاندي"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "المهاتما غاندي",
+      "en": "Mahatma Gandhi",
+      "q": "بسرعة: من صاحب هذه الملامح؟",
+      "commons": "File:Mahatma-Gandhi, studio, 1931.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أم كلثوم",
+      "topic": "فنانون وموسيقيون",
+      "ar": "أم كلثوم",
+      "en": "Umm Kulthum",
+      "q": "من هذه خلف البلاطات؟",
+      "commons": "File:Umm Kulthum as Fatimah.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "المتنبي",
+      "topic": "أدباء وشعراء",
+      "ar": "المتنبي",
+      "en": "Al-Mutanabbi",
+      "q": "لا تنتظروا كل البلاطات: لمن هذه الملامح؟",
+      "commons": "File:Al-Mutanabbi by Kahlil Gibran.png"
+    },
+    {
+      "tier": 400,
+      "a": "جون كينيدي",
+      "alt": [
+        "كنيدي"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "جون كينيدي",
+      "en": "John F. Kennedy",
+      "q": "دون تردد: من هذا الوجه المألوف؟",
+      "commons": "File:John F. Kennedy, White House color photo portrait.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "يوهان سباستيان باخ",
+      "alt": [
+        "باخ"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "يوهان سباستيان باخ",
+      "en": "Johann Sebastian Bach",
+      "q": "قبل أن تكتمل الصورة: من تعرفون في هذه الصورة؟",
+      "commons": "File:Johann Sebastian Bach.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ابن الهيثم",
+      "alt": [
+        "الحسن بن الهيثم"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "ابن الهيثم",
+      "en": "Ibn al-Haytham",
+      "q": "انظروا جيدًا: ما اسم هذا الشخص؟",
+      "commons": "File:Ibn Al-Haytham portrait.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ألكسندر غراهام بيل",
+      "alt": [
+        "جراهام بيل"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "ألكسندر غراهام بيل",
+      "en": "Alexander Graham Bell",
+      "q": "بنصف الصورة فقط: من هذا الوجه المألوف؟",
+      "commons": "File:Alexander Graham Bell.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ماركو بولو",
+      "topic": "مستكشفون",
+      "ar": "ماركو بولو",
+      "en": "Marco Polo",
+      "q": "بنصف الصورة فقط: من في الصورة؟",
+      "commons": "File:Marco Polo portrait.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "يوهان كرويف",
+      "alt": [
+        "كرويف"
+      ],
+      "topic": "رياضيون",
+      "ar": "يوهان كرويف",
+      "en": "Johan Cruyff",
+      "q": "قبل آخر بلاطة: لمن هذه الملامح؟",
+      "commons": "File:Johan Cruijff (1974).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "كارل ماركس",
+      "alt": [
+        "ماركس"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "كارل ماركس",
+      "en": "Karl Marx",
+      "q": "بلاطة بعد بلاطة: هل عرفتم من هذا؟",
+      "commons": "File:Karl Marx by John Jabez Edwin Mayall 1875 - Restored.png"
+    },
+    {
+      "tier": 400,
+      "a": "توفيق الحكيم",
+      "topic": "أدباء وشعراء",
+      "ar": "توفيق الحكيم",
+      "en": "Tawfiq al-Hakim",
+      "q": "قبل أن تنتهي البلاطات: من هذا؟",
+      "commons": "File:Tawfiq al-Hakim.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فرانكلين روزفلت",
+      "alt": [
+        "روزفلت"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "فرانكلين روزفلت",
+      "en": "Franklin D. Roosevelt",
+      "q": "قبل أن تنتهي البلاطات: ما اسم هذا الشخص؟",
+      "commons": "File:FDR 1944 Color Portrait.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فريدريك شوبان",
+      "alt": [
+        "شوبان"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "فريدريك شوبان",
+      "en": "Frédéric Chopin",
+      "q": "بسرعة: من صاحب هذه الصورة؟",
+      "commons": "File:Frederic Chopin photo.jpeg"
+    },
+    {
+      "tier": 400,
+      "a": "ابن رشد",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "ابن رشد",
+      "en": "Averroes",
+      "q": "بأقل عدد من البلاطات: لمن هذا الوجه؟",
+      "commons": "File:Statue of Averroes in Córdoba, Spain.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "لويس باستور",
+      "alt": [
+        "باستير"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "لويس باستور",
+      "en": "Louis Pasteur",
+      "q": "شيئًا فشيئًا: من ترون في الصورة؟",
+      "commons": "File:Louis Pasteur.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فرديناند ماجلان",
+      "alt": [
+        "ماجلان"
+      ],
+      "topic": "مستكشفون",
+      "ar": "فرديناند ماجلان",
+      "en": "Ferdinand Magellan",
+      "q": "مع كل بلاطة تنكشف: من صاحب هذه الملامح؟",
+      "commons": "File:Retrato de Hernando de Magallanes.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فرانتس بكنباور",
+      "alt": [
+        "بكنباور"
+      ],
+      "topic": "رياضيون",
+      "ar": "فرانتس بكنباور",
+      "en": "Franz Beckenbauer",
+      "q": "بنصف الصورة فقط: من صاحب هذا الوجه؟",
+      "commons": "File:Franz Beckenbauer (1975).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "عباس محمود العقاد",
+      "alt": [
+        "العقاد"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "عباس محمود العقاد",
+      "en": "Abbas El-Akkad",
+      "q": "دون تردد: من في الصورة؟",
+      "commons": "File:Abbas Mahmud al-Aqqad.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مارغريت تاتشر",
+      "alt": [
+        "تاتشر"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "مارغريت تاتشر",
+      "en": "Margaret Thatcher",
+      "q": "ما اسم هذه الشخصية؟",
+      "commons": "File:Margaret Thatcher (1983).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تشايكوفسكي",
+      "topic": "فنانون وموسيقيون",
+      "ar": "بيوتر إليتش تشايكوفسكي",
+      "en": "Pyotr Ilyich Tchaikovsky",
+      "q": "بنصف الصورة فقط: هل عرفتم من هذا؟",
+      "commons": "File:Tchaikovsky by Reutlinger (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أبو بكر الرازي",
+      "alt": [
+        "الرازي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "أبو بكر الرازي",
+      "en": "Muhammad ibn Zakariya al-Razi",
+      "q": "والصورة تنكشف: لمن هذه الملامح؟",
+      "commons": "File:Portrait of Rhazes (al-Razi) (AD 865 - 925) Wellcome L0005053 (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ألكسندر فلمنغ",
+      "alt": [
+        "فليمنج"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "ألكسندر فليمنغ",
+      "en": "Alexander Fleming",
+      "q": "بلاطة بعد بلاطة: ما اسم من في الصورة؟",
+      "commons": "File:Synthetic Production of Penicillin TR1468.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فاسكو دا غاما",
+      "topic": "مستكشفون",
+      "ar": "فاسكو دا غاما",
+      "en": "Vasco da Gama",
+      "q": "لا تنتظروا كل البلاطات: ما اسم من في الصورة؟",
+      "commons": "File:Ignoto portoghese, ritratto di un cavaliere dell'ordine di cristo, 1525-50 ca. 02.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "نادية كومانيتشي",
+      "topic": "رياضيون",
+      "ar": "ناديا كومانيتشي",
+      "en": "Nadia Comăneci",
+      "q": "من هذه المطلّة من الصورة؟",
+      "commons": "File:Nadia Comăneci at Sports Festival 2026.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "يوسف إدريس",
+      "topic": "أدباء وشعراء",
+      "ar": "يوسف إدريس",
+      "en": "Yusuf Idris",
+      "q": "مع كل بلاطة تنكشف: من في الصورة؟",
+      "commons": "File:Youssef idriss.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فلاديمير لينين",
+      "alt": [
+        "لينين"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "فلاديمير لينين",
+      "en": "Vladimir Lenin",
+      "q": "بأقل عدد من البلاطات: من صاحب هذا الوجه؟",
+      "commons": "File:Vladimir Lenin in July 1920 by Pavel Zhukov.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أنطونيو فيفالدي",
+      "alt": [
+        "فيفالدي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "أنطونيو فيفالدي",
+      "en": "Antonio Vivaldi",
+      "q": "والصورة تنكشف: من الذي في الصورة؟",
+      "commons": "File:Vivaldi.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الفارابي",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "الفارابي",
+      "en": "Al-Farabi",
+      "q": "لا تنتظروا كل البلاطات: من ترون في الصورة؟",
+      "commons": "File:صورة قديمة للفارابي.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ديمتري مندلييف",
+      "alt": [
+        "مندليف"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "ديمتري مندلييف",
+      "en": "Dmitri Mendeleev",
+      "q": "من أول بلاطة: من يكون هذا؟",
+      "commons": "File:Medeleeff by repin.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أميليا إيرهارت",
+      "topic": "مستكشفون",
+      "ar": "أميليا إيرهارت",
+      "en": "Amelia Earhart",
+      "q": "من هذه الشخصية؟",
+      "commons": "File:Earhart.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جيسي أوينز",
+      "topic": "رياضيون",
+      "ar": "جيسي أوينز",
+      "en": "Jesse Owens",
+      "q": "بسرعة: لمن هذه الملامح؟",
+      "commons": "File:Jesse Owens 1936.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الطيب صالح",
+      "topic": "أدباء وشعراء",
+      "ar": "الطيب صالح",
+      "en": "Tayeb Salih",
+      "q": "قبل أن تنتهي البلاطات: من يكون هذا؟",
+      "commons": "File:Tayeb saleh.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ماو تسي تونغ",
+      "alt": [
+        "ماو"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "ماو تسي تونغ",
+      "en": "Mao Zedong",
+      "q": "شيئًا فشيئًا: من الذي في الصورة؟",
+      "commons": "File:Mao Tse Tung.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مايكل أنجلو",
+      "alt": [
+        "ميكيلانجيلو"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "مايكل أنجلو",
+      "en": "Michelangelo",
+      "q": "انظروا جيدًا: من صاحب هذا الوجه؟",
+      "commons": "File:Michelangelo Daniele da Volterra (dettaglio).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "البيروني",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "البيروني",
+      "en": "Al-Biruni",
+      "q": "مع كل بلاطة تنكشف: من ترون في الصورة؟",
+      "commons": "File:Biruni-russian.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "آلان تورينغ",
+      "alt": [
+        "تورنج"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "آلان تورنج",
+      "en": "Alan Turing",
+      "q": "بنصف الصورة فقط: من تعرفون في هذه الصورة؟",
+      "commons": "File:Alan Turing (1951) (crop).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ليو تولستوي",
+      "alt": [
+        "تولستوي"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "ليو تولستوي",
+      "en": "Leo Tolstoy",
+      "q": "بأقل عدد من البلاطات: من تعرفون في هذه الصورة؟",
+      "commons": "File:Leo Tolstoy 1908 Portrait (3x4 cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "يوليوس قيصر",
+      "topic": "قادة وزعماء",
+      "ar": "يوليوس قيصر",
+      "en": "Julius Caesar",
+      "q": "والصورة تنكشف: من هذا؟",
+      "commons": "File:Retrato de Julio César (26724093101) (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "كلود مونيه",
+      "alt": [
+        "مونيه"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "كلود مونيه",
+      "en": "Claude Monet",
+      "q": "بأقل عدد من البلاطات: ما اسم من في الصورة؟",
+      "commons": "File:Claude Monet 1899 Nadar crop.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جابر بن حيان",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "جابر بن حيان",
+      "en": "Jabir ibn Hayyan",
+      "q": "بسرعة: ما اسم هذا الشخص؟",
+      "commons": "File:Jābir ibn Ḥayyān, Sayr mulhimah min al-Sharq wa-al-Gharb.png"
+    },
+    {
+      "tier": 400,
+      "a": "فيودور دوستويفسكي",
+      "alt": [
+        "دوستويفسكي"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "فيودور دوستويفسكي",
+      "en": "Fyodor Dostoevsky",
+      "q": "بنصف الصورة فقط: ما اسم هذا الشخص؟",
+      "commons": "File:Vasily Perov - Портрет Ф.М.Достоевского - Google Art Project.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الملكة فيكتوريا",
+      "topic": "قادة وزعماء",
+      "ar": "فيكتوريا ملكة المملكة المتحدة",
+      "en": "Queen Victoria",
+      "q": "هل عرفتم من هذه؟",
+      "commons": "File:Queen Victoria by Bassano.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "سلفادور دالي",
+      "alt": [
+        "دالي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "سلفادور دالي",
+      "en": "Salvador Dalí",
+      "q": "بأقل عدد من البلاطات: من هذا الشخص؟",
+      "commons": "File:Salvador Dalí 1939.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "عمر الخيام",
+      "alt": [
+        "الخيام"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "عمر الخيام",
+      "en": "Omar Khayyam",
+      "q": "بلاطة بعد بلاطة: من يكون هذا؟",
+      "commons": "File:Omar Khayyam2.JPG"
+    },
+    {
+      "tier": 400,
+      "a": "أنطون تشيخوف",
+      "alt": [
+        "تشيخوف"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "أنطون تشيخوف",
+      "en": "Anton Chekhov",
+      "q": "انظروا جيدًا: من هذا؟",
+      "commons": "File:Anton Chekhov 1889.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جان دارك",
+      "topic": "قادة وزعماء",
+      "ar": "جان دارك",
+      "en": "Joan of Arc",
+      "q": "من هذه التي تنكشف؟",
+      "commons": "File:Joan of Arc miniature graded.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فريدا كاهلو",
+      "topic": "فنانون وموسيقيون",
+      "ar": "فريدا كاهلو",
+      "en": "Frida Kahlo",
+      "q": "كم بلاطة تحتاجون لتعرفوها؟",
+      "commons": "File:Frida Kahlo, by Guillermo Kahlo (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جلال الدين الرومي",
+      "alt": [
+        "مولانا الرومي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "جلال الدين الرومي",
+      "en": "Rumi",
+      "q": "بلاطة بعد بلاطة: ما اسم هذا الشخص؟",
+      "commons": "File:مولانا اثر حسین بهزاد (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تشارلز ديكنز",
+      "alt": [
+        "ديكنز"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "تشارلز ديكنز",
+      "en": "Charles Dickens",
+      "q": "قبل أن تكتمل الصورة: من صاحب هذا الوجه؟",
+      "commons": "File:Dickens Gurney head.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "محمد علي باشا",
+      "topic": "قادة وزعماء",
+      "ar": "محمد علي باشا",
+      "en": "Muhammad Ali of Egypt",
+      "q": "بلاطة بعد بلاطة: من هذا الشخص؟",
+      "commons": "File:ModernEgypt, Muhammad Ali by Auguste Couder, BAP 17996.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مجدي يعقوب",
+      "topic": "علماء ومخترعون",
+      "ar": "مجدي يعقوب",
+      "en": "Magdi Yacoub",
+      "q": "شيئًا فشيئًا: من تعرفون في هذه الصورة؟",
+      "commons": "File:M Yacoub.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "أبو العلاء المعري",
+      "alt": [
+        "المعري"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "أبو العلاء المعري",
+      "en": "Al-Ma'arri",
+      "q": "بأقل عدد من البلاطات: ما اسم هذا الشخص؟",
+      "commons": "File:Al-Maʿarri by Khalil Gibran (cropped).png"
+    },
+    {
+      "tier": 600,
+      "a": "إدوارد سعيد",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "إدوارد سعيد",
+      "en": "Edward Said",
+      "q": "لا تنتظروا كل البلاطات: من هذا الوجه المألوف؟",
+      "commons": "File:Edward Said and Daniel Barenboim in Sevilla, 2002 (Said).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "رامبرانت",
+      "topic": "فنانون وموسيقيون",
+      "ar": "رامبرانت",
+      "en": "Rembrandt",
+      "q": "بنصف الصورة فقط: من الذي في الصورة؟",
+      "commons": "File:Rembrandt van Rijn - Self-Portrait (1659).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "الجاحظ",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "الجاحظ",
+      "en": "Al-Jahiz",
+      "q": "قبل آخر بلاطة: ما اسم من في الصورة؟",
+      "commons": "File:Al-Jāḥiẓ, Sayr mulhimah min al-Sharq wa-al-Gharb.png"
+    },
+    {
+      "tier": 600,
+      "a": "هدى شعراوي",
+      "topic": "قادة وزعماء",
+      "ar": "هدى شعراوي",
+      "en": "Huda Sha'arawi",
+      "q": "من صاحبة هذه الملامح؟",
+      "commons": "File:Huda Shaarawy.gif"
+    },
+    {
+      "tier": 600,
+      "a": "روالد أموندسن",
+      "alt": [
+        "أموندسن"
+      ],
+      "topic": "مستكشفون",
+      "ar": "روالد أموندسن",
+      "en": "Roald Amundsen",
+      "q": "والصورة تنكشف: ما اسم من في الصورة؟",
+      "commons": "File:Amundsen in fur skins.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ليف ياشين",
+      "alt": [
+        "ياشين"
+      ],
+      "topic": "رياضيون",
+      "ar": "ليف ياشين",
+      "en": "Lev Yashin",
+      "q": "انظروا جيدًا: من صاحب هذه الملامح؟",
+      "commons": "File:LevYashin.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "فاروق الباز",
+      "topic": "علماء ومخترعون",
+      "ar": "فاروق الباز",
+      "en": "Farouk El-Baz",
+      "q": "والصورة تنكشف: من تعرفون في هذه الصورة؟",
+      "commons": "File:F Al-Baz.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "الفردوسي",
+      "topic": "أدباء وشعراء",
+      "ar": "الفردوسي",
+      "en": "Ferdowsi",
+      "q": "بنصف الصورة فقط: لمن هذا الوجه؟",
+      "commons": "File:Imaginary depiction of the poet Firdausi. Folio from a Khavarannama (The Book of the East) of ibn Husam al-Din, 1476-1486 (cropped).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "قاسم أمين",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "قاسم أمين",
+      "en": "Qasim Amin",
+      "q": "والصورة تنكشف: من هذا الشخص؟",
+      "commons": "File:Qasim Amin.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "غوستاف كليمت",
+      "alt": [
+        "كليمت"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "غوستاف كليمت",
+      "en": "Gustav Klimt",
+      "q": "قبل أن تكتمل الصورة: لمن هذه الصورة؟",
+      "commons": "File:Klimt.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أبو حامد الغزالي",
+      "alt": [
+        "الغزالي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "أبو حامد الغزالي",
+      "en": "Al-Ghazali",
+      "q": "شيئًا فشيئًا: ما اسم من في الصورة؟",
+      "commons": "File:أبو حامد الغزالي.png"
+    },
+    {
+      "tier": 600,
+      "a": "بطرس الأكبر",
+      "topic": "قادة وزعماء",
+      "ar": "بطرس الأكبر",
+      "en": "Peter the Great",
+      "q": "بنصف الصورة فقط: من هذا المطلّ من الصورة؟",
+      "commons": "File:Inconnu d'après J.-M. Nattier, Portrait de Pierre Ier (musée de l’Ermitage).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "جيمس كوك",
+      "alt": [
+        "الكابتن كوك"
+      ],
+      "topic": "مستكشفون",
+      "ar": "جيمس كوك",
+      "en": "James Cook",
+      "q": "شيئًا فشيئًا: من هذا المطلّ من الصورة؟",
+      "commons": "File:Captainjamescookportrait.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ألفريدو دي ستيفانو",
+      "alt": [
+        "دي ستيفانو"
+      ],
+      "topic": "رياضيون",
+      "ar": "ألفريدو دي ستيفانو",
+      "en": "Alfredo Di Stéfano",
+      "q": "بسرعة: من في الصورة؟",
+      "commons": "File:Di stefano argentina (cropped).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "علي مصطفى مشرفة",
+      "alt": [
+        "مشرفة"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "علي مصطفى مشرفة",
+      "en": "Ali Moustafa Mosharafa",
+      "q": "بنصف الصورة فقط: من يكون هذا؟",
+      "commons": "File:Ali Mosharrafa.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سعدي الشيرازي",
+      "alt": [
+        "السعدي"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "سعدي الشيرازي",
+      "en": "Saadi Shirazi",
+      "q": "شيئًا فشيئًا: لمن هذا الوجه؟",
+      "commons": "File:Saadi by Hossein Behzad (1894–1968) (Inverted).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "رفاعة الطهطاوي",
+      "alt": [
+        "الطهطاوي"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "رفاعة الطهطاوي",
+      "en": "Rifa'a al-Tahtawi",
+      "q": "والصورة تنكشف: من صاحب هذه الملامح؟",
+      "commons": "File:Tahtawi.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "إدفارد مونك",
+      "alt": [
+        "مونك"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "إدوارد مونك",
+      "en": "Edvard Munch",
+      "q": "بسرعة: من هذا؟",
+      "commons": "File:Portrait of Edvard Munch (cropped).png"
+    },
+    {
+      "tier": 600,
+      "a": "ابن عربي",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "ابن عربي",
+      "en": "Ibn Arabi",
+      "q": "من أول بلاطة: من هذا الشخص؟",
+      "commons": "File:Ibn Arabi.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "كاترين العظيمة",
+      "alt": [
+        "كاترين الثانية"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "كاترين الثانية",
+      "en": "Catherine the Great",
+      "q": "من تكون هذه؟",
+      "commons": "File:Catherine II by V.Eriksen (1782, Rijksmuseum, Amsterdam).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ديفيد ليفينغستون",
+      "alt": [
+        "ليفينجستون"
+      ],
+      "topic": "مستكشفون",
+      "ar": "ديفيد ليفينغستون",
+      "en": "David Livingstone",
+      "q": "من أول بلاطة: من ترون في الصورة؟",
+      "commons": "File:David Livingstone by Thomas Annan.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "نيلز بور",
+      "topic": "علماء ومخترعون",
+      "ar": "نيلز بور",
+      "en": "Niels Bohr",
+      "q": "بأقل عدد من البلاطات: من صاحب هذه الملامح؟",
+      "commons": "File:Niels Bohr.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "حافظ الشيرازي",
+      "topic": "أدباء وشعراء",
+      "ar": "حافظ الشيرازي",
+      "en": "Hafez",
+      "q": "والصورة تنكشف: هل عرفتم من هذا؟",
+      "commons": "File:Ḥāfeẓ Al-Shīrāzī, Sayr mulhimah min al-Sharq wa-al-Gharb.png"
+    },
+    {
+      "tier": 600,
+      "a": "جمال الدين الأفغاني",
+      "alt": [
+        "الأفغاني"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "جمال الدين الأفغاني",
+      "en": "Jamal al-Din al-Afghani",
+      "q": "بلاطة بعد بلاطة: من صاحب هذه الصورة؟",
+      "commons": "File:Al afghani.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أوغست رودان",
+      "alt": [
+        "رودان"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "أوغست رودان",
+      "en": "Auguste Rodin",
+      "q": "انظروا جيدًا: لمن هذه الملامح؟",
+      "commons": "File:Auguste Rodin by George Charles Beresford (NPG x6573).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أبو القاسم الزهراوي",
+      "alt": [
+        "الزهراوي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "أبو القاسم الزهراوي",
+      "en": "Al-Zahrawi",
+      "q": "دون تردد: من يكون هذا؟",
+      "commons": "File:Al-Zahrawi Portrait.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سليمان القانوني",
+      "topic": "قادة وزعماء",
+      "ar": "سليمان القانوني",
+      "en": "Suleiman the Magnificent",
+      "q": "مع كل بلاطة تنكشف: من هذا الوجه المألوف؟",
+      "commons": "File:Kanuni Sultan Suleiman Han - السلطان الغازي سليمان القانوني.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ماكس بلانك",
+      "topic": "علماء ومخترعون",
+      "ar": "ماكس بلانك",
+      "en": "Max Planck",
+      "q": "قبل آخر بلاطة: من هذا الشخص؟",
+      "commons": "File:Max Planck.png"
+    },
+    {
+      "tier": 600,
+      "a": "عنترة بن شداد",
+      "alt": [
+        "عنترة"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "عنترة بن شداد",
+      "en": "Antarah ibn Shaddad",
+      "q": "بسرعة: هل عرفتم من هذا؟",
+      "commons": "File:Antarah on horse.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "محمد عبده",
+      "alt": [
+        "الشيخ محمد عبده"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "محمد عبده (مفتي)",
+      "en": "Muhammad Abduh",
+      "q": "لا تنتظروا كل البلاطات: من هذا الشخص؟",
+      "commons": "File:The late Grand Moufti.png"
+    },
+    {
+      "tier": 600,
+      "a": "بيير أوغست رينوار",
+      "alt": [
+        "رينوار"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "بيير أوغست رينوار",
+      "en": "Pierre-Auguste Renoir",
+      "q": "مع كل بلاطة تنكشف: من الذي في الصورة؟",
+      "commons": "File:PARenoir.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ابن النفيس",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "ابن النفيس",
+      "en": "Ibn al-Nafis",
+      "q": "والصورة تنكشف: من هذا الوجه المألوف؟",
+      "commons": "File:Ibn Al Nafis statue.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سيمون بوليفار",
+      "alt": [
+        "بوليفار"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "سيمون بوليفار",
+      "en": "Simón Bolívar",
+      "q": "من أول بلاطة: لمن هذا الوجه؟",
+      "commons": "File:Simón Bolívar by Acevedo Bernal, 1922.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "إرفين شرودنغر",
+      "alt": [
+        "شرودنجر"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "إرفين شرودنغر",
+      "en": "Erwin Schrödinger",
+      "q": "شيئًا فشيئًا: لمن هذه الصورة؟",
+      "commons": "File:Erwin Schrödinger - Narodowe Archiwum Cyfrowe (1-E-939).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "الخنساء",
+      "topic": "أدباء وشعراء",
+      "ar": "الخنساء",
+      "en": "Al-Khansa",
+      "q": "من صاحبة هذه الصورة؟",
+      "commons": "File:Al-Khansa.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "عبد الرحمن الكواكبي",
+      "alt": [
+        "الكواكبي"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "عبد الرحمن الكواكبي",
+      "en": "Abd al-Rahman al-Kawakibi",
+      "q": "بلاطة بعد بلاطة: من تعرفون في هذه الصورة؟",
+      "commons": "File:Abd al-Rahman al-Kawakibi Portrait.png"
+    },
+    {
+      "tier": 600,
+      "a": "يوهانس برامز",
+      "alt": [
+        "برامس"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "يوهانس برامز",
+      "en": "Johannes Brahms",
+      "q": "انظروا جيدًا: هل عرفتم من هذا؟",
+      "commons": "File:JohannesBrahms.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "الكندي",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "الكندي",
+      "en": "Al-Kindi",
+      "q": "بسرعة: من هذا المطلّ من الصورة؟",
+      "commons": "File:Al-Kindi Portrait.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "فيرنر هايزنبرغ",
+      "alt": [
+        "هايزنبرج"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "فيرنر هايزنبرغ",
+      "en": "Werner Heisenberg",
+      "q": "من أول بلاطة: من هذا الوجه المألوف؟",
+      "commons": "File:Bundesarchiv Bild183-R57262, Werner Heisenberg.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بدر شاكر السياب",
+      "alt": [
+        "السياب"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "بدر شاكر السياب",
+      "en": "Badr Shakir al-Sayyab",
+      "q": "قبل أن تنتهي البلاطات: من صاحب هذه الصورة؟",
+      "commons": "File:Sayab0.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "إيمانويل كانط",
+      "alt": [
+        "كانط"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "إيمانويل كانط",
+      "en": "Immanuel Kant",
+      "q": "من أول بلاطة: من في الصورة؟",
+      "commons": "File:Immanuel Kant - Gemaelde 2.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ريتشارد فاغنر",
+      "alt": [
+        "فاجنر"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "ريتشارد فاغنر",
+      "en": "Richard Wagner",
+      "q": "مع كل بلاطة تنكشف: لمن هذه الصورة؟",
+      "commons": "File:RichardWagner.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "عباس بن فرناس",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "عباس بن فرناس",
+      "en": "Abbas ibn Firnas",
+      "q": "مع كل بلاطة تنكشف: ما اسم من في الصورة؟",
+      "commons": "File:Armen Firman Abbás Ibn Firnás (MUNCYT, Eulogia Merle).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ريتشارد فاينمان",
+      "alt": [
+        "فاينمن"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "ريتشارد فاينمان",
+      "en": "Richard Feynman",
+      "q": "مع كل بلاطة تنكشف: لمن هذا الوجه؟",
+      "commons": "File:RichardFeynman-PaineMansionWoods1984 copyrightTamikoThiel bw.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "نازك الملائكة",
+      "topic": "أدباء وشعراء",
+      "ar": "نازك الملائكة",
+      "en": "Nazik Al-Malaika",
+      "q": "من هذه؟",
+      "commons": "File:تمثال الشاعرة نازك الملائكة 02.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "رينيه ديكارت",
+      "alt": [
+        "ديكارت"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "رينيه ديكارت",
+      "en": "René Descartes",
+      "q": "من أول بلاطة: من هذا المطلّ من الصورة؟",
+      "commons": "File:Frans Hals - Portret van René Descartes.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "محمود مختار",
+      "topic": "فنانون وموسيقيون",
+      "ar": "محمود مختار",
+      "en": "Mahmoud Mokhtar",
+      "q": "انظروا جيدًا: لمن هذا الوجه؟",
+      "commons": "File:Mahmoud Mokhtar.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "ابن المقفع",
+      "topic": "أدباء وشعراء",
+      "ar": "ابن المقفع",
+      "en": "Ibn al-Muqaffa'",
+      "q": "بسرعة: ما اسم من في الصورة؟",
+      "commons": "File:Ibn al-Muqaffa' by Khalil Gibran.png"
+    },
+    {
+      "tier": 800,
+      "a": "طارق بن زياد",
+      "topic": "قادة وزعماء",
+      "ar": "طارق بن زياد",
+      "en": "Tariq ibn Ziyad",
+      "q": "دون تردد: من هذا؟",
+      "commons": "File:Ṭāriq ibn Ziyād, Sayr mulhimah min al-Sharq wa-al-Gharb.png"
+    },
+    {
+      "tier": 800,
+      "a": "إرنست شاكلتون",
+      "alt": [
+        "شاكلتون"
+      ],
+      "topic": "مستكشفون",
+      "ar": "إرنست شاكلتون",
+      "en": "Ernest Shackleton",
+      "q": "شيئًا فشيئًا: من هذا الوجه المألوف؟",
+      "commons": "File:Ernest Henry Shackleton Nadar.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "كارل لويس",
+      "topic": "رياضيون",
+      "ar": "كارل لويس",
+      "en": "Carl Lewis",
+      "q": "لا تنتظروا كل البلاطات: من هذا؟",
+      "commons": "File:Carl Lewis (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "البتاني",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "البتاني",
+      "en": "Al-Battani",
+      "q": "قبل أن تكتمل الصورة: من صاحب هذه الصورة؟",
+      "commons": "File:Albategnius.jpeg"
+    },
+    {
+      "tier": 800,
+      "a": "أحمد لطفي السيد",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "أحمد لطفي السيد",
+      "en": "Ahmed Lutfi el-Sayed",
+      "q": "شيئًا فشيئًا: من صاحب هذه الملامح؟",
+      "commons": "File:Lutfi elsayed.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سيد درويش",
+      "topic": "فنانون وموسيقيون",
+      "ar": "سيد درويش",
+      "en": "Sayed Darwish",
+      "q": "من أول بلاطة: من الذي في الصورة؟",
+      "commons": "File:Sayed Darwish.JPG"
+    },
+    {
+      "tier": 800,
+      "a": "أبو نواس",
+      "topic": "أدباء وشعراء",
+      "ar": "أبو نواس",
+      "en": "Abu Nuwas",
+      "q": "من أول بلاطة: ما اسم هذا الشخص؟",
+      "commons": "File:Abu Nuwas.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "هارون الرشيد",
+      "topic": "قادة وزعماء",
+      "ar": "هارون الرشيد",
+      "en": "Harun al-Rashid",
+      "q": "قبل أن تكتمل الصورة: هل عرفتم من هذا؟",
+      "commons": "File:Hārūn al-Rashīd.png"
+    },
+    {
+      "tier": 800,
+      "a": "روبرت فالكون سكوت",
+      "topic": "مستكشفون",
+      "ar": "روبرت فالكون سكوت",
+      "en": "Robert Falcon Scott",
+      "q": "مع كل بلاطة تنكشف: لمن هذه الملامح؟",
+      "commons": "File:Scott of the Antarctic crop.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سيرغي بوبكا",
+      "alt": [
+        "بوبكا"
+      ],
+      "topic": "رياضيون",
+      "ar": "سيرغي بوبكا",
+      "en": "Sergey Bubka",
+      "q": "قبل أن تكتمل الصورة: من هذا الوجه المألوف؟",
+      "commons": "File:Sergei Bubka (2007) cropped.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سيبويه",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "سيبويه",
+      "en": "Sibawayh",
+      "q": "من أول بلاطة: ما اسم من في الصورة؟",
+      "commons": "File:Bust of Sibawayh, 28 February 2022 (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سلامة موسى",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "سلامة موسى",
+      "en": "Salama Moussa",
+      "q": "شيئًا فشيئًا: من يكون هذا؟",
+      "commons": "File:Salama Musa (around 1924).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "رياض السنباطي",
+      "alt": [
+        "السنباطي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "رياض السنباطي",
+      "en": "Riad Al Sunbati",
+      "q": "من أول بلاطة: من هذا يا ترى؟",
+      "commons": "File:Riad Sunbati.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "أبو تمام",
+      "topic": "أدباء وشعراء",
+      "ar": "أبو تمام",
+      "en": "Abu Tammam",
+      "q": "لا تنتظروا كل البلاطات: لمن هذه الصورة؟",
+      "commons": "File:Abu Tammam portrait.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "روزا باركس",
+      "topic": "قادة وزعماء",
+      "ar": "روزا باركس",
+      "en": "Rosa Parks",
+      "q": "من هذه يا ترى؟",
+      "commons": "File:Rosa Parks 1997.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "هنري مورتون ستانلي",
+      "topic": "مستكشفون",
+      "ar": "هنري مورتون ستانلي",
+      "en": "Henry Morton Stanley",
+      "q": "قبل أن تنتهي البلاطات: هل عرفتم من هذا؟",
+      "commons": "File:No-nb bldsa 1c051 Henry Morton Stanley.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "هشام الكروج",
+      "topic": "رياضيون",
+      "ar": "هشام الكروج",
+      "en": "Hicham El Guerrouj",
+      "q": "قبل أن تنتهي البلاطات: من في الصورة؟",
+      "commons": "File:Hicham El Guerrouj cropped.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "الإمام البخاري",
+      "alt": [
+        "البخاري"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "محمد بن إسماعيل البخاري",
+      "en": "Muhammad al-Bukhari",
+      "q": "بأقل عدد من البلاطات: من هذا المطلّ من الصورة؟",
+      "commons": "File:ImamBukhari1.png"
+    },
+    {
+      "tier": 800,
+      "a": "هيباتيا",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "هيباتيا",
+      "en": "Hypatia",
+      "q": "بلاطة بعد بلاطة: من صاحبة هذا الوجه؟",
+      "commons": "File:Hipatia67.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بليغ حمدي",
+      "topic": "فنانون وموسيقيون",
+      "ar": "بليغ حمدي",
+      "en": "Baligh Hamdi",
+      "q": "والصورة تنكشف: من في الصورة؟",
+      "commons": "File:Baligh hamdy.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "امرؤ القيس",
+      "topic": "أدباء وشعراء",
+      "ar": "امرؤ القيس",
+      "en": "Imru' al-Qais",
+      "q": "انظروا جيدًا: من تعرفون في هذه الصورة؟",
+      "commons": "File:Imru al-Qays.png"
+    },
+    {
+      "tier": 800,
+      "a": "هارييت توبمان",
+      "topic": "قادة وزعماء",
+      "ar": "هارييت توبمان",
+      "en": "Harriet Tubman",
+      "q": "شيئًا فشيئًا: من هذه في الصورة؟",
+      "commons": "File:Carte-de-visite portrait of Harriet Tubman (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "إدموند هيلاري",
+      "topic": "مستكشفون",
+      "ar": "إدموند هيلاري",
+      "en": "Edmund Hillary",
+      "q": "قبل آخر بلاطة: لمن هذا الوجه؟",
+      "commons": "File:Edmundhillarycropped.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سعيد عويطة",
+      "topic": "رياضيون",
+      "ar": "سعيد عويطة",
+      "en": "Said Aouita",
+      "q": "لا تنتظروا كل البلاطات: من هذا المطلّ من الصورة؟",
+      "commons": "File:Said Aouita.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "ابن تيمية",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "ابن تيمية",
+      "en": "Ibn Taymiyyah",
+      "q": "والصورة تنكشف: ما اسم هذا الشخص؟",
+      "commons": "File:IbnTaymiyyah.png"
+    },
+    {
+      "tier": 800,
+      "a": "زكريا أحمد",
+      "topic": "فنانون وموسيقيون",
+      "ar": "زكريا أحمد",
+      "en": "Zakaria Ahmed",
+      "q": "قبل أن تنتهي البلاطات: ما اسم من في الصورة؟",
+      "commons": "File:Ahmad zakaryia.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مصطفى لطفي المنفلوطي",
+      "alt": [
+        "المنفلوطي"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "مصطفى لطفي المنفلوطي",
+      "en": "Mustafa Lutfi al-Manfaluti",
+      "q": "مع كل بلاطة تنكشف: هل عرفتم من هذا؟",
+      "commons": "File:MustafaLutfial-Manfaluti.gif"
+    },
+    {
+      "tier": 800,
+      "a": "الأم تيريزا",
+      "topic": "قادة وزعماء",
+      "ar": "الأم تيريزا",
+      "en": "Mother Teresa",
+      "q": "بسرعة: من هذه؟",
+      "commons": "File:Mother Teresa 1.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "تنزينغ نورغاي",
+      "topic": "مستكشفون",
+      "ar": "تنزينغ نورغاي",
+      "en": "Tenzing Norgay",
+      "q": "قبل أن تكتمل الصورة: ما اسم هذا الشخص؟",
+      "commons": "File:Tenzing Norgay (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "نوال المتوكل",
+      "topic": "رياضيون",
+      "ar": "نوال المتوكل",
+      "en": "Nawal El Moutawakel",
+      "q": "شيئًا فشيئًا: من هذه؟",
+      "commons": "File:Nawal El Moutawakel (cropped).JPG"
+    },
+    {
+      "tier": 800,
+      "a": "طلال مداح",
+      "topic": "فنانون وموسيقيون",
+      "ar": "طلال مداح",
+      "en": "Talal Maddah",
+      "q": "لا تنتظروا كل البلاطات: من يكون هذا؟",
+      "commons": "File:الفنان طلال مداح.png"
+    },
+    {
+      "tier": 800,
+      "a": "إبراهيم ناجي",
+      "topic": "أدباء وشعراء",
+      "ar": "إبراهيم ناجي",
+      "en": "Ibrahim Naji",
+      "q": "انظروا جيدًا: لمن هذه الصورة؟",
+      "commons": "File:Ibrahim Nagi- Al-Alam, V1, Page 76.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "هو تشي منه",
+      "topic": "قادة وزعماء",
+      "ar": "هو تشي منه",
+      "en": "Ho Chi Minh",
+      "q": "والصورة تنكشف: من هذا المطلّ من الصورة؟",
+      "commons": "File:Ho Chi Minh - 1946 Portrait.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "وردة الجزائرية",
+      "alt": [
+        "وردة"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "وردة الجزائرية",
+      "en": "Warda Al-Jazairia",
+      "q": "والصورة تنكشف: من هذه يا ترى؟",
+      "commons": "File:Warda Al Jazairia.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "ملك حفني ناصف",
+      "topic": "أدباء وشعراء",
+      "ar": "ملك حفني ناصف",
+      "en": "Malak Hifni Nasif",
+      "q": "قبل أن تكتمل الصورة: من هذه؟",
+      "commons": "File:Malak.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سعد زغلول",
+      "topic": "قادة وزعماء",
+      "ar": "سعد زغلول",
+      "en": "Saad Zaghloul",
+      "q": "لا تنتظروا كل البلاطات: لمن هذا الوجه؟",
+      "commons": "File:ModernEgypt, Saad Zaghloul, BAP 14785.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "صباح",
+      "topic": "فنانون وموسيقيون",
+      "ar": "صباح (مغنية)",
+      "en": "Sabah (Lebanese singer)",
+      "q": "انظروا جيدًا: من هذه في الصورة؟",
+      "commons": "File:Sabah - 1960s (1).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "خورخي لويس بورخيس",
+      "alt": [
+        "بورخيس"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "خورخي لويس بورخيس",
+      "en": "Jorge Luis Borges",
+      "q": "بسرعة: من يكون هذا؟",
+      "commons": "File:Jorge Luis Borges 1951, by Grete Stern (full).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مصطفى النحاس",
+      "alt": [
+        "النحاس باشا"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "مصطفى النحاس",
+      "en": "Mustafa el-Nahas",
+      "q": "مع كل بلاطة تنكشف: من هذا الشخص؟",
+      "commons": "File:Mustafa el-Nahhas.PNG"
+    },
+    {
+      "tier": 800,
+      "a": "نجيب الريحاني",
+      "topic": "فنانون وموسيقيون",
+      "ar": "نجيب الريحاني",
+      "en": "Naguib El-Rihani",
+      "q": "قبل آخر بلاطة: ما اسم هذا الشخص؟",
+      "commons": "File:Naguib el-Rihani 2.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فرجينيا وولف",
+      "topic": "أدباء وشعراء",
+      "ar": "فرجينيا وولف",
+      "en": "Virginia Woolf",
+      "q": "مع كل بلاطة تنكشف: من هذه في الصورة؟",
+      "commons": "File:Virginia Woolf 1927.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "إسماعيل ياسين",
+      "topic": "فنانون وموسيقيون",
+      "ar": "إسماعيل ياسين",
+      "en": "Ismail Yassine",
+      "q": "من أول بلاطة: من تعرفون في هذه الصورة؟",
+      "commons": "File:Ismail Yassin.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جين أوستن",
+      "topic": "أدباء وشعراء",
+      "ar": "جاين أوستن",
+      "en": "Jane Austen",
+      "q": "بسرعة: هل عرفتم من هذه؟",
+      "commons": "File:CassandraAusten-JaneAusten(c.1810) hires.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "أحمد زكي",
+      "topic": "فنانون وموسيقيون",
+      "ar": "أحمد زكي (ممثل)",
+      "en": "Ahmed Zaki (actor)",
+      "q": "بسرعة: من صاحب هذا الوجه؟",
+      "commons": "File:Ahmed Zaki (1979).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "إدغار آلان بو",
+      "alt": [
+        "ألان بو"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "إدغار آلان بو",
+      "en": "Edgar Allan Poe",
+      "q": "بسرعة: لمن هذا الوجه؟",
+      "commons": "File:Edgar Allan Poe, circa 1849, restored, squared off.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "نيكولو باغانيني",
+      "alt": [
+        "باغانيني"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "نيكولو باغانيني",
+      "en": "Niccolò Paganini",
+      "q": "قبل أن تنتهي البلاطات: من هذا المطلّ من الصورة؟",
+      "commons": "File:Paganini.jpeg"
+    },
+    {
+      "tier": 1000,
+      "a": "سانتياغو رامون إي كاخال",
+      "alt": [
+        "رامون كاخال"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "سانتياغو رامون إي كاخال",
+      "en": "Santiago Ramón y Cajal",
+      "q": "لا تنتظروا كل البلاطات: من صاحب هذا الوجه؟",
+      "commons": "File:Cajal-mi.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "باروخ سبينوزا",
+      "alt": [
+        "سبينوزا"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "باروخ سبينوزا",
+      "en": "Baruch Spinoza",
+      "q": "لا تنتظروا كل البلاطات: من الذي في الصورة؟",
+      "commons": "File:Spinoza.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ابن الفارض",
+      "topic": "أدباء وشعراء",
+      "ar": "ابن الفارض",
+      "en": "Ibn al-Farid",
+      "q": "دون تردد: ما اسم من في الصورة؟",
+      "commons": "File:Ibn al-Farid by Khalil Gibran.png"
+    },
+    {
+      "tier": 1000,
+      "a": "أبو خليل القباني",
+      "topic": "فنانون وموسيقيون",
+      "ar": "أبو خليل القباني",
+      "en": "Abu Khalil Qabbani",
+      "q": "مع كل بلاطة تنكشف: من يكون هذا؟",
+      "commons": "File:Abu Khalil Qabbani - Al-Alam, V1, Page 325.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جوزيبي غاريبالدي",
+      "alt": [
+        "غاريبالدي"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "جوزيبي غاريبالدي",
+      "en": "Giuseppe Garibaldi",
+      "q": "بلاطة بعد بلاطة: لمن هذا الوجه؟",
+      "commons": "File:Garibaldi (1866).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "نصير الدين الطوسي",
+      "alt": [
+        "الطوسي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "نصير الدين الطوسي",
+      "en": "Nasir al-Din al-Tusi",
+      "q": "بسرعة: من ترون في الصورة؟",
+      "commons": "File:Nasir al-Din al-Tusi portrait.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "فرينتس بوشكاش",
+      "alt": [
+        "بوشكاش"
+      ],
+      "topic": "رياضيون",
+      "ar": "فرينك بوشكاش",
+      "en": "Ferenc Puskás",
+      "q": "لا تنتظروا كل البلاطات: هل عرفتم من هذا؟",
+      "commons": "File:Ferenc Puskas en 1965.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ألكسندر فون هومبولت",
+      "alt": [
+        "هومبولت"
+      ],
+      "topic": "مستكشفون",
+      "ar": "ألكسندر فون هومبولت",
+      "en": "Alexander von Humboldt",
+      "q": "انظروا جيدًا: ما اسم من في الصورة؟",
+      "commons": "File:Stieler, Joseph Karl - Alexander von Humboldt - 1843.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "إيمي نويثر",
+      "alt": [
+        "إيمي نويتر"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "إيمي نويتر",
+      "en": "Emmy Noether",
+      "q": "بسرعة: من هذه يا ترى؟",
+      "commons": "File:Emmy Noether (3x4 cropped).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "آرثر شوبنهاور",
+      "alt": [
+        "شوبنهاور"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "آرثر شوبنهاور",
+      "en": "Arthur Schopenhauer",
+      "q": "بسرعة: من هذا الوجه المألوف؟",
+      "commons": "File:Arthur Schopenhauer by J Schäfer, 1859b.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أحمد فارس الشدياق",
+      "alt": [
+        "الشدياق"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "أحمد فارس الشدياق",
+      "en": "Ahmad Faris al-Shidyaq",
+      "q": "قبل آخر بلاطة: من الذي في الصورة؟",
+      "commons": "File:Ahmad Faris Shidyaq.png"
+    },
+    {
+      "tier": 1000,
+      "a": "محمد القصبجي",
+      "alt": [
+        "القصبجي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "ar": "محمد القصبجي",
+      "en": "Mohamed El Qasabgi",
+      "q": "دون تردد: من تعرفون في هذه الصورة؟",
+      "commons": "File:Qasabgi.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أوتو فون بسمارك",
+      "alt": [
+        "بسمارك"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "أوتو فون بسمارك",
+      "en": "Otto von Bismarck",
+      "q": "بأقل عدد من البلاطات: من هذا الوجه المألوف؟",
+      "commons": "File:Bundesarchiv Bild 146-2005-0057, Otto von Bismarck (cropped).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أبو الوفاء البوزجاني",
+      "alt": [
+        "البوزجاني"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "أبو الوفاء البوزجاني",
+      "en": "Abu al-Wafa' Buzjani",
+      "q": "انظروا جيدًا: من هذا المطلّ من الصورة؟",
+      "commons": "File:Buzjani, the Persian.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "غارينشا",
+      "topic": "رياضيون",
+      "ar": "غارينشا",
+      "en": "Garrincha",
+      "q": "انظروا جيدًا: من ترون في الصورة؟",
+      "commons": "File:Manoel Francisco dos Santos-Garrincha.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ليزا مايتنر",
+      "alt": [
+        "ليز مايتنر"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "ليزه مايتنر",
+      "en": "Lise Meitner",
+      "q": "قبل أن تنتهي البلاطات: من تكون هذه؟",
+      "commons": "File:Lise Meitner (1878-1968), lecturing at Catholic University, Washington, D.C., 1946.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سورين كيركغور",
+      "alt": [
+        "كيركجارد"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "سورين كيركغور",
+      "en": "Søren Kierkegaard",
+      "q": "قبل أن تنتهي البلاطات: من صاحب هذه الملامح؟",
+      "commons": "File:Søren Kierkegaard (1813-1855) - (cropped).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بطرس البستاني",
+      "topic": "أدباء وشعراء",
+      "ar": "بطرس البستاني",
+      "en": "Butrus al-Bustani",
+      "q": "بأقل عدد من البلاطات: من هذا يا ترى؟",
+      "commons": "File:Al Mu'allim Butrus al-Bustani.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سلامة حجازي",
+      "topic": "فنانون وموسيقيون",
+      "ar": "سلامة حجازي",
+      "en": "Salama Hijazi",
+      "q": "قبل أن تنتهي البلاطات: من صاحب هذا الوجه؟",
+      "commons": "File:Salama Hejazi - Al-Alam, V 3, P 173.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "شاكا زولو",
+      "topic": "قادة وزعماء",
+      "ar": "شاكا زولو",
+      "en": "Shaka",
+      "q": "بأقل عدد من البلاطات: من في الصورة؟",
+      "commons": "File:KingShaka.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "غياث الدين الكاشي",
+      "alt": [
+        "الكاشي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "ar": "غياث الدين الكاشي",
+      "en": "Jamshid al-Kashi",
+      "q": "قبل آخر بلاطة: من صاحب هذه الصورة؟",
+      "commons": "File:Jamshid bin Mas'ud bin Mahmud al-Tabib al-Kashi, known as Ghiyath (d. 1429); Miftah al-Hisab signed ibn Muhammad Mu'min Taj al-Din al-Shirazi, Iran, dated 31 May 1656.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "إميل زاتوبيك",
+      "alt": [
+        "زاتوبيك"
+      ],
+      "topic": "رياضيون",
+      "ar": "إميل زاتوبيك",
+      "en": "Emil Zátopek",
+      "q": "من أول بلاطة: من صاحب هذا الوجه؟",
+      "commons": "File:Fotothek df roe-neg 0006305 003 Emil Zátopek-2.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بول ديراك",
+      "alt": [
+        "ديراك"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "بول ديراك",
+      "en": "Paul Dirac",
+      "q": "شيئًا فشيئًا: لمن هذه الملامح؟",
+      "commons": "File:Paul Dirac, 1933.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جان بول سارتر",
+      "alt": [
+        "سارتر"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "جان بول سارتر",
+      "en": "Jean-Paul Sartre",
+      "q": "دون تردد: من صاحب هذا الوجه؟",
+      "commons": "File:Jean Paul Sartre 1965.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جرجي زيدان",
+      "alt": [
+        "جورجي زيدان"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "جرجي زيدان",
+      "en": "Jurji Zaydan",
+      "q": "شيئًا فشيئًا: من هذا يا ترى؟",
+      "commons": "File:Jurji Zaydan (Edited2).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "منيرة المهدية",
+      "topic": "فنانون وموسيقيون",
+      "ar": "منيرة المهدية",
+      "en": "Munira al-Mahdiyya",
+      "q": "مع كل بلاطة تنكشف: من هذه؟",
+      "commons": "File:Mounira El-Mandela.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "منليك الثاني",
+      "topic": "قادة وزعماء",
+      "ar": "منليك الثاني",
+      "en": "Menelik II",
+      "q": "والصورة تنكشف: من هذا يا ترى؟",
+      "commons": "File:Menelik II in coronation garb, Emperor of Ethiopia.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ابن حزم",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "ابن حزم الأندلسي",
+      "en": "Ibn Hazm",
+      "q": "قبل آخر بلاطة: من تعرفون في هذه الصورة؟",
+      "commons": "File:ابن حزم الأندلسي.png"
+    },
+    {
+      "tier": 1000,
+      "a": "بوبي تشارلتون",
+      "topic": "رياضيون",
+      "ar": "بوبي تشارلتون",
+      "en": "Bobby Charlton",
+      "q": "قبل أن تكتمل الصورة: من يكون هذا؟",
+      "commons": "File:LondonHouseAmsterdam1966 Bobby Charlton.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سرينيفاسا رامانوجان",
+      "alt": [
+        "رامانوجان"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "سرينيفاسا رامانوجان",
+      "en": "Srinivasa Ramanujan",
+      "q": "انظروا جيدًا: من هذا الوجه المألوف؟",
+      "commons": "File:Srinivasa Ramanujan - OPC - 2 (cleaned).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سيمون دي بوفوار",
+      "alt": [
+        "دي بوفوار"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "سيمون دي بوفوار",
+      "en": "Simone de Beauvoir",
+      "q": "بسرعة: من هذه الشخصية؟",
+      "commons": "File:Simone de Beauvoir2.png"
+    },
+    {
+      "tier": 1000,
+      "a": "إيليا أبو ماضي",
+      "topic": "أدباء وشعراء",
+      "ar": "إيليا أبو ماضي",
+      "en": "Elia Abu Madi",
+      "q": "انظروا جيدًا: من صاحب هذه الصورة؟",
+      "commons": "File:Elia Abu Madi.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "يوسف وهبي",
+      "topic": "فنانون وموسيقيون",
+      "ar": "يوسف وهبي",
+      "en": "Youssef Wahbi",
+      "q": "بنصف الصورة فقط: ما اسم من في الصورة؟",
+      "commons": "File:Yousef wahby.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الظاهر بيبرس",
+      "alt": [
+        "بيبرس"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "الظاهر بيبرس",
+      "en": "Baibars",
+      "q": "والصورة تنكشف: لمن هذه الصورة؟",
+      "commons": "File:رسم الظاهر بيبرس.png"
+    },
+    {
+      "tier": 1000,
+      "a": "المسعودي",
+      "topic": "أعلام العرب والإسلام",
+      "ar": "المسعودي",
+      "en": "Al-Masudi",
+      "q": "بأقل عدد من البلاطات: من صاحب هذه الصورة؟",
+      "commons": "File:NHM Bellariastraße side risalit right - Al Masudi - Emmerich Alexius Swoboda 3890.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ليونهارت أويلر",
+      "alt": [
+        "أويلر"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "ليونهارد أويلر",
+      "en": "Leonhard Euler",
+      "q": "بلاطة بعد بلاطة: من الذي في الصورة؟",
+      "commons": "File:Leonhard Euler.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "برتراند راسل",
+      "alt": [
+        "راسل"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "برتراند راسل",
+      "en": "Bertrand Russell",
+      "q": "قبل أن تنتهي البلاطات: من ترون في الصورة؟",
+      "commons": "File:Bertrand Russell photo.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أمين الريحاني",
+      "topic": "أدباء وشعراء",
+      "ar": "أمين الريحاني",
+      "en": "Ameen Rihani",
+      "q": "قبل آخر بلاطة: هل عرفتم من هذا؟",
+      "commons": "File:Ameen Rihani - 1916.png"
+    },
+    {
+      "tier": 1000,
+      "a": "جورج أبيض",
+      "topic": "فنانون وموسيقيون",
+      "ar": "جورج أبيض",
+      "en": "George Abyad",
+      "q": "دون تردد: هل عرفتم من هذا؟",
+      "commons": "File:Gabyad.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سيف الدين قطز",
+      "alt": [
+        "قطز"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "سيف الدين قطز",
+      "en": "Qutuz",
+      "q": "مع كل بلاطة تنكشف: من هذا المطلّ من الصورة؟",
+      "commons": "File:صورة تمثال سيف الدين قطز crop.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "كارل فريدريش غاوس",
+      "alt": [
+        "غاوس"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "كارل فريدريش غاوس",
+      "en": "Carl Friedrich Gauss",
+      "q": "قبل أن تنتهي البلاطات: لمن هذه الصورة؟",
+      "commons": "File:Carl Friedrich Gauss.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "لودفيغ فتغنشتاين",
+      "alt": [
+        "فتجنشتاين"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "ar": "لودفيغ فتغنشتاين",
+      "en": "Ludwig Wittgenstein",
+      "q": "قبل آخر بلاطة: من صاحب هذه الملامح؟",
+      "commons": "File:Ludwig Wittgenstein 1929.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "محمود سامي البارودي",
+      "alt": [
+        "البارودي"
+      ],
+      "topic": "أدباء وشعراء",
+      "ar": "محمود سامي البارودي",
+      "en": "Mahmoud Sami el-Baroudi",
+      "q": "والصورة تنكشف: من يكون هذا؟",
+      "commons": "File:Mahmoud Sami Al Baroudy Pasha.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "تحية كاريوكا",
+      "topic": "فنانون وموسيقيون",
+      "ar": "تحية كاريوكا",
+      "en": "Tahiya Carioca",
+      "q": "من أول بلاطة: من تكون هذه؟",
+      "commons": "File:Taheyya Kariokka.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "عبد الرحمن الداخل",
+      "alt": [
+        "صقر قريش"
+      ],
+      "topic": "قادة وزعماء",
+      "ar": "عبد الرحمن الداخل",
+      "en": "Abd al-Rahman I",
+      "q": "انظروا جيدًا: من هذا يا ترى؟",
+      "commons": "File:Abd al-Rahman I, Crónica general de España.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مايكل فاراداي",
+      "alt": [
+        "فاراداي"
+      ],
+      "topic": "علماء ومخترعون",
+      "ar": "مايكل فاراداي",
+      "en": "Michael Faraday",
+      "q": "لا تنتظروا كل البلاطات: ما اسم هذا الشخص؟",
+      "commons": "File:Michael Faraday sitting crop.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ابن باجة",
+      "topic": "فلاسفة ومفكرون",
+      "ar": "ابن باجة",
+      "en": "Ibn Bajja",
+      "q": "دون تردد: من ترون في الصورة؟",
+      "commons": "File:Ibn Bājja, Sayr mulhimah min al-Sharq wa-al-Gharb.png"
+    },
+    {
+      "tier": 1000,
+      "a": "حافظ إبراهيم",
+      "topic": "أدباء وشعراء",
+      "ar": "حافظ إبراهيم",
+      "en": "Hafez Ibrahim",
+      "q": "بلاطة بعد بلاطة: لمن هذه الصورة؟",
+      "commons": "File:Hafez Ibrahim.JPG"
+    }
+  ]
+}
