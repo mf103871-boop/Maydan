@@ -14,6 +14,10 @@
 const CACHE = 'maydan-platform-__BUILD_ID__';
 const MEDIA_CACHE = 'maydan-media-v1';
 const MEDIA_PATH = /\/media\//;
+// These small game assets replace formerly embedded drawings. Every picture is
+// installed before activation, so a new offline game can draw an unseen card.
+// The build inserts versioned local URLs after verifying every file exists.
+const FABRAKA_IMAGES = /*__FABRAKA_IMAGES__*/[];
 
 // './' and './index.html' are the same 6.9 MB document. Precaching both fetched
 // it twice on install (on top of the page's own load) and stored it twice, and
@@ -36,6 +40,14 @@ self.addEventListener('install', (event) => {
       // Never replace a working offline release unless the new document exists.
       .then(async (cache) => {
         await cache.add('./index.html');
+        const images = await caches.open(MEDIA_CACHE);
+        await Promise.all(FABRAKA_IMAGES.map(async (url) => {
+          const cached = await images.match(url);
+          if (cached && /^image\//i.test(cached.headers.get('content-type') || '')) return;
+          const response = await fetch(url);
+          if (!response.ok || !/^image\//i.test(response.headers.get('content-type') || '')) throw new Error('Fabraka image unavailable');
+          await images.put(url, response);
+        }));
         await Promise.all(ASSETS.slice(1).map((url) => cache.add(url).catch(() => {})));
       })
       .then(() => self.skipWaiting())
@@ -106,11 +118,15 @@ self.addEventListener('fetch', (event) => {
   if (MEDIA_PATH.test(new URL(request.url).pathname)) {
     event.respondWith(
       caches.open(MEDIA_CACHE).then(async (cache) => {
-        const hit = await cache.match(request);
-        if (hit && !/text\/html/i.test(hit.headers.get('content-type') || '')) return rangedResponse(request, hit);
-        if (hit) await cache.delete(request); // Repair a fallback cached by an older release.
+        const url = new URL(request.url);
+        const retry = /\/media\/fabraka-v3\/fab3-\d{3}\.webp$/.test(url.pathname) && /^\d+$/.test(url.searchParams.get('fabRetry') || '');
+        if (retry) url.searchParams.delete('fabRetry');
+        const cacheKey = retry ? url.href : request;
+        const hit = await cache.match(cacheKey);
+        if (!retry && hit && !/text\/html/i.test(hit.headers.get('content-type') || '')) return rangedResponse(request, hit);
+        if (hit && /text\/html/i.test(hit.headers.get('content-type') || '')) await cache.delete(cacheKey); // Repair an older fallback.
         const response = await fetch(request);
-        if (response && response.status === 200 && !/text\/html/i.test(response.headers.get('content-type') || '')) event.waitUntil(cache.put(request, response.clone()).catch(() => {}));
+        if (response && response.status === 200 && !/text\/html/i.test(response.headers.get('content-type') || '')) event.waitUntil(cache.put(cacheKey, response.clone()).catch(() => {}));
         return response;
       })
     );

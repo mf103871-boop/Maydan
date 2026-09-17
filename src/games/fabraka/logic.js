@@ -11,6 +11,7 @@ export const POINTS_TRUTH = 1000;
 export const POINTS_FOOLED = 500;
 export const TRUTH_ID = '__truth__';
 export const SESSION_VERSION = 2;
+export const CONTENT_VERSION = 3;
 export const SAVE_KEY = 'session-v2';
 export const DEFAULT_OPTIONS = Object.freeze({ rounds: 3, mode: 'classic', style: 'curious', categories: [], writeSeconds: 45, discussionSeconds: 20, funnyVote: true, finalDouble: false, friendCycles: 1 });
 const PHASES = ['intro', 'host', 'question', 'write', 'discussion', 'vote', 'gather', 'reveal', 'roundEnd', 'over'];
@@ -139,7 +140,7 @@ export function initialState(players, options, { deck = [], seed = 1, sessionId 
   if (!Array.isArray(players) || players.length < 3 || players.length > 8 || players.some((p) => !validId(p.id) || typeof p.name !== 'string' || !p.name.trim() || p.name.length > 40 || (p.emoji !== undefined && (typeof p.emoji !== 'string' || p.emoji.length > 32)) || (p.color !== undefined && (typeof p.color !== 'string' || p.color.length > 80))) || new Set(players.map((p) => p.id)).size !== players.length) throw new Error('فبركة تحتاج 3–8 لاعبين مختلفين');
   const o = normalizeOptions(options);
   return {
-    schemaVersion: SESSION_VERSION, sessionId, seed, settings: o,
+    schemaVersion: SESSION_VERSION, contentVersion: CONTENT_VERSION, sessionId, seed, settings: o,
     rounds: o.mode === 'friends' ? players.length * o.friendCycles : o.rounds,
     players: players.map(({ id, name, emoji, color }) => ({ id, name, emoji, color })),
     deck, deckCursor: 0, usedQuestions: [], usedFacts: [],
@@ -354,6 +355,8 @@ export function bestLies(state) {
 export function restoreSession(raw, { includeOver = false } = {}) {
   try {
     if (!raw || raw.schemaVersion !== SESSION_VERSION || !PHASES.includes(raw.phase) || (!includeOver && raw.phase === 'over')) return null;
+    // Retired questions must not return via a saved deck. Finished results remain readable.
+    if (raw.phase !== 'over' && raw.contentVersion !== CONTENT_VERSION) return null;
     const players = raw.players; initialState(players, raw.settings);
     if (!Object.entries(normalizeOptions(raw.settings)).every(([k, v]) => JSON.stringify(raw.settings[k]) === JSON.stringify(v))) return null;
     if (typeof raw.sessionId !== 'string' || raw.sessionId.length > 120 || !['ready', 'paused', 'assisted', 'revealed'].every((k) => typeof raw[k] === 'boolean')) return null;

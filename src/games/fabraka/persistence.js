@@ -1,10 +1,14 @@
-import { SAVE_KEY, restoreSession } from './logic.js';
+import { SAVE_KEY, SESSION_VERSION, CONTENT_VERSION, restoreSession } from './logic.js';
 import { trimSeen } from '../../shared/lib/noRepeat.js';
 
 export const OPTIONS_KEY = 'options';
 export const SEEN_KEY = 'seen';
 export const RESULT_KEY = 'last-result-v2';
 export const loadSession = (storage) => restoreSession(storage.get(SAVE_KEY));
+export function hasRetiredSession(storage) {
+  const raw = storage.get(SAVE_KEY);
+  return raw?.schemaVersion === SESSION_VERSION && raw.phase !== 'over' && raw.contentVersion !== CONTENT_VERSION;
+}
 export const loadResult = (storage) => {
   const latest = restoreSession(storage.get(SAVE_KEY), { includeOver: true });
   if (latest?.phase === 'over') return latest;

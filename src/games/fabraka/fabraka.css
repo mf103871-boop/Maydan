@@ -36,10 +36,20 @@
 .fab-q .blank { position: relative; display: inline-block; min-width: 66px; padding: 0 8px; margin: 0 4px; color: var(--game-accent); font-weight: 900; }
 .fab-q .blank::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 3px; border-radius: 2px; background: var(--game-accent); transform-origin: calc(50% - var(--flow, -1) * 50%) 50%; }
 .fab-q.is-filled .blank::after { animation: ui-grow-x .5s var(--ease-out) both; }
-/* الرسم التوضيحي: جسم حرّ بظل صورة ثابت (اللوحة بلا تعبئة) */
-.fab-illustration { width: min(100%, 420px); margin-inline: auto !important; animation: ui-pop-in .45s var(--ease-spring) .12s both; }
-.fab-illustration svg { display: block; width: 100%; height: auto; max-height: 250px; overflow: visible; filter: var(--art-shadow); }
-.fab-illustration figcaption { color: var(--muted); text-align: center; font-size: 11px; padding-top: 7px; }
+/* Keep the full tool visible; loaded assets are never cropped to fit a card. */
+.fab-illustration { width: min(100%, 520px); margin-inline: auto !important; animation: ui-pop-in .45s var(--ease-spring) .12s both; }
+.fab-picture-stage { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 22px; background: var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-lift-1); }
+.fab-picture-open { display: block; position: relative; padding: 0; width: 100%; height: 100%; border: 0; background: transparent; cursor: zoom-in; }
+.fab-picture-open:disabled { cursor: default; opacity: 1; }
+.fab-picture-open img { display: block; width: 100%; height: 100%; object-fit: contain; transition: opacity .2s ease; }
+.fab-picture-stage:not(.is-ready) img { opacity: 0; }
+.fab-picture-open:focus-visible { outline: 3px solid var(--game-accent); outline-offset: -5px; }
+.fab-picture-zoom { position: absolute; bottom: 12px; inset-inline-end: 12px; padding: 7px 12px; border-radius: 999px; color: var(--text); background: var(--surface); border: 1px solid var(--stroke); font-size: 13px; box-shadow: var(--shadow-row); }
+.fab-picture-status { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.fab-illustration figcaption, .fab-picture-credit { color: var(--muted); text-align: center; font-size: 11px; padding-top: 7px; line-height: 1.7; }
+.fab-picture-modal { width: min(96vw, 1100px); max-width: 1100px; }
+.fab-picture-full { display: block; width: 100%; max-height: 75dvh; object-fit: contain; border-radius: 16px; }
+@media (prefers-reduced-motion: reduce) { .fab-picture-open img { transition: none; } }
 .fab-input { font-size: 18px; min-height: 54px; }
 .fab-hint { font-size: 13px; color: var(--muted); line-height: 1.8; }
 .fab-note, .fab-save-error { padding: 12px 14px; border: 1px solid var(--stroke-strong); border-radius: 14px; background: var(--fab-tint); font-size: 14px; line-height: 1.8; box-shadow: var(--shadow-row); }

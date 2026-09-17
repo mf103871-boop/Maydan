@@ -16,5 +16,5 @@ export default {
   duration: '10–30 دقيقة',
   tags: ['خداع', 'ضحك', 'صور'],
   isNew: true,
-  version: '2.0.0',
+  version: '3.0.0',
 };

@@ -12,7 +12,7 @@ const root=process.cwd();
 mkdirSync(path.join(root,'.cache'),{recursive:true});
 const temp=mkdtempSync(path.join(root,'.cache','fabraka-ui-'));
 after(()=>rmSync(temp,{recursive:true,force:true}));
-await build({stdin:{contents:`import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {Game,SetupOptions,Results} from './src/games/fabraka/Game.jsx'; import {Illustration,illustrationIds} from './src/games/fabraka/Illustration.jsx'; export {illustrationIds}; export const game=p=>renderToStaticMarkup(React.createElement(Game,p)); export const setup=p=>renderToStaticMarkup(React.createElement(SetupOptions,p)); export const results=p=>renderToStaticMarkup(React.createElement(Results,p)); export const picture=q=>renderToStaticMarkup(React.createElement(Illustration,{question:q}));`,resolveDir:root,loader:'jsx'},outfile:path.join(temp,'render.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',loader:{'.css':'text','.webp':'dataurl','.woff2':'dataurl'},logLevel:'silent'});
+await build({stdin:{contents:`import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {Game,SetupOptions,Results} from './src/games/fabraka/Game.jsx'; import {Illustration} from './src/games/fabraka/Illustration.jsx'; export const game=p=>renderToStaticMarkup(React.createElement(Game,p)); export const setup=p=>renderToStaticMarkup(React.createElement(SetupOptions,p)); export const results=p=>renderToStaticMarkup(React.createElement(Results,p)); export const picture=q=>renderToStaticMarkup(React.createElement(Illustration,{question:q}));`,resolveDir:root,loader:'jsx'},outfile:path.join(temp,'render.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',loader:{'.css':'text','.webp':'dataurl','.woff2':'dataurl'},logLevel:'silent'});
 const render=await import(pathToFileURL(path.join(temp,'render.mjs')));
 const noop=()=>{};
 const api={storage:{get:(_k,fallback)=>fallback,set:()=>true},sound:{play:noop},haptics:{vibrate:noop},confetti:{fire:noop},setInGame:noop};
@@ -50,10 +50,39 @@ test('reveal only exposes attribution on request and explanation at the final re
   assert.match(markup,/fab-reveal-card is-truth/);assert.match(markup,/EXPLANATION_TOKEN/);assert.match(markup,/https:\/\/example.com\/fabraka-answer/);
 });
 
-test('every picture is an embedded accessible illustration without an answer label',()=>{
+test('every picture uses neutral local artwork with accessible text and no answer/source label',()=>{
   const pictures=JSON.parse(readFileSync('src/data/games/fabraka/pictures.json','utf8'));
-  assert.deepEqual(new Set(pictures.map(q=>q.illustration)),new Set(render.illustrationIds));
-  for(const q of pictures){const markup=render.picture(q);assert.match(markup,/<svg/);assert.match(markup,/role="img" aria-label=/);assert.ok(!markup.includes(q.answer),q.id);assert.doesNotMatch(markup,/<image|<script|<text|href=|src=/);}
+  assert.equal(new Set(pictures.map(q=>q.image)).size,pictures.length);
+  for(const q of pictures){
+    const markup=render.picture(q);
+    assert.match(q.image,/^media\/fabraka-v3\/fab3-\d{3}\.webp$/);
+    assert.match(markup,/<img[^>]*alt="[^"]+"/);assert.match(markup,/تكبير صورة الأداة/);
+    assert.ok(!markup.includes(q.answer),q.id);assert.ok(!markup.includes(q.sourceUrl),q.id);
+    assert.doesNotMatch(markup,/<svg|<script|<text|<a /);
+  }
+});
+
+test('unknown or external picture URLs fail visibly without rendering remote content',()=>{
+  for(const image of ['https://example.test/answer.webp','media/fabraka-v3/../answer.webp','media/fabraka-v3/the-answer.webp']) {
+    const markup=render.picture({image,answer:'SECRET'});
+    assert.match(markup,/role="alert"/);assert.doesNotMatch(markup,/<img|SECRET/);
+  }
+});
+
+test('retired saved rounds explain the update without offering resume or deleting storage',()=>{
+  const old={...make(),contentVersion:2};let writes=0;
+  const storage={get:(key,fallback)=>key==='session-v2'?old:fallback,set:()=>{writes++;return true;}};
+  const markup=render.setup({storage,api:{...api,storage}});
+  assert.match(markup,/الجلسة القديمة غير قابلة للاستئناف/);
+  assert.doesNotMatch(markup,/استئناف اللعبة المحفوظة/);
+  assert.equal(writes,0);
+});
+
+test('retired topic filters do not strand a saved setup with zero available questions',()=>{
+  const storage={get:(key,fallback)=>key==='options'?{categories:['موضوع محذوف'],writeSeconds:30}:fallback,set:()=>true};
+  const markup=render.setup({storage,api:{...api,storage}});
+  assert.doesNotMatch(markup,/المتاح 0|مواضيع محذوفة|موضوع محذوف/);
+  assert.match(markup,/سؤالًا متاحًا/);
 });
 
 test('setup exposes all modes, timing, categories, laugh award, and the tutorial',()=>{

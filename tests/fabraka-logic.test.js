@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { initialState, reduce, currentActor, standings, createQuestionSource, normalizeOptions, validateLie, sameAnswer, matchesTruth, scoreRound, votersFor, TRUTH_ID, turnKey, buildDeck, questionPool, canVoteFor, restoreSession, awards, bestLies, multiplier, SAVE_KEY } from '../src/games/fabraka/logic.js';
-import { saveSession, loadSession, loadResult, SEEN_KEY } from '../src/games/fabraka/persistence.js';
+import { initialState, reduce, currentActor, standings, createQuestionSource, normalizeOptions, validateLie, sameAnswer, matchesTruth, scoreRound, votersFor, TRUTH_ID, turnKey, buildDeck, questionPool, canVoteFor, restoreSession, awards, bestLies, multiplier, SAVE_KEY, ROUNDS } from '../src/games/fabraka/logic.js';
+import { saveSession, loadSession, loadResult, SEEN_KEY, RESULT_KEY, hasRetiredSession } from '../src/games/fabraka/persistence.js';
 import { createStorage } from '../src/shared/lib/storage.js';
 import { seeded } from './helpers.js';
 
@@ -277,6 +277,23 @@ test('save consumes displayed facts immediately, keeps drafts, and distinguishes
   saveSession(storage,s);assert.equal(loadSession(storage),null);assert.equal(loadResult(storage).phase,'over');
 });
 
+test('content upgrade refuses retired decks but preserves finished results and unrelated storage', () => {
+  const items=new Map(), storage={get:(key,fallback)=>items.has(key)?items.get(key):fallback,set:(key,value)=>{items.set(key,value);return true;}};
+  let finished=make();for(let i=0;i<3;i++){finished=reveal(vote(write(begin(finished)),{}));finished=go(finished,'NEXT_ROUND');}
+  delete finished.contentVersion;
+  items.set(RESULT_KEY,finished);
+  const old=make();delete old.contentVersion;
+  items.set(SAVE_KEY,old);items.set('account',{id:'untouched'});items.set(SEEN_KEY,{retired:123});
+  assert.equal(loadSession(storage),null);assert.equal(restoreSession(old),null);
+  assert.equal(hasRetiredSession(storage),true);
+  assert.deepEqual(loadResult(storage).scores,finished.scores);
+  assert.deepEqual(items.get('account'),{id:'untouched'});assert.deepEqual(items.get(SEEN_KEY),{retired:123});
+  assert.equal(items.get(SAVE_KEY),old,'migration does not wipe saved data');
+  const current=make();saveSession(storage,current);
+  assert.ok(loadSession(storage));assert.equal(hasRetiredSession(storage),false);
+  assert.deepEqual(loadResult(storage).scores,finished.scores,'starting a new game preserves the prior completed result');
+});
+
 test('question sources deduplicate facts, migrate retired IDs, and prefer unseen content', () => {
   const list=[{...deck[0],previousIds:['retired']},{...deck[0],id:'duplicate'},deck[1],deck[2]];
   const source=createQuestionSource(list,{random:seeded(1),seen:{retired:1}});
@@ -290,20 +307,24 @@ test('question sources deduplicate facts, migrate retired IDs, and prefer unseen
     if(mode==='classic') assert.ok(d.every(x=>x.kind==='text'&&x.curious));
     if(mode==='pictures') assert.equal(d.filter(x=>x.kind==='picture').length,7);
     if(mode==='mixed') assert.deepEqual(d.map(x=>x.kind),['text','text','picture','text','text','picture','text']);
-    if(mode==='friends') assert.equal(d.length,24);
+    if(mode==='friends') assert.equal(d.length,f.length);
   }
   const first=buildDeck({questions:q,personal:f,options:{mode:'friends'},random:seeded(4)});
   const seen=Object.fromEntries(first.slice(0,8).map(x=>[x.factId,1]));
   const second=buildDeck({questions:q,personal:f,options:{mode:'friends'},seen,random:seeded(4)});
   assert.ok(second.slice(0,16).every(x=>!seen[x.factId]));
-  assert.ok(questionPool(q,{categories:['فضاء']}).every(x=>x.category==='فضاء'&&x.curious));
+  const category=q.find(x=>x.curious).category, filtered=questionPool(q,{categories:[category]});
+  assert.ok(filtered.length>0);assert.ok(filtered.every(x=>x.category===category&&x.curious));
 });
 
 test('all content has distinct facts, usable aliases/decoys, accessible images, and spare friend prompts', () => {
   const q=data('questions'),p=data('pictures'),f=data('personal'),all=[...q,...p,...f];
-  assert.ok(q.length>=154);assert.ok(q.filter(x=>x.curious).length>=86);assert.ok(p.length>=12);assert.ok(f.length>16);
+  // Every public mode must be able to draw the longest supported match without
+  // repeating facts; content totals are owned by the current bank, not old SVGs.
+  const longest=Math.max(...ROUNDS);
+  assert.ok(q.length>=longest);assert.ok(q.filter(x=>x.curious).length>=longest);assert.ok(p.length>=longest);assert.ok(f.length>16);
   assert.equal(new Set(all.map(x=>x.id)).size,all.length);assert.equal(new Set(all.map(x=>x.factId)).size,all.length);
-  assert.equal(q.flatMap(x=>x.previousIds||[]).length,13);
+  assert.equal(all.flatMap(x=>x.previousIds||[]).length,0,'the replacement bank must not import retired IDs');
   for(const item of all){
     assert.equal(item.text.split('___').length,2,item.id);
     assert.ok(item.aliases.every(x=>validateLie(x).ok),item.id);
@@ -311,6 +332,6 @@ test('all content has distinct facts, usable aliases/decoys, accessible images, 
     assert.ok(decoys.length>=3,item.id);
     if(item.kind==='friend') {assert.ok(item.text.includes('{name}'));assert.ok(decoys.length>=8);}
     else assert.ok(validateLie(item.answer).ok,item.id);
-    if(item.kind==='picture') {assert.ok(item.imageDescription);assert.ok(item.illustration);assert.ok(!item.imageDescription.includes(item.answer));}
+    if(item.kind==='picture') {assert.ok(item.imageDescription);assert.match(item.illustration,/^fab3-\d{3}$/);assert.match(item.image,/^media\/fabraka-v3\/fab3-\d{3}\.webp$/);assert.ok(!item.imageDescription.includes(item.answer));}
   }
 });

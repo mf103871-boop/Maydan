@@ -9,7 +9,7 @@ import { usePlatform } from '../platform/context.js';
 import { useAccount } from '../shared/account/context.js';
 import { AVATARS, ROUND_OPTIONS, MIN_PLAYERS, ONLINE_GAMES, normalizeCode, validCode, resolveServerUrl, errorText, arabicNumber } from './shared.js';
 import { RoomClient, newCredentials, post, readSaved, save, clearSession } from './client.js';
-import { normalizeOptions } from '../games/fabraka/logic.js';
+import { normalizeContentOptions } from '../games/fabraka/content.js';
 import { FabrakaSettings, FabrakaRules, FabrakaMatch, FABRAKA_MODES, fabrakaTopics } from './Fabraka.jsx';
 
 const SERVER = resolveServerUrl(typeof __MAYDAN_ROOMS_URL__ !== 'undefined' && __MAYDAN_ROOMS_URL__ || config.serverUrl, typeof location === 'undefined' ? '' : location.origin);
@@ -21,7 +21,7 @@ function Entry({ initialCode = '', initialGame = 'meenfina', onJoined }) {
   const account = useAccount();
   const [mode, setMode] = useState(initialCode ? 'join' : 'create');
   const [game, setGame] = useState(ONLINE_GAMES[initialGame] ? initialGame : 'meenfina');
-  const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeOptions(readSaved(SERVER, 'fabrakaSettings')));
+  const [fabrakaSettings, setFabrakaSettings] = useState(() => normalizeContentOptions(readSaved(SERVER, 'fabrakaSettings')));
   const [name, setName] = useState(() => readSaved(SERVER, 'profile')?.name || '');
   const [avatar, setAvatar] = useState(() => readSaved(SERVER, 'profile')?.avatar ?? 0);
   const [code, setCode] = useState(initialCode);

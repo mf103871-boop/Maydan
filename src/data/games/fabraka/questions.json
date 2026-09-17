@@ -1,3340 +1,2729 @@
 [
   {
-    "id": "fabraka-w1-001",
-    "text": "يبلغ عدد العظام في جسم الإنسان البالغ ___ عظمة.",
-    "answer": "206",
-    "explanation": "الهيكل العظمي للإنسان البالغ يتكون من 206 عظام، بعد أن تلتحم كثير من عظام الطفولة معًا أثناء النمو.",
-    "category": "جسم الإنسان",
-    "sourceHint": "Encyclopaedia Britannica / Gray's Anatomy",
-    "factId": "fabraka-w1-001",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "مئتان وستة"
-    ],
+    "id": "fab3-fact-001",
+    "factId": "fab3-fact-001",
     "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "194",
-      "218",
-      "230"
-    ]
-  },
-  {
-    "id": "fabraka-w1-002",
-    "text": "تبلغ سرعة الضوء في الفراغ نحو ___ ألف كيلومتر في الثانية.",
-    "answer": "300",
-    "explanation": "سرعة الضوء في الفراغ تساوي 299,792 كيلومترًا في الثانية تقريبًا، أي نحو 300 ألف كيلومتر في الثانية.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "NASA / NIST",
-    "factId": "fabraka-w1-002",
-    "previousIds": [
-      "fabraka-w3-034"
-    ],
-    "curious": false,
-    "aliases": [
-      "ثلاثمئة",
-      "ثلاثمائة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "288",
-      "312",
-      "324"
-    ]
-  },
-  {
-    "id": "fabraka-w1-003",
-    "text": "أطول نهر في قارة أوروبا هو نهر ___.",
-    "answer": "الفولغا",
-    "explanation": "نهر الفولغا يمتد نحو 3,530 كيلومترًا ويصب في بحر قزوين، وهو أطول أنهار أوروبا.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "Encyclopaedia Britannica",
-    "factId": "fabraka-w1-003",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "فولجا",
-      "الفولجا",
-      "فولغا"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الدانوب",
-      "الراين",
-      "السين"
-    ]
-  },
-  {
-    "id": "fabraka-w1-004",
-    "text": "أعمق نقطة معروفة في محيطات الأرض تُسمى «عمق ___» وتقع في خندق ماريانا.",
-    "answer": "تشالنجر",
-    "explanation": "عمق تشالنجر في خندق ماريانا بالمحيط الهادئ يصل إلى نحو 11 كيلومترًا تحت سطح البحر، وهو أعمق نقطة معروفة في المحيطات.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "NOAA / Guinness World Records",
-    "factId": "fabraka-w1-004",
-    "previousIds": [
-      "fabraka-w2-006"
-    ],
     "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "يترك حيوان الومبت الأسترالي فضلات تبدو كأنها خرجت من قالب؛ فهي على شكل ___.",
+    "answer": "مكعبات",
     "aliases": [
-      "تشالينجر",
-      "تشالنغر"
+      "مكعب",
+      "مكعبات صغيرة"
     ],
-    "kind": "text",
-    "answerType": "text",
     "decoys": [
-      "أطلس",
-      "نبتون",
-      "أوديسا"
-    ]
+      "حلقات",
+      "نجوم",
+      "أقراص مسطحة",
+      "حلزونات"
+    ],
+    "explanation": "درس باحثو جورجيا تك تكوّن الزوايا داخل أمعاء الومبت؛ فالفضلات المكعبة ليست نتيجة تشكيلها بعد خروجها.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "Studying Wombats' Cubic Poop",
+    "sourceUrl": "https://qbios.gatech.edu/node/312",
+    "sourceTitle": "Studying Wombats' Cubic Poop",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-005",
-    "text": "أكبر عضو في جسم الإنسان هو ___.",
-    "answer": "الجلد",
-    "explanation": "الجلد هو أكبر أعضاء الجسم، وتبلغ مساحته عند البالغ نحو مترين مربعين.",
-    "category": "جسم الإنسان",
-    "sourceHint": "National Geographic / Britannica",
-    "factId": "fabraka-w1-005",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
+    "id": "fab3-fact-002",
+    "factId": "fab3-fact-002",
     "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الكبد",
-      "الرئة",
-      "الأمعاء"
-    ]
-  },
-  {
-    "id": "fabraka-w1-006",
-    "text": "أصغر عظمة في جسم الإنسان تُسمى عظمة ___ وتوجد داخل الأذن.",
-    "answer": "الركاب",
-    "explanation": "عظمة الركاب في الأذن الوسطى طولها نحو 3 مليمترات فقط، وهي أصغر عظام الجسم.",
-    "category": "جسم الإنسان",
-    "sourceHint": "Britannica / Guinness World Records",
-    "factId": "fabraka-w1-006",
-    "previousIds": [],
     "curious": true,
-    "aliases": [
-      "عظمة الركاب"
-    ],
-    "kind": "text",
+    "previousIds": [],
     "answerType": "text",
-    "decoys": [
-      "الزورقية",
-      "المطرقة",
-      "الرضفة"
-    ]
-  },
-  {
-    "id": "fabraka-w1-007",
-    "text": "يحتوي جسم الإنسان البالغ على نحو ___ لترات من الدم.",
-    "answer": "5",
-    "explanation": "يجري في جسم الإنسان البالغ نحو 5 لترات من الدم، ويضخها القلب باستمرار في كل أنحاء الجسم.",
-    "category": "جسم الإنسان",
-    "sourceHint": "American Red Cross / Britannica",
-    "factId": "fabraka-w1-007",
-    "previousIds": [],
-    "curious": false,
+    "text": "عند تجهيز ساحة استعراضه، يجمع ذكر طائر التعريشة الساتاني مشابك وأغطية وزينة يغلب عليها اللون ___.",
+    "answer": "الأزرق",
     "aliases": [
-      "خمسة"
+      "أزرق",
+      "اللون الأزرق"
     ],
-    "kind": "text",
-    "answerType": "number",
     "decoys": [
-      "4",
-      "6",
-      "7"
-    ]
-  },
-  {
-    "id": "fabraka-w1-008",
-    "text": "أطول عظمة في جسم الإنسان هي عظمة ___.",
-    "answer": "الفخذ",
-    "explanation": "عظمة الفخذ هي أطول وأقوى عظام الجسم، ويبلغ طولها نحو ربع طول الإنسان.",
-    "category": "جسم الإنسان",
-    "sourceHint": "Britannica / Gray's Anatomy",
-    "factId": "fabraka-w1-008",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "عظم الفخذ"
+      "الأحمر",
+      "البرتقالي",
+      "الأبيض",
+      "الأسود"
     ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "العضد",
-      "الساق",
-      "الزند"
-    ]
+    "explanation": "يزين الذكر ساحة المغازلة بأشياء زرقاء، وقد يجمع لهذا الغرض قطعًا صنعها البشر مثل المشابك وأغطية الزجاجات.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "Satin Bowerbird",
+    "sourceUrl": "https://australian.museum/learn/animals/birds/satin-bowerbird/",
+    "sourceTitle": "Satin Bowerbird",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-009",
-    "text": "يبلغ عدد الأسنان الدائمة الكاملة عند الإنسان البالغ ___ سنًّا.",
-    "answer": "32",
-    "explanation": "الإنسان البالغ يملك 32 سنًّا دائمة بما فيها أضراس العقل الأربعة، مقابل 20 سنًّا لبنية عند الطفل.",
-    "category": "جسم الإنسان",
-    "sourceHint": "American Dental Association",
-    "factId": "fabraka-w1-009",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "اثنان وثلاثون",
-      "اثنين وثلاثون"
-    ],
+    "id": "fab3-fact-003",
+    "factId": "fab3-fact-003",
     "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "29",
-      "35",
-      "38"
-    ]
-  },
-  {
-    "id": "fabraka-w1-010",
-    "text": "أكبر كوكب في المجموعة الشمسية هو ___.",
-    "answer": "المشتري",
-    "explanation": "المشتري كوكب عملاق تزيد كتلته على كتلة بقية الكواكب مجتمعة، ويتسع بداخله أكثر من ألف كرة أرضية.",
-    "category": "فضاء",
-    "sourceHint": "NASA Solar System Exploration",
-    "factId": "fabraka-w1-010",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "زحل",
-      "نبتون",
-      "أورانوس"
-    ]
-  },
-  {
-    "id": "fabraka-w1-011",
-    "text": "عدد الكواكب في مجموعتنا الشمسية هو ___ كواكب.",
-    "answer": "8",
-    "explanation": "منذ عام 2006 أصبح عدد الكواكب الرسمية ثمانية بعد أن صُنّف بلوتو كوكبًا قزمًا.",
-    "category": "فضاء",
-    "sourceHint": "International Astronomical Union / NASA",
-    "factId": "fabraka-w1-011",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثمانية",
-      "ثمان",
-      "ثماني"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "7",
-      "9",
-      "10"
-    ]
-  },
-  {
-    "id": "fabraka-w1-012",
-    "text": "يستغرق ضوء الشمس نحو ___ دقائق للوصول إلى الأرض.",
-    "answer": "8",
-    "explanation": "المسافة بين الشمس والأرض نحو 150 مليون كيلومتر، فيقطعها الضوء في نحو 8 دقائق و20 ثانية.",
-    "category": "فضاء",
-    "sourceHint": "NASA",
-    "factId": "fabraka-w1-012",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثمانية",
-      "ثمان",
-      "ثماني"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "7",
-      "9",
-      "10"
-    ]
-  },
-  {
-    "id": "fabraka-w1-013",
-    "text": "أكبر محيطات العالم مساحة هو المحيط ___.",
-    "answer": "الهادئ",
-    "explanation": "المحيط الهادئ يغطي نحو 165 مليون كيلومتر مربع، أي نحو ثلث سطح الأرض، وهو أكبر من كل اليابسة مجتمعة.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "NOAA / Britannica",
-    "factId": "fabraka-w1-013",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الأطلسي",
-      "الهندي",
-      "المتجمد الشمالي"
-    ]
-  },
-  {
-    "id": "fabraka-w1-014",
-    "text": "أكبر صحراء في العالم مساحة هي القارة ___.",
-    "answer": "القطبية الجنوبية",
-    "explanation": "الصحراء تُعرَّف بقلة الأمطار لا بالحرارة، والقارة القطبية الجنوبية (أنتاركتيكا) تبلغ مساحتها نحو 14 مليون كيلومتر مربع، أي أكبر من الصحراء الكبرى.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "NASA Earth Observatory / Britannica",
-    "factId": "fabraka-w1-014",
-    "previousIds": [
-      "fabraka-w2-002"
-    ],
     "curious": true,
-    "aliases": [
-      "أنتاركتيكا",
-      "انتاركتيكا",
-      "القطب الجنوبي"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الأفريقية",
-      "الآسيوية",
-      "الأسترالية"
-    ]
-  },
-  {
-    "id": "fabraka-w1-015",
-    "text": "يبلغ ارتفاع قمة إيفرست، أعلى قمة في العالم، نحو ___ مترًا.",
-    "answer": "8849",
-    "explanation": "القياس الرسمي المشترك المعلن عام 2020 حدد ارتفاع قمة إيفرست بـ 8,848.86 مترًا فوق سطح البحر.",
-    "category": "أرقام قياسية",
-    "sourceHint": "Guinness World Records / National Geographic",
-    "factId": "fabraka-w1-015",
     "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثمانية آلاف وثمانمئة وتسعة وأربعون",
-      "ثمانية آلاف وثمانمائة وتسعة وأربعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "8824",
-      "8874",
-      "8899"
-    ]
-  },
-  {
-    "id": "fabraka-w1-016",
-    "text": "أسرع حيوان بري في العالم هو ___.",
-    "answer": "الفهد",
-    "explanation": "الفهد (الشيتا) يستطيع الركض بسرعة تتجاوز 100 كيلومتر في الساعة لمسافات قصيرة.",
-    "category": "حيوانات",
-    "sourceHint": "National Geographic / Guinness World Records",
-    "factId": "fabraka-w1-016",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "الشيتا",
-      "الفهد الصياد"
-    ],
-    "kind": "text",
     "answerType": "text",
+    "text": "أسنان القندس الأمامية برتقالية بطبيعتها؛ فالطبقة الخارجية منها تحتوي على ___.",
+    "answer": "الحديد",
+    "aliases": [
+      "حديد",
+      "عنصر الحديد"
+    ],
     "decoys": [
-      "الأسد",
-      "الغزال",
-      "النمر"
-    ]
+      "النحاس",
+      "الكبريت",
+      "الكاروتين",
+      "الذهب"
+    ],
+    "explanation": "يرتبط اللون البرتقالي بوجود الحديد في مينا الأسنان، وليس ببقايا الخشب الذي يقرضه القندس.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "Beaver",
+    "sourceUrl": "https://nationalzoo.si.edu/animals/beaver",
+    "sourceTitle": "Beaver",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-017",
-    "text": "عدد فقرات رقبة الزرافة هو ___ فقرات، مثل رقبة الإنسان تمامًا.",
-    "answer": "7",
-    "explanation": "رغم طول رقبة الزرافة فإنها تحتوي على 7 فقرات فقط مثل الإنسان، لكن كل فقرة قد يصل طولها إلى 25 سنتيمترًا.",
-    "category": "حيوانات",
-    "sourceHint": "Britannica / San Diego Zoo",
-    "factId": "fabraka-w1-017",
-    "previousIds": [
-      "fabraka-w4-004"
-    ],
+    "id": "fab3-fact-004",
+    "factId": "fab3-fact-004",
+    "kind": "text",
     "curious": true,
-    "aliases": [
-      "سبعة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "6",
-      "8",
-      "9"
-    ]
-  },
-  {
-    "id": "fabraka-w1-018",
-    "text": "الرمز الكيميائي لعنصر الذهب في الجدول الدوري هو ___.",
-    "answer": "Au",
-    "explanation": "رمز الذهب Au مأخوذ من اسمه اللاتيني «Aurum»، وعدده الذري 79.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "IUPAC Periodic Table / Royal Society of Chemistry",
-    "factId": "fabraka-w1-018",
     "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
     "answerType": "text",
-    "decoys": [
-      "Ag",
-      "Fe",
-      "Cu"
-    ]
-  },
-  {
-    "id": "fabraka-w1-019",
-    "text": "يشكّل غاز النيتروجين نحو ___ % من الهواء الذي نتنفسه.",
-    "answer": "78",
-    "explanation": "الغلاف الجوي للأرض يتكون من نحو 78% نيتروجين و21% أكسجين، والباقي غازات أخرى.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "NASA / NOAA",
-    "factId": "fabraka-w1-019",
-    "previousIds": [],
-    "curious": false,
+    "text": "في تجربة بجامعة كوين ماري، عاد نحل طنان مرارًا إلى تسلية بلا مكافأة غذائية: دحرجة ___.",
+    "answer": "كرات خشبية",
     "aliases": [
-      "ثمانية وسبعون"
+      "كرات من الخشب",
+      "الكرات الخشبية"
     ],
-    "kind": "text",
-    "answerType": "number",
     "decoys": [
-      "75",
-      "81",
-      "84"
-    ]
+      "حبات سكر",
+      "قطرات ماء",
+      "بيض نمل",
+      "حصوات ملونة"
+    ],
+    "explanation": "راقب الباحثون النحل وهو يدحرج كرات خشبية طوعًا، ووجدوا سلوكًا يطابق معايير اللعب التي استخدمتها الدراسة.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "First-ever study shows bumble bees ‘play’",
+    "sourceUrl": "https://www.qmul.ac.uk/news/latest-news/2022/se/first-ever-study-shows-bumble-bees-play.html",
+    "sourceTitle": "First-ever study shows bumble bees ‘play’",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-020",
-    "text": "الصفر المطلق، أبرد درجة حرارة ممكنة نظريًّا، يساوي نحو ___ درجة مئوية تحت الصفر.",
-    "answer": "273",
-    "explanation": "الصفر المطلق يساوي −273.15 درجة مئوية، وهو الصفر في مقياس كلفن، ولا يمكن الوصول إلى ما دونه.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "NIST / Britannica",
-    "factId": "fabraka-w1-020",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "مئتان وثلاثة وسبعون"
-    ],
+    "id": "fab3-fact-005",
+    "factId": "fab3-fact-005",
     "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "261",
-      "285",
-      "297"
-    ]
-  },
-  {
-    "id": "fabraka-w1-021",
-    "text": "تحتوي خلية الإنسان العادية على ___ كروموسومًا.",
-    "answer": "46",
-    "explanation": "خلايا جسم الإنسان تحمل 46 كروموسومًا مرتبة في 23 زوجًا، نصفها من الأب ونصفها من الأم.",
-    "category": "جسم الإنسان",
-    "sourceHint": "National Human Genome Research Institute",
-    "factId": "fabraka-w1-021",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ستة وأربعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "43",
-      "49",
-      "52"
-    ]
-  },
-  {
-    "id": "fabraka-w1-022",
-    "text": "أكبر جزيرة في العالم هي جزيرة ___.",
-    "answer": "غرينلاند",
-    "explanation": "غرينلاند تبلغ مساحتها نحو 2.17 مليون كيلومتر مربع، وهي أكبر جزيرة في العالم إذا استثنينا القارات.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "Britannica / Guinness World Records",
-    "factId": "fabraka-w1-022",
-    "previousIds": [
-      "fabraka-w2-023"
-    ],
-    "curious": false,
-    "aliases": [
-      "جرينلاند",
-      "غرينلند"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "مدغشقر",
-      "بورنيو",
-      "سومطرة"
-    ]
-  },
-  {
-    "id": "fabraka-w1-023",
-    "text": "أعمق بحيرة في العالم هي بحيرة ___.",
-    "answer": "بايكال",
-    "explanation": "بحيرة بايكال في سيبيريا يصل عمقها إلى نحو 1,642 مترًا، وتحتوي على نحو خُمس المياه العذبة السطحية غير المتجمدة في العالم.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "UNESCO / Britannica",
-    "factId": "fabraka-w1-023",
-    "previousIds": [
-      "fabraka-w2-024"
-    ],
-    "curious": false,
-    "aliases": [
-      "بايكال السيبيرية"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "فيكتوريا",
-      "تيتيكاكا",
-      "طبريا"
-    ]
-  },
-  {
-    "id": "fabraka-w1-025",
-    "text": "يملك الأخطبوط ___ قلوب.",
-    "answer": "3",
-    "explanation": "للأخطبوط ثلاثة قلوب: قلبان يضخان الدم إلى الخياشيم، وقلب ثالث يضخه إلى بقية الجسم.",
-    "category": "حيوانات",
-    "sourceHint": "Smithsonian Ocean / National Geographic",
-    "factId": "fabraka-w1-025",
-    "previousIds": [
-      "fabraka-w4-001"
-    ],
     "curious": true,
-    "aliases": [
-      "ثلاثة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "2",
-      "4",
-      "5"
-    ]
-  },
-  {
-    "id": "fabraka-w1-026",
-    "text": "أسرع طائر في العالم أثناء الانقضاض هو ___.",
-    "answer": "الشاهين",
-    "explanation": "صقر الشاهين يتجاوز 300 كيلومتر في الساعة عند الانقضاض على فريسته، وهو أسرع كائن حي على الإطلاق.",
-    "category": "حيوانات",
-    "sourceHint": "Guinness World Records / National Geographic",
-    "factId": "fabraka-w1-026",
-    "previousIds": [
-      "fabraka-w4-035"
-    ],
-    "curious": false,
-    "aliases": [
-      "صقر الشاهين"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "النسر الذهبي",
-      "العقاب",
-      "الباز"
-    ]
-  },
-  {
-    "id": "fabraka-w1-027",
-    "text": "أصغر قارات العالم مساحة هي قارة ___.",
-    "answer": "أستراليا",
-    "explanation": "قارة أستراليا تبلغ مساحتها نحو 7.7 ملايين كيلومتر مربع، وهي أصغر القارات وأكثرها استواءً.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "Britannica / National Geographic",
-    "factId": "fabraka-w1-027",
     "previousIds": [],
-    "curious": false,
+    "answerType": "text",
+    "text": "أحد أنواع نقار الخشب يحوّل جذعًا كاملًا إلى مخزن مؤن؛ إذ يحشر في ثقوبه ___.",
+    "answer": "ثمار البلوط",
     "aliases": [
-      "استراليا"
+      "البلوط",
+      "حبات البلوط",
+      "جوز البلوط"
     ],
-    "kind": "text",
-    "answerType": "text",
     "decoys": [
-      "أوروبا",
-      "أنتاركتيكا",
-      "أمريكا الجنوبية"
-    ]
-  },
-  {
-    "id": "fabraka-w1-028",
-    "text": "أكبر عضو داخلي في جسم الإنسان هو ___.",
-    "answer": "الكبد",
-    "explanation": "الكبد يزن عند البالغ نحو كيلوغرام ونصف، وهو أكبر الأعضاء الداخلية ويؤدي مئات الوظائف.",
-    "category": "جسم الإنسان",
-    "sourceHint": "Britannica / Johns Hopkins Medicine",
-    "factId": "fabraka-w1-028",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "القلب",
-      "البنكرياس",
-      "الطحال"
-    ]
-  },
-  {
-    "id": "fabraka-w1-029",
-    "text": "الماس يتكوّن بالكامل من عنصر ___.",
-    "answer": "الكربون",
-    "explanation": "الماس هو ذرات كربون مرتبة في شبكة بلورية شديدة التماسك، وهو نفس عنصر الفحم وقلم الرصاص لكن بترتيب مختلف.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "Royal Society of Chemistry / Britannica",
-    "factId": "fabraka-w1-029",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "السيليكون",
-      "الكالسيوم",
-      "الكبريت"
-    ]
-  },
-  {
-    "id": "fabraka-w1-030",
-    "text": "ينتقل الصوت في الهواء بسرعة نحو ___ مترًا في الثانية.",
-    "answer": "343",
-    "explanation": "سرعة الصوت في الهواء عند 20 درجة مئوية تبلغ نحو 343 مترًا في الثانية، ولهذا نرى البرق قبل أن نسمع الرعد.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "NASA Glenn Research Center / Britannica",
-    "factId": "fabraka-w1-030",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثلاثمئة وثلاثة وأربعون",
-      "ثلاثمائة وثلاثة وأربعون"
+      "بيض الحشرات",
+      "قطع اللحاء",
+      "حبات الزيتون",
+      "ريش الطيور"
     ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "331",
-      "355",
-      "367"
-    ]
+    "explanation": "يخزن نقار الخشب البلوطي الثمار في ثقوب يحفرها، فتبدو الشجرة كخزانة طعام مشتركة للطائفة.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "Acorn Woodpecker Overview",
+    "sourceUrl": "https://www.allaboutbirds.org/guide/Acorn_Woodpecker/overview",
+    "sourceTitle": "Acorn Woodpecker Overview",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-031",
-    "text": "الكوكب الذي يومه أطول من سنته هو كوكب ___.",
-    "answer": "الزهرة",
-    "explanation": "يستغرق كوكب الزهرة نحو 243 يومًا أرضيًّا ليدور حول نفسه مرة واحدة، لكنه يكمل دورته حول الشمس في نحو 225 يومًا فقط.",
-    "category": "فضاء",
-    "sourceHint": "NASA Solar System Exploration",
-    "factId": "fabraka-w1-031",
-    "previousIds": [
-      "fabraka-w2-012"
-    ],
+    "id": "fab3-fact-006",
+    "factId": "fab3-fact-006",
+    "kind": "text",
     "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "عطارد",
-      "زحل",
-      "المريخ"
-    ]
-  },
-  {
-    "id": "fabraka-w1-032",
-    "text": "أعلى جبل في المجموعة الشمسية هو أوليمبوس مونس، ويقع على كوكب ___.",
-    "answer": "المريخ",
-    "explanation": "بركان أوليمبوس مونس على المريخ يبلغ ارتفاعه نحو 21 كيلومترًا، أي نحو مرتين ونصف ارتفاع قمة إيفرست.",
-    "category": "فضاء",
-    "sourceHint": "NASA",
-    "factId": "fabraka-w1-032",
-    "previousIds": [
-      "fabraka-w2-013"
-    ],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الزهرة",
-      "عطارد",
-      "نبتون"
-    ]
-  },
-  {
-    "id": "fabraka-w1-033",
-    "text": "تُصنع خلايا الدم في جسم الإنسان داخل ___.",
-    "answer": "نخاع العظم",
-    "explanation": "نخاع العظم هو النسيج الإسفنجي داخل العظام، وينتج ملايين خلايا الدم الحمراء والبيضاء كل ثانية.",
-    "category": "جسم الإنسان",
-    "sourceHint": "Britannica / NIH",
-    "factId": "fabraka-w1-033",
     "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "نخاع العظام",
-      "النخاع العظمي"
-    ],
-    "kind": "text",
     "answerType": "text",
-    "decoys": [
-      "الكبد",
-      "الطحال",
-      "القلب"
-    ]
-  },
-  {
-    "id": "fabraka-w1-034",
-    "text": "يبلغ محيط الأرض عند خط الاستواء نحو ___ ألف كيلومتر.",
-    "answer": "40",
-    "explanation": "محيط الأرض عند خط الاستواء يبلغ نحو 40,075 كيلومترًا، وقد عُرِّف المتر في الأصل بناءً على قياس الأرض.",
-    "category": "فضاء",
-    "sourceHint": "NASA / NOAA",
-    "factId": "fabraka-w1-034",
-    "previousIds": [],
-    "curious": false,
+    "text": "في ليلة بلا قمر، يستطيع نوع من خنافس الروث الحفاظ على مساره بالاسترشاد بضوء ___.",
+    "answer": "درب التبانة",
     "aliases": [
-      "أربعون"
+      "مجرة درب التبانة",
+      "الدرب اللبني",
+      "المجرة"
     ],
-    "kind": "text",
-    "answerType": "number",
     "decoys": [
-      "37",
-      "43",
-      "46"
-    ]
+      "اليراعات",
+      "البرق البعيد",
+      "عيون الحيوانات",
+      "الفطر المضيء"
+    ],
+    "explanation": "أظهرت التجارب أن خنفساء Scarabaeus satyrus تستخدم الشريط المضيء للمجرة كمرجع أثناء دحرجة كرتها.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "How do dung beetles' diets keep the world clean?",
+    "sourceUrl": "https://www.nhm.ac.uk/discover/how-dung-beetles-keep-the-world-clean.html",
+    "sourceTitle": "How do dung beetles' diets keep the world clean?",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-035",
-    "text": "تنام الدلافين بنصف ___ فقط في كل مرة، بينما يبقى النصف الآخر مستيقظًا.",
-    "answer": "الدماغ",
-    "explanation": "الدلافين تنام بنصف دماغ في كل مرة حتى تستمر في الصعود إلى السطح للتنفس والانتباه لما حولها.",
-    "category": "حيوانات",
-    "sourceHint": "NOAA / Scientific American",
-    "factId": "fabraka-w1-035",
-    "previousIds": [
-      "fabraka-w4-014"
-    ],
+    "id": "fab3-fact-007",
+    "factId": "fab3-fact-007",
+    "kind": "text",
     "curious": true,
-    "aliases": [
-      "دماغه",
-      "المخ",
-      "مخه"
-    ],
-    "kind": "text",
+    "previousIds": [],
     "answerType": "text",
+    "text": "البقع الداكنة حول عيني السرقاط تقلل وهج الشمس، فتؤدي دورًا يشبه ___.",
+    "answer": "النظارات الشمسية",
+    "aliases": [
+      "نظارة شمسية",
+      "نظارات شمس",
+      "نظارة الشمس"
+    ],
     "decoys": [
-      "الرئة",
-      "القلب",
-      "الأعصاب"
-    ]
+      "العدسات المكبرة",
+      "المرايا",
+      "المناظير الليلية",
+      "المظلات المطرية"
+    ],
+    "explanation": "يساعد اللون الداكن حول العينين على تقليل الوهج، وهو مفيد لحيوان يراقب محيطه في بيئة مشمسة.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "Meerkat",
+    "sourceUrl": "https://nationalzoo.si.edu/animals/meerkat",
+    "sourceTitle": "Meerkat",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-036",
-    "text": "أدنى درجة حرارة للهواء سُجلت مباشرة بمحطة أرصاد كانت نحو ___ درجة مئوية تحت الصفر.",
-    "answer": "89",
-    "explanation": "سُجّلت درجة −89.2 مئوية في محطة فوستوك بالقارة القطبية الجنوبية في يوليو 1983، وهي أدنى درجة حرارة هواء مسجّلة رسميًّا على سطح الأرض.",
-    "category": "أرقام قياسية",
-    "sourceHint": "World Meteorological Organization / Guinness World Records",
-    "factId": "fabraka-w1-036",
-    "previousIds": [
-      "fabraka-w2-010"
-    ],
+    "id": "fab3-fact-008",
+    "factId": "fab3-fact-008",
+    "kind": "text",
     "curious": true,
-    "aliases": [
-      "تسعة وثمانون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "86",
-      "92",
-      "95"
-    ]
-  },
-  {
-    "id": "fabraka-w1-037",
-    "text": "الحيوان الثديي الوحيد القادر على الطيران الحقيقي هو ___.",
-    "answer": "الخفاش",
-    "explanation": "الخفافيش هي الثدييات الوحيدة التي تطير طيرانًا حقيقيًّا بتحريك أجنحتها، أما السناجب الطائرة فتنزلق في الهواء فقط.",
-    "category": "حيوانات",
-    "sourceHint": "Smithsonian / Britannica",
-    "factId": "fabraka-w1-037",
     "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "الوطواط"
-    ],
-    "kind": "text",
     "answerType": "text",
+    "text": "للرنة تعديل موسمي في الرؤية: الطبقة العاكسة داخل عينيها تتحول من الذهبي صيفًا إلى ___ شتاءً.",
+    "answer": "الأزرق",
+    "aliases": [
+      "أزرق",
+      "اللون الأزرق"
+    ],
     "decoys": [
-      "السنجاب الطائر",
-      "الليمور",
-      "الكنغر"
-    ]
+      "الأحمر",
+      "البنفسجي",
+      "البرتقالي",
+      "الأسود"
+    ],
+    "explanation": "التغير يحدث في الطبقة العاكسة خلف الشبكية، لا في لون القزحية الظاهر؛ ويساعدها على الرؤية في ضوء الشتاء الضعيف.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "Opinion: How reindeer eyes transform in winter to give them twilight vision",
+    "sourceUrl": "https://www.ucl.ac.uk/news/2022/jul/opinion-how-reindeer-eyes-transform-winter-give-them-twilight-vision",
+    "sourceTitle": "Opinion: How reindeer eyes transform in winter to give them twilight vision",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-038",
-    "text": "الكوكب الذي يطفو على الماء لو وُجد حوض يتسع له هو ___.",
-    "answer": "زحل",
-    "explanation": "كثافة زحل نحو 0.69 غرام لكل سنتيمتر مكعب، أي أقل من كثافة الماء، لذا فهو الكوكب الوحيد الذي يطفو نظريًّا.",
-    "category": "فضاء",
-    "sourceHint": "NASA Solar System Exploration",
-    "factId": "fabraka-w1-038",
-    "previousIds": [
-      "fabraka-w2-020"
-    ],
+    "id": "fab3-fact-009",
+    "factId": "fab3-fact-009",
+    "kind": "text",
     "curious": true,
-    "aliases": [],
-    "kind": "text",
+    "previousIds": [],
     "answerType": "text",
-    "decoys": [
-      "المشتري",
-      "نبتون",
-      "أورانوس"
-    ]
-  },
-  {
-    "id": "fabraka-w1-039",
-    "text": "يبلغ عمر كوكب الأرض نحو ___ مليار سنة.",
-    "answer": "4.5",
-    "explanation": "تشير قياسات الصخور والنيازك إلى أن عمر الأرض نحو 4.54 مليار سنة.",
-    "category": "فضاء",
-    "sourceHint": "NASA / US Geological Survey",
-    "factId": "fabraka-w1-039",
-    "previousIds": [],
-    "curious": false,
+    "text": "يغمض خلد الماء عينيه عند الغوص، لكن منقاره يستطيع التقاط إشارات ___ تصدر عن فرائسه.",
+    "answer": "كهربائية",
     "aliases": [
-      "أربعة ونصف",
-      "أربع ونصف"
+      "كهرباء",
+      "إشارات كهربائية",
+      "كهربية"
     ],
-    "kind": "text",
-    "answerType": "number",
     "decoys": [
-      "4.1",
-      "4.8",
-      "5.3"
-    ]
+      "إذاعية",
+      "حرارية بالأشعة تحت الحمراء",
+      "لونية",
+      "فوق بنفسجية"
+    ],
+    "explanation": "يحتوي المنقار على مستقبلات كهربائية وأخرى ميكانيكية تساعده على العثور على الغذاء تحت الماء.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "Platypus",
+    "sourceUrl": "https://australian.museum/learn/animals/mammals/platypus/",
+    "sourceTitle": "Platypus",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w1-040",
-    "text": "الكوكب الذي يدور حول محوره وهو مائل على جانبه تقريبًا هو ___.",
-    "answer": "أورانوس",
-    "explanation": "محور أورانوس مائل بنحو 98 درجة، فيبدو كأنه يتدحرج على جانبه أثناء دورانه حول الشمس.",
-    "category": "فضاء",
-    "sourceHint": "NASA Solar System Exploration",
-    "factId": "fabraka-w1-040",
-    "previousIds": [],
+    "id": "fab3-fact-010",
+    "factId": "fab3-fact-010",
+    "kind": "text",
     "curious": true,
-    "aliases": [
-      "اورانوس",
-      "يورانوس"
-    ],
-    "kind": "text",
+    "previousIds": [],
     "answerType": "text",
+    "text": "يطعم أبوا الفلامنغو صغيرهما إفرازًا أحمر غنيًا بالغذاء، يحمل اسم ___.",
+    "answer": "حليب الحوصلة",
+    "aliases": [
+      "لبن الحوصلة",
+      "حليب الطيور"
+    ],
     "decoys": [
-      "زحل",
-      "عطارد",
-      "نبتون"
-    ]
+      "عسل الريش",
+      "عصير المنقار",
+      "رحيق الأعشاش",
+      "شراب المرجان"
+    ],
+    "explanation": "ينتج الأبوان إفرازًا يسمى حليب الحوصلة لتغذية الفرخ؛ وتسميته بالحليب لا تجعله حليب ثدييات.",
+    "category": "حيل الحيوانات",
+    "sourceHint": "Practical Tips for Anyone Currently Raising Nine Flamingo Chicks at the Same Time",
+    "sourceUrl": "https://www.nationalzoo.si.edu/animals/news/practical-tips-anyone-currently-raising-nine-flamingo-chicks-same-time",
+    "sourceTitle": "Practical Tips for Anyone Currently Raising Nine Flamingo Chicks at the Same Time",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w2-003",
-    "text": "أطول جسر في العالم يقع في الصين ويبلغ طوله نحو ___ كيلومترًا.",
-    "answer": "164",
-    "explanation": "جسر دانيانغ-كونشان الكبير الذي يمر به القطار السريع بين بكين وشانغهاي طوله 164.8 كيلومترًا، وافتُتح عام 2011.",
-    "category": "أرقام قياسية",
-    "sourceHint": "Guinness World Records - Longest bridge",
-    "factId": "fabraka-w2-003",
-    "previousIds": [],
+    "id": "fab3-fact-011",
+    "factId": "fab3-fact-011",
+    "kind": "text",
     "curious": true,
-    "aliases": [
-      "مئة وأربعة وستون",
-      "مائة وأربعة وستون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "152",
-      "176",
-      "188"
-    ]
-  },
-  {
-    "id": "fabraka-w2-004",
-    "text": "أكبر قمر في المجموعة الشمسية هو ___ التابع لكوكب المشتري.",
-    "answer": "غانيميد",
-    "explanation": "غانيميد أكبر قمر في المجموعة الشمسية، وهو أكبر حجمًا من كوكب عطارد نفسه.",
-    "category": "فضاء",
-    "sourceHint": "NASA Solar System Exploration",
-    "factId": "fabraka-w2-004",
     "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "جانيميد",
-      "غانيميدس"
-    ],
-    "kind": "text",
     "answerType": "text",
+    "text": "تجذب زهرة التيتان بعض الحشرات بعطر غير رومانسي؛ إذ تشبه رائحتها رائحة ___.",
+    "answer": "لحم متعفن",
+    "aliases": [
+      "اللحم المتعفن",
+      "لحم فاسد",
+      "جيفة",
+      "جثث متحللة"
+    ],
     "decoys": [
-      "تيتان",
-      "أوروبا",
-      "كاليستو"
-    ]
+      "الليمون",
+      "الخبز الطازج",
+      "الصنوبر",
+      "الفلفل الأسود"
+    ],
+    "explanation": "تطلق نورة التيتان رائحة تشبه اللحم المتحلل، فتجذب حشرات تنجذب عادةً إلى الجيف.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Titan arum",
+    "sourceUrl": "https://www.kew.org/plants/titan-arum",
+    "sourceTitle": "Titan arum",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w2-005",
-    "text": "أطول جبل في العالم إذا قسناه من قاعدته إلى قمته هو جبل ___ في هاواي.",
-    "answer": "ماونا كيا",
-    "explanation": "معظم جبل ماونا كيا مغمور تحت المحيط، وارتفاعه من قاعدته في قاع البحر إلى قمته يزيد على 10 كيلومترات، أي أطول من إيفرست.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "USGS / NOAA",
-    "factId": "fabraka-w2-005",
-    "previousIds": [],
+    "id": "fab3-fact-012",
+    "factId": "fab3-fact-012",
+    "kind": "text",
     "curious": true,
-    "aliases": [
-      "مونا كيا"
-    ],
-    "kind": "text",
+    "previousIds": [],
     "answerType": "text",
-    "decoys": [
-      "كيليمنجارو",
-      "ماونا لوا",
-      "إتنا"
-    ]
-  },
-  {
-    "id": "fabraka-w2-007",
-    "text": "النهر الذي يصب أكبر كمية من المياه في العالم هو نهر ___.",
-    "answer": "الأمازون",
-    "explanation": "يصب الأمازون في المحيط الأطلسي أكثر من 200 ألف متر مكعب من الماء كل ثانية، أي أكثر من أي نهر آخر بفارق كبير.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "Britannica / USGS",
-    "factId": "fabraka-w2-007",
-    "previousIds": [],
-    "curious": false,
+    "text": "بعض نباتات الميموزا تُظهر رد فعل سريعًا عندما تلمسها؛ إذ ___.",
+    "answer": "تطوي أوراقها",
     "aliases": [
-      "امازون"
+      "تغلق أوراقها",
+      "تضم أوراقها",
+      "تنكمش أوراقها"
     ],
-    "kind": "text",
-    "answerType": "text",
     "decoys": [
-      "النيل",
-      "الكونغو",
-      "الغانج"
-    ]
+      "تطلق بذورها",
+      "تسقط أزهارها",
+      "تغيّر لون جذورها",
+      "تفرز قطرات زيت"
+    ],
+    "explanation": "تستجيب أوراق أنواع حساسة من الميموزا للمس بالانطواء؛ وهي حركة نباتية وليست هروبًا من مكانها.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Mimosa L. — Plants of the World Online",
+    "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30001613-2/general-information",
+    "sourceTitle": "Mimosa L. — Plants of the World Online",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w2-008",
-    "text": "يغطي الماء نحو ___ بالمئة من سطح كوكب الأرض.",
-    "answer": "71",
-    "explanation": "نحو 71% من سطح الأرض مغطى بالماء، ومعظمه ماء مالح في المحيطات.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "USGS Water Science School",
-    "factId": "fabraka-w2-008",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "واحد وسبعون"
-    ],
+    "id": "fab3-fact-013",
+    "factId": "fab3-fact-013",
     "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "68",
-      "74",
-      "77"
-    ]
-  },
-  {
-    "id": "fabraka-w2-009",
-    "text": "أعلى درجة حرارة سُجلت رسميًا على سطح الأرض بلغت ___ درجة مئوية.",
-    "answer": "56.7",
-    "explanation": "سُجلت في منطقة فيرنس كريك بولاية كاليفورنيا الأمريكية عام 1913، وتعتمدها المنظمة العالمية للأرصاد الجوية.",
-    "category": "أرقام قياسية",
-    "sourceHint": "WMO Global Weather & Climate Extremes Archive",
-    "factId": "fabraka-w2-009",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ستة وخمسون فاصلة سبعة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "56.3",
-      "57.0",
-      "57.5"
-    ]
-  },
-  {
-    "id": "fabraka-w2-014",
-    "text": "متوسط المسافة بين الأرض والقمر نحو ___ ألف كيلومتر.",
-    "answer": "384",
-    "explanation": "يبعد القمر عن الأرض في المتوسط نحو 384,400 كيلومتر، أي ما يعادل نحو عشرة أضعاف محيط الأرض عند خط الاستواء.",
-    "category": "فضاء",
-    "sourceHint": "NASA Moon facts",
-    "factId": "fabraka-w2-014",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثلاثمئة وأربعة وثمانون",
-      "ثلاثمائة وأربعة وثمانون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "372",
-      "396",
-      "408"
-    ]
-  },
-  {
-    "id": "fabraka-w2-015",
-    "text": "في عام ___ قرر الاتحاد الفلكي الدولي إعادة تصنيف بلوتو كوكبًا قزمًا.",
-    "answer": "2006",
-    "explanation": "في أغسطس 2006 وضع الاتحاد الفلكي الدولي تعريفًا جديدًا للكوكب، فخرج بلوتو من قائمة الكواكب وأصبحت المجموعة الشمسية ذات ثمانية كواكب.",
-    "category": "فضاء",
-    "sourceHint": "International Astronomical Union (IAU) 2006",
-    "factId": "fabraka-w2-015",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ألفان وستة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "1981",
-      "2031",
-      "2056"
-    ]
-  },
-  {
-    "id": "fabraka-w2-016",
-    "text": "أول إنسان وصل إلى الفضاء كان في عام ___.",
-    "answer": "1961",
-    "explanation": "يوري غاغارين دار حول الأرض دورة كاملة في 12 أبريل 1961 على متن مركبة فوستوك 1، في رحلة استغرقت نحو 108 دقائق.",
-    "category": "فضاء",
-    "sourceHint": "NASA / Britannica",
-    "factId": "fabraka-w2-016",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ألف وتسعمئة وواحد وستون",
-      "ألف وتسعمائة وواحد وستون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "1936",
-      "1986",
-      "2011"
-    ]
-  },
-  {
-    "id": "fabraka-w2-017",
-    "text": "عدد البشر الذين مشوا على سطح القمر حتى الآن هو ___ شخصًا.",
-    "answer": "12",
-    "explanation": "بين عامي 1969 و1972 هبطت ست بعثات من برنامج أبولو على القمر، ومشى على سطحه 12 رائد فضاء فقط.",
-    "category": "فضاء",
-    "sourceHint": "NASA Apollo program",
-    "factId": "fabraka-w2-017",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "اثنا عشر",
-      "اثني عشر"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "11",
-      "13",
-      "14"
-    ]
-  },
-  {
-    "id": "fabraka-w2-018",
-    "text": "أطول رحلة فضائية متواصلة قام بها إنسان استمرت ___ يومًا.",
-    "answer": "437",
-    "explanation": "رائد الفضاء الروسي فاليري بولياكوف بقي على متن محطة مير الفضائية 437 يومًا متواصلة بين عامي 1994 و1995.",
-    "category": "أرقام قياسية",
-    "sourceHint": "Guinness World Records / NASA",
-    "factId": "fabraka-w2-018",
-    "previousIds": [],
     "curious": true,
-    "aliases": [
-      "أربعمئة وسبعة وثلاثون",
-      "أربعمائة وسبعة وثلاثون"
-    ],
-    "kind": "text",
+    "previousIds": [],
     "answerType": "number",
-    "decoys": [
-      "425",
-      "449",
-      "461"
-    ]
-  },
-  {
-    "id": "fabraka-w2-019",
-    "text": "تدور محطة الفضاء الدولية حول الأرض نحو ___ مرة في اليوم الواحد.",
-    "answer": "16",
-    "explanation": "تكمل المحطة دورة كاملة حول الأرض كل نحو 90 دقيقة، فيرى روادها نحو 16 شروقًا و16 غروبًا كل يوم.",
-    "category": "فضاء",
-    "sourceHint": "NASA International Space Station facts",
-    "factId": "fabraka-w2-019",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ستة عشر"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "15",
-      "17",
-      "18"
-    ]
-  },
-  {
-    "id": "fabraka-w2-021",
-    "text": "أطول اسم مكان معترف به رسميًا في العالم يتكوّن من 85 حرفًا ويقع في ___.",
-    "answer": "نيوزيلندا",
-    "explanation": "اسم تلة في نيوزيلندا بلغة الماوري يبدأ بـ«تاوماتا...» ويتألف من 85 حرفًا، وهو مسجّل في غينيس كأطول اسم مكان.",
-    "category": "أرقام قياسية",
-    "sourceHint": "Guinness World Records - Longest place name",
-    "factId": "fabraka-w2-021",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "نيوزلندا"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "آيسلندا",
-      "ويلز",
-      "أستراليا"
-    ]
-  },
-  {
-    "id": "fabraka-w2-022",
-    "text": "الدولة التي تملك أطول ساحل في العالم هي ___.",
-    "answer": "كندا",
-    "explanation": "يبلغ طول ساحل كندا أكثر من 200 ألف كيلومتر بسبب جزرها الكثيرة وخلجانها المتعرجة، وهو أطول من ساحل أي دولة أخرى بفارق كبير.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "CIA World Factbook / Statistics Canada",
-    "factId": "fabraka-w2-022",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "روسيا",
-      "إندونيسيا",
-      "النرويج"
-    ]
-  },
-  {
-    "id": "fabraka-w2-025",
-    "text": "أعلى شلال في العالم هو شلال آنجل الذي يقع في دولة ___.",
-    "answer": "فنزويلا",
-    "explanation": "يهبط شلال آنجل من ارتفاع 979 مترًا، وتتحول مياهه إلى رذاذ قبل أن تصل إلى الأرض بسبب هذا الارتفاع الهائل.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "UNESCO World Heritage / Guinness World Records",
-    "factId": "fabraka-w2-025",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "البرازيل",
-      "بيرو",
-      "كولومبيا"
-    ]
-  },
-  {
-    "id": "fabraka-w2-026",
-    "text": "أطول سلسلة جبال على اليابسة هي جبال ___ في أمريكا الجنوبية.",
-    "answer": "الأنديز",
-    "explanation": "تمتد جبال الأنديز نحو 7,000 كيلومتر على طول الساحل الغربي لأمريكا الجنوبية عبر سبع دول.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "Britannica",
-    "factId": "fabraka-w2-026",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الهيمالايا",
-      "الألب",
-      "الروكي"
-    ]
-  },
-  {
-    "id": "fabraka-w2-027",
-    "text": "أكبر حاجز مرجاني في العالم يقع قبالة سواحل ___.",
-    "answer": "أستراليا",
-    "explanation": "الحاجز المرجاني العظيم يمتد نحو 2,300 كيلومتر قبالة الساحل الشمالي الشرقي لأستراليا، ويمكن رؤيته من الفضاء.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "UNESCO World Heritage / NASA",
-    "factId": "fabraka-w2-027",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "استراليا"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "أوروبا",
-      "أنتاركتيكا",
-      "أمريكا الجنوبية"
-    ]
-  },
-  {
-    "id": "fabraka-w2-028",
-    "text": "أطول مبنى في العالم هو برج خليفة في دبي، ويبلغ ارتفاعه نحو ___ مترًا.",
-    "answer": "828",
-    "explanation": "افتُتح برج خليفة عام 2010 بارتفاع 828 مترًا، ويضم أكثر من 160 طابقًا.",
-    "category": "أرقام قياسية",
-    "sourceHint": "Guinness World Records / Council on Tall Buildings and Urban Habitat",
-    "factId": "fabraka-w2-028",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثمانمئة وثمانية وعشرون",
-      "ثمانمائة وثمانية وعشرون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "816",
-      "840",
-      "852"
-    ]
-  },
-  {
-    "id": "fabraka-w2-029",
-    "text": "أعمق حفرة حفرها الإنسان في الأرض وصلت إلى عمق ___ مترًا.",
-    "answer": "12262",
-    "explanation": "حفرة كولا العميقة في روسيا وصلت إلى 12,262 مترًا عام 1989، ومع ذلك لم تتجاوز سوى جزء صغير من سُمك القشرة الأرضية.",
-    "category": "أرقام قياسية",
-    "sourceHint": "Guinness World Records - Deepest hole",
-    "factId": "fabraka-w2-029",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "اثنا عشر ألف ومئتان واثنان وستون",
-      "اثني عشر ألف ومئتان واثنين وستون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "12237",
-      "12287",
-      "12312"
-    ]
-  },
-  {
-    "id": "fabraka-w2-030",
-    "text": "أطول شجرة حية معروفة في العالم يبلغ ارتفاعها أكثر من ___ مترًا.",
-    "answer": "115",
-    "explanation": "شجرة «هايبريون» من نوع السكويا الساحلية في كاليفورنيا يزيد ارتفاعها على 115 مترًا، أي أعلى من تمثال الحرية بقاعدته.",
-    "category": "أرقام قياسية",
-    "sourceHint": "Guinness World Records - Tallest living tree",
-    "factId": "fabraka-w2-030",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "مئة وخمسة عشر",
-      "مائة وخمسة عشر"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "103",
-      "127",
-      "139"
-    ]
-  },
-  {
-    "id": "fabraka-w2-031",
-    "text": "يمكن أن يتسع داخل الشمس نحو ___ مليون كوكب بحجم الأرض.",
-    "answer": "1.3",
-    "explanation": "قطر الشمس نحو 109 أضعاف قطر الأرض، وحجمها يعادل نحو 1.3 مليون كرة أرضية.",
-    "category": "فضاء",
-    "sourceHint": "NASA Sun facts",
-    "factId": "fabraka-w2-031",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "واحد فاصلة ثلاثة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "0.9",
-      "1.6",
-      "2.1"
-    ]
-  },
-  {
-    "id": "fabraka-w2-032",
-    "text": "أبعد جسم صنعه الإنسان عن الأرض هو المسبار ___.",
-    "answer": "فوياجر 1",
-    "explanation": "أُطلق فوياجر 1 عام 1977 وخرج من الغلاف الشمسي إلى الفضاء بين النجمي عام 2012، وهو الآن على بُعد يزيد على 25 مليار كيلومتر من الأرض.",
-    "category": "فضاء",
-    "sourceHint": "NASA JPL Voyager mission",
-    "factId": "fabraka-w2-032",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "فوياجر واحد",
-      "فويجر 1",
-      "Voyager 1"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "فوياجر 2",
-      "نيو هورايزنز",
-      "بايونير 10"
-    ]
-  },
-  {
-    "id": "fabraka-w2-033",
-    "text": "الولاية الأمريكية الوحيدة التي تقع أراضيها في نصفي الكرة الشرقي والغربي معًا هي ___.",
-    "answer": "ألاسكا",
-    "explanation": "جزر ألوشيان التابعة لألاسكا تمتد إلى ما بعد خط الطول 180، فتصبح ألاسكا أقصى الولايات غربًا وأقصاها شرقًا في الوقت نفسه.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "USGS / Britannica",
-    "factId": "fabraka-w2-033",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "هاواي",
-      "كاليفورنيا",
-      "فلوريدا"
-    ]
-  },
-  {
-    "id": "fabraka-w2-034",
-    "text": "القارة الوحيدة التي تمتد في أنصاف الكرة الأرضية الأربعة (الشمالي والجنوبي والشرقي والغربي) هي ___.",
-    "answer": "أفريقيا",
-    "explanation": "يمر خط الاستواء وخط غرينتش كلاهما عبر قارة أفريقيا، فتقع أجزاء منها في الأنصاف الأربعة.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "Britannica / National Geographic",
-    "factId": "fabraka-w2-034",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "آسيا",
-      "أمريكا الجنوبية",
-      "أوروبا"
-    ]
-  },
-  {
-    "id": "fabraka-w2-035",
-    "text": "أسخن كوكب في المجموعة الشمسية ليس الأقرب إلى الشمس، بل كوكب ___.",
-    "answer": "الزهرة",
-    "explanation": "غلاف الزهرة الجوي الكثيف يحبس الحرارة فتصل درجة حرارة سطحه إلى نحو 465 درجة مئوية، وهي أعلى من حرارة عطارد الأقرب إلى الشمس.",
-    "category": "فضاء",
-    "sourceHint": "NASA Solar System Exploration - Venus",
-    "factId": "fabraka-w2-035",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "عطارد",
-      "زحل",
-      "المريخ"
-    ]
-  },
-  {
-    "id": "fabraka-w2-036",
-    "text": "عدد أقمار كوكب المريخ هو ___.",
+    "text": "قد تبدو ويلويتشيا الصحراوية ككومة من الأشرطة الخضراء، لكن عدد أوراقها الدائمة الحقيقية هو ___.",
     "answer": "2",
-    "explanation": "للمريخ قمران صغيران غير منتظمي الشكل هما فوبوس وديموس، وفوبوس أقرب قمر إلى كوكبه بين أقمار المجموعة الشمسية.",
-    "category": "فضاء",
-    "sourceHint": "NASA Mars Exploration",
-    "factId": "fabraka-w2-036",
-    "previousIds": [],
-    "curious": false,
     "aliases": [
-      "اثنان",
-      "اثنين",
-      "اثنين",
       "اثنتان",
-      "اثنتين"
+      "اثنتين",
+      "ورقتان",
+      "ورقتين",
+      "٢"
     ],
-    "kind": "text",
-    "answerType": "number",
     "decoys": [
-      "1",
-      "3",
-      "4"
-    ]
-  },
-  {
-    "id": "fabraka-w2-037",
-    "text": "يستغرق كوكب نبتون نحو ___ سنة أرضية ليكمل دورة واحدة حول الشمس.",
-    "answer": "165",
-    "explanation": "اكتُشف نبتون عام 1846، ولم يكمل دورته الأولى حول الشمس منذ اكتشافه إلا في عام 2011.",
-    "category": "فضاء",
-    "sourceHint": "NASA Solar System Exploration - Neptune",
-    "factId": "fabraka-w2-037",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "مئة وخمسة وستون",
-      "مائة وخمسة وستون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "153",
-      "177",
-      "189"
-    ]
-  },
-  {
-    "id": "fabraka-w2-038",
-    "text": "يبتعد القمر عن الأرض كل سنة بنحو ___ سنتيمتر.",
-    "answer": "3.8",
-    "explanation": "قاست الليزرات المنعكسة عن مرايا تركها رواد أبولو على القمر ابتعاده عن الأرض بمعدل نحو 3.8 سنتيمتر سنويًا.",
-    "category": "فضاء",
-    "sourceHint": "NASA Lunar Laser Ranging",
-    "factId": "fabraka-w2-038",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "ثلاثة فاصلة ثمانية"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "3.4",
-      "4.1",
-      "4.6"
-    ]
-  },
-  {
-    "id": "fabraka-w2-039",
-    "text": "تمتد روسيا، أكبر دول العالم مساحةً، عبر ___ منطقة زمنية متجاورة.",
-    "answer": "11",
-    "explanation": "من كالينينغراد غربًا إلى كامتشاتكا شرقًا تعبر روسيا 11 منطقة زمنية، فحين يتناول سكان الغرب فطورهم يكون سكان الشرق قد أنهوا عشاءهم.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "Britannica / Time and Date",
-    "factId": "fabraka-w2-039",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "أحد عشر"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "10",
-      "12",
-      "13"
-    ]
-  },
-  {
-    "id": "fabraka-w2-040",
-    "text": "البحر الوحيد في العالم الذي ليس له أي ساحل هو بحر ___.",
-    "answer": "سارغاسو",
-    "explanation": "بحر سارغاسو في المحيط الأطلسي تحدّه تيارات المحيط من كل جانب بدلًا من اليابسة، وسُمّي باسم طحالب السارغاسوم الطافية فيه.",
-    "category": "جغرافيا وطبيعة",
-    "sourceHint": "NOAA National Ocean Service",
-    "factId": "fabraka-w2-040",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "المرجان",
-      "العرب",
-      "قزوين"
-    ]
-  },
-  {
-    "id": "fabraka-w3-001",
-    "text": "عدد مفاتيح البيانو القياسي الحديث هو ___ مفتاحًا.",
-    "answer": "88",
-    "explanation": "البيانو القياسي يحتوي على 88 مفتاحًا: 52 مفتاحًا أبيض و36 مفتاحًا أسود.",
-    "category": "أشياء يومية",
-    "sourceHint": "Encyclopaedia Britannica - Piano",
-    "factId": "fabraka-w3-001",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثمانية وثمانون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "85",
-      "91",
-      "94"
-    ]
-  },
-  {
-    "id": "fabraka-w3-002",
-    "text": "حصل ألكسندر غراهام بيل على براءة اختراع الهاتف عام ___.",
-    "answer": "1876",
-    "explanation": "سُجّلت براءة اختراع الهاتف باسم بيل في مارس 1876، وأجرى أول مكالمة ناجحة في الشهر نفسه.",
-    "category": "اختراعات",
-    "sourceHint": "US Patent 174,465 / Library of Congress",
-    "factId": "fabraka-w3-002",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ألف وثمانمئة وستة وسبعون",
-      "ألف وثمانمائة وستة وسبعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "1851",
-      "1901",
-      "1926"
-    ]
-  },
-  {
-    "id": "fabraka-w3-003",
-    "text": "اقترح مخترع الهاتف أن يبدأ الناس مكالماتهم بكلمة «___» بدلًا من «هالو».",
-    "answer": "أهوي",
-    "explanation": "اقترح بيل تحية البحّارة «Ahoy» للرد على الهاتف، لكن اقتراح توماس إديسون «Hello» هو الذي انتشر.",
-    "category": "أشياء يومية",
-    "sourceHint": "Oxford English Dictionary / Smithsonian Magazine",
-    "factId": "fabraka-w3-003",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "اهوي",
-      "Ahoy"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "ألو",
-      "مرحبا",
-      "اسمعني"
-    ]
-  },
-  {
-    "id": "fabraka-w3-004",
-    "text": "أُرسل أول بريد إلكتروني بين حاسوبين عبر شبكة أربانت عام ___.",
-    "answer": "1971",
-    "explanation": "أرسل المهندس راي توملينسون أول بريد إلكتروني بين حاسوبين على شبكة أربانت عام 1971، وهو الذي اختار رمز @ للعناوين.",
-    "category": "تقنية",
-    "sourceHint": "Computer History Museum / Internet Hall of Fame",
-    "factId": "fabraka-w3-004",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ألف وتسعمئة وواحد وسبعون",
-      "ألف وتسعمائة وواحد وسبعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "1946",
-      "1996",
-      "2021"
-    ]
-  },
-  {
-    "id": "fabraka-w3-005",
-    "text": "جاءت فكرة اختراع اللاصق الشائك «فيلكرو» عندما لاحظ مخترعه بذورًا نباتية علقت بفرو ___ بعد نزهة.",
-    "answer": "كلبه",
-    "explanation": "المهندس السويسري جورج دي ميسترال فحص بذور نبات الأرقطيون التي علقت بفرو كلبه وببنطاله عام 1941، فقلّد خطاطيفها الصغيرة.",
-    "category": "اختراعات",
-    "sourceHint": "Velcro Companies history / Encyclopaedia Britannica",
-    "factId": "fabraka-w3-005",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "كلب",
-      "الكلب"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "قطته",
-      "حصانه",
-      "أرنبه"
-    ]
-  },
-  {
-    "id": "fabraka-w3-006",
-    "text": "اكتُشف مبدأ فرن الميكروويف عندما لاحظ مهندس أن قطعة ___ في جيبه ذابت وهو يقف قرب جهاز رادار.",
-    "answer": "شوكولاتة",
-    "explanation": "المهندس بيرسي سبنسر في شركة رايثيون عام 1945 لاحظ ذوبان لوح الشوكولاتة في جيبه قرب أنبوب رادار، فطوّر أول فرن ميكروويف.",
-    "category": "اختراعات",
-    "sourceHint": "Encyclopaedia Britannica - Microwave oven / Raytheon",
-    "factId": "fabraka-w3-006",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "شوكولا",
-      "الشوكولاته"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "زبدة",
-      "جبن",
-      "حلوى سكرية"
-    ]
-  },
-  {
-    "id": "fabraka-w3-007",
-    "text": "غلاف الفقاعات البلاستيكي الذي نحب فرقعته اختُرع في الأصل ليكون ___.",
-    "answer": "ورق جدران",
-    "explanation": "عام 1957 حاول ألفريد فيلدينغ ومارك شافان صنع ورق جدران بملمس بارز، ففشل كورق جدران ونجح كمادة تغليف.",
-    "category": "أشياء يومية",
-    "sourceHint": "Sealed Air Corporation history / Smithsonian Magazine",
-    "factId": "fabraka-w3-007",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "ورق حائط",
-      "ورق الجدران",
-      "ورق الحائط"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "عازل أحذية",
-      "ستائر حمام",
-      "فرش سيارات"
-    ]
-  },
-  {
-    "id": "fabraka-w3-008",
-    "text": "الورقة اللاصقة الصفراء الشهيرة (بوست-إت) وُلدت لأن عالمًا في شركة 3M كان يحاول صنع صمغ قوي فحصل على صمغ ___.",
-    "answer": "ضعيف",
-    "explanation": "اخترع سبنسر سيلفر عام 1968 لاصقًا ضعيفًا يمكن نزعه وإعادة لصقه، ثم استخدمه زميله آرت فراي لصنع ورق الملاحظات اللاصق.",
-    "category": "اختراعات",
-    "sourceHint": "3M Post-it history / Encyclopaedia Britannica",
-    "factId": "fabraka-w3-008",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "ضعيفًا",
-      "ضعيفة"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "مطاطي",
-      "عازل",
-      "مقاوم للماء"
-    ]
-  },
-  {
-    "id": "fabraka-w3-009",
-    "text": "لعبة القرص الطائر «فريزبي» بدأت عندما كان طلاب جامعيون يتقاذفون صواني ___ الفارغة.",
-    "answer": "الفطائر",
-    "explanation": "كان الطلاب يرمون صواني الفطائر المعدنية من شركة «فريزبي باي» في ولاية كونيتيكت، ومنها جاء اسم اللعبة.",
-    "category": "أشياء يومية",
-    "sourceHint": "Encyclopaedia Britannica - Frisbee / Wham-O",
-    "factId": "fabraka-w3-009",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "فطيرة",
-      "الفطيرة"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الجبن",
-      "الحلوى",
-      "الطعام المدرسي"
-    ]
-  },
-  {
-    "id": "fabraka-w3-010",
-    "text": "ترتيب الأحرف على لوحة المفاتيح المعروف بـ QWERTY صُمّم في الأصل من أجل ___ في سبعينيات القرن التاسع عشر.",
-    "answer": "الآلة الكاتبة",
-    "explanation": "ابتكر كريستوفر شولز هذا الترتيب لآلته الكاتبة، ثم انتقل كما هو إلى لوحات مفاتيح الحواسيب.",
-    "category": "أشياء يومية",
-    "sourceHint": "Encyclopaedia Britannica - Typewriter / Smithsonian",
-    "factId": "fabraka-w3-010",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "آلات كاتبة",
-      "الة كاتبة"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "التلغراف",
-      "آلة حاسبة",
-      "ماكينة طباعة"
-    ]
-  },
-  {
-    "id": "fabraka-w3-011",
-    "text": "أول فأرة حاسوب في العالم عام 1964 كان غلافها مصنوعًا من ___.",
-    "answer": "الخشب",
-    "explanation": "صنع دوغلاس إنغلبارت وفريقه في معهد ستانفورد للأبحاث أول فأرة بغلاف خشبي وعجلتين معدنيتين.",
-    "category": "تقنية",
-    "sourceHint": "Computer History Museum / SRI International",
-    "factId": "fabraka-w3-011",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "المعدن",
-      "الزجاج",
-      "المطاط"
-    ]
-  },
-  {
-    "id": "fabraka-w3-012",
-    "text": "أول «حشرة» (bug) حقيقية موثقة في حاسوب كانت ___ عالقة بين أجزاء الجهاز عام 1947.",
-    "answer": "عثة",
-    "explanation": "وجد فريق حاسوب هارفارد مارك 2 عثة عالقة في أحد المرحّلات، وألصقوها في دفتر السجل، وشاعت القصة مع غريس هوبر.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "Smithsonian National Museum of American History (Mark II logbook)",
-    "factId": "fabraka-w3-012",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "فراشة ليلية",
-      "عث"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "نملة",
-      "صرصور",
-      "نحلة"
-    ]
-  },
-  {
-    "id": "fabraka-w3-013",
-    "text": "قبل ظهور الآلات، كانت كلمة «كمبيوتر» تعني ___ يقوم بالحسابات.",
-    "answer": "إنسانًا",
-    "explanation": "منذ القرن السابع عشر كانت كلمة computer وظيفة لأشخاص يحسبون الجداول الفلكية والرياضية يدويًا.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "Oxford English Dictionary / NASA history (human computers)",
-    "factId": "fabraka-w3-013",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "إنسان",
-      "شخص",
-      "بشر",
-      "شخصًا"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "آلةً",
-      "جدولًا",
-      "كتابًا"
-    ]
-  },
-  {
-    "id": "fabraka-w3-014",
-    "text": "الاسم الأول الذي أطلقه مؤسسا غوغل على محرك بحثهما عام 1996 كان «___».",
-    "answer": "BackRub",
-    "explanation": "بدأ لاري بيج وسيرغي برين المشروع باسم BackRub لأنه يحلل الروابط الخلفية للصفحات، ثم غُيّر الاسم إلى Google عام 1997.",
-    "category": "تقنية",
-    "sourceHint": "Google official history / Stanford",
-    "factId": "fabraka-w3-014",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "باك رب",
-      "باكراب",
-      "باك راب"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "PageFinder",
-      "WebNest",
-      "LinkBox"
-    ]
-  },
-  {
-    "id": "fabraka-w3-015",
-    "text": "أول فيديو رُفع على يوتيوب عام 2005 صُوّر في ___.",
-    "answer": "حديقة الحيوان",
-    "explanation": "الفيديو بعنوان «Me at the zoo» رفعه أحد مؤسسي يوتيوب جاود كريم أمام حظيرة الفيلة في حديقة حيوان سان دييغو.",
-    "category": "تقنية",
-    "sourceHint": "YouTube - Me at the zoo (23 April 2005)",
-    "factId": "fabraka-w3-015",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "حديقة حيوانات",
-      "حديقة الحيوانات",
-      "حديقة حيوان"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "مطار",
-      "مطعم",
-      "مكتبة"
-    ]
-  },
-  {
-    "id": "fabraka-w3-016",
-    "text": "الكاميرا التي تُعدّ أول كاميرا ويب في العالم رُكّبت في جامعة كامبريدج عام 1991 لمراقبة ___.",
-    "answer": "إبريق القهوة",
-    "explanation": "وضع باحثون في مختبر الحاسوب بجامعة كامبريدج كاميرا موجّهة نحو إبريق القهوة ليعرفوا من مكاتبهم إن كان ممتلئًا قبل أن يذهبوا إليه، وفي عام 1993 صارت صورتها تُبثّ على الويب.",
-    "category": "تقنية",
-    "sourceHint": "University of Cambridge Computer Laboratory - Trojan Room coffee pot",
-    "factId": "fabraka-w3-016",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "وعاء القهوة",
-      "ماكينة القهوة",
-      "آلة القهوة",
-      "دلة القهوة"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "باب المختبر",
-      "قفص فأر",
-      "ساعة الحضور"
-    ],
-    "sourceUrl": "https://www.cl.cam.ac.uk/coffee/qsf/timeline.html",
-    "verifiedAt": "2026-09-12"
-  },
-  {
-    "id": "fabraka-w3-017",
-    "text": "الحاسوب الإلكتروني الشهير «إنياك» الذي اكتمل عام 1945 كان وزنه نحو ___ طنًا.",
-    "answer": "30",
-    "explanation": "شغل إنياك غرفة كاملة، ووزن نحو 30 طنًا، واحتوى على قرابة 18 ألف صمام مفرغ.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "University of Pennsylvania ENIAC history / Encyclopaedia Britannica",
-    "factId": "fabraka-w3-017",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثلاثون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "27",
-      "33",
-      "36"
-    ]
-  },
-  {
-    "id": "fabraka-w3-018",
-    "text": "أُجريت أول مكالمة من هاتف محمول يدوي في التاريخ عام ___.",
-    "answer": "1973",
-    "explanation": "أجرى مهندس موتورولا مارتن كوبر أول مكالمة من هاتف محمول في شوارع نيويورك في 3 أبريل 1973.",
-    "category": "اختراعات",
-    "sourceHint": "Motorola history / Encyclopaedia Britannica - Mobile telephone",
-    "factId": "fabraka-w3-018",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ألف وتسعمئة وثلاثة وسبعون",
-      "ألف وتسعمائة وثلاثة وسبعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "1948",
-      "1998",
-      "2023"
-    ]
-  },
-  {
-    "id": "fabraka-w3-019",
-    "text": "اكتشف ألكسندر فلمنغ البنسلين عام 1928 عندما لاحظ أن ___ نما في أحد أطباق مختبره.",
-    "answer": "عفنًا",
-    "explanation": "عاد فلمنغ من إجازته فوجد عفن البنسيليوم قد نما في طبق زرع وقتل البكتيريا حوله، فكان ذلك بداية المضادات الحيوية.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "Nobel Prize official site / Encyclopaedia Britannica",
-    "factId": "fabraka-w3-019",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "عفن",
-      "العفن",
-      "عفن البنسيليوم"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "طحلبًا",
-      "فطرًا كبيرًا",
-      "بلورات ملحية"
-    ]
-  },
-  {
-    "id": "fabraka-w3-020",
-    "text": "في مقياس سلسيوس الأصلي عام 1742 كانت درجة غليان الماء هي ___.",
-    "answer": "صفر",
-    "explanation": "وضع أندرس سلسيوس مقياسه مقلوبًا: الصفر للغليان و100 للتجمد، ثم عُكس الترتيب بعد وفاته إلى الشكل الذي نعرفه.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "Encyclopaedia Britannica - Anders Celsius / Uppsala University",
-    "factId": "fabraka-w3-020",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "0"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "50",
-      "100",
-      "200"
-    ]
-  },
-  {
-    "id": "fabraka-w3-021",
-    "text": "ماري كوري هي الشخص الوحيد الذي فاز بجائزة نوبل في علمين مختلفين: الفيزياء و___.",
-    "answer": "الكيمياء",
-    "explanation": "فازت ماري كوري بنوبل الفيزياء عام 1903 ثم بنوبل الكيمياء عام 1911.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "NobelPrize.org",
-    "factId": "fabraka-w3-021",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الطب",
-      "الرياضيات",
-      "الفلك"
-    ]
-  },
-  {
-    "id": "fabraka-w3-022",
-    "text": "سُمّيت الأشعة السينية بحرف X لأن مكتشفها رونتغن أراد القول إنها أشعة ___.",
-    "answer": "مجهولة",
-    "explanation": "اكتشف فيلهلم رونتغن هذه الأشعة عام 1895 ولم يعرف طبيعتها، فاستخدم حرف X الذي يرمز في الرياضيات إلى المجهول.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "NobelPrize.org - Wilhelm Röntgen",
-    "factId": "fabraka-w3-022",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "مجهول",
-      "غير معروفة"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "قوية",
-      "شفافة",
-      "سريعة"
-    ]
-  },
-  {
-    "id": "fabraka-w3-023",
-    "text": "عندما وجّه غاليليو تلسكوبه نحو كوكب المشتري عام 1610 اكتشف حوله ___ أقمار.",
-    "answer": "4",
-    "explanation": "رصد غاليليو الأقمار الأربعة الكبرى: آيو، ويوروبا، وغانيميد، وكاليستو، وتُعرف حتى اليوم بالأقمار الغاليلية.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "NASA Solar System Exploration - Galilean moons",
-    "factId": "fabraka-w3-023",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "أربعة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "3",
-      "5",
-      "6"
-    ]
-  },
-  {
-    "id": "fabraka-w3-024",
-    "text": "عنصر الهيليوم اكتُشف في ___ قبل أن يُعثر عليه على الأرض.",
-    "answer": "الشمس",
-    "explanation": "عام 1868 رُصد خط ضوئي غريب في طيف الشمس أثناء كسوف، وسُمّي العنصر الجديد هيليوم نسبة إلى كلمة «هيليوس» أي الشمس باليونانية.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "Royal Society of Chemistry - Periodic Table: Helium",
-    "factId": "fabraka-w3-024",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "القمر",
-      "المريخ",
-      "المشتري"
-    ]
-  },
-  {
-    "id": "fabraka-w3-025",
-    "text": "ما نسميه «رصاص» قلم الرصاص لا يحتوي على رصاص أصلًا، بل هو مصنوع من ___ ممزوج بالطين.",
-    "answer": "الغرافيت",
-    "explanation": "قلب قلم الرصاص خليط من الغرافيت والطين، وسُمّي رصاصًا خطأً لأن الغرافيت ظُنّ قديمًا نوعًا من الرصاص.",
-    "category": "أشياء يومية",
-    "sourceHint": "Encyclopaedia Britannica - Pencil",
-    "factId": "fabraka-w3-025",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "الجرافيت",
-      "جرافيت",
-      "جرافيت الكربون"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الفحم النباتي",
-      "الحديد",
-      "الكبريت"
-    ]
-  },
-  {
-    "id": "fabraka-w3-026",
-    "text": "قبل اختراع الممحاة المطاطية، كان الناس يمحون آثار قلم الرصاص بقطع من ___.",
-    "answer": "الخبز",
-    "explanation": "حتى أواخر القرن الثامن عشر كان فتات الخبز الطري هو الأداة الشائعة لمحو الرصاص، إلى أن اكتُشف أن المطاط يمسحه أفضل.",
-    "category": "أشياء يومية",
-    "sourceHint": "Encyclopaedia Britannica - Eraser / Joseph Priestley 1770",
-    "factId": "fabraka-w3-026",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "فتات الخبز",
-      "لب الخبز"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الإسفنج",
-      "قشر البطاطا",
-      "القطن"
-    ]
-  },
-  {
-    "id": "fabraka-w3-027",
-    "text": "كلمة «روبوت» ظهرت لأول مرة عام 1920 في مسرحية مكتوبة باللغة ___.",
-    "answer": "التشيكية",
-    "explanation": "استخدم الكاتب التشيكي كارل تشابيك الكلمة في مسرحيته R.U.R.، وهي مشتقة من كلمة تشيكية تعني العمل الشاق.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "Oxford English Dictionary / Encyclopaedia Britannica - Karel Čapek",
-    "factId": "fabraka-w3-027",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "تشيكي",
-      "لغة تشيكية"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الألمانية",
-      "الروسية",
-      "الفرنسية"
-    ]
-  },
-  {
-    "id": "fabraka-w3-028",
-    "text": "ابتكر لويس برايل نظام الكتابة بالنقاط البارزة للمكفوفين وعمره ___ عامًا فقط.",
-    "answer": "15",
-    "explanation": "وضع لويس برايل الأساس لنظامه عام 1824 عندما كان في الخامسة عشرة من عمره طالبًا في باريس.",
-    "category": "اختراعات",
-    "sourceHint": "Encyclopaedia Britannica - Louis Braille / American Foundation for the Blind",
-    "factId": "fabraka-w3-028",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "خمسة عشر"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "14",
-      "16",
-      "17"
-    ]
-  },
-  {
-    "id": "fabraka-w3-029",
-    "text": "في شيفرة مورس، يُرمز إلى حرف E الأكثر شيوعًا في الإنجليزية بـ___ واحدة فقط.",
-    "answer": "نقطة",
-    "explanation": "صُممت شيفرة مورس بحيث تأخذ الأحرف الأكثر استخدامًا أقصر الرموز، فحرف E نقطة واحدة وحرف T شرطة واحدة.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "International Telecommunication Union - Morse code",
-    "factId": "fabraka-w3-029",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "شرطة",
-      "دائرة",
-      "مسافة"
-    ]
-  },
-  {
-    "id": "fabraka-w3-030",
-    "text": "أول رحلة طيران بمحرك للأخوين رايت عام 1903 استمرت ___ ثانية فقط.",
-    "answer": "12",
-    "explanation": "في 17 ديسمبر 1903 طار أورفيل رايت لمدة 12 ثانية قاطعًا نحو 37 مترًا في أول رحلة ناجحة للطائرة.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "Smithsonian National Air and Space Museum",
-    "factId": "fabraka-w3-030",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "اثنا عشر",
-      "اثني عشر"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "11",
-      "13",
-      "14"
-    ]
-  },
-  {
-    "id": "fabraka-w3-031",
-    "text": "اسم مكعبات «ليغو» مأخوذ من عبارة دنماركية معناها «___».",
-    "answer": "العب جيدًا",
-    "explanation": "الاسم LEGO اختصار لعبارة «leg godt» الدنماركية ومعناها «العب جيدًا».",
-    "category": "أشياء يومية",
-    "sourceHint": "LEGO Group official history",
-    "factId": "fabraka-w3-031",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "العب جيدا",
-      "العب بشكل جيد"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "ابنِ حلمك",
-      "فكّر بحرية",
-      "قطع صغيرة"
-    ]
-  },
-  {
-    "id": "fabraka-w3-032",
-    "text": "عُرّف المتر في الأصل أواخر القرن الثامن عشر بأنه جزء من عشرة ملايين من المسافة بين خط الاستواء و___.",
-    "answer": "القطب الشمالي",
-    "explanation": "اختار العلماء الفرنسيون تعريف المتر بناءً على مسافة ربع محيط الأرض من خط الاستواء إلى القطب الشمالي مرورًا بباريس.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "BIPM (International Bureau of Weights and Measures) - History of the metre",
-    "factId": "fabraka-w3-032",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "القطب الجنوبي",
-      "القمر",
-      "خط غرينتش"
-    ]
-  },
-  {
-    "id": "fabraka-w3-033",
-    "text": "ظل الكيلوغرام يُعرّف بأسطوانة معدنية محفوظة في فرنسا حتى عام ___.",
-    "answer": "2019",
-    "explanation": "منذ 20 مايو 2019 يُعرّف الكيلوغرام بثابت بلانك الفيزيائي بدل الأسطوانة البلاتينية المحفوظة قرب باريس.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "BIPM - Redefinition of the SI base units 2019",
-    "factId": "fabraka-w3-033",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ألفان وتسعة عشر"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "1994",
-      "2044",
-      "2069"
-    ]
-  },
-  {
-    "id": "fabraka-w3-035",
-    "text": "مصطلح algorithm في علوم الحاسوب جاء من اسم عالم رياضيات مسلم هو ___.",
-    "answer": "الخوارزمي",
-    "explanation": "محمد بن موسى الخوارزمي، عالم الرياضيات في القرن التاسع الميلادي، تحوّل اسمه في اللاتينية إلى Algoritmi ومنه جاءت كلمة algorithm.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "Encyclopaedia Britannica - al-Khwarizmi / Oxford English Dictionary",
-    "factId": "fabraka-w3-035",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "محمد بن موسى الخوارزمي"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "ابن الهيثم",
-      "الكندي",
-      "البيروني"
-    ]
-  },
-  {
-    "id": "fabraka-w3-036",
-    "text": "في بلدان كثيرة يُسمّى القلم الجاف باسم مخترعه الصحفي المجري ___ الذي سجّل براءته عام 1938.",
-    "answer": "لاسلو بيرو",
-    "explanation": "الصحفي المجري لاسلو بيرو طوّر القلم الجاف ذا الكرة الدوّارة بحبر سريع الجفاف، ولا يزال اسمه يُطلق على القلم في بريطانيا وغيرها.",
-    "category": "اختراعات",
-    "sourceHint": "Encyclopaedia Britannica - Ballpoint pen / László Bíró",
-    "factId": "fabraka-w3-036",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "لازلو بيرو",
-      "لازلو بيري"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "إيمري ناجي",
-      "جوزيف بوليتزر",
-      "جون فون نيومان"
-    ]
-  },
-  {
-    "id": "fabraka-w3-037",
-    "text": "مكعب روبيك الشهير اخترعه عام 1974 أستاذ جامعي يدرّس ___.",
-    "answer": "العمارة",
-    "explanation": "إرنو روبيك كان أستاذًا للعمارة والتصميم في بودابست، وصنع المكعب أصلًا أداة تعليمية لشرح الحركة ثلاثية الأبعاد.",
-    "category": "أشياء يومية",
-    "sourceHint": "Encyclopaedia Britannica - Rubik's Cube / Rubik's official site",
-    "factId": "fabraka-w3-037",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "الهندسة المعمارية",
-      "هندسة معمارية"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الرياضيات",
-      "الفيزياء",
-      "الموسيقى"
-    ]
-  },
-  {
-    "id": "fabraka-w3-038",
-    "text": "مشروب كوكاكولا ابتكره عام 1886 رجل يعمل ___ في مدينة أتلانتا.",
-    "answer": "صيدليًا",
-    "explanation": "الصيدلي جون بيمبرتون ابتكر شراب المشروب عام 1886 في أتلانتا، وبيع أول مرة بالكأس عند نافورة مشروبات في إحدى الصيدليات.",
-    "category": "أشياء يومية",
-    "sourceHint": "Coca-Cola Company official history / Encyclopaedia Britannica",
-    "factId": "fabraka-w3-038",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "صيدلي",
-      "الصيدلة"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "طاهيًا",
-      "مزارعًا",
-      "مهندسًا"
-    ]
-  },
-  {
-    "id": "fabraka-w3-039",
-    "text": "أول منتج في العالم مُسح بالرمز الشريطي (باركود) في متجر عام 1974 كان علبة ___.",
-    "answer": "علكة",
-    "explanation": "في 26 يونيو 1974 مُسحت علبة علكة «ريغلي» في سوبرماركت بولاية أوهايو، وهي محفوظة اليوم في متحف سميثسونيان.",
-    "category": "أشياء يومية",
-    "sourceHint": "Smithsonian National Museum of American History / GS1",
-    "factId": "fabraka-w3-039",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "العلك",
-      "لبان"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "شوكولاتة",
-      "حبوب إفطار",
-      "بسكويت"
-    ]
-  },
-  {
-    "id": "fabraka-w3-040",
-    "text": "أُطلق تلسكوب هابل الفضائي إلى مداره حول الأرض عام ___.",
-    "answer": "1990",
-    "explanation": "حمل مكوك الفضاء ديسكفري تلسكوب هابل إلى المدار في 24 أبريل 1990، ولا يزال يعمل ويرسل صورًا مذهلة للكون.",
-    "category": "تاريخ العلوم",
-    "sourceHint": "NASA - Hubble Space Telescope",
-    "factId": "fabraka-w3-040",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ألف وتسعمئة وتسعون",
-      "ألف وتسعمائة وتسعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "1965",
-      "2015",
-      "2040"
-    ]
-  },
-  {
-    "id": "fabraka-w4-002",
-    "text": "الأبجدية العربية تتكوّن من ___ حرفًا.",
-    "answer": "28",
-    "explanation": "الأبجدية العربية فيها 28 حرفًا من الألف إلى الياء، والهمزة تُعدّ عند بعضهم حرفًا إضافيًا.",
-    "category": "لغة",
-    "sourceHint": "Britannica: Arabic alphabet",
-    "factId": "fabraka-w4-002",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ثمانية وعشرون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "25",
-      "31",
-      "34"
-    ]
-  },
-  {
-    "id": "fabraka-w4-003",
-    "text": "اللغة التي لديها أكبر عدد من المتحدثين الأصليين في العالم هي ___.",
-    "answer": "الصينية (الماندرين)",
-    "explanation": "الماندرين الصينية هي اللغة الأم لأكثر من 900 مليون شخص، وهو أكبر عدد لأي لغة في العالم.",
-    "category": "لغة",
-    "sourceHint": "Ethnologue",
-    "factId": "fabraka-w4-003",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "الصينية",
-      "الماندرين",
-      "الصينية الماندرين",
-      "ماندارين"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الإنجليزية",
-      "الهندية",
-      "الإسبانية"
-    ]
-  },
-  {
-    "id": "fabraka-w4-005",
-    "text": "الفول السوداني ليس من المكسرات، بل ينتمي نباتيًا إلى فصيلة ___.",
-    "answer": "البقوليات",
-    "explanation": "الفول السوداني من البقوليات مثل العدس والفاصوليا، وينمو تحت الأرض لا على الأشجار.",
-    "category": "أكل",
-    "sourceHint": "Britannica: Peanut",
-    "factId": "fabraka-w4-005",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "البقول",
-      "البقولية"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الحبوب",
-      "القرعيات",
-      "الدرنيات"
-    ]
-  },
-  {
-    "id": "fabraka-w4-007",
-    "text": "أكثر حرف استخدامًا في اللغة الإنجليزية هو حرف ___.",
-    "answer": "E",
-    "explanation": "حرف E هو الأكثر تكرارًا في النصوص الإنجليزية، يليه حرفا A وR بحسب قاموس أكسفورد.",
-    "category": "لغة",
-    "sourceHint": "Oxford English Dictionary letter frequency",
-    "factId": "fabraka-w4-007",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "A",
-      "S",
-      "T"
-    ]
-  },
-  {
-    "id": "fabraka-w4-008",
-    "text": "من الناحية النباتية تُصنّف الطماطم ___ لا خضارًا.",
-    "answer": "فاكهة",
-    "explanation": "الطماطم تنمو من زهرة وتحتوي على بذور، لذلك تُعدّ فاكهة نباتيًا، وإن كانت تُعامل كخضار في المطبخ.",
-    "category": "أكل",
-    "sourceHint": "Britannica: Tomato",
-    "factId": "fabraka-w4-008",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "الفواكه",
-      "ثمرة فاكهة"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "حبوبًا",
-      "بقولًا",
-      "جذرًا"
-    ]
-  },
-  {
-    "id": "fabraka-w4-009",
-    "text": "عين النعامة أكبر من ___ها.",
-    "answer": "دماغ",
-    "explanation": "قطر عين النعامة نحو 5 سنتيمترات، وهي أكبر عين بين الحيوانات البرية، وأكبر حجمًا من دماغها.",
-    "category": "حيوانات",
-    "sourceHint": "San Diego Zoo Wildlife Alliance / American Ostrich Association",
-    "factId": "fabraka-w4-009",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "مخ"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "قلب",
-      "منقار",
-      "كبد"
-    ]
-  },
-  {
-    "id": "fabraka-w4-010",
-    "text": "الفيل من الحيوانات القليلة جدًا التي لا تستطيع ___ أبدًا.",
-    "answer": "القفز",
-    "explanation": "بسبب وزنه الهائل وتركيب ساقيه، لا يستطيع الفيل رفع قوائمه الأربع عن الأرض في وقت واحد.",
-    "category": "حيوانات",
-    "sourceHint": "Smithsonian Magazine / Popular Science",
-    "factId": "fabraka-w4-010",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "قفز",
-      "يقفز"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "السباحة",
-      "الركوع",
-      "الاستلقاء"
-    ]
-  },
-  {
-    "id": "fabraka-w4-011",
-    "text": "حرارة الفلفل الحار تُقاس بوحدة تُسمى ___.",
-    "answer": "سكوفيل",
-    "explanation": "ابتكر الصيدلاني الأمريكي ويلبر سكوفيل عام 1912 مقياسًا لقياس حِدّة الفلفل وحرارته، وما زال يحمل اسمه.",
-    "category": "أكل",
-    "sourceHint": "Britannica: Scoville scale",
-    "factId": "fabraka-w4-011",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "سكوفل",
-      "سكوفيل الحراري"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "سيمنز",
-      "كلفن",
-      "بريكس"
-    ]
-  },
-  {
-    "id": "fabraka-w4-015",
-    "text": "ثمرة «تفاح الكاجو» الواحدة لا تُنتج سوى ___ حبة كاجو.",
-    "answer": "1",
-    "explanation": "حبة الكاجو تنمو معلّقة أسفل ثمرة لحمية تُسمى تفاحة الكاجو، وكل ثمرة تعطي حبة واحدة فقط، ثم تُقشَّر الحبة بعناية قبل أن تصل إلى المائدة.",
-    "category": "أكل",
-    "sourceHint": "Britannica: Cashew",
-    "factId": "fabraka-w4-015",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "واحد"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "0",
-      "2",
-      "3"
-    ]
-  },
-  {
-    "id": "fabraka-w4-016",
-    "text": "التمساح لا يستطيع إخراج ___ من فمه أبدًا.",
-    "answer": "لسانه",
-    "explanation": "لسان التمساح ملتصق بقاع فمه بغشاء، فلا يستطيع مدّه خارج الفم مثل بقية الحيوانات.",
-    "category": "حيوانات",
-    "sourceHint": "Smithsonian National Zoo / SeaWorld Animal Facts",
-    "factId": "fabraka-w4-016",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "اللسان",
-      "لسان"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "فكه",
-      "أسنانه",
-      "فقاعات الهواء"
-    ]
-  },
-  {
-    "id": "fabraka-w4-017",
-    "text": "كلمة Algebra في اللغات الأوروبية مأخوذة من الكلمة العربية ___.",
-    "answer": "الجبر",
-    "explanation": "انتقلت الكلمة إلى اللاتينية من عنوان كتاب «الجبر والمقابلة» الذي ألّفه عالم رياضيات مسلم في القرن التاسع الميلادي.",
-    "category": "لغة",
-    "sourceHint": "Britannica: Algebra / Merriam-Webster etymology",
-    "factId": "fabraka-w4-017",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الحساب",
-      "الجذر",
-      "الجمع"
-    ]
-  },
-  {
-    "id": "fabraka-w4-018",
-    "text": "البومة لا تستطيع تحريك عينيها، لذلك تدير رأسها حتى ___ درجة.",
-    "answer": "270",
-    "explanation": "عينا البومة ثابتتان في محجريهما، فتعوّض ذلك بإدارة رأسها نحو 270 درجة في كل اتجاه دون أن تتأذى.",
-    "category": "حيوانات",
-    "sourceHint": "National Geographic / Johns Hopkins study 2013",
-    "factId": "fabraka-w4-018",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "مئتان وسبعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "258",
-      "282",
-      "294"
-    ]
-  },
-  {
-    "id": "fabraka-w4-019",
-    "text": "أغلى نوع من التوابل في العالم بالوزن هو ___.",
-    "answer": "الزعفران",
-    "explanation": "يُجمع الزعفران يدويًا من مياسم زهرة الزعفران، ويلزم نحو 150 ألف زهرة لإنتاج كيلوغرام واحد منه.",
-    "category": "أكل",
-    "sourceHint": "Guinness World Records / Britannica: Saffron",
-    "factId": "fabraka-w4-019",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الفانيليا",
-      "الهيل",
-      "القرفة"
-    ]
-  },
-  {
-    "id": "fabraka-w4-020",
-    "text": "الطائر الوحيد القادر على الطيران إلى ___ هو الطائر الطنان.",
-    "answer": "الخلف",
-    "explanation": "بفضل مفصل كتفه المرن وسرعة رفرفة جناحيه يستطيع الطائر الطنان الطيران للخلف والتحليق ثابتًا في مكانه.",
-    "category": "حيوانات",
-    "sourceHint": "Smithsonian National Zoo",
-    "factId": "fabraka-w4-020",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "الوراء",
-      "للخلف",
-      "للوراء"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الجنب",
-      "الأعلى",
-      "الأسفل"
-    ]
-  },
-  {
-    "id": "fabraka-w4-021",
-    "text": "عدد الحروف العربية التي لا تتصل بما بعدها في الكتابة هو ___.",
-    "answer": "6",
-    "explanation": "الحروف الستة هي: ا، د، ذ، ر، ز، و. تتصل بما قبلها لكنها لا تتصل بالحرف الذي يليها.",
-    "category": "لغة",
-    "sourceHint": "Britannica: Arabic alphabet",
-    "factId": "fabraka-w4-021",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "ستة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "5",
-      "7",
-      "8"
-    ]
-  },
-  {
-    "id": "fabraka-w4-022",
-    "text": "أصغر طائر في العالم هو الطائر الطنان ___، وطوله نحو 5 سنتيمترات.",
-    "answer": "النحلة",
-    "explanation": "طنان النحلة الذي يعيش في كوبا يزن نحو غرامين فقط، وهو أصغر طائر معروف على وجه الأرض.",
-    "category": "حيوانات",
-    "sourceHint": "Guinness World Records: smallest bird",
-    "factId": "fabraka-w4-022",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "نحلي",
-      "النحلي"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الزمرد",
-      "الياقوت",
-      "القزم"
-    ]
-  },
-  {
-    "id": "fabraka-w4-023",
-    "text": "نسبة الماء في الخيار تبلغ نحو ___ في المئة.",
-    "answer": "95",
-    "explanation": "الخيار يتكوّن من نحو 95 إلى 96 في المئة من الماء، وهو من أكثر الخضروات احتواءً على الماء.",
-    "category": "أكل",
-    "sourceHint": "USDA FoodData Central",
-    "factId": "fabraka-w4-023",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "خمسة وتسعون"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "92",
-      "98",
-      "101"
-    ]
-  },
-  {
-    "id": "fabraka-w4-024",
-    "text": "الفراشة تتذوّق الطعام بواسطة ___.",
-    "answer": "أقدامها",
-    "explanation": "في أقدام الفراشة مستقبلات تذوّق تسمح لها بمعرفة نوع النبات بمجرد الوقوف عليه.",
-    "category": "حيوانات",
-    "sourceHint": "Smithsonian / Britannica: Butterfly",
-    "factId": "fabraka-w4-024",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "الأقدام",
-      "قدميها",
-      "أرجلها",
-      "الأرجل"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "قرون استشعارها",
-      "أجنحتها",
-      "عيونها"
-    ]
-  },
-  {
-    "id": "fabraka-w4-026",
-    "text": "عند فرس البحر، من يحمل البيض في جيبه حتى يفقس هو ___.",
-    "answer": "الذكر",
-    "explanation": "تضع الأنثى البيض في جيب خاص على بطن الذكر، ويحمله الذكر حتى تخرج الصغار.",
-    "category": "حيوانات",
-    "sourceHint": "National Geographic / Britannica: Sea horse",
-    "factId": "fabraka-w4-026",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "ذكر فرس البحر"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الأنثى",
-      "كلاهما بالتناوب",
-      "صغير من قطيعها"
-    ]
-  },
-  {
-    "id": "fabraka-w4-028",
-    "text": "سنام الجمل لا يخزّن الماء كما يظن كثيرون، بل يخزّن ___.",
-    "answer": "الدهون",
-    "explanation": "السنام مخزن للدهون يستهلكه الجمل طاقةً عندما يقلّ الطعام، أما الماء فيحتفظ به في دمه وأنسجته.",
-    "category": "حيوانات",
-    "sourceHint": "Britannica: Camel / Smithsonian",
-    "factId": "fabraka-w4-028",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "الشحم",
-      "دهون"
-    ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الدم",
-      "الهواء",
-      "العضلات"
-    ]
-  },
-  {
-    "id": "fabraka-w4-029",
-    "text": "عدد المذاقات الأساسية التي يميزها اللسان هو ___.",
-    "answer": "5",
-    "explanation": "المذاقات الخمسة هي: الحلو والمالح والحامض والمر، والخامس هو «أومامي» أي المذاق اللحمي.",
-    "category": "أكل",
-    "sourceHint": "Britannica: Taste",
-    "factId": "fabraka-w4-029",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "خمسة"
-    ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "4",
       "6",
-      "7"
-    ]
-  },
-  {
-    "id": "fabraka-w4-030",
-    "text": "طائر الفلامنغو يكتسب لونه الوردي من ___.",
-    "answer": "طعامه",
-    "explanation": "يولد الفلامنغو رماديًا، ويصبح ورديًا بسبب صبغات في الطحالب والقشريات الصغيرة التي يأكلها.",
-    "category": "حيوانات",
-    "sourceHint": "San Diego Zoo Wildlife Alliance",
-    "factId": "fabraka-w4-030",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "الطعام",
-      "الغذاء",
-      "غذائه",
-      "غذاؤه",
-      "القشريات والطحالب"
+      "12",
+      "24",
+      "40"
     ],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "أشعة الشمس",
-      "ملوحة الماء",
-      "الطين"
-    ]
+    "explanation": "تنمو الورقتان باستمرار وتتشققان إلى شرائط، فيبدو النبات وكأنه يحمل أوراقًا أكثر بكثير.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Welwitschia mirabilis",
+    "sourceUrl": "https://www.kew.org/plants/welwitschia-mirabilis",
+    "sourceTitle": "Welwitschia mirabilis",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w4-031",
-    "text": "كلمة Alphabet مأخوذة من أول حرفين في الأبجدية ___.",
-    "answer": "اليونانية",
-    "explanation": "الحرفان الأولان في اليونانية هما «ألفا» و«بيتا»، ومنهما تكوّنت كلمة Alphabet.",
-    "category": "لغة",
-    "sourceHint": "Merriam-Webster etymology / Britannica",
-    "factId": "fabraka-w4-031",
-    "previousIds": [],
-    "curious": false,
-    "aliases": [
-      "الإغريقية"
-    ],
+    "id": "fab3-fact-014",
+    "factId": "fab3-fact-014",
     "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "الفينيقية",
-      "اللاتينية",
-      "الآرامية"
-    ]
-  },
-  {
-    "id": "fabraka-w4-032",
-    "text": "أبطأ الثدييات في العالم هو حيوان ___.",
-    "answer": "الكسلان",
-    "explanation": "الكسلان ثلاثي الأصابع يتحرك على الأرض بسرعة نحو مترين في الدقيقة، ويقضي معظم يومه معلقًا على الأشجار.",
-    "category": "حيوانات",
-    "sourceHint": "Guinness World Records: slowest mammal",
-    "factId": "fabraka-w4-032",
-    "previousIds": [],
     "curious": true,
-    "aliases": [
-      "حيوان الكسلان"
-    ],
-    "kind": "text",
+    "previousIds": [],
     "answerType": "text",
+    "text": "ثمار نبات «قثاء الحمار» تنثر بذورها عند النضج بطريقة تشبه المسدس المائي: تقذفها مع ___.",
+    "answer": "سائل مضغوط",
+    "aliases": [
+      "سائل تحت الضغط",
+      "ماء مضغوط",
+      "سائل مندفع"
+    ],
     "decoys": [
-      "الكوالا",
-      "آكل النمل",
-      "المدرع"
-    ]
+      "دخان ساخن",
+      "غبار جاف",
+      "خيوط لزجة",
+      "هواء بارد"
+    ],
+    "explanation": "عندما تنفصل الثمرة عن الساق، يندفع السائل المضغوط داخلها حاملًا البذور إلى الخارج.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Squirting cucumber",
+    "sourceUrl": "https://www.kew.org/plants/squirting-cucumber",
+    "sourceTitle": "Squirting cucumber",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w4-033",
-    "text": "حبة الفشار تنفجر لأن ___ الموجود داخلها يتحوّل إلى بخار عند التسخين.",
-    "answer": "الماء",
-    "explanation": "داخل كل حبة ذرة قليل من الماء، فعند تسخينها يتحوّل إلى بخار يضغط على القشرة حتى تنفجر وينتفخ النشا.",
-    "category": "أكل",
-    "sourceHint": "Britannica: Popcorn",
-    "factId": "fabraka-w4-033",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
+    "id": "fab3-fact-015",
+    "factId": "fab3-fact-015",
     "kind": "text",
+    "curious": true,
+    "previousIds": [],
     "answerType": "text",
+    "text": "تستخدم بعض أزهار الأوركيد خدعة غرامية لجذب الملقحات؛ فتقلد في مظهرها ___.",
+    "answer": "أنثى نحلة",
+    "aliases": [
+      "نحلة أنثى",
+      "إناث النحل",
+      "النحلة الأنثى"
+    ],
     "decoys": [
+      "شبكة عنكبوت",
+      "قطعة فاكهة",
+      "جناح خفاش",
+      "بيضة طائر"
+    ],
+    "explanation": "تقلد أزهار من مجموعة أوركيد النحل هيئة الأنثى، فتجذب الذكور وتستفيد من زياراتها في نقل اللقاح.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Sneaky orchids and their pollination tricks",
+    "sourceUrl": "https://www.kew.org/read-and-watch/orchid-pollination-tricks",
+    "sourceTitle": "Sneaky orchids and their pollination tricks",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-016",
+    "factId": "fab3-fact-016",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "تخالف شجرة الكاكاو صورة الشجرة المعتادة؛ فأزهارها الصغيرة تظهر مباشرة على ___.",
+    "answer": "الجذع",
+    "aliases": [
+      "جذعها",
+      "جذع الشجرة",
+      "الجذع والأغصان القديمة"
+    ],
+    "decoys": [
+      "أطراف الجذور",
+      "سطح الأوراق",
+      "داخل الثمار",
+      "الأشواك"
+    ],
+    "explanation": "ينمو كثير من أزهار الكاكاو على الجذع والفروع القديمة، ثم تتكون منها القرون الكبيرة التي تحمل البذور.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Cacao tree",
+    "sourceUrl": "https://www.kew.org/plants/cacao-tree",
+    "sourceTitle": "Cacao tree",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-017",
+    "factId": "fab3-fact-017",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "تقدم بعض النباتات الإبريقية رحيقًا لزبابة الشجر، وتحصل في المقابل على وجبة مغذية من ___.",
+    "answer": "فضلاتها",
+    "aliases": [
+      "فضلات الزبابة",
+      "روثها",
+      "برازها",
+      "براز زبابة الشجر",
+      "فضلات",
+      "فضلات زبابة الشجر"
+    ],
+    "decoys": [
+      "شعرها",
+      "لعابها",
+      "حليبها",
+      "أظافرها"
+    ],
+    "explanation": "تجذب نباتات مثل Nepenthes rajah زبابة الشجر إلى الرحيق فوق الإبريق، فتسقط فضلات الحيوان داخله وتوفر مغذيات.",
+    "category": "عجائب النباتات",
+    "sourceHint": "In Pictures: Poo-loving plants",
+    "sourceUrl": "https://www.kew.org/read-and-watch/poo-plants",
+    "sourceTitle": "In Pictures: Poo-loving plants",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-018",
+    "factId": "fab3-fact-018",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "مصيدة النبات المائي «يوتريكولاريا» تسحب الماء والفريسة إلى الداخل بسرعة، بأسلوب يشبه عمل ___.",
+    "answer": "مكنسة كهربائية",
+    "aliases": [
+      "المكنسة الكهربائية",
+      "مكنسة شفط",
+      "آلة شفط"
+    ],
+    "decoys": [
+      "آلة تصوير",
+      "منخل",
+      "مطرقة",
+      "مكواة"
+    ],
+    "explanation": "تفتح المصيدة الصغيرة عند تحفيزها فتشفط الماء وما فيه من فرائس؛ والتشبيه بالمكنسة يصف طريقة الالتقاط.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Dive into aquatic life",
+    "sourceUrl": "https://www.kew.org/read-and-watch/dive-into-aquatic-plant-life",
+    "sourceTitle": "Dive into aquatic life",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-019",
+    "factId": "fab3-fact-019",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "قبل ظهور زهرة رافليزيا العملاقة، يعيش معظم جسم النبات الخفي داخل ___.",
+    "answer": "نبات آخر",
+    "aliases": [
+      "كرمة مضيفة",
+      "كرمة",
+      "نبات مضيف",
+      "كرمة أخرى"
+    ],
+    "decoys": [
+      "صخرة مجوفة",
+      "صدفة بحرية",
+      "عش نمل",
+      "بيضة حشرة"
+    ],
+    "explanation": "رافليزيا نبات طفيلي ينمو داخل أنسجة كرمة مضيفة، ولا يملك الأوراق والجذور والسيقان المعتادة.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Rafflesia arnoldi",
+    "sourceUrl": "https://www.kew.org/plants/rafflesia-arnoldi",
+    "sourceTitle": "Rafflesia arnoldi",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-020",
+    "factId": "fab3-fact-020",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "«كرمة الشوكولاتة» لم تحصل على اسمها لأنها تنتج ألواح الحلوى، بل بسبب ___.",
+    "answer": "رائحة أزهارها",
+    "aliases": [
+      "رائحة الزهور",
+      "عطر أزهارها",
+      "رائحة أزهارها الشبيهة بالشوكولاتة"
+    ],
+    "decoys": [
+      "لون جذورها",
+      "طعم أوراقها",
+      "شكل بذورها",
+      "لزوجة سيقانها"
+    ],
+    "explanation": "لأزهار كرمة Akebia quinata رائحة توصف بأنها شبيهة بالشوكولاتة مع نغمات أخرى؛ الاسم وصف للرائحة.",
+    "category": "عجائب النباتات",
+    "sourceHint": "Chocolate vine",
+    "sourceUrl": "https://www.kew.org/plants/chocolate-vine",
+    "sourceTitle": "Chocolate vine",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-021",
+    "factId": "fab3-fact-021",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "بعد طحن بقايا المرجان، تُخرج سمكة الببغاء فضلات قد تساعد في تكوين الشواطئ على هيئة ___.",
+    "answer": "رمل أبيض",
+    "aliases": [
+      "الرمل الأبيض",
+      "رمال بيضاء",
+      "رمل"
+    ],
+    "decoys": [
+      "لآلئ صغيرة",
+      "زجاج ملوّن",
+      "طين أسود",
+      "بلورات ملح"
+    ],
+    "explanation": "تطحن بعض أسماك الببغاء المواد الجيرية التي تبتلعها أثناء الأكل، ثم تخرجها رملًا؛ وهي أحد مصادر رمال بعض الشواطئ.",
+    "category": "أسرار البحر",
+    "sourceHint": "How does sand form?",
+    "sourceUrl": "https://oceanservice.noaa.gov/facts/sand.html",
+    "sourceTitle": "How does sand form?",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-022",
+    "factId": "fab3-fact-022",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "للأسماك الجليدية في القطب الجنوبي دم شفاف تقريبًا؛ لأنها تفتقر إلى الصبغة المسماة ___.",
+    "answer": "الهيموغلوبين",
+    "aliases": [
+      "هيموغلوبين",
+      "الهيموجلوبين",
+      "خضاب الدم"
+    ],
+    "decoys": [
+      "الميلانين",
+      "الكلوروفيل",
+      "الكيراتين",
+      "الكاروتين"
+    ],
+    "explanation": "تفتقر هذه الأسماك إلى الهيموغلوبين الذي يمنح دم معظم الفقاريات لونه الأحمر.",
+    "category": "أسرار البحر",
+    "sourceHint": "The Arctic and The Antarctic",
+    "sourceUrl": "https://ocean.si.edu/ecosystems/poles/arctic-and-antarctic",
+    "sourceTitle": "The Arctic and The Antarctic",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-023",
+    "factId": "fab3-fact-023",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "يحمل ثعلب البحر وجبته في جيوب طبيعية من الجلد، ومكان هذه الجيوب تحت ___.",
+    "answer": "ذراعيه الأماميتين",
+    "aliases": [
+      "ذراعيه",
+      "إبطيه",
+      "الإبطين",
+      "رجليه الأماميتين",
+      "أطرافه الأمامية"
+    ],
+    "decoys": [
+      "ذيله",
+      "ذقنه",
+      "أذنيه",
+      "لسانه"
+    ],
+    "explanation": "توجد ثنيات جلدية رخوة تحت الطرفين الأماميين يستطيع ثعلب البحر أن يخزن فيها ما جمعه من طعام.",
+    "category": "أسرار البحر",
+    "sourceHint": "Sea otter",
+    "sourceUrl": "https://www.montereybayaquarium.org/animals-the-ocean/animals-a-to-z/sea-otter",
+    "sourceTitle": "Sea otter",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-024",
+    "factId": "fab3-fact-024",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "للإغوانا البحرية طريقة ظاهرة للتخلص من الملح الزائد بعد وجبتها البحرية؛ فهي ___.",
+    "answer": "تعطس",
+    "aliases": [
+      "العطاس",
+      "تعطس الملح",
+      "تطرد الملح بالعطاس"
+    ],
+    "decoys": [
+      "تذرف دموعًا سوداء",
+      "تغيّر جلد ذيلها",
+      "تطلق فقاعات",
+      "تحك بطنها بالصخر"
+    ],
+    "explanation": "تخرج الإغوانا الملح عبر غدد متخصصة ثم تطرده من الأنف بالعطاس، وقد يترك ذلك ترسبات بيضاء.",
+    "category": "أسرار البحر",
+    "sourceHint": "5 facts that make the marine iguana a master of adaptation",
+    "sourceUrl": "https://galapagosconservation.org.uk/marine-iguana-facts/",
+    "sourceTitle": "5 facts that make the marine iguana a master of adaptation",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-025",
+    "factId": "fab3-fact-025",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "قدّم باحثون كرات زينة صغيرة لسرطانات بحر مزينة، فتعاملت معها كإكسسوارات ولصقتها على ___.",
+    "answer": "أجسامها",
+    "aliases": [
+      "ظهورها",
+      "قشورها",
+      "هياكلها الخارجية",
+      "جسمها"
+    ],
+    "decoys": [
+      "بيوضها",
+      "قاع الحوض",
+      "قواقع فارغة",
+      "طعامها"
+    ],
+    "explanation": "تثبت السرطانات المزينة مواد على أجسامها للتمويه، وقبلت في التجربة كرات صناعية صغيرة بدل المواد المعتادة.",
+    "category": "أسرار البحر",
+    "sourceHint": "Happy Crabby Holidays",
+    "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/happy-crabby-holidays",
+    "sourceTitle": "Happy Crabby Holidays",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-026",
+    "factId": "fab3-fact-026",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "لإسقاط حشرة تقف فوق الماء، تصوب سمكة الرامي نحوها وتطلق من فمها ___.",
+    "answer": "نفثة ماء",
+    "aliases": [
+      "تيار ماء",
+      "رشقة ماء",
+      "الماء",
+      "بصقة ماء"
+    ],
+    "decoys": [
+      "حبة رمل",
+      "فقاعة هواء",
+      "سحابة حبر",
+      "شوكة صغيرة"
+    ],
+    "explanation": "تضرب سمكة الرامي الحشرات بنفاثة مائية مركزة، ثم تلتقط ما يسقط في الماء.",
+    "category": "أسرار البحر",
+    "sourceHint": "How This Fish Sharp Shoots Its Prey with Spit",
+    "sourceUrl": "https://www.si.edu/object/how-fish-sharp-shoots-its-prey-spit%3Ayt_A_yscU47ES0",
+    "sourceTitle": "How This Fish Sharp Shoots Its Prey with Spit",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-027",
+    "factId": "fab3-fact-027",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "لكمة روبيان السرعوف سريعة لدرجة أنها تُكوّن في الماء فقاعات من ___.",
+    "answer": "البخار",
+    "aliases": [
+      "بخار الماء",
+      "بخار"
+    ],
+    "decoys": [
+      "الحبر",
       "الزيت",
-      "السكر",
-      "الهواء"
-    ]
+      "المخاط",
+      "الدم"
+    ],
+    "explanation": "تنتج الضربة تجويفًا في الماء وفقاعات بخار تنهار سريعًا؛ وليست الفقاعات نفَسًا يخرجه الحيوان.",
+    "category": "أسرار البحر",
+    "sourceHint": "Behold the Mantis Shrimp",
+    "sourceUrl": "https://www.si.edu/collections/snapshot/behold-mantis-shrimp",
+    "sourceTitle": "Behold the Mantis Shrimp",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w4-034",
-    "text": "الحروف الشمسية في اللغة العربية عددها ___ حرفًا.",
-    "answer": "14",
-    "explanation": "الحروف الشمسية 14 حرفًا تُدغم فيها لام التعريف مثل «الشمس»، والحروف القمرية 14 حرفًا أيضًا مثل «القمر».",
-    "category": "لغة",
-    "sourceHint": "قواعد اللغة العربية / Britannica: Arabic language",
-    "factId": "fabraka-w4-034",
+    "id": "fab3-fact-028",
+    "factId": "fab3-fact-028",
+    "kind": "text",
+    "curious": true,
     "previousIds": [],
-    "curious": false,
+    "answerType": "text",
+    "text": "في أعماق البحر، يزرع أحد سرطانات اليتي طعامًا على شعيرات أذرعه؛ ومزرعته تنتج ___.",
+    "answer": "البكتيريا",
     "aliases": [
-      "أربعة عشر"
+      "بكتيريا",
+      "مستعمرات بكتيرية"
     ],
-    "kind": "text",
-    "answerType": "number",
     "decoys": [
-      "13",
-      "15",
-      "16"
-    ]
+      "الطحالب الحمراء",
+      "بلورات الملح",
+      "بيض السمك",
+      "حبات الرمل"
+    ],
+    "explanation": "تعيش بكتيريا على شعيرات بعض سرطانات اليتي، ويستخدمها الحيوان مصدرًا للغذاء قرب بيئات التسربات العميقة.",
+    "category": "أسرار البحر",
+    "sourceHint": "The Deep Sea",
+    "sourceUrl": "https://ocean.si.edu/ecosystems/deep-sea/deep-sea",
+    "sourceTitle": "The Deep Sea",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w4-036",
-    "text": "نكهة الفانيليا تُستخرج من قرون نبات ينتمي إلى فصيلة ___.",
-    "answer": "السحلبيات (الأوركيد)",
-    "explanation": "الفانيليا هي الأوركيد الوحيد الذي يُزرع تجاريًا من أجل ثمرته، وموطنها الأصلي المكسيك.",
-    "category": "أكل",
-    "sourceHint": "Britannica: Vanilla",
-    "factId": "fabraka-w4-036",
+    "id": "fab3-fact-029",
+    "factId": "fab3-fact-029",
+    "kind": "text",
+    "curious": true,
     "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "السحلبيات",
-      "الأوركيد",
-      "السحلبية",
-      "السحلبيات الأوركيد"
-    ],
-    "kind": "text",
     "answerType": "text",
+    "text": "تختار بعض أسماك اللؤلؤ بيتًا حيًا وغريبًا؛ إذ تختبئ داخل جسم ___.",
+    "answer": "خيار البحر",
+    "aliases": [
+      "خيار بحري",
+      "خيارة البحر"
+    ],
     "decoys": [
-      "الزنبقيات",
-      "النجيليات",
-      "الشفويات"
-    ]
+      "سلحفاة بحرية",
+      "قنديل البحر",
+      "محار اللؤلؤ",
+      "إسفنج زجاجي"
+    ],
+    "explanation": "تدخل بعض أسماك اللؤلؤ جسم خيار البحر وتحتمي فيه؛ فالاسم لا يعني أنها تسكن اللآلئ.",
+    "category": "أسرار البحر",
+    "sourceHint": "Pearlfish from a Sea Cucumber",
+    "sourceUrl": "https://ocean.si.edu/ocean-life/fish/pearlfish-sea-cucumber",
+    "sourceTitle": "Pearlfish from a Sea Cucumber",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w4-037",
-    "text": "تُخبر نحلة العسل زميلاتها بمكان الزهور عن طريق ___.",
-    "answer": "الرقص",
-    "explanation": "تؤدي النحلة «رقصة الاهتزاز» داخل الخلية لتحدد اتجاه الزهور ومسافتها، وقد نال مكتشفها كارل فون فريش جائزة نوبل.",
-    "category": "حيوانات",
-    "sourceHint": "Britannica: Karl von Frisch / waggle dance",
-    "factId": "fabraka-w4-037",
+    "id": "fab3-fact-030",
+    "factId": "fab3-fact-030",
+    "kind": "text",
+    "curious": true,
     "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "الرقصة",
-      "رقصة الاهتزاز"
-    ],
-    "kind": "text",
     "answerType": "text",
+    "text": "عند تناول وجبتها، تستطيع أنواع من نجوم البحر إخراج جزء من ___ عبر الفم.",
+    "answer": "معدتها",
+    "aliases": [
+      "المعدة",
+      "معدة",
+      "معدتها القلبية"
+    ],
     "decoys": [
-      "الصفير",
-      "طرق الجدران",
-      "تغيير اللون"
-    ]
+      "عمودها الفقري",
+      "خياشيمها",
+      "كبدها",
+      "لسانها"
+    ],
+    "explanation": "تمتد المعدة القلبية إلى خارج الجسم وتبدأ هضم الفريسة هناك، ثم تستكمل أجزاء الجهاز الهضمي العملية.",
+    "category": "أسرار البحر",
+    "sourceHint": "Echinoderms: Sea Stars, Urchins, Sand Dollars, and Relatives",
+    "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/sea-stars-urchins-and-relatives",
+    "sourceTitle": "Echinoderms: Sea Stars, Urchins, Sand Dollars, and Relatives",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w4-038",
-    "text": "كلمة Salary (راتب) في الإنجليزية ترجع أصلًا إلى الكلمة اللاتينية التي تعني ___.",
-    "answer": "الملح",
-    "explanation": "الكلمة مشتقة من اللاتينية salarium المرتبطة بكلمة sal أي الملح، الذي كان سلعة ثمينة في العصور القديمة.",
-    "category": "لغة",
-    "sourceHint": "Merriam-Webster etymology: salary",
-    "factId": "fabraka-w4-038",
+    "id": "fab3-fact-031",
+    "factId": "fab3-fact-031",
+    "kind": "text",
+    "curious": true,
     "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
     "answerType": "text",
+    "text": "رافق المسبار جونو مجسم صغير لغاليليو يحمل تلسكوبًا؛ وقد صُنّع المجسم بتصميم ألعاب ___.",
+    "answer": "ليغو",
+    "aliases": [
+      "ليجو",
+      "ليغو LEGO",
+      "LEGO"
+    ],
     "decoys": [
-      "الذهب",
-      "القمح",
-      "الفضة"
-    ]
+      "باربي",
+      "بلايموبيل",
+      "ميكانو",
+      "ترانسفورمرز"
+    ],
+    "explanation": "حمل جونو ثلاثة مجسمات بتصميم ليغو: غاليليو وجوبيتر وجونو. وصنعت نسخ الرحلة من الألمنيوم.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "LEGO Figurines Aboard Juno",
+    "sourceUrl": "https://science.nasa.gov/photojournal/lego-figurines-aboard-juno/",
+    "sourceTitle": "LEGO Figurines Aboard Juno",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w4-039",
-    "text": "معدة البقرة تتكوّن من ___ أقسام.",
-    "answer": "4",
-    "explanation": "البقرة من المجترّات، ومعدتها ذات أربعة أقسام تساعدها على هضم العشب بعد إعادة مضغه.",
-    "category": "حيوانات",
-    "sourceHint": "Britannica: Ruminant",
-    "factId": "fabraka-w4-039",
+    "id": "fab3-fact-032",
+    "factId": "fab3-fact-032",
+    "kind": "text",
+    "curious": true,
     "previousIds": [],
-    "curious": false,
+    "answerType": "text",
+    "text": "«أشجار القمر» تنمو على الأرض؛ أما الجزء الذي دار حول القمر في رحلة أبولو 14 فهو ___.",
+    "answer": "بذورها",
     "aliases": [
-      "أربعة"
+      "البذور",
+      "بذور الأشجار"
     ],
-    "kind": "text",
-    "answerType": "number",
     "decoys": [
-      "3",
-      "5",
-      "6"
-    ]
+      "جذورها",
+      "أوراقها",
+      "لحاؤها",
+      "ثمارها الناضجة"
+    ],
+    "explanation": "حمل ستيوارت روزا بذور أشجار في مدار القمر، ثم زرعت بعد عودتها إلى الأرض.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "Moon Trees",
+    "sourceUrl": "https://www.nasa.gov/history/moon-trees/",
+    "sourceTitle": "Moon Trees",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w4-040",
-    "text": "لسان الحلزون مغطّى بآلاف ___ الصغيرة جدًا.",
-    "answer": "الأسنان",
-    "explanation": "للحلزون لسان يشبه المبرد يُسمى «الرادولا» يحمل آلاف الأسنان الدقيقة يكشط بها الطعام.",
-    "category": "حيوانات",
-    "sourceHint": "Natural History Museum London / Britannica: Radula",
-    "factId": "fabraka-w4-040",
+    "id": "fab3-fact-033",
+    "factId": "fab3-fact-033",
+    "kind": "text",
+    "curious": true,
     "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "اسنان دقيقة"
-    ],
-    "kind": "text",
     "answerType": "text",
+    "text": "في رحلة جيميني 6، فوجئ مركز التحكم بعزف «جينغل بيلز» من الفضاء على آلة ___.",
+    "answer": "هارمونيكا",
+    "aliases": [
+      "الهارمونيكا",
+      "هارمونيكا صغيرة",
+      "الأرغن الفموي"
+    ],
     "decoys": [
-      "الشعيرات",
-      "الحراشف",
-      "النتوءات المطاطية"
-    ]
+      "كمان",
+      "ناي",
+      "أكورديون",
+      "ترومبيت"
+    ],
+    "explanation": "أحضر والي شيرا هارمونيكا صغيرة، ورافقه توماس ستافورد بالأجراس في المزحة الموسيقية.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "Harmonica, Gemini 6",
+    "sourceUrl": "https://airandspace.si.edu/collection-objects/harmonica-gemini-6/nasm_A19670148000",
+    "sourceTitle": "Harmonica, Gemini 6",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-party-zoozve",
-    "factId": "fabraka-party-zoozve",
-    "text": "اسم «زووزفي» لجرم يرافق الزهرة بدأ من خطأ رسام في ___.",
-    "answer": "قراءة خطه",
-    "aliases": [
-      "قراءة الخط",
-      "قراءة خط يده",
-      "قراءة الكتابة",
-      "قراءة خط اليد"
-    ],
-    "explanation": "قرأ رسام عبارة 2002 VE التي دوّنها بخط يده على أنها Zoozve، ثم اعتُمد الاسم رسميًا في 2024.",
-    "decoys": [
-      "ترجمة اسم طائر",
-      "حل مسألة حسابية",
-      "تهجئة اسم ابنته"
-    ],
-    "category": "فضاء",
-    "curious": true,
+    "id": "fab3-fact-034",
+    "factId": "fab3-fact-034",
     "kind": "text",
+    "curious": true,
+    "previousIds": [],
     "answerType": "text",
-    "sourceHint": "NASA Science",
-    "sourceUrl": "https://science.nasa.gov/venus/venus-facts/",
-    "verifiedAt": "2026-09-12"
+    "text": "وصف بعض رواد أبولو رائحة غبار القمر الذي حملوه إلى المقصورة بأنها تشبه ___.",
+    "answer": "البارود",
+    "aliases": [
+      "رائحة البارود",
+      "بارود",
+      "بارود محترق"
+    ],
+    "decoys": [
+      "القهوة",
+      "جوز الهند",
+      "الصابون",
+      "العشب المقطوع"
+    ],
+    "explanation": "وصف رواد الرائحة بعد دخول الغبار إلى هواء المركبة؛ ولا تعني القصة أنهم شمّوه مباشرة في فراغ القمر.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "Digging In: When Rovers Get Dirt on Mars - S4E11",
+    "sourceUrl": "https://www.nasa.gov/podcasts/on-a-mission/digging-in-when-rovers-get-dirt-on-mars-s4e11/",
+    "sourceTitle": "Digging In: When Rovers Get Dirt on Mars - S4E11",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-party-venus-sunrise",
-    "factId": "fabraka-party-venus-sunrise",
-    "text": "لو شاهدت شروق الشمس من الزهرة، لظهرت من جهة ___.",
-    "answer": "الغرب",
-    "aliases": [
-      "غرب",
-      "الجهة الغربية"
-    ],
-    "explanation": "دوران الزهرة معاكس لدوران الأرض، لذلك تشرق الشمس فيه من الغرب وتغرب في الشرق.",
-    "decoys": [
-      "الشمال",
-      "الجنوب",
-      "الشرق"
-    ],
-    "category": "فضاء",
-    "curious": true,
+    "id": "fab3-fact-035",
+    "factId": "fab3-fact-035",
     "kind": "text",
+    "curious": true,
+    "previousIds": [],
     "answerType": "text",
-    "sourceHint": "NASA Science",
-    "sourceUrl": "https://science.nasa.gov/venus/venus-facts/",
-    "verifiedAt": "2026-09-12"
+    "text": "أحد أسباب نجاح التورتيلا في قوائم طعام الفضاء أنها لا تملأ المقصورة بـ ___.",
+    "answer": "فتات متطاير",
+    "aliases": [
+      "الفتات",
+      "فتات الخبز",
+      "فتات",
+      "فتات الخبز المتطاير"
+    ],
+    "decoys": [
+      "فقاعات غاز",
+      "رائحة الدخان",
+      "بخار كثيف",
+      "قطرات زيت"
+    ],
+    "explanation": "يسهل التعامل مع التورتيلا لأنها لا تتفتت مثل الخبز العادي؛ فالفتات الطافي قد ينتشر في المركبة.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "Food for Spaceflight — Educator Section",
+    "sourceUrl": "https://www.nasa.gov/wp-content/uploads/2012/02/146852main_food_for_spaceflight_educator.pdf",
+    "sourceTitle": "Food for Spaceflight — Educator Section",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-party-venus-domes",
-    "factId": "fabraka-party-venus-domes",
-    "text": "قباب بركانية مسطحة على الزهرة لُقّبت باسم طعام هو ___.",
-    "answer": "الفطائر",
-    "aliases": [
-      "فطيرة",
-      "بان كيك",
-      "بانكيك",
-      "البان كيك",
-      "الفطائر المسطحة"
-    ],
-    "explanation": "تسمى هذه التشكيلات «قباب الفطائر» لأن قممها مسطحة وحوافها شديدة الانحدار.",
-    "decoys": [
-      "المعكرونة",
-      "البسكويت",
-      "الجبن"
-    ],
-    "category": "فضاء",
-    "curious": true,
+    "id": "fab3-fact-036",
+    "factId": "fab3-fact-036",
     "kind": "text",
+    "curious": true,
+    "previousIds": [],
     "answerType": "text",
-    "sourceHint": "NASA Science",
-    "sourceUrl": "https://science.nasa.gov/venus/venus-facts/",
-    "verifiedAt": "2026-09-12"
-  },
-  {
-    "id": "fabraka-party-venus-clouds",
-    "factId": "fabraka-party-venus-clouds",
-    "text": "سحب الزهرة الكثيفة تحتوي قطرات من ___ بدلًا من الماء المعتاد في سحب الأرض.",
-    "answer": "حمض الكبريتيك",
+    "text": "وجد مسبار كاسيني بحيرات صغيرة شمال قمر تيتان، لكن السائل الغالب فيها ليس الماء بل ___.",
+    "answer": "الميثان",
     "aliases": [
-      "الكبريتيك",
-      "حمض الكبريت",
-      "حامض الكبريتيك"
+      "ميثان",
+      "الميثان السائل"
     ],
-    "explanation": "تصف ناسا سحب الزهرة بأنها مكوّنة من حمض الكبريتيك، في غلاف جوي يهيمن عليه ثاني أكسيد الكربون.",
     "decoys": [
       "الزئبق",
-      "العسل",
-      "النيتروجين السائل"
+      "الحديد",
+      "الأمونيا",
+      "النيتروجين"
     ],
-    "category": "فضاء",
-    "curious": true,
-    "kind": "text",
-    "answerType": "text",
-    "sourceHint": "NASA Science",
-    "sourceUrl": "https://science.nasa.gov/venus/venus-facts/",
-    "verifiedAt": "2026-09-12"
+    "explanation": "أظهرت قياسات كاسيني أن هذه البحيرات الشمالية غنية بالميثان السائل، في عالم أبرد كثيرًا من الأرض.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "Cassini Reveals Surprises with Titan’s Lakes",
+    "sourceUrl": "https://science.nasa.gov/missions/cassini/cassini-reveals-surprises-with-titans-lakes/",
+    "sourceTitle": "Cassini Reveals Surprises with Titan’s Lakes",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-party-saturn-hexagon",
-    "factId": "fabraka-party-saturn-hexagon",
-    "text": "حول القطب الشمالي لزحل، يشكّل تيار جوي شكلًا هندسيًا هو ___.",
-    "answer": "سداسي الأضلاع",
-    "aliases": [
-      "سداسي",
-      "مسدس",
-      "شكل سداسي",
-      "سداسي اضلاع"
-    ],
-    "explanation": "رصدت فوياجر ثم كاسيني تيارًا جويًا متموجًا ذا ستة أضلاع حول قطب زحل الشمالي.",
-    "decoys": [
-      "مثلث",
-      "مربع",
-      "نجمة خماسية"
-    ],
-    "category": "فضاء",
-    "curious": true,
+    "id": "fab3-fact-037",
+    "factId": "fab3-fact-037",
     "kind": "text",
-    "answerType": "text",
-    "sourceHint": "NASA Science",
-    "sourceUrl": "https://science.nasa.gov/saturn/facts/",
-    "verifiedAt": "2026-09-12"
-  },
-  {
-    "id": "fabraka-party-saturn-rings",
-    "factId": "fabraka-party-saturn-rings",
-    "text": "مليارات القطع في حلقات زحل تتكون أساسًا من مادتين هما ___.",
-    "answer": "الجليد والصخور",
-    "aliases": [
-      "صخور وجليد",
-      "ثلج وصخور",
-      "الجليد والصخر",
-      "الثلج والصخور"
-    ],
-    "explanation": "تتكون الحلقات من قطع جليدية وصخرية تغطيها مواد مثل الغبار، وتتفاوت أحجامها كثيرًا.",
-    "decoys": [
-      "الزجاج والمعادن",
-      "الملح والرمال",
-      "الألماس والفحم"
-    ],
-    "category": "فضاء",
     "curious": true,
-    "kind": "text",
-    "answerType": "text",
-    "sourceHint": "NASA Science",
-    "sourceUrl": "https://science.nasa.gov/saturn/facts/",
-    "verifiedAt": "2026-09-12"
-  },
-  {
-    "id": "fabraka-party-uranus-literature",
-    "factId": "fabraka-party-uranus-literature",
-    "text": "أسماء أقمار أورانوس مأخوذة من شخصيات في ___ لشكسبير وألكسندر بوب.",
-    "answer": "أعمال أدبية",
-    "aliases": [
-      "الأعمال الأدبية",
-      "الأدب",
-      "مسرحيات وقصائد",
-      "قصائد ومسرحيات",
-      "مسرحيات وأشعار"
-    ],
-    "explanation": "تستمد أقمار أورانوس أسماءها من شخصيات كتب عنها ويليام شكسبير وألكسندر بوب.",
-    "decoys": [
-      "سجلات رحلات بحرية",
-      "أبحاث طبية",
-      "خرائط فلكية"
-    ],
-    "category": "فضاء",
-    "curious": true,
-    "kind": "text",
-    "answerType": "text",
-    "sourceHint": "NASA Science",
-    "sourceUrl": "https://science.nasa.gov/uranus/facts/",
-    "verifiedAt": "2026-09-12"
-  },
-  {
-    "id": "fabraka-party-uranus-winter",
-    "factId": "fabraka-party-uranus-winter",
-    "text": "بسبب ميل أورانوس، قد يطول الشتاء المظلم عند أحد قطبيه نحو ___ سنة أرضية.",
-    "answer": "21",
-    "aliases": [
-      "٢١",
-      "واحد وعشرون",
-      "إحدى وعشرون",
-      "احدى وعشرين",
-      "واحد وعشرين"
-    ],
-    "explanation": "يشير أحد قطبي أورانوس نحو الشمس قرابة ربع سنته، بينما يعيش القطب الآخر شتاءً مظلمًا يدوم نحو 21 سنة أرضية.",
-    "decoys": [
-      "7",
-      "42",
-      "84"
-    ],
-    "category": "فضاء",
-    "curious": true,
-    "kind": "text",
-    "answerType": "number",
-    "sourceHint": "NASA Science",
-    "sourceUrl": "https://science.nasa.gov/uranus/facts/",
-    "verifiedAt": "2026-09-12"
-  },
-  {
-    "id": "fabraka-w5-001",
-    "text": "الفلز الوحيد الذي يبقى سائلًا في درجة حرارة الغرفة هو ___.",
-    "answer": "الزئبق",
-    "explanation": "درجة انصهار الزئبق نحو 39 درجة مئوية تحت الصفر، ولذلك يبقى سائلًا في درجة حرارة الغرفة بينما تبقى بقية الفلزات صلبة.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "Royal Society of Chemistry - Mercury / Encyclopaedia Britannica",
-    "factId": "fabraka-w5-001",
     "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
     "answerType": "text",
+    "text": "في عرض علمي على القمر، أسقط ديفيد سكوت مطرقة و___ معًا، فوصلتا إلى السطح في الوقت نفسه.",
+    "answer": "ريشة",
+    "aliases": [
+      "ريشة طائر",
+      "ريشة صقر",
+      "الريشة"
+    ],
     "decoys": [
-      "الرصاص",
-      "الصوديوم",
+      "بالون هيليوم",
+      "ورقة ألمنيوم",
+      "حبة قطن",
+      "كرة مطاطية"
+    ],
+    "explanation": "أجرى رائد أبولو 15 التجربة في غياب مقاومة الهواء، مستخدمًا مطرقة وريشة صقر.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "The Apollo 15 Hammer-Feather Drop",
+    "sourceUrl": "https://science.nasa.gov/resource/the-apollo-15-hammer-feather-drop/",
+    "sourceTitle": "The Apollo 15 Hammer-Feather Drop",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-038",
+    "factId": "fab3-fact-038",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "حمل كل مسبار من فوياجر تحية صوتية ومرئية للأحياء المحتملة خارج الأرض، مخزنة على ___.",
+    "answer": "أسطوانة مطلية بالذهب",
+    "aliases": [
+      "أسطوانة ذهبية",
+      "قرص ذهبي",
+      "الأسطوانة الذهبية",
+      "قرص مطلي بالذهب"
+    ],
+    "decoys": [
+      "شريط كاسيت",
+      "بطاقة مثقبة",
+      "بلورة زجاجية",
+      "شريحة سيليكون"
+    ],
+    "explanation": "الرسالة أسطوانة نحاسية مطلية بالذهب، تضم أصواتًا وصورًا وتعليمات تساعد على تشغيلها.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "Golden Record Overview",
+    "sourceUrl": "https://science.nasa.gov/mission/voyager/voyager-golden-record-overview/",
+    "sourceTitle": "Golden Record Overview",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-039",
+    "factId": "fab3-fact-039",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "حوّل آلان شيبارد أداة لجمع العينات إلى مضرب، ثم مارس على القمر رياضة ___.",
+    "answer": "الغولف",
+    "aliases": [
+      "الجولف",
+      "غولف",
+      "جولف"
+    ],
+    "decoys": [
+      "التنس",
+      "الكريكيت",
+      "البيسبول",
+      "الهوكي"
+    ],
+    "explanation": "ثبت شيبارد رأس مضرب غولف على أداة جمع عينات، وضرب كرات في نهاية عمله خارج مركبة أبولو 14.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "Apollo 14 Demonstrated Spaceflight Challenges Are Solvable",
+    "sourceUrl": "https://www.nasa.gov/history/apollo-14-demonstrated-spaceflight-challenges-are-solvable/",
+    "sourceTitle": "Apollo 14 Demonstrated Spaceflight Challenges Are Solvable",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-040",
+    "factId": "fab3-fact-040",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "وصلت آلة إيطالية خاصة إلى محطة الفضاء الدولية لتلبية طلب أرضي مألوف: تحضير ___.",
+    "answer": "الإسبريسو",
+    "aliases": [
+      "اسبرسو",
+      "إسبرسو",
+      "قهوة إسبريسو",
+      "قهوة اسبريسو",
+      "الاسبريسو"
+    ],
+    "decoys": [
+      "الجيلاتو",
+      "البيتزا",
+      "الريزوتو",
+      "اللازانيا"
+    ],
+    "explanation": "أتاحت آلة ISSpresso تحضير الإسبريسو في المحطة، واستخدمتها سامانثا كريستوفوريتي عام 2015.",
+    "category": "غرائب الفضاء",
+    "sourceHint": "Food on the International Space Station",
+    "sourceUrl": "https://www.nasa.gov/history/space-station-20th-food-on-iss/",
+    "sourceTitle": "Food on the International Space Station",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-041",
+    "factId": "fab3-fact-041",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "قبل أن تصبح عجينة «بلاي دو» لعبة للأطفال، كانت تباع مادةً لتنظيف ___.",
+    "answer": "ورق الجدران",
+    "aliases": [
+      "ورق الحائط",
+      "الجدران المغطاة بالورق"
+    ],
+    "decoys": [
+      "الأحذية الجلدية",
+      "الفضة",
+      "نوافذ السيارات",
+      "آلات الطباعة"
+    ],
+    "explanation": "بدأ المنتج عجينة لإزالة الأوساخ عن ورق الجدران، ثم أعيد تقديمه للأطفال بوصفه مادة للّعب والتشكيل.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "Play-Doh",
+    "sourceUrl": "https://www.museumofplay.org/toys/play-doh/",
+    "sourceTitle": "Play-Doh",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-042",
+    "factId": "fab3-fact-042",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "أثناء العمل على معدات للسفن، شاهد ريتشارد جيمس نابضًا يقفز بعد سقوطه، فاستلهم لعبة ___.",
+    "answer": "سلينكي",
+    "aliases": [
+      "سْلينكي",
+      "Slinky",
+      "لعبة النابض",
+      "النابض المتحرك"
+    ],
+    "decoys": [
+      "اليويو",
+      "الدوامة",
+      "الكرة النطاطة",
+      "مكعب الألغاز"
+    ],
+    "explanation": "كان جيمس يطور نوابض لمعدات بحرية، وأوحى له سلوك أحدها بلعبة النابض التي تمشي على الدرج.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "Slinky",
+    "sourceUrl": "https://www.museumofplay.org/toys/slinky/",
+    "sourceTitle": "Slinky",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-043",
+    "factId": "fab3-fact-043",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "كان لوني جونسون يجرب نظامًا لمضخة حرارية عندما ألهمه اندفاع الماء اختراع ___.",
+    "answer": "مسدس ماء",
+    "aliases": [
+      "مسدس مائي",
+      "مسدس المياه",
+      "مسدس سوبر سوكر",
+      "سوبر سوكر"
+    ],
+    "decoys": [
+      "قارب لعبة",
+      "مظلة قابلة للنفخ",
+      "غلاية سفر",
+      "دراجة بحرية"
+    ],
+    "explanation": "أدت تجربة مرتبطة بمضخة حرارية إلى الفكرة التي طورها جونسون لاحقًا في لعبة Super Soaker.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "Meet Lonnie Johnson, the Man Behind the Super Soaker",
+    "sourceUrl": "https://invention.si.edu/invention-stories/meet-lonnie-johnson-man-behind-super-soaker",
+    "sourceTitle": "Meet Lonnie Johnson, the Man Behind the Super Soaker",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-044",
+    "factId": "fab3-fact-044",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "انزعجت جوزفين كوكران من تكسّر أوانيها أثناء تنظيفها، فطورت آلة عملية لـ ___.",
+    "answer": "غسل الصحون",
+    "aliases": [
+      "غسل الأطباق",
+      "غسيل الصحون",
+      "غسيل الأطباق",
+      "غسل الأواني"
+    ],
+    "decoys": [
+      "لصق الخزف",
+      "تلميع الفضة",
+      "تجفيف الملابس",
+      "تقطيع الخضار"
+    ],
+    "explanation": "صممت كوكران غسالة صحون تستخدم الماء وأماكن تثبيت للأواني، وحولت فكرتها إلى منتج تجاري.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "Josephine Garis Cochran",
+    "sourceUrl": "https://www.invent.org/inductees/josephine-garis-cochran",
+    "sourceTitle": "Josephine Garis Cochran",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-045",
+    "factId": "fab3-fact-045",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "عندما جربت مليتا بنتز صنع فلتر للقهوة، أخذت الورق النشّاف من ___.",
+    "answer": "دفتر ابنها المدرسي",
+    "aliases": [
+      "دفتر ابنها",
+      "كراسة ابنها",
+      "دفتر مدرسي",
+      "كراسة مدرسية"
+    ],
+    "decoys": [
+      "علبة أحذية",
+      "خريطة قديمة",
+      "ظرف رسالة",
+      "وصفة طبخ"
+    ],
+    "explanation": "وضعت بنتز ورقًا نشافًا من دفتر ابنها داخل وعاء مثقوب، وكانت التجربة بداية فلتر القهوة الورقي.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "1908 — An ingenious invention",
+    "sourceUrl": "https://www.melitta-group.com/en/unternehmen/unsere-geschichte/1908",
+    "sourceTitle": "1908 — An ingenious invention",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-046",
+    "factId": "fab3-fact-046",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "راقبت ماري أندرسون سائقًا يضطر إلى إزالة الثلج عن زجاجه، فابتكرت جهازًا صار معروفًا باسم ___.",
+    "answer": "ماسحة الزجاج",
+    "aliases": [
+      "مساحة الزجاج",
+      "مساحات الزجاج",
+      "ماسحات الزجاج",
+      "مساحة السيارة"
+    ],
+    "decoys": [
+      "مزيل الضباب",
+      "مرآة الرؤية الخلفية",
+      "حزام الأمان",
+      "إشارة الانعطاف"
+    ],
+    "explanation": "ألهمتها رحلة شتوية في عربة كهربائية آليةً تتيح مسح الزجاج من الداخل باستخدام ذراع تحكم.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "Mary Anderson: The Unheralded Inventor of the Windshield Wiper",
+    "sourceUrl": "https://www.invent.org/blog/inventors/mary-anderson-windshield-wipers",
+    "sourceTitle": "Mary Anderson: The Unheralded Inventor of the Windshield Wiper",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-047",
+    "factId": "fab3-fact-047",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في فونوغراف إديسون الأول، كانت الإبرة تترك أثر الصوت على أسطوانة مغطاة بـ ___.",
+    "answer": "رقائق القصدير",
+    "aliases": [
       "القصدير",
-      "الغاليوم"
-    ]
-  },
-  {
-    "id": "fabraka-w5-002",
-    "text": "عند التجمّد يزداد حجم الماء بنحو ___ بالمئة، ولهذا يطفو الجليد.",
-    "answer": "9",
-    "explanation": "الماء من المواد النادرة التي تتمدّد عند التجمّد؛ يزيد حجمه نحو 9 بالمئة فتقل كثافته ويطفو الجليد فوق الماء السائل.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "USGS Water Science School / Encyclopaedia Britannica - Ice",
-    "factId": "fabraka-w5-002",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "تسعة"
+      "ورق القصدير",
+      "رقاقة قصدير"
     ],
-    "kind": "text",
-    "answerType": "number",
     "decoys": [
-      "2",
-      "4",
-      "15",
-      "25"
-    ]
-  },
-  {
-    "id": "fabraka-w5-003",
-    "text": "ينتقل الصوت في الماء أسرع من انتقاله في الهواء بنحو ___ أضعاف.",
-    "answer": "4",
-    "explanation": "سرعة الصوت في الماء نحو 1480 مترًا في الثانية، أي أكثر من أربعة أضعاف سرعته في الهواء، لأن جزيئات الماء أقرب إلى بعضها.",
-    "category": "الكيمياء والفيزياء",
-    "sourceHint": "NOAA Ocean Explorer / Encyclopaedia Britannica",
-    "factId": "fabraka-w5-003",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "أربعة"
+      "جلد الغزال",
+      "ورق الشمع",
+      "قماش الحرير",
+      "صفائح الزجاج"
     ],
-    "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "2",
-      "3",
-      "10",
-      "20"
-    ]
+    "explanation": "سجل النموذج الأول الاهتزازات بضغط الإبرة على رقاقة قصدير ملفوفة حول أسطوانة.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "(ENG) Tinfoil Phonographs (310)",
+    "sourceUrl": "https://www.nps.gov/media/video/view.htm?id=B9DCD826-E87F-4798-87EE-10111AA0BF81",
+    "sourceTitle": "(ENG) Tinfoil Phonographs (310)",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-w5-004",
-    "text": "في قدم الإنسان الواحدة ___ عظمة، أي نحو ربع عظام الجسم في القدمين معًا.",
-    "answer": "26",
-    "explanation": "قدم الإنسان الواحدة تضم 26 عظمة، فالقدمان معًا تحويان نحو ربع عظام الجسم كله.",
-    "category": "جسم الإنسان",
-    "sourceHint": "American Academy of Orthopaedic Surgeons / Gray’s Anatomy",
-    "factId": "fabraka-w5-004",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [
-      "ستة وعشرون"
-    ],
+    "id": "fab3-fact-048",
+    "factId": "fab3-fact-048",
     "kind": "text",
-    "answerType": "number",
-    "decoys": [
-      "14",
-      "19",
-      "38",
-      "44"
-    ]
-  },
-  {
-    "id": "fabraka-w5-005",
-    "text": "حاسة ___ هي الحاسة الوحيدة التي تصل إشاراتها إلى مراكز الذاكرة والعاطفة مباشرة دون محطة وسيطة.",
-    "answer": "الشم",
-    "explanation": "تنتقل إشارات الرائحة من البصلة الشمية إلى اللوزة والحُصين دون المرور بالمهاد كبقية الحواس، ولذلك ترتبط الروائح بالذكريات بقوة.",
-    "category": "جسم الإنسان",
-    "sourceHint": "Harvard Medical School / Nature Reviews Neuroscience",
-    "factId": "fabraka-w5-005",
-    "previousIds": [],
     "curious": true,
-    "aliases": [],
-    "kind": "text",
+    "previousIds": [],
     "answerType": "text",
-    "decoys": [
-      "البصر",
-      "السمع",
-      "اللمس",
-      "التذوق"
-    ]
-  },
-  {
-    "id": "fabraka-w5-006",
-    "text": "الحرف الوحيد في الأبجدية الإنجليزية الذي لا يظهر في اسم أي ولاية أمريكية هو ___.",
-    "answer": "Q",
-    "explanation": "من بين حروف الأبجدية الإنجليزية الستة والعشرين، هذا الحرف وحده لا يرد في اسم أي ولاية من الولايات الخمسين.",
-    "category": "لغة",
-    "sourceHint": "U.S. Census Bureau state names / Merriam-Webster",
-    "factId": "fabraka-w5-006",
-    "previousIds": [],
-    "curious": true,
-    "aliases": [],
-    "kind": "text",
-    "answerType": "text",
-    "decoys": [
-      "Z",
-      "X",
-      "J",
-      "W"
-    ]
-  },
-  {
-    "id": "fabraka-w5-007",
-    "text": "كلمة Cotton في الإنجليزية مأخوذة من الكلمة العربية ___.",
-    "answer": "قطن",
-    "explanation": "انتقلت الكلمة العربية إلى الإسبانية ثم إلى الإنجليزية في القرون الوسطى مع تجارة الأقمشة، فصارت cotton.",
-    "category": "لغة",
-    "sourceHint": "Oxford English Dictionary - cotton / Merriam-Webster etymology",
-    "factId": "fabraka-w5-007",
-    "previousIds": [],
-    "curious": true,
+    "text": "لصنع التجاعيد في نموذج شفاطة تنثني، أدخل جوزيف فريدمان مسمارًا في شفاطة، ثم ضغطها باستخدام ___.",
+    "answer": "خيط تنظيف الأسنان",
     "aliases": [
-      "القطن"
+      "خيط أسنان",
+      "خيط الأسنان",
+      "خيط تنظيف اسنان"
     ],
-    "kind": "text",
-    "answerType": "text",
     "decoys": [
-      "كتان",
-      "قماش",
-      "خيط",
-      "نسيج"
-    ]
+      "مشط شعر",
+      "شفرة حلاقة",
+      "شوكة طعام",
+      "مفتاح علب"
+    ],
+    "explanation": "أدخل فريدمان مسمارًا في الشفاطة الورقية ولف الخيط حول حزوزه، فصنع جزءًا مجعدًا قابلًا للثني.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "The Straight Truth About the Flexible Drinking Straw",
+    "sourceUrl": "https://invention.si.edu/invention-stories/straight-truth-about-flexible-drinking-straw",
+    "sourceTitle": "The Straight Truth About the Flexible Drinking Straw",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-049",
+    "factId": "fab3-fact-049",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "طورت مارغريت نايت آلة تجعل الكيس الورقي يقف كصندوق صغير؛ وذلك بصنع ___.",
+    "answer": "قاع مسطح",
+    "aliases": [
+      "قاعدة مسطحة",
+      "قاع مربع",
+      "قاعدة مربعة"
+    ],
+    "decoys": [
+      "مقبض خشبي",
+      "إطار معدني",
+      "غطاء محكم",
+      "بطانة من القماش"
+    ],
+    "explanation": "كانت آلة نايت تقص الورق وتطويه وتلصقه لتنتج أكياسًا ذات قاعدة مسطحة بدل الشكل الشبيه بالظرف.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "Margaret E. Knight",
+    "sourceUrl": "https://www.invent.org/inductees/margaret-e-knight",
+    "sourceTitle": "Margaret E. Knight",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-050",
+    "factId": "fab3-fact-050",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "جهاز تشستر غرينوود المكوّن من وسادتين ووصلة بينهما صُمم لحماية عضوين من البرد، هما ___.",
+    "answer": "الأذنان",
+    "aliases": [
+      "الأذنين",
+      "آذان",
+      "أذناه"
+    ],
+    "decoys": [
+      "الكفان",
+      "القدمان",
+      "الركبتان",
+      "العينان"
+    ],
+    "explanation": "طوّر غرينوود واقيات الأذن وحصل على براءة لاختراعه؛ تبقي الوسادتان الأذنين دافئتين وتربط بينهما وصلة.",
+    "category": "اختراعات غير متوقعة",
+    "sourceHint": "Chester Greenwood & Earmuffs",
+    "sourceUrl": "https://www.maine.gov/sos/maineatlas/explore-the-atlas/chester-greenwood-earmuffs",
+    "sourceTitle": "Chester Greenwood & Earmuffs",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-051",
+    "factId": "fab3-fact-051",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "قبل ماريو وأجهزة الألعاب بوقت طويل، بدأت نينتندو نشاطها بصناعة ___.",
+    "answer": "أوراق لعب",
+    "aliases": [
+      "بطاقات لعب",
+      "ورق لعب",
+      "بطاقات هانافودا",
+      "أوراق هانافودا"
+    ],
+    "decoys": [
+      "دمى خشبية",
+      "قطارات صغيرة",
+      "طائرات ورقية",
+      "ساعات منبهة"
+    ],
+    "explanation": "بدأت نينتندو بصناعة بطاقات هانافودا اليابانية المزينة برسومات، قبل انتقالها إلى الألعاب الإلكترونية.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Revisit Nintendo’s roots with Hanafuda",
+    "sourceUrl": "https://www.nintendo.com/en-gb/News/2021/August/Revisit-Nintendo-s-roots-with-Hanafuda-2019412.html",
+    "sourceTitle": "Revisit Nintendo’s roots with Hanafuda",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-052",
+    "factId": "fab3-fact-052",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "السلف الذي خرجت منه مونوبولي صُمم ليحذّر اللاعبين من نتيجة اقتصادية؛ هي ___.",
+    "answer": "تفاوت الثروة",
+    "aliases": [
+      "عدم عدالة توزيع الثروة",
+      "التفاوت في الثروة",
+      "تركز الثروة",
+      "احتكار الثروة",
+      "عدم المساواة في الثروة"
+    ],
+    "decoys": [
+      "نقص العملات المعدنية",
+      "تقلب سعر الذهب",
+      "غلاء تذاكر السفر",
+      "تلوث المصانع"
+    ],
+    "explanation": "صممت إليزابيث ماجي لعبة المالك لتوضيح آثار تركز الثروة والملكية، ثم تطورت اللعبة في مسار أدى إلى مونوبولي.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Monopoly",
+    "sourceUrl": "https://www.museumofplay.org/toys/monopoly/",
+    "sourceTitle": "Monopoly",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-053",
+    "factId": "fab3-fact-053",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في لوحة الرسم «إتش أ سكتش»، لا تكتب الإبرة بحبر؛ بل تزيح عن الزجاج طبقة من ___.",
+    "answer": "مسحوق الألمنيوم",
+    "aliases": [
+      "بودرة الألمنيوم",
+      "مسحوق الألومنيوم",
+      "الألمنيوم",
+      "الألومنيوم"
+    ],
+    "decoys": [
+      "غبار الفحم",
+      "دقيق الأرز",
+      "برادة النحاس",
+      "بودرة الطباشير"
+    ],
+    "explanation": "يحرك المقبضان قلمًا داخليًا يزيل المسحوق عن الزجاج فتظهر الخطوط؛ ويعيد الهز توزيع المسحوق لمحوها.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Etch A Sketch",
+    "sourceUrl": "https://www.museumofplay.org/toys/etch-a-sketch/",
+    "sourceTitle": "Etch A Sketch",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-054",
+    "factId": "fab3-fact-054",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "استلهم جون لويد رايت لعبة البناء «لينكولن لوغز» من مبانٍ يابانية صُممت لتقاوم ___.",
+    "answer": "الزلازل",
+    "aliases": [
+      "الهزات الأرضية",
+      "الزلزال"
+    ],
+    "decoys": [
+      "الحرائق",
+      "الفيضانات",
+      "النمل الأبيض",
+      "العواصف الرملية"
+    ],
+    "explanation": "أوحت له طرق تعشيق الخشب في البناء الياباني بفكرة قطع خشبية تتشابك لتكوين بيوت صغيرة.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Lincoln Logs",
+    "sourceUrl": "https://www.museumofplay.org/toys/lincoln-logs/",
+    "sourceTitle": "Lincoln Logs",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-055",
+    "factId": "fab3-fact-055",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "النسخة الأولى من «مستر بوتيتو هيد» باعت الوجوه والأطراف فقط؛ وكان على الأسرة إحضار ___.",
+    "answer": "حبة بطاطا حقيقية",
+    "aliases": [
+      "بطاطا",
+      "بطاطس",
+      "حبة بطاطس",
+      "خضار حقيقية"
+    ],
+    "decoys": [
+      "بالون منفوخ",
+      "علبة معدنية",
+      "رغيف خبز",
+      "قالب صابون"
+    ],
+    "explanation": "كانت القطع تثبت في بطاطا أو خضار حقيقية من المنزل، ثم ظهرت لاحقًا الأجسام البلاستيكية الجاهزة.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Why Stop at Potatoes?",
+    "sourceUrl": "https://www.museumofplay.org/blog/why-stop-at-potatoes/",
+    "sourceTitle": "Why Stop at Potatoes?",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-056",
+    "factId": "fab3-fact-056",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "يرتبط اسم «باك مان» بالتعبير الياباني «باكو باكو»، الذي يحاكي حركة ___.",
+    "answer": "الأكل",
+    "aliases": [
+      "المضغ",
+      "تناول الطعام",
+      "فتح الفم للأكل"
+    ],
+    "decoys": [
+      "العطس",
+      "الضحك",
+      "النوم",
+      "الركض"
+    ],
+    "explanation": "استلهم الاسم من التعبير المستخدم لوصف الأكل وفتح الفم وإغلاقه، بما يلائم الشخصية التي تلتهم النقاط.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Pac-Man",
+    "sourceUrl": "https://www.museumofplay.org/games/pac-man/",
+    "sourceTitle": "Pac-Man",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-057",
+    "factId": "fab3-fact-057",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "يمكن مطّ دمية «سترتش أرمسترونغ» ثم تعود إلى شكلها؛ ومن أسرارها حشوة من ___.",
+    "answer": "شراب الذرة",
+    "aliases": [
+      "سيرب الذرة",
+      "شراب ذرة",
+      "شراب الذرة المركز"
+    ],
+    "decoys": [
+      "العسل",
+      "الرمل الناعم",
+      "زيت الزيتون",
+      "عجينة الورق"
+    ],
+    "explanation": "تحتوي الدمية المطاطية على شراب ذرة كثيف يساعدها على التمدد ثم استعادة شكلها.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Magic Slate, Stretch Armstrong, and Toys that Make You Go Hmmm…",
+    "sourceUrl": "https://www.museumofplay.org/blog/magic-slate-stretch-armstrong-and-toys-that-make-you-go-hmmm/",
+    "sourceTitle": "Magic Slate, Stretch Armstrong, and Toys that Make You Go Hmmm…",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-058",
+    "factId": "fab3-fact-058",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "استلهم مبتكر «كلودو» أجواء ألغاز الجرائم في الفنادق، التي عرفها أثناء عمله ___.",
+    "answer": "عازف بيانو",
+    "aliases": [
+      "عازفًا على البيانو",
+      "عازف البيانو",
+      "بيانيست"
+    ],
+    "decoys": [
+      "محقق تأمين",
+      "طاهيًا",
+      "حارسًا ليليًا",
+      "مصورًا صحفيًا"
+    ],
+    "explanation": "عمل أنطوني برات عازف بيانو في أماكن استضافت سهرات ألغاز، ثم ابتكر لعبة التحقيق المعروفة.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Clue",
+    "sourceUrl": "https://www.museumofplay.org/toys/clue/",
+    "sourceTitle": "Clue",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-059",
+    "factId": "fab3-fact-059",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "كان فرن الأطفال «إيزي بيك» الأصلي يخبز الكعك بحرارة مصدر منزلي غير معتاد للطبخ: ___.",
+    "answer": "مصابيح كهربائية",
+    "aliases": [
+      "المصابيح الكهربائية",
+      "لمبات كهربائية",
+      "لمبات",
+      "المصابيح المتوهجة"
+    ],
+    "decoys": [
+      "بطاريات راديو",
+      "أكياس ماء ساخن",
+      "شموع صغيرة",
+      "عدسة شمسية"
+    ],
+    "explanation": "استخدم الفرن الصغير حرارة المصابيح المتوهجة لخبز خلطاته، قبل تغير تقنيته في إصدارات لاحقة.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Easy-Bake Oven",
+    "sourceUrl": "https://www.museumofplay.org/toys/easy-bake-oven/",
+    "sourceTitle": "Easy-Bake Oven",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-060",
+    "factId": "fab3-fact-060",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "صممت إليانور أبوت عالم الحلوى في «كاندي لاند» لتسلية أطفال كانوا يقضون وقتهم في ___.",
+    "answer": "المستشفى",
+    "aliases": [
+      "مستشفى",
+      "أجنحة المستشفى",
+      "قسم الأطفال بالمستشفى"
+    ],
+    "decoys": [
+      "القطارات",
+      "مخيم صيفي",
+      "مسرح دمى",
+      "مدرسة داخلية"
+    ],
+    "explanation": "ابتكرت أبوت اللعبة أثناء تعافيها من شلل الأطفال لتؤنس الأطفال في أجنحة المستشفى.",
+    "category": "عالم الألعاب",
+    "sourceHint": "Play is the Best Medicine",
+    "sourceUrl": "https://www.museumofplay.org/blog/play-is-the-best-medicine/",
+    "sourceTitle": "Play is the Best Medicine",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-061",
+    "factId": "fab3-fact-061",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "قبل آلاف السنين، كتب ناني شكوى إلى التاجر إيّا ناصر على لوح طيني؛ وكان غاضبًا من جودة ___.",
+    "answer": "النحاس",
+    "aliases": [
+      "نحاس",
+      "النحاس الذي اشتراه",
+      "سبائك النحاس"
+    ],
+    "decoys": [
+      "الشعير",
+      "الصوف",
+      "زيت الزيتون",
+      "الأحجار الكريمة"
+    ],
+    "explanation": "يحفظ المتحف البريطاني لوح شكوى يتعلق بتوريد نحاس رديء وبطريقة معاملة ممثل المشتري.",
+    "category": "قصص المتاحف",
+    "sourceHint": "29 things you (probably) didn't know about the British Museum",
+    "sourceUrl": "https://www.britishmuseum.org/blog/29-things-you-probably-didnt-know-about-british-museum",
+    "sourceTitle": "29 things you (probably) didn't know about the British Museum",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-062",
+    "factId": "fab3-fact-062",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في قطع شطرنج لويس القديمة، يبدو بعض المحاربين في غاية الشراسة؛ إذ يعضّ الواحد منهم ___.",
+    "answer": "درعه",
+    "aliases": [
+      "الدرع",
+      "دروعهم",
+      "درعًا"
+    ],
+    "decoys": [
+      "سيفه",
+      "حزامه",
+      "خوذته",
+      "حذاءه"
+    ],
+    "explanation": "تمثل بعض قطع الحراس محاربين يعضون دروعهم، وهي سمة مرتبطة بصورة محاربي البرسرك في التقاليد النوردية.",
+    "category": "قصص المتاحف",
+    "sourceHint": "Redisplay of the Lewis chess pieces allows them to be seen in full for the first time",
+    "sourceUrl": "https://media.nms.ac.uk/news/redisplay-of-the-lewis-chess-pieces-allows-them-to-be-seen-in-full-for-the-first-time",
+    "sourceTitle": "Redisplay of the Lewis chess pieces allows them to be seen in full for the first time",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-063",
+    "factId": "fab3-fact-063",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في مكتبة كاتدرائية هيرفورد التاريخية، كان القارئ يستطيع فتح الكتاب، لكن إخراجه صعب لأنه مربوط بـ ___.",
+    "answer": "سلسلة",
+    "aliases": [
+      "سلاسل",
+      "سلسلة حديدية",
+      "سلسلة معدنية"
+    ],
+    "decoys": [
+      "حبل حرير",
+      "سلك جرس",
+      "شريط جلدي",
+      "خيط صوف"
+    ],
+    "explanation": "تحافظ المكتبة على نظام الكتب المربوطة بسلاسل، الذي أتاح القراءة مع حماية المجلدات من السرقة.",
+    "category": "قصص المتاحف",
+    "sourceHint": "Chained Library",
+    "sourceUrl": "https://www.herefordcathedral.org/chained-library",
+    "sourceTitle": "Chained Library",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-064",
+    "factId": "fab3-fact-064",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "وضع المصريون القدماء تماثيل «أوشبتي» مع الموتى، اعتقادًا بأنها تستطيع أن تؤدي عنهم ___.",
+    "answer": "أعمال الزراعة",
+    "aliases": [
+      "العمل الزراعي",
+      "العمل في الحقول",
+      "الزراعة",
+      "الأعمال الشاقة"
+    ],
+    "decoys": [
+      "العزف في الاحتفالات",
+      "عد النجوم",
+      "رسم الخرائط",
+      "كتابة الرسائل"
+    ],
+    "explanation": "توضح نصوص أوشبتي دور التمثال بديلًا لصاحبه في العمل الزراعي في العالم الآخر، بحسب المعتقد المصري القديم.",
+    "category": "قصص المتاحف",
+    "sourceHint": "shabti — British Museum, EA65206",
+    "sourceUrl": "https://www.britishmuseum.org/collection/object/Y_EA65206",
+    "sourceTitle": "shabti — British Museum, EA65206",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-065",
+    "factId": "fab3-fact-065",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في رسالة رومانية عُثر عليها في فيندولاندا، ورد إرسال جوارب وأحذية وقطعة عملية أخرى هي ___.",
+    "answer": "ملابس داخلية",
+    "aliases": [
+      "سراويل داخلية",
+      "الملابس الداخلية",
+      "سروال داخلي"
+    ],
+    "decoys": [
+      "ربطات عنق",
+      "أقنعة مسرح",
+      "قفازات حرير",
+      "قبعات طاهٍ"
+    ],
+    "explanation": "تسجل اللوحة الكتابية ملابس أرسلت إلى المتلقي، ومنها الجوارب والصنادل والملابس الداخلية.",
+    "category": "قصص المتاحف",
+    "sourceHint": "writing-tablet — British Museum, 1980,0303.35",
+    "sourceUrl": "https://www.britishmuseum.org/collection/object/H_1980-0303-35",
+    "sourceTitle": "writing-tablet — British Museum, 1980,0303.35",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-066",
+    "factId": "fab3-fact-066",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "لم يأت لمعان فستان إلين تيري في دور ليدي ماكبث من الترتر وحده؛ فقد زُيّن بـ ___.",
+    "answer": "أغطية أجنحة الخنافس",
+    "aliases": [
+      "أجنحة الخنافس",
+      "أجنحة خنافس",
+      "أغطية أجنحة خنافس"
+    ],
+    "decoys": [
+      "قشور السمك",
+      "بتلات مجففة",
+      "شظايا مرايا",
+      "أصداف حلزون"
+    ],
+    "explanation": "يحمل الفستان أغطية أجنحة خنافس لامعة تعطي سطحه بريقًا أخضر متغيرًا مع الضوء.",
+    "category": "قصص المتاحف",
+    "sourceHint": "Fashion highlights in our collections",
+    "sourceUrl": "https://www.nationaltrust.org.uk/discover/history/art-collections/revealing-the-national-trusts-fashion-treasures",
+    "sourceTitle": "Fashion highlights in our collections",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-067",
+    "factId": "fab3-fact-067",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "كأس ليكورغوس الروماني يبدو أخضر في الضوء المنعكس، لكنه يتلوّن بالأحمر عندما ___.",
+    "answer": "يمر الضوء خلاله",
+    "aliases": [
+      "ينفذ الضوء عبره",
+      "يوضع الضوء خلفه",
+      "يضاء من الخلف"
+    ],
+    "decoys": [
+      "يُملأ بالماء",
+      "يوضع قرب مغناطيس",
+      "يُفرك بالصوف",
+      "تنخفض حرارته"
+    ],
+    "explanation": "يحتوي زجاج الكأس على جسيمات دقيقة من معادن، فيختلف لونه بين الضوء المنعكس والضوء النافذ.",
+    "category": "قصص المتاحف",
+    "sourceHint": "Large print guide — Room 41: Sutton Hoo and Europe",
+    "sourceUrl": "https://www.britishmuseum.org/sites/default/files/2021-05/large_print_guide_room_41.pdf",
+    "sourceTitle": "Large print guide — Room 41: Sutton Hoo and Europe",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-068",
+    "factId": "fab3-fact-068",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في مجموعة متحف المتروبوليتان خوذة ساموراي لا تتخذ هيئة وحش مخيف، بل هيئة ___.",
+    "answer": "أرنب رابض",
+    "aliases": [
+      "أرنب",
+      "أرنب جاثم",
+      "أرنب قابع"
+    ],
+    "decoys": [
+      "بطريق",
+      "حلزون",
+      "ضفدع",
+      "بطة"
+    ],
+    "explanation": "تتخذ هذه الخوذة اليابانية شكل أرنب رابض، بما في ذلك الأذنان الطويلتان فوق الرأس.",
+    "category": "قصص المتاحف",
+    "sourceHint": "Helmet in the Shape of a Crouching Rabbit",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/22098",
+    "sourceTitle": "Helmet in the Shape of a Crouching Rabbit",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-069",
+    "factId": "fab3-fact-069",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "تحمل مومياء تمساح من كوم أمبو، محفوظة في المتحف البريطاني، مجموعة غير متوقعة فوق ظهرها: ___.",
+    "answer": "تماسيح صغيرة محنطة",
+    "aliases": [
+      "مومياوات تماسيح صغيرة",
+      "صغار تماسيح محنطة",
+      "تماسيح محنطة صغيرة"
+    ],
+    "decoys": [
+      "قلائد من الذهب",
+      "بيض نعام",
+      "تماثيل قوارب",
+      "أقنعة قطط"
+    ],
+    "explanation": "ثُبتت مومياوات صغار تماسيح على دعامات من القصب فوق ظهر التمساح الكبير، وغُطيت المجموعة بمادة راتنجية.",
+    "category": "قصص المتاحف",
+    "sourceHint": "animal mummy — British Museum, EA38562",
+    "sourceUrl": "https://www.britishmuseum.org/collection/object/Y_EA38562",
+    "sourceTitle": "animal mummy — British Museum, EA38562",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-070",
+    "factId": "fab3-fact-070",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "number",
+    "text": "عُثر على مجسمات رومانية معدنية غامضة الاستخدام، ذات ثقوب في أوجهها؛ عدد أوجه كل مجسم منها ___.",
+    "answer": "12",
+    "aliases": [
+      "١٢",
+      "اثنا عشر",
+      "اثني عشر",
+      "اثني عشر وجهًا"
+    ],
+    "decoys": [
+      "8",
+      "16",
+      "20",
+      "24"
+    ],
+    "explanation": "هذه المجسمات تسمى الاثني عشريات الرومانية؛ شكلها معروف، لكن وظيفتها الأصلية لا تزال محل نقاش.",
+    "category": "قصص المتاحف",
+    "sourceHint": "The mysterious dodecahedra of the Roman Empire",
+    "sourceUrl": "https://www.english-heritage.org.uk/visit/places/corbridge-roman-town-hadrians-wall/dodecahedron-exhibition/",
+    "sourceTitle": "The mysterious dodecahedra of the Roman Empire",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-071",
+    "factId": "fab3-fact-071",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "البهار المعروف بالبسباسة ليس ورقة شجرة؛ بل هو الغلاف الأحمر الذي يحيط ببذرة ___.",
+    "answer": "جوزة الطيب",
+    "aliases": [
+      "جوز الطيب",
+      "جوز الطيب العطري",
+      "جوزة طيب"
+    ],
+    "decoys": [
+      "الفستق",
+      "الكاكاو",
+      "التمر الهندي",
+      "الهيل"
+    ],
+    "explanation": "تعطي ثمرة جوزة الطيب بهارين مختلفين: البذرة نفسها، والغلاف المحيط بها الذي يجفف ليصبح بسباسة.",
+    "category": "طعام ومائدة",
+    "sourceHint": "A spice sensation in oils at the Marianne North Gallery",
+    "sourceUrl": "https://www.kew.org/read-and-watch/marianne-north-gallery-a-spice-sensation",
+    "sourceTitle": "A spice sensation in oils at the Marianne North Gallery",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-072",
+    "factId": "fab3-fact-072",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "عود القرفة الذي يسبح في كوبك ليس غصنًا صغيرًا؛ إنه قطعة ملتفة من ___.",
+    "answer": "لحاء شجرة",
+    "aliases": [
+      "اللحاء",
+      "اللحاء الداخلي",
+      "لحاء الشجرة",
+      "قشر الشجرة"
+    ],
+    "decoys": [
+      "جذر مجفف",
+      "ورقة نخيل",
+      "قشرة ثمرة",
+      "ساق زهرة"
+    ],
+    "explanation": "تصنع عيدان القرفة من اللحاء الداخلي الذي يلتف أثناء التجفيف، وليس من أغصان كاملة.",
+    "category": "طعام ومائدة",
+    "sourceHint": "A spice sensation in oils at the Marianne North Gallery",
+    "sourceUrl": "https://www.kew.org/read-and-watch/marianne-north-gallery-a-spice-sensation",
+    "sourceTitle": "A spice sensation in oils at the Marianne North Gallery",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-073",
+    "factId": "fab3-fact-073",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "حبات الكَبَر الصغيرة التي تُخلّل للمقبلات ليست بذورًا؛ إنها ___.",
+    "answer": "براعم أزهار",
+    "aliases": [
+      "براعم الزهور",
+      "براعم زهرية",
+      "براعم الأزهار"
+    ],
+    "decoys": [
+      "جذور صغيرة",
+      "قشور ثمار",
+      "أوراق ملفوفة",
+      "درنات"
+    ],
+    "explanation": "الكَبَر المعتاد في التوابل هو البرعم الزهري قبل تفتحه؛ وتختلف عنه ثمار النبات التي قد تخلل أيضًا.",
+    "category": "طعام ومائدة",
+    "sourceHint": "Capparaceae Juss. — Plants of the World Online",
+    "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A30001562-2/general-information",
+    "sourceTitle": "Capparaceae Juss. — Plants of the World Online",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-074",
+    "factId": "fab3-fact-074",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "لم تكن بذور الكاكاو مجرد طريق إلى شراب لذيذ عند الأزتك؛ فقد استُخدمت أيضًا كـ ___.",
+    "answer": "نقود",
+    "aliases": [
+      "عملة",
+      "وسيلة دفع",
+      "عملات",
+      "مال"
+    ],
+    "decoys": [
+      "وقود للمشاعل",
+      "حبر للكتابة",
+      "أوزان للميزان",
+      "حبات للسبحة"
+    ],
+    "explanation": "استخدم الأزتك حبوب الكاكاو وسيلة للتبادل، فكانت لها قيمة تتجاوز تحضير المشروبات.",
+    "category": "طعام ومائدة",
+    "sourceHint": "Cacao tree",
+    "sourceUrl": "https://www.kew.org/plants/cacao-tree",
+    "sourceTitle": "Cacao tree",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-075",
+    "factId": "fab3-fact-075",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "اسم «أولسبايس» يوحي بأنه خليط كل التوابل، لكنه في الحقيقة ___.",
+    "answer": "ثمار نبات واحد",
+    "aliases": [
+      "ثمار شجرة واحدة",
+      "حبات نبات واحد",
+      "بهار من نبات واحد",
+      "ثمار نوع واحد من النباتات"
+    ],
+    "decoys": [
+      "خليط أربع بذور",
+      "أوراق متعددة مطحونة",
+      "ملح مع عطور",
+      "فطر مجفف"
+    ],
+    "explanation": "أولسبايس بهار يصنع من ثمار غير ناضجة مجففة لنبات واحد، وسمي بذلك لتعدد الروائح التي يذكّر بها.",
+    "category": "طعام ومائدة",
+    "sourceHint": "Christmas spice makes all things nice",
+    "sourceUrl": "https://www.kew.org/read-and-watch/christmas-spices",
+    "sourceTitle": "Christmas spice makes all things nice",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-076",
+    "factId": "fab3-fact-076",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "وجد موموفوكو أندو مفتاح تجفيف الشعيرية السريعة عندما شاهد زوجته تقلي طبق ___.",
+    "answer": "التمبورا",
+    "aliases": [
+      "تمبورا",
+      "التيمبورا",
+      "تيمبورا"
+    ],
+    "decoys": [
+      "السوشي",
+      "الأونيغيري",
+      "الساشيمي",
+      "الموتشي"
+    ],
+    "explanation": "لاحظ خروج الرطوبة من عجينة التمبورا في الزيت، وجرّب تطبيق مبدأ القلي السريع على الشعيرية.",
+    "category": "طعام ومائدة",
+    "sourceHint": "Our Founder — NISSIN FOODS GROUP",
+    "sourceUrl": "https://www.nissin.com/en_jp/about/founder/",
+    "sourceTitle": "Our Founder — NISSIN FOODS GROUP",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-077",
+    "factId": "fab3-fact-077",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في مقلب تلفزيوني عام 1957، عرضت BBC مزارعين يزعمون أنهم يحصدون ___ من الأشجار.",
+    "answer": "السباغيتي",
+    "aliases": [
+      "سباغيتي",
+      "سباجيتي",
+      "المعكرونة",
+      "المكرونة",
+      "معكرونة"
+    ],
+    "decoys": [
+      "البسكويت",
+      "الجبن",
+      "أكياس الشاي",
+      "البطاطس المقلية"
+    ],
+    "explanation": "كان التقرير خدعة في الأول من أبريل؛ فالسباغيتي لا تنمو على الأشجار، حتى لو بدا الحصاد مقنعًا.",
+    "category": "طعام ومائدة",
+    "sourceHint": "Italian Food in Britain — BBC",
+    "sourceUrl": "https://downloads.bbc.co.uk/china/assets/pdf/bbc_italian_food_in_britain.pdf",
+    "sourceTitle": "Italian Food in Britain — BBC",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-078",
+    "factId": "fab3-fact-078",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "خبّأ جون يونغ وجبة غير مدرجة في قائمة رحلة جيميني 3 داخل بدلته؛ وكانت ___.",
+    "answer": "شطيرة لحم بقري مملح",
+    "aliases": [
+      "ساندويتش لحم بقري",
+      "شطيرة لحم بقري",
+      "ساندويتش كورند بيف",
+      "شطيرة كورند بيف"
+    ],
+    "decoys": [
+      "قطعة بيتزا",
+      "كيس فشار",
+      "لفافة سوشي",
+      "دجاجة مشوية"
+    ],
+    "explanation": "أخرج يونغ شطيرة اللحم البقري المملح أثناء الرحلة، وأثار فتاتها مشكلة عملية في مقصورة الفضاء.",
+    "category": "طعام ومائدة",
+    "sourceHint": "Contraband Corned Beef and the Early Days of Space Biology: the Gemini III Mission",
+    "sourceUrl": "https://www.nasa.gov/centers-and-facilities/ames/contraband-corned-beef-and-the-early-days-of-space-biology-the-gemini-iii-mission/",
+    "sourceTitle": "Contraband Corned Beef and the Early Days of Space Biology: the Gemini III Mission",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-079",
+    "factId": "fab3-fact-079",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في وصفة حساء فيكتورية لميسز بيتون، يُضاف كاتشب لا تصنعه الطماطم؛ بل يصنعه ___.",
+    "answer": "الفطر",
+    "aliases": [
+      "المشروم",
+      "عيش الغراب",
+      "فطر"
+    ],
+    "decoys": [
+      "الخوخ",
+      "البازلاء",
+      "الجزر",
+      "الكرز"
+    ],
+    "explanation": "تتضمن وصفة حساء الديك الرومي كاتشب الفطر؛ فكلمة كاتشب استعملت تاريخيًا لصلصات تتجاوز الطماطم.",
+    "category": "طعام ومائدة",
+    "sourceHint": "Is Mrs Beeton Relevant to Modern Families?",
+    "sourceUrl": "https://www.english-heritage.org.uk/visit/inspire-me/blog/blog-posts/is-mrs-beeton-relevant-to-modern-families/",
+    "sourceTitle": "Is Mrs Beeton Relevant to Modern Families?",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-080",
+    "factId": "fab3-fact-080",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "شجرة السابوديلا تعطينا ثمارًا، لكنها تعطي أيضًا مادة «تشيكل» التي استُخدمت لصناعة ___.",
+    "answer": "العلكة",
+    "aliases": [
+      "علكة",
+      "اللبان",
+      "علكة المضغ",
+      "لبان المضغ"
+    ],
+    "decoys": [
+      "الشوكولاتة",
+      "الآيس كريم",
+      "النودلز",
+      "الخبز"
+    ],
+    "explanation": "تستخرج مادة تشيكل من العصارة اللبنية للشجرة، وقد استعملت أساسًا طبيعيًا للعلكة.",
+    "category": "طعام ومائدة",
+    "sourceHint": "Manilkara zapota (L.) P.Royen — Plants of the World Online",
+    "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A152641-2/general-information",
+    "sourceTitle": "Manilkara zapota (L.) P.Royen — Plants of the World Online",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-081",
+    "factId": "fab3-fact-081",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "جمع بيكاسو مقعدًا ومقودًا وصنع منهما «رأس ثور». القطعتان كانتا في الأصل من ___.",
+    "answer": "دراجة هوائية",
+    "aliases": [
+      "دراجة",
+      "بسكليت",
+      "عجلة هوائية"
+    ],
+    "decoys": [
+      "آلة خياطة",
+      "جزازة عشب",
+      "عربة أطفال",
+      "دراجة نارية"
+    ],
+    "explanation": "استخدم بيكاسو مقعد دراجة ليمثل الرأس ومقودها ليمثل القرنين، فغيّر المعنى من دون إخفاء أصل القطعتين.",
+    "category": "فنون وحكايات",
+    "sourceHint": "Pablo Picasso. Bull’s Head. 1942",
+    "sourceUrl": "https://www.moma.org/audio/playlist/19/412",
+    "sourceTitle": "Pablo Picasso. Bull’s Head. 1942",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-082",
+    "factId": "fab3-fact-082",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "حفظ آندي وارهول رسائل وقصاصات وأغراضًا يومية في «كبسولات زمن»، لكن الحاوية الأساسية كانت ___.",
+    "answer": "صندوق كرتون",
+    "aliases": [
+      "صناديق كرتونية",
+      "علبة كرتون",
+      "صندوق من الورق المقوى",
+      "صناديق من الكرتون"
+    ],
+    "decoys": [
+      "خزانة فولاذية",
+      "جرة فخارية",
+      "كرة زجاجية",
+      "حقيبة سفر"
+    ],
+    "explanation": "جمع وارهول مواد حياته اليومية في صناديق أغلقها وحفظها، وصارت مشروعًا أرشيفيًا يعرف بكبسولات الزمن.",
+    "category": "فنون وحكايات",
+    "sourceHint": "Time Capsules",
+    "sourceUrl": "https://www.warhol.org/time-capsules/",
+    "sourceTitle": "Time Capsules",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-083",
+    "factId": "fab3-fact-083",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "وصف هنري ماتيس أسلوبه في تشكيل قصاصات الورق الملوّن بأنه رسم باستخدام ___.",
+    "answer": "المقص",
+    "aliases": [
+      "مقص",
+      "المقصات"
+    ],
+    "decoys": [
+      "المشط",
+      "المطرقة",
+      "الملعقة",
+      "الدبوس"
+    ],
+    "explanation": "كان ماتيس يقص أشكالًا من ورق ملوّن بالغواش ثم يرتبها، فينشئ العمل بالقص بدل رسم حدوده بالقلم.",
+    "category": "فنون وحكايات",
+    "sourceHint": "Henri Matisse: The Cut-Outs",
+    "sourceUrl": "https://www.moma.org/interactives/exhibitions/2014/matisse/the-cut-outs.html",
+    "sourceTitle": "Henri Matisse: The Cut-Outs",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-084",
+    "factId": "fab3-fact-084",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "حصل روبرت راوشنبرغ على رسم من الفنان دي كوننغ بموافقته، ثم أنجز عمله الجديد عن طريق ___.",
+    "answer": "محو الرسم",
+    "aliases": [
+      "مسح الرسم",
+      "محوه",
+      "مسحه",
+      "إزالة الرسم بالممحاة"
+    ],
+    "decoys": [
+      "حرق نصفه",
+      "طيه كطائرة",
+      "غمره بالقهوة",
+      "دفنه في الرمل"
+    ],
+    "explanation": "طلب راوشنبرغ رسمًا ليمحوه، ووافق دي كوننغ؛ والنتيجة عمل بعنوان «رسم دي كوننغ الممحو».",
+    "category": "فنون وحكايات",
+    "sourceHint": "Robert Rauschenberg, Erased de Kooning Drawing, 1953",
+    "sourceUrl": "https://www.sfmoma.org/artwork/98.298/",
+    "sourceTitle": "Robert Rauschenberg, Erased de Kooning Drawing, 1953",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-085",
+    "factId": "fab3-fact-085",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في مقطوعة جون كيج «4 دقائق و33 ثانية»، تطلب التعليمات من المؤدي أن ___ خلال حركاتها الثلاث.",
+    "answer": "يمتنع عن العزف",
+    "aliases": [
+      "لا يعزف أي نغمة",
+      "لا يعزف",
+      "يمتنع عن إصدار أصوات متعمدة",
+      "يصمت"
+    ],
+    "decoys": [
+      "يعزف نغمة واحدة",
+      "يضرب البيانو بيديه",
+      "يصفّر مع الجمهور",
+      "يرتجل دون نوتة مكتوبة"
+    ],
+    "explanation": "يتوقف المؤدي عن إنتاج النغمات المقصودة، فتلفت المقطوعة الانتباه إلى أصوات القاعة والمحيط؛ ولا تشترط صمت العالم.",
+    "category": "فنون وحكايات",
+    "sourceHint": "There Will Never Be Silence: Scoring John Cage’s 4′33″",
+    "sourceUrl": "https://www.moma.org/calendar/exhibitions/1386",
+    "sourceTitle": "There Will Never Be Silence: Scoring John Cage’s 4′33″",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-086",
+    "factId": "fab3-fact-086",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "رسم ماغريت غليونًا واضحًا، ثم وضع تحته جملة مفاجئة تقول: «هذا ___».",
+    "answer": "ليس غليونًا",
+    "aliases": [
+      "ليس غليون",
+      "ليس بغليون"
+    ],
+    "decoys": [
+      "تذكار جدي",
+      "أفضل غليون",
+      "مصنوع من الخشب",
+      "ممنوع من البيع"
+    ],
+    "explanation": "عنوان العمل «خيانة الصور». تذكّر العبارة بأن صورة الغليون ليست الغليون الحقيقي الذي يمكن استعماله.",
+    "category": "فنون وحكايات",
+    "sourceHint": "The Treachery of Images (This is Not a Pipe)",
+    "sourceUrl": "https://collections.lacma.org/object/31931",
+    "sourceTitle": "The Treachery of Images (This is Not a Pipe)",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-087",
+    "factId": "fab3-fact-087",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "أدخل الملحن ليروي أندرسون إلى الأوركسترا آلة مكتبية تتكفل بالنقرات والرنين؛ إنها ___.",
+    "answer": "آلة كاتبة",
+    "aliases": [
+      "الآلة الكاتبة",
+      "ماكينة كاتبة",
+      "ماكينة كتابة"
+    ],
+    "decoys": [
+      "آلة حاسبة",
+      "هاتف دوّار",
+      "دباسة",
+      "آلة برقيات"
+    ],
+    "explanation": "تستخدم مقطوعة The Typewriter آلة كاتبة حقيقية أداةً إيقاعية، بأصوات مفاتيحها وجرسها وحركتها.",
+    "category": "فنون وحكايات",
+    "sourceHint": "The Typewriter by Leroy Anderson",
+    "sourceUrl": "https://www.leroyanderson.com/news-about-leroy-anderson.php",
+    "sourceTitle": "The Typewriter by Leroy Anderson",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-088",
+    "factId": "fab3-fact-088",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "حوّلت ميريت أوبنهايم فنجانًا وصحنه وملعقته إلى عمل سريالي، حين غطتها جميعًا بـ ___.",
+    "answer": "الفرو",
+    "aliases": [
+      "فرو",
+      "فراء",
+      "فرو غزال"
+    ],
+    "decoys": [
+      "الملح",
+      "ريش الطاووس",
+      "أزرار القمصان",
+      "أوراق الشجر"
+    ],
+    "explanation": "يغطي الفرو أدوات الشرب في عمل Object، فيجعل الأشياء المألوفة تبدو غريبة وصعبة الاستعمال.",
+    "category": "فنون وحكايات",
+    "sourceHint": "Meret Oppenheim. Object. Paris, 1936",
+    "sourceUrl": "https://www.moma.org/collection/works/80997",
+    "sourceTitle": "Meret Oppenheim. Object. Paris, 1936",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-089",
+    "factId": "fab3-fact-089",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "قدّم مارسيل دوشامب عملًا سماه «النافورة»، لكن القطعة الجاهزة التي اختارها كانت ___.",
+    "answer": "مبولة",
+    "aliases": [
+      "مبولة خزفية",
+      "مبولة حمام"
+    ],
+    "decoys": [
+      "حوض سمك",
+      "إبريق شاي",
+      "رشاش حديقة",
+      "حوض استحمام"
+    ],
+    "explanation": "استعمل دوشامب مبولة جاهزة وقدمها بوصفها عملًا فنيًا؛ وأصبحت Fountain من أشهر أمثلة الأشياء الجاهزة في الفن.",
+    "category": "فنون وحكايات",
+    "sourceHint": "Marcel Duchamp, Fountain, 1917/1964",
+    "sourceUrl": "https://www.sfmoma.org/artwork/98.291",
+    "sourceTitle": "Marcel Duchamp, Fountain, 1917/1964",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-090",
+    "factId": "fab3-fact-090",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في هاتف سريالي صممه دالي، استقر فوق السماعة مجسّم لحيوان يؤكل في المطاعم البحرية، هو ___.",
+    "answer": "الكركند",
+    "aliases": [
+      "كركند",
+      "جراد البحر",
+      "لوبستر",
+      "اللُّوبستر"
+    ],
+    "decoys": [
+      "الأخطبوط",
+      "المحار",
+      "الحبار",
+      "قنفذ البحر"
+    ],
+    "explanation": "يجمع «هاتف الكركند» هاتفًا عاملًا ومجسم كركند فوق سماعته، في مزج سريالي بين شيئين لا يجتمعان عادة.",
+    "category": "فنون وحكايات",
+    "sourceHint": "Lobster Telephone",
+    "sourceUrl": "https://www.nationalgalleries.org/art-and-artists/166050/lobster-telephone?page=0",
+    "sourceTitle": "Lobster Telephone",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-091",
+    "factId": "fab3-fact-091",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "في فانواتو، يستطيع صاحب بطاقة بريدية مقاومة للماء إرسالها من مكتب بريد يقع ___.",
+    "answer": "تحت الماء",
+    "aliases": [
+      "تحت سطح الماء",
+      "تحت البحر",
+      "في البحر"
+    ],
+    "decoys": [
+      "داخل بركان",
+      "فوق شجرة",
+      "داخل كهف جليدي",
+      "على ظهر قطار"
+    ],
+    "explanation": "تقدم فانواتو بطاقات خاصة لمكتب البريد تحت الماء قرب جزيرة هايداواي، وتجمع الرسائل باستخدام الغواصين.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "Post Cards: Under Water Postcards",
+    "sourceUrl": "https://vanuatupost.vu/index.php/component/virtuemart/post-cards/under-water-postcards-detail",
+    "sourceTitle": "Post Cards: Under Water Postcards",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-092",
+    "factId": "fab3-fact-092",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "عند افتتاح برج إيفل سنة 1889، لم يكن لونه رماديًا؛ بل كان ___.",
+    "answer": "بنيًا مائلًا إلى الأحمر",
+    "aliases": [
+      "بني محمر",
+      "بني أحمر",
+      "بني مائل للأحمر",
+      "أحمر بني"
+    ],
+    "decoys": [
+      "أبيض عاجيًا",
+      "أزرق داكنًا",
+      "أخضر زيتونيًا",
+      "أسود لامعًا"
+    ],
+    "explanation": "مر البرج بألوان طلاء متعددة. وتسجل إدارته اللون البني المحمر لونًا لمرحلة افتتاحه عام 1889.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "Painting and color of the Eiffel Tower",
+    "sourceUrl": "https://www.toureiffel.paris/en/the-monument/painting-eiffel-tower",
+    "sourceTitle": "Painting and color of the Eiffel Tower",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-093",
+    "factId": "fab3-fact-093",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "داخل جبل في سفالبارد توجد خزنة عالمية، لكن ما تحفظه خلف أبوابها هو ___.",
+    "answer": "بذور المحاصيل",
+    "aliases": [
+      "البذور",
+      "بذور",
+      "بذور نباتات",
+      "بذور زراعية"
+    ],
+    "decoys": [
+      "مياه الأنهار",
+      "عينات سحاب",
+      "عملات منقرضة",
+      "عطور نادرة"
+    ],
+    "explanation": "تحفظ خزنة سفالبارد نسخًا احتياطية من مجموعات البذور لحماية التنوع الزراعي.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "Purpose, operations and organisation",
+    "sourceUrl": "https://www.seedvault.no/about/purpose-operations-and-organisation/",
+    "sourceTitle": "Purpose, operations and organisation",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-094",
+    "factId": "fab3-fact-094",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "أراد غاودي أن يشعر زائر ساغرادا فاميليا أنه داخل غابة؛ لذلك جعل الأعمدة ___.",
+    "answer": "تتفرع كالأشجار",
+    "aliases": [
+      "تتفرع",
+      "شبيهة بالأشجار",
+      "تتشعب كالأشجار",
+      "كجذوع الأشجار"
+    ],
+    "decoys": [
+      "مغطاة بالتراب",
+      "تتحرك مع الريح",
+      "تطلق أصوات طيور",
+      "محاطة بالماء"
+    ],
+    "explanation": "تتفرع الأعمدة الحجرية لدعم البناء، ويقصد تصميمها إلى استحضار إحساس الغابة داخل الكنيسة.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "Sagrada Família columns: the geometry, mechanics and materials of a stone forest",
+    "sourceUrl": "https://blog.sagradafamilia.org/en/columns-sagrada-familia-geometry-mechanics-materials-stone-forest/",
+    "sourceTitle": "Sagrada Família columns: the geometry, mechanics and materials of a stone forest",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-095",
+    "factId": "fab3-fact-095",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "«شلالات الدم» في أنتاركتيكا ليست دمًا؛ فالمياه الملحية التي تخرج منها غنية بـ ___.",
+    "answer": "الحديد",
+    "aliases": [
+      "حديد",
+      "عنصر الحديد"
+    ],
+    "decoys": [
+      "النحاس",
+      "اليود",
+      "الذهب",
+      "الكبريت"
+    ],
+    "explanation": "يرتبط اللون الأحمر بالمحلول الملحي الغني بالحديد الذي يخرج من تحت الجليد إلى السطح.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "Science on the Ice: The United States Antarctic Program",
+    "sourceUrl": "https://www.nsf.gov/geo/opp/documents/NSF%20Science%20on%20the%20Ice_fifth_edition.pdf",
+    "sourceTitle": "Science on the Ice: The United States Antarctic Program",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-096",
+    "factId": "fab3-fact-096",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "الأنوار الشبيهة بالنجوم في بعض كهوف نيوزيلندا تصنعها «ديدان مضيئة»، وهي في الحقيقة ___.",
+    "answer": "يرقات ذباب",
+    "aliases": [
+      "يرقات بعوض الفطر",
+      "يرقات ذباب الفطر",
+      "يرقات نوع من الذباب"
+    ],
+    "decoys": [
+      "حبات فطر",
+      "بيض عناكب",
+      "يرقات فراشات",
+      "طحالب على الصخور"
+    ],
+    "explanation": "الديدان المضيئة المحلية هي طور يرقي لذباب صغير؛ وتجذب فريستها بضوئها إلى خيوط لزجة.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "Clifden area: Places to go in Southland",
+    "sourceUrl": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/southland/places/clifden-area/?tab-id=Caving",
+    "sourceTitle": "Clifden area: Places to go in Southland",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-097",
+    "factId": "fab3-fact-097",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "تبدو أعمدة «ممر العمالقة» كأنها قُطعت بالمسطرة، لكن انتظامها نتج عن تشقق ___ أثناء التبريد.",
+    "answer": "الحمم",
+    "aliases": [
+      "اللافا",
+      "حمم بركانية",
+      "الحمم البركانية",
+      "الصخور المنصهرة"
+    ],
+    "decoys": [
+      "الجليد",
+      "الطين البحري",
+      "الرمال",
+      "الملح"
+    ],
+    "explanation": "بردت الحمم البازلتية وانكمشت، فتكونت شقوق صنعت الأعمدة المتعددة الأضلاع التي نراها اليوم.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "History of Giant's Causeway",
+    "sourceUrl": "https://www.nationaltrust.org.uk/visit/northern-ireland/giants-causeway/history-of-giants-causeway",
+    "sourceTitle": "History of Giant's Causeway",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-098",
+    "factId": "fab3-fact-098",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "اللون الأبيض اللامع لمصاطب باموكالي التركية لا يأتي من الثلج، بل من ترسبات ___.",
+    "answer": "كربونات الكالسيوم",
+    "aliases": [
+      "الكالسيت",
+      "كربونات الكلس",
+      "الكلس",
+      "ترسبات كلسية"
+    ],
+    "decoys": [
+      "ملح الطعام",
+      "الكوارتز",
+      "الجبس الصناعي",
+      "الرماد البركاني"
+    ],
+    "explanation": "تحمل مياه الينابيع معادن تترسب لتكوّن المصاطب؛ وتعطيها ترسبات كربونات الكالسيوم الحديثة مظهرها الأبيض.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "Hierapolis-Pamukkale",
+    "sourceUrl": "https://whc.unesco.org/en/list/485",
+    "sourceTitle": "Hierapolis-Pamukkale",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-099",
+    "factId": "fab3-fact-099",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "بعد المطر، يتحول جزء من مسطح أويوني الملحي في بوليفيا إلى ما يشبه ___ هائلة.",
+    "answer": "مرآة",
+    "aliases": [
+      "مرآة طبيعية",
+      "مرآة كبيرة",
+      "مراية"
+    ],
+    "decoys": [
+      "إسفنجة",
+      "موجة متجمدة",
+      "سجادة حمراء",
+      "متاهة"
+    ],
+    "explanation": "تغطي المياه السطح المستوي بطبقة عاكسة، فيظهر كأنه مرآة للسماء في الموسم الرطب.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "A Salt Bath in Bolivia",
+    "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/a-salt-bath-in-bolivia-149502/",
+    "sourceTitle": "A Salt Bath in Bolivia",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-fact-100",
+    "factId": "fab3-fact-100",
+    "kind": "text",
+    "curious": true,
+    "previousIds": [],
+    "answerType": "text",
+    "text": "يسهّل الشكل غير المتناظر لقوارب الغندول في البندقية توجيه القارب والتقدم به باستخدام ___.",
+    "answer": "مجداف واحد",
+    "aliases": [
+      "مجذاف واحد",
+      "مجداف",
+      "مجذاف"
+    ],
+    "decoys": [
+      "مروحة هوائية",
+      "شراع مثلث",
+      "دواستين",
+      "حبل ساحلي"
+    ],
+    "explanation": "يشرح المصدر الرسمي لإقليم فينيتو أن الشكل غير المتناظر للغندول يعاكس الدفع الجانبي لمجدافه الوحيد، فيساعده على الحفاظ على اتجاهه.",
+    "category": "طرائف الأماكن",
+    "sourceHint": "Venezia, gondole — Bollettino Ufficiale Regione Veneto 5/2009, p. 1",
+    "sourceUrl": "https://bur.regione.veneto.it/BurvServices/pubblica/stampapdfburv.aspx?date=16/01/2009&num=5#page=1",
+    "sourceTitle": "Venezia, gondole — Bollettino Ufficiale Regione Veneto 5/2009, p. 1",
+    "verifiedAt": "2026-09-18"
   }
 ]

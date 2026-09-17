@@ -7,6 +7,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkMedia, copyMedia, fmtMB } from './media.mjs';
+import { fabrakaMediaManifest } from './fabraka-media.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const DIST = path.join(ROOT, 'dist');
@@ -19,15 +20,16 @@ export async function readPkg() {
 // نسخة لكل مجلد وسائط (بصمة محتوى ملفاته): تُلحق بعناوين الملفات كـ ?v= فيتجاوز
 // المتصفح والعامل الخدمي النسخة المخزّنة حين يُصحَّح ملف بالاسم نفسه.
 export async function mediaVersions(root = ROOT) {
-  const base = path.join(root, 'media');
   const versions = {};
-  let packs = [];
-  try { packs = (await readdir(base, { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name); } catch { return versions; }
-  for (const pack of packs.sort()) {
-    const hash = createHash('sha256');
-    const files = (await readdir(path.join(base, pack))).filter((f) => !f.startsWith('_') && !f.endsWith('.md')).sort();
-    for (const f of files) { hash.update(f); hash.update(await readFile(path.join(base, pack, f))); }
-    if (files.length) versions[pack] = hash.digest('hex').slice(0, 8);
+  for (const base of [path.join(root, 'media'), path.join(root, 'public/media')]) {
+    const entries = await readdir(base, { withFileTypes: true }).catch(() => []);
+    const packs = entries.filter((d) => d.isDirectory()).map((d) => d.name);
+    for (const pack of packs.sort()) {
+      const hash = createHash('sha256');
+      const files = (await readdir(path.join(base, pack))).filter((f) => !f.startsWith('_') && !f.endsWith('.md')).sort();
+      for (const f of files) { hash.update(f); hash.update(await readFile(path.join(base, pack, f))); }
+      if (files.length) versions[pack] = hash.digest('hex').slice(0, 8);
+    }
   }
   return versions;
 }
@@ -78,7 +80,7 @@ export function buildId(version, html) {
   return `${version}-${createHash('sha256').update(html).digest('hex').slice(0, 8)}`;
 }
 
-async function copyPublic({ id = 'dev' } = {}) {
+async function copyPublic({ id = 'dev', fabrakaImages = [] } = {}) {
   const pub = path.join(ROOT, 'public');
   try { await stat(pub); } catch { return; }
   for (const entry of await readdir(pub)) {
@@ -87,15 +89,17 @@ async function copyPublic({ id = 'dev' } = {}) {
   const sw = path.join(DIST, 'sw.js');
   try {
     const src = await readFile(sw, 'utf8');
-    await writeFile(sw, src.replaceAll('__BUILD_ID__', id), 'utf8');
+    await writeFile(sw, src.replaceAll('__BUILD_ID__', id).replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages)), 'utf8');
   } catch { /* لا عامل خدمي في public */ }
 }
 
 export async function buildOnce({ minify = true } = {}) {
   const pkg = await readPkg();
+  const versions = await mediaVersions(ROOT);
+  const fabrakaImages = await fabrakaMediaManifest(ROOT, versions);
   let result;
   try {
-    result = await esbuildBuild(esbuildOptions({ minify, version: pkg.version, media: await mediaVersions(ROOT) }));
+    result = await esbuildBuild(esbuildOptions({ minify, version: pkg.version, media: versions }));
   } catch (error) {
     const messages = (error.errors || []).map((e) => `${e.location ? `${e.location.file}:${e.location.line}:${e.location.column} ` : ''}${e.text}`);
     throw new Error(messages.length ? messages.join('\n') : error.message);
@@ -104,7 +108,7 @@ export async function buildOnce({ minify = true } = {}) {
   const html = await renderHtml(js, { version: pkg.version });
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
-  await copyPublic({ id: buildId(pkg.version, html) });
+  await copyPublic({ id: buildId(pkg.version, html), fabrakaImages });
   // الوسائط تُفحص قبل النسخ: سؤال يشير إلى ملف غير موجود يوقف البناء.
   const media = await checkMedia(ROOT);
   if (media.errors.length) {

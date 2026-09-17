@@ -32,12 +32,20 @@ await build({ stdin: { loader: 'jsx', resolveDir: root, contents: `
   import { renderToStaticMarkup } from 'react-dom/server';
   import { PlatformContext } from './src/platform/context.js';
   import { Online, Lobby } from './src/online/Online.jsx';
+  import { questions } from './src/games/fabraka/content.js';
   export { save } from './src/online/client.js';
   const platform = { toast() {}, sound: { play() {} }, haptics: { vibrate() {} } };
   const wrap = (Component, props) => renderToStaticMarkup(
     React.createElement(PlatformContext.Provider, { value: platform }, React.createElement(Component, props)));
   export const entry = (props) => wrap(Online, props);
   export const lobby = (props) => wrap(Lobby, props);
+  // A real but temporarily small topic keeps the insufficient-pool regression
+  // meaningful even when every topic in the current bank has ten questions.
+  export function oneFactTopic() {
+    const saved = questions.slice(), selected = saved.find(q => q.curious);
+    questions.splice(0, questions.length, selected);
+    return { category: selected.category, restore: () => questions.splice(0, questions.length, ...saved) };
+  }
 ` }, outfile: path.join(renderDir, 'render.mjs'), bundle: true, platform: 'node', format: 'esm', packages: 'external',
   jsx: 'automatic', define: { __MAYDAN_ROOMS_URL__: JSON.stringify(ROOMS_URL) },
   loader: { '.css': 'text', '.webp': 'dataurl', '.woff2': 'dataurl' }, logLevel: 'silent' });
@@ -270,8 +278,10 @@ test('10 · the shipped page only needs the sources the policy allows', { skip: 
   }
 });
 
-test('4 · the create button is disabled, and the warning visible, when the topics cannot fill the rounds', () => {
-  const impossible = { mode: 'classic', rounds: 7, style: 'curious', categories: ['\u0644\u0627-\u064a\u0648\u062c\u062f-\u0645\u0648\u0636\u0648\u0639-\u0628\u0647\u0630\u0627-\u0627\u0644\u0627\u0633\u0645'] };
+test('4 · the create button is disabled, and the warning visible, when an existing topic cannot fill the rounds', (t) => {
+  const topic = ui.oneFactTopic();
+  t.after(topic.restore);
+  const impossible = { mode: 'classic', rounds: 7, style: 'curious', categories: [topic.category] };
   ui.save(ROOMS_URL, 'fabrakaSettings', impossible);
   const blocked = ui.entry({ game: 'fabraka' });
   assert.match(submitButton(blocked), /disabled=""/); // The server would answer QUESTIONS.
@@ -279,6 +289,7 @@ test('4 · the create button is disabled, and the warning visible, when the topi
   // The host must see the warning without opening the topics block.
   assert.ok(blocked.indexOf('</details>') < blocked.indexOf('\u0644\u0627 \u062a\u0643\u0641\u064a'), 'warning belongs outside <details>');
   assert.match(blocked, /\u0648\u0633\u0651\u0639 \u0627\u0644\u0645\u0648\u0627\u0636\u064a\u0639 \u0627\u0644\u0645\u062e\u062a\u0627\u0631\u0629 \u0623\u0648 \u0627\u062e\u062a\u0631/);
+  topic.restore();
   ui.save(ROOMS_URL, 'fabrakaSettings', { mode: 'classic', rounds: 3, style: 'all', categories: [] });
   const ready = ui.entry({ game: 'fabraka' });
   assert.doesNotMatch(submitButton(ready), /disabled=""/);
@@ -289,6 +300,13 @@ test('4 · the create button is disabled, and the warning visible, when the topi
   // The reworded server error points at the topics, not at the round count.
   assert.match(errorText('QUESTIONS'), /\u0627\u0644\u0645\u0648\u0627\u0636\u064a\u0639/);
   assert.doesNotMatch(errorText('QUESTIONS'), /\u0642\u0644\u0651\u0644 \u0639\u062f\u062f \u0627\u0644\u062c\u0648\u0644\u0627\u062a/);
+});
+
+test('retired saved topic names are migrated before creating a new Fabraka room', () => {
+  ui.save(ROOMS_URL, 'fabrakaSettings', { mode: 'classic', rounds: 7, categories: ['RETIRED_TOPIC'] });
+  const ready = ui.entry({ game: 'fabraka' });
+  assert.doesNotMatch(submitButton(ready), /disabled=""/);
+  assert.doesNotMatch(ready, /لا تكفي|RETIRED_TOPIC/);
 });
 
 test('5+6 · the waiting room prints Arabic-Indic digits and no zero-second discussion', () => {

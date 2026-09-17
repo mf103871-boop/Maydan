@@ -66,7 +66,7 @@ test('friends truth is shown only to its owner and picture rounds render accessi
   assert.match(friends.html(0), /PRIVATE_FRIEND/);
   assert.doesNotMatch(friends.html(1), /PRIVATE_FRIEND/);
   const picture = fixture({ mode: 'pictures' });
-  assert.match(picture.html(1), /<svg[^>]*role="img"/);
+  assert.match(picture.html(1), /<img[^>]*src="media\/fabraka-v3\/fab3-\d{3}\.webp"[^>]*alt="[^"]+"/);
   assert.ok(!picture.html(1).includes(picture.room.fab.question.answer));
 });
 

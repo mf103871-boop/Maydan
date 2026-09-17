@@ -1,6 +1,7 @@
 // Authoritative simultaneous Fabraka. Only snapshot() may leave the room server.
 import { FABRAKA_PROTOCOL, ROOM_TTL, HOST_GRACE, AVATARS, COLORS, VOTE_SECONDS } from '../src/online/shared.js';
 import { normalizeOptions, validateLie, matchesTruth, sameAnswer, roundBreakdown, fillName, TRUTH_ID } from '../src/games/fabraka/logic.js';
+import { pictureAsset, PICTURE_CREDIT } from '../src/games/fabraka/pictureAssets.js';
 import { active, member, memberOrNull, profile, transferHost, joinRoom as joinMember, fail } from './room-model.mjs';
 import { shuffled } from './protocol.mjs';
 
@@ -279,7 +280,7 @@ function publicQuestion(room) {
   const q = question(room);
   if (!q) return null;
   const safe = { text: q.text, kind: q.kind || 'text' };
-  if (q.kind === 'picture') Object.assign(safe, { visualIndex: q.visualIndex, imageDescription: q.imageDescription });
+  if (q.kind === 'picture') Object.assign(safe, { image: pictureAsset(q), imageDescription: q.imageDescription, imageCredit: PICTURE_CREDIT });
   if (room.fab.scored) Object.assign(safe, { answer: q.answer, explanation: q.explanation, sourceUrl: q.sourceUrl || null });
   return safe;
 }

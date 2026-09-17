@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as game from '../server/game-model.mjs';
 import { buildFabrakaDeck } from '../server/fabraka-content.mjs';
+import { FABRAKA_PROTOCOL } from '../src/online/shared.js';
 
 const q = { id: 'truth-fixture', kind: 'text', text: 'السؤال فيه ___؟', answer: '206', aliases: ['مئتان وستة'],
   explanation: 'PRIVATE_EXPLANATION', sourceUrl: 'https://example.com/private-source', decoys: ['190', '218', '230'], curious: true };
@@ -27,7 +28,7 @@ test('rooms dispatch games and preserve legacy rooms without a game field', () =
   delete original.game;
   assert.equal(game.snapshot(original, p.id, 1001).protocol, 1);
   assert.equal(game.snapshot(original, p.id, 1001).game, 'meenfina');
-  assert.equal(fixture().view().protocol, 2);
+  assert.equal(fixture().view().protocol, FABRAKA_PROTOCOL);
   assert.throws(() => game.createRoom('123456', { ...p, game: 'unknown' }, 1000), error('GAME'));
   const { room, players } = fixture({}, 8);
   assert.equal(game.joinRoom(room, players[1], 1002).id, players[1].id);
@@ -168,8 +169,10 @@ test('all four game modes build server decks and pictures expose only display da
     if (mode === 'pictures') {
       game.action(f.room, f.players[0].id, { type: 'start', matchId: 0 }, 1001, deck);
       const exposed = f.view().question;
-      assert.ok(Number.isInteger(exposed.visualIndex)); assert.equal(exposed.illustration, undefined);
-      for (const field of ['answer', 'aliases', 'decoys', 'sourceUrl', 'id', 'factId']) assert.equal(exposed[field], undefined);
+      assert.match(exposed.image, /^media\/fabraka-v3\/fab3-\d{3}\.webp$/);
+      assert.ok(exposed.imageDescription);assert.match(exposed.imageCredit,/الذكاء الاصطناعي/);
+      for (const field of ['answer', 'aliases', 'decoys', 'sourceUrl', 'id', 'factId', 'visualIndex', 'illustration', 'explanation']) assert.equal(exposed[field], undefined);
+      assert.equal(JSON.stringify(exposed).includes(f.room.fab.question.answer), false);
     }
   }
 });

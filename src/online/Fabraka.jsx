@@ -23,7 +23,7 @@ export const FABRAKA_MODES = { classic: 'حقائق', mixed: 'مزيج', picture
 const modeHints = {
   classic: 'فبرك إجابة مقنعة لسؤال حقيقي، ثم اكتشف الحقيقة بين إجابات أصحابك.',
   mixed: 'أسئلة حقائق تتخللها جولة صور كل ثلاث جولات.',
-  pictures: 'شاهدوا رسم أداة حقيقية، وفبركوا استخدامًا يبدو منطقيًا.',
+  pictures: `${number(pictures.length)} صورة توضيحية لأدوات حقيقية؛ فبركوا استخدامًا يبدو منطقيًا.`,
   friends: 'يتناوب اللاعبون على كتابة حقيقة عن أنفسهم، والبقية يفبركون ويصوّتون.',
 };
 export function FabrakaSettings({ value, onChange, disabled }) {
@@ -80,7 +80,7 @@ function Question({ value, answer = false }) {
   if (!value) return null;
   const [before, ...rest] = value.text.split('___');
   return <div className="fab-question online-fab-question">
-    {value.kind === 'picture' && <Illustration question={{ illustration: pictures[value.visualIndex]?.illustration, imageDescription: value.imageDescription }} />}
+    {value.kind === 'picture' && <Illustration question={value} />}
     <h1 className={answer ? 'fab-q is-filled' : 'fab-q'}>{before}{rest.length > 0 && <><span className="blank">{answer ? value.answer || '…' : '؟؟؟'}</span>{rest.join('___')}</>}</h1>
   </div>;
 }
