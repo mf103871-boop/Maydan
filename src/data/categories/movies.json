@@ -64,7 +64,7 @@
         "شيف"
       ],
       "p": 200,
-      "q": "في «راتاتوي»، ما المهنة التي يحلم بطل القصة بممارستها؟",
+      "q": "في «الفأر الطباخ»، ما المهنة التي يحلم بطل القصة بممارستها؟",
       "qid": "movies-200-054",
       "source": "https://www.pixar.com/ratatouille",
       "topic": "المنافسات والطموح",
@@ -419,18 +419,6 @@
       "verified": true
     },
     {
-      "a": "أفاتار",
-      "alt": [
-        "Avatar"
-      ],
-      "p": 200,
-      "q": "ما الفيلم الذي يستخدم فيه جيك جسدًا بيولوجيًا بديلًا لزيارة قمر بعيد؟",
-      "qid": "movies-200-086",
-      "source": "https://www.20thcenturystudios.com/movies/avatar",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
       "a": "الجامعة",
       "p": 200,
       "q": "في «حكاية لعبة 3»، إلى أين يستعد صاحب الألعاب للرحيل من أجل الدراسة؟",
@@ -496,7 +484,7 @@
         "الذيل"
       ],
       "p": 200,
-      "q": "في «ويني الدبدوب»، ما الجزء الذي يفقده الحمار من جسمه؟",
+      "q": "في «ويني الدبدوب»، ما الجزء الذي يفقده إيور الحزين من جسمه؟",
       "qid": "movies-200-093",
       "source": "https://movies.disney.com/winnie-the-pooh",
       "topic": "رحلات الحيوانات",
@@ -533,6 +521,18 @@
       "qid": "movies-200-096",
       "source": "https://movies.disney.com/moana",
       "topic": "الخيال والممالك",
+      "verified": true
+    },
+    {
+      "a": "أزرق",
+      "alt": [
+        "الأزرق"
+      ],
+      "p": 200,
+      "q": "في فيلم «أفاتار»، ما لون بشرة سكان القمر الأصليين؟",
+      "qid": "movies-200-097",
+      "source": "https://www.20thcenturystudios.com/movies/avatar",
+      "topic": "المستقبل والفضاء",
       "verified": true
     },
     {
@@ -877,7 +877,7 @@
         "جوثل"
       ],
       "p": 400,
-      "q": "في «رابونزل»، ما اسم المرأة التي حبست البطلة منذ طفولتها؟",
+      "q": "في «رابونزل»، من حبست البطلة داخل البرج منذ طفولتها؟",
       "qid": "movies-400-077",
       "source": "https://movies.disney.com/tangled",
       "topic": "الأميرات والسحر",
@@ -942,15 +942,6 @@
       "qid": "movies-400-082",
       "source": "https://movies.disney.com/pinocchio",
       "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "مخترع",
-      "p": 400,
-      "q": "في «الجميلة والوحش»، ما مهنة والد البطلة؟",
-      "qid": "movies-400-083",
-      "source": "https://movies.disney.com/beauty-and-the-beast",
-      "topic": "الخيال والممالك",
       "verified": true
     },
     {
@@ -1069,7 +1060,7 @@
         "Forky"
       ],
       "p": 400,
-      "q": "في «حكاية لعبة 4»، ما اسم اللعبة المصنوعة من أداة طعام؟",
+      "q": "في «حكاية لعبة 4»، ما اسم اللعبة التي صنعتها الطفلة في يومها الأول بالروضة؟",
       "qid": "movies-400-093",
       "source": "https://www.pixar.com/toy-story-4",
       "topic": "الألعاب والمقتنيات",
@@ -1112,6 +1103,18 @@
       "verified": true
     },
     {
+      "a": "الوردة",
+      "alt": [
+        "الوردة المسحورة"
+      ],
+      "p": 400,
+      "q": "في «الجميلة والوحش»، ما الشيء السحري الذي تتساقط بتلاته مع مرور الوقت؟",
+      "qid": "movies-400-097",
+      "source": "https://movies.disney.com/beauty-and-the-beast",
+      "topic": "الخيال والممالك",
+      "verified": true
+    },
+    {
       "a": "هام",
       "alt": [
         "Hamm"
@@ -1131,7 +1134,7 @@
       "p": 600,
       "q": "في «حكاية لعبة»، ما اسم الكلب اللعبة ذي الجسم الزنبركي؟",
       "qid": "movies-600-050",
-      "source": "https://www.pixar.com/toy-story-3",
+      "source": "https://www.pixar.com/toy-story",
       "topic": "الألعاب والمقتنيات",
       "verified": true
     },
@@ -2105,7 +2108,7 @@
         "Neytiri"
       ],
       "p": 800,
-      "q": "في فيلم «أفاتار»، ما اسم المرأة التي تنقذ حياة جيك؟",
+      "q": "في فيلم «أفاتار»، من أنقذ حياة جيك عند وصوله إلى الغابة؟",
       "qid": "movies-800-084",
       "source": "https://www.20thcenturystudios.com/movies/avatar",
       "topic": "المستقبل والفضاء",
@@ -2452,7 +2455,7 @@
         "Probe One"
       ],
       "p": 1000,
-      "q": "في «وول إي»، ما التسمية التي يطلقها القبطان على الروبوت الأبيض؟",
+      "q": "في «وول إي»، ما التسمية التي تُطلق على الروبوت الأبيض في السفينة؟",
       "qid": "movies-1000-065",
       "source": "https://www.pixar.com/wall-e",
       "topic": "المستقبل والفضاء",
@@ -2634,30 +2637,6 @@
       "verified": true
     },
     {
-      "a": "ديفيد أوغدن ستايرز",
-      "alt": [
-        "David Ogden Stiers"
-      ],
-      "p": 1000,
-      "q": "من يؤدي صوت الساعة بالإنجليزية في النسخة المتحركة من «الجميلة والوحش»؟",
-      "qid": "movies-1000-081",
-      "source": "https://movies.disney.com/beauty-and-the-beast",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "برادلي بيرس",
-      "alt": [
-        "Bradley Pierce"
-      ],
-      "p": 1000,
-      "q": "من يؤدي صوت الفنجان الصغير بالإنجليزية في النسخة المتحركة من «الجميلة والوحش»؟",
-      "qid": "movies-1000-082",
-      "source": "https://movies.disney.com/beauty-and-the-beast",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
       "a": "تاي أدفانسد",
       "alt": [
         "TIE Advanced"
@@ -2730,54 +2709,6 @@
       "verified": true
     },
     {
-      "a": "تويتش",
-      "alt": [
-        "Twitch"
-      ],
-      "p": 1000,
-      "q": "في «حكاية لعبة 3»، ما اسم المحارب اللعبة الذي يجمع شكل الإنسان والحشرة؟",
-      "qid": "movies-1000-089",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "تشانك",
-      "alt": [
-        "Chunk"
-      ],
-      "p": 1000,
-      "q": "في «حكاية لعبة 3»، ما اسم اللعبة التي يتبدل تعبير وجهها بالضغط على شوكة رأسها؟",
-      "qid": "movies-1000-090",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "غيغل ماكديمبلز",
-      "alt": [
-        "Giggle McDimples"
-      ],
-      "p": 1000,
-      "q": "في «حكاية لعبة 4»، ما اسم الشرطية الصغيرة التي تستقر على كتف الراعية؟",
-      "qid": "movies-1000-091",
-      "source": "https://www.pixar.com/toy-story-4",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "مينيوبوليس",
-      "alt": [
-        "Mini-opolis"
-      ],
-      "p": 1000,
-      "q": "في «حكاية لعبة 4»، ما اسم المدينة المصغرة التي تعمل فيها شرطية دورية الحيوانات؟",
-      "qid": "movies-1000-092",
-      "source": "https://www.pixar.com/toy-story-4",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
       "a": "فيرن",
       "alt": [
         "Fern"
@@ -2823,6 +2754,83 @@
       "qid": "movies-1000-096",
       "source": "https://www.pixar.com/luca",
       "topic": "عوالم الوحوش",
+      "verified": true
+    },
+    {
+      "a": "سنحتاج قاربًا أكبر",
+      "alt": [
+        "نحتاج قاربًا أكبر",
+        "سنحتاج إلى قارب أكبر"
+      ],
+      "p": 1000,
+      "q": "في «الفك المفترس»، ماذا يقول برودي فور رؤيته القرش لأول مرة؟",
+      "qid": "movies-1000-097",
+      "source": "https://en.wikiquote.org/wiki/Jaws_(film)",
+      "topic": "البقاء والمطاردات",
+      "verified": true
+    },
+    {
+      "a": "أوركا",
+      "alt": [
+        "Orca"
+      ],
+      "p": 1000,
+      "q": "في «الفك المفترس»، ما اسم قارب الصيد الذي يخرج به الثلاثة لملاحقة القرش؟",
+      "qid": "movies-1000-098",
+      "source": "https://en.wikipedia.org/wiki/Jaws_(film)",
+      "topic": "البقاء والمطاردات",
+      "verified": true
+    },
+    {
+      "a": "الكهرمان",
+      "alt": [
+        "العنبر"
+      ],
+      "p": 1000,
+      "q": "في «الحديقة الجوراسية»، داخل أي مادة حُفظت البعوضة التي استُخرج منها الحمض النووي؟",
+      "qid": "movies-1000-099",
+      "source": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "topic": "البقاء والمطاردات",
+      "verified": true
+    },
+    {
+      "a": "توين باينز",
+      "alt": [
+        "Twin Pines Mall",
+        "مركز توين باينز"
+      ],
+      "p": 1000,
+      "q": "في «العودة إلى المستقبل»، ما اسم المركز التجاري الذي جُربت فيه آلة الزمن؟",
+      "qid": "movies-1000-100",
+      "source": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "topic": "المستقبل والفضاء",
+      "verified": true
+    },
+    {
+      "a": "ريسيس بيسز",
+      "alt": [
+        "Reese's Pieces",
+        "حلوى ريسيس"
+      ],
+      "p": 1000,
+      "q": "في «إي تي»، ما الحلوى التي يستدرج بها الطفل الكائن الفضائي إلى بيته؟",
+      "qid": "movies-1000-101",
+      "source": "https://en.wikipedia.org/wiki/E.T._the_Extra-Terrestrial",
+      "topic": "المستقبل والفضاء",
+      "verified": true
+    },
+    {
+      "a": "أعلم",
+      "alt": [
+        "أنا أعلم",
+        "أعرف",
+        "I know"
+      ],
+      "p": 1000,
+      "q": "في «الإمبراطورية ترد الضربة»، بماذا يرد هان على قول ليا «أحبك»؟",
+      "qid": "movies-1000-102",
+      "source": "https://en.wikiquote.org/wiki/The_Empire_Strikes_Back",
+      "topic": "الأبطال والقوى",
       "verified": true
     }
   ],
