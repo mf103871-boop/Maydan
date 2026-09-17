@@ -1,3016 +1,3091 @@
 {
- "id": "guesscar",
- "name": "خمن السيارة",
- "icon": "🚗",
- "defaultType": "image",
- "kind": "image",
- "effect": "none",
- "subjects": [
-  {
-   "tier": 200,
-   "a": "لاندكروزر",
-   "alt": [
-    "لاند كروزر",
-    "تويوتا لاند كروزر",
-    "كروزر"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "تويوتا لاند كروزر",
-   "en": "Toyota Land Cruiser",
-   "q": "ما طراز هذه السيارة؟",
-   "commons": "File:2021 Toyota Land Cruiser 300 3.4 ZX (Colombia) front view 04.png"
-  },
-  {
-   "tier": 200,
-   "a": "نيسان باترول",
-   "alt": [
-    "باترول",
-    "بترول"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "نيسان باترول",
-   "en": "Nissan Patrol",
-   "q": "انظر جيدًا: ما طراز هذه السيارة؟",
-   "commons": "File:2016 Nissan Patrol (Y62) Ti-L wagon (2018-09-17) 01.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "جيب رانجلر",
-   "alt": [
-    "رانجلر",
-    "جيب ورانجلر"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "جيب رانجلر",
-   "en": "Jeep Wrangler",
-   "q": "لقطة واحدة: ما طراز هذه السيارة؟",
-   "commons": "File:2018 Jeep Wrangler Sahara Unlimited Multijet 2.1 Front.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "مرسيدس جي كلاس",
-   "alt": [
-    "جي كلاس",
-    "قيرزن",
-    "مرسيدس جي"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "مرسيدس-بنز الفئة جي",
-   "en": "Mercedes-Benz G-Class",
-   "q": "دقق في الصورة: ما طراز هذه السيارة؟",
-   "commons": "File:Mercedes-Benz W463 G 350 BlueTEC 01.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "لاند روفر ديفندر",
-   "alt": [
-    "ديفندر"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "لاند روفر ديفندر",
-   "en": "Land Rover Defender",
-   "q": "سؤال سريع: ما طراز هذه السيارة؟",
-   "commons": "File:2015 Land Rover Defender (L316 MY15) 90 3-door wagon (2015-10-24) 01.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "همر H1",
-   "alt": [
-    "همر",
-    "هامر"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "همر H1",
-   "en": "Hummer H1",
-   "q": "للمتمعن: ما طراز هذه السيارة؟",
-   "commons": "File:94-00 AM General Hummer soft top.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "سوزوكي جيمني",
-   "alt": [
-    "جيمني"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "سوزوكي جيمني",
-   "en": "Suzuki Jimny",
-   "q": "بنظرة واحدة: ما طراز هذه السيارة؟",
-   "commons": "File:2019 Suzuki Jimny SZ5 4X4 Automatic 1.5.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تويوتا برادو",
-   "alt": [
-    "برادو",
-    "لاند كروزر برادو"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "تويوتا لاند كروزر برادو",
-   "en": "Toyota Land Cruiser Prado",
-   "q": "من الذاكرة: ما طراز هذه السيارة؟",
-   "commons": "File:2003-2007 Toyota Land Cruiser Prado (GRJ120R) 02.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "ميتسوبيشي باجيرو",
-   "alt": [
-    "باجيرو",
-    "بجيرو"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "ميتسوبيشي باجيرو",
-   "en": "Mitsubishi Pajero",
-   "q": "للعارفين: ما طراز هذه السيارة؟",
-   "commons": "File:Mitsubishi V98 Pajero Long Body Super Exceed 3200 DI-D.JPG"
-  },
-  {
-   "tier": 200,
-   "a": "فورد برونكو",
-   "alt": [
-    "برونكو"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "فورد برونكو",
-   "en": "Ford Bronco",
-   "q": "تأمل الشكل: ما طراز هذه السيارة؟",
-   "commons": "File:Ford Bronco (6th generation) Outer Banks 1X7A0384.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "جيب جراند شيروكي",
-   "alt": [
-    "جراند شيروكي",
-    "شيروكي"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "جيب جراند شيروكي",
-   "en": "Jeep Grand Cherokee",
-   "q": "خمن بسرعة: ما طراز هذه السيارة؟",
-   "commons": "File:2022 Jeep Grand Cherokee Summit Reserve 4x4 in Bright White, Front Left, 01-16-2022.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تويوتا فورتشنر",
-   "alt": [
-    "فورتشنر",
-    "فورتشونر"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "تويوتا فورتشنر",
-   "en": "Toyota Fortuner",
-   "q": "ركز قليلًا: ما طراز هذه السيارة؟",
-   "commons": "File:2015 Toyota Fortuner (New Zealand).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "فورد موستانغ",
-   "alt": [
-    "موستانج",
-    "موستانق"
-   ],
-   "topic": "رياضية",
-   "ar": "فورد موستانج",
-   "en": "Ford Mustang",
-   "q": "بلا تردد: ما طراز هذه السيارة؟",
-   "commons": "File:Ford Mustang VII GT Rutesheimer Autoschau 2025 DSC 9234.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "شيفروليه كامارو",
-   "alt": [
-    "كامارو"
-   ],
-   "topic": "رياضية",
-   "ar": "شيفروليه كامارو",
-   "en": "Chevrolet Camaro",
-   "q": "أمامك صورة: ما طراز هذه السيارة؟",
-   "commons": "File:2019 Chevrolet Camaro 2SS 6.2L front 3.16.19.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "بورشه 911",
-   "alt": [
-    "بورش 911",
-    "بورشه كاريرا"
-   ],
-   "topic": "رياضية",
-   "ar": "بورشه 911",
-   "en": "Porsche 911",
-   "q": "لمحبي السيارات: ما طراز هذه السيارة؟",
-   "commons": "File:Porsche 911 No 1000000, 70 Years Porsche Sports Car, Berlin (1X7A3888).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "دودج تشارجر",
-   "alt": [
-    "تشارجر",
-    "شارجر"
-   ],
-   "topic": "رياضية",
-   "ar": "دودج تشارجر",
-   "en": "Dodge Charger",
-   "q": "بلا مساعدة: ما طراز هذه السيارة؟",
-   "commons": "File:1969 Dodge Charger R-T, front right (2022 Ellwood City Fall Fest & Car Cruise).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "دودج تشالنجر",
-   "alt": [
-    "تشالنجر",
-    "شالنجر"
-   ],
-   "topic": "رياضية",
-   "ar": "دودج تشالنجر",
-   "en": "Dodge Challenger",
-   "q": "هيا جرب: ما طراز هذه السيارة؟",
-   "commons": "File:Dodge Challenger SRT8 (2015) Hirschaid-20220709-RM-120221 (cropped).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "شيفروليه كورفيت",
-   "alt": [
-    "كورفيت",
-    "كورڤيت"
-   ],
-   "topic": "رياضية",
-   "ar": "شيفروليه كورفيت",
-   "en": "Chevrolet Corvette",
-   "q": "فكر ثم أجب: ما طراز هذه السيارة؟",
-   "commons": "File:2021 Chevrolet Corvette C8.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "نيسان جي تي آر",
-   "alt": [
-    "جي تي ار",
-    "GT-R",
-    "سكايلاين"
-   ],
-   "topic": "رياضية",
-   "ar": "نيسان جي تي آر",
-   "en": "Nissan GT-R",
-   "q": "أي سيارة هذه؟",
-   "commons": "File:2009-2010 Nissan GT-R (R35) coupe 01.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تويوتا سوبرا",
-   "alt": [
-    "سوبرا"
-   ],
-   "topic": "رياضية",
-   "ar": "تويوتا سوبرا",
-   "en": "Toyota Supra",
-   "q": "انظر جيدًا: أي سيارة هذه؟",
-   "commons": "File:2020 Toyota GR Supra (United States).png"
-  },
-  {
-   "tier": 200,
-   "a": "لامبورغيني أفينتادور",
-   "alt": [
-    "أفينتادور",
-    "افنتادور"
-   ],
-   "topic": "رياضية",
-   "ar": "لامبورغيني أفينتادور",
-   "en": "Lamborghini Aventador",
-   "q": "لقطة واحدة: أي سيارة هذه؟",
-   "commons": "File:Lamborghini Aventador S (44554).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "فولكسفاغن الخنفساء",
-   "alt": [
-    "الخنفساء",
-    "بيتل",
-    "فولكس واجن بيتل"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "فولكس فاغن بيتل",
-   "en": "Volkswagen Beetle",
-   "q": "دقق في الصورة: أي سيارة هذه؟",
-   "commons": "File:VW Käfer Baujahr 1966.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "ميني كوبر",
-   "alt": [
-    "ميني",
-    "الميني"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "ميني (سيارة)",
-   "en": "Mini",
-   "q": "سؤال سريع: أي سيارة هذه؟",
-   "commons": "File:Morris Mini-Minor 1959 (621 AOK).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "فولكسفاغن ميكروباص",
-   "alt": [
-    "الميكروباص",
-    "فولكس واجن تايب 2",
-    "كومبي"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "فولكس فاغن تايب 2",
-   "en": "Volkswagen Type 2",
-   "q": "للمتمعن: أي سيارة هذه؟",
-   "commons": "File:1965 Volkswagen Type 2 T1 Microbus (31982075454).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "فيات 500",
-   "alt": [
-    "فيات شينكوشينتو"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "فيات 500",
-   "en": "Fiat 500",
-   "q": "بنظرة واحدة: أي سيارة هذه؟",
-   "commons": "File:1970 Fiat 500 L -- 2011 DC 1.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تويوتا كورولا",
-   "alt": [
-    "كورولا"
-   ],
-   "topic": "شعبية",
-   "ar": "تويوتا كورولا",
-   "en": "Toyota Corolla",
-   "q": "من الذاكرة: أي سيارة هذه؟",
-   "commons": "File:Toyota Corolla Hybrid (E210) IMG 4338.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تويوتا كامري",
-   "alt": [
-    "كامري"
-   ],
-   "topic": "شعبية",
-   "ar": "تويوتا كامري",
-   "en": "Toyota Camry",
-   "q": "للعارفين: أي سيارة هذه؟",
-   "commons": "File:2018 Toyota Camry (ASV70R) Ascent sedan (2018-08-27) 01.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "هوندا سيفيك",
-   "alt": [
-    "سيفيك",
-    "سيفك"
-   ],
-   "topic": "شعبية",
-   "ar": "هوندا سيفيك",
-   "en": "Honda Civic",
-   "q": "تأمل الشكل: أي سيارة هذه؟",
-   "commons": "File:Honda Civic e-HEV Sport (XI) – f 30062024.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "فولكسفاغن جولف",
-   "alt": [
-    "جولف",
-    "غولف"
-   ],
-   "topic": "شعبية",
-   "ar": "فولكس فاغن جولف",
-   "en": "Volkswagen Golf",
-   "q": "خمن بسرعة: أي سيارة هذه؟",
-   "commons": "File:2020 Volkswagen Golf Style 1.5 Front.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تويوتا هايس",
-   "alt": [
-    "هايس",
-    "الهايس"
-   ],
-   "topic": "شعبية",
-   "ar": "تويوتا هايس",
-   "en": "Toyota HiAce",
-   "q": "ركز قليلًا: أي سيارة هذه؟",
-   "commons": "File:2020 Toyota HiAce (front).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "شيفروليه كابريس",
-   "alt": [
-    "كابريس"
-   ],
-   "topic": "شعبية",
-   "ar": "شيفروليه كابريس",
-   "en": "Chevrolet Caprice",
-   "q": "بلا تردد: أي سيارة هذه؟",
-   "commons": "File:2011 Chevrolet Caprice PPV -- 12-06-2010 front.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "سمارت فورتو",
-   "alt": [
-    "سمارت",
-    "فورتو"
-   ],
-   "topic": "شعبية",
-   "ar": "سمارت فورتو",
-   "en": "Smart Fortwo",
-   "q": "أمامك صورة: أي سيارة هذه؟",
-   "commons": "File:2016 Smart Fortwo Passion Automatic 1.0 Front.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "مرسيدس سبرينتر",
-   "alt": [
-    "سبرينتر"
-   ],
-   "topic": "شعبية",
-   "ar": "مرسيدس-بنز سبرينتر",
-   "en": "Mercedes-Benz Sprinter",
-   "q": "لمحبي السيارات: أي سيارة هذه؟",
-   "commons": "File:2019 Mercedes-Benz Sprinter 314 CDi 2.1.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تويوتا كوستر",
-   "alt": [
-    "كوستر",
-    "الكوستر"
-   ],
-   "topic": "شعبية",
-   "ar": "تويوتا كوستر",
-   "en": "Toyota Coaster",
-   "q": "بلا مساعدة: أي سيارة هذه؟",
-   "commons": "File:Toyota Coaster GX XZB70.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تويوتا هايلكس",
-   "alt": [
-    "هايلكس",
-    "هيلوكس"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "تويوتا هايلكس",
-   "en": "Toyota Hilux",
-   "q": "ما طراز هذه المركبة؟",
-   "commons": "File:2016 Toyota HiLux Invincible D-4D 4WD 2.4 Front.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "فورد F-150",
-   "alt": [
-    "اف 150",
-    "فورد اف150",
-    "فورد F150"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "فورد إف-سيريز",
-   "en": "Ford F-Series",
-   "q": "انظر جيدًا: ما طراز هذه المركبة؟",
-   "commons": "File:2018 Ford F-150 XLT Crew Cab, front 11.10.19.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "شيفروليه سيلفرادو",
-   "alt": [
-    "سيلفرادو"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "شيفروليه سيلفرادو",
-   "en": "Chevrolet Silverado",
-   "q": "سؤال سريع: ما طراز هذه المركبة؟",
-   "commons": "File:2021 Chevrolet Silverado 1500 LT 4x4 Double Cab, front right, 09-02-2022.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "دودج رام",
-   "alt": [
-    "رام",
-    "رام بيك أب"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "رام بيك أب",
-   "en": "Ram Pickup",
-   "q": "دقق في الصورة: ما طراز هذه المركبة؟",
-   "commons": "File:2017 Ram 1500 Express Crew Cab, front left, 09-02-2022.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "فورد ترانزيت",
-   "alt": [
-    "ترانزيت"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "فورد ترانزيت",
-   "en": "Ford Transit",
-   "q": "أي مركبة هذه؟",
-   "commons": "File:2016 Ford Transit 350 2.2.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "نيسان نافارا",
-   "alt": [
-    "نافارا"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "نيسان نافارا",
-   "en": "Nissan Navara",
-   "q": "انظر جيدًا: أي مركبة هذه؟",
-   "commons": "File:2021 Nissan Navara facelift (cropped).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "رينج روفر",
-   "alt": [
-    "رنج روفر",
-    "لاند روفر رينج روفر"
-   ],
-   "topic": "فارهة",
-   "ar": "رينج روفر",
-   "en": "Range Rover",
-   "q": "هيا جرب: أي سيارة هذه؟",
-   "commons": "File:2022 Land Rover Range Rover SE P440e AWD Automatic 3.0 Front.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "مرسيدس الفئة S",
-   "alt": [
-    "اس كلاس",
-    "مرسيدس اس",
-    "الفئة الاس"
-   ],
-   "topic": "فارهة",
-   "ar": "مرسيدس-بنز الفئة إس",
-   "en": "Mercedes-Benz S-Class",
-   "q": "فكر ثم أجب: أي سيارة هذه؟",
-   "commons": "File:Mercedes-Benz W223 IMG 6663.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "لكزس LX",
-   "alt": [
-    "لكزس ال اكس",
-    "لكسس LX"
-   ],
-   "topic": "فارهة",
-   "ar": "لكزس LX",
-   "en": "Lexus LX",
-   "q": "ما اسم هذا الطراز؟",
-   "commons": "File:2018 Lexus LX 570 (facelift), front 3.24.23.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "كاديلاك إسكاليد",
-   "alt": [
-    "اسكاليد",
-    "اسكليد"
-   ],
-   "topic": "فارهة",
-   "ar": "كاديلاك إسكاليد",
-   "en": "Cadillac Escalade",
-   "q": "انظر جيدًا: ما اسم هذا الطراز؟",
-   "commons": "File:2026 Cadillac Escalade ESV.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "بورشه كايين",
-   "alt": [
-    "كايين",
-    "كايان"
-   ],
-   "topic": "فارهة",
-   "ar": "بورشه كايين",
-   "en": "Porsche Cayenne",
-   "q": "لقطة واحدة: ما اسم هذا الطراز؟",
-   "commons": "File:Porsche Cayenne (III, Facelift) – f 01012025.jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تسلا سايبرتراك",
-   "alt": [
-    "سايبر تراك",
-    "تسلا سيبرتراك"
-   ],
-   "topic": "كهربائية",
-   "ar": "تسلا سايبرتراك",
-   "en": "Tesla Cybertruck",
-   "q": "دقق في الصورة: ما اسم هذا الطراز؟",
-   "commons": "File:2024 Tesla Cybertruck Foundation Series, front left (Greenwich).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "تسلا موديل S",
-   "alt": [
-    "تسلا اس",
-    "موديل اس"
-   ],
-   "topic": "كهربائية",
-   "ar": "تسلا موديل إس",
-   "en": "Tesla Model S",
-   "q": "سؤال سريع: ما اسم هذا الطراز؟",
-   "commons": "File:Tesla Model S (Facelift ab 04-2016) (cropped).jpg"
-  },
-  {
-   "tier": 200,
-   "a": "فيسبا",
-   "alt": [
-    "سكوتر فيسبا",
-    "ڤيسبا"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "فيسبا",
-   "en": "Vespa",
-   "q": "ما طراز هذه الدراجة؟",
-   "commons": "File:PerthVespa.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "تويوتا FJ كروزر",
-   "alt": [
-    "اف جيه كروزر",
-    "FJ كروزر"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "تويوتا إف جيه كروزر",
-   "en": "Toyota FJ Cruiser",
-   "q": "للمتمعن: ما اسم هذا الطراز؟",
-   "commons": "File:2011 Toyota FJ Cruiser (GSJ15R) wagon (2011-11-08) 01.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "جيب شيروكي XJ",
-   "alt": [
-    "شيروكي XJ",
-    "جيب شيروكي"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "جيب شيروكي",
-   "en": "Jeep Cherokee (XJ)",
-   "q": "بنظرة واحدة: ما اسم هذا الطراز؟",
-   "commons": "File:Jeep Cherokee 2-door.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "همر H2",
-   "alt": [
-    "هامر H2"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "همر H2",
-   "en": "Hummer H2",
-   "q": "من الذاكرة: ما اسم هذا الطراز؟",
-   "commons": "File:Hummer H2 (52891415542) (cropped).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "لادا نيفا",
-   "alt": [
-    "نيفا"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "لادا نيفا",
-   "en": "Lada Niva",
-   "q": "للعارفين: ما اسم هذا الطراز؟",
-   "commons": "File:1987 Lada Niva 1600.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "فورد إكسبلورر",
-   "alt": [
-    "اكسبلورر"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "فورد إكسبلورر",
-   "en": "Ford Explorer",
-   "q": "تأمل الشكل: ما اسم هذا الطراز؟",
-   "commons": "File:Ford Explorer (sixth generation) IMG 6063.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "شيفروليه تاهو",
-   "alt": [
-    "تاهو"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "شيفروليه تاهو",
-   "en": "Chevrolet Tahoe",
-   "q": "خمن بسرعة: ما اسم هذا الطراز؟",
-   "commons": "File:2022 Chevrolet Tahoe RST, front 3.7.22.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "شيفروليه سوبربان",
-   "alt": [
-    "سوبربان"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "شيفروليه سوبربان",
-   "en": "Chevrolet Suburban",
-   "q": "ركز قليلًا: ما اسم هذا الطراز؟",
-   "commons": "File:2015 Chevrolet Suburban 1500 LTZ, front 4.18.19.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "سوزوكي فيتارا",
-   "alt": [
-    "فيتارا",
-    "جراند فيتارا"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "سوزوكي فيتارا",
-   "en": "Suzuki Vitara",
-   "q": "بلا تردد: ما اسم هذا الطراز؟",
-   "commons": "File:2018 Suzuki Vitara (LY) S Turbo wagon (2018-11-02) 01.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "تويوتا راف4",
-   "alt": [
-    "راف فور",
-    "RAV4"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "تويوتا راف4",
-   "en": "Toyota RAV4",
-   "q": "أمامك صورة: ما اسم هذا الطراز؟",
-   "commons": "File:2024 Toyota RAV4 Prime XSE Premium in Silver Sky with Midnight Black roof, front left.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "هوندا CR-V",
-   "alt": [
-    "سي ار في",
-    "هوندا سي آر في"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "هوندا سي آر-في",
-   "en": "Honda CR-V",
-   "q": "لمحبي السيارات: ما اسم هذا الطراز؟",
-   "commons": "File:Honda CR-V e-HEV Elegance AWD (VI) – f 14072024.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "نيسان إكس تريل",
-   "alt": [
-    "اكس تريل"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "نيسان إكس-تريل",
-   "en": "Nissan X-Trail",
-   "q": "بلا مساعدة: ما اسم هذا الطراز؟",
-   "commons": "File:Nissan X-Trail (T33) 1X7A7179.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "لاند روفر ديسكفري",
-   "alt": [
-    "ديسكفري"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "لاند روفر ديسكفري",
-   "en": "Land Rover Discovery",
-   "q": "هيا جرب: ما اسم هذا الطراز؟",
-   "commons": "File:2018 Land Rover Discovery Luxury HSE TD6 3.0 Front.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "تويوتا تندرا",
-   "alt": [
-    "تندرا"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "تويوتا تندرا",
-   "en": "Toyota Tundra",
-   "q": "سؤال سريع: أي مركبة هذه؟",
-   "commons": "File:2022 Toyota Tundra Limited CrewMax Short Bed 4x4 with TRD Off-Road Package, front left, 11-01-2022.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "فورد رينجر",
-   "alt": [
-    "رينجر"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "فورد رينجر",
-   "en": "Ford Ranger",
-   "q": "دقق في الصورة: أي مركبة هذه؟",
-   "commons": "File:Ford Ranger (T6, P703) Wildtrak IMG 7320.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "ميتسوبيشي L200",
-   "alt": [
-    "ال 200",
-    "تريتون"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "ميتسوبيشي إل200",
-   "en": "Mitsubishi Triton",
-   "q": "ما اسم هذه المركبة؟",
-   "commons": "File:Mitsubishi Triton LC 2.4 GLS 2WD Blade Silver Metallic (cropped).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "إيسوزو دي ماكس",
-   "alt": [
-    "دي ماكس",
-    "D-Max"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "إيسوزو دي-ماكس",
-   "en": "Isuzu D-Max",
-   "q": "انظر جيدًا: ما اسم هذه المركبة؟",
-   "commons": "File:Isuzu D-Max (third generation) autoMOBIL Tübingen 2025 DSC 2758.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "فولكسفاغن أماروك",
-   "alt": [
-    "اماروك"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "فولكس فاغن أماروك",
-   "en": "Volkswagen Amarok",
-   "q": "سؤال سريع: ما اسم هذه المركبة؟",
-   "commons": "File:VW Amarok 3.0 TDI 4Motion Style (II) – f 05072025.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "أونيموغ",
-   "alt": [
-    "يونيموج",
-    "مرسيدس أونيموغ"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "أونيموغ",
-   "en": "Unimog",
-   "q": "دقق في الصورة: ما اسم هذه المركبة؟",
-   "commons": "File:Mercedes-Benz-Museum 2015-01 by-RaBoe 187.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "مرسيدس الفئة E",
-   "alt": [
-    "اي كلاس",
-    "مرسيدس اي"
-   ],
-   "topic": "فارهة",
-   "ar": "مرسيدس-بنز الفئة إي",
-   "en": "Mercedes-Benz E-Class",
-   "q": "فكر ثم أجب: ما اسم هذا الطراز؟",
-   "commons": "File:Mercedes-Benz W214 1X7A1841.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "بي إم دبليو الفئة السابعة",
-   "alt": [
-    "بي ام دبليو 7",
-    "سلسلة 7"
-   ],
-   "topic": "فارهة",
-   "ar": "بي إم دبليو الفئة السابعة",
-   "en": "BMW 7 Series",
-   "q": "أي طراز أمامك؟",
-   "commons": "File:BMW 730d (G11, Facelift) – f 16012021.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "أودي Q7",
-   "alt": [
-    "اودي كيو 7"
-   ],
-   "topic": "فارهة",
-   "ar": "أودي Q7",
-   "en": "Audi Q7",
-   "q": "انظر جيدًا: أي طراز أمامك؟",
-   "commons": "File:Audi Q7 4M FL2 3.0 V6 MHEV quattro Satellite Silver Metallic 01 (cropped).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "لكزس RX",
-   "alt": [
-    "لكزس ار اكس"
-   ],
-   "topic": "فارهة",
-   "ar": "لكزس RX",
-   "en": "Lexus RX",
-   "q": "لقطة واحدة: أي طراز أمامك؟",
-   "commons": "File:Lexus RX 500h F SPORT+ (V) – f 14072024.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "بورشه باناميرا",
-   "alt": [
-    "باناميرا"
-   ],
-   "topic": "فارهة",
-   "ar": "بورشه باناميرا",
-   "en": "Porsche Panamera",
-   "q": "دقق في الصورة: أي طراز أمامك؟",
-   "commons": "File:Porsche 972 Turbo E-Hybrid IMG 0445.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "بي إم دبليو X6",
-   "alt": [
-    "اكس 6",
-    "بي ام دبليو اكس6"
-   ],
-   "topic": "فارهة",
-   "ar": "بي إم دبليو X6",
-   "en": "BMW X6",
-   "q": "سؤال سريع: أي طراز أمامك؟",
-   "commons": "File:BMW G06 IMG 3142.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "لينكولن نافيجيتور",
-   "alt": [
-    "نافيجيتور",
-    "نافيغيتور"
-   ],
-   "topic": "فارهة",
-   "ar": "لينكون نافيجيتور",
-   "en": "Lincoln Navigator",
-   "q": "للمتمعن: أي طراز أمامك؟",
-   "commons": "File:2019 Lincoln Navigator 'Reserve', front 8.29.20.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "أودي TT",
-   "alt": [
-    "اودي تي تي"
-   ],
-   "topic": "رياضية",
-   "ar": "أودي TT",
-   "en": "Audi TT",
-   "q": "بنظرة واحدة: أي طراز أمامك؟",
-   "commons": "File:2019 Audi TT Sport 40 TFSi S-A 2.0 Front.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "مازدا MX-5",
-   "alt": [
-    "ام اكس 5",
-    "مياتا"
-   ],
-   "topic": "رياضية",
-   "ar": "مازدا إم إكس-5",
-   "en": "Mazda MX-5",
-   "q": "من الذاكرة: أي طراز أمامك؟",
-   "commons": "File:Mazda Roadster (MX-5) by Negawa Bridge (cropped).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "بورشه بوكستر",
-   "alt": [
-    "بوكستر"
-   ],
-   "topic": "رياضية",
-   "ar": "بورشه بوكستر",
-   "en": "Porsche Boxster",
-   "q": "للعارفين: أي طراز أمامك؟",
-   "commons": "File:Porsche 718 Boxster Spyder IMG 2961.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "سوبارو إمبريزا WRX",
-   "alt": [
-    "امبريزا",
-    "WRX",
-    "سوبارو WRX"
-   ],
-   "topic": "رياضية",
-   "ar": "سوبارو إمبريزا",
-   "en": "Subaru Impreza WRX STI",
-   "q": "تأمل الشكل: أي طراز أمامك؟",
-   "commons": "File:2022 Subaru WRX Sport-Tech in World Rally Blue Pearl, Front Left, 06-03-2022.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "ميتسوبيشي لانسر إيفو",
-   "alt": [
-    "لانسر ايفو",
-    "ايفوليوشن"
-   ],
-   "topic": "رياضية",
-   "ar": "ميتسوبيشي لانسر إيفوليوشن",
-   "en": "Mitsubishi Lancer Evolution",
-   "q": "خمن بسرعة: أي طراز أمامك؟",
-   "commons": "File:2017-04-02 Mitsubishi Lancer Evolution X MR SST 14 (2).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "نيسان 350Z",
-   "alt": [
-    "350 زد",
-    "فيرليدي زد"
-   ],
-   "topic": "رياضية",
-   "ar": "نيسان 350 زد",
-   "en": "Nissan 350Z",
-   "q": "ركز قليلًا: أي طراز أمامك؟",
-   "commons": "File:2004 Nissan 350Z 3.5 Front.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "بي إم دبليو M3",
-   "alt": [
-    "ام 3",
-    "بي ام دبليو ام3"
-   ],
-   "topic": "رياضية",
-   "ar": "بي إم دبليو M3",
-   "en": "BMW M3",
-   "q": "بلا تردد: أي طراز أمامك؟",
-   "commons": "File:BMW M3 Competition (G80) IMG 4041.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "مرسيدس W123",
-   "alt": [
-    "دبليو 123",
-    "مرسيدس أبو دقة"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "مرسيدس-بنز W123",
-   "en": "Mercedes-Benz W123",
-   "q": "أمامك صورة: أي طراز أمامك؟",
-   "commons": "File:1984 Mercedes-Benz 280E Sedan (cropped).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "بيجو 504",
-   "alt": [
-    "بيجو ٥٠٤"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "بيجو 504",
-   "en": "Peugeot 504",
-   "q": "لمحبي السيارات: أي طراز أمامك؟",
-   "commons": "File:1978 Peugeot 504 Ti Automatic 2.0 Front.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "رينو 4",
-   "alt": [
-    "رينو كاتر",
-    "رينو أربعة"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "رينو 4",
-   "en": "Renault 4",
-   "q": "بلا مساعدة: أي طراز أمامك؟",
-   "commons": "File:1984 Renault 4 GTL, front left (Germany).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "لادا 2107",
-   "alt": [
-    "لادا ريفا",
-    "لادا جيجولي"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "لادا ريفا",
-   "en": "Lada Riva",
-   "q": "هيا جرب: أي طراز أمامك؟",
-   "commons": "File:Lada 2107 aka Lada Riva October 1995 1452cc.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "شيفروليه إمبالا",
-   "alt": [
-    "امبالا"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "شيفروليه إمبالا",
-   "en": "Chevrolet Impala",
-   "q": "فكر ثم أجب: أي طراز أمامك؟",
-   "commons": "File:Chevrolet Impala (14373209694) (cropped).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "فورد كراون فيكتوريا",
-   "alt": [
-    "كراون فيكتوريا",
-    "كراون فك"
-   ],
-   "topic": "شعبية",
-   "ar": "فورد كراون فيكتوريا",
-   "en": "Ford Crown Victoria",
-   "q": "ما هذه السيارة؟",
-   "commons": "File:Ford Crown Victoria LX.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "نيسان جوك",
-   "alt": [
-    "جوك",
-    "juke"
-   ],
-   "topic": "شعبية",
-   "ar": "نيسان جوك",
-   "en": "Nissan Juke",
-   "q": "انظر جيدًا: ما هذه السيارة؟",
-   "commons": "File:Nissan Juke (F16) IMG 4903.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "هوندا أكورد",
-   "alt": [
-    "اكورد"
-   ],
-   "topic": "شعبية",
-   "ar": "هوندا أكورد",
-   "en": "Honda Accord",
-   "q": "لقطة واحدة: ما هذه السيارة؟",
-   "commons": "File:2023 Honda Accord LX, front left, 07-13-2023.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "تويوتا بريفيا",
-   "alt": [
-    "بريفيا"
-   ],
-   "topic": "شعبية",
-   "ar": "تويوتا بريفيا",
-   "en": "Toyota Previa",
-   "q": "دقق في الصورة: ما هذه السيارة؟",
-   "commons": "File:2016 Toyota Estima.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "تسلا موديل 3",
-   "alt": [
-    "موديل ثري",
-    "تسلا 3"
-   ],
-   "topic": "كهربائية",
-   "ar": "تسلا موديل 3",
-   "en": "Tesla Model 3",
-   "q": "سؤال سريع: ما هذه السيارة؟",
-   "commons": "File:Tesla Model 3 (2023) Autofrühling Ulm IMG 9282.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "تسلا موديل X",
-   "alt": [
-    "موديل اكس"
-   ],
-   "topic": "كهربائية",
-   "ar": "تسلا موديل إكس",
-   "en": "Tesla Model X",
-   "q": "للمتمعن: ما هذه السيارة؟",
-   "commons": "File:2017 Tesla Model X 100D Front.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "نيسان ليف",
-   "alt": [
-    "ليف",
-    "LEAF"
-   ],
-   "topic": "كهربائية",
-   "ar": "نيسان ليف",
-   "en": "Nissan Leaf",
-   "q": "بنظرة واحدة: ما هذه السيارة؟",
-   "commons": "File:Nissan Leaf (ZE2) autoMOBIL Tübingen 2025 DSC 2752.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "تويوتا بريوس",
-   "alt": [
-    "بريوس"
-   ],
-   "topic": "كهربائية",
-   "ar": "تويوتا بريوس",
-   "en": "Toyota Prius",
-   "q": "من الذاكرة: ما هذه السيارة؟",
-   "commons": "File:Toyota Prius 2.0 HEV Limited (V) – f 18112022.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "هارلي ديفيدسون فات بوي",
-   "alt": [
-    "فات بوي",
-    "هارلي فات بوي"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "هارلي ديفيدسون فات بوي",
-   "en": "Harley-Davidson Fat Boy",
-   "q": "انظر جيدًا: ما طراز هذه الدراجة؟",
-   "commons": "File:Harley Davidson Fat Boy 2018 FLFBS.jpg"
-  },
-  {
-   "tier": 400,
-   "a": "هوندا غولد وينغ",
-   "alt": [
-    "جولد وينج",
-    "قولد وينق"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "هوندا غولد وينغ",
-   "en": "Honda Gold Wing",
-   "q": "سؤال سريع: ما طراز هذه الدراجة؟",
-   "commons": "File:Honda Gold Wing GL 1800 (SC79 - 2018).jpg"
-  },
-  {
-   "tier": 400,
-   "a": "ياماها YZF-R1",
-   "alt": [
-    "R1",
-    "ياماها ار1"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "ياماها YZF-R1",
-   "en": "Yamaha YZF-R1",
-   "q": "أي دراجة نارية هذه؟",
-   "commons": "File:2015 Yamaha YZF-R1 crop.JPG"
-  },
-  {
-   "tier": 600,
-   "a": "فيراري F40",
-   "alt": [
-    "اف 40"
-   ],
-   "topic": "خارقة",
-   "ar": "فيراري F40",
-   "en": "Ferrari F40",
-   "q": "للعارفين: ما هذه السيارة؟",
-   "commons": "File:F40 Ferrari 20090509.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "لافيراري",
-   "alt": [
-    "لا فيراري",
-    "فيراري لافيراري"
-   ],
-   "topic": "خارقة",
-   "ar": "لافيراري",
-   "en": "LaFerrari",
-   "q": "تأمل الشكل: ما هذه السيارة؟",
-   "commons": "File:LaFerrari in Beverly Hills (14563979888).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "فيراري إنزو",
-   "alt": [
-    "انزو",
-    "انزو فيراري"
-   ],
-   "topic": "خارقة",
-   "ar": "فيراري إنزو",
-   "en": "Ferrari Enzo",
-   "q": "خمن بسرعة: ما هذه السيارة؟",
-   "commons": "File:Orange Enzo Ferrari (7191948164).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "مكلارين P1",
-   "alt": [
-    "بي 1",
-    "مكلارين بي1"
-   ],
-   "topic": "خارقة",
-   "ar": "مكلارين P1",
-   "en": "McLaren P1",
-   "q": "ركز قليلًا: ما هذه السيارة؟",
-   "commons": "File:McLaren P1.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "مكلارين F1",
-   "alt": [
-    "مكلارين اف1"
-   ],
-   "topic": "خارقة",
-   "ar": "مكلارين F1",
-   "en": "McLaren F1",
-   "q": "بلا تردد: ما هذه السيارة؟",
-   "commons": "File:1996 McLaren F1 Chassis No 63 6.1 Front.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بوغاتي فيرون",
-   "alt": [
-    "فيرون",
-    "بوجاتي فيرون"
-   ],
-   "topic": "خارقة",
-   "ar": "بوغاتي فيرون",
-   "en": "Bugatti Veyron",
-   "q": "أمامك صورة: ما هذه السيارة؟",
-   "commons": "File:Bugatti Veyron 16.4 – Frontansicht (1), 5. April 2012, Düsseldorf.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بوغاتي شيرون",
-   "alt": [
-    "شيرون",
-    "بوجاتي شيرون"
-   ],
-   "topic": "خارقة",
-   "ar": "بوغاتي شيرون",
-   "en": "Bugatti Chiron",
-   "q": "لمحبي السيارات: ما هذه السيارة؟",
-   "commons": "File:Bugatti Chiron 1.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "كوينيجسيج أجيرا",
-   "alt": [
-    "اجيرا",
-    "كونيجزيج"
-   ],
-   "topic": "خارقة",
-   "ar": "كوينيغسيغ أجيرا",
-   "en": "Koenigsegg Agera",
-   "q": "بلا مساعدة: ما هذه السيارة؟",
-   "commons": "File:Agera RST Koenigsegg.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "باغاني زوندا",
-   "alt": [
-    "زوندا",
-    "بجاني زوندا"
-   ],
-   "topic": "خارقة",
-   "ar": "باغاني زوندا",
-   "en": "Pagani Zonda",
-   "q": "هيا جرب: ما هذه السيارة؟",
-   "commons": "File:Pagani Zonda C12 'chassis 001' Genf 2019 1Y7A5539.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بورشه كاريرا GT",
-   "alt": [
-    "كاريرا جي تي"
-   ],
-   "topic": "خارقة",
-   "ar": "بورشه كاريرا GT",
-   "en": "Porsche Carrera GT",
-   "q": "فكر ثم أجب: ما هذه السيارة؟",
-   "commons": "File:Porsche Carrera GT - Goodwood Breakfast Club (July 2008).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بورشه 918 سبايدر",
-   "alt": [
-    "918",
-    "بورشه 918"
-   ],
-   "topic": "خارقة",
-   "ar": "بورشه 918 سبايدر",
-   "en": "Porsche 918 Spyder",
-   "q": "ما اسم هذه السيارة؟",
-   "commons": "File:Porsche 918 Spyder IAA 2013.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "لامبورغيني ديابلو",
-   "alt": [
-    "ديابلو"
-   ],
-   "topic": "خارقة",
-   "ar": "لامبورغيني ديابلو",
-   "en": "Lamborghini Diablo",
-   "q": "انظر جيدًا: ما اسم هذه السيارة؟",
-   "commons": "File:1995 Lamborghini Diablo SE 30.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "فيراري 458 إيطاليا",
-   "alt": [
-    "458",
-    "فيراري 458"
-   ],
-   "topic": "رياضية",
-   "ar": "فيراري 458 إيطاليا",
-   "en": "Ferrari 458 Italia",
-   "q": "لقطة واحدة: ما اسم هذه السيارة؟",
-   "commons": "File:Ferrari 458 Fort Worth June 2016 56 (Ferrari) (cropped-2).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "لامبورغيني هوراكان",
-   "alt": [
-    "هوراكان"
-   ],
-   "topic": "رياضية",
-   "ar": "لامبورغيني هوراكان",
-   "en": "Lamborghini Huracán",
-   "q": "دقق في الصورة: ما اسم هذه السيارة؟",
-   "commons": "File:2017 Lamborghini Huracan LP610.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "لامبورغيني غالاردو",
-   "alt": [
-    "جالاردو",
-    "قلاردو"
-   ],
-   "topic": "رياضية",
-   "ar": "لامبورغيني غالاردو",
-   "en": "Lamborghini Gallardo",
-   "q": "سؤال سريع: ما اسم هذه السيارة؟",
-   "commons": "File:Lamborghini Superleggera-20180708.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "أودي R8",
-   "alt": [
-    "ار 8",
-    "اودي ار8"
-   ],
-   "topic": "رياضية",
-   "ar": "أودي R8",
-   "en": "Audi R8",
-   "q": "للمتمعن: ما اسم هذه السيارة؟",
-   "commons": "File:2018 Audi R8 Coupe V10 plus Front.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "مرسيدس SLS AMG",
-   "alt": [
-    "اس ال اس",
-    "SLS"
-   ],
-   "topic": "رياضية",
-   "ar": "مرسيدس-بنز SLS AMG",
-   "en": "Mercedes-Benz SLS AMG",
-   "q": "بنظرة واحدة: ما اسم هذه السيارة؟",
-   "commons": "File:Mercedes-Benz SLS AMG (C 197) – Frontansicht geöffnet, 10. August 2011, Düsseldorf.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "دودج فايبر",
-   "alt": [
-    "فايبر",
-    "ڤايبر"
-   ],
-   "topic": "رياضية",
-   "ar": "دودج فايبر",
-   "en": "Dodge Viper",
-   "q": "من الذاكرة: ما اسم هذه السيارة؟",
-   "commons": "File:\" 14 Fiat-Chrysler SRT Viper GTS (cropped).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "نيسان سكايلاين GT-R",
-   "alt": [
-    "سكايلاين",
-    "R34"
-   ],
-   "topic": "رياضية",
-   "ar": "نيسان سكايلاين GT-R",
-   "en": "Nissan Skyline GT-R",
-   "q": "للعارفين: ما اسم هذه السيارة؟",
-   "commons": "File:Nissan Skyline GT-R R34 V Spec II.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "مازدا RX-7",
-   "alt": [
-    "ار اكس 7"
-   ],
-   "topic": "رياضية",
-   "ar": "مازدا RX-7",
-   "en": "Mazda RX-7",
-   "q": "تأمل الشكل: ما اسم هذه السيارة؟",
-   "commons": "File:1994 Mazda RX-7 R2 in Vintage Red, front left (Lime Rock).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "هوندا NSX",
-   "alt": [
-    "ان اس اكس",
-    "اكورا NSX"
-   ],
-   "topic": "رياضية",
-   "ar": "هوندا NSX",
-   "en": "Honda NSX",
-   "q": "خمن بسرعة: ما اسم هذه السيارة؟",
-   "commons": "File:AcuraNSX-05-cropped.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بي إم دبليو i8",
-   "alt": [
-    "اي 8",
-    "بي ام دبليو اي8"
-   ],
-   "topic": "رياضية",
-   "ar": "بي إم دبليو i8",
-   "en": "BMW i8",
-   "q": "ركز قليلًا: ما اسم هذه السيارة؟",
-   "commons": "File:2016 BMW i8.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "تويوتا 86",
-   "alt": [
-    "جي تي 86",
-    "GT86"
-   ],
-   "topic": "رياضية",
-   "ar": "تويوتا 86",
-   "en": "Toyota 86",
-   "q": "بلا تردد: ما اسم هذه السيارة؟",
-   "commons": "File:2022 Toyota GR86 Premium in Halo, Front Right, 04-10-2022.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "هوندا S2000",
-   "alt": [
-    "اس 2000"
-   ],
-   "topic": "رياضية",
-   "ar": "هوندا S2000",
-   "en": "Honda S2000",
-   "q": "أمامك صورة: ما اسم هذه السيارة؟",
-   "commons": "File:HondaS2000-004.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بنتلي كونتيننتال GT",
-   "alt": [
-    "كونتيننتال جي تي"
-   ],
-   "topic": "فارهة",
-   "ar": "بنتلي كونتيننتال GT",
-   "en": "Bentley Continental GT",
-   "q": "لمحبي السيارات: ما اسم هذه السيارة؟",
-   "commons": "File:Bentley Continental GT First Edition (49919050697) (cropped) (cropped).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "رولز رويس غوست",
-   "alt": [
-    "غوست",
-    "جوست"
-   ],
-   "topic": "فارهة",
-   "ar": "رولز رويس غوست",
-   "en": "Rolls-Royce Ghost",
-   "q": "بلا مساعدة: ما اسم هذه السيارة؟",
-   "commons": "File:2022 Rolls-Royce Ghost Black Badge in Arctic White, front left.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "رولز رويس كولينان",
-   "alt": [
-    "كولينان"
-   ],
-   "topic": "فارهة",
-   "ar": "رولز رويس كولينان",
-   "en": "Rolls-Royce Cullinan",
-   "q": "هيا جرب: ما اسم هذه السيارة؟",
-   "commons": "File:2019 Rolls-Royce Cullinan V12 Automatic 6.75 Front.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "لامبورغيني أوروس",
-   "alt": [
-    "اوروس"
-   ],
-   "topic": "فارهة",
-   "ar": "لامبورغيني أوروس",
-   "en": "Lamborghini Urus",
-   "q": "فكر ثم أجب: ما اسم هذه السيارة؟",
-   "commons": "File:Lamborghini Urus SE DSC 8524.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بنتلي بنتايغا",
-   "alt": [
-    "بنتايجا"
-   ],
-   "topic": "فارهة",
-   "ar": "بنتلي بنتايغا",
-   "en": "Bentley Bentayga",
-   "q": "أتعرف هذا الطراز؟",
-   "commons": "File:Bentley Bentayga V8 (FL) IMG 0005.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "مازيراتي جران توريزمو",
-   "alt": [
-    "جران توريزمو",
-    "مازيراتي GT"
-   ],
-   "topic": "فارهة",
-   "ar": "مازيراتي جران توريزمو",
-   "en": "Maserati GranTurismo",
-   "q": "انظر جيدًا: أتعرف هذا الطراز؟",
-   "commons": "File:Maserati GranTurismo Trofeo 1X7A0828.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "أستون مارتن DB11",
-   "alt": [
-    "دي بي 11"
-   ],
-   "topic": "فارهة",
-   "ar": "أستون مارتن DB11",
-   "en": "Aston Martin DB11",
-   "q": "لقطة واحدة: أتعرف هذا الطراز؟",
-   "commons": "File:2018 Aston Martin DB11 V8 Automatic 4.0 Front.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "أستون مارتن فانتاج",
-   "alt": [
-    "فانتاج",
-    "ڤانتاج"
-   ],
-   "topic": "فارهة",
-   "ar": "أستون مارتن فانتاج",
-   "en": "Aston Martin Vantage",
-   "q": "دقق في الصورة: أتعرف هذا الطراز؟",
-   "commons": "File:Aston-Martin Vantage (1973) (34328531642).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "لكزس LFA",
-   "alt": [
-    "ال اف ايه"
-   ],
-   "topic": "فارهة",
-   "ar": "لكزس LFA",
-   "en": "Lexus LFA",
-   "q": "سؤال سريع: أتعرف هذا الطراز؟",
-   "commons": "File:Lexus LFA 001.JPG"
-  },
-  {
-   "tier": 600,
-   "a": "مرسيدس AMG GT",
-   "alt": [
-    "ايه ام جي جي تي"
-   ],
-   "topic": "فارهة",
-   "ar": "مرسيدس-إيه إم جي GT",
-   "en": "Mercedes-AMG GT",
-   "q": "للمتمعن: أتعرف هذا الطراز؟",
-   "commons": "File:Festival automobile international 2015 - Mercedes AMG GT - 003.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "تويوتا سيليكا",
-   "alt": [
-    "سيليكا"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "تويوتا سيليكا",
-   "en": "Toyota Celica",
-   "q": "بنظرة واحدة: أتعرف هذا الطراز؟",
-   "commons": "File:1994 Toyota Celica GT-4 2.0.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "تويوتا MR2",
-   "alt": [
-    "ام ار 2"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "تويوتا MR2",
-   "en": "Toyota MR2",
-   "q": "من الذاكرة: أتعرف هذا الطراز؟",
-   "commons": "File:1993ToyotaMR2Hardtop.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "فورد كابري",
-   "alt": [
-    "كابري"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "فورد كابري",
-   "en": "Ford Capri",
-   "q": "للعارفين: أتعرف هذا الطراز؟",
-   "commons": "File:1978 Ford Capri MK3 (25595512244) (shadow enhance etc).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بيجو 205",
-   "alt": [
-    "بيجو ٢٠٥"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "بيجو 205",
-   "en": "Peugeot 205",
-   "q": "تأمل الشكل: أتعرف هذا الطراز؟",
-   "commons": "File:Peugeot 205 front 20080121.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "فولكسفاغن شيروكو",
-   "alt": [
-    "شيروكو",
-    "سيروكو"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "فولكس فاغن شيروكو",
-   "en": "Volkswagen Scirocco",
-   "q": "خمن بسرعة: أتعرف هذا الطراز؟",
-   "commons": "File:2015 Volkswagen Scirocco GT BlueMotion Tech 2.0.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "سيتروين 2CV",
-   "alt": [
-    "تو شوفو",
-    "سيتروين 2 سي في"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "ستروين 2 سي في",
-   "en": "Citroën 2CV",
-   "q": "ركز قليلًا: أتعرف هذا الطراز؟",
-   "commons": "File:Citroen 2CV 1X7A7979.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "ألفا روميو سبايدر",
-   "alt": [
-    "الفا سبايدر"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "ألفا روميو سبايدر",
-   "en": "Alfa Romeo Spider",
-   "q": "بلا تردد: أتعرف هذا الطراز؟",
-   "commons": "File:Alfa Romeo (3568179480).jpg"
-  },
-  {
-   "tier": 600,
-   "a": "مرسيدس أكتروس",
-   "alt": [
-    "اكتروس"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "مرسيدس-بنز أكتروس",
-   "en": "Mercedes-Benz Actros",
-   "q": "أتعرف هذه المركبة؟",
-   "commons": "File:Mercedes-Benz Actros 2545 mit Atlas Ladekran.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "فولفو FH",
-   "alt": [
-    "فولفو اف اتش"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "فولفو FH",
-   "en": "Volvo FH",
-   "q": "انظر جيدًا: أتعرف هذه المركبة؟",
-   "commons": "File:2013 Volvo FH16 540 demotruck.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "بيتربيلت 379",
-   "alt": [
-    "بيتربلت"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "بيتربيلت 379",
-   "en": "Peterbilt 379",
-   "q": "سؤال سريع: أتعرف هذه المركبة؟",
-   "commons": "File:2003 Peterbilt 379.jpeg"
-  },
-  {
-   "tier": 600,
-   "a": "كينوورث W900",
-   "alt": [
-    "كنورث",
-    "كينورث"
-   ],
-   "topic": "بيك أب وشاحنات",
-   "ar": "كينوورث W900",
-   "en": "Kenworth W900",
-   "q": "دقق في الصورة: أتعرف هذه المركبة؟",
-   "commons": "File:Kenworth W900 semi in red.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "دوكاتي مونستر",
-   "alt": [
-    "مونستر"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "دوكاتي مونستر",
-   "en": "Ducati Monster",
-   "q": "انظر جيدًا: أي دراجة نارية هذه؟",
-   "commons": "File:2003 Ducati Monster S4R.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "كاواساكي نينجا H2",
-   "alt": [
-    "نينجا",
-    "نينجا اتش2"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "كاواساكي نينجا H2",
-   "en": "Kawasaki Ninja H2",
-   "q": "سؤال سريع: أي دراجة نارية هذه؟",
-   "commons": "File:Kawasaki Ninja H2.jpg"
-  },
-  {
-   "tier": 600,
-   "a": "سوزوكي حيابوسا",
-   "alt": [
-    "حايابوسا",
-    "هايابوسا"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "سوزوكي حيابوسا",
-   "en": "Suzuki Hayabusa",
-   "q": "ما اسم هذه الدراجة؟",
-   "commons": "File:SUZUKI Hayabusa 2007TMS.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فورد موديل T",
-   "alt": [
-    "موديل تي",
-    "فورد تي"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "فورد موديل تي",
-   "en": "Ford Model T",
-   "q": "أمامك صورة: أتعرف هذا الطراز؟",
-   "commons": "File:1925 Ford Model T touring.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "سيتروين DS",
-   "alt": [
-    "دي اس",
-    "سيتروين دي اس"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "ستروين DS",
-   "en": "Citroën DS",
-   "q": "لمحبي السيارات: أتعرف هذا الطراز؟",
-   "commons": "File:Bornholm Rundt 2012 (2012-07-08), by Klugschnacker modified.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "جاكوار E-Type",
-   "alt": [
-    "اي تايب",
-    "جاجوار اي تايب"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "جاكوار إي-تايب",
-   "en": "Jaguar E-Type",
-   "q": "بلا مساعدة: أتعرف هذا الطراز؟",
-   "commons": "File:Jaguar E-Type Series 1 3.8 Litre 1961.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "أستون مارتن DB5",
-   "alt": [
-    "دي بي 5"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "أستون مارتن DB5",
-   "en": "Aston Martin DB5",
-   "q": "هيا جرب: أتعرف هذا الطراز؟",
-   "commons": "File:Aston Martin DB5 (Skyfall).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "مرسيدس 300 SL",
-   "alt": [
-    "300 اس ال",
-    "جناح النورس"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "مرسيدس-بنز 300 إس إل",
-   "en": "Mercedes-Benz 300 SL",
-   "q": "فكر ثم أجب: أتعرف هذا الطراز؟",
-   "commons": "File:Fox Classic Car Collection, 2008 (02).JPG"
-  },
-  {
-   "tier": 800,
-   "a": "بورشه 356",
-   "alt": [
-    "356"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "بورشه 356",
-   "en": "Porsche 356",
-   "q": "أي موديل هذا؟",
-   "commons": "File:2007-07-08 Porsche 356 C (01 kl ret).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "بي إم دبليو إيزيتا",
-   "alt": [
-    "ايزيتا",
-    "ايستا"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "بي إم دبليو إيزيتا",
-   "en": "BMW Isetta",
-   "q": "انظر جيدًا: أي موديل هذا؟",
-   "commons": "File:BMW Isetta - Flickr - mick - Lumix.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "شيفروليه بيل إير",
-   "alt": [
-    "بل اير",
-    "بيل اير"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "شيفروليه بيل إير",
-   "en": "Chevrolet Bel Air",
-   "q": "لقطة واحدة: أي موديل هذا؟",
-   "commons": "File:57 Chevy BelAir.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "كاديلاك إلدورادو",
-   "alt": [
-    "الدورادو"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "كاديلاك إلدورادو",
-   "en": "Cadillac Eldorado",
-   "q": "دقق في الصورة: أي موديل هذا؟",
-   "commons": "File:67 Cadillac Eldorado (14277560774) cropped.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فورد ثاندربيرد",
-   "alt": [
-    "ثندربيرد",
-    "تندربيرد"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "فورد ثاندربيرد",
-   "en": "Ford Thunderbird",
-   "q": "سؤال سريع: أي موديل هذا؟",
-   "commons": "File:1957 Ford Thunderbird (28911503716) (cropped).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "لينكولن كونتيننتال",
-   "alt": [
-    "كونتيننتال"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "لينكون كونتيننتال",
-   "en": "Lincoln Continental",
-   "q": "للمتمعن: أي موديل هذا؟",
-   "commons": "File:2019 Lincoln Continental \"Select\", front 10.29.19.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فولكسفاغن كارمان غيا",
-   "alt": [
-    "كارمان جيا"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "فولكس فاغن كارمان غيا",
-   "en": "Volkswagen Karmann Ghia",
-   "q": "بنظرة واحدة: أي موديل هذا؟",
-   "commons": "File:1958 Volkswagen Type 14 Karmann.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "لامبورغيني كونتاش",
-   "alt": [
-    "كونتاش",
-    "كونتاك"
-   ],
-   "topic": "رياضية",
-   "ar": "لامبورغيني كونتاش",
-   "en": "Lamborghini Countach",
-   "q": "من الذاكرة: أي موديل هذا؟",
-   "commons": "File:Lamborghini Countach - Flickr - exfordy (2) (cropped-2).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "لامبورغيني ميورا",
-   "alt": [
-    "ميورا"
-   ],
-   "topic": "رياضية",
-   "ar": "لامبورغيني ميورا",
-   "en": "Lamborghini Miura",
-   "q": "للعارفين: أي موديل هذا؟",
-   "commons": "File:1971 Lamborghini Miura P400 SV.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فيراري تيستاروسا",
-   "alt": [
-    "تستاروسا"
-   ],
-   "topic": "رياضية",
-   "ar": "فيراري تيستاروسا",
-   "en": "Ferrari Testarossa",
-   "q": "تأمل الشكل: أي موديل هذا؟",
-   "commons": "File:Ferrari Testarossa IMG 3043.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فيراري F50",
-   "alt": [
-    "اف 50"
-   ],
-   "topic": "رياضية",
-   "ar": "فيراري F50",
-   "en": "Ferrari F50",
-   "q": "خمن بسرعة: أي موديل هذا؟",
-   "commons": "File:1999 Ferrari F50.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "بورشه 959",
-   "alt": [
-    "959"
-   ],
-   "topic": "رياضية",
-   "ar": "بورشه 959",
-   "en": "Porsche 959",
-   "q": "ركز قليلًا: أي موديل هذا؟",
-   "commons": "File:Porsche 959 – Frontansicht (2), 21. März 2013, Düsseldorf.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "بي إم دبليو M1",
-   "alt": [
-    "ام 1"
-   ],
-   "topic": "رياضية",
-   "ar": "بي إم دبليو M1",
-   "en": "BMW M1",
-   "q": "بلا تردد: أي موديل هذا؟",
-   "commons": "File:BMW M1, front right (Brooklyn).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "بي إم دبليو 507",
-   "alt": [
-    "507"
-   ],
-   "topic": "رياضية",
-   "ar": "بي إم دبليو 507",
-   "en": "BMW 507",
-   "q": "أمامك صورة: أي موديل هذا؟",
-   "commons": "File:BMW 507.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "تويوتا 2000GT",
-   "alt": [
-    "2000 جي تي"
-   ],
-   "topic": "رياضية",
-   "ar": "تويوتا 2000GT",
-   "en": "Toyota 2000GT",
-   "q": "لمحبي السيارات: أي موديل هذا؟",
-   "commons": "File:TOYOTA 2000GT.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "داتسون 240Z",
-   "alt": [
-    "240 زد",
-    "داتسون زد"
-   ],
-   "topic": "رياضية",
-   "ar": "داتسون 240Z",
-   "en": "Datsun 240Z",
-   "q": "بلا مساعدة: أي موديل هذا؟",
-   "commons": "File:1970-1973 Nissan Fairlady Z.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "مازدا كوسمو",
-   "alt": [
-    "كوزمو"
-   ],
-   "topic": "رياضية",
-   "ar": "مازدا كوسمو",
-   "en": "Mazda Cosmo",
-   "q": "هيا جرب: أي موديل هذا؟",
-   "commons": "File:1968 Mazda Cosmo-Sport 01.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فورد GT40",
-   "alt": [
-    "جي تي 40"
-   ],
-   "topic": "سباقات",
-   "ar": "فورد GT40",
-   "en": "Ford GT40",
-   "q": "فكر ثم أجب: أي موديل هذا؟",
-   "commons": "File:GT40 at Goodwood.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "شيلبي كوبرا",
-   "alt": [
-    "ايه سي كوبرا",
-    "كوبرا"
-   ],
-   "topic": "سباقات",
-   "ar": "إيه سي كوبرا",
-   "en": "AC Cobra",
-   "q": "ما الطراز الظاهر؟",
-   "commons": "File:Shelby AC 427 Cobra vl blue.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فيراري 250 GTO",
-   "alt": [
-    "250 جي تي او"
-   ],
-   "topic": "سباقات",
-   "ar": "فيراري 250 GTO",
-   "en": "Ferrari 250 GTO",
-   "q": "انظر جيدًا: ما الطراز الظاهر؟",
-   "commons": "File:1962 Ferrari 250 GTO SP25.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "لانشيا ستراتوس",
-   "alt": [
-    "ستراتوس"
-   ],
-   "topic": "سباقات",
-   "ar": "لانشيا ستراتوس",
-   "en": "Lancia Stratos",
-   "q": "لقطة واحدة: ما الطراز الظاهر؟",
-   "commons": "File:1974 Lancia Stratos Stradale at Greenwich 2021, front left.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "لانشيا دلتا إنتيغرالي",
-   "alt": [
-    "لانشيا دلتا",
-    "انتجرالي"
-   ],
-   "topic": "سباقات",
-   "ar": "لانشيا دلتا",
-   "en": "Lancia Delta",
-   "q": "دقق في الصورة: ما الطراز الظاهر؟",
-   "commons": "File:1994 Lancia Delta HF Integrale front.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "أودي كواترو",
-   "alt": [
-    "كواترو",
-    "كوواترو"
-   ],
-   "topic": "سباقات",
-   "ar": "أودي كواترو",
-   "en": "Audi Quattro",
-   "q": "سؤال سريع: ما الطراز الظاهر؟",
-   "commons": "File:1985 Audi Quattro.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "رينو 5 توربو",
-   "alt": [
-    "ار 5 توربو"
-   ],
-   "topic": "سباقات",
-   "ar": "رينو 5 توربو",
-   "en": "Renault 5 Turbo",
-   "q": "للمتمعن: ما الطراز الظاهر؟",
-   "commons": "File:1981 Renault 5 Turbo LC23.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "بلايموث سوبربيرد",
-   "alt": [
-    "سوبربيرد"
-   ],
-   "topic": "سباقات",
-   "ar": "بليموث سوبربيرد",
-   "en": "Plymouth Superbird",
-   "q": "بنظرة واحدة: ما الطراز الظاهر؟",
-   "commons": "File:Superbird Yellow.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "دودج تشارجر ديتونا",
-   "alt": [
-    "ديتونا"
-   ],
-   "topic": "سباقات",
-   "ar": "دودج تشارجر ديتونا",
-   "en": "Dodge Charger Daytona",
-   "q": "من الذاكرة: ما الطراز الظاهر؟",
-   "commons": "File:1969 Dodge Charger Daytona (13419983895) (cropped).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "جيب ويليز",
-   "alt": [
-    "ويليز",
-    "ويلز MB"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "ويليز إم بي",
-   "en": "Willys MB",
-   "q": "للعارفين: ما الطراز الظاهر؟",
-   "commons": "File:Covered Willy's jeep Wings Over Wine Country 2007.JPG"
-  },
-  {
-   "tier": 800,
-   "a": "لاند روفر سيريز",
-   "alt": [
-    "لاند روفر الأصلية"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "لاند روفر سيريز",
-   "en": "Land Rover Series",
-   "q": "تأمل الشكل: ما الطراز الظاهر؟",
-   "commons": "File:Land Rover Series I 1948 (HUE 166).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "إنترناشونال سكاوت",
-   "alt": [
-    "سكاوت"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "إنترناشونال هارفستر سكاوت",
-   "en": "International Harvester Scout",
-   "q": "خمن بسرعة: ما الطراز الظاهر؟",
-   "commons": "File:1978 International Harvester Scout II wagon (23176143526) (cropped).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "دودج باور واغن",
-   "alt": [
-    "باور واجن"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "دودج باور واغن",
-   "en": "Dodge Power Wagon",
-   "q": "حدد طراز هذه المركبة",
-   "commons": "File:54 Dodge Power Wagon 1 Ton Pick-Up (7154796521).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فولكسفاغن كوبلفاغن",
-   "alt": [
-    "كوبل واجن"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "فولكس فاغن كوبلفاغن",
-   "en": "Volkswagen Kübelwagen",
-   "q": "ركز قليلًا: ما الطراز الظاهر؟",
-   "commons": "File:VW Kuebelwagen 1.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "لامبورغيني LM002",
-   "alt": [
-    "ال ام 002",
-    "رامبو لامبو"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "لامبورغيني LM002",
-   "en": "Lamborghini LM002",
-   "q": "بلا تردد: ما الطراز الظاهر؟",
-   "commons": "File:Lamborghini LM002 Gen1 Type129 1986-1993 1988 frontleft 2013-03-17 U (cropped).JPG"
-  },
-  {
-   "tier": 800,
-   "a": "ترابانت",
-   "alt": [
-    "ترابنت",
-    "ترابي"
-   ],
-   "topic": "شعبية",
-   "ar": "ترابانت 601",
-   "en": "Trabant 601",
-   "q": "أمامك صورة: ما الطراز الظاهر؟",
-   "commons": "File:1988 VEB Sachenring Trabant P601S Beige (1 bearb Sp) (cropped).jpg"
-  },
-  {
-   "tier": 800,
-   "a": "ساب 900",
-   "alt": [
-    "ساب"
-   ],
-   "topic": "شعبية",
-   "ar": "ساب 900",
-   "en": "Saab 900",
-   "q": "لمحبي السيارات: ما الطراز الظاهر؟",
-   "commons": "File:1993 Saab 900 SE Turbo 2.0 Front.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "فولفو P1800",
-   "alt": [
-    "بي 1800"
-   ],
-   "topic": "شعبية",
-   "ar": "فولفو P1800",
-   "en": "Volvo P1800",
-   "q": "بلا مساعدة: ما الطراز الظاهر؟",
-   "commons": "File:1969 P1800 S.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "تاكسي لندن الأسود",
-   "alt": [
-    "اوستن FX4",
-    "الكاب الأسود"
-   ],
-   "topic": "شعبية",
-   "ar": "أوستن FX4",
-   "en": "Austin FX4",
-   "q": "هيا جرب: ما الطراز الظاهر؟",
-   "commons": "File:1962 Austin FX4 London taxi.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "تشيكر ماراثون",
-   "alt": [
-    "تاكسي نيويورك",
-    "تشيكر"
-   ],
-   "topic": "شعبية",
-   "ar": "تشيكر ماراثون",
-   "en": "Checker Marathon",
-   "q": "فكر ثم أجب: ما الطراز الظاهر؟",
-   "commons": "File:Checker-Marathon-2.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "سيتروين HY",
-   "alt": [
-    "اتش واي",
-    "سيتروين اتش"
-   ],
-   "topic": "شعبية",
-   "ar": "ستروين إتش",
-   "en": "Citroën H Van",
-   "q": "انظر جيدًا: حدد طراز هذه المركبة",
-   "commons": "File:Citroën Typ H 1981 grey vl TCE.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "جنرال موتورز EV1",
-   "alt": [
-    "اي في 1",
-    "EV1"
-   ],
-   "topic": "كهربائية",
-   "ar": "جنرال موتورز EV1",
-   "en": "General Motors EV1",
-   "q": "اذكر اسم هذه السيارة",
-   "commons": "File:EV1A014 (1) cropped.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "هوندا CB750",
-   "alt": [
-    "سي بي 750"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "هوندا CB750",
-   "en": "Honda CB750",
-   "q": "انظر جيدًا: ما اسم هذه الدراجة؟",
-   "commons": "File:Honda CB750.JPG"
-  },
-  {
-   "tier": 800,
-   "a": "نورتون كوماندو",
-   "alt": [
-    "كوماندو"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "نورتون كوماندو",
-   "en": "Norton Commando",
-   "q": "سؤال سريع: ما اسم هذه الدراجة؟",
-   "commons": "File:Norton 850 Commando 1973.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "إنديان سكاوت",
-   "alt": [
-    "انديان"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "إنديان سكاوت",
-   "en": "Indian Scout (motorcycle)",
-   "q": "أتعرف هذه الدراجة؟",
-   "commons": "File:Indian Scout 600 cc 1920.jpg"
-  },
-  {
-   "tier": 800,
-   "a": "رويال إنفيلد بوليت",
-   "alt": [
-    "انفيلد بوليت",
-    "رويال انفيلد"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "رويال إنفيلد بوليت",
-   "en": "Royal Enfield Bullet",
-   "q": "انظر جيدًا: أتعرف هذه الدراجة؟",
-   "commons": "File:Royal Enfield Bullet 500 - 2002 model.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "بورشه 917",
-   "alt": [
-    "917"
-   ],
-   "topic": "سباقات",
-   "ar": "بورشه 917",
-   "en": "Porsche 917",
-   "q": "انظر جيدًا: اذكر اسم هذه السيارة",
-   "commons": "File:1969 Porsche 917K Red.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "بورشه 962",
-   "alt": [
-    "962"
-   ],
-   "topic": "سباقات",
-   "ar": "بورشه 962",
-   "en": "Porsche 962",
-   "q": "لقطة واحدة: اذكر اسم هذه السيارة",
-   "commons": "File:2006FOS 1988Porsche962CLeMans.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "ألفا روميو 33 ستراديل",
-   "alt": [
-    "33 ستراديل",
-    "الفا 33"
-   ],
-   "topic": "سباقات",
-   "ar": "ألفا روميو 33 ستراديل",
-   "en": "Alfa Romeo 33 Stradale",
-   "q": "دقق في الصورة: اذكر اسم هذه السيارة",
-   "commons": "File:1968 Alfa Romeo 33 Stradale, front right (Miller).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "مرسيدس W196",
-   "alt": [
-    "دبليو 196"
-   ],
-   "topic": "سباقات",
-   "ar": "مرسيدس-بنز W196",
-   "en": "Mercedes-Benz W196",
-   "q": "سؤال سريع: اذكر اسم هذه السيارة",
-   "commons": "File:KlingK-MB-W196-1976.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "مرسيدس 300 SLR",
-   "alt": [
-    "300 اس ال ار"
-   ],
-   "topic": "سباقات",
-   "ar": "مرسيدس-بنز 300 SLR",
-   "en": "Mercedes-Benz 300 SLR",
-   "q": "للمتمعن: اذكر اسم هذه السيارة",
-   "commons": "File:Mercedes-Benz 300 SLR 1955.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "أوتو يونيون تايب C",
-   "alt": [
-    "اوتو يونيون"
-   ],
-   "topic": "سباقات",
-   "ar": "أوتو يونيون",
-   "en": "Auto Union racing car",
-   "q": "بنظرة واحدة: اذكر اسم هذه السيارة",
-   "commons": "File:Auto Union Typ C - 1984-05-12.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "لوتس 49",
-   "alt": [
-    "لوتس فورتي ناين"
-   ],
-   "topic": "سباقات",
-   "ar": "لوتس 49",
-   "en": "Lotus 49",
-   "q": "من الذاكرة: اذكر اسم هذه السيارة",
-   "commons": "File:HillGraham19690801Lotus-Nordkehre.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "مكلارين MP4/4",
-   "alt": [
-    "ام بي 4/4"
-   ],
-   "topic": "سباقات",
-   "ar": "مكلارين MP4/4",
-   "en": "McLaren MP4/4",
-   "q": "للعارفين: اذكر اسم هذه السيارة",
-   "commons": "File:McLaren MP4-4 front-right Honda Collection Hall.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "تيريل P34",
-   "alt": [
-    "تيرل بي 34",
-    "السيارة بست عجلات"
-   ],
-   "topic": "سباقات",
-   "ar": "تيريل P34",
-   "en": "Tyrrell P34",
-   "q": "تأمل الشكل: اذكر اسم هذه السيارة",
-   "commons": "File:Rétromobile 2017 - Tyrrell P34 - 1977 - 002.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "برابهام BT46",
-   "alt": [
-    "المروحة",
-    "برابهام فان كار"
-   ],
-   "topic": "سباقات",
-   "ar": "برابهام BT46",
-   "en": "Brabham BT46",
-   "q": "خمن بسرعة: اذكر اسم هذه السيارة",
-   "commons": "File:2001 Goodwood Festival of Speed Brabham BT46B Fan car.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "جاكوار D-Type",
-   "alt": [
-    "دي تايب"
-   ],
-   "topic": "سباقات",
-   "ar": "جاكوار دي-تايب",
-   "en": "Jaguar D-Type",
-   "q": "ركز قليلًا: اذكر اسم هذه السيارة",
-   "commons": "File:Paris - Retromobile 2013 - Jaguar D Type - 1955 - 106.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "بوغاتي تايب 35",
-   "alt": [
-    "تايب 35"
-   ],
-   "topic": "سباقات",
-   "ar": "بوغاتي تايب 35",
-   "en": "Bugatti Type 35",
-   "q": "بلا تردد: اذكر اسم هذه السيارة",
-   "commons": "File:Bugatti 35, Bj 1924, M Nicolosi - 1976.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "جاكوار XJ220",
-   "alt": [
-    "اكس جيه 220"
-   ],
-   "topic": "خارقة",
-   "ar": "جاكوار XJ220",
-   "en": "Jaguar XJ220",
-   "q": "أمامك صورة: اذكر اسم هذه السيارة",
-   "commons": "File:JaguarXJ220.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "فيكتور W8",
-   "alt": [
-    "ڤيكتور"
-   ],
-   "topic": "خارقة",
-   "ar": "فيكتور W8",
-   "en": "Vector W8",
-   "q": "لمحبي السيارات: اذكر اسم هذه السيارة",
-   "commons": "File:VectorW8.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "سبايكر C8",
-   "alt": [
-    "سبايكر"
-   ],
-   "topic": "خارقة",
-   "ar": "سبايكر C8",
-   "en": "Spyker C8",
-   "q": "بلا مساعدة: اذكر اسم هذه السيارة",
-   "commons": "File:2008 Spyker C8 Spyder SP 25.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "لامبورغيني ريفينتون",
-   "alt": [
-    "ريفينتون"
-   ],
-   "topic": "خارقة",
-   "ar": "لامبورغيني ريفينتون",
-   "en": "Lamborghini Reventón",
-   "q": "هيا جرب: اذكر اسم هذه السيارة",
-   "commons": "File:MotorShow 2007, Lamborghini - Flickr - Gaspa (1) (cropped).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "ميتسوؤكا أوروتشي",
-   "alt": [
-    "اوروتشي"
-   ],
-   "topic": "خارقة",
-   "ar": "ميتسوؤكا أوروتشي",
-   "en": "Mitsuoka Orochi",
-   "q": "فكر ثم أجب: اذكر اسم هذه السيارة",
-   "commons": "File:Mitsuoka Orochi Nude Top Roadstar.JPG"
-  },
-  {
-   "tier": 1000,
-   "a": "سالين S7",
-   "alt": [
-    "سالين"
-   ],
-   "topic": "خارقة",
-   "ar": "سالين S7",
-   "en": "Saleen S7",
-   "q": "حدد طراز هذه السيارة",
-   "commons": "File:Saleen S7 (8228619567).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "أستون مارتن فالكيري",
-   "alt": [
-    "فالكيري"
-   ],
-   "topic": "خارقة",
-   "ar": "أستون مارتن فالكيري",
-   "en": "Aston Martin Valkyrie",
-   "q": "انظر جيدًا: حدد طراز هذه السيارة",
-   "commons": "File:Aston Martin Valkyrie Verification Prototype 001 Genf 2019 1Y7A5569.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "بوغاتي EB110",
-   "alt": [
-    "اي بي 110"
-   ],
-   "topic": "خارقة",
-   "ar": "بوغاتي EB110",
-   "en": "Bugatti EB110",
-   "q": "لقطة واحدة: حدد طراز هذه السيارة",
-   "commons": "File:1995 Bugatti EB110SS in Blu Bugatti, front left (Greenwich).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "سيزيتا V16T",
-   "alt": [
-    "سيزيتا"
-   ],
-   "topic": "خارقة",
-   "ar": "سيزيتا V16T",
-   "en": "Cizeta V16T",
-   "q": "دقق في الصورة: حدد طراز هذه السيارة",
-   "commons": "File:Cizeta-Moroder V16T - Concorso Italiano 2003 - fvr.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "باغاني هوايرا",
-   "alt": [
-    "هوايرا"
-   ],
-   "topic": "خارقة",
-   "ar": "باغاني هوايرا",
-   "en": "Pagani Huayra",
-   "q": "سؤال سريع: حدد طراز هذه السيارة",
-   "commons": "File:Pagani, GIMS 2019, Le Grand-Saconnex (GIMS0023).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "تاكر 48",
-   "alt": [
-    "تاكر"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "تاكر 48",
-   "en": "Tucker 48",
-   "q": "للمتمعن: حدد طراز هذه السيارة",
-   "commons": "File:1948 Tucker Torpedo (no. 51) in Maroon, front left.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "كرايسلر إيرفلو",
-   "alt": [
-    "ايرفلو"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "كرايسلر إيرفلو",
-   "en": "Chrysler Airflow",
-   "q": "بنظرة واحدة: حدد طراز هذه السيارة",
-   "commons": "File:1936-chrysler-archives.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "تاترا 87",
-   "alt": [
-    "تاترا"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "تاترا 87",
-   "en": "Tatra 87",
-   "q": "من الذاكرة: حدد طراز هذه السيارة",
-   "commons": "File:Tatra 87 front (Foto Hilarmont).JPG"
-  },
-  {
-   "tier": 1000,
-   "a": "ستوديبيكر أفانتي",
-   "alt": [
-    "افانتي"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "ستوديبيكر أفانتي",
-   "en": "Studebaker Avanti",
-   "q": "للعارفين: حدد طراز هذه السيارة",
-   "commons": "File:1963 Studebaker Avanti gold at Concord University.JPG"
-  },
-  {
-   "tier": 1000,
-   "a": "إدسل",
-   "alt": [
-    "ادسل",
-    "فورد ادسل"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "إدسل رينجر",
-   "en": "Edsel Ranger",
-   "q": "تأمل الشكل: حدد طراز هذه السيارة",
-   "commons": "File:1959 Edsel Ranger 2-door sedan, front left (2022 Back to the 50's Weekend).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "شيفروليه كورفير",
-   "alt": [
-    "كورفير"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "شيفروليه كورفير",
-   "en": "Chevrolet Corvair",
-   "q": "خمن بسرعة: حدد طراز هذه السيارة",
-   "commons": "File:Flickr - DVS1mn - 64 Chevrolet Corvair Monza (3) (cropped).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "AMC بيسر",
-   "alt": [
-    "بيسر",
-    "باسر"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "إيه إم سي بيسر",
-   "en": "AMC Pacer",
-   "q": "ركز قليلًا: حدد طراز هذه السيارة",
-   "commons": "File:1975 AMC Pacer base model frontleftside.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "AMC غريملين",
-   "alt": [
-    "جريملين"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "إيه إم سي غريملين",
-   "en": "AMC Gremlin",
-   "q": "بلا تردد: حدد طراز هذه السيارة",
-   "commons": "File:Gremlin side (5903000893).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "مسرشميت KR200",
-   "alt": [
-    "مسرشميت"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "مسرشميت KR200",
-   "en": "Messerschmitt KR200",
-   "q": "أمامك صورة: حدد طراز هذه السيارة",
-   "commons": "File:Messerschmitt Kabinenroller.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "سوبارو 360",
-   "alt": [
-    "سوبارو ٣٦٠"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "سوبارو 360",
-   "en": "Subaru 360",
-   "q": "لمحبي السيارات: حدد طراز هذه السيارة",
-   "commons": "File:1958 Subaru 360 01.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "أمفيبيكار",
-   "alt": [
-    "امفيبي كار",
-    "السيارة البرمائية"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "أمفيبيكار",
-   "en": "Amphicar",
-   "q": "بلا مساعدة: حدد طراز هذه السيارة",
-   "commons": "File:Amphicar p1.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "ميني موك",
-   "alt": [
-    "موك"
-   ],
-   "topic": "كلاسيكية",
-   "ar": "ميني موك",
-   "en": "Mini Moke",
-   "q": "هيا جرب: حدد طراز هذه السيارة",
-   "commons": "File:Moke02.png"
-  },
-  {
-   "tier": 1000,
-   "a": "فيات مولتيبلا",
-   "alt": [
-    "مولتيبلا"
-   ],
-   "topic": "شعبية",
-   "ar": "فيات مولتيبلا",
-   "en": "Fiat Multipla",
-   "q": "فكر ثم أجب: حدد طراز هذه السيارة",
-   "commons": "File:Fiat Multipla front 20080825.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "نيسان إس-كارغو",
-   "alt": [
-    "اس كارجو"
-   ],
-   "topic": "شعبية",
-   "ar": "نيسان إس-كارغو",
-   "en": "Nissan S-Cargo",
-   "q": "هل تعرف هذه السيارة؟",
-   "commons": "File:Nissan S-Cargo 001.JPG"
-  },
-  {
-   "tier": 1000,
-   "a": "نيسان فيغارو",
-   "alt": [
-    "فيجارو"
-   ],
-   "topic": "شعبية",
-   "ar": "نيسان فيغارو",
-   "en": "Nissan Figaro",
-   "q": "انظر جيدًا: هل تعرف هذه السيارة؟",
-   "commons": "File:1991 Nissan Figaro 1.0 Front.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "رينو أفانتايم",
-   "alt": [
-    "افانتايم"
-   ],
-   "topic": "شعبية",
-   "ar": "رينو أفانتايم",
-   "en": "Renault Avantime",
-   "q": "لقطة واحدة: هل تعرف هذه السيارة؟",
-   "commons": "File:2002 Renault Avantime Privilege 3.0 Front.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "ريليانت روبن",
-   "alt": [
-    "روبن",
-    "ريلاينت"
-   ],
-   "topic": "شعبية",
-   "ar": "ريليانت روبن",
-   "en": "Reliant Robin",
-   "q": "دقق في الصورة: هل تعرف هذه السيارة؟",
-   "commons": "File:1977 Reliant Robin 850 (14136529926) (cropped).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "سيتروين ميهاري",
-   "alt": [
-    "ميهاري"
-   ],
-   "topic": "شعبية",
-   "ar": "ستروين ميهاري",
-   "en": "Citroën Méhari",
-   "q": "سؤال سريع: هل تعرف هذه السيارة؟",
-   "commons": "File:Citroën Méhari Nice IMG 1269.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "بياجيو آبي",
-   "alt": [
-    "ابي",
-    "توك توك بياجيو"
-   ],
-   "topic": "شعبية",
-   "ar": "بياجيو آبي",
-   "en": "Piaggio Ape",
-   "q": "سؤال سريع: أتعرف هذه الدراجة؟",
-   "commons": "File:Piaggio Vespacar APE P400V MPF.dsc01304.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "وينرموبيل",
-   "alt": [
-    "سيارة النقانق"
-   ],
-   "topic": "شعبية",
-   "ar": "وينرموبيل",
-   "en": "Wienermobile",
-   "q": "للمتمعن: هل تعرف هذه السيارة؟",
-   "commons": "File:Oscar Mayer Frankmobile.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "عربة القمر",
-   "alt": [
-    "روفر القمر",
-    "العربة القمرية"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "عربة القمر الجوالة",
-   "en": "Lunar Roving Vehicle",
-   "q": "بنظرة واحدة: هل تعرف هذه السيارة؟",
-   "commons": "File:Apollo15LunarRover.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "مايرز مانكس",
-   "alt": [
-    "بيتش باجي",
-    "مانكس"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "مايرز مانكس",
-   "en": "Meyers Manx",
-   "q": "من الذاكرة: هل تعرف هذه السيارة؟",
-   "commons": "File:1stMeyersManxWithBruceMeyers.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "فولكسفاغن تايب 181",
-   "alt": [
-    "ذا ثينج",
-    "كورييه"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "فولكس فاغن تايب 181",
-   "en": "Volkswagen Type 181",
-   "q": "للعارفين: هل تعرف هذه السيارة؟",
-   "commons": "File:Vw 181 v sst.jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "بينزغاور",
-   "alt": [
-    "بنزجاور"
-   ],
-   "topic": "دفع رباعي",
-   "ar": "بينزغاور",
-   "en": "Pinzgauer High Mobility All-Terrain Vehicle",
-   "q": "سؤال سريع: حدد طراز هذه المركبة",
-   "commons": "File:Steyr- Puch Pinzgauer Turbo D.png"
-  },
-  {
-   "tier": 1000,
-   "a": "مورغان ثري ويلر",
-   "alt": [
-    "مورجان 3 ويلر"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "مورغان 3 ويلر",
-   "en": "Morgan 3-Wheeler",
-   "q": "حدد طراز هذه الدراجة",
-   "commons": "File:Morgan 3-Wheeler, front left (Amagansett).jpg"
-  },
-  {
-   "tier": 1000,
-   "a": "هوندا مونكي",
-   "alt": [
-    "مونكي"
-   ],
-   "topic": "دراجات نارية",
-   "ar": "هوندا مونكي",
-   "en": "Honda Monkey",
-   "q": "انظر جيدًا: حدد طراز هذه الدراجة",
-   "commons": "File:Honda Z50M.jpg"
-  }
- ]
+  "id": "guesscar",
+  "name": "خمن السيارة",
+  "icon": "🚗",
+  "defaultType": "image",
+  "kind": "image",
+  "effect": "none",
+  "subjects": [
+    {
+      "tier": 200,
+      "a": "لاندكروزر",
+      "alt": [
+        "لاند كروزر",
+        "تويوتا لاند كروزر",
+        "كروزر"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "تويوتا لاند كروزر",
+      "en": "Toyota Land Cruiser",
+      "q": "ما طراز هذه السيارة؟",
+      "commons": "File:2021 Toyota Land Cruiser 300 3.4 ZX (Colombia) front view 04.png"
+    },
+    {
+      "tier": 200,
+      "a": "نيسان باترول",
+      "alt": [
+        "باترول",
+        "بترول"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "نيسان باترول",
+      "en": "Nissan Patrol",
+      "q": "انظر جيدًا: ما طراز هذه السيارة؟",
+      "commons": "File:2016 Nissan Patrol (Y62) Ti-L wagon (2018-09-17) 01.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جيب رانجلر",
+      "alt": [
+        "رانجلر",
+        "جيب ورانجلر"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "جيب رانجلر",
+      "en": "Jeep Wrangler",
+      "q": "لقطة واحدة: ما طراز هذه السيارة؟",
+      "commons": "File:2018 Jeep Wrangler Sahara Unlimited Multijet 2.1 Front.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "مرسيدس جي كلاس",
+      "alt": [
+        "جي كلاس",
+        "قيرزن",
+        "مرسيدس جي"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "مرسيدس-بنز الفئة جي",
+      "en": "Mercedes-Benz G-Class",
+      "q": "دقق في الصورة: ما طراز هذه السيارة؟",
+      "commons": "File:Mercedes-Benz W463 G 350 BlueTEC 01.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "لاند روفر ديفندر",
+      "alt": [
+        "ديفندر"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "لاند روفر ديفندر",
+      "en": "Land Rover Defender",
+      "q": "سؤال سريع: ما طراز هذه السيارة؟",
+      "commons": "File:2015 Land Rover Defender (L316 MY15) 90 3-door wagon (2015-10-24) 01.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "همر إتش ون",
+      "alt": [
+        "همر",
+        "هامر",
+        "همر H1"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "همر H1",
+      "en": "Hummer H1",
+      "q": "للمتمعن: ما طراز هذه السيارة؟",
+      "commons": "File:94-00 AM General Hummer soft top.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "سوزوكي جيمني",
+      "alt": [
+        "جيمني"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "سوزوكي جيمني",
+      "en": "Suzuki Jimny",
+      "q": "بنظرة واحدة: ما طراز هذه السيارة؟",
+      "commons": "File:2019 Suzuki Jimny SZ5 4X4 Automatic 1.5.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تويوتا برادو",
+      "alt": [
+        "برادو",
+        "لاند كروزر برادو"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "تويوتا لاند كروزر برادو",
+      "en": "Toyota Land Cruiser Prado",
+      "q": "من الذاكرة: ما طراز هذه السيارة؟",
+      "commons": "File:2003-2007 Toyota Land Cruiser Prado (GRJ120R) 02.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ميتسوبيشي باجيرو",
+      "alt": [
+        "باجيرو",
+        "بجيرو"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "ميتسوبيشي باجيرو",
+      "en": "Mitsubishi Pajero",
+      "q": "للعارفين: ما طراز هذه السيارة؟",
+      "commons": "File:Mitsubishi V98 Pajero Long Body Super Exceed 3200 DI-D.JPG"
+    },
+    {
+      "tier": 200,
+      "a": "فورد برونكو",
+      "alt": [
+        "برونكو"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "فورد برونكو",
+      "en": "Ford Bronco",
+      "q": "تأمل الشكل: ما طراز هذه السيارة؟",
+      "commons": "File:Ford Bronco (6th generation) Outer Banks 1X7A0384.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جيب جراند شيروكي",
+      "alt": [
+        "جراند شيروكي",
+        "شيروكي"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "جيب جراند شيروكي",
+      "en": "Jeep Grand Cherokee",
+      "q": "خمن بسرعة: ما طراز هذه السيارة؟",
+      "commons": "File:2022 Jeep Grand Cherokee Summit Reserve 4x4 in Bright White, Front Left, 01-16-2022.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تويوتا فورتشنر",
+      "alt": [
+        "فورتشنر",
+        "فورتشونر"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "تويوتا فورتشنر",
+      "en": "Toyota Fortuner",
+      "q": "ركز قليلًا: ما طراز هذه السيارة؟",
+      "commons": "File:2015 Toyota Fortuner (New Zealand).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فورد موستانغ",
+      "alt": [
+        "موستانج",
+        "موستانق"
+      ],
+      "topic": "رياضية",
+      "ar": "فورد موستانج",
+      "en": "Ford Mustang",
+      "q": "بلا تردد: ما طراز هذه السيارة؟",
+      "commons": "File:Ford Mustang VII GT Rutesheimer Autoschau 2025 DSC 9234.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "شيفروليه كامارو",
+      "alt": [
+        "كامارو"
+      ],
+      "topic": "رياضية",
+      "ar": "شيفروليه كامارو",
+      "en": "Chevrolet Camaro",
+      "q": "أمامك صورة: ما طراز هذه السيارة؟",
+      "commons": "File:2019 Chevrolet Camaro 2SS 6.2L front 3.16.19.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "بورشه 911",
+      "alt": [
+        "بورش 911",
+        "بورشه كاريرا"
+      ],
+      "topic": "رياضية",
+      "ar": "بورشه 911",
+      "en": "Porsche 911",
+      "q": "لمحبي السيارات: ما طراز هذه السيارة؟",
+      "commons": "File:Porsche 911 No 1000000, 70 Years Porsche Sports Car, Berlin (1X7A3888).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "دودج تشارجر",
+      "alt": [
+        "تشارجر",
+        "شارجر"
+      ],
+      "topic": "رياضية",
+      "ar": "دودج تشارجر",
+      "en": "Dodge Charger",
+      "q": "بلا مساعدة: ما طراز هذه السيارة؟",
+      "commons": "File:1969 Dodge Charger R-T, front right (2022 Ellwood City Fall Fest & Car Cruise).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "دودج تشالنجر",
+      "alt": [
+        "تشالنجر",
+        "شالنجر"
+      ],
+      "topic": "رياضية",
+      "ar": "دودج تشالنجر",
+      "en": "Dodge Challenger",
+      "q": "هيا جرب: ما طراز هذه السيارة؟",
+      "commons": "File:Dodge Challenger SRT8 (2015) Hirschaid-20220709-RM-120221 (cropped).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "شيفروليه كورفيت",
+      "alt": [
+        "كورفيت",
+        "كورڤيت"
+      ],
+      "topic": "رياضية",
+      "ar": "شيفروليه كورفيت",
+      "en": "Chevrolet Corvette",
+      "q": "فكر ثم أجب: ما طراز هذه السيارة؟",
+      "commons": "File:2021 Chevrolet Corvette C8.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نيسان جي تي آر",
+      "alt": [
+        "جي تي ار",
+        "GT-R",
+        "سكايلاين"
+      ],
+      "topic": "رياضية",
+      "ar": "نيسان جي تي آر",
+      "en": "Nissan GT-R",
+      "q": "أي سيارة هذه؟",
+      "commons": "File:2009-2010 Nissan GT-R (R35) coupe 01.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تويوتا سوبرا",
+      "alt": [
+        "سوبرا"
+      ],
+      "topic": "رياضية",
+      "ar": "تويوتا سوبرا",
+      "en": "Toyota Supra",
+      "q": "انظر جيدًا: أي سيارة هذه؟",
+      "commons": "File:2020 Toyota GR Supra (United States).png"
+    },
+    {
+      "tier": 200,
+      "a": "لامبورغيني أفينتادور",
+      "alt": [
+        "أفينتادور",
+        "افنتادور"
+      ],
+      "topic": "رياضية",
+      "ar": "لامبورغيني أفينتادور",
+      "en": "Lamborghini Aventador",
+      "q": "لقطة واحدة: أي سيارة هذه؟",
+      "commons": "File:Lamborghini Aventador S (44554).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فولكسفاغن الخنفساء",
+      "alt": [
+        "الخنفساء",
+        "بيتل",
+        "فولكس واجن بيتل"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "فولكس فاغن بيتل",
+      "en": "Volkswagen Beetle",
+      "q": "دقق في الصورة: أي سيارة هذه؟",
+      "commons": "File:VW Käfer Baujahr 1966.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ميني كوبر",
+      "alt": [
+        "ميني",
+        "الميني"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "ميني (سيارة)",
+      "en": "Mini",
+      "q": "سؤال سريع: أي سيارة هذه؟",
+      "commons": "File:Morris Mini-Minor 1959 (621 AOK).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فولكسفاغن ميكروباص",
+      "alt": [
+        "الميكروباص",
+        "فولكس واجن تايب 2",
+        "كومبي"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "فولكس فاغن تايب 2",
+      "en": "Volkswagen Type 2",
+      "q": "للمتمعن: أي سيارة هذه؟",
+      "commons": "File:1965 Volkswagen Type 2 T1 Microbus (31982075454).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فيات 500",
+      "alt": [
+        "فيات شينكوشينتو"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "فيات 500",
+      "en": "Fiat 500",
+      "q": "بنظرة واحدة: أي سيارة هذه؟",
+      "commons": "File:1970 Fiat 500 L -- 2011 DC 1.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تويوتا كورولا",
+      "alt": [
+        "كورولا"
+      ],
+      "topic": "شعبية",
+      "ar": "تويوتا كورولا",
+      "en": "Toyota Corolla",
+      "q": "من الذاكرة: أي سيارة هذه؟",
+      "commons": "File:Toyota Corolla Hybrid (E210) IMG 4338.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تويوتا كامري",
+      "alt": [
+        "كامري"
+      ],
+      "topic": "شعبية",
+      "ar": "تويوتا كامري",
+      "en": "Toyota Camry",
+      "q": "للعارفين: أي سيارة هذه؟",
+      "commons": "File:2018 Toyota Camry (ASV70R) Ascent sedan (2018-08-27) 01.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "هوندا سيفيك",
+      "alt": [
+        "سيفيك",
+        "سيفك"
+      ],
+      "topic": "شعبية",
+      "ar": "هوندا سيفيك",
+      "en": "Honda Civic",
+      "q": "تأمل الشكل: أي سيارة هذه؟",
+      "commons": "File:Honda Civic e-HEV Sport (XI) – f 30062024.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فولكسفاغن جولف",
+      "alt": [
+        "جولف",
+        "غولف"
+      ],
+      "topic": "شعبية",
+      "ar": "فولكس فاغن جولف",
+      "en": "Volkswagen Golf",
+      "q": "خمن بسرعة: أي سيارة هذه؟",
+      "commons": "File:2020 Volkswagen Golf Style 1.5 Front.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تويوتا هايس",
+      "alt": [
+        "هايس",
+        "الهايس"
+      ],
+      "topic": "شعبية",
+      "ar": "تويوتا هايس",
+      "en": "Toyota HiAce",
+      "q": "ركز قليلًا: أي سيارة هذه؟",
+      "commons": "File:2020 Toyota HiAce (front).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "شيفروليه كابريس",
+      "alt": [
+        "كابريس"
+      ],
+      "topic": "شعبية",
+      "ar": "شيفروليه كابريس",
+      "en": "Chevrolet Caprice",
+      "q": "بلا تردد: أي سيارة هذه؟",
+      "commons": "File:2011 Chevrolet Caprice PPV -- 12-06-2010 front.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "سمارت فورتو",
+      "alt": [
+        "سمارت",
+        "فورتو"
+      ],
+      "topic": "شعبية",
+      "ar": "سمارت فورتو",
+      "en": "Smart Fortwo",
+      "q": "أمامك صورة: أي سيارة هذه؟",
+      "commons": "File:2016 Smart Fortwo Passion Automatic 1.0 Front.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "مرسيدس سبرينتر",
+      "alt": [
+        "سبرينتر"
+      ],
+      "topic": "شعبية",
+      "ar": "مرسيدس-بنز سبرينتر",
+      "en": "Mercedes-Benz Sprinter",
+      "q": "لمحبي السيارات: أي سيارة هذه؟",
+      "commons": "File:2019 Mercedes-Benz Sprinter 314 CDi 2.1.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تويوتا كوستر",
+      "alt": [
+        "كوستر",
+        "الكوستر"
+      ],
+      "topic": "شعبية",
+      "ar": "تويوتا كوستر",
+      "en": "Toyota Coaster",
+      "q": "بلا مساعدة: أي سيارة هذه؟",
+      "commons": "File:Toyota Coaster GX XZB70.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تويوتا هايلكس",
+      "alt": [
+        "هايلكس",
+        "هيلوكس"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "تويوتا هايلكس",
+      "en": "Toyota Hilux",
+      "q": "ما طراز هذه المركبة؟",
+      "commons": "File:2016 Toyota HiLux Invincible D-4D 4WD 2.4 Front.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فورد إف 150",
+      "alt": [
+        "اف 150",
+        "فورد اف150",
+        "فورد F150",
+        "فورد F-150"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "فورد إف-سيريز",
+      "en": "Ford F-Series",
+      "q": "انظر جيدًا: ما طراز هذه المركبة؟",
+      "commons": "File:2018 Ford F-150 XLT Crew Cab, front 11.10.19.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "شيفروليه سيلفرادو",
+      "alt": [
+        "سيلفرادو"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "شيفروليه سيلفرادو",
+      "en": "Chevrolet Silverado",
+      "q": "سؤال سريع: ما طراز هذه المركبة؟",
+      "commons": "File:2021 Chevrolet Silverado 1500 LT 4x4 Double Cab, front right, 09-02-2022.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "دودج رام",
+      "alt": [
+        "رام",
+        "رام بيك أب"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "رام بيك أب",
+      "en": "Ram Pickup",
+      "q": "دقق في الصورة: ما طراز هذه المركبة؟",
+      "commons": "File:2017 Ram 1500 Express Crew Cab, front left, 09-02-2022.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فورد ترانزيت",
+      "alt": [
+        "ترانزيت"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "فورد ترانزيت",
+      "en": "Ford Transit",
+      "q": "أي مركبة هذه؟",
+      "commons": "File:2016 Ford Transit 350 2.2.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نيسان نافارا",
+      "alt": [
+        "نافارا"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "نيسان نافارا",
+      "en": "Nissan Navara",
+      "q": "انظر جيدًا: أي مركبة هذه؟",
+      "commons": "File:2021 Nissan Navara facelift (cropped).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "رينج روفر",
+      "alt": [
+        "رنج روفر",
+        "لاند روفر رينج روفر"
+      ],
+      "topic": "فارهة",
+      "ar": "رينج روفر",
+      "en": "Range Rover",
+      "q": "هيا جرب: أي سيارة هذه؟",
+      "commons": "File:2022 Land Rover Range Rover SE P440e AWD Automatic 3.0 Front.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "مرسيدس الفئة إس",
+      "alt": [
+        "اس كلاس",
+        "مرسيدس اس",
+        "الفئة الاس",
+        "مرسيدس الفئة S"
+      ],
+      "topic": "فارهة",
+      "ar": "مرسيدس-بنز الفئة إس",
+      "en": "Mercedes-Benz S-Class",
+      "q": "فكر ثم أجب: أي سيارة هذه؟",
+      "commons": "File:Mercedes-Benz W223 IMG 6663.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "لكزس إل إكس",
+      "alt": [
+        "لكزس ال اكس",
+        "لكسس LX",
+        "لكزس LX"
+      ],
+      "topic": "فارهة",
+      "ar": "لكزس LX",
+      "en": "Lexus LX",
+      "q": "ما اسم هذا الطراز؟",
+      "commons": "File:2018 Lexus LX 570 (facelift), front 3.24.23.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "كاديلاك إسكاليد",
+      "alt": [
+        "اسكاليد",
+        "اسكليد"
+      ],
+      "topic": "فارهة",
+      "ar": "كاديلاك إسكاليد",
+      "en": "Cadillac Escalade",
+      "q": "انظر جيدًا: ما اسم هذا الطراز؟",
+      "commons": "File:2026 Cadillac Escalade ESV.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "بورشه كايين",
+      "alt": [
+        "كايين",
+        "كايان"
+      ],
+      "topic": "فارهة",
+      "ar": "بورشه كايين",
+      "en": "Porsche Cayenne",
+      "q": "لقطة واحدة: ما اسم هذا الطراز؟",
+      "commons": "File:Porsche Cayenne (III, Facelift) – f 01012025.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تسلا سايبرتراك",
+      "alt": [
+        "سايبر تراك",
+        "تسلا سيبرتراك"
+      ],
+      "topic": "كهربائية",
+      "ar": "تسلا سايبرتراك",
+      "en": "Tesla Cybertruck",
+      "q": "دقق في الصورة: ما اسم هذا الطراز؟",
+      "commons": "File:2024 Tesla Cybertruck Foundation Series, front left (Greenwich).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تسلا موديل إس",
+      "alt": [
+        "تسلا اس",
+        "موديل اس",
+        "تسلا موديل S"
+      ],
+      "topic": "كهربائية",
+      "ar": "تسلا موديل إس",
+      "en": "Tesla Model S",
+      "q": "سؤال سريع: ما اسم هذا الطراز؟",
+      "commons": "File:Tesla Model S (Facelift ab 04-2016) (cropped).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "فيسبا",
+      "alt": [
+        "سكوتر فيسبا",
+        "ڤيسبا"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "فيسبا",
+      "en": "Vespa",
+      "q": "ما طراز هذه الدراجة؟",
+      "commons": "File:PerthVespa.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تويوتا إف جيه كروزر",
+      "alt": [
+        "اف جيه كروزر",
+        "FJ كروزر",
+        "تويوتا FJ كروزر"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "تويوتا إف جيه كروزر",
+      "en": "Toyota FJ Cruiser",
+      "q": "للمتمعن: ما اسم هذا الطراز؟",
+      "commons": "File:2011 Toyota FJ Cruiser (GSJ15R) wagon (2011-11-08) 01.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جيب شيروكي إكس جيه",
+      "alt": [
+        "شيروكي XJ",
+        "جيب شيروكي",
+        "جيب شيروكي XJ"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "جيب شيروكي",
+      "en": "Jeep Cherokee (XJ)",
+      "q": "بنظرة واحدة: ما اسم هذا الطراز؟",
+      "commons": "File:Jeep Cherokee 2-door.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "همر إتش تو",
+      "alt": [
+        "هامر H2",
+        "همر H2"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "همر H2",
+      "en": "Hummer H2",
+      "q": "من الذاكرة: ما اسم هذا الطراز؟",
+      "commons": "File:Hummer H2 (52891415542) (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "لادا نيفا",
+      "alt": [
+        "نيفا"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "لادا نيفا",
+      "en": "Lada Niva",
+      "q": "للعارفين: ما اسم هذا الطراز؟",
+      "commons": "File:1987 Lada Niva 1600.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فورد إكسبلورر",
+      "alt": [
+        "اكسبلورر"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "فورد إكسبلورر",
+      "en": "Ford Explorer",
+      "q": "تأمل الشكل: ما اسم هذا الطراز؟",
+      "commons": "File:Ford Explorer (sixth generation) IMG 6063.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "شيفروليه تاهو",
+      "alt": [
+        "تاهو"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "شيفروليه تاهو",
+      "en": "Chevrolet Tahoe",
+      "q": "خمن بسرعة: ما اسم هذا الطراز؟",
+      "commons": "File:2022 Chevrolet Tahoe RST, front 3.7.22.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "شيفروليه سوبربان",
+      "alt": [
+        "سوبربان"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "شيفروليه سوبربان",
+      "en": "Chevrolet Suburban",
+      "q": "ركز قليلًا: ما اسم هذا الطراز؟",
+      "commons": "File:2015 Chevrolet Suburban 1500 LTZ, front 4.18.19.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "سوزوكي فيتارا",
+      "alt": [
+        "فيتارا",
+        "جراند فيتارا"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "سوزوكي فيتارا",
+      "en": "Suzuki Vitara",
+      "q": "بلا تردد: ما اسم هذا الطراز؟",
+      "commons": "File:2018 Suzuki Vitara (LY) S Turbo wagon (2018-11-02) 01.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تويوتا راف4",
+      "alt": [
+        "راف فور",
+        "RAV4"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "تويوتا راف4",
+      "en": "Toyota RAV4",
+      "q": "أمامك صورة: ما اسم هذا الطراز؟",
+      "commons": "File:2024 Toyota RAV4 Prime XSE Premium in Silver Sky with Midnight Black roof, front left.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "هوندا سي آر في",
+      "alt": [
+        "سي ار في",
+        "هوندا سي آر في",
+        "هوندا CR-V"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "هوندا سي آر-في",
+      "en": "Honda CR-V",
+      "q": "لمحبي السيارات: ما اسم هذا الطراز؟",
+      "commons": "File:Honda CR-V e-HEV Elegance AWD (VI) – f 14072024.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "نيسان إكس تريل",
+      "alt": [
+        "اكس تريل"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "نيسان إكس-تريل",
+      "en": "Nissan X-Trail",
+      "q": "بلا مساعدة: ما اسم هذا الطراز؟",
+      "commons": "File:Nissan X-Trail (T33) 1X7A7179.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "لاند روفر ديسكفري",
+      "alt": [
+        "ديسكفري"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "لاند روفر ديسكفري",
+      "en": "Land Rover Discovery",
+      "q": "هيا جرب: ما اسم هذا الطراز؟",
+      "commons": "File:2018 Land Rover Discovery Luxury HSE TD6 3.0 Front.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تويوتا تندرا",
+      "alt": [
+        "تندرا"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "تويوتا تندرا",
+      "en": "Toyota Tundra",
+      "q": "سؤال سريع: أي مركبة هذه؟",
+      "commons": "File:2022 Toyota Tundra Limited CrewMax Short Bed 4x4 with TRD Off-Road Package, front left, 11-01-2022.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فورد رينجر",
+      "alt": [
+        "رينجر"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "فورد رينجر",
+      "en": "Ford Ranger",
+      "q": "دقق في الصورة: أي مركبة هذه؟",
+      "commons": "File:Ford Ranger (T6, P703) Wildtrak IMG 7320.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ميتسوبيشي إل 200",
+      "alt": [
+        "ال 200",
+        "تريتون",
+        "ميتسوبيشي L200"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "ميتسوبيشي إل200",
+      "en": "Mitsubishi Triton",
+      "q": "ما اسم هذه المركبة؟",
+      "commons": "File:Mitsubishi Triton LC 2.4 GLS 2WD Blade Silver Metallic (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "إيسوزو دي ماكس",
+      "alt": [
+        "دي ماكس",
+        "D-Max"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "إيسوزو دي-ماكس",
+      "en": "Isuzu D-Max",
+      "q": "انظر جيدًا: ما اسم هذه المركبة؟",
+      "commons": "File:Isuzu D-Max (third generation) autoMOBIL Tübingen 2025 DSC 2758.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فولكسفاغن أماروك",
+      "alt": [
+        "اماروك"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "فولكس فاغن أماروك",
+      "en": "Volkswagen Amarok",
+      "q": "سؤال سريع: ما اسم هذه المركبة؟",
+      "commons": "File:VW Amarok 3.0 TDI 4Motion Style (II) – f 05072025.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أونيموغ",
+      "alt": [
+        "يونيموج",
+        "مرسيدس أونيموغ"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "أونيموغ",
+      "en": "Unimog",
+      "q": "دقق في الصورة: ما اسم هذه المركبة؟",
+      "commons": "File:Mercedes-Benz-Museum 2015-01 by-RaBoe 187.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مرسيدس الفئة إي",
+      "alt": [
+        "اي كلاس",
+        "مرسيدس اي",
+        "مرسيدس الفئة E"
+      ],
+      "topic": "فارهة",
+      "ar": "مرسيدس-بنز الفئة إي",
+      "en": "Mercedes-Benz E-Class",
+      "q": "فكر ثم أجب: ما اسم هذا الطراز؟",
+      "commons": "File:Mercedes-Benz W214 1X7A1841.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "بي إم دبليو الفئة السابعة",
+      "alt": [
+        "بي ام دبليو 7",
+        "سلسلة 7"
+      ],
+      "topic": "فارهة",
+      "ar": "بي إم دبليو الفئة السابعة",
+      "en": "BMW 7 Series",
+      "q": "أي طراز أمامك؟",
+      "commons": "File:BMW 730d (G11, Facelift) – f 16012021.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أودي كيو 7",
+      "alt": [
+        "اودي كيو 7",
+        "أودي Q7"
+      ],
+      "topic": "فارهة",
+      "ar": "أودي Q7",
+      "en": "Audi Q7",
+      "q": "انظر جيدًا: أي طراز أمامك؟",
+      "commons": "File:Audi Q7 4M FL2 3.0 V6 MHEV quattro Satellite Silver Metallic 01 (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "لكزس آر إكس",
+      "alt": [
+        "لكزس ار اكس",
+        "لكزس RX"
+      ],
+      "topic": "فارهة",
+      "ar": "لكزس RX",
+      "en": "Lexus RX",
+      "q": "لقطة واحدة: أي طراز أمامك؟",
+      "commons": "File:Lexus RX 500h F SPORT+ (V) – f 14072024.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "بورشه باناميرا",
+      "alt": [
+        "باناميرا"
+      ],
+      "topic": "فارهة",
+      "ar": "بورشه باناميرا",
+      "en": "Porsche Panamera",
+      "q": "دقق في الصورة: أي طراز أمامك؟",
+      "commons": "File:Porsche 972 Turbo E-Hybrid IMG 0445.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "بي إم دبليو إكس 6",
+      "alt": [
+        "اكس 6",
+        "بي ام دبليو اكس6",
+        "بي إم دبليو X6"
+      ],
+      "topic": "فارهة",
+      "ar": "بي إم دبليو X6",
+      "en": "BMW X6",
+      "q": "سؤال سريع: أي طراز أمامك؟",
+      "commons": "File:BMW G06 IMG 3142.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "لينكولن نافيجيتور",
+      "alt": [
+        "نافيجيتور",
+        "نافيغيتور"
+      ],
+      "topic": "فارهة",
+      "ar": "لينكون نافيجيتور",
+      "en": "Lincoln Navigator",
+      "q": "للمتمعن: أي طراز أمامك؟",
+      "commons": "File:2019 Lincoln Navigator 'Reserve', front 8.29.20.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أودي تي تي",
+      "alt": [
+        "اودي تي تي",
+        "أودي TT"
+      ],
+      "topic": "رياضية",
+      "ar": "أودي TT",
+      "en": "Audi TT",
+      "q": "بنظرة واحدة: أي طراز أمامك؟",
+      "commons": "File:2019 Audi TT Sport 40 TFSi S-A 2.0 Front.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مازدا إم إكس 5",
+      "alt": [
+        "ام اكس 5",
+        "مياتا",
+        "مازدا MX-5"
+      ],
+      "topic": "رياضية",
+      "ar": "مازدا إم إكس-5",
+      "en": "Mazda MX-5",
+      "q": "من الذاكرة: أي طراز أمامك؟",
+      "commons": "File:Mazda Roadster (MX-5) by Negawa Bridge (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "بورشه بوكستر",
+      "alt": [
+        "بوكستر"
+      ],
+      "topic": "رياضية",
+      "ar": "بورشه بوكستر",
+      "en": "Porsche Boxster",
+      "q": "للعارفين: أي طراز أمامك؟",
+      "commons": "File:Porsche 718 Boxster Spyder IMG 2961.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "سوبارو إمبريزا دبليو آر إكس",
+      "alt": [
+        "امبريزا",
+        "WRX",
+        "سوبارو WRX",
+        "سوبارو إمبريزا WRX"
+      ],
+      "topic": "رياضية",
+      "ar": "سوبارو إمبريزا",
+      "en": "Subaru Impreza WRX STI",
+      "q": "تأمل الشكل: أي طراز أمامك؟",
+      "commons": "File:2022 Subaru WRX Sport-Tech in World Rally Blue Pearl, Front Left, 06-03-2022.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ميتسوبيشي لانسر إيفو",
+      "alt": [
+        "لانسر ايفو",
+        "ايفوليوشن"
+      ],
+      "topic": "رياضية",
+      "ar": "ميتسوبيشي لانسر إيفوليوشن",
+      "en": "Mitsubishi Lancer Evolution",
+      "q": "خمن بسرعة: أي طراز أمامك؟",
+      "commons": "File:2017-04-02 Mitsubishi Lancer Evolution X MR SST 14 (2).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "نيسان 350 زد",
+      "alt": [
+        "350 زد",
+        "فيرليدي زد",
+        "نيسان 350Z"
+      ],
+      "topic": "رياضية",
+      "ar": "نيسان 350 زد",
+      "en": "Nissan 350Z",
+      "q": "ركز قليلًا: أي طراز أمامك؟",
+      "commons": "File:2004 Nissan 350Z 3.5 Front.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "بي إم دبليو إم 3",
+      "alt": [
+        "ام 3",
+        "بي ام دبليو ام3",
+        "بي إم دبليو M3"
+      ],
+      "topic": "رياضية",
+      "ar": "بي إم دبليو M3",
+      "en": "BMW M3",
+      "q": "بلا تردد: أي طراز أمامك؟",
+      "commons": "File:BMW M3 Competition (G80) IMG 4041.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مرسيدس دبليو 123",
+      "alt": [
+        "دبليو 123",
+        "مرسيدس أبو دقة",
+        "مرسيدس W123"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "مرسيدس-بنز W123",
+      "en": "Mercedes-Benz W123",
+      "q": "أمامك صورة: أي طراز أمامك؟",
+      "commons": "File:1984 Mercedes-Benz 280E Sedan (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "بيجو 504",
+      "alt": [
+        "بيجو ٥٠٤"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "بيجو 504",
+      "en": "Peugeot 504",
+      "q": "لمحبي السيارات: أي طراز أمامك؟",
+      "commons": "File:1978 Peugeot 504 Ti Automatic 2.0 Front.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "رينو 4",
+      "alt": [
+        "رينو كاتر",
+        "رينو أربعة"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "رينو 4",
+      "en": "Renault 4",
+      "q": "بلا مساعدة: أي طراز أمامك؟",
+      "commons": "File:1984 Renault 4 GTL, front left (Germany).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "لادا 2107",
+      "alt": [
+        "لادا ريفا",
+        "لادا جيجولي"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "لادا ريفا",
+      "en": "Lada Riva",
+      "q": "هيا جرب: أي طراز أمامك؟",
+      "commons": "File:Lada 2107 aka Lada Riva October 1995 1452cc.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "شيفروليه إمبالا",
+      "alt": [
+        "امبالا"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "شيفروليه إمبالا",
+      "en": "Chevrolet Impala",
+      "q": "فكر ثم أجب: أي طراز أمامك؟",
+      "commons": "File:Chevrolet Impala (14373209694) (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "فورد كراون فيكتوريا",
+      "alt": [
+        "كراون فيكتوريا",
+        "كراون فك"
+      ],
+      "topic": "شعبية",
+      "ar": "فورد كراون فيكتوريا",
+      "en": "Ford Crown Victoria",
+      "q": "ما هذه السيارة؟",
+      "commons": "File:Ford Crown Victoria LX.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "نيسان جوك",
+      "alt": [
+        "جوك",
+        "juke"
+      ],
+      "topic": "شعبية",
+      "ar": "نيسان جوك",
+      "en": "Nissan Juke",
+      "q": "انظر جيدًا: ما هذه السيارة؟",
+      "commons": "File:Nissan Juke (F16) IMG 4903.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "هوندا أكورد",
+      "alt": [
+        "اكورد"
+      ],
+      "topic": "شعبية",
+      "ar": "هوندا أكورد",
+      "en": "Honda Accord",
+      "q": "لقطة واحدة: ما هذه السيارة؟",
+      "commons": "File:2023 Honda Accord LX, front left, 07-13-2023.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تويوتا بريفيا",
+      "alt": [
+        "بريفيا"
+      ],
+      "topic": "شعبية",
+      "ar": "تويوتا بريفيا",
+      "en": "Toyota Previa",
+      "q": "دقق في الصورة: ما هذه السيارة؟",
+      "commons": "File:2016 Toyota Estima.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تسلا موديل 3",
+      "alt": [
+        "موديل ثري",
+        "تسلا 3"
+      ],
+      "topic": "كهربائية",
+      "ar": "تسلا موديل 3",
+      "en": "Tesla Model 3",
+      "q": "سؤال سريع: ما هذه السيارة؟",
+      "commons": "File:Tesla Model 3 (2023) Autofrühling Ulm IMG 9282.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تسلا موديل إكس",
+      "alt": [
+        "موديل اكس",
+        "تسلا موديل X"
+      ],
+      "topic": "كهربائية",
+      "ar": "تسلا موديل إكس",
+      "en": "Tesla Model X",
+      "q": "للمتمعن: ما هذه السيارة؟",
+      "commons": "File:2017 Tesla Model X 100D Front.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "نيسان ليف",
+      "alt": [
+        "ليف",
+        "LEAF"
+      ],
+      "topic": "كهربائية",
+      "ar": "نيسان ليف",
+      "en": "Nissan Leaf",
+      "q": "بنظرة واحدة: ما هذه السيارة؟",
+      "commons": "File:Nissan Leaf (ZE2) autoMOBIL Tübingen 2025 DSC 2752.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "تويوتا بريوس",
+      "alt": [
+        "بريوس"
+      ],
+      "topic": "كهربائية",
+      "ar": "تويوتا بريوس",
+      "en": "Toyota Prius",
+      "q": "من الذاكرة: ما هذه السيارة؟",
+      "commons": "File:Toyota Prius 2.0 HEV Limited (V) – f 18112022.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "هارلي ديفيدسون فات بوي",
+      "alt": [
+        "فات بوي",
+        "هارلي فات بوي"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "هارلي ديفيدسون فات بوي",
+      "en": "Harley-Davidson Fat Boy",
+      "q": "انظر جيدًا: ما طراز هذه الدراجة؟",
+      "commons": "File:Harley Davidson Fat Boy 2018 FLFBS.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "هوندا غولد وينغ",
+      "alt": [
+        "جولد وينج",
+        "قولد وينق"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "هوندا غولد وينغ",
+      "en": "Honda Gold Wing",
+      "q": "سؤال سريع: ما طراز هذه الدراجة؟",
+      "commons": "File:Honda Gold Wing GL 1800 (SC79 - 2018).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ياماها واي زد إف آر ون",
+      "alt": [
+        "R1",
+        "ياماها ار1",
+        "ياماها YZF-R1"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "ياماها YZF-R1",
+      "en": "Yamaha YZF-R1",
+      "q": "أي دراجة نارية هذه؟",
+      "commons": "File:2015 Yamaha YZF-R1 crop.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "فيراري إف 40",
+      "alt": [
+        "اف 40",
+        "فيراري F40"
+      ],
+      "topic": "خارقة",
+      "ar": "فيراري F40",
+      "en": "Ferrari F40",
+      "q": "للعارفين: ما هذه السيارة؟",
+      "commons": "File:F40 Ferrari 20090509.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "لافيراري",
+      "alt": [
+        "لا فيراري",
+        "فيراري لافيراري"
+      ],
+      "topic": "خارقة",
+      "ar": "لافيراري",
+      "en": "LaFerrari",
+      "q": "تأمل الشكل: ما هذه السيارة؟",
+      "commons": "File:LaFerrari in Beverly Hills (14563979888).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "فيراري إنزو",
+      "alt": [
+        "انزو",
+        "انزو فيراري"
+      ],
+      "topic": "خارقة",
+      "ar": "فيراري إنزو",
+      "en": "Ferrari Enzo",
+      "q": "خمن بسرعة: ما هذه السيارة؟",
+      "commons": "File:Orange Enzo Ferrari (7191948164).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مكلارين بي ون",
+      "alt": [
+        "بي 1",
+        "مكلارين بي1",
+        "مكلارين P1"
+      ],
+      "topic": "خارقة",
+      "ar": "مكلارين P1",
+      "en": "McLaren P1",
+      "q": "ركز قليلًا: ما هذه السيارة؟",
+      "commons": "File:McLaren P1.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مكلارين إف ون",
+      "alt": [
+        "مكلارين اف1",
+        "مكلارين F1"
+      ],
+      "topic": "خارقة",
+      "ar": "مكلارين F1",
+      "en": "McLaren F1",
+      "q": "بلا تردد: ما هذه السيارة؟",
+      "commons": "File:1996 McLaren F1 Chassis No 63 6.1 Front.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بوغاتي فيرون",
+      "alt": [
+        "فيرون",
+        "بوجاتي فيرون"
+      ],
+      "topic": "خارقة",
+      "ar": "بوغاتي فيرون",
+      "en": "Bugatti Veyron",
+      "q": "أمامك صورة: ما هذه السيارة؟",
+      "commons": "File:Bugatti Veyron 16.4 – Frontansicht (1), 5. April 2012, Düsseldorf.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بوغاتي شيرون",
+      "alt": [
+        "شيرون",
+        "بوجاتي شيرون"
+      ],
+      "topic": "خارقة",
+      "ar": "بوغاتي شيرون",
+      "en": "Bugatti Chiron",
+      "q": "لمحبي السيارات: ما هذه السيارة؟",
+      "commons": "File:Bugatti Chiron 1.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "كوينيجسيج أجيرا",
+      "alt": [
+        "اجيرا",
+        "كونيجزيج"
+      ],
+      "topic": "خارقة",
+      "ar": "كوينيغسيغ أجيرا",
+      "en": "Koenigsegg Agera",
+      "q": "بلا مساعدة: ما هذه السيارة؟",
+      "commons": "File:Agera RST Koenigsegg.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "باغاني زوندا",
+      "alt": [
+        "زوندا",
+        "بجاني زوندا"
+      ],
+      "topic": "خارقة",
+      "ar": "باغاني زوندا",
+      "en": "Pagani Zonda",
+      "q": "هيا جرب: ما هذه السيارة؟",
+      "commons": "File:Pagani Zonda C12 'chassis 001' Genf 2019 1Y7A5539.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بورشه كاريرا جي تي",
+      "alt": [
+        "كاريرا جي تي",
+        "بورشه كاريرا GT"
+      ],
+      "topic": "خارقة",
+      "ar": "بورشه كاريرا GT",
+      "en": "Porsche Carrera GT",
+      "q": "فكر ثم أجب: ما هذه السيارة؟",
+      "commons": "File:Porsche Carrera GT - Goodwood Breakfast Club (July 2008).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بورشه 918 سبايدر",
+      "alt": [
+        "918",
+        "بورشه 918"
+      ],
+      "topic": "خارقة",
+      "ar": "بورشه 918 سبايدر",
+      "en": "Porsche 918 Spyder",
+      "q": "ما اسم هذه السيارة؟",
+      "commons": "File:Porsche 918 Spyder IAA 2013.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "لامبورغيني ديابلو",
+      "alt": [
+        "ديابلو"
+      ],
+      "topic": "خارقة",
+      "ar": "لامبورغيني ديابلو",
+      "en": "Lamborghini Diablo",
+      "q": "انظر جيدًا: ما اسم هذه السيارة؟",
+      "commons": "File:1995 Lamborghini Diablo SE 30.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "فيراري 458 إيطاليا",
+      "alt": [
+        "458",
+        "فيراري 458"
+      ],
+      "topic": "رياضية",
+      "ar": "فيراري 458 إيطاليا",
+      "en": "Ferrari 458 Italia",
+      "q": "لقطة واحدة: ما اسم هذه السيارة؟",
+      "commons": "File:Ferrari 458 Fort Worth June 2016 56 (Ferrari) (cropped-2).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "لامبورغيني هوراكان",
+      "alt": [
+        "هوراكان"
+      ],
+      "topic": "رياضية",
+      "ar": "لامبورغيني هوراكان",
+      "en": "Lamborghini Huracán",
+      "q": "دقق في الصورة: ما اسم هذه السيارة؟",
+      "commons": "File:2017 Lamborghini Huracan LP610.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "لامبورغيني غالاردو",
+      "alt": [
+        "جالاردو",
+        "قلاردو"
+      ],
+      "topic": "رياضية",
+      "ar": "لامبورغيني غالاردو",
+      "en": "Lamborghini Gallardo",
+      "q": "سؤال سريع: ما اسم هذه السيارة؟",
+      "commons": "File:Lamborghini Superleggera-20180708.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أودي آر 8",
+      "alt": [
+        "ار 8",
+        "اودي ار8",
+        "أودي R8"
+      ],
+      "topic": "رياضية",
+      "ar": "أودي R8",
+      "en": "Audi R8",
+      "q": "للمتمعن: ما اسم هذه السيارة؟",
+      "commons": "File:2018 Audi R8 Coupe V10 plus Front.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مرسيدس إس إل إس",
+      "alt": [
+        "اس ال اس",
+        "SLS",
+        "مرسيدس SLS AMG",
+        "مرسيدس إس إل إس أيه إم جي"
+      ],
+      "topic": "رياضية",
+      "ar": "مرسيدس-بنز SLS AMG",
+      "en": "Mercedes-Benz SLS AMG",
+      "q": "بنظرة واحدة: ما اسم هذه السيارة؟",
+      "commons": "File:Mercedes-Benz SLS AMG (C 197) – Frontansicht geöffnet, 10. August 2011, Düsseldorf.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "دودج فايبر",
+      "alt": [
+        "فايبر",
+        "ڤايبر"
+      ],
+      "topic": "رياضية",
+      "ar": "دودج فايبر",
+      "en": "Dodge Viper",
+      "q": "من الذاكرة: ما اسم هذه السيارة؟",
+      "commons": "File:\" 14 Fiat-Chrysler SRT Viper GTS (cropped).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "نيسان سكايلاين جي تي آر",
+      "alt": [
+        "سكايلاين",
+        "R34",
+        "نيسان سكايلاين GT-R"
+      ],
+      "topic": "رياضية",
+      "ar": "نيسان سكايلاين GT-R",
+      "en": "Nissan Skyline GT-R",
+      "q": "للعارفين: ما اسم هذه السيارة؟",
+      "commons": "File:Nissan Skyline GT-R R34 V Spec II.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مازدا آر إكس 7",
+      "alt": [
+        "ار اكس 7",
+        "مازدا RX-7"
+      ],
+      "topic": "رياضية",
+      "ar": "مازدا RX-7",
+      "en": "Mazda RX-7",
+      "q": "تأمل الشكل: ما اسم هذه السيارة؟",
+      "commons": "File:1994 Mazda RX-7 R2 in Vintage Red, front left (Lime Rock).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "هوندا إن إس إكس",
+      "alt": [
+        "ان اس اكس",
+        "اكورا NSX",
+        "هوندا NSX"
+      ],
+      "topic": "رياضية",
+      "ar": "هوندا NSX",
+      "en": "Honda NSX",
+      "q": "خمن بسرعة: ما اسم هذه السيارة؟",
+      "commons": "File:AcuraNSX-05-cropped.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بي إم دبليو آي 8",
+      "alt": [
+        "اي 8",
+        "بي ام دبليو اي8",
+        "بي إم دبليو i8"
+      ],
+      "topic": "رياضية",
+      "ar": "بي إم دبليو i8",
+      "en": "BMW i8",
+      "q": "ركز قليلًا: ما اسم هذه السيارة؟",
+      "commons": "File:2016 BMW i8.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "تويوتا 86",
+      "alt": [
+        "جي تي 86",
+        "GT86"
+      ],
+      "topic": "رياضية",
+      "ar": "تويوتا 86",
+      "en": "Toyota 86",
+      "q": "بلا تردد: ما اسم هذه السيارة؟",
+      "commons": "File:2022 Toyota GR86 Premium in Halo, Front Right, 04-10-2022.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "هوندا إس 2000",
+      "alt": [
+        "اس 2000",
+        "هوندا S2000"
+      ],
+      "topic": "رياضية",
+      "ar": "هوندا S2000",
+      "en": "Honda S2000",
+      "q": "أمامك صورة: ما اسم هذه السيارة؟",
+      "commons": "File:HondaS2000-004.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بنتلي كونتيننتال جي تي",
+      "alt": [
+        "كونتيننتال جي تي",
+        "بنتلي كونتيننتال GT"
+      ],
+      "topic": "فارهة",
+      "ar": "بنتلي كونتيننتال GT",
+      "en": "Bentley Continental GT",
+      "q": "لمحبي السيارات: ما اسم هذه السيارة؟",
+      "commons": "File:Bentley Continental GT First Edition (49919050697) (cropped) (cropped).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "رولز رويس غوست",
+      "alt": [
+        "غوست",
+        "جوست"
+      ],
+      "topic": "فارهة",
+      "ar": "رولز رويس غوست",
+      "en": "Rolls-Royce Ghost",
+      "q": "بلا مساعدة: ما اسم هذه السيارة؟",
+      "commons": "File:2022 Rolls-Royce Ghost Black Badge in Arctic White, front left.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "رولز رويس كولينان",
+      "alt": [
+        "كولينان"
+      ],
+      "topic": "فارهة",
+      "ar": "رولز رويس كولينان",
+      "en": "Rolls-Royce Cullinan",
+      "q": "هيا جرب: ما اسم هذه السيارة؟",
+      "commons": "File:2019 Rolls-Royce Cullinan V12 Automatic 6.75 Front.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "لامبورغيني أوروس",
+      "alt": [
+        "اوروس"
+      ],
+      "topic": "فارهة",
+      "ar": "لامبورغيني أوروس",
+      "en": "Lamborghini Urus",
+      "q": "فكر ثم أجب: ما اسم هذه السيارة؟",
+      "commons": "File:Lamborghini Urus SE DSC 8524.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بنتلي بنتايغا",
+      "alt": [
+        "بنتايجا"
+      ],
+      "topic": "فارهة",
+      "ar": "بنتلي بنتايغا",
+      "en": "Bentley Bentayga",
+      "q": "أتعرف هذا الطراز؟",
+      "commons": "File:Bentley Bentayga V8 (FL) IMG 0005.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مازيراتي جران توريزمو",
+      "alt": [
+        "جران توريزمو",
+        "مازيراتي GT"
+      ],
+      "topic": "فارهة",
+      "ar": "مازيراتي جران توريزمو",
+      "en": "Maserati GranTurismo",
+      "q": "انظر جيدًا: أتعرف هذا الطراز؟",
+      "commons": "File:Maserati GranTurismo Trofeo 1X7A0828.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أستون مارتن دي بي 11",
+      "alt": [
+        "دي بي 11",
+        "أستون مارتن DB11"
+      ],
+      "topic": "فارهة",
+      "ar": "أستون مارتن DB11",
+      "en": "Aston Martin DB11",
+      "q": "لقطة واحدة: أتعرف هذا الطراز؟",
+      "commons": "File:2018 Aston Martin DB11 V8 Automatic 4.0 Front.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أستون مارتن فانتاج",
+      "alt": [
+        "فانتاج",
+        "ڤانتاج"
+      ],
+      "topic": "فارهة",
+      "ar": "أستون مارتن فانتاج",
+      "en": "Aston Martin Vantage",
+      "q": "دقق في الصورة: أتعرف هذا الطراز؟",
+      "commons": "File:Aston-Martin Vantage (1973) (34328531642).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "لكزس إل إف إيه",
+      "alt": [
+        "ال اف ايه",
+        "لكزس LFA"
+      ],
+      "topic": "فارهة",
+      "ar": "لكزس LFA",
+      "en": "Lexus LFA",
+      "q": "سؤال سريع: أتعرف هذا الطراز؟",
+      "commons": "File:Lexus LFA 001.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "مرسيدس أيه إم جي جي تي",
+      "alt": [
+        "ايه ام جي جي تي",
+        "مرسيدس AMG GT"
+      ],
+      "topic": "فارهة",
+      "ar": "مرسيدس-إيه إم جي GT",
+      "en": "Mercedes-AMG GT",
+      "q": "للمتمعن: أتعرف هذا الطراز؟",
+      "commons": "File:Festival automobile international 2015 - Mercedes AMG GT - 003.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "تويوتا سيليكا",
+      "alt": [
+        "سيليكا"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "تويوتا سيليكا",
+      "en": "Toyota Celica",
+      "q": "بنظرة واحدة: أتعرف هذا الطراز؟",
+      "commons": "File:1994 Toyota Celica GT-4 2.0.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "تويوتا إم آر 2",
+      "alt": [
+        "ام ار 2",
+        "تويوتا MR2"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "تويوتا MR2",
+      "en": "Toyota MR2",
+      "q": "من الذاكرة: أتعرف هذا الطراز؟",
+      "commons": "File:1993ToyotaMR2Hardtop.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "فورد كابري",
+      "alt": [
+        "كابري"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "فورد كابري",
+      "en": "Ford Capri",
+      "q": "للعارفين: أتعرف هذا الطراز؟",
+      "commons": "File:1978 Ford Capri MK3 (25595512244) (shadow enhance etc).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بيجو 205",
+      "alt": [
+        "بيجو ٢٠٥"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "بيجو 205",
+      "en": "Peugeot 205",
+      "q": "تأمل الشكل: أتعرف هذا الطراز؟",
+      "commons": "File:Peugeot 205 front 20080121.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "فولكسفاغن شيروكو",
+      "alt": [
+        "شيروكو",
+        "سيروكو"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "فولكس فاغن شيروكو",
+      "en": "Volkswagen Scirocco",
+      "q": "خمن بسرعة: أتعرف هذا الطراز؟",
+      "commons": "File:2015 Volkswagen Scirocco GT BlueMotion Tech 2.0.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سيتروين دوشوفو",
+      "alt": [
+        "تو شوفو",
+        "سيتروين 2 سي في",
+        "سيتروين 2CV"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "ستروين 2 سي في",
+      "en": "Citroën 2CV",
+      "q": "ركز قليلًا: أتعرف هذا الطراز؟",
+      "commons": "File:Citroen 2CV 1X7A7979.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ألفا روميو سبايدر",
+      "alt": [
+        "الفا سبايدر"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "ألفا روميو سبايدر",
+      "en": "Alfa Romeo Spider",
+      "q": "بلا تردد: أتعرف هذا الطراز؟",
+      "commons": "File:Alfa Romeo (3568179480).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مرسيدس أكتروس",
+      "alt": [
+        "اكتروس"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "مرسيدس-بنز أكتروس",
+      "en": "Mercedes-Benz Actros",
+      "q": "أتعرف هذه المركبة؟",
+      "commons": "File:Mercedes-Benz Actros 2545 mit Atlas Ladekran.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "فولفو إف إتش",
+      "alt": [
+        "فولفو اف اتش",
+        "فولفو FH"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "فولفو FH",
+      "en": "Volvo FH",
+      "q": "انظر جيدًا: أتعرف هذه المركبة؟",
+      "commons": "File:2013 Volvo FH16 540 demotruck.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بيتربيلت 379",
+      "alt": [
+        "بيتربلت"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "بيتربيلت 379",
+      "en": "Peterbilt 379",
+      "q": "سؤال سريع: أتعرف هذه المركبة؟",
+      "commons": "File:2003 Peterbilt 379.jpeg"
+    },
+    {
+      "tier": 600,
+      "a": "كينوورث دبليو 900",
+      "alt": [
+        "كنورث",
+        "كينورث",
+        "كينوورث W900"
+      ],
+      "topic": "بيك أب وشاحنات",
+      "ar": "كينوورث W900",
+      "en": "Kenworth W900",
+      "q": "دقق في الصورة: أتعرف هذه المركبة؟",
+      "commons": "File:Kenworth W900 semi in red.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "دوكاتي مونستر",
+      "alt": [
+        "مونستر"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "دوكاتي مونستر",
+      "en": "Ducati Monster",
+      "q": "انظر جيدًا: أي دراجة نارية هذه؟",
+      "commons": "File:2003 Ducati Monster S4R.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "كاواساكي نينجا إتش تو",
+      "alt": [
+        "نينجا",
+        "نينجا اتش2",
+        "كاواساكي نينجا H2"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "كاواساكي نينجا H2",
+      "en": "Kawasaki Ninja H2",
+      "q": "سؤال سريع: أي دراجة نارية هذه؟",
+      "commons": "File:Kawasaki Ninja H2.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سوزوكي حيابوسا",
+      "alt": [
+        "حايابوسا",
+        "هايابوسا"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "سوزوكي حيابوسا",
+      "en": "Suzuki Hayabusa",
+      "q": "ما اسم هذه الدراجة؟",
+      "commons": "File:SUZUKI Hayabusa 2007TMS.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فورد موديل تي",
+      "alt": [
+        "موديل تي",
+        "فورد تي",
+        "فورد موديل T"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "فورد موديل تي",
+      "en": "Ford Model T",
+      "q": "أمامك صورة: أتعرف هذا الطراز؟",
+      "commons": "File:1925 Ford Model T touring.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سيتروين دي إس",
+      "alt": [
+        "دي اس",
+        "سيتروين دي اس",
+        "سيتروين DS"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "ستروين DS",
+      "en": "Citroën DS",
+      "q": "لمحبي السيارات: أتعرف هذا الطراز؟",
+      "commons": "File:Bornholm Rundt 2012 (2012-07-08), by Klugschnacker modified.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جاكوار إي تايب",
+      "alt": [
+        "اي تايب",
+        "جاجوار اي تايب",
+        "جاكوار E-Type"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "جاكوار إي-تايب",
+      "en": "Jaguar E-Type",
+      "q": "بلا مساعدة: أتعرف هذا الطراز؟",
+      "commons": "File:Jaguar E-Type Series 1 3.8 Litre 1961.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "أستون مارتن دي بي 5",
+      "alt": [
+        "دي بي 5",
+        "أستون مارتن DB5"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "أستون مارتن DB5",
+      "en": "Aston Martin DB5",
+      "q": "هيا جرب: أتعرف هذا الطراز؟",
+      "commons": "File:Aston Martin DB5 (Skyfall).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مرسيدس 300 إس إل",
+      "alt": [
+        "300 اس ال",
+        "جناح النورس",
+        "مرسيدس 300 SL"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "مرسيدس-بنز 300 إس إل",
+      "en": "Mercedes-Benz 300 SL",
+      "q": "فكر ثم أجب: أتعرف هذا الطراز؟",
+      "commons": "File:Fox Classic Car Collection, 2008 (02).JPG"
+    },
+    {
+      "tier": 800,
+      "a": "بورشه 356",
+      "alt": [
+        "356"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "بورشه 356",
+      "en": "Porsche 356",
+      "q": "أي موديل هذا؟",
+      "commons": "File:2007-07-08 Porsche 356 C (01 kl ret).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بي إم دبليو إيزيتا",
+      "alt": [
+        "ايزيتا",
+        "ايستا"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "بي إم دبليو إيزيتا",
+      "en": "BMW Isetta",
+      "q": "انظر جيدًا: أي موديل هذا؟",
+      "commons": "File:BMW Isetta - Flickr - mick - Lumix.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "شيفروليه بيل إير",
+      "alt": [
+        "بل اير",
+        "بيل اير"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "شيفروليه بيل إير",
+      "en": "Chevrolet Bel Air",
+      "q": "لقطة واحدة: أي موديل هذا؟",
+      "commons": "File:57 Chevy BelAir.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "كاديلاك إلدورادو",
+      "alt": [
+        "الدورادو"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "كاديلاك إلدورادو",
+      "en": "Cadillac Eldorado",
+      "q": "دقق في الصورة: أي موديل هذا؟",
+      "commons": "File:67 Cadillac Eldorado (14277560774) cropped.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فورد ثاندربيرد",
+      "alt": [
+        "ثندربيرد",
+        "تندربيرد"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "فورد ثاندربيرد",
+      "en": "Ford Thunderbird",
+      "q": "سؤال سريع: أي موديل هذا؟",
+      "commons": "File:1957 Ford Thunderbird (28911503716) (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لينكولن كونتيننتال",
+      "alt": [
+        "كونتيننتال"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "لينكون كونتيننتال",
+      "en": "Lincoln Continental",
+      "q": "للمتمعن: أي موديل هذا؟",
+      "commons": "File:2019 Lincoln Continental \"Select\", front 10.29.19.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فولكسفاغن كارمان غيا",
+      "alt": [
+        "كارمان جيا"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "فولكس فاغن كارمان غيا",
+      "en": "Volkswagen Karmann Ghia",
+      "q": "بنظرة واحدة: أي موديل هذا؟",
+      "commons": "File:1958 Volkswagen Type 14 Karmann.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لامبورغيني كونتاش",
+      "alt": [
+        "كونتاش",
+        "كونتاك"
+      ],
+      "topic": "رياضية",
+      "ar": "لامبورغيني كونتاش",
+      "en": "Lamborghini Countach",
+      "q": "من الذاكرة: أي موديل هذا؟",
+      "commons": "File:Lamborghini Countach - Flickr - exfordy (2) (cropped-2).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لامبورغيني ميورا",
+      "alt": [
+        "ميورا"
+      ],
+      "topic": "رياضية",
+      "ar": "لامبورغيني ميورا",
+      "en": "Lamborghini Miura",
+      "q": "للعارفين: أي موديل هذا؟",
+      "commons": "File:1971 Lamborghini Miura P400 SV.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فيراري تيستاروسا",
+      "alt": [
+        "تستاروسا"
+      ],
+      "topic": "رياضية",
+      "ar": "فيراري تيستاروسا",
+      "en": "Ferrari Testarossa",
+      "q": "تأمل الشكل: أي موديل هذا؟",
+      "commons": "File:Ferrari Testarossa IMG 3043.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فيراري إف 50",
+      "alt": [
+        "اف 50",
+        "فيراري F50"
+      ],
+      "topic": "رياضية",
+      "ar": "فيراري F50",
+      "en": "Ferrari F50",
+      "q": "خمن بسرعة: أي موديل هذا؟",
+      "commons": "File:1999 Ferrari F50.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بورشه 959",
+      "alt": [
+        "959"
+      ],
+      "topic": "رياضية",
+      "ar": "بورشه 959",
+      "en": "Porsche 959",
+      "q": "ركز قليلًا: أي موديل هذا؟",
+      "commons": "File:Porsche 959 – Frontansicht (2), 21. März 2013, Düsseldorf.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بي إم دبليو إم ون",
+      "alt": [
+        "ام 1",
+        "بي إم دبليو M1"
+      ],
+      "topic": "رياضية",
+      "ar": "بي إم دبليو M1",
+      "en": "BMW M1",
+      "q": "بلا تردد: أي موديل هذا؟",
+      "commons": "File:BMW M1, front right (Brooklyn).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بي إم دبليو 507",
+      "alt": [
+        "507"
+      ],
+      "topic": "رياضية",
+      "ar": "بي إم دبليو 507",
+      "en": "BMW 507",
+      "q": "أمامك صورة: أي موديل هذا؟",
+      "commons": "File:BMW 507.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "تويوتا 2000 جي تي",
+      "alt": [
+        "2000 جي تي",
+        "تويوتا 2000GT"
+      ],
+      "topic": "رياضية",
+      "ar": "تويوتا 2000GT",
+      "en": "Toyota 2000GT",
+      "q": "لمحبي السيارات: أي موديل هذا؟",
+      "commons": "File:TOYOTA 2000GT.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "داتسون 240 زد",
+      "alt": [
+        "240 زد",
+        "داتسون زد",
+        "داتسون 240Z"
+      ],
+      "topic": "رياضية",
+      "ar": "داتسون 240Z",
+      "en": "Datsun 240Z",
+      "q": "بلا مساعدة: أي موديل هذا؟",
+      "commons": "File:1970-1973 Nissan Fairlady Z.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مازدا كوسمو",
+      "alt": [
+        "كوزمو"
+      ],
+      "topic": "رياضية",
+      "ar": "مازدا كوسمو",
+      "en": "Mazda Cosmo",
+      "q": "هيا جرب: أي موديل هذا؟",
+      "commons": "File:1968 Mazda Cosmo-Sport 01.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فورد جي تي 40",
+      "alt": [
+        "جي تي 40",
+        "فورد GT40"
+      ],
+      "topic": "سباقات",
+      "ar": "فورد GT40",
+      "en": "Ford GT40",
+      "q": "فكر ثم أجب: أي موديل هذا؟",
+      "commons": "File:GT40 at Goodwood.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "شيلبي كوبرا",
+      "alt": [
+        "ايه سي كوبرا",
+        "كوبرا"
+      ],
+      "topic": "سباقات",
+      "ar": "إيه سي كوبرا",
+      "en": "AC Cobra",
+      "q": "ما الطراز الظاهر؟",
+      "commons": "File:Shelby AC 427 Cobra vl blue.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فيراري 250 جي تي أو",
+      "alt": [
+        "250 جي تي او",
+        "فيراري 250 GTO"
+      ],
+      "topic": "سباقات",
+      "ar": "فيراري 250 GTO",
+      "en": "Ferrari 250 GTO",
+      "q": "انظر جيدًا: ما الطراز الظاهر؟",
+      "commons": "File:1962 Ferrari 250 GTO SP25.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لانشيا ستراتوس",
+      "alt": [
+        "ستراتوس"
+      ],
+      "topic": "سباقات",
+      "ar": "لانشيا ستراتوس",
+      "en": "Lancia Stratos",
+      "q": "لقطة واحدة: ما الطراز الظاهر؟",
+      "commons": "File:1974 Lancia Stratos Stradale at Greenwich 2021, front left.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لانشيا دلتا إنتيغرالي",
+      "alt": [
+        "لانشيا دلتا",
+        "انتجرالي"
+      ],
+      "topic": "سباقات",
+      "ar": "لانشيا دلتا",
+      "en": "Lancia Delta",
+      "q": "دقق في الصورة: ما الطراز الظاهر؟",
+      "commons": "File:1994 Lancia Delta HF Integrale front.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "أودي كواترو",
+      "alt": [
+        "كواترو",
+        "كوواترو"
+      ],
+      "topic": "سباقات",
+      "ar": "أودي كواترو",
+      "en": "Audi Quattro",
+      "q": "سؤال سريع: ما الطراز الظاهر؟",
+      "commons": "File:1985 Audi Quattro.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "رينو 5 توربو",
+      "alt": [
+        "ار 5 توربو"
+      ],
+      "topic": "سباقات",
+      "ar": "رينو 5 توربو",
+      "en": "Renault 5 Turbo",
+      "q": "للمتمعن: ما الطراز الظاهر؟",
+      "commons": "File:1981 Renault 5 Turbo LC23.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بلايموث سوبربيرد",
+      "alt": [
+        "سوبربيرد"
+      ],
+      "topic": "سباقات",
+      "ar": "بليموث سوبربيرد",
+      "en": "Plymouth Superbird",
+      "q": "بنظرة واحدة: ما الطراز الظاهر؟",
+      "commons": "File:Superbird Yellow.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "دودج تشارجر ديتونا",
+      "alt": [
+        "ديتونا"
+      ],
+      "topic": "سباقات",
+      "ar": "دودج تشارجر ديتونا",
+      "en": "Dodge Charger Daytona",
+      "q": "من الذاكرة: ما الطراز الظاهر؟",
+      "commons": "File:1969 Dodge Charger Daytona (13419983895) (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جيب ويليز",
+      "alt": [
+        "ويليز",
+        "ويلز MB"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "ويليز إم بي",
+      "en": "Willys MB",
+      "q": "للعارفين: ما الطراز الظاهر؟",
+      "commons": "File:Covered Willy's jeep Wings Over Wine Country 2007.JPG"
+    },
+    {
+      "tier": 800,
+      "a": "لاند روفر سيريز",
+      "alt": [
+        "لاند روفر الأصلية"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "لاند روفر سيريز",
+      "en": "Land Rover Series",
+      "q": "تأمل الشكل: ما الطراز الظاهر؟",
+      "commons": "File:Land Rover Series I 1948 (HUE 166).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "إنترناشونال سكاوت",
+      "alt": [
+        "سكاوت"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "إنترناشونال هارفستر سكاوت",
+      "en": "International Harvester Scout",
+      "q": "خمن بسرعة: ما الطراز الظاهر؟",
+      "commons": "File:1978 International Harvester Scout II wagon (23176143526) (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "دودج باور واغن",
+      "alt": [
+        "باور واجن"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "دودج باور واغن",
+      "en": "Dodge Power Wagon",
+      "q": "حدد طراز هذه المركبة",
+      "commons": "File:54 Dodge Power Wagon 1 Ton Pick-Up (7154796521).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فولكسفاغن كوبلفاغن",
+      "alt": [
+        "كوبل واجن"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "فولكس فاغن كوبلفاغن",
+      "en": "Volkswagen Kübelwagen",
+      "q": "ركز قليلًا: ما الطراز الظاهر؟",
+      "commons": "File:VW Kuebelwagen 1.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "لامبورغيني إل إم 002",
+      "alt": [
+        "ال ام 002",
+        "رامبو لامبو",
+        "لامبورغيني LM002"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "لامبورغيني LM002",
+      "en": "Lamborghini LM002",
+      "q": "بلا تردد: ما الطراز الظاهر؟",
+      "commons": "File:Lamborghini LM002 Gen1 Type129 1986-1993 1988 frontleft 2013-03-17 U (cropped).JPG"
+    },
+    {
+      "tier": 800,
+      "a": "ترابانت",
+      "alt": [
+        "ترابنت",
+        "ترابي"
+      ],
+      "topic": "شعبية",
+      "ar": "ترابانت 601",
+      "en": "Trabant 601",
+      "q": "أمامك صورة: ما الطراز الظاهر؟",
+      "commons": "File:1988 VEB Sachenring Trabant P601S Beige (1 bearb Sp) (cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "ساب 900",
+      "alt": [
+        "ساب"
+      ],
+      "topic": "شعبية",
+      "ar": "ساب 900",
+      "en": "Saab 900",
+      "q": "لمحبي السيارات: ما الطراز الظاهر؟",
+      "commons": "File:1993 Saab 900 SE Turbo 2.0 Front.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فولفو بي 1800",
+      "alt": [
+        "بي 1800",
+        "فولفو P1800"
+      ],
+      "topic": "شعبية",
+      "ar": "فولفو P1800",
+      "en": "Volvo P1800",
+      "q": "بلا مساعدة: ما الطراز الظاهر؟",
+      "commons": "File:1969 P1800 S.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "تاكسي لندن الأسود",
+      "alt": [
+        "اوستن FX4",
+        "الكاب الأسود"
+      ],
+      "topic": "شعبية",
+      "ar": "أوستن FX4",
+      "en": "Austin FX4",
+      "q": "هيا جرب: ما الطراز الظاهر؟",
+      "commons": "File:1962 Austin FX4 London taxi.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "تشيكر ماراثون",
+      "alt": [
+        "تاكسي نيويورك",
+        "تشيكر"
+      ],
+      "topic": "شعبية",
+      "ar": "تشيكر ماراثون",
+      "en": "Checker Marathon",
+      "q": "فكر ثم أجب: ما الطراز الظاهر؟",
+      "commons": "File:Checker-Marathon-2.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سيتروين إتش واي",
+      "alt": [
+        "اتش واي",
+        "سيتروين اتش",
+        "سيتروين HY"
+      ],
+      "topic": "شعبية",
+      "ar": "ستروين إتش",
+      "en": "Citroën H Van",
+      "q": "انظر جيدًا: حدد طراز هذه المركبة",
+      "commons": "File:Citroën Typ H 1981 grey vl TCE.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جنرال موتورز إي في ون",
+      "alt": [
+        "اي في 1",
+        "EV1",
+        "جنرال موتورز EV1"
+      ],
+      "topic": "كهربائية",
+      "ar": "جنرال موتورز EV1",
+      "en": "General Motors EV1",
+      "q": "اذكر اسم هذه السيارة",
+      "commons": "File:EV1A014 (1) cropped.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "هوندا سي بي 750",
+      "alt": [
+        "سي بي 750",
+        "هوندا CB750"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "هوندا CB750",
+      "en": "Honda CB750",
+      "q": "انظر جيدًا: ما اسم هذه الدراجة؟",
+      "commons": "File:Honda CB750.JPG"
+    },
+    {
+      "tier": 800,
+      "a": "نورتون كوماندو",
+      "alt": [
+        "كوماندو"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "نورتون كوماندو",
+      "en": "Norton Commando",
+      "q": "سؤال سريع: ما اسم هذه الدراجة؟",
+      "commons": "File:Norton 850 Commando 1973.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "إنديان سكاوت",
+      "alt": [
+        "انديان"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "إنديان سكاوت",
+      "en": "Indian Scout (motorcycle)",
+      "q": "أتعرف هذه الدراجة؟",
+      "commons": "File:Indian Scout 600 cc 1920.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "رويال إنفيلد بوليت",
+      "alt": [
+        "انفيلد بوليت",
+        "رويال انفيلد"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "رويال إنفيلد بوليت",
+      "en": "Royal Enfield Bullet",
+      "q": "انظر جيدًا: أتعرف هذه الدراجة؟",
+      "commons": "File:Royal Enfield Bullet 500 - 2002 model.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بورشه 917",
+      "alt": [
+        "917"
+      ],
+      "topic": "سباقات",
+      "ar": "بورشه 917",
+      "en": "Porsche 917",
+      "q": "انظر جيدًا: اذكر اسم هذه السيارة",
+      "commons": "File:1969 Porsche 917K Red.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بورشه 962",
+      "alt": [
+        "962"
+      ],
+      "topic": "سباقات",
+      "ar": "بورشه 962",
+      "en": "Porsche 962",
+      "q": "لقطة واحدة: اذكر اسم هذه السيارة",
+      "commons": "File:2006FOS 1988Porsche962CLeMans.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ألفا روميو 33 ستراديل",
+      "alt": [
+        "33 ستراديل",
+        "الفا 33"
+      ],
+      "topic": "سباقات",
+      "ar": "ألفا روميو 33 ستراديل",
+      "en": "Alfa Romeo 33 Stradale",
+      "q": "دقق في الصورة: اذكر اسم هذه السيارة",
+      "commons": "File:1968 Alfa Romeo 33 Stradale, front right (Miller).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مرسيدس دبليو 196",
+      "alt": [
+        "دبليو 196",
+        "مرسيدس W196"
+      ],
+      "topic": "سباقات",
+      "ar": "مرسيدس-بنز W196",
+      "en": "Mercedes-Benz W196",
+      "q": "سؤال سريع: اذكر اسم هذه السيارة",
+      "commons": "File:KlingK-MB-W196-1976.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مرسيدس 300 إس إل آر",
+      "alt": [
+        "300 اس ال ار",
+        "مرسيدس 300 SLR"
+      ],
+      "topic": "سباقات",
+      "ar": "مرسيدس-بنز 300 SLR",
+      "en": "Mercedes-Benz 300 SLR",
+      "q": "للمتمعن: اذكر اسم هذه السيارة",
+      "commons": "File:Mercedes-Benz 300 SLR 1955.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أوتو يونيون تايب سي",
+      "alt": [
+        "اوتو يونيون",
+        "أوتو يونيون تايب C"
+      ],
+      "topic": "سباقات",
+      "ar": "أوتو يونيون",
+      "en": "Auto Union racing car",
+      "q": "بنظرة واحدة: اذكر اسم هذه السيارة",
+      "commons": "File:Auto Union Typ C - 1984-05-12.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "لوتس 49",
+      "alt": [
+        "لوتس فورتي ناين"
+      ],
+      "topic": "سباقات",
+      "ar": "لوتس 49",
+      "en": "Lotus 49",
+      "q": "من الذاكرة: اذكر اسم هذه السيارة",
+      "commons": "File:HillGraham19690801Lotus-Nordkehre.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مكلارين إم بي 4",
+      "alt": [
+        "ام بي 4/4",
+        "مكلارين MP4/4"
+      ],
+      "topic": "سباقات",
+      "ar": "مكلارين MP4/4",
+      "en": "McLaren MP4/4",
+      "q": "للعارفين: اذكر اسم هذه السيارة",
+      "commons": "File:McLaren MP4-4 front-right Honda Collection Hall.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "تيريل بي 34",
+      "alt": [
+        "تيرل بي 34",
+        "السيارة بست عجلات",
+        "تيريل P34"
+      ],
+      "topic": "سباقات",
+      "ar": "تيريل P34",
+      "en": "Tyrrell P34",
+      "q": "تأمل الشكل: اذكر اسم هذه السيارة",
+      "commons": "File:Rétromobile 2017 - Tyrrell P34 - 1977 - 002.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "برابهام بي تي 46",
+      "alt": [
+        "المروحة",
+        "برابهام فان كار",
+        "برابهام BT46"
+      ],
+      "topic": "سباقات",
+      "ar": "برابهام BT46",
+      "en": "Brabham BT46",
+      "q": "خمن بسرعة: اذكر اسم هذه السيارة",
+      "commons": "File:2001 Goodwood Festival of Speed Brabham BT46B Fan car.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جاكوار دي تايب",
+      "alt": [
+        "دي تايب",
+        "جاكوار D-Type"
+      ],
+      "topic": "سباقات",
+      "ar": "جاكوار دي-تايب",
+      "en": "Jaguar D-Type",
+      "q": "ركز قليلًا: اذكر اسم هذه السيارة",
+      "commons": "File:Paris - Retromobile 2013 - Jaguar D Type - 1955 - 106.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بوغاتي تايب 35",
+      "alt": [
+        "تايب 35"
+      ],
+      "topic": "سباقات",
+      "ar": "بوغاتي تايب 35",
+      "en": "Bugatti Type 35",
+      "q": "بلا تردد: اذكر اسم هذه السيارة",
+      "commons": "File:Bugatti 35, Bj 1924, M Nicolosi - 1976.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جاكوار إكس جيه 220",
+      "alt": [
+        "اكس جيه 220",
+        "جاكوار XJ220"
+      ],
+      "topic": "خارقة",
+      "ar": "جاكوار XJ220",
+      "en": "Jaguar XJ220",
+      "q": "أمامك صورة: اذكر اسم هذه السيارة",
+      "commons": "File:JaguarXJ220.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "فيكتور دبليو 8",
+      "alt": [
+        "ڤيكتور",
+        "فيكتور W8"
+      ],
+      "topic": "خارقة",
+      "ar": "فيكتور W8",
+      "en": "Vector W8",
+      "q": "لمحبي السيارات: اذكر اسم هذه السيارة",
+      "commons": "File:VectorW8.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سبايكر سي 8",
+      "alt": [
+        "سبايكر",
+        "سبايكر C8"
+      ],
+      "topic": "خارقة",
+      "ar": "سبايكر C8",
+      "en": "Spyker C8",
+      "q": "بلا مساعدة: اذكر اسم هذه السيارة",
+      "commons": "File:2008 Spyker C8 Spyder SP 25.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "لامبورغيني ريفينتون",
+      "alt": [
+        "ريفينتون"
+      ],
+      "topic": "خارقة",
+      "ar": "لامبورغيني ريفينتون",
+      "en": "Lamborghini Reventón",
+      "q": "هيا جرب: اذكر اسم هذه السيارة",
+      "commons": "File:MotorShow 2007, Lamborghini - Flickr - Gaspa (1) (cropped).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ميتسوؤكا أوروتشي",
+      "alt": [
+        "اوروتشي"
+      ],
+      "topic": "خارقة",
+      "ar": "ميتسوؤكا أوروتشي",
+      "en": "Mitsuoka Orochi",
+      "q": "فكر ثم أجب: اذكر اسم هذه السيارة",
+      "commons": "File:Mitsuoka Orochi Nude Top Roadstar.JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "سالين إس 7",
+      "alt": [
+        "سالين",
+        "سالين S7"
+      ],
+      "topic": "خارقة",
+      "ar": "سالين S7",
+      "en": "Saleen S7",
+      "q": "حدد طراز هذه السيارة",
+      "commons": "File:Saleen S7 (8228619567).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أستون مارتن فالكيري",
+      "alt": [
+        "فالكيري"
+      ],
+      "topic": "خارقة",
+      "ar": "أستون مارتن فالكيري",
+      "en": "Aston Martin Valkyrie",
+      "q": "انظر جيدًا: حدد طراز هذه السيارة",
+      "commons": "File:Aston Martin Valkyrie Verification Prototype 001 Genf 2019 1Y7A5569.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بوغاتي إي بي 110",
+      "alt": [
+        "اي بي 110",
+        "بوغاتي EB110"
+      ],
+      "topic": "خارقة",
+      "ar": "بوغاتي EB110",
+      "en": "Bugatti EB110",
+      "q": "لقطة واحدة: حدد طراز هذه السيارة",
+      "commons": "File:1995 Bugatti EB110SS in Blu Bugatti, front left (Greenwich).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سيزيتا في 16 تي",
+      "alt": [
+        "سيزيتا",
+        "سيزيتا V16T"
+      ],
+      "topic": "خارقة",
+      "ar": "سيزيتا V16T",
+      "en": "Cizeta V16T",
+      "q": "دقق في الصورة: حدد طراز هذه السيارة",
+      "commons": "File:Cizeta-Moroder V16T - Concorso Italiano 2003 - fvr.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "باغاني هوايرا",
+      "alt": [
+        "هوايرا"
+      ],
+      "topic": "خارقة",
+      "ar": "باغاني هوايرا",
+      "en": "Pagani Huayra",
+      "q": "سؤال سريع: حدد طراز هذه السيارة",
+      "commons": "File:Pagani, GIMS 2019, Le Grand-Saconnex (GIMS0023).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "تاكر 48",
+      "alt": [
+        "تاكر"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "تاكر 48",
+      "en": "Tucker 48",
+      "q": "للمتمعن: حدد طراز هذه السيارة",
+      "commons": "File:1948 Tucker Torpedo (no. 51) in Maroon, front left.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "كرايسلر إيرفلو",
+      "alt": [
+        "ايرفلو"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "كرايسلر إيرفلو",
+      "en": "Chrysler Airflow",
+      "q": "بنظرة واحدة: حدد طراز هذه السيارة",
+      "commons": "File:1936-chrysler-archives.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "تاترا 87",
+      "alt": [
+        "تاترا"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "تاترا 87",
+      "en": "Tatra 87",
+      "q": "من الذاكرة: حدد طراز هذه السيارة",
+      "commons": "File:Tatra 87 front (Foto Hilarmont).JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "ستوديبيكر أفانتي",
+      "alt": [
+        "افانتي"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "ستوديبيكر أفانتي",
+      "en": "Studebaker Avanti",
+      "q": "للعارفين: حدد طراز هذه السيارة",
+      "commons": "File:1963 Studebaker Avanti gold at Concord University.JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "إدسل",
+      "alt": [
+        "ادسل",
+        "فورد ادسل"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "إدسل رينجر",
+      "en": "Edsel Ranger",
+      "q": "تأمل الشكل: حدد طراز هذه السيارة",
+      "commons": "File:1959 Edsel Ranger 2-door sedan, front left (2022 Back to the 50's Weekend).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "شيفروليه كورفير",
+      "alt": [
+        "كورفير"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "شيفروليه كورفير",
+      "en": "Chevrolet Corvair",
+      "q": "خمن بسرعة: حدد طراز هذه السيارة",
+      "commons": "File:Flickr - DVS1mn - 64 Chevrolet Corvair Monza (3) (cropped).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أيه إم سي بيسر",
+      "alt": [
+        "بيسر",
+        "باسر",
+        "AMC بيسر"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "إيه إم سي بيسر",
+      "en": "AMC Pacer",
+      "q": "ركز قليلًا: حدد طراز هذه السيارة",
+      "commons": "File:1975 AMC Pacer base model frontleftside.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أيه إم سي غريملين",
+      "alt": [
+        "جريملين",
+        "AMC غريملين"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "إيه إم سي غريملين",
+      "en": "AMC Gremlin",
+      "q": "بلا تردد: حدد طراز هذه السيارة",
+      "commons": "File:Gremlin side (5903000893).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مسرشميت كيه آر 200",
+      "alt": [
+        "مسرشميت",
+        "مسرشميت KR200"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "مسرشميت KR200",
+      "en": "Messerschmitt KR200",
+      "q": "أمامك صورة: حدد طراز هذه السيارة",
+      "commons": "File:Messerschmitt Kabinenroller.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سوبارو 360",
+      "alt": [
+        "سوبارو ٣٦٠"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "سوبارو 360",
+      "en": "Subaru 360",
+      "q": "لمحبي السيارات: حدد طراز هذه السيارة",
+      "commons": "File:1958 Subaru 360 01.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أمفيبيكار",
+      "alt": [
+        "امفيبي كار",
+        "السيارة البرمائية"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "أمفيبيكار",
+      "en": "Amphicar",
+      "q": "بلا مساعدة: حدد طراز هذه السيارة",
+      "commons": "File:Amphicar p1.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ميني موك",
+      "alt": [
+        "موك"
+      ],
+      "topic": "كلاسيكية",
+      "ar": "ميني موك",
+      "en": "Mini Moke",
+      "q": "هيا جرب: حدد طراز هذه السيارة",
+      "commons": "File:Moke02.png"
+    },
+    {
+      "tier": 1000,
+      "a": "فيات مولتيبلا",
+      "alt": [
+        "مولتيبلا"
+      ],
+      "topic": "شعبية",
+      "ar": "فيات مولتيبلا",
+      "en": "Fiat Multipla",
+      "q": "فكر ثم أجب: حدد طراز هذه السيارة",
+      "commons": "File:Fiat Multipla front 20080825.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "نيسان إس-كارغو",
+      "alt": [
+        "اس كارجو"
+      ],
+      "topic": "شعبية",
+      "ar": "نيسان إس-كارغو",
+      "en": "Nissan S-Cargo",
+      "q": "هل تعرف هذه السيارة؟",
+      "commons": "File:Nissan S-Cargo 001.JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "نيسان فيغارو",
+      "alt": [
+        "فيجارو"
+      ],
+      "topic": "شعبية",
+      "ar": "نيسان فيغارو",
+      "en": "Nissan Figaro",
+      "q": "انظر جيدًا: هل تعرف هذه السيارة؟",
+      "commons": "File:1991 Nissan Figaro 1.0 Front.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "رينو أفانتايم",
+      "alt": [
+        "افانتايم"
+      ],
+      "topic": "شعبية",
+      "ar": "رينو أفانتايم",
+      "en": "Renault Avantime",
+      "q": "لقطة واحدة: هل تعرف هذه السيارة؟",
+      "commons": "File:2002 Renault Avantime Privilege 3.0 Front.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ريليانت روبن",
+      "alt": [
+        "روبن",
+        "ريلاينت"
+      ],
+      "topic": "شعبية",
+      "ar": "ريليانت روبن",
+      "en": "Reliant Robin",
+      "q": "دقق في الصورة: هل تعرف هذه السيارة؟",
+      "commons": "File:1977 Reliant Robin 850 (14136529926) (cropped).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سيتروين ميهاري",
+      "alt": [
+        "ميهاري"
+      ],
+      "topic": "شعبية",
+      "ar": "ستروين ميهاري",
+      "en": "Citroën Méhari",
+      "q": "سؤال سريع: هل تعرف هذه السيارة؟",
+      "commons": "File:Citroën Méhari Nice IMG 1269.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بياجيو آبي",
+      "alt": [
+        "ابي",
+        "توك توك بياجيو"
+      ],
+      "topic": "شعبية",
+      "ar": "بياجيو آبي",
+      "en": "Piaggio Ape",
+      "q": "سؤال سريع: أتعرف هذه الدراجة؟",
+      "commons": "File:Piaggio Vespacar APE P400V MPF.dsc01304.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "وينرموبيل",
+      "alt": [
+        "سيارة النقانق"
+      ],
+      "topic": "شعبية",
+      "ar": "وينرموبيل",
+      "en": "Wienermobile",
+      "q": "للمتمعن: هل تعرف هذه السيارة؟",
+      "commons": "File:Oscar Mayer Frankmobile.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "عربة القمر",
+      "alt": [
+        "روفر القمر",
+        "العربة القمرية"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "عربة القمر الجوالة",
+      "en": "Lunar Roving Vehicle",
+      "q": "بنظرة واحدة: هل تعرف هذه السيارة؟",
+      "commons": "File:Apollo15LunarRover.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مايرز مانكس",
+      "alt": [
+        "بيتش باجي",
+        "مانكس"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "مايرز مانكس",
+      "en": "Meyers Manx",
+      "q": "من الذاكرة: هل تعرف هذه السيارة؟",
+      "commons": "File:1stMeyersManxWithBruceMeyers.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "فولكسفاغن تايب 181",
+      "alt": [
+        "ذا ثينج",
+        "كورييه"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "فولكس فاغن تايب 181",
+      "en": "Volkswagen Type 181",
+      "q": "للعارفين: هل تعرف هذه السيارة؟",
+      "commons": "File:Vw 181 v sst.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بينزغاور",
+      "alt": [
+        "بنزجاور"
+      ],
+      "topic": "دفع رباعي",
+      "ar": "بينزغاور",
+      "en": "Pinzgauer High Mobility All-Terrain Vehicle",
+      "q": "سؤال سريع: حدد طراز هذه المركبة",
+      "commons": "File:Steyr- Puch Pinzgauer Turbo D.png"
+    },
+    {
+      "tier": 1000,
+      "a": "مورغان ثري ويلر",
+      "alt": [
+        "مورجان 3 ويلر"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "مورغان 3 ويلر",
+      "en": "Morgan 3-Wheeler",
+      "q": "حدد طراز هذه الدراجة",
+      "commons": "File:Morgan 3-Wheeler, front left (Amagansett).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "هوندا مونكي",
+      "alt": [
+        "مونكي"
+      ],
+      "topic": "دراجات نارية",
+      "ar": "هوندا مونكي",
+      "en": "Honda Monkey",
+      "q": "انظر جيدًا: حدد طراز هذه الدراجة",
+      "commons": "File:Honda Z50M.jpg"
+    }
+  ]
 }
