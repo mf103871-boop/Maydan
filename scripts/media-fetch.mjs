@@ -23,6 +23,7 @@
 //   - واجهة كومنز تحدّ الطلبات المتتابعة بنص "too many requests"، فنعيد المحاولة بهدوء.
 //   - بحث أرشيف الإنترنت بأحرف البدل داخل licenseurl يُسقط خادمهم، فنرشّح الرخص محليًا.
 import { readFile, writeFile, copyFile, mkdir, mkdtemp, rm, stat, access } from 'node:fs/promises';
+import fsSync from 'node:fs';
 import { execFile, spawnSync } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
@@ -136,7 +137,56 @@ function parseArgs(argv) {
 
 // ---------------------------------------------------------------- الشبكة
 
+// بوابة معدل مشتركة بين العمليات لطلبات ويكيميديا.
+//
+// حين تُبنى عدة حزم في وقت واحد تصير الطلبات المتوازية عشرات، فيردّ الخادم بالرفض
+// (429) وتدخل كل عملية في دوامة إعادة محاولة تُبطئ الجميع. البوابة تجعل العمليات
+// كلها تتقاسم إيقاعًا واحدًا مهذّبًا: طلب كل GATE_MS، فيختفي الرفض ويرتفع الإنتاج.
+//
+// التنسيق عبر ملف في مجلد مؤقت لأن العمليات منفصلة: مجلد القفل يُنشأ ذريًّا
+// (mkdir يفشل إن وُجد)، والانتظار بـAtomics.wait لأن لا نوم متزامنًا في Node.
+const GATE_DIR = path.join(os.tmpdir(), 'maydan-wikimedia-gate');
+const GATE_LOCK = path.join(GATE_DIR, 'lock');
+const GATE_STAMP = path.join(GATE_DIR, 'next-at');
+const GATE_MS = Number(process.env.MAYDAN_GATE_MS || 600);
+const WIKIMEDIA = /(^|\.)wikimedia\.org$|(^|\.)wikipedia\.org$|(^|\.)wikidata\.org$/;
+const sleepSync = (ms) => { if (ms > 0) Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms); };
+
+// يحجز الدور التالي ويعيد لحظته. يتحمّل تلف الملف أو تعذّر القفل: عند الشك يمرّ.
+function claimSlot() {
+  try { fsSync.mkdirSync(GATE_DIR, { recursive: true }); } catch { return Date.now(); }
+  for (let attempt = 0; attempt < 200; attempt++) {
+    try {
+      fsSync.mkdirSync(GATE_LOCK);
+    } catch {
+      sleepSync(5);
+      continue;
+    }
+    try {
+      let nextAt = 0;
+      try { nextAt = Number(fsSync.readFileSync(GATE_STAMP, 'utf8')) || 0; } catch { nextAt = 0; }
+      const now = Date.now();
+      const slot = Math.max(now, nextAt);
+      fsSync.writeFileSync(GATE_STAMP, String(slot + GATE_MS));
+      return slot;
+    } finally {
+      try { fsSync.rmdirSync(GATE_LOCK); } catch { /* أُزيل أصلًا */ }
+    }
+  }
+  return Date.now();                                  // تعذّر القفل طويلًا: لا نعطّل العمل
+}
+
+async function passGate(url) {
+  let host;
+  try { host = new URL(url).hostname; } catch { return; }
+  if (!WIKIMEDIA.test(host)) return;
+  const slot = claimSlot();
+  const wait = slot - Date.now();
+  if (wait > 0) await new Promise((resolve) => setTimeout(resolve, wait));
+}
+
 async function fetchWithTimeout(url, init = {}) {
+  await passGate(url);
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
@@ -151,7 +201,9 @@ async function fetchWithTimeout(url, init = {}) {
 
 // طلب JSON مع إعادة محاولة هادئة عند تقييد المعدل أو عطل الخادم.
 async function fetchJson(url, label) {
-  const delays = [2500, 7000];
+  // تهدئة تصاعدية تبلغ الدقيقة. كانت تقف عند سبع ثوانٍ، فكان موضوع كامل يُهدر
+  // لأن الخادم كان في نافذة تقييد عابرة لا أكثر.
+  const delays = [2500, 7000, 15_000, 30_000, 60_000];
   for (let attempt = 0; ; attempt++) {
     let res;
     let text;
@@ -164,8 +216,11 @@ async function fetchJson(url, label) {
     }
     const throttled = res.status === 429 || res.status >= 500 || /too many requests/i.test(text.slice(0, 300));
     if (throttled && attempt < delays.length) {
-      log(`… ${label} يحدّ الطلبات مؤقتًا، إعادة المحاولة بعد ${delays[attempt] / 1000} ث`);
-      await sleep(delays[attempt]);
+      // الخادم يقول متى يقبل الطلب التالي؛ احترام قوله أسرع من تخمين أقصر منه.
+      const advised = Number(res.headers.get('retry-after')) * 1000;
+      const wait = Number.isFinite(advised) && advised > 0 ? Math.max(advised, delays[attempt]) : delays[attempt];
+      log(`… ${label} يحدّ الطلبات مؤقتًا، إعادة المحاولة بعد ${Math.round(wait / 1000)} ث`);
+      await sleep(wait);
       continue;
     }
     if (throttled) throw new FetchError(`${label}: تقييد معدل الطلبات (HTTP ${res.status}) — أعد المحاولة بعد دقيقة`);
@@ -176,7 +231,9 @@ async function fetchJson(url, label) {
 
 // ينزّل إلى Buffer مع إعادة محاولة متباعدة. خادم ملفات ويكيميديا يردّ 429 على
 // التنزيلات المتتابعة، وإعادة المحاولة فورًا تزيد الطين بلّة، فالانتظار يتصاعد.
-const DOWNLOAD_DELAYS = [0, 2500, 7000, 15_000];
+// تهدئة تصاعدية تبلغ الدقيقة: حين يقول الخادم «أعد بعد دقيقة» فالاستسلام بعد
+// خمس عشرة ثانية يُهدر الموضوع بلا سبب، والانتظار أرخص من فقدان الصورة.
+const DOWNLOAD_DELAYS = [0, 2500, 7000, 15_000, 30_000, 60_000];
 async function downloadBuffer(url, { cap, partial }) {
   if (!hostAllowed(url)) throw new FetchError(`المضيف غير مسموح: ${hostOf(url)}`);
   let lastError;
@@ -357,9 +414,36 @@ export function commonsRedirect(title, info) {
   return `«${asked}» تحويلة في كومنز إلى ملف آخر: «${actual}» — أعد الأمر بالاسم الحقيقي إن كان هو المقصود`;
 }
 
-async function fetchCommonsFile(title, kind) {
-  const data = await fetchJson(commonsUrl({ titles: title }), 'كومنز');
-  const page = data.query?.pages?.[0];
+// بيانات عدة ملفات في طلب واحد.
+//
+// كانت كل صورة تكلّف طلبًا مستقلًا على واجهة كومنز، فحزمة من 240 موضوعًا تعني 240
+// طلبًا — وهو ما استنزف حصّتنا حتى صار الردّ تهدئةً من نصف دقيقة. والواجهة تقبل
+// خمسين عنوانًا في الطلب الواحد، فالدفعة تخفض الطلبات إلى الخُمس من العُشر.
+const metaCache = new Map();
+
+export async function primeCommonsFiles(titles, kind) {
+  const wanted = [...new Set(titles.filter((t) => t && !metaCache.has(`${kind}:${t}`)))];
+  for (let i = 0; i < wanted.length; i += 50) {
+    const slice = wanted.slice(i, i + 50);
+    const data = await fetchJson(commonsUrl({ titles: slice.join('|') }), 'كومنز');
+    const normalized = new Map((data.query?.normalized || []).map((n) => [n.to, n.from]));
+    for (const page of data.query?.pages || []) {
+      const asked = normalized.get(page.title) ?? page.title;
+      metaCache.set(`${kind}:${asked}`, page);
+      metaCache.set(`${kind}:${page.title}`, page);
+    }
+    // العناوين المفقودة تُخزَّن أيضًا كي لا يُعاد سؤال الخادم عنها.
+    for (const title of slice) if (!metaCache.has(`${kind}:${title}`)) metaCache.set(`${kind}:${title}`, null);
+  }
+}
+
+export async function fetchCommonsFile(title, kind) {
+  let page = metaCache.get(`${kind}:${title}`);
+  if (page === undefined) {
+    const data = await fetchJson(commonsUrl({ titles: title }), 'كومنز');
+    page = data.query?.pages?.[0] ?? null;
+    metaCache.set(`${kind}:${title}`, page);
+  }
   if (!page || page.missing || !page.imageinfo) throw new NoCandidateError(`لا يوجد ملف بهذا الاسم في كومنز: ${title}`);
   // صفحة التحويلة في كومنز تُرجع بيانات الملف الهدف تحت الاسم المطلوب، فينزل
   // ملف مختلف تمامًا بصمت وبإسناد باسم غير اسمه. ‏--from تعني «هذا العنصر بعينه»،
@@ -516,7 +600,7 @@ async function fetchFrom(from, kind) {
 // ---------------------------------------------------------------- المعالجة
 
 // sharp يُحمَّل عند الحاجة فقط: --list والصوت لا يحتاجانه، وتعطّله يُبلَّغ بسطر واحد لا بتتبّع.
-async function loadSharp() {
+export async function loadSharp() {
   try {
     return (await import('sharp')).default;
   } catch (error) {
@@ -538,7 +622,7 @@ async function processImage(sharp, input, maxBytes) {
   throw new BudgetError(`الصورة ${fmtKb(last.bytes)} تتجاوز الميزانية ${fmtKb(maxBytes)} حتى بعد كل التخفيضات`);
 }
 
-async function resolveFfmpeg() {
+export async function resolveFfmpeg() {
   const candidates = [];
   if (process.env.FFMPEG_PATH) candidates.push(process.env.FFMPEG_PATH);
   try { candidates.push((await import('ffmpeg-static')).default); } catch { /* غير مثبّت؛ نجرّب PATH */ }
@@ -579,7 +663,7 @@ async function processAudio(ffmpeg, input, output, maxBytes) {
 const audioExt = (url) => (new URL(url).pathname.match(/\.(mp3|ogg|oga|opus|wav|flac|m4a|aac|webm)$/i) || ['', 'bin'])[1];
 
 // ينزّل المرشح ويعالجه ويكتب الملف النهائي. يعيد { bytes, width, height, durationSec }.
-async function acquire(c, { kind, ffmpeg, sharp, maxBytes, outPath }) {
+export async function acquire(c, { kind, ffmpeg, sharp, maxBytes, outPath }) {
   if (c.provider === 'archive' && !c.downloadUrl) await resolveArchiveFile(c);
   if (c.reject) throw new NoCandidateError(c.reject);
   const buffer = kind === 'audio'
@@ -608,7 +692,7 @@ async function acquire(c, { kind, ffmpeg, sharp, maxBytes, outPath }) {
 
 // يقرأ سجل النسب ويتحقق أنه مصفوفة JSON. يُستدعى قبل أي عمل شبكي (سجل تالف = لا نبدأ)
 // ثم مرة أخرى عند الحفظ ليُبنى التحديث على أحدث نسخة على القرص.
-async function readSourceIndex(dir) {
+export async function readSourceIndex(dir) {
   const file = path.join(dir, '_sources.json');
   const rel = path.relative(ROOT, file);
   let text;
@@ -627,11 +711,31 @@ async function readSourceIndex(dir) {
   }
 }
 
-async function saveSourceRecord(dir, record) {
-  const { file, list } = await readSourceIndex(dir);
-  const i = list.findIndex((r) => r.file === record.file);
-  if (i === -1) list.push(record); else list[i] = record;
-  await writeFile(file, `${JSON.stringify(list, null, 2)}\n`, 'utf8');
+// الكتابة في سجل المصادر قراءةٌ ثم تعديل ثم كتابة، فبناءان متزامنان للحزمة نفسها
+// يفقد أحدهما سجلات الآخر بصمت. قفل مجلد ذرّي يجعل الكتابة تتابعية.
+async function withIndexLock(dir, fn) {
+  const lock = path.join(dir, '.sources-lock');
+  for (let attempt = 0; attempt < 600; attempt++) {
+    try {
+      await mkdir(lock);
+    } catch (error) {
+      if (error.code !== 'EEXIST') throw error;
+      await new Promise((resolve) => setTimeout(resolve, 50));
+      continue;
+    }
+    try { return await fn(); } finally { await rm(lock, { recursive: true, force: true }); }
+  }
+  // تعذّر القفل نصف دقيقة: الكتابة بلا قفل أهون من إسقاط السجل.
+  return fn();
+}
+
+export async function saveSourceRecord(dir, record) {
+  await withIndexLock(dir, async () => {
+    const { file, list } = await readSourceIndex(dir);
+    const i = list.findIndex((r) => r.file === record.file);
+    if (i === -1) list.push(record); else list[i] = record;
+    await writeFile(file, `${JSON.stringify(list, null, 2)}\n`, 'utf8');
+  });
 }
 
 function describe(c, kind) {

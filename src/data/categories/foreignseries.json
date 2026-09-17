@@ -7,2400 +7,2917 @@
     {
       "p": 200,
       "topic": "شخصيات",
-      "q": "في «فريندز»، من الجار الإحصائي؟",
-      "a": "تشاندلر",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «صراع العروش»، من الملقّبة بـ«أم التنانين»؟",
+      "a": "دنيريس تارغاريان",
+      "alt": [
+        "دينيريس",
+        "Daenerys"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-200-049"
     },
     {
       "p": 200,
       "topic": "شخصيات",
-      "q": "في «فريندز»، من الطاهي؟",
-      "a": "مونيكا",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «بريزون بريك»، من المهندس الذي دخل السجن عمدًا لينقذ أخاه؟",
+      "a": "مايكل سكوفيلد",
+      "alt": [
+        "Michael Scofield"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break",
       "verified": true,
       "qid": "foreignseries-200-050"
     },
     {
       "p": 200,
       "topic": "شخصيات",
-      "q": "في «فريندز»، من الساكن الكسول في الشقة؟",
-      "a": "جوي",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «سترينجر ثينغز»، من الفتاة الهاربة من المختبر بقواها الذهنية؟",
+      "a": "إيليفن",
+      "alt": [
+        "إليفن",
+        "Eleven"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-200-051"
     },
     {
       "p": 200,
       "topic": "شخصيات",
-      "q": "في «صراع العروش»، من Bastard الشمال؟",
-      "a": "جون سنو",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «لا كاسا دي بابيل»، من يدير السرقة كلها من خارج المبنى؟",
+      "a": "البروفيسور",
+      "alt": [
+        "El Profesor",
+        "الأستاذ"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-200-052"
     },
     {
       "p": 200,
       "topic": "شخصيات",
-      "q": "في «صراع العروش»، من أم التنانين؟",
-      "a": "دنيرس",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «ذا ووكينغ ديد»، من نائب الشريف الذي أفاق من غيبوبته على عالم منهار؟",
+      "a": "ريك غرايمز",
+      "alt": [
+        "Rick Grimes"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-053"
     },
     {
       "p": 200,
       "topic": "شخصيات",
-      "q": "في «بريزون بريك»، من المهندس؟",
-      "a": "مايكل",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «هاوس»، من الطبيب الأعرج الذي يحل الحالات المستعصية؟",
+      "a": "غريغوري هاوس",
+      "alt": [
+        "Gregory House"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/House_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-054"
     },
     {
       "p": 200,
       "topic": "أماكن",
-      "q": "في «فريندز»، ما المقهى؟",
+      "q": "في «فريندز»، ما اسم المقهى الذي تجتمع فيه المجموعة دائمًا؟",
       "a": "سنترال بيرك",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "alt": [
+        "Central Perk"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-200-055"
     },
     {
       "p": 200,
       "topic": "أماكن",
-      "q": "في «بريزون بريك»، ما السجن؟",
+      "q": "في «بريزون بريك»، ما اسم السجن الذي يدور فيه الموسم الأول؟",
       "a": "فوكس ريفر",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "alt": [
+        "Fox River"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break",
       "verified": true,
       "qid": "foreignseries-200-056"
     },
     {
       "p": 200,
       "topic": "أماكن",
-      "q": "في «شرلوك»، ما الشارع؟",
-      "a": "بيكر ستريت",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «سترينجر ثينغز»، في أي بلدة أمريكية صغيرة تقع الأحداث؟",
+      "a": "هوكينز",
+      "alt": [
+        "Hawkins"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-200-057"
     },
     {
       "p": 200,
       "topic": "أماكن",
-      "q": "في «هاوس أوف كاردز»، ما البيت؟",
-      "a": "البيت الأبيض دراما",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «صراع العروش»، ما اسم معقل الشمال الذي يحكمه آل ستارك؟",
+      "a": "وينترفيل",
+      "alt": [
+        "ونترفل",
+        "Winterfell"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-200-058"
     },
     {
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «فريندز»، ما الزفاف المتكرر؟",
-      "a": "زفاف الأصدقاء",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «شرلوك»، ما عنوان شقة المحقق في لندن؟",
+      "a": "221 بي بيكر ستريت",
+      "alt": [
+        "بيكر ستريت",
+        "221B Baker Street"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-059"
     },
     {
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «صراع العروش»، ما الحفل الدموي؟",
-      "a": "الزفاف الأحمر",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «فريندز»، في أي مدينة يعيش الأصدقاء الستة؟",
+      "a": "نيويورك",
+      "alt": [
+        "New York"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-200-060"
     },
     {
       "p": 200,
       "topic": "أحداث",
-      "q": "في «شرلوك»، ما القضية؟",
-      "a": "قضية بيكري",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «صراع العروش»، ما اسم المذبحة التي وقعت أثناء عرس؟",
+      "a": "الزفاف الأحمر",
+      "alt": [
+        "Red Wedding",
+        "العرس الأحمر"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-200-061"
     },
     {
       "p": 200,
       "topic": "أحداث",
-      "q": "في «سترينجر ثينغز»، ما الاختفاء؟",
-      "a": "اختفاء ويل",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «سترينجر ثينغز»، من الصبي الذي يختفي في الحلقة الأولى؟",
+      "a": "ويل بايرز",
+      "alt": [
+        "Will Byers"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-200-062"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «فريندز»، من زوجة الطاهية لاحقا؟",
-      "a": "تشاندلر زوج",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «لا كاسا دي بابيل»، ما أول مبنى تحتله العصابة؟",
+      "a": "دار سك النقود",
+      "alt": [
+        "Royal Mint",
+        "دار السك الملكية"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-200-063"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «صراع العروش»، من المستشار؟",
-      "a": "تيريون",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «بريزون بريك»، أين خبّأ البطل مخطط الهروب كاملًا؟",
+      "a": "في وشم جسده",
+      "alt": [
+        "الوشم"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break",
       "verified": true,
       "qid": "foreignseries-200-064"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «بريزون بريك»، من الأخ؟",
-      "a": "لينكولن",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «لوست»، ما رقم الرحلة التي تحطمت على الجزيرة؟",
+      "a": "815",
+      "alt": [
+        "رحلة 815"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-065"
     },
     {
       "p": 200,
-      "topic": "علاقات",
-      "q": "في «لوست»، من الطبيبة؟",
-      "a": "جولييت",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «ذا ووكينغ ديد»، بأي اسم ينادي الناجون الموتى الأحياء؟",
+      "a": "السائرون",
+      "alt": [
+        "ووكرز",
+        "Walkers"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-066"
     },
     {
       "p": 200,
       "topic": "علاقات",
-      "q": "في «شرلوك»، من الشريك؟",
-      "a": "واطسون",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «بريزون بريك»، من الأخ المحكوم بالإعدام ظلمًا؟",
+      "a": "لينكولن بوروز",
+      "alt": [
+        "Lincoln Burrows"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break",
       "verified": true,
       "qid": "foreignseries-200-067"
     },
     {
       "p": 200,
       "topic": "علاقات",
-      "q": "في «سترينجر ثينغز»، من الأخت؟",
-      "a": "إليفن",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «فريندز»، من شقيق مونيكا داخل المجموعة؟",
+      "a": "روس غيلر",
+      "alt": [
+        "Ross Geller"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-200-068"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «فريندز»، ما الجملة الأشهر؟",
-      "a": "كيف حالك",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «سترينجر ثينغز»، من الأم التي كلّمت ابنها عبر أضواء الزينة؟",
+      "a": "جويس بايرز",
+      "alt": [
+        "Joyce Byers"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-200-069"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «صراع العروش»، ما جملة الشمال؟",
-      "a": "الشتاء قادم",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «شرلوك»، من الطبيب العائد من أفغانستان ورفيق المحقق؟",
+      "a": "جون واطسون",
+      "alt": [
+        "John Watson",
+        "واتسون"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-070"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «بريزون بريك»، ما النداء؟",
-      "a": "يا سكوفيلد",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «صراع العروش»، من القزم الداهية في عائلة لانيستر؟",
+      "a": "تيريون",
+      "alt": [
+        "Tyrion",
+        "تيريون لانيستر"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-200-071"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «لوست»، ما النداء؟",
-      "a": "يا جاك",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «هاوس»، من طبيب الأورام الذي يبقى صديق هاوس الوحيد؟",
+      "a": "جيمس ويلسون",
+      "alt": [
+        "James Wilson"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/House_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-072"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «شرلوك»، ما النداء؟",
-      "a": "يا واطسون",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «صراع العروش»، ما شعار بيت ستارك؟",
+      "a": "الشتاء قادم",
+      "alt": [
+        "Winter is coming"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-200-073"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «سترينجر ثينغز»، ما النداء؟",
-      "a": "يا إليفن",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «لا كاسا دي بابيل»، ما الأغنية التي يرددها اللصوص في كل انتصار؟",
+      "a": "بيلا تشاو",
+      "alt": [
+        "Bella Ciao"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-200-074"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «فريندز»، ما الأريكة؟",
-      "a": "أريكة المقهى",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «هاوس»، ما القاعدة التي يكررها الطبيب عن مرضاه؟",
+      "a": "الجميع يكذبون",
+      "alt": [
+        "كلهم يكذبون",
+        "Everybody lies"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/House_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-075"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «صراع العروش»، ما العرش؟",
-      "a": "العرش الحديدي",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «فريندز»، بأي جملة يغازل جوي كل فتاة يقابلها؟",
+      "a": "كيف حالكِ؟",
+      "alt": [
+        "How you doin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-200-076"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «بريزون بريك»، ما الوشم؟",
-      "a": "وشم الخطة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ذا ووكينغ ديد»، ما الاسم الذي أطلقه نيغان على مضربه؟",
+      "a": "لوسيل",
+      "alt": [
+        "Lucille"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-077"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «شرلوك»، ما الكمان؟",
-      "a": "كمان شرلوك",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «فريندز»، بأي جملة برر روس خيانته لريتشل؟",
+      "a": "كنا منفصلين",
+      "alt": [
+        "We were on a break"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-200-078"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «سترينجر ثينغز»، ما وافل؟",
-      "a": "وافل إليفن",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «صراع العروش»، ما العرش الذي يتنازع عليه الجميع؟",
+      "a": "العرش الحديدي",
+      "alt": [
+        "Iron Throne"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-200-079"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «فريندز»، ما الوداع؟",
-      "a": "وداع الأصدقاء",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «سترينجر ثينغز»، ما الحلوى المجمّدة التي تلتهمها الفتاة ذات القوى؟",
+      "a": "الوافل",
+      "alt": [
+        "إيغو",
+        "Eggo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-200-080"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «بريزون بريك»، ما الخروج؟",
-      "a": "خروج السجن",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «لا كاسا دي بابيل»، وجه أي فنان إسباني رُسم على أقنعة العصابة؟",
+      "a": "سلفادور دالي",
+      "alt": [
+        "دالي",
+        "Dali"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-200-081"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «فريندز»، ما مجموعة الشقة؟",
-      "a": "آل الأصدقاء",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «شرلوك»، ما الآلة الموسيقية التي يعزفها المحقق في شقته؟",
+      "a": "الكمان",
+      "alt": [
+        "Violin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-082"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «صراع العروش»، ما بيت الشمال؟",
-      "a": "آل ستارك",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «هاوس»، على أي شيء يتكئ الطبيب في مشيه؟",
+      "a": "عصا",
+      "alt": [
+        "عكاز",
+        "Cane"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/House_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-083"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «بريزون بريك»، ما الأخوة؟",
-      "a": "آل سكوفيلد",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا ووكينغ ديد»، ما السلاح المميز الذي يحمله داريل؟",
+      "a": "القوس والنشاب",
+      "alt": [
+        "كروسبو",
+        "Crossbow"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-084"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «لوست»، ما الناجون؟",
-      "a": "ناجو الجزيرة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «صراع العروش»، ما مصير نيد ستارك في نهاية الموسم الأول؟",
+      "a": "قُطع رأسه",
+      "alt": [
+        "أُعدم",
+        "قطع رأسه"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-200-085"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «شرلوك»، ما الشقة؟",
-      "a": "آل بيكر",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «لوست»، ما سلسلة الأرقام التي تلاحق الناجين؟",
+      "a": "4 8 15 16 23 42",
+      "alt": [
+        "الأرقام"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-086"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «سترينجر ثينغز»، ما البيت؟",
-      "a": "آل بايرز",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «سترينجر ثينغز»، ما اسم الوحش الذي خطف الصبي في الموسم الأول؟",
+      "a": "ديموغورغون",
+      "alt": [
+        "Demogorgon"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-200-087"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ذا أوفيس»، من المدير؟",
-      "a": "مدير المكتب",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «بريزون بريك»، ما التهمة التي لُفّقت للأخ الأكبر؟",
+      "a": "قتل شقيق نائب الرئيس",
+      "alt": [
+        "قتل تيرينس ستيدمان"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break",
       "verified": true,
       "qid": "foreignseries-200-088"
     },
     {
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ذا ويتشر»، من الصياد؟",
-      "a": "صياد الوحوش",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «هاوس»، ما المسكّن الذي أدمنه الطبيب طوال المسلسل؟",
+      "a": "فيكودين",
+      "alt": [
+        "Vicodin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/House_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-089"
     },
     {
       "p": 200,
-      "topic": "أماكن",
-      "q": "في «لا كاسا دي بابيل»، ما الدار؟",
-      "a": "دار الورق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «لا كاسا دي بابيل»، ماذا فعلت العصابة بدل سرقة المال الجاهز؟",
+      "a": "طبعت المال بنفسها",
+      "alt": [
+        "طباعة النقود"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-200-090"
     },
     {
       "p": 200,
-      "topic": "أماكن",
-      "q": "في «ذا كراون»، ما القصر؟",
-      "a": "قصر التاج",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «صراع العروش»، ما اسم الحرس المرابط على الجدار الجليدي؟",
+      "a": "حرس الليل",
+      "alt": [
+        "Night's Watch"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-200-091"
     },
     {
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «هاوس»، ما التشخيص؟",
-      "a": "تشخيص هاوس",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «سترينجر ثينغز»، ما لعبة الطاولة التي يعشقها الأصدقاء في القبو؟",
+      "a": "دنجنز أند دراغونز",
+      "alt": [
+        "الزنازين والتنانين",
+        "Dungeons and Dragons"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-200-092"
     },
     {
       "p": 200,
-      "topic": "أشياء",
-      "q": "في «سوبرناتشورال»، ما السلاح؟",
-      "a": "سلاح الأخوين",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ذا ووكينغ ديد»، ما اسم الجماعة التي يقودها نيغان؟",
+      "a": "المخلّصون",
+      "alt": [
+        "Saviors"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-093"
     },
     {
       "p": 200,
-      "topic": "نهايات مواسم",
-      "q": "في «فامباير دايريز»، ما الختام؟",
-      "a": "ختام اليوميات",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «لوست»، بأي اسم يعرف الناجون سكان الجزيرة الغرباء؟",
+      "a": "الآخرون",
+      "alt": [
+        "The Others"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-094"
     },
     {
       "p": 200,
-      "topic": "عائلات وعشائر",
-      "q": "في «قوانتم ليب»، ما الفريق؟",
-      "a": "فريق القفزة",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «لا كاسا دي بابيل»، بأي نوع من الأسماء ينادي أفراد العصابة بعضهم؟",
+      "a": "أسماء مدن",
+      "alt": [
+        "مدن العالم"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-200-095"
     },
     {
       "p": 200,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا أوفيس»، ما النداء؟",
-      "a": "يا مدير المكتب",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «شرلوك»، من عدو المحقق اللدود وعقل الجريمة في لندن؟",
+      "a": "جيم موريارتي",
+      "alt": [
+        "Moriarty",
+        "موريارتي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
       "verified": true,
       "qid": "foreignseries-200-096"
     },
     {
       "p": 400,
       "topic": "شخصيات",
-      "q": "في «ذا أوفيس»، من البطل في الطبقة ق؟",
-      "a": "بطل ذا أوفيس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «ذا أوفيس»، من مدير فرع سكرانتون المهووس بأن يكون محبوبًا؟",
+      "a": "مايكل سكوت",
+      "alt": [
+        "Michael Scott"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-049"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «ذا أوفيس»، ما الدار في الطبقة ق؟",
-      "a": "دار ذا أوفيس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «بيكي بلايندرز»، من زعيم العصابة صاحب النظرة الباردة؟",
+      "a": "توماس شيلبي",
+      "alt": [
+        "تومي شيلبي",
+        "Thomas Shelby"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-050"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ذا أوفيس»، ما النزاع في الطبقة ق؟",
-      "a": "نزاع ذا أوفيس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «فايكنغز»، من المزارع الذي صار ملكًا وقاد الغارات غربًا؟",
+      "a": "راغنار لوثبروك",
+      "alt": [
+        "Ragnar Lothbrok"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-051"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «ذا أوفيس»، من الرفيق في الطبقة ق؟",
-      "a": "رفيق ذا أوفيس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «ذا ويتشر»، من الصياد أبيض الشعر الذي يقتل الوحوش بأجر؟",
+      "a": "غيرالت أوف ريفيا",
+      "alt": [
+        "جيرالت",
+        "Geralt"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-052"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا أوفيس»، ما النداء في الطبقة ق؟",
-      "a": "نداء ذا أوفيس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «سوتس»، من المحامي النجم الذي وظّف مساعدًا بلا شهادة؟",
+      "a": "هارفي سبيكتر",
+      "alt": [
+        "Harvey Specter"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Suits_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-053"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ذا أوفيس»، ما الختم في الطبقة ق؟",
-      "a": "ختم ذا أوفيس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «ديكستر»، من محلل آثار الدماء الذي يقتل المجرمين ليلًا؟",
+      "a": "ديكستر مورغان",
+      "alt": [
+        "Dexter Morgan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dexter_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-054"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ذا ويتشر»، من البطل في الطبقة ق؟",
-      "a": "بطل ذا ويتشر ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «بيكي بلايندرز»، في أي مدينة إنجليزية تدور الأحداث؟",
+      "a": "برمنغهام",
+      "alt": [
+        "Birmingham"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-055"
     },
     {
       "p": 400,
       "topic": "أماكن",
-      "q": "في «ذا ويتشر»، ما الدار في الطبقة ق؟",
-      "a": "دار ذا ويتشر ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «دارك»، ما اسم البلدة الألمانية التي يختفي فيها الأطفال؟",
+      "a": "فيندن",
+      "alt": [
+        "Winden"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-056"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ذا ويتشر»، ما النزاع في الطبقة ق؟",
-      "a": "نزاع ذا ويتشر ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «فايكنغز»، ما اسم المرفأ الذي انطلقت منه سفن راغنار؟",
+      "a": "كاتيغات",
+      "alt": [
+        "Kattegat"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-057"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «ذا ويتشر»، من الرفيق في الطبقة ق؟",
-      "a": "رفيق ذا ويتشر ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «هاوس»، ما اسم المستشفى الذي يعمل فيه فريق التشخيص؟",
+      "a": "برينستون بلينزبورو",
+      "alt": [
+        "Princeton-Plainsboro"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/House_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-058"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا ويتشر»، ما النداء في الطبقة ق؟",
-      "a": "نداء ذا ويتشر ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «إيليت»، ما اسم المدرسة الفاخرة التي تجمع الأغنياء والفقراء؟",
+      "a": "لاس إنسيناس",
+      "alt": [
+        "Las Encinas"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Elite_(Spanish_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-059"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ذا ويتشر»، ما الختم في الطبقة ق؟",
-      "a": "ختم ذا ويتشر ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «لا كاسا دي بابيل»، ما المبنى الذي اقتحمته العصابة في سرقتها الثانية؟",
+      "a": "مصرف إسبانيا",
+      "alt": [
+        "بنك إسبانيا",
+        "Bank of Spain"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-400-060"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «لا كاسا دي بابيل»، من البطل في الطبقة ق؟",
-      "a": "بطل لا كاسا دي بابيل ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «تشيرنوبل»، أي مفاعل هو الذي انفجر في المحطة؟",
+      "a": "المفاعل الرابع",
+      "alt": [
+        "الرابع",
+        "Reactor 4"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
       "verified": true,
       "qid": "foreignseries-400-061"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «لا كاسا دي بابيل»، ما الدار في الطبقة ق؟",
-      "a": "دار لا كاسا دي بابيل ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «فايكنغز»، ما اسم الدير الذي نهبه الفايكنغ في أول غارة على إنجلترا؟",
+      "a": "ليندسفارن",
+      "alt": [
+        "Lindisfarne"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-062"
     },
     {
       "p": 400,
       "topic": "أحداث",
-      "q": "في «لا كاسا دي بابيل»، ما النزاع في الطبقة ق؟",
-      "a": "نزاع لا كاسا دي بابيل ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «ناركوس»، ما اسم السجن الفاخر الذي بناه إسكوبار لنفسه؟",
+      "a": "لا كاتدرال",
+      "alt": [
+        "La Catedral"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Narcos",
       "verified": true,
       "qid": "foreignseries-400-063"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «لا كاسا دي بابيل»، من الرفيق في الطبقة ق؟",
-      "a": "رفيق لا كاسا دي بابيل ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «داونتون آبي»، أي كارثة بحرية تفتتح أحداث المسلسل؟",
+      "a": "غرق تيتانيك",
+      "alt": [
+        "Titanic"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Downton_Abbey",
       "verified": true,
       "qid": "foreignseries-400-064"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «لا كاسا دي بابيل»، ما النداء في الطبقة ق؟",
-      "a": "نداء لا كاسا دي بابيل ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «سترينجر ثينغز»، ما اسم المركز التجاري الذي يحتل الموسم الثالث؟",
+      "a": "ستاركورت",
+      "alt": [
+        "Starcourt"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-400-065"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «لا كاسا دي بابيل»، ما الختم في الطبقة ق؟",
-      "a": "ختم لا كاسا دي بابيل ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «لوبان»، من أي متحف باريسي سرق أسان قلادة الملكة؟",
+      "a": "اللوفر",
+      "alt": [
+        "Louvre"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lupin_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-066"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ذا كراون»، من البطل في الطبقة ق؟",
-      "a": "بطل ذا كراون ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «هاو آي مِت يور ماذر»، من الأب الذي يروي لولديه قصة لقائه بأمهما؟",
+      "a": "تيد موزبي",
+      "alt": [
+        "Ted Mosby"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/How_I_Met_Your_Mother",
       "verified": true,
       "qid": "foreignseries-400-067"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «ذا كراون»، ما الدار في الطبقة ق؟",
-      "a": "دار ذا كراون ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «ذا فامباير دايريز»، ما اسم عائلة الأخوين مصاصي الدماء؟",
+      "a": "سالفاتور",
+      "alt": [
+        "Salvatore"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Vampire_Diaries",
       "verified": true,
       "qid": "foreignseries-400-068"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «ذا كراون»، ما النزاع في الطبقة ق؟",
-      "a": "نزاع ذا كراون ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «سوبرناتشورال»، ما اسم عائلة الأخوين صائدي الشياطين؟",
+      "a": "وينشستر",
+      "alt": [
+        "Winchester"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Supernatural_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-069"
     },
     {
       "p": 400,
       "topic": "علاقات",
-      "q": "في «ذا كراون»، من الرفيق في الطبقة ق؟",
-      "a": "رفيق ذا كراون ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «ذا أوفيس»، من موظف المبيعات الذي أحب موظفة الاستقبال سرًّا؟",
+      "a": "جيم هالبرت",
+      "alt": [
+        "Jim Halpert"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-070"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا كراون»، ما النداء في الطبقة ق؟",
-      "a": "نداء ذا كراون ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «بيكي بلايندرز»، من العمّة التي تمسك خزينة العائلة؟",
+      "a": "بولي غراي",
+      "alt": [
+        "Polly Gray",
+        "بولي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-071"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «ذا كراون»، ما الختم في الطبقة ق؟",
-      "a": "ختم ذا كراون ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «لا كاسا دي بابيل»، ما صلة برلين بالعقل المدبر للسرقة؟",
+      "a": "أخوه الأكبر",
+      "alt": [
+        "أخوه"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-400-072"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «هاوس»، من البطل في الطبقة ق؟",
-      "a": "بطل هاوس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «شرلوك»، بأي وصف يصحح المحقق من يسمّيه مختلًا نفسيًا؟",
+      "a": "معتل اجتماعي عالي الأداء",
+      "alt": [
+        "سوسيوباث"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-073"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «هاوس»، ما الدار في الطبقة ق؟",
-      "a": "دار هاوس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «تشيرنوبل»، بأي سؤال يفتتح ليغاسوف المسلسل ويختمه؟",
+      "a": "ما ثمن الأكاذيب؟",
+      "alt": [
+        "ما ثمن الكذب"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
       "verified": true,
       "qid": "foreignseries-400-074"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «هاوس»، ما النزاع في الطبقة ق؟",
-      "a": "نزاع هاوس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «غريز أناتومي»، بأي عبارة تصف كريستينا صديقتها ميريديث؟",
+      "a": "أنتِ شخصي",
+      "alt": [
+        "You're my person"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Grey%27s_Anatomy",
       "verified": true,
       "qid": "foreignseries-400-075"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «هاوس»، من الرفيق في الطبقة ق؟",
-      "a": "رفيق هاوس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ذا ماندالوريان»، ما العبارة التي يرددها أبناء العشيرة؟",
+      "a": "هذا هو الطريق",
+      "alt": [
+        "This is the Way"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Mandalorian",
       "verified": true,
       "qid": "foreignseries-400-076"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «هاوس»، ما النداء في الطبقة ق؟",
-      "a": "نداء هاوس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «بيكي بلايندرز»، بأي عبارة يُختم كل أمر تصدره العصابة؟",
+      "a": "بأمر من بيكي بلايندرز",
+      "alt": [
+        "By order of the Peaky Blinders"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-077"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «هاوس»، ما الختم في الطبقة ق؟",
-      "a": "ختم هاوس ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «صراع العروش»، ما العبارة الفاليرية التي تعني «كل الرجال يموتون»؟",
+      "a": "فالار مورغوليس",
+      "alt": [
+        "Valar Morghulis"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-400-078"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «سوبرناتشورال»، من البطل في الطبقة ق؟",
-      "a": "بطل سوبرناتشورال ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «سوبرناتشورال»، ما السيارة السوداء التي يجوب بها الأخوان أمريكا؟",
+      "a": "إمبالا 1967",
+      "alt": [
+        "Impala",
+        "شيفروليه إمبالا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Supernatural_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-079"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «سوبرناتشورال»، ما الدار في الطبقة ق؟",
-      "a": "دار سوبرناتشورال ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا ويتشر»، ما الاسم الذي يطلقه غيرالت على كل فرس يركبها؟",
+      "a": "روتش",
+      "alt": [
+        "Roach"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-080"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «سوبرناتشورال»، ما النزاع في الطبقة ق؟",
-      "a": "نزاع سوبرناتشورال ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «بيكي بلايندرز»، ما الذي يخبئه رجال العصابة في حواف قبعاتهم؟",
+      "a": "شفرات حلاقة",
+      "alt": [
+        "أمواس"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-081"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «سوبرناتشورال»، من الرفيق في الطبقة ق؟",
-      "a": "رفيق سوبرناتشورال ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا ماندالوريان»، ما المعدن النادر الذي يصنع منه الصياد درعه؟",
+      "a": "البيسكار",
+      "alt": [
+        "Beskar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Mandalorian",
       "verified": true,
       "qid": "foreignseries-400-082"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «سوبرناتشورال»، ما النداء في الطبقة ق؟",
-      "a": "نداء سوبرناتشورال ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «هاو آي مِت يور ماذر»، ما الشيء الأصفر الذي يقود تيد إلى حبيبته؟",
+      "a": "مظلة صفراء",
+      "alt": [
+        "الشمسية الصفراء"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/How_I_Met_Your_Mother",
       "verified": true,
       "qid": "foreignseries-400-083"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «سوبرناتشورال»، ما الختم في الطبقة ق؟",
-      "a": "ختم سوبرناتشورال ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا لاست أوف أس»، ما الفطر الذي حوّل البشر إلى مسوخ؟",
+      "a": "كورديسيبس",
+      "alt": [
+        "Cordyceps"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Last_of_Us_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-084"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «فامباير دايريز»، من البطل في الطبقة ق؟",
-      "a": "بطل فامباير دايريز ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «مستر روبوت»، من تبيّن أن الرجل الذي يوجّه إليوت في الحقيقة؟",
+      "a": "والده الراحل",
+      "alt": [
+        "أبوه",
+        "إدوارد ألدرسون"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mr._Robot",
       "verified": true,
       "qid": "foreignseries-400-085"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «فامباير دايريز»، ما الدار في الطبقة ق؟",
-      "a": "دار فامباير دايريز ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «سوتس»، ما السر الذي يخفيه مايك روس عن كل زبائنه؟",
+      "a": "لم يدرس الحقوق",
+      "alt": [
+        "ليس محاميًا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Suits_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-400-086"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «فامباير دايريز»، ما النزاع في الطبقة ق؟",
-      "a": "نزاع فامباير دايريز ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «دارك»، كم سنة تفصل بين الحقب التي يتنقل بينها المسافرون؟",
+      "a": "ثلاث وثلاثون سنة",
+      "alt": [
+        "33 سنة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-087"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «فامباير دايريز»، من الرفيق في الطبقة ق؟",
-      "a": "رفيق فامباير دايريز ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «بريدجرتون»، من تبيّن في ختام الموسم الأول أنها ليدي ويسلداون؟",
+      "a": "بينيلوبي فيذرينغتون",
+      "alt": [
+        "بينيلوبي",
+        "Penelope"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bridgerton",
       "verified": true,
       "qid": "foreignseries-400-088"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «فامباير دايريز»، ما النداء في الطبقة ق؟",
-      "a": "نداء فامباير دايريز ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «سترينجر ثينغز»، أي أغنية أنقذت ماكس من قبضة فيكنا؟",
+      "a": "رَنِنغ أب ذات هيل",
+      "alt": [
+        "Running Up That Hill",
+        "أغنية كيت بوش"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-400-089"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «فامباير دايريز»، ما الختم في الطبقة ق؟",
-      "a": "ختم فامباير دايريز ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «بريزون بريك»، ما اسم السجن البنمي الذي وقع فيه الإخوة لاحقًا؟",
+      "a": "سونا",
+      "alt": [
+        "Sona"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break",
       "verified": true,
       "qid": "foreignseries-400-090"
     },
     {
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «قوانتم ليب»، من البطل في الطبقة ق؟",
-      "a": "بطل قوانتم ليب ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «مستر روبوت»، ما اسم جماعة القرصنة التي ينضم إليها إليوت؟",
+      "a": "إف سوسايتي",
+      "alt": [
+        "fsociety"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mr._Robot",
       "verified": true,
       "qid": "foreignseries-400-091"
     },
     {
       "p": 400,
-      "topic": "أماكن",
-      "q": "في «قوانتم ليب»، ما الدار في الطبقة ق؟",
-      "a": "دار قوانتم ليب ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ذا بويز»، ما اسم فريق الأبطال الخارقين الفاسد؟",
+      "a": "السبعة",
+      "alt": [
+        "The Seven"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Boys_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-092"
     },
     {
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «قوانتم ليب»، ما النزاع في الطبقة ق؟",
-      "a": "نزاع قوانتم ليب ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ذا ووكينغ ديد»، ما اسم البلدة المحصّنة التي يحكمها «الحاكم»؟",
+      "a": "وودبري",
+      "alt": [
+        "Woodbury"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-093"
     },
     {
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «قوانتم ليب»، من الرفيق في الطبقة ق؟",
-      "a": "رفيق قوانتم ليب ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ذا كراون»، حول أي ملكة بريطانية تدور أحداث المسلسل؟",
+      "a": "إليزابيث الثانية",
+      "alt": [
+        "Elizabeth II"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Crown_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-094"
     },
     {
       "p": 400,
-      "topic": "ألقاب وجمل",
-      "q": "في «قوانتم ليب»، ما النداء في الطبقة ق؟",
-      "a": "نداء قوانتم ليب ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «لوست»، ما اسم المشروع العلمي الذي بنى محطات الجزيرة؟",
+      "a": "مبادرة دارما",
+      "alt": [
+        "Dharma Initiative",
+        "دارما"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-095"
     },
     {
       "p": 400,
-      "topic": "أشياء",
-      "q": "في «قوانتم ليب»، ما الختم في الطبقة ق؟",
-      "a": "ختم قوانتم ليب ق",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ويندزداي»، ما اسم الأكاديمية التي تلتحق بها البطلة؟",
+      "a": "نيفرمور",
+      "alt": [
+        "Nevermore"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wednesday_(TV_series)",
       "verified": true,
       "qid": "foreignseries-400-096"
     },
     {
       "p": 600,
       "topic": "شخصيات",
-      "q": "في «ذا أوفيس»، من البطل في الطبقة س؟",
-      "a": "بطل ذا أوفيس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «ذا واير»، من اللص الملثم الذي لا يسطو إلا على تجار المخدرات؟",
+      "a": "عمر ليتل",
+      "alt": [
+        "Omar Little"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wire",
       "verified": true,
       "qid": "foreignseries-600-049"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «ذا أوفيس»، ما الدار في الطبقة س؟",
-      "a": "دار ذا أوفيس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «ماد مِن»، من مدير الإبداع الغامض في وكالة الإعلانات؟",
+      "a": "دون درايبر",
+      "alt": [
+        "Don Draper"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mad_Men",
       "verified": true,
       "qid": "foreignseries-600-050"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ذا أوفيس»، ما النزاع في الطبقة س؟",
-      "a": "نزاع ذا أوفيس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «24»، من عميل وحدة مكافحة الإرهاب الذي ينقذ البلاد في يوم واحد؟",
+      "a": "جاك باور",
+      "alt": [
+        "Jack Bauer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/24_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-051"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «ذا أوفيس»، من الرفيق في الطبقة س؟",
-      "a": "رفيق ذا أوفيس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «ويستوورلد»، من المضيفة المزارعة التي تستيقظ على حقيقة المتنزه؟",
+      "a": "دولوريس",
+      "alt": [
+        "Dolores"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Westworld_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-052"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا أوفيس»، ما النداء في الطبقة س؟",
-      "a": "نداء ذا أوفيس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «كراش لاندينغ أون يو»، من ضابط الشمال الذي يخبئ الوريثة الهاربة؟",
+      "a": "ري جيونغ هيوك",
+      "alt": [
+        "Ri Jeong-hyeok"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Crash_Landing_on_You",
       "verified": true,
       "qid": "foreignseries-600-053"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ذا أوفيس»، ما الختم في الطبقة س؟",
-      "a": "ختم ذا أوفيس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «سبارتاكوس»، من سيد المصارعين الذي اشترى البطل ودرّبه؟",
+      "a": "باتياتوس",
+      "alt": [
+        "Batiatus"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spartacus_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-054"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ذا ويتشر»، من البطل في الطبقة س؟",
-      "a": "بطل ذا ويتشر س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «ذا واير»، في أي مدينة أمريكية تدور أحداث المسلسل؟",
+      "a": "بالتيمور",
+      "alt": [
+        "Baltimore"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wire",
       "verified": true,
       "qid": "foreignseries-600-055"
     },
     {
       "p": 600,
       "topic": "أماكن",
-      "q": "في «ذا ويتشر»، ما الدار في الطبقة س؟",
-      "a": "دار ذا ويتشر س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «سيفرنس»، ما اسم الشركة التي تفصل ذاكرة موظفيها عن حياتهم؟",
+      "a": "لومون",
+      "alt": [
+        "Lumon"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Severance_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-056"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ذا ويتشر»، ما النزاع في الطبقة س؟",
-      "a": "نزاع ذا ويتشر س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «سكسشن»، ما اسم الإمبراطورية الإعلامية التي يتصارع عليها آل روي؟",
+      "a": "وايستار رويكو",
+      "alt": [
+        "Waystar Royco"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Succession_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-057"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «ذا ويتشر»، من الرفيق في الطبقة س؟",
-      "a": "رفيق ذا ويتشر س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «ديسندنتس أوف ذا سن»، إلى أي بلد متخيّل تُرسل الوحدة والفريق الطبي؟",
+      "a": "أوروك",
+      "alt": [
+        "Uruk"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Descendants_of_the_Sun",
       "verified": true,
       "qid": "foreignseries-600-058"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا ويتشر»، ما النداء في الطبقة س؟",
-      "a": "نداء ذا ويتشر س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «ذا سوبرانوز»، ما اسم الملهى الذي يتخذه توني مقرًّا لأعماله؟",
+      "a": "بادا بينغ",
+      "alt": [
+        "Bada Bing"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Sopranos",
       "verified": true,
       "qid": "foreignseries-600-059"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ذا ويتشر»، ما الختم في الطبقة س؟",
-      "a": "ختم ذا ويتشر س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «ذا هاندميدز تيل»، ما اسم الدولة الدينية التي قامت على أنقاض أمريكا؟",
+      "a": "جلعاد",
+      "alt": [
+        "Gilead"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Handmaid%27s_Tale_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-060"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «لا كاسا دي بابيل»، من البطل في الطبقة س؟",
-      "a": "بطل لا كاسا دي بابيل س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «صراع العروش»، ما العبارة التي انسحق عندها عقل هودور في الماضي؟",
+      "a": "أمسك الباب",
+      "alt": [
+        "Hold the door"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-600-061"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «لا كاسا دي بابيل»، ما الدار في الطبقة س؟",
-      "a": "دار لا كاسا دي بابيل س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «لوست»، كل كم دقيقة كان يجب ضغط زر الفتحة؟",
+      "a": "كل 108 دقائق",
+      "alt": [
+        "108 دقيقة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-062"
     },
     {
       "p": 600,
       "topic": "أحداث",
-      "q": "في «لا كاسا دي بابيل»، ما النزاع في الطبقة س؟",
-      "a": "نزاع لا كاسا دي بابيل س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «ذا أوفيس»، أين أقام جيم وبام زفافهما أخيرًا؟",
+      "a": "شلالات نياغرا",
+      "alt": [
+        "Niagara Falls"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-600-063"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «لا كاسا دي بابيل»، من الرفيق في الطبقة س؟",
-      "a": "رفيق لا كاسا دي بابيل س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «تشيرنوبل»، بأي اسم عُرف العمال الذين أزاحوا الغرافيت عن السطح؟",
+      "a": "الروبوتات الحيوية",
+      "alt": [
+        "Bio-robots"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
       "verified": true,
       "qid": "foreignseries-600-064"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «لا كاسا دي بابيل»، ما النداء في الطبقة س؟",
-      "a": "نداء لا كاسا دي بابيل س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «فايكنغز»، كيف أنهى الملك آيلا حياة راغنار؟",
+      "a": "ألقاه في حفرة أفاعٍ",
+      "alt": [
+        "حفرة الأفاعي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
       "verified": true,
       "qid": "foreignseries-600-065"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «لا كاسا دي بابيل»، ما الختم في الطبقة س؟",
-      "a": "ختم لا كاسا دي بابيل س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «باند أوف براذرز»، ما اسم السرية المظلية التي يتتبعها المسلسل؟",
+      "a": "سرية إيزي",
+      "alt": [
+        "Easy Company"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Band_of_Brothers_(miniseries)",
       "verified": true,
       "qid": "foreignseries-600-066"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ذا كراون»، من البطل في الطبقة س؟",
-      "a": "بطل ذا كراون س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «ذا كراون»، من الزوج الذي رافق الملكة منذ الحلقة الأولى؟",
+      "a": "الأمير فيليب",
+      "alt": [
+        "Prince Philip"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Crown_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-067"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «ذا كراون»، ما الدار في الطبقة س؟",
-      "a": "دار ذا كراون س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «دارك»، من الشخصية التي تبيّن أنها يوناس بعد أن شاخ؟",
+      "a": "آدم",
+      "alt": [
+        "Adam"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-068"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «ذا كراون»، ما النزاع في الطبقة س؟",
-      "a": "نزاع ذا كراون س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «ذا سوبرانوز»، من الطبيبة النفسية التي يفضي إليها توني بأسراره؟",
+      "a": "جينيفر ميلفي",
+      "alt": [
+        "Dr. Melfi",
+        "ميلفي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Sopranos",
       "verified": true,
       "qid": "foreignseries-600-069"
     },
     {
       "p": 600,
       "topic": "علاقات",
-      "q": "في «ذا كراون»، من الرفيق في الطبقة س؟",
-      "a": "رفيق ذا كراون س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «ديكستر»، من الشقيقة التي تعمل في قسم شرطة ميامي نفسه؟",
+      "a": "ديبرا مورغان",
+      "alt": [
+        "Debra"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dexter_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-070"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا كراون»، ما النداء في الطبقة س؟",
-      "a": "نداء ذا كراون س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «غوبلن»، ماذا على «عروس الغول» أن تفعل لتحرر روحه؟",
+      "a": "تنزع السيف من صدره",
+      "alt": [
+        "نزع السيف"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Guardian:_The_Lonely_and_Great_God",
       "verified": true,
       "qid": "foreignseries-600-071"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «ذا كراون»، ما الختم في الطبقة س؟",
-      "a": "ختم ذا كراون س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «ذا ويتشر»، بأي عرف قديم صار غيرالت مسؤولًا عن الأميرة سيري؟",
+      "a": "قانون المفاجأة",
+      "alt": [
+        "Law of Surprise"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-072"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «هاوس»، من البطل في الطبقة س؟",
-      "a": "بطل هاوس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «إكس فايلز»، ما العبارة التي تُختم بها مقدمة كل حلقة؟",
+      "a": "الحقيقة في الخارج",
+      "alt": [
+        "The Truth Is Out There"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_X-Files",
       "verified": true,
       "qid": "foreignseries-600-073"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «هاوس»، ما الدار في الطبقة س؟",
-      "a": "دار هاوس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ويستوورلد»، ما العبارة الشكسبيرية التي توقظ المضيفين؟",
+      "a": "هذه المتع العنيفة نهايتها عنيفة",
+      "alt": [
+        "These violent delights"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Westworld_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-074"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «هاوس»، ما النزاع في الطبقة س؟",
-      "a": "نزاع هاوس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «تروو ديتكتيف»، ما العبارة الشهيرة عن الزمن في الموسم الأول؟",
+      "a": "الزمن دائرة مسطحة",
+      "alt": [
+        "Time is a flat circle"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/True_Detective",
       "verified": true,
       "qid": "foreignseries-600-075"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «هاوس»، من الرفيق في الطبقة س؟",
-      "a": "رفيق هاوس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «دكتور هو»، ما الصرخة التي يطلقها الداليك قبل إطلاق النار؟",
+      "a": "أبيدوا",
+      "alt": [
+        "Exterminate"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Doctor_Who",
       "verified": true,
       "qid": "foreignseries-600-076"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «هاوس»، ما النداء في الطبقة س؟",
-      "a": "نداء هاوس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «صراع العروش»، بأي جملة أعلن روس بولتون طعنته لروب ستارك؟",
+      "a": "آل لانيستر يبلغونك تحياتهم",
+      "alt": [
+        "الليستر يبلغونك تحياتهم"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-600-077"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «هاوس»، ما الختم في الطبقة س؟",
-      "a": "ختم هاوس س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «فارغو»، ما الجملة التي تفتتح كل حلقة رغم أنها غير صحيحة؟",
+      "a": "هذه قصة حقيقية",
+      "alt": [
+        "This is a true story"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fargo_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-078"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «سوبرناتشورال»، من البطل في الطبقة س؟",
-      "a": "بطل سوبرناتشورال س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «دكتور هو»، ما اسم مركبة الزمن التي تشبه كشك شرطة أزرق؟",
+      "a": "التارديس",
+      "alt": [
+        "TARDIS"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Doctor_Who",
       "verified": true,
       "qid": "foreignseries-600-079"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «سوبرناتشورال»، ما الدار في الطبقة س؟",
-      "a": "دار سوبرناتشورال س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «إكس فايلز»، ماذا كُتب على ملصق الصحن الطائر في مكتب مولدر؟",
+      "a": "أريد أن أصدّق",
+      "alt": [
+        "I Want to Believe"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_X-Files",
       "verified": true,
       "qid": "foreignseries-600-080"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «سوبرناتشورال»، ما النزاع في الطبقة س؟",
-      "a": "نزاع سوبرناتشورال س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ديكستر»، ما الأثر الذي يحتفظ به القاتل من كل ضحية؟",
+      "a": "شريحة دم",
+      "alt": [
+        "blood slide"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dexter_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-081"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «سوبرناتشورال»، من الرفيق في الطبقة س؟",
-      "a": "رفيق سوبرناتشورال س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «سوبرناتشورال»، ما اسم الملاك الذي صار رفيق الأخوين؟",
+      "a": "كاستيال",
+      "alt": [
+        "Castiel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Supernatural_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-600-082"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «سوبرناتشورال»، ما النداء في الطبقة س؟",
-      "a": "نداء سوبرناتشورال س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا ويتشر»، ما الأغنية التي نظمها الشاعر ياسكير في مديح رفيقه؟",
+      "a": "ارمِ عملة لساحرك",
+      "alt": [
+        "Toss a Coin to Your Witcher"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-083"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «سوبرناتشورال»، ما الختم في الطبقة س؟",
-      "a": "ختم سوبرناتشورال س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ماكغايفر»، ما الأداة الصغيرة التي يحل بها البطل كل أزمة؟",
+      "a": "مطواة سويسرية",
+      "alt": [
+        "سكين الجيش السويسري"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/MacGyver_(1985_TV_series)",
       "verified": true,
       "qid": "foreignseries-600-084"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «فامباير دايريز»، من البطل في الطبقة س؟",
-      "a": "بطل فامباير دايريز س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «صراع العروش»، من وجّه الطعنة التي أنهت ملك الليل؟",
+      "a": "آريا ستارك",
+      "alt": [
+        "Arya Stark",
+        "أريا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-600-085"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «فامباير دايريز»، ما الدار في الطبقة س؟",
-      "a": "دار فامباير دايريز س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «مستر روبوت»، بأي اسم عُرف الهجوم الذي محا ديون العالم؟",
+      "a": "هجوم خمسة تسعة",
+      "alt": [
+        "5/9"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mr._Robot",
       "verified": true,
       "qid": "foreignseries-600-086"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «فامباير دايريز»، ما النزاع في الطبقة س؟",
-      "a": "نزاع فامباير دايريز س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «سيفرنس»، ما اسم القسم الغامض الذي يعمل فيه مارك وزملاؤه؟",
+      "a": "تنقية البيانات الكبرى",
+      "alt": [
+        "Macrodata Refinement"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Severance_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-087"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «فامباير دايريز»، من الرفيق في الطبقة س؟",
-      "a": "رفيق فامباير دايريز س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «لا كاسا دي بابيل»، ما الاسم الحقيقي للعقل المدبر؟",
+      "a": "سيرجيو ماركينا",
+      "alt": [
+        "Sergio Marquina"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-600-088"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «فامباير دايريز»، ما النداء في الطبقة س؟",
-      "a": "نداء فامباير دايريز س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «ذا لاست أوف أس»، لماذا صارت إيلي أمل البشرية كله؟",
+      "a": "لأنها محصّنة ضد العدوى",
+      "alt": [
+        "مناعتها"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Last_of_Us_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-089"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «فامباير دايريز»، ما الختم في الطبقة س؟",
-      "a": "ختم فامباير دايريز س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «توين بيكس»، ما السؤال الذي أشعل المسلسل كله؟",
+      "a": "من قتل لورا بالمر؟",
+      "alt": [
+        "Who killed Laura Palmer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Twin_Peaks",
       "verified": true,
       "qid": "foreignseries-600-090"
     },
     {
       "p": 600,
-      "topic": "شخصيات",
-      "q": "في «قوانتم ليب»، من البطل في الطبقة س؟",
-      "a": "بطل قوانتم ليب س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «سونز أوف أناركي»، ما نوع النادي الذي تدور حوله الأحداث؟",
+      "a": "نادي دراجات نارية",
+      "alt": [
+        "عصابة دراجات"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sons_of_Anarchy",
       "verified": true,
       "qid": "foreignseries-600-091"
     },
     {
       "p": 600,
-      "topic": "أماكن",
-      "q": "في «قوانتم ليب»، ما الدار في الطبقة س؟",
-      "a": "دار قوانتم ليب س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «كينغدوم»، في أي حقبة كورية ينتشر وباء الموتى؟",
+      "a": "عصر جوسون",
+      "alt": [
+        "Joseon"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kingdom_(South_Korean_TV_series)",
       "verified": true,
       "qid": "foreignseries-600-092"
     },
     {
       "p": 600,
-      "topic": "أحداث",
-      "q": "في «قوانتم ليب»، ما النزاع في الطبقة س؟",
-      "a": "نزاع قوانتم ليب س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ذا بويز»، ما المادة التي تمنح الخارقين قواهم سرًّا؟",
+      "a": "المركّب في",
+      "alt": [
+        "Compound V"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Boys_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-093"
     },
     {
       "p": 600,
-      "topic": "علاقات",
-      "q": "في «قوانتم ليب»، من الرفيق في الطبقة س؟",
-      "a": "رفيق قوانتم ليب س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «بيكي بلايندرز»، ما اسم الحانة التي تتخذها العائلة مقرًّا؟",
+      "a": "الغاريسون",
+      "alt": [
+        "The Garrison"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-094"
     },
     {
       "p": 600,
-      "topic": "ألقاب وجمل",
-      "q": "في «قوانتم ليب»، ما النداء في الطبقة س؟",
-      "a": "نداء قوانتم ليب س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «مايندهنتر»، أي وحدة في الإف بي آي تستجوب القتلة المتسلسلين؟",
+      "a": "وحدة العلوم السلوكية",
+      "alt": [
+        "Behavioral Science Unit"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mindhunter_(TV_series)",
       "verified": true,
       "qid": "foreignseries-600-095"
     },
     {
       "p": 600,
-      "topic": "أشياء",
-      "q": "في «قوانتم ليب»، ما الختم في الطبقة س؟",
-      "a": "ختم قوانتم ليب س",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ناركوس»، ما الكارتل الذي تلاحقه الوكالة في الموسم الثالث؟",
+      "a": "كارتل كالي",
+      "alt": [
+        "Cali Cartel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Narcos",
       "verified": true,
       "qid": "foreignseries-600-096"
     },
     {
       "p": 800,
       "topic": "شخصيات",
-      "q": "في «ذا أوفيس»، من البطل في الطبقة ث؟",
-      "a": "بطل ذا أوفيس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «فريندز»، ما اسم القرد الذي تبنّاه روس في الموسم الأول؟",
+      "a": "مارسيل",
+      "alt": [
+        "Marcel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-800-049"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «ذا أوفيس»، ما الدار في الطبقة ث؟",
-      "a": "دار ذا أوفيس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «فريندز»، ما الاسم المستعار الذي تنتحله فيبي كلما كذبت؟",
+      "a": "ريجينا فالانج",
+      "alt": [
+        "Regina Phalange"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-800-050"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ذا أوفيس»، ما النزاع في الطبقة ث؟",
-      "a": "نزاع ذا أوفيس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «ذا أوفيس»، ما اللقب الوظيفي الذي يتمسك به دوايت بشراسة؟",
+      "a": "مساعد مدير الفرع",
+      "alt": [
+        "Assistant to the Regional Manager"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-800-051"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «ذا أوفيس»، من الرفيق في الطبقة ث؟",
-      "a": "رفيق ذا أوفيس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «لوست»، من الاسكتلندي الذي أمضى سنوات في المحطة يضغط الزر؟",
+      "a": "ديزموند",
+      "alt": [
+        "Desmond"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-052"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا أوفيس»، ما النداء في الطبقة ث؟",
-      "a": "نداء ذا أوفيس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «سترينجر ثينغز»، ما الاسم البشري لفيكنا قبل تحوّله؟",
+      "a": "هنري كريل",
+      "alt": [
+        "Henry Creel",
+        "One"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-800-053"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ذا أوفيس»، ما الختم في الطبقة ث؟",
-      "a": "ختم ذا أوفيس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «صراع العروش»، ماذا كان اسم هودور قبل أن يفقد الكلام؟",
+      "a": "ويليس",
+      "alt": [
+        "Wylis"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-800-054"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ذا ويتشر»، من البطل في الطبقة ث؟",
-      "a": "بطل ذا ويتشر ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «ذا أوفيس»، ما اسم مزرعة الشمندر التي يملكها دوايت؟",
+      "a": "مزرعة شروت",
+      "alt": [
+        "Schrute Farms"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-800-055"
     },
     {
       "p": 800,
       "topic": "أماكن",
-      "q": "في «ذا ويتشر»، ما الدار في الطبقة ث؟",
-      "a": "دار ذا ويتشر ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «تروو ديتكتيف»، ما اسم المكان الذي يتحصن فيه القاتل في الختام؟",
+      "a": "كاركوزا",
+      "alt": [
+        "Carcosa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/True_Detective",
       "verified": true,
       "qid": "foreignseries-800-056"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ذا ويتشر»، ما النزاع في الطبقة ث؟",
-      "a": "نزاع ذا ويتشر ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «ذا سوبرانوز»، في أي مطعم جرى المشهد الأخير قبل العتمة؟",
+      "a": "هولستن",
+      "alt": [
+        "Holsten's"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Sopranos",
       "verified": true,
       "qid": "foreignseries-800-057"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «ذا ويتشر»، من الرفيق في الطبقة ث؟",
-      "a": "رفيق ذا ويتشر ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «ناركوس»، أي مدينة كولومبية كانت معقل كارتل إسكوبار؟",
+      "a": "ميديلين",
+      "alt": [
+        "Medellín"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Narcos",
       "verified": true,
       "qid": "foreignseries-800-058"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا ويتشر»، ما النداء في الطبقة ث؟",
-      "a": "نداء ذا ويتشر ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «داونتون آبي»، في أي مقاطعة إنجليزية تقع الضيعة؟",
+      "a": "يوركشير",
+      "alt": [
+        "Yorkshire"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Downton_Abbey",
       "verified": true,
       "qid": "foreignseries-800-059"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ذا ويتشر»، ما الختم في الطبقة ث؟",
-      "a": "ختم ذا ويتشر ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «تشيرنوبل»، ما المدينة التي أُخليت بالكامل بعد الانفجار؟",
+      "a": "بريبيات",
+      "alt": [
+        "Pripyat"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
       "verified": true,
       "qid": "foreignseries-800-060"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «لا كاسا دي بابيل»، من البطل في الطبقة ث؟",
-      "a": "بطل لا كاسا دي بابيل ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «لا كاسا دي بابيل»، ماذا استخرجت العصابة من خزائن المصرف؟",
+      "a": "سبائك الذهب",
+      "alt": [
+        "الذهب"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-800-061"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «لا كاسا دي بابيل»، ما الدار في الطبقة ث؟",
-      "a": "دار لا كاسا دي بابيل ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «صراع العروش»، ما اللحن الذي أنذر ببدء المذبحة في القاعة؟",
+      "a": "أمطار كاستامير",
+      "alt": [
+        "The Rains of Castamere"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-800-062"
     },
     {
       "p": 800,
       "topic": "أحداث",
-      "q": "في «لا كاسا دي بابيل»، ما النزاع في الطبقة ث؟",
-      "a": "نزاع لا كاسا دي بابيل ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «بريزون بريك»، ما الاسم الحركي للسجين ثيودور باغويل؟",
+      "a": "تي باغ",
+      "alt": [
+        "T-Bag"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break",
       "verified": true,
       "qid": "foreignseries-800-063"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «لا كاسا دي بابيل»، من الرفيق في الطبقة ث؟",
-      "a": "رفيق لا كاسا دي بابيل ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «تشيرنوبل»، كم ثانية سُمح لكل عامل بالبقاء فوق السطح؟",
+      "a": "تسعون ثانية",
+      "alt": [
+        "90 ثانية"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
       "verified": true,
       "qid": "foreignseries-800-064"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «لا كاسا دي بابيل»، ما النداء في الطبقة ث؟",
-      "a": "نداء لا كاسا دي بابيل ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «ذا أوفيس»، ما اسم فيلم التجسس الذي صوّره مايكل سرًّا لسنوات؟",
+      "a": "مستوى التهديد منتصف الليل",
+      "alt": [
+        "Threat Level Midnight"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Office_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-800-065"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «لا كاسا دي بابيل»، ما الختم في الطبقة ث؟",
-      "a": "ختم لا كاسا دي بابيل ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «لوست»، ماذا كتب تشارلي على كفّه قبل أن يغرق؟",
+      "a": "ليس قارب بيني",
+      "alt": [
+        "Not Penny's Boat"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-066"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ذا كراون»، من البطل في الطبقة ث؟",
-      "a": "بطل ذا كراون ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «فريندز»، ما اسم شقيقة فيبي التوأم؟",
+      "a": "أورسولا",
+      "alt": [
+        "Ursula"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-800-067"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «ذا كراون»، ما الدار في الطبقة ث؟",
-      "a": "دار ذا كراون ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «هاو آي مِت يور ماذر»، ما الاسم الحقيقي لأم أولاد تيد؟",
+      "a": "تريسي مكونيل",
+      "alt": [
+        "Tracy McConnell"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/How_I_Met_Your_Mother",
       "verified": true,
       "qid": "foreignseries-800-068"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «ذا كراون»، ما النزاع في الطبقة ث؟",
-      "a": "نزاع ذا كراون ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «دارك»، من تبيّن أنها مارثا بعد أن شاخت؟",
+      "a": "إيفا",
+      "alt": [
+        "Eva"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-069"
     },
     {
       "p": 800,
       "topic": "علاقات",
-      "q": "في «ذا كراون»، من الرفيق في الطبقة ث؟",
-      "a": "رفيق ذا كراون ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «صراع العروش»، من والدا جون سنو الحقيقيان؟",
+      "a": "ريغار وليانا",
+      "alt": [
+        "Rhaegar and Lyanna"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-800-070"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا كراون»، ما النداء في الطبقة ث؟",
-      "a": "نداء ذا كراون ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «بيكي بلايندرز»، من الزعيم الفاشي الذي واجهه تومي في المواسم الأخيرة؟",
+      "a": "أوزوالد موزلي",
+      "alt": [
+        "Oswald Mosley"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-071"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «ذا كراون»، ما الختم في الطبقة ث؟",
-      "a": "ختم ذا كراون ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «إيتايوان كلاس»، ما اسم الحانة التي فتحها البطل ليبني بها انتقامه؟",
+      "a": "دان بام",
+      "alt": [
+        "DanBam"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Itaewon_Class",
       "verified": true,
       "qid": "foreignseries-800-072"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «هاوس»، من البطل في الطبقة ث؟",
-      "a": "بطل هاوس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ذا واير»، ما اللحن الذي كان عمر يصفّره قبل ظهوره؟",
+      "a": "المزارع في الوادي",
+      "alt": [
+        "The Farmer in the Dell"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wire",
       "verified": true,
       "qid": "foreignseries-800-073"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «هاوس»، ما الدار في الطبقة ث؟",
-      "a": "دار هاوس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ذا بيغ بانغ ثيوري»، ما الكلمة التي يختم بها شيلدون مقالبه؟",
+      "a": "بازينغا",
+      "alt": [
+        "Bazinga"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Big_Bang_Theory",
       "verified": true,
       "qid": "foreignseries-800-074"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «هاوس»، ما النزاع في الطبقة ث؟",
-      "a": "نزاع هاوس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «دكتور هو»، ماذا يعني اسم مركبة الزمن حين يُفكّ اختصاره؟",
+      "a": "الزمان والأبعاد النسبية في الفضاء",
+      "alt": [
+        "Time And Relative Dimension In Space"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Doctor_Who",
       "verified": true,
       "qid": "foreignseries-800-075"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «هاوس»، من الرفيق في الطبقة ث؟",
-      "a": "رفيق هاوس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ذا سوبرانوز»، ما الأغنية التي كانت تُعزف لحظة انقطاع الصورة؟",
+      "a": "دونت ستوب بيليفن",
+      "alt": [
+        "Don't Stop Believin'"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Sopranos",
       "verified": true,
       "qid": "foreignseries-800-076"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «هاوس»، ما النداء في الطبقة ث؟",
-      "a": "نداء هاوس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ناركوس»، ما المعادلة التي كان إسكوبار يعرضها على خصومه؟",
+      "a": "فضة أو رصاص",
+      "alt": [
+        "Plata o plomo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Narcos",
       "verified": true,
       "qid": "foreignseries-800-077"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «هاوس»، ما الختم في الطبقة ث؟",
-      "a": "ختم هاوس ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «صراع العروش»، بأي عبارة يُردّ على تحية «كل الرجال يموتون»؟",
+      "a": "فالار دوهايريس",
+      "alt": [
+        "Valar Dohaeris"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-800-078"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «سوبرناتشورال»، من البطل في الطبقة ث؟",
-      "a": "بطل سوبرناتشورال ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «فريندز»، ما اسم البطريق المحشو الذي يعانقه جوي؟",
+      "a": "هاغزي",
+      "alt": [
+        "Hugsy"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-800-079"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «سوبرناتشورال»، ما الدار في الطبقة ث؟",
-      "a": "دار سوبرناتشورال ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «فريندز»، ما الكلمة التي صرخ بها روس وهو يصعد الأريكة في الدرج؟",
+      "a": "استدر",
+      "alt": [
+        "بيفوت",
+        "Pivot"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-800-080"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «سوبرناتشورال»، ما النزاع في الطبقة ث؟",
-      "a": "نزاع سوبرناتشورال ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا ويتشر»، ما اسم المملكة التي وُلدت فيها الأميرة سيري؟",
+      "a": "سينترا",
+      "alt": [
+        "Cintra"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-081"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «سوبرناتشورال»، من الرفيق في الطبقة ث؟",
-      "a": "رفيق سوبرناتشورال ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «سترينجر ثينغز»، ما اسم المخلوق الذي يسيطر على العقول في الموسم الثاني؟",
+      "a": "مايند فلاير",
+      "alt": [
+        "Mind Flayer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-800-082"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «سوبرناتشورال»، ما النداء في الطبقة ث؟",
-      "a": "نداء سوبرناتشورال ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «فايكنغز»، ما اسم القاعة التي يتمنى كل محارب أن ينتهي إليها؟",
+      "a": "فالهالا",
+      "alt": [
+        "Valhalla"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
       "verified": true,
       "qid": "foreignseries-800-083"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «سوبرناتشورال»، ما الختم في الطبقة ث؟",
-      "a": "ختم سوبرناتشورال ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا ماندالوريان»، ما اسم الصغير أخضر البشرة الذي يرافق الصياد؟",
+      "a": "غروغو",
+      "alt": [
+        "Grogu"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Mandalorian",
       "verified": true,
       "qid": "foreignseries-800-084"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «فامباير دايريز»، من البطل في الطبقة ث؟",
-      "a": "بطل فامباير دايريز ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «صراع العروش»، ماذا فعل التنين بالعرش بعد مقتل دنيريس؟",
+      "a": "أذابه بناره",
+      "alt": [
+        "أحرقه",
+        "أذابه"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-800-085"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «فامباير دايريز»، ما الدار في الطبقة ث؟",
-      "a": "دار فامباير دايريز ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «ديكستر»، ما اللقب الذي عُرف به القاتل آرثر ميتشل؟",
+      "a": "قاتل الثالوث",
+      "alt": [
+        "Trinity Killer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dexter_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-086"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «فامباير دايريز»، ما النزاع في الطبقة ث؟",
-      "a": "نزاع فامباير دايريز ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «مستر روبوت»، ما اسم الشركة العملاقة التي يسميها إليوت «شركة الشر»؟",
+      "a": "إي كورب",
+      "alt": [
+        "E Corp",
+        "إيفل كورب"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mr._Robot",
       "verified": true,
       "qid": "foreignseries-800-087"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «فامباير دايريز»، من الرفيق في الطبقة ث؟",
-      "a": "رفيق فامباير دايريز ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «سوتس»، بأي اسم عُرف المكتب في بداية المسلسل؟",
+      "a": "بيرسون هاردمان",
+      "alt": [
+        "Pearson Hardman"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Suits_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-800-088"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «فامباير دايريز»، ما النداء في الطبقة ث؟",
-      "a": "نداء فامباير دايريز ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «هاوس»، ما سبب عرج الطبيب وألمه المزمن؟",
+      "a": "احتشاء في عضلة ساقه",
+      "alt": [
+        "جلطة في ساقه"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/House_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-089"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «فامباير دايريز»، ما الختم في الطبقة ث؟",
-      "a": "ختم فامباير دايريز ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «بريزون بريك»، من الرجل الذي اتُّهم لينكولن بقتله وكان حيًّا؟",
+      "a": "تيرينس ستيدمان",
+      "alt": [
+        "Terrence Steadman"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break",
       "verified": true,
       "qid": "foreignseries-800-090"
     },
     {
       "p": 800,
-      "topic": "شخصيات",
-      "q": "في «قوانتم ليب»، من البطل في الطبقة ث؟",
-      "a": "بطل قوانتم ليب ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «لا كاسا دي بابيل»، من المحققة التي فاوضت العصابة ثم انحازت إليها؟",
+      "a": "راكيل موريو",
+      "alt": [
+        "Raquel Murillo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-800-091"
     },
     {
       "p": 800,
-      "topic": "أماكن",
-      "q": "في «قوانتم ليب»، ما الدار في الطبقة ث؟",
-      "a": "دار قوانتم ليب ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «فايكنغز»، ما اسم الراهب الذي أسره راغنار فصار أقرب أصدقائه؟",
+      "a": "آثلستان",
+      "alt": [
+        "Athelstan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
       "verified": true,
       "qid": "foreignseries-800-092"
     },
     {
       "p": 800,
-      "topic": "أحداث",
-      "q": "في «قوانتم ليب»، ما النزاع في الطبقة ث؟",
-      "a": "نزاع قوانتم ليب ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ذا ووكينغ ديد»، ما اسم المجتمع الذي تبيّن أن أهله يأكلون البشر؟",
+      "a": "تيرمينوس",
+      "alt": [
+        "Terminus"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-093"
     },
     {
       "p": 800,
-      "topic": "علاقات",
-      "q": "في «قوانتم ليب»، من الرفيق في الطبقة ث؟",
-      "a": "رفيق قوانتم ليب ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «بيكي بلايندرز»، من زعيم المافيا الإيطالية الذي جاء للثأر في الموسم الرابع؟",
+      "a": "لوكا تشانغريتا",
+      "alt": [
+        "Luca Changretta"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-094"
     },
     {
       "p": 800,
-      "topic": "ألقاب وجمل",
-      "q": "في «قوانتم ليب»، ما النداء في الطبقة ث؟",
-      "a": "نداء قوانتم ليب ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «لوست»، من زعيم «الآخرين» صاحب النظارة والدهاء؟",
+      "a": "بن لاينوس",
+      "alt": [
+        "Ben Linus"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-800-095"
     },
     {
       "p": 800,
-      "topic": "أشياء",
-      "q": "في «قوانتم ليب»، ما الختم في الطبقة ث؟",
-      "a": "ختم قوانتم ليب ث",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «تشيرنوبل»، من المسؤول الحكومي الذي رافق ليغاسوف في الموقع؟",
+      "a": "بوريس شيربينا",
+      "alt": [
+        "Boris Shcherbina"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
       "verified": true,
       "qid": "foreignseries-800-096"
     },
     {
       "p": 1000,
       "topic": "شخصيات",
-      "q": "في «ذا أوفيس»، من البطل في الطبقة ص؟",
-      "a": "بطل ذا أوفيس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «فريندز»، ما الاسم الأوسط الذي يخفيه تشاندلر خجلًا؟",
+      "a": "ميوريل",
+      "alt": [
+        "Muriel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-1000-049"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ذا أوفيس»، ما الدار في الطبقة ص؟",
-      "a": "دار ذا أوفيس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «فريندز»، ما اسم وكيلة أعمال جوي الفنية؟",
+      "a": "إستيل",
+      "alt": [
+        "Estelle"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-1000-050"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ذا أوفيس»، ما النزاع في الطبقة ص؟",
-      "a": "نزاع ذا أوفيس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «هاوس»، ما منصب الدكتورة كادي في المستشفى؟",
+      "a": "عميدة الطب",
+      "alt": [
+        "مديرة المستشفى"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/House_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-051"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ذا أوفيس»، من الرفيق في الطبقة ص؟",
-      "a": "رفيق ذا أوفيس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «لوست»، من الفائز باليانصيب الذي لاحقته الأرقام؟",
+      "a": "هيرلي",
+      "alt": [
+        "Hurley"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-052"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا أوفيس»، ما النداء في الطبقة ص؟",
-      "a": "نداء ذا أوفيس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «ذا بويز»، ما اسم زعيم الفريق صاحب العباءة الأمريكية؟",
+      "a": "هوملاندر",
+      "alt": [
+        "Homelander"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Boys_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-053"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ذا أوفيس»، ما الختم في الطبقة ص؟",
-      "a": "ختم ذا أوفيس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "شخصيات",
+      "q": "في «سيفرنس»، من مؤسس الشركة الذي تُقدَّس أقواله كالوحي؟",
+      "a": "كير إيغان",
+      "alt": [
+        "Kier Eagan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Severance_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-054"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ذا ويتشر»، من البطل في الطبقة ص؟",
-      "a": "بطل ذا ويتشر ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «سترينجر ثينغز»، ما اسم محل المثلجات الذي عمل فيه ستيف؟",
+      "a": "سكوبس آهوي",
+      "alt": [
+        "Scoops Ahoy"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-1000-055"
     },
     {
       "p": 1000,
       "topic": "أماكن",
-      "q": "في «ذا ويتشر»، ما الدار في الطبقة ص؟",
-      "a": "دار ذا ويتشر ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «ماد مِن»، ما اسم الوكالة الإعلانية في بداية المسلسل؟",
+      "a": "ستيرلنغ كوبر",
+      "alt": [
+        "Sterling Cooper"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mad_Men",
       "verified": true,
       "qid": "foreignseries-1000-056"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ذا ويتشر»، ما النزاع في الطبقة ص؟",
-      "a": "نزاع ذا ويتشر ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «لوست»، ما اسم المحطة التي فيها الزر والعدّاد؟",
+      "a": "البجعة",
+      "alt": [
+        "The Swan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-057"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ذا ويتشر»، من الرفيق في الطبقة ص؟",
-      "a": "رفيق ذا ويتشر ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «صراع العروش»، ما اسم الحصن الذي يرابط فيه حرس الجدار؟",
+      "a": "القلعة السوداء",
+      "alt": [
+        "Castle Black"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-1000-058"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا ويتشر»، ما النداء في الطبقة ص؟",
-      "a": "نداء ذا ويتشر ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «بيكي بلايندرز»، ما النشاط التجاري المعلن لعائلة شيلبي؟",
+      "a": "محل مراهنات",
+      "alt": [
+        "مكتب رهانات"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-059"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ذا ويتشر»، ما الختم في الطبقة ص؟",
-      "a": "ختم ذا ويتشر ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أماكن",
+      "q": "في «هاو آي مِت يور ماذر»، ما اسم الحانة التي يجتمع فيها الأصدقاء؟",
+      "a": "ماكلارنز",
+      "alt": [
+        "MacLaren's"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/How_I_Met_Your_Mother",
       "verified": true,
       "qid": "foreignseries-1000-060"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «لا كاسا دي بابيل»، من البطل في الطبقة ص؟",
-      "a": "بطل لا كاسا دي بابيل ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «تشيرنوبل»، ما التوقيت الذي صار عنوانًا للحلقة الأولى؟",
+      "a": "1:23:45",
+      "alt": [
+        "الواحدة وثلاث وعشرين دقيقة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
       "verified": true,
       "qid": "foreignseries-1000-061"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «لا كاسا دي بابيل»، ما الدار في الطبقة ص؟",
-      "a": "دار لا كاسا دي بابيل ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «صراع العروش»، ما اسم المعركة التي استعاد بها جون سنو معقل أهله؟",
+      "a": "معركة الأوغاد",
+      "alt": [
+        "Battle of the Bastards"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-1000-062"
     },
     {
       "p": 1000,
       "topic": "أحداث",
-      "q": "في «لا كاسا دي بابيل»، ما النزاع في الطبقة ص؟",
-      "a": "نزاع لا كاسا دي بابيل ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «فريندز»، بأي سجل زواج يُعيَّر روس بين أصدقائه؟",
+      "a": "ثلاث زيجات فاشلة",
+      "alt": [
+        "ثلاث مرات"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-1000-063"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «لا كاسا دي بابيل»، من الرفيق في الطبقة ص؟",
-      "a": "رفيق لا كاسا دي بابيل ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «لا كاسا دي بابيل»، ما اسم ابنة السفير البريطاني المحتجزة رهينة؟",
+      "a": "أليسون باركر",
+      "alt": [
+        "Alison Parker"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-1000-064"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «لا كاسا دي بابيل»، ما النداء في الطبقة ص؟",
-      "a": "نداء لا كاسا دي بابيل ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «ديكستر»، ما اللقب الذي عُرف به أول قاتل واجهه البطل؟",
+      "a": "قاتل شاحنة الثلج",
+      "alt": [
+        "Ice Truck Killer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dexter_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-065"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «لا كاسا دي بابيل»، ما الختم في الطبقة ص؟",
-      "a": "ختم لا كاسا دي بابيل ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أحداث",
+      "q": "في «مستر روبوت»، ما اسم الشركة التي كان إليوت يعمل فيها نهارًا؟",
+      "a": "أولسيف",
+      "alt": [
+        "Allsafe"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mr._Robot",
       "verified": true,
       "qid": "foreignseries-1000-066"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ذا كراون»، من البطل في الطبقة ص؟",
-      "a": "بطل ذا كراون ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «فريندز»، ما اسم زوجة روس الإنجليزية التي نطق اسم غيرها في زفافها؟",
+      "a": "إميلي",
+      "alt": [
+        "Emily"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
       "qid": "foreignseries-1000-067"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ذا كراون»، ما الدار في الطبقة ص؟",
-      "a": "دار ذا كراون ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «ذا سوبرانوز»، من الأم التي دبّرت مع العم جونيور محاولة قتل توني؟",
+      "a": "ليفيا",
+      "alt": [
+        "Livia"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Sopranos",
       "verified": true,
       "qid": "foreignseries-1000-068"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ذا كراون»، ما النزاع في الطبقة ص؟",
-      "a": "نزاع ذا كراون ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «فايكنغز»، من المحاربة التي كانت أولى زوجات راغنار؟",
+      "a": "لاغرتا",
+      "alt": [
+        "Lagertha"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-069"
     },
     {
       "p": 1000,
       "topic": "علاقات",
-      "q": "في «ذا كراون»، من الرفيق في الطبقة ص؟",
-      "a": "رفيق ذا كراون ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "q": "في «كراش لاندينغ أون يو»، ما اسم وريثة الأزياء التي حملتها الريح شمالًا؟",
+      "a": "يون سي ري",
+      "alt": [
+        "Yoon Se-ri"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Crash_Landing_on_You",
       "verified": true,
       "qid": "foreignseries-1000-070"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «ذا كراون»، ما النداء في الطبقة ص؟",
-      "a": "نداء ذا كراون ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «إيتايوان كلاس»، ما اسم المجموعة التي أقسم البطل على إسقاطها؟",
+      "a": "مجموعة جانغا",
+      "alt": [
+        "Jangga"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Itaewon_Class",
       "verified": true,
       "qid": "foreignseries-1000-071"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «ذا كراون»، ما الختم في الطبقة ص؟",
-      "a": "ختم ذا كراون ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "علاقات",
+      "q": "في «ذا ويتشر»، من الساحرة التي تصير أقرب حلفاء غيرالت؟",
+      "a": "ينيفر",
+      "alt": [
+        "Yennefer",
+        "ينيفر أوف فينغربيرغ"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-072"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «هاوس»، من البطل في الطبقة ص؟",
-      "a": "بطل هاوس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «لوست»، ما الجملة التي يصرخ بها جون لوك رفضًا للعجز؟",
+      "a": "لا تخبرني بما لا أستطيع فعله",
+      "alt": [
+        "Don't tell me what I can't do"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-073"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «هاوس»، ما الدار في الطبقة ص؟",
-      "a": "دار هاوس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ذا هاندميدز تيل»، ما التحية التي تتبادلها الجواري في الطريق؟",
+      "a": "مبارك ثمرك",
+      "alt": [
+        "Blessed be the fruit"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Handmaid%27s_Tale_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-074"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «هاوس»، ما النزاع في الطبقة ص؟",
-      "a": "نزاع هاوس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ذا واير»، ما العبارة التي تختصر قانون الشارع في المسلسل؟",
+      "a": "اللعبة هي اللعبة",
+      "alt": [
+        "The game is the game"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wire",
       "verified": true,
       "qid": "foreignseries-1000-075"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «هاوس»، من الرفيق في الطبقة ص؟",
-      "a": "رفيق هاوس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «مستر روبوت»، بأي جملة يخاطب إليوت المشاهد في أول حلقة؟",
+      "a": "مرحبًا يا صديقي",
+      "alt": [
+        "Hello, friend"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mr._Robot",
       "verified": true,
       "qid": "foreignseries-1000-076"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «هاوس»، ما النداء في الطبقة ص؟",
-      "a": "نداء هاوس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «سكسشن»، ما اللعبة المذلّة التي أجبر لوغان رجاله عليها؟",
+      "a": "الخنزير على الأرض",
+      "alt": [
+        "Boar on the Floor"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Succession_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-077"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «هاوس»، ما الختم في الطبقة ص؟",
-      "a": "ختم هاوس ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جمل شهيرة",
+      "q": "في «ذا ويتشر»، ما الذي يهتز في عنق غيرالت كلما اقترب وحش؟",
+      "a": "ميداليته",
+      "alt": [
+        "الميدالية",
+        "ميدالية الساحر"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-078"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «سوبرناتشورال»، من البطل في الطبقة ص؟",
-      "a": "بطل سوبرناتشورال ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «سوبرناتشورال»، ما الأغنية التي ترافق ملخّص الأحداث في كل ختام موسم؟",
+      "a": "كاري أون وايوارد سن",
+      "alt": [
+        "Carry On Wayward Son"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Supernatural_(American_TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-079"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «سوبرناتشورال»، ما الدار في الطبقة ص؟",
-      "a": "دار سوبرناتشورال ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ويستوورلد»، ما الرمز الذي يفتش عنه الرجل ذو الثياب السوداء؟",
+      "a": "المتاهة",
+      "alt": [
+        "The Maze"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Westworld_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-080"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «سوبرناتشورال»، ما النزاع في الطبقة ص؟",
-      "a": "نزاع سوبرناتشورال ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا فامباير دايريز»، ما العشبة التي تقي البشر من مصاصي الدماء؟",
+      "a": "الفيرفين",
+      "alt": [
+        "Vervain"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Vampire_Diaries",
       "verified": true,
       "qid": "foreignseries-1000-081"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «سوبرناتشورال»، من الرفيق في الطبقة ص؟",
-      "a": "رفيق سوبرناتشورال ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «سترينجر ثينغز»، ما اسم النادي المدرسي الذي أسسه إيدي مونسون؟",
+      "a": "نادي هيلفاير",
+      "alt": [
+        "Hellfire Club"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things",
       "verified": true,
       "qid": "foreignseries-1000-082"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «سوبرناتشورال»، ما النداء في الطبقة ص؟",
-      "a": "نداء سوبرناتشورال ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «إكس فايلز»، من الأخت التي اختفت وصارت هاجس مولدر؟",
+      "a": "سامانثا",
+      "alt": [
+        "Samantha"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_X-Files",
       "verified": true,
       "qid": "foreignseries-1000-083"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «سوبرناتشورال»، ما الختم في الطبقة ص؟",
-      "a": "ختم سوبرناتشورال ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أشياء ورموز",
+      "q": "في «ذا سوبرانوز»، أي طيور في حوض المنزل أشعلت نوبات هلع توني؟",
+      "a": "البط",
+      "alt": [
+        "Ducks"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Sopranos",
       "verified": true,
       "qid": "foreignseries-1000-084"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «فامباير دايريز»، من البطل في الطبقة ص؟",
-      "a": "بطل فامباير دايريز ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «صراع العروش»، بأي لقب عُرف بران بعد اختياره ملكًا؟",
+      "a": "بران المكسور",
+      "alt": [
+        "Bran the Broken"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-1000-085"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «فامباير دايريز»، ما الدار في الطبقة ص؟",
-      "a": "دار فامباير دايريز ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «ديكستر»، ما القاعدة الأولى في وصايا هاري لابنه؟",
+      "a": "ألا يقتل إلا مجرمًا",
+      "alt": [
+        "لا يقتل بريئًا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dexter_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-086"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «فامباير دايريز»، ما النزاع في الطبقة ص؟",
-      "a": "نزاع فامباير دايريز ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «لا كاسا دي بابيل»، بأي اسم مستعار تقرّب العقل المدبر من المحققة؟",
+      "a": "سالفا",
+      "alt": [
+        "Salva",
+        "Salva Martín"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
       "qid": "foreignseries-1000-087"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «فامباير دايريز»، من الرفيق في الطبقة ص؟",
-      "a": "رفيق فامباير دايريز ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «دارك»، ما اسم الجماعة السرية التي يقودها آدم؟",
+      "a": "سيك مونودس",
+      "alt": [
+        "Sic Mundus"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-088"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «فامباير دايريز»، ما النداء في الطبقة ص؟",
-      "a": "نداء فامباير دايريز ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «فايكنغز»، أي أبناء راغنار وُلد بعظام هشّة فلُقّب بلا عظام؟",
+      "a": "إيفار",
+      "alt": [
+        "Ivar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vikings_(2013_TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-089"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «فامباير دايريز»، ما الختم في الطبقة ص؟",
-      "a": "ختم فامباير دايريز ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "أسرار وتحولات",
+      "q": "في «ذا ويتشر»، ما اللقب الذي لاحق غيرالت بعد مذبحة في السوق؟",
+      "a": "جزار بلافيكن",
+      "alt": [
+        "Butcher of Blaviken"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-090"
     },
     {
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «قوانتم ليب»، من البطل في الطبقة ص؟",
-      "a": "بطل قوانتم ليب ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «دارك»، كم عائلة تتشابك مصائرها في البلدة؟",
+      "a": "أربع عائلات",
+      "alt": [
+        "أربعة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-091"
     },
     {
       "p": 1000,
-      "topic": "أماكن",
-      "q": "في «قوانتم ليب»، ما الدار في الطبقة ص؟",
-      "a": "دار قوانتم ليب ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «بيكي بلايندرز»، من المفتش الذي أُرسل من بلفاست لسحق العصابة؟",
+      "a": "تشيستر كامبل",
+      "alt": [
+        "Campbell"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peaky_Blinders_(TV_series)",
       "verified": true,
       "qid": "foreignseries-1000-092"
     },
     {
       "p": 1000,
-      "topic": "أحداث",
-      "q": "في «قوانتم ليب»، ما النزاع في الطبقة ص؟",
-      "a": "نزاع قوانتم ليب ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «ذا سوبرانوز»، ما اسم العائلة الإجرامية التي يقودها توني؟",
+      "a": "عائلة ديميو",
+      "alt": [
+        "DiMeo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Sopranos",
       "verified": true,
       "qid": "foreignseries-1000-093"
     },
     {
       "p": 1000,
-      "topic": "علاقات",
-      "q": "في «قوانتم ليب»، من الرفيق في الطبقة ص؟",
-      "a": "رفيق قوانتم ليب ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «صراع العروش»، ما اسم الطائفة التي تبدّل الوجوه وتخدم إله الموت؟",
+      "a": "الرجال بلا وجوه",
+      "alt": [
+        "Faceless Men"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Game_of_Thrones",
       "verified": true,
       "qid": "foreignseries-1000-094"
     },
     {
       "p": 1000,
-      "topic": "ألقاب وجمل",
-      "q": "في «قوانتم ليب»، ما النداء في الطبقة ص؟",
-      "a": "نداء قوانتم ليب ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «مستر روبوت»، من الشقيقة التي تبرمج برمجيات المجموعة الخبيثة؟",
+      "a": "دارلين",
+      "alt": [
+        "Darlene"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mr._Robot",
       "verified": true,
       "qid": "foreignseries-1000-095"
     },
     {
       "p": 1000,
-      "topic": "أشياء",
-      "q": "في «قوانتم ليب»، ما الختم في الطبقة ص؟",
-      "a": "ختم قوانتم ليب ص",
-      "alt": [],
-      "sourceUrl": "https://www.elcinema.com/",
+      "topic": "جماعات وخصوم",
+      "q": "في «تشيرنوبل»، ما اسم نوع المفاعل السوفيتي الذي انفجر؟",
+      "a": "آر بي إم كيه",
+      "alt": [
+        "RBMK"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chernobyl_(miniseries)",
       "verified": true,
       "qid": "foreignseries-1000-096"
     }

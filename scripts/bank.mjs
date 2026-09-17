@@ -213,9 +213,29 @@ function echoesQuestion(stem, questionText) {
   return parts.length > 0 && parts.every((w) => w.length > 2 && words.has(w));
 }
 
+// علامة فارقة بين سلسلة حشو وعائلة اسم حقيقية: «بورشه 911» و«بورشه 917» تبدوان
+// سلسلة عدّاد، لكن الجذر نفسه يحمل في الفئة إجابات غير رقمية («بورشه كايين»،
+// «بورشه بوكستر»)، وهذا ما لا يحدث في الحشو المولَّد أبدًا. فإن ظهر الجذر مرتين
+// أو أكثر مع تكملة غير رقمية، وبعدد لا يقلّ عن عدد الأرقام، عُدّ عائلة اسم وسقطت
+// عنه قاعدة العدّ وحدها؛ وتبقى قاعدة «الجذر مأخوذ من نص السؤال» سارية لأنها لا
+// تعتمد على العدّ. اشتراط الغلبة يمنع سلسلة حشو من التستّر خلف اسمين حقيقيين.
+function namedFamilies(qs) {
+  const plain = qs.map((q) => String(q.a || '').trim()).filter((a) => a && !counterStem(a)).map(normalizeArabic);
+  const counts = new Map();
+  for (const answer of plain) {
+    const parts = answer.split(/\s+/).filter(Boolean);
+    for (let n = 1; n < parts.length; n += 1) {
+      const stem = parts.slice(0, n).join(' ');
+      counts.set(stem, (counts.get(stem) || 0) + 1);
+    }
+  }
+  return counts;
+}
+
 // تُعطى أسئلة فئة واحدة، وتُعيد سطرًا لكل سؤال حشو مع سبب رصده.
 export function placeholderFindings(questions) {
   const qs = (Array.isArray(questions) ? questions : []).filter((q) => q && typeof q === 'object');
+  const families = namedFamilies(qs);
   const series = new Map();
   for (const q of qs) {
     const stem = counterStem(q.a);
@@ -233,7 +253,7 @@ export function placeholderFindings(questions) {
     if (!reason && stem) {
       const n = series.get(stem) || 0;
       if (SOUND_NUMBER.test(text)) reason = 'قالب «ما هذا الصوت رقم N» بإجابة عدّاد';
-      else if (n >= 3) reason = `إجابة «اسم + عدّاد» متسلسلة (${n} مرة بالجذر «${stem}»)`;
+      else if (n >= 3 && (families.get(stem) || 0) < n) reason = `إجابة «اسم + عدّاد» متسلسلة (${n} مرة بالجذر «${stem}»)`;
       else if (n >= 2 && echoesQuestion(stem, text)) reason = `إجابة هي اسم من نص السؤال يليه عدّاد (${n} مرة)`;
     }
     if (reason) findings.push({ qid: String(q.qid || '؟'), p: q.p, rule: reason, q: text, a: answer });

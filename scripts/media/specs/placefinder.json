@@ -1,0 +1,2505 @@
+{
+  "id": "placefinder",
+  "name": "وين المكان؟",
+  "icon": "📍",
+  "defaultType": "image",
+  "kind": "image",
+  "effect": "none",
+  "subjects": [
+    {
+      "tier": 200,
+      "a": "البتراء",
+      "topic": "مواقع أثرية",
+      "ar": "البتراء",
+      "en": "Petra",
+      "q": "ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Petra Treasury.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أهرامات الجيزة",
+      "alt": [
+        "الأهرامات"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "أهرامات الجيزة",
+      "en": "Giza pyramid complex",
+      "q": "أي موقع أثري هذا؟",
+      "commons": "File:All Gizah Pyramids.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أبو الهول",
+      "topic": "مواقع أثرية",
+      "ar": "أبو الهول",
+      "en": "Great Sphinx of Giza",
+      "q": "أين هذه الآثار؟",
+      "commons": "File:Great Sphinx of Giza May 2015.JPG"
+    },
+    {
+      "tier": 200,
+      "a": "جرش",
+      "topic": "مواقع أثرية",
+      "ar": "جرش",
+      "en": "Jerash",
+      "q": "ما اسم هذا الموقع؟",
+      "commons": "File:Oval Plaza (Forum Romanum, Gerasa - Jerash, Jordan) - ساحة الندوة, جرش.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تدمر",
+      "topic": "مواقع أثرية",
+      "ar": "تدمر",
+      "en": "Palmyra",
+      "q": "انظر جيدًا: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Temple of Bel in Palmyra.JPG"
+    },
+    {
+      "tier": 200,
+      "a": "بعلبك",
+      "topic": "مواقع أثرية",
+      "ar": "بعلبك",
+      "en": "Baalbek",
+      "q": "انظر جيدًا: أي موقع أثري هذا؟",
+      "commons": "File:The ancient Lebanese city of Baalbek, in 1966.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "معبد أبو سمبل",
+      "alt": [
+        "أبو سمبل"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "معبد أبو سمبل",
+      "en": "Abu Simbel",
+      "q": "انظر جيدًا: أين هذه الآثار؟",
+      "commons": "File:Großer Tempel (Abu Simbel) 31.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "معبد الكرنك",
+      "alt": [
+        "الكرنك"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "معبد الكرنك",
+      "en": "Karnak",
+      "q": "انظر جيدًا: ما اسم هذا الموقع؟",
+      "commons": "File:Karnak-Hypostyle3.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "سور الصين العظيم",
+      "topic": "مواقع أثرية",
+      "ar": "سور الصين العظيم",
+      "en": "Great Wall of China",
+      "q": "بنظرة واحدة: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:The Great Wall of China at Jinshanling-edit.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الكولوسيوم",
+      "alt": [
+        "مدرج روما"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "الكولوسيوم",
+      "en": "Colosseum",
+      "q": "بنظرة واحدة: أي موقع أثري هذا؟",
+      "commons": "File:Colosseum in Rome, Italy - April 2007.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ستونهنج",
+      "topic": "مواقع أثرية",
+      "ar": "ستونهنج",
+      "en": "Stonehenge",
+      "q": "بنظرة واحدة: أين هذه الآثار؟",
+      "commons": "File:Stonehenge, Salisbury retouched.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ماتشو بيتشو",
+      "topic": "مواقع أثرية",
+      "ar": "ماتشو بيتشو",
+      "en": "Machu Picchu",
+      "q": "بنظرة واحدة: ما اسم هذا الموقع؟",
+      "commons": "File:Machu Picchu, 2023 (012).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "المسجد الحرام",
+      "alt": [
+        "الكعبة",
+        "مكة"
+      ],
+      "topic": "معالم دينية",
+      "ar": "المسجد الحرام",
+      "en": "Great Mosque of Mecca",
+      "q": "أي معلم ديني هذا؟",
+      "commons": "File:Edited Great Mosque of Mecca1 5-2019-ccsa4.0 (cropped).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "المسجد النبوي",
+      "topic": "معالم دينية",
+      "ar": "المسجد النبوي",
+      "en": "Al-Masjid an-Nabawi",
+      "q": "ما اسم هذا المعلم؟",
+      "commons": "File:Masjid Nabawi The Prophet's Mosque, Madina.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "قبة الصخرة",
+      "topic": "معالم دينية",
+      "ar": "قبة الصخرة",
+      "en": "Dome of the Rock",
+      "q": "أين هذا المكان؟",
+      "commons": "File:16-04-04-Felsendom-Tempelberg-Jerusalem-RalfR-WAT 6385.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جامع الشيخ زايد الكبير",
+      "alt": [
+        "مسجد الشيخ زايد"
+      ],
+      "topic": "معالم دينية",
+      "ar": "جامع الشيخ زايد الكبير",
+      "en": "Sheikh Zayed Grand Mosque",
+      "q": "ما اسم هذا المكان المقدس؟",
+      "commons": "File:Sheikh Zayed Mosque Silhouette.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أنغكور وات",
+      "topic": "معالم دينية",
+      "ar": "أنغكور وات",
+      "en": "Angkor Wat",
+      "q": "انظر جيدًا: أي معلم ديني هذا؟",
+      "commons": "File:Angkor Wat W-Seite.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "ساغرادا فاميليا",
+      "alt": [
+        "كنيسة العائلة المقدسة"
+      ],
+      "topic": "معالم دينية",
+      "ar": "ساغرادا فاميليا",
+      "en": "Sagrada Família",
+      "q": "انظر جيدًا: ما اسم هذا المعلم؟",
+      "commons": "File:Σαγράδα Φαμίλια 2941.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "كاتدرائية القديس باسيل",
+      "alt": [
+        "كنيسة القديس باسيل"
+      ],
+      "topic": "معالم دينية",
+      "ar": "كاتدرائية القديس باسيل",
+      "en": "Saint Basil's Cathedral",
+      "q": "انظر جيدًا: أين هذا المكان؟",
+      "commons": "File:00 0568 Saint Basil's Cathedral - Moscow.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "البارثينون",
+      "alt": [
+        "معبد البارثينون"
+      ],
+      "topic": "معالم دينية",
+      "ar": "البارثينون",
+      "en": "Parthenon",
+      "q": "انظر جيدًا: ما اسم هذا المكان المقدس؟",
+      "commons": "File:The Parthenon in Athens.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "برج خليفة",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "برج خليفة",
+      "en": "Burj Khalifa",
+      "q": "بنظرة واحدة: ما اسم هذا المعلم؟",
+      "commons": "File:برج خليفة.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "برج العرب",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "برج العرب",
+      "en": "Burj Al Arab",
+      "q": "أي معلم هذا؟",
+      "commons": "File:Burj Al-Arab (13996844503).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "أبراج الكويت",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "أبراج الكويت",
+      "en": "Kuwait Towers",
+      "q": "ما اسم هذا الصرح؟",
+      "commons": "File:Kuwait towers.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "برج إيفل",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "برج إيفل",
+      "en": "Eiffel Tower",
+      "q": "أين هذا المعلم؟",
+      "commons": "File:Tour Eiffel - 20150801 15h30 (10621).jpg"
+    },
+    {
+      "tier": 200,
+      "a": "برج بيزا المائل",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "برج بيزا المائل",
+      "en": "Leaning Tower of Pisa",
+      "q": "من الصورة وحدها: ما اسم هذا المعلم؟",
+      "commons": "File:Campanile Dôme - Pise (IT52) - 2022-08-31 - 20.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تمثال الحرية",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "تمثال الحرية",
+      "en": "Statue of Liberty",
+      "q": "انظر جيدًا: أي معلم هذا؟",
+      "commons": "File:Statue of Liberty and a sightseeing boat, Liberty Island, New York.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تمثال المسيح الفادي",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "تمثال المسيح الفادي",
+      "en": "Christ the Redeemer",
+      "q": "انظر جيدًا: ما اسم هذا الصرح؟",
+      "commons": "File:Christ the Redeemer - Cristo Redentor.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "دار أوبرا سيدني",
+      "alt": [
+        "أوبرا سيدني"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "دار أوبرا سيدني",
+      "en": "Sydney Opera House",
+      "q": "انظر جيدًا: أين هذا المعلم؟",
+      "commons": "File:Sydney Opera House Sails.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "بيغ بن",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "بيغ بن",
+      "en": "Big Ben",
+      "q": "سؤال سريع: ما اسم هذا المعلم؟",
+      "commons": "File:Clock Tower - Palace of Westminster, London - September 2006.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جسر البرج",
+      "alt": [
+        "تاور بريدج"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "جسر البرج",
+      "en": "Tower Bridge",
+      "q": "بنظرة واحدة: أي معلم هذا؟",
+      "commons": "File:London - London Tower Bridge - 140806 171049.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جسر البوابة الذهبية",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "جسر البوابة الذهبية",
+      "en": "Golden Gate Bridge",
+      "q": "بنظرة واحدة: ما اسم هذا الصرح؟",
+      "commons": "File:Golden gate2.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "تاج محل",
+      "topic": "قصور وقلاع",
+      "ar": "تاج محل",
+      "en": "Taj Mahal",
+      "q": "من الصورة وحدها: ما اسم هذا الصرح؟",
+      "commons": "File:Taj Mahal, Agra, India edit3.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "قصر فرساي",
+      "topic": "قصور وقلاع",
+      "ar": "قصر فرساي",
+      "en": "Palace of Versailles",
+      "q": "من الصورة وحدها: أي معلم هذا؟",
+      "commons": "File:Cour royale de Versailles.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "قلعة حلب",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة حلب",
+      "en": "Aleppo Citadel",
+      "q": "ما اسم هذا المبنى التاريخي؟",
+      "commons": "File:أيقونة قلعة حلب 2013.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "البيت الأبيض",
+      "topic": "قصور وقلاع",
+      "ar": "البيت الأبيض",
+      "en": "White House",
+      "q": "بنظرة واحدة: أين هذا المكان؟",
+      "commons": "File:The White House logo under Trump 2.0.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "البندقية",
+      "alt": [
+        "فينيسيا"
+      ],
+      "topic": "مدن وبلدات",
+      "ar": "البندقية",
+      "en": "Venice",
+      "q": "لأي مدينة هذه الإطلالة؟",
+      "commons": "File:Floating city.tif"
+    },
+    {
+      "tier": 200,
+      "a": "شفشاون",
+      "topic": "مدن وبلدات",
+      "ar": "شفشاون",
+      "en": "Chefchaouen",
+      "q": "ما اسم هذه المدينة؟",
+      "commons": "File:Chefchaouen Mountain.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جبل إفرست",
+      "alt": [
+        "إيفرست"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "جبل إفرست",
+      "en": "Mount Everest",
+      "q": "أي جبل هذا؟",
+      "commons": "File:Mount Everest as seen from Drukair2 PLW edit.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جبل فوجي",
+      "topic": "جبال وبراكين",
+      "ar": "جبل فوجي",
+      "en": "Mount Fuji",
+      "q": "ما اسم هذا الجبل؟",
+      "commons": "File:Kodaki fuji frm shojinko refurb.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "جبل كليمنجارو",
+      "alt": [
+        "كليمنجارو"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "جبل كلمنجارو",
+      "en": "Mount Kilimanjaro",
+      "q": "أين هذه القمة؟",
+      "commons": "File:Mt. Kilimanjaro 12.2006.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "وادي رم",
+      "topic": "صحارى وتضاريس",
+      "ar": "وادي رم",
+      "en": "Wadi Rum",
+      "q": "من الصورة وحدها: أين هذا المكان؟",
+      "commons": "File:Wadi Rum in December.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "الصحراء الكبرى",
+      "topic": "صحارى وتضاريس",
+      "ar": "الصحراء الكبرى",
+      "en": "Sahara",
+      "q": "ما اسم هذا الموقع الطبيعي؟",
+      "commons": "File:Sahara real color.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "غراند كانيون",
+      "alt": [
+        "الأخدود العظيم"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "الأخدود العظيم",
+      "en": "Grand Canyon",
+      "q": "أي مكان هذا؟",
+      "commons": "File:Grand Canyon view from Pima Point 2010.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "البحر الميت",
+      "topic": "بحيرات وشلالات",
+      "ar": "البحر الميت",
+      "en": "Dead Sea",
+      "q": "ما اسم هذا المعلم المائي؟",
+      "commons": "File:Dead sea.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نهر النيل",
+      "alt": [
+        "النيل"
+      ],
+      "topic": "بحيرات وشلالات",
+      "ar": "نهر النيل",
+      "en": "Nile",
+      "q": "سؤال سريع: أين هذا المكان؟",
+      "commons": "File:Cairo skyline, Panoramic view, Egypt.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "شلالات نياجرا",
+      "topic": "بحيرات وشلالات",
+      "ar": "شلالات نياجرا",
+      "en": "Niagara Falls",
+      "q": "من الصورة وحدها: ما اسم هذا الموقع؟",
+      "commons": "File:Niagara Falls USA Canada from Skylon Tower on 2002-05-28, full size.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "سانتوريني",
+      "topic": "جزر",
+      "ar": "سانتوريني",
+      "en": "Santorini",
+      "q": "أي جزيرة هذه؟",
+      "commons": "File:Santoríni aerial.jpg"
+    },
+    {
+      "tier": 200,
+      "a": "نخلة جميرا",
+      "alt": [
+        "جزيرة النخلة"
+      ],
+      "topic": "جزر",
+      "ar": "نخلة جميرا",
+      "en": "Palm Jumeirah",
+      "q": "أين هذه الجزيرة؟",
+      "commons": "File:Artificial Archipelagos, Dubai, United Arab Emirates ISS022-E-024940 lrg (cropped).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "برج ساعة مكة",
+      "alt": [
+        "أبراج البيت",
+        "ساعة مكة"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "أبراج البيت",
+      "en": "Abraj Al Bait",
+      "q": "خمن بسرعة: ما اسم هذا المعلم؟",
+      "commons": "File:Abraj-al-Bait-Towers.JPG"
+    },
+    {
+      "tier": 400,
+      "a": "متحف الفن الإسلامي",
+      "alt": [
+        "متحف الفن الإسلامي بالدوحة"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "متحف الفن الإسلامي (الدوحة)",
+      "en": "Museum of Islamic Art, Doha",
+      "q": "سؤال سريع: أي معلم هذا؟",
+      "commons": "File:IslamicArtMuseumDohaSkyline.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "برجا بتروناس",
+      "alt": [
+        "أبراج بتروناس"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "برجا بتروناس",
+      "en": "Petronas Towers",
+      "q": "سؤال سريع: ما اسم هذا الصرح؟",
+      "commons": "File:Kuala Lumpur - panoramio (18).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مارينا باي ساندز",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "مارينا باي ساندز",
+      "en": "Marina Bay Sands",
+      "q": "بنظرة واحدة: أين هذا المعلم؟",
+      "commons": "File:Marina Bay Sands Hotel 3 (31345110894).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مبنى إمباير ستيت",
+      "alt": [
+        "إمباير ستيت"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "مبنى إمباير ستيت",
+      "en": "Empire State Building",
+      "q": "دقق في الصورة: ما اسم هذا المعلم؟",
+      "commons": "File:Empire State Building (aerial view).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "قوس النصر",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "قوس النصر (باريس)",
+      "en": "Arc de Triomphe",
+      "q": "خمن بسرعة: أي معلم هذا؟",
+      "commons": "File:Arc de Triomphe - Août 2026.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "متحف اللوفر",
+      "alt": [
+        "اللوفر",
+        "هرم اللوفر"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "متحف اللوفر",
+      "en": "Louvre",
+      "q": "خمن بسرعة: ما اسم هذا الصرح؟",
+      "commons": "File:Cour Napoléon at night - Louvre.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "نافورة تريفي",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "نافورة تريفي",
+      "en": "Trevi Fountain",
+      "q": "من الصورة وحدها: أين هذا المعلم؟",
+      "commons": "File:Trevi Fountain - Roma.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جبل رشمور",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "جبل رشمور",
+      "en": "Mount Rushmore",
+      "q": "تأمل المشهد: ما اسم هذا المعلم؟",
+      "commons": "File:Mount Rushmore detail view (100MP).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "آيا صوفيا",
+      "alt": [
+        "أيا صوفيا"
+      ],
+      "topic": "معالم دينية",
+      "ar": "آيا صوفيا",
+      "en": "Hagia Sophia",
+      "q": "بلا تردد: ما اسم هذا المعلم؟",
+      "commons": "File:Hagia Sophia Mars 2013.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "المسجد الأزرق",
+      "alt": [
+        "مسجد السلطان أحمد"
+      ],
+      "topic": "معالم دينية",
+      "ar": "مسجد السلطان أحمد",
+      "en": "Sultan Ahmed Mosque",
+      "q": "خمن بسرعة: أين هذا المكان؟",
+      "commons": "File:Exterior of Sultan Ahmed I Mosque in Istanbul, Turkey 002.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "كاتدرائية نوتردام",
+      "alt": [
+        "نوتردام"
+      ],
+      "topic": "معالم دينية",
+      "ar": "كاتدرائية نوتردام دو باري",
+      "en": "Notre-Dame de Paris",
+      "q": "بنظرة واحدة: ما اسم هذا المكان المقدس؟",
+      "commons": "File:Notre-Dame de Paris 2013-07-24.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "كاتدرائية القديس بطرس",
+      "alt": [
+        "كنيسة القديس بطرس"
+      ],
+      "topic": "معالم دينية",
+      "ar": "كاتدرائية القديس بطرس",
+      "en": "St. Peter's Basilica",
+      "q": "بنظرة واحدة: أي معلم ديني هذا؟",
+      "commons": "File:Basilica di San Pietro in Vaticano September 2015-1a.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مسجد قرطبة",
+      "alt": [
+        "جامع قرطبة"
+      ],
+      "topic": "معالم دينية",
+      "ar": "مسجد قرطبة",
+      "en": "Mosque–Cathedral of Córdoba",
+      "q": "للعارفين: ما اسم هذا المعلم؟",
+      "commons": "File:Mezquita de Córdoba desde el aire (Córdoba, España).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الجامع الأموي",
+      "alt": [
+        "المسجد الأموي"
+      ],
+      "topic": "معالم دينية",
+      "ar": "الجامع الأموي",
+      "en": "Umayyad Mosque",
+      "q": "دقق في الصورة: أين هذا المكان؟",
+      "commons": "File:Ommayyad masjed.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جامع عقبة بن نافع",
+      "alt": [
+        "جامع القيروان"
+      ],
+      "topic": "معالم دينية",
+      "ar": "جامع عقبة بن نافع",
+      "en": "Great Mosque of Kairouan",
+      "q": "من الصورة وحدها: ما اسم هذا المكان المقدس؟",
+      "commons": "File:Grande Mosquée de Kairouan, vue d'ensemble.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مون سان ميشيل",
+      "topic": "معالم دينية",
+      "ar": "مون سان ميشيل",
+      "en": "Mont-Saint-Michel",
+      "q": "من الصورة وحدها: أي معلم ديني هذا؟",
+      "commons": "File:Mont St Michel 3, Brittany, France - July 2011.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "قصر الحمراء",
+      "alt": [
+        "الحمراء"
+      ],
+      "topic": "قصور وقلاع",
+      "ar": "قصر الحمراء",
+      "en": "Alhambra",
+      "q": "انظر جيدًا: ما اسم هذا المبنى التاريخي؟",
+      "commons": "File:Alhambra detail.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "قلعة نويشفانشتاين",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة نويشفانشتاين",
+      "en": "Neuschwanstein Castle",
+      "q": "تأمل المشهد: أين هذا المكان؟",
+      "commons": "File:Schloss Neuschwanstein 2013.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "قصر باكنغهام",
+      "topic": "قصور وقلاع",
+      "ar": "قصر باكنغهام",
+      "en": "Buckingham Palace",
+      "q": "دقق في الصورة: ما اسم هذا الصرح؟",
+      "commons": "File:Buckingham Palace, London - April 2009.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "المدينة المحرمة",
+      "topic": "قصور وقلاع",
+      "ar": "المدينة المحرمة",
+      "en": "Forbidden City",
+      "q": "دقق في الصورة: أي معلم هذا؟",
+      "commons": "File:Hall of Supreme Harmony (20241127120000).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "قلعة صلاح الدين",
+      "alt": [
+        "قلعة القاهرة"
+      ],
+      "topic": "قصور وقلاع",
+      "ar": "قلعة صلاح الدين (القاهرة)",
+      "en": "Cairo Citadel",
+      "q": "بنظرة واحدة: ما اسم هذا المبنى التاريخي؟",
+      "commons": "File:Flickr - HuTect ShOts - Citadel of Salah El.Din and Masjid Muhammad Ali قلعة صلاح الدين الأيوبي ومسجد محمد علي - Cairo - Egypt - 17 04 2010 (4).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "قلعة قايتباي",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة قايتباي",
+      "en": "Citadel of Qaitbay",
+      "q": "بلا تردد: أين هذا المكان؟",
+      "commons": "File:Alexandria Egypt (235108463).jpeg"
+    },
+    {
+      "tier": 400,
+      "a": "مدائن صالح",
+      "alt": [
+        "الحجر"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "مدائن صالح",
+      "en": "Hegra (Mada'in Salih)",
+      "q": "سؤال سريع: ما اسم هذا الموقع؟",
+      "commons": "File:Hegramo.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "وادي الملوك",
+      "topic": "مواقع أثرية",
+      "ar": "وادي الملوك",
+      "en": "Valley of the Kings",
+      "q": "من الصورة وحدها: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Luxor, Tal der Könige (1995, 860x605).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "معبد حتشبسوت",
+      "alt": [
+        "الدير البحري"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "معبد حتشبسوت",
+      "en": "Mortuary Temple of Hatshepsut",
+      "q": "من الصورة وحدها: أي موقع أثري هذا؟",
+      "commons": "File:Templo funerario de Hatshepsut, Luxor, Egipto, 2022-04-03, DD 13.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "آيت بن حدو",
+      "alt": [
+        "قصر آيت بن حدو"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "آيت بن حدو",
+      "en": "Aït Benhaddou",
+      "q": "من الصورة وحدها: أين هذه الآثار؟",
+      "commons": "File:Ksar Aït Benhaddou, Marocco (أيت بن حدو، المغرب, ⴰⵢⵜ ⵃⴰⴷⴷⵓ).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "مدرج الجم",
+      "alt": [
+        "الجم"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "مدرج الجم",
+      "en": "Amphitheatre of El Jem",
+      "q": "خمن بسرعة: ما اسم هذا الموقع؟",
+      "commons": "File:Amphi El Jem.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "قرطاج",
+      "topic": "مواقع أثرية",
+      "ar": "قرطاج",
+      "en": "Carthage",
+      "q": "سؤال سريع: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Tunisie Carthage Ruines 08.JPG"
+    },
+    {
+      "tier": 400,
+      "a": "تشيتشن إيتزا",
+      "topic": "مواقع أثرية",
+      "ar": "تشيتشن إيتزا",
+      "en": "Chichen Itza",
+      "q": "سؤال سريع: أي موقع أثري هذا؟",
+      "commons": "File:Chichen Itza 3.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أهرامات مروي",
+      "alt": [
+        "مروي"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "أهرامات مروي",
+      "en": "Meroë",
+      "q": "سؤال سريع: أين هذه الآثار؟",
+      "commons": "File:Sudan Meroe Pyramids 2001.JPG"
+    },
+    {
+      "tier": 400,
+      "a": "بابل",
+      "topic": "مواقع أثرية",
+      "ar": "بابل",
+      "en": "Babylon",
+      "q": "دقق في الصورة: ما اسم هذا الموقع؟",
+      "commons": "File:DSC 0658-Recovered.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "هرم زوسر",
+      "alt": [
+        "هرم سقارة المدرج"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "هرم زوسر",
+      "en": "Pyramid of Djoser",
+      "q": "خمن بسرعة: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Sakkara 01.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ماترهورن",
+      "topic": "جبال وبراكين",
+      "ar": "ماترهورن",
+      "en": "Matterhorn",
+      "q": "انظر جيدًا: أي جبل هذا؟",
+      "commons": "File:Cervino cloud.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جبال الأطلس",
+      "topic": "جبال وبراكين",
+      "ar": "جبال الأطلس",
+      "en": "Atlas Mountains",
+      "q": "انظر جيدًا: ما اسم هذا الجبل؟",
+      "commons": "File:Atlas mountains aerial 1.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جبل سيناء",
+      "alt": [
+        "جبل موسى"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "جبل سيناء",
+      "en": "Mount Sinai",
+      "q": "انظر جيدًا: أين هذه القمة؟",
+      "commons": "File:Sinai-Katharinenberg-162-Abstieg-Oase-2009-gje.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "جبل فيزوف",
+      "alt": [
+        "فيزوف"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "جبل فيزوف",
+      "en": "Mount Vesuvius",
+      "q": "ما اسم هذه القمة؟",
+      "commons": "File:Il cratere del Vulcano - panoramio.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "كابادوكيا",
+      "topic": "صحارى وتضاريس",
+      "ar": "كابادوكيا",
+      "en": "Cappadocia",
+      "q": "انظر جيدًا: ما اسم هذا الموقع الطبيعي؟",
+      "commons": "File:Cappadocia Aerial View (6998755984).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "أولورو",
+      "alt": [
+        "آيرز روك"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "أولورو",
+      "en": "Uluru",
+      "q": "انظر جيدًا: أي مكان هذا؟",
+      "commons": "File:Sunset at Uluru on July 30, 2005.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الربع الخالي",
+      "topic": "صحارى وتضاريس",
+      "ar": "الربع الخالي",
+      "en": "Rub' al Khali",
+      "q": "ما اسم هذه التضاريس؟",
+      "commons": "File:Rub al Khali 002.JPG"
+    },
+    {
+      "tier": 400,
+      "a": "مغارة جعيتا",
+      "topic": "صحارى وتضاريس",
+      "ar": "مغارة جعيتا",
+      "en": "Jeita Grotto",
+      "q": "للعارفين: أين هذا المكان؟",
+      "commons": "File:Upper Jeita Grotto.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "شلالات إجوازو",
+      "alt": [
+        "إغوازو"
+      ],
+      "topic": "بحيرات وشلالات",
+      "ar": "شلالات إجوازو",
+      "en": "Iguazu Falls",
+      "q": "تأمل المشهد: ما اسم هذا الموقع؟",
+      "commons": "File:Aerial Foz de Iguaçu 26 Nov 2005.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "شلالات فيكتوريا",
+      "topic": "بحيرات وشلالات",
+      "ar": "شلالات فيكتوريا",
+      "en": "Victoria Falls",
+      "q": "بنظرة واحدة: أي مكان هذا؟",
+      "commons": "File:Cataratas Victoria, Zambia-Zimbabue, 2018-07-27, DD 05.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "خليج ها لونغ",
+      "topic": "بحيرات وشلالات",
+      "ar": "خليج ها لونغ",
+      "en": "Hạ Long Bay",
+      "q": "انظر جيدًا: ما اسم هذا المعلم المائي؟",
+      "commons": "File:Halong ensemble (colour corrected).jpg"
+    },
+    {
+      "tier": 400,
+      "a": "الحاجز المرجاني العظيم",
+      "topic": "بحيرات وشلالات",
+      "ar": "الحاجز المرجاني العظيم",
+      "en": "Great Barrier Reef",
+      "q": "للمتمعن: أين هذا المكان؟",
+      "commons": "File:GreatBarrierReef-EO.JPG"
+    },
+    {
+      "tier": 400,
+      "a": "جزيرة الفصح",
+      "alt": [
+        "جزيرة القيامة",
+        "رابا نوي"
+      ],
+      "topic": "جزر",
+      "ar": "جزيرة الفصح",
+      "en": "Easter Island",
+      "q": "ما اسم هذه الجزيرة؟",
+      "commons": "File:Easter Island 5.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "ميكونوس",
+      "alt": [
+        "جزيرة ميكونوس"
+      ],
+      "topic": "جزر",
+      "ar": "ميكونوس",
+      "en": "Mykonos",
+      "q": "انظر جيدًا: أي جزيرة هذه؟",
+      "commons": "File:Little Venice with a view of the ferry terminal in Mykonos, Greece - 50661522178.jpg"
+    },
+    {
+      "tier": 400,
+      "a": "منتزه يلوستون",
+      "alt": [
+        "يلوستون"
+      ],
+      "topic": "متنزهات ومحميات",
+      "ar": "حديقة يلوستون الوطنية",
+      "en": "Yellowstone National Park",
+      "q": "أين هذا المتنزه؟",
+      "commons": "File:Grand Prismatic Spring 2013.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "صنعاء القديمة",
+      "alt": [
+        "صنعاء"
+      ],
+      "topic": "مدن وبلدات",
+      "ar": "صنعاء القديمة",
+      "en": "Old City of Sana'a",
+      "q": "انظر جيدًا: ما اسم هذه المدينة؟",
+      "commons": "File:View of Old Sana'a, Yemen, Jan. 2009.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "شبام",
+      "alt": [
+        "شبام حضرموت"
+      ],
+      "topic": "مدن وبلدات",
+      "ar": "شبام",
+      "en": "Shibam",
+      "q": "أي مدينة هذه؟",
+      "commons": "File:مدينة شبام حضرموت.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سيدي بوسعيد",
+      "topic": "مدن وبلدات",
+      "ar": "سيدي بو سعيد",
+      "en": "Sidi Bou Said",
+      "q": "انظر جيدًا: لأي مدينة هذه الإطلالة؟",
+      "commons": "File:Sidi Bou Said, Tunisia, 19 March 2018 DSC 8004.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بروج",
+      "topic": "مدن وبلدات",
+      "ar": "بروج",
+      "en": "Bruges",
+      "q": "بنظرة واحدة: ما اسم هذه المدينة؟",
+      "commons": "File:Brugge-CanalRozenhoedkaai.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "دوبروفنيك",
+      "topic": "مدن وبلدات",
+      "ar": "دوبروفنيك",
+      "en": "Dubrovnik",
+      "q": "انظر جيدًا: أي مدينة هذه؟",
+      "commons": "File:The walls of the fortress and View of the old city. panorama.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "هالشتات",
+      "topic": "مدن وبلدات",
+      "ar": "هالشتات",
+      "en": "Hallstatt",
+      "q": "بنظرة واحدة: لأي مدينة هذه الإطلالة؟",
+      "commons": "File:Hallstatt - Zentrum .JPG"
+    },
+    {
+      "tier": 600,
+      "a": "قلعة الحصن",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة الحصن",
+      "en": "Krak des Chevaliers",
+      "q": "من الذاكرة: أين هذا المكان؟",
+      "commons": "File:Krak des Chevaliers 01.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "قلعة نزوى",
+      "alt": [
+        "حصن نزوى"
+      ],
+      "topic": "قصور وقلاع",
+      "ar": "قلعة نزوى",
+      "en": "Nizwa Fort",
+      "q": "تأمل المشهد: ما اسم هذا الصرح؟",
+      "commons": "File:Nizwa (5).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "قصر الشتاء",
+      "alt": [
+        "الإرميتاج"
+      ],
+      "topic": "قصور وقلاع",
+      "ar": "قصر الشتاء",
+      "en": "Winter Palace",
+      "q": "تأمل المشهد: أي معلم هذا؟",
+      "commons": "File:Winter Palace Panorama 3.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "الكرملين",
+      "alt": [
+        "كرملين موسكو"
+      ],
+      "topic": "قصور وقلاع",
+      "ar": "الكرملين",
+      "en": "Moscow Kremlin",
+      "q": "من الصورة وحدها: ما اسم هذا المبنى التاريخي؟",
+      "commons": "File:Moscow Kremlin Egg.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سقطرى",
+      "alt": [
+        "جزيرة سقطرى"
+      ],
+      "topic": "جزر",
+      "ar": "سقطرى",
+      "en": "Socotra",
+      "q": "بنظرة واحدة: أي جزيرة هذه؟",
+      "commons": "File:Socotra satview.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "الملوية",
+      "alt": [
+        "ملوية سامراء",
+        "مسجد سامراء الكبير"
+      ],
+      "topic": "معالم دينية",
+      "ar": "المئذنة الملوية",
+      "en": "Great Mosque of Samarra",
+      "q": "سؤال سريع: ما اسم هذا المكان المقدس؟",
+      "commons": "File:Samara spiralovity minaret rijen1973.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "جامع السلطان قابوس الأكبر",
+      "topic": "معالم دينية",
+      "ar": "جامع السلطان قابوس الأكبر",
+      "en": "Sultan Qaboos Grand Mosque",
+      "q": "سؤال سريع: أي معلم ديني هذا؟",
+      "commons": "File:Sultan Qaboos Grand Mosque (1).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مرقد الإمام الحسين",
+      "alt": [
+        "حرم الإمام الحسين"
+      ],
+      "topic": "معالم دينية",
+      "ar": "مرقد الإمام الحسين",
+      "en": "Imam Husayn Shrine",
+      "q": "للمتمعن: ما اسم هذا المعلم؟",
+      "commons": "File:Kerbela.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "مسجد الكتبية",
+      "alt": [
+        "الكتبية"
+      ],
+      "topic": "معالم دينية",
+      "ar": "مسجد الكتبية",
+      "en": "Koutoubia Mosque",
+      "q": "بلا مساعدة: أين هذا المكان؟",
+      "commons": "File:Mosquée de la Koutoubia - marakesh.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بوروبودور",
+      "topic": "معالم دينية",
+      "ar": "بوروبودور",
+      "en": "Borobudur",
+      "q": "خمن بسرعة: ما اسم هذا المكان المقدس؟",
+      "commons": "File:Borobudur-Nothwest-view.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "فوشيمي إناري",
+      "topic": "معالم دينية",
+      "ar": "فوشيمي إناري تايشا",
+      "en": "Fushimi Inari-taisha",
+      "q": "خمن بسرعة: أي معلم ديني هذا؟",
+      "commons": "File:Fushimiinari-taisha, naihaiden-1.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "كينكاكو جي",
+      "alt": [
+        "الجناح الذهبي"
+      ],
+      "topic": "معالم دينية",
+      "ar": "كينكاكو جي",
+      "en": "Kinkaku-ji",
+      "q": "من الذاكرة: ما اسم هذا المعلم؟",
+      "commons": "File:Water reflection of Kinkaku-ji Temple a sunny day, Kyoto, Japan.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ضريح إتسوكوشيما",
+      "alt": [
+        "بوابة ميازيما"
+      ],
+      "topic": "معالم دينية",
+      "ar": "ضريح إتسوكوشيما",
+      "en": "Itsukushima Shrine",
+      "q": "فكر ثم أجب: أين هذا المكان؟",
+      "commons": "File:Itsukushima Gate.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "معبد السماء",
+      "topic": "معالم دينية",
+      "ar": "معبد السماء",
+      "en": "Temple of Heaven",
+      "q": "دقق في الصورة: ما اسم هذا المكان المقدس؟",
+      "commons": "File:Temple of Heaven 20160323 01.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "وات أرون",
+      "topic": "معالم دينية",
+      "ar": "وات أرون",
+      "en": "Wat Arun",
+      "q": "دقق في الصورة: أي معلم ديني هذا؟",
+      "commons": "File:Wat Arun from Chao Phraya River.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "جبيل",
+      "topic": "مواقع أثرية",
+      "ar": "جبيل",
+      "en": "Byblos",
+      "q": "خمن بسرعة: أي موقع أثري هذا؟",
+      "commons": "File:Byblos Libanon 2003.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "الدرعية",
+      "alt": [
+        "حي الطريف"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "الدرعية",
+      "en": "Diriyah",
+      "q": "خمن بسرعة: أين هذه الآثار؟",
+      "commons": "File:Diriyahpic.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "زقورة أور",
+      "topic": "مواقع أثرية",
+      "ar": "زقورة أور",
+      "en": "Ziggurat of Ur",
+      "q": "بلا تردد: ما اسم هذا الموقع؟",
+      "commons": "File:Ancient ziggurat at Ali Air Base Iraq 2005.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "ميتيورا",
+      "topic": "مواقع أثرية",
+      "ar": "ميتيورا",
+      "en": "Meteora",
+      "q": "دقق في الصورة: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:00 0541 Kloster Agía Triáda (Meteora) - Griechenland.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "برسبوليس",
+      "alt": [
+        "تخت جمشيد"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "برسبوليس",
+      "en": "Persepolis",
+      "q": "دقق في الصورة: أي موقع أثري هذا؟",
+      "commons": "File:Gate of All Nations, Persepolis.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "تيوتيهواكان",
+      "topic": "مواقع أثرية",
+      "ar": "تيوتيهواكان",
+      "en": "Teotihuacan",
+      "q": "دقق في الصورة: أين هذه الآثار؟",
+      "commons": "File:ZA77 Teotihuacán edo de mex Herberto de la rosa.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "أفسس",
+      "alt": [
+        "أفسوس"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "أفسس",
+      "en": "Ephesus",
+      "q": "للعارفين: ما اسم هذا الموقع؟",
+      "commons": "File:Ephesus Celsus Library Façade.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "صومعة حسان",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "صومعة حسان",
+      "en": "Hassan Tower",
+      "q": "بلا مساعدة: ما اسم هذا المعلم؟",
+      "commons": "File:Hassan Tower, Rabat, Marocco (صومعة حسان ).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "جسر تشارلز",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "جسر تشارلز",
+      "en": "Charles Bridge",
+      "q": "بلا تردد: أي معلم هذا؟",
+      "commons": "File:Prague 07-2016 View from Petrinska Tower img2.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "طوكيو سكاي تري",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "طوكيو سكاي تري",
+      "en": "Tokyo Skytree",
+      "q": "بلا تردد: ما اسم هذا الصرح؟",
+      "commons": "File:Tokyo Skytree 2023.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "لافتة هوليوود",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "لافتة هوليوود",
+      "en": "Hollywood Sign",
+      "q": "سؤال سريع: أين هذا المعلم؟",
+      "commons": "File:Hollywood Sign (Zuschnitt).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "متحف غوغنهايم بلباو",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "متحف غوغنهايم بلباو",
+      "en": "Guggenheim Museum Bilbao",
+      "q": "فكر ثم أجب: ما اسم هذا المعلم؟",
+      "commons": "File:Museo Guggenheim, Bilbao (31273245344).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "جسر ميناء سيدني",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "جسر ميناء سيدني",
+      "en": "Sydney Harbour Bridge",
+      "q": "للعارفين: أي معلم هذا؟",
+      "commons": "File:Sydney harbour bridge new south wales.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "برج ميلاد",
+      "alt": [
+        "برج طهران"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "برج ميلاد",
+      "en": "Milad Tower",
+      "q": "للعارفين: ما اسم هذا الصرح؟",
+      "commons": "File:برج میلاد و کوه دماوند از آزادراه تهران کرج - panoramio.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "شلالات أنجل",
+      "alt": [
+        "شلال أنجل"
+      ],
+      "topic": "بحيرات وشلالات",
+      "ar": "شلالات أنخل",
+      "en": "Angel Falls",
+      "q": "بنظرة واحدة: ما اسم هذا المعلم المائي؟",
+      "commons": "File:SaltoAngel4.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بحيرة لويز",
+      "topic": "بحيرات وشلالات",
+      "ar": "بحيرة لويز",
+      "en": "Lake Louise",
+      "q": "لقطة واحدة: أين هذا المكان؟",
+      "commons": "File:Lakelouiseisland.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "بحيرة بليد",
+      "topic": "بحيرات وشلالات",
+      "ar": "بحيرة بليد",
+      "en": "Lake Bled",
+      "q": "للمتمعن: ما اسم هذا الموقع؟",
+      "commons": "File:Aerial image of Lake Bled (view from the southwest).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "بحيرات بليتفيتشي",
+      "topic": "بحيرات وشلالات",
+      "ar": "بحيرات بليتفيتشي",
+      "en": "Plitvice Lakes National Park",
+      "q": "من الصورة وحدها: أي مكان هذا؟",
+      "commons": "File:Plitvice Lakes National Park (2).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "وادي الحيتان",
+      "topic": "صحارى وتضاريس",
+      "ar": "وادي الحيتان",
+      "en": "Wadi El Hitan",
+      "q": "انظر جيدًا: ما اسم هذه التضاريس؟",
+      "commons": "File:WadiHitanRock.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "سيوة",
+      "alt": [
+        "واحة سيوة"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "واحة سيوة",
+      "en": "Siwa Oasis",
+      "q": "هيا جرب: أين هذا المكان؟",
+      "commons": "File:Shali (Historic Center of Siwa) 02.JPG"
+    },
+    {
+      "tier": 600,
+      "a": "سالار دي أويوني",
+      "alt": [
+        "ملاحة أويوني"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "سالار دي أويوني",
+      "en": "Salar de Uyuni",
+      "q": "بنظرة واحدة: ما اسم هذا الموقع الطبيعي؟",
+      "commons": "File:Salar de Uyuni - panoramio (10).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "باموكالي",
+      "topic": "صحارى وتضاريس",
+      "ar": "باموكالي",
+      "en": "Pamukkale",
+      "q": "سؤال سريع: أي مكان هذا؟",
+      "commons": "File:Pamukkale, Denizli 2026 68.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "درب العمالقة",
+      "alt": [
+        "جسر العمالقة"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "درب العمالقة",
+      "en": "Giant's Causeway",
+      "q": "بنظرة واحدة: ما اسم هذه التضاريس؟",
+      "commons": "File:Giant's Causeway (36834542085).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "مون بلان",
+      "alt": [
+        "مونت بلانك"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "مون بلان",
+      "en": "Mont Blanc",
+      "q": "انظر جيدًا: ما اسم هذه القمة؟",
+      "commons": "File:Panorama of Mont Blanc du Tacul, Mont Maudit and Mont Blanc from Aiguille du Midi, Chamonix, Haute-Savoie.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "جبل سانت هيلين",
+      "topic": "جبال وبراكين",
+      "ar": "جبل سانت هيلين",
+      "en": "Mount St. Helens",
+      "q": "بنظرة واحدة: أي جبل هذا؟",
+      "commons": "File:MSH82 st helens plume from harrys ridge 05-19-82.jpg"
+    },
+    {
+      "tier": 600,
+      "a": "منتزه يوسمايت",
+      "alt": [
+        "يوسمايت"
+      ],
+      "topic": "متنزهات ومحميات",
+      "ar": "حديقة يوسمايت الوطنية",
+      "en": "Yosemite National Park",
+      "q": "ما اسم هذه المحمية؟",
+      "commons": "File:Half Dome with Eastern Yosemite Valley (50MP).jpg"
+    },
+    {
+      "tier": 600,
+      "a": "منتزه سيرينغيتي",
+      "alt": [
+        "سيرينغيتي"
+      ],
+      "topic": "متنزهات ومحميات",
+      "ar": "سيرينغيتي",
+      "en": "Serengeti National Park",
+      "q": "انظر جيدًا: أين هذا المتنزه؟",
+      "commons": "File:Serengeti-Landscape-2012.JPG"
+    },
+    {
+      "tier": 800,
+      "a": "لبدة الكبرى",
+      "topic": "مواقع أثرية",
+      "ar": "لبدة الكبرى",
+      "en": "Leptis Magna",
+      "q": "تأمل المشهد: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Leptis Magna (29) (8288918733).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "تيمقاد",
+      "topic": "مواقع أثرية",
+      "ar": "تيمقاد",
+      "en": "Timgad",
+      "q": "تأمل المشهد: أي موقع أثري هذا؟",
+      "commons": "File:Timgad Ruins Panorama.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "وليلي",
+      "topic": "مواقع أثرية",
+      "ar": "وليلي",
+      "en": "Volubilis",
+      "q": "تأمل المشهد: أين هذه الآثار؟",
+      "commons": "File:Volubilis 1990.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "الحضر",
+      "topic": "مواقع أثرية",
+      "ar": "الحضر",
+      "en": "Hatra",
+      "q": "من الذاكرة: ما اسم هذا الموقع؟",
+      "commons": "File:Hatra ruins.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "قصير عمرة",
+      "alt": [
+        "قصر عمرة"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "قصير عمرة",
+      "en": "Qusayr 'Amra",
+      "q": "بلا تردد: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Qasr Amra.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "أم قيس",
+      "alt": [
+        "جدارا"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "أم قيس",
+      "en": "Umm Qais",
+      "q": "بلا تردد: أي موقع أثري هذا؟",
+      "commons": "File:Modern Umm Qais, Jordan.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "صور",
+      "alt": [
+        "صور اللبنانية"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "صور (لبنان)",
+      "en": "Tyre, Lebanon",
+      "q": "بلا تردد: أين هذه الآثار؟",
+      "commons": "File:SubmergedEgyptianHarbour TyreSour Lebanon RomanDeckert04112019.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "معبد فيلة",
+      "alt": [
+        "فيلة"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "معبد فيلة",
+      "en": "Philae",
+      "q": "بلا مساعدة: ما اسم هذا الموقع؟",
+      "commons": "File:The Temple of Isis from Philae, First pylon, Lake Nasser, Egypt.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "ريغستان",
+      "alt": [
+        "ساحة ريغستان",
+        "سمرقند"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "ريغستان",
+      "en": "Registan",
+      "q": "للعارفين: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Registan 01.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سيغيريا",
+      "alt": [
+        "صخرة الأسد"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "سيغيريا",
+      "en": "Sigiriya",
+      "q": "للعارفين: أي موقع أثري هذا؟",
+      "commons": "File:Beauty of Sigiriya by Binuka.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "دير سانت كاترين",
+      "topic": "معالم دينية",
+      "ar": "دير سانت كاترين",
+      "en": "Saint Catherine's Monastery",
+      "q": "ركز قليلًا: أين هذا المكان؟",
+      "commons": "File:Katharinenkloster Sinai BW 2.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "الحرم الإبراهيمي",
+      "alt": [
+        "المسجد الإبراهيمي"
+      ],
+      "topic": "معالم دينية",
+      "ar": "الحرم الإبراهيمي",
+      "en": "Cave of the Patriarchs",
+      "q": "تأمل المشهد: ما اسم هذا المكان المقدس؟",
+      "commons": "File:Hebron Cave of the Patriarchs.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مسجد الحسن الثاني",
+      "topic": "معالم دينية",
+      "ar": "مسجد الحسن الثاني",
+      "en": "Hassan II Mosque",
+      "q": "تأمل المشهد: أي معلم ديني هذا؟",
+      "commons": "File:Sunshine on mosque Hassan II in Casablanca, Morocco - Flickr - Milamber's portfolio.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "ساحة نقش جهان",
+      "alt": [
+        "ميدان نقش جهان",
+        "أصفهان"
+      ],
+      "topic": "معالم دينية",
+      "ar": "ساحة نقش جهان",
+      "en": "Naqsh-e Jahan Square",
+      "q": "لقطة واحدة: ما اسم هذا المعلم؟",
+      "commons": "File:Naghsh-e Jahan Square.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "كاتدرائية كولونيا",
+      "topic": "معالم دينية",
+      "ar": "كاتدرائية كولونيا",
+      "en": "Cologne Cathedral",
+      "q": "قبل أن تخمّن: أين هذا المكان؟",
+      "commons": "File:Kölner Dom von Osten.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "كاتدرائية ميلانو",
+      "alt": [
+        "دومو ميلانو"
+      ],
+      "topic": "معالم دينية",
+      "ar": "كاتدرائية ميلانو",
+      "en": "Milan Cathedral",
+      "q": "بلا تردد: ما اسم هذا المكان المقدس؟",
+      "commons": "File:20110724 Milan Cathedral 5260.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "قلعة صيدا البحرية",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة صيدا البحرية",
+      "en": "Sidon Sea Castle",
+      "q": "للمتمعن: أي معلم هذا؟",
+      "commons": "File:SidonSeaCastle.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "قصر جيونغبوكغونغ",
+      "topic": "قصور وقلاع",
+      "ar": "قصر جيونغبوكغونغ",
+      "en": "Gyeongbokgung",
+      "q": "سؤال سريع: ما اسم هذا المبنى التاريخي؟",
+      "commons": "File:광화문 월대.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "قصر بيترهوف",
+      "topic": "قصور وقلاع",
+      "ar": "قصر بيترهوف",
+      "en": "Peterhof Palace",
+      "q": "من المشهد وحده: أين هذا المكان؟",
+      "commons": "File:Grand Cascade in Peterhof 01.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "قلعة إدنبرة",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة إدنبرة",
+      "en": "Edinburgh Castle",
+      "q": "للمتمعن: ما اسم هذا الصرح؟",
+      "commons": "File:Edinburgh Castle from the Grassmarket.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جبل شمس",
+      "topic": "جبال وبراكين",
+      "ar": "جبل شمس",
+      "en": "Jebel Shams",
+      "q": "بنظرة واحدة: ما اسم هذه القمة؟",
+      "commons": "File:Jebel Shams (2).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جبل توبقال",
+      "topic": "جبال وبراكين",
+      "ar": "جبل توبقال",
+      "en": "Toubkal",
+      "q": "من الصورة وحدها: أي جبل هذا؟",
+      "commons": "File:Toubkal 7.90965W 31.05231N.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جبل أرارات",
+      "topic": "جبال وبراكين",
+      "ar": "جبل أرارات",
+      "en": "Mount Ararat",
+      "q": "بنظرة واحدة: ما اسم هذا الجبل؟",
+      "commons": "File:NEO ararat big.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جبل بروموو",
+      "topic": "جبال وبراكين",
+      "ar": "جبل بروموو",
+      "en": "Mount Bromo",
+      "q": "بنظرة واحدة: أين هذه القمة؟",
+      "commons": "File:Mount Bromo closeup on sunrise 2.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "هوانغشان",
+      "alt": [
+        "الجبل الأصفر"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "هوانغشان",
+      "en": "Huangshan",
+      "q": "من الصورة وحدها: ما اسم هذه القمة؟",
+      "commons": "File:屯溪宽网大厦11楼外景 - panoramio - luchangjiang~鲁昌江.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "جبل رينييه",
+      "topic": "جبال وبراكين",
+      "ar": "جبل رينييه",
+      "en": "Mount Rainier",
+      "q": "سؤال سريع: أي جبل هذا؟",
+      "commons": "File:Mount Rainier 5917s.JPG"
+    },
+    {
+      "tier": 800,
+      "a": "دينالي",
+      "topic": "جبال وبراكين",
+      "ar": "دينالي",
+      "en": "Denali",
+      "q": "من الصورة وحدها: ما اسم هذا الجبل؟",
+      "commons": "File:Wonder Lake and Denali.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بريكستولن",
+      "alt": [
+        "منبر الصخرة"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "بريكستولن",
+      "en": "Preikestolen",
+      "q": "من الصورة وحدها: أين هذه القمة؟",
+      "commons": "File:Preikestolen Norge.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "عرق الشبي",
+      "alt": [
+        "مرزوقة"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "عرق الشبي",
+      "en": "Erg Chebbi",
+      "q": "بلا خرائط: أين هذا المكان؟",
+      "commons": "File:Merzouga Dunes 2011.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "وادي الموت",
+      "topic": "صحارى وتضاريس",
+      "ar": "وادي الموت",
+      "en": "Death Valley",
+      "q": "من الصورة وحدها: ما اسم هذا الموقع الطبيعي؟",
+      "commons": "File:Badwater Desolation.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "وادي أنتيلوب",
+      "topic": "صحارى وتضاريس",
+      "ar": "وادي أنتيلوب",
+      "en": "Antelope Canyon",
+      "q": "خمن بسرعة: أي مكان هذا؟",
+      "commons": "File:USA Antelope-Canyon.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "مدرجات باناوي",
+      "alt": [
+        "مدرجات الأرز في باناوي"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "مدرجات أرز باناوي",
+      "en": "Banaue Rice Terraces",
+      "q": "من الصورة وحدها: ما اسم هذه التضاريس؟",
+      "commons": "File:Pana Banaue Rice Terraces (Cropped).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بحيرة تيتيكاكا",
+      "topic": "بحيرات وشلالات",
+      "ar": "بحيرة تيتيكاكا",
+      "en": "Lake Titicaca",
+      "q": "رحلة سريعة: أين هذا المكان؟",
+      "commons": "File:00 1635 Reed Islands of Lake Titicaca.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "بحيرة بايكال",
+      "topic": "بحيرات وشلالات",
+      "ar": "بحيرة بايكال",
+      "en": "Lake Baikal",
+      "q": "فكر ثم أجب: ما اسم هذا الموقع؟",
+      "commons": "File:Olkhon Island and Lake Baikal.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "غيرانغر فيورد",
+      "alt": [
+        "مضيق غيرانغر"
+      ],
+      "topic": "بحيرات وشلالات",
+      "ar": "غيرانغر فيورد",
+      "en": "Geirangerfjord",
+      "q": "دقق في الصورة: أي مكان هذا؟",
+      "commons": "File:00 2269 Geiranger - Norway.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "شلال سكوغافوس",
+      "alt": [
+        "سكوغافوس"
+      ],
+      "topic": "بحيرات وشلالات",
+      "ar": "سكوغافوس",
+      "en": "Skógafoss",
+      "q": "من الصورة وحدها: ما اسم هذا المعلم المائي؟",
+      "commons": "File:Skogafoss-02-2018-gje.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "البحيرة الزرقاء",
+      "alt": [
+        "بلو لاغون"
+      ],
+      "topic": "بحيرات وشلالات",
+      "ar": "البحيرة الزرقاء (آيسلندا)",
+      "en": "Blue Lagoon (geothermal spa)",
+      "q": "من زاوية واحدة: أين هذا المكان؟",
+      "commons": "File:Blue Lagoon 2012-08-23 (4).JPG"
+    },
+    {
+      "tier": 800,
+      "a": "ساحل أمالفي",
+      "topic": "مدن وبلدات",
+      "ar": "ساحل أمالفي",
+      "en": "Amalfi Coast",
+      "q": "بنظرة واحدة: أي مدينة هذه؟",
+      "commons": "File:Ravello September 2007.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "تشينكوي تيري",
+      "alt": [
+        "سينك تيري"
+      ],
+      "topic": "مدن وبلدات",
+      "ar": "تشينكوي تيري",
+      "en": "Cinque Terre",
+      "q": "من الصورة وحدها: لأي مدينة هذه الإطلالة؟",
+      "commons": "File:Manarola NW Cemetery Corniglia Monterosso Cinque Terre Sep23 A7C 06872.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "فاليتا",
+      "topic": "مدن وبلدات",
+      "ar": "فاليتا",
+      "en": "Valletta",
+      "q": "من الصورة وحدها: ما اسم هذه المدينة؟",
+      "commons": "File:Malta, 2010 - panoramio - Bengt Nyman (23).jpg"
+    },
+    {
+      "tier": 800,
+      "a": "كيندرديك",
+      "alt": [
+        "طواحين كيندرديك"
+      ],
+      "topic": "مدن وبلدات",
+      "ar": "كيندرديك",
+      "en": "Kinderdijk",
+      "q": "من الصورة وحدها: أي مدينة هذه؟",
+      "commons": "File:KinderdijkMolens02.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "سبيس نيدل",
+      "alt": [
+        "إبرة الفضاء"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "سبيس نيدل",
+      "en": "Space Needle",
+      "q": "من الذاكرة: أي معلم هذا؟",
+      "commons": "File:Seattle, October 6, 2023 - 60.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "برج ويليس",
+      "alt": [
+        "برج سيرز"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "برج ويليس",
+      "en": "Willis Tower",
+      "q": "من الذاكرة: ما اسم هذا الصرح؟",
+      "commons": "File:Chicago Sears Tower.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "برج سي إن",
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "برج سي إن",
+      "en": "CN Tower",
+      "q": "خمن بسرعة: أين هذا المعلم؟",
+      "commons": "File:CN Tower from Puente de Luz, Toronto, Ontario, 2025-08-25 01.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "حديقة غويل",
+      "alt": [
+        "بارك غويل"
+      ],
+      "topic": "أبراج ومعالم حديثة",
+      "ar": "حديقة غويل",
+      "en": "Park Güell",
+      "q": "هيا جرب: ما اسم هذا المعلم؟",
+      "commons": "File:Güell BCN edited.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "غابة أرز الرب",
+      "alt": [
+        "أرز الرب"
+      ],
+      "topic": "متنزهات ومحميات",
+      "ar": "غابة أرز الرب",
+      "en": "Cedars of God",
+      "q": "أي متنزه وطني هذا؟",
+      "commons": "File:Forest of The cedars of God.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "منتزه برايس كانيون",
+      "alt": [
+        "برايس كانيون"
+      ],
+      "topic": "متنزهات ومحميات",
+      "ar": "حديقة برايس كانيون الوطنية",
+      "en": "Bryce Canyon National Park",
+      "q": "انظر جيدًا: ما اسم هذه المحمية؟",
+      "commons": "File:USA 10654 Bryce Canyon Luca Galuzzi 2007.jpg"
+    },
+    {
+      "tier": 800,
+      "a": "منتزه توري ديل باين",
+      "alt": [
+        "توري ديل باين"
+      ],
+      "topic": "متنزهات ومحميات",
+      "ar": "حديقة توري ديل باين الوطنية",
+      "en": "Torres del Paine National Park",
+      "q": "بنظرة واحدة: أين هذا المتنزه؟",
+      "commons": "File:Torres del Paine, Laguna Azul 09.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "غدامس",
+      "topic": "مدن وبلدات",
+      "ar": "غدامس",
+      "en": "Ghadames",
+      "q": "سؤال سريع: ما اسم هذه المدينة؟",
+      "commons": "File:Ghadames, 2006.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "شنقيط",
+      "topic": "مدن وبلدات",
+      "ar": "شنقيط",
+      "en": "Chinguetti",
+      "q": "سؤال سريع: أي مدينة هذه؟",
+      "commons": "File:مسجد شنقيط التاريخي.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "وادان",
+      "topic": "مدن وبلدات",
+      "ar": "وادان",
+      "en": "Ouadane",
+      "q": "سؤال سريع: لأي مدينة هذه الإطلالة؟",
+      "commons": "File:Oudane old tower.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "غرداية",
+      "alt": [
+        "وادي مزاب"
+      ],
+      "topic": "مدن وبلدات",
+      "ar": "غرداية",
+      "en": "Ghardaïa",
+      "q": "خمن بسرعة: ما اسم هذه المدينة؟",
+      "commons": "File:Ksar Ghardaia place marché 1.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "معلولا",
+      "topic": "مدن وبلدات",
+      "ar": "معلولا",
+      "en": "Maaloula",
+      "q": "خمن بسرعة: أي مدينة هذه؟",
+      "commons": "File:Maaloula 01.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "شيراكاوا غو",
+      "alt": [
+        "شيراكاوا"
+      ],
+      "topic": "مدن وبلدات",
+      "ar": "شيراكاوا (غيفو)",
+      "en": "Shirakawa-gō",
+      "q": "خمن بسرعة: لأي مدينة هذه الإطلالة؟",
+      "commons": "File:Shirakawa 0195.JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "ليجيانغ",
+      "topic": "مدن وبلدات",
+      "ar": "ليجيانغ",
+      "en": "Lijiang",
+      "q": "دقق في الصورة: ما اسم هذه المدينة؟",
+      "commons": "File:Lijiang-canales-l02.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "كولمار",
+      "topic": "مدن وبلدات",
+      "ar": "كولمار",
+      "en": "Colmar",
+      "q": "دقق في الصورة: أي مدينة هذه؟",
+      "commons": "File:View of Église Saint-Martin (43833049001).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جميلة",
+      "topic": "مواقع أثرية",
+      "ar": "جميلة (الجزائر)",
+      "en": "Djémila",
+      "q": "للمتمعن: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Roman Ruins of Djemila in Sétif, Algeria.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "تيبازة",
+      "topic": "مواقع أثرية",
+      "ar": "تيبازة",
+      "en": "Tipasa",
+      "q": "للمتمعن: أي موقع أثري هذا؟",
+      "commons": "File:Mzafran مزفران - panoramio.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "شحات",
+      "alt": [
+        "قوريني"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "شحات",
+      "en": "Cyrene",
+      "q": "للعارفين: أين هذه الآثار؟",
+      "commons": "File:Archaeological Site of Cyrene-109025.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "صبراتة",
+      "topic": "مواقع أثرية",
+      "ar": "صبراتة",
+      "en": "Sabratha",
+      "q": "لقطة واحدة: ما اسم هذا الموقع؟",
+      "commons": "File:Theatre of Sabratha, Libya.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جبل البركل",
+      "topic": "مواقع أثرية",
+      "ar": "جبل البركل",
+      "en": "Jebel Barkal",
+      "q": "من الذاكرة: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Gebel Barkal.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سد مأرب",
+      "topic": "مواقع أثرية",
+      "ar": "سد مأرب",
+      "en": "Marib Dam",
+      "q": "من الذاكرة: أي موقع أثري هذا؟",
+      "commons": "File:Marib dam.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "باغان",
+      "topic": "مواقع أثرية",
+      "ar": "باغان",
+      "en": "Bagan",
+      "q": "للمتمعن: أين هذه الآثار؟",
+      "commons": "File:Bagan, Myanmar, Htilominlo Temple and other Buddhist stupas in Bagan plain.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "هامبي",
+      "topic": "مواقع أثرية",
+      "ar": "هامبي",
+      "en": "Hampi",
+      "q": "هيا جرب: ما اسم هذا الموقع؟",
+      "commons": "File:Hampi, India, Granite boulders of Matanga Hill.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "خاجوراهو",
+      "alt": [
+        "معابد خاجوراهو"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "خاجوراهو",
+      "en": "Khajuraho Group of Monuments",
+      "q": "بلا مساعدة: ما اسم هذا الموقع الأثري؟",
+      "commons": "File:Khajuraho tempel india.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بترا الصغرى",
+      "alt": [
+        "البيضا",
+        "سيق البارد"
+      ],
+      "topic": "مواقع أثرية",
+      "ar": "البيضا (الأردن)",
+      "en": "Little Petra",
+      "q": "بلا مساعدة: أي موقع أثري هذا؟",
+      "commons": "File:05 Little Petra Canyon Trail - The Trail Starts at the End of Little Petra - panoramio.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "قلعة بهلاء",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة بهلاء",
+      "en": "Bahla Fort",
+      "q": "شدّ الرحال: أين هذا المكان؟",
+      "commons": "File:Bahla Fort.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "قلعة الكرك",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة الكرك",
+      "en": "Kerak Castle",
+      "q": "بلا مساعدة: ما اسم هذا الصرح؟",
+      "commons": "File:Kerak BW 1.JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "قلعة عجلون",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة عجلون",
+      "en": "Ajloun Castle",
+      "q": "بلا مساعدة: أي معلم هذا؟",
+      "commons": "File:Ajlun Castle in 2009.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "دار الحجر",
+      "alt": [
+        "قصر دار الحجر"
+      ],
+      "topic": "قصور وقلاع",
+      "ar": "دار الحجر",
+      "en": "Dar al-Hajar",
+      "q": "خمن بسرعة: ما اسم هذا المبنى التاريخي؟",
+      "commons": "File:Dar al hajar.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "قلعة أمبير",
+      "alt": [
+        "حصن أمبير"
+      ],
+      "topic": "قصور وقلاع",
+      "ar": "قلعة أمبير",
+      "en": "Amer Fort",
+      "q": "حدّد الوجهة: أين هذا المكان؟",
+      "commons": "File:Jaipur 03-2016 04 Amber Fort.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "قلعة بيليش",
+      "topic": "قصور وقلاع",
+      "ar": "قلعة بيليش",
+      "en": "Peleș Castle",
+      "q": "فكر ثم أجب: ما اسم هذا الصرح؟",
+      "commons": "File:01 Chateau Peles.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "رباط المنستير",
+      "topic": "قصور وقلاع",
+      "ar": "رباط المنستير",
+      "en": "Ribat of Monastir",
+      "q": "فكر ثم أجب: أي معلم هذا؟",
+      "commons": "File:Ribat of Monastir, April 3, 2025 (01).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "دير ريلا",
+      "topic": "معالم دينية",
+      "ar": "دير ريلا",
+      "en": "Rila Monastery",
+      "q": "ركز قليلًا: ما اسم هذا المعلم؟",
+      "commons": "File:Rila Monastery, August 2013.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "لاليبيلا",
+      "alt": [
+        "كنائس لاليبيلا"
+      ],
+      "topic": "معالم دينية",
+      "ar": "لاليبيلا",
+      "en": "Lalibela",
+      "q": "على الخريطة: أين هذا المكان؟",
+      "commons": "File:Bete Giyorgis 01.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "دير خور فيراب",
+      "topic": "معالم دينية",
+      "ar": "خور فيراب",
+      "en": "Khor Virap",
+      "q": "للعارفين: ما اسم هذا المكان المقدس؟",
+      "commons": "File:Monasterio Khor Virap, Armenia, 2016-10-01, DD 25.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "مهابليبورام",
+      "alt": [
+        "معابد مهابليبورام"
+      ],
+      "topic": "معالم دينية",
+      "ar": "مهابليبورام",
+      "en": "Mahabalipuram",
+      "q": "بلا تردد: أي معلم ديني هذا؟",
+      "commons": "File:Mamallapuram, The Shore Temple 2, India.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "طاسيلي ناجر",
+      "topic": "صحارى وتضاريس",
+      "ar": "طاسيلي ناجر",
+      "en": "Tassili n'Ajjer",
+      "q": "سؤال سريع: ما اسم هذا الموقع الطبيعي؟",
+      "commons": "File:Tassili Desert Algeria.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جبال أكاكوس",
+      "alt": [
+        "أكاكوس"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "أكاكوس",
+      "en": "Acacus Mountains",
+      "q": "تأمل المشهد: أي مكان هذا؟",
+      "commons": "File:Libya 5076 Tadrart Acacus Luca Galuzzi 2007.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "كهف سون دونغ",
+      "alt": [
+        "سون دونغ"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "كهف سون دونغ",
+      "en": "Hang Sơn Đoòng",
+      "q": "سؤال سريع: ما اسم هذه التضاريس؟",
+      "commons": "File:Son Doong Cave 5.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "سوسوسفلي",
+      "alt": [
+        "كثبان سوسوسفلي"
+      ],
+      "topic": "صحارى وتضاريس",
+      "ar": "سوسوسفلي",
+      "en": "Sossusvlei",
+      "q": "أين نحن: أين هذا المكان؟",
+      "commons": "File:2011-02-09 066.JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "كهوف وايتومو",
+      "topic": "صحارى وتضاريس",
+      "ar": "كهوف وايتومو",
+      "en": "Waitomo Glowworm Caves",
+      "q": "خمن بسرعة: ما اسم هذا الموقع الطبيعي؟",
+      "commons": "File:Green Glow Caves in New Zealand (6563152219).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر فرسان",
+      "topic": "جزر",
+      "ar": "جزر فرسان",
+      "en": "Farasan Islands",
+      "q": "من الصورة وحدها: أي جزيرة هذه؟",
+      "commons": "File:Farasan Islands.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "أرواد",
+      "alt": [
+        "جزيرة أرواد"
+      ],
+      "topic": "جزر",
+      "ar": "أرواد",
+      "en": "Arwad",
+      "q": "انظر جيدًا: أين هذه الجزيرة؟",
+      "commons": "File:Ruad large.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "لوفوتن",
+      "alt": [
+        "جزر لوفوتن"
+      ],
+      "topic": "جزر",
+      "ar": "لوفوتن",
+      "en": "Lofoten",
+      "q": "انظر جيدًا: ما اسم هذه الجزيرة؟",
+      "commons": "File:Moskenes Reinebringen lub 2025-07-21 img09 Aussicht.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر فارو",
+      "topic": "جزر",
+      "ar": "جزر فارو",
+      "en": "Faroe Islands",
+      "q": "سؤال سريع: أي جزيرة هذه؟",
+      "commons": "File:Faroe Islands by Sentinel-2.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "بورا بورا",
+      "topic": "جزر",
+      "ar": "بورا بورا",
+      "en": "Bora Bora",
+      "q": "بنظرة واحدة: أين هذه الجزيرة؟",
+      "commons": "File:Bora Bora (16542797633).jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جبل هوا",
+      "alt": [
+        "هواشان"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "جبل هوا",
+      "en": "Mount Hua",
+      "q": "سؤال سريع: أين هذه القمة؟",
+      "commons": "File:Hua Shan.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "جبل رورايما",
+      "topic": "جبال وبراكين",
+      "ar": "جبل رورايما",
+      "en": "Mount Roraima",
+      "q": "سؤال سريع: ما اسم هذه القمة؟",
+      "commons": "File:Roraima3 (79).JPG"
+    },
+    {
+      "tier": 1000,
+      "a": "إرتا آلي",
+      "alt": [
+        "بركان إرتا آلي"
+      ],
+      "topic": "جبال وبراكين",
+      "ar": "إرتا آلي",
+      "en": "Erta Ale",
+      "q": "خمن بسرعة: أي جبل هذا؟",
+      "commons": "File:ET Afar asv2018-01 img98 way to Ertale.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "الجبل الأخضر",
+      "topic": "جبال وبراكين",
+      "ar": "الجبل الأخضر (عمان)",
+      "en": "Jebel Akhdar (Oman)",
+      "q": "سؤال سريع: ما اسم هذا الجبل؟",
+      "commons": "File:Jebel Akhdar view.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "شلالات ديتيفوس",
+      "alt": [
+        "ديتيفوس"
+      ],
+      "topic": "بحيرات وشلالات",
+      "ar": "ديتيفوس",
+      "en": "Dettifoss",
+      "q": "سؤال سريع: ما اسم هذا المعلم المائي؟",
+      "commons": "File:Dettifoss Panorama 03.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "شلالات كايتور",
+      "topic": "بحيرات وشلالات",
+      "ar": "شلالات كايتور",
+      "en": "Kaieteur Falls",
+      "q": "خمّن قبل الكشف: أين هذا المكان؟",
+      "commons": "File:GuyanaKaieteurFalls2004.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "ميلفورد ساوند",
+      "topic": "بحيرات وشلالات",
+      "ar": "ميلفورد ساوند",
+      "en": "Milford Sound",
+      "q": "ركز قليلًا: ما اسم هذا الموقع؟",
+      "commons": "File:00 1371 New Zealand - Milford Sound.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "منتزه تشانغجياجيه",
+      "alt": [
+        "تشانغجياجيه"
+      ],
+      "topic": "متنزهات ومحميات",
+      "ar": "تشانغجياجيه",
+      "en": "Zhangjiajie National Forest Park",
+      "q": "بنظرة واحدة: ما اسم هذه المحمية؟",
+      "commons": "File:文明实践中心6楼南望 20240224.jpg"
+    },
+    {
+      "tier": 1000,
+      "a": "منتزه غراند تيتون",
+      "alt": [
+        "غراند تيتون"
+      ],
+      "topic": "متنزهات ومحميات",
+      "ar": "حديقة غراند تيتون الوطنية",
+      "en": "Grand Teton National Park",
+      "q": "من الصورة وحدها: أين هذا المتنزه؟",
+      "commons": "File:Barns grand tetons.jpg"
+    }
+  ]
+}

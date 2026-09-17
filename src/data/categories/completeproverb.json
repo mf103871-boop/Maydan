@@ -20,11 +20,12 @@
     {
       "p": 200,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: دوام الحال من ___",
-      "a": "المحال",
+      "q": "أكمل: عامل الناس كما تحبّ أن ___",
+      "a": "يعاملوك",
       "type": "complete",
       "alt": [
-        "محال"
+        "يعاملوك الناس",
+        "أن يعاملوك"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -50,7 +51,8 @@
       "a": "نار",
       "type": "complete",
       "alt": [
-        "نارٍ"
+        "نارٍ",
+        "النار"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -91,7 +93,8 @@
       "a": "رحمة",
       "type": "complete",
       "alt": [
-        "رحمه"
+        "رحمه",
+        "الرحمة"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -187,7 +190,8 @@
       "a": "ملك",
       "type": "complete",
       "alt": [
-        "ملك مفتّح"
+        "ملك مفتّح",
+        "الملك"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -223,12 +227,12 @@
     {
       "p": 200,
       "topic": "أمثال مصرية",
-      "q": "أكمل: القرش الأبيض ينفع في اليوم ___",
-      "a": "الأسود",
+      "q": "أكمل: اللي ما يشوفش من الغربال يبقى ___",
+      "a": "أعمى",
       "type": "complete",
       "alt": [
-        "الإسود",
-        "أسود"
+        "اعمى",
+        "عمي"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -277,12 +281,12 @@
     {
       "p": 200,
       "topic": "أمثال مصرية",
-      "q": "أكمل: مش كل مرّة تسلم ___",
-      "a": "الجرّة",
+      "q": "أكمل: أعلى ما خيلك ___",
+      "a": "اركبه",
       "type": "complete",
       "alt": [
-        "الجرة",
-        "جرّة"
+        "إركبه",
+        "اركب"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -428,13 +432,14 @@
     {
       "p": 200,
       "topic": "أمثال خليجية",
-      "q": "أكمل: من خاف ___",
-      "a": "سلم",
+      "q": "أكمل: اللي ما يستحي منك لا تستحي ___",
+      "a": "منه",
       "type": "complete",
       "alt": [
-        "سلِم"
+        "منّه",
+        "منه انت"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
+      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
       "verified": true,
       "qid": "completeproverb-200-032"
     },
@@ -580,7 +585,8 @@
       "type": "complete",
       "alt": [
         "الوادي",
-        "لواد"
+        "لواد",
+        "لوادي"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -630,13 +636,14 @@
     {
       "p": 200,
       "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: الصابر ظافر والمستعجل ___",
-      "a": "عاثر",
+      "q": "أكمل: نام بكير وفيّق بكير وشوف الصحّة كيف ___",
+      "a": "بتصير",
       "type": "complete",
       "alt": [
-        "عاثرًا"
+        "تصير",
+        "كيف بتصير"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%8A%D9%85%D9%86%D9%8A%D8%A9",
+      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
       "qid": "completeproverb-200-047"
     },
@@ -877,7 +884,8 @@
       "type": "complete",
       "alt": [
         "حمص",
-        "حمّصة"
+        "حمّصة",
+        "الحمّص"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -918,7 +926,8 @@
       "a": "الجنّة",
       "type": "complete",
       "alt": [
-        "الجنة"
+        "الجنة",
+        "جنّة"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -980,13 +989,14 @@
     {
       "p": 400,
       "topic": "أمثال خليجية",
-      "q": "أكمل: من طمع ___",
-      "a": "طبع",
+      "q": "أكمل: كل شارب وله ___",
+      "a": "مقص",
       "type": "complete",
       "alt": [
-        "طبعَ"
+        "مقصّ",
+        "المقص"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
+      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
       "verified": true,
       "qid": "completeproverb-400-025"
     },
@@ -1104,7 +1114,8 @@
       "a": "جوز",
       "type": "complete",
       "alt": [
-        "جوزة"
+        "جوزة",
+        "الجوز"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
       "verified": true,
@@ -1277,14 +1288,15 @@
     {
       "p": 400,
       "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: الصدفة أحسن من ___",
+      "q": "أكمل: ربّ صدفة خير من ألف ___",
       "a": "ميعاد",
       "type": "complete",
       "alt": [
         "الميعاد",
-        "موعد"
+        "موعد",
+        "ألف ميعاد"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
       "qid": "completeproverb-400-047"
     },
@@ -1324,7 +1336,8 @@
       "type": "complete",
       "alt": [
         "فوايد",
-        "فوائدُ"
+        "فوائدُ",
+        "الفوائد"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -1333,11 +1346,12 @@
     {
       "p": 600,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: لسانك حصانك إن صنته صانك وإن خنته ___",
-      "a": "خانك",
+      "q": "أكمل: من اغتاب الناس عندك اغتابك ___",
+      "a": "عندهم",
       "type": "complete",
       "alt": [
-        "خانَك"
+        "عندهمُ",
+        "عند الناس"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -1377,7 +1391,8 @@
       "a": "مقال",
       "type": "complete",
       "alt": [
-        "مقالٌ"
+        "مقالٌ",
+        "المقال"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -1605,7 +1620,8 @@
       "a": "نور",
       "type": "complete",
       "alt": [
-        "سلامة"
+        "سلامة",
+        "النور"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -1686,7 +1702,8 @@
       "a": "رفسة",
       "type": "complete",
       "alt": [
-        "رفسه"
+        "رفسه",
+        "الرفسة"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
       "verified": true,
@@ -1699,7 +1716,8 @@
       "a": "فحم",
       "type": "complete",
       "alt": [
-        "فحمًا"
+        "فحمًا",
+        "الفحم"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
       "verified": true,
@@ -1721,7 +1739,7 @@
     {
       "p": 600,
       "topic": "أمثال خليجية",
-      "q": "أكمل: الباب اللي يوسّع ___",
+      "q": "أكمل: الباب يوسّع ___",
       "a": "جمل",
       "type": "complete",
       "alt": [
@@ -1740,7 +1758,8 @@
       "type": "complete",
       "alt": [
         "سلّاية",
-        "صرماية"
+        "صرماية",
+        "السلاية"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
       "verified": true,
@@ -1897,14 +1916,13 @@
     {
       "p": 600,
       "topic": "أمثال عن الحيوان",
-      "q": "أكمل: أيش عرّف الحمير بأكل ___",
-      "a": "الزنجبيل",
+      "q": "أكمل: لا يموت الذيب ولا تفنى ___",
+      "a": "الغنم",
       "type": "complete",
       "alt": [
-        "زنجبيل",
-        "الزنجفيل"
+        "غنم"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
       "verified": true,
       "qid": "completeproverb-600-045"
     },
@@ -1928,7 +1946,8 @@
       "a": "العمر",
       "type": "complete",
       "alt": [
-        "عمر"
+        "عمر",
+        "العمر والعمر وقفة عزّ"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -2005,12 +2024,12 @@
     {
       "p": 800,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: ذلّ من لا ___",
-      "a": "سيف له",
+      "q": "أكمل: عدوّ عاقل خير من صديق ___",
+      "a": "جاهل",
       "type": "complete",
       "alt": [
-        "سيف",
-        "سيفَ له"
+        "الجاهل",
+        "جاهلٍ"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -2106,7 +2125,8 @@
       "type": "complete",
       "alt": [
         "وقية",
-        "أوقية"
+        "أوقية",
+        "الوقية"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -2141,12 +2161,13 @@
     {
       "p": 800,
       "topic": "أمثال شامية",
-      "q": "أكمل: الحكي إلك يا كنّة اسمعي يا ___",
-      "a": "جارة",
+      "q": "أكمل: الحكي إلك يا ___ اسمعي يا جارة",
+      "a": "كنّة",
       "type": "complete",
       "alt": [
-        "يا جاره",
-        "الجارة"
+        "كنه",
+        "الكنّة",
+        "يا كنّة"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -2160,7 +2181,8 @@
       "type": "complete",
       "alt": [
         "زبده",
-        "زبدةً"
+        "زبدةً",
+        "الزبدة"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
@@ -2389,7 +2411,8 @@
       "type": "complete",
       "alt": [
         "ذراعًا",
-        "ذراع زيادة"
+        "ذراع زيادة",
+        "الذراع"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
       "verified": true,
@@ -2417,7 +2440,8 @@
       "type": "complete",
       "alt": [
         "گرابة",
-        "قرابه"
+        "قرابه",
+        "القرابة"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
       "verified": true,
@@ -2443,7 +2467,8 @@
       "a": "حدّاد",
       "type": "complete",
       "alt": [
-        "حداد"
+        "حداد",
+        "الحدّاد"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
       "verified": true,
@@ -2525,7 +2550,8 @@
       "type": "complete",
       "alt": [
         "تفاحة",
-        "تفاحه"
+        "تفاحه",
+        "التفاحة"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -2574,14 +2600,15 @@
     {
       "p": 800,
       "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: أطول من ليلة بلا ___",
-      "a": "عشا",
+      "q": "أكمل: أطول من ليلة ما فيها ___",
+      "a": "العشاء",
       "type": "complete",
       "alt": [
+        "العشا",
         "عشاء",
-        "عشاءٍ"
+        "عشا"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
+      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
       "qid": "completeproverb-800-047"
     },
@@ -2601,11 +2628,13 @@
     {
       "p": 1000,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أكذب من ___",
-      "a": "مسيلمة",
+      "q": "أكمل: أطهر الناس أعراقًا أحسنهم ___",
+      "a": "أخلاقًا",
       "type": "complete",
       "alt": [
-        "مسيلمة الكذاب"
+        "أخلاقا",
+        "اخلاقا",
+        "خلقًا"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -2627,11 +2656,13 @@
     {
       "p": 1000,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أمرّ من ___",
-      "a": "العلقم",
+      "q": "أكمل: أحبّ شيء إلى الإنسان ما ___",
+      "a": "مُنع",
       "type": "complete",
       "alt": [
-        "علقم"
+        "منع",
+        "مُنِعا",
+        "منعا"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -2640,11 +2671,13 @@
     {
       "p": 1000,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أيأس من ___",
-      "a": "غريق",
+      "q": "أكمل: ربّ أخٍ لك لم ___",
+      "a": "تلده أمّك",
       "type": "complete",
       "alt": [
-        "الغريق"
+        "تلده امك",
+        "تلدْه أمّك",
+        "تلده أمه"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -2653,11 +2686,13 @@
     {
       "p": 1000,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أكتم من ___",
-      "a": "الأرض",
+      "q": "أكمل: لا تكن صلبًا فتُكسر ولا ليّنًا ___",
+      "a": "فتُعصر",
       "type": "complete",
       "alt": [
-        "الارض"
+        "فتعصر",
+        "تُعصر",
+        "تعصر"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -2666,11 +2701,13 @@
     {
       "p": 1000,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أعزّ من ___",
-      "a": "وائل",
+      "q": "أكمل: لا ترمِ سهمًا يعييك ___",
+      "a": "ردّه",
       "type": "complete",
       "alt": [
-        "واىل"
+        "رده",
+        "ردّهُ",
+        "ردَّه"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -2679,14 +2716,15 @@
     {
       "p": 1000,
       "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أبلغ من ___",
-      "a": "قسّ",
+      "q": "أكمل: سرّك أسيرك فإن أفشيته صرت ___",
+      "a": "أسيره",
       "type": "complete",
       "alt": [
-        "قس",
-        "قس بن ساعدة"
+        "اسيره",
+        "أسيرهُ",
+        "أسيرًا له"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
+      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
       "qid": "completeproverb-1000-007"
     },
@@ -2711,7 +2749,9 @@
       "a": "الحرم",
       "type": "complete",
       "alt": [
-        "حرم"
+        "حرم",
+        "مكة",
+        "حمام مكة"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
       "verified": true,
@@ -3061,7 +3101,8 @@
       "a": "نجوم",
       "type": "complete",
       "alt": [
-        "نجوّم"
+        "نجوّم",
+        "النجوم"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
       "verified": true,
@@ -3163,11 +3204,12 @@
     {
       "p": 1000,
       "topic": "أمثال عن الحيوان",
-      "q": "أكمل: أغدر من ___",
-      "a": "ذئب",
+      "q": "أكمل: إنّ البعوضة تُدمي مقلة ___",
+      "a": "الأسد",
       "type": "complete",
       "alt": [
-        "ذيب"
+        "أسد",
+        "الاسد"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -3176,11 +3218,13 @@
     {
       "p": 1000,
       "topic": "أمثال عن الحيوان",
-      "q": "أكمل: أفسد من ___",
-      "a": "السوس",
+      "q": "أكمل: إذا رأيت نيوب الليث بارزة فلا تحسبنّ أنّ الليث ___",
+      "a": "يبتسم",
       "type": "complete",
       "alt": [
-        "سوس"
+        "يبتسمُ",
+        "مبتسم",
+        "يضحك"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -3189,13 +3233,14 @@
     {
       "p": 1000,
       "topic": "أمثال عن الحيوان",
-      "q": "أكمل: لا يموت الذيب ولا تفنى ___",
-      "a": "الغنم",
+      "q": "أكمل: أيش عرّف الحمير بأكل ___",
+      "a": "الزنجبيل",
       "type": "complete",
       "alt": [
-        "غنم"
+        "زنجبيل",
+        "الزنجفيل"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
+      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
       "verified": true,
       "qid": "completeproverb-1000-045"
     },
@@ -3220,7 +3265,8 @@
       "type": "complete",
       "alt": [
         "أيام",
-        "ايام"
+        "ايام",
+        "الأيّام"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
       "verified": true,
@@ -3229,11 +3275,13 @@
     {
       "p": 1000,
       "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: أطول من يوم ___",
-      "a": "الفراق",
+      "q": "أكمل: من أطال الأمل ___",
+      "a": "أساء العمل",
       "type": "complete",
       "alt": [
-        "فراق"
+        "اساء العمل",
+        "أساء عمله",
+        "ساء عمله"
       ],
       "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,

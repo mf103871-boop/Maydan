@@ -5,14 +5,14 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما المجموعة الحيوانية التي تضم القط والكلب والحصان؟",
+      "q": "ما المجموعة الحيوانية التي تضم القط والكلب والحوت؟",
       "a": "ثدييات",
       "qid": "commonbond-200-001",
       "type": "common",
       "items": [
         "القط",
         "الكلب",
-        "الحصان"
+        "الحوت"
       ],
       "topic": "الحيوانات",
       "verified": true,
@@ -35,14 +35,14 @@
     },
     {
       "p": 200,
-      "q": "ما الاسم الجامع للسردين والسلمون والتونة؟",
+      "q": "ما الاسم الجامع للسردين والسلمون والقرش؟",
       "a": "أسماك",
       "qid": "commonbond-200-003",
       "type": "common",
       "items": [
         "السردين",
         "السلمون",
-        "التونة"
+        "القرش"
       ],
       "topic": "الحيوانات",
       "verified": true,
@@ -80,18 +80,22 @@
     },
     {
       "p": 200,
-      "q": "كيف تتكاثر الدجاجة والبطة والنعامة؟",
+      "q": "ما الصفة التكاثرية المشتركة بين الدجاجة والضفدع والسمكة؟",
       "a": "وضع البيض",
       "qid": "commonbond-200-006",
       "type": "common",
       "items": [
         "الدجاجة",
-        "البطة",
-        "النعامة"
+        "الضفدع",
+        "السمكة"
       ],
       "topic": "الحيوانات",
       "verified": true,
-      "source": "https://animaldiversity.org/accounts/Aves/"
+      "source": "https://animaldiversity.org/accounts/Amniota/",
+      "alt": [
+        "حيوانات بيوضة",
+        "تبيض"
+      ]
     },
     {
       "p": 200,
@@ -181,7 +185,11 @@
       ],
       "topic": "تقنية وحوسبة",
       "verified": true,
-      "source": "https://support.microsoft.com/en-us/accessibility/windows/keyboard-shortcuts-in-windows"
+      "source": "https://support.microsoft.com/en-us/accessibility/windows/keyboard-shortcuts-in-windows",
+      "alt": [
+        "أوامر الحافظة",
+        "الحافظة"
+      ]
     },
     {
       "p": 200,
@@ -290,18 +298,22 @@
     },
     {
       "p": 200,
-      "q": "ما المادة التي نجدها في الجليد والبخار والندى؟",
-      "a": "الماء",
+      "q": "إلى أي جهاز في الجسم تنتمي الأنف والحنجرة والقصبة الهوائية؟",
+      "a": "الجهاز التنفسي",
       "qid": "commonbond-200-020",
       "type": "common",
       "items": [
-        "الجليد",
-        "البخار",
-        "الندى"
+        "الأنف",
+        "الحنجرة",
+        "القصبة الهوائية"
       ],
       "topic": "فضاء وعلوم",
       "verified": true,
-      "source": "https://www.grc.nasa.gov/www/k-12/airplane/state.html"
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-1-organs-and-structures-of-the-respiratory-system",
+      "alt": [
+        "التنفسي",
+        "جهاز التنفس"
+      ]
     },
     {
       "p": 200,
@@ -361,22 +373,30 @@
       ],
       "topic": "فضاء وعلوم",
       "verified": true,
-      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body"
+      "source": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-2-structural-organization-of-the-human-body",
+      "alt": [
+        "أعضاء داخلية",
+        "أعضاء"
+      ]
     },
     {
       "p": 200,
-      "q": "ماذا تصف كلمات أحمر وأزرق وأخضر؟",
-      "a": "ألوان",
+      "q": "ما زمن الأفعال شرب ولعب وجلس؟",
+      "a": "الفعل الماضي",
       "qid": "commonbond-200-025",
       "type": "common",
       "items": [
-        "أحمر",
-        "أزرق",
-        "أخضر"
+        "شرب",
+        "لعب",
+        "جلس"
       ],
       "topic": "كلمات ولغة",
       "verified": true,
-      "source": "https://ar.wikipedia.org/wiki/لون"
+      "source": "https://ar.wikipedia.org/wiki/فعل_ماض",
+      "alt": [
+        "الماضي",
+        "زمن الماضي"
+      ]
     },
     {
       "p": 200,
@@ -421,7 +441,10 @@
       ],
       "topic": "كلمات ولغة",
       "verified": true,
-      "source": "https://learning.aljazeera.net/ar/generallanguage/المعرب-والمبني"
+      "source": "https://learning.aljazeera.net/ar/generallanguage/المعرب-والمبني",
+      "alt": [
+        "ضمائر"
+      ]
     },
     {
       "p": 200,
@@ -451,12 +474,15 @@
       ],
       "topic": "كلمات ولغة",
       "verified": true,
-      "source": "https://ar.wikipedia.org/wiki/اسم_استفهام"
+      "source": "https://ar.wikipedia.org/wiki/اسم_استفهام",
+      "alt": [
+        "أدوات استفهام"
+      ]
     },
     {
       "p": 200,
-      "q": "ما طريقة إنتاج الصوت التي تجمع العود والكمان والغيتار؟",
-      "a": "اهتزاز الأوتار",
+      "q": "ما الفئة الآلية التي تجمع العود والكمان والغيتار؟",
+      "a": "آلات وترية",
       "qid": "commonbond-200-031",
       "type": "common",
       "items": [
@@ -466,12 +492,16 @@
       ],
       "topic": "فنون وأدب",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/String_instrument"
+      "source": "https://en.wikipedia.org/wiki/String_instrument",
+      "alt": [
+        "الوتريات",
+        "آلات ذات أوتار"
+      ]
     },
     {
       "p": 200,
-      "q": "ما طريقة العزف المشتركة بين الناي والفلوت والكلارينيت؟",
-      "a": "النفخ",
+      "q": "ما الفئة التي تجمع الناي والفلوت والكلارينيت؟",
+      "a": "آلات نفخ",
       "qid": "commonbond-200-032",
       "type": "common",
       "items": [
@@ -481,7 +511,11 @@
       ],
       "topic": "فنون وأدب",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Wind_instrument"
+      "source": "https://en.wikipedia.org/wiki/Wind_instrument",
+      "alt": [
+        "النفخيات",
+        "آلات النفخ"
+      ]
     },
     {
       "p": 200,
@@ -511,7 +545,11 @@
       ],
       "topic": "فنون وأدب",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Drawing"
+      "source": "https://en.wikipedia.org/wiki/Drawing",
+      "alt": [
+        "فن الرسم",
+        "التخطيط"
+      ]
     },
     {
       "p": 200,
@@ -620,18 +658,22 @@
     },
     {
       "p": 200,
-      "q": "ما الرياضة التي تجمع ويمبلدون ورولان غاروس وأستراليا المفتوحة؟",
-      "a": "التنس",
+      "q": "ما اللعبة التي تجمع الإرسال والصد والضربة الساحقة؟",
+      "a": "الكرة الطائرة",
       "qid": "commonbond-200-042",
       "type": "common",
       "items": [
-        "ويمبلدون",
-        "رولان غاروس",
-        "أستراليا المفتوحة"
+        "الإرسال",
+        "الصد",
+        "الضربة الساحقة"
       ],
       "topic": "رياضة وألعاب",
       "verified": true,
-      "source": "https://www.itftennis.com/en/tours/grand-slam-tournaments/"
+      "source": "https://en.wikipedia.org/wiki/Volleyball",
+      "alt": [
+        "كرة الطائرة",
+        "الطائرة"
+      ]
     },
     {
       "p": 200,
@@ -755,18 +797,22 @@
     },
     {
       "p": 400,
-      "q": "ما الفصيلة التي تضم الأسد والنمر والفهد؟",
+      "q": "ما الفصيلة التي تضم الأسد والنمر والقط المنزلي؟",
       "a": "السنوريات",
       "qid": "commonbond-400-003",
       "type": "common",
       "items": [
         "الأسد",
         "النمر",
-        "الفهد"
+        "القط المنزلي"
       ],
       "topic": "الحيوانات",
       "verified": true,
-      "source": "https://animaldiversity.org/accounts/Felidae/"
+      "source": "https://animaldiversity.org/accounts/Felidae/",
+      "alt": [
+        "فصيلة القطط",
+        "القطيات"
+      ]
     },
     {
       "p": 400,
@@ -785,7 +831,7 @@
     },
     {
       "p": 400,
-      "q": "ما العجز الحركي الذي يجمع النعامة والكيوي والبطريق؟",
+      "q": "ما الصفة المشتركة بين النعامة والكيوي والبطريق رغم كونها طيورًا؟",
       "a": "العجز عن الطيران",
       "qid": "commonbond-400-005",
       "type": "common",
@@ -796,7 +842,11 @@
       ],
       "topic": "الحيوانات",
       "verified": true,
-      "source": "https://animals.sandiegozoo.org/animals/kiwi"
+      "source": "https://animals.sandiegozoo.org/animals/kiwi",
+      "alt": [
+        "طيور لا تطير",
+        "لا تطير"
+      ]
     },
     {
       "p": 400,
@@ -830,8 +880,8 @@
     },
     {
       "p": 400,
-      "q": "ما نوع المحتوى الذي تخزنه ملفات MP3 وWAV وFLAC؟",
-      "a": "صوت",
+      "q": "ما التصنيف الذي يجمع ملفات MP3 وWAV وFLAC؟",
+      "a": "صيغ صوتية",
       "qid": "commonbond-400-008",
       "type": "common",
       "items": [
@@ -841,7 +891,11 @@
       ],
       "topic": "تقنية وحوسبة",
       "verified": true,
-      "source": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Audio_codecs"
+      "source": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Audio_codecs",
+      "alt": [
+        "صيغ ملفات صوتية",
+        "ملفات صوت"
+      ]
     },
     {
       "p": 400,
@@ -946,22 +1000,29 @@
       ],
       "topic": "جغرافيا وأماكن",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Scandinavia"
+      "source": "https://en.wikipedia.org/wiki/Scandinavia",
+      "alt": [
+        "دول الشمال",
+        "الدول الإسكندنافية"
+      ]
     },
     {
       "p": 400,
-      "q": "ما المجرى المائي الذي يجمع الأقصر وأسوان والقاهرة؟",
+      "q": "ما المجرى المائي الذي تقع عليه الخرطوم وجوبا وأسوان؟",
       "a": "نهر النيل",
       "qid": "commonbond-400-016",
       "type": "common",
       "items": [
-        "الأقصر",
-        "أسوان",
-        "القاهرة"
+        "الخرطوم",
+        "جوبا",
+        "أسوان"
       ],
       "topic": "جغرافيا وأماكن",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Nile"
+      "source": "https://en.wikipedia.org/wiki/Nile",
+      "alt": [
+        "النيل"
+      ]
     },
     {
       "p": 400,
@@ -1006,7 +1067,11 @@
       ],
       "topic": "فضاء وعلوم",
       "verified": true,
-      "source": "https://science.nasa.gov/solar-system/planets/"
+      "source": "https://science.nasa.gov/solar-system/planets/",
+      "alt": [
+        "الكواكب الداخلية",
+        "كواكب أرضية"
+      ]
     },
     {
       "p": 400,
@@ -1051,7 +1116,11 @@
       ],
       "topic": "فضاء وعلوم",
       "verified": true,
-      "source": "https://periodic-table.rsc.org/"
+      "source": "https://periodic-table.rsc.org/",
+      "alt": [
+        "معادن",
+        "عناصر فلزية"
+      ]
     },
     {
       "p": 400,
@@ -1205,18 +1274,22 @@
     },
     {
       "p": 400,
-      "q": "ما العائلة الآلية التي تجمع الكمان والفيولا والتشيلو؟",
-      "a": "عائلة الكمان",
+      "q": "ما التصنيف الذي يجمع السيمفونية والكونشيرتو والسوناتا؟",
+      "a": "قوالب موسيقية كلاسيكية",
       "qid": "commonbond-400-033",
       "type": "common",
       "items": [
-        "الكمان",
-        "الفيولا",
-        "التشيلو"
+        "السيمفونية",
+        "الكونشيرتو",
+        "السوناتا"
       ],
       "topic": "فنون وأدب",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Violin_family"
+      "source": "https://en.wikipedia.org/wiki/Musical_form",
+      "alt": [
+        "أشكال موسيقية",
+        "قوالب الموسيقى الكلاسيكية"
+      ]
     },
     {
       "p": 400,
@@ -1231,7 +1304,11 @@
       ],
       "topic": "فنون وأدب",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Painting"
+      "source": "https://en.wikipedia.org/wiki/Painting",
+      "alt": [
+        "أنواع الرسم",
+        "تصنيفات اللوحات"
+      ]
     },
     {
       "p": 400,
@@ -1276,7 +1353,10 @@
       ],
       "topic": "رياضة وألعاب",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Racket_sport"
+      "source": "https://en.wikipedia.org/wiki/Racket_sport",
+      "alt": [
+        "رياضات المضرب"
+      ]
     },
     {
       "p": 400,
@@ -1325,18 +1405,22 @@
     },
     {
       "p": 400,
-      "q": "ما التصنيف الذي يجمع طواف فرنسا وجيرو إيطاليا وفويلتا إسبانيا؟",
+      "q": "ما التصنيف الذي يجمع الطواف الفرنسي والجيرو الإيطالي والفويلتا الإسبانية؟",
       "a": "الجولات الكبرى للدراجات",
       "qid": "commonbond-400-041",
       "type": "common",
       "items": [
-        "طواف فرنسا",
-        "جيرو إيطاليا",
-        "فويلتا إسبانيا"
+        "الطواف الفرنسي",
+        "الجيرو الإيطالي",
+        "الفويلتا الإسبانية"
       ],
       "topic": "رياضة وألعاب",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Grand_Tour_(cycling)"
+      "source": "https://en.wikipedia.org/wiki/Grand_Tour_(cycling)",
+      "alt": [
+        "الجولات الكبرى",
+        "غراند تور"
+      ]
     },
     {
       "p": 400,
@@ -1445,14 +1529,14 @@
     },
     {
       "p": 600,
-      "q": "ما المجموعة التي تضم الكنغر والكوالا والومبت؟",
+      "q": "ما المجموعة التي تضم الكنغر والكوالا والأبوسوم؟",
       "a": "جرابيات",
       "qid": "commonbond-600-001",
       "type": "common",
       "items": [
         "الكنغر",
         "الكوالا",
-        "الومبت"
+        "الأبوسوم"
       ],
       "topic": "الحيوانات",
       "verified": true,
@@ -1475,14 +1559,14 @@
     },
     {
       "p": 600,
-      "q": "ما المجموعة التي تجمع السلطعون والروبيان والكركند؟",
+      "q": "ما المجموعة التي تجمع السلطعون والروبيان والبرنقيل؟",
       "a": "قشريات",
       "qid": "commonbond-600-003",
       "type": "common",
       "items": [
         "السلطعون",
         "الروبيان",
-        "الكركند"
+        "البرنقيل"
       ],
       "topic": "الحيوانات",
       "verified": true,
@@ -1606,7 +1690,11 @@
       ],
       "topic": "تقنية وحوسبة",
       "verified": true,
-      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures"
+      "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures",
+      "alt": [
+        "الأنواع البدائية",
+        "أنواع أولية"
+      ]
     },
     {
       "p": 600,
@@ -1675,7 +1763,7 @@
     },
     {
       "p": 600,
-      "q": "ما العلاقة بين أنهار نيغرو وماديرا وتاباجوس وأكبر أنهار أمريكا الجنوبية؟",
+      "q": "ما الصفة المشتركة بين أنهار نيغرو وماديرا وتاباجوس؟",
       "a": "روافد الأمازون",
       "qid": "commonbond-600-016",
       "type": "common",
@@ -1686,7 +1774,10 @@
       ],
       "topic": "جغرافيا وأماكن",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Amazon_River"
+      "source": "https://en.wikipedia.org/wiki/Amazon_River",
+      "alt": [
+        "روافد نهر الأمازون"
+      ]
     },
     {
       "p": 600,
@@ -1705,18 +1796,21 @@
     },
     {
       "p": 600,
-      "q": "ما المنطقة البحرية الشهيرة التي تحددها عادة ميامي وبرمودا وسان خوان؟",
+      "q": "ما المثلث البحري الشهير الذي تقع ميامي وسان خوان وهاميلتون عند رؤوسه؟",
       "a": "مثلث برمودا",
       "qid": "commonbond-600-018",
       "type": "common",
       "items": [
         "ميامي",
-        "برمودا",
-        "سان خوان"
+        "سان خوان",
+        "هاميلتون"
       ],
       "topic": "جغرافيا وأماكن",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Bermuda_Triangle"
+      "source": "https://en.wikipedia.org/wiki/Bermuda_Triangle",
+      "alt": [
+        "مثلث الشيطان"
+      ]
     },
     {
       "p": 600,
@@ -2430,7 +2524,11 @@
       ],
       "topic": "جغرافيا وأماكن",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Karakoram"
+      "source": "https://en.wikipedia.org/wiki/Karakoram",
+      "alt": [
+        "قراقرم",
+        "كاراكورام"
+      ]
     },
     {
       "p": 800,
@@ -2520,7 +2618,11 @@
       ],
       "topic": "فضاء وعلوم",
       "verified": true,
-      "source": "https://home.cern/science/physics/standard-model/"
+      "source": "https://home.cern/science/physics/standard-model/",
+      "alt": [
+        "بوزونات المعايرة",
+        "نقل القوى الأساسية"
+      ]
     },
     {
       "p": 800,
@@ -2734,8 +2836,8 @@
     },
     {
       "p": 800,
-      "q": "ما العلاقة المشتركة بنتيجة البار في بيردي وإيغل وألباتروس؟",
-      "a": "نتائج أقل من البار",
+      "q": "ما الصفة المشتركة لنتائج بيردي وإيغل وألباتروس في الغولف؟",
+      "a": "أقل من البار",
       "qid": "commonbond-800-038",
       "type": "common",
       "items": [
@@ -2745,7 +2847,11 @@
       ],
       "topic": "رياضة وألعاب",
       "verified": true,
-      "source": "https://en.wikipedia.org/wiki/Par_(score)"
+      "source": "https://en.wikipedia.org/wiki/Par_(score)",
+      "alt": [
+        "تحت البار",
+        "نتائج أقل من البار"
+      ]
     },
     {
       "p": 800,
@@ -2754,9 +2860,9 @@
       "qid": "commonbond-800-039",
       "type": "common",
       "items": [
-        "Caught",
-        "Bowled",
-        "Run out"
+        "كوت",
+        "بولد",
+        "رن آوت"
       ],
       "topic": "رياضة وألعاب",
       "verified": true,
@@ -2899,7 +3005,7 @@
     },
     {
       "p": 1000,
-      "q": "ما الرتبة التي تجمع خلد الماء وآكلي النمل الشوكي الموضحين؟",
+      "q": "ما الرتبة التي تجمع خلد الماء وآكلي النمل الشوكي؟",
       "a": "وحيدات المسلك",
       "qid": "commonbond-1000-001",
       "type": "common",
@@ -2915,7 +3021,7 @@
     {
       "p": 1000,
       "q": "ما الرتبة التي تجمع الحصان ووحيد القرن والتابير؟",
-      "a": "فرديات الأصابع",
+      "a": "مفردات الأصابع",
       "qid": "commonbond-1000-002",
       "type": "common",
       "items": [
@@ -2925,7 +3031,11 @@
       ],
       "topic": "الحيوانات",
       "verified": true,
-      "source": "https://animaldiversity.org/accounts/Perissodactyla/"
+      "source": "https://animaldiversity.org/accounts/Perissodactyla/",
+      "alt": [
+        "وتريات الأصابع",
+        "فرديات الأصابع"
+      ]
     },
     {
       "p": 1000,
@@ -3053,18 +3163,22 @@
     },
     {
       "p": 1000,
-      "q": "إلى أي عائلة تجزئة تنتمي SHA-256 وSHA-384 وSHA-512؟",
-      "a": "SHA-2",
+      "q": "ما الوظيفة المشتركة لخوارزميات bcrypt وscrypt وArgon2؟",
+      "a": "تجزئة كلمات المرور",
       "qid": "commonbond-1000-011",
       "type": "common",
       "items": [
-        "SHA-256",
-        "SHA-384",
-        "SHA-512"
+        "bcrypt",
+        "scrypt",
+        "Argon2"
       ],
       "topic": "تقنية وحوسبة",
       "verified": true,
-      "source": "https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest"
+      "source": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+      "alt": [
+        "تخزين كلمات المرور",
+        "دوال اشتقاق المفاتيح"
+      ]
     },
     {
       "p": 1000,
@@ -3173,22 +3287,25 @@
     },
     {
       "p": 1000,
-      "q": "ما الجرم الذي تتبعه ستيكس ونيكس وكيربيروس؟",
-      "a": "بلوتو",
+      "q": "ما الكوكب الذي تدور حوله تريتون ونيريد وبروتيوس؟",
+      "a": "نبتون",
       "qid": "commonbond-1000-019",
       "type": "common",
       "items": [
-        "ستيكس",
-        "نيكس",
-        "كيربيروس"
+        "تريتون",
+        "نيريد",
+        "بروتيوس"
       ],
       "topic": "فضاء وعلوم",
       "verified": true,
-      "source": "https://science.nasa.gov/dwarf-planets/pluto/moons/"
+      "source": "https://science.nasa.gov/neptune/moons/",
+      "alt": [
+        "كوكب نبتون"
+      ]
     },
     {
       "p": 1000,
-      "q": "في أي منطقة وراء نبتون تقع هاوميا وماكيماكي وأروكوث؟",
+      "q": "إلى أي منطقة من النظام الشمسي الخارجي تنتمي هاوميا وماكيماكي وأروكوث؟",
       "a": "حزام كايبر",
       "qid": "commonbond-1000-020",
       "type": "common",
@@ -3244,7 +3361,10 @@
       ],
       "topic": "فضاء وعلوم",
       "verified": true,
-      "source": "https://periodic-table.rsc.org/"
+      "source": "https://periodic-table.rsc.org/",
+      "alt": [
+        "العناصر الأرضية النادرة"
+      ]
     },
     {
       "p": 1000,
@@ -3338,14 +3458,14 @@
     },
     {
       "p": 1000,
-      "q": "ما الصيغة الصرفية التي تجمع مساجد ومصابيح ومفاتيح؟",
+      "q": "ما الصيغة الصرفية التي تجمع مصابيح ومفاتيح وعصافير؟",
       "a": "صيغة منتهى الجموع",
       "qid": "commonbond-1000-030",
       "type": "common",
       "items": [
-        "مساجد",
         "مصابيح",
-        "مفاتيح"
+        "مفاتيح",
+        "عصافير"
       ],
       "topic": "كلمات ولغة",
       "verified": true,

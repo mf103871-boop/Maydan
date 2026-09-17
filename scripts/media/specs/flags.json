@@ -1,0 +1,2605 @@
+{
+  "id": "flags",
+  "name": "أعلام",
+  "icon": "🚩",
+  "defaultType": "image",
+  "kind": "image",
+  "effect": "none",
+  "subjects": [
+    {
+      "tier": 200,
+      "a": "السعودية",
+      "alt": [
+        "المملكة العربية السعودية"
+      ],
+      "topic": "كتابة ونقوش",
+      "ar": "المملكة العربية السعودية",
+      "en": "Saudi Arabia",
+      "commons": "File:Flag of Saudi Arabia.svg",
+      "q": "أي دولة خليجية ترفع هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "مصر",
+      "alt": [
+        "جمهورية مصر العربية"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "مصر",
+      "en": "Egypt",
+      "commons": "File:Flag of Egypt.svg",
+      "q": "لأي دولة عربية هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "الإمارات",
+      "alt": [
+        "الإمارات العربية المتحدة",
+        "دولة الإمارات"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "الإمارات العربية المتحدة",
+      "en": "United Arab Emirates",
+      "commons": "File:Flag of the United Arab Emirates.svg",
+      "q": "راية أي دولة خليجية أمامك؟"
+    },
+    {
+      "tier": 200,
+      "a": "الكويت",
+      "topic": "أشكال هندسية",
+      "ar": "الكويت",
+      "en": "Kuwait",
+      "commons": "File:Flag of Kuwait.svg",
+      "q": "لمن هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "قطر",
+      "topic": "أشكال هندسية",
+      "ar": "قطر",
+      "en": "Qatar",
+      "commons": "File:Flag of Qatar.svg",
+      "q": "سمّ الدولة الخليجية صاحبة هذه الراية."
+    },
+    {
+      "tier": 200,
+      "a": "البحرين",
+      "topic": "أشكال هندسية",
+      "ar": "البحرين",
+      "en": "Bahrain",
+      "commons": "File:Flag of Bahrain.svg",
+      "q": "أي دولة خليجية ترفع هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "عُمان",
+      "alt": [
+        "سلطنة عمان",
+        "عمان"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "سلطنة عمان",
+      "en": "Oman",
+      "commons": "File:CGI Oman Flag.png",
+      "q": "هذه راية أي دولة خليجية؟"
+    },
+    {
+      "tier": 200,
+      "a": "العراق",
+      "topic": "كتابة ونقوش",
+      "ar": "العراق",
+      "en": "Iraq",
+      "commons": "File:Flag of Iraq.svg",
+      "q": "ما الدولة العربية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "الأردن",
+      "alt": [
+        "المملكة الأردنية الهاشمية"
+      ],
+      "topic": "نجوم",
+      "ar": "الأردن",
+      "en": "Jordan",
+      "commons": "File:Flag of Jordan.svg",
+      "q": "ما الدولة العربية التي يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "فلسطين",
+      "alt": [
+        "دولة فلسطين"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "فلسطين",
+      "en": "Palestine",
+      "commons": "File:Flag of Palestine.svg",
+      "q": "علم أي دولة عربية هذا؟"
+    },
+    {
+      "tier": 200,
+      "a": "لبنان",
+      "topic": "نباتات وحيوانات",
+      "ar": "لبنان",
+      "en": "Lebanon",
+      "commons": "File:Flag of Lebanon.svg",
+      "q": "هذا علم أي دولة عربية؟"
+    },
+    {
+      "tier": 200,
+      "a": "سوريا",
+      "alt": [
+        "سورية"
+      ],
+      "topic": "نجوم",
+      "ar": "سوريا",
+      "en": "Syria",
+      "commons": "File:Flag of Syria (2025-).svg",
+      "q": "هذا العلم لأي دولة عربية؟"
+    },
+    {
+      "tier": 200,
+      "a": "اليمن",
+      "topic": "أشرطة وألوان",
+      "ar": "اليمن",
+      "en": "Yemen",
+      "commons": "File:Flag of Yemen.svg",
+      "q": "ما اسم الدولة العربية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "المغرب",
+      "alt": [
+        "المملكة المغربية"
+      ],
+      "topic": "نجوم",
+      "ar": "المغرب",
+      "en": "Morocco",
+      "commons": "File:Flag of Morocco.svg",
+      "q": "ما الدولة العربية التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "الجزائر",
+      "topic": "أهلة",
+      "ar": "الجزائر",
+      "en": "Algeria",
+      "commons": "File:Flag of Algeria.svg",
+      "q": "راية أي دولة عربية هذه؟"
+    },
+    {
+      "tier": 200,
+      "a": "تونس",
+      "topic": "أهلة",
+      "ar": "تونس",
+      "en": "Tunisia",
+      "commons": "File:Flag of Tunisia.svg",
+      "q": "علم أي دولة عربية تراه أمامك؟"
+    },
+    {
+      "tier": 200,
+      "a": "ليبيا",
+      "topic": "أهلة",
+      "ar": "ليبيا",
+      "en": "Libya",
+      "commons": "File:Flag of Libya.svg",
+      "q": "سمّ الدولة العربية صاحبة هذا العلم."
+    },
+    {
+      "tier": 200,
+      "a": "السودان",
+      "topic": "أشكال هندسية",
+      "ar": "السودان",
+      "en": "Sudan",
+      "commons": "File:Flag of Sudan.svg",
+      "q": "ما اسم الدولة العربية التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "تركيا",
+      "topic": "أهلة",
+      "ar": "تركيا",
+      "en": "Turkey",
+      "commons": "File:Flag of Turkey.svg",
+      "q": "لأي دولة آسيوية هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "إيران",
+      "topic": "كتابة ونقوش",
+      "ar": "إيران",
+      "en": "Iran",
+      "commons": "File:Flag of Iran.svg",
+      "q": "أي دولة آسيوية يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "اليابان",
+      "topic": "أشكال هندسية",
+      "ar": "اليابان",
+      "en": "Japan",
+      "commons": "File:Flag of Japan.svg",
+      "q": "لمن هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "الصين",
+      "alt": [
+        "جمهورية الصين الشعبية"
+      ],
+      "topic": "نجوم",
+      "ar": "الصين",
+      "en": "China",
+      "commons": "File:Flag of the People's Republic of China.svg",
+      "q": "ما الدولة الآسيوية التي ترفع هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "كوريا الجنوبية",
+      "topic": "شعارات ورموز",
+      "ar": "كوريا الجنوبية",
+      "en": "South Korea",
+      "commons": "File:Flag of South Korea.svg",
+      "q": "أي دولة آسيوية ترفع هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "الهند",
+      "topic": "شعارات ورموز",
+      "ar": "الهند",
+      "en": "India",
+      "commons": "File:Flag of India.svg",
+      "q": "لأي دولة آسيوية هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "باكستان",
+      "topic": "أهلة",
+      "ar": "باكستان",
+      "en": "Pakistan",
+      "commons": "File:Flag of Pakistan.svg",
+      "q": "راية أي دولة آسيوية أمامك؟"
+    },
+    {
+      "tier": 200,
+      "a": "الولايات المتحدة",
+      "alt": [
+        "أمريكا",
+        "الولايات المتحدة الأمريكية"
+      ],
+      "topic": "نجوم",
+      "ar": "الولايات المتحدة",
+      "en": "United States",
+      "commons": "File:Flag of the United States.svg",
+      "q": "ما الدولة صاحبة هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "كندا",
+      "topic": "نباتات وحيوانات",
+      "ar": "كندا",
+      "en": "Canada",
+      "commons": "File:Flag of Canada.svg",
+      "q": "سمّ الدولة صاحبة هذه الراية."
+    },
+    {
+      "tier": 200,
+      "a": "البرازيل",
+      "topic": "نجوم",
+      "ar": "البرازيل",
+      "en": "Brazil",
+      "commons": "File:Flag of Brazil.svg",
+      "q": "لأي دولة في أمريكا الجنوبية هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "الأرجنتين",
+      "topic": "شعارات ورموز",
+      "ar": "الأرجنتين",
+      "en": "Argentina",
+      "commons": "File:Flag of Argentina.svg",
+      "q": "راية أي دولة في أمريكا الجنوبية أمامك؟"
+    },
+    {
+      "tier": 200,
+      "a": "المكسيك",
+      "topic": "نباتات وحيوانات",
+      "ar": "المكسيك",
+      "en": "Mexico",
+      "commons": "File:Flag of Mexico.svg",
+      "q": "ما الدولة صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "المملكة المتحدة",
+      "alt": [
+        "بريطانيا",
+        "بريطانيا العظمى"
+      ],
+      "topic": "صلبان",
+      "ar": "المملكة المتحدة",
+      "en": "United Kingdom",
+      "commons": "File:Flag of the United Kingdom (3-5).svg",
+      "q": "ما الدولة الأوروبية التي يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "فرنسا",
+      "topic": "أشرطة وألوان",
+      "ar": "فرنسا",
+      "en": "France",
+      "commons": "File:Flag of France.svg",
+      "q": "علم أي دولة أوروبية هذا؟"
+    },
+    {
+      "tier": 200,
+      "a": "ألمانيا",
+      "topic": "أشرطة وألوان",
+      "ar": "ألمانيا",
+      "en": "Germany",
+      "commons": "File:Flag of Germany.svg",
+      "q": "هذا علم أي دولة أوروبية؟"
+    },
+    {
+      "tier": 200,
+      "a": "إيطاليا",
+      "topic": "أشرطة وألوان",
+      "ar": "إيطاليا",
+      "en": "Italy",
+      "commons": "File:Flag of Italy.svg",
+      "q": "هذا العلم لأي دولة أوروبية؟"
+    },
+    {
+      "tier": 200,
+      "a": "إسبانيا",
+      "topic": "دروع وتيجان",
+      "ar": "إسبانيا",
+      "en": "Spain",
+      "commons": "File:Flag of Spain.svg",
+      "q": "ما اسم الدولة الأوروبية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "البرتغال",
+      "topic": "دروع وتيجان",
+      "ar": "البرتغال",
+      "en": "Portugal",
+      "commons": "File:Flag of Portugal.svg",
+      "q": "ما الدولة الأوروبية التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "هولندا",
+      "alt": [
+        "الأراضي المنخفضة"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "هولندا",
+      "en": "Netherlands",
+      "commons": "File:Flag of the Netherlands.svg",
+      "q": "راية أي دولة أوروبية هذه؟"
+    },
+    {
+      "tier": 200,
+      "a": "سويسرا",
+      "topic": "صلبان",
+      "ar": "سويسرا",
+      "en": "Switzerland",
+      "commons": "File:Flag of Switzerland.svg",
+      "q": "من صاحب هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "السويد",
+      "topic": "صلبان",
+      "ar": "السويد",
+      "en": "Sweden",
+      "commons": "File:Flag of Sweden.svg",
+      "q": "سمّ الدولة الإسكندنافية صاحبة هذا العلم."
+    },
+    {
+      "tier": 200,
+      "a": "روسيا",
+      "alt": [
+        "الاتحاد الروسي"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "روسيا",
+      "en": "Russia",
+      "commons": "File:Flag of Russia.svg",
+      "q": "ما اسم الدولة الأوروبية التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "اليونان",
+      "topic": "صلبان",
+      "ar": "اليونان",
+      "en": "Greece",
+      "commons": "File:Flag of Greece.svg",
+      "q": "لأي دولة أوروبية هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "أستراليا",
+      "topic": "نجوم",
+      "ar": "أستراليا",
+      "en": "Australia",
+      "commons": "File:Flag of Australia.svg",
+      "q": "راية أي دولة في المحيط الهادئ أمامك؟"
+    },
+    {
+      "tier": 200,
+      "a": "جنوب أفريقيا",
+      "topic": "أشكال هندسية",
+      "ar": "جنوب أفريقيا",
+      "en": "South Africa",
+      "commons": "File:Flag of South Africa.svg",
+      "q": "أي دولة أفريقية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "نيجيريا",
+      "topic": "أشرطة وألوان",
+      "ar": "نيجيريا",
+      "en": "Nigeria",
+      "commons": "File:Flag of Nigeria.svg",
+      "q": "أي دولة في غرب أفريقيا يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "أوكرانيا",
+      "topic": "أشرطة وألوان",
+      "ar": "أوكرانيا",
+      "en": "Ukraine",
+      "commons": "File:Flag of Ukraine.svg",
+      "q": "أي دولة أوروبية ترفع هذا العلم؟"
+    },
+    {
+      "tier": 200,
+      "a": "الدنمارك",
+      "topic": "صلبان",
+      "ar": "الدنمارك",
+      "en": "Denmark",
+      "commons": "File:Flag of Denmark.svg",
+      "q": "لأي دولة إسكندنافية هذه الراية؟"
+    },
+    {
+      "tier": 200,
+      "a": "الأمم المتحدة",
+      "alt": [
+        "هيئة الأمم المتحدة"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "الأمم المتحدة",
+      "en": "United Nations",
+      "commons": "File:Flag of the United Nations.svg",
+      "q": "راية أي منظمة دولية أمامك؟"
+    },
+    {
+      "tier": 200,
+      "a": "الاتحاد الأوروبي",
+      "alt": [
+        "أوروبا"
+      ],
+      "topic": "نجوم",
+      "ar": "الاتحاد الأوروبي",
+      "en": "European Union",
+      "commons": "File:Flag of Europe.svg",
+      "q": "ما المنظمة الدولية صاحبة هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "موريتانيا",
+      "topic": "أهلة",
+      "ar": "موريتانيا",
+      "en": "Mauritania",
+      "commons": "File:Flag of Mauritania.svg",
+      "q": "سمّ الدولة العربية صاحبة هذه الراية."
+    },
+    {
+      "tier": 400,
+      "a": "الصومال",
+      "topic": "نجوم",
+      "ar": "الصومال",
+      "en": "Somalia",
+      "commons": "File:Flag of Somalia.svg",
+      "q": "أي دولة عربية ترفع هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "جيبوتي",
+      "topic": "نجوم",
+      "ar": "جيبوتي",
+      "en": "Djibouti",
+      "commons": "File:Flag of Djibouti.svg",
+      "q": "هذه راية أي دولة عربية؟"
+    },
+    {
+      "tier": 400,
+      "a": "بلجيكا",
+      "topic": "أشرطة وألوان",
+      "ar": "بلجيكا",
+      "en": "Belgium",
+      "commons": "File:Flag of Belgium.svg",
+      "q": "ما الدولة الأوروبية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "النرويج",
+      "topic": "صلبان",
+      "ar": "النرويج",
+      "en": "Norway",
+      "commons": "File:Flag of Norway.svg",
+      "q": "ما الدولة الإسكندنافية التي يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "فنلندا",
+      "topic": "صلبان",
+      "ar": "فنلندا",
+      "en": "Finland",
+      "commons": "File:Flag of Finland.svg",
+      "q": "علم أي دولة إسكندنافية هذا؟"
+    },
+    {
+      "tier": 400,
+      "a": "آيسلندا",
+      "topic": "صلبان",
+      "ar": "آيسلندا",
+      "en": "Iceland",
+      "commons": "File:Flag of Iceland.svg",
+      "q": "من يرفع هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "أيرلندا",
+      "topic": "أشرطة وألوان",
+      "ar": "أيرلندا",
+      "en": "Ireland",
+      "commons": "File:Flag of Ireland.svg",
+      "q": "أي دولة أوروبية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "النمسا",
+      "topic": "أشرطة وألوان",
+      "ar": "النمسا",
+      "en": "Austria",
+      "commons": "File:Flag of Austria.svg",
+      "q": "ما الدولة الأوروبية التي ترفع هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "بولندا",
+      "topic": "أشرطة وألوان",
+      "ar": "بولندا",
+      "en": "Poland",
+      "commons": "File:Flag of Poland.svg",
+      "q": "أي دولة أوروبية ترفع هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "التشيك",
+      "alt": [
+        "تشيكيا",
+        "جمهورية التشيك"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "التشيك",
+      "en": "Czech Republic",
+      "commons": "File:Flag of the Czech Republic.svg",
+      "q": "لأي دولة أوروبية هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "المجر",
+      "alt": [
+        "هنغاريا"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "المجر",
+      "en": "Hungary",
+      "commons": "File:Flag of Hungary.svg",
+      "q": "علم أي دولة أوروبية تراه أمامك؟"
+    },
+    {
+      "tier": 400,
+      "a": "بلغاريا",
+      "topic": "أشرطة وألوان",
+      "ar": "بلغاريا",
+      "en": "Bulgaria",
+      "commons": "File:Flag of Bulgaria.svg",
+      "q": "سمّ الدولة البلقانية صاحبة هذا العلم."
+    },
+    {
+      "tier": 400,
+      "a": "صربيا",
+      "topic": "دروع وتيجان",
+      "ar": "صربيا",
+      "en": "Serbia",
+      "commons": "File:Flag of Serbia.svg",
+      "q": "ما اسم الدولة البلقانية التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "كرواتيا",
+      "topic": "دروع وتيجان",
+      "ar": "كرواتيا",
+      "en": "Croatia",
+      "commons": "File:Flag of Croatia.svg",
+      "q": "لأي دولة بلقانية هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "اسكتلندا",
+      "alt": [
+        "إسكتلندا"
+      ],
+      "topic": "صلبان",
+      "ar": "اسكتلندا",
+      "en": "Scotland",
+      "commons": "File:Flag of Scotland.svg",
+      "q": "أي إقليم يمثله هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "ويلز",
+      "alt": [
+        "بلاد الغال"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "ويلز",
+      "en": "Wales",
+      "commons": "File:Flag of Wales.svg",
+      "q": "أي إقليم صاحب هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "إنجلترا",
+      "alt": [
+        "انكلترا"
+      ],
+      "topic": "صلبان",
+      "ar": "إنجلترا",
+      "en": "England",
+      "commons": "File:Flag of England.svg",
+      "q": "ما الإقليم الذي يرفع هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "كولومبيا",
+      "topic": "أشرطة وألوان",
+      "ar": "كولومبيا",
+      "en": "Colombia",
+      "commons": "File:Flag of Colombia.svg",
+      "q": "هذا علم أي دولة في أمريكا الجنوبية؟"
+    },
+    {
+      "tier": 400,
+      "a": "تشيلي",
+      "alt": [
+        "شيلي"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "تشيلي",
+      "en": "Chile",
+      "commons": "File:Flag of Chile.svg",
+      "q": "هذا العلم لأي دولة في أمريكا الجنوبية؟"
+    },
+    {
+      "tier": 400,
+      "a": "فنزويلا",
+      "topic": "نجوم",
+      "ar": "فنزويلا",
+      "en": "Venezuela",
+      "commons": "File:Flag of Venezuela.svg",
+      "q": "لأي دولة في أمريكا الجنوبية هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "بيرو",
+      "topic": "أشرطة وألوان",
+      "ar": "بيرو",
+      "en": "Peru",
+      "commons": "File:Flag of Peru.svg",
+      "q": "أي دولة في أمريكا الجنوبية يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "كوبا",
+      "topic": "أشكال هندسية",
+      "ar": "كوبا",
+      "en": "Cuba",
+      "commons": "File:Flag of Cuba.svg",
+      "q": "سمّ الدولة الكاريبية صاحبة هذه الراية."
+    },
+    {
+      "tier": 400,
+      "a": "أوروغواي",
+      "alt": [
+        "أوروجواي"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "أوروغواي",
+      "en": "Uruguay",
+      "commons": "File:Flag of Uruguay.svg",
+      "q": "من يرفع هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "إندونيسيا",
+      "topic": "أشرطة وألوان",
+      "ar": "إندونيسيا",
+      "en": "Indonesia",
+      "commons": "File:Flag of Indonesia.svg",
+      "q": "علم أي دولة في جنوب شرق آسيا تراه أمامك؟"
+    },
+    {
+      "tier": 400,
+      "a": "ماليزيا",
+      "topic": "أهلة",
+      "ar": "ماليزيا",
+      "en": "Malaysia",
+      "commons": "File:Flag of Malaysia.svg",
+      "q": "علم أي دولة في جنوب شرق آسيا هذا؟"
+    },
+    {
+      "tier": 400,
+      "a": "تايلاند",
+      "alt": [
+        "تايلند"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "تايلاند",
+      "en": "Thailand",
+      "commons": "File:Flag of Thailand.svg",
+      "q": "هذا علم أي دولة في جنوب شرق آسيا؟"
+    },
+    {
+      "tier": 400,
+      "a": "فيتنام",
+      "topic": "نجوم",
+      "ar": "فيتنام",
+      "en": "Vietnam",
+      "commons": "File:Flag of Vietnam.svg",
+      "q": "هذا العلم لأي دولة في جنوب شرق آسيا؟"
+    },
+    {
+      "tier": 400,
+      "a": "الفلبين",
+      "alt": [
+        "الفيليبين"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "الفلبين",
+      "en": "Philippines",
+      "commons": "File:Flag of the Philippines.svg",
+      "q": "أي دولة في جنوب شرق آسيا ترفع هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "سنغافورة",
+      "alt": [
+        "سنغافورا"
+      ],
+      "topic": "أهلة",
+      "ar": "سنغافورة",
+      "en": "Singapore",
+      "commons": "File:Flag of Singapore.svg",
+      "q": "هذه راية أي دولة في جنوب شرق آسيا؟"
+    },
+    {
+      "tier": 400,
+      "a": "كوريا الشمالية",
+      "topic": "نجوم",
+      "ar": "كوريا الشمالية",
+      "en": "North Korea",
+      "commons": "File:Flag of North Korea.svg",
+      "q": "ما اسم الدولة الآسيوية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "بنغلاديش",
+      "alt": [
+        "بنجلاديش"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "بنغلاديش",
+      "en": "Bangladesh",
+      "commons": "File:Flag of Bangladesh.svg",
+      "q": "ما الدولة الآسيوية التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "كينيا",
+      "topic": "دروع وتيجان",
+      "ar": "كينيا",
+      "en": "Kenya",
+      "commons": "File:Flag of Kenya.svg",
+      "q": "راية أي دولة في شرق أفريقيا أمامك؟"
+    },
+    {
+      "tier": 400,
+      "a": "غانا",
+      "topic": "نجوم",
+      "ar": "غانا",
+      "en": "Ghana",
+      "commons": "File:Flag of Ghana.svg",
+      "q": "لأي دولة في غرب أفريقيا هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "إثيوبيا",
+      "alt": [
+        "الحبشة"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "إثيوبيا",
+      "en": "Ethiopia",
+      "commons": "File:Flag of Ethiopia.svg",
+      "q": "أي دولة في شرق أفريقيا يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "الكاميرون",
+      "topic": "نجوم",
+      "ar": "الكاميرون",
+      "en": "Cameroon",
+      "commons": "File:Flag of Cameroon.svg",
+      "q": "أي دولة في غرب أفريقيا صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "السنغال",
+      "topic": "نجوم",
+      "ar": "السنغال",
+      "en": "Senegal",
+      "commons": "File:Flag of Senegal.svg",
+      "q": "راية أي دولة في غرب أفريقيا هذه؟"
+    },
+    {
+      "tier": 400,
+      "a": "نيوزيلندا",
+      "alt": [
+        "نيوزيلاندا"
+      ],
+      "topic": "نجوم",
+      "ar": "نيوزيلندا",
+      "en": "New Zealand",
+      "commons": "File:Flag of New Zealand.svg",
+      "q": "علم أي دولة في المحيط الهادئ تراه أمامك؟"
+    },
+    {
+      "tier": 400,
+      "a": "رومانيا",
+      "topic": "أشرطة وألوان",
+      "ar": "رومانيا",
+      "en": "Romania",
+      "commons": "File:Flag of Romania.svg",
+      "q": "أي دولة بلقانية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "هونغ كونغ",
+      "alt": [
+        "هونج كونج",
+        "هونغ كونج"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "هونغ كونغ",
+      "en": "Hong Kong",
+      "commons": "File:Flag of Hong Kong.svg",
+      "q": "ما الإقليم الذي يمثله هذا العلم؟"
+    },
+    {
+      "tier": 400,
+      "a": "نيبال",
+      "topic": "أشكال هندسية",
+      "ar": "نيبال",
+      "en": "Nepal",
+      "commons": "File:Flag of Nepal.svg",
+      "q": "لمن تعود هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "تايوان",
+      "alt": [
+        "جمهورية الصين"
+      ],
+      "topic": "نجوم",
+      "ar": "تايوان",
+      "en": "Taiwan",
+      "commons": "File:Flag of the Republic of China.svg",
+      "q": "هذا علم أي دولة آسيوية؟"
+    },
+    {
+      "tier": 400,
+      "a": "ألبانيا",
+      "topic": "نباتات وحيوانات",
+      "ar": "ألبانيا",
+      "en": "Albania",
+      "commons": "File:Flag of Albania.svg",
+      "q": "راية أي دولة بلقانية أمامك؟"
+    },
+    {
+      "tier": 400,
+      "a": "البوسنة والهرسك",
+      "alt": [
+        "البوسنة"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "البوسنة والهرسك",
+      "en": "Bosnia and Herzegovina",
+      "commons": "File:Flag of Bosnia and Herzegovina.svg",
+      "q": "ما الدولة البلقانية صاحبة هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "الفاتيكان",
+      "alt": [
+        "دولة الفاتيكان",
+        "الكرسي الرسولي"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "الفاتيكان",
+      "en": "Vatican City",
+      "commons": "File:Flag of Vatican City (2023–present).svg",
+      "q": "سمّ الدولة الأوروبية صاحبة هذه الراية."
+    },
+    {
+      "tier": 400,
+      "a": "الألعاب الأولمبية",
+      "alt": [
+        "الأولمبياد",
+        "اللجنة الأولمبية الدولية",
+        "الألعاب الأولمبية الدولية"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "الألعاب الأولمبية",
+      "en": "Olympic Games",
+      "commons": "File:Olympic flag.svg",
+      "q": "أي منظمة دولية ترفع هذه الراية؟"
+    },
+    {
+      "tier": 400,
+      "a": "جامعة الدول العربية",
+      "alt": [
+        "الجامعة العربية"
+      ],
+      "topic": "كتابة ونقوش",
+      "ar": "جامعة الدول العربية",
+      "en": "Arab League",
+      "commons": "File:Flag of the Arab League.svg",
+      "q": "هذه راية أي منظمة دولية؟"
+    },
+    {
+      "tier": 400,
+      "a": "الاتحاد السوفيتي",
+      "alt": [
+        "الاتحاد السوفييتي",
+        "اتحاد الجمهوريات الاشتراكية السوفياتية"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "الاتحاد السوفيتي",
+      "en": "Soviet Union",
+      "commons": "File:Flag of the Soviet Union.svg",
+      "q": "ما الدولة التي كانت ترفع هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "جزر القمر",
+      "alt": [
+        "القمر"
+      ],
+      "topic": "أهلة",
+      "ar": "جزر القمر",
+      "en": "Comoros",
+      "commons": "File:Flag of the Comoros.svg",
+      "q": "أي دولة عربية ترفع هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "قيرغيزستان",
+      "alt": [
+        "قرغيزستان",
+        "قيرغيزيا"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "قيرغيزستان",
+      "en": "Kyrgyzstan",
+      "commons": "File:Flag of Kyrgyzstan.svg",
+      "q": "راية أي دولة في وسط آسيا هذه؟"
+    },
+    {
+      "tier": 600,
+      "a": "إقليم كردستان",
+      "alt": [
+        "كردستان",
+        "كردستان العراق"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "إقليم كردستان",
+      "en": "Kurdistan Region",
+      "commons": "File:Flag of Kurdistan.svg",
+      "q": "هذا علم أي إقليم؟"
+    },
+    {
+      "tier": 600,
+      "a": "قبرص",
+      "topic": "شعارات ورموز",
+      "ar": "قبرص",
+      "en": "Cyprus",
+      "commons": "File:Flag of Cyprus.svg",
+      "q": "سمّ الدولة الأوروبية صاحبة هذا العلم."
+    },
+    {
+      "tier": 600,
+      "a": "مالطا",
+      "topic": "صلبان",
+      "ar": "مالطا",
+      "en": "Malta",
+      "commons": "File:Flag of Malta.svg",
+      "q": "أي دولة أوروبية يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "أذربيجان",
+      "alt": [
+        "آذربيجان"
+      ],
+      "topic": "أهلة",
+      "ar": "أذربيجان",
+      "en": "Azerbaijan",
+      "commons": "File:Flag of Azerbaijan.svg",
+      "q": "هذا العلم لأي دولة في القوقاز؟"
+    },
+    {
+      "tier": 600,
+      "a": "كازاخستان",
+      "topic": "شعارات ورموز",
+      "ar": "كازاخستان",
+      "en": "Kazakhstan",
+      "commons": "File:Flag of Kazakhstan.svg",
+      "q": "أي دولة في وسط آسيا ترفع هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "أوزبكستان",
+      "topic": "أهلة",
+      "ar": "أوزبكستان",
+      "en": "Uzbekistan",
+      "commons": "File:Flag of Uzbekistan.svg",
+      "q": "هذه راية أي دولة في وسط آسيا؟"
+    },
+    {
+      "tier": 600,
+      "a": "تركمانستان",
+      "topic": "أهلة",
+      "ar": "تركمانستان",
+      "en": "Turkmenistan",
+      "commons": "File:Flag of Turkmenistan.svg",
+      "q": "أي دولة في وسط آسيا ترفع هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "جورجيا",
+      "alt": [
+        "جورجيا الدولة"
+      ],
+      "topic": "صلبان",
+      "ar": "جورجيا",
+      "en": "Georgia (country)",
+      "commons": "File:Flag of Georgia.svg",
+      "q": "لمن يعود هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "أرمينيا",
+      "topic": "أشرطة وألوان",
+      "ar": "أرمينيا",
+      "en": "Armenia",
+      "commons": "File:Flag of Armenia.svg",
+      "q": "راية أي دولة في القوقاز أمامك؟"
+    },
+    {
+      "tier": 600,
+      "a": "بيلاروسيا",
+      "alt": [
+        "روسيا البيضاء",
+        "بيلاروس"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "بيلاروسيا",
+      "en": "Belarus",
+      "commons": "File:Flag of Belarus.svg",
+      "q": "هذه راية أي دولة أوروبية؟"
+    },
+    {
+      "tier": 600,
+      "a": "مولدوفا",
+      "alt": [
+        "مولدافيا"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "مولدوفا",
+      "en": "Moldova",
+      "commons": "File:Flag of Moldova.svg",
+      "q": "ما الدولة الأوروبية صاحبة هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "إستونيا",
+      "alt": [
+        "أستونيا"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "إستونيا",
+      "en": "Estonia",
+      "commons": "File:Flag of Estonia.svg",
+      "q": "راية أي دولة أوروبية أمامك؟"
+    },
+    {
+      "tier": 600,
+      "a": "ليتوانيا",
+      "alt": [
+        "ليتوانية"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "ليتوانيا",
+      "en": "Lithuania",
+      "commons": "File:Flag of Lithuania.svg",
+      "q": "أي دولة ترفع هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "سلوفاكيا",
+      "topic": "دروع وتيجان",
+      "ar": "سلوفاكيا",
+      "en": "Slovakia",
+      "commons": "File:Flag of Slovakia.svg",
+      "q": "لأي دولة هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "إريتريا",
+      "alt": [
+        "أريتريا"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "إريتريا",
+      "en": "Eritrea",
+      "commons": "File:Flag of Eritrea.svg",
+      "q": "علم أي دولة في شرق أفريقيا هذا؟"
+    },
+    {
+      "tier": 600,
+      "a": "مقدونيا الشمالية",
+      "alt": [
+        "مقدونيا"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "مقدونيا الشمالية",
+      "en": "North Macedonia",
+      "commons": "File:Flag of North Macedonia.svg",
+      "q": "ما اسم الدولة البلقانية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "الجبل الأسود",
+      "alt": [
+        "مونتينيغرو"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "الجبل الأسود",
+      "en": "Montenegro",
+      "commons": "File:Flag of Montenegro.svg",
+      "q": "سمّ الدولة البلقانية صاحبة هذه الراية."
+    },
+    {
+      "tier": 600,
+      "a": "مالي",
+      "topic": "أشرطة وألوان",
+      "ar": "مالي",
+      "en": "Mali",
+      "commons": "File:Flag of Mali.svg",
+      "q": "أي دولة في غرب أفريقيا ترفع هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "بوركينا فاسو",
+      "alt": [
+        "بوركينافاسو"
+      ],
+      "topic": "نجوم",
+      "ar": "بوركينا فاسو",
+      "en": "Burkina Faso",
+      "commons": "File:Flag of Burkina Faso.svg",
+      "q": "هذه راية أي دولة في غرب أفريقيا؟"
+    },
+    {
+      "tier": 600,
+      "a": "تنزانيا",
+      "topic": "أشكال هندسية",
+      "ar": "تنزانيا",
+      "en": "Tanzania",
+      "commons": "File:Flag of Tanzania.svg",
+      "q": "أي دولة في شرق أفريقيا ترفع هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "أوغندا",
+      "alt": [
+        "يوغندا"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "أوغندا",
+      "en": "Uganda",
+      "commons": "File:Flag of Uganda.svg",
+      "q": "لأي دولة في شرق أفريقيا هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "زيمبابوي",
+      "topic": "نباتات وحيوانات",
+      "ar": "زيمبابوي",
+      "en": "Zimbabwe",
+      "commons": "File:Flag of Zimbabwe.svg",
+      "q": "علم أي دولة أفريقية هذا؟"
+    },
+    {
+      "tier": 600,
+      "a": "زامبيا",
+      "topic": "نباتات وحيوانات",
+      "ar": "زامبيا",
+      "en": "Zambia",
+      "commons": "File:Flag of Zambia.svg",
+      "q": "هذا علم أي دولة أفريقية؟"
+    },
+    {
+      "tier": 600,
+      "a": "أنغولا",
+      "alt": [
+        "أنجولا"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "أنغولا",
+      "en": "Angola",
+      "commons": "File:Flag of Angola.svg",
+      "q": "هذا العلم لأي دولة أفريقية؟"
+    },
+    {
+      "tier": 600,
+      "a": "موزمبيق",
+      "alt": [
+        "موزامبيق"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "موزمبيق",
+      "en": "Mozambique",
+      "commons": "File:Flag of Mozambique.svg",
+      "q": "ما الجهة صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "ناميبيا",
+      "topic": "أشكال هندسية",
+      "ar": "ناميبيا",
+      "en": "Namibia",
+      "commons": "File:Flag of Namibia.svg",
+      "q": "ما الدولة الأفريقية التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "بوتسوانا",
+      "alt": [
+        "بتسوانا"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "بوتسوانا",
+      "en": "Botswana",
+      "commons": "File:Flag of Botswana.svg",
+      "q": "راية أي دولة أفريقية هذه؟"
+    },
+    {
+      "tier": 600,
+      "a": "مدغشقر",
+      "alt": [
+        "مدغسقر"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "مدغشقر",
+      "en": "Madagascar",
+      "commons": "File:Flag of Madagascar.svg",
+      "q": "علم أي دولة في المحيط الهندي هذا؟"
+    },
+    {
+      "tier": 600,
+      "a": "سريلانكا",
+      "alt": [
+        "سيلان"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "سريلانكا",
+      "en": "Sri Lanka",
+      "commons": "File:Flag of Sri Lanka.svg",
+      "q": "سمّ الدولة الآسيوية صاحبة هذا العلم."
+    },
+    {
+      "tier": 600,
+      "a": "ميانمار",
+      "alt": [
+        "بورما"
+      ],
+      "topic": "نجوم",
+      "ar": "ميانمار",
+      "en": "Myanmar",
+      "commons": "File:Flag of Myanmar.svg",
+      "q": "أي دولة في جنوب شرق آسيا صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "كمبوديا",
+      "alt": [
+        "كامبوديا"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "كمبوديا",
+      "en": "Cambodia",
+      "commons": "File:Flag of Cambodia.svg",
+      "q": "راية أي دولة في جنوب شرق آسيا هذه؟"
+    },
+    {
+      "tier": 600,
+      "a": "لاوس",
+      "topic": "أشكال هندسية",
+      "ar": "لاوس",
+      "en": "Laos",
+      "commons": "File:Flag of Laos.svg",
+      "q": "راية أي دولة في جنوب شرق آسيا أمامك؟"
+    },
+    {
+      "tier": 600,
+      "a": "منغوليا",
+      "alt": [
+        "منغوليا الخارجية"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "منغوليا",
+      "en": "Mongolia",
+      "commons": "File:Flag of Mongolia.svg",
+      "q": "أي دولة آسيوية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "المالديف",
+      "alt": [
+        "جزر المالديف"
+      ],
+      "topic": "أهلة",
+      "ar": "المالديف",
+      "en": "Maldives",
+      "commons": "File:Flag of Maldives.svg",
+      "q": "لأي دولة في المحيط الهندي هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "بوتان",
+      "topic": "نباتات وحيوانات",
+      "ar": "بوتان",
+      "en": "Bhutan",
+      "commons": "File:Flag of Bhutan.svg",
+      "q": "علم أي دولة آسيوية هذا؟"
+    },
+    {
+      "tier": 600,
+      "a": "الإكوادور",
+      "alt": [
+        "الإكوادر"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "الإكوادور",
+      "en": "Ecuador",
+      "commons": "File:Flag of Ecuador.svg",
+      "q": "أي دولة في أمريكا الجنوبية ترفع هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "بوليفيا",
+      "topic": "دروع وتيجان",
+      "ar": "بوليفيا",
+      "en": "Bolivia",
+      "commons": "File:Flag of Bolivia.svg",
+      "q": "هذه راية أي دولة في أمريكا الجنوبية؟"
+    },
+    {
+      "tier": 600,
+      "a": "باراغواي",
+      "alt": [
+        "باراجواي"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "باراغواي",
+      "en": "Paraguay",
+      "commons": "File:Flag of Paraguay.svg",
+      "q": "أي دولة في أمريكا الجنوبية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "كوستاريكا",
+      "alt": [
+        "كوستا ريكا"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "كوستاريكا",
+      "en": "Costa Rica",
+      "commons": "File:Flag of Costa Rica.svg",
+      "q": "راية أي دولة في أمريكا الوسطى هذه؟"
+    },
+    {
+      "tier": 600,
+      "a": "جامايكا",
+      "alt": [
+        "جاميكا"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "جامايكا",
+      "en": "Jamaica",
+      "commons": "File:Flag of Jamaica.svg",
+      "q": "أي دولة كاريبية ترفع هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "هايتي",
+      "topic": "دروع وتيجان",
+      "ar": "هايتي",
+      "en": "Haiti",
+      "commons": "File:Flag of Haiti.svg",
+      "q": "هذه راية أي دولة كاريبية؟"
+    },
+    {
+      "tier": 600,
+      "a": "بورتوريكو",
+      "alt": [
+        "بويرتوريكو"
+      ],
+      "topic": "نجوم",
+      "ar": "بورتوريكو",
+      "en": "Puerto Rico",
+      "commons": "File:Flag of Puerto Rico.svg",
+      "q": "ما الجهة صاحبة هذه الراية؟"
+    },
+    {
+      "tier": 600,
+      "a": "الاتحاد الأفريقي",
+      "topic": "شعارات ورموز",
+      "ar": "الاتحاد الأفريقي",
+      "en": "African Union",
+      "commons": "File:Flag of the African Union.svg",
+      "q": "ما المنظمة الدولية التي يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "حلف شمال الأطلسي",
+      "alt": [
+        "الناتو",
+        "الحلف الأطلسي"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "حلف شمال الأطلسي",
+      "en": "NATO",
+      "commons": "File:Flag of NATO.svg",
+      "q": "علم أي منظمة دولية هذا؟"
+    },
+    {
+      "tier": 600,
+      "a": "الجماهيرية العربية الليبية",
+      "alt": [
+        "الجماهيرية الليبية",
+        "ليبيا في عهد القذافي"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "الجماهيرية العربية الليبية",
+      "en": "Libya (1977–2011)",
+      "commons": "File:Flag of Libya (1977–2011).svg",
+      "q": "لأي دولة زالت من الخريطة هذا العلم؟"
+    },
+    {
+      "tier": 600,
+      "a": "كتالونيا",
+      "alt": [
+        "كاتالونيا"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "كتالونيا",
+      "en": "Catalonia",
+      "commons": "File:Flag of Catalonia.svg",
+      "q": "هذا العلم لأي إقليم؟"
+    },
+    {
+      "tier": 800,
+      "a": "غينيا",
+      "alt": [
+        "غينيا كوناكري"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "غينيا",
+      "en": "Guinea",
+      "commons": "File:Flag of Guinea.svg",
+      "q": "لأي دولة في غرب أفريقيا هذه الراية؟"
+    },
+    {
+      "tier": 800,
+      "a": "النيجر",
+      "topic": "أشكال هندسية",
+      "ar": "النيجر",
+      "en": "Niger",
+      "commons": "File:Flag of Niger.svg",
+      "q": "راية أي دولة في غرب أفريقيا أمامك؟"
+    },
+    {
+      "tier": 800,
+      "a": "بنين",
+      "topic": "أشكال هندسية",
+      "ar": "بنين",
+      "en": "Benin",
+      "commons": "File:Flag of Benin.svg",
+      "q": "هذا علم أي دولة في غرب أفريقيا؟"
+    },
+    {
+      "tier": 800,
+      "a": "توغو",
+      "alt": [
+        "توجو"
+      ],
+      "topic": "نجوم",
+      "ar": "توغو",
+      "en": "Togo",
+      "commons": "File:Flag of Togo.svg",
+      "q": "علم أي دولة في غرب أفريقيا تراه أمامك؟"
+    },
+    {
+      "tier": 800,
+      "a": "سيراليون",
+      "alt": [
+        "سيراليون الأفريقية"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "سيراليون",
+      "en": "Sierra Leone",
+      "commons": "File:Flag of Sierra Leone.svg",
+      "q": "أي دولة في غرب أفريقيا ترفع هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "غامبيا",
+      "alt": [
+        "جامبيا"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "غامبيا",
+      "en": "Gambia",
+      "commons": "File:Flag of The Gambia.svg",
+      "q": "هذا العلم لأي دولة في غرب أفريقيا؟"
+    },
+    {
+      "tier": 800,
+      "a": "غينيا بيساو",
+      "alt": [
+        "بيساو"
+      ],
+      "topic": "نجوم",
+      "ar": "غينيا بيساو",
+      "en": "Guinea-Bissau",
+      "commons": "File:Flag of Guinea-Bissau.svg",
+      "q": "علم أي دولة في غرب أفريقيا هذا؟"
+    },
+    {
+      "tier": 800,
+      "a": "الرأس الأخضر",
+      "alt": [
+        "كابو فيردي",
+        "جزر الرأس الأخضر"
+      ],
+      "topic": "نجوم",
+      "ar": "الرأس الأخضر",
+      "en": "Cape Verde",
+      "commons": "File:Flag of Cape Verde (3-2).svg",
+      "q": "أي دولة أفريقية يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "ساو تومي وبرينسيب",
+      "alt": [
+        "ساو تومي"
+      ],
+      "topic": "نجوم",
+      "ar": "ساو تومي وبرينسيب",
+      "en": "São Tomé and Príncipe",
+      "commons": "File:Flag of São Tomé and Príncipe.svg",
+      "q": "ما الدولة الأفريقية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "غينيا الاستوائية",
+      "topic": "دروع وتيجان",
+      "ar": "غينيا الاستوائية",
+      "en": "Equatorial Guinea",
+      "commons": "File:Flag of Equatorial Guinea.svg",
+      "q": "ما الدولة الأفريقية التي ترفع هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "الغابون",
+      "alt": [
+        "جابون"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "الغابون",
+      "en": "Gabon",
+      "commons": "File:Flag of Gabon.svg",
+      "q": "أي دولة أفريقية ترفع هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "جمهورية الكونغو",
+      "alt": [
+        "الكونغو برازافيل"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "جمهورية الكونغو",
+      "en": "Republic of the Congo",
+      "commons": "File:Flag of the Republic of the Congo.svg",
+      "q": "لأي دولة أفريقية هذه الراية؟"
+    },
+    {
+      "tier": 800,
+      "a": "جمهورية الكونغو الديمقراطية",
+      "alt": [
+        "الكونغو الديمقراطية",
+        "الكونغو كينشاسا"
+      ],
+      "topic": "نجوم",
+      "ar": "جمهورية الكونغو الديمقراطية",
+      "en": "Democratic Republic of the Congo",
+      "commons": "File:Flag of the Democratic Republic of the Congo.svg",
+      "q": "لأي جهة يعود هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "جمهورية أفريقيا الوسطى",
+      "alt": [
+        "أفريقيا الوسطى"
+      ],
+      "topic": "نجوم",
+      "ar": "جمهورية أفريقيا الوسطى",
+      "en": "Central African Republic",
+      "commons": "File:Flag of the Central African Republic.svg",
+      "q": "ما الدولة الأفريقية صاحبة هذه الراية؟"
+    },
+    {
+      "tier": 800,
+      "a": "بوروندي",
+      "topic": "نجوم",
+      "ar": "بوروندي",
+      "en": "Burundi",
+      "commons": "File:Flag of Burundi.svg",
+      "q": "هذا العلم لأي دولة في شرق أفريقيا؟"
+    },
+    {
+      "tier": 800,
+      "a": "رواندا",
+      "topic": "شعارات ورموز",
+      "ar": "رواندا",
+      "en": "Rwanda",
+      "commons": "File:Flag of Rwanda.svg",
+      "q": "لأي دولة في شرق أفريقيا هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "مالاوي",
+      "alt": [
+        "ملاوي"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "مالاوي",
+      "en": "Malawi",
+      "commons": "File:Flag of Malawi.svg",
+      "q": "هذه راية أي دولة أفريقية؟"
+    },
+    {
+      "tier": 800,
+      "a": "سلوفينيا",
+      "topic": "دروع وتيجان",
+      "ar": "سلوفينيا",
+      "en": "Slovenia",
+      "commons": "File:Flag of Slovenia.svg",
+      "q": "ما الدولة البلقانية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "إسواتيني",
+      "alt": [
+        "سوازيلاند"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "إسواتيني",
+      "en": "Eswatini",
+      "commons": "File:Flag of Eswatini.svg",
+      "q": "ما الدولة الأفريقية التي يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "ليسوتو",
+      "alt": [
+        "ليسوثو"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "ليسوتو",
+      "en": "Lesotho",
+      "commons": "File:Flag of Lesotho.svg",
+      "q": "لأي دولة أفريقية هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "سيشل",
+      "alt": [
+        "سيشيل",
+        "جزر سيشل"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "سيشل",
+      "en": "Seychelles",
+      "commons": "File:Flag of Seychelles.svg",
+      "q": "لأي دولة في المحيط الهندي هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "موريشيوس",
+      "alt": [
+        "موريشيس",
+        "جزيرة موريشيوس"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "موريشيوس",
+      "en": "Mauritius",
+      "commons": "File:Flag of Mauritius.svg",
+      "q": "هذا علم أي دولة في المحيط الهندي؟"
+    },
+    {
+      "tier": 800,
+      "a": "جنوب السودان",
+      "topic": "نجوم",
+      "ar": "جنوب السودان",
+      "en": "South Sudan",
+      "commons": "File:Flag of South Sudan.svg",
+      "q": "ما اسم الدولة الأفريقية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "فيجي",
+      "alt": [
+        "فيجى"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "فيجي",
+      "en": "Fiji",
+      "commons": "File:Flag of Fiji.svg",
+      "q": "أي دولة في المحيط الهادئ ترفع هذه الراية؟"
+    },
+    {
+      "tier": 800,
+      "a": "ساموا",
+      "topic": "نجوم",
+      "ar": "ساموا",
+      "en": "Samoa",
+      "commons": "File:Flag of Samoa.svg",
+      "q": "هذه راية أي دولة في المحيط الهادئ؟"
+    },
+    {
+      "tier": 800,
+      "a": "تونغا",
+      "alt": [
+        "تونجا"
+      ],
+      "topic": "صلبان",
+      "ar": "تونغا",
+      "en": "Tonga",
+      "commons": "File:Flag of Tonga.svg",
+      "q": "أي دولة في المحيط الهادئ ترفع هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "فانواتو",
+      "topic": "شعارات ورموز",
+      "ar": "فانواتو",
+      "en": "Vanuatu",
+      "commons": "File:Flag of Vanuatu.svg",
+      "q": "لأي دولة في المحيط الهادئ هذه الراية؟"
+    },
+    {
+      "tier": 800,
+      "a": "جزر سليمان",
+      "alt": [
+        "سليمان"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "جزر سليمان",
+      "en": "Solomon Islands",
+      "commons": "File:Flag of the Solomon Islands.svg",
+      "q": "هذا العلم لأي دولة في المحيط الهادئ؟"
+    },
+    {
+      "tier": 800,
+      "a": "بابوا غينيا الجديدة",
+      "alt": [
+        "بابوا"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "بابوا غينيا الجديدة",
+      "en": "Papua New Guinea",
+      "commons": "File:Flag of Papua New Guinea.svg",
+      "q": "لأي دولة في المحيط الهادئ هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "غرينلاند",
+      "alt": [
+        "جرينلاند"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "غرينلاند",
+      "en": "Greenland",
+      "commons": "File:Flag of Greenland.svg",
+      "q": "سمّ صاحب هذا العلم."
+    },
+    {
+      "tier": 800,
+      "a": "جزر فارو",
+      "alt": [
+        "فارو",
+        "جزر فيرو"
+      ],
+      "topic": "صلبان",
+      "ar": "جزر فارو",
+      "en": "Faroe Islands",
+      "commons": "File:Flag of the Faroe Islands.svg",
+      "q": "أي جزيرة صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "جبل طارق",
+      "alt": [
+        "جبرلتار"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "جبل طارق",
+      "en": "Gibraltar",
+      "commons": "File:Flag of Gibraltar.svg",
+      "q": "راية أي إقليم ما وراء البحار هذه؟"
+    },
+    {
+      "tier": 800,
+      "a": "جزيرة مان",
+      "alt": [
+        "مان"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "جزيرة مان",
+      "en": "Isle of Man",
+      "commons": "File:Flag of the Isle of Man.svg",
+      "q": "أي جزيرة ترفع هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "كاليفورنيا",
+      "alt": [
+        "ولاية كاليفورنيا"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "كاليفورنيا",
+      "en": "California",
+      "commons": "File:Flag of California.svg",
+      "q": "لأي ولاية أمريكية هذه الراية؟"
+    },
+    {
+      "tier": 800,
+      "a": "كيبيك",
+      "alt": [
+        "كويبك"
+      ],
+      "topic": "صلبان",
+      "ar": "كيبك",
+      "en": "Quebec",
+      "commons": "File:Flag of Quebec.svg",
+      "q": "راية أي مقاطعة كندية أمامك؟"
+    },
+    {
+      "tier": 800,
+      "a": "هندوراس",
+      "topic": "أشرطة وألوان",
+      "ar": "هندوراس",
+      "en": "Honduras",
+      "commons": "File:Flag of Honduras (1949–2022, 2026–present).svg",
+      "q": "هذا العلم لأي دولة في أمريكا الوسطى؟"
+    },
+    {
+      "tier": 800,
+      "a": "السلفادور",
+      "topic": "دروع وتيجان",
+      "ar": "السلفادور",
+      "en": "El Salvador",
+      "commons": "File:Flag of El Salvador.svg",
+      "q": "أي دولة في أمريكا الوسطى ترفع هذه الراية؟"
+    },
+    {
+      "tier": 800,
+      "a": "غواتيمالا",
+      "alt": [
+        "جواتيمالا"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "غواتيمالا",
+      "en": "Guatemala",
+      "commons": "File:Flag of Guatemala.svg",
+      "q": "هذه راية أي دولة في أمريكا الوسطى؟"
+    },
+    {
+      "tier": 800,
+      "a": "بليز",
+      "alt": [
+        "بيليز"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "بليز",
+      "en": "Belize",
+      "commons": "File:Flag of Belize.svg",
+      "q": "أي دولة في أمريكا الوسطى ترفع هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "غيانا",
+      "alt": [
+        "جويانا"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "غيانا",
+      "en": "Guyana",
+      "commons": "File:Flag of Guyana.svg",
+      "q": "علم أي دولة في أمريكا الجنوبية تراه أمامك؟"
+    },
+    {
+      "tier": 800,
+      "a": "سورينام",
+      "alt": [
+        "سورينامي"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "سورينام",
+      "en": "Suriname",
+      "commons": "File:Flag of Suriname.svg",
+      "q": "أي دولة في أمريكا الجنوبية ترفع هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "ترينيداد وتوباغو",
+      "alt": [
+        "ترينيداد"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "ترينيداد وتوباغو",
+      "en": "Trinidad and Tobago",
+      "commons": "File:Flag of Trinidad and Tobago.svg",
+      "q": "علم أي دولة كاريبية هذا؟"
+    },
+    {
+      "tier": 800,
+      "a": "الباهاما",
+      "alt": [
+        "جزر الباهاما"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "الباهاما",
+      "en": "Bahamas",
+      "commons": "File:Flag of the Bahamas.svg",
+      "q": "هذا علم أي دولة كاريبية؟"
+    },
+    {
+      "tier": 800,
+      "a": "بربادوس",
+      "alt": [
+        "باربادوس"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "بربادوس",
+      "en": "Barbados",
+      "commons": "File:Flag of Barbados.svg",
+      "q": "هذا العلم لأي دولة كاريبية؟"
+    },
+    {
+      "tier": 800,
+      "a": "ألمانيا الشرقية",
+      "alt": [
+        "جمهورية ألمانيا الديمقراطية"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "ألمانيا الشرقية",
+      "en": "East Germany",
+      "commons": "File:Flag of East Germany.svg",
+      "q": "هذا علم دولة لم تعد موجودة؛ فما اسمها؟"
+    },
+    {
+      "tier": 800,
+      "a": "يوغوسلافيا",
+      "alt": [
+        "يوغسلافيا"
+      ],
+      "topic": "نجوم",
+      "ar": "يوغوسلافيا",
+      "en": "Yugoslavia",
+      "commons": "File:Flag of Yugoslavia (1946-1992).svg",
+      "q": "أي دولة سابقة كانت ترفع هذا العلم؟"
+    },
+    {
+      "tier": 800,
+      "a": "مجلس التعاون الخليجي",
+      "alt": [
+        "مجلس التعاون لدول الخليج العربية",
+        "مجلس التعاون"
+      ],
+      "topic": "كتابة ونقوش",
+      "ar": "مجلس التعاون الخليجي",
+      "en": "Gulf Cooperation Council",
+      "commons": "File:Flag of the Cooperation Council for the Arab States of the Gulf.svg",
+      "q": "سمّ صاحب هذه الراية."
+    },
+    {
+      "tier": 800,
+      "a": "بروناي",
+      "alt": [
+        "بروناي دار السلام"
+      ],
+      "topic": "كتابة ونقوش",
+      "ar": "بروناي",
+      "en": "Brunei",
+      "commons": "File:Flag of Brunei.svg",
+      "q": "أي دولة في جنوب شرق آسيا يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "أروبا",
+      "topic": "نجوم",
+      "ar": "أروبا",
+      "en": "Aruba",
+      "commons": "File:Flag of Aruba.svg",
+      "q": "سمّ الجزيرة صاحبة هذا العلم."
+    },
+    {
+      "tier": 1000,
+      "a": "كوراساو",
+      "alt": [
+        "كوراكاو"
+      ],
+      "topic": "نجوم",
+      "ar": "كوراساو",
+      "en": "Curaçao",
+      "commons": "File:Flag of Curaçao.svg",
+      "q": "ما اسم الجزيرة التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "مكاو",
+      "alt": [
+        "ماكاو"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "ماكاو",
+      "en": "Macau",
+      "commons": "File:Flag of Macau.svg",
+      "q": "لأي إقليم هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر كايمان",
+      "alt": [
+        "كايمان"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "جزر كايمان",
+      "en": "Cayman Islands",
+      "commons": "File:Flag of the Cayman Islands.svg",
+      "q": "أي إقليم ما وراء البحار يرفع هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "غرينادا",
+      "alt": [
+        "جرينادا"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "غرينادا",
+      "en": "Grenada",
+      "commons": "File:Flag of Grenada.svg",
+      "q": "أي دولة كاريبية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "سانت لوسيا",
+      "topic": "أشكال هندسية",
+      "ar": "سانت لوسيا",
+      "en": "Saint Lucia",
+      "commons": "File:Flag of Saint Lucia.svg",
+      "q": "ما الدولة الكاريبية التي ترفع هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "مونتسرات",
+      "topic": "دروع وتيجان",
+      "ar": "مونتسرات",
+      "en": "Montserrat",
+      "commons": "File:Flag of Montserrat.svg",
+      "q": "لأي إقليم ما وراء البحار هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "أنغويلا",
+      "alt": [
+        "أنجويلا"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "أنغويلا",
+      "en": "Anguilla",
+      "commons": "File:Flag of Anguilla.svg",
+      "q": "أي إقليم ما وراء البحار يمثله هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "دومينيكا",
+      "topic": "نباتات وحيوانات",
+      "ar": "دومينيكا",
+      "en": "Dominica",
+      "commons": "File:Flag of Dominica.svg",
+      "q": "راية أي دولة كاريبية أمامك؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر فوكلاند",
+      "alt": [
+        "مالفيناس",
+        "جزر مالفيناس"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "جزر فوكلاند",
+      "en": "Falkland Islands",
+      "commons": "File:Flag of the Falkland Islands.svg",
+      "q": "لأي إقليم ما وراء البحار هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "برمودا",
+      "topic": "دروع وتيجان",
+      "ar": "برمودا",
+      "en": "Bermuda",
+      "commons": "File:Flag of Bermuda.svg",
+      "q": "علم أي إقليم ما وراء البحار تراه أمامك؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر آلاند",
+      "alt": [
+        "آلاند"
+      ],
+      "topic": "صلبان",
+      "ar": "جزر آلاند",
+      "en": "Åland Islands",
+      "commons": "File:Flag of Åland.svg",
+      "q": "أي جزيرة ترفع هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جيرزي",
+      "alt": [
+        "جيرسي"
+      ],
+      "topic": "صلبان",
+      "ar": "جيرزي",
+      "en": "Jersey",
+      "commons": "File:Flag of Jersey.svg",
+      "q": "هذه راية أي جزيرة؟"
+    },
+    {
+      "tier": 1000,
+      "a": "غيرنزي",
+      "alt": [
+        "غيرنسي"
+      ],
+      "topic": "صلبان",
+      "ar": "غيرنزي",
+      "en": "Guernsey",
+      "commons": "File:Flag of Guernsey.svg",
+      "q": "ما الجزيرة صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "أنتيغوا وباربودا",
+      "alt": [
+        "أنتيغوا"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "أنتيغوا وباربودا",
+      "en": "Antigua and Barbuda",
+      "commons": "File:Flag of Antigua and Barbuda.svg",
+      "q": "ما الدولة الكاريبية التي يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "واليس وفوتونا",
+      "alt": [
+        "واليس"
+      ],
+      "topic": "صلبان",
+      "ar": "واليس وفوتونا",
+      "en": "Wallis and Futuna",
+      "commons": "File:Flag of Wallis and Futuna.svg",
+      "q": "ما الجهة التي ترفع هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "بولينيزيا الفرنسية",
+      "alt": [
+        "تاهيتي"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "بولينيزيا الفرنسية",
+      "en": "French Polynesia",
+      "commons": "File:Flag of French Polynesia.svg",
+      "q": "علم أي دولة في المحيط الهادئ هذا؟"
+    },
+    {
+      "tier": 1000,
+      "a": "توكيلاو",
+      "alt": [
+        "توكلاو"
+      ],
+      "topic": "نجوم",
+      "ar": "توكيلاو",
+      "en": "Tokelau",
+      "commons": "File:Flag of Tokelau.svg",
+      "q": "هذا علم أي دولة في المحيط الهادئ؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزيرة الكريسماس",
+      "alt": [
+        "كريسماس"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "جزيرة الكريسماس",
+      "en": "Christmas Island",
+      "commons": "File:Flag of Christmas Island.svg",
+      "q": "ما اسم الجزيرة صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر كوكوس",
+      "alt": [
+        "كوكوس",
+        "جزر كيلينغ"
+      ],
+      "topic": "أهلة",
+      "ar": "جزر كوكوس",
+      "en": "Cocos (Keeling) Islands",
+      "commons": "File:Flag of the Cocos (Keeling) Island.svg",
+      "q": "ما الجزيرة التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزيرة نورفولك",
+      "alt": [
+        "نورفولك"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "جزيرة نورفولك",
+      "en": "Norfolk Island",
+      "commons": "File:Flag of Norfolk Island.svg",
+      "q": "راية أي جزيرة هذه؟"
+    },
+    {
+      "tier": 1000,
+      "a": "غوام",
+      "alt": [
+        "جوام"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "غوام",
+      "en": "Guam",
+      "commons": "File:Flag of Guam.svg",
+      "q": "أي دولة في المحيط الهادئ صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر ماريانا الشمالية",
+      "alt": [
+        "ماريانا الشمالية"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "جزر ماريانا الشمالية",
+      "en": "Northern Mariana Islands",
+      "commons": "File:Flag of the Northern Mariana Islands.svg",
+      "q": "راية أي دولة في المحيط الهادئ هذه؟"
+    },
+    {
+      "tier": 1000,
+      "a": "ساموا الأمريكية",
+      "topic": "نباتات وحيوانات",
+      "ar": "ساموا الأمريكية",
+      "en": "American Samoa",
+      "commons": "File:Flag of American Samoa.svg",
+      "q": "أي دولة في المحيط الهادئ يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "سينت مارتن",
+      "alt": [
+        "سانت مارتن"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "سينت مارتن",
+      "en": "Sint Maarten",
+      "commons": "File:Flag of Sint Maarten.svg",
+      "q": "لأي جزيرة هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "سان بيير وميكلون",
+      "alt": [
+        "سان بيير"
+      ],
+      "topic": "دروع وتيجان",
+      "ar": "سان بيير وميكلون",
+      "en": "Saint Pierre and Miquelon",
+      "commons": "File:Flag of Saint-Pierre and Miquelon.svg",
+      "q": "أي جزيرة يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "ناورو",
+      "topic": "نجوم",
+      "ar": "ناورو",
+      "en": "Nauru",
+      "commons": "File:Flag of Nauru.svg",
+      "q": "هذا العلم لأي جزيرة في المحيط الهادئ؟"
+    },
+    {
+      "tier": 1000,
+      "a": "توفالو",
+      "topic": "نجوم",
+      "ar": "توفالو",
+      "en": "Tuvalu",
+      "commons": "File:Flag of Tuvalu.svg",
+      "q": "أي جزيرة في المحيط الهادئ ترفع هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "كيريباتي",
+      "alt": [
+        "كيريباس"
+      ],
+      "topic": "نباتات وحيوانات",
+      "ar": "كيريباتي",
+      "en": "Kiribati",
+      "commons": "File:Flag of Kiribati.svg",
+      "q": "هذه راية أي جزيرة في المحيط الهادئ؟"
+    },
+    {
+      "tier": 1000,
+      "a": "بالاو",
+      "alt": [
+        "بالو"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "بالاو",
+      "en": "Palau",
+      "commons": "File:Flag of Palau.svg",
+      "q": "أي جزيرة في المحيط الهادئ ترفع هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر مارشال",
+      "alt": [
+        "مارشال"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "جزر مارشال",
+      "en": "Marshall Islands",
+      "commons": "File:Flag of the Marshall Islands.svg",
+      "q": "لأي جزيرة في المحيط الهادئ هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "ميكرونيسيا",
+      "alt": [
+        "ولايات ميكرونيسيا المتحدة"
+      ],
+      "topic": "نجوم",
+      "ar": "ولايات ميكرونيسيا المتحدة",
+      "en": "Micronesia",
+      "commons": "File:Flag of the Federated States of Micronesia.svg",
+      "q": "راية أي جزيرة في المحيط الهادئ أمامك؟"
+    },
+    {
+      "tier": 1000,
+      "a": "أونتاريو",
+      "topic": "صلبان",
+      "ar": "أونتاريو",
+      "en": "Ontario",
+      "commons": "File:Flag of Ontario.svg",
+      "q": "ما الجهة التي ترفع هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "ألبرتا",
+      "topic": "دروع وتيجان",
+      "ar": "ألبرتا",
+      "en": "Alberta",
+      "commons": "File:Flag of Alberta.svg",
+      "q": "أي مقاطعة كندية ترفع هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "نونافوت",
+      "topic": "شعارات ورموز",
+      "ar": "نونافوت",
+      "en": "Nunavut",
+      "commons": "File:Flag of Nunavut.svg",
+      "q": "هذه راية أي مقاطعة كندية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "يوكون",
+      "topic": "نباتات وحيوانات",
+      "ar": "يوكون",
+      "en": "Yukon",
+      "commons": "File:Flag of Yukon.svg",
+      "q": "ما المقاطعة الكندية صاحبة هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "نوفا سكوشا",
+      "alt": [
+        "نوفا سكوتيا"
+      ],
+      "topic": "صلبان",
+      "ar": "نوفا سكوشا",
+      "en": "Nova Scotia",
+      "commons": "File:Flag of Nova Scotia.svg",
+      "q": "ما المقاطعة الكندية التي يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "كولومبيا البريطانية",
+      "alt": [
+        "بريتش كولومبيا"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "كولومبيا البريطانية",
+      "en": "British Columbia",
+      "commons": "File:Flag of British Columbia.svg",
+      "q": "علم أي مقاطعة كندية هذا؟"
+    },
+    {
+      "tier": 1000,
+      "a": "ساسكاتشوان",
+      "topic": "نباتات وحيوانات",
+      "ar": "ساسكاتشوان",
+      "en": "Saskatchewan",
+      "commons": "File:Flag of Saskatchewan.svg",
+      "q": "هذا علم أي مقاطعة كندية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "كورسيكا",
+      "alt": [
+        "كورسيكة"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "كورسيكا",
+      "en": "Corsica",
+      "commons": "File:Flag of Corsica.svg",
+      "q": "ما الإقليم صاحب هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "بريتاني",
+      "alt": [
+        "بروتاني",
+        "بريتانيا"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "بريتاني",
+      "en": "Brittany",
+      "commons": "File:Flag of Brittany.svg",
+      "q": "ما اسم الإقليم صاحب هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "سردينيا",
+      "alt": [
+        "ساردينيا"
+      ],
+      "topic": "صلبان",
+      "ar": "سردينيا",
+      "en": "Sardinia",
+      "commons": "File:Flag of Sardinia, Italy.svg",
+      "q": "ما الإقليم الذي يرفع هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "صقلية",
+      "alt": [
+        "سيسيليا"
+      ],
+      "topic": "شعارات ورموز",
+      "ar": "صقلية",
+      "en": "Sicily",
+      "commons": "File:Flag of Sicily.svg",
+      "q": "راية أي إقليم هذه؟"
+    },
+    {
+      "tier": 1000,
+      "a": "زائير",
+      "topic": "شعارات ورموز",
+      "ar": "زائير",
+      "en": "Zaire",
+      "commons": "File:Flag of Zaire (1971–1997).svg",
+      "q": "علم أي دولة زائلة هذا؟"
+    },
+    {
+      "tier": 1000,
+      "a": "فيتنام الجنوبية",
+      "alt": [
+        "جمهورية فيتنام"
+      ],
+      "topic": "أشرطة وألوان",
+      "ar": "فيتنام الجنوبية",
+      "en": "South Vietnam",
+      "commons": "File:Flag of South Vietnam.svg",
+      "q": "ما اسم الدولة التي كانت ترفع هذه الراية؟"
+    },
+    {
+      "tier": 1000,
+      "a": "اليمن الجنوبي",
+      "alt": [
+        "جمهورية اليمن الديمقراطية الشعبية"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "اليمن الجنوبي",
+      "en": "South Yemen",
+      "commons": "File:Flag of South Yemen.svg",
+      "q": "راية دولة زالت من الخريطة؛ فلمن كانت؟"
+    },
+    {
+      "tier": 1000,
+      "a": "جزر كوك",
+      "alt": [
+        "كوك"
+      ],
+      "topic": "نجوم",
+      "ar": "جزر كوك",
+      "en": "Cook Islands",
+      "commons": "File:Flag of the Cook Islands.svg",
+      "q": "أي جزيرة في المحيط الهادئ يمثلها هذا العلم؟"
+    },
+    {
+      "tier": 1000,
+      "a": "سانت فنسنت والغرينادين",
+      "alt": [
+        "سانت فنسنت"
+      ],
+      "topic": "أشكال هندسية",
+      "ar": "سانت فنسنت والغرينادين",
+      "en": "Saint Vincent and the Grenadines",
+      "commons": "File:Flag of Saint Vincent and the Grenadines.svg",
+      "q": "أي دولة كاريبية يمثلها هذا العلم؟"
+    }
+  ]
+}

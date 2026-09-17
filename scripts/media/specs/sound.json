@@ -1,0 +1,3754 @@
+{
+  "id": "sound",
+  "name": "خمن الصوت",
+  "icon": "🔊",
+  "defaultType": "audio",
+  "kind": "audio",
+  "note": "المقاطع غير المثبّتة بـcommons جُلبت بـscripts/media-fetch.mjs --from <الرابط في حقل from>؛ build-pack.mjs لا يحلّ غير كومنز.",
+  "subjects": [
+    {
+      "tier": 200,
+      "a": "بيانو",
+      "alt": [
+        "البيانو",
+        "بيان"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "بيانو",
+      "en": "piano",
+      "q": "ما الآلة التي تسمعها؟",
+      "commons": "File:Outing- Chinese kids' Piano Song - Junjun's edition (selected from real piano lesson).ogg"
+    },
+    {
+      "tier": 200,
+      "a": "غيتار",
+      "alt": [
+        "جيتار",
+        "قيثار"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "غيتار",
+      "en": "acoustic guitar",
+      "q": "ما اسم الآلة التي تسمعها؟",
+      "commons": "File:Jason Shaw - SOLO ACOUSTIC GUITAR.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "كمان",
+      "alt": [
+        "كمنجة",
+        "فيولين"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "كمان",
+      "en": "violin solo melody",
+      "q": "أي آلة تسمعها الآن؟",
+      "search": "violin solo melody",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/szegvari/sounds/518568"
+    },
+    {
+      "tier": 200,
+      "a": "طبل",
+      "alt": [
+        "طبلة",
+        "درامز"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "طبل",
+      "en": "drum snare",
+      "q": "ما الآلة الموسيقية في المقطع؟",
+      "commons": "File:Snare drum muffled.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "بوق",
+      "alt": [
+        "ترومبيت",
+        "نفير"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "بوق",
+      "en": "trumpet fanfare",
+      "q": "من أي آلة يخرج هذا الصوت؟",
+      "commons": "File:The Arrival of the Armies of Wisdom.wav"
+    },
+    {
+      "tier": 200,
+      "a": "ناي",
+      "alt": [
+        "فلوت",
+        "قصبة"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "ناي",
+      "en": "bansuri",
+      "q": "ما الآلة التي يُعزف عليها؟",
+      "commons": "File:Carnatic flute.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "ساكسفون",
+      "alt": [
+        "ساكس",
+        "ساكسوفون"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "ساكسفون",
+      "en": "saxophone",
+      "q": "أي آلة تعزف هنا؟",
+      "commons": "File:Bariton Saxophone independently performing a base line in 5 voice sax sectional harmony.oga"
+    },
+    {
+      "tier": 200,
+      "a": "قيثارة",
+      "alt": [
+        "هارب",
+        "جنك"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "قيثارة",
+      "en": "harp",
+      "q": "ما الآلة التي تسمعونها؟",
+      "commons": "File:01 La Nueva Alianza.wav"
+    },
+    {
+      "tier": 200,
+      "a": "أجراس",
+      "alt": [
+        "جرس كنيسة",
+        "أجراس الكنيسة",
+        "جرس"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "أجراس",
+      "en": "church bells",
+      "q": "ما هذا التنبيه؟",
+      "commons": "File:Samariter Church Bell II (g).ogg"
+    },
+    {
+      "tier": 200,
+      "a": "جرس باب",
+      "alt": [
+        "جرس الباب",
+        "جرس المنزل"
+      ],
+      "topic": "البيت",
+      "ar": "جرس باب",
+      "en": "doorbell",
+      "q": "أي تنبيه هذا؟",
+      "commons": "File:Doorbell-classic-dingdong.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "منبه",
+      "alt": [
+        "ساعة منبهة",
+        "منبه الصباح"
+      ],
+      "topic": "البيت",
+      "ar": "منبه",
+      "en": "alarm clock",
+      "q": "ما اسم هذا التنبيه؟",
+      "commons": "File:Alarm Clock (Directory.Audio).mp3"
+    },
+    {
+      "tier": 200,
+      "a": "صفارة إسعاف",
+      "alt": [
+        "سيارة إسعاف",
+        "إسعاف"
+      ],
+      "topic": "مركبات",
+      "ar": "صفارة إسعاف",
+      "en": "ambulance siren",
+      "q": "ما التنبيه الذي تسمعه؟",
+      "commons": "File:Ambulance Sounds2.wav"
+    },
+    {
+      "tier": 200,
+      "a": "صفارة شرطة",
+      "alt": [
+        "سيارة شرطة",
+        "شرطة"
+      ],
+      "topic": "مركبات",
+      "ar": "صفارة شرطة",
+      "en": "police siren",
+      "q": "لأي تنبيه هذا الصوت؟",
+      "commons": "File:American police siren i.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "بوق ضباب",
+      "alt": [
+        "بوق الضباب",
+        "بوق ميناء"
+      ],
+      "topic": "مركبات",
+      "ar": "بوق ضباب",
+      "en": "fog horn",
+      "q": "ما مصدر هذا التنبيه؟",
+      "commons": "File:Fog signal Bremerhaven.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "صافرة قطار",
+      "alt": [
+        "صفارة قطار",
+        "صافرة القطار"
+      ],
+      "topic": "مركبات",
+      "ar": "صافرة قطار",
+      "en": "train whistle",
+      "q": "خمّن التنبيه الذي تسمعه.",
+      "commons": "File:WWS SteamWhistle.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "زمور",
+      "alt": [
+        "بوق سيارة",
+        "كلاكس",
+        "زامور"
+      ],
+      "topic": "مركبات",
+      "ar": "زمور",
+      "en": "car horn",
+      "q": "حدّد التنبيه الذي تسمعه.",
+      "commons": "File:Car Horn.wav"
+    },
+    {
+      "tier": 200,
+      "a": "رعد",
+      "alt": [
+        "صاعقة",
+        "رعد وبرق"
+      ],
+      "topic": "طبيعة",
+      "ar": "رعد",
+      "en": "thunder",
+      "q": "ما الظاهرة الطبيعية التي تسمعها الآن؟",
+      "commons": "File:Thunder 01.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "مطر",
+      "alt": [
+        "هطول المطر",
+        "أمطار"
+      ],
+      "topic": "طبيعة",
+      "ar": "مطر",
+      "en": "rain falling",
+      "q": "أي ظاهرة طبيعية تسمعها في المقطع؟",
+      "commons": "File:Falling Rain SFX 1 2016-11-19.oga"
+    },
+    {
+      "tier": 200,
+      "a": "أمواج",
+      "alt": [
+        "موج",
+        "موج البحر",
+        "بحر"
+      ],
+      "topic": "طبيعة",
+      "ar": "أمواج",
+      "en": "ocean waves",
+      "q": "ما اسم الظاهرة التي تسمعها؟",
+      "commons": "File:Ocean Waves on a Tropical Beach.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "ريح",
+      "alt": [
+        "رياح",
+        "عاصفة",
+        "هبوب الريح"
+      ],
+      "topic": "طبيعة",
+      "ar": "ريح",
+      "en": "wind howling",
+      "q": "ما الظاهرة الطبيعية التي تسمعها؟",
+      "commons": "File:Howling wind.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "نباح",
+      "alt": [
+        "كلب",
+        "نباح كلب"
+      ],
+      "topic": "حيوانات",
+      "ar": "نباح",
+      "en": "dog barking",
+      "q": "ما الحيوان الذي تسمعه في المقطع؟",
+      "commons": "File:Dog barking.webm"
+    },
+    {
+      "tier": 200,
+      "a": "مواء",
+      "alt": [
+        "قطة",
+        "قط",
+        "مواء قطة"
+      ],
+      "topic": "حيوانات",
+      "ar": "مواء",
+      "en": "cat meow",
+      "q": "أي حيوان تسمعه الآن؟",
+      "commons": "File:Meow of a pleading cat.oga"
+    },
+    {
+      "tier": 200,
+      "a": "زئير أسد",
+      "alt": [
+        "أسد",
+        "زئير"
+      ],
+      "topic": "حيوانات",
+      "ar": "زئير أسد",
+      "en": "Lion roars & snarls 1",
+      "q": "ما اسم الحيوان الذي تسمعه؟",
+      "search": "Lion roars & snarls 1",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_ANIMALS"
+    },
+    {
+      "tier": 200,
+      "a": "صهيل",
+      "alt": [
+        "حصان",
+        "صهيل حصان",
+        "خيل"
+      ],
+      "topic": "حيوانات",
+      "ar": "صهيل",
+      "en": "horse neigh",
+      "q": "ما الحيوان الذي تسمعه؟",
+      "commons": "File:Wiehern.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "صياح ديك",
+      "alt": [
+        "ديك",
+        "صياح الديك"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "صياح ديك",
+      "en": "rooster crow",
+      "q": "ما الطائر الذي تسمعه الآن؟",
+      "commons": "File:Rooster crowing.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "خوار",
+      "alt": [
+        "بقرة",
+        "خوار بقرة"
+      ],
+      "topic": "حيوانات",
+      "ar": "خوار",
+      "en": "cow moo",
+      "q": "ما الحيوان الذي يصدر هذا الصوت؟",
+      "commons": "File:Single Cow Moo.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "ثغاء",
+      "alt": [
+        "خروف",
+        "غنم",
+        "ثغاء خروف"
+      ],
+      "topic": "حيوانات",
+      "ar": "ثغاء",
+      "en": "sheep bleat",
+      "q": "لأي حيوان هذا الصوت؟",
+      "commons": "File:Sheep bleating.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "عواء",
+      "alt": [
+        "ذئب",
+        "عواء ذئب"
+      ],
+      "topic": "حيوانات",
+      "ar": "عواء",
+      "en": "wolf howl",
+      "q": "من أي حيوان هذا الصوت؟",
+      "commons": "File:Wolf howls.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "فيل",
+      "alt": [
+        "نفير الفيل",
+        "فيلة"
+      ],
+      "topic": "حيوانات",
+      "ar": "فيل",
+      "en": "elephant trumpeting call",
+      "q": "ما الحيوان في هذا المقطع؟",
+      "search": "elephant trumpeting call",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/AdrianaSpalinky/sounds/52249"
+    },
+    {
+      "tier": 200,
+      "a": "زقزقة",
+      "alt": [
+        "عصافير",
+        "زقزقة عصافير",
+        "عصفور"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "زقزقة",
+      "en": "bird chirping",
+      "q": "أي طائر تسمعه في المقطع؟",
+      "commons": "File:Birds chirping in a garden.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "بوم",
+      "alt": [
+        "بومة",
+        "نعيق بومة"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "بوم",
+      "en": "owl hoot",
+      "q": "ما اسم الطائر الذي تسمعه؟",
+      "commons": "File:Maghreb owl hooting.wav"
+    },
+    {
+      "tier": 200,
+      "a": "نقيق",
+      "alt": [
+        "ضفدع",
+        "نقيق ضفدع",
+        "ضفادع"
+      ],
+      "topic": "حيوانات",
+      "ar": "نقيق",
+      "en": "frog croak",
+      "q": "ما الحيوان في التسجيل؟",
+      "commons": "File:Single Frog Croak.oga"
+    },
+    {
+      "tier": 200,
+      "a": "صرصور الليل",
+      "alt": [
+        "صرصور",
+        "جدجد",
+        "صرار الليل"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "صرصور الليل",
+      "en": "cricket chirp",
+      "q": "ما الحشرة التي تسمعها الآن؟",
+      "commons": "File:Cricket Gryllus bimaculatus Chirps.oga"
+    },
+    {
+      "tier": 200,
+      "a": "طنين",
+      "alt": [
+        "نحل",
+        "طنين نحل",
+        "نحلة"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "طنين",
+      "en": "bee buzzing",
+      "q": "أي حشرة تسمعها في المقطع؟",
+      "commons": "File:Buzzing bees.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "نبض",
+      "alt": [
+        "نبض القلب",
+        "دقات القلب",
+        "قلب"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "نبض",
+      "en": "Human heartbeat_CS",
+      "q": "ما هذا الصوت البشري؟",
+      "search": "Human heartbeat_CS",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_HUMAN"
+    },
+    {
+      "tier": 200,
+      "a": "تصفيق",
+      "alt": [
+        "تصفيق جمهور",
+        "تصفيق حار"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "تصفيق",
+      "en": "applause",
+      "q": "أي صوت بشري هذا؟",
+      "commons": "File:277021 sandermotions applause-2.wav"
+    },
+    {
+      "tier": 200,
+      "a": "ضحك",
+      "alt": [
+        "ضحك جمهور",
+        "قهقهة"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "ضحك",
+      "en": "laughter",
+      "q": "ما الصوت البشري الذي تسمعه؟",
+      "commons": "File:72844 lonemonk approx-800-laughter-and-clapter-1.wav"
+    },
+    {
+      "tier": 200,
+      "a": "عطس",
+      "alt": [
+        "عطسة",
+        "عطاس"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "عطس",
+      "en": "sneeze",
+      "q": "ما اسم هذا الصوت البشري؟",
+      "commons": "File:Double sneeze (man).ogg"
+    },
+    {
+      "tier": 200,
+      "a": "غالق كاميرا",
+      "alt": [
+        "كاميرا",
+        "التقاط صورة",
+        "تصوير"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "غالق كاميرا",
+      "en": "camera shutter",
+      "q": "ما الجهاز الذي تسمعه؟",
+      "commons": "File:Canon T50 shutter noise.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "آلة كاتبة",
+      "alt": [
+        "الآلة الكاتبة",
+        "آلة طباعة قديمة"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "آلة كاتبة",
+      "en": "Manual Typewriter",
+      "q": "أي جهاز تسمعه الآن؟",
+      "search": "Manual Typewriter",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Communications"
+    },
+    {
+      "tier": 200,
+      "a": "مروحية",
+      "alt": [
+        "هليكوبتر",
+        "طائرة عمودية",
+        "هيلوكبتر"
+      ],
+      "topic": "مركبات",
+      "ar": "مروحية",
+      "en": "helicopter rotor",
+      "q": "ما المركبة التي تسمعها؟",
+      "search": "helicopter rotor",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/lezaarth/sounds/232818"
+    },
+    {
+      "tier": 200,
+      "a": "طائرة",
+      "alt": [
+        "طائرة نفاثة",
+        "طيارة"
+      ],
+      "topic": "مركبات",
+      "ar": "طائرة",
+      "en": "Jet Fly By",
+      "q": "أي مركبة تسمعها الآن؟",
+      "search": "Jet Fly By",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_08_09_10_11_Aircraft-Jets"
+    },
+    {
+      "tier": 200,
+      "a": "دراجة نارية",
+      "alt": [
+        "موتوسيكل",
+        "دراجة بخارية",
+        "موتور"
+      ],
+      "topic": "مركبات",
+      "ar": "دراجة نارية",
+      "en": "motorcycle",
+      "q": "ما اسم المركبة التي تسمعها؟",
+      "commons": "File:Jawa250 motorbike exhaust sound.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "ألعاب نارية",
+      "alt": [
+        "مفرقعات",
+        "صواريخ احتفال"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "ألعاب نارية",
+      "en": "fireworks",
+      "q": "ما هذا الصوت؟",
+      "commons": "File:Fireworks piece.ogg"
+    },
+    {
+      "tier": 200,
+      "a": "سيوف",
+      "alt": [
+        "مبارزة",
+        "سيف",
+        "مبارزة بالسيوف"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "سيوف",
+      "en": "sword fight clash metal blades",
+      "q": "ما مصدر هذا الصوت؟",
+      "search": "sword fight clash metal blades",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/ihitokage/sounds/397168"
+    },
+    {
+      "tier": 200,
+      "a": "خطوات",
+      "alt": [
+        "مشي",
+        "خطوات أقدام"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "خطوات",
+      "en": "footsteps on gravel walking",
+      "q": "سمِّ الصوت البشري الذي تسمعه.",
+      "search": "footsteps on gravel walking",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Joozz/sounds/531952"
+    },
+    {
+      "tier": 200,
+      "a": "باب",
+      "alt": [
+        "إغلاق باب",
+        "صفق باب",
+        "باب يُغلق"
+      ],
+      "topic": "البيت",
+      "ar": "باب",
+      "en": "door slam",
+      "q": "ماذا تسمع في هذا المقطع؟",
+      "commons": "File:Slam closet door (Gravity Sound).wav"
+    },
+    {
+      "tier": 200,
+      "a": "رذاذ",
+      "alt": [
+        "ماء",
+        "تناثر ماء",
+        "رش ماء"
+      ],
+      "topic": "البيت",
+      "ar": "رذاذ",
+      "en": "water splash",
+      "q": "ما الذي يصدر هذا الصوت؟",
+      "commons": "File:Bathtub water splashes.ogg"
+    },
+    {
+      "tier": 400,
+      "a": "غليان",
+      "alt": [
+        "ماء يغلي",
+        "غليان الماء"
+      ],
+      "topic": "البيت",
+      "ar": "غليان",
+      "en": "boiling water",
+      "q": "خمّن مصدر هذا الصوت.",
+      "commons": "File:Boiling water being poured into a mug for tea.ogg"
+    },
+    {
+      "tier": 400,
+      "a": "تكتكة",
+      "alt": [
+        "ساعة",
+        "تكتكة ساعة",
+        "عقارب الساعة"
+      ],
+      "topic": "البيت",
+      "ar": "تكتكة",
+      "en": "clock ticking",
+      "q": "ما الذي تسمعه؟",
+      "commons": "File:Clock ticking.ogg"
+    },
+    {
+      "tier": 400,
+      "a": "صندوق نقد",
+      "alt": [
+        "ماكينة الكاشير",
+        "صندوق النقد",
+        "كاشير"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "صندوق نقد",
+      "en": "cash register",
+      "q": "ما اسم الجهاز الذي تسمعه؟",
+      "search": "cash register",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/clubmydia+/sounds/584168"
+    },
+    {
+      "tier": 400,
+      "a": "نرد",
+      "alt": [
+        "زهر",
+        "رمي النرد",
+        "زهر الطاولة"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "نرد",
+      "en": "dice rolling shaking",
+      "q": "ما اسم هذا الصوت؟",
+      "search": "dice rolling shaking",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/dylanperitz/sounds/444186"
+    },
+    {
+      "tier": 400,
+      "a": "حمار",
+      "alt": [
+        "نهيق",
+        "نهيق حمار"
+      ],
+      "topic": "حيوانات",
+      "ar": "حمار",
+      "en": "donkey braying",
+      "q": "أي حيوان تسمع؟",
+      "commons": "File:157763 felix-blume a-donkey-is-braying-in-his-enclosure-in-south-of-france.wav"
+    },
+    {
+      "tier": 400,
+      "a": "خنزير",
+      "alt": [
+        "قباع",
+        "خنازير"
+      ],
+      "topic": "حيوانات",
+      "ar": "خنزير",
+      "en": "Pig Snorts and Squeals",
+      "q": "سمِّ الحيوان الذي تسمعه.",
+      "search": "Pig Snorts and Squeals",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Animals_Farm"
+    },
+    {
+      "tier": 400,
+      "a": "ماعز",
+      "alt": [
+        "عنزة",
+        "تيس",
+        "ثغاء ماعز"
+      ],
+      "topic": "حيوانات",
+      "ar": "ماعز",
+      "en": "FARM/ANMLFarm_Goat calls",
+      "q": "حدّد الحيوان الذي تسمعه.",
+      "search": "FARM/ANMLFarm_Goat calls",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_ANIMALS"
+    },
+    {
+      "tier": 400,
+      "a": "قرد",
+      "alt": [
+        "قرود",
+        "سعدان"
+      ],
+      "topic": "حيوانات",
+      "ar": "قرد",
+      "en": "Monkey Chattering",
+      "q": "ما الحيوان صاحب هذا الصوت؟",
+      "search": "Monkey Chattering",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 400,
+      "a": "ركض الخيل",
+      "alt": [
+        "وقع حوافر",
+        "خيل تركض",
+        "حصان يركض",
+        "حوافر"
+      ],
+      "topic": "حيوانات",
+      "ar": "ركض الخيل",
+      "en": "Horse Gallops",
+      "q": "لأي شيء هذا الصوت؟",
+      "search": "Horse Gallops",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_38_Horses"
+    },
+    {
+      "tier": 400,
+      "a": "أفعى",
+      "alt": [
+        "ثعبان",
+        "أفعى مجلجلة",
+        "حية",
+        "فحيح"
+      ],
+      "topic": "حيوانات",
+      "ar": "أفعى",
+      "en": "Rattlesnake Rattle",
+      "q": "ما الحيوان الذي نسمعه؟",
+      "search": "Rattlesnake Rattle",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 400,
+      "a": "بطة",
+      "alt": [
+        "بط",
+        "بطبطة"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "بطة",
+      "en": "Ducks Quack on Pond",
+      "q": "ما الطائر الذي تسمعه؟",
+      "search": "Ducks Quack on Pond",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Animals_Birds"
+    },
+    {
+      "tier": 400,
+      "a": "دجاجة",
+      "alt": [
+        "دجاج",
+        "قوقأة"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "دجاجة",
+      "en": "Close Chicken Vocals",
+      "q": "ما الطائر الذي يصدر هذا الصوت؟",
+      "search": "Close Chicken Vocals",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Animals_Birds"
+    },
+    {
+      "tier": 400,
+      "a": "غراب",
+      "alt": [
+        "نعيق",
+        "نعيق غراب",
+        "غربان"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "غراب",
+      "en": "Raven scolding",
+      "q": "لأي طائر هذا الصوت؟",
+      "search": "Raven scolding",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_BIRDS"
+    },
+    {
+      "tier": 400,
+      "a": "حمامة",
+      "alt": [
+        "هديل",
+        "حمام",
+        "يمامة"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "حمامة",
+      "en": "Pigeon Coos",
+      "q": "من أي طائر هذا الصوت؟",
+      "search": "Pigeon Coos",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Animals_Birds"
+    },
+    {
+      "tier": 400,
+      "a": "ببغاء",
+      "alt": [
+        "كوكاتو",
+        "مكاو",
+        "ببغاء مكاو"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "ببغاء",
+      "en": "McCaw parrot screams",
+      "q": "ما الطائر في هذا المقطع؟",
+      "search": "McCaw parrot screams",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_BIRDS"
+    },
+    {
+      "tier": 400,
+      "a": "نورس",
+      "alt": [
+        "طائر النورس",
+        "نوارس"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "نورس",
+      "en": "Close up Seagull",
+      "q": "أي طائر تسمع؟",
+      "search": "Close up Seagull",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Animals_Birds"
+    },
+    {
+      "tier": 400,
+      "a": "سيارة",
+      "alt": [
+        "محرك سيارة",
+        "تشغيل سيارة",
+        "سيارة تنطلق"
+      ],
+      "topic": "مركبات",
+      "ar": "سيارة",
+      "en": "car engine starting idling",
+      "q": "ما المركبة التي تصدر هذا الصوت؟",
+      "search": "car engine starting idling",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/davidbain/sounds/209864"
+    },
+    {
+      "tier": 400,
+      "a": "قطار",
+      "alt": [
+        "سكة حديد",
+        "عجلات قطار",
+        "قطار يمر"
+      ],
+      "topic": "مركبات",
+      "ar": "قطار",
+      "en": "Train Wheels Click",
+      "q": "لأي مركبة هذا الصوت؟",
+      "search": "Train Wheels Click",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_47_48_49_Trains"
+    },
+    {
+      "tier": 400,
+      "a": "شاحنة",
+      "alt": [
+        "شاحنة ديزل",
+        "لوري",
+        "قلاب"
+      ],
+      "topic": "مركبات",
+      "ar": "شاحنة",
+      "en": "Diesel Truck",
+      "q": "من أي مركبة هذا الصوت؟",
+      "search": "Diesel Truck",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_14_Trucks"
+    },
+    {
+      "tier": 400,
+      "a": "دراجة هوائية",
+      "alt": [
+        "جرس دراجة",
+        "دراجة",
+        "بسكليت",
+        "عجلة"
+      ],
+      "topic": "مركبات",
+      "ar": "دراجة هوائية",
+      "en": "Bicycle Bell",
+      "q": "ما المركبة في هذا المقطع؟",
+      "search": "Bicycle Bell",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Bells_Horns_Whistles"
+    },
+    {
+      "tier": 400,
+      "a": "سفينة",
+      "alt": [
+        "بوق سفينة",
+        "باخرة",
+        "بوق باخرة"
+      ],
+      "topic": "مركبات",
+      "ar": "سفينة",
+      "en": "Ship Horn",
+      "q": "أي مركبة تسمع؟",
+      "search": "Ship Horn",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_37_Horns"
+    },
+    {
+      "tier": 400,
+      "a": "شلال",
+      "alt": [
+        "شلالات",
+        "مساقط مياه"
+      ],
+      "topic": "طبيعة",
+      "ar": "شلال",
+      "en": "waterfall",
+      "q": "لأي ظاهرة طبيعية هذا الصوت؟",
+      "commons": "File:Water fall.ogg"
+    },
+    {
+      "tier": 400,
+      "a": "نار",
+      "alt": [
+        "حريق",
+        "طقطقة النار",
+        "لهب",
+        "موقد"
+      ],
+      "topic": "طبيعة",
+      "ar": "نار",
+      "en": "Heavy fire crackle",
+      "q": "ما الذي سُجّل في هذا المقطع؟",
+      "search": "Heavy fire crackle",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_FIRE"
+    },
+    {
+      "tier": 400,
+      "a": "نهر",
+      "alt": [
+        "جدول",
+        "مجرى ماء",
+        "ساقية",
+        "ماء جارٍ"
+      ],
+      "topic": "طبيعة",
+      "ar": "نهر",
+      "en": "Mountain stream gurgling",
+      "q": "ما الظاهرة في هذا المقطع؟",
+      "search": "Mountain stream gurgling",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_WATER"
+    },
+    {
+      "tier": 400,
+      "a": "مكنسة كهربائية",
+      "alt": [
+        "مكنسة",
+        "هوفر",
+        "شفاط"
+      ],
+      "topic": "البيت",
+      "ar": "مكنسة كهربائية",
+      "en": "vacuum cleaner",
+      "q": "ما الجهاز الذي يصدر هذا الصوت؟",
+      "commons": "File:Het aanstaan van een stofzuiger - SoundCloud - Beeld en Geluid.ogg"
+    },
+    {
+      "tier": 400,
+      "a": "غسالة",
+      "alt": [
+        "غسالة ملابس",
+        "دورة الغسيل",
+        "غسالة أوتوماتيك"
+      ],
+      "topic": "البيت",
+      "ar": "غسالة",
+      "en": "washing machine spinning",
+      "q": "لأي جهاز هذا الصوت؟",
+      "search": "washing machine spinning",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Ama_Dis/sounds/156393"
+    },
+    {
+      "tier": 400,
+      "a": "مجفف شعر",
+      "alt": [
+        "سشوار",
+        "استشوار",
+        "مجفف الشعر"
+      ],
+      "topic": "البيت",
+      "ar": "مجفف شعر",
+      "en": "hair dryer",
+      "q": "من أي جهاز هذا الصوت؟",
+      "search": "hair dryer",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/cognito%20perceptu/sounds/34994"
+    },
+    {
+      "tier": 400,
+      "a": "خلاط",
+      "alt": [
+        "خلاط كهربائي",
+        "خلاط عصير",
+        "بلندر"
+      ],
+      "topic": "البيت",
+      "ar": "خلاط",
+      "en": "kitchen blender",
+      "q": "ما الجهاز في هذا المقطع؟",
+      "search": "kitchen blender",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/shpira/sounds/656236"
+    },
+    {
+      "tier": 400,
+      "a": "طرق الباب",
+      "alt": [
+        "طرق باب",
+        "دق الباب",
+        "طرق على الباب",
+        "خبط الباب"
+      ],
+      "topic": "البيت",
+      "ar": "طرق الباب",
+      "en": "Door Knocks",
+      "q": "ما الذي يُحدث هذا الصوت؟",
+      "search": "Door Knocks",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Doors"
+    },
+    {
+      "tier": 400,
+      "a": "صنبور",
+      "alt": [
+        "حنفية",
+        "صنبور ماء",
+        "صنبور مفتوح",
+        "حنفية مفتوحة"
+      ],
+      "topic": "البيت",
+      "ar": "صنبور",
+      "en": "Faucet Running",
+      "q": "ما الصوت الذي تسمعه؟",
+      "search": "Faucet Running",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_53_54_Water"
+    },
+    {
+      "tier": 400,
+      "a": "مفاتيح",
+      "alt": [
+        "سلسلة مفاتيح",
+        "رنين مفاتيح",
+        "مفاتيح البيت"
+      ],
+      "topic": "البيت",
+      "ar": "مفاتيح",
+      "en": "Key Jingle and Clicks",
+      "q": "حدّد مصدر هذا الصوت.",
+      "search": "Key Jingle and Clicks",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_13_13.1_Cars"
+    },
+    {
+      "tier": 400,
+      "a": "رنين هاتف",
+      "alt": [
+        "هاتف",
+        "تلفون",
+        "هاتف قديم",
+        "رنين تلفون",
+        "جرس الهاتف"
+      ],
+      "topic": "البيت",
+      "ar": "رنين هاتف",
+      "en": "Rotary Telephone Bell",
+      "q": "ما التنبيه في هذا المقطع؟",
+      "search": "Rotary Telephone Bell",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_19_20_Bells_Buzzers"
+    },
+    {
+      "tier": 400,
+      "a": "جرس مدرسة",
+      "alt": [
+        "جرس المدرسة",
+        "جرس الفسحة",
+        "جرس الحصة"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "جرس مدرسة",
+      "en": "School or Fire House Bell",
+      "q": "ما التنبيه في هذا التسجيل؟",
+      "search": "School or Fire House Bell",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_19_20_Bells_Buzzers"
+    },
+    {
+      "tier": 400,
+      "a": "مطرقة",
+      "alt": [
+        "طرق مسمار",
+        "دق مسمار",
+        "مطرقة ومسمار",
+        "شاكوش"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "مطرقة",
+      "en": "Hammer Metal Stakes or Nails",
+      "q": "ما الأداة التي تسمعها؟",
+      "search": "Hammer Metal Stakes or Nails",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Tools"
+    },
+    {
+      "tier": 400,
+      "a": "زحام مروري",
+      "alt": [
+        "حركة مرور",
+        "شارع مزدحم",
+        "ازدحام",
+        "زحمة"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "زحام مروري",
+      "en": "Heavy Downtown City Traffic",
+      "q": "أين تسمع هذا الصوت عادة؟",
+      "search": "Heavy Downtown City Traffic",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_16_17_18_Ambience"
+    },
+    {
+      "tier": 400,
+      "a": "بكاء طفل",
+      "alt": [
+        "بكاء رضيع",
+        "طفل يبكي",
+        "رضيع",
+        "بكاء"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "بكاء طفل",
+      "en": "baby crying",
+      "q": "خمّن الصوت البشري الذي تسمعه.",
+      "search": "baby crying",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Stevious42/sounds/259607"
+    },
+    {
+      "tier": 400,
+      "a": "شخير",
+      "alt": [
+        "نائم يشخر",
+        "شخير نائم",
+        "غطيط"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "شخير",
+      "en": "snoring man",
+      "q": "ما الصوت البشري في المقطع؟",
+      "search": "snoring man",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/het_HCKM_DS_huis/sounds/678601"
+    },
+    {
+      "tier": 400,
+      "a": "سعال",
+      "alt": [
+        "كحة",
+        "سعلة"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "سعال",
+      "en": "Man Coughing Once",
+      "q": "أي صوت بشري تسمع؟",
+      "search": "Man Coughing Once",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Voices_Men_1"
+    },
+    {
+      "tier": 400,
+      "a": "صفير",
+      "alt": [
+        "تصفير",
+        "صفير بالفم",
+        "صفارة فم"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "صفير",
+      "en": "whistling a tune",
+      "q": "حدّد الصوت البشري الذي تسمعه.",
+      "search": "whistling a tune",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/georgisound/sounds/369296"
+    },
+    {
+      "tier": 400,
+      "a": "هتاف جمهور",
+      "alt": [
+        "جمهور",
+        "هتاف",
+        "تشجيع",
+        "جماهير الملعب"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "هتاف جمهور",
+      "en": "Giant Crowd Cheering",
+      "q": "ما الصوت البشري في التسجيل؟",
+      "search": "Giant Crowd Cheering",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_28_29_30_Crowds"
+    },
+    {
+      "tier": 400,
+      "a": "صفارة حكم",
+      "alt": [
+        "صافرة الحكم",
+        "صفارة الحكم",
+        "صفارة",
+        "صافرة"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "صفارة حكم",
+      "en": "referee whistle",
+      "q": "أي تنبيه تسمع؟",
+      "search": "referee whistle",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Dodgy%20C/sounds/60558"
+    },
+    {
+      "tier": 400,
+      "a": "كرة سلة",
+      "alt": [
+        "كرة السلة",
+        "تنطيط كرة",
+        "باسكت"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "كرة سلة",
+      "en": "Basketball; dribbling and shooting hoops",
+      "q": "ما اللعبة التي تسمعها؟",
+      "search": "Basketball; dribbling and shooting hoops",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_SPORTS"
+    },
+    {
+      "tier": 400,
+      "a": "بينغ بونغ",
+      "alt": [
+        "تنس الطاولة",
+        "تنس طاولة",
+        "بنج بونج"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "بينغ بونغ",
+      "en": "Ping Pong game; steady",
+      "q": "أي لعبة تسمعها الآن؟",
+      "search": "Ping Pong game; steady",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_SPORTS"
+    },
+    {
+      "tier": 400,
+      "a": "لوحة مفاتيح",
+      "alt": [
+        "كيبورد",
+        "كتابة على الحاسوب",
+        "لوحة المفاتيح",
+        "طباعة على الكمبيوتر"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "لوحة مفاتيح",
+      "en": "keyboard typing computer",
+      "q": "أي جهاز تسمع؟",
+      "search": "keyboard typing computer",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Anton/sounds/137"
+    },
+    {
+      "tier": 400,
+      "a": "إنذار حريق",
+      "alt": [
+        "جرس إنذار",
+        "إنذار",
+        "جرس الحريق",
+        "إنذار الحريق"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "إنذار حريق",
+      "en": "Fire Alarm",
+      "q": "ما التنبيه الذي نسمعه؟",
+      "search": "Fire Alarm",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_19_20_Bells_Buzzers"
+    },
+    {
+      "tier": 400,
+      "a": "أكورديون",
+      "alt": [
+        "أوكورديون",
+        "أكورديون يدوي"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "أكورديون",
+      "en": "Accordion Tune",
+      "q": "ما اسم الآلة في هذا التسجيل؟",
+      "search": "Accordion Tune",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Music"
+    },
+    {
+      "tier": 400,
+      "a": "مزمار القربة",
+      "alt": [
+        "قربة",
+        "باغبايب",
+        "مزمار اسكتلندي",
+        "القربة"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "مزمار القربة",
+      "en": "bagpipes",
+      "q": "لأي آلة هذا الصوت؟",
+      "commons": "File:Skye Boat Song.ogg"
+    },
+    {
+      "tier": 400,
+      "a": "هارمونيكا",
+      "alt": [
+        "هارمونكا",
+        "أرمونيكا",
+        "مزمار الفم",
+        "هرمونيكا"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "هارمونيكا",
+      "en": "harmonica blues",
+      "q": "سمِّ الآلة التي تسمعها.",
+      "search": "harmonica blues",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/redafs/sounds/348311"
+    },
+    {
+      "tier": 600,
+      "a": "جمل",
+      "alt": [
+        "بعير",
+        "ناقة",
+        "رغاء",
+        "إبل"
+      ],
+      "topic": "حيوانات",
+      "ar": "جمل",
+      "en": "Camel Grunt",
+      "q": "ما الحيوان الذي تسمعونه؟",
+      "search": "Camel Grunt",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 600,
+      "a": "دب",
+      "alt": [
+        "دب بني",
+        "زمجرة دب",
+        "دبب"
+      ],
+      "topic": "حيوانات",
+      "ar": "دب",
+      "en": "Bear Roaring",
+      "q": "أي حيوان وراء هذا الصوت؟",
+      "search": "Bear Roaring",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Animals_Misc"
+    },
+    {
+      "tier": 600,
+      "a": "دلفين",
+      "alt": [
+        "دولفين",
+        "دلافين"
+      ],
+      "topic": "حيوانات",
+      "ar": "دلفين",
+      "en": "Dolphins Underwater",
+      "q": "خمّن الحيوان الذي تسمعه.",
+      "search": "Dolphins Underwater",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 600,
+      "a": "خرخرة قطة",
+      "alt": [
+        "خرخرة",
+        "قطة تخرخر",
+        "قط يخرخر"
+      ],
+      "topic": "حيوانات",
+      "ar": "خرخرة قطة",
+      "en": "cat purring",
+      "q": "سمِّ ما تسمعه.",
+      "search": "cat purring",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/cubilon/sounds/130968"
+    },
+    {
+      "tier": 600,
+      "a": "شمبانزي",
+      "alt": [
+        "قرد شمبانزي",
+        "شمبانزى"
+      ],
+      "topic": "حيوانات",
+      "ar": "شمبانزي",
+      "en": "Chimpanzee whimper and scream",
+      "q": "ما اسم الحيوان في المقطع؟",
+      "search": "Chimpanzee whimper and scream",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_ANIMALS"
+    },
+    {
+      "tier": 600,
+      "a": "ديك رومي",
+      "alt": [
+        "ديك حبش",
+        "حبش",
+        "ديك الحبش",
+        "تركي"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "ديك رومي",
+      "en": "turkey gobble",
+      "q": "سمِّ الطائر الذي تسمعه.",
+      "search": "turkey gobble",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/DrDufus/sounds/417327"
+    },
+    {
+      "tier": 600,
+      "a": "إوزة",
+      "alt": [
+        "وزة",
+        "إوز",
+        "وز",
+        "أوزة"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "إوزة",
+      "en": "goose honking",
+      "q": "حدّد الطائر الذي تسمعه.",
+      "search": "goose honking",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/iamkaylagreen/sounds/470035"
+    },
+    {
+      "tier": 600,
+      "a": "نقار الخشب",
+      "alt": [
+        "نقار خشب",
+        "النقار"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "نقار الخشب",
+      "en": "woodpecker pecking",
+      "q": "ما الطائر صاحب هذا الصوت؟",
+      "search": "woodpecker pecking",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Benboncan/sounds/66955"
+    },
+    {
+      "tier": 600,
+      "a": "طاووس",
+      "alt": [
+        "طاوس",
+        "طائر الطاووس"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "طاووس",
+      "en": "Peacock calls",
+      "q": "ما الطائر الذي نسمعه؟",
+      "search": "Peacock calls",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_BIRDS"
+    },
+    {
+      "tier": 600,
+      "a": "صقر",
+      "alt": [
+        "نسر",
+        "عقاب",
+        "باز",
+        "صقر أحمر الذيل"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "صقر",
+      "en": "Red Tailed Hawk",
+      "q": "أي طائر وراء هذا الصوت؟",
+      "search": "Red Tailed Hawk",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Animals_Birds"
+    },
+    {
+      "tier": 600,
+      "a": "وقواق",
+      "alt": [
+        "طائر الوقواق",
+        "كوكو",
+        "الوقواق"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "وقواق",
+      "en": "cuckoo bird call",
+      "q": "خمّن الطائر الذي تسمعه.",
+      "search": "cuckoo bird call",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Benboncan/sounds/72699"
+    },
+    {
+      "tier": 600,
+      "a": "بعوضة",
+      "alt": [
+        "ناموسة",
+        "طنين بعوضة",
+        "بعوض",
+        "ناموس"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "بعوضة",
+      "en": "mosquito buzzing",
+      "q": "ما اسم الحشرة التي تسمعها؟",
+      "search": "mosquito buzzing",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/scottjodoin/sounds/435650"
+    },
+    {
+      "tier": 600,
+      "a": "طبلة",
+      "alt": [
+        "دربكة",
+        "طبلة شرقية",
+        "دربوكة"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "طبلة",
+      "en": "darbuka",
+      "q": "حدّد الآلة الموسيقية التي تسمعها.",
+      "commons": "File:Baladi Ejemplo.ogg"
+    },
+    {
+      "tier": 600,
+      "a": "أرغن",
+      "alt": [
+        "أرغن كنيسة",
+        "أورغن",
+        "أرغن أنبوبي"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "أرغن",
+      "en": "pipe organ church",
+      "q": "ما الآلة وراء هذا الصوت؟",
+      "search": "pipe organ church",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/InspectorJ/sounds/402095"
+    },
+    {
+      "tier": 600,
+      "a": "إكسيليفون",
+      "alt": [
+        "زيلوفون",
+        "اكسيليفون",
+        "إكسليفون"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "إكسيليفون",
+      "en": "Xylophone or Toy Piano",
+      "q": "أي آلة موسيقية تسمع؟",
+      "search": "Xylophone or Toy Piano",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_19_20_Bells_Buzzers"
+    },
+    {
+      "tier": 600,
+      "a": "غونغ",
+      "alt": [
+        "جونج",
+        "صنج كبير",
+        "غونج"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "غونغ",
+      "en": "Gong Hit",
+      "q": "ما الآلة التي نسمعها؟",
+      "search": "Gong Hit",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Music"
+    },
+    {
+      "tier": 600,
+      "a": "صندوق موسيقى",
+      "alt": [
+        "علبة موسيقى",
+        "صندوق الموسيقى",
+        "علبة موسيقية"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "صندوق موسيقى",
+      "en": "Music Box",
+      "q": "ما الآلة الموسيقية التي تسمعها؟",
+      "search": "Music Box",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Music"
+    },
+    {
+      "tier": 600,
+      "a": "صنج",
+      "alt": [
+        "صنوج",
+        "سيمبال",
+        "صنجات"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "صنج",
+      "en": "cymbal crash",
+      "q": "ما الآلة التي تصدر هذا الصوت؟",
+      "search": "cymbal crash",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/ianhall/sounds/13244"
+    },
+    {
+      "tier": 600,
+      "a": "بونغو",
+      "alt": [
+        "طبول بونغو",
+        "بونجو",
+        "بونغوز"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "بونغو",
+      "en": "Fast Bongo Drum",
+      "q": "أي آلة عُزف بها هذا المقطع؟",
+      "search": "Fast Bongo Drum",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Music"
+    },
+    {
+      "tier": 600,
+      "a": "حافلة",
+      "alt": [
+        "باص",
+        "أوتوبيس",
+        "حافلة ركاب"
+      ],
+      "topic": "مركبات",
+      "ar": "حافلة",
+      "en": "Bus Sounds",
+      "q": "سمِّ المركبة التي تسمعها.",
+      "search": "Bus Sounds",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Trucks"
+    },
+    {
+      "tier": 600,
+      "a": "قارب",
+      "alt": [
+        "قارب بمحرك",
+        "زورق",
+        "لنش",
+        "قارب سريع"
+      ],
+      "topic": "مركبات",
+      "ar": "قارب",
+      "en": "Motor Boat Cruising By",
+      "q": "حدّد المركبة التي تسمعها.",
+      "search": "Motor Boat Cruising By",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_22_Boats"
+    },
+    {
+      "tier": 600,
+      "a": "جرار",
+      "alt": [
+        "تراكتور",
+        "جرار زراعي",
+        "حراثة"
+      ],
+      "topic": "مركبات",
+      "ar": "جرار",
+      "en": "tractor engine",
+      "q": "ما المركبة صاحبة هذا الصوت؟",
+      "search": "tractor engine",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Erdie/sounds/34372"
+    },
+    {
+      "tier": 600,
+      "a": "مترو",
+      "alt": [
+        "مترو الأنفاق",
+        "قطار أنفاق",
+        "قطار المترو"
+      ],
+      "topic": "مركبات",
+      "ar": "مترو",
+      "en": "Subway By",
+      "q": "ما المركبة التي نسمعها؟",
+      "search": "Subway By",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_47_48_49_Trains"
+    },
+    {
+      "tier": 600,
+      "a": "قطار بخاري",
+      "alt": [
+        "قاطرة بخارية",
+        "قطار قديم",
+        "قطار بالبخار"
+      ],
+      "topic": "مركبات",
+      "ar": "قطار بخاري",
+      "en": "Steam Train Starts",
+      "q": "أي مركبة وراء هذا الصوت؟",
+      "search": "Steam Train Starts",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_47_48_49_Trains"
+    },
+    {
+      "tier": 600,
+      "a": "سيارة سباق",
+      "alt": [
+        "سباق سيارات",
+        "سيارة فورمولا",
+        "سباق"
+      ],
+      "topic": "مركبات",
+      "ar": "سيارة سباق",
+      "en": "1972 Porsche drive by fast",
+      "q": "خمّن المركبة التي تسمعها.",
+      "search": "1972 Porsche drive by fast",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_VEHICLES"
+    },
+    {
+      "tier": 600,
+      "a": "إنذار سيارة",
+      "alt": [
+        "إنذار السيارة",
+        "صفارة سيارة",
+        "إنذار سرقة"
+      ],
+      "topic": "مركبات",
+      "ar": "إنذار سيارة",
+      "en": "car alarm",
+      "q": "سمِّ التنبيه الذي تسمعه.",
+      "search": "car alarm",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/erkanozan/sounds/51747"
+    },
+    {
+      "tier": 600,
+      "a": "فرملة",
+      "alt": [
+        "صرير إطارات",
+        "انزلاق",
+        "فرامل",
+        "كبح مفاجئ"
+      ],
+      "topic": "مركبات",
+      "ar": "فرملة",
+      "en": "Old Auto Tire Skids",
+      "q": "ما الذي نسمعه هنا؟",
+      "search": "Old Auto Tire Skids",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Cars_1"
+    },
+    {
+      "tier": 600,
+      "a": "إطلاق صاروخ",
+      "alt": [
+        "صاروخ",
+        "إطلاق صاروخ فضائي",
+        "صاروخ فضاء",
+        "انطلاق صاروخ"
+      ],
+      "topic": "مركبات",
+      "ar": "إطلاق صاروخ",
+      "en": "Rocket Lift Off",
+      "q": "ما الذي تسمعونه في المقطع؟",
+      "search": "Rocket Lift Off",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_43_Seismic_Effects"
+    },
+    {
+      "tier": 600,
+      "a": "زلزال",
+      "alt": [
+        "هزة أرضية",
+        "هزة",
+        "زلازل"
+      ],
+      "topic": "طبيعة",
+      "ar": "زلزال",
+      "en": "Seismic Effects",
+      "q": "أي ظاهرة طبيعية تسمع؟",
+      "search": "Seismic Effects",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_43_Seismic_Effects"
+    },
+    {
+      "tier": 600,
+      "a": "قطرات ماء",
+      "alt": [
+        "تنقيط",
+        "نقطة ماء",
+        "قطرة ماء",
+        "تقطير"
+      ],
+      "topic": "طبيعة",
+      "ar": "قطرات ماء",
+      "en": "Water Drip",
+      "q": "ماذا يجري في هذا التسجيل؟",
+      "search": "Water Drip",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_53_54_Water"
+    },
+    {
+      "tier": 600,
+      "a": "خطوات على الثلج",
+      "alt": [
+        "مشي على الثلج",
+        "ثلج",
+        "المشي في الثلج",
+        "خطوات في الثلج"
+      ],
+      "topic": "طبيعة",
+      "ar": "خطوات على الثلج",
+      "en": "Footsteps in Deep Snow",
+      "q": "لأي فعل بشري هذا الصوت؟",
+      "search": "Footsteps in Deep Snow",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Footsteps_2"
+    },
+    {
+      "tier": 600,
+      "a": "فقاعات",
+      "alt": [
+        "فقاقيع",
+        "فقاعات ماء",
+        "فقاعات تحت الماء"
+      ],
+      "topic": "طبيعة",
+      "ar": "فقاعات",
+      "en": "Bubbles and Splashes",
+      "q": "ما هذا الذي تسمعه؟",
+      "search": "Bubbles and Splashes",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_53_54_Water"
+    },
+    {
+      "tier": 600,
+      "a": "ميكروويف",
+      "alt": [
+        "مايكرويف",
+        "فرن ميكروويف",
+        "ميكرويف"
+      ],
+      "topic": "البيت",
+      "ar": "ميكروويف",
+      "en": "microwave oven beep",
+      "q": "سمِّ الجهاز الذي تسمعه.",
+      "search": "microwave oven beep",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Filmscore/sounds/268525"
+    },
+    {
+      "tier": 600,
+      "a": "محمصة خبز",
+      "alt": [
+        "محمصة",
+        "توستر",
+        "محمصة الخبز",
+        "محمصة كهربائية"
+      ],
+      "topic": "البيت",
+      "ar": "محمصة خبز",
+      "en": "toaster pop up",
+      "q": "حدّد الجهاز الذي تسمعه.",
+      "search": "toaster pop up",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Squidems/sounds/709969"
+    },
+    {
+      "tier": 600,
+      "a": "غلاية",
+      "alt": [
+        "إبريق شاي",
+        "صفير الغلاية",
+        "غلاية صافرة",
+        "براد"
+      ],
+      "topic": "البيت",
+      "ar": "غلاية",
+      "en": "kettle whistling",
+      "q": "ما الجهاز صاحب هذا الصوت؟",
+      "search": "kettle whistling",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Sirderf/sounds/333133"
+    },
+    {
+      "tier": 600,
+      "a": "قلي",
+      "alt": [
+        "أزيز القلي",
+        "زيت يقلي",
+        "قلي في الزيت",
+        "مقلاة"
+      ],
+      "topic": "البيت",
+      "ar": "قلي",
+      "en": "frying sizzling pan oil",
+      "q": "ما مصدر الصوت في المقطع؟",
+      "search": "frying sizzling pan oil",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/BenjaminNelan/sounds/353124"
+    },
+    {
+      "tier": 600,
+      "a": "فشار",
+      "alt": [
+        "بوشار",
+        "فوشار",
+        "فشار يفرقع",
+        "ذرة تفرقع"
+      ],
+      "topic": "البيت",
+      "ar": "فشار",
+      "en": "popcorn popping",
+      "q": "من أين يأتي هذا الصوت؟",
+      "search": "popcorn popping",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Kat466/sounds/178542"
+    },
+    {
+      "tier": 600,
+      "a": "سيفون",
+      "alt": [
+        "مرحاض",
+        "شطاف",
+        "سيفون المرحاض",
+        "تنظيف المرحاض"
+      ],
+      "topic": "البيت",
+      "ar": "سيفون",
+      "en": "toilet flush",
+      "q": "ما الشيء الذي يصدر هذا الصوت؟",
+      "search": "toilet flush",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/lorenzgillner/sounds/274448"
+    },
+    {
+      "tier": 600,
+      "a": "مقص",
+      "alt": [
+        "مقص ورق",
+        "قص بالمقص",
+        "مقص يقص"
+      ],
+      "topic": "البيت",
+      "ar": "مقص",
+      "en": "scissors cutting paper",
+      "q": "أي أداة تسمعها الآن؟",
+      "search": "scissors cutting paper",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Jagadamba/sounds/257032"
+    },
+    {
+      "tier": 600,
+      "a": "تمزيق ورق",
+      "alt": [
+        "ورق يتمزق",
+        "تمزيق ورقة",
+        "تقطيع ورق"
+      ],
+      "topic": "البيت",
+      "ar": "تمزيق ورق",
+      "en": "Paper Rips",
+      "q": "ما الذي تتعرف عليه في المقطع؟",
+      "search": "Paper Rips",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Foley_Props_4"
+    },
+    {
+      "tier": 600,
+      "a": "صرير باب",
+      "alt": [
+        "باب يصر",
+        "صرير",
+        "باب قديم",
+        "باب يصرّ"
+      ],
+      "topic": "البيت",
+      "ar": "صرير باب",
+      "en": "General Wooden Creak",
+      "q": "ما هذا الصوت الذي تسمعه؟",
+      "search": "General Wooden Creak",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_27_Creaks"
+    },
+    {
+      "tier": 600,
+      "a": "عود ثقاب",
+      "alt": [
+        "كبريت",
+        "إشعال ثقاب",
+        "عود كبريت",
+        "ثقاب"
+      ],
+      "topic": "البيت",
+      "ar": "عود ثقاب",
+      "en": "Match Being Struck and Lit",
+      "q": "ما الذي يُسمع هنا؟",
+      "search": "Match Being Struck and Lit",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Foley_Props_1"
+    },
+    {
+      "tier": 600,
+      "a": "مروحة",
+      "alt": [
+        "مروحة سقف",
+        "مروحة كهربائية",
+        "مروحة هواء"
+      ],
+      "topic": "البيت",
+      "ar": "مروحة",
+      "en": "electric fan running",
+      "q": "ما الجهاز الذي نسمعه؟",
+      "search": "electric fan running",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/unfa/sounds/170869"
+    },
+    {
+      "tier": 600,
+      "a": "سكب ماء",
+      "alt": [
+        "صب ماء",
+        "سكب الماء",
+        "صب ماء في كوب",
+        "ملء كوب"
+      ],
+      "topic": "البيت",
+      "ar": "سكب ماء",
+      "en": "Water Poured from Bottle",
+      "q": "خمّنوا ما تسمعون.",
+      "search": "Water Poured from Bottle",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Water_1"
+    },
+    {
+      "tier": 600,
+      "a": "سوق",
+      "alt": [
+        "سوق شعبي",
+        "بازار",
+        "سوق مراكش",
+        "باعة"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "سوق",
+      "en": "Street market in Marrakesh",
+      "q": "في أي مكان يُسمع هذا الصوت؟",
+      "search": "Street market in Marrakesh",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_AMBIENCE"
+    },
+    {
+      "tier": 600,
+      "a": "مثقاب هوائي",
+      "alt": [
+        "كسارة خرسانة",
+        "جاك هامر",
+        "حفار شوارع",
+        "مثقاب الشوارع",
+        "حفار"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "مثقاب هوائي",
+      "en": "Jack hammer",
+      "q": "ما اسم الأداة التي تسمعها؟",
+      "search": "Jack hammer",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_39_Miscellaneous"
+    },
+    {
+      "tier": 600,
+      "a": "صفارة إنذار",
+      "alt": [
+        "صفارة الغارة",
+        "إنذار غارة جوية",
+        "صافرة الإنذار",
+        "إنذار غارة"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "صفارة إنذار",
+      "en": "SIREN/ALRMSirn_Air raid siren",
+      "q": "أي تنبيه يصدر هذا الصوت؟",
+      "search": "SIREN/ALRMSirn_Air raid siren",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_ALARMS"
+    },
+    {
+      "tier": 600,
+      "a": "مصعد",
+      "alt": [
+        "أسانسير",
+        "باب المصعد",
+        "مصعد كهربائي"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "مصعد",
+      "en": "Elevator door open & close",
+      "q": "أي جهاز وراء هذا الصوت؟",
+      "search": "Elevator door open & close",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_MACHINES"
+    },
+    {
+      "tier": 800,
+      "a": "نمر",
+      "alt": [
+        "ببر",
+        "نمر بنغالي",
+        "زمجرة نمر"
+      ],
+      "topic": "حيوانات",
+      "ar": "نمر",
+      "en": "Tiger Hiss and Growl",
+      "q": "أي حيوان يصدر هذا الصوت؟",
+      "search": "Tiger Hiss and Growl",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 800,
+      "a": "ضبع",
+      "alt": [
+        "ضبع مرقط",
+        "ضباع",
+        "ضحكة ضبع"
+      ],
+      "topic": "حيوانات",
+      "ar": "ضبع",
+      "en": "hyena laughing",
+      "q": "ما الحيوان الذي سُجّل صوته؟",
+      "search": "hyena laughing",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/sounagix/sounds/680844"
+    },
+    {
+      "tier": 800,
+      "a": "فقمة",
+      "alt": [
+        "أسد البحر",
+        "عجل البحر",
+        "فقمات"
+      ],
+      "topic": "حيوانات",
+      "ar": "فقمة",
+      "en": "Seal Bark",
+      "q": "ما الحيوان الذي تتعرف عليه من صوته؟",
+      "search": "Seal Bark",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 800,
+      "a": "حوت",
+      "alt": [
+        "حوت أحدب",
+        "غناء الحيتان",
+        "حيتان"
+      ],
+      "topic": "حيوانات",
+      "ar": "حوت",
+      "en": "humpback whale song",
+      "q": "أي حيوان صوته هذا؟",
+      "commons": "File:Akhumphi1x.ogg"
+    },
+    {
+      "tier": 800,
+      "a": "بيسون",
+      "alt": [
+        "ثور أمريكي",
+        "جاموس أمريكي",
+        "ثور البيسون",
+        "جاموس"
+      ],
+      "topic": "حيوانات",
+      "ar": "بيسون",
+      "en": "bison",
+      "q": "ما الحيوان الذي تسمع صوته؟",
+      "commons": "File:Bison.ogg"
+    },
+    {
+      "tier": 800,
+      "a": "جندب",
+      "alt": [
+        "جرادة",
+        "جراد",
+        "نطاط",
+        "جرادة الحقل"
+      ],
+      "topic": "حيوانات",
+      "ar": "جندب",
+      "en": "Chorthippus",
+      "q": "ما الحشرة التي تسمعها؟",
+      "commons": "File:Chorthippus apricarius - sound.oga"
+    },
+    {
+      "tier": 800,
+      "a": "ذبابة",
+      "alt": [
+        "ذباب",
+        "طنين ذبابة",
+        "ذبابة منزل"
+      ],
+      "topic": "حيوانات",
+      "ar": "ذبابة",
+      "en": "housefly buzzing",
+      "q": "أي حشرة تصدر هذا الصوت؟",
+      "search": "housefly buzzing",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/cognito%20perceptu/sounds/476080"
+    },
+    {
+      "tier": 800,
+      "a": "فأر",
+      "alt": [
+        "فأرة",
+        "صرير فأر",
+        "فئران",
+        "جرذ"
+      ],
+      "topic": "حيوانات",
+      "ar": "فأر",
+      "en": "mouse squeaking rat squeaks",
+      "q": "ما هذا الحيوان الذي تسمعه؟",
+      "search": "mouse squeaking rat squeaks",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/adamamazing/sounds/557703"
+    },
+    {
+      "tier": 800,
+      "a": "تمساح",
+      "alt": [
+        "قاطور",
+        "تماسيح",
+        "زمجرة تمساح"
+      ],
+      "topic": "حيوانات",
+      "ar": "تمساح",
+      "en": "Alligator Growl",
+      "q": "أي حيوان هذا الصوت له؟",
+      "search": "Alligator Growl",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 800,
+      "a": "بلبل",
+      "alt": [
+        "عندليب",
+        "بلبل مغرد",
+        "العندليب"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "بلبل",
+      "en": "nightingale singing",
+      "q": "ما اسم الطائر في التسجيل؟",
+      "search": "nightingale singing",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Garuda1982/sounds/634243"
+    },
+    {
+      "tier": 800,
+      "a": "كناري",
+      "alt": [
+        "طائر الكناري",
+        "كنار",
+        "كناريا"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "كناري",
+      "en": "canary singing",
+      "q": "أي طائر يصدح هنا؟",
+      "search": "canary singing",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/DaniloSFX/sounds/672730"
+    },
+    {
+      "tier": 800,
+      "a": "كوكابورا",
+      "alt": [
+        "طائر الكوكابورا",
+        "كوكابارا"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "كوكابورا",
+      "en": "Kookaburra Bird in Jungle",
+      "q": "ما الطائر الذي سُجّل صوته؟",
+      "search": "Kookaburra Bird in Jungle",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 800,
+      "a": "سنونو",
+      "alt": [
+        "خطاف",
+        "عصفور السنونو",
+        "سنونوة"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "سنونو",
+      "en": "Group of Cliff Swallows Sing",
+      "q": "أي طائر صوته هذا؟",
+      "search": "Group of Cliff Swallows Sing",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Animals_Birds"
+    },
+    {
+      "tier": 800,
+      "a": "عود",
+      "alt": [
+        "العود",
+        "عود عربي",
+        "آلة العود"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "عود",
+      "en": "oud instrument",
+      "q": "ما الآلة المعزوفة في المقطع؟",
+      "commons": "File:Oud music by Andy R. Jordan 1V2 short.mp3"
+    },
+    {
+      "tier": 800,
+      "a": "دف",
+      "alt": [
+        "رق",
+        "بندير",
+        "طار",
+        "الدف"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "دف",
+      "en": "bendir",
+      "q": "ما الآلة في هذا المقطع؟",
+      "commons": "File:Aksak (90 bpm).ogg"
+    },
+    {
+      "tier": 800,
+      "a": "تشيلو",
+      "alt": [
+        "تشللو",
+        "كمان جهير",
+        "فيولونسيل",
+        "تشيللو"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "تشيلو",
+      "en": "cello",
+      "q": "ما اسم الآلة الموسيقية المسموعة؟",
+      "search": "cello",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/juskiddink/sounds/68373"
+    },
+    {
+      "tier": 800,
+      "a": "كلارينيت",
+      "alt": [
+        "كلارينت",
+        "كلارنيت",
+        "مزمار الكلارينيت"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "كلارينيت",
+      "en": "clarinet",
+      "q": "أي آلة يعزف عليها العازف؟",
+      "commons": "File:Clarinet lead sample.oga"
+    },
+    {
+      "tier": 800,
+      "a": "ترومبون",
+      "alt": [
+        "ترمبون",
+        "ترومبون منزلق"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "ترومبون",
+      "en": "trombone",
+      "q": "ما الآلة التي تعرفها من صوتها؟",
+      "commons": "File:Sheherazade opening, trombone bass.wav"
+    },
+    {
+      "tier": 800,
+      "a": "بانجو",
+      "alt": [
+        "البانجو",
+        "بانجو أمريكي"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "بانجو",
+      "en": "banjo",
+      "q": "ما الآلة التي نسمع عزفها؟",
+      "commons": "File:Banjo.ogg"
+    },
+    {
+      "tier": 800,
+      "a": "قانون",
+      "alt": [
+        "آلة القانون",
+        "القانون"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "قانون",
+      "en": "qanun",
+      "q": "ما الآلة التي تُسمع هنا؟",
+      "commons": "File:ArabicQanunSample.ogg"
+    },
+    {
+      "tier": 800,
+      "a": "أوكوليلي",
+      "alt": [
+        "يوكوليلي",
+        "أوكليلي",
+        "غيتار هاواي"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "أوكوليلي",
+      "en": "ukulele strumming",
+      "q": "أي آلة يصدر عنها هذا اللحن؟",
+      "search": "ukulele strumming",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Liz_Zabloudil/sounds/425542"
+    },
+    {
+      "tier": 800,
+      "a": "كاستانيت",
+      "alt": [
+        "صنجات إسبانية",
+        "كاستانيتس",
+        "كاستنيت"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "كاستانيت",
+      "en": "castanets",
+      "q": "ما الآلة صاحبة هذا الصوت؟",
+      "search": "castanets",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Satoration/sounds/57299"
+    },
+    {
+      "tier": 800,
+      "a": "مثلث موسيقي",
+      "alt": [
+        "مثلث",
+        "ترايانغل",
+        "المثلث"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "مثلث موسيقي",
+      "en": "triangle percussion",
+      "q": "خمّن الآلة التي تسمعها.",
+      "search": "triangle percussion",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/InspectorJ/sounds/354140"
+    },
+    {
+      "tier": 800,
+      "a": "طائرة صغيرة",
+      "alt": [
+        "طائرة بمروحة",
+        "سيسنا",
+        "طائرة خفيفة",
+        "طائرة ذات محرك مروحي"
+      ],
+      "topic": "مركبات",
+      "ar": "طائرة صغيرة",
+      "en": "Light Plane Takeoff and Fly",
+      "q": "ما اسم المركبة في التسجيل؟",
+      "search": "Light Plane Takeoff and Fly",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_03_Aircraft-Light_Planes"
+    },
+    {
+      "tier": 800,
+      "a": "دبابة",
+      "alt": [
+        "دبابات",
+        "مدرعة",
+        "دبابة حربية"
+      ],
+      "topic": "مركبات",
+      "ar": "دبابة",
+      "en": "M-4 Tank Pass By",
+      "q": "أي مركبة صوتها هذا؟",
+      "search": "M-4 Tank Pass By",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_15_Tanks_Bulldozers"
+    },
+    {
+      "tier": 800,
+      "a": "أفعوانية",
+      "alt": [
+        "قطار الملاهي",
+        "رولر كوستر",
+        "قطار الموت",
+        "لعبة الملاهي"
+      ],
+      "topic": "مركبات",
+      "ar": "أفعوانية",
+      "en": "Roller coaster by with kids screaming_CS",
+      "q": "ما الصوت المسجّل هنا؟",
+      "search": "Roller coaster by with kids screaming_CS",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_MACHINES"
+    },
+    {
+      "tier": 800,
+      "a": "ترام",
+      "alt": [
+        "ترامواي",
+        "حافلة كهربائية",
+        "ترولي"
+      ],
+      "topic": "مركبات",
+      "ar": "ترام",
+      "en": "Trolley Rumbling with Clangs",
+      "q": "ما المركبة التي سُجّل صوتها؟",
+      "search": "Trolley Rumbling with Clangs",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_50_Trolley"
+    },
+    {
+      "tier": 800,
+      "a": "جرافة",
+      "alt": [
+        "بلدوزر",
+        "بولدوزر",
+        "جرافة بناء"
+      ],
+      "topic": "مركبات",
+      "ar": "جرافة",
+      "en": "Bulldozer Working",
+      "q": "ما المركبة التي تسمع صوتها؟",
+      "search": "Bulldozer Working",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_15_Tanks_Bulldozers"
+    },
+    {
+      "tier": 800,
+      "a": "عربة خيل",
+      "alt": [
+        "عربة تجرها خيول",
+        "حنطور",
+        "عربة حصان",
+        "كارو"
+      ],
+      "topic": "مركبات",
+      "ar": "عربة خيل",
+      "en": "Stage Coach",
+      "q": "أي مركبة تمر في المقطع؟",
+      "search": "Stage Coach",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_52_Wagons"
+    },
+    {
+      "tier": 800,
+      "a": "سونار",
+      "alt": [
+        "غواصة",
+        "رادار",
+        "سونار الغواصة"
+      ],
+      "topic": "مركبات",
+      "ar": "سونار",
+      "en": "04a-Submarine Sonar Blips 1",
+      "q": "خمّن الجهاز الذي تسمعه.",
+      "search": "04a-Submarine Sonar Blips 1",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_45_Submarine_Effects"
+    },
+    {
+      "tier": 800,
+      "a": "بركان",
+      "alt": [
+        "ثوران بركان",
+        "براكين",
+        "انفجار بركاني"
+      ],
+      "topic": "طبيعة",
+      "ar": "بركان",
+      "en": "Volcano explosion with debris and lava",
+      "q": "سمِّ الظاهرة الطبيعية التي تسمعها.",
+      "search": "Volcano explosion with debris and lava",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_NATURAL_DISASTER"
+    },
+    {
+      "tier": 800,
+      "a": "عاصفة رملية",
+      "alt": [
+        "عاصفة ترابية",
+        "رمال",
+        "عاصفة غبار"
+      ],
+      "topic": "طبيعة",
+      "ar": "عاصفة رملية",
+      "en": "Sandstorm",
+      "q": "حدّد الظاهرة الطبيعية التي تسمعها.",
+      "search": "Sandstorm",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_55_56_Weather-Wind"
+    },
+    {
+      "tier": 800,
+      "a": "برد",
+      "alt": [
+        "حبات برد",
+        "بَرَد",
+        "حبات البرد",
+        "تساقط البرد"
+      ],
+      "topic": "طبيعة",
+      "ar": "برد",
+      "en": "hail storm on roof",
+      "q": "ما الظاهرة الطبيعية وراء هذا الصوت؟",
+      "search": "hail storm on roof",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/joly1/sounds/81452"
+    },
+    {
+      "tier": 800,
+      "a": "انهيار أرضي",
+      "alt": [
+        "انهيار صخري",
+        "انزلاق تربة",
+        "انهيار جبلي",
+        "انهيار"
+      ],
+      "topic": "طبيعة",
+      "ar": "انهيار أرضي",
+      "en": "NATDAval_Landslide_CS",
+      "q": "خمّن الظاهرة الطبيعية التي تسمعها.",
+      "search": "NATDAval_Landslide_CS",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_NATURAL_DISASTER"
+    },
+    {
+      "tier": 800,
+      "a": "سحاب",
+      "alt": [
+        "سوستة",
+        "زمام",
+        "سحاب الجاكيت",
+        "زبر"
+      ],
+      "topic": "البيت",
+      "ar": "سحاب",
+      "en": "Zipper being Zipped",
+      "q": "ماذا تسمع الآن؟",
+      "search": "Zipper being Zipped",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Machines_2"
+    },
+    {
+      "tier": 800,
+      "a": "تقليب صفحات",
+      "alt": [
+        "تصفح مجلة",
+        "تقليب الصفحات",
+        "تصفح كتاب",
+        "صفحات"
+      ],
+      "topic": "البيت",
+      "ar": "تقليب صفحات",
+      "en": "Turning Magazine Pages",
+      "q": "ما الصوت الذي سُجّل في المقطع؟",
+      "search": "Turning Magazine Pages",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Foley_Props_2"
+    },
+    {
+      "tier": 800,
+      "a": "فتح قفل",
+      "alt": [
+        "مفتاح في القفل",
+        "قفل باب",
+        "فتح الباب بالمفتاح",
+        "قفل"
+      ],
+      "topic": "البيت",
+      "ar": "فتح قفل",
+      "en": "Unlocking a Door with Key Jingle",
+      "q": "ما الذي يصدر عنه هذا الصوت؟",
+      "search": "Unlocking a Door with Key Jingle",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Doors"
+    },
+    {
+      "tier": 800,
+      "a": "مفتاح الكهرباء",
+      "alt": [
+        "زر الإضاءة",
+        "كبسة الكهرباء",
+        "مفتاح الإضاءة",
+        "إطفاء النور"
+      ],
+      "topic": "البيت",
+      "ar": "مفتاح الكهرباء",
+      "en": "turning off several light switches",
+      "q": "ما الذي تعرفه من هذا الصوت؟",
+      "search": "turning off several light switches",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_MECHANICAL"
+    },
+    {
+      "tier": 800,
+      "a": "بالون",
+      "alt": [
+        "انفجار بالون",
+        "فرقعة بالون",
+        "بالونة",
+        "بلونة"
+      ],
+      "topic": "البيت",
+      "ar": "بالون",
+      "en": "Popping Balloons",
+      "q": "ما مصدر الصوت الذي تسمعه؟",
+      "search": "Popping Balloons",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Foley_Props_4"
+    },
+    {
+      "tier": 800,
+      "a": "مطرقة القاضي",
+      "alt": [
+        "مطرقة قاض",
+        "محكمة",
+        "مطرقة المحكمة",
+        "قاضٍ"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "مطرقة القاضي",
+      "en": "Gavel pounding short & long",
+      "q": "ما الأداة في هذا المقطع؟",
+      "search": "Gavel pounding short & long",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_TOOLS"
+    },
+    {
+      "tier": 800,
+      "a": "بيغ بن",
+      "alt": [
+        "ساعة بيغ بن",
+        "برج الساعة",
+        "ساعة لندن",
+        "بيج بن"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "بيغ بن",
+      "en": "Big Ben",
+      "q": "ما الذي تسمعه في التسجيل؟",
+      "search": "Big Ben",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_19_20_Bells_Buzzers"
+    },
+    {
+      "tier": 800,
+      "a": "ورشة حدادة",
+      "alt": [
+        "حداد",
+        "سندان",
+        "مطرقة الحداد",
+        "حدادة"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "ورشة حدادة",
+      "en": "Blacksmith hitting anvil with hammer",
+      "q": "أين سُجّل هذا الصوت؟",
+      "search": "Blacksmith hitting anvil with hammer",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_METAL"
+    },
+    {
+      "tier": 800,
+      "a": "مرشة حديقة",
+      "alt": [
+        "رشاش ماء",
+        "مرش الحديقة",
+        "رشاش حديقة",
+        "مرش"
+      ],
+      "topic": "المدينة والعمل",
+      "ar": "مرشة حديقة",
+      "en": "Garden sprinkler; impact; Rainbird",
+      "q": "خمّن ما يصدر هذا الصوت.",
+      "search": "Garden sprinkler; impact; Rainbird",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_WATER"
+    },
+    {
+      "tier": 800,
+      "a": "بولينغ",
+      "alt": [
+        "بولنج",
+        "بولينج",
+        "كرة البولينغ"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "بولينغ",
+      "en": "bowling ball striking pins",
+      "q": "ما اسم اللعبة التي تسمعها؟",
+      "search": "bowling ball striking pins",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/driftworks/sounds/128969"
+    },
+    {
+      "tier": 800,
+      "a": "بلياردو",
+      "alt": [
+        "سنوكر",
+        "بليارد"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "بلياردو",
+      "en": "Billiards cue stick hits ball",
+      "q": "ما الرياضة التي تسمعها؟",
+      "search": "Billiards cue stick hits ball",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_SPORTS"
+    },
+    {
+      "tier": 800,
+      "a": "جولف",
+      "alt": [
+        "غولف",
+        "مضرب جولف",
+        "ضربة جولف"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "جولف",
+      "en": "Golf Club Swings and Hits",
+      "q": "أي رياضة تسمعها في المقطع؟",
+      "search": "Golf Club Swings and Hits",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Sports"
+    },
+    {
+      "tier": 800,
+      "a": "بينبول",
+      "alt": [
+        "فليبر",
+        "لعبة البينبول"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "بينبول",
+      "en": "Pinball machine sequence 1",
+      "q": "ما اللعبة في هذا المقطع؟",
+      "search": "Pinball machine sequence 1",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_GAMES"
+    },
+    {
+      "tier": 800,
+      "a": "مبارزة",
+      "alt": [
+        "مبارزة بالشيش",
+        "شيش",
+        "مبارزة أولمبية",
+        "سلاح الشيش"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "مبارزة",
+      "en": "Fencing Practice",
+      "q": "سمِّ اللعبة التي تسمعها.",
+      "search": "Fencing Practice",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Sports"
+    },
+    {
+      "tier": 1000,
+      "a": "حمار وحشي",
+      "alt": [
+        "زيبرا",
+        "حمار الزرد",
+        "الحمار الوحشي"
+      ],
+      "topic": "حيوانات",
+      "ar": "حمار وحشي",
+      "en": "zebra",
+      "q": "ما الحيوان الذي تميّزه أذنك؟",
+      "commons": "File:Grévys zebra (Sound Effects).ogg"
+    },
+    {
+      "tier": 1000,
+      "a": "قرد عوّاء",
+      "alt": [
+        "القرد العواء",
+        "قرد عواء",
+        "هاولر",
+        "قرد هاولر"
+      ],
+      "topic": "حيوانات",
+      "ar": "قرد عوّاء",
+      "en": "Alouatta howler monkey",
+      "q": "ما الحيوان الذي يُسمع هنا؟",
+      "commons": "File:Howler monkey.ogg"
+    },
+    {
+      "tier": 1000,
+      "a": "قنفذ",
+      "alt": [
+        "قنافذ",
+        "قنفذ شائك"
+      ],
+      "topic": "حيوانات",
+      "ar": "قنفذ",
+      "en": "hedgehog huffing",
+      "q": "من صاحب هذا الصوت من الحيوانات؟",
+      "search": "hedgehog huffing",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/fthgurdy/sounds/528178"
+    },
+    {
+      "tier": 1000,
+      "a": "سنجاب",
+      "alt": [
+        "سناجب",
+        "سنجاب رمادي"
+      ],
+      "topic": "حيوانات",
+      "ar": "سنجاب",
+      "en": "squirrel chattering",
+      "q": "ما الحيوان في هذا التسجيل الصوتي؟",
+      "search": "squirrel chattering",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Littlebrojay/sounds/195440"
+    },
+    {
+      "tier": 1000,
+      "a": "ثعلب",
+      "alt": [
+        "ثعلب أحمر",
+        "ثعالب",
+        "صرخة ثعلب"
+      ],
+      "topic": "حيوانات",
+      "ar": "ثعلب",
+      "en": "red fox scream",
+      "q": "أي حيوان تعرفه من صوته؟",
+      "search": "red fox scream",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/craig.cerinocraigsays/sounds/537586"
+    },
+    {
+      "tier": 1000,
+      "a": "أيل",
+      "alt": [
+        "وعل",
+        "إلك",
+        "أيل أمريكي",
+        "غزال كبير"
+      ],
+      "topic": "حيوانات",
+      "ar": "أيل",
+      "en": "elk bugle",
+      "q": "ما الحيوان الذي يصيح في المقطع؟",
+      "search": "elk bugle",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Hyperionn/sounds/250188"
+    },
+    {
+      "tier": 1000,
+      "a": "فرس النهر",
+      "alt": [
+        "فرس نهر",
+        "هيبو",
+        "سيد قشطة"
+      ],
+      "topic": "حيوانات",
+      "ar": "فرس النهر",
+      "en": "hippo grunt",
+      "q": "أي حيوان يصيح في المقطع؟",
+      "search": "hippo grunt",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/TheVeoMammoth11/sounds/492652"
+    },
+    {
+      "tier": 1000,
+      "a": "قيوط",
+      "alt": [
+        "ذئب البراري",
+        "كايوتي",
+        "ذئب أمريكي"
+      ],
+      "topic": "حيوانات",
+      "ar": "قيوط",
+      "en": "coyote howl yip",
+      "q": "ما الحيوان الذي تسمعه الآن؟",
+      "search": "coyote howl yip",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/tubbers/sounds/201454"
+    },
+    {
+      "tier": 1000,
+      "a": "خفاش",
+      "alt": [
+        "خفافيش",
+        "وطواط",
+        "صرير خفاش"
+      ],
+      "topic": "حيوانات",
+      "ar": "خفاش",
+      "en": "Bats Chirping",
+      "q": "حيوان يصدر صوتًا: ما هو؟",
+      "search": "Bats Chirping",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 1000,
+      "a": "نيص",
+      "alt": [
+        "شيهم",
+        "دعلج",
+        "قنفذ كبير",
+        "أبو شوك"
+      ],
+      "topic": "حيوانات",
+      "ar": "نيص",
+      "en": "Porcupine puffing grunting",
+      "q": "ما الحيوان الذي سمعته؟",
+      "search": "Porcupine puffing grunting",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_ANIMALS"
+    },
+    {
+      "tier": 1000,
+      "a": "غيبون",
+      "alt": [
+        "قرد الغيبون",
+        "جيبون"
+      ],
+      "topic": "حيوانات",
+      "ar": "غيبون",
+      "en": "Gibbons Hooting",
+      "q": "أي حيوان سُجّل صوته هنا؟",
+      "search": "Gibbons Hooting",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_12_Animals"
+    },
+    {
+      "tier": 1000,
+      "a": "كركي",
+      "alt": [
+        "الكركي",
+        "طائر الكركي",
+        "غرنوق",
+        "كراكي"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "كركي",
+      "en": "Grus grus",
+      "q": "ما الطائر الذي تسمع صوته؟",
+      "commons": "File:Grus grus.ogg"
+    },
+    {
+      "tier": 1000,
+      "a": "بطريق",
+      "alt": [
+        "بطاريق",
+        "بطريق إمبراطور",
+        "بنغوين"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "بطريق",
+      "en": "penguin call",
+      "q": "ما الطائر الذي تتعرف عليه من صوته؟",
+      "search": "penguin call",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/soundbytez/sounds/97387"
+    },
+    {
+      "tier": 1000,
+      "a": "لقلق",
+      "alt": [
+        "لقلاق",
+        "أبو سعد",
+        "لقلق أبيض"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "لقلق",
+      "en": "stork bill clattering",
+      "q": "أي طائر تعرفه من صوته؟",
+      "search": "stork bill clattering",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/dobroide/sounds/153500"
+    },
+    {
+      "tier": 1000,
+      "a": "طائر طنان",
+      "alt": [
+        "الطائر الطنان",
+        "طنان",
+        "هامينغ بيرد"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "طائر طنان",
+      "en": "hummingbird wings",
+      "q": "ما الطائر في هذا التسجيل الصوتي؟",
+      "search": "hummingbird wings",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/MrBizarro89/sounds/143656"
+    },
+    {
+      "tier": 1000,
+      "a": "زيز",
+      "alt": [
+        "زيز الحصاد",
+        "سيكادا",
+        "زيزان"
+      ],
+      "topic": "طيور وحشرات",
+      "ar": "زيز",
+      "en": "cicada buzzing",
+      "q": "ما الحشرة في هذا المقطع؟",
+      "search": "cicada buzzing",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/TRP/sounds/567943"
+    },
+    {
+      "tier": 1000,
+      "a": "سيتار",
+      "alt": [
+        "سيتار هندي",
+        "السيتار"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "سيتار",
+      "en": "sitar",
+      "q": "ما الآلة التي سُجّل صوتها؟",
+      "commons": "File:Sitar clipping.ogg"
+    },
+    {
+      "tier": 1000,
+      "a": "ديدجيريدو",
+      "alt": [
+        "ديجيريدو",
+        "ديدجريدو",
+        "بوق السكان الأصليين"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "ديدجيريدو",
+      "en": "didgeridoo",
+      "q": "أي آلة موسيقية في التسجيل؟",
+      "search": "didgeridoo",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Noxdl/sounds/204912"
+    },
+    {
+      "tier": 1000,
+      "a": "ثيرمين",
+      "alt": [
+        "ثيرمن",
+        "الثيرمين",
+        "تيرمين"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "ثيرمين",
+      "en": "theremin",
+      "q": "ما الآلة التي يعزف بها؟",
+      "search": "theremin",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/kirkoid/sounds/40816"
+    },
+    {
+      "tier": 1000,
+      "a": "ماندولين",
+      "alt": [
+        "مندولين",
+        "ماندولينا",
+        "المندولين"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "ماندولين",
+      "en": "mandolin",
+      "q": "ما اسم الآلة الموسيقية في المقطع؟",
+      "commons": "File:Schneewalzer.ogg"
+    },
+    {
+      "tier": 1000,
+      "a": "رباب",
+      "alt": [
+        "ربابة",
+        "الربابة",
+        "رباب بدوي"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "رباب",
+      "en": "rebab",
+      "q": "أي آلة تسمع في المقطع؟",
+      "commons": "File:Rebab Laras Degung koleksi Jurusan Karawitan ISBI Bandung.wav"
+    },
+    {
+      "tier": 1000,
+      "a": "بالاليكا",
+      "alt": [
+        "بالالايكا",
+        "بلالايكا",
+        "غيتار روسي"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "بالاليكا",
+      "en": "balalaika",
+      "q": "ما الآلة التي تتعرف عليها من صوتها؟",
+      "search": "balalaika",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/cottager/sounds/91983"
+    },
+    {
+      "tier": 1000,
+      "a": "دودوك",
+      "alt": [
+        "الدودوك",
+        "دودوك أرمني"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "دودوك",
+      "en": "duduk",
+      "q": "ما الآلة المستعملة في العزف؟",
+      "search": "duduk",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/joshuaempyre/sounds/371059"
+    },
+    {
+      "tier": 1000,
+      "a": "سانتور",
+      "alt": [
+        "سنطور",
+        "السنطور",
+        "السانتور",
+        "سنتور"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "سانتور",
+      "en": "santur",
+      "q": "أي آلة صوتها هذا؟",
+      "commons": "File:Santur by Mohammad R Azadehfar.wav"
+    },
+    {
+      "tier": 1000,
+      "a": "كالمبا",
+      "alt": [
+        "كاليمبا",
+        "بيانو الإبهام",
+        "مبيرا"
+      ],
+      "topic": "آلات موسيقية",
+      "ar": "كالمبا",
+      "en": "kalimba",
+      "q": "ما الآلة في هذا التسجيل الصوتي؟",
+      "search": "kalimba",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/iluppai/sounds/100474"
+    },
+    {
+      "tier": 1000,
+      "a": "سيارة قديمة",
+      "alt": [
+        "فورد موديل تي",
+        "سيارة عتيقة",
+        "سيارة كلاسيكية",
+        "سيارة من العشرينيات"
+      ],
+      "topic": "مركبات",
+      "ar": "سيارة قديمة",
+      "en": "Model T steady; clatters",
+      "q": "ما المركبة التي تسمعونها؟",
+      "search": "Model T steady; clatters",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_VEHICLES"
+    },
+    {
+      "tier": 1000,
+      "a": "طائرة ذات سطحين",
+      "alt": [
+        "بايبلين",
+        "طائرة قديمة",
+        "طائرة بجناحين مزدوجين",
+        "طائرة الحرب العالمية الأولى"
+      ],
+      "topic": "مركبات",
+      "ar": "طائرة ذات سطحين",
+      "en": "Stearman Biplane Flies By",
+      "q": "ما المركبة في هذا التسجيل؟",
+      "search": "Stearman Biplane Flies By",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_01_02_Aircraft-Biplanes"
+    },
+    {
+      "tier": 1000,
+      "a": "قارب بخاري",
+      "alt": [
+        "باخرة نهرية",
+        "قارب بعجلة مجاديف",
+        "سفينة المسيسيبي",
+        "قارب مجاديف"
+      ],
+      "topic": "مركبات",
+      "ar": "قارب بخاري",
+      "en": "Paddlewheel Boat",
+      "q": "أي مركبة تتعرف عليها من صوتها؟",
+      "search": "Paddlewheel Boat",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_22_Boats"
+    },
+    {
+      "tier": 1000,
+      "a": "طائرة مقاتلة",
+      "alt": [
+        "طائرة حربية",
+        "نفاثة مقاتلة",
+        "مقاتلة",
+        "طائرة عسكرية"
+      ],
+      "topic": "مركبات",
+      "ar": "طائرة مقاتلة",
+      "en": "15_F-86 Jet Fast Fly By",
+      "q": "ما المركبة التي يصدر عنها هذا الصوت؟",
+      "search": "15_F-86 Jet Fast Fly By",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_08_09_10_11_Aircraft-Jets"
+    },
+    {
+      "tier": 1000,
+      "a": "زلاجة ثلج",
+      "alt": [
+        "سنوموبيل",
+        "دراجة ثلجية",
+        "زلاجة آلية",
+        "موتور ثلج"
+      ],
+      "topic": "مركبات",
+      "ar": "زلاجة ثلج",
+      "en": "snowmobile passing",
+      "q": "ما المركبة التي سمعتها؟",
+      "search": "snowmobile passing",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/kyles/sounds/452096"
+    },
+    {
+      "tier": 1000,
+      "a": "منطاد",
+      "alt": [
+        "منطاد هواء ساخن",
+        "بالون هواء ساخن",
+        "موقد المنطاد"
+      ],
+      "topic": "مركبات",
+      "ar": "منطاد",
+      "en": "hot air balloon burner",
+      "q": "ما الذي يقف وراء هذا الصوت؟",
+      "search": "hot air balloon burner",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/ExploreTayo/sounds/652482"
+    },
+    {
+      "tier": 1000,
+      "a": "ينبوع حار",
+      "alt": [
+        "نافورة حارة",
+        "غيزر",
+        "عين حارة",
+        "فوارة"
+      ],
+      "topic": "طبيعة",
+      "ar": "ينبوع حار",
+      "en": "geyser erupting",
+      "q": "ما الظاهرة الطبيعية في التسجيل؟",
+      "search": "geyser erupting",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/YleArkisto/sounds/263878"
+    },
+    {
+      "tier": 1000,
+      "a": "انهيار جليدي",
+      "alt": [
+        "انهيار ثلجي",
+        "انهيار الثلوج",
+        "جليد ينهار"
+      ],
+      "topic": "طبيعة",
+      "ar": "انهيار جليدي",
+      "en": "avalanche snow",
+      "q": "أي ظاهرة طبيعية صوتها هذا؟",
+      "search": "avalanche snow",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Breviceps/sounds/457528"
+    },
+    {
+      "tier": 1000,
+      "a": "جليد يتشقق",
+      "alt": [
+        "تشقق الجليد",
+        "جليد ينكسر",
+        "بحيرة متجمدة",
+        "تكسر الجليد"
+      ],
+      "topic": "طبيعة",
+      "ar": "جليد يتشقق",
+      "en": "ice cracking lake",
+      "q": "ما الظاهرة التي سمعتها؟",
+      "search": "ice cracking lake",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/theundecided/sounds/91903"
+    },
+    {
+      "tier": 1000,
+      "a": "مستنقع",
+      "alt": [
+        "أهوار",
+        "مستنقع ليلي",
+        "بركة مستنقع",
+        "مستنقعات"
+      ],
+      "topic": "طبيعة",
+      "ar": "مستنقع",
+      "en": "Swamp or Jungle Background",
+      "q": "أين يأخذك هذا الصوت؟",
+      "search": "Swamp or Jungle Background",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Ambience_3"
+    },
+    {
+      "tier": 1000,
+      "a": "آلة عرض أفلام",
+      "alt": [
+        "بروجكتور",
+        "جهاز عرض",
+        "آلة عرض سينمائي",
+        "بروجكتور أفلام"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "آلة عرض أفلام",
+      "en": "film projector running",
+      "q": "ما اسم الجهاز في التسجيل؟",
+      "search": "film projector running",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/Dr.%20Macak/sounds/253758"
+    },
+    {
+      "tier": 1000,
+      "a": "أسطوانة",
+      "alt": [
+        "فينيل",
+        "جرامافون",
+        "فونوغراف",
+        "مشغل أسطوانات",
+        "أسطوانة فينيل"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "أسطوانة",
+      "en": "vinyl record player crackle needle",
+      "q": "أي جهاز صوته هذا؟",
+      "search": "vinyl record player crackle needle",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/RileyB711/sounds/708198"
+    },
+    {
+      "tier": 1000,
+      "a": "كاسيت",
+      "alt": [
+        "شريط كاسيت",
+        "مسجل كاسيت",
+        "مسجل",
+        "شريط"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "كاسيت",
+      "en": "cassette tape player",
+      "q": "ما الجهاز الذي سُجّل صوته؟",
+      "search": "cassette tape player",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/rbirdwise/sounds/158429"
+    },
+    {
+      "tier": 1000,
+      "a": "فاكس",
+      "alt": [
+        "جهاز فاكس",
+        "إرسال فاكس",
+        "الفاكس"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "فاكس",
+      "en": "fax machine",
+      "q": "ما الجهاز الذي تسمعونه؟",
+      "search": "fax machine",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/ondrosik/sounds/121753"
+    },
+    {
+      "tier": 1000,
+      "a": "مودم",
+      "alt": [
+        "مودم إنترنت",
+        "اتصال إنترنت قديم",
+        "مودم هاتفي",
+        "دايل أب"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "مودم",
+      "en": "dial-up modem connecting",
+      "q": "ما الجهاز الذي سمعته؟",
+      "search": "dial-up modem connecting",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/BoilingSand/sounds/49608"
+    },
+    {
+      "tier": 1000,
+      "a": "شفرة مورس",
+      "alt": [
+        "مورس",
+        "تلغراف",
+        "إشارات مورس",
+        "كود مورس"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "شفرة مورس",
+      "en": "Fast Morse Code",
+      "q": "سمِّ مصدر هذا الصوت.",
+      "search": "Fast Morse Code",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_32_Electricity"
+    },
+    {
+      "tier": 1000,
+      "a": "قرص الهاتف",
+      "alt": [
+        "هاتف قرص",
+        "تدوير قرص الهاتف",
+        "طلب رقم بالقرص",
+        "هاتف بقرص"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "قرص الهاتف",
+      "en": "Rotary Telephone",
+      "q": "أي جهاز تتعرف عليه من صوته؟",
+      "search": "Rotary Telephone",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/GOLD_TAPE_19_20_Bells_Buzzers"
+    },
+    {
+      "tier": 1000,
+      "a": "جهاز مراقبة القلب",
+      "alt": [
+        "مونيتور المستشفى",
+        "شاشة النبض",
+        "جهاز رسم القلب",
+        "شاشة المستشفى"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "جهاز مراقبة القلب",
+      "en": "EKG heart rate of 70 BPM",
+      "q": "ما الجهاز في هذا التسجيل؟",
+      "search": "EKG heart rate of 70 BPM",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/SSE_Library_MACHINES"
+    },
+    {
+      "tier": 1000,
+      "a": "ساعة الوقواق",
+      "alt": [
+        "ساعة الكوكو",
+        "ساعة كوكو",
+        "ساعة الحائط بالطائر"
+      ],
+      "topic": "أجهزة وتقنية",
+      "ar": "ساعة الوقواق",
+      "en": "cuckoo clock",
+      "q": "حدّد ما تسمعه.",
+      "search": "cuckoo clock",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/InspectorJ/sounds/398194"
+    },
+    {
+      "tier": 1000,
+      "a": "همس",
+      "alt": [
+        "وشوشة",
+        "همسات",
+        "كلام خافت"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "همس",
+      "en": "Man Whispers",
+      "q": "ما الصوت الصادر عن إنسان هنا؟",
+      "search": "Man Whispers",
+      "mime": "audio/ogg",
+      "from": "https://archive.org/details/Red_Library_Voices_Men_1"
+    },
+    {
+      "tier": 1000,
+      "a": "غرغرة",
+      "alt": [
+        "مضمضة",
+        "غرغرة بالماء",
+        "غرغرة الحلق"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "غرغرة",
+      "en": "gargling water",
+      "q": "ما الصوت البشري الذي نسمعه؟",
+      "search": "gargling water",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/brlproductions/sounds/171336"
+    },
+    {
+      "tier": 1000,
+      "a": "قرقرة بطن",
+      "alt": [
+        "قرقرة البطن",
+        "بطن جائع",
+        "قرقرة المعدة",
+        "أمعاء"
+      ],
+      "topic": "أصوات بشرية",
+      "ar": "قرقرة بطن",
+      "en": "stomach growling",
+      "q": "أي صوت بشري سُجّل هنا؟",
+      "search": "stomach growling",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/SamanthaCastleberry/sounds/696405"
+    },
+    {
+      "tier": 1000,
+      "a": "تزلج على الجليد",
+      "alt": [
+        "زلاجة جليد",
+        "سكيت على الجليد",
+        "تزحلق على الجليد",
+        "تزلج"
+      ],
+      "topic": "رياضة وألعاب",
+      "ar": "تزلج على الجليد",
+      "en": "ice skating blades",
+      "q": "أي رياضة تسمع صوتها؟",
+      "search": "ice skating blades",
+      "mime": "audio/ogg",
+      "from": "https://freesound.org/people/splodge123/sounds/249833"
+    }
+  ]
+}
