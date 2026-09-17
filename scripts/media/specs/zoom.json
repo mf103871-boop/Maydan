@@ -71,12 +71,12 @@
     },
     {
       "tier": 200,
-      "a": "ثلاجة",
+      "a": "فأرة الحاسوب",
       "topic": "أجهزة",
-      "ar": "ثلاجة",
-      "en": "Refrigerator",
-      "commons": "File:LG refrigerator interior.jpg",
-      "q": "أي جهاز هذا؟"
+      "ar": "فأرة حاسوب",
+      "en": "Computer mouse",
+      "commons": "File:ComputerMouseCloseup3.jpg",
+      "q": "من قرب جدًا: ما هذا الجهاز؟"
     },
     {
       "tier": 200,
@@ -212,12 +212,12 @@
     },
     {
       "tier": 200,
-      "a": "عباد الشمس",
+      "a": "شجرة الزيتون",
       "topic": "نباتات",
-      "ar": "دوار الشمس",
-      "en": "Common sunflower",
-      "commons": "File:W&Asunflower.jpg",
-      "q": "ما هذا النبات؟"
+      "ar": "زيتون (ثمرة)",
+      "en": "Olive",
+      "commons": "File:Des olives vertes sur leur branche..jpg",
+      "q": "جزء صغير يكفي: ما هذا النبات؟"
     },
     {
       "tier": 200,
@@ -275,12 +275,12 @@
     },
     {
       "tier": 200,
-      "a": "نملة",
+      "a": "عنكبوت",
       "topic": "طبيعة",
-      "ar": "نمل",
-      "en": "Ant",
-      "commons": "File:Meat eater ant feeding on honey02.jpg",
-      "q": "ما اسم هذه التفصيلة؟"
+      "ar": "عنكبوت",
+      "en": "Spider",
+      "commons": "File:Spiders Diversity.jpg",
+      "q": "بعد التكبير: ما هذه التفصيلة؟"
     },
     {
       "tier": 200,
@@ -341,12 +341,12 @@
     },
     {
       "tier": 200,
-      "a": "مصباح أمامي",
+      "a": "دواسة",
       "topic": "مركبات",
-      "ar": "مصباح أمامي",
-      "en": "Headlamp",
-      "commons": "File:Scooter headlights.jpg",
-      "q": "تفصيلة مكبّرة: ما هذا الجزء؟"
+      "ar": "دواسة الدراجة الهوائية",
+      "en": "Bicycle pedal",
+      "commons": "File:13-01-06-fahrradkram-05.jpg",
+      "q": "بعد التكبير: ما هذا الجزء؟"
     },
     {
       "tier": 200,
@@ -364,7 +364,7 @@
       "ar": "ربطة عنق",
       "en": "Necktie",
       "commons": "File:Dress-pinstripe.jpg",
-      "q": "ما هذه القطعة؟"
+      "q": "بعد التكبير: ما هذه القطعة؟"
     },
     {
       "tier": 200,
@@ -377,15 +377,12 @@
     },
     {
       "tier": 200,
-      "a": "قماش الدنيم",
-      "alt": [
-        "جينز"
-      ],
+      "a": "زر",
       "topic": "ملابس",
-      "ar": "دنيم",
-      "en": "Denim",
-      "commons": "File:Denim texture 03.jpg",
-      "q": "ما اسم هذه القطعة؟"
+      "ar": "زر",
+      "en": "Button",
+      "commons": "File:Plastic & fabric buttons showing holes & shank.jpg",
+      "q": "أمامك قطعة مكبّرة جدًا: ما هي؟"
     },
     {
       "tier": 200,
@@ -464,21 +461,21 @@
     },
     {
       "tier": 400,
-      "a": "مفك براغي",
+      "a": "دباسة",
       "topic": "أدوات",
-      "ar": "مفك براغي",
-      "en": "Screwdriver",
-      "commons": "File:Screw Driver display.jpg",
-      "q": "خمّن هذه الأداة من هذه التفصيلة."
+      "ar": "دباسة",
+      "en": "Stapler",
+      "commons": "File:Swingline-stapler.jpg",
+      "q": "جزء صغير يكفي: ما هذه الأداة؟"
     },
     {
       "tier": 400,
-      "a": "منشار",
+      "a": "قفل",
       "topic": "أدوات",
-      "ar": "منشار",
-      "en": "Saw",
-      "commons": "File:Handsaws876.jpg",
-      "q": "ماذا تكون هذه الأداة؟"
+      "ar": "قفل",
+      "en": "Lock (security device)",
+      "commons": "File:Serrure-Dogon.jpg",
+      "q": "بعد التكبير: ما هذه الأداة؟"
     },
     {
       "tier": 400,
@@ -539,12 +536,12 @@
     },
     {
       "tier": 400,
-      "a": "سماعة طبية",
+      "a": "ميكروفون",
       "topic": "أجهزة",
-      "ar": "سماعة طبية",
-      "en": "Stethoscope",
-      "commons": "File:2023 Stetoskop.jpg",
-      "q": "ما هذا الجهاز الذي تراه؟"
+      "ar": "ميكروفون",
+      "en": "Microphone",
+      "commons": "File:Neumann U87 microphone 20050905.jpg",
+      "q": "أي جهاز هذا؟"
     },
     {
       "tier": 400,
@@ -575,12 +572,12 @@
     },
     {
       "tier": 400,
-      "a": "تشيلو",
+      "a": "كلارينيت",
       "topic": "موسيقى",
-      "ar": "كمان جهير",
-      "en": "Cello",
-      "commons": "File:Cello front side.png",
-      "q": "ماذا تكون هذه الآلة الموسيقية؟"
+      "ar": "يراعة (موسيقى)",
+      "en": "Clarinet",
+      "commons": "File:Klarinetten von Herbert Wurlitzer 2.jpg",
+      "q": "بعد التكبير: ما هذه الآلة الموسيقية؟"
     },
     {
       "tier": 400,
@@ -596,21 +593,21 @@
     },
     {
       "tier": 400,
-      "a": "قانون",
+      "a": "أرغن",
       "topic": "موسيقى",
-      "ar": "قانون (آلة موسيقية)",
-      "en": "Qanun (instrument)",
-      "commons": "File:Qānūn - MET 89.4.330.jpg",
-      "q": "ما هذه الآلة الموسيقية التي تراها؟"
+      "ar": "أرغن (آلة موسيقية)",
+      "en": "Organ (music)",
+      "commons": "File:OrgueSaintThomasStrasbourg a.jpg",
+      "q": "ماذا تكون هذه الآلة الموسيقية؟"
     },
     {
       "tier": 400,
-      "a": "رمان",
+      "a": "تين",
       "topic": "أطعمة",
-      "ar": "رمان",
-      "en": "Pomegranate",
-      "commons": "File:Pomegranate02 edit.jpg",
-      "q": "قرّبنا الصورة كثيرًا: ما هذا الصنف؟"
+      "ar": "تين",
+      "en": "Common fig",
+      "commons": "File:Smokve na grani.jpg",
+      "q": "ما هذا الصنف الظاهر هنا؟"
     },
     {
       "tier": 400,
@@ -636,7 +633,7 @@
       "topic": "أطعمة",
       "ar": "زعفران",
       "en": "Saffron",
-      "commons": "File:Arabic-Shells-Dips-Sauces-Dumplings-Appetizers-Vegetables-1626976.jpg",
+      "commons": "File:Iran saffron threads.jpg",
       "q": "ماذا يكون هذا الصنف؟"
     },
     {
@@ -645,7 +642,7 @@
       "topic": "أطعمة",
       "ar": "فستق",
       "en": "Pistachio",
-      "commons": "File:Arabic-Shells-Dips-Sauces-Dumplings-Appetizers-Vegetables-1626976.jpg",
+      "commons": "File:Pistachios.jpg",
       "q": "حدّد هذا الصنف."
     },
     {
@@ -671,14 +668,11 @@
     },
     {
       "tier": 400,
-      "a": "أوركيد",
-      "alt": [
-        "سحلبية"
-      ],
+      "a": "أقحوان",
       "topic": "نباتات",
-      "ar": "سحلبية",
-      "en": "Orchidaceae",
-      "commons": "File:PhalaenopsisOphrysPaphiopedilumMaxillaria.jpg",
+      "ar": "أقحوان",
+      "en": "Chrysanthemum",
+      "commons": "File:NIEdot318.jpg",
       "q": "من عالم النبات: ما هذا النبات؟"
     },
     {
@@ -689,24 +683,6 @@
       "en": "Nelumbo nucifera",
       "commons": "File:Sacred lotus Nelumbo nucifera.jpg",
       "q": "خمّن هذا النبات من هذه التفصيلة."
-    },
-    {
-      "tier": 400,
-      "a": "سرخس",
-      "topic": "نباتات",
-      "ar": "سراخس",
-      "en": "Fern",
-      "commons": "File:Ferns02.jpg",
-      "q": "ماذا يكون هذا النبات؟"
-    },
-    {
-      "tier": 400,
-      "a": "صنوبر",
-      "topic": "نباتات",
-      "ar": "صنوبر",
-      "en": "Pine",
-      "commons": "File:Pinus pinaster.jpg",
-      "q": "حدّد هذا النبات."
     },
     {
       "tier": 400,
@@ -749,12 +725,12 @@
     },
     {
       "tier": 400,
-      "a": "قرص العسل",
+      "a": "بيت العنكبوت",
       "topic": "طبيعة",
-      "ar": "قرص عسل",
-      "en": "Honeycomb",
-      "commons": "File:Bienen auf Honigwabe.jpg",
-      "q": "ماذا تكون هذه التفصيلة؟"
+      "ar": "شبكة العنكبوت",
+      "en": "Spider web",
+      "commons": "File:Opadometa fastigata weaving the web-Kadavoor-2015-08-20-001.jpg",
+      "q": "ما اسم هذه التفصيلة؟"
     },
     {
       "tier": 400,
@@ -767,33 +743,30 @@
     },
     {
       "tier": 400,
-      "a": "شمعة إشعال",
-      "alt": [
-        "بوجيه"
-      ],
+      "a": "طوق نجاة",
       "topic": "مركبات",
-      "ar": "شمعة احتراق",
-      "en": "Spark plug",
-      "commons": "File:Bujía Bosch Yttrium Super Plus.JPG",
-      "q": "من أجزاء المركبات: ما هذا الجزء؟"
-    },
-    {
-      "tier": 400,
-      "a": "ماسحة الزجاج",
-      "topic": "مركبات",
-      "ar": "مساحة الزجاج الأمامي",
-      "en": "Windscreen wiper",
-      "commons": "File:Windscreen Wiper.gif",
+      "ar": "طافية النجاة",
+      "en": "Lifebuoy",
+      "commons": "File:USCGC Eagle life preserver.JPG",
       "q": "خمّن هذا الجزء من هذه التفصيلة."
     },
     {
       "tier": 400,
-      "a": "فرامل قرصية",
+      "a": "سلسلة الدراجة",
       "topic": "مركبات",
-      "ar": "مكبح قرصي",
-      "en": "Disc brake",
-      "commons": "File:Disk brake dsc03682.jpg",
-      "q": "ماذا يكون هذا الجزء؟"
+      "ar": "سلسلة الدراجة",
+      "en": "Bicycle chain",
+      "commons": "File:Bicycle chains.JPG",
+      "q": "تفصيلة مكبّرة: ما هذا الجزء؟"
+    },
+    {
+      "tier": 400,
+      "a": "عداد السرعة",
+      "topic": "مركبات",
+      "ar": "عداد سرعة",
+      "en": "Speedometer",
+      "commons": "File:Ford Mondeo MK3 ST220 - Speedometer.jpg",
+      "q": "ما هذا الجزء الظاهر هنا؟"
     },
     {
       "tier": 400,
@@ -815,14 +788,11 @@
     },
     {
       "tier": 400,
-      "a": "سحّاب",
-      "alt": [
-        "سوستة"
-      ],
+      "a": "عمامة",
       "topic": "ملابس",
-      "ar": "زمام منزلق",
-      "en": "Zipper",
-      "commons": "File:Coil plastic and metal zippers.jpg",
+      "ar": "عمامة",
+      "en": "Turban",
+      "commons": "File:Omani Qaboos bin Said Al Said (cropped).jpg",
       "q": "قرّبنا الصورة كثيرًا: ما هذه القطعة؟"
     },
     {
@@ -848,12 +818,12 @@
     },
     {
       "tier": 400,
-      "a": "دانتيل",
+      "a": "ساري",
       "topic": "ملابس",
-      "ar": "مخرمة",
-      "en": "Lace",
-      "commons": "File:1911 Britannica - Lace 3.jpg",
-      "q": "ماذا تكون هذه القطعة؟"
+      "ar": "ساري (زي)",
+      "en": "Sari",
+      "commons": "File:Sari on mannequin for demo.jpg",
+      "q": "جزء صغير يكفي: ما هذه القطعة؟"
     },
     {
       "tier": 400,
@@ -1049,12 +1019,12 @@
     },
     {
       "tier": 600,
-      "a": "مندولين",
+      "a": "أوبوا",
       "topic": "موسيقى",
-      "ar": "مندولين",
-      "en": "Mandolin",
-      "commons": "File:Range mandolin.PNG",
-      "q": "إلامَ تنظر من الآلات الموسيقية؟"
+      "ar": "مزمار إفرنجي",
+      "en": "Oboe",
+      "commons": "File:Mönnig, Oboe Modell 155 Albrecht Mayer.jpg",
+      "q": "ما هذه الآلة الموسيقية التي تراها؟"
     },
     {
       "tier": 600,
@@ -1076,29 +1046,29 @@
     },
     {
       "tier": 600,
-      "a": "كينوا",
+      "a": "كركم",
       "topic": "أطعمة",
-      "ar": "كينوا",
-      "en": "Quinoa",
-      "commons": "File:Chenopodium quinoa0.jpg",
-      "q": "ما هذا الصنف في الصورة؟"
+      "ar": "كركم",
+      "en": "Turmeric",
+      "commons": "File:Curcuma longa (Haldi) W IMG 2440.jpg",
+      "q": "قرّبنا الصورة كثيرًا: ما هذا الصنف؟"
     },
     {
       "tier": 600,
-      "a": "واسابي",
+      "a": "قرنفل",
       "topic": "أطعمة",
-      "ar": "وسابي",
-      "en": "Wasabi",
-      "commons": "File:Wasabia japonica 4.JPG",
-      "q": "عرّف هذا الصنف."
+      "ar": "قرنفل",
+      "en": "Clove",
+      "commons": "File:Cengkih.jpg",
+      "q": "من قرب جدًا: ما هذا الصنف؟"
     },
     {
       "tier": 600,
-      "a": "تمر هندي",
+      "a": "كيمتشي",
       "topic": "أطعمة",
-      "ar": "تمر هندي",
-      "en": "Tamarind",
-      "commons": "File:Tamarindus indica pods.JPG",
+      "ar": "كمتشي",
+      "en": "Kimchi",
+      "commons": "File:Gimchi.jpg",
       "q": "إلامَ تنظر من المطبخ؟"
     },
     {
@@ -1112,12 +1082,12 @@
     },
     {
       "tier": 600,
-      "a": "خناق الذباب",
+      "a": "بابونج",
       "topic": "نباتات",
-      "ar": "خناق الذباب",
-      "en": "Venus flytrap",
-      "commons": "File:Venus Flytrap Dionaea muscipula (26455092815).jpg",
-      "q": "لقطة قريبة جدًا: ما هذا النبات؟"
+      "ar": "بابونج ألماني",
+      "en": "Matricaria chamomilla",
+      "commons": "File:Matricaria recutita 0.1 R.jpg",
+      "q": "ما هذا النبات؟"
     },
     {
       "tier": 600,
@@ -1130,12 +1100,12 @@
     },
     {
       "tier": 600,
-      "a": "باوباب",
+      "a": "شوفان",
       "topic": "نباتات",
-      "ar": "تبلدي",
-      "en": "Adansonia",
-      "commons": "File:Adansonia grandidieri04.jpg",
-      "q": "ما هذا النبات في الصورة؟"
+      "ar": "شوفان",
+      "en": "Oat",
+      "commons": "File:Avena sativa L.jpg",
+      "q": "ماذا يكون هذا النبات؟"
     },
     {
       "tier": 600,
@@ -1145,15 +1115,6 @@
       "en": "Aloe vera",
       "commons": "File:Aloe vera flower inset.png",
       "q": "عرّف هذا النبات."
-    },
-    {
-      "tier": 600,
-      "a": "طحلب",
-      "topic": "نباتات",
-      "ar": "نباتات حزازية",
-      "en": "Moss",
-      "commons": "File:Haeckel Muscinae.jpg",
-      "q": "إلامَ تنظر من عالم النبات؟"
     },
     {
       "tier": 600,
@@ -1217,12 +1178,12 @@
     },
     {
       "tier": 600,
-      "a": "مكربن",
+      "a": "عادم",
       "topic": "مركبات",
-      "ar": "مكربن",
-      "en": "Carburetor",
-      "commons": "File:Carburateur1.jpg",
-      "q": "لقطة قريبة جدًا: ما هذا الجزء؟"
+      "ar": "كاتم صوت (سيارة)",
+      "en": "Muffler",
+      "commons": "File:Ducati muffler.jpg",
+      "q": "من أجزاء المركبات: ما هذا الجزء؟"
     },
     {
       "tier": 600,
@@ -1271,12 +1232,12 @@
     },
     {
       "tier": 600,
-      "a": "مخمل",
+      "a": "شال",
       "topic": "ملابس",
-      "ar": "مخمل",
-      "en": "Velvet",
-      "commons": "File:lossy-page1-1920px-Jacka - del av Nordstjärneordens dräkt från cirka 1820 - Livrustkammaren - 108329.tif.jpg",
-      "q": "لقطة قريبة جدًا: ما هذه القطعة؟"
+      "ar": "شال",
+      "en": "Shawl",
+      "commons": "File:Orange triangle shawl.jpg",
+      "q": "ما اسم هذه القطعة؟"
     },
     {
       "tier": 600,
@@ -1298,12 +1259,12 @@
     },
     {
       "tier": 600,
-      "a": "تطريز",
+      "a": "كروشيه",
       "topic": "ملابس",
-      "ar": "تطريز",
-      "en": "Embroidery",
-      "commons": "File:Kazakh rug chain stitch embroidery.jpg",
-      "q": "عرّف هذه القطعة."
+      "ar": "تعقيف",
+      "en": "Crochet",
+      "commons": "File:Crochet-round.jpg",
+      "q": "ماذا تكون هذه القطعة؟"
     },
     {
       "tier": 600,
@@ -1334,12 +1295,12 @@
     },
     {
       "tier": 600,
-      "a": "كرة اليد",
+      "a": "عارضة التوازن",
       "topic": "رياضة",
-      "ar": "كرة اليد",
-      "en": "Handball",
-      "commons": "File:langar-330px-Handball pictogram.svg.png",
-      "q": "ما هذه الأداة الرياضية في الصورة؟"
+      "ar": "عارضة التوازن",
+      "en": "Balance beam",
+      "commons": "File:Balance beam GMM.jpg",
+      "q": "أمامك أداة رياضية مكبّرة جدًا: ما هي؟"
     },
     {
       "tier": 600,
@@ -1511,12 +1472,12 @@
     },
     {
       "tier": 800,
-      "a": "رامبوتان",
+      "a": "فانيليا",
       "topic": "أطعمة",
-      "ar": "رامبوتان",
-      "en": "Rambutan",
-      "commons": "File:Rambutan white background alt.jpg",
-      "q": "ما هذا الصنف أمامك؟"
+      "ar": "فانيليا",
+      "en": "Vanilla",
+      "commons": "File:Vanilla 6beans.JPG",
+      "q": "ما هذا الصنف في الصورة؟"
     },
     {
       "tier": 800,
@@ -1712,21 +1673,21 @@
     },
     {
       "tier": 800,
-      "a": "باتيك",
+      "a": "لباد",
       "topic": "ملابس",
-      "ar": "باتيك",
-      "en": "Batik",
-      "commons": "File:Batik Indonesia.jpg",
-      "q": "صورة مقرّبة: ما هذه القطعة؟"
+      "ar": "لباد",
+      "en": "Felt",
+      "commons": "File:Homemade felted cloth.jpg",
+      "q": "لقطة قريبة جدًا: ما هذه القطعة؟"
     },
     {
       "tier": 800,
-      "a": "نقشة سن الكلب",
+      "a": "كليم",
       "topic": "ملابس",
-      "ar": "نقشة سن الكلب",
-      "en": "Houndstooth",
-      "commons": "File:Houndstooth.svg.png",
-      "q": "أي قطعة كُبِّرت هنا؟"
+      "ar": "كليم",
+      "en": "Kilim",
+      "commons": "File:Kilim anatolie centrale.jpg",
+      "q": "عرّف هذه القطعة."
     },
     {
       "tier": 800,
@@ -1748,21 +1709,21 @@
     },
     {
       "tier": 800,
-      "a": "حجر الكيرلنغ",
+      "a": "كاياك",
       "topic": "رياضة",
-      "ar": "كرلنغ",
-      "en": "Curling",
-      "commons": "File:langar-330px-Curling pictogram.svg.png",
-      "q": "إلامَ تنظر من الأدوات الرياضية؟"
+      "ar": "كياك",
+      "en": "Kayak",
+      "commons": "File:GreatFallsKayaker2.jpg",
+      "q": "ما هذه الأداة الرياضية في الصورة؟"
     },
     {
       "tier": 800,
-      "a": "سيف المبارزة",
+      "a": "وتد التسلق",
       "topic": "رياضة",
-      "ar": "سيف المبارزة",
-      "en": "Épée",
-      "commons": "File:langar-960px-Fencing epee valid surfaces.svg.png",
-      "q": "صورة مقرّبة: ما هذه الأداة الرياضية؟"
+      "ar": "وتد التسلق",
+      "en": "Piton",
+      "commons": "File:Profilhaken.jpg",
+      "q": "جزء صغير يكفي: ما هذه الأداة الرياضية؟"
     },
     {
       "tier": 800,
@@ -1820,12 +1781,12 @@
     },
     {
       "tier": 1000,
-      "a": "مسطرين",
+      "a": "بريمة",
       "topic": "أدوات",
-      "ar": "مالج",
-      "en": "Trowel",
-      "commons": "File:Masons trowel.jpg",
-      "q": "ما هذه الأداة المقرّبة؟"
+      "ar": "بريمة (أداة)",
+      "en": "Auger (drill)",
+      "commons": "File:Museo Etnológico de Puerto Seguro - Barrenas (30961671045).jpg",
+      "q": "خمّن هذه الأداة من هذه التفصيلة."
     },
     {
       "tier": 1000,
@@ -1874,12 +1835,12 @@
     },
     {
       "tier": 1000,
-      "a": "مغنطرون",
+      "a": "منظم طرد مركزي",
       "topic": "أجهزة",
-      "ar": "مغنطرون",
-      "en": "Cavity magnetron",
-      "commons": "File:الماجنترون.jpg",
-      "q": "بعد التكبير: ما هذا الجهاز؟"
+      "ar": "منظم طرد مركزي",
+      "en": "Centrifugal governor",
+      "commons": "File:Centrifugal governor.png",
+      "q": "ما هذا الجهاز الذي تراه؟"
     },
     {
       "tier": 1000,
@@ -1955,12 +1916,12 @@
     },
     {
       "tier": 1000,
-      "a": "سالاك",
+      "a": "قرنبيط رومانسكو",
       "topic": "أطعمة",
-      "ar": "سالاكة مألوفة",
-      "en": "Salak",
-      "commons": "File:Salacca P 071118 1165 ipb.jpg",
-      "q": "اكتشف هذا الصنف."
+      "ar": "بروكلي رومانسكي",
+      "en": "Romanesco broccoli",
+      "commons": "File:Romanesco broccoli (Brassica oleracea).jpg",
+      "q": "عرّف هذا الصنف."
     },
     {
       "tier": 1000,
@@ -1982,12 +1943,12 @@
     },
     {
       "tier": 1000,
-      "a": "كمكوات",
+      "a": "كارامبولا",
       "topic": "أطعمة",
-      "ar": "كمكوات",
-      "en": "Kumquat",
-      "commons": "File:Fortpolyandra.jpg",
-      "q": "جزء صغير يكفي: ما هذا الصنف؟"
+      "ar": "قلنباق",
+      "en": "Carambola",
+      "commons": "File:Carambolas765pt.jpg",
+      "q": "ما هذا الصنف أمامك؟"
     },
     {
       "tier": 1000,
@@ -2000,15 +1961,6 @@
     },
     {
       "tier": 1000,
-      "a": "ليثوبس",
-      "topic": "نباتات",
-      "ar": "نبات الحصى",
-      "en": "Lithops",
-      "commons": "File:Marloth-Lithops-drawing.jpg",
-      "q": "بالتقريب الشديد: ما هذا النبات؟"
-    },
-    {
-      "tier": 1000,
       "a": "زهرة الجثة",
       "topic": "نباتات",
       "ar": "زهرة الجثة",
@@ -2018,30 +1970,30 @@
     },
     {
       "tier": 1000,
-      "a": "سيلاجينيلا",
+      "a": "ساراسينيا",
       "topic": "نباتات",
-      "ar": "كفعان",
-      "en": "Selaginella",
-      "commons": "File:Selaginella-sp.jpg",
+      "ar": "سراسينة",
+      "en": "Sarracenia",
+      "commons": "File:Sarracenia rubra ne.JPG",
+      "q": "لقطة قريبة جدًا: ما هذا النبات؟"
+    },
+    {
+      "tier": 1000,
+      "a": "نبات الغليون الهندي",
+      "topic": "نباتات",
+      "ar": "غليون هندي",
+      "en": "Monotropa uniflora",
+      "commons": "File:Pink indian pipes.jpg",
+      "q": "ما هذا النبات في الصورة؟"
+    },
+    {
+      "tier": 1000,
+      "a": "بانكسيا",
+      "topic": "نباتات",
+      "ar": "بنكسية",
+      "en": "Banksia",
+      "commons": "File:Banksia in the Blue Mountains.jpg",
       "q": "اكتشف هذا النبات."
-    },
-    {
-      "tier": 1000,
-      "a": "هيدنورا",
-      "topic": "نباتات",
-      "ar": "نبات هيدنورا أفريكانا",
-      "en": "Hydnora africana",
-      "commons": "File:HydnoraAfricanaKarasburgDistrictNamibia2002Musselman.jpg",
-      "q": "ما هذا النبات المقرّب؟"
-    },
-    {
-      "tier": 1000,
-      "a": "بويا ريموندي",
-      "topic": "نباتات",
-      "ar": "بويا ريموندي",
-      "en": "Puya raimondii",
-      "commons": "File:Puya raimondii hábito.jpg",
-      "q": "أمامك نبات مكبّر جدًا: ما هو؟"
     },
     {
       "tier": 1000,
@@ -2063,12 +2015,12 @@
     },
     {
       "tier": 1000,
-      "a": "بزموت",
+      "a": "دب الماء",
       "topic": "طبيعة",
-      "ar": "بزموت",
-      "en": "Bismuth",
-      "commons": "File:Bismuth crystals and 1cm3 cube.jpg",
-      "q": "ما هذه التفصيلة المقرّبة؟"
+      "ar": "بطيء الخطو",
+      "en": "Tardigrade",
+      "commons": "File:Waterbear.jpg",
+      "q": "ماذا تكون هذه التفصيلة؟"
     },
     {
       "tier": 1000,
@@ -2171,21 +2123,21 @@
     },
     {
       "tier": 1000,
-      "a": "سيرسوكر",
+      "a": "نول الجاكار",
       "topic": "ملابس",
-      "ar": "لبن وسكر",
-      "en": "Seersucker",
-      "commons": "File:Seersucker-sample2.jpg",
-      "q": "ما هذه القطعة المقرّبة؟"
+      "ar": "منسج جاكار",
+      "en": "Jacquard machine",
+      "commons": "File:Jacquard.loom.full.view.jpg",
+      "q": "صورة مقرّبة: ما هذه القطعة؟"
     },
     {
       "tier": 1000,
-      "a": "كرة السيباك تاكراو",
+      "a": "عصا الشينتي",
       "topic": "رياضة",
-      "ar": "سيبق تكراو",
-      "en": "Sepak takraw",
-      "commons": "File:langar-330px-Sepaktakraw pictogram.svg.png",
-      "q": "تحت العدسة: ما هذه الأداة الرياضية؟"
+      "ar": "شينتي",
+      "en": "Shinty",
+      "commons": "File:CabersGlasgow.jpg",
+      "q": "إلامَ تنظر من الأدوات الرياضية؟"
     },
     {
       "tier": 1000,
