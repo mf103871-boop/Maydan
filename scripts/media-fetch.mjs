@@ -414,9 +414,36 @@ export function commonsRedirect(title, info) {
   return `«${asked}» تحويلة في كومنز إلى ملف آخر: «${actual}» — أعد الأمر بالاسم الحقيقي إن كان هو المقصود`;
 }
 
+// بيانات عدة ملفات في طلب واحد.
+//
+// كانت كل صورة تكلّف طلبًا مستقلًا على واجهة كومنز، فحزمة من 240 موضوعًا تعني 240
+// طلبًا — وهو ما استنزف حصّتنا حتى صار الردّ تهدئةً من نصف دقيقة. والواجهة تقبل
+// خمسين عنوانًا في الطلب الواحد، فالدفعة تخفض الطلبات إلى الخُمس من العُشر.
+const metaCache = new Map();
+
+export async function primeCommonsFiles(titles, kind) {
+  const wanted = [...new Set(titles.filter((t) => t && !metaCache.has(`${kind}:${t}`)))];
+  for (let i = 0; i < wanted.length; i += 50) {
+    const slice = wanted.slice(i, i + 50);
+    const data = await fetchJson(commonsUrl({ titles: slice.join('|') }), 'كومنز');
+    const normalized = new Map((data.query?.normalized || []).map((n) => [n.to, n.from]));
+    for (const page of data.query?.pages || []) {
+      const asked = normalized.get(page.title) ?? page.title;
+      metaCache.set(`${kind}:${asked}`, page);
+      metaCache.set(`${kind}:${page.title}`, page);
+    }
+    // العناوين المفقودة تُخزَّن أيضًا كي لا يُعاد سؤال الخادم عنها.
+    for (const title of slice) if (!metaCache.has(`${kind}:${title}`)) metaCache.set(`${kind}:${title}`, null);
+  }
+}
+
 export async function fetchCommonsFile(title, kind) {
-  const data = await fetchJson(commonsUrl({ titles: title }), 'كومنز');
-  const page = data.query?.pages?.[0];
+  let page = metaCache.get(`${kind}:${title}`);
+  if (page === undefined) {
+    const data = await fetchJson(commonsUrl({ titles: title }), 'كومنز');
+    page = data.query?.pages?.[0] ?? null;
+    metaCache.set(`${kind}:${title}`, page);
+  }
   if (!page || page.missing || !page.imageinfo) throw new NoCandidateError(`لا يوجد ملف بهذا الاسم في كومنز: ${title}`);
   // صفحة التحويلة في كومنز تُرجع بيانات الملف الهدف تحت الاسم المطلوب، فينزل
   // ملف مختلف تمامًا بصمت وبإسناد باسم غير اسمه. ‏--from تعني «هذا العنصر بعينه»،

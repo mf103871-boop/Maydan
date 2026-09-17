@@ -8,7 +8,7 @@
 import { access, readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import fsSync from 'node:fs';
 import path from 'node:path';
-import { acquire, fetchCommonsFile, loadSharp, readSourceIndex, resolveFfmpeg, saveSourceRecord } from '../media-fetch.mjs';
+import { acquire, fetchCommonsFile, loadSharp, primeCommonsFiles, readSourceIndex, resolveFfmpeg, saveSourceRecord } from '../media-fetch.mjs';
 import { resolveSubjects } from './resolve.mjs';
 import { bestZoomOrigin, silhouetteCheck, blurCheck } from './analyze.mjs';
 
@@ -93,6 +93,8 @@ export async function buildPack(specPath, { limit = Infinity, only = null, dry =
     return { ...s, ar: s.ar || s.a, seat: seats[tier] };
   });
   const resolved = await resolveSubjects(seated);
+  // بيانات الملفات كلها في طلبات من خمسين، قبل أن يبدأ التنزيل المتوازي.
+  await primeCommonsFiles(resolved.map((s) => s.file), kind);
   const questions = [];
   const failures = [];
 
