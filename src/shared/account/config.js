@@ -13,12 +13,14 @@ export const AUTH_CODE_TTL_S = 60;
 
 // الصفحات القانونية: بريد الدعم (فارغ = الإحالة إلى صفحة الدعم في المتجر) وتاريخ آخر تحديث.
 export const SUPPORT_EMAIL = 'mf103871@gmail.com';
-export const LEGAL_UPDATED = '2026-09-16';
+export const LEGAL_UPDATED = '2026-09-18';
 export const LEGAL_ROUTES = { terms: '#/terms', privacy: '#/privacy' };
+// وجهة عرض ثابتة وموثوقة، لا تغيّر خادم API ولا تسمح للمعاينة باستعمال جلسة الموقع.
+export const PUBLIC_SITE_ORIGIN = 'https://maydan-game.mf103871.workers.dev';
+export const PUBLISHED_SETTINGS_URL = `${PUBLIC_SITE_ORIGIN}/#/settings`;
 
-// رموز الهدايا: بصمات SHA-256 للرموز بعد التطبيع (src/shared/account/redeem.js)، لا الرموز نفسها.
-// الخادم يقبل بصمات إضافية من السرّ REDEEM_CODE_HASHES (قائمة مفصولة بفواصل) دون نشر جديد.
-export const REDEEM_CODE_HASHES = ['548e90ecbc3856ce0006f82a5a2127625ddcebb85a72827cf9bb0c223b28fc2e'];
+// لا رموز قبول في العميل. الخادم يقرأ بصمات الرموز من السرّ REDEEM_CODE_HASHES فقط.
+export const REDEEM_CODE_HASHES = []; // القبول على الخادم فقط؛ لا مفاتيح عامة داخل الحزمة.
 // مدة التفعيل بالرمز على الحساب (فعليًا دائم).
 export const PROMO_DURATION_MS = 100 * 365 * 86_400_000;
 // قواعد App Store (3.1.1) تمنع فتح المحتوى بمفاتيح داخل التطبيق، فالزر مخفي على iOS؛

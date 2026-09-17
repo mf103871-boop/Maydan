@@ -1,0 +1,49 @@
+{
+  "checkedOn": "2026-09-18",
+  "project": "[جذر المشروع]",
+  "localConfigs": [
+    {
+      "file": "wrangler.jsonc",
+      "environment": "sandbox",
+      "clientTokenType": "test",
+      "monthlyPriceConfigured": true,
+      "yearlyPriceConfigured": true
+    },
+    {
+      "file": "wrangler.rooms.jsonc",
+      "environment": "sandbox",
+      "clientTokenType": "test",
+      "monthlyPriceConfigured": true,
+      "yearlyPriceConfigured": true
+    }
+  ],
+  "publishedSite": "https://maydan-game.mf103871.workers.dev",
+  "publicConfigCheck": {
+    "status": 200,
+    "environment": "sandbox",
+    "clientTokenType": "test",
+    "monthlyPriceConfigured": true,
+    "yearlyPriceConfigured": true
+  },
+  "cloudflareSecretNamesPresent": [
+    "PADDLE_API_KEY",
+    "PADDLE_WEBHOOK_SECRET"
+  ],
+  "secretValuesRead": false,
+  "livePaddleAccountExistence": "owner confirmed successful live dashboard login",
+  "livePaddleAccountApproval": "owner reports verification or website approval incomplete",
+  "deploymentPerformed": true,
+  "deploymentVersion": "d47e6893-7717-4e81-9119-2262852be537",
+  "remoteMigrationsApplied": [
+    "0002",
+    "0003"
+  ],
+  "privateBackupCreated": true,
+  "publishedPages": [
+    "/pricing/",
+    "/refunds/",
+    "/pay.html"
+  ],
+  "paymentEnvironmentChanged": false,
+  "livePurchasePerformed": false
+}

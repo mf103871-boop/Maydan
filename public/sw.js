@@ -33,9 +33,11 @@ const ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE)
-      // Individually, so one missing icon cannot fail the whole install and
-      // leave the game with no offline copy at all.
-      .then((cache) => Promise.all(ASSETS.map((url) => cache.add(url).catch(() => {}))))
+      // Never replace a working offline release unless the new document exists.
+      .then(async (cache) => {
+        await cache.add('./index.html');
+        await Promise.all(ASSETS.slice(1).map((url) => cache.add(url).catch(() => {})));
+      })
       .then(() => self.skipWaiting())
   );
 });
@@ -44,20 +46,17 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
       .then((keys) => {
-        const stale = keys.filter((k) => k !== CACHE && k !== MEDIA_CACHE);
+        const stale = keys.filter((k) => k.startsWith('maydan-platform-') && k !== CACHE);
         return Promise.all(stale.map((k) => caches.delete(k))).then(() => stale.length > 0);
       })
       .then((wasUpgrade) => self.clients.claim().then(() => wasUpgrade))
       .then((wasUpgrade) => {
-        // An upgrade means the open page was served from the previous version's
-        // cache before this worker took over, so it is showing the old release.
-        // The page cannot fix that itself — the code that would is in the new
-        // document it has not received — so the worker reloads it from here.
-        // Only on an upgrade: on a first install nothing on screen is stale.
+        // Never navigate an open game: doing so loses unsaved turns and timers.
+        // The next normal launch uses the new cached document.
         if (!wasUpgrade) return undefined;
         return self.clients.matchAll({ type: 'window' }).then((clients) => {
           for (const client of clients) {
-            if (typeof client.navigate === 'function') client.navigate(client.url).catch(() => {});
+            client.postMessage({ type: 'maydan-update-ready' });
           }
         });
       })
@@ -72,6 +71,14 @@ self.addEventListener('fetch', (event) => {
   // Room endpoints must stay live even when the game and API share a host.
   const pathname = new URL(request.url).pathname;
   if (pathname === '/api' || pathname.startsWith('/api/') || pathname === '/health') return;
+  // Paddle's default payment page must stay live and must never replace the
+  // cached game document. Workers assets may redirect pay.html to /pay.
+  if (pathname === '/pay' || pathname === '/pay/' || pathname === '/pay.html') return;
+  // Public commerce documents must never be served as (or overwrite) the game.
+  // Keep policies and prices live, including their stylesheet and HTML aliases.
+  if (/^\/(?:pricing|refunds)(?:\/|\.html)?$/.test(pathname)
+      || /^\/(?:pricing|refunds)\/index\.html$/.test(pathname)
+      || pathname === '/commerce.css') return;
 
   // Navigations: serve the cached document immediately (a launch from the home
   // screen must not wait on the network, or on there being one), then refresh
@@ -83,11 +90,12 @@ self.addEventListener('fetch', (event) => {
           .then((response) => {
             if (response && response.ok) {
               const copy = response.clone();
-              caches.open(CACHE).then((cache) => cache.put('./index.html', copy));
+              event.waitUntil(caches.open(CACHE).then((cache) => cache.put('./index.html', copy)).catch(() => {}));
             }
             return response;
           })
           .catch(() => cached);
+        event.waitUntil(fresh.then(() => {}));
         return cached || fresh;
       })
     );
@@ -97,10 +105,14 @@ self.addEventListener('fetch', (event) => {
   // الوسائط: من المخزن أولًا فهي لا تتغيّر، وما يُجلب يُخزَّن للمرة القادمة.
   if (MEDIA_PATH.test(new URL(request.url).pathname)) {
     event.respondWith(
-      caches.open(MEDIA_CACHE).then((cache) => cache.match(request).then((hit) => hit || fetch(request).then((response) => {
-        if (response && response.ok) cache.put(request, response.clone());
+      caches.open(MEDIA_CACHE).then(async (cache) => {
+        const hit = await cache.match(request);
+        if (hit && !/text\/html/i.test(hit.headers.get('content-type') || '')) return rangedResponse(request, hit);
+        if (hit) await cache.delete(request); // Repair a fallback cached by an older release.
+        const response = await fetch(request);
+        if (response && response.status === 200 && !/text\/html/i.test(response.headers.get('content-type') || '')) event.waitUntil(cache.put(request, response.clone()).catch(() => {}));
         return response;
-      })))
+      })
     );
     return;
   }
@@ -109,12 +121,35 @@ self.addEventListener('fetch', (event) => {
     caches.match(request).then((cached) => cached || fetch(request).then((response) => {
       if (response && response.ok) {
         const copy = response.clone();
-        caches.open(CACHE).then((cache) => cache.put(request, copy));
+        event.waitUntil(caches.open(CACHE).then((cache) => cache.put(request, copy)).catch(() => {}));
       }
       return response;
     }))
   );
 });
+
+// Safari requests byte ranges for audio/video, including when fully cached offline.
+async function rangedResponse(request, response) {
+  const range = request.headers.get('range');
+  if (!range || response.status !== 200) return response;
+  const match = /^bytes=(\d*)-(\d*)$/.exec(range.trim());
+  if (!match || (!match[1] && !match[2])) return response;
+  const body = await response.blob();
+  const size = body.size;
+  const start = match[1] ? Number(match[1]) : Math.max(0, size - Number(match[2]));
+  const end = match[1] && match[2] ? Math.min(Number(match[2]), size - 1) : size - 1;
+  const headers = new Headers(response.headers);
+  headers.set('Accept-Ranges', 'bytes');
+  headers.delete('Content-Encoding');
+  if (start > end || start >= size) {
+    headers.set('Content-Range', `bytes */${size}`);
+    headers.set('Content-Length', '0');
+    return new Response(null, { status: 416, headers });
+  }
+  headers.set('Content-Range', `bytes ${start}-${end}/${size}`);
+  headers.set('Content-Length', String(end - start + 1));
+  return new Response(body.slice(start, end + 1), { status: 206, headers });
+}
 
 // «نزّل الحزمة» من الصفحة: تُخزَّن الملفات دفعة واحدة مع تقرير تقدّم، فيستطيع
 // اللاعب تجهيز الجولة قبل سفر أو مكان بلا تغطية.
@@ -123,15 +158,33 @@ self.addEventListener('message', (event) => {
   if (data.type !== 'cache-media' || !Array.isArray(data.urls)) return;
   const port = event.ports && event.ports[0];
   const urls = [...new Set(data.urls)];
+  const mediaBase = new URL('./media/', self.location.href);
   const post = (message) => { if (port) port.postMessage(message); };
   event.waitUntil(
     caches.open(MEDIA_CACHE).then(async (cache) => {
       let ok = 0;
       let done = 0;
-      for (const url of urls) {
+      let index = 0;
+      async function download() {
+      while (index < urls.length) {
+        const url = urls[index++];
         try {
-          const hit = await cache.match(url);
-          if (!hit) await cache.add(url);
+          const address = new URL(url, self.location.href);
+          if (address.origin !== mediaBase.origin || !address.pathname.startsWith(mediaBase.pathname)) throw new Error('Not local media');
+          let hit = await cache.match(address.href);
+          if (hit && /text\/html/i.test(hit.headers.get('content-type') || '')) {
+            await cache.delete(address.href);
+            hit = null;
+          }
+          if (!hit) {
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), 20000);
+            try {
+              const response = await fetch(address.href, { signal: controller.signal });
+              if (!response.ok || response.status !== 200 || /text\/html/i.test(response.headers.get('content-type') || '')) throw new Error('Missing media');
+              await cache.put(address.href, response);
+            } finally { clearTimeout(timer); }
+          }
           ok += 1;
         } catch (error) {
           // ملف واحد يسقط لا يوقف البقية
@@ -139,7 +192,9 @@ self.addEventListener('message', (event) => {
         done += 1;
         post({ type: 'progress', done, total: urls.length, ok });
       }
+      }
+      await Promise.all(Array.from({ length: Math.min(4, urls.length) }, download));
       post({ type: 'done', total: urls.length, ok, failed: urls.length - ok });
-    })
+    }).catch(() => post({ type: 'done', total: urls.length, ok: 0, failed: urls.length }))
   );
 });

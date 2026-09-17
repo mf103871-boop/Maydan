@@ -6,13 +6,13 @@ import { TeamsSetup } from '../../shared/setup/TeamsSetup.jsx';
 import { createStorage } from '../../shared/lib/storage.js';
 import { createWakeLock } from '../../shared/lib/wakeLock.js';
 import { flashScreen, stampScreen, vignette, prefersReducedMotion, wait } from '../../shared/fx/index.js';
-import { GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
 import { navigate, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 import { GameFrame } from '../GameFrame.jsx';
 import { MissingGame } from './GameDetails.jsx';
+import { GameLoading, useVisualReadiness } from './Splash.jsx';
 
 // طبقات التأثير المشتركة تُمرَّر للألعاب عبر api.fx (اختصار؛ الاستيراد المباشر من shared/fx هو العقد).
 const FX = { flash: flashScreen, stamp: stampScreen, vignette, reduced: prefersReducedMotion, wait };
@@ -21,6 +21,7 @@ export function Play({ id }) {
   const game = getGame(id);
   const platform = usePlatform();
   const account = useAccount();
+  const { ready, progress } = useVisualReadiness();
   const [stage, setStage] = useState(game && game.setup === 'self' ? 'play' : 'setup');
   const [players, setPlayers] = useState([]);
   const [teams, setTeams] = useState([]);
@@ -32,14 +33,14 @@ export function Play({ id }) {
   const [setupValid, setSetupValid] = useState(true);
   const [exitMessage, setExitMessage] = useState(null);
   const [beforeExit, setBeforeExit] = useState(null);
-  // ستار بلون اللعبة عند البدء/الإعادة/الاستئناف/العودة للإعداد: زينة فقط، الحالة تتبدّل فورًا ولا يُصيَّر تحت تقليل الحركة.
+  // وهج أطراف عند البدء/الإعادة: لا يغطي اللعب ولا يُصيَّر تحت تقليل الحركة.
   const [curtain, setCurtain] = useState(0);
   const curtainTimer = useRef(0);
   const raiseCurtain = useCallback(() => {
     if (prefersReducedMotion()) return;
     setCurtain((c) => c + 1);
     clearTimeout(curtainTimer.current);
-    curtainTimer.current = setTimeout(() => setCurtain(0), wait(480));
+    curtainTimer.current = setTimeout(() => setCurtain(0), wait(240));
   }, []);
   useEffect(() => () => clearTimeout(curtainTimer.current), []);
 
@@ -92,8 +93,8 @@ export function Play({ id }) {
   const Component = game.Component;
 
   return (
-    <GameFrame game={game} inGame={inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
-      {stage === 'setup' ? (
+    <GameFrame game={game} inGame={ready && inGame} exitMessage={exitMessage || game.exitMessage} beforeExit={beforeExit}>
+      {!ready ? <GameLoading game={game} progress={progress} /> : stage === 'setup' ? (
         <Screen dir={getDirection()} className="stack" style={{ '--game-accent': game.accent }} aria-label={`إعداد ${game.name}`}>
           <TopBar title="من يلعب؟" eyebrow={game.name} />
           {game.players.mode === 'both' && (
@@ -112,7 +113,7 @@ export function Play({ id }) {
       ) : (
         <Component key={session} api={api} players={players} teams={teams} mode={mode} savedSession={savedSession} gameOptions={gameOptions} onExit={api.requestExit} />
       )}
-      {curtain > 0 && <div key={`curtain-${curtain}`} className="game-curtain" aria-hidden="true"><ClayStage><GameArtwork game={game.id} /></ClayStage></div>}
+      {curtain > 0 && <div key={`curtain-${curtain}`} className="game-curtain" aria-hidden="true" />}
     </GameFrame>
   );
 }

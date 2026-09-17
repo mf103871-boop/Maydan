@@ -1,0 +1,1 @@
+PASS: actual local Live billing config, monthly only, checkout disabled; phone paywall renders mock $5.00; anonymous identity empty; no auth, customer, checkout or external requests; /pay and app _ptxn gates stop SDK initialization. PricePreview output was mocked; no remote provider verification is claimed.

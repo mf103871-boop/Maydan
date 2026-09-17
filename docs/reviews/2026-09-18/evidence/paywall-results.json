@@ -1,0 +1,181 @@
+{
+  "results": [
+    {
+      "name": "anon locked 68/78",
+      "ok": true,
+      "extra": "{\"locked\":68,\"total\":78}"
+    },
+    {
+      "name": "anon paywall opens reason=pack",
+      "ok": true,
+      "extra": "pack"
+    },
+    {
+      "name": "paywall online (no offline notice)",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "paywall shows sign-in block (providers unconfigured in dev → note only)",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "anonymous redemption requires sign-in",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "anonymous redemption rejected by server",
+      "ok": true,
+      "extra": "401"
+    },
+    {
+      "name": "back returns to plans and focuses the redeem trigger",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "reopened paywall starts on plans",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "legacy local promo cannot unlock packs",
+      "ok": true,
+      "extra": "{\"locked\":68,\"total\":78}"
+    },
+    {
+      "name": "legacy raw gift code removed from storage",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "dev sign-in 200",
+      "ok": true,
+      "extra": "200"
+    },
+    {
+      "name": "settings shows user name",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "signed-in free still locked 68",
+      "ok": true,
+      "extra": "{\"locked\":68,\"total\":78}"
+    },
+    {
+      "name": "dev grant 200 premium",
+      "ok": true,
+      "extra": "{\"active\":true,\"until\":1792273182647,\"source\":\"paddle\",\"status\":\"active\",\"willRenew\":true}"
+    },
+    {
+      "name": "premium locked 0",
+      "ok": true,
+      "extra": "{\"locked\":0,\"total\":78}"
+    },
+    {
+      "name": "settings shows plus active",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "premium: no plus note on beep details",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "free user: one free match note",
+      "ok": true,
+      "extra": "مباراة واحدة مجانية، ثم ميدان بلس"
+    },
+    {
+      "name": "first play goes to setup (no paywall)",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "POST /api/trials/beep 200",
+      "ok": true,
+      "extra": "{\"beep\":true}"
+    },
+    {
+      "name": "after trial: locked note",
+      "ok": true,
+      "extra": "لعبت مباراتك المجانية — اشترك للمتابعة"
+    },
+    {
+      "name": "second play opens paywall reason=trial",
+      "ok": true,
+      "extra": "{\"open\":true,\"reason\":\"trial\"}"
+    },
+    {
+      "name": "home badges present",
+      "ok": true,
+      "extra": "[\"١٠ فئات مجانية\",\"بلس\",\"مباراة مجانية\",\"مباراة مجانية\",\"مباراة مجانية\",\"مباراة مجانية\"]"
+    },
+    {
+      "name": "room create after trial → 402 PLUS_REQUIRED",
+      "ok": true,
+      "extra": "{\"status\":402,\"body\":{\"error\":\"PLUS_REQUIRED\"}}"
+    },
+    {
+      "name": "premium room create → 201",
+      "ok": true,
+      "extra": "201"
+    },
+    {
+      "name": "anon room create allowed",
+      "ok": true,
+      "extra": "201"
+    },
+    {
+      "name": "sign-out button present",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "sign-out clears session",
+      "ok": true,
+      "extra": "null"
+    },
+    {
+      "name": "revoked token → 401",
+      "ok": true,
+      "extra": "401"
+    },
+    {
+      "name": "legacy device promo never creates a server grant after sign-in",
+      "ok": true,
+      "extra": "{\"active\":false,\"until\":0,\"source\":null,\"status\":null,\"willRenew\":false}"
+    },
+    {
+      "name": "legacy raw code erased after sign-in",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "unknown code rejected by server too",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "server-only code redeemed from the UI → premium",
+      "ok": true,
+      "extra": "{\"active\":true,\"until\":4943281210404,\"source\":\"promo\",\"status\":\"active\",\"willRenew\":false}"
+    },
+    {
+      "name": "server-only code leaves no device promo",
+      "ok": true,
+      "extra": ""
+    },
+    {
+      "name": "server-only code unlocks packs",
+      "ok": true,
+      "extra": "{\"locked\":0,\"total\":78}"
+    }
+  ],
+  "errors": [],
+  "failed": 0
+}

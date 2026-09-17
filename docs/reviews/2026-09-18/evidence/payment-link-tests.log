@@ -1,0 +1,17 @@
+✔ production payment link initializes Paddle with its existing transaction (616.0764ms)
+✔ sandbox payment link initializes Paddle with its existing transaction (225.2179ms)
+✔ missing or invalid transaction (none) does not initialize checkout (182.4548ms)
+✔ missing or invalid transaction (?_ptxn=invalid) does not initialize checkout (199.6467ms)
+✔ unconfigured leaves an actionable retry without starting a new purchase (191.7382ms)
+✔ wrong environment token leaves an actionable retry without starting a new purchase (188.5191ms)
+✔ CDN failure leaves an actionable retry without starting a new purchase (219.0857ms)
+✔ native shell never loads the web payment provider (183.5846ms)
+✔ payment-page navigation bypasses the game cache and cannot replace its offline shell (5.4885ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2486.7251

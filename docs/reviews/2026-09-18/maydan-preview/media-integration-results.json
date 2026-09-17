@@ -1,0 +1,100 @@
+{
+  "executedAt": "2026-09-17T20:57:55.889Z",
+  "mockAccountOnly": true,
+  "realBankAndAssets": true,
+  "inMemorySelection": "600-point silhouette candidates restricted to production shadow-effect questions",
+  "injectedAudioFailures": 1,
+  "results": [
+    {
+      "name": "startup waits for actual decode and does not mount a hidden game",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "real service worker controls the local test app",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "isolated mock Plus unlocks paid media packs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "round loader tracks actual media and keeps the board unmounted",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "image question displays a real loading state while its response is held",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shadow is visible dimmed imagery instead of a black rectangle",
+      "ok": true,
+      "detail": "{\"width\":640,\"height\":479,\"filter\":\"grayscale(1) contrast(1.315) brightness(0.73)\",\"assisted\":true}"
+    },
+    {
+      "name": "600-point image includes answer-shape assistance",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1000-point text includes light assistance",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "200-point text retains original presentation",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "unavailable audio shows a retry action",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "retried audio retains global mute and volume on its replacement element",
+      "ok": true,
+      "detail": "{\"muted\":true,\"volume\":0.35,\"paused\":true,\"duration\":3}"
+    },
+    {
+      "name": "muted question playback button is disabled",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "unmuting does not autoplay the question",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "real MP3 plays after retry with the saved volume",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "simulated background visibility pauses question audio after retry",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cached audio serves byte ranges completely offline",
+      "ok": true,
+      "detail": "{\"status\":206,\"bytes\":32,\"range\":\"bytes 0-31/12451\"}"
+    },
+    {
+      "name": "saved media question resumes and plays after a fully offline reload",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no JavaScript runtime errors",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "errors": []
+}

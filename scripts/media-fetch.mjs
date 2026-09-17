@@ -1,6 +1,6 @@
 // جلب وسائط مفتوحة الرخصة لأسئلة الحزم: يبحث في ويكيميديا كومنز وOpenverse وناسا
 // وأرشيف الإنترنت، ولا يقبل إلا CC0 والملك العام وCC BY وCC BY-SA (لا NC ولا ND ولا
-// مجهول الرخصة). ثم يضغط الصورة إلى webp بأطول ضلع 640 بكسل، أو يقصّ أول 8 ثوانٍ من
+// مجهول الرخصة). ثم يحفظ الصورة WebP حتى 1280 بكسل بلا تكبير مصطنع، أو يقصّ أول 8 ثوانٍ من
 // الصوت إلى mp3 أحادي مضبوط الصوت، ويسجّل النسبة في media/<الفئة>/_sources.json ويطبع
 // مقطع "media" الجاهز للصق في السؤال.
 //
@@ -12,7 +12,7 @@
 //     --from <url|File:Name>  تجاوز البحث واجلب هذا العنصر بعينه: صفحة ملف في كومنز، أو عنصر Openverse/ناسا/أرشيف
 //     --source <commons|openverse|nasa|archive|all>  المصدر (الافتراضي all، وتُجرَّب بهذا الترتيب)
 //     --suffix <n>      لأسئلة الصور المتعددة: الملف يصير <qid>-<n>.webp
-//     --max-kb <n>      ميزانية الحجم (الافتراضي: صورة 30، صوت 50)
+//     --max-kb <n>      ميزانية الحجم (الافتراضي من mediaBudget في bank-status.json)
 //     --force           اكتب فوق الملف إن كان موجودًا
 //     --json            اطبع السجل (ما يُكتب في _sources.json) بصيغة JSON على stdout
 //   أكواد الخروج: 0 نجاح؛ 1 لا مرشح مقبول / فشل التنزيل / تجاوز الميزانية؛ 2 خطأ استعمال أو أدوات.
@@ -43,7 +43,8 @@ const run = promisify(execFile);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const USER_AGENT = 'MaydanPlatform/1.0 (https://github.com/mf103871-boop/maydan; media fetch script)';
 const TIMEOUT_MS = 30_000;
-const DEFAULT_KB = { image: 30, audio: 50 };
+const MEDIA_BUDGET = JSON.parse(fsSync.readFileSync(path.join(ROOT, 'src/data/bank-status.json'), 'utf8')).mediaBudget;
+const DEFAULT_KB = { image: MEDIA_BUDGET.imageKB, audio: MEDIA_BUDGET.audioKB };
 const SOURCES = { image: ['commons', 'openverse', 'nasa'], audio: ['commons', 'openverse', 'archive'] };
 const ALLOWED_HOSTS = new Set([
   'commons.wikimedia.org', 'upload.wikimedia.org', 'api.openverse.org', 'live.staticflickr.com',
@@ -54,8 +55,8 @@ const IMAGE_MIMES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif
 // للصوت نحتاج أول 8 ثوانٍ فقط، فلا داعي لتنزيل مقطوعة كاملة.
 const AUDIO_DOWNLOAD_CAP = 6 * 1024 * 1024;
 const IMAGE_DOWNLOAD_CAP = 25 * 1024 * 1024;
-const IMAGE_ATTEMPTS = [[640, 75], [640, 65], [640, 55], [640, 45], [512, 60], [400, 60]];
-const AUDIO_ATTEMPTS = [[8, '48k'], [8, '40k'], [6, '40k']];
+const IMAGE_ATTEMPTS = [[1280, 84], [1280, 78], [1280, 72], [960, 80], [960, 72], [640, 80]];
+const AUDIO_ATTEMPTS = [[8, '128k'], [8, '96k'], [8, '80k']];
 const MAX_CANDIDATE_TRIES = 3;
 const SAFE_NAME = /^[A-Za-z0-9_][A-Za-z0-9._-]*$/;
 const UNKNOWN_AUTHOR = 'مؤلف غير معروف';
@@ -285,16 +286,18 @@ export function normalizeLicense(...parts) {
   if (!s) return null;
   const has = (re) => re.test(s);
   if (has(/(^|-)(nc|nd)(-|$)/) || has(/non-?commercial|no-?deriv/)) return null;
-  if (has(/cc0|publicdomain-zero|(^|-)zero-1\.0/)) return { license: 'CC0 1.0', licenseUrl: `${CC}publicdomain/zero/1.0/` };
-  if (has(/public-?domain|(^|-)pdm?(-|$)/)) return { license: 'Public Domain', licenseUrl: `${CC}publicdomain/mark/1.0/` };
   // الاسم الطويل الرسمي ("Attribution-ShareAlike 4.0 International") لا يذكر CC،
   // لكنه رخصة كرييتف كومنز. يُقبل فقط بصيغته الكاملة برقم إصدار، فلا تُخلط مع
   // قوالب "Attribution" المجردة (رخصة حرة أخرى ليست ضمن الأربع المسموحة).
   const isCc = has(/(^|-)cc(-|$)|creativecommons/) || has(/(^|-)attribution(-sharealike)?-[1-4]\.[05](-|$)/);
-  const version = (s.match(/(^|-)([1-4]\.[05])(-|$)/) || [])[2];
+  // A photographed public-domain object can still have a CC-licensed photograph.
+  // Prefer attribution obligations, and bind the version to that license, not PDM 1.0.
+  const version = (s.match(/(?:by-sa|by|attribution-sharealike|attribution)-([1-4]\.[05])(?:-|$)/) || [])[1];
   const suffix = version ? `${version}/` : '';
   if (isCc && has(/(^|-)by-sa(-|$)|sharealike/)) return { license: version ? `CC BY-SA ${version}` : 'CC BY-SA', licenseUrl: `${CC}licenses/by-sa/${suffix}` };
   if (isCc && has(/(^|-)by(-|$)|(^|-)attribution(-|$)/)) return { license: version ? `CC BY ${version}` : 'CC BY', licenseUrl: `${CC}licenses/by/${suffix}` };
+  if (has(/cc0|publicdomain-zero|(^|-)zero-1\.0/)) return { license: 'CC0 1.0', licenseUrl: `${CC}publicdomain/zero/1.0/` };
+  if (has(/public-?domain|(^|-)pdm?(-|$)/)) return { license: 'Public Domain', licenseUrl: `${CC}publicdomain/mark/1.0/` };
   return null;
 }
 
@@ -336,7 +339,7 @@ const COMMONS_API = 'https://commons.wikimedia.org/w/api.php';
 function commonsUrl(extra) {
   return `${COMMONS_API}?${new URLSearchParams({
     action: 'query', format: 'json', formatversion: '2', prop: 'imageinfo',
-    iiprop: 'url|size|mime|extmetadata', iiurlwidth: '800',
+    iiprop: 'url|size|mime|extmetadata', iiurlwidth: '1280',
     iiextmetadatafilter: 'LicenseShortName|License|LicenseUrl|Artist|ImageDescription|ObjectName|Credit',
     ...extra,
   })}`;

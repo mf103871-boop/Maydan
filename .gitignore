@@ -28,3 +28,8 @@ src/data/categories/demo[a-f].json
 .dev.vars
 .env
 .env.*
+!.env.example
+.dev.vars.*
+
+# Reviewed, redacted verification logs belong with the release review.
+!docs/reviews/**/evidence/*.log

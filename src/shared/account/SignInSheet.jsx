@@ -4,6 +4,7 @@ import React from 'react';
 import { Sheet, Button } from '../ui/components.jsx';
 import { useAccount } from './context.js';
 import { accountErrorText } from './errors.js';
+import { PUBLISHED_SETTINGS_URL } from './config.js';
 
 export const SIGN_IN_NOTE = 'الاشتراك يُربط بحسابك ليعمل على كل أجهزتك';
 
@@ -31,7 +32,7 @@ export function SignInButtons({ onDone }) {
   const account = useAccount();
   const providers = (account.billing && account.billing.providers) || null;
   const busy = account.busy === 'signin';
-  const run = async (provider) => { await account.signIn(provider); if (onDone) onDone(); };
+  const run = async (provider) => { const result = await account.signIn(provider); if (result && onDone) onDone(); };
   if (account.offline) return <p className="online-notice" role="status">{accountErrorText('OFFLINE')}</p>;
   return (
     <div className="account-providers">
@@ -47,12 +48,16 @@ export function SignInButtons({ onDone }) {
 }
 
 export function SignInSheet({ open, onClose, title = 'تسجيل الدخول', note = SIGN_IN_NOTE }) {
+  const account = useAccount();
   if (!open) return null;
   return (
     <Sheet open={open} onClose={onClose} title={title}>
       <div className="account-signin">
         <p className="card-muted">{note}</p>
         <SignInButtons onDone={onClose} />
+        {account.error === 'PREVIEW_ONLY' && (
+          <a className="btn btn-secondary btn-full" href={PUBLISHED_SETTINGS_URL} target="_blank" rel="noopener noreferrer">فتح الموقع المنشور لتسجيل الدخول ↗</a>
+        )}
         <p className="account-fineprint">لا نطلب كلمة مرور. يكفي حساب Apple أو Google لتتبع اشتراكك.</p>
       </div>
     </Sheet>

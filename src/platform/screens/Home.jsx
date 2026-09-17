@@ -4,6 +4,7 @@ import { Screen, IconButton, ripple } from '../../shared/ui/components.jsx';
 import { IconSettings, IconUsers, IconClock, IconInfo } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
+import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
 import { Avatar, BrandMark, Wordmark, GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
@@ -132,6 +133,10 @@ export function Home() {
         </div>
       </div>
       <p className="home-footer">ألعاب الجهاز الواحد تعمل دون إنترنت · الغرف تحتاج اتصالًا <span>الإصدار {version}</span></p>
+      <nav className="muted center legal-links" aria-label="الأسعار والسياسات" style={{ fontSize: 13 }}>
+        {account.platform !== 'ios' && <><a href="/pricing/">التسعير</a> · </>}
+        <a href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : '/refunds/'}>سياسة الاسترداد</a> · <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+      </nav>
     </Screen>
   );
 }

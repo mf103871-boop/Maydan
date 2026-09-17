@@ -24,11 +24,13 @@ try { ({ chromium } = require('playwright')); } catch { console.error('يلزم 
 const OUT = process.argv[2] || path.join(os.tmpdir(), 'maydan-e2e', 'paywall'); fs.mkdirSync(OUT, { recursive: true });
 const API = ''; // نداءات الصفحة نسبية: GET بلا Origin كما يفعل المتصفح فعلًا
 const SECRET_CODE = 'EXTRACODE'; // رمز يعرفه الخادم وحده (السرّ REDEEM_CODE_HASHES)، ليس في حزمة الويب
-const app = await startLocalServer({ port: API_PORT, origins: `http://localhost:${WEB_PORT}`, vars: { AUTH_DEV_FAKE: '1', SESSION_SECRET: 'e2e-secret', REDEEM_CODE_HASHES: createHash('sha256').update(SECRET_CODE).digest('hex') } });
+let app; let web; let browser;
+try {
+app = await startLocalServer({ port: API_PORT, origins: `http://localhost:${WEB_PORT}`, vars: { AUTH_DEV_FAKE: '1', SESSION_SECRET: 'e2e-secret', REDEEM_CODE_HASHES: createHash('sha256').update(SECRET_CODE).digest('hex') } });
 const pkg = await readPkg(); const media = await mediaVersions();
 const result = await esbuildBuild(esbuildOptions({ minify: false, version: pkg.version, media }));
 const html = await renderHtml(result.outputFiles[0].text, { version: pkg.version });
-const web = http.createServer((req, res) => {
+web = http.createServer((req, res) => {
   const { pathname } = new URL(req.url, 'http://localhost');
   if (pathname === '/health' || pathname === '/api' || pathname.startsWith('/api/')) {
     // تمرير شفاف يحفظ ترويسات المتصفح (Origin إن وُجد، Sec-Fetch-Site، Referer، Authorization).
@@ -39,7 +41,7 @@ const web = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' }); res.end(html);
 });
 await new Promise((r) => web.listen(WEB_PORT, r));
-const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, locale: 'ar', isMobile: true, hasTouch: true });
 const page = await ctx.newPage();
 const errors = []; page.on('pageerror', (e) => errors.push(e.message));
@@ -72,11 +74,12 @@ check('anon paywall opens reason=pack', pw.open && pw.reason === 'pack', pw.reas
 check('paywall online (no offline notice)', !/دون اتصال/.test(pw.text));
 check('paywall shows sign-in block (providers unconfigured in dev → note only)', await page.evaluate(() => !!document.querySelector('.paywall-auth .paywall-note')));
 
-// رمز الهدية من الجدار (أرقام عربية لاختبار التطبيع): يفتح كل شيء على الجهاز فورًا، ثم نزيله لنكمل الرحلة.
+// التفعيل للمسجل فقط؛ رمز الخادم لا يفتح شيئًا للمجهول.
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
-await page.fill('.paywall input[aria-label="رمز الهدية"]', '٠٠٠٠');
-await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(400);
-check('wrong code shows error and keeps lock', await page.evaluate(() => !!document.querySelector('.paywall .online-notice.error') && localStorage.getItem('maydan:account:promo') === null && !!document.querySelector('.paywall form')));
+await page.fill('.paywall input[aria-label="رمز الهدية"]', SECRET_CODE);
+check('anonymous redemption requires sign-in', await page.evaluate(() => /سجّل الدخول أولًا/.test(document.querySelector('.account-redeem').textContent) && [...document.querySelectorAll('.account-redeem button')].find((b) => b.textContent.includes('تفعيل')).disabled));
+const anonRedeem = await apiCall('/api/redeem', { code: SECRET_CODE });
+check('anonymous redemption rejected by server', anonRedeem.status === 401, String(anonRedeem.status));
 // «رجوع» يعيد الخطط ويعيد التركيز إلى زر الرمز؛ وإغلاق الجدار ثم فتحه يبدأ بالخطط لا بالنموذج.
 await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('رجوع')).click()); await page.waitForTimeout(300); // زر النموذج لا زر رجوع اللعبة
 check('back returns to plans and focuses the redeem trigger', await page.evaluate(() => !document.querySelector('.paywall form') && !!document.querySelector('.paywall-plans') && document.activeElement && document.activeElement.classList.contains('paywall-redeem')));
@@ -85,12 +88,11 @@ await page.keyboard.press('Escape'); await page.waitForTimeout(600);
 await page.evaluate(() => document.querySelector('.m-category-pick.is-locked .m-category-main').click()); await page.waitForTimeout(600);
 check('reopened paywall starts on plans', await page.evaluate(() => !!document.querySelector('.paywall .paywall-plans') && !document.querySelector('.paywall form')));
 await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
-await page.fill('.paywall input[aria-label="رمز الهدية"]', '١١٢١٩٩٨');
-await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(900); await shot('01b-redeemed');
-check('paywall closes after redeem', await page.evaluate(() => !document.querySelector('.paywall')));
-c = await lockedCounts(); check('redeem code unlocks all packs', c.locked === 0, JSON.stringify(c));
-await page.evaluate(() => localStorage.removeItem('maydan:account:promo')); await reload();
-c = await lockedCounts(); check('promo removed → locked again', c.locked === 68, JSON.stringify(c));
+await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+await page.evaluate(() => localStorage.setItem('maydan:account:promo', JSON.stringify({ code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() })));
+await reload();
+c = await lockedCounts(); check('legacy local promo cannot unlock packs', c.locked === 68, JSON.stringify(c));
+check('legacy raw gift code removed from storage', await page.evaluate(() => localStorage.getItem('maydan:account:promo') === null));
 
 // ٢) دخول وهمي عبر الخادم ثم حقن الجلسة.
 const signin = await apiCall('/api/auth/dev', { subject: 'e2e-user', name: 'مختبر', client: 'web' });
@@ -147,19 +149,14 @@ check('sign-out clears session', tokenAfter === null, String(tokenAfter));
 const me401 = await page.evaluate(async ({ API, token2 }) => (await fetch(`${API}/api/me`, { headers: { authorization: `Bearer ${token2}` } })).status, { API, token2 });
 check('revoked token → 401', me401 === 401, String(me401));
 
-// ٧) رمز مفعَّل على الجهاز ثم دخول: يُربط بالحساب عند الإقلاع (refresh) فيصبح /api/me مشتركًا برمز.
-c = await lockedCounts(); await page.evaluate(() => document.querySelector('.m-category-pick.is-locked .m-category-main').click()); await page.waitForTimeout(500);
-await page.evaluate(() => document.querySelector('.paywall-redeem').click()); await page.waitForTimeout(300);
-await page.fill('.paywall input[aria-label="رمز الهدية"]', '1121998');
-await page.evaluate(() => [...document.querySelectorAll('.paywall .account-redeem button')].find((b) => b.textContent.includes('تفعيل')).click()); await page.waitForTimeout(700);
+// ٧) الدخول لا يحول رمز جهاز قديم إلى منحة على الخادم.
+await page.evaluate(() => localStorage.setItem('maydan:account:promo', JSON.stringify({ code: 'legacy-public-code', hash: 'legacy-hash', redeemedAt: Date.now() })));
 const s3 = await apiCall('/api/auth/dev', { subject: 'e2e-sync', name: 'مزامن', client: 'web' }); const token3 = s3.body?.session?.token;
 await page.evaluate((t) => localStorage.setItem('maydan:account:session', JSON.stringify(t)), token3);
-await reload(); await page.waitForTimeout(800);
-const meSync = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: `Bearer ${JSON.parse(localStorage.getItem('maydan:account:session'))}` } })).json());
-check('device promo synced to account at boot → server source promo', meSync.premium && meSync.premium.active && meSync.premium.source === 'promo', JSON.stringify(meSync.premium));
-check('promo marked synced for this user', await page.evaluate((id) => (JSON.parse(localStorage.getItem('maydan:account:promo') || '{}').syncedFor) === id, meSync.user.id));
-await go('#/settings'); await page.waitForTimeout(500); await shot('07-settings-promo');
-check('settings line says gift code, no manage button', await page.evaluate(() => /برمز هدية/.test(document.body.textContent) && ![...document.querySelectorAll('button')].some((b) => b.textContent.includes('إدارة الاشتراك'))));
+await reload(); await page.waitForTimeout(400);
+const meSync = await page.evaluate(async () => (await fetch('/api/me', { headers: { authorization: 'Bearer ' + JSON.parse(localStorage.getItem('maydan:account:session')) } })).json());
+check('legacy device promo never creates a server grant after sign-in', !meSync.premium.active && meSync.premium.source === null, JSON.stringify(meSync.premium));
+check('legacy raw code erased after sign-in', await page.evaluate(() => localStorage.getItem('maydan:account:promo') === null));
 
 // ٨) رمز يعرفه الخادم وحده: ليس في الحزمة، ومع جلسة يُقبل عبر الواجهة نفسها.
 await page.evaluate(() => { localStorage.removeItem('maydan:account:promo'); localStorage.removeItem('maydan:account:me'); });
@@ -177,6 +174,12 @@ check('server-only code redeemed from the UI → premium', meSecret.premium && m
 check('server-only code leaves no device promo', await page.evaluate(() => localStorage.getItem('maydan:account:promo') === null));
 c = await lockedCounts(); check('server-only code unlocks packs', c.locked === 0, JSON.stringify(c));
 
-await browser.close(); web.close(); await app.close();
+
 if (errors.length) { console.log('أخطاء الصفحة:'); for (const e of errors) console.log(' -', e.slice(0, 300)); }
-const failed = results.filter((r) => !r.ok).length + errors.length; console.log(`${results.length - failed}/${results.length} passed`); process.exit(failed ? 1 : 0);
+const failed = results.filter((r) => !r.ok).length + errors.length; console.log(`${results.length - failed}/${results.length} passed`); fs.writeFileSync(path.join(OUT, 'results.json'), JSON.stringify({ results, errors, failed }, null, 2));
+process.exitCode = failed ? 1 : 0;
+} finally {
+  if (browser) await browser.close();
+  if (web) await new Promise((resolve) => web.close(resolve));
+  if (app) await app.close();
+}

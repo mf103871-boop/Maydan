@@ -1,6 +1,8 @@
 // طبقة D1 رقيقة: كل استعلامات الحسابات في مكان واحد، بلا SQL مبعثر في المسارات.
 // تستعمل فقط prepare().bind().first()/all()/run() كي يعمل غلاف node:sqlite المحلي بالواجهة نفسها.
 import { TRIAL_GAMES } from '../../src/shared/account/config.js';
+import { failure } from './errors.mjs';
+import { paddleEnvironmentOf } from './billing-environment.mjs';
 
 function statement(env, sql, args) {
   const prepared = env.DB.prepare(sql);
@@ -85,33 +87,65 @@ export const subscriptionByExternal = (env, source, externalId) =>
 // التحديث رتيب: إشعار قديم يصل متأخرًا لا يُرجع الحالة إلى الوراء (occurred_at).
 export async function upsertSubscription(env, row) {
   const now = Date.now();
+  const environment = row.source === 'paddle' ? row.environment || paddleEnvironmentOf(env) : row.environment || null;
+  if (row.source === 'paddle') {
+    const existing = await subscriptionByExternal(env, row.source, row.external_id);
+    if (existing?.environment && existing.environment !== environment) failure('NOT_ELIGIBLE');
+  }
   await run(env, `INSERT INTO subscriptions (source, external_id, user_id, product, status, until, will_renew, environment, occurred_at, updated_at)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT (source, external_id) DO UPDATE SET
       user_id = excluded.user_id, product = excluded.product, status = excluded.status, until = excluded.until,
       will_renew = excluded.will_renew, environment = excluded.environment, occurred_at = excluded.occurred_at, updated_at = excluded.updated_at
-    WHERE excluded.occurred_at >= subscriptions.occurred_at`.replace(/\s+/g, ' '),
+    WHERE excluded.occurred_at >= subscriptions.occurred_at AND excluded.user_id = subscriptions.user_id
+      AND (subscriptions.source != 'paddle' OR subscriptions.environment IS NULL OR subscriptions.environment = excluded.environment)`.replace(/\s+/g, ' '),
   row.source, row.external_id, row.user_id, row.product || null, row.status || null,
-  Number(row.until) || 0, row.will_renew ? 1 : 0, row.environment || null, Number(row.occurred_at) || now, now);
+  Number(row.until) || 0, row.will_renew ? 1 : 0, environment, Number(row.occurred_at) || now, now);
   return subscriptionByExternal(env, row.source, row.external_id);
 }
 
 // ── أحداث الـwebhook (منع التكرار) ──────────────────────────────────────────
+export const webhookEvent = (env, id) => first(env, 'SELECT id FROM webhook_events WHERE id = ?', id);
 export async function markWebhookEvent(env, id, now = Date.now()) {
   const result = await run(env, 'INSERT OR IGNORE INTO webhook_events (id, received_at) VALUES (?, ?)', id, now);
   return (result?.meta?.changes ?? result?.meta?.rows_written ?? 0) > 0; // true = حدث جديد
 }
 
 // ── عملاء Paddle ────────────────────────────────────────────────────────────
-export const paddleCustomerOf = (env, userId) => first(env, 'SELECT customer_id FROM paddle_customers WHERE user_id = ?', userId);
-export const paddleUserOf = (env, customerId) => first(env, 'SELECT user_id FROM paddle_customers WHERE customer_id = ?', customerId);
-export const setPaddleCustomer = (env, userId, customerId, now = Date.now()) =>
-  run(env, 'INSERT OR REPLACE INTO paddle_customers (user_id, customer_id, created_at) VALUES (?, ?, ?)', userId, customerId, now);
+export const legacyPaddleCustomerOf = (env, userId) => first(env, 'SELECT customer_id FROM paddle_customers WHERE user_id = ?', userId);
+export const paddleCustomerOf = (env, userId) => first(env, 'SELECT customer_id FROM paddle_customers_scoped WHERE environment = ? AND user_id = ?', paddleEnvironmentOf(env), userId);
+export const paddleUserOf = (env, customerId) => first(env, 'SELECT user_id FROM paddle_customers_scoped WHERE environment = ? AND customer_id = ?', paddleEnvironmentOf(env), customerId);
+export async function setPaddleCustomer(env, userId, customerId, now = Date.now()) {
+  const owner = await paddleUserOf(env, customerId);
+  if (owner && owner.user_id !== userId) failure('ALREADY_LINKED');
+  const legacyOwner = await first(env, 'SELECT user_id FROM paddle_customers WHERE customer_id = ?', customerId);
+  if (legacyOwner && legacyOwner.user_id !== userId) failure('ALREADY_LINKED');
+  return run(env, 'INSERT INTO paddle_customers_scoped (environment, user_id, customer_id, created_at) VALUES (?, ?, ?, ?) ON CONFLICT(environment, user_id) DO UPDATE SET customer_id = excluded.customer_id', paddleEnvironmentOf(env), userId, customerId, now);
+}
+
+// A cross-worker reservation, not an expiring in-memory lock.
+export const paddleCheckoutOf = (env, userId) => first(env, 'SELECT * FROM paddle_checkouts WHERE environment = ? AND user_id = ?', paddleEnvironmentOf(env), userId);
+const changed = (result) => (result?.meta?.changes ?? result?.meta?.rows_written ?? 0) > 0;
+export async function reservePaddleCheckout(env, userId, plan, priceId, attemptId, now = Date.now()) {
+  return changed(await run(env, 'INSERT OR IGNORE INTO paddle_checkouts (environment, user_id, attempt_id, plan, price_id, state, created_at, updated_at) SELECT ?, ?, ?, ?, ?, ?, ?, ? WHERE EXISTS (SELECT 1 FROM users WHERE id = ?) AND NOT EXISTS (SELECT 1 FROM account_deletions WHERE user_id = ?)', paddleEnvironmentOf(env), userId, attemptId, plan, priceId, 'creating', now, now, userId, userId));
+}
+export async function recordPaddleTransaction(env, userId, attemptId, transactionId, now = Date.now()) {
+  return changed(await run(env, "UPDATE paddle_checkouts SET transaction_id = ?, state = 'ready', updated_at = ? WHERE environment = ? AND user_id = ? AND attempt_id = ? AND (transaction_id IS NULL OR transaction_id = ?)", transactionId, now, paddleEnvironmentOf(env), userId, attemptId, transactionId));
+}
+export const markPaddleCheckoutUnknown = (env, userId, attemptId) => run(env, "UPDATE paddle_checkouts SET state = 'unknown', updated_at = ? WHERE environment = ? AND user_id = ? AND attempt_id = ? AND transaction_id IS NULL", Date.now(), paddleEnvironmentOf(env), userId, attemptId);
+export async function releasePaddleCheckout(env, userId, attemptId) {
+  return changed(await run(env, 'DELETE FROM paddle_checkouts WHERE environment = ? AND user_id = ? AND attempt_id = ?', paddleEnvironmentOf(env), userId, attemptId));
+}
+export async function reserveAccountDeletion(env, userId, attemptId) {
+  return changed(await run(env, 'INSERT OR IGNORE INTO account_deletions (user_id, attempt_id, created_at) SELECT ?, ?, ? WHERE EXISTS (SELECT 1 FROM users WHERE id = ?)', userId, attemptId, Date.now(), userId));
+}
+export const releaseAccountDeletion = (env, userId, attemptId) => run(env, 'DELETE FROM account_deletions WHERE user_id = ? AND attempt_id = ?', userId, attemptId);
 
 // ── الحذف المتسلسل ──────────────────────────────────────────────────────────
 export async function deleteUser(env, userId) {
-  for (const table of ['sessions', 'auth_codes', 'trials', 'subscriptions', 'paddle_customers', 'identities']) {
-    await run(env, `DELETE FROM ${table} WHERE user_id = ?`, userId);
-  }
-  await run(env, 'DELETE FROM users WHERE id = ?', userId);
+  const statements = ['sessions', 'auth_codes', 'trials', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities']
+    .map((table) => statement(env, `DELETE FROM ${table} WHERE user_id = ?`, [userId]));
+  statements.push(statement(env, 'DELETE FROM users WHERE id = ?', [userId]));
+  // D1 batch is transactional: a failed delete cannot strand a partial account.
+  await env.DB.batch(statements);
 }

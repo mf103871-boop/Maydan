@@ -120,10 +120,10 @@
 /* screens */
 .screen { width: min(100%, 720px); margin: 0 auto; padding: calc(10px + var(--safe-top)) max(14px, var(--safe-right)) calc(28px + var(--safe-bottom) + var(--screen-bottom-reserve, 0px)) max(14px, var(--safe-left)); min-height: 100dvh; animation: screen-in var(--dur) var(--ease-out) both; }
 .screen[data-dir="back"] { animation-name: screen-in-back; }
-@keyframes screen-in { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * 28px)); } }
-@keyframes screen-in-back { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * -20px)) scale(.97); } }
-/* child stagger on every screen (≤ 8 children, 45ms) */
-.screen > * { animation: ui-lift-in .36s var(--ease-out) both; animation-delay: calc(var(--n, 0) * 45ms); }
+@keyframes screen-in { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * 14px)); } }
+@keyframes screen-in-back { from { opacity: 0; transform: translateX(calc(var(--flow, -1) * -12px)); } }
+/* Short stagger; backwards fill releases transformed containing blocks. */
+.screen > * { animation: ui-lift-in .26s var(--ease-out) backwards; animation-delay: calc(var(--n, 0) * 24ms); }
 .screen > :nth-child(2) { --n: 1 } .screen > :nth-child(3) { --n: 2 } .screen > :nth-child(4) { --n: 3 } .screen > :nth-child(5) { --n: 4 } .screen > :nth-child(6) { --n: 5 } .screen > :nth-child(7) { --n: 6 } .screen > :nth-child(8) { --n: 7 }
 .screen > .game-stage, .screen > [class*="jabeen-stage"], .screen > .beep-boom, .screen > .meen-count, .screen > .pass-screen, .screen > .m-root { animation: none; }   /* الأغلفة الثابتة لا تدخل بالتدرّج */
 .screen > :has(.timer-resume) { animation: none; }   /* غلاف يحوي طبقة الاستئناف الثابتة لا يُحوَّل أبدًا */

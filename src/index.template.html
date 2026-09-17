@@ -21,7 +21,7 @@
 #boot{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#087D89;background:radial-gradient(520px 340px at 50% 38%,#F0E0F7 0%,#FFF7E7 48%,#FFF7E7 100%)}
 #boot .mark{width:112px;height:112px;display:block;object-fit:cover;border:0;border-radius:30px;background:#FFF7E7;box-shadow:inset 0 2px 0 #FFFFFF66,0 5px 0 #6A3A8A,0 14px 30px rgba(91,61,36,.18);animation:boot-in .4s cubic-bezier(.2,.8,.3,1) both}
 @keyframes boot-in{from{opacity:0;transform:translateY(8px) scale(.94)}}
-@media (prefers-reduced-motion: reduce){#boot .mark{animation:none}}
+@media (prefers-reduced-motion: reduce){#boot .mark,#boot .ring{animation:none}}
 #boot .name{font-size:24px;font-weight:900;margin:0}
 #boot .ring{width:28px;height:28px;border:3px solid rgba(245,184,46,.2);border-top-color:#087D89;border-radius:50%;animation:boot-spin .85s linear infinite}
 #boot small{color:#77677C;font-size:13px}
@@ -34,7 +34,8 @@
 </style>
 </head>
 <body>
-<div id="root"><div id="boot"><img class="mark" src="icons/icon-192.png" width="112" height="112" alt=""><p class="name">ميدان</p><small>ألعاب جمعتنا</small><div class="ring"></div><small>تجهز الساحة…</small></div></div>
+<div id="root"><div id="boot" role="status" aria-live="polite" aria-label="جارٍ تجهيز ميدان"><img class="mark" src="icons/icon-192.png" width="112" height="112" alt=""><p class="name">ميدان</p><small>ألعاب جمعتنا</small><div class="ring" aria-hidden="true"></div><small>تجهز الساحة…</small></div></div>
+<noscript>تحتاج ميدان إلى تفعيل JavaScript في المتصفح لتشغيل الألعاب.</noscript>
 <div id="fatal" role="alert">
 <pre id="fatal-detail"></pre>
 <div class="acts">
@@ -72,20 +73,7 @@ window.onerror = function (msg, src, line, col) {
 </script>
 <script>
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  // Navigations are served from cache first so a launch from the home screen
-  // never waits on a network that might not be there. The cost is that a
-  // returning player sees the previous release once before the new worker
-  // takes over. skipWaiting + clients.claim make that handover happen on this
-  // very load, so reloading when it does turns "stale until you open it twice"
-  // into a single refresh the player barely notices.
-  var hadController = !!navigator.serviceWorker.controller;
-  var reloading = false;
-  navigator.serviceWorker.addEventListener('controllerchange', function () {
-    // No previous worker means this is the first install: nothing is stale.
-    if (!hadController || reloading) return;
-    reloading = true;
-    location.reload();
-  });
+  // An update is used on the next normal launch, never by interrupting a round.
   window.addEventListener('load', function () {
     navigator.serviceWorker.register('sw.js').catch(function () {});
   });

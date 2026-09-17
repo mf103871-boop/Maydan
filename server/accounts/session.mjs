@@ -5,6 +5,7 @@ import { failure } from './errors.mjs';
 import { base64url, bytesFromBase64url, hmacHex, randomHex, randomToken, safeEqual } from './jwt.mjs';
 import * as db from './db.mjs';
 import { meResponse } from './entitlements.mjs';
+import { paddleEnvironmentOf } from './billing-environment.mjs';
 
 export const SESSION_TTL = 180 * 24 * 60 * 60 * 1000; // 180 يومًا
 export const ROTATE_AFTER = 24 * 60 * 60 * 1000;      // تدوير منزلق بعد يوم من آخر استعمال
@@ -69,8 +70,13 @@ export function withRotation(response, rotated) {
 }
 
 export async function me(env, user, now = Date.now()) {
-  const [subscriptions, trials] = await Promise.all([db.subscriptionsOf(env, user.id), db.trialsOf(env, user.id)]);
-  return meResponse({ user, subscriptions, trials, now });
+  const [subscriptions, trials, customer] = await Promise.all([
+    db.subscriptionsOf(env, user.id), db.trialsOf(env, user.id), db.paddleCustomerOf(env, user.id),
+  ]);
+  // Read only: never create a Paddle customer or classify a legacy mapping here.
+  const customerId = /^ctm_[a-z0-9]{26}$/.test(customer?.customer_id || '') ? customer.customer_id : null;
+  return { ...meResponse({ user, subscriptions, trials, now, env }),
+    paddle: { environment: paddleEnvironmentOf(env), customerId } };
 }
 
 // ── رموز الدخول لمرة واحدة (تمرير الجلسة عبر إعادة التوجيه دون كشفها) ───────
@@ -93,7 +99,11 @@ export async function redeemAuthCode(env, code, now = Date.now()) {
 // ── حالة OAuth الموقّعة (بلا تخزين) ─────────────────────────────────────────
 // state = base64url(JSON) + '.' + HMAC، صلاحيتها 10 دقائق ومعها nonce لربط id_token.
 export const STATE_TTL = 10 * 60 * 1000;
-const stateSecret = (env) => String(env.SESSION_SECRET || 'maydan-dev-session-secret');
+const stateSecret = (env) => {
+  if (env.SESSION_SECRET) return String(env.SESSION_SECRET);
+  if (env.AUTH_DEV_FAKE === '1') return 'maydan-dev-session-secret';
+  failure('NOT_ELIGIBLE');
+};
 
 export async function signState(env, value, now = Date.now()) {
   const body = base64url(JSON.stringify({ ...value, t: now, n: randomHex(12) }));

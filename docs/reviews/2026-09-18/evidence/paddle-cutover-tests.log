@@ -1,0 +1,14 @@
+✔ recent cached sandbox access is refreshed on settings; only the live monthly plan is offered (739.0532ms)
+✔ purchase rechecks the server before a stale cached sandbox subscription can block live checkout (286.7688ms)
+✔ failed refresh preserves cached apple history and never opens checkout (284.5803ms)
+✔ failed refresh preserves cached promo history and never opens checkout (278.468ms)
+✔ CHECKOUT_PENDING explains the server hold without claiming payment or opening checkout (368.114ms)
+✔ CHECKOUT_REVIEW explains the server hold without claiming payment or opening checkout (358.8992ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2785.4419

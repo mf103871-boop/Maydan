@@ -3,7 +3,7 @@
 import { PRODUCTS } from '../../src/shared/account/config.js';
 import { json } from '../protocol.mjs';
 import { failure } from './errors.mjs';
-import { decodeJws, providerFetch, signEs256, verifyJwt } from './jwt.mjs';
+import { providerFetch, signEs256, verifyJwt } from './jwt.mjs';
 import { rootFingerprint, verifyAppleJws } from './x509.mjs';
 import * as db from './db.mjs';
 
@@ -29,18 +29,18 @@ export function authorizeUrl(env, { redirectUri, state, nonce }) {
 }
 
 // سر عميل آبل لا يُخزَّن: يُولَّد ES256 عند كل تبادل ويعيش ساعة واحدة.
-async function clientSecret(env, now = Date.now()) {
+async function clientSecret(env, client = 'web', now = Date.now()) {
   if (!env.APPLE_SIGNIN_PRIVATE_KEY || !env.APPLE_TEAM_ID || !env.APPLE_SIGNIN_KEY_ID) failure('NOT_ELIGIBLE');
   const issued = Math.floor(now / 1000);
   return signEs256({ kid: env.APPLE_SIGNIN_KEY_ID }, {
-    iss: env.APPLE_TEAM_ID, iat: issued, exp: issued + 3600, aud: ISSUER, sub: env.APPLE_SERVICES_ID || env.APPLE_BUNDLE_ID,
+    iss: env.APPLE_TEAM_ID, iat: issued, exp: issued + 3600, aud: ISSUER, sub: audienceFor(env, client),
   }, env.APPLE_SIGNIN_PRIVATE_KEY);
 }
 export async function exchangeCode(env, { code, redirectUri, client = 'web' }) {
   // بلا مفتاح الدخول (الفريق، معرّف المفتاح، p8) لا يمكن توقيع سر العميل: الدخول يمضي
   // بـid_token وحده، ويغيب رمز التحديث فقط (يلزم لإبطال الربط عند حذف الحساب).
   let secret;
-  try { secret = await clientSecret(env); } catch { return null; }
+  try { secret = await clientSecret(env, client); } catch { return null; }
   const body = new URLSearchParams({
     grant_type: 'authorization_code', code, client_id: audienceFor(env, client) || '', client_secret: secret,
   });
@@ -53,15 +53,20 @@ export async function exchangeCode(env, { code, redirectUri, client = 'web' }) {
 }
 export async function revokeToken(env, refreshToken) {
   if (!refreshToken) return;
-  const body = new URLSearchParams({
-    token: refreshToken, token_type_hint: 'refresh_token',
-    client_id: env.APPLE_SERVICES_ID || env.APPLE_BUNDLE_ID || '', client_secret: await clientSecret(env),
-  });
-  await providerFetch(urls(env).revoke, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: String(body) });
+  // السجلات القديمة لا تحفظ مصدر الرمز: جرّب الجمهورين مع سر مطابق لكل جمهور.
+  for (const client of ['web', 'ios']) {
+    if (!audienceFor(env, client)) continue;
+    const body = new URLSearchParams({ token: refreshToken, token_type_hint: 'refresh_token',
+      client_id: audienceFor(env, client), client_secret: await clientSecret(env, client) });
+    const result = await providerFetch(urls(env).revoke, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: String(body) });
+    if (result.ok) return;
+  }
+  failure('PROVIDER');
 }
 
 export async function verifyIdentityToken(env, token, { client = 'web', nonce, now = Date.now() } = {}) {
-  const audience = [audienceFor(env, client), env.APPLE_BUNDLE_ID, env.APPLE_SERVICES_ID].filter(Boolean);
+  const audience = audienceFor(env, client);
+  if (!audience) failure('NOT_ELIGIBLE');
   const payload = await verifyJwt(token, { jwksUrl: urls(env).jwks, issuer: ISSUER, audience, nonce, now });
   if (!payload.sub) failure('SIGNATURE');
   return payload;
@@ -86,11 +91,17 @@ async function storeToken(env, now = Date.now()) {
     iss: env.APPLE_IAP_ISSUER_ID, iat: issued, exp: issued + 1800, aud: 'appstoreconnect-v1', bid: env.APPLE_BUNDLE_ID,
   }, env.APPLE_IAP_PRIVATE_KEY);
 }
-export async function fetchSubscription(env, originalTransactionId, now = Date.now()) {
+export function storeUrl(env, environment) {
+  if (env.APPLE_STORE_API_URL) return String(env.APPLE_STORE_API_URL).replace(/\/+$/, '');
+  return environment === 'Sandbox' ? 'https://api.storekit-sandbox.apple.com' : 'https://api.storekit.apple.com';
+}
+export async function fetchSubscription(env, originalTransactionId, now = Date.now(), environment = null) {
   const token = await storeToken(env, now);
-  const result = await providerFetch(`${urls(env).store}/inApps/v1/subscriptions/${encodeURIComponent(originalTransactionId)}`, {
+  const request = (target) => providerFetch(`${storeUrl(env, target)}/inApps/v1/subscriptions/${encodeURIComponent(originalTransactionId)}`, {
     headers: { authorization: `Bearer ${token}`, accept: 'application/json' },
   });
+  let result = await request(environment);
+  if (!env.APPLE_STORE_API_URL && !environment && result.status === 404 && result.data?.errorCode === 4040010) result = await request('Sandbox');
   if (result.status === 404) failure('NOT_ELIGIBLE');
   if (!result.ok || !result.data) failure('PROVIDER');
   return result.data;
@@ -116,13 +127,15 @@ export async function readSubscriptionStatus(env, status, originalTransactionId,
   if (!Object.values(PRODUCTS).includes(info.productId)) failure('NOT_ELIGIBLE');
   const external = info.originalTransactionId || entry.originalTransactionId || originalTransactionId;
   if (!external) failure('INVALID');
+  if (originalTransactionId && String(external) !== String(originalTransactionId)) failure('NOT_ELIGIBLE');
+  if (renewal.originalTransactionId && String(renewal.originalTransactionId) !== String(external)) failure('NOT_ELIGIBLE');
   const until = Math.max(Number(info.expiresDate) || 0, Number(renewal.gracePeriodExpiresDate) || 0);
   return {
     source: 'apple', external_id: String(external), product: info.productId,
     status: STATUS_TEXT[entry.status] || 'unknown', until,
     will_renew: renewal.autoRenewStatus === 1,
     environment: info.environment || status.environment || null,
-    occurred_at: Number(info.signedDate) || now,
+    occurred_at: Math.max(Number(info.signedDate) || 0, Number(renewal.signedDate) || 0) || now,
     appAccountToken: info.appAccountToken ? String(info.appAccountToken).toLowerCase() : null,
   };
 }
@@ -133,7 +146,7 @@ export async function bindTransaction(env, user, jws, now = Date.now()) {
   const hint = await verifySigned(env, jws, now);
   const originalTransactionId = hint.originalTransactionId || hint.transactionId;
   if (!originalTransactionId) failure('INVALID');
-  const status = await fetchSubscription(env, String(originalTransactionId), now);
+  const status = await fetchSubscription(env, String(originalTransactionId), now, hint.environment);
   const row = await readSubscriptionStatus(env, status, String(originalTransactionId), now);
   if (row.appAccountToken && row.appAccountToken !== String(user.id).toLowerCase()) failure('ALREADY_LINKED');
   const existing = await db.subscriptionByExternal(env, 'apple', row.external_id);
@@ -148,15 +161,22 @@ export async function handleNotification(env, signedPayload, now = Date.now()) {
   const payload = await verifySigned(env, signedPayload, now);
   const uuid = payload.notificationUUID;
   if (!uuid) failure('INVALID');
-  if (!(await db.markWebhookEvent(env, `apple:${uuid}`, now))) return json({ ok: true, duplicate: true });
+  const eventId = `apple:${uuid}`;
+  if (await db.webhookEvent(env, eventId)) return json({ ok: true, duplicate: true });
   const data = payload.data || {};
   const info = data.signedTransactionInfo ? await verifySigned(env, data.signedTransactionInfo, now) : {};
   const originalTransactionId = info.originalTransactionId || data.originalTransactionId;
-  if (!originalTransactionId) return json({ ok: true, ignored: 'no-transaction' }, 202);
+  if (!originalTransactionId) {
+    await db.markWebhookEvent(env, eventId, now);
+    return json({ ok: true, ignored: 'no-transaction' }, 202);
+  }
   const existing = await db.subscriptionByExternal(env, 'apple', String(originalTransactionId));
-  if (!existing) return json({ ok: true, ignored: 'unknown-transaction' }, 202);
-  const status = await fetchSubscription(env, String(originalTransactionId), now);
+  const userId = existing?.user_id || (info.appAccountToken ? String(info.appAccountToken).toLowerCase() : null);
+  if (!userId || !(await db.userById(env, userId))) return json({ ok: true, ignored: 'unknown-transaction' }, 202);
+  const status = await fetchSubscription(env, String(originalTransactionId), now, info.environment || data.environment);
   const row = await readSubscriptionStatus(env, status, String(originalTransactionId), now);
-  await db.upsertSubscription(env, { ...row, user_id: existing.user_id });
+  if (row.appAccountToken && row.appAccountToken !== userId) failure('ALREADY_LINKED');
+  await db.upsertSubscription(env, { ...row, user_id: userId });
+  await db.markWebhookEvent(env, eventId, now);
   return json({ ok: true });
 }

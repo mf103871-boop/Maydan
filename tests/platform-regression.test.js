@@ -226,14 +226,15 @@ test('حدود الخطأ موجودة حول الشاشات وحول اللعب
   assert.match(read('src/index.template.html'), /fatal-clear/);
 });
 
-test('الافتتاحية تملأ الشاشة وتحترم تقليل الحركة و splashSeen', () => {
+test('الافتتاحية تملأ الشاشة وتنتظر جاهزية الأصول قبل تركيب اللعبة', () => {
   assert.match(read('src/platform/platform.css'), /\.splash \.splash-world \{[^}]*height: 100%/);
   const splash = read('src/platform/screens/Splash.jsx');
   assert.match(splash, /reducedMotion = false/);
-  assert.match(splash, /const reduced = reducedMotion/);
+  assert.match(splash, /useVisualReadiness\(\{ includeWorld: true \}\)/);
+  assert.doesNotMatch(splash, /role="button"|setTimeout\(finish|duration = 2200/);
   const app = read('src/platform/PlatformApp.jsx');
   assert.match(app, /reducedMotion=\{settings\.reducedMotion\}/);
-  assert.match(app, /settings\.splashSeen \? 900 : 2200/);
+  assert.match(app, /booted && <ErrorBoundary/);
   assert.match(app, /setSettings\(\{ splashSeen: true \}\)/);
 });
 

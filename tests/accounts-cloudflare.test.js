@@ -83,10 +83,13 @@ function startProviders(state) {
         const found = state.subscriptions.get(decodeURIComponent(appstore[1]));
         return found ? send(200, found) : send(404, { errorCode: 4040010 });
       }
-      if (url.pathname === '/paddle/customers' && request.method === 'POST') return send(201, { data: { id: 'ctm_test_1' } });
+      if (url.pathname === '/paddle/customers' && request.method === 'POST') return send(201, { data: { id: `ctm_test_${++state.customerCount}` } });
       if (url.pathname === '/paddle/transactions' && request.method === 'POST') {
         state.transactions.push(JSON.parse(body || '{}'));
         return send(201, { data: { id: 'txn_test_1', status: 'ready' } });
+      }
+      if (url.pathname === '/paddle/transactions/txn_test_1' && request.method === 'GET') {
+        return send(200, { data: { ...state.transactions.at(-1), id: 'txn_test_1', status: 'ready' } });
       }
       if (/^\/paddle\/customers\/[^/]+\/portal-sessions$/.test(url.pathname)) {
         return send(201, { data: { urls: { general: { overview: 'https://sandbox-customer-portal.paddle.com/cpl_1' } } } });
@@ -101,7 +104,7 @@ function startProviders(state) {
 // ── التهيئة ─────────────────────────────────────────────────────────────────
 let mf; let dir; let providers; let origin; let d1;
 const state = {
-  calls: [], revoked: [], transactions: [], cancelled: [],
+  calls: [], revoked: [], transactions: [], cancelled: [], customerCount: 0,
   subscriptions: new Map(), googleTokens: new Map(),
   appleRefreshToken: 'apple_refresh_test', appleJwk: null, googleJwk: null,
 };
@@ -183,7 +186,7 @@ const credentials = () => ({
 });
 async function signInDev(subject, name = 'لاعب') {
   const api = client();
-  const created = await api.post('/api/auth/dev', { subject, name });
+  const created = await api.post('/api/auth/dev', { subject, name, email: `${subject}@example.test` });
   assert.equal(created.status, 200, JSON.stringify(created.data));
   api.token = created.data.session.token;
   return { api, me: created.data.me, userId: created.data.me.user.id };
@@ -194,7 +197,7 @@ test('إعداد الفوترة يعلن Paddle والمزوّدين المتا�
   const { status, data } = await client().get('/api/billing/config');
   assert.equal(status, 200);
   assert.deepEqual(data.products, PRODUCTS);
-  assert.deepEqual(data.paddle, { clientToken: 'test_client_token', environment: 'sandbox', prices: { monthly: 'pri_monthly', yearly: 'pri_yearly' } });
+  assert.deepEqual(data.paddle, { clientToken: 'test_client_token', environment: 'sandbox', prices: { monthly: 'pri_monthly', yearly: 'pri_yearly' }, checkoutEnabled: true });
   assert.deepEqual(data.providers, { apple: true, google: true, dev: true });
 });
 
@@ -419,7 +422,8 @@ test('Paddle: المعاملة تحمل custom_data.userId، والبوابة ت
   assert.equal(checkout.status, 200, JSON.stringify(checkout.data));
   assert.deepEqual(checkout.data, { transactionId: 'txn_test_1', clientToken: 'test_client_token', environment: 'sandbox' });
   const sent = state.transactions.at(-1);
-  assert.deepEqual(sent.custom_data, { userId });
+  assert.equal(sent.custom_data.userId, userId);
+  assert.match(sent.custom_data.checkoutAttemptId, /^[\da-f]{8}-[\da-f-]{27}$/i);
   assert.deepEqual(sent.items, [{ price_id: 'pri_yearly', quantity: 1 }]);
   assert.equal(sent.customer_id, 'ctm_test_1');
 
@@ -436,11 +440,29 @@ test('Paddle: المعاملة تحمل custom_data.userId، والبوابة ت
   const again = await api.post('/api/paddle/checkout', { plan: 'monthly' });
   assert.equal(again.status, 409);
   assert.equal(again.data.error, 'ALREADY_SUBSCRIBED');
-  await api.post('/api/dev/grant', { until: 0, source: 'paddle' }); // انتهى → يُسمح من جديد
-  assert.equal((await api.post('/api/paddle/checkout', { plan: 'monthly' })).status, 200);
+  await api.post('/api/dev/grant', { until: 0, source: 'paddle' });
+  // انتهاء الاستحقاق المحلي لا يبطل رابط الدفع السنوي السابق عند المزوّد.
+  assert.equal((await api.post('/api/paddle/checkout', { plan: 'monthly' })).data.error, 'CHECKOUT_PENDING');
+  assert.equal((await api.post('/api/paddle/checkout', { plan: 'yearly' })).status, 200);
   const promoOnly = await signInDev('paddle-promo', 'هدية');
-  assert.equal((await promoOnly.api.post('/api/redeem', { code: '1121998' })).status, 200);
+  assert.equal((await promoOnly.api.post('/api/redeem', { code: 'extra-code' })).status, 200);
   assert.equal((await promoOnly.api.post('/api/paddle/checkout', { plan: 'monthly' })).status, 200, 'المفعَّل بالرمز يستطيع الشراء');
+});
+
+test('D1 serializes concurrent checkout creation across worker requests', { timeout: 30_000 }, async () => {
+  const { api } = await signInDev('paddle-parallel', 'متزامن');
+  const before = state.transactions.length;
+  const replies = await Promise.all([api.post('/api/paddle/checkout', { plan: 'monthly' }), api.post('/api/paddle/checkout', { plan: 'monthly' })]);
+  assert.equal(state.transactions.length - before, 1, 'one provider POST, even before any subscription webhook');
+  assert.ok(replies.some((r) => r.status === 200));
+  for (const response of replies) {
+    assert.ok(response.status === 200 || (response.status === 409 && response.data.error === 'CHECKOUT_PENDING'), JSON.stringify(response));
+    if (response.status === 200) assert.equal(response.data.transactionId, 'txn_test_1');
+  }
+  const retry = await api.post('/api/paddle/checkout', { plan: 'monthly' });
+  assert.equal(retry.status, 200, JSON.stringify(retry.data));
+  assert.equal(retry.data.transactionId, 'txn_test_1');
+  assert.equal(state.transactions.length - before, 1);
 });
 
 test('webhook باديل: توقيع صالح يفعّل الاشتراك، ومزوّر أو مكرّر يُرفض', { timeout: 30_000 }, async () => {
@@ -565,15 +587,15 @@ test('رمز الهدية: يفعّل بلس للمسجّل ويفتح الغر�
   const wrong = await api.post('/api/redeem', { code: '0000000' });
   assert.equal(wrong.status, 400);
   assert.equal(wrong.data.error, 'REDEEM_INVALID');
-  const anonymous = await client().post('/api/redeem', { code: '1121998' });
+  const anonymous = await client().post('/api/redeem', { code: 'extra-code' });
   assert.equal(anonymous.status, 401);
-  const ok = await api.post('/api/redeem', { code: ' ١١٢١٩٩٨ ' });
+  const ok = await api.post('/api/redeem', { code: ' EXTRA-CODE ' });
   assert.equal(ok.status, 200, JSON.stringify(ok.data));
   assert.equal(ok.data.premium.active, true);
   assert.equal(ok.data.premium.source, 'promo');
   assert.equal(ok.data.premium.willRenew, false);
   assert.ok(ok.data.premium.until > Date.now() + 50 * 365 * 86_400_000, 'دائم عمليًا');
-  const again = await api.post('/api/redeem', { code: '1121998' });
+  const again = await api.post('/api/redeem', { code: 'extra-code' });
   assert.equal(again.status, 200, 'إعادة التفعيل آمنة');
   const me = await api.get('/api/me');
   assert.equal(me.data.premium.source, 'promo');
@@ -589,7 +611,7 @@ test('رمز الهدية: يفعّل بلس للمسجّل ويفتح الغر�
   // جسم غير نصي يُرفض، والرمز نفسه يفعّل حسابًا ثانيًا (المفتاح يضم معرّف المستخدم).
   assert.equal((await api.post('/api/redeem', { code: 1121998 })).status, 400);
   const second = await signInDev('redeem-2', 'ثانٍ');
-  const secondOk = await second.api.post('/api/redeem', { code: '1121998' });
+  const secondOk = await second.api.post('/api/redeem', { code: 'extra-code' });
   assert.equal(secondOk.status, 200, JSON.stringify(secondOk.data));
   assert.equal(secondOk.data.premium.source, 'promo');
   assert.equal((await api.get('/api/me')).data.premium.active, true, 'الحساب الأول لم يتأثر');
@@ -608,12 +630,13 @@ test('حذف الحساب يُبطل رمز آبل ويمسح كل صفوفه', 
   await api.post('/api/trials/beep', {});
   await api.post('/api/dev/grant', { until: Date.now() + 86_400_000 });
   await d1.prepare('INSERT OR REPLACE INTO paddle_customers (user_id, customer_id, created_at) VALUES (?, ?, ?)').bind(userId, 'ctm_delete_1', Date.now()).run();
+  await d1.prepare('INSERT INTO paddle_customers_scoped (environment, user_id, customer_id, created_at) VALUES (?, ?, ?, ?)').bind('sandbox', userId, 'ctm_delete_scoped', Date.now()).run();
 
   const deleted = await api.del('/api/account');
   assert.equal(deleted.status, 204);
   assert.ok(state.revoked.includes(state.appleRefreshToken), 'لم يُبطل رمز آبل');
   assert.ok(state.cancelled.some((entry) => entry.includes(`dev_${userId}`)), 'لم يُطلب إلغاء اشتراك Paddle');
-  for (const table of ['users', 'identities', 'sessions', 'trials', 'subscriptions', 'paddle_customers']) {
+  for (const table of ['users', 'identities', 'sessions', 'trials', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped']) {
     const column = table === 'users' ? 'id' : 'user_id';
     const rows = await d1.prepare(`SELECT count(*) AS n FROM ${table} WHERE ${column} = ?`).bind(userId).first();
     assert.equal(rows.n, 0, `${table} لم يُنظَّف`);

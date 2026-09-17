@@ -17,7 +17,7 @@ let raf = 0;
 let lastTime = 0;
 
 function ensureCanvas() {
-  if (canvas) return;
+  if (canvas) return true;
   canvas = document.createElement('canvas');
   canvas.setAttribute('aria-hidden', 'true');
   Object.assign(canvas.style, {
@@ -29,9 +29,11 @@ function ensureCanvas() {
     zIndex: '900',
   });
   document.body.appendChild(canvas);
-  ctx = canvas.getContext('2d');
+  try { ctx = canvas.getContext('2d'); } catch { ctx = null; }
+  if (!ctx) { canvas.remove(); canvas = null; return false; }
   resize();
   window.addEventListener('resize', resize);
+  return true;
 }
 
 function resize() {
@@ -43,6 +45,7 @@ function resize() {
 }
 
 function frame(now) {
+  if (document.hidden || reducedMotion()) { clearConfetti(); return; }
   const dt = Math.min(0.05, (now - lastTime) / 1000 || 0.016);
   lastTime = now;
   const w = window.innerWidth;
@@ -71,10 +74,7 @@ function frame(now) {
     ctx.restore();
   }
   if (particles.length) raf = requestAnimationFrame(frame);
-  else {
-    raf = 0;
-    ctx.clearRect(0, 0, w, h);
-  }
+  else clearConfetti();
 }
 
 function spawn({ count, x, y, spread, power, colors, gravity, life }) {
@@ -105,7 +105,7 @@ function spawn({ count, x, y, spread, power, colors, gravity, life }) {
 // انفجار كبير من الأسفل (نهاية الجولة / الفائز).
 export function fireConfetti({ count = 160, colors = DEFAULT_COLORS, duration = 2.6 } = {}) {
   if (typeof document === 'undefined' || reducedMotion()) return;
-  ensureCanvas();
+  if (document.hidden || !ensureCanvas()) return;
   const w = window.innerWidth;
   const h = window.innerHeight;
   spawn({ count: Math.ceil(count / 2), x: w * 0.2, y: h * 0.95, spread: 1.1, power: 900, colors, gravity: 1, life: duration });
@@ -115,7 +115,7 @@ export function fireConfetti({ count = 160, colors = DEFAULT_COLORS, duration = 
 // دفعة صغيرة من نقطة (إجابة صحيحة).
 export function burstConfetti({ x, y, count = 28, colors = DEFAULT_COLORS } = {}) {
   if (typeof document === 'undefined' || reducedMotion()) return;
-  ensureCanvas();
+  if (document.hidden || !ensureCanvas()) return;
   spawn({
     count,
     x: x ?? window.innerWidth / 2,
@@ -133,6 +133,10 @@ export function clearConfetti() {
   if (raf) cancelAnimationFrame(raf);
   raf = 0;
   if (ctx) ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  if (canvas) canvas.remove();
+  canvas = null;
+  ctx = null;
+  if (typeof window !== 'undefined') window.removeEventListener('resize', resize);
 }
 
 export const confetti = { fire: fireConfetti, burst: burstConfetti, clear: clearConfetti };

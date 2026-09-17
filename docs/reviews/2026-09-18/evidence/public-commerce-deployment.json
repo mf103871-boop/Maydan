@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-09-17T21:57:21.486Z",
+  "version": "d47e6893-7717-4e81-9119-2262852be537",
+  "checks": [
+    {
+      "path": "/pricing/",
+      "status": 200,
+      "url": "https://maydan-game.mf103871.workers.dev/pricing/",
+      "type": "text/html",
+      "title": "ميدان بلس — التسعير",
+      "bytes": 5509
+    },
+    {
+      "path": "/refunds/",
+      "status": 200,
+      "url": "https://maydan-game.mf103871.workers.dev/refunds/",
+      "type": "text/html",
+      "title": "ميدان — سياسة الاسترداد",
+      "bytes": 5936
+    },
+    {
+      "path": "/commerce.css",
+      "status": 200,
+      "url": "https://maydan-game.mf103871.workers.dev/commerce.css",
+      "type": "text/css",
+      "bytes": 5513
+    },
+    {
+      "path": "/pay.html",
+      "status": 200,
+      "url": "https://maydan-game.mf103871.workers.dev/pay",
+      "type": "text/html",
+      "title": "الدفع — ميدان",
+      "bytes": 5386
+    },
+    {
+      "path": "/health",
+      "status": 200,
+      "url": "https://maydan-game.mf103871.workers.dev/health",
+      "type": "application/json; charset=utf-8",
+      "body": {
+        "ok": true,
+        "protocol": 1,
+        "game": "meenfina",
+        "games": [
+          "meenfina",
+          "fabraka"
+        ],
+        "version": "1.4.1",
+        "accounts": true
+      }
+    },
+    {
+      "path": "/api/billing/config",
+      "status": 200,
+      "url": "https://maydan-game.mf103871.workers.dev/api/billing/config",
+      "type": "application/json; charset=utf-8",
+      "environment": "sandbox",
+      "clientTokenType": "test",
+      "monthlyPriceConfigured": true,
+      "yearlyPriceConfigured": true
+    }
+  ],
+  "browserCheck": {
+    "devices": [
+      "390x844",
+      "1440x1000"
+    ],
+    "javascriptDisabled": true,
+    "overflow": false,
+    "consoleErrors": 0,
+    "loadErrors": 0,
+    "performedBy": "experience agent"
+  }
+}

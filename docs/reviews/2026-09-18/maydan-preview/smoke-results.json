@@ -1,0 +1,488 @@
+{
+  "base": "http://localhost:3000",
+  "executedAt": "2026-09-17T20:51:17.197Z",
+  "results": [
+    {
+      "name": "phone: six games after automatic startup",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: home fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: volume survives reload",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: mute disables volume/preview",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: reduced motion applies",
+      "ok": true,
+      "detail": "{\"setting\":\"true\",\"duration\":\"1e-05s\"}"
+    },
+    {
+      "name": "phone: reduced motion survives reload",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: settings fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: three players created through UI",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: badeeha details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: badeeha setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: badeeha setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: badeeha board starts from six free categories",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: badeeha first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: badeeha exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: beep details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: beep setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: beep setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: beep first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: beep first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: beep exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: mamnoo details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: mamnoo setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: mamnoo setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: mamnoo first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: mamnoo first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: mamnoo exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: jabeen details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: jabeen setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: jabeen setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: rotation prompt pauses timer and blocks hidden controls",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: dismissing rotation prompt resumes the round",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: rotating mid-round preserves remaining time",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: rotation resume does not award a fresh timer",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: jabeen first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: jabeen first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: jabeen exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: fabraka details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: fabraka setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: fabraka setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: fabraka first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: fabraka first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: fabraka exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: meenfina details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: meenfina setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: meenfina setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: meenfina first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: meenfina first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":390,\"scroll\":390}"
+    },
+    {
+      "name": "phone: meenfina exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "phone: OS reduced motion honored even with app switch off",
+      "ok": true,
+      "detail": "1e-05s"
+    },
+    {
+      "name": "desktop: six games after automatic startup",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: home fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: volume survives reload",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: mute disables volume/preview",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: reduced motion applies",
+      "ok": true,
+      "detail": "{\"setting\":\"true\",\"duration\":\"1e-05s\"}"
+    },
+    {
+      "name": "desktop: reduced motion survives reload",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: settings fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: three players created through UI",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: badeeha details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: badeeha setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: badeeha setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: badeeha board starts from six free categories",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: badeeha first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: badeeha exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: beep details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: beep setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: beep setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: beep first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: beep first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: beep exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: mamnoo details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: mamnoo setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: mamnoo setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: mamnoo first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: mamnoo first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: mamnoo exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: jabeen details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: jabeen setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: jabeen setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: jabeen first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: jabeen first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: jabeen exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: fabraka details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: fabraka setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: fabraka setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: fabraka first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: fabraka first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: fabraka exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: meenfina details fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: meenfina setup opens",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: meenfina setup fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: meenfina first round starts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: meenfina first round fits viewport",
+      "ok": true,
+      "detail": "{\"width\":1440,\"scroll\":1440}"
+    },
+    {
+      "name": "desktop: meenfina exit returns home",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: OS reduced motion honored even with app switch off",
+      "ok": true,
+      "detail": "1e-05s"
+    },
+    {
+      "name": "no browser errors",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no HTTP errors",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "errors": [],
+  "responses": []
+}

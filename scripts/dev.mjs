@@ -12,11 +12,21 @@ const serveOnly = process.argv.includes('--serve-only');
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.webmanifest': 'application/manifest+json; charset=utf-8',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
   '.webp': 'image/webp',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.mp3': 'audio/mpeg',
+  '.m4a': 'audio/mp4',
+  '.ogg': 'audio/ogg',
+  '.wav': 'audio/wav',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
+  '.woff2': 'font/woff2',
 };
 
 let building = null;
@@ -44,15 +54,28 @@ if (!serveOnly) {
   });
 }
 
-http
+const server = http
   .createServer(async (req, res) => {
     try {
-      let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+      const requested = new URL(req.url, 'http://x');
+      let p = decodeURIComponent(requested.pathname);
+      // This preview serves files only. Never present a missing OAuth endpoint
+      // as a working login service, or silently proxy real account requests.
+      if (p === '/api' || p.startsWith('/api/')) {
+        res.writeHead(503, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+        res.end(JSON.stringify({ error: 'PREVIEW_ONLY' }));
+        return;
+      }
       if (p.endsWith('/')) p += 'index.html';
       const file = path.join(DIST, p);
-      if (!file.startsWith(DIST)) throw new Error('outside dist');
+      const relative = path.relative(DIST, file);
+      if (relative.startsWith('..') || path.isAbsolute(relative)) throw new Error('outside dist');
       const s = await stat(file);
-      if (s.isDirectory()) throw new Error('dir');
+      if (s.isDirectory()) {
+        res.writeHead(308, { Location: requested.pathname + '/' + requested.search });
+        res.end();
+        return;
+      }
       res.writeHead(200, {
         'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream',
         'Cache-Control': 'no-store',
@@ -63,4 +86,4 @@ http
       res.end('not found');
     }
   })
-  .listen(PORT, () => console.log(`[dev] http://localhost:${PORT}/`));
+  .listen(PORT, () => console.log(`[dev] http://localhost:${server.address().port}/`));

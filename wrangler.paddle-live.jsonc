@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maydan-paddle-live",
+  "main": "server/paddle-live-worker.mjs",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "vars": {
+    "PADDLE_ENV": "production",
+    "PADDLE_CHECKOUT_ENABLED": "false",
+    "PADDLE_PRICE_MONTHLY": "pri_01m2rqq887jk85av1b1a68j82k",
+    "PADDLE_PRICE_YEARLY": ""
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "maydan-accounts",
+      "database_id": "9d863a31-6a5c-45f1-91f5-79ad400c3f6e"
+    }
+  ],
+  "observability": { "enabled": false }
+}
