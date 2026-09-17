@@ -14,6 +14,7 @@ import logic, {
 import meta from '../src/games/badeeha/meta.js';
 import { BADEEHA_KEYS, LEGACY_KEYS, migrateLegacyKeys } from '../src/games/badeeha/keys.js';
 import { CATS } from '../src/data/categories/index.js';
+import status from '../src/data/bank-status.json' with { type: 'json' };
 
 // ── 7 — «حتى 1000» كانت تُطبع لوضع «تحدّي» الذي يقف عند 800 ──────────────
 test('modeTopTier: كل وضع يَعِد بأعلى شريحة فيه هو، لا بألف دائمًا', () => {
@@ -132,7 +133,11 @@ test('البنك خالٍ من أسئلة الفيديو، والوصف لا ي�
     }
   }
   assert.equal(types.get('video') || 0, 0, 'لا أسئلة فيديو في البنك');
-  assert.equal([...types.values()].reduce((a, b) => a + b, 0), 18720);
+  // كان هنا رقم مثبّت (18720) فصار يكذب كلما نقصت حزمة أو زادت. المقصود أن
+  // الملفات وسجل الحالة يرويان الرواية نفسها، فيُشتق المجموع من السجل.
+  const expected = Object.values(status.categories)
+    .reduce((sum, c) => sum + Object.values(c.counts || {}).reduce((a, b) => a + b, 0), 0);
+  assert.equal([...types.values()].reduce((a, b) => a + b, 0), expected);
   assert.ok(!/مقاطع|فيديو/.test(meta.description), `الوصف ما زال يَعِد بالمقاطع: ${meta.description}`);
   assert.ok(/صور/.test(meta.description) && /أصوات/.test(meta.description));
   // النوع «video» يبقى معروفًا في MEDIA_QUESTION_TYPES لأن العارض يدعمه.
