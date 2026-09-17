@@ -23,6 +23,7 @@
 //   - واجهة كومنز تحدّ الطلبات المتتابعة بنص "too many requests"، فنعيد المحاولة بهدوء.
 //   - بحث أرشيف الإنترنت بأحرف البدل داخل licenseurl يُسقط خادمهم، فنرشّح الرخص محليًا.
 import { readFile, writeFile, copyFile, mkdir, mkdtemp, rm, stat, access } from 'node:fs/promises';
+import fsSync from 'node:fs';
 import { execFile, spawnSync } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
@@ -136,7 +137,56 @@ function parseArgs(argv) {
 
 // ---------------------------------------------------------------- الشبكة
 
+// بوابة معدل مشتركة بين العمليات لطلبات ويكيميديا.
+//
+// حين تُبنى عدة حزم في وقت واحد تصير الطلبات المتوازية عشرات، فيردّ الخادم بالرفض
+// (429) وتدخل كل عملية في دوامة إعادة محاولة تُبطئ الجميع. البوابة تجعل العمليات
+// كلها تتقاسم إيقاعًا واحدًا مهذّبًا: طلب كل GATE_MS، فيختفي الرفض ويرتفع الإنتاج.
+//
+// التنسيق عبر ملف في مجلد مؤقت لأن العمليات منفصلة: مجلد القفل يُنشأ ذريًّا
+// (mkdir يفشل إن وُجد)، والانتظار بـAtomics.wait لأن لا نوم متزامنًا في Node.
+const GATE_DIR = path.join(os.tmpdir(), 'maydan-wikimedia-gate');
+const GATE_LOCK = path.join(GATE_DIR, 'lock');
+const GATE_STAMP = path.join(GATE_DIR, 'next-at');
+const GATE_MS = Number(process.env.MAYDAN_GATE_MS || 600);
+const WIKIMEDIA = /(^|\.)wikimedia\.org$|(^|\.)wikipedia\.org$|(^|\.)wikidata\.org$/;
+const sleepSync = (ms) => { if (ms > 0) Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms); };
+
+// يحجز الدور التالي ويعيد لحظته. يتحمّل تلف الملف أو تعذّر القفل: عند الشك يمرّ.
+function claimSlot() {
+  try { fsSync.mkdirSync(GATE_DIR, { recursive: true }); } catch { return Date.now(); }
+  for (let attempt = 0; attempt < 200; attempt++) {
+    try {
+      fsSync.mkdirSync(GATE_LOCK);
+    } catch {
+      sleepSync(5);
+      continue;
+    }
+    try {
+      let nextAt = 0;
+      try { nextAt = Number(fsSync.readFileSync(GATE_STAMP, 'utf8')) || 0; } catch { nextAt = 0; }
+      const now = Date.now();
+      const slot = Math.max(now, nextAt);
+      fsSync.writeFileSync(GATE_STAMP, String(slot + GATE_MS));
+      return slot;
+    } finally {
+      try { fsSync.rmdirSync(GATE_LOCK); } catch { /* أُزيل أصلًا */ }
+    }
+  }
+  return Date.now();                                  // تعذّر القفل طويلًا: لا نعطّل العمل
+}
+
+async function passGate(url) {
+  let host;
+  try { host = new URL(url).hostname; } catch { return; }
+  if (!WIKIMEDIA.test(host)) return;
+  const slot = claimSlot();
+  const wait = slot - Date.now();
+  if (wait > 0) await new Promise((resolve) => setTimeout(resolve, wait));
+}
+
 async function fetchWithTimeout(url, init = {}) {
+  await passGate(url);
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
@@ -151,7 +201,9 @@ async function fetchWithTimeout(url, init = {}) {
 
 // طلب JSON مع إعادة محاولة هادئة عند تقييد المعدل أو عطل الخادم.
 async function fetchJson(url, label) {
-  const delays = [2500, 7000];
+  // تهدئة تصاعدية تبلغ الدقيقة. كانت تقف عند سبع ثوانٍ، فكان موضوع كامل يُهدر
+  // لأن الخادم كان في نافذة تقييد عابرة لا أكثر.
+  const delays = [2500, 7000, 15_000, 30_000, 60_000];
   for (let attempt = 0; ; attempt++) {
     let res;
     let text;
@@ -164,8 +216,11 @@ async function fetchJson(url, label) {
     }
     const throttled = res.status === 429 || res.status >= 500 || /too many requests/i.test(text.slice(0, 300));
     if (throttled && attempt < delays.length) {
-      log(`… ${label} يحدّ الطلبات مؤقتًا، إعادة المحاولة بعد ${delays[attempt] / 1000} ث`);
-      await sleep(delays[attempt]);
+      // الخادم يقول متى يقبل الطلب التالي؛ احترام قوله أسرع من تخمين أقصر منه.
+      const advised = Number(res.headers.get('retry-after')) * 1000;
+      const wait = Number.isFinite(advised) && advised > 0 ? Math.max(advised, delays[attempt]) : delays[attempt];
+      log(`… ${label} يحدّ الطلبات مؤقتًا، إعادة المحاولة بعد ${Math.round(wait / 1000)} ث`);
+      await sleep(wait);
       continue;
     }
     if (throttled) throw new FetchError(`${label}: تقييد معدل الطلبات (HTTP ${res.status}) — أعد المحاولة بعد دقيقة`);
@@ -176,7 +231,9 @@ async function fetchJson(url, label) {
 
 // ينزّل إلى Buffer مع إعادة محاولة متباعدة. خادم ملفات ويكيميديا يردّ 429 على
 // التنزيلات المتتابعة، وإعادة المحاولة فورًا تزيد الطين بلّة، فالانتظار يتصاعد.
-const DOWNLOAD_DELAYS = [0, 2500, 7000, 15_000];
+// تهدئة تصاعدية تبلغ الدقيقة: حين يقول الخادم «أعد بعد دقيقة» فالاستسلام بعد
+// خمس عشرة ثانية يُهدر الموضوع بلا سبب، والانتظار أرخص من فقدان الصورة.
+const DOWNLOAD_DELAYS = [0, 2500, 7000, 15_000, 30_000, 60_000];
 async function downloadBuffer(url, { cap, partial }) {
   if (!hostAllowed(url)) throw new FetchError(`المضيف غير مسموح: ${hostOf(url)}`);
   let lastError;

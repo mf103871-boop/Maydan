@@ -5,9 +5,9 @@
 //
 // كل خطوة تُفحص: موضوع بلا صورة، أو صورة لا تحتمل المؤثّر (ظلّ بلا شفافية، قصّة بلا
 // تفاصيل) تُرفض ويُسجَّل سببها في تقرير الحزمة بدل أن تدخل البنك سؤالًا بلا حل.
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { access, readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
-import { acquire, fetchCommonsFile, loadSharp, resolveFfmpeg, saveSourceRecord } from '../media-fetch.mjs';
+import { acquire, fetchCommonsFile, loadSharp, readSourceIndex, resolveFfmpeg, saveSourceRecord } from '../media-fetch.mjs';
 import { resolveSubjects } from './resolve.mjs';
 import { bestZoomOrigin, silhouetteCheck, blurCheck } from './analyze.mjs';
 
@@ -17,6 +17,7 @@ const BUDGET = { image: 30 * 1024, audio: 50 * 1024 };
 const CONCURRENCY = 4;
 
 const pad = (n) => String(n).padStart(3, '0');
+const readable = (file) => access(file).then(() => true, () => false);
 
 async function pool(items, size, worker) {
   const results = new Array(items.length);
@@ -59,11 +60,23 @@ export async function buildPack(specPath, { limit = Infinity, only = null, dry =
   const sharp = kind === 'image' ? await loadSharp() : null;
   const ffmpeg = kind === 'audio' ? await resolveFfmpeg() : null;
 
+  const existing = new Map();
+  try {
+    for (const record of await readSourceIndex(dir).then((r) => r.list)) existing.set(record.file, record);
+  } catch { /* لا سجل بعد */ }
+
   let subjects = spec.subjects.filter((s) => (only ? s.tier === Number(only) : true)).slice(0, limit);
   process.stderr.write(`▶ ${spec.id}: ${subjects.length} موضوعًا\n`);
 
-  const resolved = await resolveSubjects(subjects.map((s) => ({ ...s, ar: s.ar || s.a })));
-  const counters = Object.fromEntries(TIERS.map((t) => [t, 0]));
+  // ترتيب السؤال داخل خانته يُشتق من موضعه في المواصفات، لا من عدّاد يتقدّم مع النجاح،
+  // كي يعطي البناءُ المعرّفَ نفسه لكل موضوع في كل مرة فيصير الاستئناف ممكنًا.
+  const seats = {};
+  const seated = subjects.map((s) => {
+    const tier = s.tier;
+    seats[tier] = (seats[tier] || 0) + 1;
+    return { ...s, ar: s.ar || s.a, seat: seats[tier] };
+  });
+  const resolved = await resolveSubjects(seated);
   const questions = [];
   const failures = [];
 
@@ -71,13 +84,20 @@ export async function buildPack(specPath, { limit = Infinity, only = null, dry =
     if (!subject.file) throw new Error('لم يُعثر على صورة لهذا الموضوع');
     const candidate = await fetchCommonsFile(subject.file, kind);
     if (candidate.reject) throw new Error(candidate.reject);
-    const index = ++counters[subject.tier];
-    const qid = `${spec.id}-${subject.tier}-${pad(index)}`;
+    const qid = `${spec.id}-${subject.tier}-${pad(subject.seat)}`;
     const src = `${qid}.${kind === 'audio' ? 'mp3' : 'webp'}`;
     const outPath = path.join(dir, src);
     if (dry) return { subject, qid, src, candidate, result: null, params: { fields: {}, note: 'تجريبي' } };
     await mkdir(dir, { recursive: true });
-    const result = await acquire(candidate, { kind, ffmpeg, sharp, maxBytes: BUDGET[kind], outPath });
+    // استئناف: ملف نُزّل في محاولة سابقة لهذا الموضوع نفسه يُعاد استعماله. الشبكة هنا
+    // مقيّدة المعدل بشدة، فإعادة تنزيل ما نجح تضيّع ساعات بلا فائدة.
+    const done = existing.get(src);
+    let result;
+    if (done && done.sourceUrl === candidate.sourceUrl && await readable(outPath)) {
+      result = { bytes: done.bytes, width: done.width, height: done.height, durationSec: done.durationSec };
+    } else {
+      result = await acquire(candidate, { kind, ffmpeg, sharp, maxBytes: BUDGET[kind], outPath });
+    }
     const params = await effectParams(spec, subject, outPath);
     return { subject, qid, src, candidate, result, params };
   });

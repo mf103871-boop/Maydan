@@ -5,7 +5,9 @@
 // فهي أضمن تطابقًا مع الجواب من أي بحث نصي حر.
 const UA = 'MaydanBank/1.0 (https://github.com/mf103871-boop/maydan; bank media build)';
 const TIMEOUT_MS = 30_000;
-const RETRY_DELAYS = [1000, 3000, 8000];
+// تهدئة تصاعدية تبلغ الدقيقة. ويكيميديا تقيّد المعدل بشدة حين تُبنى عدة حزم معًا،
+// وسلّم من ثماني ثوانٍ كان يُسقط المواضيع وهي سليمة.
+const RETRY_DELAYS = [1000, 3000, 8000, 20_000, 45_000, 90_000];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -19,7 +21,12 @@ export async function apiJson(url, label = 'ويكيميديا') {
     try {
       const response = await fetch(url, { headers: { 'user-agent': UA, accept: 'application/json' }, signal: controller.signal });
       const text = await response.text();
-      if (!response.ok) throw new Error(`${label} ردّت ${response.status}`);
+      if (!response.ok) {
+        // الخادم يقول متى يقبل الطلب التالي؛ احترام قوله أسرع من تخمين أقصر منه.
+        const advised = Number(response.headers.get('retry-after')) * 1000;
+        if (Number.isFinite(advised) && advised > 0) await sleep(advised);
+        throw new Error(`${label} ردّت ${response.status}`);
+      }
       try { return JSON.parse(text); } catch { throw new Error(`${label} ردّت محتوى ليس JSON`); }
     } catch (error) {
       lastError = error;
