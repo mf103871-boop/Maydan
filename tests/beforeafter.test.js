@@ -31,22 +31,30 @@ test('قبل ولا بعد: الحل يطابق الحدثين وسنتيهما 
     assert.equal(q.a, left.year < right.year ? 'قبل' : 'بعد', q.qid);
     assert.deepEqual(q.verification.years, [left.year, right.year], q.qid);
     assert.deepEqual(q.source, [left.sourceUrl, right.sourceUrl], q.qid);
-    assert.equal(q.q, `${left.label} مقارنة بـ${right.label}؟`, q.qid);
+    // «بـ» تُوصل بما بعدها؛ التطويل يسقط قبل الهمزة والألف. نقارن بعد حذف التطويل
+    // فيبقى ترتيب الحدثين ونصّهما مثبّتين دون فرض إملاء ركيك.
+    const tatweel = (text) => text.replace(/\u0640/g, '');
+    assert.equal(tatweel(q.q), tatweel(`${left.label} مقارنة بـ${right.label}؟`), q.qid);
     for (const url of q.source) assert.equal(new URL(url).protocol, 'https:');
     assert.equal(q.verified, true, q.qid);
   }
 });
 
-test('قبل ولا بعد: هويات الإنشاء محفوظة والتصنيف المراجع لا يخفي الفجوات', () => {
-  const reviewedCounts = { 200: 59, 400: 65, 600: 65, 800: 18, 1000: 33 };
-  assert.equal(pack.qs.filter(q => q.p !== Number(q.qid.split('-')[1])).length, 70);
+test('قبل ولا بعد: 48 سؤالًا في كل خانة، والخانة تطابق المعرّف', () => {
+  const evidenceTopics = evidence.groups.map(group => group.topic);
   for (const p of [200, 400, 600, 800, 1000]) {
-    assert.equal(pack.qs.filter(q => q.p === p).length, reviewedCounts[p], `توزيع المراجعة ${p}`);
-    // معرّف السؤال يسجل شريحة الإنشاء، وليس تصنيفه بعد المراجعة.
-    const tier = pack.qs.filter(q => Number(q.qid.split('-')[1]) === p);
-    assert.equal(tier.length, 48);
-    assert.equal(tier.filter(q => q.a === 'قبل').length, 24);
-    assert.equal(tier.filter(q => q.a === 'بعد').length, 24);
-    for (const { topic } of evidence.groups) assert.equal(tier.filter(q => q.topic === topic).length, 8);
+    const tier = pack.qs.filter(q => q.p === p);
+    assert.equal(tier.length, 48, `توزيع ${p}`);
+    // المعرّف يطابق الخانة بعد إعادة التصنيف بالصعوبة الفعلية.
+    for (const q of tier) assert.equal(Number(q.qid.split('-')[1]), p, q.qid);
+    // لا يميل الجواب إلى جهة فيخمّنه اللاعب: يبقى كلٌّ من «قبل» و«بعد» قرب النصف.
+    const before = tier.filter(q => q.a === 'قبل').length;
+    assert.ok(before >= 19 && before <= 29, `${p}: ميل الجواب ${before}/48`);
+    // لا يهيمن موضوع على خانة (سقف البنك 25%).
+    for (const topic of evidenceTopics) {
+      assert.ok(tier.filter(q => q.topic === topic).length <= 12, `${p}: الموضوع ${topic} يتجاوز الربع`);
+    }
   }
+  const ids = pack.qs.map(q => q.qid);
+  assert.equal(new Set(ids).size, ids.length, 'معرّفات مكررة');
 });
