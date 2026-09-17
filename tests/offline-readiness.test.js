@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import { readFile } from 'node:fs/promises';
 import { preloadMedia, cacheForOffline, isLoaded, resetMediaState } from '../src/shared/media/preload.js';
 
-async function worker({ entries = {}, fetcher = async () => new Response('asset'), failDocument = false } = {}) {
+async function worker({ entries = {}, fetcher = async () => new Response('asset'), failDocument = false, fabrakaImages = [] } = {}) {
   const listeners = new Map();
   const cachesByName = new Map(Object.entries(entries));
   const deleted = [];
@@ -29,7 +29,8 @@ async function worker({ entries = {}, fetcher = async () => new Response('asset'
     async skipWaiting() { skipped = true; },
     clients: { async claim() {}, async matchAll() { return [{ postMessage() {}, navigate() { navigated = true; } }]; } },
   };
-  vm.runInNewContext(await readFile(new URL('../public/sw.js', import.meta.url), 'utf8'), { self, caches, fetch: fetcher, URL, Response, Headers, AbortController, setTimeout, clearTimeout });
+  const source = (await readFile(new URL('../public/sw.js', import.meta.url), 'utf8')).replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages));
+  vm.runInNewContext(source, { self, caches, fetch: fetcher, URL, Response, Headers, AbortController, setTimeout, clearTimeout });
   async function dispatch(type, extras = {}) {
     let response;
     const tasks = [];
@@ -45,6 +46,14 @@ test('failed shell download cannot activate an incomplete offline release', asyn
   const w = await worker({ failDocument: true });
   await assert.rejects(w.dispatch('install'), /offline/);
   assert.equal(w.skipped(), false);
+});
+
+test('a missing or HTML Fabraka picture cannot activate an incomplete offline release', async () => {
+  for (const fetcher of [async () => new Response('missing', { status: 404 }), async () => new Response('<html>fallback</html>', { headers: { 'content-type': 'text/html' } })]) {
+    const w = await worker({ fetcher, fabrakaImages: ['./media/fabraka-v3/fab3-001.webp?v=unit'] });
+    await assert.rejects(w.dispatch('install'), /Fabraka image unavailable/);
+    assert.equal(w.skipped(), false);
+  }
 });
 
 test('upgrade preserves other applications and never reloads an active round', async () => {

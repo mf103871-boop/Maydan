@@ -4,20 +4,21 @@ import { Screen, Button, Podium, Segment, Card, Scoreboard, Modal, CountUp } fro
 import { flashScreen, stampScreen, vignette, burstConfetti, wait } from '../../shared/fx/index.js';
 import { useReaction } from '../../shared/ui/useReaction.js';
 import { mulberry32, randomSeed } from '../../shared/lib/rng.js';
-import { questions, pictures, personal, categories, categoryCount } from './content.js';
+import { questions, pictures, personal, categories, categoryCount, normalizeContentOptions } from './content.js';
 import { Illustration } from './Illustration.jsx';
-import { OPTIONS_KEY, SEEN_KEY, loadSession, loadResult, saveSession } from './persistence.js';
+import { OPTIONS_KEY, SEEN_KEY, loadSession, loadResult, saveSession, hasRetiredSession } from './persistence.js';
 import { initialState, reduce, currentActor, currentHost, standings, normalizeOptions, validateLie, votersFor, TRUTH_ID, ROUNDS, buildDeck, questionPool, turnKey, isSecret, multiplier, canVoteFor, restoreSession, awards, bestLies, factId } from './logic.js';
 import css from './fabraka.css';
 
 const MODE_LABELS = { classic: '🎭 حقائق', mixed: '✨ مزيج', pictures: '🖼️ صور', friends: '👋 أصحابنا' };
-const MODE_HINTS = { classic: 'اكتبوا كذبة مقنعة لسؤال حقيقي غريب.', mixed: 'أسئلة حقيقية تتخللها جولة صور كل ثلاث جولات.', pictures: '12 رسمًا لأدوات حقيقية. فبركوا استخدامًا يبدو منطقيًا!', friends: 'صاحب الجولة يكتب الحقيقة عن نفسه، والبقية يفبركون ويصوّتون.' };
+const MODE_HINTS = { classic: 'اكتبوا كذبة مقنعة لسؤال حقيقي غريب.', mixed: 'أسئلة حقيقية تتخللها جولة صور كل ثلاث جولات.', pictures: `${pictures.length} صورة توضيحية لأدوات حقيقية. فبركوا استخدامًا يبدو منطقيًا!`, friends: 'صاحب الجولة يكتب الحقيقة عن نفسه، والبقية يفبركون ويصوّتون.' };
 const PHASE_LABELS = { intro: 'استعدوا', host: 'صاحب الحقيقة', question: 'السؤال للجميع', write: 'كتابة سرية', discussion: 'نقاش', vote: 'تصويت سري', gather: 'اجتمعوا', reveal: 'وقت الكشف', roundEnd: 'حصيلة الجولة' };
 const names = (state, ids) => state.players.filter((p) => ids.includes(p.id)).map((p) => p.name).join('، ');
 
 export function SetupOptions({ storage, api }) {
-  const [opts, setOpts] = useState(() => normalizeOptions(storage.get(OPTIONS_KEY)));
+  const [opts, setOpts] = useState(() => normalizeContentOptions(storage.get(OPTIONS_KEY)));
   const [resume] = useState(() => loadSession(storage));
+  const [retiredSession] = useState(() => hasRetiredSession(storage));
   const [lastResult] = useState(() => loadResult(storage));
   const [showResult, setShowResult] = useState(false);
   const [tutorial, setTutorial] = useState(false);
@@ -34,6 +35,7 @@ export function SetupOptions({ storage, api }) {
   useEffect(() => { api.setGameOptions?.(opts); }, [api, opts]);
   return <div className="fabraka fab-setup stack">
     <style>{css}</style>
+    {retiredSession && <p className="fab-note" role="status">تجدّدت أسئلة فبركة وصورها. ابدأوا جلسة جديدة؛ الجلسة القديمة غير قابلة للاستئناف، ونتائجكم السابقة محفوظة.</p>}
     {resume && <Card className="fab-resume stack">
       <h2 className="card-title">لعبتكم بانتظاركم</h2>
       <p>{MODE_LABELS[resume.settings.mode]} · الجولة {resume.round} من {resume.rounds} · {resume.players.length} لاعبين</p>

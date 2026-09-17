@@ -61,8 +61,9 @@ test('على جبينك: ≥ 8 فئات × ≥ 30 عنصرًا، ولا تكرا
   }
 });
 
-test('فبركة: ≥ 120 سؤالًا، كل نص فيه ___ مرة واحدة وإجابة غير فارغة', () => {
-  assertCommon('fabraka', fabraka, { min: 120, textOf: (i) => i.text });
+test('فبركة 3: 100 سؤال جديد، كل نص فيه ___ مرة واحدة وإجابة غير فارغة', () => {
+  assert.equal(fabraka.length, 100, 'agreed replacement bank');
+  assertCommon('fabraka', fabraka, { min: 100, textOf: (i) => i.text });
   for (const q of fabraka) {
     const blanks = q.text.split('___').length - 1;
     assert.equal(blanks, 1, `fabraka/${q.id}: ${blanks} فراغات`);

@@ -139,17 +139,16 @@ test('10 — memorable lies carry the round answer so the blank can be filled', 
   assert.ok(best.question.includes('___'));
 });
 
-test('6/7/8 — every topic keeps playable «غرائب», merged facts keep their retired ids, and no answer sits in its own question', () => {
+test('every rebuilt topic stays playable and retired questions cannot return through previous IDs', () => {
   const questions = JSON.parse(readFileSync('src/data/games/fabraka/questions.json', 'utf8'));
   const personal = JSON.parse(readFileSync('src/data/games/fabraka/personal.json', 'utf8'));
   for (const category of new Set(questions.map((q) => q.category))) {
     const curious = questions.filter((q) => q.category === category && q.curious).length;
     assert.ok(curious >= 3, `${category}: ${curious} غرائب فقط`);
   }
-  const ids = new Set(questions.map((q) => q.id));
-  for (const retired of ['fabraka-w2-006', 'fabraka-w2-012']) {
-    assert.equal(ids.has(retired), false, `${retired} merged away`);
-    assert.ok(questions.some((q) => (q.previousIds || []).includes(retired)), `${retired} recorded in previousIds`);
+  for (const question of questions) {
+    assert.match(question.id, /^fab3-/);
+    assert.deepEqual(question.previousIds || [], [], 'new bank cannot revive a retired question');
   }
   for (const q of questions) assert.equal(q.text.replace('___', ' ').includes(q.answer), false, q.id);
   // القوالب الشخصية جُمَل اسمية: لا فعل مذكّر ملتصق بـ{name}.

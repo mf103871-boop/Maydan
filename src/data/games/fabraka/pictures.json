@@ -1,288 +1,963 @@
 [
   {
-    "id": "fabraka-picture-cherry-pitter",
-    "factId": "fabraka-picture-cherry-pitter",
-    "illustration": "cherry-pitter",
-    "text": "هذه الأداة ذات السنّ والكأس الصغيرة تُستخدم في ___.",
-    "answer": "إزالة نواة الكرز",
+    "id": "fab3-picture-001",
+    "factId": "fab3-picture-001",
+    "kind": "picture",
+    "illustration": "fab3-001",
+    "image": "media/fabraka-v3/fab3-001.webp",
+    "imageDescription": "قطعة خشبية ذات رأس دائري محدب وعصا قصيرة في أسفله.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "كانت هذه القطعة الخشبية تساعد في ___ دون انكماش القماش.",
+    "answer": "رتق الجوارب",
     "aliases": [
-      "نزع نوى الكرز",
-      "نزع نواة الكرز",
-      "إزالة نوى الكرز",
-      "إخراج نواة الكرز",
+      "ترقيع الجوارب",
+      "إصلاح الجوارب",
+      "رتق الملابس",
+      "ترقيع الملابس",
+      "إسناد القماش أثناء الرتق"
+    ],
+    "decoys": [
+      "كبس العجين في القوالب",
+      "تلميع الأواني المعدنية",
+      "فرد الطين الرطب",
+      "سد فوهات الزجاجات"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يوضع الرأس داخل الجورب تحت الثقب ليدعم القماش ويحافظ على شكله أثناء تمرير غرز الإصلاح.",
+    "sourceUrl": "https://museum.tweed.nsw.gov.au/files/assets/museum/v/1/documents/visit/school-resource-sheets/darning-mushroom.pdf",
+    "sourceTitle": "Tweed Regional Museum — Darning Mushroom",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-002",
+    "factId": "fab3-picture-002",
+    "kind": "picture",
+    "illustration": "fab3-002",
+    "image": "media/fabraka-v3/fab3-002.webp",
+    "imageDescription": "قطعة خشبية مسطحة ذات ذراعين قصيرين متقابلين وفتحة أسفلهما.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "تُلف الخيوط حول طرفي هذه الأداة من أجل ___.",
+    "answer": "صنع حبل من الخيط",
+    "aliases": [
+      "جدل الحبال",
+      "صنع الحبال",
+      "نسج حبال من الخيط",
+      "تضفير الخيوط",
+      "صنع حبال زينة"
+    ],
+    "decoys": [
+      "فصل بذور القطن",
+      "قياس سماكة القماش",
+      "تمشيط ألياف الكتان",
+      "توسيع فتحات الأزرار"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تُنقل حلقات الخيط بين الطرفين لتتشابك وتكوّن حبلًا؛ تسمى الأداة لوسيت.",
+    "sourceUrl": "https://www.crafthub.eu/material/braiding/",
+    "sourceTitle": "CraftHub / UWTSD — Braiding",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-003",
+    "factId": "fab3-picture-003",
+    "kind": "picture",
+    "illustration": "fab3-003",
+    "image": "media/fabraka-v3/fab3-003.webp",
+    "imageDescription": "قطعة صغيرة ممدودة ومدببة الطرفين، لها جانبان منحنيان وفراغ ضيق بينهما.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "هذه القطعة الصغيرة تحمل خيطًا لمساعدة الحرفي على ___.",
+    "answer": "صنع الدانتيل بالعقد",
+    "aliases": [
+      "صنع الدانتيل",
+      "حياكة الدانتيل",
+      "نسج الدانتيل",
+      "عمل دانتيل بالعقد",
+      "عمل الدانتيل"
+    ],
+    "decoys": [
+      "لف السجائر يدويًا",
+      "تقشير حبات الفستق",
+      "إغلاق أكياس الورق",
+      "شحذ إبر الخياطة"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يخزن مكوك التاتينغ الخيط، ويمرره الحرفي عبر حلقات متعاقبة لصنع دانتيل من العقد.",
+    "sourceUrl": "https://web.prm.ox.ac.uk/england/englishness-Lace-Techniques.html",
+    "sourceTitle": "Pitt Rivers Museum, University of Oxford — Lace Techniques",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-004",
+    "factId": "fab3-picture-004",
+    "kind": "picture",
+    "illustration": "fab3-004",
+    "image": "media/fabraka-v3/fab3-004.webp",
+    "imageDescription": "عصا خشبية ملساء لها مقبض عريض نسبيًا وطرف طويل مستدق قليلًا.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "وظيفة هذه العصا في أشغال الصوف هي ___.",
+    "answer": "لف الخيط في كرة",
+    "aliases": [
+      "لف الصوف",
+      "لف كرات الخيط",
+      "تكوين كرة من الخيط",
+      "تكوين كرة صوف",
+      "لف خيط الصوف"
+    ],
+    "decoys": [
+      "قياس طول الأكمام",
+      "توسيع قبعات الصوف",
+      "تمشيط أطراف السجاد",
+      "شد أزرار المعاطف"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يلف الخيط حول العصا ثم تسحب منه، فتتكون كرة يمكن سحب الخيط من وسطها.",
+    "sourceUrl": "https://www.stephanwoodworking.com/Nostepinne.htm",
+    "sourceTitle": "Stephan Woodworking — Nostepinne or Nostepinde: Yarn Ball Winders",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-005",
+    "factId": "fab3-picture-005",
+    "kind": "picture",
+    "illustration": "fab3-005",
+    "image": "media/fabraka-v3/fab3-005.webp",
+    "imageDescription": "قطعة خشبية طويلة ذات طرفين مدببين وتجويف وسطي فيه بكرة صغيرة.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "تمر هذه القطعة بين خيوط النول من أجل ___.",
+    "answer": "تمرير خيط النسيج",
+    "aliases": [
+      "تمرير خيط اللحمة",
+      "نقل خيط اللحمة",
+      "تمرير الخيط في النول",
+      "نسج القماش",
+      "حمل خيط اللحمة"
+    ],
+    "decoys": [
+      "ضغط ثنيات القماش",
+      "قص أطراف السجاد",
+      "تلوين خيوط الصوف",
+      "عد غرز التطريز"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يحمل المكوك بكرة خيط اللحمة، وينقله عرضيًا بين خيوط السدى أثناء النسج.",
+    "sourceUrl": "https://schachtspindle.com/products/boat-shuttles",
+    "sourceTitle": "Schacht Spindle Company — Boat Shuttles",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-006",
+    "factId": "fab3-picture-006",
+    "kind": "picture",
+    "illustration": "fab3-006",
+    "image": "media/fabraka-v3/fab3-006.webp",
+    "imageDescription": "قاعدة معدنية منخفضة تعلوها مجموعة كثيفة من الدبابيس القصيرة القائمة.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "تُستخدم هذه القاعدة المليئة بالدبابيس في ___.",
+    "answer": "تثبيت سيقان الزهور",
+    "aliases": [
+      "تثبيت الزهور",
+      "تنسيق الزهور",
+      "ترتيب الزهور",
+      "تثبيت الورد",
+      "تنسيق الورد"
+    ],
+    "decoys": [
+      "تنظيف فرش الطلاء",
+      "تمشيط الصوف الخام",
+      "تثقيب أغلفة الكتب",
+      "تجفيف شرائح الفاكهة"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تُثبت سيقان الزهور على الدبابيس، فتظل في الزوايا المختارة داخل الإناء؛ وتُعرف القاعدة باسم كينزان.",
+    "sourceUrl": "https://www.niwaki.com/us/kenzan-accessories",
+    "sourceTitle": "Niwaki — Kenzan",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-007",
+    "factId": "fab3-picture-007",
+    "kind": "picture",
+    "illustration": "fab3-007",
+    "image": "media/fabraka-v3/fab3-007.webp",
+    "imageDescription": "لوح خشبي منخفض مائل قليلًا، ينتهي أحد طرفيه بشق واسع على شكل حرف U.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "الفتحة في طرف هذه القطعة تساعد صاحبها على ___.",
+    "answer": "خلع الحذاء",
+    "aliases": [
+      "نزع الحذاء",
+      "خلع الأحذية",
+      "نزع الأحذية",
+      "خلع الجزمة",
+      "خلع البوت"
+    ],
+    "decoys": [
+      "تثبيت باب مفتوح",
+      "فتح أغطية البرطمانات",
+      "شد الحبال القصيرة",
+      "حمل الأطباق الساخنة"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يثبت الكعب في الشق، وتضغط القدم الأخرى على القاعدة، فيخرج الحذاء دون الإمساك به باليد.",
+    "sourceUrl": "https://dnr.illinois.gov/content/dam/soi/en/web/dnr/education/documents/prairiewhatisitactivity.pdf",
+    "sourceTitle": "Illinois State Museum — What Is It? (Bootjack)",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-008",
+    "factId": "fab3-picture-008",
+    "kind": "picture",
+    "illustration": "fab3-008",
+    "image": "media/fabraka-v3/fab3-008.webp",
+    "imageDescription": "ذراعان فاتحا اللون متصلان بمفصل، لهما طرفان طويلان مستدقان ومقبضان أوسع.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "كانت هذه الأداة ذات الطرفين تُستخدم في ___.",
+    "answer": "توسيع أصابع القفازات",
+    "aliases": [
+      "توسيع القفازات",
+      "تمديد القفازات",
+      "توسيع القفاز",
+      "تليين أصابع القفازات",
+      "توسيع القفازات الجلدية"
+    ],
+    "decoys": [
+      "فصل صفحات الكتب",
       "نزع نوى الزيتون",
-      "إزالة نوى الزيتون",
-      "إزالة نواة الزيتون"
-    ],
-    "explanation": "يضغط السنّ على النواة فيدفعها عبر الفتحة أسفل الثمرة. تُستخدم أدوات مشابهة للزيتون.",
-    "decoys": [
-      "ثقب العملات",
-      "تركيب الأزرار",
-      "قطع الأسلاك"
+      "تمديد إطارات النظارات",
+      "تقليب شرائح الخبز"
     ],
     "category": "صور الأدوات",
     "curious": true,
-    "kind": "picture",
-    "imageDescription": "أداة ذات مقبضين مفصليين، وسن معدني مقابل كأس صغيرة مثقوبة."
+    "explanation": "يدخل الطرفان في إصبع القفاز الجلدي، ثم يُباعد بينهما لتوسيعه وتسهيل ارتدائه.",
+    "sourceUrl": "https://www.nps.gov/long/blogs/glove-stretcher.htm",
+    "sourceTitle": "National Park Service — Glove Stretcher",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-picture-honey-dipper",
-    "factId": "fabraka-picture-honey-dipper",
-    "illustration": "honey-dipper",
-    "text": "الرأس الخشبي المحزّز لهذه العصا يساعد في ___.",
-    "answer": "نقل العسل",
+    "id": "fab3-picture-009",
+    "factId": "fab3-picture-009",
+    "kind": "picture",
+    "illustration": "fab3-009",
+    "image": "media/fabraka-v3/fab3-009.webp",
+    "imageDescription": "مقبض صغير يخرج منه قضيب معدني رفيع ينتهي بخطاف مستدير.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "في ارتداء الملابس، كان هذا الخطاف الصغير يساعد على ___.",
+    "answer": "تمرير الأزرار عبر عراويها",
     "aliases": [
-      "سكب العسل",
-      "تقديم العسل",
-      "أخذ العسل",
-      "غرف العسل",
-      "غمس العسل"
+      "إغلاق الأزرار",
+      "تزرير الملابس",
+      "إدخال الأزرار في فتحاتها",
+      "تمرير الزر في العروة",
+      "إقفال أزرار الملابس"
     ],
-    "explanation": "تحتجز الأخاديد العسل، ويمكن التحكم في نزوله بتدوير العصا.",
     "decoys": [
-      "تدليك الأصابع",
-      "ختم العجين",
-      "شد الخيوط"
+      "ربط خيوط الأحذية",
+      "قص الخيوط الزائدة",
+      "توسيع أطواق القمصان",
+      "فرد طيات الأكمام"
     ],
     "category": "صور الأدوات",
     "curious": true,
-    "kind": "picture",
-    "imageDescription": "عصا خشبية ينتهي طرفها برأس بيضاوي تحيط به أخاديد عميقة."
+    "explanation": "يمر الخطاف عبر عروة الزر، ويمسك بساق الزر ليسحبه خلالها؛ واستُخدم أيضًا لأزرار الأحذية والقفازات.",
+    "sourceUrl": "https://www.boylstonhistory.org/images/Buttonhooks.pdf",
+    "sourceTitle": "Boylston Historical Society and Museum — The Buttonhook: A Handy Victorian Era Tool",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-picture-strawberry-huller",
-    "factId": "fabraka-picture-strawberry-huller",
-    "illustration": "strawberry-huller",
-    "text": "الأصابع المعدنية الصغيرة لهذه الأداة مخصصة لـ ___.",
-    "answer": "إزالة قلب الفراولة",
+    "id": "fab3-picture-010",
+    "factId": "fab3-picture-010",
+    "kind": "picture",
+    "illustration": "fab3-010",
+    "image": "media/fabraka-v3/fab3-010.webp",
+    "imageDescription": "أداة معدنية بمقبضين ومفصل، تنتهي بفكين قصيرين متقابلين ذوي حافتين.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "قبل شيوع السكر الحبيبي، كانت هذه الأداة تُستخدم في ___.",
+    "answer": "تقطيع قوالب السكر",
     "aliases": [
-      "نزع قلب الفراولة",
-      "إزالة أوراق الفراولة",
-      "نزع أوراق الفراولة",
-      "إزالة عنق الفراولة",
-      "تنظيف الفراولة"
+      "تكسير السكر",
+      "قص قطع السكر",
+      "تجزئة السكر الصلب",
+      "كسر قوالب السكر",
+      "تقطيع السكر"
     ],
-    "explanation": "تغلق المخالب حول موضع الأوراق والقلب أعلى الفراولة لسحبهما.",
     "decoys": [
-      "التقاط الإبر",
-      "حفر الشمع",
-      "تثبيت الخرز"
+      "نزع أعناق الكرز",
+      "شق قشور الكستناء",
+      "قص أوراق الشاي",
+      "سحق حبوب القهوة"
     ],
     "category": "صور الأدوات",
     "curious": true,
-    "kind": "picture",
-    "imageDescription": "مقبض قصير وزر علوي، وثلاثة مخالب معدنية تتقابل في الطرف."
+    "explanation": "كان السكر يباع في قوالب صلبة، وتُقص منه بهذه الكماشة قطع أصغر للاستخدام.",
+    "sourceUrl": "https://www.mgmnc.org/blog/2026/04/20/sugar-nips",
+    "sourceTitle": "Mountain Gateway Museum — Sugar Nips",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-picture-egg-separator",
-    "factId": "fabraka-picture-egg-separator",
-    "illustration": "egg-separator",
-    "text": "هذه الملعقة ذات الفتحات تساعد في ___.",
-    "answer": "فصل صفار البيض",
+    "id": "fab3-picture-011",
+    "factId": "fab3-picture-011",
+    "kind": "picture",
+    "illustration": "fab3-011",
+    "image": "media/fabraka-v3/fab3-011.webp",
+    "imageDescription": "ذراع طويلة تنتهي بقطعة مجوفة صغيرة على شكل جرس.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يوضع الطرف المجوف لهذه الأداة فوق اللهب من أجل ___.",
+    "answer": "إطفاء الشموع",
     "aliases": [
-      "فصل الصفار عن البياض",
-      "فصل بياض البيض",
-      "فصل الصفار",
-      "فصل البياض عن الصفار",
-      "فصل صفار البيض عن بياضه"
+      "إطفاء الشمعة",
+      "إخماد لهب الشمعة",
+      "إطفاء الشموع دون نفخ",
+      "إخماد الشموع"
     ],
-    "explanation": "يبقى الصفار في التجويف ويمر بياض البيض من الفتحات المحيطة به.",
     "decoys": [
-      "رش السكر",
-      "قياس الدقيق",
-      "تصفية أوراق النعناع"
+      "تشكيل الشمع الساخن",
+      "تثبيت الشمعة مستقيمة",
+      "قياس طول الفتيل",
+      "حماية الشمعة من الريح"
     ],
     "category": "صور الأدوات",
     "curious": true,
-    "kind": "picture",
-    "imageDescription": "ملعقة عميقة ذات تجويف دائري صغير وشقوق واسعة تحيط به."
+    "explanation": "يغطي الجرس لهب الشمعة فينطفئ. هذه مطفأة ذات غطاء، وتختلف عن مقص قص الفتيل.",
+    "sourceUrl": "https://www.collections.dickensmuseum.com/object-dh57",
+    "sourceTitle": "Charles Dickens Museum — Candle-snuffers (DH57)",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-picture-nutcracker",
-    "factId": "fabraka-picture-nutcracker",
-    "illustration": "nutcracker",
-    "text": "الفكّان المسنّنان في هذه الأداة صُمّما من أجل ___.",
-    "answer": "كسر قشور المكسرات",
+    "id": "fab3-picture-012",
+    "factId": "fab3-picture-012",
+    "kind": "picture",
+    "illustration": "fab3-012",
+    "image": "media/fabraka-v3/fab3-012.webp",
+    "imageDescription": "مقص معدني طويل ذو حلقتين للأصابع وعلبة صغيرة مستطيلة عند طرفيه.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "الصندوق الصغير في هذا المقص يجمع البقايا عند ___.",
+    "answer": "قص فتيل الشمعة",
     "aliases": [
-      "كسر المكسرات",
-      "تكسير الجوز",
-      "كسر الجوز",
-      "تقشير الجوز",
-      "تكسير المكسرات",
-      "كسر قشرة الجوز"
+      "تقليم فتيل الشمعة",
+      "قص فتائل الشموع",
+      "تشذيب فتيل الشمعة",
+      "قص طرف الفتيل",
+      "تقصير الفتيل"
     ],
-    "explanation": "تضغط الأداة على القشرة الصلبة للمكسّرات لكسرها والوصول إلى اللب.",
     "decoys": [
-      "تمويج الورق",
-      "ثني المفاتيح",
-      "ضغط العجين"
+      "قص زهور الزينة",
+      "تشذيب حواف الورق",
+      "قطع شرائط القماش",
+      "جمع شظايا الخشب"
     ],
     "category": "صور الأدوات",
     "curious": true,
-    "kind": "picture",
-    "imageDescription": "مقبضان طويلان يتصلان بمفصل، وبينهما تجويفان داخليان مسننان."
+    "explanation": "يُقص به الطرف المحترق من الفتيل لتحسين الاحتراق، ويحتجز الصندوق الصغير الجزء المقطوع.",
+    "sourceUrl": "https://wesleysheritage.org.uk/object/candle-wick-trimmer/",
+    "sourceTitle": "Museum of Methodism — Candle Wick Trimmer",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-picture-spaghetti-measure",
-    "factId": "fabraka-picture-spaghetti-measure",
-    "illustration": "spaghetti-measure",
-    "text": "الفتحات المختلفة في هذه القطعة تُستخدم في ___.",
-    "answer": "قياس حصص السباغيتي",
-    "aliases": [
-      "قياس كمية السباغيتي",
-      "تحديد كمية المعكرونة",
-      "قياس حصص المعكرونة",
-      "قياس المكرونة",
-      "قياس المعكرونة"
-    ],
-    "explanation": "تمرر حزمة السباغيتي الجافة عبر الفتحة المناسبة لتقدير الحصة.",
-    "decoys": [
-      "تحديد مقاس الخواتم",
-      "ترتيب العملات",
-      "قياس أحجام الأزرار"
-    ],
-    "category": "صور الأدوات",
-    "curious": true,
+    "id": "fab3-picture-013",
+    "factId": "fab3-picture-013",
     "kind": "picture",
-    "imageDescription": "صفيحة مسطحة فيها أربعة ثقوب دائرية تزداد أحجامها من طرف لآخر."
-  },
-  {
-    "id": "fabraka-picture-citrus-reamer",
-    "factId": "fabraka-picture-citrus-reamer",
-    "illustration": "citrus-reamer",
-    "text": "الرأس المخروطي المحزّز لهذه الأداة مناسب لـ ___.",
-    "answer": "عصر الحمضيات",
+    "illustration": "fab3-013",
+    "image": "media/fabraka-v3/fab3-013.webp",
+    "imageDescription": "مقبض خشبي قصير يتصل بقاعدة معدنية دائرية ذات نقش زخرفي.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "تُضغط القاعدة المنقوشة لهذه الأداة على مادة لينة من أجل ___.",
+    "answer": "ختم الرسائل بالشمع",
     "aliases": [
-      "عصر الليمون",
-      "عصر البرتقال",
-      "استخراج عصير الليمون",
-      "عصير الليمون"
-    ],
-    "explanation": "يُضغط الرأس داخل نصف ثمرة من الحمضيات ويُدار لاستخراج العصير.",
-    "decoys": [
-      "تشكيل الصلصال",
-      "توسيع ثقوب الخشب",
-      "لف الصوف"
-    ],
-    "category": "صور الأدوات",
-    "curious": true,
-    "kind": "picture",
-    "imageDescription": "مقبض خشبي ينتهي بمخروط عريض ذي أضلاع طولية بارزة."
-  },
-  {
-    "id": "fabraka-picture-apple-corer",
-    "factId": "fabraka-picture-apple-corer",
-    "illustration": "apple-corer",
-    "text": "الأسطوانة المعدنية ذات الحافة المسننة تُستخدم في ___.",
-    "answer": "إزالة قلب التفاح",
-    "aliases": [
-      "نزع قلب التفاح",
-      "إزالة بذور التفاح",
-      "نزع بذور التفاح",
-      "تفريغ قلب التفاح"
-    ],
-    "explanation": "تُدفع الأسطوانة حول موضع البذور لإخراج قلب التفاحة كقطعة واحدة.",
-    "decoys": [
-      "حفر ثقوب الأزرار",
-      "تقطيع أقلام الشمع",
-      "قياس عمق التربة"
-    ],
-    "category": "صور الأدوات",
-    "curious": true,
-    "kind": "picture",
-    "imageDescription": "مقبض فوق أنبوب معدني قصير مجوّف، حافته السفلى مسننة."
-  },
-  {
-    "id": "fabraka-picture-ravioli-stamp",
-    "factId": "fabraka-picture-ravioli-stamp",
-    "illustration": "ravioli-stamp",
-    "text": "هذا القالب ذو المقبض والحافة المتموجة يُستخدم في ___.",
-    "answer": "تشكيل الرافيولي",
-    "aliases": [
-      "قطع الرافيولي",
-      "تقطيع الرافيولي",
-      "ختم الرافيولي",
-      "تشكيل رافيولي",
-      "صنع الرافيولي"
-    ],
-    "explanation": "يضغط القالب على طبقتي عجين تحيطان بالحشوة ليقطع الرافيولي ويغلق حوافه.",
-    "decoys": [
+      "صنع ختم شمعي",
+      "عمل ختم شمعي",
+      "طبع نقش على الشمع",
       "ختم الشمع",
-      "تشكيل قطع الصابون",
-      "تثبيت قماش التطريز"
+      "ختم المظاريف بالشمع"
+    ],
+    "decoys": [
+      "طبع الزخارف على الخبز",
+      "تسطيح أزرار الملابس",
+      "دمغ قطع الصابون",
+      "ضغط أوراق الزهور"
     ],
     "category": "صور الأدوات",
     "curious": true,
-    "kind": "picture",
-    "imageDescription": "مقبض خشبي قصير فوق إطار معدني مربع له حواف متموجة."
+    "explanation": "تُطبع القاعدة في الشمع اللين، فتترك بصمتها بعد أن يبرد، كما في أختام المراسلات.",
+    "sourceUrl": "https://shop.getty.edu/products/sealing-wax-stamp-kit",
+    "sourceTitle": "Getty Museum Store — Sealing Wax Stamp Kit",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-picture-pastry-wheel",
-    "factId": "fabraka-picture-pastry-wheel",
-    "illustration": "pastry-wheel",
-    "text": "العجلة الصغيرة ذات الحافة المتعرجة في هذه الأداة تُستخدم في ___.",
-    "answer": "تقطيع العجين",
+    "id": "fab3-picture-014",
+    "factId": "fab3-picture-014",
+    "kind": "picture",
+    "illustration": "fab3-014",
+    "image": "media/fabraka-v3/fab3-014.webp",
+    "imageDescription": "علبة صغيرة ذات غطاء مثقب واسع يشبه طبقًا ضحلًا.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "بعد كتابة رسالة بالحبر، كانت هذه العلبة تُستخدم في ___.",
+    "answer": "تجفيف الحبر",
     "aliases": [
-      "قطع العجين",
-      "تزيين حواف العجين",
-      "تشكيل حواف العجين",
-      "قص العجين"
+      "تنشيف الحبر",
+      "امتصاص الحبر الزائد",
+      "رش مسحوق لتجفيف الحبر",
+      "تجفيف الحبر على الورق"
     ],
-    "explanation": "تدور العجلة فوق العجين لتقطعه وتترك حافة متعرجة للمعجنات.",
     "decoys": [
-      "تخريم الجلد",
-      "قص الزجاج",
-      "قياس المسافات"
+      "تعطير الرسالة",
+      "رش مادة تمحو الكلمات",
+      "تلوين حواف الظرف",
+      "حفظ سن القلم"
     ],
     "category": "صور الأدوات",
     "curious": true,
-    "kind": "picture",
-    "imageDescription": "مقبض طويل يحمل عجلة معدنية صغيرة ذات محيط متعرج."
+    "explanation": "تُنثر منها مادة مسحوقة على الحبر الطري لامتصاصه. وقد استُخدمت أوعية مماثلة أيضًا لتحضير سطح الورق قبل الكتابة.",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/833963",
+    "sourceTitle": "The Metropolitan Museum of Art — Pouncepot (part of a set)",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-picture-tea-infuser",
-    "factId": "fabraka-picture-tea-infuser",
-    "illustration": "tea-infuser",
-    "text": "الكرة المعدنية المثقبة المتصلة بسلسلة مخصصة لـ ___.",
-    "answer": "نقع أوراق الشاي",
+    "id": "fab3-picture-015",
+    "factId": "fab3-picture-015",
+    "kind": "picture",
+    "illustration": "fab3-015",
+    "image": "media/fabraka-v3/fab3-015.webp",
+    "imageDescription": "مقبض خشبي تعلوه كأس صغيرة، وتتصل به كرة بواسطة خيط.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "التحدي في هذه اللعبة الخشبية هو ___.",
+    "answer": "التقاط الكرة بالكأس",
     "aliases": [
-      "تحضير الشاي",
-      "نقع الشاي",
-      "تصفية الشاي",
-      "تخمير الشاي"
+      "إدخال الكرة في الكأس",
+      "إسقاط الكرة داخل الكأس",
+      "لعبة الكرة والكأس",
+      "التقاط كرة مربوطة",
+      "التقاط الكرة في التجويف"
     ],
-    "explanation": "توضع أوراق الشاي داخل الكرة وتمر المياه عبر الثقوب أثناء النقع.",
     "decoys": [
-      "تعطير الخزائن",
-      "حفظ البذور",
-      "تنظيف الأنابيب"
+      "تدوير الكرة فوق الطاولة",
+      "إصابة هدف بعيد بالكرة",
+      "فك الخيط دون لمس الكرة",
+      "موازنة الكأس فوق الكرة"
     ],
     "category": "صور الأدوات",
     "curious": true,
-    "kind": "picture",
-    "imageDescription": "كرة معدنية تنفتح إلى نصفين، تغطيها ثقوب صغيرة وتتصل بسلسلة."
+    "explanation": "يقذف اللاعب الكرة المتصلة بخيط، ويحاول استقبالها في الكأس؛ وهي إحدى صور لعبة بيلبوكيه.",
+    "sourceUrl": "https://coopermanhistorylives.com/products/wooden-bilbo-catcher-spindle-cup-ball",
+    "sourceTitle": "Cooperman HistoryLives — Bilbo-Catcher (Bilboquet)",
+    "verifiedAt": "2026-09-18"
   },
   {
-    "id": "fabraka-picture-shoehorn",
-    "factId": "fabraka-picture-shoehorn",
-    "illustration": "shoehorn",
-    "text": "القطعة الطويلة المقعّرة في الصورة تساعد في ___.",
-    "answer": "ارتداء الحذاء",
+    "id": "fab3-picture-016",
+    "factId": "fab3-picture-016",
+    "kind": "picture",
+    "illustration": "fab3-016",
+    "image": "media/fabraka-v3/fab3-016.webp",
+    "imageDescription": "كؤوس نصف كروية موزعة على أذرع حول محور رأسي.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "دوران هذه الكؤوس حول محورها يسمح بـ ___.",
+    "answer": "قياس سرعة الرياح",
     "aliases": [
-      "لبس الحذاء",
-      "إدخال القدم في الحذاء",
-      "لبس الأحذية",
-      "ارتداء الأحذية"
+      "قياس سرعة الريح",
+      "معرفة سرعة الرياح",
+      "قياس شدة الرياح",
+      "تحديد سرعة الرياح"
     ],
-    "explanation": "توضع خلف الكعب لينزلق إلى الحذاء دون ثني مؤخرته.",
     "decoys": [
-      "رفع غطاء العلبة",
-      "تقشير الخضار",
-      "تنعيم الصلصال"
+      "تحديد اتجاه الشمال",
+      "قياس كمية الأمطار",
+      "معرفة رطوبة الهواء",
+      "قياس ضغط الهواء"
     ],
     "category": "صور الأدوات",
     "curious": true,
+    "explanation": "تدير الرياح الكؤوس، ويُستخدم معدل دورانها لحساب سرعتها؛ أما اتجاه الريح فيقاس عادة بأداة أخرى.",
+    "sourceUrl": "https://weather.metoffice.gov.uk/guides/observations/how-we-measure-wind",
+    "sourceTitle": "Met Office — How we measure wind",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-017",
+    "factId": "fab3-picture-017",
     "kind": "picture",
-    "imageDescription": "شريط طويل منحنٍ قليلًا، يتسع طرفه السفلي على هيئة ملعقة ضحلة."
+    "illustration": "fab3-017",
+    "image": "media/fabraka-v3/fab3-017.webp",
+    "imageDescription": "قرص أفقي عليه خطوط شعاعية، يتوسطه جزء رفيع قائم ذو حافة مائلة.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يعتمد هذا القرص والجزء القائم فوقه على الشمس من أجل ___.",
+    "answer": "معرفة الوقت من الظل",
+    "aliases": [
+      "معرفة الوقت",
+      "قياس الوقت",
+      "تحديد الوقت بالشمس",
+      "معرفة الساعة",
+      "ساعة شمسية",
+      "مزولة شمسية"
+    ],
+    "decoys": [
+      "قياس حرارة الجو",
+      "معرفة موعد هطول المطر",
+      "تحديد عمر الصخور",
+      "قياس شدة أشعة الشمس"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يتحرك ظل الجزء القائم مع حركة الشمس الظاهرية، وتُقرأ الساعة من موضعه على تدريجات القرص.",
+    "sourceUrl": "https://collection.kotsanasmuseum.com/en/exhibits/106071/",
+    "sourceTitle": "Kotsanas Museum — Level horizontal sundial",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-018",
+    "factId": "fab3-picture-018",
+    "kind": "picture",
+    "illustration": "fab3-018",
+    "image": "media/fabraka-v3/fab3-018.webp",
+    "imageDescription": "أسطوانة شفافة قائمة ذات تدريجات وفوهة علوية واسعة.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "تجمع هذه الأسطوانة ما يدخلها من الأعلى من أجل ___.",
+    "answer": "قياس كمية المطر",
+    "aliases": [
+      "قياس المطر",
+      "قياس كمية الأمطار",
+      "قياس هطول الأمطار",
+      "معرفة كمية المطر",
+      "قياس معدل هطول المطر"
+    ],
+    "decoys": [
+      "قياس رطوبة التربة",
+      "تقدير سرعة الرياح",
+      "معرفة ملوحة الماء",
+      "قياس تبخر الماء"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يجمع الوعاء المطر خلال مدة محددة، وتساعد التدريجات على معرفة مقدار الهطول.",
+    "sourceUrl": "https://weather.metoffice.gov.uk/guides/observations/how-we-measure-rainfall",
+    "sourceTitle": "Met Office — How we measure rainfall",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-019",
+    "factId": "fab3-picture-019",
+    "kind": "picture",
+    "illustration": "fab3-019",
+    "image": "media/fabraka-v3/fab3-019.webp",
+    "imageDescription": "قطعة معدنية على شكل حرف U طويل، لها مقبض قصير من الأسفل.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يستفيد الموسيقي من اهتزاز هذه القطعة في ___.",
+    "answer": "ضبط نغمة الآلات الموسيقية",
+    "aliases": [
+      "ضبط الآلات الموسيقية",
+      "دوزان الآلات",
+      "تحديد طبقة الصوت",
+      "إعطاء نغمة مرجعية",
+      "ضبط النغمات"
+    ],
+    "decoys": [
+      "زيادة علو صوت الآلة",
+      "قياس طول الأوتار",
+      "تحديد سرعة العزف",
+      "تسجيل الألحان"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تعطي الشوكة عند الطرق نغمة محددة، فيقارن الموسيقي بها نغمة آلته عند ضبطها.",
+    "sourceUrl": "https://americanhistory.si.edu/acoustics/tuning-forks",
+    "sourceTitle": "Smithsonian National Museum of American History — Tuning Forks",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-020",
+    "factId": "fab3-picture-020",
+    "kind": "picture",
+    "illustration": "fab3-020",
+    "image": "media/fabraka-v3/fab3-020.webp",
+    "imageDescription": "ثقل معدني متماثل ومدبب من الأسفل، متصل بخيط من أعلاه.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يساعد تعليق هذه القطعة بخيط ساكن البنّاء على ___.",
+    "answer": "تحديد الخط الرأسي",
+    "aliases": [
+      "التأكد من عمودية الجدار",
+      "فحص عمودية الجدار",
+      "تحديد الاتجاه الرأسي",
+      "قياس عمودية البناء",
+      "فحص استقامة الجدران"
+    ],
+    "decoys": [
+      "قياس رطوبة الجدار",
+      "تحديد سماكة الزجاج",
+      "معرفة وزن الحجارة",
+      "حساب مساحة الغرفة"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تجعل الجاذبية الخيط المشدود بالثقل مرجعًا رأسيًا، فيُقارن به ميل الجدار أو غيره.",
+    "sourceUrl": "https://gem.eg/en/collection/artefacts/plumb-line-level",
+    "sourceTitle": "Grand Egyptian Museum — Plumb Line Level",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-021",
+    "factId": "fab3-picture-021",
+    "kind": "picture",
+    "illustration": "fab3-021",
+    "image": "media/fabraka-v3/fab3-021.webp",
+    "imageDescription": "ذراعان رفيعان متقاطعان على شكل X بأربعة أطراف مدببة، مع شق طولي ظاهر قرب مسمار المفصل",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يضبط الرسّام موضع المفصل في هذه الأداة كي تساعده على ___.",
+    "answer": "نقل القياسات بنسبة محددة",
+    "aliases": [
+      "تكبير وتصغير القياسات",
+      "نقل الأبعاد بمقياس",
+      "تكبير وتصغير الرسوم",
+      "تكبير القياسات",
+      "تصغير القياسات",
+      "نقل النسب في الرسم",
+      "قياس النسب"
+    ],
+    "decoys": [
+      "قص شرائط الورق بالتساوي",
+      "ثني الأسلاك المعدنية",
+      "تثبيت لوحين أثناء اللصق",
+      "معرفة درجة ميل الطاولة"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يُقاس بُعد بزوج من الأطراف، ويعطي الزوج المقابل بُعدًا مكبّرًا أو مصغّرًا بنسبة يحددها موضع المفصل؛ فيساعد على نقل أبعاد الرسم بمقياس مختلف.",
+    "sourceUrl": "https://files.eric.ed.gov/fulltext/ED083371.pdf#page=18",
+    "sourceTitle": "Department of the Army — General Drafting, TM 5-581A: Proportional Dividers",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-022",
+    "factId": "fab3-picture-022",
+    "kind": "picture",
+    "illustration": "fab3-022",
+    "image": "media/fabraka-v3/fab3-022.webp",
+    "imageDescription": "قضيب خشبي يمر عبر كتلة منزلقة مزودة بمسمار تثبيت، وبقرب طرفه سن صغيرة.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يضبط النجار موضع الكتلة المنزلقة في هذه الأداة من أجل ___.",
+    "answer": "تعليم خط مواز لحافة الخشب",
+    "aliases": [
+      "رسم خط مواز لحافة الخشب",
+      "تعليم خطوط موازية",
+      "تخطيط الخشب",
+      "تعليم الخشب",
+      "تحديد خط على الخشب"
+    ],
+    "decoys": [
+      "فحص رطوبة الخشب",
+      "توسيع ثقوب المسامير",
+      "شد ألواح الخشب معًا",
+      "قياس وزن قطعة الخشب"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تستند الكتلة إلى الحافة، بينما يخدش السن خطًا على مسافة ثابتة منها ليوجّه العمل.",
+    "sourceUrl": "https://www.faithfulltools.com/p/FAIRMARK/Marking-Gauge",
+    "sourceTitle": "Faithfull Tools — Marking Gauge",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-023",
+    "factId": "fab3-picture-023",
+    "kind": "picture",
+    "illustration": "fab3-023",
+    "image": "media/fabraka-v3/fab3-023.webp",
+    "imageDescription": "قطعة وسطية معدنية فيها شفرة قصيرة، ويمتد من جانبيها مقبضان.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يمسك النجار المقبضين الجانبيين لهذه الأداة ليقوم بـ ___.",
+    "answer": "تشكيل الخشب وتنعيمه",
+    "aliases": [
+      "تنعيم الخشب",
+      "نحت الخشب",
+      "تنعيم حواف الخشب",
+      "حلق الخشب",
+      "تسوية الخشب"
+    ],
+    "decoys": [
+      "قياس صلابة المسامير",
+      "ثني صفائح المعدن",
+      "نشر الأخشاب إلى ألواح",
+      "دق المسامير الصغيرة"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تزيل شفرتها طبقات رقيقة من الخشب، فتسمح بتشكيل السطح والحواف والتحكم في نعومتها.",
+    "sourceUrl": "https://www.lie-nielsen.com/products/1-sp-boggs-f-boggs-spokeshaves?node=4091&path=spokeshaves",
+    "sourceTitle": "Lie-Nielsen Toolworks — Boggs Flat Spokeshave",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-024",
+    "factId": "fab3-picture-024",
+    "kind": "picture",
+    "illustration": "fab3-024",
+    "image": "media/fabraka-v3/fab3-024.webp",
+    "imageDescription": "كتلة خشبية ملساء على هيئة قدم كاملة ذات مقدمة مستديرة وكعب.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "كانت هذه القطعة الخشبية أساسًا يعتمد عليه الحرفي في ___.",
+    "answer": "تشكيل الحذاء أثناء صنعه",
+    "aliases": [
+      "صناعة الأحذية",
+      "صنع الأحذية",
+      "تشكيل جلد الحذاء",
+      "قولبة الحذاء",
+      "تشكيل الأحذية"
+    ],
+    "decoys": [
+      "تدريب خطوات الرقص",
+      "قياس عمق آثار الأقدام",
+      "طبع آثار على الرمال",
+      "تجفيف الجوارب فقط"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يشد صانع الحذاء الجلد حول قالب القدم ليعطي الحذاء شكله خلال مراحل التصنيع.",
+    "sourceUrl": "https://metc.org/decoding-the-past-shoemaker/",
+    "sourceTitle": "Museum of Early Trades & Crafts — The Shoemaker",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-025",
+    "factId": "fab3-picture-025",
+    "kind": "picture",
+    "illustration": "fab3-025",
+    "image": "media/fabraka-v3/fab3-025.webp",
+    "imageDescription": "حزام جلدي قصير ذو فتحة جانبية وقرص معدني صغير مليء بالنقر.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يرتدي صانع الأشرعة هذه القطعة الجلدية لتساعده في ___.",
+    "answer": "دفع الإبرة عبر القماش السميك",
+    "aliases": [
+      "خياطة الأشرعة",
+      "دفع الإبرة عبر قماش الأشرعة",
+      "حماية الكف عند الخياطة",
+      "خياطة القماش السميك",
+      "دفع إبرة الخياطة"
+    ],
+    "decoys": [
+      "سحب مسامير الخشب",
+      "قياس قوة الرياح",
+      "لف الحبال على البكرات",
+      "حمل مصباح ساخن"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يستند رأس الإبرة إلى القرص المعدني المنقّر، ليتمكن الحرفي من دفعها بقوة عبر القماش مع حماية كفه.",
+    "sourceUrl": "https://www.staugustinelighthouse.org/2016/07/06/whats-in-a-collection-sailmakers-palm/",
+    "sourceTitle": "St. Augustine Lighthouse & Maritime Museum — What’s in a Collection? Sailmaker’s Palm",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-026",
+    "factId": "fab3-picture-026",
+    "kind": "picture",
+    "illustration": "fab3-026",
+    "image": "media/fabraka-v3/fab3-026.webp",
+    "imageDescription": "قطعة طويلة ملساء ذات قاعدة عريضة وطرف يتدرج إلى رأس مدبب.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "في أعمال الحبال، تساعد هذه القطعة المدببة على ___.",
+    "answer": "فصل جدائل الحبل لوصلها",
+    "aliases": [
+      "فصل جدائل الحبال",
+      "فتح خيوط الحبل لوصلها",
+      "وصل الحبال",
+      "عمل وصلة في الحبل",
+      "تضفير الحبال"
+    ],
+    "decoys": [
+      "قياس وزن الحبل",
+      "قطع الحبال بحركة واحدة",
+      "حرق أطراف الحبال",
+      "صبغ الحبال من الداخل"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يفتح الطرف المدبب مسافة بين جدائل الحبل، لتمرير الجدائل الأخرى خلالها وصنع وصلة متشابكة.",
+    "sourceUrl": "https://victoriancollections.net.au/items/61ca4e93dd33b340e6bf0505",
+    "sourceTitle": "Flagstaff Hill Maritime Museum and Village — Tool: Fid",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-027",
+    "factId": "fab3-picture-027",
+    "kind": "picture",
+    "illustration": "fab3-027",
+    "image": "media/fabraka-v3/fab3-027.webp",
+    "imageDescription": "قطعة خشبية رفيعة مخرطة، لها رأس صغير وعنق ضيق وجسم أطول منتفخ قليلًا.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "وظيفة هذه القطعة الصغيرة في صناعة الدانتيل هي ___.",
+    "answer": "حمل الخيط وتحريكه",
+    "aliases": [
+      "حمل خيط الدانتيل",
+      "لف خيوط الدانتيل",
+      "نسج الدانتيل",
+      "صنع الدانتيل",
+      "حفظ الخيط وتحريكه"
+    ],
+    "decoys": [
+      "قص حواف القماش",
+      "كي شرائط الدانتيل",
+      "صبغ العقد الصغيرة",
+      "ثقب الإبر الدقيقة"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يلف الخيط حول العنق الضيق، ويُمسك الجسم لتحريك الخيط وتشبيكه مع بقية الخيوط دون لمسه مباشرة.",
+    "sourceUrl": "https://cowperandnewtonmuseum.org.uk/bobbins-and-lacemaking/",
+    "sourceTitle": "Cowper & Newton Museum — Bobbins and Lacemaking",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-028",
+    "factId": "fab3-picture-028",
+    "kind": "picture",
+    "illustration": "fab3-028",
+    "image": "media/fabraka-v3/fab3-028.webp",
+    "imageDescription": "وعاء خشبي أسطواني مجوف، ومعه قطعة دائرية منقوشة متصلة بمقبض.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "استُخدم التجويف والنقش داخل هذه القطعة في ___.",
+    "answer": "تشكيل الزبدة وزخرفتها",
+    "aliases": [
+      "قولبة الزبدة",
+      "تزيين الزبدة",
+      "طبع نقش على الزبدة",
+      "ختم الزبدة",
+      "تشكيل الزبدة"
+    ],
+    "decoys": [
+      "تجفيف أعشاب الشاي",
+      "ضغط قشر الحمضيات",
+      "غربلة دقيق الخبز",
+      "فصل صفار البيض"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تُضغط الزبدة في القالب لتأخذ شكله، وتترك القطعة المنقوشة زخرفتها على السطح. وقد ميّزت هذه النقوش منتجات صانعيها.",
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/1053",
+    "sourceTitle": "The Metropolitan Museum of Art — Butter Mold",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-029",
+    "factId": "fab3-picture-029",
+    "kind": "picture",
+    "illustration": "fab3-029",
+    "image": "media/fabraka-v3/fab3-029.webp",
+    "imageDescription": "حلقة عريضة مجوفة ذات نتوءات واضحة على سطحها الداخلي.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "النتوءات داخل هذه الحلقة تساعد في ___.",
+    "answer": "فصل حبوب الذرة عن الكوز",
+    "aliases": [
+      "تفريط الذرة",
+      "نزع حبات الذرة",
+      "إزالة حبوب الذرة",
+      "فصل حبات الذرة",
+      "تفريغ كوز الذرة"
+    ],
+    "decoys": [
+      "نزع قشر البرتقال",
+      "تقطيع حلقات البصل",
+      "فتح حبات الجوز",
+      "كشط قشور السمك"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "يُمرّر الكوز ويُدار داخل الأداة، فتفصل النتوءات الحبوب عنه؛ وهي أداة يدوية بسيطة لتفريط الذرة.",
+    "sourceUrl": "https://d-lab.mit.edu/resources/publications/how-corn-sheller",
+    "sourceTitle": "MIT D-Lab — How To: Corn Sheller",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-030",
+    "factId": "fab3-picture-030",
+    "kind": "picture",
+    "illustration": "fab3-030",
+    "image": "media/fabraka-v3/fab3-030.webp",
+    "imageDescription": "مقبض قصير ينتهي بذراع معدنية تحمل عجلة صغيرة ذات أسنان حادة.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "تترك العجلة المسننة أثرًا متتابعًا على الورق بهدف ___.",
+    "answer": "تثقيب خطوط الرسم لنقلها",
+    "aliases": [
+      "نقل الرسوم بثقوب صغيرة",
+      "تثقيب الورق لتتبع الرسم",
+      "نقل الباترون",
+      "نقل الرسم",
+      "نقل خطوط الرسم"
+    ],
+    "decoys": [
+      "قص دوائر من الورق",
+      "بري أقلام الرصاص",
+      "ضغط الزهور بين الصفحات",
+      "تمزيق حواف الطوابع"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تُمرر العجلة فوق خطوط النمط لتصنع ثقوبًا متتابعة، ويمكن نقل النمط عبرها إلى سطح آخر.",
+    "sourceUrl": "https://www.rosebrand.com/pounce-wheel",
+    "sourceTitle": "Rose Brand — Pounce Wheel",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-031",
+    "factId": "fab3-picture-031",
+    "kind": "picture",
+    "illustration": "fab3-031",
+    "image": "media/fabraka-v3/fab3-031.webp",
+    "imageDescription": "قطعة فاتحة اللون مسطحة وملساء، أحد طرفيها مستدير والآخر مستدق.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "يستخدم مُجلّد الكتب الحافة الملساء لهذه القطعة في ___.",
+    "answer": "طي الورق وتثبيت ثنياته",
+    "aliases": [
+      "طي الورق",
+      "ثني الورق",
+      "كبس ثنيات الورق",
+      "تجليد الكتب",
+      "تسوية طيات الورق"
+    ],
+    "decoys": [
+      "كشط الحبر الجاف",
+      "قطع ألواح الزجاج",
+      "شحذ أقلام الخط",
+      "فصل خيوط النسيج"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تساعد الحافة الملساء على عمل ثنيات واضحة وتسطيح الورق في التجليد والأعمال الورقية.",
+    "sourceUrl": "https://library.ucdavis.edu/news/tools-of-the-preservation-trade/",
+    "sourceTitle": "UC Davis Library — Tools of the Preservation Trade",
+    "verifiedAt": "2026-09-18"
+  },
+  {
+    "id": "fab3-picture-032",
+    "factId": "fab3-picture-032",
+    "kind": "picture",
+    "illustration": "fab3-032",
+    "image": "media/fabraka-v3/fab3-032.webp",
+    "imageDescription": "أسطوانة خشبية قصيرة مجوفة، تعلو حافتها دبابيس معدنية قصيرة.",
+    "imageCredit": "تصوير توضيحي مولّد بالذكاء الاصطناعي لأداة حقيقية",
+    "text": "ينتج عن تمرير حلقات الخيط فوق دبابيس هذه القطعة ___.",
+    "answer": "حبل محاك من الخيط",
+    "aliases": [
+      "حياكة حبل من الخيط",
+      "صنع حبال الصوف",
+      "نسج حبال الخيط",
+      "حياكة حبال زينة",
+      "حبل من الصوف",
+      "أنبوب صغير من الخيط"
+    ],
+    "decoys": [
+      "كرة صوف ملفوفة",
+      "قطعة قماش عريضة",
+      "خيط مصبوغ بلون جديد",
+      "أزرار مكسوة بالخيط"
+    ],
+    "category": "صور الأدوات",
+    "curious": true,
+    "explanation": "تُرفع الحلقات فوق الدبابيس بالتتابع، فيخرج حبل محاك من الفتحة الوسطى؛ وتسمى الطريقة حياكة البكرة.",
+    "sourceUrl": "https://blog.clover-usa.com/2021/03/31/wonder-knitter-tutorial/amp/",
+    "sourceTitle": "Clover Needlecraft — Wonder Knitter Tutorial",
+    "verifiedAt": "2026-09-18"
   }
 ]

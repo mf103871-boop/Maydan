@@ -1,6 +1,6 @@
 // Values shared by the browser and the authoritative room server.
 export const PROTOCOL = 1;
-export const FABRAKA_PROTOCOL = 2;
+export const FABRAKA_PROTOCOL = 3;
 export const ONLINE_GAMES = {
   meenfina: { name: 'مين فينا؟', min: 3, max: 12 },
   fabraka: { name: 'فبركة', min: 3, max: 8 },

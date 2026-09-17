@@ -61,7 +61,7 @@ test('Fabraka on workerd: private simultaneous play, SQLite hibernation, reconne
     const { clients, profiles, code } = await group('classic');
     for (let round = 1; round <= 3; round++) {
       await until(() => clients.every((c) => c.state.phase === 'write' && c.state.round === round));
-      assert.equal(clients[0].state.protocol, 2);
+      assert.equal(clients[0].state.protocol, 3);
       const question = questions.find((q) => q.text === clients[0].state.question.text);
       assert.ok(question);
       assert.equal(clients[0].state.question.answer, undefined);

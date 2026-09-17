@@ -5,6 +5,6 @@ import { buildDeck } from '../src/games/fabraka/logic.js';
 
 export function buildFabrakaDeck(room) {
   const random = () => crypto.getRandomValues(new Uint32Array(1))[0] / 4294967296;
-  return buildDeck({ questions, pictures: pictures.map((q, visualIndex) => ({ ...q, visualIndex })), personal,
+  return buildDeck({ questions, pictures, personal,
     options: room.settings, seen: Object.fromEntries((room.seenFacts || []).map((id, index) => [id, index + 1])), random });
 }
