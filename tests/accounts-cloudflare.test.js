@@ -430,6 +430,17 @@ test('Paddle: المعاملة تحمل custom_data.userId، والبوابة ت
   const portal = await api.get('/api/paddle/portal');
   assert.equal(portal.status, 200);
   assert.match(portal.data.url, /^https:\/\/sandbox-customer-portal\.paddle\.com\//);
+
+  // اشتراك مدفوع سارٍ يمنع معاملة ثانية (لا فوترة مزدوجة)؛ رمز الهدية وحده لا يمنع.
+  await api.post('/api/dev/grant', { until: Date.now() + 30 * 86_400_000, source: 'paddle' });
+  const again = await api.post('/api/paddle/checkout', { plan: 'monthly' });
+  assert.equal(again.status, 409);
+  assert.equal(again.data.error, 'ALREADY_SUBSCRIBED');
+  await api.post('/api/dev/grant', { until: 0, source: 'paddle' }); // انتهى → يُسمح من جديد
+  assert.equal((await api.post('/api/paddle/checkout', { plan: 'monthly' })).status, 200);
+  const promoOnly = await signInDev('paddle-promo', 'هدية');
+  assert.equal((await promoOnly.api.post('/api/redeem', { code: '1121998' })).status, 200);
+  assert.equal((await promoOnly.api.post('/api/paddle/checkout', { plan: 'monthly' })).status, 200, 'المفعَّل بالرمز يستطيع الشراء');
 });
 
 test('webhook باديل: توقيع صالح يفعّل الاشتراك، ومزوّر أو مكرّر يُرفض', { timeout: 30_000 }, async () => {

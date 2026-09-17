@@ -6,6 +6,7 @@ export const ACCOUNT_ERRORS = {
   PROVIDER: 'تعذّر الاتصال بمزوّد الدخول، جرّب لاحقًا.',
   STATE: 'انتهت صلاحية طلب الدخول، أعد المحاولة.',
   ALREADY_LINKED: 'هذا الاشتراك مرتبط بحساب آخر.',
+  ALREADY_SUBSCRIBED: 'أنت مشترك بالفعل؛ أدر اشتراكك من الإعدادات.',
   SIGNATURE: 'طلب غير صالح.',
   NOT_ELIGIBLE: 'هذا الحساب غير مؤهل.',
   PURCHASE_CANCELLED: 'أُلغيت عملية الشراء.',

@@ -242,6 +242,9 @@ async function paddleCheckout(request, env, now) {
   if (body.client === 'ios' || origin.startsWith('maydan:')) failure('NOT_ELIGIBLE');
   if (!paddle.configured(env)) failure('NOT_ELIGIBLE');
   if (body.plan !== 'monthly' && body.plan !== 'yearly') failure('INVALID');
+  // اشتراك مدفوع سارٍ (Paddle أو آبل) يمنع معاملة ثانية: لا فوترة مزدوجة؛ الرمز لا يمنع.
+  const current = premiumOf(await db.subscriptionsOf(env, user.id), now);
+  if (premiumActive(current, now) && current.source !== 'promo') failure('ALREADY_SUBSCRIBED');
   return withRotation(json(await paddle.createTransaction(env, user, body.plan)), rotated);
 }
 async function paddlePortal(request, env, now) {

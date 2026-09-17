@@ -67,7 +67,7 @@ Authorization: Bearer mdn1.<معرّف 16 hex>.<سر base64url من 32 بايت>
 
 ### أكواد الأخطاء
 
-`AUTH_REQUIRED` 401 · `AUTH_EXPIRED` 401 · `PLUS_REQUIRED` 402 · `ALREADY_LINKED` 409 · `SIGNATURE` 401 · `PROVIDER` 502 · `STATE` 400 · `NOT_ELIGIBLE` 400 · `INVALID` 400 · `RATE_LIMIT` 429 · `NOT_FOUND` 404.
+`AUTH_REQUIRED` 401 · `AUTH_EXPIRED` 401 · `PLUS_REQUIRED` 402 · `ALREADY_LINKED` 409 · `ALREADY_SUBSCRIBED` 409 (اشتراك مدفوع سارٍ يمنع معاملة Paddle ثانية) · `SIGNATURE` 401 · `PROVIDER` 502 · `STATE` 400 · `NOT_ELIGIBLE` 400 · `INVALID` 400 · `RATE_LIMIT` 429 · `NOT_FOUND` 404.
 
 نصوصها العربية في `src/shared/account/errors.js`.
 
