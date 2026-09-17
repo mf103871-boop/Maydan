@@ -34,12 +34,25 @@ const ASSETS = [
   './icons/apple-touch-icon.png'
 ];
 
+// Static hosts may redirect index.html to the directory URL. Navigation
+// requests use redirect:manual, which cannot receive a Response that already
+// followed a redirect. A fresh Response keeps the document/headers without its
+// redirect URL list. clone() alone retains that list and makes reload fail.
+function navigationResponse(response) {
+  if (!response || !response.redirected) return response;
+  return new Response(response.body, {
+    status: response.status, statusText: response.statusText, headers: response.headers
+  });
+}
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE)
       // Never replace a working offline release unless the new document exists.
       .then(async (cache) => {
-        await cache.add('./index.html');
+        const document = await fetch('./index.html');
+        if (!document.ok) throw new Error('Offline document unavailable');
+        await cache.put('./index.html', navigationResponse(document));
         const images = await caches.open(MEDIA_CACHE);
         await Promise.all(FABRAKA_IMAGES.map(async (url) => {
           const cached = await images.match(url);
@@ -98,8 +111,16 @@ self.addEventListener('fetch', (event) => {
   if (request.mode === 'navigate') {
     event.respondWith(
       caches.match('./index.html').then((cached) => {
+        // Repair a shell saved by an older worker too. A worker-only update can
+        // retain the same document hash/cache name, and recovery must work offline.
+        if (cached && cached.redirected) {
+          cached = navigationResponse(cached);
+          const copy = cached.clone();
+          event.waitUntil(caches.open(CACHE).then((cache) => cache.put('./index.html', copy)).catch(() => {}));
+        }
         const fresh = fetch(request)
           .then((response) => {
+            response = navigationResponse(response);
             if (response && response.ok) {
               const copy = response.clone();
               event.waitUntil(caches.open(CACHE).then((cache) => cache.put('./index.html', copy)).catch(() => {}));

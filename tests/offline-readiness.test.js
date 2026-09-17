@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import { readFile } from 'node:fs/promises';
 import { preloadMedia, cacheForOffline, isLoaded, resetMediaState } from '../src/shared/media/preload.js';
 
-async function worker({ entries = {}, fetcher = async () => new Response('asset'), failDocument = false, fabrakaImages = [] } = {}) {
+async function worker({ entries = {}, fetcher = async () => new Response('asset'), failDocument = false, documentStatus = 200, fabrakaImages = [] } = {}) {
   const listeners = new Map();
   const cachesByName = new Map(Object.entries(entries));
   const deleted = [];
@@ -12,7 +12,7 @@ async function worker({ entries = {}, fetcher = async () => new Response('asset'
   let navigated = false;
   const key = (value) => typeof value === 'string' ? value : value.url;
   const makeCache = (map = new Map()) => ({
-    async add(url) { if (failDocument && url === './index.html') throw new Error('offline'); map.set(key(url), new Response('asset')); },
+    async add(url) { map.set(key(url), new Response('asset')); },
     async put(url, response) { map.set(key(url), response.clone()); },
     async match(url) { return map.get(key(url))?.clone(); },
     async delete(url) { return map.delete(key(url)); },
@@ -30,7 +30,14 @@ async function worker({ entries = {}, fetcher = async () => new Response('asset'
     clients: { async claim() {}, async matchAll() { return [{ postMessage() {}, navigate() { navigated = true; } }]; } },
   };
   const source = (await readFile(new URL('../public/sw.js', import.meta.url), 'utf8')).replace('/*__FABRAKA_IMAGES__*/[]', JSON.stringify(fabrakaImages));
-  vm.runInNewContext(source, { self, caches, fetch: fetcher, URL, Response, Headers, AbortController, setTimeout, clearTimeout });
+  const fetch = async (request, options) => {
+    if (request === './index.html') {
+      if (failDocument) throw new Error('offline');
+      return new Response('<html>offline shell</html>', { status: documentStatus, headers: { 'content-type': 'text/html' } });
+    }
+    return fetcher(request, options);
+  };
+  vm.runInNewContext(source, { self, caches, fetch, URL, Response, Headers, AbortController, setTimeout, clearTimeout });
   async function dispatch(type, extras = {}) {
     let response;
     const tasks = [];
@@ -46,6 +53,15 @@ test('failed shell download cannot activate an incomplete offline release', asyn
   const w = await worker({ failDocument: true });
   await assert.rejects(w.dispatch('install'), /offline/);
   assert.equal(w.skipped(), false);
+});
+
+test('an HTTP error cannot be stored as the next offline document', async () => {
+  for (const documentStatus of [404, 500]) {
+    const w = await worker({ documentStatus });
+    await assert.rejects(w.dispatch('install'), /Offline document unavailable/);
+    assert.equal(w.skipped(), false);
+    assert.equal(await w.caches.match('./index.html'), undefined);
+  }
 });
 
 test('a missing or HTML Fabraka picture cannot activate an incomplete offline release', async () => {
