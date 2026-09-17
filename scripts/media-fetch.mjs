@@ -684,11 +684,31 @@ export async function readSourceIndex(dir) {
   }
 }
 
+// الكتابة في سجل المصادر قراءةٌ ثم تعديل ثم كتابة، فبناءان متزامنان للحزمة نفسها
+// يفقد أحدهما سجلات الآخر بصمت. قفل مجلد ذرّي يجعل الكتابة تتابعية.
+async function withIndexLock(dir, fn) {
+  const lock = path.join(dir, '.sources-lock');
+  for (let attempt = 0; attempt < 600; attempt++) {
+    try {
+      await mkdir(lock);
+    } catch (error) {
+      if (error.code !== 'EEXIST') throw error;
+      await new Promise((resolve) => setTimeout(resolve, 50));
+      continue;
+    }
+    try { return await fn(); } finally { await rm(lock, { recursive: true, force: true }); }
+  }
+  // تعذّر القفل نصف دقيقة: الكتابة بلا قفل أهون من إسقاط السجل.
+  return fn();
+}
+
 export async function saveSourceRecord(dir, record) {
-  const { file, list } = await readSourceIndex(dir);
-  const i = list.findIndex((r) => r.file === record.file);
-  if (i === -1) list.push(record); else list[i] = record;
-  await writeFile(file, `${JSON.stringify(list, null, 2)}\n`, 'utf8');
+  await withIndexLock(dir, async () => {
+    const { file, list } = await readSourceIndex(dir);
+    const i = list.findIndex((r) => r.file === record.file);
+    if (i === -1) list.push(record); else list[i] = record;
+    await writeFile(file, `${JSON.stringify(list, null, 2)}\n`, 'utf8');
+  });
 }
 
 function describe(c, kind) {

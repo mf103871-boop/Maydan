@@ -5,7 +5,8 @@
 //
 // كل خطوة تُفحص: موضوع بلا صورة، أو صورة لا تحتمل المؤثّر (ظلّ بلا شفافية، قصّة بلا
 // تفاصيل) تُرفض ويُسجَّل سببها في تقرير الحزمة بدل أن تدخل البنك سؤالًا بلا حل.
-import { access, readFile, writeFile, mkdir } from 'node:fs/promises';
+import { access, readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
 import { acquire, fetchCommonsFile, loadSharp, readSourceIndex, resolveFfmpeg, saveSourceRecord } from '../media-fetch.mjs';
 import { resolveSubjects } from './resolve.mjs';
@@ -59,6 +60,21 @@ export async function buildPack(specPath, { limit = Infinity, only = null, dry =
   const dir = path.join(ROOT, 'media', spec.id);
   const sharp = kind === 'image' ? await loadSharp() : null;
   const ffmpeg = kind === 'audio' ? await resolveFfmpeg() : null;
+
+  // بناءان متزامنان لحزمة واحدة يتنافسان على الملفات نفسها ويهدران الشبكة المقيّدة.
+  // قفل مجلد ذرّي يجعل الثاني يفشل فشلًا واضحًا بدل أن يعمل بصمت فوق الأول.
+  await mkdir(dir, { recursive: true });
+  const buildLock = path.join(dir, '.build-lock');
+  try {
+    await mkdir(buildLock);
+  } catch (error) {
+    if (error.code === 'EEXIST') {
+      throw new Error(`بناء آخر يعمل على ${spec.id} الآن (${buildLock}). انتظر انتهاءه، أو احذف المجلد إن كان بقية بناء متوقف.`);
+    }
+    throw error;
+  }
+  const releaseLock = () => rm(buildLock, { recursive: true, force: true });
+  process.once('exit', () => { try { fsSync.rmSync(buildLock, { recursive: true, force: true }); } catch { /* انتهى */ } });
 
   const existing = new Map();
   try {
@@ -127,6 +143,7 @@ export async function buildPack(specPath, { limit = Infinity, only = null, dry =
     }
   }
 
+  await releaseLock();
   questions.sort((a, b) => a.p - b.p || a.qid.localeCompare(b.qid));
   const out = { id: spec.id, name: spec.name, icon: spec.icon, ...(spec.defaultType ? { defaultType: spec.defaultType } : {}), qs: questions };
   const built = Object.fromEntries(TIERS.map((t) => [t, questions.filter((q) => q.p === t).length]));
