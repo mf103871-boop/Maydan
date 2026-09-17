@@ -37,8 +37,12 @@ async function clientSecret(env, now = Date.now()) {
   }, env.APPLE_SIGNIN_PRIVATE_KEY);
 }
 export async function exchangeCode(env, { code, redirectUri, client = 'web' }) {
+  // بلا مفتاح الدخول (الفريق، معرّف المفتاح، p8) لا يمكن توقيع سر العميل: الدخول يمضي
+  // بـid_token وحده، ويغيب رمز التحديث فقط (يلزم لإبطال الربط عند حذف الحساب).
+  let secret;
+  try { secret = await clientSecret(env); } catch { return null; }
   const body = new URLSearchParams({
-    grant_type: 'authorization_code', code, client_id: audienceFor(env, client) || '', client_secret: await clientSecret(env),
+    grant_type: 'authorization_code', code, client_id: audienceFor(env, client) || '', client_secret: secret,
   });
   if (redirectUri) body.set('redirect_uri', redirectUri);
   const result = await providerFetch(urls(env).token, {

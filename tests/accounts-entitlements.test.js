@@ -6,7 +6,7 @@ import { premiumOf, premiumActive, meResponse } from '../server/accounts/entitle
 import { isPremium } from '../src/shared/account/entitlements.js';
 import { GRACE_MS, PRODUCTS, TRIAL_GAMES } from '../src/shared/account/config.js';
 import { parseSignature, productOf, subscriptionRow } from '../server/accounts/paddle.mjs';
-import { readSubscriptionStatus } from '../server/accounts/apple.mjs';
+import { readSubscriptionStatus, exchangeCode } from '../server/accounts/apple.mjs';
 import { verifyAppleJws, verifyChain, parseCertificate, APPLE_ROOT_CA_G3_SHA256, APPLE_LEAF_OID, APPLE_INTERMEDIATE_OID } from '../server/accounts/x509.mjs';
 import { cleanup } from '../server/accounts/cleanup.mjs';
 import { createLocalD1 } from '../server/local-d1.mjs';
@@ -249,4 +249,9 @@ test('GET من الأصل نفسه بلا Origin يُقبل بـSec-Fetch-Site �
   // أصل غير مسموح أصلًا (عامل الغرف وحده مع صفحة على مضيف آخر) لا يُقبل ولو كان الطلب من صفحته.
   const other = await routeRequest(new Request('https://rooms.test/api/me', { headers: { 'sec-fetch-site': 'same-origin' } }), env);
   assert.equal(other.status, 403);
+});
+
+// دخول آبل بلا مفتاح الدخول على الخادم: التبادل يعود null ولا يُسقط الاستدعاء (id_token يكفي).
+test('exchangeCode بلا أسرار الدخول يعيد null بدل رمي NOT_ELIGIBLE', async () => {
+  assert.equal(await exchangeCode({ APPLE_SERVICES_ID: 'app.maydan.web' }, { code: 'abc', client: 'web' }), null);
 });
