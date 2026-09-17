@@ -19,7 +19,16 @@ import {
   STORY_ACTOR,
   fabricatedContentReasons,
   readRetiredQids,
+  questionIdentity,
 } from '../scripts/bank.mjs';
+
+test('media instructions use their assets as content, without hiding repeated assets or text questions', () => {
+  const image = { type: 'image', q: 'ما الشيء في الصورة؟', a: 'أسد', media: { src: 'lion.webp' } };
+  assert.notEqual(questionIdentity(image, 'pic'), questionIdentity({ ...image, media: { src: 'bird.webp' } }, 'pic'));
+  assert.equal(questionIdentity(image, 'pic'), questionIdentity({ ...image, a: 'نمر', qid: 'other', media: { src: 'media/pic/lion.webp' } }, 'other'));
+  assert.equal(questionIdentity({ ...image, type: undefined }, 'pic'), questionIdentity({ ...image, type: undefined, media: { src: 'other.webp' } }, 'pic'));
+  assert.equal(questionIdentity({ ...image, media: { src: 'https://example.com/a.webp' } }, 'pic'), normalizeArabic(image.q));
+});
 
 // ── البنك الحقيقي ─────────────────────────────────────────────────────────
 test('البنك الفعلي يجتاز bank:validate بلا أخطاء', async () => {

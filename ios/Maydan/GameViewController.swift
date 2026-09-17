@@ -322,6 +322,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
             }
             // appAccountToken = معرّف مستخدم ميدان (UUID) فيربط الخادم المعاملة بالحساب الصحيح.
             let token = (payload["userId"] as? String).flatMap { UUID(uuidString: $0) }
+            guard token != nil else { reply(id, error: .notEligible); return }
             run(id) { [weak self] in
                 guard let self else { throw StoreError.failed }
                 let jws = try await StoreManager.shared.purchase(productId: productId, appAccountToken: token, from: self)
@@ -331,6 +332,19 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
             run(id) {
                 let transactions = try await StoreManager.shared.restore()
                 return ["transactions": transactions] as [String: Any]
+            }
+        case "pendingTransactions":
+            run(id) {
+                return ["transactions": await StoreManager.shared.pendingTransactions()] as [String: Any]
+            }
+        case "finishTransaction":
+            guard let jws = payload["jws"] as? String, !jws.isEmpty, jws.count <= 32_768 else {
+                reply(id, error: .invalid)
+                return
+            }
+            run(id) {
+                await StoreManager.shared.finishTransaction(jws: jws)
+                return ["finished": true] as [String: Any]
             }
         case "manageSubscriptions":
             run(id) { [weak self] in
@@ -385,7 +399,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKScript
         emit(event: "authReturn", payload: ["code": code])
     }
 
-    private func run(_ id: String, _ work: @escaping () async throws -> Any) {
+    private func run(_ id: String, _ work: @escaping @MainActor () async throws -> Any) {
         Task { @MainActor [weak self] in
             do {
                 let result = try await work()

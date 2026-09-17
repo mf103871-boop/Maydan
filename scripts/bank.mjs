@@ -31,7 +31,7 @@ export const TYPES = new Set([
   'image', 'audio', 'video', 'diff', 'truefalse', 'choice', 'scramble', 'complete', 'common', 'hints', 'code',
   'emoji', 'order', 'odd', 'grid', 'flag', 'zoom', 'pic', 'sound', 'closest',
 ]);
-const IMAGE_EFFECTS = new Set(['none', 'zoom', 'blur', 'silhouette', 'reveal', 'jumble']);
+const IMAGE_EFFECTS = new Set(['none', 'zoom', 'blur', 'silhouette', 'shadow', 'reveal', 'jumble']);
 const MEDIA_TYPES = new Set(['image', 'audio', 'video', 'diff']);
 // أنواع لا تحمل إجابة مكتوبة لأن الإجابة داخل عناصرها
 const NO_WRITTEN_ANSWER = new Set(['order', 'odd', 'grid']);
@@ -125,6 +125,20 @@ function mediaSrc(entry) {
   if (typeof entry === 'string') return entry.trim();
   if (entry && typeof entry === 'object') return String(entry.src || '').trim();
   return '';
+}
+
+// The photographed subject or recording is part of a media question. A shared
+// instruction is not a duplicate when its local assets differ. Do not include
+// the answer or qid: reusing an asset with a different answer must still fail.
+export function questionIdentity(question, categoryId) {
+  const text = normalizeArabic(question?.q || '');
+  const sources = mediaList(question).map(mediaSrc);
+  if (!MEDIA_TYPES.has(question?.type) || !sources.length
+      || sources.some((src) => !src || EXTERNAL.test(src) || /^data:/i.test(src))) return text;
+  const assets = sources.map((src) => path.posix.normalize(
+    (src.startsWith('media/') ? src : `media/${categoryId}/${src}`).replace(/\\/g, '/'),
+  )).sort();
+  return `${text}\u0000${question.type}\u0000${assets.join('\u0000')}`;
 }
 
 function mediaFilePath(root, categoryId, src) {
@@ -343,7 +357,7 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
       if (qid && !seenQid.has(qid)) seenQid.set(qid, id);
       const text = String(q.q || '').trim();
       if (text) {
-        const nq = normalizeArabic(text);
+        const nq = questionIdentity(q, id);
         if (!seenQ.has(nq)) seenQ.set(nq, { cat: id, tag: qid || '؟' });
       }
       const answer = String(q.a || '').trim();
@@ -499,7 +513,7 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
 
       // التكرار داخل الفئة
       if (text) {
-        const nq = normalizeArabic(text);
+        const nq = questionIdentity(q, id);
         if (localQ.has(nq)) qerr(`نص مكرر داخل الفئة (مثل ${localQ.get(nq)})`);
         else localQ.set(nq, tag);
         if (seenQ.has(nq) && seenQ.get(nq).cat !== id) qerr(`نص مكرر عبر البنك (ورد في ${seenQ.get(nq).cat}/${seenQ.get(nq).tag})`);

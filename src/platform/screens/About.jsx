@@ -5,7 +5,8 @@ import { IconBack } from '../../shared/ui/icons.jsx';
 import { usePlatform } from '../context.js';
 import { back, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
-import { LEGAL_ROUTES } from '../../shared/account/config.js';
+import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
+import { isNativeShell } from '../../shared/account/native.js';
 
 // «المصادر والتراخيص»: كل صورة أو مقطع صوت في حزم الأسئلة مأخوذ من مصدر مفتوح
 // (Wikimedia Commons وأمثاله) بترخيص يسمح بإعادة النشر، وبعض التراخيص (CC BY)
@@ -44,6 +45,7 @@ function Credits() {
 
 export function About() {
   const { version } = usePlatform();
+  const native = isNativeShell();
   return (
     <Screen dir={getDirection()} className="stack" aria-label="عن المنصة">
       <TopBar title="عن ميدان" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
@@ -68,7 +70,8 @@ export function About() {
       </Card>
       <Credits />
       <p className="muted center legal-links" style={{ fontSize: 13 }}>
-        <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+        {!native && <><a href="/pricing/">التسعير</a> · </>}
+        <a href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : '/refunds/'}>سياسة الاسترداد</a> · <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
       </p>
       <p className="muted center" style={{ fontSize: 13 }}>الإصدار {version} · صُنعت بحب للجلسات العائلية</p>
     </Screen>

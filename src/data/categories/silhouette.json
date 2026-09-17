@@ -1,16 +1,16 @@
 {
   "id": "silhouette",
-  "name": "الظل",
+  "name": "صور غامضة",
   "icon": "🌑",
   "defaultType": "image",
   "qs": [
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 1؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أسد",
       "qid": "silhouette-200-001",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -25,11 +25,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 2؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فيل",
       "qid": "silhouette-200-002",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -44,11 +44,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 3؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "زرافة",
       "qid": "silhouette-200-003",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -63,11 +63,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 4؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "جمل",
       "qid": "silhouette-200-004",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -82,7 +82,7 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 5؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "حصان",
       "qid": "silhouette-200-005",
       "type": "image",
@@ -101,7 +101,7 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 6؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "ذئب",
       "qid": "silhouette-200-006",
       "type": "image",
@@ -120,11 +120,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 7؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غزال",
       "qid": "silhouette-200-007",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -139,30 +139,30 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 8؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "نسر",
       "qid": "silhouette-200-008",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-200-008.webp",
         "type": "image",
-        "title": "As the sun begins to set at Nellis Air Force Base, Nev., Oregon Air National Guard Lt. Col. Nick Rutgers, assigned to t…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oregon_ANG_pilot_preparing_F-15_flight_at_Nellis_-_Weapons_Instructor_Course.jpg",
-        "author": "John Hughel",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Bald eagle in Alaska",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bald_eagle_in_Alaska_2016-3.jpg",
+        "author": "Andy Morffew from Itchen Abbas, Hampshire, UK",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 9؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بومة",
       "qid": "silhouette-200-009",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -177,11 +177,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 10؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "دلفين",
       "qid": "silhouette-200-010",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -196,11 +196,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 11؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قرش",
       "qid": "silhouette-200-011",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -215,11 +215,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 12؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حوت",
       "qid": "silhouette-200-012",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -234,11 +234,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 13؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قطة",
       "qid": "silhouette-200-013",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -253,7 +253,7 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 14؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "كلب",
       "qid": "silhouette-200-014",
       "type": "image",
@@ -272,7 +272,7 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 15؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "أرنب",
       "qid": "silhouette-200-015",
       "type": "image",
@@ -291,7 +291,7 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 16؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "كنغر",
       "qid": "silhouette-200-016",
       "type": "image",
@@ -310,7 +310,7 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 17؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "دب",
       "qid": "silhouette-200-017",
       "type": "image",
@@ -329,11 +329,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 18؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "موظ",
       "qid": "silhouette-200-018",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -348,7 +348,7 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 19؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "ديك",
       "qid": "silhouette-200-019",
       "type": "image",
@@ -367,11 +367,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 20؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بجعة",
       "qid": "silhouette-200-020",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -386,30 +386,30 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 21؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "خفاش",
       "qid": "silhouette-200-021",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-200-021.webp",
         "type": "image",
-        "title": "A dreamlike scene unfolds in the night sky. A full moon illuminates the Koshi Tappu Wildlife Reserve, and a giant India…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Lunar_Bat.jpg",
-        "author": "Nabin Regmi",
+        "title": "Bat Flying on backdrop of Moon",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bat_flying_on_the_backdrop_of_Moon.jpg",
+        "author": "Phadke09",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 22؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فراشة",
       "qid": "silhouette-200-022",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -424,11 +424,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 23؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "يعسوب",
       "qid": "silhouette-200-023",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -443,11 +443,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 24؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تمساح",
       "qid": "silhouette-200-024",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -462,11 +462,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 25؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ضفدع",
       "qid": "silhouette-200-025",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -481,26 +481,26 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 26؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "سلحفاة",
       "qid": "silhouette-200-026",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-200-026.webp",
         "type": "image",
-        "title": "Silhouette of Little Turtle by Robert Wyer",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Little_Turtle_silhouette.jpg",
-        "author": "Robert Wyer",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Balkan pond turtle (Mauremys rivulata), Butrint Archaeological Park, Albania",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Balkan_pond_turtle_(Mauremys_rivulata)_Butrint.jpg",
+        "author": "Charles J. Sharp",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 27؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "بطريق",
       "qid": "silhouette-200-027",
       "type": "image",
@@ -519,11 +519,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 28؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فلامنجو",
       "qid": "silhouette-200-028",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -538,11 +538,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 29؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "طاووس",
       "qid": "silhouette-200-029",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -557,7 +557,7 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 30؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "سنجاب",
       "qid": "silhouette-200-030",
       "type": "image",
@@ -576,30 +576,30 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 31؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "برج إيفل",
       "qid": "silhouette-200-031",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
         "src": "silhouette-200-031.webp",
         "type": "image",
-        "title": "Saint-Jacques tower at dusk, Paris, France.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tour_Saint-Jacques_au_cr%C3%A9puscule.jpg",
-        "author": "Fabien Barrau",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "The Eiffel Tower in spring, Paris, France.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paris_-_The_Eiffel_Tower_in_spring_-_2307.jpg",
+        "author": "Jorge Royan",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 32؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تمثال الحرية",
       "qid": "silhouette-200-032",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -614,11 +614,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 33؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بيغ بن",
       "qid": "silhouette-200-033",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -633,11 +633,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 34؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "كولوسيوم",
       "qid": "silhouette-200-034",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -652,11 +652,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 35؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أهرام",
       "qid": "silhouette-200-035",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -671,30 +671,30 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 36؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أبو الهول",
       "qid": "silhouette-200-036",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
         "src": "silhouette-200-036.webp",
         "type": "image",
-        "title": "A Sphinx to Left",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Florentine_15th_Century,_A_Sphinx_to_Left,_15th_century,_NGA_43866.jpg",
-        "author": "Florentine 15th Century",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        "title": "The Great Sphinx of Giza in May 2015",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Sphinx_of_Giza_May_2015.JPG",
+        "author": "MusikAnimal",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 37؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تاج محل",
       "qid": "silhouette-200-037",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -709,11 +709,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 38؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أوبرا سيدني",
       "qid": "silhouette-200-038",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -728,30 +728,30 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 39؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "البوابة الذهبية",
       "qid": "silhouette-200-039",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
         "src": "silhouette-200-039.webp",
         "type": "image",
-        "title": "Crepuscular rays, and their reflection. The image was taken in Golden Gate Park, San Francisco at Mallard Lake.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Crepuscular_rays_with_reflection_in_GGP.jpg",
-        "author": "Brocken Inaglory",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "like many other pictures of the golden gategolden gate",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_gate2.jpg",
+        "author": "Aslak Raanes from Trondheim, Norway",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 40؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "إبرة الفضاء",
       "qid": "silhouette-200-040",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -766,11 +766,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 41؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "برج طوكيو",
       "qid": "silhouette-200-041",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -785,11 +785,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 42؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "المسيح الفادي",
       "qid": "silhouette-200-042",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -804,11 +804,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 43؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بيزا",
       "qid": "silhouette-200-043",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -823,11 +823,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 44؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "عين لندن",
       "qid": "silhouette-200-044",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -842,30 +842,30 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 45؟",
+      "q": "ما اسم ناطحة السحاب في الصورة؟",
       "a": "برج خليفة",
       "qid": "silhouette-200-045",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
         "src": "silhouette-200-045.webp",
         "type": "image",
-        "title": "Silhouette of a Boat on a Body of Water With Fountain",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boat_on_the_Burj_Khalifa_Lake_at_night.jpg",
-        "author": "Aleksandar Pasaric",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        "title": "Burj Khalifa",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Burj_dubai_3.11.08.jpg",
+        "author": "Aheilner",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 46؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "الخزنة",
       "qid": "silhouette-200-046",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -880,11 +880,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 47؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ستون هنج",
       "qid": "silhouette-200-047",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -899,11 +899,11 @@
     },
     {
       "p": 200,
-      "q": "ما هذا الظل رقم 48؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فوجي",
       "qid": "silhouette-200-048",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -918,11 +918,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 49؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ماترهورن",
       "qid": "silhouette-400-001",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -937,11 +937,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 50؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أولورو",
       "qid": "silhouette-400-002",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -956,11 +956,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 51؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "منارة",
       "qid": "silhouette-400-003",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -975,11 +975,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 52؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "طاحونة",
       "qid": "silhouette-400-004",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -994,30 +994,30 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 53؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قلعة",
       "qid": "silhouette-400-005",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
         "src": "silhouette-400-005.webp",
         "type": "image",
-        "title": "The White Horse, Oxfordshire, UK - taken from a glider from the nearby White Horse Gliding Club by Dan Huby and release…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:White_horse_from_air.jpg",
-        "author": "Dan Huby",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Neuschwanstein Castle at Schwangau, Bavaria, Germany.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Neuschwanstein_Castle_2024-02.jpg",
+        "author": "Wilfredor",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 54؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قبة مسجد",
       "qid": "silhouette-400-006",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -1032,11 +1032,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 55؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "برج كنيسة",
       "qid": "silhouette-400-007",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -1051,11 +1051,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 56؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "باغودا",
       "qid": "silhouette-400-008",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -1070,11 +1070,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 57؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "جسر ليلي",
       "qid": "silhouette-400-009",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -1089,11 +1089,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 58؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أفق أبراج",
       "qid": "silhouette-400-010",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -1108,11 +1108,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 59؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مسلة",
       "qid": "silhouette-400-011",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
@@ -1127,49 +1127,49 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 60؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قوس تذكاري",
       "qid": "silhouette-400-012",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "معالم",
       "verified": true,
       "media": {
         "src": "silhouette-400-012.webp",
         "type": "image",
-        "title": "Arches National Park is a U.S. National Park in eastern Utah. It is known for preserving over 2000 natural sandstone ar…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turret_Arch_Silhouette,_Arches_National_Park,_Utah_(2438610147).jpg",
-        "author": "Ken Lund from Reno, Nevada, USA",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "Arc de Triomphe de l'Étoile at night, Paris, France.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe_de_l%27%C3%89toile_at_night_vertical_fix.jpg",
+        "author": "Wilfredor",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 61؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مفتاح",
       "qid": "silhouette-400-013",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-400-013.webp",
         "type": "image",
-        "title": "Perdido Key, Florida. Bird silhouetted at bay at dusk.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:BirdSilhouettePerdidoKeyFL.jpg",
-        "author": "Infrogmation of New Orleans",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "A key is hanging from a door lock. The door is part of a building structure. The scene shows a clear view of the outdoo…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Key_hanging_from_a_door_lock_at_an_entrance_near_a_building.jpg",
+        "author": "Shixart1985",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 62؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قفل",
       "qid": "silhouette-400-014",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -1184,68 +1184,68 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 63؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مقص",
       "qid": "silhouette-400-015",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-400-015.webp",
         "type": "image",
-        "title": "Silhouette of Ann-Sophie Qvarnström, 1968. Original dimensions 11,5 x 13,6 cm. It was later cut oval to fit a frame. Th…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silhouette_of_Ann-Sophie_Qvarnstr%C3%B6m,_1968.jpg",
-        "author": "W.carter",
-        "license": "CC BY 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما هذا الظل رقم 64؟",
-      "a": "مطرقة",
-      "qid": "silhouette-400-016",
-      "type": "image",
-      "effect": "silhouette",
-      "topic": "رياضة",
-      "verified": true,
-      "media": {
-        "src": "silhouette-400-016.webp",
-        "type": "image",
-        "title": "Western Iran Sculpture Bronze, hammered 4 1.2 x 1 1/4 in. (11.4 x 3.2 cm) The Nasli M. Heeramaneck Collection of Ancien…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silhouette_LACMA_M.76.97.790.jpg",
-        "author": "Image: http://collections.lacma.org/sites/default/files/remote_images/piction/ma-31568955-O3.jpg Gallery: http://collections.lacma.org/node/226771 archive copy at the Wayback Machine",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما هذا الظل رقم 65؟",
-      "a": "مفتاح ربط",
-      "qid": "silhouette-400-017",
-      "type": "image",
-      "effect": "silhouette",
-      "topic": "رياضة",
-      "verified": true,
-      "media": {
-        "src": "silhouette-400-017.webp",
-        "type": "image",
-        "title": "The centuries-old Bonedi Bari (ancestral house) of Kolkata stands as a quiet witness, its ornate iron balconies and det…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%22Bidaay-Bela-_The_Tender,_Communal_Farewell_of_a_Bonedi_Bari%22.jpg",
-        "author": "Sannidh26",
+        "title": "A red pair of scissors",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pair_of_scissors_on_white_background.jpg",
+        "author": "Help e choose",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 66؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
+      "a": "مطرقة",
+      "qid": "silhouette-400-016",
+      "type": "image",
+      "effect": "shadow",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "silhouette-400-016.webp",
+        "type": "image",
+        "title": "Oberhausmuseum ( Passau ). War hammer ( 16th century ).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:OHM_-_Streithammer.jpg",
+        "author": "Wolfgang Sauber",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
+      "a": "مفتاح ربط",
+      "qid": "silhouette-400-017",
+      "type": "image",
+      "effect": "shadow",
+      "topic": "رياضة",
+      "verified": true,
+      "media": {
+        "src": "silhouette-400-017.webp",
+        "type": "image",
+        "title": "1950s adjustable wrench by Swedish company AB B. A. Hjorth & Co, Stockholm. Ca 10.5*3*0.7 cm and 52 gr.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1950s_adjustable_wrench_by_Swedish_company_B_A_Hjorth_Co.jpg",
+        "author": "R. Henrik Nilsson",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مفك",
       "qid": "silhouette-400-018",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -1260,11 +1260,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 67؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مظلة",
       "qid": "silhouette-400-019",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -1279,64 +1279,64 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 68؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قبعة",
       "qid": "silhouette-400-020",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-400-020.webp",
         "type": "image",
-        "title": "Canadian-American ambient/melogaze band Vision Eternel photographed in Wexford, Quebec, Canada on December 23, 2015. Pi…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vision_%C3%89ternel_Photo_Shoot_In_Wexford,_2015_3.jpg",
-        "author": "Rain Frances",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "Collapsible top hat",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Collapsible_top_hat_IMGP9692.jpg",
+        "author": "Nikodem Nijaki",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 69؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حذاء",
       "qid": "silhouette-400-021",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-400-021.webp",
         "type": "image",
-        "title": "The Silhouette of Bound Boot Boy",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Silhouette_of_Bound_Boot_Boy.png",
-        "author": "Quarth-99",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "Reebok Royal Glide Ripple Clip men's shoe. Stacked image.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reebok_Royal_Glide_Ripple_Clip_shoe.jpg",
+        "author": "Petar Milošević",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 70؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غيتار",
       "qid": "silhouette-400-022",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-400-022.webp",
         "type": "image",
-        "title": "Original graphic by Andrew Alder, created 17 August 2007, for use in the Star (guitar) article. Tranferred from File:St…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Star_guitar_body_silhouette_2.gif",
-        "author": "Andrew Alder",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "Classical Guitar, front and side view. This image shows two views of a classical guitar.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Classical_Guitar_two_views.jpg",
+        "author": "Martin Möller",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 71؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "كمان",
       "qid": "silhouette-400-023",
       "type": "image",
@@ -1346,58 +1346,58 @@
       "media": {
         "src": "silhouette-400-023.webp",
         "type": "image",
-        "title": "5 parts (1st violin, viola, cornet, trombone, piano). Arr. by J.B. Oakden, Jr.; On verso of each part is: Serenade, op.…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plenty_o%27_pepper_%3D_Beaucoup_de_poivre_;_silhouette_one_step_and_trot_-_DPLA_-_27ef5cdbde8077b8615f0e6dd3b42db1_(page_1).jpg",
-        "author": "Bien, Harold",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "A standard modern trade violin shown from the front and the side",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Violin_VL100.png",
+        "author": "Just plain Bill",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 72؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بيانو",
       "qid": "silhouette-400-024",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-400-024.webp",
         "type": "image",
-        "title": "Titre uniforme : Auvray, Georges (1858-1931). Compositeur. [Silhouette. Piano. Op. 133] Valses (piano) -- +* 1900......…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silhouette_-_valse_(pour_piano)_-_op._133_-_par_Georges_Auvray_-_btv1b9071041g_(3_of_8).jpg",
-        "author": "Auvray, Georges (1858-1931). Compositeur",
+        "title": "A photo of a Bösendorfer grand piano and a photo of an upright piano.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grand_piano_and_upright_piano.jpg",
+        "author": "User:Gryffindor and User:Megodenas",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
+      "a": "طبل",
+      "qid": "silhouette-400-025",
+      "type": "image",
+      "effect": "shadow",
+      "topic": "حيوانات",
+      "verified": true,
+      "media": {
+        "src": "silhouette-400-025.webp",
+        "type": "image",
+        "title": "Rope-tension snare drum used by William C. Streetor of Co. F., 7th Infantry E.M.M. [Enrolled Missouri Militia] during t…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snare_Drum_Used_by_William_C._Streetor_during_the_Civil_War_-_DPLA_-_d811e2880aaad83307f128c38e46ea4b_(page_1).jpg",
+        "author": "William S. Tompkins and Sons",
         "license": "Public Domain",
         "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 73؟",
-      "a": "طبل",
-      "qid": "silhouette-400-025",
-      "type": "image",
-      "effect": "silhouette",
-      "topic": "حيوانات",
-      "verified": true,
-      "media": {
-        "src": "silhouette-400-025.webp",
-        "type": "image",
-        "title": "The Baunsa Rani which means \"The Bamboo Queen\" is an old Indian art form in which young girls walk on tightropes barefo…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Indian_tightrope_girl_performing_folk_art_Baunsa_Rani_(Crop_2).jpg",
-        "author": "Derivative work: IamMM, Original: Manir Dhabak",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
-      }
-    },
-    {
-      "p": 400,
-      "q": "ما هذا الظل رقم 74؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بوق",
       "qid": "silhouette-400-026",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -1412,7 +1412,7 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 75؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "ميكروفون",
       "qid": "silhouette-400-027",
       "type": "image",
@@ -1431,11 +1431,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 76؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "كاميرا",
       "qid": "silhouette-400-028",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
@@ -1450,11 +1450,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 77؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "دراجة",
       "qid": "silhouette-400-029",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -1469,7 +1469,7 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 78؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "دراجة نارية",
       "qid": "silhouette-400-030",
       "type": "image",
@@ -1479,16 +1479,16 @@
       "media": {
         "src": "silhouette-400-030.webp",
         "type": "image",
-        "title": "A home-made silhouette with motorcyle engine (most likely Suzuki Hayabusa). Pista Winner, Nizza Monferrato, Italy. 23.7…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silhouette_with_motorcycle_engine_(5988611982).jpg",
-        "author": "photobeppus",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "Motorcycle",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Motorcycle_icon.svg",
+        "author": "Sarang",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 79؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "طائرة",
       "qid": "silhouette-400-031",
       "type": "image",
@@ -1507,11 +1507,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 80؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مروحية",
       "qid": "silhouette-400-032",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -1526,7 +1526,7 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 81؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "شراع",
       "qid": "silhouette-400-033",
       "type": "image",
@@ -1536,20 +1536,20 @@
       "media": {
         "src": "silhouette-400-033.webp",
         "type": "image",
-        "title": "The Silhouette 17 sail badge.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silhouette_17_sail_badge.png",
-        "author": "Robert Tucker",
+        "title": "Pictograms of Olympic sports - Sailing. This is unofficial sample picture. Images of official Olympic pictograms for 19…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sailing_pictogram.svg",
+        "author": "Thadius856 (SVG conversion) & Parutakupiu (original image)",
         "license": "Public Domain",
         "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 82؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مرساة",
       "qid": "silhouette-400-034",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -1564,30 +1564,30 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 83؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "عجلة سفينة",
       "qid": "silhouette-400-035",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
         "src": "silhouette-400-035.webp",
         "type": "image",
-        "title": "IdentificatieTitel(s): Gezicht op gebouwen rondom het San Marcoplein in VenetiëVenezia panorama (titel op object)Object…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gezicht_op_gebouwen_rondom_het_San_Marcoplein_in_Veneti%C3%AB_Venezia_panorama_(titel_op_object),_RP-F-F01093-CL.jpg",
-        "author": "Rijksmuseum",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        "title": "Marine Museum Goderich",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ship_Wheel_(7667940704).jpg",
+        "author": "RichardBH from Hamilton, Canada",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 84؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "شجرة",
       "qid": "silhouette-400-036",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -1602,11 +1602,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 85؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "نخلة",
       "qid": "silhouette-400-037",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -1621,11 +1621,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 86؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "صبار",
       "qid": "silhouette-400-038",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -1640,30 +1640,30 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 87؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فطر",
       "qid": "silhouette-400-039",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
         "src": "silhouette-400-039.webp",
         "type": "image",
-        "title": "Redwing Cherokee nuclear test. Fireball shown here with high cloud layer silhouetted in foreground.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Redwing_Cherokee_010.jpg",
-        "author": "National Nuclear Security Administration / Nevada Site Office",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Fly Agaric mushroom growing under a stand of Pinus radiata trees, Wellington, New Zealand.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fly_Agaric_mushroom_04.jpg",
+        "author": "Tony Wills",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 88؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ورقة",
       "qid": "silhouette-400-040",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -1678,7 +1678,7 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 89؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "وردة",
       "qid": "silhouette-400-041",
       "type": "image",
@@ -1697,11 +1697,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 90؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قلب",
       "qid": "silhouette-400-042",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -1716,11 +1716,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 91؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ركلة",
       "qid": "silhouette-400-043",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -1735,11 +1735,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 92؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غمس",
       "qid": "silhouette-400-044",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -1754,11 +1754,11 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 93؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "إرسال تنس",
       "qid": "silhouette-400-045",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -1773,64 +1773,64 @@
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 94؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "عداء",
       "qid": "silhouette-400-046",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-400-046.webp",
         "type": "image",
-        "title": "An energetic design This amphora is decorated in the 'Fikellura' style. The style is so-called after a cemetery on the…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sprinter_on_a_vase,_Fikellura_style_amphora_with_a_running_man,_Greek,_6th_century_BC,_from_Kamiros,_Rhodes,_Aegean_Sea,_Winning_at_the_ancient_Games,_British_Museum_(7667199008).jpg",
-        "author": "Carole Raddato from FRANKFURT, Germany",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "GRAND BARA DESERT, Djibouti (Dec. 8, 2011) A runner sprints for the finish line during the 29th annual Grand Bara 15K r…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Navy_111208-F-UI176-619_A_runner_sprints_for_the_finish_line_during_the_29th_annual_Grand_Bara_15K_race_in_the_Grand_Bara_Desert,_Djibouti.jpg",
+        "author": "U.S. Air Force photo by Staff Sgt. Jonathan Steffen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 95؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غطسة",
       "qid": "silhouette-400-047",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-400-047.webp",
         "type": "image",
-        "title": "Polar bear underwater in CPH ZOO's The Arctic Ring. From a preview event in the new \"Den Arktiske Ring\" attraction (The…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polar_bear_-_Flickr_-_Stig_Nygaard.jpg",
-        "author": "Stig Nygaard",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "Ka anyị wụba n'ime mmiri",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diving_into_the_water.jpg",
+        "author": "Ronyyz",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 400,
-      "q": "ما هذا الظل رقم 96؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "جمباز",
       "qid": "silhouette-400-048",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-400-048.webp",
         "type": "image",
-        "title": "500px provided description: Budva is a coastal tourist resort in Montenegro. On the outskirts Budva, on the shores of t…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Still_Waiting_(232680247).jpeg",
-        "author": "Angshuman Chatterjee",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "Floor exercise during the boys' apparatus finals at the 1st FIG Artistic Gymnastics Junior World Championships on 29 Ju…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:2019-06-29_1st_FIG_Artistic_Gymnastics_JWCH_Men%27s_Apparatus_finals_Floor_exercise_(Martin_Rulsch)_297.jpg",
+        "author": "Martin Rulsch, Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 97؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "ملاكمة",
       "qid": "silhouette-600-001",
       "type": "image",
@@ -1840,20 +1840,20 @@
       "media": {
         "src": "silhouette-600-001.webp",
         "type": "image",
-        "title": "Karzi a Gregory Finn ze Southpaw na Rock for People 2008",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Southpaw_rfp2008.jpg",
-        "author": "Fay2",
+        "title": "Pictograms of Olympic sports - Boxing. This is unofficial sample picture. Images of official Olympic pictograms for 194…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boxing_pictogram.svg",
+        "author": "Thadius856 (SVG conversion) & Parutakupiu (original image)",
         "license": "Public Domain",
         "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 98؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "رامٍ",
       "qid": "silhouette-600-002",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -1868,30 +1868,30 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 99؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "متزلج",
       "qid": "silhouette-600-003",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-600-003.webp",
         "type": "image",
-        "title": "Patrick Ortlieb at the presentation of the Austrian Sportspersonalities of the Year 2010 (Eventhotel Pyramide in Vösend…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Patrick_Ortlieb_-_Gala_Nacht_des_Sports_2010.jpg",
-        "author": "Manfred Werner / Tsui",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "Skier at Bradgate Park",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Skier_at_Bradgate_Park_-_geograph.org.uk_-_3708472.jpg",
+        "author": "Mat Fascione",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 100؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "لوح ثلج",
       "qid": "silhouette-600-004",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -1906,11 +1906,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 101؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "راكب موج",
       "qid": "silhouette-600-005",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -1925,26 +1925,26 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 102؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "دراج",
       "qid": "silhouette-600-006",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-600-006.webp",
         "type": "image",
-        "title": "Uni-cyclist, Olney Pancake Race",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Uni-cyclist,_Olney_Pancake_Race_-_geograph.org.uk_-_2414950.jpg",
-        "author": "Cameraman",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "Yellow cyclist bicycling down the Vennbahnweg in Raeren, Belgium",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellow_cyclist_bicycling_down_the_Vennbahnweg_in_Raeren,_Belgium_(DSCF5866).jpg",
+        "author": "Trougnouf (Benoit Brummer)",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 103؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "رباع",
       "qid": "silhouette-600-007",
       "type": "image",
@@ -1954,20 +1954,20 @@
       "media": {
         "src": "silhouette-600-007.webp",
         "type": "image",
-        "title": "Chen Yanqing",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chen_Yanqing.jpg",
-        "author": "Tksteven",
-        "license": "CC BY-SA 2.5",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+        "title": "Pictograms of Olympic sports - Weightlifting. This is unofficial sample picture. Images of official Olympic pictograms…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Weightlifting_pictogram.svg",
+        "author": "Thadius856 (SVG conversion) & Parutakupiu (original image)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 104؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مبارز",
       "qid": "silhouette-600-008",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -1982,30 +1982,30 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 105؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حارس",
       "qid": "silhouette-600-009",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-600-009.webp",
         "type": "image",
-        "title": "Diving save",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jason_Peter_Jones_Goalkeeper_Coach.jpg",
-        "author": "Jabby1",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "Ewen Fields, Hyde, United Kingdom",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silhouette_goalkeeper_catching_the_ball_(Unsplash).jpg",
+        "author": "david clarke davidclarke",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 106؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مشجعة",
       "qid": "silhouette-600-010",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -2020,11 +2020,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 107؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "راقصة",
       "qid": "silhouette-600-011",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -2039,7 +2039,7 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 108؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "يوغا",
       "qid": "silhouette-600-012",
       "type": "image",
@@ -2058,7 +2058,7 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 109؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "ركلة فنون",
       "qid": "silhouette-600-013",
       "type": "image",
@@ -2068,20 +2068,20 @@
       "media": {
         "src": "silhouette-600-013.webp",
         "type": "image",
-        "title": "Melvin Manhoef",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Melvin-Manhoef2.jpg",
-        "author": "Paulblank",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "Pictograms of Olympic sports - Karate",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Karate_pictogram.svg",
+        "author": "Thadius856 (SVG conversion) & Parutakupiu (original image)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 110؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فارس",
       "qid": "silhouette-600-014",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2096,11 +2096,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 111؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تجديف",
       "qid": "silhouette-600-015",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2115,11 +2115,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 112؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "كاياك",
       "qid": "silhouette-600-016",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2134,11 +2134,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 113؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "متسلق",
       "qid": "silhouette-600-017",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2153,11 +2153,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 114؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مظلي",
       "qid": "silhouette-600-018",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2172,11 +2172,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 115؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "لوح شوارع",
       "qid": "silhouette-600-019",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2191,11 +2191,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 116؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تزلج فني",
       "qid": "silhouette-600-020",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2210,30 +2210,30 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 117؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ضارب",
       "qid": "silhouette-600-021",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-600-021.webp",
         "type": "image",
-        "title": "針の穴を通せというのか",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88_(19890838296).jpg",
-        "author": "M Natsu",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "Detroit Tigers batter at the plate",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Detroit_Tigers_batter_at_the_plate.jpg",
+        "author": "Dave Hogg from Royal Oak, MI, USA",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 118؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ضربة غولف",
       "qid": "silhouette-600-022",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2248,49 +2248,49 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 119؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حكم",
       "qid": "silhouette-600-023",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-600-023.webp",
         "type": "image",
-        "title": "Ref's whistle from 1992, Belgrade, Yugoslavia",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1992_Referee_whistles_for_football_Laslovarga_(8).jpg",
-        "author": "Laslovarga",
+        "title": "This is an image with the theme \"Health and Wellness in Africa\" from:",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Center_referee.jpg",
+        "author": "Douglaseru",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 120؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "كأس",
       "qid": "silhouette-600-024",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-600-024.webp",
         "type": "image",
-        "title": "...University of Florida football quarterback.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tim_Tebow_07_Heisman_Trophy_Winner_(2627716016).jpg",
-        "author": "Steve Evans from Citizen of the World",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "Trophy image. Often used in Wikinews (en) as a barnstar",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trophy.jpg",
+        "author": "US National institute of health. Modified by Davodd, Dbenbenn",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 121؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غروب نخل",
       "qid": "silhouette-600-025",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2305,11 +2305,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 122؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "هلال",
       "qid": "silhouette-600-026",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2324,11 +2324,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 123؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بدر وشجرة",
       "qid": "silhouette-600-027",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2343,11 +2343,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 124؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "سلسلة جبال",
       "qid": "silhouette-600-028",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2362,11 +2362,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 125؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بركان",
       "qid": "silhouette-600-029",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2381,11 +2381,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 126؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "جزيرة",
       "qid": "silhouette-600-030",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2400,30 +2400,30 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 127؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "جرف",
       "qid": "silhouette-600-031",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
         "src": "silhouette-600-031.webp",
         "type": "image",
-        "title": "Swanage: signpost in silhouette Looking into the sun at Peveril Point, the two fingers on this signpost not quite silho…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Swanage,_signpost_in_silhouette_-_geograph.org.uk_-_1717280.jpg",
-        "author": "Chris Downer",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "Cliff at Bodrum Castle, Turkey.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sea_Cliff.jpg",
+        "author": "Serhio Magpie",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 128؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حافة أخدود",
       "qid": "silhouette-600-032",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2438,11 +2438,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 129؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "كثيب",
       "qid": "silhouette-600-033",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2457,11 +2457,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 130؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غروب صبار",
       "qid": "silhouette-600-034",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2476,11 +2476,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 131؟",
-      "a": "غابة صنوبر",
+      "q": "ما نوع الشجرة في الصورة؟",
+      "a": "صنوبر",
       "qid": "silhouette-600-035",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2491,15 +2491,18 @@
         "author": "Jim Champion",
         "license": "CC BY-SA 2.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
-      }
+      },
+      "alt": [
+        "شجرة صنوبر"
+      ]
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 132؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "شجرة وحيدة",
       "qid": "silhouette-600-036",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "أشياء",
       "verified": true,
       "media": {
@@ -2514,11 +2517,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 133؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "سرب",
       "qid": "silhouette-600-037",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2533,11 +2536,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 134؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غراب",
       "qid": "silhouette-600-038",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2552,11 +2555,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 135؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بلشون",
       "qid": "silhouette-600-039",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2571,30 +2574,30 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 136؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تنين ظل",
       "qid": "silhouette-600-040",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
         "src": "silhouette-600-040.webp",
         "type": "image",
-        "title": "myth busters, Grant Imahara, Kari Byron and Tory Belleci in Dragon Con 2006",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MythBusters.jpg",
-        "author": "ViNull",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "Dragon statue, Beddgelert",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dragon_statue,_Beddgelert_-_geograph.org.uk_-_3823309.jpg",
+        "author": "nick macneill",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 137؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "برق وغيم",
       "qid": "silhouette-600-041",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2609,30 +2612,30 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 138؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "إعصار",
       "qid": "silhouette-600-042",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
         "src": "silhouette-600-042.webp",
         "type": "image",
-        "title": "U.S. Air Force Staff Sgt. Brendan Brustad, 509th Medical Support Squadron NCO in charge of medical contracting, catches…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Running_for_a_reason_150519-F-PD075-020.jpg",
-        "author": "Airman 1st Class Joel Pfiester",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "F5 tornado (upgraded from initial estimate of F4) viewed from the southeast as it approached Elie, Manitoba on Friday,…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:F5_tornado_Elie_Manitoba_2007.jpg",
+        "author": "Justin Hobson (Justin1569 at English Wikipedia)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 139؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "شلال ضباب",
       "qid": "silhouette-600-043",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2647,11 +2650,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 140؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بخار ينبوع",
       "qid": "silhouette-600-044",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2666,11 +2669,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 141؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "جبل جليد",
       "qid": "silhouette-600-045",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2685,11 +2688,11 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 142؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "لسان جليدي",
       "qid": "silhouette-600-046",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2704,49 +2707,49 @@
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 143؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أتول",
       "qid": "silhouette-600-047",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
         "src": "silhouette-600-047.webp",
         "type": "image",
-        "title": "A variety of corals form an outcrop on Flynn Reef, part of the Great Barrier Reef near Cairns, Queensland, Australia.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coral_Outcrop_Flynn_Reef.jpg",
-        "author": "Toby Hudson",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "Satellite picture of the Atafu atoll in Tokelau.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Atafu.jpg",
+        "author": "NASA Johnson Space Center",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 600,
-      "q": "ما هذا الظل رقم 144؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "موجة",
       "qid": "silhouette-600-048",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
         "src": "silhouette-600-048.webp",
         "type": "image",
-        "title": "Distracted bicyclist using ear phones crashes into truck. Bicycle safety signage graphic of bike, cyclist, ear phones,…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Distracted_Bicyclist_using_Ear_Phones_Crashes_into_Truck_-_Black_silhouette_road_safety_graphic.png",
-        "author": "Mcha6677",
+        "title": "ล่องเรืออ่าวนาง กระบี่ ... สัมผัสกับน้ำทะเล คลื่น และท้องฟ้าที่สดใส",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sea,_Wave_and_Sky.jpg",
+        "author": "Boonlert Aroonpiboon",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 145؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مسارات نجوم",
       "qid": "silhouette-800-001",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2761,11 +2764,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 146؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تبانة وجبل",
       "qid": "silhouette-800-002",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2780,11 +2783,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 147؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مذنب",
       "qid": "silhouette-800-003",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2799,11 +2802,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 148؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "صحن لاقط",
       "qid": "silhouette-800-004",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2818,11 +2821,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 149؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "توربين",
       "qid": "silhouette-800-005",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
@@ -2837,30 +2840,30 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 150؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "برج نفط",
       "qid": "silhouette-800-006",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "طبيعة",
       "verified": true,
       "media": {
         "src": "silhouette-800-006.webp",
         "type": "image",
-        "title": "Coal Oil Point",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paddleboarding_at_Sunset_(50226482731).jpg",
-        "author": "Channel City Camera Club from Santa Barbara, US",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "Brazil - The first 100% Brazilian oil platform, the P-51 will produce about 180 thousand barrels of oil and 6 million c…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oil_platform_P-51_(Brazil).jpg",
+        "author": "Divulgação Petrobras / ABr",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 151؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قاطرة",
       "qid": "silhouette-800-007",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2875,11 +2878,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 152؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قطار بضائع",
       "qid": "silhouette-800-008",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2894,30 +2897,30 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 153؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حافلة",
       "qid": "silhouette-800-009",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-800-009.webp",
         "type": "image",
-        "title": "A picture of the sunrise I took while waiting for the school bus in 2015. Pirenópolis, Goiás, Brazil.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Just_waiting_for_the_school_bus.jpg",
-        "author": "Pwoli",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "El Gouna (Red Sea, Egypt): public transport bus, customised and highly decorated in genuine Pakistani style. Coach buil…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Gouna_Bus_R01.jpg",
+        "author": "Marc Ryckaert",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 154؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "إطفائية",
       "qid": "silhouette-800-010",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2932,49 +2935,49 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 155؟",
+      "q": "لأي جهة تتبع المركبة في الصورة؟",
       "a": "شرطة",
       "qid": "silhouette-800-011",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-800-011.webp",
         "type": "image",
-        "title": "While on a bike ride at 530pm yesterday I decided I wanted to head to the beach (an hour away) to catch the sunset....r…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Things_happen_for_a_reason_-_Flickr_-_Dawn_Huczek.jpg",
-        "author": "Dawn Huczek",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "Police car in England",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Police_car.JPG",
+        "author": "Andrevruas",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 156؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تاكسي",
       "qid": "silhouette-800-012",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-800-012.webp",
         "type": "image",
-        "title": "Bohinj-from-boat-taxi_silhouette",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bohinj-from-boat-taxi_silhouette_(8139678814).jpg",
-        "author": "Delaina Haslam",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "A preserved early example of the type",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1962_Austin_FX4_London_taxi.jpg",
+        "author": "MunBill",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 157؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "جرار",
       "qid": "silhouette-800-013",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -2989,11 +2992,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 158؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حصّادة",
       "qid": "silhouette-800-014",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -3008,49 +3011,49 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 159؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قلاب",
       "qid": "silhouette-800-015",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-800-015.webp",
         "type": "image",
-        "title": "Kandahar, Afganistan (Dec. 27, 2001) -- At the U.S. Marine Corps base in Kandahar, Afghanistan, senior chief equipment…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:011227-N-2383B-512_Navy_Seebees_operate_in_Kandahar,_Afganistan.jpg",
-        "author": "U.S. Navy photo by chief photographer's mate Johnny Bivera / Released",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Walo dumper, construction machine, Zürich.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dumper.jpg",
+        "author": "Tiia Monto",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 160؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "رافعة",
       "qid": "silhouette-800-016",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-800-016.webp",
         "type": "image",
-        "title": "Toronto's skyline, 2016 06 22 -b",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silhouette_of_Toronto%27s_skyline,_at_dusk_2016_06_22_-b_(27666792300).jpg",
-        "author": "booledozer",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "A red tower crane contrasted against a blue sky, Knoxville, Tennessee, USA.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_Tower_Crane_-_Knoxville,_Tennessee_-_October_18,_2014.jpg",
+        "author": "Lee Ann Ratledge",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 161؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "منطاد",
       "qid": "silhouette-800-017",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -3065,26 +3068,26 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 162؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "زبلن",
       "qid": "silhouette-800-018",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-800-018.webp",
         "type": "image",
-        "title": "Ferdinand Graf von Zeppelin zum 75. Geburtstag, 1913",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferdinand_Graf_von_Zeppelin,_1913.jpg",
-        "author": "Friedrich Brandseph",
+        "title": "Zeppelin NT of airship that \"Nippon Airship Corporation\" Ltd. has..",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zeppelin_NT_Nippon_Airship_Corporation.JPG",
+        "author": "まも(Mamo)",
         "license": "Public Domain",
         "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 163؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "مقاتلة",
       "qid": "silhouette-800-019",
       "type": "image",
@@ -3103,11 +3106,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 164؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مزدوجة",
       "qid": "silhouette-800-020",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -3122,11 +3125,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 165؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غواصة",
       "qid": "silhouette-800-021",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -3141,30 +3144,30 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 166؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حاملة",
       "qid": "silhouette-800-022",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-800-022.webp",
         "type": "image",
-        "title": "Stencils on the side of the Shuttle Carrier Aircraft after its last ferry flight of Space Shuttle Enterprise to JFK air…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shuttle_Carrier_Aircraft_-_Silhouettes.jpg",
-        "author": "Autopilot",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "The U.S. Navy aircraft carrier USS America (CV-66) underway in the Indian Ocean, 24 April 1983. America, with assigned…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Navy_050420-N-0000X-002_An_aerial_bow_view_of_the_conventionally-powered_aircraft_carrier_USS_America_(CV_66).jpg",
+        "author": "U.S. Navy photo by Photographer's Mate 2nd Class Robert D. Bunge",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 167؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "شراع غروب",
       "qid": "silhouette-800-023",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -3179,11 +3182,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 168؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "سفينة ومنارة",
       "qid": "silhouette-800-024",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -3198,11 +3201,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 169؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قارب بحيرة",
       "qid": "silhouette-800-025",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
@@ -3217,30 +3220,35 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 170؟",
+      "q": "ما وسيلة النقل المائية الظاهرة في الصورة؟",
       "a": "زورق نهر",
       "qid": "silhouette-800-026",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
         "src": "silhouette-800-026.webp",
         "type": "image",
-        "title": "A person paddles a canoe across the Selawik River at sunset. Gold colors reflect in the water and trees are a black sil…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Selawik_River_Paddle_(50442492002).jpg",
-        "author": "USFWSAlaska",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-      }
+        "title": "canoeing on Dordogne river, in Limeuil, Dordogne department, France.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canoe_Dordogne.jpg",
+        "author": "Jebulon",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": [
+        "زورق",
+        "قارب تجديف",
+        "كانو"
+      ]
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 171؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "سكوتر",
       "qid": "silhouette-800-027",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
@@ -3255,11 +3263,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 172؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أحادية",
       "qid": "silhouette-800-028",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
@@ -3274,11 +3282,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 173؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "سيغواي",
       "qid": "silhouette-800-029",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
@@ -3293,49 +3301,49 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 174؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "رباعية",
       "qid": "silhouette-800-030",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
         "src": "silhouette-800-030.webp",
         "type": "image",
-        "title": "Motocross is a form of off-road motorcycle racing held on enclosed off-road circuits. The sport evolved from motorcycle…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Motocross_in_Iran-_Ali_Borzozadeh_%D8%AD%D8%B1%DA%A9%D8%A7%D8%AA_%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DB%8C_%D9%85%D9%88%D8%AA%D9%88%D8%B1%DA%A9%D8%B1%D8%A7%D8%B3_%D8%AF%D8%B1_%D8%B4%D9%87%D8%B1%DA%A9%D8%B1%D8%AF%D8%8C_%D8%B9%D9%84%DB%8C_%D8%A8%D8%B1%D8%B2%D9%88%D8%B2%D8%A7%D8%AF%D9%87%D8%8C_%D8%B9%DA%A9%D8%A7%D8%B3-_%D9%85%D8%B5%D8%B7%D9%81%DB%8C_%D9%85%D8%B9%D8%B1%D8%A7%D8%AC%DB%8C_28.jpg",
-        "author": "Mostafameraji",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "ATV custom-made from E-ATV Eicker Germany. Basevehicle was a KTM Supermotobike, Typ SM 990 with LC8 engine.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:KTM_Quad_990_neutral.jpg",
+        "author": "Stefan Krause, Germany",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 175؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "دراجة ثلج",
       "qid": "silhouette-800-031",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
         "src": "silhouette-800-031.webp",
         "type": "image",
-        "title": "The photo contact sheet, identified as A3165 by the White House Photographic Office (WHPO), is housed at the Gerald R.…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_A3165_NLGRF_photo_contact_sheet_(1975-02-08)(Gerald_Ford_Library).jpg",
-        "author": "David Hume Kennerly",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Two people riding a snowmobile during training for North Shore Rescue",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snowmobile_training_in_North_Shore_Rescue.jpg",
+        "author": "North Shore Rescue",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 176؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "جت سكي",
       "qid": "silhouette-800-032",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
@@ -3350,11 +3358,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 177؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فورمولا",
       "qid": "silhouette-800-033",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
@@ -3369,11 +3377,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 178؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "وحش",
       "qid": "silhouette-800-034",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
@@ -3388,30 +3396,30 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 179؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "صاروخ",
       "qid": "silhouette-800-035",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
         "src": "silhouette-800-035.webp",
         "type": "image",
-        "title": "Photo credit: Astra / John Kraus",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rocket_3.0_DARPA_Launch_Challenge_Sunrise_silhouettes_(50617607492).jpg",
-        "author": "Astra",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "The Apollo 11 Saturn V rocket launch vehicle lifts-off with astronauts Neil A. Armstrong, Michael Collins and Edwin E.…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apollo_11_Launch_-_GPN-2000-000630.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 180؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مكوك",
       "qid": "silhouette-800-036",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مركبات",
       "verified": true,
       "media": {
@@ -3426,18 +3434,18 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 181؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "طبيب",
       "qid": "silhouette-800-037",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-800-037.webp",
         "type": "image",
-        "title": "Doctor using stethoscope on a computer hard drive",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doctor_using_stethoscope_on_a_computer_hard_drive.jpg",
+        "title": "Female doctor listens to the patient using a stethoscope closeup",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Female_doctor_listens_to_the_patient_using_a_stethoscope_closeup.jpg",
         "author": "Shixart1985",
         "license": "CC BY 2.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
@@ -3445,49 +3453,49 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 182؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "طباخ",
       "qid": "silhouette-800-038",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-800-038.webp",
         "type": "image",
-        "title": "Drawing of the Thesaurus concept : 'chef's hat'.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chef%27s_hat.jpg",
-        "author": "David Ring",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        "title": "This is an image with the theme \"Farm to Plate\" from:",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chef_cooking_fish_from_Lake_Malawi.jpg",
+        "author": "AmyAbroad",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 183؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "إطفائي",
       "qid": "silhouette-800-039",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-800-039.webp",
         "type": "image",
-        "title": "A helmet displaying the rank markings of a Japanese fire department Firefighter.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Firefighter_Japanese_Helmet_Markings.png",
-        "author": "NZandUKstuff",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        "title": "This is an image of \"African people at work\" from",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Firefighter,_Ashton_Bay,_March_2017.jpg",
+        "author": "StevenTerblanche",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 184؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "شرطي",
       "qid": "silhouette-800-040",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3502,11 +3510,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 185؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "معلم",
       "qid": "silhouette-800-041",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3521,30 +3529,30 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 186؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قاض",
       "qid": "silhouette-800-042",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-800-042.webp",
         "type": "image",
-        "title": "Banksy stencil showing a judge beating a protester with a gavel on the Royal Courts of Justice (Queen’s Building), Lond…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wide-angle_Judge_beating_a_protester_(Royal_Courts_of_Justice).jpg",
-        "author": "Retiolus",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        "title": "A portrait of Judge Daniel Manion in his chambers.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Judge_Daniel_Manion_Portrait.jpg",
+        "author": "Peter Ringenberg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 187؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مزارع",
       "qid": "silhouette-800-043",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3559,11 +3567,11 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 188؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "صياد",
       "qid": "silhouette-800-044",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3578,49 +3586,49 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 189؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "طيار",
       "qid": "silhouette-800-045",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-800-045.webp",
         "type": "image",
-        "title": "Aviation in Britain Before the First World War Cody aircraft mark IC (Cathedral - so named because of its size and the…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cody_aircraft_mark_IC,_Cathedral_RAE-O266.jpg",
-        "author": "Royal Engineers official photographer",
+        "title": "Grzegorz Wojcik in 737 cockpit",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grzegorz_wojcik_pilot.jpg",
+        "author": "Wojtasso",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
+      "a": "بحّار",
+      "qid": "silhouette-800-046",
+      "type": "image",
+      "effect": "shadow",
+      "topic": "مهن",
+      "verified": true,
+      "media": {
+        "src": "silhouette-800-046.webp",
+        "type": "image",
+        "title": "191107-N-PC620-0077 GULF OF OMAN (Nov. 7, 2019) Boatswain's Mate 3rd Class Alton Mccall gives Pakistan navy sailors a t…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pak_Navy_Sailors.jpg",
+        "author": "US Navy Servicemen",
         "license": "Public Domain",
         "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 190؟",
-      "a": "بحّار",
-      "qid": "silhouette-800-046",
-      "type": "image",
-      "effect": "silhouette",
-      "topic": "مهن",
-      "verified": true,
-      "media": {
-        "src": "silhouette-800-046.webp",
-        "type": "image",
-        "title": "Prosopis pallida (habitat and sunset). Location: Kahoolawe, Sailors hat",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr_030731-0113_Prosopis_pallida.jpg",
-        "author": "Forest & Kim Starr",
-        "license": "CC BY 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
-      }
-    },
-    {
-      "p": 800,
-      "q": "ما هذا الظل رقم 191؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "عالم",
       "qid": "silhouette-800-047",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3635,30 +3643,30 @@
     },
     {
       "p": 800,
-      "q": "ما هذا الظل رقم 192؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مصور",
       "qid": "silhouette-800-048",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-800-048.webp",
         "type": "image",
-        "title": "Silhouette of a fisherman on his pirogue at sunrise in Don Det, Si Phan Don, Laos",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silhouette_of_a_fisherman_on_his_pirogue_at_sunrise_in_Si_Phan_Don_Laos.jpg",
-        "author": "Basile Morin",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "Photographer Wally C. Guy using Linhof Technika camera in the lab. Sellwood Lab. Portland, Oregon. Photo by: Peter W. O…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1958._Photographer_Wally_C._Guy_using_Linhof_Technika_camera_in_the_lab._Sellwood_Lab._Portland,_OR._(33433271162).jpg",
+        "author": "R6, State & Private Forestry, Forest Health Protection",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 193؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "رسام",
       "qid": "silhouette-1000-001",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -3673,11 +3681,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 194؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "عازف",
       "qid": "silhouette-1000-002",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -3692,11 +3700,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 195؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "راقص",
       "qid": "silhouette-1000-003",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -3711,11 +3719,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 196؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ساحر",
       "qid": "silhouette-1000-004",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -3730,30 +3738,30 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 197؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تاج",
       "qid": "silhouette-1000-005",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-1000-005.webp",
         "type": "image",
-        "title": "1924 advertisement for King Oliver band at \"Boyd's Studio\", Madison, Wisconsin, March, 1924. Text at top: \"King Oliver…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:King_Oliver_at_Boyd%27s_Studio_Madison_Wisc_1924.jpg",
-        "author": "Uncredited",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Crown used in the proclamation of Kings of Spain. Made it in the XVIII century., Cropped and Blackened version of Spani…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spanish_Royal_Crown_1crop.jpg",
+        "author": "TheRichic",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 198؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ملكة",
       "qid": "silhouette-1000-006",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -3768,49 +3776,49 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 199؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فارس درع",
       "qid": "silhouette-1000-007",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-1000-007.webp",
         "type": "image",
-        "title": "GEORGIA GARRISON TRAINING CENTER, Ft. Stewart, Ga., July 24, 2014 – A new member of the armored security vehicle (ASV)…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:M1200_Guardian_%22Armored_Knight%22_(14794103335).jpg",
-        "author": "Georgia National Guard from United States",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "From childhood, sons of noblemen might join in ceremonial occasions for which armor was required. Appearing with adult…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:French_-_Child%27s_Suit_of_Armor_-_Walters_51590.jpg",
+        "author": "Anonymous (French artist)Unknown author Anonymous (German artist)Unknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 200؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قرصان",
       "qid": "silhouette-1000-008",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-1000-008.webp",
         "type": "image",
-        "title": "Taken at White Plains Avenue, September 21, 2025. Text reads \"Tayo ang lakas\" (We are the strength)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trillion_Peso_March_(Straw_Hat_Pirates_Flag).jpg",
-        "author": "RFNirmala",
-        "license": "CC BY 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        "title": "Photos from Gen Con Indy 2007.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gen_Con_Indy_2007_-_costumes_21_(pirate).JPG",
+        "author": "myself (User:Piotrus)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 201؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "نينجا",
       "qid": "silhouette-1000-009",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3825,30 +3833,30 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 202؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ساموراي",
       "qid": "silhouette-1000-010",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-1000-010.webp",
         "type": "image",
-        "title": "Togoville",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Togoville_sunset3.jpg",
-        "author": "David Bacon",
-        "license": "CC BY 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+        "title": "Suit of Armor inside the Samurai Museum, Berlin",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suit_of_Armor_Samurai_Museum_Berlin.jpg",
+        "author": "Neomicro",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 203؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "رائد",
       "qid": "silhouette-1000-011",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3863,30 +3871,30 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 204؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "معدّن",
       "qid": "silhouette-1000-012",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-1000-012.webp",
         "type": "image",
-        "title": "Looking up at the ceiling in the Miner's change room in Rammelsberg Mining Museum. The work clothes for the miners are…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miners_change_room,_Rammelsberg,_Lower_Saxony,_Germany,_2015-05-17.jpg",
-        "author": "Slaunger",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "Man of the Mine- Life at the Coal Face, Britain, 1942 A striking head and shoulders portrait of coal miner Fred Woolhou…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Man_of_the_Mine-_Life_at_the_Coal_Face,_Britain,_1942_D8246.jpg",
+        "author": "Ministry of Information Photo Division Photographer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 205؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "عامل بناء",
       "qid": "silhouette-1000-013",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3901,11 +3909,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 206؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ميكانيكي",
       "qid": "silhouette-1000-014",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3920,30 +3928,30 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 207؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حلاق",
       "qid": "silhouette-1000-015",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-1000-015.webp",
         "type": "image",
-        "title": "Barber's pole, Drummond Street Once a common sight, but now a rarity, this shop has retained its barber's pole, symboli…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barber%27s_pole,_Drummond_Street_-_geograph.org.uk_-_1352847.jpg",
-        "author": "kim traynor",
-        "license": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+        "title": "Barber cutting hair with comb. Back view of man in barber shop.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barber_cutting_hair_with_comb._Back_view_of_man_in_barber_shop.jpg",
+        "author": "Nenad Stojkovic",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 208؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "نادل",
       "qid": "silhouette-1000-016",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3958,30 +3966,30 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 209؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أمين مكتبة",
       "qid": "silhouette-1000-017",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
         "src": "silhouette-1000-017.webp",
         "type": "image",
-        "title": "Image from the Italian book Nova polemica, by Olindo Guerrini (using the art name of Lorenzo Stecchetti), Zanichelli, B…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nova_polemica-pag133.png",
-        "author": "Olindo Guerrini",
+        "title": "Young woman with glasses, dressed in a suit reading. A shelf of books and folders is behind her. Kathleen Gawler worked…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Librarian_Kathleen_Gawler_at_State_Electricity_Commission_Library,_Melbourne,_1946.jpg",
+        "author": "Unknown authorUnknown author",
         "license": "Public Domain",
         "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 210؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "صحفي",
       "qid": "silhouette-1000-018",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "مهن",
       "verified": true,
       "media": {
@@ -3996,30 +4004,30 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 211؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "آلة كاتبة",
       "qid": "silhouette-1000-019",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-1000-019.webp",
         "type": "image",
-        "title": "Обложка издания повести И.М. Бондаренко \"Astrid\" Astrid: Повесть. — Ростов н/Д: Кн. изд-во, 1989. — 288 с.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Astrid_1989.jpg",
-        "author": "И.М. Бондаренко",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "The Underwood 1, within ten years, would establish the standard design of typewriters for the 20th century.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Underwood_1_typewriter,_1896.jpg",
+        "author": "Martin Howard",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 212؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "غرامافون",
       "qid": "silhouette-1000-020",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -4034,11 +4042,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 213؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "راديو",
       "qid": "silhouette-1000-021",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -4053,11 +4061,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 214؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "هاتف قرصي",
       "qid": "silhouette-1000-022",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
@@ -4072,7 +4080,7 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 215؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "ساعة رملية",
       "qid": "silhouette-1000-023",
       "type": "image",
@@ -4082,39 +4090,39 @@
       "media": {
         "src": "silhouette-1000-023.webp",
         "type": "image",
-        "title": "USpatent293969 1884",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:USpatent293969_1884.png",
-        "author": "مؤلف غير معروف",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "An icon from the 3d Glossy Blue Orbs icon set.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Glossy_3d_blue_hourglass.png",
+        "author": "Mysitemyway.com",
+        "license": "CC BY 1.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 216؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "ساعة جيب",
       "qid": "silhouette-1000-024",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "رياضة",
       "verified": true,
       "media": {
         "src": "silhouette-1000-024.webp",
         "type": "image",
-        "title": "A cart seen from behind and stacked high with treasure-chests approaches the shore beside a signpost pointing 'To Hanov…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Something_like_emigration._(BM_1868,0808.9438).jpg",
-        "author": "Print made by: Henry Heath Published by: S W Fores",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Pocket watch, savonette-type.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MontreGousset001.jpg",
+        "author": "Isabelle Grosjean ZA",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 217؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "منظار",
       "qid": "silhouette-1000-025",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -4129,11 +4137,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 218؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "تلسكوب",
       "qid": "silhouette-1000-026",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -4148,11 +4156,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 219؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "مجهر",
       "qid": "silhouette-1000-027",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -4167,68 +4175,68 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 220؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "كرة أرضية",
       "qid": "silhouette-1000-028",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-028.webp",
         "type": "image",
-        "title": "A 3-view silhouette drawing of the Globe GC-1A Swift. Profile view has been moved from prior position on page.",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Globe_GC-1A_Swift_3-view_silhouette_drawing.png",
-        "author": "Globe Aircraft Corporation via Flight Manuals Online",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "3d earth globe",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:3d_earth_globe.jpg",
+        "author": "Thomas Amberg",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 221؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "معداد",
       "qid": "silhouette-1000-029",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-029.webp",
         "type": "image",
-        "title": "architecture · city-view in general; 'veduta' · names of cities and villages (ATHENS) · geographical names of countries…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Athens-_View_of_Theseion_and_Acropolis_(SM_stf138).png",
-        "author": "Petros Moraites",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "Abacus used at State Department Store in Ulaanbaatar from 1923 to 1970.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abacus_of_State_Department_Store.jpg",
+        "author": "K.F.",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 222؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بوصلة",
       "qid": "silhouette-1000-030",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-030.webp",
         "type": "image",
-        "title": "A silhouette drawing of a horizontal situation indicator (HSI). It is a component of a flight director system (FDS). 1.…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horizontal_situation_indicator_silhouette_drawing.png",
-        "author": "United States Air Force",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "used for Geological Mapping",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brunton_compass.jpg",
+        "author": "Kamalfencer",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 223؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "فانوس",
       "qid": "silhouette-1000-031",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -4243,26 +4251,26 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 224؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "شمعة",
       "qid": "silhouette-1000-032",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-032.webp",
         "type": "image",
-        "title": "an amazing image of a sunset with a silhouette of trees and houses....Just like a candle flame with the three different…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amazing_blue_sky.jpg",
-        "author": "Saumyadeep chowdhury",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "A closeup of a cream/yellow candle's flame with round bokeh in the background.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Candle_flame_closeup.jpg",
+        "author": "domdomegg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 225؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "مصباح",
       "qid": "silhouette-1000-033",
       "type": "image",
@@ -4281,7 +4289,7 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 226؟",
+      "q": "ما صاحب هذا الشكل؟",
       "a": "مكبر",
       "qid": "silhouette-1000-034",
       "type": "image",
@@ -4291,39 +4299,39 @@
       "media": {
         "src": "silhouette-1000-034.webp",
         "type": "image",
-        "title": "Kazantip Festival in the 2000s: sun, sea, sandy beaches, staged palm trees, Kazantip people, parties, parades, days, ni…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kazantip,_Popovka,_Crimea,_Games.jpg",
-        "author": "Vyacheslav Argenberg",
-        "license": "CC BY 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        "title": "Icon from \"3dicons\" icon collection in \"front\" perspective style.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Megaphone-front-clay.png",
+        "author": "Vijay Verma (https://vijayverma.co/?ref=3dicons / https://web.archive.org/web/20230821152010/https://vijayverma.co/?ref=3dicons)",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 227؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "عربة تسوق",
       "qid": "silhouette-1000-035",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-035.webp",
         "type": "image",
-        "title": "This nighttime street scene captures a lively urban setting in Pattaya, Thailand, likely along the famous Beach Road ar…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:DZ3_0677_A_nighttime_street_scene_in_Pattaya_a_vendor_tends_a_brightly_lit_food_cart_parked_along_a_busy_sidewalk_with_palm_trees_passing_shoppers_and_traffic_under_neon_signs_and_a_McDonalds_in_the_background.jpg",
-        "author": "PattayaPatrol",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "A shopping cart in a Walmart parking lot, filled with plastic grocery bags and a case of Diet Coke cans",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shopping_cart.jpg",
+        "author": "Guanaco",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 228؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حقيبة",
       "qid": "silhouette-1000-036",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "حيوانات",
       "verified": true,
       "media": {
@@ -4338,49 +4346,49 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 229؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "حقيبة ظهر",
       "qid": "silhouette-1000-037",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-037.webp",
         "type": "image",
-        "title": "View from the La Cloche Silhouette Trail, a 78 kilometre (48 mi) backpacking loop in Killarney Provincial Park, Ontario…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Cloche_Silhouette_Mountain_View_2010.png",
-        "author": "Mensilater at English Wikipedia",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "title": "Plecak Hiker 50 L HiMountain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plecak_Hiker_50_L_HiMountain.jpg",
+        "author": "WrS.tm.pl",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 230؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "هدية",
       "qid": "silhouette-1000-038",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-038.webp",
         "type": "image",
-        "title": "Circular, with detachable cover; gold, the cover, sides and base decorated with silhouette landscapes of trees and bird…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Circular_snuff_box_Circular_Snuff_Box,_1779_(CH_18457537).jpg",
-        "author": "Unknown artistUnknown artist",
-        "license": "Public Domain",
-        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+        "title": "A child eagerly holds a decorated gift with a bright red bow, surrounded by family in a warm living room, radiating exc…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Child_joyfully_holding_a_beautifully_wrapped_gift_during_a_festive_gathering_in_a_cozy_home_setting.jpg",
+        "author": "Shixart1985",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 231؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "بالون",
       "qid": "silhouette-1000-039",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
@@ -4395,11 +4403,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 232؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "طائرة ورقية",
       "qid": "silhouette-1000-040",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
@@ -4414,11 +4422,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 233؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أرجوحة توازن",
       "qid": "silhouette-1000-041",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
@@ -4433,11 +4441,11 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 234؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "أرجوحة",
       "qid": "silhouette-1000-042",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
@@ -4452,30 +4460,34 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 235؟",
+      "q": "ما اسم لعبة الأطفال في الصورة؟",
       "a": "زلاقة",
       "qid": "silhouette-1000-043",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-043.webp",
         "type": "image",
-        "title": "Die Spielgeräte Stuttgarter Straße befinden sich vor dem Metzinger Rathaus und in der anschließenden Fußgängerzone. Ein…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playground_Stuttgarter_Stra%C3%9Fe.jpg",
-        "author": "RealMetzor",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
+        "title": "Playground slide",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playground_slide.jpg",
+        "author": "Hyena",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "alt": [
+        "زحليقة",
+        "زحلوقة"
+      ]
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 236؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "عجلة كبيرة",
       "qid": "silhouette-1000-044",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
@@ -4490,30 +4502,30 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 237؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "دوامة خيل",
       "qid": "silhouette-1000-045",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-045.webp",
         "type": "image",
-        "title": "500px provided description: Night shot at the SeaGlad Carousel at Battery Park, New York City [#urban ,#black and white…",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nighttime_At_The_Seaglass_Carousel_(190427783).jpeg",
-        "author": "Simon Franz",
-        "license": "CC BY 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+        "title": "Carousel horses in Perpignan. This image has been originally created as the illustration for konik entry in szarada.net…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carousel_horses_in_Perpignan.jpg",
+        "author": "Przemek P",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 238؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "قطار ملاهٍ",
       "qid": "silhouette-1000-046",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
@@ -4528,40 +4540,40 @@
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 239؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "خيمة",
       "qid": "silhouette-1000-047",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-047.webp",
         "type": "image",
-        "title": "This is an image with the theme \"Home + Habitat in Africa\" from:",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:My_second_home.jpg",
-        "author": "Wubshet Jote",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+        "title": "Camping tent set up on a tarp in the woods",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camping_tent_on_tarp.jpg",
+        "author": "Eden Aviv",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
       }
     },
     {
       "p": 1000,
-      "q": "ما هذا الظل رقم 240؟",
+      "q": "ما الذي يظهر في الصورة المعتمة؟",
       "a": "نار مخيم",
       "qid": "silhouette-1000-048",
       "type": "image",
-      "effect": "silhouette",
+      "effect": "shadow",
       "topic": "آلات",
       "verified": true,
       "media": {
         "src": "silhouette-1000-048.webp",
         "type": "image",
-        "title": "Wesley Balten 2017",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wesley_Balten_2017_(Unsplash).jpg",
-        "author": "Wesley Balten arcsigne",
-        "license": "CC0 1.0",
-        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        "title": "Campfire",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Campfire.jpg",
+        "author": "F.A. Mac Donald, Inverness, Nova Scotia, Canada",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
       }
     }
   ]

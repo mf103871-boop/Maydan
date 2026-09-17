@@ -1,29 +1,47 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Wordmark, WorldArtwork } from '../../shared/brand/art.jsx';
+import React, { useEffect, useRef, useState } from 'react';
+import { Wordmark, WorldArtwork, GameArtwork, ClayStage } from '../../shared/brand/art.jsx';
+import { prepareVisuals } from '../../shared/fx/readiness.js';
+import gameIcons from '../../shared/brand/assets/game-icons.webp';
+import avatars from '../../shared/brand/assets/avatars.webp';
+import world from '../../shared/brand/assets/world.webp';
 
-// reducedMotion يأتي كخاصية: قراءته من dataset هنا تسبق كتابته في تأثير الأب
-// (تأثيرات الأبناء تعمل أولًا) فكان دائمًا غائبًا.
-export function Splash({ onDone, duration = 2200, reducedMotion = false }) {
-  const [leaving, setLeaving] = useState(false);
-  const done = useRef(false);
-  const exitTimer = useRef(null);
-  const finish = useCallback(() => {
-    if (done.current) return;
-    done.current = true;
-    setLeaving(true);
-    exitTimer.current = setTimeout(onDone, 250);
-  }, [onDone]);
-
+export function useVisualReadiness({ includeWorld = false } = {}) {
+  const [ready, setReady] = useState(false);
+  const [progress, setProgress] = useState({ complete: 0, total: 0 });
   useEffect(() => {
-    const reduced = reducedMotion
-      || document.documentElement.dataset.reducedMotion === 'true'
-      || (typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches);
-    const timer = setTimeout(finish, reduced ? 600 : duration);
-    return () => { clearTimeout(timer); clearTimeout(exitTimer.current); };
-  }, [duration, finish, reducedMotion]);
+    let active = true;
+    prepareVisuals({ images: includeWorld ? [world, gameIcons, avatars] : [gameIcons, avatars],
+      onProgress: (next) => { if (active) setProgress(next); },
+    }).then(() => { if (active) setReady(true); });
+    return () => { active = false; };
+  }, [includeWorld]);
+  return { ready, progress };
+}
 
-  // السماء: غيمتان وبالونان وأربع نجوم CSS فوق تدرّج يطابق أعلى الصورة؛ كلها زينة (aria-hidden) وتُزال مع الشاشة.
-  return <div className={`splash ${leaving ? 'is-leaving' : ''}`} onClick={finish} role="button" tabIndex={0} aria-label="تخطي شاشة البداية" onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); finish(); } }}>
+function LoadingStatus({ progress, label }) {
+  return <div className="loading-status" role="status" aria-live="polite">
+    <span className="loading-orbit" aria-hidden="true"><i /><i /><i /></span>
+    <b>{label}</b>
+    <span className="loading-track" aria-hidden="true"><span style={{ transform: `scaleX(${progress.total ? progress.complete / progress.total : 0})` }} /></span>
+  </div>;
+}
+
+export function GameLoading({ game, progress }) {
+  return <section className="game-loading" aria-busy="true" aria-label={`تجهيز ${game.name}`}>
+    <ClayStage className="clay-static"><GameArtwork game={game.id} /></ClayStage>
+    <h1>{game.name}</h1>
+    <LoadingStatus progress={progress} label="نجهّز ساحة اللعب…" />
+  </section>;
+}
+
+export function Splash({ onDone, reducedMotion = false }) {
+  const { ready, progress } = useVisualReadiness({ includeWorld: true });
+  const finished = useRef(false);
+  useEffect(() => {
+    if (ready && !finished.current) { finished.current = true; onDone(); }
+  }, [ready, onDone]);
+
+  return <div className="splash" aria-busy="true" aria-label="تجهيز ميدان" data-reduced-motion={reducedMotion ? 'true' : undefined}>
     <div className="splash-sky" aria-hidden="true">
       <i className="splash-cloud" style={{ '--i': 0 }} /><i className="splash-cloud" style={{ '--i': 1 }} />
       <i className="splash-balloon" style={{ '--i': 0 }} /><i className="splash-balloon" style={{ '--i': 1 }} />
@@ -31,6 +49,6 @@ export function Splash({ onDone, duration = 2200, reducedMotion = false }) {
     </div>
     <WorldArtwork className="splash-world" />
     <div className="splash-inner"><Wordmark sculpted /><div className="splash-sub">ألعاب جمعتنا</div></div>
-    <div className="splash-skip">المس الشاشة للتخطي</div>
+    <div className="splash-loading"><LoadingStatus progress={progress} label="تجهز الساحة…" /></div>
   </div>;
 }

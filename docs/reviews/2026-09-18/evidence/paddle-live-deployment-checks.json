@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-09-17T22:43:07.038Z",
+  "checks": [
+    {
+      "test": "Live receiver configured",
+      "status": 200
+    },
+    {
+      "test": "No user-facing route /",
+      "status": 404
+    },
+    {
+      "test": "No user-facing route /pay",
+      "status": 404
+    },
+    {
+      "test": "No user-facing route /api/billing/config",
+      "status": 404
+    },
+    {
+      "test": "No user-facing route /api/auth/google/start",
+      "status": 404
+    },
+    {
+      "test": "Non-Paddle caller rejected before database access",
+      "status": 403,
+      "error": "IP_FORBIDDEN"
+    },
+    {
+      "test": "Public game remains Sandbox",
+      "status": 200,
+      "environment": "sandbox"
+    },
+    {
+      "test": "Public page /pricing/",
+      "status": 200
+    },
+    {
+      "test": "Public page /refunds/",
+      "status": 200
+    },
+    {
+      "test": "Public page /pay",
+      "status": 200
+    }
+  ],
+  "limitations": [
+    "No valid Paddle event sent to the production database.",
+    "No customer, subscription or transaction created; no live payment.",
+    "No business verification or payouts configuration attempted."
+  ]
+}

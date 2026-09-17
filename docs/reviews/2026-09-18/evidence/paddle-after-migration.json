@@ -1,0 +1,158 @@
+{
+  "checkedAt": "2026-09-17T22:30:55.989Z",
+  "mutationRequests": 0,
+  "accounts": {
+    "live": {
+      "products": {
+        "status": 200,
+        "count": 1,
+        "data": [
+          {
+            "id": "pro_01m2rqq7vwa8ycqbh5b1e3x7cg",
+            "name": "ميدان بلس",
+            "status": "active",
+            "tax_category": "standard"
+          }
+        ]
+      },
+      "prices": {
+        "status": 200,
+        "count": 1,
+        "data": [
+          {
+            "id": "pri_01m2rqq887jk85av1b1a68j82k",
+            "product_id": "pro_01m2rqq7vwa8ycqbh5b1e3x7cg",
+            "name": "شهري",
+            "description": "ميدان بلس — شهري",
+            "status": "active",
+            "unit_price": {
+              "amount": "500",
+              "currency_code": "USD"
+            },
+            "billing_cycle": {
+              "interval": "month",
+              "frequency": 1
+            },
+            "trial_period": null,
+            "tax_mode": "location"
+          }
+        ]
+      },
+      "discounts": {
+        "status": 200,
+        "count": 0,
+        "data": []
+      },
+      "client-tokens": {
+        "status": 200,
+        "count": 1,
+        "data": [
+          {
+            "id": "ctkn_01m2rqq8myjv8659vt3ghrfa3w",
+            "name": "Maydan Live web",
+            "description": "Maydan web billing; checkout remains disabled during pre-verification preparation.",
+            "status": "active",
+            "revoked_at": null,
+            "liveTokenPresent": true
+          }
+        ]
+      },
+      "notification-settings": {
+        "status": 200,
+        "count": 1,
+        "data": [
+          {
+            "id": "ntfset_01m2rqw7p3y1ze2nyqbsma21gx",
+            "description": "Maydan Live permanent subscription webhook",
+            "destination": "https://maydan-paddle-live.mf103871.workers.dev/api/paddle/webhook",
+            "type": "url",
+            "active": true,
+            "traffic_source": "platform",
+            "subscribed_events": [
+              "transaction.created",
+              "transaction.updated",
+              "subscription.created",
+              "subscription.updated"
+            ],
+            "signingSecretPresent": true
+          }
+        ]
+      },
+      "checkout-domains": {
+        "status": 200,
+        "count": 1,
+        "data": [
+          {
+            "id": "chedom_01m2rp1kbakbjwsj3d35pcsnse",
+            "domain": "maydan-game.mf103871.workers.dev",
+            "status": "approved",
+            "payment_method_verification": {
+              "apple_pay": {
+                "status": "verified"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "sandbox": {
+      "products": {
+        "status": 200,
+        "count": 1,
+        "data": [
+          {
+            "id": "pro_01m2p9gavyr3n26hq46b8xbxc0",
+            "name": "ميدان بلس",
+            "status": "active",
+            "tax_category": "standard"
+          }
+        ]
+      },
+      "prices": {
+        "status": 200,
+        "count": 2,
+        "data": [
+          {
+            "id": "pri_01m2p9gbmv4tyx2q203e035ye9",
+            "product_id": "pro_01m2p9gavyr3n26hq46b8xbxc0",
+            "name": "سنوي",
+            "description": "ميدان بلس — سنوي",
+            "status": "active",
+            "unit_price": {
+              "amount": "1999",
+              "currency_code": "USD"
+            },
+            "billing_cycle": {
+              "interval": "year",
+              "frequency": 1
+            },
+            "trial_period": null,
+            "tax_mode": "location"
+          },
+          {
+            "id": "pri_01m2p9gbanyptbz5hdf350ktet",
+            "product_id": "pro_01m2p9gavyr3n26hq46b8xbxc0",
+            "name": "شهري",
+            "description": "ميدان بلس — شهري",
+            "status": "active",
+            "unit_price": {
+              "amount": "299",
+              "currency_code": "USD"
+            },
+            "billing_cycle": {
+              "interval": "month",
+              "frequency": 1
+            },
+            "trial_period": null,
+            "tax_mode": "location"
+          }
+        ]
+      },
+      "discounts": {
+        "status": 200,
+        "count": 0,
+        "data": []
+      }
+    }
+  }
+}

@@ -16,7 +16,7 @@ import { routeRequest } from '../server/worker.mjs';
 import { limitKind } from '../server/accounts/router.mjs';
 
 const NOW = 1_800_000_000_000;
-const row = (extra) => ({ source: 'paddle', external_id: 'sub_1', product: PRODUCTS.monthly, status: 'active', until: NOW + 1000, will_renew: 1, ...extra });
+const row = (extra) => ({ source: 'paddle', environment: 'sandbox', external_id: 'sub_1', product: PRODUCTS.monthly, status: 'active', until: NOW + 1000, will_renew: 1, ...extra });
 
 test('premiumOf يختار الأبعد انتهاءً ويتجاهل الملغى قسرًا', () => {
   assert.deepEqual(premiumOf([], NOW), { active: false, until: 0, source: null, status: null, willRenew: false });

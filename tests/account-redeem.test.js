@@ -73,63 +73,52 @@ test('التطبيع: أرقام عربية وفارسية ومسافات وشر
   assert.equal(codeHash('١١٢١٩٩٨'), codeHash(CODE));
 });
 
-test('الرمز المتفق عليه صحيح وكل ما عداه مرفوض، والبصمة في الإعداد لا الرمز', () => {
-  assert.equal(isValidCode(CODE), true);
-  assert.equal(isValidCode(' ١١٢١٩٩٨ '), true);
-  for (const bad of ['1121999', '', '112', '0000000', null, undefined, 12345678, CODE + '0']) assert.equal(isValidCode(bad), false, String(bad));
-  assert.ok(REDEEM_CODE_HASHES.includes(sha256Hex(CODE)));
-  assert.ok(!JSON.stringify(REDEEM_CODE_HASHES).includes(CODE), 'الرمز نفسه لا يظهر في الحزمة');
-  assert.equal(isValidCode(CODE, []), false);
-  assert.equal(isValidCode('other', [sha256Hex('OTHER')]), true, 'قائمة خارجية + حالة الأحرف');
+test('لا رمز عام في الحزمة: القبول يحتاج بصمات الخادم', () => {
+  assert.deepEqual(REDEEM_CODE_HASHES, []);
+  assert.equal(isValidCode(CODE), false);
+  assert.equal(isValidCode('other', [sha256Hex('OTHER')]), true);
+  assert.equal(isValidCode('a'.repeat(65), [sha256Hex('A'.repeat(65))]), false);
   assert.ok('REDEEM_INVALID' in ACCOUNT_ERRORS);
 });
 
-test('المخزن: الرمز يُحفظ ببصمته، وبصمة أُلغيت من الإعداد تُعامل كأن لا رمز', () => {
+test('ترحيل الرموز المحلية يمسح الرمز الخام ولا يمنح استحقاقًا', () => {
   const store = createAccountStore(fakeStorage());
+  store.storage.set('promo', { code: CODE, hash: codeHash(CODE), redeemedAt: 1000 });
   assert.equal(store.readPromo(), null);
-  const entry = store.writePromo(CODE, codeHash(CODE), 1000);
-  assert.deepEqual(entry, { code: CODE, hash: codeHash(CODE), redeemedAt: 1000, syncedFor: null });
-  assert.deepEqual(store.readPromo(), entry);
-  store.writePromo(CODE, 'deadbeef');
-  assert.equal(store.readPromo(), null, 'بصمة غير معروفة');
-  store.writePromo('x', codeHash(CODE));
-  store.clearAuth();
-  assert.ok(store.readPromo(), 'الخروج لا يمسح رمز الجهاز');
-  assert.equal(store.readPromo().syncedFor, null);
-  assert.equal(store.markPromoSynced('user-1').syncedFor, 'user-1');
-  assert.equal(store.markPromoSynced('').syncedFor, null);
-  store.clearPromo();
-  assert.equal(store.readPromo(), null);
-  assert.equal(store.markPromoSynced('user-1'), null, 'لا رمز = لا شيء يُعلَّم');
-  // أشكال تالفة أو غريبة لا تُسقط الواجهة.
-  for (const raw of ['nope', ['a'], { hash: 42 }, { code: CODE }, null]) {
-    store.storage.set('promo', raw);
-    assert.equal(store.readPromo(), null, JSON.stringify(raw));
-  }
-  store.storage.set('promo', { code: CODE, hash: codeHash(CODE).toUpperCase(), redeemedAt: 'x' });
-  assert.deepEqual(store.readPromo(), { code: CODE, hash: codeHash(CODE), redeemedAt: 0, syncedFor: null }, 'بصمة بأحرف كبيرة تُقبل والتاريخ التالف يصير صفرًا');
-  assert.equal(store.writePromo(CODE, ''), null, 'بصمة فارغة تمسح المفتاح');
-  assert.equal(store.readPromo(), null);
-  // حدود الطول والتطبيع.
-  assert.equal(isValidCode('a'.repeat(65), [sha256Hex('A'.repeat(65))]), false, 'أطول من CODE_MAX');
-  assert.equal(isValidCode('a'.repeat(64), [sha256Hex('A'.repeat(64))]), true);
-  assert.equal(normalizeCode('a_b.c d-e'), 'ABCDE');
+  assert.equal(store.storage.get('promo', null), null);
+  assert.equal(store.writePromo(CODE, codeHash(CODE)), null);
+  assert.equal(store.storage.get('promo', null), null);
+  assert.equal(store.markPromoSynced('user-1'), null);
 });
 
-test('المزوّد: رمز مفعَّل على الجهاز = مشترك، بلا جلسة وبلا شبكة', () => {
-  const before = mod.renderProvider();
-  assert.match(before, /data-premium="false"/);
-  assert.match(before, /data-locked="true"/);
-  mod.accountStore.writePromo(CODE, codeHash(CODE));
-  try {
-    const html = mod.renderProvider();
-    assert.match(html, /data-premium="true"/);
-    assert.match(html, /data-promo="true"/);
-    assert.match(html, /data-locked="false"/);
-    assert.match(html, /data-access="premium"/);
-  } finally {
-    mod.accountStore.clearPromo();
-  }
+test('المزوّد لا يقبل هدية محلية بلا جلسة وبلا تأكيد الخادم', () => {
+  mod.accountStore.storage.set('promo', { code: CODE, hash: codeHash(CODE) });
+  const html = mod.renderProvider();
+  assert.match(html, /data-premium="false"/);
+  assert.match(html, /data-promo="false"/);
+  assert.match(html, /data-locked="true"/);
+  assert.match(html, /data-access="trial"/);
+  mod.accountStore.clearPromo();
+});
+
+test('الجدار يوضح بيئة الدفع التجريبية على الويب فقط', () => {
+  const billing = { paddle: { environment: 'sandbox' } };
+  assert.match(mod.renderPaywall({ platform: 'web', billing }), /الدفع في وضع الاختبار؛ لا تُخصم مبالغ حقيقية/);
+  assert.doesNotMatch(mod.renderPaywall({ platform: 'web', billing: { paddle: { environment: 'production' } } }), /الدفع في وضع الاختبار/);
+  assert.doesNotMatch(mod.renderPaywall({ platform: 'ios', billing }), /الدفع في وضع الاختبار/);
+});
+
+test('الجدار يدعم شهرية فقط دون اختلاق خطة سنوية ويحافظ على منتجات App Store', () => {
+  const products = { monthly: { price: '$5.00', period: 'شهريًا' }, yearly: null };
+  const billing = { paddle: { environment: 'production', prices: { monthly: 'pri_live_month', yearly: '' } } };
+  const html = mod.renderPaywall({ platform: 'web', signedIn: true, products, billing });
+  assert.match(html, /data-plan="monthly"/);
+  assert.match(html, /aria-checked="true" data-plan="monthly"/);
+  assert.match(html, /\$5.00/);
+  assert.doesNotMatch(html, /data-plan="yearly"|سنوي/);
+  const both = { ...products, yearly: { price: '$50.00', period: 'سنويًا' } };
+  assert.doesNotMatch(mod.renderPaywall({ platform: 'web', signedIn: true, products: both, billing }), /data-plan="yearly"/, 'سعر قديم لا يعيد خطة أوقفها الخادم');
+  assert.match(mod.renderPaywall({ platform: 'ios', signedIn: true, products: both, billing }), /data-plan="yearly"/, 'منتجات App Store مستقلة عن خطط Paddle');
 });
 
 test('الجدار وبطاقة الحساب: رابط الرمز على الويب فقط، والسطر يذكر «برمز هدية»', () => {

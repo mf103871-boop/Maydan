@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="same-origin">
+  <title>الدفع — ميدان</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#f5f1e9;color:#332541;font-family:Tahoma,Arial,sans-serif;line-height:1.9}main{width:100%;max-width:480px;padding:32px;border:1px solid #e7ded0;border-radius:24px;background:#fffdf8;text-align:center;box-shadow:0 14px 40px #542c7810}h1{margin:8px 0 16px;font-size:28px}p{margin:16px 0}.brand{color:#70528d;font-weight:bold}a{color:#59387c;text-underline-offset:4px}.button,button{display:inline-block;border:0;border-radius:14px;background:#59387c;color:#fff;padding:12px 24px;font:inherit;text-decoration:none;cursor:pointer}button{margin-bottom:16px}nav{margin-top:24px;font-size:13px}nav a{margin:0 8px}.notice{background:#fff0c9;border-radius:12px;padding:10px;font-size:14px}[hidden]{display:none!important}:focus-visible{outline:3px solid #b39acb;outline-offset:4px}
+  </style>
+</head>
+<body>
+  <main>
+    <span class="brand">ميدان بلس</span>
+    <h1>إكمال الدفع</h1>
+    <p id="status" role="status" aria-live="polite">جارٍ تجهيز نافذة الدفع…</p>
+    <p id="sandbox" class="notice" hidden>الدفع في وضع الاختبار؛ لا تُخصم مبالغ حقيقية.</p>
+    <button id="retry" type="button" hidden>إعادة المحاولة</button><br>
+    <a class="button" href="/#/settings">العودة إلى حسابي</a>
+    <nav aria-label="المعلومات القانونية"><a href="/#/terms">شروط الاستخدام</a><a href="/#/privacy">سياسة الخصوصية</a><a href="/refunds/">سياسة الاسترداد</a></nav>
+    <noscript><p>فعّل JavaScript لفتح نافذة الدفع.</p></noscript>
+  </main>
+  <script>
+    // A default Paddle payment link opens an existing transaction. This page
+    // never creates transactions or grants access based on a browser event.
+    (async () => {
+      const status = document.getElementById('status');
+      const retry = document.getElementById('retry');
+      const sessionKey = 'maydan:account:session';
+      const readSession = () => {
+        try { const token = JSON.parse(localStorage.getItem(sessionKey)); return typeof token === 'string' && /^mdn1\.[a-f0-9]{16}\.[A-Za-z0-9_-]{16,128}$/.test(token) ? token : ''; }
+        catch { return ''; }
+      };
+      const clearCustomer = () => {
+        try { if (window.Paddle?.Initialized) window.Paddle.Update({ pwCustomer: {} }); } catch { /* leaving this document */ }
+      };
+      window.addEventListener('storage', (event) => { if (event.key === sessionKey || event.key === null) clearCustomer(); });
+      window.addEventListener('pagehide', clearCustomer);
+      retry.addEventListener('click', () => location.reload());
+      if (location.protocol === 'maydan:' || window.MaydanNative) {
+        status.textContent = 'يمكنك إدارة اشتراك التطبيق من إعدادات App Store.';
+        return;
+      }
+      const transaction = new URLSearchParams(location.search).get('_ptxn');
+      if (!transaction || !/^txn_[a-z\d]{26}$/.test(transaction)) {
+        status.textContent = 'افتح رابط الدفع الذي وصلك، أو انتقل إلى حسابك لاختيار الاشتراك.';
+        return;
+      }
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+        let config;
+        try {
+          const response = await fetch('/api/billing/config', { cache: 'no-store', signal: controller.signal });
+          if (!response.ok) throw new Error('CONFIG');
+          config = (await response.json()).paddle;
+        } finally { clearTimeout(timeout); }
+        if (config?.checkoutEnabled === false) {
+          status.textContent = 'شراء الاشتراك غير متاح بعد. يمكنك متابعة اللعب بالمحتوى المجاني.';
+          return;
+        }
+        if (!config || !['sandbox', 'production'].includes(config.environment)
+          || typeof config.clientToken !== 'string'
+          || !config.clientToken.startsWith(config.environment === 'sandbox' ? 'test_' : 'live_')) throw new Error('CONFIG');
+        document.getElementById('sandbox').hidden = config.environment !== 'sandbox';
+        // Identity comes only from this origin's authenticated API. A receipt
+        // link by itself, local cached profile, internal ID or email is not proof.
+        let pwCustomer = {};
+        let identitySession = config.environment === 'production' ? readSession() : '';
+        if (identitySession) {
+          const customerController = new AbortController();
+          const customerTimeout = setTimeout(() => customerController.abort(), 8000);
+          try {
+            const response = await fetch('/api/me', { headers: { authorization: `Bearer ${identitySession}` }, credentials: 'omit', cache: 'no-store', signal: customerController.signal });
+            if (response.ok && readSession() === identitySession) {
+              const me = await response.json();
+              if (readSession() === identitySession && me?.user?.id && me?.paddle?.environment === 'production'
+                  && /^ctm_[a-z0-9]{26}$/.test(me.paddle.customerId || '')) pwCustomer = { id: me.paddle.customerId };
+              const rotated = response.headers.get('x-maydan-session');
+              if (rotated && readSession() === identitySession) {
+                try { localStorage.setItem(sessionKey, JSON.stringify(rotated)); identitySession = rotated; } catch { /* storage unavailable */ }
+              }
+            }
+          } catch { /* Anonymous Retain is safe when identification fails. */ }
+          finally { clearTimeout(customerTimeout); }
+        }
+        await new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          const timer = setTimeout(() => reject(new Error('SCRIPT_TIMEOUT')), 12000);
+          script.src = 'https://cdn.paddle.com/paddle/v2/paddle.js';
+          script.onload = () => { clearTimeout(timer); resolve(); };
+          script.onerror = () => { clearTimeout(timer); reject(new Error('SCRIPT')); };
+          document.head.appendChild(script);
+        });
+        if (config.environment === 'sandbox') window.Paddle.Environment.set('sandbox');
+        if (!identitySession || readSession() !== identitySession) pwCustomer = {};
+        status.textContent = 'أكمل الخطوات في نافذة الدفع. يمكنك بعدها العودة إلى حسابك.';
+        // Paddle.js reads _ptxn and opens checkout automatically on initialize.
+        window.Paddle.Initialize({ token: config.clientToken, pwCustomer, eventCallback(event) {
+          if (event?.name === 'checkout.completed') {
+            status.textContent = 'اكتملت الخطوات في نافذة الدفع. ارجع إلى حسابك للتحقق من حالة الاشتراك.';
+            retry.hidden = true;
+          } else if (event?.name === 'checkout.closed') {
+            status.textContent = 'أُغلقت نافذة الدفع. يمكنك العودة إلى حسابك للتحقق من الحالة.';
+          } else if (event?.name === 'checkout.error') {
+            status.textContent = 'تعذّر إكمال الدفع. حاول مجددًا أو ارجع إلى حسابك.';
+            retry.hidden = false;
+          }
+        } });
+      } catch {
+        status.textContent = 'تعذّر فتح الدفع الآن. تحقق من اتصالك ثم أعد المحاولة.';
+        retry.hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>

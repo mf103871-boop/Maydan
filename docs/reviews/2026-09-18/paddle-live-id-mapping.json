@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-09-17T22:30:27.792Z",
+  "environment": "production",
+  "checkoutEnabled": false,
+  "products": [
+    {
+      "sandbox": "pro_01m2p9gavyr3n26hq46b8xbxc0",
+      "live": "pro_01m2rqq7vwa8ycqbh5b1e3x7cg",
+      "name": "ميدان بلس"
+    }
+  ],
+  "prices": [
+    {
+      "sandbox": "pri_01m2p9gbanyptbz5hdf350ktet",
+      "live": "pri_01m2rqq887jk85av1b1a68j82k",
+      "sandboxAmount": "2.99 USD/month",
+      "liveAmount": "5.00 USD/month",
+      "reason": "User-approved live monthly price"
+    }
+  ],
+  "notMigrated": [
+    {
+      "sandbox": "pri_01m2p9gbmv4tyx2q203e035ye9",
+      "reason": "No approved annual live offering"
+    }
+  ],
+  "discounts": [],
+  "clientToken": {
+    "id": "ctkn_01m2rqq8myjv8659vt3ghrfa3w",
+    "valueIncluded": false
+  },
+  "notification": {
+    "id": "ntfset_01m2rqw7p3y1ze2nyqbsma21gx",
+    "destination": "https://maydan-paddle-live.mf103871.workers.dev/api/paddle/webhook",
+    "active": true,
+    "traffic_source": "platform",
+    "events": [
+      "transaction.created",
+      "transaction.updated",
+      "subscription.created",
+      "subscription.updated"
+    ]
+  }
+}

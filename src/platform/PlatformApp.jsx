@@ -29,7 +29,7 @@ import accountCss from '../shared/account/account.css';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
-const DEFAULT_SETTINGS = { soundOn: true, hapticsOn: true, reducedMotion: false, splashSeen: false };
+const DEFAULT_SETTINGS = { soundOn: true, soundVolume: 0.75, hapticsOn: true, reducedMotion: false, splashSeen: false };
 
 function ScreenHost({ route }) {
   // Screens animate in, with the direction taken from how the route was
@@ -57,22 +57,28 @@ function Providers({ children }) {
   const toast = useToast();
   const [settings, setSettingsState] = useState(() => ({ ...DEFAULT_SETTINGS, ...(platformStorage.get('settings', {}) || {}) }));
   const [roster, setRosterState] = useState(() => platformStorage.get('roster', []) || []);
-  const sound = useMemo(() => createSound({ enabled: settings.soundOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const sound = useMemo(() => createSound({ enabled: settings.soundOn, volume: settings.soundVolume }), []); // eslint-disable-line react-hooks/exhaustive-deps
   const haptics = useMemo(() => createHaptics({ enabled: settings.hapticsOn }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSettings = useCallback((patch) => {
+    // Apply in the gesture itself so enabling audio can play its confirmation.
+    if ('soundOn' in patch) sound.enable(patch.soundOn);
+    if ('soundVolume' in patch) sound.setVolume(patch.soundVolume);
+    if ('hapticsOn' in patch) haptics.enable(patch.hapticsOn);
     setSettingsState((prev) => {
       const next = { ...prev, ...patch };
       platformStorage.set('settings', next);
       return next;
     });
-  }, []);
+  }, [sound, haptics]);
   const setRoster = useCallback((next) => {
     setRosterState(next);
     platformStorage.set('roster', next);
   }, []);
 
+  useEffect(() => { sound.attach(); return () => sound.dispose(); }, [sound]);
   useEffect(() => { sound.enable(settings.soundOn); }, [sound, settings.soundOn]);
+  useEffect(() => { sound.setVolume(settings.soundVolume); }, [sound, settings.soundVolume]);
   useEffect(() => { haptics.enable(settings.hapticsOn); }, [haptics, settings.hapticsOn]);
   useEffect(() => { document.documentElement.dataset.reducedMotion = settings.reducedMotion ? 'true' : 'false'; }, [settings.reducedMotion]);
 
@@ -83,13 +89,14 @@ function Providers({ children }) {
 
 function Shell() {
   const route = useRoute();
-  const { settings, setSettings } = usePlatform();
+  const { settings, setSettings, sound, confetti } = usePlatform();
   const [booted, setBooted] = useState(false);
-  // splashSeen كان يُكتب ولا يُقرأ: الافتتاحية الكاملة تُعرض مرة واحدة، ثم تقصر.
+  // Assets settle before mounting a route: hidden games must not start timers.
   const finishSplash = useCallback(() => {
     setBooted(true);
     if (!settings.splashSeen) setSettings({ splashSeen: true });
   }, [settings.splashSeen, setSettings]);
+  useEffect(() => () => { sound.stop(); confetti.clear(); }, [route.path, sound, confetti]);
   // «مسح كل البيانات» من الشاشة الحمراء يبقي الحساب كما تفعل الإعدادات.
   const resetKeepingAccount = () => { clearAllPlatformData({ keep: [ACCOUNT_PREFIX] }); location.reload(); };
   return (
@@ -98,9 +105,9 @@ function Shell() {
       <style>{uiCss}</style>
       <style>{setupCss}</style>
       <style>{platformCss}</style>
-      {!booted && <Splash onDone={finishSplash} reducedMotion={settings.reducedMotion} duration={settings.splashSeen ? 900 : 2200} />}
+      {!booted && <Splash onDone={finishSplash} reducedMotion={settings.reducedMotion} />}
       {/* حدّ خطأ حول الشاشات: خطأ تصيير واحد كان يُفرغ الصفحة بلا رجعة. */}
-      <ErrorBoundary
+      {booted && <ErrorBoundary
         resetKey={route.path}
         title="تعطّلت هذه الشاشة"
         message="حدث خطأ غير متوقع. يمكنك العودة إلى الرئيسية، أو مسح البيانات المحفوظة إن تكرّر الخطأ عند كل فتح."
@@ -109,8 +116,8 @@ function Shell() {
         onClear={resetKeepingAccount}
       >
         <ScreenHost route={route} />
-      </ErrorBoundary>
-      <PaywallHost />
+      </ErrorBoundary>}
+      {booted && <PaywallHost />}
       <style>{brandCss}</style>
       <style>{onlineCss}</style>
       <style>{accountCss}</style>

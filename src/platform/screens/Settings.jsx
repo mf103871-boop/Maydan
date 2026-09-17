@@ -4,7 +4,8 @@ import { Screen, TopBar, IconButton, Button, Card, ConfirmModal } from '../../sh
 import { IconBack, IconVolume, IconVibrate, IconMotion, IconTrash, IconFlag, IconShare } from '../../shared/ui/icons.jsx';
 import { clearAllPlatformData, createStorage } from '../../shared/lib/storage.js';
 import { AccountCard } from '../../shared/account/AccountCard.jsx';
-import { LEGAL_ROUTES } from '../../shared/account/config.js';
+import { LEGAL_ROUTES, PUBLIC_SITE_ORIGIN } from '../../shared/account/config.js';
+import { isNativeShell } from '../../shared/account/native.js';
 import { ACCOUNT_PREFIX } from '../../shared/account/store.js';
 import { shareText } from '../../shared/fx/haptics.js';
 import { usePlatform } from '../context.js';
@@ -23,6 +24,7 @@ function Toggle({ icon, title, sub, checked, onChange, index = 0 }) {
 
 export function Settings() {
   const { settings, setSettings, sound, haptics, toast, version } = usePlatform();
+  const native = isNativeShell();
   const [confirmClear, setConfirmClear] = useState(false);
   const reports = createStorage('badeeha').get('question-reports-v1', []) || [];
   const share = async () => {
@@ -35,7 +37,15 @@ export function Settings() {
     <Screen dir={getDirection()} className="stack" aria-label="الإعدادات">
       <TopBar title="الإعدادات" start={<IconButton label="رجوع" onClick={back}><IconBack /></IconButton>} />
       <div className="stack">
-        <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="مؤثرات اللعب والمؤقت" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
+        <Toggle index={0} icon={<IconVolume />} title="الصوت" sub="مؤثرات اللعب ومقاطع الأسئلة" checked={settings.soundOn} onChange={(v) => { setSettings({ soundOn: v }); if (v) sound.play('pop'); }} />
+        <div className="setting setting-volume">
+          <label htmlFor="sound-volume"><b>مستوى الصوت</b><output htmlFor="sound-volume">{Math.round(sound.volume * 100)}٪</output></label>
+          <input id="sound-volume" type="range" min="0" max="100" step="5" value={Math.round(sound.volume * 100)} disabled={!settings.soundOn}
+            aria-valuetext={`${Math.round(sound.volume * 100)} بالمئة`}
+            onChange={(event) => setSettings({ soundVolume: Number(event.target.value) / 100 })}
+            onPointerUp={() => sound.play('pop')} onKeyUp={(event) => { if (event.key.startsWith('Arrow') || event.key === 'Home' || event.key === 'End') sound.play('pop'); }} />
+          <Button size="sm" disabled={!settings.soundOn || sound.volume === 0} onClick={() => sound.play('correct')}>تجربة الصوت</Button>
+        </div>
         <Toggle index={1} icon={<IconVibrate />} title="الاهتزاز" sub="عند الإجابات والمؤقت (حيث يتوفر)" checked={settings.hapticsOn} onChange={(v) => { setSettings({ hapticsOn: v }); if (v) haptics.vibrate('light'); }} />
         <Toggle index={2} icon={<IconMotion />} title="تقليل الحركة" sub="يعطّل الجسيمات والانتقالات مع بقاء الوظائف" checked={settings.reducedMotion} onChange={(v) => setSettings({ reducedMotion: v })} />
       </div>
@@ -51,7 +61,8 @@ export function Settings() {
         <Button variant="danger" icon={<IconTrash />} onClick={() => setConfirmClear(true)}>مسح كل البيانات</Button>
       </Card>
       <p className="muted center legal-links" style={{ fontSize: 13 }}>
-        <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
+        {!native && <><a href="/pricing/">التسعير</a> · </>}
+        <a href={native ? `${PUBLIC_SITE_ORIGIN}/refunds/` : '/refunds/'}>سياسة الاسترداد</a> · <a href={LEGAL_ROUTES.terms}>شروط الاستخدام</a> · <a href={LEGAL_ROUTES.privacy}>سياسة الخصوصية</a>
       </p>
       <p className="muted center" style={{ fontSize: 13 }}>ميدان: ألعاب جمعتنا · الإصدار {version}</p>
       {confirmClear && (

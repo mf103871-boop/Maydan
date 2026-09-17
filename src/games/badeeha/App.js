@@ -16,6 +16,7 @@ import MaydanLogicBeta, {
   HINT_COST_PERCENT,
 } from "./logic.js";
 import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
+import { questionAssistance } from "./assistance.js";
 import { FREE_PACKS } from "../../shared/account/config.js";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
 import { mulberry32 } from "../../shared/lib/rng.js";
@@ -27,7 +28,7 @@ import {
   hasFailed as mediaHasFailed,
 } from "../../shared/media/preload.js";
 
-const { useState, useEffect, useRef, useMemo } = React;
+const { useState, useEffect, useRef, useMemo, useCallback } = React;
 const TOOLS = [
     { id: "double", label: "دبل النقاط", icon: "✨", hint: "نقاط هذا السؤال ×2 إذا جاوبتوا صح" },
     { id: "two", label: "جوابين", icon: "✌️", hint: "يحق لفريقكم قول إجابتين" },
@@ -854,13 +855,13 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
     return () => window.clearTimeout(timer);
   }, [revealed, effect, url]);
   const shown = revealed ? [] : tiles;
-  const cls = ["m-media-img", `fx-${effect}`, revealed ? "is-revealed" : ""].join(" ");
+  const cls = ["m-media-img", `fx-${effect}`, questionAssistance(question) ? "is-assisted" : "", revealed ? "is-revealed" : ""].join(" ");
   // التكبير باللمس لا يكشف ما يخفيه المؤثّر: يُتاح للصورة العادية دائمًا، وللبقية بعد الكشف.
   const canEnlarge = effect === "none" || revealed;
   const jumbled = effect === "jumble" && !revealed;
   const order = effect === "jumble" ? jumbleOrder(question.qid || url) : null;
   // الضبابية والظل: المرشّح ثابت على الصورة الأولى، والكشف تلاشٍ لصورة نظيفة فوقها (لا يُحرَّك filter).
-  const crossfade = effect === "blur" || effect === "silhouette";
+  const crossfade = effect === "blur" || effect === "silhouette" || effect === "shadow";
   return hBeta(
     MediaBox,
     { url, className: `fx-frame-${effect}`, alt: question.q || "صورة السؤال" },
@@ -871,6 +872,8 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
           className: `m-media-stage ${canEnlarge ? "can-enlarge" : ""}`,
           onClick: canEnlarge ? () => { setEnlarged(true); onSfx && onSfx("click"); } : undefined,
           role: canEnlarge ? "button" : undefined,
+          tabIndex: canEnlarge ? 0 : undefined,
+          onKeyDown: canEnlarge ? (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); event.currentTarget.click(); } } : undefined,
           "aria-label": canEnlarge ? "تكبير الصورة" : undefined,
         },
         hBeta("img", {
@@ -990,8 +993,42 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
   );
 }
 
-function MediaAudio({ url, revealed }) {
+function useQuestionMedia(ref, soundOn, volume, sound) {
+  const [element, setElement] = useState(null);
+  const attach = useCallback((node) => {
+    ref.current = node;
+    setElement(node);
+  }, [ref]);
+  useEffect(() => {
+    if (!element) return undefined;
+    element.muted = !soundOn;
+    element.volume = Math.max(0, Math.min(1, Number.isFinite(volume) ? volume : .75));
+    if (!soundOn) element.pause();
+    const pauseHidden = () => { if (document.hidden) element.pause(); };
+    document.addEventListener("visibilitychange", pauseHidden);
+    return () => document.removeEventListener("visibilitychange", pauseHidden);
+  }, [element, soundOn, volume]);
+  useEffect(() => {
+    const duck = () => sound?.setDucking?.(true);
+    const release = () => sound?.setDucking?.(false);
+    element?.addEventListener("play", duck);
+    element?.addEventListener("pause", release);
+    element?.addEventListener("ended", release);
+    return () => {
+      element?.pause();
+      element?.removeEventListener("play", duck);
+      element?.removeEventListener("pause", release);
+      element?.removeEventListener("ended", release);
+      release();
+    };
+  }, [element, sound]);
+  return attach;
+}
+
+function MediaAudio({ url, revealed, soundOn = true, volume = .75, sound }) {
   const ref = useRef(null);
+  const pending = useRef(false);
+  const attach = useQuestionMedia(ref, soundOn, volume, sound);
   const [playing, setPlaying] = useState(false);
   // تُحتسب المرة عند بدء التشغيل من أوله؛ الإيقاف المؤقت ثم الاستئناف لا يُحتسب.
   const [plays, setPlays] = useState(0);
@@ -1003,12 +1040,13 @@ function MediaAudio({ url, revealed }) {
     left = Math.max(0, MAX_AUDIO_PLAYS - plays);
   const start = (fromStart) => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || !soundOn || pending.current) return;
     const fresh = fromStart || el.currentTime === 0 || el.ended;
     if (fresh && spent) return;
     if (fromStart) el.currentTime = 0;
     // العدّ بعد تأكد التشغيل: ضغطة على مقطع ما زال يُحمَّل ثم إيقافها كانت تحرق مرة بلا صوت
-    el.play().then(() => { setPlaying(true); if (fresh) setPlays((n) => n + 1); }).catch(() => setPlaying(false));
+    pending.current = true;
+    el.play().then(() => { setPlaying(!el.paused); if (fresh && !el.paused) setPlays((n) => n + 1); }).catch(() => setPlaying(false)).finally(() => { pending.current = false; });
   };
   const toggle = () => {
     const el = ref.current;
@@ -1024,7 +1062,8 @@ function MediaAudio({ url, revealed }) {
         "div",
         { className: `m-audio ${spent ? "is-spent" : ""}` },
         hBeta("audio", {
-          ref,
+          ref: attach,
+          muted: !soundOn,
           src: url,
           preload: "auto",
           onCanPlay: onReady,
@@ -1040,7 +1079,7 @@ function MediaAudio({ url, revealed }) {
             type: "button",
             className: `m-audio-btn ${playing ? "is-playing" : ""}`,
             onClick: toggle,
-            disabled: spent && !playing && !midway,
+            disabled: !soundOn || (spent && !playing && !midway),
             "aria-label": playing ? "إيقاف" : "تشغيل",
           },
           hBeta("span", { "aria-hidden": "true" }, playing ? "⏸" : "▶"),
@@ -1048,7 +1087,7 @@ function MediaAudio({ url, revealed }) {
         hBeta(
           "div",
           { className: "m-audio-meta" },
-          hBeta("b", null, playing ? "يعمل الآن" : spent ? "انتهت مرات السماع" : "اضغط للاستماع"),
+          hBeta("b", null, !soundOn ? "الصوت مكتوم — فعّله من زر الصوت" : playing ? "يعمل الآن" : spent ? "انتهت مرات السماع" : "اضغط للاستماع"),
           hBeta(
             "small",
             null,
@@ -1064,7 +1103,7 @@ function MediaAudio({ url, revealed }) {
           {
             type: "button",
             className: "m-secondary m-small",
-            disabled: spent,
+            disabled: spent || !soundOn,
             onClick: () => start(true),
           },
           "↻ من البداية",
@@ -1093,14 +1132,16 @@ function FourPics({ question, urls, revealed }) {
   );
 }
 
-function MediaVideo({ url }) {
+function MediaVideo({ url, soundOn = true, volume = .75, sound }) {
   const ref = useRef(null);
+  const attach = useQuestionMedia(ref, soundOn, volume, sound);
   return hBeta(
     MediaBox,
     { url, className: "is-video" },
     ({ onReady, onError }) =>
       hBeta("video", {
-        ref,
+        ref: attach,
+        muted: !soundOn,
         src: url,
         className: "m-media-video",
         controls: true,
@@ -1164,6 +1205,7 @@ function MaydanBeta({ api } = {}) {
     [effect, setEffect] = useState({ double: !1, two: !1 }),
     [hintsUsed, setHintsUsed] = useState(0),
     [offlineMedia, setOfflineMedia] = useState({ state: "idle", done: 0, total: 0 }),
+    [roundLoading, setRoundLoading] = useState(null),
     [questionBaseTeams, setQuestionBaseTeams] = useState(null),
     [history, setHistory] = useState({}),
     [results, setResults] = useState([]),
@@ -1182,6 +1224,7 @@ function MaydanBeta({ api } = {}) {
     [lastAction, setLastAction] = useState(null),
     [notice, setNotice] = useState(""),
     deadlineRef = useRef(null),
+    roundLoadRef = useRef(null),
     soundTimerRef = useRef(null),
     saveTimerRef = useRef(null),
     timeoutPlayedRef = useRef(!1),
@@ -1230,6 +1273,10 @@ function MaydanBeta({ api } = {}) {
   }
   function playSfx(name) {
     if (!effectiveSoundOn || !SFX[name]) return;
+    if (api && api.sound && typeof api.sound.play === "function") {
+      api.sound.play(name);
+      return;
+    }
     const context = getCtx();
     if (context)
       try {
@@ -1246,6 +1293,37 @@ function MaydanBeta({ api } = {}) {
       try {
         SOUND_RECIPES[recipe](context);
       } catch (error) {}
+  }
+  useEffect(() => () => { roundLoadRef.current?.abort(); }, []);
+  async function prepareRoundMedia(nextDeck) {
+    const urls = deckMedia(nextDeck, CATS).filter((url) => !mediaIsLoaded(url));
+    roundLoadRef.current?.abort();
+    if (!urls.length) { setRoundLoading(null); playSfx("start"); return; }
+    const controller = new AbortController();
+    roundLoadRef.current = controller;
+    setRoundLoading({ done: 0, total: urls.length });
+    try {
+      const result = await preloadMedia(urls, {
+        signal: controller.signal,
+        onProgress: ({ done, total }) => { if (!controller.signal.aborted) setRoundLoading({ done, total }); },
+      });
+      if (controller.signal.aborted) return;
+      if (result.failed) toast("بعض الوسائط لم تُحمّل؛ يمكنك إعادة المحاولة عند فتح السؤال");
+      playSfx("start");
+    } catch {
+      if (!controller.signal.aborted) toast("تعذّر تجهيز بعض الوسائط؛ يمكنك إعادة المحاولة من السؤال");
+    } finally {
+      if (roundLoadRef.current === controller && !controller.signal.aborted) {
+        roundLoadRef.current = null;
+        setRoundLoading(null);
+      }
+    }
+  }
+  function skipRoundLoading() {
+    roundLoadRef.current?.abort();
+    roundLoadRef.current = null;
+    setRoundLoading(null);
+    toast("بدأت الجولة؛ الوسائط غير الجاهزة ستُحمّل عند فتحها");
   }
   function haptic(kind) {
     if (!hapticsOn) return;
@@ -1337,7 +1415,7 @@ function MaydanBeta({ api } = {}) {
       if (!effectiveSoundOn) {
         closeQuestionSoundTimer();
         try {
-          _ctx && _ctx.state === "running" && _ctx.suspend();
+          if (_ctx) { Promise.resolve(_ctx.close()).catch(() => {}); _ctx = null; }
         } catch (error) {}
       }
     }, [effectiveSoundOn]),
@@ -1614,10 +1692,8 @@ function MaydanBeta({ api } = {}) {
       (deadlineRef.current = null),
       (timeoutPlayedRef.current = !1),
       betaRemoveKey(MAYDAN_BETA_KEYS.active),
-      // وسائط الجولة تُجلب في الخلفية فور بناء اللوحة، فلا ينتظر أحد عند فتح السؤال.
-      preloadMedia(deckMedia(nextDeck, CATS)),
+      prepareRoundMedia(nextDeck),
       setScreen("board"),
-      playSfx("start"),
       haptic("medium"));
   }
   function resumeGame() {
@@ -2104,8 +2180,8 @@ ${record.answered} من ${record.total} سؤالًا`,
         hBeta("div", { className: "m-code", dir: question.dir || "ltr", lang: /[A-Za-z]/.test(question.q || "") ? "en" : undefined }, question.q),
         question.hint && hBeta("p", { className: "m-hint" }, `تلميح: ${question.hint}`),
       );
-    if (question.type === "audio") return hBeta("div", null, ownText, hBeta(MediaAudio, { url, revealed }));
-    if (question.type === "video") return hBeta("div", null, ownText, hBeta(MediaVideo, { url }));
+    if (question.type === "audio") return hBeta("div", null, ownText, hBeta(MediaAudio, { key: url, url, revealed, soundOn: effectiveSoundOn, volume: platformSettings?.soundVolume, sound: api?.sound }));
+    if (question.type === "video") return hBeta("div", null, ownText, hBeta(MediaVideo, { key: url, url, soundOn: effectiveSoundOn, volume: platformSettings?.soundVolume, sound: api?.sound }));
     if (question.type === "diff")
       return hBeta(
         "div",
@@ -2754,6 +2830,8 @@ ${record.answered} من ${record.total} سؤالًا`,
             ? `يُحمَّل ${done} من ${total}…`
             : state === "done"
               ? "جاهزة للّعب دون إنترنت"
+              : state === "unsupported"
+                ? "التحميل المؤقت اكتمل؛ أعد فتح اللعبة لتفعيل الحفظ دون إنترنت"
               : state === "error"
                 ? "تعذّر تحميل بعض الملفات؛ ستُجلب عند فتح السؤال"
                 : `${count} ملفًا · حمّلها الآن لتلعبوا دون إنترنت`,
@@ -2772,7 +2850,7 @@ ${record.answered} من ${record.total} سؤالًا`,
                 setOfflineMedia({ state: "busy", done: n, total: t || count }),
             });
             setOfflineMedia({
-              state: result && result.failed ? "error" : "done",
+              state: result && result.failed ? "error" : result && result.offlineReady ? "done" : "unsupported",
               done: count,
               total: count,
             });
@@ -2934,6 +3012,7 @@ ${record.answered} من ${record.total} سؤالًا`,
   function QuestionScreen() {
     if (!currentQuestion || !currentCategory) return null;
     const prompt = TYPE_PROMPT[currentQuestion.type],
+      assistance = questionAssistance(currentQuestion),
       questionAward = pointsAfterHints(currentQuestion.p, hintsUsed),
       fraction = Math.max(0, Math.min(1, timeLeft / timerLength)),
       danger = timeLeft <= 10;
@@ -3018,6 +3097,12 @@ ${record.answered} من ${record.total} سؤالًا`,
         "article",
         { className: `m-question-card ${revealed ? "is-revealed" : ""}` },
         prompt && hBeta("p", { className: "m-prompt" }, prompt),
+        !revealed && assistance && (assistance.context || assistance.shape) && hBeta(
+          "aside",
+          { className: "m-question-assistance", "aria-label": "مساعدة خفيفة بلا خصم نقاط" },
+          assistance.context && hBeta("span", null, assistance.context),
+          assistance.shape && hBeta("small", null, assistance.shape),
+        ),
         QuestionVisual({ question: currentQuestion }),
         revealed &&
           (answerShown
@@ -3431,7 +3516,14 @@ ${record.answered} من ${record.total} سؤالًا`,
       { dir: "rtl", className: `m-root m-screen-${screen}`, "data-dir": navDir },
       hBeta("style", null, MAYDAN_BETA_CSS),
       // مفتاح الشاشة يعيد تركيب القسم فتعمل حركة الدخول عند كل انتقال (كلها عناصر section)
-      hBeta(React.Fragment, { key: screen }, content),
+      hBeta(React.Fragment, { key: screen }, roundLoading ? hBeta(
+        "section", { className: "m-round-loading", "aria-busy": "true", "aria-label": "تجهيز الجولة" },
+        hBeta(GameArtwork, { game: "badeeha" }),
+        hBeta("h2", null, "نجهّز أسئلتكم"),
+        hBeta("p", { role: "status" }, `تحميل ${roundLoading.done.toLocaleString("ar")} من ${roundLoading.total.toLocaleString("ar")} ملفًا`),
+        hBeta("progress", { max: roundLoading.total, value: roundLoading.done, "aria-label": "تحميل وسائط الجولة" }),
+        hBeta("button", { type: "button", className: "m-secondary", onClick: skipRoundLoading }, "متابعة اللعب الآن"),
+      ) : content),
       showRules && RulesModal(),
       showScore && ScoreModal(),
       reportQuestion && ReportModal(),

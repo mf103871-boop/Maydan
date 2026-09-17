@@ -1,7 +1,7 @@
 // تخزين الحساب على الجهاز: رمز الجلسة، نسخة /api/me المخزّنة، وعلامات التجارب.
 // كل قراءة تُطبّع الشكل كي لا تُسقط بياناتٌ تالفة الواجهةَ (JSON آمن دائمًا).
 import { createStorage } from '../lib/storage.js';
-import { TRIAL_GAMES, REDEEM_CODE_HASHES } from './config.js';
+import { TRIAL_GAMES } from './config.js';
 
 // البادئة التي يحميها «مسح البيانات» في الإعدادات (keep).
 export const ACCOUNT_PREFIX = 'maydan:account:';
@@ -70,35 +70,16 @@ export function createAccountStore(backend) {
       const drop = Array.isArray(games) ? new Set(games) : null;
       return api.writeTrials({ marks: trials.marks, pending: drop ? trials.pending.filter((g) => !drop.has(g)) : [] });
     },
-    // ── رمز الهدية: { code, hash, redeemedAt, syncedFor } ──────
-    // بصمة لم تعد ضمن REDEEM_CODE_HASHES (رمز أُلغي بنشر جديد) تُعامل كأن لا رمز.
-    // syncedFor = معرّف الحساب الذي رُبط به الرمز على الخادم (null قبل الربط).
+    // ترحيل الرموز المحلية القديمة: لا تُخزن الرموز ولا تمنح صلاحيات على الجهاز.
     readPromo() {
-      const raw = storage.get(KEYS.promo, null);
-      if (!raw || typeof raw !== 'object' || Array.isArray(raw) || typeof raw.hash !== 'string') return null;
-      const hash = raw.hash.toLowerCase();
-      if (!REDEEM_CODE_HASHES.some((known) => String(known).toLowerCase() === hash)) return null;
-      const redeemedAt = Number(raw.redeemedAt);
-      return {
-        code: typeof raw.code === 'string' ? raw.code : '', hash,
-        redeemedAt: Number.isFinite(redeemedAt) ? redeemedAt : 0,
-        syncedFor: typeof raw.syncedFor === 'string' && raw.syncedFor ? raw.syncedFor : null,
-      };
+      storage.remove(KEYS.promo);
+      return null;
     },
-    writePromo(code, hash, redeemedAt = Date.now()) {
-      if (typeof hash !== 'string' || !hash) { storage.remove(KEYS.promo); return null; }
-      storage.set(KEYS.promo, { code: String(code || ''), hash: hash.toLowerCase(), redeemedAt, syncedFor: null });
-      return api.readPromo();
-    },
-    markPromoSynced(userId) {
-      const current = api.readPromo();
-      if (!current) return null;
-      storage.set(KEYS.promo, { ...current, syncedFor: typeof userId === 'string' && userId ? userId : null });
-      return api.readPromo();
-    },
+    writePromo() { return api.readPromo(); },
+    markPromoSynced() { return api.readPromo(); },
     clearPromo() { storage.remove(KEYS.promo); },
-    // الخروج يمسح الجلسة والنسخة المخزّنة فقط: علامات التجارب ورمز الهدية خاصان بالجهاز فيبقيان.
-    clearAuth() { api.clearSession(); api.clearMe(); },
+    // الخروج يمسح الهوية وأي رمز قديم؛ تبقى علامات التجارب.
+    clearAuth() { api.clearSession(); api.clearMe(); api.clearPromo(); },
     clear() { storage.clear(); },
   };
   return api;

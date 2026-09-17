@@ -19,8 +19,8 @@ enum StoreError: Error {
 }
 
 /// StoreKit 2: المنتجات، الشراء بربط المعاملة بحساب ميدان (`appAccountToken`)، الاستعادة،
-/// وإدارة الاشتراك. المعاملات تُنهى بعد إبلاغ الويب بتوقيعها (JWS)، والخادم يتحقق
-/// منها بإعادة الجلب من App Store Server API، فلا ثقة بما يدّعيه الجهاز.
+/// وإدارة الاشتراك. تبقى المعاملات معلقة حتى يؤكد الويب حفظ الاستحقاق على الخادم.
+@MainActor
 final class StoreManager {
     static let shared = StoreManager()
 
@@ -29,18 +29,20 @@ final class StoreManager {
 
     private var updatesTask: Task<Void, Never>?
     private var cache: [String: Product] = [:]
+    private var pending: [String: Transaction] = [:]
 
     private init() {}
 
     func startListening() {
         updatesTask?.cancel()
-        updatesTask = Task.detached(priority: .background) { [weak self] in
+        updatesTask = Task { [weak self] in
             for await result in Transaction.updates {
                 guard let self else { return }
-                guard case .verified(let transaction) = result else { continue }
+                guard case .verified(let transaction) = result,
+                      NativeConfig.shared.productIds.contains(transaction.productID) else { continue }
                 let jws = result.jwsRepresentation
-                await MainActor.run { self.onTransaction?(jws) }
-                await transaction.finish()
+                self.pending[jws] = transaction
+                self.onTransaction?(jws)
             }
         }
     }
@@ -81,8 +83,9 @@ final class StoreManager {
         switch result {
         case .success(let verification):
             guard case .verified(let transaction) = verification else { throw StoreError.unverified }
-            await transaction.finish()
-            return verification.jwsRepresentation
+            let jws = verification.jwsRepresentation
+            pending[jws] = transaction
+            return jws
         case .userCancelled:
             throw StoreError.cancelled
         case .pending:
@@ -97,10 +100,29 @@ final class StoreManager {
         try await AppStore.sync()
         var list: [String] = []
         for await result in Transaction.currentEntitlements {
-            guard case .verified = result else { continue }
-            list.append(result.jwsRepresentation)
+            guard case .verified(let transaction) = result,
+                  NativeConfig.shared.productIds.contains(transaction.productID) else { continue }
+            let jws = result.jwsRepresentation
+            pending[jws] = transaction
+            list.append(jws)
         }
         return list
+    }
+
+    /// بلا نافذة تسجيل دخول: يعاد إرسال ما لم يؤكده الخادم بعد، حتى بعد إغلاق التطبيق.
+    func pendingTransactions() async -> [String] {
+        for await result in Transaction.unfinished {
+            guard case .verified(let transaction) = result,
+                  NativeConfig.shared.productIds.contains(transaction.productID) else { continue }
+            pending[result.jwsRepresentation] = transaction
+        }
+        return Array(pending.keys)
+    }
+
+    func finishTransaction(jws: String) async {
+        guard let transaction = pending[jws] else { return }
+        await transaction.finish()
+        pending.removeValue(forKey: jws)
     }
 
     @MainActor

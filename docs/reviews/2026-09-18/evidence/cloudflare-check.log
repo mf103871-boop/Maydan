@@ -1,0 +1,36 @@
+
+> maydan-platform@1.4.1 cloudflare:check
+> wrangler deploy --dry-run --outdir .wrangler/full-check
+
+
+ ⛅️ wrangler 4.131.1 (update available 4.134.0)
+───────────────────────────────────────────────
+[custom build] Running: npm run build:cloudflare
+[custom build]
+[custom build] > maydan-platform@1.4.1 build:cloudflare
+[custom build] > node scripts/build-cloudflare.mjs
+[custom build]
+[custom build]
+[custom build] Cloudflare full game: [repository]\dist\index.html
+[custom build]
+[custom build] v1.4.1 · 7521.7 KB · room API on the same origin
+[custom build]
+✨ Read 2663 files from the assets directory [repository]\dist
+Total Upload: 464.49 KiB / gzip: 77.09 KiB
+Your Worker has access to the following bindings:
+Binding                                                                    Resource
+env.ROOMS (Room)                                                           Durable Object
+env.LIMITERS (RequestLimiter)                                              Durable Object
+env.DB (maydan-accounts)                                                   D1 Database
+env.ASSETS                                                                 Assets
+env.APP_ORIGIN ("")                                                        Environment Variable
+env.EXTRA_ORIGINS ("maydan://app")                                         Environment Variable
+env.APPLE_BUNDLE_ID ("Maydan")                                             Environment Variable
+env.APPLE_SERVICES_ID ("app.maydan.web")                                   Environment Variable
+env.GOOGLE_CLIENT_ID ("436944195283-042ike8qeg0636ndima1ehj1...")          Environment Variable
+env.PADDLE_ENV ("sandbox")                                                 Environment Variable
+env.PADDLE_CLIENT_TOKEN ("test_9ce6eae313e37236bdd56ff84c0")               Environment Variable
+env.PADDLE_PRICE_MONTHLY ("pri_01m2p9gbanyptbz5hdf350ktet")                Environment Variable
+env.PADDLE_PRICE_YEARLY ("pri_01m2p9gbmv4tyx2q203e035ye9")                 Environment Variable
+
+--dry-run: exiting now.

@@ -11,9 +11,9 @@
   "maxQuestionWords": 22,
   "maxAnswerWords": 6,
   "mediaBudget": {
-    "imageKB": 70,
-    "audioKB": 60,
-    "categoryMB": 14
+    "imageKB": 256,
+    "audioKB": 160,
+    "categoryMB": 64
   },
   "categories": {
     "general": {
@@ -1140,7 +1140,7 @@
       "defaultType": "image:reveal"
     },
     "silhouette": {
-      "name": "الظل",
+      "name": "صور غامضة",
       "icon": "🌑",
       "media": true,
       "status": "done",

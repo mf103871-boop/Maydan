@@ -1,11 +1,11 @@
 // جدار «ميدان بلس»: ورقة سفلية واحدة لكل أسباب القفل. لا خدع: السبب أولًا، ثم
-// ما يفتحه الاشتراك، ثم الخطتان بأسعار المتجر، ثم الشروط بوضوح.
+// ما يفتحه الاشتراك، ثم الخطط المتاحة بأسعار المتجر، ثم الشروط بوضوح.
 import React, { useEffect, useRef, useState } from 'react';
 import { Sheet, Button } from '../ui/components.jsx';
 import { ClayStage, TrophyArtwork } from '../brand/art.jsx';
 import { useAccount } from './context.js';
 import { accountErrorText } from './errors.js';
-import { PLUS_NAME, LEGAL_ROUTES } from './config.js';
+import { PLUS_NAME, LEGAL_ROUTES, SUPPORT_EMAIL, PUBLIC_SITE_ORIGIN } from './config.js';
 import { SignInButtons, SIGN_IN_NOTE } from './SignInSheet.jsx';
 import { RedeemForm, REDEEM_PROMPT } from './RedeemSheet.jsx';
 import { REDEEM_ON_IOS } from './config.js';
@@ -37,12 +37,12 @@ export function paywallReason(reason, game) {
 
 const PLANS = [
   { key: 'monthly', label: 'شهري', fallbackPeriod: 'شهريًا' },
-  { key: 'yearly', label: 'سنوي', fallbackPeriod: 'سنويًا', best: true },
+  { key: 'yearly', label: 'سنوي', fallbackPeriod: 'سنويًا' },
 ];
 
 export function Paywall({ open = true, reason = 'settings', game = null, pack = null, onClose }) {
   const account = useAccount();
-  const [plan, setPlan] = useState('yearly');
+  const [plan, setPlan] = useState('monthly');
   const [redeeming, setRedeeming] = useState(false);
   const redeemTrigger = useRef(null);
   const cancelRedeem = () => {
@@ -58,6 +58,14 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
 
   const reasonText = paywallReason(reason, game);
   const products = account.products || null;
+  const plans = PLANS.filter((item) => {
+    // Do not advertise an annual plan until its price is actually available.
+    if (item.key === 'yearly' && !products?.yearly?.price) return false;
+    if (account.platform === 'ios') return !products || !!products[item.key];
+    if (!account.billing) return item.key === 'monthly';
+    return !!account.billing.paddle?.prices?.[item.key];
+  });
+  const selectedPlan = plans.some((item) => item.key === plan) ? plan : plans[0]?.key;
   const needsSignIn = account.platform !== 'ios' && !account.signedIn;
   const busy = account.busy;
   // قواعد App Store تمنع فتح المحتوى بمفاتيح داخل التطبيق: الرابط للويب فقط.
@@ -68,6 +76,9 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
       <section className="paywall" aria-label={`اشتراك ${PLUS_NAME}`} data-reason={reason} data-pack={pack || undefined}>
         <ClayStage className="paywall-hero clay-idle" aria-hidden="true"><TrophyArtwork /></ClayStage>
         <h2 className="paywall-title">افتح كل ميدان مع {PLUS_NAME}</h2>
+        {account.platform !== 'ios' && account.billing?.paddle?.environment === 'sandbox' && (
+          <p className="online-notice" role="status">الدفع في وضع الاختبار؛ لا تُخصم مبالغ حقيقية. الاشتراك الناتج تجريبي.</p>
+        )}
         {reasonText && <p className="paywall-reason">{reasonText}</p>}
         {redeeming ? (
           <RedeemForm onDone={onClose} onCancel={cancelRedeem} />
@@ -77,19 +88,20 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
           {PAYWALL_BULLETS.map((text, i) => <li key={text} style={{ '--n': i }}>{text}</li>)}
         </ul>
         <div className="paywall-plans" role="radiogroup" aria-label="اختر مدة الاشتراك">
-          {PLANS.map((item) => {
+          {plans.map((item) => {
             const product = products && products[item.key];
-            const selected = plan === item.key;
+            const selected = selectedPlan === item.key;
             return (
               <button key={item.key} type="button" role="radio" aria-checked={selected} data-plan={item.key}
                 className={`paywall-plan ${selected ? 'is-selected' : ''}`} onClick={() => setPlan(item.key)}>
-                <span className="paywall-plan-name">{item.label}{item.best && <span className="badge badge-accent">الأوفر</span>}</span>
+                <span className="paywall-plan-name">{item.label}</span>
                 <span className="paywall-plan-price">{product && product.price ? product.price : PRICE_UNKNOWN}</span>
                 <span className="paywall-plan-period">{(product && product.period) || item.fallbackPeriod}</span>
               </button>
             );
           })}
         </div>
+        {!plans.length && <p className="online-notice" role="status">الاشتراك غير متاح حاليًا؛ حاول لاحقًا.</p>}
         {needsSignIn ? (
           <div className="paywall-auth">
             <p className="paywall-note">{SIGN_IN_NOTE}</p>
@@ -98,7 +110,8 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
         ) : (
           <>
             {account.platform === 'ios' && !account.signedIn && <p className="paywall-note">{SIGN_IN_NOTE}</p>}
-            <Button variant="primary" size="lg" full loading={busy === 'purchase' || busy === 'signin'} onClick={() => account.purchase && account.purchase(plan)}>اشترك</Button>
+            <Button variant="primary" size="lg" full disabled={!!account.activationPending || !selectedPlan} loading={busy === 'purchase' || busy === 'signin'} onClick={() => account.purchase && account.purchase(selectedPlan)}>اشترك</Button>
+            {account.activationPending && <Button variant="secondary" full onClick={() => account.refresh()}>تحديث حالة الاشتراك</Button>}
           </>
         )}
         {account.platform === 'ios' && (
@@ -108,12 +121,18 @@ export function Paywall({ open = true, reason = 'settings', game = null, pack = 
           <button type="button" ref={redeemTrigger} className="btn btn-ghost btn-full paywall-redeem" onClick={() => setRedeeming(true)}>{REDEEM_PROMPT}</button>
         )}
         {account.error && !needsSignIn && <p className="online-notice error" role="alert">{accountErrorText(account.error)}</p>}
+        {account.error === 'CHECKOUT_REVIEW' && !needsSignIn && SUPPORT_EMAIL && (
+          <a className="btn btn-ghost btn-full" href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent('مراجعة محاولة دفع ميدان')}`}>التواصل مع الدعم</a>
+        )}
         <p className="paywall-legal">
           {PAYWALL_LEGAL}
           <span className="paywall-legal-links">
+            {account.platform !== 'ios' && <><a data-legal="pricing" href="/pricing/" onClick={onClose}>التسعير</a><span aria-hidden="true"> · </span></>}
             <a data-legal="terms" href={LEGAL_ROUTES.terms} onClick={onClose}>شروط الاستخدام</a>
             <span aria-hidden="true"> · </span>
             <a data-legal="privacy" href={LEGAL_ROUTES.privacy} onClick={onClose}>سياسة الخصوصية</a>
+            <span aria-hidden="true"> · </span>
+            <a data-legal="refunds" href={account.platform === 'ios' ? `${PUBLIC_SITE_ORIGIN}/refunds/` : '/refunds/'} onClick={onClose}>سياسة الاسترداد</a>
           </span>
         </p>
           </>

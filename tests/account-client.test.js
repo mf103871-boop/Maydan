@@ -285,8 +285,8 @@ test('الجدار يعرض السبب والخطتين والشروط وروا�
   assert.match(html, /لعبت مباراتك المجانية في قبل ما يطق!/);
   for (const bullet of ['كل فئات بَديهة', 'مباريات بلا حدود', 'غرف جماعية بلا حدود', 'اشتراك واحد على كل أجهزتك']) assert.match(html, new RegExp(bullet));
   assert.match(html, /data-plan="monthly"/);
-  assert.match(html, /data-plan="yearly"/);
-  assert.match(html, /الأوفر/);
+  assert.doesNotMatch(html, /data-plan="yearly"/, 'لا خطة سنوية قبل توفر سعرها');
+  assert.doesNotMatch(html, /الأوفر/, 'لا ادعاء توفير بلا مقارنة أسعار المتجر');
   assert.match(html, /يُعرض السعر عند الشراء/, 'بلا أسعار من المتجر يبقى السعر صادقًا');
   assert.match(html, /يتجدد الاشتراك تلقائيًا ما لم يُلغَ قبل نهاية الفترة/);
   assert.match(html, /data-legal="terms"[^>]*>شروط الاستخدام</);

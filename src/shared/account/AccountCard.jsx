@@ -1,6 +1,6 @@
 // بطاقة الحساب في الإعدادات: الحالة، الاشتراك، وكل ما تشترطه المتاجر
 // (إدارة الاشتراك، استعادة المشتريات، الخروج، وحذف الحساب).
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, ConfirmModal } from '../ui/components.jsx';
 import { IconUsers, IconStar, IconRotate, IconTrash, IconBack } from '../ui/icons.jsx';
 import { useAccount } from './context.js';
@@ -34,6 +34,8 @@ export function subscriptionLine(me, premium, promo = null, now = Date.now()) {
 
 export function AccountCard() {
   const account = useAccount();
+  const { signedIn, refresh } = account;
+  useEffect(() => { if (signedIn) refresh(); }, [signedIn, refresh]);
   const [signIn, setSignIn] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [redeem, setRedeem] = useState(false);

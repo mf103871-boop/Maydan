@@ -7,14 +7,14 @@ import { AccountContext } from './context.js';
 import { PLUS_NAME, PRODUCTS, TRIAL_GAMES } from './config.js';
 import { isPremium, lockedPack as lockedPackOf, trialAvailable as trialAvailableOf, gameAccess as gameAccessOf, mergeTrials, shouldRefresh } from './entitlements.js';
 import { accountErrorText } from './errors.js';
-import { accountStore } from './store.js';
+import { accountStore, ACCOUNT_PREFIX, KEYS } from './store.js';
 import {
   ClientError, accountOffline, authStartUrl, appleNative, createPaddleCheckout, deleteAccountRequest,
   exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout,
 } from './api.js';
-import { codeHash, isValidCode } from './redeem.js';
+import { deliverAppleTransaction, waitForEntitlement } from './purchases.js';
 import { callNative, isNativeShell, onNativeEvent } from './native.js';
-import { openCheckout, previewPrices } from './paddle.js';
+import { clearPaddleCustomer, loadPaddle, openCheckout, previewPrices, setPaddleCustomer } from './paddle.js';
 import { usePlatform } from '../../platform/context.js';
 import { navigate, useRoute } from '../../platform/router.js';
 
@@ -47,16 +47,19 @@ export function AccountProvider({ children }) {
   const [me, setMe] = useState(cached.data);
   const [fetchedAt, setFetchedAt] = useState(cached.fetchedAt);
   const [localTrials, setLocalTrials] = useState(() => accountStore.readTrials());
-  // رمز هدية مفعَّل على هذا الجهاز: يفتح كل شيء محليًا ويُربط بالحساب عند توفره.
-  const [promo, setPromo] = useState(() => accountStore.readPromo());
+  // منح الهدايا تأتي ضمن me من الخادم، ولا تمنح بيانات الجهاز صلاحيات مستقلة.
+  const promo = null; // Legacy device-only gifts no longer grant access; server grants remain valid.
   const [ready, setReady] = useState(() => !(accountStore.readSession() && !cached.data));
   const [products, setProducts] = useState(null);
   const [billing, setBilling] = useState(null);
+  const [paddleIdentity, setPaddleIdentity] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [activationPending, setActivationPending] = useState(false);
   const [error, setError] = useState(null);
   const [paywall, setPaywall] = useState({ open: false, reason: 'settings', game: null, pack: null });
 
   const sessionRef = useRef(session);
+  const authEpochRef = useRef(0);
   const meRef = useRef(me);
   meRef.current = me;
   const fetchedRef = useRef(cached.fetchedAt);
@@ -71,13 +74,20 @@ export function AccountProvider({ children }) {
     setSession(token || null);
   }, []);
 
-  const applyMe = useCallback((next) => {
+  const applyMe = useCallback((next, epoch = authEpochRef.current) => {
+    if (epoch !== authEpochRef.current || !sessionRef.current) return;
     const stamp = Date.now();
     accountStore.writeMe(next, stamp);
     fetchedRef.current = stamp;
+    meRef.current = next || null;
     setMe(next || null);
     setFetchedAt(stamp);
-  }, []);
+    if (!native) {
+      const identity = next?.user?.id ? next.paddle || null : null;
+      setPaddleCustomer(identity);
+      setPaddleIdentity(identity);
+    }
+  }, [native]);
 
   const applyTrials = useCallback((serverTrials) => {
     if (!serverTrials) return;
@@ -89,8 +99,12 @@ export function AccountProvider({ children }) {
   }, []);
 
   const clearLocalAuth = useCallback(() => {
+    authEpochRef.current++;
+    clearPaddleCustomer();
+    setPaddleIdentity(null);
     accountStore.clearAuth();
     sessionRef.current = null;
+    meRef.current = null;
     fetchedRef.current = 0;
     setSession(null);
     setMe(null);
@@ -98,7 +112,13 @@ export function AccountProvider({ children }) {
   }, []);
 
   // خيارات كل نداء: الرمز الحالي + التقاط تدوير الجلسة المنزلق.
-  const options = useCallback(() => ({ token: sessionRef.current || undefined, onSession: applySession }), [applySession]);
+  const options = useCallback(() => {
+    const token = sessionRef.current;
+    const epoch = authEpochRef.current;
+    return { token: token || undefined, onSession: (next) => {
+      if (epoch === authEpochRef.current && token && token === sessionRef.current) applySession(next);
+    } };
+  }, [applySession]);
 
   const handleError = useCallback((err) => {
     const code = codeOf(err);
@@ -120,39 +140,33 @@ export function AccountProvider({ children }) {
     }
   }, [options, applyTrials, clearLocalAuth]);
 
-  // رمز مفعَّل على الجهاز ولم يُربط بهذا الحساب بعد: يُرسل عند الإقلاع وعند كل تحديث حتى ينجح.
-  const syncPromo = useCallback(async (userId = null) => {
-    const stored = accountStore.readPromo();
-    if (!stored || !stored.code || !sessionRef.current || accountOffline()) return;
-    if (stored.syncedFor && (!userId || stored.syncedFor === userId)) return;
-    try {
-      const next = await redeemRequest(stored.code, options());
-      if (next) applyMe(next);
-      setPromo(accountStore.markPromoSynced((next && next.user && next.user.id) || userId));
-    } catch (err) {
-      if (isAuthError(codeOf(err))) clearLocalAuth();
-    }
-  }, [options, applyMe, clearLocalAuth]);
-
   const refresh = useCallback(async () => {
     if (!sessionRef.current || accountOffline()) return null;
+    const epoch = authEpochRef.current;
     try {
       const next = await getMe(options());
-      applyMe(next);
+      if (epoch !== authEpochRef.current) return null;
+      applyMe(next, epoch);
+      if (isPremium(next) && next?.premium?.active && next.premium.source === 'paddle') setActivationPending(false);
       flushPending();
-      syncPromo(next && next.user ? next.user.id : null);
       return next;
     } catch (err) {
+      if (epoch !== authEpochRef.current) return null;
       const code = codeOf(err);
       if (isAuthError(code)) clearLocalAuth();
       if (isDisabled(code)) setOffline(true);
       return null;
     }
-  }, [options, applyMe, flushPending, clearLocalAuth, syncPromo]);
+  }, [options, applyMe, flushPending, clearLocalAuth]);
 
   // بعد أي دخول ناجح: خزّن الجلسة، ادمج علامات هذا الجهاز، ثم رحّب باللاعب.
   const afterSignIn = useCallback(async (result) => {
     if (!result || !result.session || !result.session.token) throw new ClientError('PROVIDER');
+    authEpochRef.current++;
+    clearPaddleCustomer();
+    setPaddleIdentity(null);
+    meRef.current = null;
+    setMe(null);
     applySession(result.session.token);
     if (result.me) applyMe(result.me);
     const stored = accountStore.readTrials();
@@ -164,16 +178,17 @@ export function AccountProvider({ children }) {
         applyTrials(merged && merged.trials);
       } catch (err) { /* تبقى محليًا وتُدمج لاحقًا */ }
     }
-    await syncPromo(result.me && result.me.user ? result.me.user.id : null);
     const name = (result.me && result.me.user && result.me.user.name) || '';
     toast(name ? `أهلًا ${name}` : 'أهلًا بك');
     return result.me || null;
-  }, [applySession, applyMe, applyTrials, options, toast, syncPromo]);
+  }, [applySession, applyMe, applyTrials, options, toast]);
 
   const consumeCode = useCallback(async (code, client) => {
-    const result = await exchangeCode(code, client, { onSession: applySession });
+    const epoch = authEpochRef.current;
+    const result = await exchangeCode(code, client);
+    if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
     return afterSignIn(result);
-  }, [applySession, afterSignIn]);
+  }, [afterSignIn]);
 
   // ── المنتجات والأسعار (كسول: عند فتح الجدار أو بطاقة الإعدادات) ─────────
   const loadProducts = useCallback(async () => {
@@ -192,6 +207,7 @@ export function AccountProvider({ children }) {
             yearly: yearly ? { id: PRODUCTS.yearly, price: String(yearly.price || ''), period: String(yearly.period || 'سنويًا') } : null,
           });
         }
+        if (!monthly && !yearly) productsRef.current = false;
         return;
       }
       if (accountOffline()) return;
@@ -199,8 +215,8 @@ export function AccountProvider({ children }) {
       setBilling(config || null);
       const paddle = config && config.paddle;
       if (!paddle || !paddle.clientToken) return;
-      const prices = await previewPrices(paddle.prices, { clientToken: paddle.clientToken, environment: paddle.environment });
-      if (!prices) return;
+      const prices = await previewPrices(paddle.prices, paddle);
+      if (!prices) { productsRef.current = false; return; }
       setProducts({
         monthly: prices.monthly ? { id: PRODUCTS.monthly, ...prices.monthly } : null,
         yearly: prices.yearly ? { id: PRODUCTS.yearly, ...prices.yearly } : null,
@@ -216,7 +232,8 @@ export function AccountProvider({ children }) {
     setError(null);
     setPaywall({ open: true, reason: detail.reason || 'settings', game: detail.game || null, pack: detail.pack || null });
     loadProducts();
-  }, [loadProducts]);
+    if (sessionRef.current) refresh();
+  }, [loadProducts, refresh]);
   const closePaywall = useCallback(() => setPaywall((prev) => ({ ...prev, open: false })), []);
 
   const markTrial = useCallback((game) => {
@@ -253,9 +270,14 @@ export function AccountProvider({ children }) {
         // نتأكد أن الحسابات مفعّلة على الخادم كي لا نهبط على صفحة 404.
         const url = authStartUrl(provider, { client: 'web' });
         if (!url) throw new ClientError('OFFLINE');
-        if (!billing) {
-          try { setBilling((await getBillingConfig(options())) || null); }
-          catch (err) { if (isDisabled(codeOf(err))) { setOffline(true); throw new ClientError('OFFLINE'); } }
+        try {
+          const config = await getBillingConfig(options());
+          setBilling(config || null);
+          if (config?.providers?.[provider] === false) throw new ClientError('PROVIDER');
+        }
+        catch (err) {
+          if (isDisabled(codeOf(err))) { setOffline(true); throw new ClientError('OFFLINE'); }
+          throw err; // لا نغادر الصفحة إن فشل فحص الخادم، حتى بعد تحميل إعدادات سابقة.
         }
         if (typeof location !== 'undefined') location.assign(url);
         return null;
@@ -278,14 +300,15 @@ export function AccountProvider({ children }) {
     } finally {
       setBusy(false);
     }
-  }, [native, billing, options, applySession, afterSignIn, consumeCode, waitForAuthReturn, handleError, toast]);
+  }, [native, options, applySession, afterSignIn, consumeCode, waitForAuthReturn, handleError, toast]);
 
   const signOut = useCallback(async () => {
     setBusy('signout');
-    try { if (sessionRef.current && !accountOffline()) await signout(options()); }
+    const requestOptions = options();
+    clearLocalAuth(); // Clear Retain before waiting on an unavailable logout endpoint.
+    try { if (requestOptions.token && !accountOffline()) await signout(requestOptions); }
     catch (err) { /* الخروج محلي في كل الأحوال */ }
     finally {
-      clearLocalAuth();
       setBusy(false);
       setError(null);
       toast('سجّلت الخروج');
@@ -294,6 +317,7 @@ export function AccountProvider({ children }) {
 
   const purchase = useCallback(async (plan = 'monthly') => {
     setError(null);
+    if (activationPending) { setError('ACTIVATION_PENDING'); return null; }
     if (accountOffline()) { setError('OFFLINE'); return null; }
     // داخل التطبيق: الاشتراك يُربط بحساب ليعمل على كل الأجهزة، فالدخول بحساب Apple
     // (ورقة واحدة) يسبق ورقة المتجر حين لا جلسة.
@@ -302,7 +326,16 @@ export function AccountProvider({ children }) {
       if (!signed || !sessionRef.current) return null;
     }
     setBusy('purchase');
+    const epoch = authEpochRef.current;
     try {
+      if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
+      // An old sandbox entitlement may still be cached after a live cutover.
+      // Require a fresh server answer before checking duplicates or opening a
+      // payment sheet; a network failure leaves the cached history untouched.
+      const current = await getMe(options());
+      if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+      applyMe(current, epoch);
+      if (isPremium(current) && current.premium.source !== 'promo') throw new ClientError('ALREADY_SUBSCRIBED');
       if (native) {
         // appAccountToken = معرّف المستخدم: الخادم يرفض ربط المعاملة بحساب آخر.
         const userId = (meRef.current && meRef.current.user && meRef.current.user.id) || null;
@@ -310,17 +343,28 @@ export function AccountProvider({ children }) {
         const result = await callNative('purchase', { productId: PRODUCTS[plan] || PRODUCTS.monthly, plan, userId }, { timeout: NATIVE_SHEET_TIMEOUT });
         const jws = (result && (result.jws || result.transaction)) || null;
         if (!jws) throw new ClientError('PURCHASE_PENDING');
-        const next = await postAppleTransaction(jws, options());
-        applyMe(next);
+        const next = await deliverAppleTransaction(jws, {
+          submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
+          acknowledge: (value) => callNative('finishTransaction', { jws: value }, { timeout: 5_000 }),
+        });
+        if (!isPremium(next)) throw new ClientError('ACTIVATION_PENDING');
         toast('فُعِّل ميدان بلس');
         closePaywall();
         return next;
       }
       if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
+      const config = await getBillingConfig(options());
+      if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+      setBilling(config || null);
+      if (config?.paddle?.checkoutEnabled === false) throw new ClientError('CHECKOUT_DISABLED');
       const checkout = await createPaddleCheckout(plan, options());
-      await openCheckout({ transactionId: checkout.transactionId, clientToken: checkout.clientToken, environment: checkout.environment });
-      const next = await refresh();
-      toast('فُعِّل ميدان بلس');
+      if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+      await openCheckout({ transactionId: checkout.transactionId, clientToken: checkout.clientToken, environment: checkout.environment, checkoutEnabled: config?.paddle?.checkoutEnabled });
+      if (epoch !== authEpochRef.current) throw new ClientError('PURCHASE_CANCELLED');
+      setActivationPending(true);
+      const next = await waitForEntitlement(refresh);
+      setActivationPending(false);
+      toast(checkout.environment === 'sandbox' ? 'فُعّل اشتراك الاختبار — لم يُخصم مبلغ حقيقي' : 'فُعِّل ميدان بلس');
       closePaywall();
       return next;
     } catch (err) {
@@ -330,7 +374,7 @@ export function AccountProvider({ children }) {
     } finally {
       setBusy(false);
     }
-  }, [native, options, applyMe, refresh, handleError, closePaywall, toast, signIn]);
+  }, [native, options, applyMe, refresh, handleError, closePaywall, toast, signIn, activationPending]);
 
   const restore = useCallback(async () => {
     setError(null);
@@ -341,7 +385,10 @@ export function AccountProvider({ children }) {
       const jwsList = listOf(await callNative('restore', {}, { timeout: NATIVE_SHEET_TIMEOUT }), 'transactions').filter((value) => typeof value === 'string' && value);
       if (!jwsList.length) throw new ClientError('RESTORE_EMPTY');
       let next = null;
-      for (const jws of jwsList) next = await postAppleTransaction(jws, options());
+      for (const jws of jwsList) next = await deliverAppleTransaction(jws, {
+        submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
+        acknowledge: (value) => callNative('finishTransaction', { jws: value }, { timeout: 5_000 }),
+      });
       if (next) applyMe(next);
       toast(isPremium(next) ? 'استُعيد اشتراكك' : accountErrorText('RESTORE_EMPTY'));
       return next;
@@ -357,7 +404,12 @@ export function AccountProvider({ children }) {
   const manageSubscription = useCallback(async () => {
     setError(null);
     try {
-      if (native) { await callNative('manageSubscriptions'); return; }
+      if (meRef.current?.premium?.source === 'apple') {
+        if (native) await callNative('manageSubscriptions');
+        else if (typeof location !== 'undefined') location.assign('https://apps.apple.com/account/subscriptions');
+        return;
+      }
+      if (native) throw new ClientError('MANAGE_ON_WEB');
       const result = await getPaddlePortal(options());
       if (result && result.url && typeof location !== 'undefined') location.assign(result.url);
     } catch (err) {
@@ -366,37 +418,31 @@ export function AccountProvider({ children }) {
     }
   }, [native, options, handleError, toast]);
 
-  // رمز الهدية. يعيد true عند النجاح أو كود خطأ (REDEEM_INVALID/NETWORK…) يعرضه النموذج
-  // وحده؛ لا يلمس خطأ المزوّد العام كي لا يتكرر النص خارج النموذج.
+  // رمز الهدية: الخادم يتحقق بعد تسجيل الدخول، ولا نحفظ الرمز محليًا.
   const redeem = useCallback(async (code) => {
-    const online = !!sessionRef.current && !accountOffline();
-    if (!isValidCode(code)) {
-      // ليس في قائمة الحزمة: قد يكون رمزًا يعرفه الخادم وحده (السرّ REDEEM_CODE_HASHES).
-      if (!online) return 'REDEEM_INVALID';
-      try {
-        const next = await redeemRequest(code, options());
-        if (next) applyMe(next);
-      } catch (err) {
-        const failure = codeOf(err);
-        if (isAuthError(failure)) clearLocalAuth();
-        return failure === 'NOT_FOUND' ? 'REDEEM_INVALID' : failure;
-      }
-      closePaywall();
-      toast(`فُعِّل ${PLUS_NAME}`);
-      return true;
+    if (!sessionRef.current) return 'AUTH_REQUIRED';
+    if (accountOffline()) return 'OFFLINE';
+    const epoch = authEpochRef.current;
+    try {
+      const next = await redeemRequest(code, options());
+      if (epoch !== authEpochRef.current) return 'PURCHASE_CANCELLED';
+      if (next) applyMe(next, epoch);
+    } catch (err) {
+      const failure = codeOf(err);
+      if (isAuthError(failure)) clearLocalAuth();
+      return failure === 'NOT_FOUND' ? 'REDEEM_INVALID' : failure;
     }
-    const entry = accountStore.writePromo(String(code).trim(), codeHash(code));
-    setPromo(entry);
     closePaywall();
     toast(`فُعِّل ${PLUS_NAME}`);
-    if (online) syncPromo(meRef.current && meRef.current.user ? meRef.current.user.id : null);
     return true;
-  }, [options, applyMe, clearLocalAuth, closePaywall, toast, syncPromo]);
+  }, [options, applyMe, clearLocalAuth, closePaywall, toast]);
 
   const deleteAccount = useCallback(async () => {
     setBusy('delete');
     try {
-      if (sessionRef.current && !accountOffline()) await deleteAccountRequest(options());
+      if (accountOffline()) throw new ClientError('OFFLINE');
+      if (!sessionRef.current) throw new ClientError('AUTH_REQUIRED');
+      await deleteAccountRequest(options());
       clearLocalAuth();
       toast('حُذف حسابك');
       return true;
@@ -410,12 +456,54 @@ export function AccountProvider({ children }) {
   }, [options, clearLocalAuth, handleError, toast]);
 
   // ── التأثيرات ───────────────────────────────────────────────────────────
+  // Retain uses fresh server identity, never the offline /api/me cache. It is
+  // independent of the paywall so existing live subscribers can be identified.
+  useEffect(() => {
+    if (native || !session || paddleIdentity?.environment !== 'production' || !paddleIdentity.customerId) return undefined;
+    let alive = true;
+    const epoch = authEpochRef.current;
+    (async () => {
+      try {
+        const config = await getBillingConfig(options());
+        if (!alive || epoch !== authEpochRef.current) return;
+        setBilling(config || null);
+        if (config?.paddle?.clientToken) await loadPaddle(config.paddle);
+      } catch { /* Retain is optional; checkout reports configuration failures. */ }
+    })();
+    return () => { alive = false; };
+  }, [native, session, paddleIdentity, options]);
+
+  useEffect(() => () => clearPaddleCustomer(), []);
+
+  // A second tab may sign out or switch account while this tab is open. Do not
+  // rewrite its storage event; invalidate this tab's identity and verify afresh.
+  useEffect(() => {
+    const changed = (event) => {
+      if (event.key !== null && event.key !== `${ACCOUNT_PREFIX}${KEYS.session}`) return;
+      const token = accountStore.readSession();
+      if (token === sessionRef.current) return;
+      authEpochRef.current++;
+      clearPaddleCustomer();
+      setPaddleIdentity(null);
+      sessionRef.current = token;
+      meRef.current = null;
+      fetchedRef.current = 0;
+      setSession(token);
+      setMe(null);
+      setFetchedAt(0);
+      if (token) refresh();
+    };
+    window.addEventListener('storage', changed);
+    return () => window.removeEventListener('storage', changed);
+  }, [refresh]);
+
   // إقلاع: تحديث في الخلفية إن تقادمت النسخة المخزّنة.
   useEffect(() => {
     let alive = true;
+    accountStore.clearPromo();
     setOffline(accountOffline());
     (async () => {
-      if (sessionRef.current && !accountOffline() && shouldRefresh(fetchedRef.current)) await refresh();
+      if (sessionRef.current && !accountOffline()) await refresh();
       if (alive) setReady(true);
     })();
     return () => { alive = false; };
@@ -439,10 +527,12 @@ export function AccountProvider({ children }) {
   // العودة إلى التطبيق: الاشتراك قد يكون تغيّر على جهاز آخر.
   useEffect(() => {
     if (typeof document === 'undefined' || !document.addEventListener) return undefined;
-    const onVisible = () => { if (document.visibilityState === 'visible' && shouldRefresh(fetchedRef.current)) refresh(); };
+    const onVisible = () => {
+      if (document.visibilityState === 'visible' && (paywall.open || route?.name === 'settings' || shouldRefresh(fetchedRef.current))) refresh();
+    };
     document.addEventListener('visibilitychange', onVisible);
     return () => document.removeEventListener('visibilitychange', onVisible);
-  }, [refresh]);
+  }, [refresh, paywall.open, route?.name]);
 
   // عودة الغلاف من متصفح المصادقة (maydan://auth?code=…).
   useEffect(() => onNativeEvent('authReturn', (payload) => {
@@ -460,10 +550,38 @@ export function AccountProvider({ children }) {
   useEffect(() => onNativeEvent('transaction', (payload) => {
     const jws = payload && typeof payload === 'object' ? payload.jws : null;
     if (typeof jws !== 'string' || !jws || !sessionRef.current || accountOffline()) return;
-    postAppleTransaction(jws, options())
-      .then((next) => { if (next) applyMe(next); })
+    deliverAppleTransaction(jws, {
+      submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
+      acknowledge: (value) => callNative('finishTransaction', { jws: value }, { timeout: 5_000 }),
+    })
       .catch((err) => { if (isAuthError(codeOf(err))) clearLocalAuth(); });
   }), [options, applyMe, clearLocalAuth]);
+
+  // Replay after sign-in/start and on returning online; StoreKit holds transactions until acknowledgment.
+  useEffect(() => {
+    if (!native || !session) return undefined;
+    let running = false;
+    const replay = async () => {
+      if (running || accountOffline()) return;
+      running = true;
+      try {
+        const transactions = listOf(await callNative('pendingTransactions'), 'transactions');
+        for (const jws of transactions) {
+          if (typeof jws !== 'string') continue;
+          try { await deliverAppleTransaction(jws, {
+            submit: (value) => postAppleTransaction(value, options()), apply: applyMe,
+            acknowledge: (value) => callNative('finishTransaction', { jws: value }, { timeout: 5_000 }),
+          }); } catch { /* A transaction for another account must not block the remaining purchases. */ }
+        }
+      } catch { /* Retry on next launch/online/foreground. */ }
+      finally { running = false; }
+    };
+    replay();
+    const visible = () => { if (document.visibilityState === 'visible') replay(); };
+    window.addEventListener('online', replay);
+    document.addEventListener('visibilitychange', visible);
+    return () => { window.removeEventListener('online', replay); document.removeEventListener('visibilitychange', visible); };
+  }, [native, session, options, applyMe]);
 
   // عودة الويب: #/auth?code=… رمز لمرة واحدة عمره 60 ثانية.
   const authCode = route && route.name === 'auth' ? (route.params && route.params.code) || '' : '';
@@ -484,13 +602,13 @@ export function AccountProvider({ children }) {
   }, [authCode, native, consumeCode, handleError, toast]);
 
   // ── القيمة ──────────────────────────────────────────────────────────────
-  const premium = isPremium(me) || !!promo;
+  const premium = isPremium(me);
   const trials = useMemo(() => mergeTrials(localTrials.marks, (me && me.trials) || EMPTY), [localTrials, me]);
   const user = (me && me.user) || null;
 
   const value = useMemo(() => ({
     ready, user, me, premium, promo, trials, platform, products,
-    offline, signedIn: !!session, busy, error, paywall, billing,
+    offline, signedIn: !!session, busy, error, paywall, billing, activationPending,
     redeem,
     signIn, signOut, refresh,
     markTrial,
@@ -501,7 +619,7 @@ export function AccountProvider({ children }) {
     purchase, manageSubscription, loadProducts,
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
-  }), [ready, user, me, premium, promo, trials, platform, products, offline, session, busy, error, paywall, billing,
+  }), [ready, user, me, premium, promo, trials, platform, products, offline, session, busy, error, paywall, billing, activationPending,
     signIn, signOut, refresh, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, redeem]);
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;

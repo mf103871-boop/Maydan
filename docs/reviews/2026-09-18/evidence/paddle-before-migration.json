@@ -1,0 +1,108 @@
+{
+  "checkedAt": "2026-09-17T22:24:21.451Z",
+  "mutationRequests": 0,
+  "accounts": {
+    "sandbox": {
+      "products": {
+        "status": 200,
+        "count": 1,
+        "data": [
+          {
+            "id": "pro_01m2p9gavyr3n26hq46b8xbxc0",
+            "name": "ميدان بلس",
+            "status": "active",
+            "tax_category": "standard"
+          }
+        ]
+      },
+      "prices": {
+        "status": 200,
+        "count": 2,
+        "data": [
+          {
+            "id": "pri_01m2p9gbmv4tyx2q203e035ye9",
+            "product_id": "pro_01m2p9gavyr3n26hq46b8xbxc0",
+            "name": "سنوي",
+            "description": "ميدان بلس — سنوي",
+            "status": "active",
+            "unit_price": {
+              "amount": "1999",
+              "currency_code": "USD"
+            },
+            "billing_cycle": {
+              "interval": "year",
+              "frequency": 1
+            },
+            "trial_period": null,
+            "tax_mode": "location"
+          },
+          {
+            "id": "pri_01m2p9gbanyptbz5hdf350ktet",
+            "product_id": "pro_01m2p9gavyr3n26hq46b8xbxc0",
+            "name": "شهري",
+            "description": "ميدان بلس — شهري",
+            "status": "active",
+            "unit_price": {
+              "amount": "299",
+              "currency_code": "USD"
+            },
+            "billing_cycle": {
+              "interval": "month",
+              "frequency": 1
+            },
+            "trial_period": null,
+            "tax_mode": "location"
+          }
+        ]
+      },
+      "discounts": {
+        "status": 200,
+        "count": 0,
+        "data": []
+      }
+    },
+    "live": {
+      "products": {
+        "status": 200,
+        "count": 0,
+        "data": []
+      },
+      "prices": {
+        "status": 200,
+        "count": 0,
+        "data": []
+      },
+      "discounts": {
+        "status": 200,
+        "count": 0,
+        "data": []
+      },
+      "client-tokens": {
+        "status": 200,
+        "count": 0,
+        "data": []
+      },
+      "notification-settings": {
+        "status": 200,
+        "count": 0,
+        "data": []
+      },
+      "checkout-domains": {
+        "status": 200,
+        "count": 1,
+        "data": [
+          {
+            "id": "chedom_01m2rp1kbakbjwsj3d35pcsnse",
+            "domain": "maydan-game.mf103871.workers.dev",
+            "status": "approved",
+            "payment_method_verification": {
+              "apple_pay": {
+                "status": "verified"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

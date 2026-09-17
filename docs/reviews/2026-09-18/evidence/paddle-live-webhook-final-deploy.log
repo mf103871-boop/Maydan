@@ -1,0 +1,17 @@
+
+ ⛅️ wrangler 4.131.1 (update available 4.134.0)
+───────────────────────────────────────────────
+Total Upload: 84.12 KiB / gzip: 21.19 KiB
+Worker Startup Time: 2 ms
+Your Worker has access to the following bindings:
+Binding                                                             Resource
+env.DB (maydan-accounts)                                            D1 Database
+env.PADDLE_ENV ("production")                                       Environment Variable
+env.PADDLE_CHECKOUT_ENABLED ("false")                               Environment Variable
+env.PADDLE_PRICE_MONTHLY ("pri_01m2rqq887jk85av1b1a68j82k")         Environment Variable
+env.PADDLE_PRICE_YEARLY ("")                                        Environment Variable
+
+Uploaded maydan-paddle-live (6.22 sec)
+Deployed maydan-paddle-live triggers (3.11 sec)
+  https://maydan-paddle-live.mf103871.workers.dev
+Current Version ID: 082ec861-77d0-41f7-be3e-8701a9730fac

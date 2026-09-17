@@ -87,13 +87,14 @@
 .game-frame .m-root .m-header { top: calc(52px + var(--safe-top)); }
 .game-frame .m-root { padding-top: 10px; min-height: calc(100dvh - 52px - var(--safe-top)); }
 
-/* الستار عند بدء/إعادة اللعبة (Play.jsx): ثابت، بلا لمس، يُزال بمؤقّت ولا يُصيَّر تحت تقليل الحركة */
-.game-curtain { position: fixed; inset: 0; z-index: 315; pointer-events: none; display: grid; place-items: center;
-  background: radial-gradient(70% 45% at 50% 50%, #FFFFFF40, #FFFFFF00 70%), var(--top-light), color-mix(in srgb, var(--game-accent) 85%, #fff);
-  transform-origin: 50% 100%; animation: curtain-wipe .48s var(--ease-snap) both; }
-.game-curtain .clay-stage > .clay-lift { animation: ui-wobble .48s ease-in-out both; }
-.game-curtain .clay-stage::after { animation: none; --clay-contact: rgba(var(--clay-ink), .38); }
-@keyframes curtain-wipe { 0% { transform: translateY(100%); } 35% { transform: translateY(0); } 60% { transform: translateY(0); } 100% { transform: translateY(-100%); } }
+/* A brief edge glow never hides a running game or intercepts its controls. */
+.game-curtain { position: fixed; inset: 0; z-index: 315; pointer-events: none;
+  box-shadow: inset 0 0 75px color-mix(in srgb, var(--game-accent) 20%, transparent);
+  animation: curtain-glow .24s ease-out both; }
+@keyframes curtain-glow { from { opacity: .8; } to { opacity: 0; } }
+.game-loading { min-height: 65dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 28px; text-align: center; }
+.game-loading .clay-art { width: 128px; height: 128px; }
+.game-loading h1 { margin: 0; font-size: 28px; color: var(--game-accent); }
 
 /* ── الإعدادات ── */
 .setting { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: var(--top-light), var(--surface); border: 1px solid var(--stroke); box-shadow: var(--shadow-row); animation: ui-lift-in .38s var(--ease-out) both; animation-delay: var(--delay, 0ms); }
@@ -101,6 +102,11 @@
 .setting .text { flex: 1; min-width: 0; }
 .setting .text b { display: block; font-size: 16px; }
 .setting .text small { color: var(--muted); font-size: 13px; }
+.setting-volume { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; }
+.setting-volume label { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 16px; }
+.setting-volume output { font-variant-numeric: tabular-nums; color: var(--accent); }
+.setting-volume input { width: 100%; min-width: 0; min-height: 44px; padding: 0; accent-color: var(--accent); cursor: pointer; direction: ltr; }
+.setting-volume input:disabled { opacity: .4; cursor: default; }
 /* المفتاح (منطقي: --flow) */
 .switch::before { content: ""; position: absolute; inset: -6px 0; }   /* هدف لمس ≥44px دون تغيير الشكل */
 .switch { width: 54px; height: 32px; border-radius: 999px; background: #DCCAE6; border: 1px solid var(--stroke-strong); position: relative; flex: 0 0 auto; box-shadow: inset 0 2px 3px rgba(53,37,71,.18); transition: background-color .2s ease; min-height: 32px; }
@@ -113,7 +119,7 @@
 .setup-error[role="alert"] { animation: ui-fade .2s ease-out both, ui-nudge .4s ease-out; }
 
 /* ── البداية: سماء تطابق أعلى الصورة (#41B9FA) وتتعمّق فوقها؛ لا خط فاصل ── */
-.splash { position: fixed; inset: 0; z-index: 1000; overflow: hidden; cursor: pointer;
+.splash { position: fixed; inset: 0; z-index: 1000; overflow: hidden;
   background: linear-gradient(180deg, #2E9FF0 0%, #41B9FA max(0px, calc(100% - 150vw)), #41B9FA 100%); }
 .splash .splash-world { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; z-index: 1; transform-origin: 50% 100%; will-change: transform; animation: splash-world-in 1.6s var(--ease-out) both; }
 /* ريش لحافة الصورة العلوية (تُخفي الغيوم المقطوعة وأي فرق باقٍ) */
@@ -146,7 +152,15 @@
 .splash-inner { position: absolute; top: calc(5% + var(--safe-top)); inset-inline: 16px; display: grid; justify-items: center; z-index: 3; isolation: isolate; animation: splash-mark .55s var(--ease-spring) both; }
 .splash-inner::before { content: ""; position: absolute; inset: -30% -20%; z-index: -1; pointer-events: none; background: radial-gradient(60% 55% at 50% 45%, #FFFFFF66, #FFFFFF00 70%); }
 .splash-sub { color: var(--plum); font-size: clamp(22px, 6vw, 32px); font-weight: 800; margin-top: -12px; animation: ui-lift-in .4s var(--ease-out) .22s both; }
-.splash-skip { position: absolute; z-index: 3; bottom: calc(18px + var(--safe-bottom)); inset-inline: 12px; text-align: center; color: var(--plum); font-size: 15px; font-weight: 600; animation: ui-fade .5s ease-out .8s both; }
+.splash-loading { position: absolute; z-index: 3; bottom: calc(22px + var(--safe-bottom)); inset-inline: 20px; display: grid; justify-items: center; }
+.loading-status { display: grid; justify-items: center; gap: 10px; min-width: 220px; max-width: 100%; padding: 14px 24px; border: 1px solid #FFFFFFB3; border-radius: 22px; color: #513273; background: #FFF7E7F2; box-shadow: 0 8px 24px #35254712; font-size: 15px; }
+.loading-orbit { display: flex; gap: 6px; height: 14px; align-items: center; }
+.loading-orbit i { width: 7px; height: 7px; border-radius: 50%; background: #9250BD; animation: loading-breathe 1.2s ease-in-out infinite; }
+.loading-orbit i:nth-child(2) { animation-delay: .15s; background: #087D89; }
+.loading-orbit i:nth-child(3) { animation-delay: .3s; background: #BD8500; }
+.loading-track { display: block; width: 160px; max-width: 100%; height: 4px; overflow: hidden; border-radius: 4px; background: #E1D4E9; }
+.loading-track > span { display: block; width: 100%; height: 100%; background: #087D89; transform-origin: right; transition: transform .18s ease-out; }
+@keyframes loading-breathe { 0%, 100% { opacity: .5; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-4px); } }
 @keyframes splash-world-in { from { transform: scale(1.06) translateY(1.5%); } }
 @keyframes splash-mark { from { opacity: 0; transform: translateY(-26px) scale(.9); } }
 .splash.is-leaving { animation: splash-out .25s ease-in forwards; }

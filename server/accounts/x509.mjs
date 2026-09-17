@@ -145,9 +145,14 @@ export async function verifyAppleJws(token, { now = Date.now(), rootSha256 = APP
     header = JSON.parse(new TextDecoder().decode(bytesFromBase64url(parts[0])));
     payload = JSON.parse(new TextDecoder().decode(bytesFromBase64url(parts[1])));
   } catch { return failure('INVALID'); }
-  if (header.alg !== 'ES256' || !Array.isArray(header.x5c) || !header.x5c.length) failure('SIGNATURE');
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) failure('INVALID');
+  if (header?.alg !== 'ES256' || !Array.isArray(header.x5c) || !header.x5c.length) failure('SIGNATURE');
   const chain = header.x5c.map((entry) => bytesFromBase64url(String(entry).replace(/-/g, '+').replace(/_/g, '/').replace(/=+$/, '')));
-  const parsed = await verifyChain(chain, { now, rootSha256 });
+  // Offline verification uses the signed date, as Apple's verifier does: a restored
+  // transaction can legitimately outlive the certificate that signed it.
+  const signedAt = payload.signedDate === undefined ? now : Number(payload.signedDate);
+  if (!Number.isFinite(signedAt) || signedAt <= 0 || signedAt > now + 300_000) failure('SIGNATURE');
+  const parsed = await verifyChain(chain, { now: signedAt, rootSha256 });
   const leaf = parsed[0];
   if (leaf.curve !== 'P-256' || !leaf.extensions.has(APPLE_LEAF_OID)) failure('SIGNATURE');
   if (parsed.length > 2 && !parsed[1].extensions.has(APPLE_INTERMEDIATE_OID)) failure('SIGNATURE');

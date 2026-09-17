@@ -1,6 +1,6 @@
 // موجّه مسارات الحسابات: يُستدعى من routeRequest قبل مسارات الغرف.
 // يُعيد Response إن كان المسار له، أو null ليكمل الموجّه الأصلي طريقه.
-import { TRIAL_GAMES, PRODUCTS, REDEEM_CODE_HASHES, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
+import { TRIAL_GAMES, PRODUCTS, PROMO_DURATION_MS } from '../../src/shared/account/config.js';
 import { codeHash, isValidCode } from '../../src/shared/account/redeem.js';
 import { json, readJson } from '../protocol.mjs';
 import { failure, RoomError } from './errors.mjs';
@@ -8,7 +8,9 @@ import * as db from './db.mjs';
 import * as apple from './apple.mjs';
 import * as google from './google.mjs';
 import * as paddle from './paddle.mjs';
+import { assertPaddleWebhookIp } from './paddle-ips.mjs';
 import { premiumOf, premiumActive } from './entitlements.mjs';
+import { inBillingEnvironment } from './billing-environment.mjs';
 import {
   bearer, issueAuthCode, issueSession, me as meOf, readSession, readState, redeemAuthCode,
   requireSession, returnRedirect, safeReturn, signState, withRotation,
@@ -99,9 +101,9 @@ async function startGoogle(request, env, url, now) {
   return new Response(null, { status: 302, headers: { location, 'cache-control': 'no-store' } });
 }
 
-// nonce اختياري: بعض المزوّدين لا يعيدونه، لكن إن أعادوه فلا بد أن يطابق.
+// أرسلنا nonce في بدء الدخول، فلا نقبل إسقاطه من رمز الهوية.
 function checkNonce(payload, state) {
-  if (payload.nonce && state.nonce && payload.nonce !== state.nonce) failure('STATE');
+  if (!state.nonce || payload.nonce !== state.nonce) failure('STATE');
 }
 
 async function callbackApple(request, env, url, now) {
@@ -110,12 +112,12 @@ async function callbackApple(request, env, url, now) {
   if (state.p !== 'apple') failure('STATE');
   const idToken = form.get('id_token');
   if (!idToken) failure('STATE');
-  const payload = await apple.verifyIdentityToken(env, idToken, { client: state.c, now });
+  const payload = await apple.verifyIdentityToken(env, idToken, { client: 'web', now });
   checkNonce(payload, state);
   // التبادل اختياري: نحتفظ برمز التحديث كي نستطيع إبطاله عند حذف الحساب.
   let refreshToken = null;
   if (form.get('code')) {
-    const tokens = await apple.exchangeCode(env, { code: form.get('code'), redirectUri: redirectUri(url, 'apple'), client: state.c });
+    const tokens = await apple.exchangeCode(env, { code: form.get('code'), redirectUri: redirectUri(url, 'apple'), client: 'web' });
     refreshToken = tokens?.refresh_token || null;
   }
   const user = await db.linkIdentity(env, {
@@ -243,7 +245,7 @@ async function paddleCheckout(request, env, now) {
   if (!paddle.configured(env)) failure('NOT_ELIGIBLE');
   if (body.plan !== 'monthly' && body.plan !== 'yearly') failure('INVALID');
   // اشتراك مدفوع سارٍ (Paddle أو آبل) يمنع معاملة ثانية: لا فوترة مزدوجة؛ الرمز لا يمنع.
-  const current = premiumOf(await db.subscriptionsOf(env, user.id), now);
+  const current = premiumOf(await db.subscriptionsOf(env, user.id), now, env);
   if (premiumActive(current, now) && current.source !== 'promo') failure('ALREADY_SUBSCRIBED');
   return withRotation(json(await paddle.createTransaction(env, user, body.plan)), rotated);
 }
@@ -252,50 +254,74 @@ async function paddlePortal(request, env, now) {
   return withRotation(json({ url: await paddle.portalUrl(env, user) }), rotated);
 }
 async function paddleWebhook(request, env, now) {
+  await assertPaddleWebhookIp(request, env);
   const raw = await request.text();
   if (raw.length > 262_144) failure('INVALID');
   await paddle.verifySignature(env, request.headers.get('paddle-signature'), raw, now);
   let event;
   try { event = JSON.parse(raw); } catch { return failure('INVALID'); }
   if (!event?.event_id) failure('INVALID');
-  if (!(await db.markWebhookEvent(env, `paddle:${event.event_id}`, now))) return json({ ok: true, duplicate: true });
+  const eventId = `paddle:${paddle.environmentOf(env)}:${event.event_id}`;
+  if (await db.webhookEvent(env, eventId)) return json({ ok: true, duplicate: true });
+  if (await paddle.recoverCheckoutEvent(env, event)) {
+    await db.markWebhookEvent(env, eventId, now);
+    return json({ ok: true, recovered: true });
+  }
   const row = paddle.subscriptionRow(env, event, now);
-  if (!row) return json({ ok: true, ignored: event.event_type || 'unknown' });
+  if (!row) {
+    await db.markWebhookEvent(env, eventId, now);
+    return json({ ok: true, ignored: event.event_type || 'unknown' });
+  }
+  const existing = await db.subscriptionByExternal(env, 'paddle', row.external_id);
+  if (existing?.environment && !inBillingEnvironment(env, existing)) failure('NOT_ELIGIBLE');
   let userId = row.userId;
   if (!userId && row.customerId) userId = (await db.paddleUserOf(env, row.customerId))?.user_id || null;
   if (!userId) {
-    const existing = await db.subscriptionByExternal(env, 'paddle', row.external_id);
     userId = existing?.user_id || null;
   }
   if (!userId || !(await db.userById(env, userId))) return json({ ok: true, ignored: 'unknown-user' });
+  if (existing && existing.user_id !== userId) failure('ALREADY_LINKED');
   if (row.customerId) await db.setPaddleCustomer(env, userId, row.customerId, now);
   await db.upsertSubscription(env, { ...row, user_id: userId });
+  // لا نؤكد المعالجة قبل نجاح كل الكتابات: يسمح ذلك بإعادة المحاولة بعد أي عطل.
+  await db.markWebhookEvent(env, eventId, now);
   return json({ ok: true });
 }
 
 // ── حذف الحساب ──────────────────────────────────────────────────────────────
 async function deleteAccount(request, env, now) {
   const { user } = await requireSession(env, request, { now, rotate: false });
-  const [identities, subscriptions] = await Promise.all([db.identitiesOf(env, user.id), db.subscriptionsOf(env, user.id)]);
-  for (const identity of identities) {
-    if (identity.provider === 'apple' && identity.refresh_token) {
-      try { await apple.revokeToken(env, identity.refresh_token); } catch { /* الحذف يمضي */ }
+  const deletionId = db.uuid();
+  if (!await db.reserveAccountDeletion(env, user.id, deletionId)) failure('CHECKOUT_REVIEW');
+  try {
+    await paddle.checkDeletionCheckout(env, user);
+    const [identities, subscriptions] = await Promise.all([db.identitiesOf(env, user.id), db.subscriptionsOf(env, user.id)]);
+    // A sandbox worker must not delete a real renewal it cannot cancel.
+    if (subscriptions.some((s) => s.source === 'paddle' && paddle.mayResumeBilling(s)
+      && !inBillingEnvironment(env, s) && s.environment !== 'sandbox')) failure('BILLING_CANCEL_FAILED');
+    for (const subscription of subscriptions) {
+      if (subscription.source === 'paddle' && paddle.mayResumeBilling(subscription) && inBillingEnvironment(env, subscription)) {
+        await paddle.cancelSubscription(env, subscription.external_id, { verifyFirst: !subscription.will_renew });
+      }
     }
+    for (const identity of identities) {
+      if (identity.provider === 'apple' && identity.refresh_token) await apple.revokeToken(env, identity.refresh_token);
+    }
+    await db.deleteUser(env, user.id);
+    return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } });
+  } finally {
+    // Failure keeps the checkout reservation, but does not strand account management.
+    await db.releaseAccountDeletion(env, user.id, deletionId).catch(() => {});
   }
-  for (const subscription of subscriptions) {
-    if (subscription.source === 'paddle' && subscription.will_renew) await paddle.cancelSubscription(env, subscription.external_id);
-  }
-  await db.deleteUser(env, user.id);
-  return new Response(null, { status: 204, headers: { 'cache-control': 'no-store' } });
 }
 
 // ── رموز الهدايا ────────────────────────────────────────────────────────────
-// التطبيع والتجزئة نفسهما في العميل (src/shared/account/redeem.js). بصمات إضافية
+// التطبيع والتجزئة في src/shared/account/redeem.js. البصمات المقبولة كلها
 // تأتي من السرّ REDEEM_CODE_HASHES بلا نشر جديد. الرمز الصحيح يمنح صف اشتراك
 // مصدره promo (دائم عمليًا) فيراه /api/me على كل أجهزة الحساب.
 export function redeemHashes(env) {
   const extra = String(env.REDEEM_CODE_HASHES || '').split(',').map((entry) => entry.trim().toLowerCase()).filter(Boolean);
-  return [...REDEEM_CODE_HASHES, ...extra];
+  return extra.filter((entry) => /^[a-f0-9]{64}$/.test(entry));
 }
 async function redeem(request, env, now) {
   const { user, rotated } = await requireSession(env, request, { now });
@@ -321,7 +347,7 @@ export async function roomGate(request, env, input, now = Date.now()) {
   if (!found) return null;
   const game = gameOf(input);
   const [subscriptions, trials] = await Promise.all([db.subscriptionsOf(env, found.user.id), db.trialsOf(env, found.user.id)]);
-  const premium = premiumActive(premiumOf(subscriptions, now), now);
+  const premium = premiumActive(premiumOf(subscriptions, now, env), now);
   if (!premium && trials[game]) failure('PLUS_REQUIRED');
   return { userId: found.user.id, game, premium };
 }

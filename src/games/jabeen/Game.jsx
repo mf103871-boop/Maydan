@@ -34,14 +34,14 @@ export function SetupOptions({ storage, api }) {
   );
 }
 
-function Stage({ state, timer, tilt, onAnswer, onEnd, flash }) {
+function Stage({ state, timer, tilt, onAnswer, onEnd, flash, blocked }) {
   const tiltLive = state.control === 'auto' && tilt.supported;
   const danger = timer.left <= 10;
   const okCount = state.results.filter((r) => r.ok).length;
   // التظليل الأحمر في آخر 3 ثوانٍ: عنصر ثابت في body (fx.vignette) يُطفأ عند إزالة المسرح.
   useEffect(() => { vignette(timer.running && timer.left > 0 && timer.left <= 3); return () => vignette(false); }, [timer.left, timer.running]);
   return (
-    <div className={`jabeen-stage ${flash}`} role="group" aria-label="جولة على جبينك">
+    <div className={`jabeen-stage ${flash}`} role="group" aria-label="جولة على جبينك" inert={blocked} aria-hidden={blocked || undefined}>
       <div className="jabeen-stage-top">
         {/* في ثواني الخطر يُعاد تركيب الرقم كل ثانية (key) فيُلكم ثم ينبض */}
         <span className={`num ${danger ? 'is-danger' : ''}`} dir="ltr" key={danger ? `t${timer.left}` : 'n'}>{timer.left}</span>
@@ -82,6 +82,7 @@ export function Game({ api, players, onExit }) {
   };
 
   const answer = (ok) => {
+    if (!landscape || !timer.running) return;
     api.sound.play(ok ? 'correct' : 'wrong');
     api.haptics.vibrate(ok ? 'success' : 'light');
     setFlash(ok ? 'is-good' : 'is-skip');
@@ -92,7 +93,7 @@ export function Game({ api, players, onExit }) {
   };
 
   // نسخة واحدة من مستشعر الميلان: الإذن والقراءة في المكان نفسه.
-  const tilt = useTilt({ enabled: state.control === 'auto' && state.phase === 'play', onDecision: (d) => answer(d === 'correct') });
+  const tilt = useTilt({ enabled: state.control === 'auto' && state.phase === 'play' && landscape && timer.running, onDecision: (d) => answer(d === 'correct') });
 
   useEffect(() => { api.setInGame(state.phase !== 'over'); }, [state.phase, api]);
   useEffect(() => () => clearTimeout(flashTimer.current), []);
@@ -103,7 +104,14 @@ export function Game({ api, players, onExit }) {
     window.addEventListener('orientationchange', check);
     return () => { window.removeEventListener('resize', check); window.removeEventListener('orientationchange', check); };
   }, []);
-  useEffect(() => { if (state.phase === 'play') { timer.reset(state.seconds); timer.start(); } else if (timer.running) timer.pause(); }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Reset once per turn. Rotation only pauses/resumes the remaining time.
+  useEffect(() => { if (state.phase === 'play') timer.reset(state.seconds); else timer.pause(); }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (state.phase === 'play' && landscape && !document.hidden) timer.start();
+    else timer.pause();
+  }, [state.phase, landscape]); // eslint-disable-line react-hooks/exhaustive-deps
+  // A browser visibility resume must not restart behind the rotate prompt.
+  useEffect(() => { if (!landscape && timer.running) timer.pause(); }, [landscape, timer.running, timer.pause]);
   useEffect(() => {
     if (state.phase !== 'over') return;
     api.storage.set(SEEN_KEY, trimSeen(source.seen(), 1200));
@@ -122,7 +130,7 @@ export function Game({ api, players, onExit }) {
           <h2>دور {entrant.name}</h2>
           <p className="muted">فئة «{state.categoryName}» · {state.seconds} ثانية</p>
           <p className="muted">ضع الجوال على جبينك والشاشة نحو الآخرين. هم يصفون وأنت تخمّن.</p>
-          {tilt.needsPermission && <p className="jabeen-perm">سيطلب سفاري إذن استخدام مستشعر الحركة عند الضغط. إن رفضت، ستعمل اللعبة باللمس.</p>}
+          {tilt.needsPermission && <p className="jabeen-perm">قد يطلب جهازك إذن استخدام مستشعر الحركة عند البدء. إن رفضت، يمكنك اللعب باللمس.</p>}
           {exhausted && <p className="jabeen-perm">انتهت كلمات «{state.categoryName}» — سنعيد خلطها من جديد ليكمل كل لاعب دوره.</p>}
           <Button variant="accent" size="lg" full className="is-armed" onClick={async () => { await tilt.request(); api.sound.play('whoosh'); const draw = drawForTurn(); dispatch({ type: 'BEGIN', item: draw.item, recycled: draw.recycled }); }}>ابدأ الجولة</Button>
         </div>
@@ -130,7 +138,7 @@ export function Game({ api, players, onExit }) {
       {state.phase === 'play' && (
         <>
           {!landscape && <div className="jabeen-rotate" style={{ animation: 'none' }}><div><div className="big" aria-hidden="true">📱</div><p style={{ marginTop: 14, fontWeight: 800 }}>أدر الجوال أفقيًا</p><p className="muted">أسهل في القراءة من بعيد.</p><Button variant="ghost" onClick={() => setLandscape(true)}>تخطي هذا التنبيه</Button></div></div>}
-          <Stage state={state} timer={timer} tilt={tilt} flash={flash} onAnswer={answer} onEnd={() => { timer.pause(); dispatch({ type: 'TIME_UP' }); }} />
+          <Stage state={state} timer={timer} tilt={tilt} flash={flash} blocked={!landscape} onAnswer={answer} onEnd={() => { timer.pause(); dispatch({ type: 'TIME_UP' }); }} />
         </>
       )}
       {state.phase === 'review' && (

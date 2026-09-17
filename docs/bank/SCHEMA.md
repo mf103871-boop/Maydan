@@ -126,7 +126,7 @@ export const CATS = [geo];
 | `a` | نص | إلزامي إلا في `order` و`odd` و`grid`؛ ≤ 6 كلمات (`maxAnswerWords`) |
 | `qid` | نص | `bank:validate` يقبل الصيغة الجديدة `<id>-<tier>-<nnn>` (`^[a-z][a-z0-9]*-(200\|400\|600\|800\|1000)-\d{3}$` ويجب أن تبدأ بمعرّف الفئة) أو القديمة 12 خانة ست عشرية؛ فريد عبر البنك. اختلاف شريحة المعرّف عن `p` **تحذير** لا خطأ (مقبول بعد إعادة التصنيف). الاختبارات تقبل الصيغتين |
 | `type` | نص | غيابه = سؤال نصي. المعروف للكود والفاحص (20 نوعًا): `image audio video diff truefalse choice scramble complete common hints code emoji order odd grid flag zoom pic sound closest`؛ غيرها خطأ |
-| `effect` | نص | لصور `image`: `none` (افتراضي) · `zoom` · `blur` · `silhouette` · `reveal` (12 قطعة تُكشف قطعة قطعة) · `jumble` (12 قطعة مبعثرة بترتيب ثابت مشتق من `qid`) |
+| `effect` | نص | لصور `image`: `none` (افتراضي) · `zoom` · `blur` · `silhouette` (شكل مع خلفية شفافة فعلًا) · `shadow` (صورة معتمة مع تفاصيل مرئية) · `reveal` (12 قطعة تُكشف قطعة قطعة) · `jumble` (12 قطعة مبعثرة بترتيب ثابت مشتق من `qid`) |
 | `origin` | نص | نقطة التقريب لـ `effect: "zoom"` ولنوع `zoom`، مثل `"30% 35%"`؛ الافتراضي `"50% 50%"` |
 | `spot` | كائن | لـ `diff`: `{ "x": 50, "y": 50, "r": 14 }` نِسَب مئوية 0–100، يظهر عند الكشف |
 | `alt` | مصفوفة نصوص | إجابات بديلة؛ الفاحص يوجب أن تكون مصفوفة نصوص غير فارغة إن وُجدت. تظهر للمضيف بعد الكشف: «يُقبل أيضًا: …» |
@@ -201,8 +201,8 @@ export const CATS = [geo];
 - الامتدادات المقبولة: صور `webp png jpg jpeg gif avif svg` · صوت
   `mp3 m4a aac ogg opus wav` · فيديو `mp4 webm mov`.
 - الميزانيات تُقرأ من `bank-status.json` (`mediaBudget`) ويفرضها
-  `bank:validate`: صورة ≤ 30KB، صوت ≤ 50KB (الفيديو بلا حدّ لكل ملف)، ومجموع
-  ملفات الفئة ≤ 4MB.
+  `bank:validate`: صورة ≤ 256KB، صوت ≤ 160KB (الفيديو بلا حدّ لكل ملف)، ومجموع
+  ملفات الفئة ≤ 64MB.
 - فهرس النسب `media/<category-id>/_sources.json`: يكتبه `npm run media:fetch`
   لكل ملف جُلب (المصدر، المؤلف، الترخيص، الحجم، تاريخ الجلب) لمراجعة الحقوق؛
   الإسناد الذي تعرضه اللعبة هو كائن `media` داخل السؤال.
@@ -351,7 +351,7 @@ export const CATS = [geo];
 | `npm run bank:status -- <id>` | يعرض حالة الفئة وأعدادها الفعلية وترتيبها ووسائطها، وينبّه إن خالفت `counts` الملف | 0 · 2 لفئة غير مسجّلة |
 | `npm run bank:status -- <id> done\|pending` | يحدّث `counts` و`status` و`doneAt` من الملف الفعلي | 0 · 2 عند خطأ |
 | `node scripts/bank.mjs index` | يعيد توليد `index.js` فقط | 0 |
-| `npm run media:fetch -- <id> "<query>" <image\|audio> --qid <qid>` | بحث في كومنز ثم Openverse ثم ناسا ثم أرشيف الإنترنت بفلتر ترخيص، تنزيل، معالجة بـ `sharp`/`ffmpeg` (webp 640px ≤ 30KB أو mp3 أحادي ≤ 8 ث ≤ 50KB)، حفظ `media/<id>/<qid>.webp\|.mp3`، تسجيل الإسناد في `_sources.json`، وطباعة كائن `media` الجاهز للصق. خيارات: `--list`، `--pick n`، `--from <File:…>`، `--source`، `--suffix n`، `--force`، `--json` | 0 نجاح · 1 لا مرشح مقبول/تجاوز الميزانية · 2 استعمال/أدوات |
+| `npm run media:fetch -- <id> "<query>" <image\|audio> --qid <qid>` | بحث في كومنز ثم Openverse ثم ناسا ثم أرشيف الإنترنت بفلتر ترخيص، تنزيل، معالجة بـ `sharp`/`ffmpeg` (webp 1280px ≤ 256KB أو mp3 أحادي ≤ 8 ث ≤ 160KB)، حفظ `media/<id>/<qid>.webp\|.mp3`، تسجيل الإسناد في `_sources.json`، وطباعة كائن `media` الجاهز للصق. خيارات: `--list`، `--pick n`، `--from <File:…>`، `--source`، `--suffix n`، `--force`، `--json` | 0 نجاح · 1 لا مرشح مقبول/تجاوز الميزانية · 2 استعمال/أدوات |
 | `npm test` | كل `tests/**/*.test.js` | 1 عند أي فشل |
 | `npm run build` | البناء + فحص الوسائط (القسم 4) + نسخ `media/` | 1 عند فشل |
 | `node scripts/demo-packs.mjs [--remove]` | يركّب/يزيل ست حزم تجريبية تغطي الأنواع كلها (غير منشورة، مستثناة من أرشيف الإصدار) ويسجّلها مؤقتًا في `bank-status.json` | 0 |

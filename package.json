@@ -41,9 +41,10 @@
     "react-dom": "19.2.5"
   },
   "devDependencies": {
-    "esbuild": "^0.24.2",
+    "esbuild": "0.25.12",
     "ffmpeg-static": "^5.3.0",
     "miniflare": "5.20260911.0-alpha",
+    "playwright": "1.63.0",
     "sharp": "^0.35.4",
     "wrangler": "4.131.1",
     "ws": "8.21.3"
