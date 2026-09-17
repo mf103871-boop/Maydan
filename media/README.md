@@ -35,7 +35,7 @@ npm run media:fetch -- sound "lion roar" audio --qid sound-200-001
 
 المصادر: Wikimedia Commons ثم Openverse ثم NASA ثم Internet Archive، بفلتر
 ترخيص (CC0 / ملك عام / CC BY / CC BY-SA فقط). المعالجة تلقائية: WebP بأطول ضلع
-640px ≤ 30KB، أو MP3 أحادي 48kbps ≤ 8 ثوانٍ ≤ 50KB.
+640px ≤ 70KB، أو MP3 أحادي 48kbps ≤ 8 ثوانٍ ≤ 60KB.
 
 ## ما يفحصه البناء
 
@@ -50,8 +50,8 @@ npm run media:fetch -- sound "lion roar" audio --qid sound-200-001
 | صوت | `.mp3` أو `.m4a` | مدعومة في كل المتصفحات |
 | فيديو | `.mp4` (H.264) | يعمل على آيفون وأندرويد |
 
-الحدود التي يفرضها `bank:validate`: صورة ≤ 30KB (أطول ضلع 640px)، صوت ≤ 50KB
-(≤ 8 ثوانٍ)، والفئة كلها ≤ 4MB — سؤال يتجاوزها يوقف البناء.
+الحدود التي يفرضها `bank:validate`: صورة ≤ 70KB (أطول ضلع 640px)، صوت ≤ 60KB
+(≤ 8 ثوانٍ)، والفئة كلها ≤ 14MB — سؤال يتجاوزها يوقف البناء.
 
 ## الإنترنت
 

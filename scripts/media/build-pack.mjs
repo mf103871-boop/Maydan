@@ -14,7 +14,12 @@ import { bestZoomOrigin, silhouetteCheck, blurCheck } from './analyze.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..');
 const TIERS = [200, 400, 600, 800, 1000];
-const BUDGET = { image: 30 * 1024, audio: 50 * 1024 };
+// الحدود تُقرأ من bank-status.json فلا تتفرّق النسخ بين المولّد والفاحص.
+const STATUS = JSON.parse(await readFile(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
+const BUDGET = {
+  image: (STATUS.mediaBudget?.imageKB ?? 70) * 1024,
+  audio: (STATUS.mediaBudget?.audioKB ?? 60) * 1024,
+};
 const CONCURRENCY = 4;
 
 const pad = (n) => String(n).padStart(3, '0');

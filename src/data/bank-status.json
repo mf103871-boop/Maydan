@@ -11,9 +11,9 @@
   "maxQuestionWords": 22,
   "maxAnswerWords": 6,
   "mediaBudget": {
-    "imageKB": 30,
-    "audioKB": 50,
-    "categoryMB": 4
+    "imageKB": 70,
+    "audioKB": 60,
+    "categoryMB": 14
   },
   "categories": {
     "general": {
