@@ -357,7 +357,7 @@ export function commonsRedirect(title, info) {
   return `«${asked}» تحويلة في كومنز إلى ملف آخر: «${actual}» — أعد الأمر بالاسم الحقيقي إن كان هو المقصود`;
 }
 
-async function fetchCommonsFile(title, kind) {
+export async function fetchCommonsFile(title, kind) {
   const data = await fetchJson(commonsUrl({ titles: title }), 'كومنز');
   const page = data.query?.pages?.[0];
   if (!page || page.missing || !page.imageinfo) throw new NoCandidateError(`لا يوجد ملف بهذا الاسم في كومنز: ${title}`);
@@ -516,7 +516,7 @@ async function fetchFrom(from, kind) {
 // ---------------------------------------------------------------- المعالجة
 
 // sharp يُحمَّل عند الحاجة فقط: --list والصوت لا يحتاجانه، وتعطّله يُبلَّغ بسطر واحد لا بتتبّع.
-async function loadSharp() {
+export async function loadSharp() {
   try {
     return (await import('sharp')).default;
   } catch (error) {
@@ -538,7 +538,7 @@ async function processImage(sharp, input, maxBytes) {
   throw new BudgetError(`الصورة ${fmtKb(last.bytes)} تتجاوز الميزانية ${fmtKb(maxBytes)} حتى بعد كل التخفيضات`);
 }
 
-async function resolveFfmpeg() {
+export async function resolveFfmpeg() {
   const candidates = [];
   if (process.env.FFMPEG_PATH) candidates.push(process.env.FFMPEG_PATH);
   try { candidates.push((await import('ffmpeg-static')).default); } catch { /* غير مثبّت؛ نجرّب PATH */ }
@@ -579,7 +579,7 @@ async function processAudio(ffmpeg, input, output, maxBytes) {
 const audioExt = (url) => (new URL(url).pathname.match(/\.(mp3|ogg|oga|opus|wav|flac|m4a|aac|webm)$/i) || ['', 'bin'])[1];
 
 // ينزّل المرشح ويعالجه ويكتب الملف النهائي. يعيد { bytes, width, height, durationSec }.
-async function acquire(c, { kind, ffmpeg, sharp, maxBytes, outPath }) {
+export async function acquire(c, { kind, ffmpeg, sharp, maxBytes, outPath }) {
   if (c.provider === 'archive' && !c.downloadUrl) await resolveArchiveFile(c);
   if (c.reject) throw new NoCandidateError(c.reject);
   const buffer = kind === 'audio'
@@ -608,7 +608,7 @@ async function acquire(c, { kind, ffmpeg, sharp, maxBytes, outPath }) {
 
 // يقرأ سجل النسب ويتحقق أنه مصفوفة JSON. يُستدعى قبل أي عمل شبكي (سجل تالف = لا نبدأ)
 // ثم مرة أخرى عند الحفظ ليُبنى التحديث على أحدث نسخة على القرص.
-async function readSourceIndex(dir) {
+export async function readSourceIndex(dir) {
   const file = path.join(dir, '_sources.json');
   const rel = path.relative(ROOT, file);
   let text;
@@ -627,7 +627,7 @@ async function readSourceIndex(dir) {
   }
 }
 
-async function saveSourceRecord(dir, record) {
+export async function saveSourceRecord(dir, record) {
   const { file, list } = await readSourceIndex(dir);
   const i = list.findIndex((r) => r.file === record.file);
   if (i === -1) list.push(record); else list[i] = record;
