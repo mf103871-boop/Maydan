@@ -58,16 +58,18 @@ export function collectCredits(categories) {
         if (!entry || typeof entry !== 'object' || !entry.src) continue;
         const url = resolveMedia(entry.src, category.id);
         if (!url || seen.has(url)) continue;
+        const generated = entry.provenance?.kind === 'ai-generated';
         seen.set(url, {
           url,
           category: category.id,
           categoryName: category.name,
           type: entry.type || 'image',
           title: entry.title || '',
-          sourceUrl: entry.sourceUrl || '',
+          sourceUrl: generated ? '' : entry.sourceUrl || '',
           author: entry.author || '',
-          license: entry.license || '',
-          licenseUrl: entry.licenseUrl || '',
+          license: generated ? '' : entry.license || '',
+          licenseUrl: generated ? '' : entry.licenseUrl || '',
+          ...(generated ? { generated: true, disclosure: entry.disclosure || 'وسيط مولّد بالذكاء الاصطناعي' } : {}),
         });
       }
     }

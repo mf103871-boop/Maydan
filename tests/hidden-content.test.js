@@ -8,16 +8,16 @@ const pack = JSON.parse(await readFile(new URL('../src/data/categories/hidden.js
 const graphemes = new Intl.Segmenter('ar', { granularity: 'grapheme' });
 const fingerprint = (value) => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 
-test('البطة المخفية: 240 شبكة أصلية وستة مجالات مع 48 في كل شريحة', () => {
+test('البطة المخفية: 40 شبكة أصلية وثمانية مجالات مع 8 في كل شريحة', () => {
   assert.equal(pack.id, 'hidden');
   assert.equal(pack.name, 'البطة المخفية');
-  assert.equal(pack.qs.length, 240);
-  assert.equal(new Set(pack.qs.map((q) => q.qid)).size, 240);
+  assert.equal(pack.qs.length, 40);
+  assert.equal(new Set(pack.qs.map((q) => q.qid)).size, 40);
   assert.deepEqual(new Set(pack.qs.map((q) => q.topic)), new Set(HIDDEN_THEMES.map((theme) => theme.topic)));
   for (const { p } of HIDDEN_TIERS) {
     const questions = pack.qs.filter((q) => q.p === p);
-    assert.equal(questions.length, 48);
-    for (const { topic } of HIDDEN_THEMES) assert.equal(questions.filter((q) => q.topic === topic).length, 8);
+    assert.equal(questions.length, 8);
+    for (const { topic } of HIDDEN_THEMES) assert.equal(questions.filter((q) => q.topic === topic).length, 1);
   }
   assert.deepEqual(pack.qs.map((q) => q.qid), [...pack.qs].sort((a, b) => a.p - b.p || a.qid.localeCompare(b.qid)).map((q) => q.qid));
 });
@@ -49,9 +49,9 @@ test('البطة المخفية: هدف واحد فقط وشكل مستطيل و
 });
 
 test('البطة المخفية: اختلاف الشبكات ليس مجرد نقل الهدف فوق الخلفية نفسها', () => {
-  assert.equal(new Set(pack.qs.map((q) => fingerprint(q.grid))).size, 240);
+  assert.equal(new Set(pack.qs.map((q) => fingerprint(q.grid))).size, 40);
   const arrangementsWithoutTarget = pack.qs.map((q) => fingerprint(q.grid.map((row) => row.map((cell) => cell === TARGET ? null : cell))));
-  assert.equal(new Set(arrangementsWithoutTarget).size, 240);
+  assert.equal(new Set(arrangementsWithoutTarget).size, 40);
   for (let i = 0; i < pack.qs.length; i += 1) {
     const first = pack.qs[i];
     for (const second of pack.qs.slice(i + 1).filter((q) => q.p === first.p && q.topic === first.topic)) {
@@ -75,17 +75,17 @@ test('البطة المخفية: مواقع الهدف تشمل الزوايا �
       positions.push(index);
       quadrants[targetQuadrant(row, column, side)] += 1;
     }
-    assert.deepEqual(quadrants, [12, 12, 12, 12], String(p));
+    assert.deepEqual(quadrants, [2, 2, 2, 2], String(p));
     for (const corner of [0, side - 1, side * (side - 1), side * side - 1]) assert.ok(positions.includes(corner), `${p}: زاوية غير مستعملة`);
     assert.ok(positions.some((index) => Math.floor(index / side) > 0 && Math.floor(index / side) < side - 1 && index % side > 0 && index % side < side - 1));
-    assert.ok(new Set(positions).size >= Math.min(40, side * side), `${p}: مواقع متكررة أكثر من اللازم`);
+    assert.equal(new Set(positions).size, 8, `${p}: مواقع متكررة`);
     for (const { topic } of HIDDEN_THEMES) {
       const perTopic = [0, 0, 0, 0];
       for (const q of pack.qs.filter((question) => question.p === p && question.topic === topic)) {
         const index = q.grid.flat().indexOf(TARGET);
         perTopic[targetQuadrant(Math.floor(index / side), index % side, side)] += 1;
       }
-      assert.deepEqual(perTopic, [2, 2, 2, 2], `${p}/${topic}`);
+      assert.equal(perTopic.reduce((sum,n)=>sum+n,0), 1, `${p}/${topic}`);
     }
   }
 });

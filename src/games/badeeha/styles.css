@@ -101,16 +101,26 @@
   .m-filter-row::-webkit-scrollbar { display:none; }
   .m-filter-row button { white-space:nowrap; flex:1; min-width:max-content; }
   .m-category-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:9px 0; }
-  .m-category-picker { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+  .m-category-picker { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
   .m-category-pick { min-width:0; position:relative; border:1px solid var(--line); border-radius:17px; background:rgba(255,249,237,.86); overflow:hidden; }
   .m-category-pick.selected { border:2px solid var(--gold); background:linear-gradient(150deg,rgba(255,249,237,.9),rgba(255,249,237,.92)); box-shadow:0 8px 18px rgba(91,61,36,0.068); }
   .m-category-pick:focus-within,.m-category-pick.selected:focus-within { box-shadow:inset 0 0 0 3px var(--focus),0 8px 18px rgba(91,61,36,0.068); }
-  .m-category-main { width:100%; min-height:116px!important; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; padding:27px 6px 9px; color:var(--text); }
-  .m-category-main b { max-width:100%; font-size:14px; line-height:1.3; overflow-wrap:anywhere; }
-  .m-category-main small { color:#795294; font-size:12px; }
+  .m-category-main { width:100%; height:100%; min-height:116px!important; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:4px; padding:0 0 10px; color:var(--text); }
+  .m-category-main b { max-width:calc(100% - 16px); min-height:2.6em; display:grid; place-items:center; margin:5px 8px 0; font-size:14px; line-height:1.3; overflow-wrap:anywhere; }
+  .m-category-main small { margin-top:auto; color:#795294; font-size:12px; }
   .m-category-icon { font-size:30px; filter:drop-shadow(0 5px 10px rgba(91,61,36,0.114)); }
-  /* حزمة ضمن «ميدان بلس»: خفوت خفيف وقرص بنفسجي صغير؛ البلاطة تبقى قابلة للنقر لتفتح الجدار. */
-  .m-category-pick.is-locked .m-category-main { opacity:.65 }
+  .m-category-cover { position:relative; display:block; width:100%; flex:none; overflow:hidden; background:#F3E9DD; border-bottom:1px solid var(--line); }
+  /* Percentage padding preserves the 4:3 space on older iOS versions too. */
+  .m-category-cover::before { content:""; display:block; padding-top:75%; }
+  .m-category-cover-fallback { position:absolute; inset:0; display:grid; place-items:center; font-size:42px; background:linear-gradient(145deg,#FFFAEE,#EDE1ED); }
+  .m-category-cover img { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .18s ease; }
+  .m-category-cover[data-state="ready"] img { opacity:1; }
+  .m-category-cover[data-state="ready"] .m-category-cover-fallback { visibility:hidden; }
+  .m-category-pick .m-favorite { display:grid; place-items:center; }
+  .m-category-pick .m-favorite > span { display:grid; place-items:center; width:32px; height:32px; border-radius:50%; color:#735010; background:rgba(255,252,244,.96); border:1px solid #E6D4BE; box-shadow:0 2px 6px #35254715; }
+  .m-category-pick .m-order-badge { z-index:2; box-shadow:0 1px 5px #35254722; }
+  /* The explicit Plus badge communicates locking while the cover stays readable. */
+  .m-category-pick.is-locked .m-category-main { opacity:1 }
   .m-lock { display:inline-flex; align-items:center; gap:3px; padding:1px 7px; border-radius:999px; background:color-mix(in srgb,var(--purple) 18%,transparent); border:1px solid color-mix(in srgb,var(--purple) 40%,transparent); color:var(--purple); font-size:10.5px; font-weight:900; white-space:nowrap; }
   .m-order-badge { position:absolute; inset-block-start:7px; inset-inline-end:7px; width:26px; height:26px; border-radius:50%; display:grid; place-items:center; color:#111827; background:var(--gold); font-size:13px; font-weight:900; }
   .m-favorite { position:absolute; inset-block-start:0; inset-inline-start:0; z-index:2; width:48px; height:48px; color:#8D6017; background:transparent!important; border:0!important; font-size:23px; }
@@ -272,8 +282,13 @@
   @media (min-width:720px) {
     .m-board-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .m-team-scores { grid-template-columns:repeat(4,minmax(0,1fr)); }
-    .m-category-picker { grid-template-columns:repeat(5,minmax(0,1fr)); }
     .m-team-inputs { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  }
+  @media (min-width:600px) and (max-width:899px) {
+    .m-category-picker { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  }
+  @media (min-width:900px) {
+    .m-category-picker { grid-template-columns:repeat(5,minmax(0,1fr)); }
   }
   @media (max-width:520px) {
     .m-mode-grid { grid-template-columns:1fr; }

@@ -11,7 +11,8 @@
 //   node scripts/bank.mjs status <id> done|pending   يحدّث الحالة والأعداد من الملف الفعلي
 //
 // القواعد كلها في docs/bank/RUBRIC.md، وبنية الملفات في docs/bank/SCHEMA.md.
-// الحدود تُقرأ من src/data/bank-status.json ولا تُخفَّض من هنا.
+// سياسة العدد والتحرير تُقرأ من src/data/bank-status.json؛ الإصدار المنتقى
+// يفرض ثمانية بالضبط لكل شريحة بتفويض المالك، لا حدًا أدنى لبنك مفتوح.
 import { readFile, writeFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -311,7 +312,8 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
   try { retiredQids = await readRetiredQids(root); }
   catch (error) { return { errors: [`سجل المعرّفات المحذوفة: ${error.message}`], warnings, placeholders, categories: [] }; }
   const tiers = status.tiers || [200, 400, 600, 800, 1000];
-  const tierMin = status.tierMin || 48;
+  const tierCount = Number.isInteger(status.tierCount) && status.tierCount > 0 ? status.tierCount : null;
+  const tierMin = status.tierMin || 8;
   const maxQ = status.maxQuestionWords || 22;
   const maxA = status.maxAnswerWords || 6;
   const budget = status.mediaBudget || { imageKB: 30, audioKB: 50, categoryMB: 4 };
@@ -416,6 +418,29 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
         const idTier = Number(qid.split('-')[1]);
         if (idTier !== q.p) qwarn(`الخانة في المعرّف (${idTier}) تختلف عن p (${q.p}) — مقبول بعد إعادة التصنيف`);
       }
+      if (status.qidRange) {
+        const sequence = Number(qid.split('-')[2]);
+        if (!QID_NEW.test(qid) || Number(qid.split('-')[1]) !== q.p
+            || sequence < status.qidRange.start || sequence > status.qidRange.end) {
+          qerr(`معرّف البنك المنتقى يجب أن يكون ${id}-${q.p}-${status.qidRange.start}..${status.qidRange.end}`);
+        }
+      }
+      if (status.difficultyTargets) {
+        const target = status.difficultyTargets[q.p];
+        if (!Number.isFinite(target) || target <= 0 || target >= 1 || q.difficultyTarget !== target) {
+          qerr('difficultyTarget لا يطابق الهدف التحريري للشريحة (ليس معدل نجاح مقاسًا)');
+        }
+      }
+      if (status.requireSources) {
+        const rawSources = q.source ?? q.sourceUrl;
+        const sources = Array.isArray(rawSources) ? rawSources : [rawSources];
+        if (!sources.length || sources.some((source) => typeof source !== 'string' || !source.trim())) qerr('بلا مصدر للمراجعة');
+        else for (const source of sources) {
+          if (/^https:\/\/[^\s]+$/.test(source)) continue;
+          if (!/^docs\/bank\/[a-zA-Z0-9_./-]+\.(?:md|json)$/.test(source)
+              || source.split('/').includes('..') || !(await exists(path.join(root, source)))) qerr(`مصدر مراجعة غير صالح: ${source}`);
+        }
+      }
 
       // النوع
       const type = q.type;
@@ -433,7 +458,7 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
       for (const reason of fabricatedContentReasons(q)) qerr(reason);
 
       // حقول الجودة (إلزامية للفئات المكتملة)
-      if (done) {
+      if (done || tierCount) {
         if (q.verified !== true) qerr('verified ليست true');
         if (!q.topic || !String(q.topic).trim()) qerr('بلا topic');
       }
@@ -489,10 +514,24 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
         if (typeof entry === 'string') {
           qerr(`media نص مجرد؛ المطلوب كائن فيه src وtitle وsourceUrl وauthor وlicense وlicenseUrl${where}`);
         } else {
-          for (const k of ['type', 'title', 'sourceUrl', 'author', 'license', 'licenseUrl']) {
+          const generated = entry.provenance?.kind === 'ai-generated';
+          for (const k of generated ? ['type', 'title', 'author', 'disclosure'] : ['type', 'title', 'sourceUrl', 'author', 'license', 'licenseUrl']) {
             if (!entry[k] || !String(entry[k]).trim()) qerr(`media بلا ${k}${where}`);
           }
-          if (entry.license && !isAllowedLicense(entry.license)) qerr(`ترخيص مرفوض: ${entry.license}${where}`);
+          if (generated) {
+            if (EXTERNAL.test(src) || /^data:/i.test(src)) qerr(`الوسيط المولّد يحتاج ملفًا محليًا وسجل إنشاء${where}`);
+            if (entry.license || entry.licenseUrl) qerr(`لا يُنسب للوسيط المولّد ترخيص تصوير خارجي${where}`);
+            if (!/ذكاء اصطناعي|ذكاء الاصطناعي|AI.generated/i.test(String(entry.disclosure || ''))) qerr(`disclosure يجب أن يوضح أن الوسيط مولّد بالذكاء الاصطناعي${where}`);
+            const provenance = entry.provenance;
+            if (typeof provenance.tool !== 'string' || !provenance.tool.trim()) qerr(`provenance بلا أداة إنشاء${where}`);
+            if (!/^\d{4}-\d{2}-\d{2}(?:T.*)?$/.test(String(provenance.createdAt || '')) || !Number.isFinite(Date.parse(provenance.createdAt))) qerr(`provenance بلا تاريخ إنشاء صالح${where}`);
+            const record = provenance.record;
+            if (typeof record !== 'string' || !/^docs\/bank\/[a-zA-Z0-9_./-]+\.json$/.test(record)
+                || record.split('/').includes('..') || !(await exists(path.join(root, record)))) qerr(`provenance يحتاج سجل إنشاء محليًا موجودًا${where}`);
+          } else {
+            if (entry.provenance?.kind) qerr(`نوع provenance غير مدعوم: ${entry.provenance.kind}${where}`);
+            if (entry.license && !isAllowedLicense(entry.license)) qerr(`ترخيص مرفوض: ${entry.license}${where}`);
+          }
           const expectKind = type === 'audio' ? 'audio' : type === 'video' ? 'video' : 'image';
           if (entry.type && entry.type !== expectKind) qerr(`media.type «${entry.type}» لا يطابق نوع السؤال ${type}${where}`);
         }
@@ -575,15 +614,16 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
 
     // الحدود
     const total = qs.length;
-    if (done) {
-      for (const t of tiers) if (counts[t] < tierMin) err(`خانة ${t}: ${counts[t]} سؤالًا والحد ${tierMin}`);
+    if (tierCount) for (const t of tiers) if (counts[t] !== tierCount) err(`خانة ${t}: ${counts[t]} سؤالًا والمطلوب ${tierCount} بالضبط`);
+    if (done || tierCount) {
+      if (!tierCount) for (const t of tiers) if (counts[t] < tierMin) err(`خانة ${t}: ${counts[t]} سؤالًا والحد ${tierMin}`);
       if (topics.size < 6 || topics.size > 10) err(`عدد المواضيع الفرعية ${topics.size} والمطلوب من 6 إلى 10`);
       for (const t of tiers) {
         const m = topicByTier.get(t);
         for (const [topic, n] of m) if (counts[t] && n / counts[t] > 0.25 + 1e-9) err(`خانة ${t}: موضوع «${topic}» يشغل ${Math.round((n / counts[t]) * 100)}% والحد 25%`);
       }
       if (meta) for (const t of tiers) if (Number(meta.counts?.[t]) !== counts[t]) err(`bank-status: خانة ${t} مسجّلة ${meta.counts?.[t]} والفعلي ${counts[t]}`);
-      if (meta && !meta.doneAt) err('bank-status: الفئة done بلا doneAt');
+      if (done && meta && !meta.doneAt) err('bank-status: الفئة done بلا doneAt');
     } else if (total < 24) {
       err(`${total} سؤالًا فقط والحد الأدنى لملف موجود 24`);
     } else if (meta) {
@@ -699,13 +739,14 @@ export async function bankReport(root = ROOT) {
   for (const id of ids) if (!status.categories[id]) rows.push({ order: 9999, id, name: '(غير مسجّلة)', status: 'unknown', hasFile: true, media: false, counts: {}, total: 0, note: 'ملف بلا سجل في bank-status.json' });
   const done = rows.filter((r) => r.status === 'done').length;
   const questions = rows.reduce((s, r) => s + r.total, 0);
-  return { tiers, tierMin: status.tierMin, rows, done, pending: rows.length - done, questions };
+  return { tiers, tierMin: status.tierMin, tierCount: status.tierCount, difficultyTargets: status.difficultyTargets, difficultyCalibration: status.difficultyCalibration, rows, done, pending: rows.length - done, questions };
 }
 
 export function formatReport(r) {
   const pad = (s, n, right = false) => { const str = String(s); return right ? str.padStart(n) : str.padEnd(n); };
   const lines = [];
-  lines.push(`بنك بَديهة — ${r.rows.length} فئة · ${r.done} مكتملة · ${r.pending} قيد الانتظار · ${r.questions} سؤالًا · الحد ${r.tierMin}/خانة`);
+  lines.push(`بنك بَديهة — ${r.rows.length} فئة · ${r.done} مكتملة · ${r.pending} قيد الانتظار · ${r.questions} سؤالًا · ${r.tierCount ? `${r.tierCount} بالضبط` : `الحد ${r.tierMin}`}/خانة`);
+  if (r.difficultyTargets) lines.push('نسب الإجابة الصحيحة أهداف تحريرية للجمهور المستهدف، وليست نتائج قياس على لاعبين.');
   lines.push('');
   lines.push(`${pad('#', 3, true)}  ${pad('id', 16)} ${r.tiers.map((t) => pad(t, 5, true)).join(' ')} ${pad('مج', 5, true)}  ${pad('حالة', 8)} ${pad('وسائط', 6)} الاسم`);
   for (const row of r.rows) {
@@ -793,7 +834,7 @@ async function main(argv) {
       const total = Object.values(counts).reduce((n, v) => n + Number(v || 0), 0);
       console.log(`${id} — ${meta.name}${meta.icon ? ` ${meta.icon}` : ''}`);
       console.log(`  الحالة: ${meta.status}${meta.doneAt ? ` منذ ${meta.doneAt}` : ''}${actual ? '' : ' · لا ملف للفئة بعد'}`);
-      console.log(`  الخانات: ${tiers.map((t) => `${t}:${counts[t] ?? 0}`).join(' ')} · المجموع ${total} · الحد ${status.tierMin || 48}/خانة`);
+      console.log(`  الخانات: ${tiers.map((t) => `${t}:${counts[t] ?? 0}`).join(' ')} · المجموع ${total} · ${status.tierCount ? `${status.tierCount} بالضبط` : `الحد ${status.tierMin || 8}`}/خانة`);
       console.log(`  الترتيب: ${meta.order} · وسائط: ${meta.media ? 'نعم' : 'لا'}${meta.style ? ` · نمط: ${meta.style}` : ''}${meta.note ? ` · ${meta.note}` : ''}`);
       if (actual && meta.counts && tiers.some((t) => Number(meta.counts[t]) !== actual[t])) {
         console.log('  ⚠ أعداد bank-status لا تطابق الملف — شغّل: npm run bank:status -- ' + id + ' ' + meta.status);

@@ -6,8 +6,8 @@ const pack = JSON.parse(await readFile(new URL('../src/data/categories/beforeaft
 const evidence = JSON.parse(await readFile(new URL('../docs/bank/beforeafter-evidence.json', import.meta.url), 'utf8'));
 const events = new Map(evidence.groups.flatMap(group => group.events.map(event => [event.id, event])));
 
-test('قبل ولا بعد: 240 مقارنة مستقلة بلا أزواج معكوسة مكررة', () => {
-  assert.equal(pack.qs.length, 240);
+test('قبل ولا بعد: 40 مقارنة مستقلة بلا أزواج معكوسة مكررة', () => {
+  assert.equal(pack.qs.length, 40);
   assert.equal(events.size, 60);
   const pairs = new Set();
   for (const q of pack.qs) {
@@ -40,19 +40,19 @@ test('قبل ولا بعد: الحل يطابق الحدثين وسنتيهما 
   }
 });
 
-test('قبل ولا بعد: 48 سؤالًا في كل خانة، والخانة تطابق المعرّف', () => {
+test('قبل ولا بعد: 8 أسئلة في كل خانة، والخانة تطابق المعرّف', () => {
   const evidenceTopics = evidence.groups.map(group => group.topic);
   for (const p of [200, 400, 600, 800, 1000]) {
     const tier = pack.qs.filter(q => q.p === p);
-    assert.equal(tier.length, 48, `توزيع ${p}`);
+    assert.equal(tier.length, 8, `توزيع ${p}`);
     // المعرّف يطابق الخانة بعد إعادة التصنيف بالصعوبة الفعلية.
     for (const q of tier) assert.equal(Number(q.qid.split('-')[1]), p, q.qid);
     // لا يميل الجواب إلى جهة فيخمّنه اللاعب: يبقى كلٌّ من «قبل» و«بعد» قرب النصف.
     const before = tier.filter(q => q.a === 'قبل').length;
-    assert.ok(before >= 19 && before <= 29, `${p}: ميل الجواب ${before}/48`);
+    assert.equal(before, 4, `${p}: يلزم أربعة قبل وأربعة بعد`);
     // لا يهيمن موضوع على خانة (سقف البنك 25%).
     for (const topic of evidenceTopics) {
-      assert.ok(tier.filter(q => q.topic === topic).length <= 12, `${p}: الموضوع ${topic} يتجاوز الربع`);
+      assert.ok(tier.filter(q => q.topic === topic).length <= 2, `${p}: الموضوع ${topic} يتجاوز الربع`);
     }
   }
   const ids = pack.qs.map(q => q.qid);

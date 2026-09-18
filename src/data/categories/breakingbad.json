@@ -5,785 +5,521 @@
   "style": "story",
   "qs": [
     {
+      "qid": "breakingbad-200-901",
       "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ما اللقب الذي اتخذه والتر وايت لنفسه في عالم الجريمة؟",
-      "a": "هايزنبرغ",
-      "alt": [
-        "هايزنبيرغ",
-        "هايزنبرج",
-        "هيزنبرغ",
-        "Heisenberg"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-001"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "ما المادة التي كان والتر يدرّسها في المدرسة الثانوية؟",
+      "topic": "تحول والتر",
+      "q": "ما المادة التي يدرّسها والتر في المدرسة قبل دخوله عالم الجريمة؟",
       "a": "الكيمياء",
       "alt": [
-        "كيمياء",
-        "مادة الكيمياء"
+        "كيمياء"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_1",
       "verified": true,
-      "qid": "breakingbad-200-002"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "breakingbad-200-902",
       "p": 200,
-      "topic": "شخصيات",
-      "q": "من تلميذ والتر السابق الذي صار شريكه في العمل؟",
-      "a": "جيسي بينكمان",
-      "alt": [
-        "جيسي",
-        "Jesse Pinkman",
-        "جسي بينكمان",
-        "جيسى بينكمان",
-        "جيسي بنكمان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "ما اسم زوجة والتر في المسلسل؟",
+      "topic": "أسرة وايت",
+      "q": "ما اسم زوجة والتر التي تكتشف مصدر أمواله؟",
       "a": "سكايلر وايت",
       "alt": [
         "سكايلر",
-        "Skyler White",
-        "سكايلر هوايت",
-        "سكيلر وايت"
+        "Skyler White"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_1",
       "verified": true,
-      "qid": "breakingbad-200-004"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "breakingbad-200-903",
       "p": 200,
-      "topic": "شخصيات",
-      "q": "ما اسم العميل الفيدرالي المتزوّج من شقيقة زوجة والتر؟",
+      "topic": "عالم جيسي",
+      "q": "من تلميذ والتر السابق الذي يصبح شريكه الرئيسي؟",
+      "a": "جيسي بينكمان",
+      "alt": [
+        "جيسي",
+        "Jesse Pinkman"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_1",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-904",
+      "p": 200,
+      "topic": "واجهات العمل",
+      "q": "ما اسم سلسلة مطاعم الدجاج التي يملكها غوس؟",
+      "a": "لوس بولوس هيرمانوس",
+      "alt": [
+        "Los Pollos Hermanos",
+        "بولوس هيرمانوس"
+      ],
+      "sourceUrl": "https://www.amc.com/blogs/relive-the-height-of-guss-empire-on-breaking-bad--1008864",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-905",
+      "p": 200,
+      "topic": "المطاردة والتحقيق",
+      "q": "من قريب والتر العامل في مكافحة المخدرات، الذي يطارده دون أن يعرف هويته أولًا؟",
       "a": "هانك شرايدر",
       "alt": [
         "هانك",
-        "Hank Schrader",
-        "هانك شريدر",
-        "هانك شرادر"
+        "Hank Schrader"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hank_Schrader",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_1",
       "verified": true,
-      "qid": "breakingbad-200-005"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "breakingbad-200-906",
       "p": 200,
-      "topic": "شخصيات",
-      "q": "من المحامي صاحب الإعلانات التلفزيونية الرخيصة في المسلسل؟",
+      "topic": "خطط ومواجهات",
+      "q": "ما الاسم الذي يتخذه والتر لنفسه في عالم الجريمة؟",
+      "a": "هايزنبرغ",
+      "alt": [
+        "هايزنبرج",
+        "هايزنبيرغ",
+        "Heisenberg"
+      ],
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-early-meetings-with-walter-white-with-breaking-bad-full-episodes--1008872",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "breakingbad-200-907",
+      "p": 200,
+      "topic": "حلفاء ومنافسون",
+      "q": "من المحامي الذي يلجأ إليه والتر وجيسي بعد اعتقال بادجر؟",
       "a": "سول غودمان",
       "alt": [
         "سول",
-        "Saul Goodman",
-        "سول جودمان"
+        "ساول غودمان",
+        "Saul Goodman"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saul_Goodman",
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-early-meetings-with-walter-white-with-breaking-bad-full-episodes--1008872",
       "verified": true,
-      "qid": "breakingbad-200-006"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "breakingbad-200-908",
       "p": 200,
-      "topic": "شخصيات",
-      "q": "من صاحب سلسلة مطاعم الدجاج الذي يخفي وراءها تجارة سرية؟",
-      "a": "غوستافو فرينغ",
+      "topic": "أشياء مفصلية",
+      "q": "ما نوع المركبة التي يستخدمها الشريكان مختبرًا متنقلًا في البداية؟",
+      "a": "بيت متنقل",
       "alt": [
-        "غوس فرينغ",
-        "غوس",
-        "Gus Fring",
-        "جوستافو فرينج",
-        "غوستافو فرنج"
+        "عربة سكنية",
+        "كرفان",
+        "RV"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_1",
       "verified": true,
-      "qid": "breakingbad-200-007"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "من الرجل الكهل الهادئ الذي يعمل حارسًا ومحقّقًا لدى غوس؟",
+      "qid": "breakingbad-400-901",
+      "p": 400,
+      "topic": "تحول والتر",
+      "q": "ما التشخيص الذي يقلب حياة والتر في بداية القصة؟",
+      "a": "سرطان الرئة",
+      "alt": [
+        "سرطان في الرئة",
+        "سرطان رئوي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_1",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-902",
+      "p": 400,
+      "topic": "أسرة وايت",
+      "q": "ما اسم ابنة والتر الرضيعة؟",
+      "a": "هولي",
+      "alt": [
+        "Holly"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-903",
+      "p": 400,
+      "topic": "عالم جيسي",
+      "q": "ما اسم جارة جيسي التي تصبح حبيبته في الموسم الثاني؟",
+      "a": "جين مارغوليس",
+      "alt": [
+        "جين",
+        "Jane Margolis"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_2",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-904",
+      "p": 400,
+      "topic": "واجهات العمل",
+      "q": "ما المشروع الذي تقترحه سكايلر لتمرير أموال زوجها وتشتريه لاحقًا؟",
+      "a": "مغسلة سيارات",
+      "alt": [
+        "غسيل السيارات",
+        "مغسل سيارات"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-905",
+      "p": 400,
+      "topic": "المطاردة والتحقيق",
+      "q": "ما الذي يبدأ هانك بجمعه وتصنيفه خلال تعافيه من الإصابة؟",
+      "a": "المعادن",
+      "alt": [
+        "عينات المعادن",
+        "أحجار معدنية"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-906",
+      "p": 400,
+      "topic": "خطط ومواجهات",
+      "q": "ما الأداة الصغيرة التي يستخدمها هيكتور للتواصل وهو على كرسيه؟",
+      "a": "جرس",
+      "alt": [
+        "الجرس"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_2",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "breakingbad-400-907",
+      "p": 400,
+      "topic": "حلفاء ومنافسون",
+      "q": "من رجل غوس الهادئ الذي يعمل أيضًا مع محامي والتر؟",
       "a": "مايك إيرمانتراوت",
       "alt": [
         "مايك",
-        "Mike Ehrmantraut",
-        "مايك إرمانتراوت",
-        "مايك أرمانتراوت"
+        "Mike Ehrmantraut"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
       "verified": true,
-      "qid": "breakingbad-200-008"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "ما اسم العائلة المكسيكية التي ينتمي إليها هيكتور والتوأمان؟",
-      "a": "سالامانكا",
+      "qid": "breakingbad-400-908",
+      "p": 400,
+      "topic": "أشياء مفصلية",
+      "q": "ما الكائن الصغير الذي ينشغل والتر بطرده من المختبر خوفًا من التلوث؟",
+      "a": "ذبابة",
       "alt": [
-        "آل سالامانكا",
-        "Salamanca"
+        "الذبابة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
       "verified": true,
-      "qid": "breakingbad-200-009"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "من الزعيم المندفع الذي اشترى أول بضاعة من والتر وجيسي؟",
-      "a": "توكو سالامانكا",
+      "qid": "breakingbad-600-901",
+      "p": 600,
+      "topic": "تحول والتر",
+      "q": "ما اسم الشركة التي شارك والتر في تأسيسها ثم ندم على بيع حصته فيها؟",
+      "a": "غراي ماتر",
       "alt": [
-        "توكو",
-        "Tuco"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم ابنة والتر وسكايلر الرضيعة؟",
-      "a": "هولي",
-      "alt": [
-        "Holly",
-        "هولي وايت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم شقيقة سكايلر زوجة هانك؟",
-      "a": "ماري شرايدر",
-      "alt": [
-        "ماري",
-        "Marie",
-        "ماري شريدر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اللون الذي يغلب على ملابس ماري وأثاث بيتها؟",
-      "a": "البنفسجي",
-      "alt": [
-        "الأرجواني",
-        "بنفسجي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "ما المرض الذي اكتشفه والتر في نفسه فقلب حياته؟",
-      "a": "سرطان الرئة",
-      "alt": [
-        "سرطان رئة",
-        "السرطان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "ما الذي يستعين به ابن والتر على المشي بسبب حالته؟",
-      "a": "عكّازان",
-      "alt": [
-        "عكازات",
-        "عكاز",
-        "العكازات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "ما الاسم الذي يفضّل ابن والتر أن يناديه الناس به؟",
-      "a": "فلين",
-      "alt": [
-        "Flynn",
-        "فلِن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "من الجارة التي أحبّها جيسي في الموسم الثاني؟",
-      "a": "جين",
-      "alt": [
-        "جين مارغوليس",
-        "Jane"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم الطفل الصغير الذي تعلّق به جيسي وحماه؟",
-      "a": "بروك",
-      "alt": [
-        "Brock",
-        "بروك كانتيو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "كيف تخلّص والتر وجيسي من جثث ضحاياهما في بداية المسلسل؟",
-      "a": "أذاباها بالحمض",
-      "alt": [
-        "بالحمض",
-        "إذابتها في الحمض",
-        "حمض الهيدروفلوريك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Cat%27s_in_the_Bag...",
-      "verified": true,
-      "qid": "breakingbad-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في أي مدينة أمريكية تدور أحداث المسلسل؟",
-      "a": "ألباكركي",
-      "alt": [
-        "ألبوكيركي",
-        "البوكيرك",
-        "البوكيركي",
-        "Albuquerque"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وتجارة",
-      "q": "ما نوع المخدر الذي كان والتر وجيسي يصنعانه؟",
-      "a": "الميثامفيتامين",
-      "alt": [
-        "الميث",
-        "ميث",
-        "الكريستال ميث",
-        "كريستال ميث"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "ما اسم سلسلة مطاعم الدجاج الشهيرة في المسلسل؟",
-      "a": "لوس بولوس هيرمانوس",
-      "alt": [
-        "لوس بويوس هيرمانوس",
-        "Los Pollos Hermanos"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "أين بنى غوس مختبره السري الضخم؟",
-      "a": "تحت مغسلة ملابس",
-      "alt": [
-        "أسفل مغسلة ملابس",
-        "في مغسلة ملابس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "أين كان والتر وجيسي يعملان في الحلقات الأولى بعيدًا عن الأعين؟",
-      "a": "في الصحراء",
-      "alt": [
-        "الصحراء",
-        "وسط الصحراء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "أين كان هانك جالسًا حين اكتشف حقيقة والتر؟",
-      "a": "في الحمّام",
-      "alt": [
-        "الحمام",
-        "في حمام بيت والتر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hank_Schrader",
-      "verified": true,
-      "qid": "breakingbad-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وتجارة",
-      "q": "ما المشروع الذي اشترته عائلة وايت لتمرير أموالها عبره؟",
-      "a": "مغسلة سيارات",
-      "alt": [
-        "المغسلة",
-        "مغسلة السيارات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال وتجارة",
-      "q": "ما الجهة الحكومية التي يعمل فيها هانك؟",
-      "a": "مكافحة المخدرات",
-      "alt": [
-        "إدارة مكافحة المخدرات",
-        "DEA"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hank_Schrader",
-      "verified": true,
-      "qid": "breakingbad-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما اللون الذي اشتهرت به بضاعة والتر فصار علامته؟",
-      "a": "الأزرق",
-      "alt": [
-        "أزرق",
-        "اللون الأزرق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما الذي يضعه والتر على رأسه حين يتقمّص شخصيته الثانية؟",
-      "a": "قبعة سوداء",
-      "alt": [
-        "قبعة",
-        "القبعة السوداء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما الأداة التي يستعملها هيكتور العجوز للتعبير بدل الكلام؟",
-      "a": "جرس",
-      "alt": [
-        "الجرس",
-        "جرس صغير",
-        "جرس مكتب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما اللعبة التي سقطت في بركة بيت والتر وصارت من أشهر رموز المسلسل؟",
-      "a": "دبدوب وردي",
-      "alt": [
-        "دمية دب",
-        "الدب الوردي",
-        "دب وردي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما نوع المركبة التي اتخذها والتر وجيسي مختبرًا متنقلًا أول الأمر؟",
-      "a": "بيت متنقل",
-      "alt": [
-        "كرفان",
-        "عربة سكن متنقلة",
-        "RV"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sunset_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ماذا يرتدي والتر وجيسي فوق ثيابهما أثناء العمل في المختبر؟",
-      "a": "بذلة واقية",
-      "alt": [
-        "بدلة واقية",
-        "بذلة صفراء",
-        "ملابس واقية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "بماذا ينادي جيسي شريكه والتر طوال المسلسل؟",
-      "a": "السيد وايت",
-      "alt": [
-        "مستر وايت",
-        "يا سيد وايت",
-        "Mr. White"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-200-034"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ما الجملة التي ختم بها والتر حديثه لزوجته مؤكدًا أنه هو مصدر الخطر؟",
-      "a": "أنا من يطرق الباب",
-      "alt": [
-        "أنا الذي يطرق الباب",
-        "I am the one who knocks"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ما الجملة التي يطلب بها والتر من خصمه أن ينطق لقبه؟",
-      "a": "قل اسمي",
-      "alt": [
-        "Say my name",
-        "قل اسمي!"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Say_My_Name_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ما شعار إعلانات المحامي في المسلسل؟",
-      "a": "اتصل بسول",
-      "alt": [
-        "من الأفضل أن تتصل بسول",
-        "Better Call Saul"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saul_Goodman",
-      "verified": true,
-      "qid": "breakingbad-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "كيف انتهت حياة غوس في ختام الموسم الرابع؟",
-      "a": "بانفجار قنبلة",
-      "alt": [
-        "قنبلة",
-        "انفجار",
-        "تفجير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Face_Off_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ما الكلمة القصيرة التي يبدأ بها جيسي كلامه حتى صارت علامته؟",
-      "a": "يو",
-      "alt": [
-        "Yo",
-        "يو!"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "ما المناسبة التي كان والتر يحتفل بها في أول حلقة من المسلسل؟",
-      "a": "عيد ميلاده الخمسين",
-      "alt": [
-        "بلوغه الخمسين",
-        "عيد ميلاده الـ50"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "ما الحادثة الكبرى التي وقعت في سماء المدينة في ختام الموسم الثاني؟",
-      "a": "تصادم طائرتين",
-      "alt": [
-        "اصطدام طائرتين",
-        "حادث طائرتين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "ما التغيير الذي طرأ على مظهر والتر بعد بدء علاجه؟",
-      "a": "حلق شعره",
-      "alt": [
-        "صار أصلع",
-        "حلق رأسه",
-        "الصلع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "ما الهواية التي انشغل بها هانك في فترة نقاهته الطويلة؟",
-      "a": "جمع المعادن",
-      "alt": [
-        "جمع الأحجار",
-        "هواية المعادن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hank_Schrader",
-      "verified": true,
-      "qid": "breakingbad-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "بأي وسيلة أتلف والتر ورفيقاه حاسوب الأدلة من خارج مبنى الشرطة؟",
-      "a": "مغناطيس عملاق",
-      "alt": [
-        "بمغناطيس",
-        "مغناطيس ضخم",
-        "المغناطيس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Live_Free_or_Die_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "ما وسيلة النقل التي نفّذ والتر وجيسي وتود عليها سرقتهم الكبرى؟",
-      "a": "قطار",
-      "alt": [
-        "قطار شحن",
-        "القطار"
+        "Gray Matter",
+        "جراي ماتر"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
       "verified": true,
-      "qid": "breakingbad-200-045"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "ما الحشرة التي عطّلت عمل والتر يومًا كاملًا في المختبر؟",
-      "a": "ذبابة",
+      "qid": "breakingbad-600-902",
+      "p": 600,
+      "topic": "أسرة وايت",
+      "q": "أين تدخل سكايلر بثيابها خلال احتفال عيد ميلاد زوجها، لإبعاد الأطفال عن البيت؟",
+      "a": "المسبح",
       "alt": [
-        "الذبابة",
-        "ذبابة واحدة"
+        "حمام السباحة",
+        "بركة السباحة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
+      "sourceUrl": "https://www.amc.com/blogs/follow-the-rise-and-fall-of-the-white-family-in-these-breaking-bad-episodes--1008871",
       "verified": true,
-      "qid": "breakingbad-200-046"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "ماذا كان يفعل جيسي بالمال وهو يقود سيارته ليلًا في الأحياء؟",
-      "a": "يرميه من النافذة",
+      "qid": "breakingbad-600-903",
+      "p": 600,
+      "topic": "عالم جيسي",
+      "q": "ما اسم الطفل الذي يدخل المستشفى ويظن جيسي أولًا أنه تسمم بالريسين؟",
+      "a": "بروك",
       "alt": [
-        "يلقيه من النافذة",
-        "يرمي المال في الشوارع"
+        "Brock"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
       "verified": true,
-      "qid": "breakingbad-200-047"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 200,
-      "topic": "العائلة والعلاقات",
-      "q": "ما مهنة ماري التي تعمل بها في المستشفى؟",
-      "a": "فنية أشعة",
+      "qid": "breakingbad-600-904",
+      "p": 600,
+      "topic": "واجهات العمل",
+      "q": "تحت أي نوع من المنشآت يخفي غوس مختبره الكبير؟",
+      "a": "مغسلة ملابس",
       "alt": [
-        "أخصائية أشعة",
-        "تصوير بالأشعة"
+        "مغسلة صناعية",
+        "مغسل ملابس"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
       "verified": true,
-      "qid": "breakingbad-200-048"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "ما اسم الكيميائي المهذّب المولع بالشعر الذي عمل في مختبر غوس؟",
-      "a": "غيل بوتيشر",
+      "qid": "breakingbad-600-905",
+      "p": 600,
+      "topic": "المطاردة والتحقيق",
+      "q": "ما عنوان الديوان الذي يكشف إهداؤه لهانك حقيقة والتر؟",
+      "a": "أوراق العشب",
+      "alt": [
+        "Leaves of Grass",
+        "أوراق من العشب"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "breakingbad-600-906",
+      "p": 600,
+      "topic": "خطط ومواجهات",
+      "q": "بماذا يعطّل الشركاء الحاسوب المضبوط لدى الشرطة في بداية الموسم الخامس؟",
+      "a": "مغناطيس ضخم",
+      "alt": [
+        "مغناطيس",
+        "مغناطيس كهربائي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Live_Free_or_Die_(Breaking_Bad)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "breakingbad-600-907",
+      "p": 600,
+      "topic": "حلفاء ومنافسون",
+      "q": "من مساعد المختبر الذي يقتله جيسي لإنقاذ والتر في نهاية الموسم الثالث؟",
+      "a": "غيل بوتيكر",
       "alt": [
         "غيل",
-        "Gale Boetticher",
-        "جيل بوتيشر"
+        "غايل",
+        "Gale Boetticher"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_4",
       "verified": true,
-      "qid": "breakingbad-400-001"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "ما لقب صديق جيسي النحيل صاحب القبعة الصوفية؟",
-      "a": "سكيني بيت",
+      "qid": "breakingbad-600-908",
+      "p": 600,
+      "topic": "أشياء مفصلية",
+      "q": "ما الحيوان الذي يجمعه الصبي في مرطبان قبل أن يشاهد عملية القطار؟",
+      "a": "عنكبوت رتيلاء",
       "alt": [
-        "Skinny Pete",
-        "سكيني بت"
+        "رتيلاء",
+        "تارانتولا",
+        "عنكبوت"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dead_Freight",
       "verified": true,
-      "qid": "breakingbad-400-002"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "ما لقب صديق جيسي المولع بالحديث عن مسلسلات الفضاء؟",
-      "a": "بادجر",
+      "qid": "breakingbad-800-901",
+      "p": 800,
+      "topic": "تحول والتر",
+      "q": "بأي حجة كاذبة يفسّر الزوجان للعائلة مصدر أموالهما الجديدة؟",
+      "a": "أرباح القمار",
       "alt": [
-        "Badger",
-        "باجر"
+        "المقامرة",
+        "ربح القمار",
+        "فوز في القمار"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
       "verified": true,
-      "qid": "breakingbad-400-003"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "ما اسم مديرة الشحن التي تزوّد العصابة بالمواد من شركة ألمانية؟",
-      "a": "ليديا رودارتي كويل",
+      "qid": "breakingbad-800-902",
+      "p": 800,
+      "topic": "أسرة وايت",
+      "q": "من رئيس سكايلر السابق الذي تحاول سداد ضرائبه سرًا؟",
+      "a": "تيد بينيكي",
+      "alt": [
+        "تيد",
+        "Ted Beneke"
+      ],
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-most-heroic-save-the-day-schemes-on-breaking-bad--1008918",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "breakingbad-800-903",
+      "p": 800,
+      "topic": "عالم جيسي",
+      "q": "أين يتعرف جيسي إلى أندريا؟",
+      "a": "مجموعة علاج الإدمان",
+      "alt": [
+        "جلسات التعافي",
+        "مجموعة دعم",
+        "جلسة دعم المدمنين"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "breakingbad-800-904",
+      "p": 800,
+      "topic": "واجهات العمل",
+      "q": "ما اسم شركة مكافحة الآفات التي تستخدم البيوت المغطاة ستارًا للعمل؟",
+      "a": "فامونوس بيست",
+      "alt": [
+        "Vamonos Pest",
+        "فامونوس بست"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "breakingbad-800-905",
+      "p": 800,
+      "topic": "المطاردة والتحقيق",
+      "q": "ما الخبر الكاذب الذي يجذب هانك بعيدًا عن المركبة المحاصرة في مكب الخردة؟",
+      "a": "تعرض زوجته لحادث",
+      "alt": [
+        "حادث ماري",
+        "دخول ماري المستشفى",
+        "إصابة ماري بحادث"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "breakingbad-800-906",
+      "p": 800,
+      "topic": "خطط ومواجهات",
+      "q": "ما الذي يستخدمه هانك لإيهام والتر بأن جيسي وجد المال المدفون؟",
+      "a": "صورة مفبركة للمال",
+      "alt": [
+        "صورة مزيفة",
+        "صورة الأموال",
+        "صورة برميل المال"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "breakingbad-800-907",
+      "p": 800,
+      "topic": "حلفاء ومنافسون",
+      "q": "من موظفة مادريغال التي ترتب توسيع تجارة والتر إلى السوق التشيكية؟",
+      "a": "ليديا رودارت كويل",
       "alt": [
         "ليديا",
-        "Lydia",
-        "ليديا رودارت كويل"
+        "Lydia Rodarte-Quayle"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Madrigal_(Breaking_Bad)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
       "verified": true,
-      "qid": "breakingbad-400-004"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "ما اسم زميل هانك ورفيقه في التحقيقات الميدانية؟",
-      "a": "ستيف غوميز",
+      "qid": "breakingbad-800-908",
+      "p": 800,
+      "topic": "أشياء مفصلية",
+      "q": "على أي ورقة يحفظ والتر إحداثيات موضع دفن أمواله؟",
+      "a": "ورقة يانصيب",
       "alt": [
-        "غوميز",
-        "غومي",
-        "Gomez"
+        "بطاقة يانصيب",
+        "قسيمة يانصيب",
+        "تذكرة يانصيب"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Buried_(Breaking_Bad)",
       "verified": true,
-      "qid": "breakingbad-400-005"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "ما اسم المرأة التي ارتبط بها جيسي في الموسمين الرابع والخامس؟",
-      "a": "أندريا",
+      "qid": "breakingbad-1000-901",
+      "p": 1000,
+      "topic": "تحول والتر",
+      "q": "ما اسم الثانوية التي يعمل فيها والتر في بداية المسلسل؟",
+      "a": "جيه بي واين",
       "alt": [
-        "أندريا كانتيو",
-        "Andrea"
+        "J. P. Wynne",
+        "جي بي وين",
+        "ثانوية جيه بي واين"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_2",
       "verified": true,
-      "qid": "breakingbad-400-006"
+      "difficultyTarget": 0.15
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "ما اسم عمّ تود وزعيم العصابة التي انضم إليها؟",
-      "a": "جاك",
+      "qid": "breakingbad-1000-902",
+      "p": 1000,
+      "topic": "أسرة وايت",
+      "q": "ما اسم العمة الوهمية التي ينسب إليها المحامي المال المرسل لرئيس سكايلر السابق؟",
+      "a": "بيرغيد",
       "alt": [
-        "جاك ويلكر",
-        "العم جاك",
-        "Uncle Jack"
+        "برغيد",
+        "Birgid",
+        "بيرجيد"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-most-heroic-save-the-day-schemes-on-breaking-bad--1008918",
       "verified": true,
-      "qid": "breakingbad-400-007"
+      "difficultyTarget": 0.15
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "من تاجر المخدرات الذي خنقه والتر في قبو بيت جيسي؟",
-      "a": "كرايزي إيت",
+      "qid": "breakingbad-1000-903",
+      "p": 1000,
+      "topic": "عالم جيسي",
+      "q": "إلى أم أي صديق لجيسي كانت تعود المركبة المتنقلة قبل انتقالها إليه؟",
+      "a": "كومبو",
       "alt": [
-        "Krazy-8",
-        "كريزي إيت",
-        "دومينغو"
+        "Combo"
       ],
-      "sourceUrl": "https://breakingbad.fandom.com/wiki/Krazy-8",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_3",
       "verified": true,
-      "qid": "breakingbad-400-008"
+      "difficultyTarget": 0.15
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "من الشاب المهذّب قليل الكلام الذي التحق بفريق والتر في الموسم الخامس؟",
-      "a": "تود",
+      "qid": "breakingbad-1000-904",
+      "p": 1000,
+      "topic": "واجهات العمل",
+      "q": "ما المشروع الترفيهي الذي يقترحه المحامي لتمرير الأموال قبل رفض سكايلر للفكرة؟",
+      "a": "ساحة ليزر تاغ",
       "alt": [
-        "Todd",
-        "تود ألكويست"
+        "Laser tag",
+        "ألعاب الليزر",
+        "مركز ليزر تاغ"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-early-meetings-with-walter-white-with-breaking-bad-full-episodes--1008872",
       "verified": true,
-      "qid": "breakingbad-400-009"
+      "difficultyTarget": 0.15
     },
     {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "في أي ولاية اختبأ والتر في كوخ معزول وسط الثلوج؟",
+      "qid": "breakingbad-1000-905",
+      "p": 1000,
+      "topic": "المطاردة والتحقيق",
+      "q": "في أي ولاية يُخفى والتر في كوخ معزول قرب نهاية المسلسل؟",
       "a": "نيوهامبشير",
       "alt": [
         "نيو هامبشير",
@@ -791,2399 +527,49 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
       "verified": true,
-      "qid": "breakingbad-400-010"
+      "difficultyTarget": 0.15
     },
     {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "ما اسم دار الرعاية التي يقيم فيها هيكتور؟",
-      "a": "كاسا ترانكيلا",
+      "qid": "breakingbad-1000-906",
+      "p": 1000,
+      "topic": "خطط ومواجهات",
+      "q": "ما الذي يعوّض به الشركاء وزن السائل المسروق من صهريج القطار؟",
+      "a": "الماء",
       "alt": [
-        "Casa Tranquila",
-        "كازا ترانكيلا"
+        "ماء"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dead_Freight",
       "verified": true,
-      "qid": "breakingbad-400-011"
+      "difficultyTarget": 0.15
     },
     {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "في بيت من كان جيسي يسكن في بداية المسلسل؟",
-      "a": "بيت عمّته",
-      "alt": [
-        "منزل عمته",
-        "بيت خالته"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "ما البلد الذي ينحدر منه غوس حسب ما يُذكر في المسلسل؟",
-      "a": "تشيلي",
-      "alt": [
-        "شيلي",
-        "Chile"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "أين أخفى والتر أكياس نقوده داخل بيته قبل أن ينقلها؟",
-      "a": "تحت أرضية البيت",
-      "alt": [
-        "في الحيز تحت الأرضية",
-        "تحت الأرضية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما الاسم الذي أطلقه جيسي على البيت المتنقل؟",
-      "a": "السفينة البلورية",
-      "alt": [
-        "سفينة الكريستال",
-        "The Crystal Ship",
-        "السفينة الكريستالية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما السمّ النادر الذي حضّره والتر واحتفظ به للحظة الحاسمة؟",
-      "a": "الريسين",
-      "alt": [
-        "ريسين",
-        "Ricin",
-        "الريسين السام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "أين أخفى والتر قارورة السمّ داخل بيته؟",
-      "a": "في مقبس الكهرباء",
-      "alt": [
-        "داخل مقبس كهربائي",
-        "في فيشة الكهرباء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما اسم النبتة التي كانت في فناء بيت والتر وتبيّن أنها سامة؟",
-      "a": "زنبق الوادي",
-      "alt": [
-        "ليلي الوادي",
-        "Lily of the Valley"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما السلاح الذي أخفاه والتر في صندوق سيارته في الحلقة الأخيرة؟",
-      "a": "رشاش آلي",
-      "alt": [
-        "مدفع رشاش",
-        "رشاش إم60",
-        "M60"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما نوع الهاتف الذي كان والتر يتخلص منه بعد كل مكالمة خطرة؟",
-      "a": "هاتف مؤقت",
-      "alt": [
-        "هاتف مسبق الدفع",
-        "جوال رخيص"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما الذي احتفظ به والتر من الدمية التي سقطت في بركة بيته؟",
-      "a": "عينها",
-      "alt": [
-        "عين الدمية",
-        "العين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما الهدية التي قدّمها جيسي لوالتر في عيد ميلاده الحادي والخمسين؟",
-      "a": "ساعة يد",
-      "alt": [
-        "ساعة",
-        "ساعة معصم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
-      "verified": true,
-      "qid": "breakingbad-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما الذي كان يرتديه والتر على وجهه في أول مشهد من المسلسل؟",
-      "a": "قناع واقٍ",
-      "alt": [
-        "قناع غاز",
-        "كمامة واقية",
-        "قناع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "ما الاسم الذي يُعرف به منتج والتر في الشارع؟",
-      "a": "السماء الزرقاء",
-      "alt": [
-        "بلو سكاي",
-        "Blue Sky",
-        "السما الزرقاء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Say_My_Name_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "بأي عبارة عبّر مايك عن رفضه للحلول الناقصة؟",
-      "a": "لا أنصاف حلول",
-      "alt": [
-        "لا أنصاف تدابير",
-        "نصف الحل لا ينفع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "بأي وصف نعت جيسي شريكه حين حذّر منه صديقيه؟",
-      "a": "الشيطان",
-      "alt": [
-        "إنه الشيطان",
-        "شيطان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "ماذا قال والتر لزوجته في اعترافه الأخير عن الدافع الحقيقي لما فعل؟",
-      "a": "فعلته لنفسي",
-      "alt": [
-        "من أجل نفسي",
-        "لأنني أحببت ذلك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "بأي كلمة إسبانية كان أفراد العائلة ينادون هيكتور؟",
-      "a": "تيو",
-      "alt": [
-        "Tio",
-        "العم",
-        "تيّو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم رئيس سكايلر في العمل الذي ارتبطت به؟",
-      "a": "تيد بينيكي",
-      "alt": [
-        "تيد",
-        "Ted Beneke"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "العائلة والعلاقات",
-      "q": "ما مهنة والد جين التي جعلت حزنه يمتد إلى المدينة كلها؟",
-      "a": "مراقب جوي",
-      "alt": [
-        "مراقب حركة جوية",
-        "مراقب ملاحة جوية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم الموقع الذي أنشأه ابن والتر لجمع تبرعات لعلاج أبيه؟",
-      "a": "أنقذوا والتر وايت",
-      "alt": [
-        "SaveWalterWhite",
-        "موقع أنقذوا والتر وايت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "العائلة والعلاقات",
-      "q": "ما صلة كايلي بمايك؟",
-      "a": "حفيدته",
-      "alt": [
-        "حفيدة مايك",
-        "ابنة ابنه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "العائلة والعلاقات",
-      "q": "ما العمل الذي كانت سكايلر تمارسه من البيت في بداية المسلسل؟",
-      "a": "البيع عبر الإنترنت",
-      "alt": [
-        "بيع على الإنترنت",
-        "المزادات الإلكترونية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "العائلة والعلاقات",
-      "q": "ما العادة السيئة التي كانت ماري تخفيها عن الجميع؟",
-      "a": "سرقة الأشياء الصغيرة",
-      "alt": [
-        "السرقة من المتاجر",
-        "هوس السرقة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وتجارة",
-      "q": "ما اسم الشركة التي أسّسها والتر مع صديقيه أيام الدراسة ثم تركها؟",
-      "a": "غراي ماتر",
-      "alt": [
-        "جراي ماتر",
-        "Gray Matter",
-        "غراي ماتر تكنولوجيز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وتجارة",
-      "q": "ما اسم الشركة الألمانية الكبرى التي تملك سلسلة مطاعم غوس؟",
-      "a": "مادريغال",
-      "alt": [
-        "مادريجال",
-        "Madrigal",
-        "مادريغال إلكتروموتيف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Madrigal_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وتجارة",
-      "q": "ما نوع الشركة التي اتخذها والتر ومايك وجيسي ستارًا في الموسم الخامس؟",
-      "a": "شركة مكافحة حشرات",
-      "alt": [
-        "مكافحة الحشرات",
-        "شركة مبيدات",
-        "شركة تبخير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hazard_Pay",
-      "verified": true,
-      "qid": "breakingbad-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وتجارة",
-      "q": "من الرجل صاحب الحاجبين الكثّين الذي باع مشروعه لعائلة وايت؟",
-      "a": "بوغدان",
-      "alt": [
-        "بوجدان",
-        "Bogdan",
-        "بوغدان ووليناتز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال وتجارة",
-      "q": "ما نوع المتجر الذي يديره الرجل الذي يخفي المطلوبين؟",
-      "a": "محل مكانس كهربائية",
-      "alt": [
-        "متجر مكانس",
-        "صيانة مكانس كهربائية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "ما الشيء الذي اشتراه والتر لابنه هدية فأعادته سكايلر إلى المعرض؟",
-      "a": "سيارة رياضية",
-      "alt": [
-        "سيارة سبور",
-        "دودج تشالنجر",
-        "سيارة فارهة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "ماذا فعلت سكايلر في حفل عيد ميلاد والتر الحادي والخمسين أمام الضيوف؟",
-      "a": "نزلت إلى المسبح بثيابها",
-      "alt": [
-        "دخلت المسبح بملابسها",
-        "مشت إلى حوض السباحة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
-      "verified": true,
-      "qid": "breakingbad-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "ما اسم الأغنية المكسيكية التي افتُتحت بها حلقة وتحكي عن صاحب البضاعة الزرقاء؟",
-      "a": "نيغرو إي أزول",
-      "alt": [
-        "Negro y Azul",
-        "أسود وأزرق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Negro_y_Azul",
-      "verified": true,
-      "qid": "breakingbad-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "كم برميلًا من المال دفنه والتر خارج المدينة؟",
-      "a": "سبعة",
-      "alt": [
-        "سبعة براميل",
-        "7"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Buried_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "بكم دولارًا تخلّص والتر من سيارته العائلية القديمة؟",
-      "a": "خمسون دولارًا",
-      "alt": [
-        "50 دولارًا",
-        "بخمسين دولارا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
-      "verified": true,
-      "qid": "breakingbad-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "ما نوع الأماكن التي اتخذها والتر وجيسي مختبرًا مؤقتًا في الموسم الخامس؟",
-      "a": "بيوت مغطاة بالخيام",
-      "alt": [
-        "بيوت مبخرة",
-        "منازل تحت الخيام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hazard_Pay",
-      "verified": true,
-      "qid": "breakingbad-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "ما الذي طلبه والتر من سول حين قرر أن يختفي تمامًا؟",
-      "a": "هوية جديدة",
-      "alt": [
-        "أوراق هوية جديدة",
-        "حياة جديدة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "ما الذي فعله والتر وجيسي بالمختبر الكبير في نهاية الموسم الرابع؟",
-      "a": "أحرقاه",
-      "alt": [
-        "أشعلا فيه النار",
-        "حرقاه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "ما الجهاز الذي عثر عليه والتر ملصقًا أسفل سيارته؟",
-      "a": "جهاز تعقّب",
-      "alt": [
-        "جهاز تتبع",
-        "متعقب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
-      "verified": true,
-      "qid": "breakingbad-400-048"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "من الرجل الضخم الذي يعمل حارسًا ومساعدًا للمحامي في المسلسل؟",
-      "a": "هيول",
-      "alt": [
-        "Huell",
-        "هيول بابينو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "ما اسم صديق والتر القديم الذي صار من أثرياء الصناعة العلمية؟",
-      "a": "إليوت شوارتز",
-      "alt": [
-        "إليوت",
-        "Elliott Schwartz"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "ما اسم زميلة والتر السابقة وشريكته في تأسيس شركته العلمية؟",
-      "a": "غريتشن",
-      "alt": [
-        "غريتشن شوارتز",
-        "Gretchen"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "ما اسم السكرتيرة التي تستقبل زبائن مكتب المحامي؟",
+      "qid": "breakingbad-1000-907",
+      "p": 1000,
+      "topic": "حلفاء ومنافسون",
+      "q": "ما اسم سكرتيرة المحامي التي تساعد في تضليل هانك بمكالمة هاتفية؟",
       "a": "فرانشيسكا",
       "alt": [
         "Francesca",
-        "فرانسيسكا"
+        "فرانشيسكا ليدي"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saul_Goodman",
+      "sourceUrl": "https://www.amc.com/blogs/relive-sauls-early-meetings-with-walter-white-with-breaking-bad-full-episodes--1008872",
       "verified": true,
-      "qid": "breakingbad-600-004"
+      "difficultyTarget": 0.15
     },
     {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "ما اسم صديق جيسي الذي كان يملك البيت المتنقل قبله؟",
-      "a": "كومبو",
-      "alt": [
-        "Combo",
-        "كريستيان أورتيغا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "ما صلة القريبين الصامتين القادمين من المكسيك بتوكو؟",
-      "a": "ابنا عمّه",
-      "alt": [
-        "أبناء عمومته",
-        "قريباه",
-        "ابنا عمه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "ما اسم الشقيق الأصغر لجيسي المتفوّق في دراسته؟",
-      "a": "جيك",
-      "alt": [
-        "Jake",
-        "جيك بينكمان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "ما اسم المطعم الأمريكي الذي جلس فيه والتر صباح عيد ميلاده الثاني والخمسين؟",
-      "a": "دينيز",
-      "alt": [
-        "Denny's",
-        "دينيس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Live_Free_or_Die_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في أي مدينة قال المحامي إنه قد يدير محل حلويات لو اضطر للاختفاء؟",
-      "a": "أوماها",
-      "alt": [
-        "Omaha",
-        "أوماها في نبراسكا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "أين كدّست سكايلر أكوام المال التي عجزت عن تبييضها؟",
-      "a": "في مستودع تخزين",
-      "alt": [
-        "وحدة تخزين",
-        "مخزن مستأجر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
-      "verified": true,
-      "qid": "breakingbad-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في أي مدينة أمريكية عمل مايك شرطيًّا قبل انتقاله؟",
-      "a": "فيلادلفيا",
-      "alt": [
-        "Philadelphia",
-        "فيلادلفيا الأمريكية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "ما اسم محمية السكان الأصليين التي دفن والتر أمواله فيها؟",
-      "a": "توهاخيلي",
-      "alt": [
-        "Tohajiilee",
-        "توهاجيلي",
-        "محمية توهاخيلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Buried_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما اسم الديوان الشعري الذي وجده هانك في حمّام بيت والتر؟",
-      "a": "أوراق العشب",
-      "alt": [
-        "Leaves of Grass",
-        "ديوان أوراق العشب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
-      "verified": true,
-      "qid": "breakingbad-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما نوع السيارة الباهتة التي كان والتر يقودها في المواسم الأولى؟",
-      "a": "بونتياك أزتك",
-      "alt": [
-        "أزتك",
-        "Pontiac Aztek"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fifty-One_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما نوع السيارة المنخفضة التي كان جيسي يقودها في الموسم الأول؟",
-      "a": "مونتي كارلو",
-      "alt": [
-        "شيفروليه مونتي كارلو",
-        "Monte Carlo"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما الشيء الذي كسره والتر ليشتري بما فيه علبة مشروب غازي؟",
-      "a": "إطار الدولار الأول",
-      "alt": [
-        "الدولار المؤطر",
-        "برواز الدولار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما المشروب الذي تطلبه ليديا في كل لقاءاتها؟",
-      "a": "شاي البابونج",
-      "alt": [
-        "بابونج",
-        "شاي بابونج بحليب الصويا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما العلبة التي كان والتر يخفي فيها قارورة السمّ حين يحملها معه؟",
-      "a": "علبة سجائر",
-      "alt": [
-        "علبة السجائر",
-        "باكيت سجائر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما الحرفان اللذان كُتبا في إهداء كتاب غيل وأثارا شكوك هانك؟",
-      "a": "دبليو دبليو",
-      "alt": [
-        "W.W.",
-        "حرفا دبليو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
-      "verified": true,
-      "qid": "breakingbad-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما لون البذلات التي يرتديها العاملون داخل مختبر غوس؟",
-      "a": "الأصفر",
-      "alt": [
-        "أصفر",
-        "اللون الأصفر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما طراز السيارة الفارهة التي استأجرها والتر لنفسه بعد تخلّصه من سيارته القديمة؟",
-      "a": "كرايسلر 300",
-      "alt": [
-        "Chrysler 300",
-        "كرايسلر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fifty-One_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "بأي لقب تجاري كان جيسي يسمّي نفسه قبل شراكته مع والتر؟",
-      "a": "كابتن كوك",
-      "alt": [
-        "Cap'n Cook",
-        "كابتن كووك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "ما الكلمة الواحدة التي ختم بها والتر مكالمته مع زوجته معلنًا انتصاره؟",
-      "a": "فزت",
-      "alt": [
-        "أنا فزت",
-        "انتصرت",
-        "I won"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "بأي عبارة ردّ والتر على خصمه بعد أن نطق لقبه أخيرًا؟",
-      "a": "أنت محق تمامًا",
-      "alt": [
-        "معك حق تمامًا",
-        "You're goddamn right"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Say_My_Name_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "بأي عبارة برّر غوس لوالتر استمراره في العمل رغم الخطر؟",
-      "a": "الرجل يعيل أهله",
-      "alt": [
-        "الرجل يوفر لأسرته",
-        "A man provides"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "ما التحذير الذي وجّهه والتر إلى هانك في المرآب بعد أن انكشف أمره؟",
-      "a": "تمهّل",
-      "alt": [
-        "امشِ على مهلك",
-        "سر بحذر",
-        "Tread lightly"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Blood_Money_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم عائلة سكايلر وماري قبل الزواج؟",
-      "a": "لامبرت",
-      "alt": [
-        "Lambert",
-        "لمبرت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "العائلة والعلاقات",
-      "q": "ما صلة الطفل توماس الذي قتله التجّار بصديقة جيسي؟",
-      "a": "شقيقها الأصغر",
-      "alt": [
-        "أخوها الصغير",
-        "شقيقها"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Half_Measures",
-      "verified": true,
-      "qid": "breakingbad-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "العائلة والعلاقات",
-      "q": "ما الذي دفع والتر إلى مغادرة مخبئه والعودة إلى المدينة؟",
-      "a": "مقابلة تلفزيونية",
-      "alt": [
-        "حديث تلفزيوني",
-        "برنامج تلفزيوني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "العائلة والعلاقات",
-      "q": "ما الذي فعله والتر في مكالمته الهاتفية الأخيرة مع زوجته والشرطة تسمع؟",
-      "a": "برّأها من كل شيء",
-      "alt": [
-        "حمل نفسه المسؤولية",
-        "أبعد عنها التهمة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ozymandias_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "ماذا كان جيسي يسكب في بيت والتر حين فاجأه هانك؟",
-      "a": "البنزين",
-      "alt": [
-        "بنزين",
-        "الوقود",
-        "وقود"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Rabid_Dog",
-      "verified": true,
-      "qid": "breakingbad-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "من الرجل الذي ذبحه غوس بقاطع الكرتون أمام والتر وجيسي؟",
-      "a": "فيكتور",
-      "alt": [
-        "Victor",
-        "ڤيكتور"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Box_Cutter_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وتجارة",
-      "q": "ما اسم المصنع الذي كان يديره رئيس سكايلر السابق؟",
-      "a": "بينيكي للتصنيع",
-      "alt": [
-        "مصنع بينيكي",
-        "Beneke Fabricators"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وتجارة",
-      "q": "ما نوع المكان الذي اتخذه المحامي مكتبًا متواضعًا له؟",
-      "a": "مركز تجاري صغير",
-      "alt": [
-        "مول صغير",
-        "محل في مركز تجاري"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saul_Goodman",
-      "verified": true,
-      "qid": "breakingbad-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وتجارة",
-      "q": "في أي مدينة ألمانية يقع مقر الشركة التي تعمل بها ليديا؟",
-      "a": "هامبورغ",
-      "alt": [
-        "هامبورج",
-        "Hamburg"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Madrigal_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال وتجارة",
-      "q": "ما معنى اسم سلسلة مطاعم غوس إذا تُرجم إلى العربية؟",
-      "a": "الإخوة الدجاج",
-      "alt": [
-        "إخوة الدجاج",
-        "الدجاج الإخوة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "ما الذي فعله والتر وجيسي بالبيت المتنقل حين خشيا أن يصل إليه هانك؟",
-      "a": "سحقاه في مكب خردة",
-      "alt": [
-        "أتلفاه في المكب",
-        "دمراه في ساحة الخردة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sunset_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "ما الذي اضطر هانك إلى استعماله فترة طويلة بعد إصابته الخطيرة؟",
-      "a": "كرسي متحرك",
-      "alt": [
-        "الكرسي المتحرك",
-        "كرسي المقعدين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hank_Schrader",
-      "verified": true,
-      "qid": "breakingbad-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "بم أنهى والتر حياة التاجرين اللذين كان جيسي ذاهبًا لقتلهما؟",
-      "a": "دهسهما بسيارته",
-      "alt": [
-        "دهسهما",
-        "صدمهما بالسيارة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Half_Measures",
-      "verified": true,
-      "qid": "breakingbad-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "ماذا رمى والتر على سطح بيته في نوبة غضب أمام عائلته؟",
-      "a": "بيتزا",
-      "alt": [
-        "فطيرة بيتزا",
-        "علبة بيتزا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "ما الشيء الذي صنعه والتر ليقلب الاتهام كله على هانك؟",
-      "a": "شريط اعتراف مزيّف",
-      "alt": [
-        "فيديو اعتراف كاذب",
-        "تسجيل مصور مزيف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Blood_Money_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "ما المادة التي أوهم والتر بها توكو أنها بضاعته ثم فجّرها؟",
-      "a": "زئبق متفجّر",
-      "alt": [
-        "فولمينات الزئبق",
-        "زئبق مفجر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Crazy_Handful_of_Nothin%27",
-      "verified": true,
-      "qid": "breakingbad-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "كم عرض غوس على والتر مقابل ثلاثة أشهر من العمل في مختبره؟",
-      "a": "ثلاثة ملايين دولار",
-      "alt": [
-        "3 ملايين دولار",
-        "ثلاثة ملايين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "ما الذي أخذه والتر خلسة من مختبر مدرسته في بداية المسلسل؟",
-      "a": "معدات مخبرية",
-      "alt": [
-        "أدوات المختبر",
-        "زجاجيات مخبرية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما اسم الحلقة الأخيرة من المسلسل؟",
-      "a": "فيلينا",
-      "alt": [
-        "Felina",
-        "فلينا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما نسبة النقاء التي اشتهرت بها بضاعة والتر؟",
-      "a": "99.1%",
-      "alt": [
-        "99.1",
-        "تسعة وتسعون فاصلة واحد بالمئة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Say_My_Name_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما رقم الرحلة المنكوبة التي تحطمت في سماء المدينة؟",
-      "a": "515",
-      "alt": [
-        "الرحلة 515",
-        "خمسمئة وخمسة عشر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/ABQ_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما اسم الحلقة المستوحى من قصيدة عن تمثال ملك مهشّم؟",
-      "a": "أوزيماندياس",
-      "alt": [
-        "Ozymandias",
-        "أوزيمانداس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ozymandias_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-600-048"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسم صاحب مكب الخردة الذي باع لوالتر ورفيقيه عدّتهم الثقيلة؟",
-      "a": "العجوز جو",
-      "alt": [
-        "جو",
-        "Old Joe"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Live_Free_or_Die_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-001"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسم التاجر الذي أرغمه والتر على نطق لقبه في لقاء صحراوي؟",
-      "a": "ديكلان",
-      "alt": [
-        "Declan",
-        "دكلان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Say_My_Name_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسم مساعد المحامي الذي يتولى المهام القذرة مع الحارس الضخم؟",
-      "a": "كوبي",
-      "alt": [
-        "Kuby",
-        "باتريك كوبي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saul_Goodman",
-      "verified": true,
-      "qid": "breakingbad-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسم تاجر السلاح الذي باع لوالتر عدّته في الحلقة الأخيرة؟",
-      "a": "لوسون",
-      "alt": [
-        "Lawson",
-        "لاوسون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسم مديرة المدرسة الثانوية التي كان والتر يدرّس فيها؟",
-      "a": "كارمن",
-      "alt": [
-        "كارمن مولينا",
-        "Carmen"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-005"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسما القريبين التوأمين القادمين من المكسيك؟",
-      "a": "ليونيل وماركو",
-      "alt": [
-        "ماركو وليونيل",
-        "Leonel and Marco"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسم المالك الأصلي لشركة التبخير قبل أن يشتريها الثلاثي؟",
-      "a": "إيرا",
-      "alt": [
-        "Ira",
-        "إيرا صاحب الشركة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hazard_Pay",
-      "verified": true,
-      "qid": "breakingbad-800-007"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "ما اسم المدرسة الثانوية التي كان والتر يدرّس فيها؟",
-      "a": "ثانوية جيه بي واين",
-      "alt": [
-        "J.P. Wynne",
-        "مدرسة جيه بي واين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في أي بلد آسيوي صُوّر شريط الكاريوكي الذي خلّفه غيل؟",
-      "a": "تايلاند",
-      "alt": [
-        "تايلندا",
-        "Thailand"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Full_Measure_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسم زعيم الكارتل الذي أطاح به غوس في حفل المسبح؟",
-      "a": "دون إلاديو",
-      "alt": [
-        "إلاديو",
-        "Don Eladio",
-        "دون الاديو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Salud_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "ما التسمية التي عُرف بها مختبر غوس الضخم تحت الأرض؟",
-      "a": "المختبر الخارق",
-      "alt": [
-        "السوبر لاب",
-        "Superlab",
-        "المختبر العملاق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما طراز السيارة التي سرقها والتر ليعود بها إلى مدينته؟",
-      "a": "فولفو",
-      "alt": [
-        "فولفو 240",
-        "Volvo"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما اسم البيرة المنزلية التي كان هانك يفتخر بصنعها؟",
-      "a": "شرايدربراو",
-      "alt": [
-        "Schraderbräu",
-        "شريدربراو",
-        "شرادربراو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hank_Schrader",
-      "verified": true,
-      "qid": "breakingbad-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما المُحلّي الذي كانت ليديا تضيفه إلى كوبها دائمًا؟",
-      "a": "ستيفيا",
-      "alt": [
-        "Stevia",
-        "ستيفيا المحلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما المشروب الساخن الذي كان غيل يفخر بإعداده بطريقته الخاصة؟",
-      "a": "القهوة",
-      "alt": [
-        "قهوة",
-        "قهوة مقطرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما الاسم الدقيق لنوع القبعة التي صارت علامة شخصية والتر الثانية؟",
-      "a": "قبعة بوركباي",
-      "alt": [
-        "بوركباي",
-        "Pork Pie",
-        "قبعة بورك باي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما طراز السيارة الصغيرة التي قادها جيسي بعد أن فقد سيارته الأولى؟",
-      "a": "تويوتا تيرسل",
-      "alt": [
-        "Toyota Tercel",
-        "تيرسل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما الذي ركّبه غوس في مختبره لمنع خروج الروائح إلى الخارج؟",
-      "a": "نظام ترشيح ضخم",
-      "alt": [
-        "نظام تنقية الهواء",
-        "مرشحات هواء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما طراز الطائرة الكبيرة التي تحطمت في سماء المدينة؟",
-      "a": "بوينغ 737",
-      "alt": [
-        "737",
-        "بوينج 737"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/ABQ_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ما الحيوان الذي كان الصبي يحمله في مرطبان قبيل السرقة الكبرى؟",
-      "a": "عنكبوت رتيلاء",
-      "alt": [
-        "رتيلاء",
-        "عنكبوت",
-        "ترانتولا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dead_Freight",
-      "verified": true,
-      "qid": "breakingbad-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "جمل وألقاب",
-      "q": "بأي عبارة وصف والتر طموحه حين رفض أن يبيع حصته ويخرج؟",
-      "a": "أنا في تجارة الإمبراطوريات",
-      "alt": [
-        "تجارة الإمبراطورية",
-        "empire business"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_5",
-      "verified": true,
-      "qid": "breakingbad-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "جمل وألقاب",
-      "q": "ما الاسم المستعار الذي عاش به والتر في كوخه الشمالي؟",
-      "a": "السيد لامبرت",
-      "alt": [
-        "Mr. Lambert",
-        "مستر لامبرت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "ما الذي فعله والتر بالساعة التي أهداها له جيسي قبل أن يختفي؟",
-      "a": "تركها على هاتف عمومي",
-      "alt": [
-        "وضعها على هاتف عمومي",
-        "نسيها عند الهاتف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "كم بلغ تقريبًا ما جمعه والتر من مال في براميله؟",
-      "a": "نحو ثمانين مليونًا",
-      "alt": [
-        "80 مليون دولار",
-        "ثمانون مليون دولار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "ما الذي ضخّه والتر ورفيقاه في الصهريج ليخفوا أثر سرقتهم؟",
-      "a": "ماء",
-      "alt": [
-        "الماء",
-        "ضخوا ماء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dead_Freight",
-      "verified": true,
-      "qid": "breakingbad-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "كم بطارية سيارة اشترى والتر ورفيقاه لتنفيذ حيلتهم في مكب الخردة؟",
-      "a": "اثنتان وأربعون",
-      "alt": [
-        "42",
-        "42 بطارية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Live_Free_or_Die_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "ماذا فعل والتر ببرميل ماله حين تعطّلت سيارته وسط الرمال؟",
-      "a": "دحرجه على الأرض",
-      "alt": [
-        "جرّه مشيًا",
-        "دفعه بيديه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ozymandias_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "ما الحيلة التي أخرج بها المحامي أحد رفاق جيسي من قبضة الشرطة؟",
-      "a": "قدّم متهمًا بديلًا",
-      "alt": [
-        "أرسل شخصًا يعترف مكانه",
-        "دفع رجلًا ليعترف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "ما اسم شريك غوس الذي قتله هيكتور أمام عينيه؟",
-      "a": "ماكس",
-      "alt": [
-        "Max",
-        "ماكس أرسينييغا",
-        "ماكسيمينو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hermanos_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "ما المبلغ الذي دفعه والتر للرجل المُخفي ليبقى معه ساعة إضافية؟",
-      "a": "عشرة آلاف دولار",
-      "alt": [
-        "10 آلاف دولار",
-        "عشرة آلاف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "العائلة والعلاقات",
-      "q": "أين ترك والتر ابنته الرضيعة بعد أن أخذها من البيت؟",
-      "a": "في شاحنة إطفاء",
-      "alt": [
-        "سيارة إطفاء",
-        "عند مركز الإطفاء",
-        "محطة إطفاء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ozymandias_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "العائلة والعلاقات",
-      "q": "ممن اشترى جيسي المنزل الذي كان يسكنه منذ بداية المسلسل؟",
-      "a": "من والديه",
-      "alt": [
-        "من أبويه",
-        "من أهله"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "العائلة والعلاقات",
-      "q": "ما المهنة التي كانت تعمل بها جين؟",
-      "a": "رسّامة وشوم",
-      "alt": [
-        "فنانة وشم",
-        "رسامة وشم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "جمل وألقاب",
-      "q": "ما آخر ما قاله مايك لوالتر وهو يحتضر على ضفة النهر؟",
-      "a": "دعني أموت بسلام",
-      "alt": [
-        "اصمت ودعني أموت بسلام",
-        "دعني أموت بهدوء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Say_My_Name_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم الشاب الذي حاول والتر أن يرسل المال إلى ابنه عن طريقه؟",
-      "a": "لويس",
-      "alt": [
-        "Louis",
-        "لويس صديق ابنه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم عائلة صديقة جيسي وابنها الصغير؟",
-      "a": "كانتيّو",
-      "alt": [
-        "Cantillo",
-        "كانتييو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وتجارة",
-      "q": "ما الاسم الإسباني الذي حملته شركة التبخير التي اشتراها الثلاثي؟",
-      "a": "فامونوس بيست",
-      "alt": [
-        "Vamonos Pest",
-        "فاموس بيست",
-        "فامونوس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hazard_Pay",
-      "verified": true,
-      "qid": "breakingbad-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وتجارة",
-      "q": "كم كلّف بناء المختبر السري تحت الأرض تقريبًا؟",
-      "a": "أكثر من ثمانية ملايين",
-      "alt": [
-        "8 ملايين دولار",
-        "ثمانية ملايين دولار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "تفاصيل دقيقة",
-      "q": "في أي فرع علمي دقيق برع والتر أيام بحثه الجامعي؟",
-      "a": "علم البلورات بالأشعة",
-      "alt": [
-        "علم البلورات بالأشعة السينية",
-        "التصوير البلوري",
-        "X-ray crystallography"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال وتجارة",
-      "q": "ما اسم شركة الطيران التي تحطمت طائرتها فوق المدينة؟",
-      "a": "وايفيرر",
-      "alt": [
-        "Wayfarer",
-        "وايفارر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/ABQ_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما الرقم الذي رسمه والتر بشرائح اللحم في فطور عيد ميلاده؟",
-      "a": "52",
-      "alt": [
-        "اثنان وخمسون",
-        "٥٢"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Live_Free_or_Die_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما نسبة النقاء التي كان يبلغها غيل في عمله؟",
-      "a": "96%",
-      "alt": [
-        "96",
-        "ستة وتسعون بالمئة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Say_My_Name_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما شعار ولاية أمريكية صار عنوانًا لإحدى حلقات المسلسل؟",
-      "a": "عش حرًّا أو مت",
-      "alt": [
-        "Live Free or Die",
-        "عش حرا أو مت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Live_Free_or_Die_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما العدد الذي حمله عنوان الحلقة التي بلغ فيها والتر عامًا جديدًا؟",
-      "a": "واحد وخمسون",
-      "alt": [
-        "51",
-        "الحادية والخمسون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fifty-One_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية والتر وايت؟",
-      "a": "براين كرانستون",
-      "alt": [
-        "بريان كرانستون",
-        "Bryan Cranston"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bryan_Cranston",
-      "verified": true,
-      "qid": "breakingbad-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية جيسي؟",
-      "a": "آرون بول",
-      "alt": [
-        "ارون بول",
-        "Aaron Paul"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية هانك؟",
-      "a": "دين نوريس",
-      "alt": [
-        "Dean Norris",
-        "دين نورس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من الممثلة التي أدت شخصية سكايلر؟",
-      "a": "آنا غن",
-      "alt": [
-        "Anna Gunn",
-        "أنا غان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-800-048"
-    },
-    {
+      "qid": "breakingbad-1000-908",
       "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما العنصران الكيميائيان اللذان يبرزان في شعار اسم المسلسل؟",
-      "a": "البروم والباريوم",
+      "topic": "أشياء مفصلية",
+      "q": "أي جزء مفقود يكشف لوالتر أن كريزي إيت يخطط لمهاجمته في القبو؟",
+      "a": "قطعة من الصحن المكسور",
       "alt": [
-        "بروم وباريوم",
-        "Br و Ba"
+        "شظية صحن",
+        "قطعة طبق",
+        "شظية من الطبق"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad_season_1",
       "verified": true,
-      "qid": "breakingbad-1000-001"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما العناصر الثلاثة التي يتألف منها عنوان الحلقة الأخيرة؟",
-      "a": "الحديد والليثيوم والصوديوم",
-      "alt": [
-        "حديد وليثيوم وصوديوم",
-        "Fe Li Na"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-002"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما رقم هاتف مكتب المحامي كما يظهر في إعلاناته؟",
-      "a": "505-503-4455",
-      "alt": [
-        "5055034455",
-        "٥٠٥-٥٠٣-٤٤٥٥"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saul_Goodman",
-      "verified": true,
-      "qid": "breakingbad-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما معنى الاسم الإسباني الذي حملته شركة التبخير في المسلسل؟",
-      "a": "لنذهب",
-      "alt": [
-        "هيا بنا",
-        "فلنذهب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hazard_Pay",
-      "verified": true,
-      "qid": "breakingbad-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "كيف اشتُقّ اسم شركة والتر العلمية من لقبي مؤسسيها؟",
-      "a": "أسود وأبيض يعطيان الرمادي",
-      "alt": [
-        "الأسود والأبيض معًا رماديّ",
-        "من مزج الأسود والأبيض"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Gray_Matter_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما اسم القصيدة التي كان غيل يحب ترديدها لشاعر أمريكي؟",
-      "a": "حين سمعت الفلكي العالم",
-      "alt": [
-        "When I Heard the Learn'd Astronomer",
-        "قصيدة الفلكي العالم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما اسم المقطوعة الكلاسيكية التي عزفها صديق جيسي النحيل ببراعة؟",
-      "a": "سولفيجيتو",
-      "alt": [
-        "Solfeggietto",
-        "سولفيدجيتو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hazard_Pay",
-      "verified": true,
-      "qid": "breakingbad-1000-007"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما اسم الأغنية التي غنّاها غيل في شريط الكاريوكي؟",
-      "a": "ميجر توم",
-      "alt": [
-        "Major Tom",
-        "ميجور توم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Full_Measure_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-008"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما الفيلم الوحيد الذي كان متاحًا لوالتر في كوخه المعزول؟",
-      "a": "متجر السيد ماغوريوم",
-      "alt": [
-        "Mr. Magorium's Wonder Emporium",
-        "متجر ماغوريوم العجيب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما اسم المسلسل الفضائي الذي كتب له أحد رفاق جيسي حلقة من خياله؟",
-      "a": "ستار تريك",
-      "alt": [
-        "Star Trek",
-        "ستار ترك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Blood_Money_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "ما النوع الموسيقي المكسيكي الذي تنتمي إليه الأغنية التي تحكي عن والتر؟",
-      "a": "كورّيدو",
-      "alt": [
-        "ناركو كوريدو",
-        "corrido"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "تفاصيل دقيقة",
-      "q": "إلى أي عالم فيزياء ألماني يعود اللقب الذي اختاره والتر لنفسه؟",
-      "a": "فيرنر هايزنبرغ",
-      "alt": [
-        "Werner Heisenberg",
-        "فيرنر هايزنبيرغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "ما اسم الجارة التي فاجأها والتر واقفًا أمام بيته المهجور؟",
-      "a": "كارول",
-      "alt": [
-        "Carol",
-        "كارول الجارة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "ما اسم المدير الألماني الذي شارك غوس في تمويل المختبر؟",
-      "a": "بيتر شولر",
-      "alt": [
-        "Peter Schuler",
-        "بيتر شوهلر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Madrigal_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "ما اسم قريب أحد رفاق جيسي الذي باعه سيارته الثانية؟",
-      "a": "كلوفيس",
-      "alt": [
-        "Clovis",
-        "كلوفس"
-      ],
-      "sourceUrl": "https://breakingbad.fandom.com/wiki/Clovis",
-      "verified": true,
-      "qid": "breakingbad-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "ما اسم مدير المكتب الإقليمي الذي كان رئيسًا لهانك؟",
-      "a": "جورج ميركرت",
-      "alt": [
-        "ميركرت",
-        "George Merkert"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "ما اسم مغسلة الملابس التي كانت تخفي المختبر تحتها؟",
-      "a": "لافاندريا بريانتي",
-      "alt": [
-        "Lavandería Brillante",
-        "لافاندريا برييانتي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في أي معهد أمريكي مرموق درس والتر وتعرّف إلى شريكه؟",
-      "a": "كالتك",
-      "alt": [
-        "معهد كاليفورنيا للتقنية",
-        "Caltech"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Walter_White_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "من أي مدينة أمريكية جاء التاجر الذي عرض على والتر شراكة؟",
-      "a": "فينيكس",
-      "alt": [
-        "Phoenix",
-        "فينكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Say_My_Name_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "ما اسم المدينة الحدودية التي ينسب إليها الكارتل في المسلسل؟",
-      "a": "خواريز",
-      "alt": [
-        "Juarez",
-        "سيوداد خواريز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما المشروب الغازي الذي اشتراه والتر من آلة البيع بذلك الدولار؟",
-      "a": "كوكاكولا",
-      "alt": [
-        "كولا",
-        "Coca-Cola"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما طراز السيارة التي انطلق بها جيسي في المشهد الأخير؟",
-      "a": "الكامينو",
-      "alt": [
-        "El Camino",
-        "شيفروليه الكامينو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما الوثيقة التي زيّن بها المحامي الجدار خلف مكتبه؟",
-      "a": "الدستور الأمريكي",
-      "alt": [
-        "دستور الولايات المتحدة",
-        "الدستور"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saul_Goodman",
-      "verified": true,
-      "qid": "breakingbad-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما المجسّم المنفوخ الذي كان يعتلي سطح مكتب المحامي؟",
-      "a": "تمثال الحرية",
-      "alt": [
-        "مجسم تمثال الحرية",
-        "تمثال الحرية المنفوخ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saul_Goodman",
-      "verified": true,
-      "qid": "breakingbad-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما الجهاز الصغير الذي استعمله والتر ليشغّل ما في صندوق سيارته؟",
-      "a": "جهاز فتح باب المرآب",
-      "alt": [
-        "ريموت باب الكراج",
-        "جهاز التحكم بباب المرآب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "أين دوّن والتر إحداثيات المكان الذي دفن فيه أمواله؟",
-      "a": "على ورقة يانصيب",
-      "alt": [
-        "ورقة اليانصيب",
-        "على تذكرة يانصيب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "بكم اشترى جيسي البيت المتنقل من صديقه؟",
-      "a": "ألف وأربعمئة دولار",
-      "alt": [
-        "1400 دولار",
-        "ألف وأربعمائة دولار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jesse_Pinkman",
-      "verified": true,
-      "qid": "breakingbad-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "مما صنع والتر بطارية بديلة حين تعطّلت مركبته وسط الرمال؟",
-      "a": "من نقود معدنية",
-      "alt": [
-        "من عملات معدنية",
-        "بطارية من النقود"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/4_Days_Out",
-      "verified": true,
-      "qid": "breakingbad-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "كم يومًا علق والتر وجيسي في البرية بعد تعطّل مركبتهما؟",
-      "a": "أربعة أيام",
-      "alt": [
-        "4 أيام",
-        "أربعة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/4_Days_Out",
-      "verified": true,
-      "qid": "breakingbad-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "ما اللعبة التي كان والتر يلعبها مع الرجل المُخفي في الكوخ؟",
-      "a": "الورق",
-      "alt": [
-        "لعبة ورق",
-        "الشدّة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "كم غالونًا سُرق من الصهريج في أكبر عملية سطو بالمسلسل؟",
-      "a": "ألف غالون",
-      "alt": [
-        "1000 غالون",
-        "ألف جالون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dead_Freight",
-      "verified": true,
-      "qid": "breakingbad-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وتجارة",
-      "q": "ما اسم عائلة الرجل الذي باع مغسلة السيارات لعائلة وايت؟",
-      "a": "ووليناتز",
-      "alt": [
-        "Wolynetz",
-        "وولينتز",
-        "فولينتز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Breaking_Bad",
-      "verified": true,
-      "qid": "breakingbad-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم عائلة تود؟",
-      "a": "ألكويست",
-      "alt": [
-        "Alquist",
-        "الكويست"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وتجارة",
-      "q": "بكم دولارًا باع والتر حصته في شركته العلمية لصديقه؟",
-      "a": "خمسة آلاف دولار",
-      "alt": [
-        "5000 دولار",
-        "بخمسة آلاف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Gray_Matter_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "العائلة والعلاقات",
-      "q": "ما اسم عائلة جين ووالدها؟",
-      "a": "مارغوليس",
-      "alt": [
-        "Margolis",
-        "مارجوليس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "العائلة والعلاقات",
-      "q": "ما الاسم الذي سجّل به ابن والتر نفسه رسميًّا؟",
-      "a": "فلين وايت",
-      "alt": [
-        "Flynn White",
-        "فلين هوايت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما الأغنية التي انطلقت من مسجّل السيارة التي سرقها والتر؟",
-      "a": "إل باسو",
-      "alt": [
-        "El Paso",
-        "إل باسو لمارتي روبنز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Felina_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وتجارة",
-      "q": "ما اسم متجر المكانس الذي يتخذه الرجل المُخفي واجهةً لعمله؟",
-      "a": "أفضل جودة للمكانس",
-      "alt": [
-        "Best Quality Vacuum",
-        "بست كواليتي فاكيوم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال وتجارة",
-      "q": "ما اسم سلسلة المخابز التي ذكر المحامي أنه قد يعمل فيها؟",
-      "a": "سينابون",
-      "alt": [
-        "Cinnabon",
-        "سينابون للحلويات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Granite_State_(Breaking_Bad)",
-      "verified": true,
-      "qid": "breakingbad-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في أي شارع يقع بيت عائلة وايت حسب المسلسل؟",
-      "a": "نيغرا أرويو لين",
-      "alt": [
-        "Negra Arroyo Lane",
-        "نيجرا أرويو"
-      ],
-      "sourceUrl": "https://breakingbad.fandom.com/wiki/White_Residence",
-      "verified": true,
-      "qid": "breakingbad-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية غوس؟",
-      "a": "جيانكارلو إسبوزيتو",
-      "alt": [
-        "Giancarlo Esposito",
-        "جيانكارلو اسبوزيتو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية مايك؟",
-      "a": "جوناثان بانكس",
-      "alt": [
-        "Jonathan Banks",
-        "جوناثان بانكز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية المحامي سول؟",
-      "a": "بوب أودنكيرك",
-      "alt": [
-        "Bob Odenkirk",
-        "بوب اودنكيرك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية ابن والتر؟",
-      "a": "آر جيه ميتي",
-      "alt": [
-        "RJ Mitte",
-        "ار جي ميتي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية تود؟",
-      "a": "جيسي بليمونز",
-      "alt": [
-        "Jesse Plemons",
-        "جسي بليمونز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-045"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من الممثلة التي أدت شخصية ماري؟",
-      "a": "بيتسي براندت",
-      "alt": [
-        "Betsy Brandt",
-        "بيتسي برانت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من الممثلة التي أدت شخصية ليديا؟",
-      "a": "لورا فريزر",
-      "alt": [
-        "Laura Fraser",
-        "لورا فرايزر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من الممثل الذي أدى شخصية غيل؟",
-      "a": "ديفيد كوستابيل",
-      "alt": [
-        "David Costabile",
-        "دايفيد كوستابيل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Breaking_Bad_characters",
-      "verified": true,
-      "qid": "breakingbad-1000-048"
+      "difficultyTarget": 0.15
     }
   ]
 }

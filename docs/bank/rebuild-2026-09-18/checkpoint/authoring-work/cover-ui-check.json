@@ -1,0 +1,104 @@
+{
+  "fixture": "Local code built in memory; unrelated existing WebP used only to test loading. No generated cover or external API was called.",
+  "checks": [
+    {
+      "name": "78 category choices preserved",
+      "ok": true
+    },
+    {
+      "name": "old icon remains visible while image is pending",
+      "ok": true
+    },
+    {
+      "name": "image completion preserves reserved 4:3 layout",
+      "ok": true
+    },
+    {
+      "name": "missing individual cover falls back without a broken image",
+      "ok": true
+    },
+    {
+      "name": "image cover preserves selection state",
+      "ok": true
+    },
+    {
+      "name": "favorite control stays independent of selection",
+      "ok": true
+    },
+    {
+      "name": "layout at 320px",
+      "ok": true
+    },
+    {
+      "name": "layout at 360px",
+      "ok": true
+    },
+    {
+      "name": "layout at 390px",
+      "ok": true
+    },
+    {
+      "name": "layout at 430px",
+      "ok": true
+    },
+    {
+      "name": "layout at 768px",
+      "ok": true
+    },
+    {
+      "name": "layout at 1440px",
+      "ok": true
+    },
+    {
+      "name": "long-name category remains searchable",
+      "ok": true
+    },
+    {
+      "name": "cover imagery is decorative",
+      "ok": true
+    },
+    {
+      "name": "no JavaScript exceptions",
+      "ok": true
+    }
+  ],
+  "sizes": [
+    {
+      "width": 320,
+      "columns": 2,
+      "overflow": false,
+      "button": 48
+    },
+    {
+      "width": 360,
+      "columns": 2,
+      "overflow": false,
+      "button": 48
+    },
+    {
+      "width": 390,
+      "columns": 2,
+      "overflow": false,
+      "button": 48
+    },
+    {
+      "width": 430,
+      "columns": 2,
+      "overflow": false,
+      "button": 48
+    },
+    {
+      "width": 768,
+      "columns": 3,
+      "overflow": false,
+      "button": 48
+    },
+    {
+      "width": 1440,
+      "columns": 5,
+      "overflow": false,
+      "button": 48
+    }
+  ],
+  "errors": []
+}

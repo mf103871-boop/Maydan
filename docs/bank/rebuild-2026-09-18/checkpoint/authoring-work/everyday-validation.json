@@ -1,0 +1,130 @@
+[
+  {
+    "id": "puzzles",
+    "errors": [],
+    "warnings": [
+      "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «قمر» في emoji،puzzles"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "puzzles",
+        "name": "ألغاز وذكاء",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 8,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  },
+  {
+    "id": "arabic",
+    "errors": [],
+    "warnings": [
+      "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «القلب» في arabliterature،general،arabic · «الكسره» في ramadan،arabic"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "arabic",
+        "name": "لغة عربية",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 8,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  },
+  {
+    "id": "apps",
+    "errors": [],
+    "warnings": [
+      "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «تويتش» في videogames،youtubers،apps · «تيك توك» في youtubers،apps · «انستغرام» في youtubers،apps"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "apps",
+        "name": "تطبيقات وسوشيال",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 8,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  },
+  {
+    "id": "brands",
+    "errors": [],
+    "warnings": [],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "brands",
+        "name": "ماركات وشركات",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 8,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  },
+  {
+    "id": "cars",
+    "errors": [],
+    "warnings": [
+      "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «اودي» في cartoon،cars · «فيراري» في sports،cars · «ناقل الحركه» في zoom،cars"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "cars",
+        "name": "سيارات",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 8,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  }
+]

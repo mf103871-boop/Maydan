@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import logic from '../src/games/badeeha/logic.js';
+import logic, { BANK_CONTENT_VERSION } from '../src/games/badeeha/logic.js';
 import { seeded } from './helpers.js';
 
 // فئات اصطناعية: منطق بناء الجولة يجب أن يُختبر بمعزل عن محتوى البنك الحقيقي،
@@ -82,7 +82,7 @@ test('الجلسة: deck → ids → deck يعيد نفس الأسئلة، وا�
   const ids = logic.deckToIds(deck);
   const restored = logic.idsToDeck(CATS, ids);
   assert.deepEqual(deckIds(restored), deckIds(deck));
-  const session = { version: 2, teams: [{}, {}], selectedCategories: six, mode: 'family', roundSize: 20, deck: ids };
+  const session = { version: 2, contentVersion: BANK_CONTENT_VERSION, teams: [{}, {}], selectedCategories: six, mode: 'family', roundSize: 20, deck: ids };
   assert.equal(logic.isValidSession(CATS, session), true);
   assert.equal(logic.isValidSession(CATS, { ...session, version: 1 }), false);
   assert.equal(logic.isValidSession(CATS, { ...session, roundSize: 30 }), false);

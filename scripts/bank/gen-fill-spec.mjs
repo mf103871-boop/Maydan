@@ -3,10 +3,9 @@ import { normalizeArabic } from '../bank.mjs'
 
 const DIR = 'src/data/categories'
 const TIERS = [200, 400, 600, 800, 1000]
-const MIN = 48
-const CAP = Math.ceil(MIN * 0.25) // 12 — no topic may exceed 25% of a tier
-
 const status = JSON.parse(readFileSync('src/data/bank-status.json', 'utf8'))
+const MIN = status.tierCount ?? status.tierMin ?? 8
+const CAP = Math.max(1, Math.floor(MIN * 0.25))
 const files = readdirSync(DIR).filter((f) => f.endsWith('.json'))
 const bankAnswers = new Set()
 const packs = []

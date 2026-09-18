@@ -32,6 +32,55 @@ async function run(root, command, questions, checks) {
 }
 const readPack = async (root) => JSON.parse(await readFile(path.join(root, 'src/data/categories/trial.json'), 'utf8'));
 
+async function curatedPolicy(root) {
+  const file = path.join(root, 'src/data/bank-status.json');
+  const status = JSON.parse(await readFile(file, 'utf8'));
+  await writeFile(file, JSON.stringify({ ...status, tierCount: 8, qidRange: { start: 901, end: 908 },
+    difficultyTargets: { 200: .8, 400: .6, 600: .4, 800: .25, 1000: .15 } }));
+}
+
+test('curated pipeline caps tiers/topics and stamps the reviewed tier target with fresh identifiers', async (t) => {
+  for (const command of ['append', 'merge']) {
+    const root = await fixture(t, command === 'append' ? { id: 'trial', name: 'اختبار', icon: '🧩', qs: [] } : undefined);
+    await curatedPolicy(root);
+    const questions = Array.from({ length: 10 }, (_, i) => ({
+      p: 200, q: `ما الحدث المرتبط بالبطاقة ${i} هنا؟`, a: `إجابة ${String.fromCharCode(0x641 + i)} خاصة`,
+      topic: `مجال ${Math.floor(i / 2)}`, source: 'https://example.org/evidence',
+    }));
+    const checks = questions.map((_, i) => ({ i, verdict: 'fix', p: 400 }));
+    const result = await run(root, command, questions, checks);
+    assert.equal(result.status, 0, result.stderr);
+    const pack = await readPack(root);
+    assert.equal(pack.qs.length, 8);
+    assert.deepEqual(pack.qs.map(q => q.qid), Array.from({ length: 8 }, (_, i) => `trial-400-${901 + i}`));
+    for (const q of pack.qs) {
+      assert.equal(q.p, 400);
+      assert.equal(q.difficultyTarget, .6);
+      assert.equal(q.source, 'https://example.org/evidence');
+      assert.equal(q.verified, true);
+    }
+    const topicCounts = Object.values(Object.groupBy(pack.qs, q => q.topic)).map(qs => qs.length);
+    assert.ok(topicCounts.every(n => n <= 2));
+  }
+});
+
+test('curated pipeline cannot reuse retired range or overflow 908, and failed allocation writes nothing', async (t) => {
+  for (const command of ['append', 'merge']) {
+    const old = { id: 'trial', name: 'اختبار', icon: '🧩', qs: [] };
+    const root = await fixture(t, command === 'append' ? old : undefined);
+    await curatedPolicy(root);
+    await mkdir(path.join(root, 'docs/bank'), { recursive: true });
+    await writeFile(path.join(root, 'docs/bank/retired-qids.json'), JSON.stringify({
+      ranges: [{ category: 'trial', tier: 200, start: 901, end: 908 }], qids: [],
+    }));
+    const result = await run(root, command, [candidate()], [{ i: 0, verdict: 'keep' }]);
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /نفدت المعرّفات/);
+    if (command === 'append') assert.deepEqual(await readPack(root), old);
+    else await assert.rejects(readPack(root), { code: 'ENOENT' });
+  }
+});
+
 test('append preserves old ids, reassigned tiers, metadata and media; only checked questions enter', async (t) => {
   const old = [
     { p: 200, qid: 'trial-200-003', q: 'نص قديم أول', a: 'قديم أ', topic: 'موضوع', verified: true, type: 'image', media: { src: 'one.webp' }, alt: ['بديل'] },

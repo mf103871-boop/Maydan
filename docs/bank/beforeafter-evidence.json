@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-09-08",
-  "note": "أزواج تحريرية من أحداث موثقة. السنوات لا تظهر للاعب، وتقارن بعد توثيق الحدثين. تقديرات الصعوبة تحريرية ولم تقس على جمهور.",
+  "note": "أربعون مقارنة منتقاة من الأحداث الموثقة. التدرج يعتمد على شهرة الحدثين وتقارب موعديهما؛ نسبة النجاح الفعلية في خيارين لها خط أساس عشوائي 50%، لذا أهداف 40/25/15% تعني المعرفة دون تخمين، وليست قياسًا للنجاح في هذا النمط.",
   "groups": [
     {
       "topic": "تاريخ الحوسبة",
@@ -139,7 +139,7 @@
           "id": "liberty",
           "label": "تدشين تمثال الحرية بنيويورك",
           "year": 1886,
-          "sourceUrl": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+          "sourceUrl": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm"
         },
         {
           "id": "eiffel",
@@ -334,7 +334,7 @@
           "id": "londonmetro",
           "label": "بدء تشغيل مترو لندن",
           "year": 1863,
-          "sourceUrl": "https://en.wikipedia.org/wiki/London_Underground"
+          "sourceUrl": "https://foi.tfl.gov.uk/FOI-0773-2324/TUBE160%20Heritage%20Leaflet.pdf"
         },
         {
           "id": "parismetro",
@@ -376,7 +376,7 @@
           "id": "dubaimetro",
           "label": "بدء تشغيل مترو دبي",
           "year": 2009,
-          "sourceUrl": "https://en.wikipedia.org/wiki/Dubai_Metro"
+          "sourceUrl": "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders"
         },
         {
           "id": "dohametro",

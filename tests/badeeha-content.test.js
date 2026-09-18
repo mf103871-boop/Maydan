@@ -9,11 +9,10 @@ import { STORY_CREDITS, STORY_ACTOR, answerLeaks, normalizeArabic } from '../scr
 const dir = path.resolve('src/data/categories');
 const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
 const cats = files.map((f) => JSON.parse(readFileSync(path.join(dir, f), 'utf8')));
-// الحدود من ملف الحالة: الفئة «done» تُفحص بصرامة (48 لكل خانة)، و«pending» بحد أدنى 24 إجمالًا.
+// عقد الإصدار المنتقى: 8 بالضبط لكل شريحة، لكل حزمة، حتى لو كانت قيد المراجعة.
 const STATUS = JSON.parse(readFileSync(path.resolve('src/data/bank-status.json'), 'utf8'));
 const TIERS = STATUS.tiers;
-const TIER_MIN = STATUS.tierMin;
-const MIN_PER_PACK = 24;
+const TIER_COUNT = STATUS.tierCount;
 const QID = /^(?:[0-9a-f]{12}|[a-z][a-z0-9]*-(?:200|400|600|800|1000)-\d{3})$/;
 
 test('كل حزمة لها معرّف واسم وأيقونة، والمعرّفات فريدة', () => {
@@ -26,19 +25,17 @@ test('كل حزمة لها معرّف واسم وأيقونة، والمعرّف
   }
 });
 
-test(`كل حزمة مسجّلة في bank-status.json، وpending ≥ ${MIN_PER_PACK} سؤالًا، وdone ≥ ${TIER_MIN} في كل شريحة`, () => {
-  assert.equal(TIER_MIN, 48, 'TIER_MIN لا يُخفَّض لتمرير الاختبارات');
+test('كل حزمة مسجّلة وتحتوي 8 أسئلة بالضبط لكل شريحة حسب طلب المالك', () => {
+  assert.equal(TIER_COUNT, 8);
   for (const c of cats) {
     const meta = STATUS.categories[c.id];
     assert.ok(meta, `${c.id}: ليست في bank-status.json`);
     const perTier = Object.fromEntries(TIERS.map((t) => [t, c.qs.filter((q) => q.p === t).length]));
+    assert.equal(c.qs.length, 40, c.id);
+    for (const p of TIERS) assert.equal(perTier[p], TIER_COUNT, `${c.id}: شريحة ${p}`);
+    for (const p of TIERS) assert.equal(meta.counts[p], perTier[p], `${c.id}: bank-status لا يطابق الملف في شريحة ${p}`);
     if (meta.status === 'done') {
-      for (const p of TIERS) assert.ok(perTier[p] >= TIER_MIN, `${c.id}: شريحة ${p} فيها ${perTier[p]} والحد ${TIER_MIN}`);
-      for (const p of TIERS) assert.equal(meta.counts[p], perTier[p], `${c.id}: bank-status لا يطابق الملف في شريحة ${p}`);
       assert.ok(meta.doneAt, `${c.id}: done بلا doneAt`);
-    } else {
-      assert.ok(c.qs.length >= MIN_PER_PACK, `${c.id}: ${c.qs.length} سؤالًا فقط`);
-      for (const p of TIERS) assert.ok(perTier[p] > 0, `${c.id}: لا أسئلة بشريحة ${p}`);
     }
   }
   for (const [id, meta] of Object.entries(STATUS.categories)) {
@@ -52,6 +49,8 @@ test('المعرّفات فريدة عبر البنك كله، ولا سؤال �
   for (const q of all) {
     assert.match(String(q.qid || ''), QID, `${q.cat}: qid غير صالح (${q.qid})`);
     assert.ok(TIERS.includes(q.p), `${q.cat}/${q.qid}: نقاط غير صالحة`);
+    assert.match(q.qid, new RegExp(`^${q.cat}-${q.p}-90[1-8]$`), 'المعرّفات الجديدة لا تعيد استعمال سجل سؤال قديم');
+    assert.equal(q.difficultyTarget, STATUS.difficultyTargets[q.p], q.qid);
     const hasPrompt = (q.q && String(q.q).trim()) || q.type;
     assert.ok(hasPrompt, `${q.cat}/${q.qid}: سؤال بلا نص`);
     const noWrittenAnswer = ['order', 'odd', 'grid'].includes(q.type);

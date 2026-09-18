@@ -36,14 +36,19 @@ test('البنك الفعلي يجتاز bank:validate بلا أخطاء', async
   assert.deepEqual(errors, []);
 });
 
-test('bank-status.json: 78 فئة بترتيب فريد بعد حذف childhood وfourpics، والحدود لم تُخفَّض', async () => {
+test('bank-status.json: سياسة البنك المنتقى تطابق طلب المالك مع بقاء الحزم الـ78', async () => {
   const status = JSON.parse(await readFile(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
   // الحزم التجريبية (scripts/demo-packs.mjs) تُسجَّل مؤقتًا باسم demo[a-f] ولا تُحتسب
   const cats = Object.entries(status.categories).filter(([id]) => !/^demo[a-f]$/.test(id));
   assert.equal(cats.length, 78);
   assert.ok(!status.categories.childhood, 'childhood حُذفت بقرار صاحب المشروع');
   assert.ok(!status.categories.fourpics, 'fourpics سُحبت بقرار صاحب المشروع');
-  assert.equal(status.tierMin, 48, 'TIER_MIN لا يُخفَّض');
+  assert.equal(status.tierMin, 8);
+  assert.equal(status.tierCount, 8, 'ثمانية بالضبط لكل شريحة');
+  assert.deepEqual(status.qidRange, { start: 901, end: 908 });
+  assert.deepEqual(status.difficultyTargets, { 200: 0.8, 400: 0.6, 600: 0.4, 800: 0.25, 1000: 0.15 });
+  assert.equal(status.difficultyCalibration, 'editorial-not-measured');
+  assert.equal(status.requireSources, true);
   assert.deepEqual(status.tiers, [200, 400, 600, 800, 1000]);
   assert.equal(status.maxQuestionWords, 22);
   assert.equal(status.maxAnswerWords, 6);
@@ -145,7 +150,7 @@ async function makeRoot({ categories, packs, files = {} }) {
   const root = await mkdtemp(path.join(tmpdir(), 'maydan-bank-'));
   await mkdir(path.join(root, 'src/data/categories'), { recursive: true });
   const status = {
-    tierMin: 48, tiers: TIERS, maxQuestionWords: 22, maxAnswerWords: 6,
+    tierMin: 8, tiers: TIERS, maxQuestionWords: 22, maxAnswerWords: 6,
     mediaBudget: { imageKB: 30, audioKB: 50, categoryMB: 4 },
     categories,
   };
@@ -163,28 +168,28 @@ async function makeRoot({ categories, packs, files = {} }) {
 const counts = (perTier) => Object.fromEntries(TIERS.map((t) => [t, perTier]));
 const meta = (over = {}) => ({ name: 'اختبار', icon: '🧪', media: false, status: 'pending', counts: counts(0), doneAt: null, order: 1, ...over });
 
-test('فئة مكتملة سليمة: 48 لكل خانة، مواضيع، تحقق، ترتيب', async () => {
-  const qs = makeQuestions('geo', 48);
+test('فئة مكتملة سليمة: 8 لكل خانة، مواضيع، تحقق، ترتيب', async () => {
+  const qs = makeQuestions('geo', 8);
   const root = await makeRoot({
-    categories: { geo: meta({ status: 'done', counts: counts(48), doneAt: '2026-09-06T00:00:00Z' }) },
+    categories: { geo: meta({ status: 'done', counts: counts(8), doneAt: '2026-09-06T00:00:00Z' }) },
     packs: [{ id: 'geo', name: 'جغرافيا', icon: '🌍', qs }],
   });
   const { errors, categories } = await validateBank(root);
   assert.deepEqual(errors, []);
-  assert.equal(categories[0].total, 240);
+  assert.equal(categories[0].total, 40);
   await rm(root, { recursive: true, force: true });
 });
 
 test('فئة مكتملة ناقصة خانة، أو بلا verified، أو موضوع متضخّم → أخطاء', async () => {
-  const qs = makeQuestions('geo', 48);
+  const qs = makeQuestions('geo', 8);
   qs.pop(); // ينقص سؤال من 1000
-  const noVerified = makeQuestions('sci', 48, { verified: false });
-  const lopsided = makeQuestions('his', 48).map((q) => ({ ...q, topic: q.p === 200 ? 'واحد' : q.topic }));
+  const noVerified = makeQuestions('sci', 8, { verified: false });
+  const lopsided = makeQuestions('his', 8).map((q) => ({ ...q, topic: q.p === 200 ? 'واحد' : q.topic }));
   const root = await makeRoot({
     categories: {
-      geo: meta({ status: 'done', counts: { ...counts(48), 1000: 47 }, doneAt: 'x', order: 1 }),
-      sci: meta({ status: 'done', counts: counts(48), doneAt: 'x', order: 2 }),
-      his: meta({ status: 'done', counts: counts(48), doneAt: 'x', order: 3 }),
+      geo: meta({ status: 'done', counts: { ...counts(8), 1000: 7 }, doneAt: 'x', order: 1 }),
+      sci: meta({ status: 'done', counts: counts(8), doneAt: 'x', order: 2 }),
+      his: meta({ status: 'done', counts: counts(8), doneAt: 'x', order: 3 }),
     },
     packs: [
       { id: 'geo', name: 'ج', icon: '🌍', qs },
@@ -194,7 +199,7 @@ test('فئة مكتملة ناقصة خانة، أو بلا verified، أو مو
   });
   const { errors } = await validateBank(root);
   const has = (s) => errors.some((e) => e.includes(s));
-  assert.ok(has('geo: خانة 1000: 47 سؤالًا والحد 48'), errors.join('\n'));
+  assert.ok(has('geo: خانة 1000: 7 سؤالًا والحد 8'), errors.join('\n'));
   assert.ok(has('sci: sci-200-001: verified ليست true'));
   assert.ok(has('his: خانة 200: موضوع «واحد» يشغل 100% والحد 25%'));
   await rm(root, { recursive: true, force: true });

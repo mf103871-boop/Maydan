@@ -1,0 +1,158 @@
+[
+  {
+    "id": "sports",
+    "errors": [],
+    "warnings": [
+      "sports: sports-400-905: إجابته «أثينا» مكشوفة في نص sports-800-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "sports: sports-600-908: إجابته «الأبيض» مكشوفة في نص sports-800-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "13 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «باريس» في arabliterature،capitals،emoji،hints،spacetoon،syriandrama،turkishdrama،sports · «الارجنتين» في babalhara،flags،football،worldcup،sports · «طوكيو» في capitals،deathnote،emoji،sports · «فيراري» في cars،sports · «مايكل شوماخر» في cars،sports · «خوان مانويل فانجيو» في cars،sports · «الملاكمه» في commonbond،hints،sports · «خطوه» في completeproverb،sports …"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "sports",
+        "name": "رياضة",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 8,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  },
+  {
+    "id": "football",
+    "errors": [],
+    "warnings": [
+      "football: football-400-904: إجابته «اليونان» مكشوفة في نص football-1000-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "football: football-400-905: إجابته «السعودية» مكشوفة في نص football-600-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "football: football-400-906: إجابته «أستراليا» مكشوفة في نص football-600-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "football: football-400-906: إجابته «أستراليا» مكشوفة في نص football-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "football: football-600-906: إجابته «اليابان» مكشوفة في نص football-200-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "22 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «يونس محمود» في arabcelebs،football · «المعز علي» في arabcelebs،football · «اسبانيا» في arabliterature،flags،history،worldcup،football · «السعوديه» في arabmovies،cars،commonbond،emoji،flags،food،hints،islamiyat،ramadanseries،worldcup،football · «فرنسا» في arabmovies،commonbond،flags،food،syriandrama،turkishdrama،football · «مصر» في arabseries،books،code،commonbond،emoji،flags،prophets،quran،ramadan،youtubers،football · «الارجنتين» في babalhara،flags،sports،worldcup،football · «احمر» في books،football …"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "football",
+        "name": "كرة القدم",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 6,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  },
+  {
+    "id": "worldcup",
+    "errors": [],
+    "warnings": [
+      "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-200-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-200-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-400-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-600-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-1000-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-200-902: إجابته «البرازيل» مكشوفة في نص worldcup-400-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-200-902: إجابته «البرازيل» مكشوفة في نص worldcup-1000-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-800-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-1000-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-1000-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "worldcup: worldcup-400-908: إجابته «إسبانيا» مكشوفة في نص worldcup-400-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "16 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «سعيد العويران» في arabcelebs،worldcup · «وليد الركراكي» في arabcelebs،worldcup · «رابح ماجر» في arabcelebs،spacetoon،worldcup · «اسبانيا» في arabliterature،flags،football،history،worldcup · «السعوديه» في arabmovies،cars،commonbond،emoji،flags،food،football،hints،islamiyat،ramadanseries،worldcup · «الارجنتين» في babalhara،flags،football،sports،worldcup · «المغرب» في code،emoji،flags،islamiyat،youtubers،worldcup · «ايطاليا» في commonbond،emoji،flags،history،spacetoon،worldcup …"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "worldcup",
+        "name": "كأس العالم",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 9,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  },
+  {
+    "id": "ucl",
+    "errors": [],
+    "warnings": [
+      "5 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «اليكس فيرغسون» في premier،quotes،ucl · «بيتر تشيك» في premier،ucl · «تشيلسي» في premier،ucl · «جوزيه مورينيو» في premier،quotes،ucl · «زين الدين زيدان» في worldcup،ucl"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "ucl",
+        "name": "دوري أبطال أوروبا",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 6,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  },
+  {
+    "id": "premier",
+    "errors": [],
+    "warnings": [
+      "premier: premier-200-901: إجابته «أرسنال» مكشوفة في نص premier-200-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "premier: premier-200-901: إجابته «أرسنال» مكشوفة في نص premier-600-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "premier: premier-200-901: إجابته «أرسنال» مكشوفة في نص premier-600-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "premier: premier-200-901: إجابته «أرسنال» مكشوفة في نص premier-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "premier: premier-200-907: إجابته «1992» مكشوفة في نص premier-400-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "premier: premier-400-908: إجابته «تشيلسي» مكشوفة في نص premier-400-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "premier: premier-400-908: إجابته «تشيلسي» مكشوفة في نص premier-800-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "premier: premier-400-908: إجابته «تشيلسي» مكشوفة في نص premier-800-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+      "7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «محمد صلاح» في arabseries،premier · «11» في football،premier · «اليكس فيرغسون» في quotes،ucl،premier · «جوزيه مورينيو» في quotes،ucl،premier · «اريك كانتونا» في quotes،premier · «تشيلسي» في ucl،premier · «بيتر تشيك» في ucl،premier"
+    ],
+    "reusedQuestionText": [],
+    "categories": [
+      {
+        "id": "premier",
+        "name": "الدوري الإنجليزي",
+        "status": "pending",
+        "counts": {
+          "200": 8,
+          "400": 8,
+          "600": 8,
+          "800": 8,
+          "1000": 8
+        },
+        "total": 40,
+        "topics": 8,
+        "mediaBytes": 0,
+        "media": false
+      }
+    ]
+  }
+]

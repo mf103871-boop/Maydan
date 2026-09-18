@@ -1,0 +1,23 @@
+const fs=require('node:fs/promises');
+const path=require('node:path');
+const crypto=require('node:crypto');
+const sharp=require('C:/Users/user/Desktop/maydan/node_modules/sharp');
+const repo='C:/Users/user/Desktop/maydan';
+const workspace='C:/Users/user/Documents/Codex/2026-09-17/my-limmite';
+(async()=>{
+ const jobFile=process.argv[2];if(!jobFile)throw Error('Job path required');
+ const job=JSON.parse(await fs.readFile(jobFile,'utf8'));
+ if(!/^[a-z][a-z0-9-]*$/.test(job.id))throw Error('Invalid id');
+ if(!['cover','question'].includes(job.kind))throw Error('Invalid kind');
+ const folder=job.kind==='cover'?'public/media/badeeha-covers':`media/${job.pack}`;
+ if(job.kind==='question'&&!/^[a-z][a-z0-9]*$/.test(job.pack))throw Error('Invalid pack');
+ const output=path.join(repo,folder,job.id+'.webp');
+ const original=path.join(workspace,'outputs/badeeha-rebuild/art/originals',job.id+'.png');
+ await fs.mkdir(path.dirname(original),{recursive:true});await fs.mkdir(path.dirname(output),{recursive:true});
+ await fs.copyFile(job.source,original);
+ await sharp(job.source).webp({quality:90,effort:6}).toFile(output);
+ const bytes=await fs.readFile(output);const meta=await sharp(output).metadata();
+ const record={id:job.id,kind:job.kind,pack:job.pack||job.id,asset:path.relative(repo,output).replaceAll('\\','/'),prompt:job.prompt,tool:'OpenAI image generation',createdAt:'2026-09-18',width:meta.width,height:meta.height,bytes:bytes.length,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),disclosure:'تصوير توضيحي مولّد بالذكاء الاصطناعي'};
+ const recordsDir=path.join(workspace,'work/badeeha-rebuild/art-records');await fs.mkdir(recordsDir,{recursive:true});await fs.writeFile(path.join(recordsDir,job.id+'.json'),JSON.stringify(record,null,2)+'\n');
+ console.log(JSON.stringify({asset:record.asset,bytes:bytes.length,width:meta.width,height:meta.height}));
+})().catch(e=>{console.error(e.message);process.exitCode=1});

@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { CATS } from '../src/data/categories/index.js';
-import logic from '../src/games/badeeha/logic.js';
+import logic, { BANK_CONTENT_VERSION } from '../src/games/badeeha/logic.js';
 import { seeded } from './helpers.js';
 
 const batchIds = ['arabliterature', 'beforeafter', 'commonbond', 'hidden', 'quran', 'movies', 'onepiece', 'dragonball', 'worldcup'];
@@ -23,7 +23,7 @@ test('دفعة البنك: كل حزمة جديدة أو مستكملة قابل
         const saved = logic.deckToIds(deck);
         assert.deepEqual(logic.idsToDeck(CATS, saved), deck);
         assert.equal(logic.isValidSession(CATS, {
-          version: 2, teams: [{}, {}], selectedCategories: selected,
+          version: 2, contentVersion: BANK_CONTENT_VERSION, teams: [{}, {}], selectedCategories: selected,
           mode, roundSize: size, deck: saved,
         }), true, `${id}/${mode}/${size}`);
       }

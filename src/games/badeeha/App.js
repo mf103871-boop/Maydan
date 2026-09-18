@@ -14,9 +14,13 @@ import MaydanLogicBeta, {
   pointsAfterHints,
   modeTopTier,
   HINT_COST_PERCENT,
+  BANK_CONTENT_VERSION,
+  currentQuestionHistoryCount,
 } from "./logic.js";
 import { BADEEHA_KEYS as MAYDAN_BETA_KEYS } from "./keys.js";
+import { readBadeehaState, RETIRED_GAME_NOTICE } from "./persistence.js";
 import { questionAssistance } from "./assistance.js";
+import { CategoryCover } from "./Cover.jsx";
 import { FREE_PACKS } from "../../shared/account/config.js";
 import { questionMedia, deckMedia } from "../../shared/media/resolve.js";
 import { mulberry32 } from "../../shared/lib/rng.js";
@@ -1212,6 +1216,7 @@ function MaydanBeta({ api } = {}) {
     [reports, setReports] = useState([]),
     [favorites, setFavorites] = useState([]),
     [savedActive, setSavedActive] = useState(null),
+    [retiredActive, setRetiredActive] = useState(!1),
     [finalResult, setFinalResult] = useState(null),
     [soundOn, setSoundOn] = useState(!0),
     [categoryFilter, setCategoryFilter] = useState("all"),
@@ -1372,14 +1377,9 @@ function MaydanBeta({ api } = {}) {
     let cancelled = !1;
     return (
       (async () => {
-        const [loadedHistory, loadedResults, loadedActive, loadedSettings, loadedReports] =
-          await Promise.all([
-            loadKey(MAYDAN_BETA_KEYS.history),
-            loadKey(MAYDAN_BETA_KEYS.results),
-            loadKey(MAYDAN_BETA_KEYS.active),
-            loadKey(MAYDAN_BETA_KEYS.settings),
-            loadKey(MAYDAN_BETA_KEYS.reports),
-          ]);
+        const restored = readBadeehaState(CATS);
+        const { history: loadedHistory, results: loadedResults, active: loadedActive,
+          settings: loadedSettings, reports: loadedReports } = restored;
         cancelled ||
           (loadedHistory &&
             typeof loadedHistory == "object" &&
@@ -1397,9 +1397,9 @@ function MaydanBeta({ api } = {}) {
               setRoundSize(loadedSettings.roundSize),
             Array.isArray(loadedSettings.favorites) &&
               setFavorites(loadedSettings.favorites.filter((id) => CATS.some((c) => c.id === id)))),
-          logic.isValidSession(CATS, loadedActive)
-            ? setSavedActive(loadedActive)
-            : loadedActive && betaRemoveKey(MAYDAN_BETA_KEYS.active),
+          setSavedActive(loadedActive),
+          setRetiredActive(restored.retiredActive),
+          restored.invalidActive && betaRemoveKey(MAYDAN_BETA_KEYS.active),
           setHydrated(!0));
       })(),
       () => {
@@ -1425,6 +1425,7 @@ function MaydanBeta({ api } = {}) {
       if (judgingRef.current) return;
       const session = {
         version: 2,
+        contentVersion: BANK_CONTENT_VERSION,
         updatedAt: Date.now(),
         screen,
         teams: betaCloneTeams(teams),
@@ -1688,6 +1689,7 @@ function MaydanBeta({ api } = {}) {
       setConfirmEnd(!1),
       setShowScore(!1),
       setSavedActive(null),
+      setRetiredActive(!1),
       setSetupError(""),
       (deadlineRef.current = null),
       (timeoutPlayedRef.current = !1),
@@ -2486,6 +2488,7 @@ ${record.answered} من ${record.total} سؤالًا`,
             "حذفها",
           ),
         ),
+      retiredActive && hBeta("p", { className: "m-muted m-center", role: "status" }, RETIRED_GAME_NOTICE),
       hBeta(
         "div",
         { className: "m-home-actions" },
@@ -2749,11 +2752,7 @@ ${record.answered} من ${record.total} سؤالًا`,
                     : `${selected ? "إلغاء" : "اختيار"} فئة ${category.name}`,
                 },
                 selected && hBeta("span", { className: "m-order-badge" }, order),
-                hBeta(
-                  "span",
-                  { className: "m-category-icon", "aria-hidden": "true" },
-                  category.icon,
-                ),
+                hBeta(CategoryCover, { id: category.id, icon: category.icon }),
                 hBeta("b", null, category.name),
                 locked && hBeta("span", { className: "m-lock" }, "🔒 بلس"),
                 hBeta("small", null, `حتى ${modeTopTier(activeMode)}`),
@@ -2779,7 +2778,7 @@ ${record.answered} من ${record.total} سؤالًا`,
         hBeta(
           "div",
           { className: "m-history-note" },
-          hBeta("span", null, `لُعب ${Object.keys(history).length} سؤالًا؛ الجديد له الأولوية.`),
+          hBeta("span", null, `لُعب ${currentQuestionHistoryCount(CATS, history)} سؤالًا من البنك الحالي؛ الجديد له الأولوية.`),
           hBeta(
             "button",
             { type: "button", className: "m-link", onClick: clearQuestionHistory },

@@ -5,2939 +5,443 @@
   "qs": [
     {
       "p": 200,
-      "topic": "الأبطال والمواسم",
-      "q": "من قاد أرسنال إلى لقب الدوري في 2026 بعد انتظار 22 عامًا؟",
-      "a": "ميكل أرتيتا",
-      "alt": [
-        "أرتيتا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "أي نادٍ أنهى موسم 2003/04 في البريميرليغ بلا هزيمة؟",
+      "a": "أرسنال",
+      "qid": "premier-200-901",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "premier-200-049"
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/59016",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 200,
-      "topic": "الأبطال والمواسم",
-      "q": "من بطل موسم 1998-1999 صاحب الثلاثية التاريخية؟",
-      "a": "مانشستر يونايتد",
-      "alt": [
-        "اليونايتد",
-        "مان يونايتد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-050"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والألقاب",
-      "q": "كم لقب دوري ممتاز جمع مانشستر سيتي حتى موسم 2026؟",
-      "a": "ثمانية ألقاب",
-      "alt": [
-        "ثمانية",
-        "8"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-051"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والألقاب",
-      "q": "ما لون قميص تشيلسي الأساسي؟",
-      "a": "أزرق",
-      "alt": [
-        "الأزرق"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-052"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والألقاب",
-      "q": "كم لقب دوري ممتاز لأرسنال بعد تتويج 2026؟",
-      "a": "أربعة ألقاب",
-      "alt": [
-        "أربعة",
-        "4"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-053"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والألقاب",
-      "q": "كم مرة رفع ليفربول درع البريميرليغ في العصر الحديث؟",
-      "a": "مرتان",
-      "alt": [
-        "اثنان",
-        "2"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-054"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب أستون فيلا العريق؟",
-      "a": "فيلا بارك",
-      "alt": [],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-055"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المهاجم النرويجي الذي حطّم أرقام التهديف مع مانشستر سيتي؟",
-      "a": "إيرلينغ هالاند",
-      "alt": [
-        "هالاند"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صاحب الرقم القياسي لأهداف ليفربول في البريميرليغ؟",
+      "q": "من النجم المصري الذي سجل 32 هدفًا في موسم 2017/18 بالبريميرليغ؟",
       "a": "محمد صلاح",
-      "alt": [
-        "صلاح"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "qid": "premier-200-902",
+      "topic": "الهدافون",
       "verified": true,
-      "qid": "premier-200-057"
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/686479",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الجناح الإنجليزي ابن أكاديمية أرسنال الملقّب بـ«ستاربوي»؟",
-      "a": "بوكايو ساكا",
-      "alt": [
-        "ساكا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-058"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من القائد النرويجي الذي قاد أرسنال في سنوات أرتيتا؟",
-      "a": "مارتن أوديغارد",
-      "alt": [
-        "أوديغارد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "لحظات وديربيات",
-      "q": "أي ناديين يلتقيان في ديربي شمال لندن؟",
-      "a": "أرسنال وتوتنهام",
-      "alt": [
-        "توتنهام وأرسنال"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من المدرب الهولندي الذي توّج بالدوري في موسمه الأول مع ليفربول؟",
-      "a": "آرنه سلوت",
-      "alt": [
-        "سلوت"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من المدرب الإسباني صاحب سلسلة ألقاب مانشستر سيتي؟",
-      "a": "بيب غوارديولا",
-      "alt": [
-        "غوارديولا",
-        "جوارديولا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-062"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من الإسكتلندي الذي درّب اليونايتد ستةً وعشرين عامًا؟",
+      "q": "من المدرب الاسكتلندي الذي جمع 13 لقبًا للبريميرليغ مع يونايتد؟",
       "a": "أليكس فيرغسون",
-      "alt": [
-        "فيرغسون",
-        "السير أليكس"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-063"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب أرسنال منذ 2006؟",
-      "a": "الإمارات",
-      "alt": [
-        "ملعب الإمارات",
-        "الإمارات ستاديوم"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-064"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب ليفربول العريق؟",
-      "a": "أنفيلد",
-      "alt": [],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-065"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب تشيلسي؟",
-      "a": "ستامفورد بريدج",
-      "alt": [],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-066"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم فريقًا في الدوري الإنجليزي الممتاز؟",
-      "a": "عشرون",
-      "alt": [
-        "20"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-067"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم مباراة يلعبها كل فريق في الموسم؟",
-      "a": "ثمان وثلاثون",
-      "alt": [
-        "38"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-068"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم نقطة تُمنح للفوز؟",
-      "a": "ثلاث",
-      "alt": [
-        "3",
-        "ثلاث نقاط"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-069"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "في أي عام انطلق عصر البريميرليغ؟",
-      "a": "1992",
-      "alt": [],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-070"
-    },
-    {
-      "p": 200,
-      "topic": "العرب في البريميرليغ",
-      "q": "من أي بلد الجناح حكيم زياش الذي لعب لتشيلسي؟",
-      "a": "المغرب",
-      "alt": [
-        "مغربي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-071"
-    },
-    {
-      "p": 200,
-      "topic": "لحظات وديربيات",
-      "q": "ما النشيد الذي يرفعه جمهور ليفربول قبل كل مباراة؟",
-      "a": "لن تمشي وحدك",
-      "alt": [
-        "لن تسير وحدك",
-        "You'll Never Walk Alone"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-072"
-    },
-    {
-      "p": 200,
-      "topic": "الأبطال والمواسم",
-      "q": "من بطل موسم 2015-2016 المفاجئ؟",
-      "a": "ليستر سيتي",
-      "alt": [
-        "ليستر"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-073"
-    },
-    {
-      "p": 200,
-      "topic": "الأبطال والمواسم",
-      "q": "أي نادٍ فاز بلقبه الوحيد في الدوري عام 1995؟",
-      "a": "بلاكبيرن روفرز",
-      "alt": [
-        "بلاكبيرن"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-074"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من القائد الهولندي الذي رفع درع 2025 مع ليفربول؟",
-      "a": "فيرجيل فان دايك",
-      "alt": [
-        "فان دايك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-075"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "في أي دولة تُقام المسابقة؟",
-      "a": "إنجلترا",
-      "alt": [
-        "انكلترا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-076"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم فريقًا يهبط في نهاية كل موسم؟",
-      "a": "ثلاثة فرق",
-      "alt": [
-        "ثلاثة",
-        "3"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-077"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب اليونايتد الشائع بين الجماهير؟",
-      "a": "الشياطين الحمر",
-      "alt": [],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-078"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب أرسنال الشائع؟",
-      "a": "المدفعجية",
-      "alt": [
-        "الغانرز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-079"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الهدّاف التاريخي لتوتنهام الذي رحل إلى بايرن ميونخ؟",
-      "a": "هاري كين",
-      "alt": [
-        "كين"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-080"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب مانشستر سيتي؟",
-      "a": "ملعب الاتحاد",
-      "alt": [
-        "الاتحاد",
-        "الإتحاد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-081"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "ما لون بطاقة الإنذار؟",
-      "a": "صفراء",
-      "alt": [
-        "الصفراء"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-082"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "ما لون بطاقة الطرد؟",
-      "a": "حمراء",
-      "alt": [
-        "الحمراء"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-083"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب توتنهام الجديد؟",
-      "a": "توتنهام هوتسبير",
-      "alt": [
-        "توتنهام هوتسبير ستاديوم"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-084"
-    },
-    {
-      "p": 200,
+      "qid": "premier-200-903",
       "topic": "المدربون",
-      "q": "من الألماني الذي أنهى انتظار ليفربول للقب الدوري عام 2020؟",
-      "a": "يورغن كلوب",
-      "alt": [
-        "كلوب"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
       "verified": true,
-      "qid": "premier-200-085"
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/events/hall-of-fame/inductees/alex-ferguson",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 200,
-      "topic": "لحظات وديربيات",
-      "q": "ما اسم ديربي ليفربول وإيفرتون؟",
-      "a": "ديربي الميرسيسايد",
-      "alt": [
-        "الميرسيسايد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-086"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والألقاب",
-      "q": "ما الطائر الذي يزيّن شعار ليفربول؟",
-      "a": "طائر الليفر",
-      "alt": [
-        "الليفر بيرد",
-        "ليفر بيرد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-087"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من المدرب الأسترالي الذي درّب توتنهام موسمي 2024 و2025؟",
-      "a": "أنجي بوستيكوغلو",
-      "alt": [
-        "بوستيكوغلو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-088"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم دقيقة زمن المباراة الأصلي؟",
-      "a": "تسعون",
-      "alt": [
-        "90"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-089"
-    },
-    {
-      "p": 200,
-      "topic": "العرب في البريميرليغ",
-      "q": "من لاعب الوسط المصري الذي انضم إلى أرسنال عام 2016؟",
-      "a": "محمد النني",
-      "alt": [
-        "النني",
-        "إلنني"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-090"
-    },
-    {
-      "p": 200,
-      "topic": "لحظات وديربيات",
-      "q": "ما اسم جولة البريميرليغ التي تُقام في السادس والعشرين من ديسمبر؟",
-      "a": "بوكسينغ داي",
-      "alt": [
-        "يوم الملاكمة"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-091"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المهاجم البرتغالي الذي عاد إلى اليونايتد عام 2021 بالقميص السابع؟",
-      "a": "كريستيانو رونالدو",
-      "alt": [
-        "رونالدو",
-        "كريستيانو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-092"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "ما اسم الجائزة التي يفوز بها هدّاف الدوري الإنجليزي الممتاز؟",
-      "a": "الحذاء الذهبي",
-      "alt": [
-        "الجزمة الذهبية"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-093"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المهاجم الغابوني الذي قاد هجوم أرسنال بين 2018 و2022؟",
-      "a": "بيير إيميريك أوباميانغ",
-      "alt": [
-        "أوباميانغ"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-094"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من المدرب الإنجليزي المخضرم الذي تولى تدريب بالاس وعمره فوق السبعين؟",
-      "a": "روي هودجسون",
-      "alt": [
-        "هودجسون"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-095"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب اليونايتد الشهير بمسرح الأحلام؟",
-      "a": "أولد ترافورد",
-      "alt": [],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-200-096"
-    },
-    {
-      "p": 400,
-      "topic": "الأندية والألقاب",
-      "q": "كم ناديًا فاز بلقب البريميرليغ منذ انطلاقه؟",
-      "a": "سبعة أندية",
-      "alt": [
-        "سبعة",
-        "7"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-049"
-    },
-    {
-      "p": 400,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب ليفربول الشائع؟",
-      "a": "الريدز",
-      "alt": [
-        "الحمر"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-050"
-    },
-    {
-      "p": 400,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب نيوكاسل الشائع؟",
-      "a": "الماغبايز",
-      "alt": [
-        "العقعق",
-        "المغازية"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-051"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صاحب الرقم القياسي لأهداف البريميرليغ عبر التاريخ؟",
-      "a": "آلان شيرر",
-      "alt": [
-        "شيرر"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-052"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من سجّل في إحدى عشرة مباراة متتالية في موسم لقب ليستر؟",
-      "a": "جيمي فاردي",
-      "alt": [
-        "فاردي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-053"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المدافع القائد الذي رفع أول لقبين لتشيلسي في عهد مورينيو؟",
-      "a": "جون تيري",
-      "alt": [
-        "تيري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-054"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الحارس الإسباني الذي حمى مرمى اليونايتد اثني عشر عامًا؟",
-      "a": "دافيد دي خيا",
-      "alt": [
-        "دي خيا",
-        "دي خيا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-055"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المهاجم الإيفواري الذي صار أسطورة هجوم تشيلسي؟",
-      "a": "ديدييه دروغبا",
-      "alt": [
-        "دروغبا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-056"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من ابن أكاديمية مانشستر سيتي الذي اختير أفضل لاعب في موسم 2024؟",
-      "a": "فيل فودن",
-      "alt": [
-        "فودن"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-057"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من المدرب الإيطالي الذي صنع معجزة ليستر عام 2016؟",
-      "a": "كلاوديو رانييري",
-      "alt": [
-        "رانييري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-058"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من المدرب البرتغالي صاحب لقبي 2005 و2006 مع تشيلسي؟",
-      "a": "جوزيه مورينيو",
-      "alt": [
-        "مورينيو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-059"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من المدرب الفرنسي الذي قاد أرسنال إلى موسم بلا هزيمة؟",
-      "a": "أرسين فينغر",
-      "alt": [
-        "فينغر",
-        "أرسين فينجر"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-060"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من المدرب الإيطالي الذي توّج تشيلسي بلقب 2017 في موسمه الأول؟",
-      "a": "أنطونيو كونتي",
-      "alt": [
-        "كونتي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-061"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب نيوكاسل؟",
-      "a": "سانت جيمس بارك",
-      "alt": [
-        "سانت جيمس"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-062"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "كم تبديلًا يُسمح به لكل فريق في مباراة البريميرليغ؟",
-      "a": "خمسة تبديلات",
-      "alt": [
-        "خمسة",
-        "5"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-063"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب إيفرتون التقليدي؟",
-      "a": "غوديسون بارك",
-      "alt": [
-        "جوديسون بارك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-064"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "أي ملعب استضاف أولمبياد 2012 ثم صار بيتًا لناد من شرق لندن؟",
-      "a": "لندن ستاديوم",
-      "alt": [
-        "الملعب الأولمبي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-065"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "ما الفاصل الأول بين فريقين تساوت نقاطهما في الترتيب؟",
-      "a": "فارق الأهداف",
-      "alt": [
-        "الفارق التهديفي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-066"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "ما اسم القاعدة التي تُلغي الهدف إذا سبق المهاجمُ آخرَ المدافعين؟",
-      "a": "التسلل",
-      "alt": [
-        "التسلّل"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-067"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "في أي شهر يبدأ الموسم عادة؟",
-      "a": "أغسطس",
-      "alt": [
-        "آب"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-068"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "كم مباراة يغيب اللاعب بعد جمعه خمسة إنذارات؟",
-      "a": "مباراة واحدة",
-      "alt": [
-        "واحدة",
-        "1"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-069"
-    },
-    {
-      "p": 400,
-      "topic": "العرب في البريميرليغ",
-      "q": "من الجزائري الذي فاز باللقب مع ليستر ثم مع مانشستر سيتي؟",
-      "a": "رياض محرز",
-      "alt": [
-        "محرز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-070"
-    },
-    {
-      "p": 400,
-      "topic": "العرب في البريميرليغ",
-      "q": "من المصري الذي انتقل من آينتراخت فرانكفورت إلى مانشستر سيتي؟",
-      "a": "عمر مرموش",
-      "alt": [
-        "مرموش"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-071"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات وديربيات",
-      "q": "ماذا يُسمى اللقاء الأشهر بين ليفربول واليونايتد؟",
-      "a": "ديربي الشمال الغربي",
-      "alt": [
-        "ديربي شمال غرب انجلترا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-072"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات وديربيات",
-      "q": "بأي اسم اشتهر فريق أرسنال الذي لم يخسر في موسم 2004؟",
-      "a": "الإنفنسبلز",
-      "alt": [
-        "الذين لا يُقهرون",
-        "اللاهزيمة"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-073"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات وديربيات",
-      "q": "من سجّل الهدف الشهير في الدقيقة الرابعة والتسعين ليمنح سيتي لقب 2012؟",
-      "a": "سيرخيو أغويرو",
-      "alt": [
-        "أغويرو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-074"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب برايتون؟",
-      "a": "الأمكس",
-      "alt": [
-        "أمكس",
-        "فالمر"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-075"
-    },
-    {
-      "p": 400,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب إيفرتون الشائع؟",
-      "a": "التوفيز",
-      "alt": [
-        "الحلوى"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-076"
-    },
-    {
-      "p": 400,
-      "topic": "العرب في البريميرليغ",
-      "q": "من المغربي الذي لعب لأرسنال ووست هام وكريستال بالاس؟",
-      "a": "مروان الشماخ",
-      "alt": [
-        "الشماخ"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-077"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الهدّاف التاريخي لليونايتد الذي تجاوز رقم بوبي تشارلتون؟",
-      "a": "واين روني",
-      "alt": [
-        "روني"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-078"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من القائد الأيرلندي الشرس في وسط ملعب اليونايتد في التسعينيات؟",
-      "a": "روي كين",
-      "alt": [
-        "كين"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-079"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب كريستال بالاس؟",
-      "a": "سلهيرست بارك",
-      "alt": [
-        "سيلهيرست بارك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-080"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من المدرب الإسكتلندي الذي جلس على مقعد فيرغسون بعد اعتزاله؟",
-      "a": "ديفيد مويس",
-      "alt": [
-        "مويس"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-081"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "من الحارس الإسباني الذي حصد جائزة أفضل حارس مع أرسنال في 2026؟",
-      "a": "دافيد رايا",
-      "alt": [
-        "رايا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-082"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من المدرب الهولندي الذي تولى اليونايتد عام 2022 قادمًا من أياكس؟",
-      "a": "إيريك تن هاغ",
-      "alt": [
-        "تن هاغ"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-083"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "ما اسم جائزة أفضل حارس مرمى في الموسم؟",
+      "q": "ما اسم جائزة البريميرليغ الموسمية للحارس الأكثر حفاظًا على نظافة شباكه؟",
       "a": "القفاز الذهبي",
-      "alt": [
-        "الجوانتي الذهبي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "qid": "premier-200-904",
+      "topic": "حراسة المرمى",
       "verified": true,
-      "qid": "premier-400-084"
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/686479",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 200,
+      "q": "من المهاجم الأرجنتيني صاحب هدف سيتي الحاسم للقب في الجولة الأخيرة عام 2012؟",
+      "a": "سيرخيو أغويرو",
+      "qid": "premier-200-905",
+      "topic": "لحظات الحسم",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/693667",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 200,
+      "q": "كم نقطة يمنح الفوز الواحد في البريميرليغ؟",
+      "a": "3",
+      "qid": "premier-200-906",
+      "topic": "نظام البطولة",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/58905",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 200,
+      "q": "في أي عام انطلق أول موسم يحمل اسم البريميرليغ؟",
+      "a": "1992",
+      "qid": "premier-200-907",
+      "topic": "البدايات",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 200,
+      "q": "على أي ملعب أقيم فوز يونايتد 8–2 على أرسنال عام 2011؟",
+      "a": "أولد ترافورد",
+      "qid": "premier-200-908",
+      "topic": "الملاعب",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.premierleague.com/en/news/693667",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 400,
-      "topic": "الأندية والألقاب",
-      "q": "أي نادٍ هبط في 2026 رغم جمعه تسعًا وثلاثين نقطة؟",
-      "a": "وست هام يونايتد",
-      "alt": [
-        "وست هام"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "أي فريق حقق مفاجأة التتويج بالبريميرليغ في موسم 2015/16؟",
+      "a": "ليستر سيتي",
+      "qid": "premier-400-901",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "premier-400-085"
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/2748139",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من قائد سويسرا الذي قضى سبع سنوات في وسط أرسنال؟",
-      "a": "غرانيت تشاكا",
-      "alt": [
-        "تشاكا",
-        "جرانيت تشاكا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-086"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من المدرب الألماني الذي تولى تشيلسي في يناير 2021؟",
-      "a": "توماس توخيل",
-      "alt": [
-        "توخيل"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-087"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من السويدي الذي وصل اليونايتد عام 2016 وسجّل سبعة عشر هدفًا في موسمه الأول؟",
-      "a": "زلاتان إبراهيموفيتش",
-      "alt": [
-        "زلاتان",
-        "إبراهيموفيتش"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-088"
-    },
-    {
-      "p": 400,
-      "topic": "العرب في البريميرليغ",
-      "q": "من الجزائري الذي تخرّج من أكاديمية توتنهام ثم أُعير إلى نيوكاسل؟",
-      "a": "نبيل بن طالب",
-      "alt": [
-        "بن طالب"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-089"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من البلجيكي الذي تجاوز مئة تمريرة حاسمة في البريميرليغ مع سيتي؟",
-      "a": "كيفن دي بروين",
-      "alt": [
-        "دي بروين"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-090"
-    },
-    {
-      "p": 400,
-      "topic": "الأبطال والمواسم",
-      "q": "كم هدفًا سجّل هالاند في موسمه الأول بالبريميرليغ؟",
-      "a": "ستة وثلاثون",
-      "alt": [
-        "36"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-091"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "أي مباراة تجمع بطل الدوري وبطل كأس الاتحاد قبل انطلاق الموسم؟",
-      "a": "الدرع الخيرية",
-      "alt": [
-        "درع المجتمع",
-        "كوميونيتي شيلد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-092"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "ما اسم تقنية الفيديو التي تراجع قرارات الحكم في البريميرليغ؟",
-      "a": "فار",
-      "alt": [
-        "الفار",
-        "حكم الفيديو المساعد",
-        "VAR"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-400-093"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من ابن أكاديمية تشيلسي الذي انتقل إلى اليونايتد عام 2023؟",
-      "a": "ماسون ماونت",
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "alt": [
-        "ماونت"
-      ],
-      "qid": "premier-400-094"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من الأرجنتيني «المجنون» الذي أعاد ليدز إلى البريميرليغ عام 2020؟",
-      "a": "مارسيلو بييلسا",
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "alt": [
-        "بييلسا"
-      ],
-      "qid": "premier-400-095"
-    },
-    {
-      "p": 400,
-      "topic": "الأبطال والمواسم",
-      "q": "أي نادٍ عاد للبريميرليغ 2026 بعد تتويجه بطلًا للتشامبيونشيب؟",
-      "a": "ليدز يونايتد",
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "alt": [
-        "ليدز"
-      ],
-      "qid": "premier-400-096"
-    },
-    {
-      "p": 600,
-      "topic": "الأبطال والمواسم",
-      "q": "كم هدفًا سجّل تشيلسي في موسم لقب 2010 القياسي؟",
-      "a": "مئة وثلاثة",
-      "alt": [
-        "103"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-049"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والألقاب",
-      "q": "كم نقطة حصد ليستر في موسم لقبه التاريخي؟",
-      "a": "إحدى وثمانون",
-      "alt": [
-        "81"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-050"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والألقاب",
-      "q": "أي نادٍ هبط في 2026 بعد موسم كارثي جمع فيه عشرين نقطة؟",
-      "a": "وولفرهامبتون",
-      "alt": [
-        "وولفز",
-        "الذئاب"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-051"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب توتنهام الشائع؟",
-      "a": "السبيرز",
-      "alt": [
-        "سبيرز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-052"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والألقاب",
-      "q": "كم مرة أنهى أرسنال الموسم وصيفًا قبل لقب 2026 مباشرة؟",
-      "a": "ثلاث مرات",
-      "alt": [
-        "ثلاث",
-        "3"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-053"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الفرنسي صاحب الياقة المرفوعة الذي قاد اليونايتد في التسعينيات؟",
-      "a": "إيريك كانتونا",
-      "alt": [
-        "كانتونا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-054"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الحارس الدنماركي الذي حرس عرين اليونايتد في ثلاثية 1999؟",
-      "a": "بيتر شمايكل",
-      "alt": [
-        "شمايكل"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-055"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الهدّاف التاريخي لتشيلسي القادم من وسط الملعب؟",
-      "a": "فرانك لامبارد",
-      "alt": [
-        "لامبارد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-056"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من القائد الفرنسي الذي قاد وسط أرسنال في موسم اللاهزيمة؟",
-      "a": "باتريك فييرا",
-      "alt": [
-        "فييرا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-057"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المدافع الذي قاد أرسنال ورفع اللقب في ثلاثة عقود مختلفة؟",
-      "a": "توني آدمز",
-      "alt": [
-        "آدمز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-058"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من الإسكتلندي الذي صنع مفاجأة بلاكبيرن وتوّجها في 1995؟",
-      "a": "كيني دالغليش",
-      "alt": [
-        "دالغليش"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-059"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من المدرب النرويجي الذي درّب اليونايتد بين 2018 و2021؟",
-      "a": "أوليه غونار سولشاير",
-      "alt": [
-        "سولشاير"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-060"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من المدرب الإيطالي الذي أنهى انتظار سيتي أربعة وأربعين عامًا في 2012؟",
-      "a": "روبرتو مانشيني",
-      "alt": [
-        "مانشيني"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-061"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من المدرب الذي خلف فينغر على مقعد أرسنال عام 2018؟",
-      "a": "أوناي إيمري",
-      "alt": [
-        "إيمري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-062"
-    },
-    {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب ساوثهامبتون؟",
-      "a": "سانت ماري",
-      "alt": [
-        "سنت ماري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-063"
-    },
-    {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب «الذئاب» العريق؟",
-      "a": "مولينو",
-      "alt": [
-        "مولينيو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-064"
-    },
-    {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب فولهام على ضفة التايمز؟",
-      "a": "كرافن كوتيدج",
-      "alt": [
-        "كرافن كوتج"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-065"
-    },
-    {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب «النحل» الحديث في غرب لندن؟",
-      "a": "جيتك",
-      "alt": [
-        "جتيك",
-        "ملعب جيتك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-066"
-    },
-    {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "ما اسم القواعد المالية التي تحدّ من خسائر أندية البريميرليغ؟",
-      "a": "قواعد الربح والاستدامة",
-      "alt": [
-        "اللعب المالي النظيف",
-        "PSR"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-067"
-    },
-    {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "ما اسم الدرجة الثانية الإنجليزية الحديثة؟",
-      "a": "التشامبيونشيب",
-      "alt": [
-        "تشامبيونشيب"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-068"
-    },
-    {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "ما اسم التقنية التي سرّعت قرارات الحكم المساعد بدءًا من 2026؟",
-      "a": "التسلل شبه الآلي",
-      "alt": [
-        "التسلل الآلي",
-        "SAOT"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-069"
-    },
-    {
-      "p": 600,
-      "topic": "العرب في البريميرليغ",
-      "q": "من التونسي الذي لعب لسندرلاند في البريميرليغ؟",
-      "a": "وهبي الخزري",
-      "alt": [
-        "الخزري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-070"
-    },
-    {
-      "p": 600,
-      "topic": "العرب في البريميرليغ",
-      "q": "من المغربي الذي حمل قميص توتنهام مدافعًا عام 2004؟",
-      "a": "نور الدين النيبت",
-      "alt": [
-        "النيبت",
-        "نايبت"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-071"
-    },
-    {
-      "p": 600,
-      "topic": "العرب في البريميرليغ",
-      "q": "من المصري الذي حمل شارة قيادة إبسويتش في البريميرليغ؟",
-      "a": "سام مرسي",
-      "alt": [
-        "مرسي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-072"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات وديربيات",
-      "q": "من صاحب الهاتريك الذي حسم لقب 2013 في وداع فيرغسون؟",
-      "a": "روبن فان برسي",
-      "alt": [
-        "فان برسي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-073"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الفرنسي الذي توّج هدّافًا للبريميرليغ أربع مرات مع أرسنال؟",
+      "q": "من المهاجم الفرنسي الذي تصدر هدافي البريميرليغ بـ 30 هدفًا في موسم 2003/04؟",
       "a": "تييري هنري",
-      "alt": [
-        "هنري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "qid": "premier-400-902",
+      "topic": "الهدافون",
       "verified": true,
-      "qid": "premier-600-074"
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/59016",
+      "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الحارس صاحب الشارب الشهير الذي حمى مرمى أرسنال ثلاثة عشر عامًا؟",
-      "a": "ديفيد سيمان",
-      "alt": [
-        "سيمان"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-075"
-    },
-    {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب ليدز؟",
-      "a": "إيلاند رود",
-      "alt": [
-        "ايلاند رود"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-076"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات وديربيات",
-      "q": "بكم هدفًا تفوّق سيتي على اليونايتد ليحسم لقب 2012؟",
-      "a": "ثمانية أهداف",
-      "alt": [
-        "ثمانية",
-        "8"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-077"
-    },
-    {
-      "p": 600,
+      "p": 400,
+      "q": "من المدرب الذي أنهى انتظار ليفربول للقب الدوري عام 2020؟",
+      "a": "يورغن كلوب",
+      "qid": "premier-400-903",
       "topic": "المدربون",
-      "q": "من الأرجنتيني الذي قاد توتنهام إلى وصافة 2017؟",
-      "a": "ماوريسيو بوكيتينو",
-      "alt": [
-        "بوكيتينو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
       "verified": true,
-      "qid": "premier-600-078"
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/1751648",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 400,
+      "q": "من حارس تشيلسي الذي خرج بشباك نظيفة في 24 مباراة بالدوري موسم 2004/05؟",
+      "a": "بيتر تشيك",
+      "qid": "premier-400-904",
+      "topic": "حراسة المرمى",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/ar/news/59017",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 400,
+      "q": "من سجل هدف سيتي المتأخر أمام ساوثهامبتون الذي أكمل مئة نقطة عام 2018؟",
+      "a": "غابرييل جيسوس",
+      "qid": "premier-400-905",
+      "topic": "لحظات الحسم",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/690534",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 400,
+      "q": "أي نادٍ أنهى البريميرليغ 2017/18 برصيد 100 نقطة؟",
+      "a": "مانشستر سيتي",
+      "qid": "premier-400-906",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/686479",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 400,
+      "q": "من توج بالنسخة الأولى للبريميرليغ موسم 1992/93؟",
+      "a": "مانشستر يونايتد",
+      "qid": "premier-400-907",
+      "topic": "البدايات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 400,
+      "q": "أي نادٍ يلعب على ملعب ستامفورد بريدج؟",
+      "a": "تشيلسي",
+      "qid": "premier-400-908",
+      "topic": "الملاعب",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.premierleague.com/ar/news/59017",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 600,
-      "topic": "النظام والكأس",
-      "q": "كم ناديًا شارك في موسم البريميرليغ الأول؟",
-      "a": "اثنان وعشرون",
-      "alt": [
-        "22"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "أي نادٍ أنهى احتكار يونايتد للقب البريميرليغ بتتويجه عام 1995؟",
+      "a": "بلاكبيرن روفرز",
+      "qid": "premier-600-901",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "premier-600-079"
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من اللاعب صاحب أكبر عدد من مباريات البريميرليغ؟",
-      "a": "غاريث باري",
-      "alt": [
-        "باري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من مهاجم ليفربول الذي سجل 31 هدفًا في الدوري موسم 2013/14؟",
+      "a": "لويس سواريز",
+      "qid": "premier-600-902",
+      "topic": "الهدافون",
       "verified": true,
-      "qid": "premier-600-080"
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/693673",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 600,
-      "topic": "العرب في البريميرليغ",
-      "q": "من المصري الذي لعب لتوتنهام وميدلزبره وويغان؟",
-      "a": "أحمد حسام ميدو",
-      "alt": [
-        "ميدو",
-        "أحمد حسام"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من المدرب الفرنسي الذي تولى تدريب أرسنال من 1996 إلى 2018؟",
+      "a": "أرسين فينغر",
+      "qid": "premier-600-903",
+      "topic": "المدربون",
       "verified": true,
-      "qid": "premier-600-081"
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/2738718",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب بورنموث الصغير؟",
-      "a": "فيتاليتي",
-      "alt": [
-        "دين كورت",
-        "ملعب فيتاليتي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من حارس يونايتد الذي تصدر الشباك النظيفة في البريميرليغ 2017/18؟",
+      "a": "دافيد دي خيا",
+      "qid": "premier-600-904",
+      "topic": "حراسة المرمى",
       "verified": true,
-      "qid": "premier-600-082"
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/686479",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 600,
-      "topic": "لحظات وديربيات",
-      "q": "من رفع درع البريميرليغ عام 2020 قائدًا لليفربول؟",
-      "a": "جوردان هندرسون",
-      "alt": [
-        "هندرسون"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من أحرز تعادل سيتي في الدقيقة 92 قبل هدف التتويج أمام كوينز بارك رينجرز عام 2012؟",
+      "a": "إدين دجيكو",
+      "qid": "premier-600-905",
+      "topic": "لحظات الحسم",
       "verified": true,
-      "qid": "premier-600-083"
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/693667",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من السنغالي الذي شارك صلاح ثلاثية هجوم ليفربول حتى 2022؟",
+      "q": "إلى كم فريقًا تقلص البريميرليغ بدءًا من موسم 1995/96؟",
+      "a": "20",
+      "qid": "premier-600-906",
+      "topic": "نظام البطولة",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 600,
+      "q": "من صاحب أول هدف في تاريخ البريميرليغ، بقميص شيفيلد يونايتد؟",
+      "a": "برايان دين",
+      "qid": "premier-600-907",
+      "topic": "البدايات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم ملعب أرسنال الذي غادره عام 2006 إلى الإمارات؟",
+      "a": "هايبري",
+      "qid": "premier-600-908",
+      "topic": "الملاعب",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.arsenal.com/feature/where-are-arsenal-located-in-london-a78bI0A8K1JA",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 800,
+      "q": "بكم نقطة أنهى ليفربول موسم تتويجه بالبريميرليغ 2019/20؟",
+      "a": "99",
+      "qid": "premier-800-901",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/1751648",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 800,
+      "q": "من سجل ثلاثية لساوثهامبتون خلال دقيقتين و 56 ثانية أمام أستون فيلا عام 2015؟",
       "a": "ساديو ماني",
-      "alt": [
-        "ماني"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "qid": "premier-800-902",
+      "topic": "الهدافون",
       "verified": true,
-      "qid": "premier-600-084"
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من البرازيلي الذي ودّع ليفربول عام 2023 بعد ثماني سنوات؟",
-      "a": "روبرتو فيرمينو",
-      "alt": [
-        "فيرمينو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-085"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب بورنموث الشائع؟",
-      "a": "الكرز",
-      "alt": [
-        "التشيريز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-086"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من البرتغالي الذي اختير أفضل لاعب في البريميرليغ موسم 2026؟",
-      "a": "برونو فيرنانديز",
-      "alt": [
-        "برونو",
-        "فيرنانديز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-087"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات وديربيات",
-      "q": "من القائد الجامايكي الذي رفع الدرع مع ليستر عام 2016؟",
-      "a": "ويس مورغان",
-      "alt": [
-        "مورغان"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-088"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والألقاب",
-      "q": "أي نادٍ عاد إلى دوري الأضواء عام 2021 بعد غياب أربعة وسبعين عامًا؟",
-      "a": "برينتفورد",
-      "alt": [],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-089"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الكوري الذي تقاسم جائزة هدّاف البريميرليغ عام 2022؟",
-      "a": "سون هيونغ مين",
-      "alt": [
-        "سون",
-        "سون هينغ مين"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-090"
-    },
-    {
-      "p": 600,
+      "p": 800,
+      "q": "من المدرب البرتغالي الذي منح تشيلسي أول لقب بريميرليغ عام 2005؟",
+      "a": "جوزيه مورينيو",
+      "qid": "premier-800-903",
       "topic": "المدربون",
-      "q": "من الدنماركي الذي قاد «النحل» سبع سنوات قبل انتقاله لتوتنهام؟",
-      "a": "توماس فرانك",
-      "alt": [
-        "فرانك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
       "verified": true,
-      "qid": "premier-600-091"
-    },
-    {
-      "p": 600,
-      "topic": "الأبطال والمواسم",
-      "q": "ما الرقم القياسي لنقاط فريق في موسم واحد بالبريميرليغ؟",
-      "a": "مئة نقطة",
-      "alt": [
-        "100",
-        "مئة"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-092"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات وديربيات",
-      "q": "ما اسم الحادثة التي كلّفت ليفربول لقب 2014 أمام تشيلسي؟",
-      "a": "انزلاقة جيرارد",
-      "alt": [
-        "زلة جيرارد",
-        "سقطة جيرارد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-093"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من المدرب الإنجليزي الذي ترك برايتون إلى تشيلسي عام 2022؟",
-      "a": "غراهام بوتر",
-      "alt": [
-        "بوتر"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-094"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والألقاب",
-      "q": "كم ناديًا لم يهبط من البريميرليغ منذ تأسيسه؟",
-      "a": "ستة أندية",
-      "alt": [
-        "ستة",
-        "6"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-600-095"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات وديربيات",
-      "q": "ماذا يُسمى الديربي بين نيوكاسل وسندرلاند؟",
-      "a": "ديربي التاين ووير",
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "alt": [
-        "تاين ووير",
-        "ديربي التاين وير"
-      ],
-      "qid": "premier-600-096"
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/ar/news/59017",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 800,
-      "topic": "الأندية والألقاب",
-      "q": "كم مرة توّج أرسنال بلقب الدوري الإنجليزي عبر تاريخه كله؟",
-      "a": "أربعة عشر لقبًا",
-      "alt": [
-        "أربعة عشر",
-        "14"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من حارس ليفربول الذي سجل برأسه أمام وست بروميتش عام 2021؟",
+      "a": "أليسون بيكر",
+      "qid": "premier-800-904",
+      "topic": "حراسة المرمى",
       "verified": true,
-      "qid": "premier-800-049"
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/ar/news/2145933",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 800,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب ساوثهامبتون الشائع؟",
-      "a": "القديسون",
-      "alt": [
-        "السينتس"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من سجل ثنائية تشيلسي أمام بولتون التي حسمت لقب الدوري عام 2005؟",
+      "a": "فرانك لامبارد",
+      "qid": "premier-800-905",
+      "topic": "لحظات الحسم",
       "verified": true,
-      "qid": "premier-800-050"
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/ar/news/59017",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 800,
-      "topic": "الأندية والألقاب",
-      "q": "كم نقطة جمع بيرنلي في موسم هبوطه 2026؟",
-      "a": "اثنتان وعشرون",
-      "alt": [
-        "22"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "كم تعادلًا سجل أرسنال في الدوري خلال موسم 2003/04؟",
+      "a": "12",
+      "qid": "premier-800-906",
+      "topic": "نظام البطولة",
       "verified": true,
-      "qid": "premier-800-051"
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/59016",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 800,
-      "topic": "النظام والكأس",
-      "q": "كم لاعبًا يضم كشف الفريق المسجّل لموسم البريميرليغ؟",
-      "a": "خمسة وعشرون",
-      "alt": [
-        "25"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-052"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الإنجليزي الذي انتقل من ليفربول إلى سيتي عام 2015 ثم إلى تشيلسي؟",
-      "a": "رحيم ستيرلينغ",
-      "alt": [
-        "ستيرلينغ"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-053"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من القائد البلجيكي صاحب الصاروخ الذي حسم لقب 2019 لسيتي؟",
-      "a": "فنسنت كومباني",
-      "alt": [
-        "كومباني"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-054"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الحارس الهولندي الذي حمى مرمى اليونايتد حتى اعتزاله عام 2011؟",
-      "a": "إدوين فان در سار",
-      "alt": [
-        "فان در سار"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-055"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من المدرب التشيلي الذي سبق غوارديولا في سيتي وفاز بلقب 2014؟",
-      "a": "مانويل بيليغريني",
-      "alt": [
-        "بيليغريني"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-056"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من المدرب الأيرلندي الشمالي الذي كاد يتوّج ليفربول في 2014؟",
-      "a": "برندان رودجرز",
-      "alt": [
-        "رودجرز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-057"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من المدرب الإيطالي الذي تولى إيفرتون عام 2019 قادمًا من نابولي؟",
-      "a": "كارلو أنشيلوتي",
-      "alt": [
-        "أنشيلوتي",
-        "أنجيلوتي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-058"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من المدرب الإسباني الذي درّب ليفربول ثم نيوكاسل ثم إيفرتون؟",
-      "a": "رافائيل بينيتيز",
-      "alt": [
-        "بينيتيز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-059"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب ليستر؟",
-      "a": "كينغ باور",
-      "alt": [
-        "كنج باور"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-060"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب نورويتش؟",
-      "a": "كارو رود",
-      "alt": [
-        "كارّو رود"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-061"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب واتفورد؟",
-      "a": "فيكاراج رود",
-      "alt": [
-        "فيكارج رود"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-062"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب إبسويتش؟",
-      "a": "بورتمن رود",
-      "alt": [
-        "بورتمان رود"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-063"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "كم فريقًا إنجليزيًا تأهل لدوري أبطال أوروبا من موسم 2026؟",
-      "a": "خمسة فرق",
-      "alt": [
-        "خمسة",
-        "5"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-064"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "كم إنذارًا يكفي لإيقاف اللاعب مباراتين؟",
-      "a": "عشرة إنذارات",
-      "alt": [
-        "عشرة",
-        "10"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-065"
-    },
-    {
-      "p": 800,
-      "topic": "العرب في البريميرليغ",
-      "q": "من الجزائري الذي انتقل من فالنسيا إلى وست هام عام 2016؟",
-      "a": "سفيان فيغولي",
-      "alt": [
-        "فيغولي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-066"
-    },
-    {
-      "p": 800,
-      "topic": "العرب في البريميرليغ",
-      "q": "من الجزائري الذي وصل ليستر من سبورتنغ لشبونة بصفقة قياسية؟",
-      "a": "إسلام سليماني",
-      "alt": [
-        "سليماني"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-067"
-    },
-    {
-      "p": 800,
-      "topic": "العرب في البريميرليغ",
-      "q": "من المصري الذي لعب لسندرلاند وهال سيتي وأستون فيلا؟",
-      "a": "أحمد المحمدي",
-      "alt": [
-        "المحمدي",
-        "إلمحمدي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-068"
-    },
-    {
-      "p": 800,
-      "topic": "لحظات وديربيات",
-      "q": "ما نتيجة الفوز التاريخي لليونايتد على أرسنال عام 2011؟",
-      "a": "ثمانية مقابل اثنين",
-      "alt": [
-        "8-2",
-        "ثمانية اثنان"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-069"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الغيني الذي انتقل من لايبزيغ إلى ليفربول عام 2018؟",
-      "a": "نابي كيتا",
-      "alt": [
-        "كيتا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-070"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب نوتنغهام فورست؟",
-      "a": "سيتي غراوند",
-      "alt": [
-        "سيتي جراوند"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-071"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من المدرب البرتغالي الذي قاد نوتنغهام فورست للمركز السابع في 2025؟",
-      "a": "نونو إسبيريتو سانتو",
-      "alt": [
-        "نونو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-072"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من المدرب الإنجليزي الذي أنهى انتظار نيوكاسل للقب محلي عام 2025؟",
-      "a": "إيدي هاو",
-      "alt": [
-        "هاو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-073"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من سجّل أسرع هدف في تاريخ البريميرليغ؟",
-      "a": "شين لونغ",
-      "alt": [
-        "لونغ"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-074"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صاحب الرقم القياسي للتمريرات الحاسمة في تاريخ البريميرليغ؟",
-      "a": "رايان غيغز",
-      "alt": [
-        "غيغز",
-        "جيغز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-075"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الفرنسي الذي عاد لليونايتد عام 2016 بصفقة قياسية عالمية؟",
-      "a": "بول بوغبا",
-      "alt": [
-        "بوغبا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-076"
-    },
-    {
-      "p": 800,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب لوتون تاون الشائع؟",
-      "a": "القبعات",
-      "alt": [
-        "الهاترز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-077"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الألماني الذي رفع الثلاثية قائدًا لسيتي عام 2023؟",
-      "a": "إلكاي غوندوغان",
-      "alt": [
-        "غوندوغان",
-        "إلقاي غوندوغان"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-078"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من الإيطالي الذي قاد برايتون إلى أوروبا لأول مرة في تاريخه؟",
-      "a": "روبرتو دي زيربي",
-      "alt": [
-        "دي زيربي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-079"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب لوتون؟",
-      "a": "كينيلورث رود",
-      "alt": [
-        "كنيلورث رود"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-080"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "في أي موسم دخلت تقنية خط المرمى إلى البريميرليغ؟",
-      "a": "2013-2014",
-      "alt": [
-        "2013",
-        "2014"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-081"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والمواسم",
-      "q": "كم نقطة جمع سندرلاند في موسم عودته 2026؟",
-      "a": "أربع وخمسون",
-      "alt": [
-        "54"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-082"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من البلجيكي الذي تجاوز مئة هدف في البريميرليغ مع أربعة أندية؟",
-      "a": "روميلو لوكاكو",
-      "alt": [
-        "لوكاكو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-083"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من المدرب الشاب الذي قاد إبسويتش إلى صعودين متتاليين؟",
-      "a": "كيران مكينا",
-      "alt": [
-        "مكينا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-084"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الفرنسي الذي وصل اليونايتد من موناكو عام 2015 وسجّل في ظهوره الأول؟",
-      "a": "أنطوني مارسيال",
-      "alt": [
-        "مارسيال",
-        "أنطوني مارسال"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-085"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "كم شهرًا يمتد موسم البريميرليغ تقريبًا؟",
-      "a": "تسعة أشهر",
-      "alt": [
-        "تسعة",
-        "9"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-086"
-    },
-    {
-      "p": 800,
-      "topic": "الأندية والألقاب",
-      "q": "كم مرة توّج أستون فيلا بلقب الدوري الإنجليزي؟",
-      "a": "سبع مرات",
-      "alt": [
-        "سبعة",
-        "7"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-087"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الإسكتلندي الذي صار قائد أستون فيلا في عهد إيمري؟",
-      "a": "جون ماكغين",
-      "alt": [
-        "ماكغين",
-        "ماكجين"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-088"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من الإيطالي الذي درّب تشيلسي موسم 2019 قبل رحيله ليوفنتوس؟",
-      "a": "ماوريسيو ساري",
-      "alt": [
-        "ساري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-089"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب شيفيلد يونايتد؟",
-      "a": "برامال لين",
-      "alt": [
-        "برامل لين"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-090"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والمواسم",
-      "q": "كم نقطة جمع ليفربول في موسم 2019 دون أن يفوز باللقب؟",
-      "a": "سبع وتسعون",
-      "alt": [
-        "97"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-091"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الغاني الذي انتقل من أتلتيكو مدريد إلى أرسنال عام 2020؟",
-      "a": "توماس بارتي",
-      "alt": [
-        "بارتي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-092"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من الهولندي الذي درّب اليونايتد بين 2014 و2016؟",
-      "a": "لويس فان خال",
-      "alt": [
-        "فان خال",
-        "فان جال"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-093"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب بيرنلي؟",
-      "a": "تيرف مور",
-      "alt": [
-        "ترف مور"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-094"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والمواسم",
-      "q": "كم نقطة جمع هدرسفيلد في موسم 2019 الكارثي؟",
-      "a": "ست عشرة",
-      "alt": [
-        "16"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-095"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "ما الاسم التجاري لكأس الرابطة الإنجليزية حاليًا؟",
-      "a": "كأس كاراباو",
-      "alt": [
-        "كاراباو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-800-096"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب كوينز بارك رينجرز الشائع؟",
-      "a": "الهوبس",
-      "alt": [
-        "الأطواق"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-049"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والألقاب",
-      "q": "أي نادٍ يحمل أسوأ رصيد نقاط في تاريخ البريميرليغ؟",
-      "a": "ديربي كاونتي",
-      "alt": [
-        "ديربي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-050"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والألقاب",
-      "q": "ما لقب سندرلاند الشائع؟",
-      "a": "القطط السود",
-      "alt": [
-        "الهررة السود"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-051"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من أول هدّاف في تاريخ البريميرليغ موسم 1993؟",
+      "q": "من فاز بالحذاء الذهبي في أول موسم للبريميرليغ؟",
       "a": "تيدي شيرينغهام",
-      "alt": [
-        "شيرينغهام"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "qid": "premier-800-907",
+      "topic": "البدايات",
       "verified": true,
-      "qid": "premier-1000-052"
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 800,
+      "q": "ما الملعب الذي ودعه توتنهام بمباراة ضد يونايتد في مايو 2017؟",
+      "a": "وايت هارت لين",
+      "qid": "premier-800-908",
+      "topic": "الملاعب",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.premierleague.com/en/news/394288/spurs-say-goodbye-to-white-hart-lane",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من أول لاعب يسجّل خمسة أهداف في لقاء واحد بالبريميرليغ؟",
-      "a": "أندي كول",
-      "alt": [
-        "كول",
-        "أندرو كول"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من كان قائد بلاكبيرن عند التتويج بلقب البريميرليغ 1994/95؟",
+      "a": "تيم شيروود",
+      "qid": "premier-1000-901",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "premier-1000-053"
+      "difficultyTarget": 0.15,
+      "source": "https://www.premierleague.com/en/news/2081325",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من لاعب ترينيداد وتوباغو الذي شكّل ثنائيًا فتاكًا مع كول في 1999؟",
-      "a": "دوايت يورك",
-      "alt": [
-        "يورك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من مهاجم سندرلاند صاحب الحذاء الذهبي بـ 30 هدفًا في موسم 1999/2000؟",
+      "a": "كيفن فيليبس",
+      "qid": "premier-1000-902",
+      "topic": "الهدافون",
       "verified": true,
-      "qid": "premier-1000-054"
+      "difficultyTarget": 0.15,
+      "source": "https://www.premierleague.com/es/news/59011",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الحارس صاحب أكبر عدد من مباريات البريميرليغ؟",
-      "a": "ديفيد جيمس",
-      "alt": [
-        "جيمس"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-055"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المدافع الذي انتقل من ليدز إلى اليونايتد بصفقة قياسية عام 2002؟",
-      "a": "ريو فرديناند",
-      "alt": [
-        "فرديناند"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-056"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الظهير الفرنسي الذي وصل اليونايتد من موناكو عام 2006؟",
-      "a": "باتريس إيفرا",
-      "alt": [
-        "إيفرا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-057"
-    },
-    {
-      "p": 1000,
+      "q": "من قاد بلاكبيرن تدريبيًا إلى لقب البريميرليغ عام 1995؟",
+      "a": "كيني دالغليش",
+      "qid": "premier-1000-903",
       "topic": "المدربون",
-      "q": "من المدرب الذي خلف مورينيو في تشيلسي عام 2007؟",
-      "a": "أفرام غرانت",
-      "alt": [
-        "غرانت"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
       "verified": true,
-      "qid": "premier-1000-058"
+      "difficultyTarget": 0.15,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "المدربون",
-      "q": "من المدرب الذي سبق فينغر مباشرة على مقعد أرسنال؟",
-      "a": "بروس ريوك",
-      "alt": [
-        "ريوك",
-        "بروس ريوتش"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من حارس وست هام الذي أحبط محاولات يونايتد في اليوم الأخير لموسم 1994/95؟",
+      "a": "لوديك ميكلوسكو",
+      "qid": "premier-1000-904",
+      "topic": "حراسة المرمى",
       "verified": true,
-      "qid": "premier-1000-059"
+      "difficultyTarget": 0.15,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "المدربون",
-      "q": "من المدرب الويلزي الذي سبق مانشيني على مقعد سيتي؟",
-      "a": "مارك هيوز",
-      "alt": [
-        "هيوز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من كان شريك شيرر الهجومي في ثنائي SAS لبلاكبيرن موسم 1994/95؟",
+      "a": "كريس ساتون",
+      "qid": "premier-1000-905",
+      "topic": "لحظات الحسم",
       "verified": true,
-      "qid": "premier-1000-060"
+      "difficultyTarget": 0.15,
+      "source": "https://www.premierleague.com/en/news/60236",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب ميدلزبره؟",
-      "a": "ريفرسايد",
-      "alt": [
-        "الريفرسايد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "أي فريق أنهى الموسم الأول للبريميرليغ في المركز الثالث؟",
+      "a": "نورويتش سيتي",
+      "qid": "premier-1000-906",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "premier-1000-061"
+      "difficultyTarget": 0.15,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب سندرلاند؟",
-      "a": "ستاديوم أوف لايت",
-      "alt": [
-        "ملعب النور"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "من سجل أول ثلاثية في البريميرليغ بقميص ليدز أمام توتنهام؟",
+      "a": "إريك كانتونا",
+      "qid": "premier-1000-907",
+      "topic": "البدايات",
       "verified": true,
-      "qid": "premier-1000-062"
+      "difficultyTarget": 0.15,
+      "source": "https://www.premierleague.com/en/news/58731",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب وست بروميتش ألبيون؟",
-      "a": "ذا هوثورنز",
-      "alt": [
-        "الهوثورنز"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
+      "q": "في مواجهة بورتسموث وريدينغ عام 2007، كم هدفًا سجل الفريقان معًا؟",
+      "a": "11",
+      "qid": "premier-1000-908",
+      "topic": "الملاعب",
       "verified": true,
-      "qid": "premier-1000-063"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب سوانزي حين لعب في البريميرليغ؟",
-      "a": "ليبرتي",
-      "alt": [
-        "ملعب ليبرتي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-064"
-    },
-    {
-      "p": 1000,
-      "topic": "النظام والكأس",
-      "q": "في أي موسم صار عدد أندية البريميرليغ عشرين بدل اثنين وعشرين؟",
-      "a": "1995-1996",
-      "alt": [
-        "1995",
-        "1996"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-065"
-    },
-    {
-      "p": 1000,
-      "topic": "النظام والكأس",
-      "q": "ما اسم أول راعٍ تجاري حمل اسمه الدوري الإنجليزي الممتاز؟",
-      "a": "كارلينغ",
-      "alt": [
-        "كارلنغ",
-        "Carling"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-066"
-    },
-    {
-      "p": 1000,
-      "topic": "النظام والكأس",
-      "q": "أي شركة صارت مورّد كرة البريميرليغ الرسمية بعد نايكي؟",
-      "a": "بوما",
-      "alt": [
-        "Puma"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-067"
-    },
-    {
-      "p": 1000,
-      "topic": "العرب في البريميرليغ",
-      "q": "من التونسي الذي لعب في وسط ملعب برمنغهام سيتي؟",
-      "a": "مهدي النفطي",
-      "alt": [
-        "النفطي",
-        "مهدي النفتي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-068"
-    },
-    {
-      "p": 1000,
-      "topic": "العرب في البريميرليغ",
-      "q": "من التونسي الذي تخرّج من أكاديمية اليونايتد ولعب لبيرنلي؟",
-      "a": "حنبعل المجبري",
-      "alt": [
-        "حنبعل",
-        "المجبري"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-069"
-    },
-    {
-      "p": 1000,
-      "topic": "العرب في البريميرليغ",
-      "q": "من المصري الذي لعب مدافعًا لوست بروميتش منذ 2017؟",
-      "a": "أحمد حجازي",
-      "alt": [
-        "حجازي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-070"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات وديربيات",
-      "q": "كم هدفًا سُجِّل في مباراة بورتسموث وريدينغ الأغزر تاريخيًا؟",
-      "a": "أحد عشر",
-      "alt": [
-        "11"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-071"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات وديربيات",
-      "q": "كم هدفًا سجّل هنري في الدوري موسم اللاهزيمة؟",
-      "a": "ثلاثون",
-      "alt": [
-        "30"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-072"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صاحب القميص الثامن الذي قاد ليفربول عقدًا ونصفًا؟",
-      "a": "ستيفن جيرارد",
-      "alt": [
-        "جيرارد"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-073"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المدافع الفنلندي الذي شكّل ثنائيًا مع كاراغر في ليفربول؟",
-      "a": "سامي هيبيا",
-      "alt": [
-        "هيبيا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-074"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب تشارلتون التقليدي؟",
-      "a": "ذا فالي",
-      "alt": [
-        "الفالي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-075"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والألقاب",
-      "q": "أي نادٍ ويلزي صعد إلى البريميرليغ مرتين في تاريخه؟",
-      "a": "كارديف سيتي",
-      "alt": [
-        "كارديف"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-076"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من المدرب الذي درّب توتنهام وساوثهامبتون بعد قيادته المنتخب الإنجليزي؟",
-      "a": "غلين هودل",
-      "alt": [
-        "هودل",
-        "هويدل"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-077"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات وديربيات",
-      "q": "ما أكبر نتيجة فوز سُجّلت في تاريخ البريميرليغ؟",
-      "a": "تسعة مقابل صفر",
-      "alt": [
-        "9-0",
-        "تسعة صفر"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-078"
-    },
-    {
-      "p": 1000,
-      "topic": "النظام والكأس",
-      "q": "كم لاعبًا محليّ التخريج يجب أن يضمّه كشف الفريق؟",
-      "a": "ثمانية لاعبين",
-      "alt": [
-        "ثمانية",
-        "8"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-079"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الإيفواري الذي سجّل من وسط الملعب أهدافًا حاسمة لسيتي في 2014؟",
-      "a": "يايا توريه",
-      "alt": [
-        "توريه",
-        "يايا"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-080"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب كوينز بارك رينجرز؟",
-      "a": "لوفتوس رود",
-      "alt": [
-        "لفتوس رود"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-081"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من المدرب الإنجليزي الذي قاد بورتسموث للفوز بكأس الاتحاد 2008؟",
-      "a": "هاري ريدناب",
-      "alt": [
-        "ريدناب"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-082"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من الإيطالي الذي تولى تشيلسي مؤقتًا في ربيع 2012؟",
-      "a": "روبرتو دي ماتيو",
-      "alt": [
-        "دي ماتيو"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-083"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الجناح الهولندي السريع الذي قاد جناح أرسنال في ثنائية 1998؟",
-      "a": "مارك أوفرمارس",
-      "alt": [
-        "أوفرمارس"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-084"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والألقاب",
-      "q": "ما أطول سلسلة انتصارات متتالية في تاريخ البريميرليغ؟",
-      "a": "ثمانية عشر انتصارًا",
-      "alt": [
-        "18",
-        "ثمانية عشر"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-085"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الإسباني الذي قاد وسط أرسنال شابًا ثم عاد للبريميرليغ مع تشيلسي؟",
-      "a": "سيسك فابريغاس",
-      "alt": [
-        "فابريغاس"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-086"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من المدرب النمساوي الذي درّب ساوثهامبتون بين 2018 و2022؟",
-      "a": "رالف هازنهوتل",
-      "alt": [
-        "هازنهوتل"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-087"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات وديربيات",
-      "q": "أمام أي فريق سجّل بيركامب هدفه الشهير بلمسة دائرية عام 2002؟",
-      "a": "نيوكاسل يونايتد",
-      "alt": [
-        "نيوكاسل"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-088"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب بولتون حين لعب في البريميرليغ؟",
-      "a": "ريبوك",
-      "alt": [
-        "ملعب ريبوك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-089"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صاحب الرقم القياسي للشباك النظيفة في تاريخ البريميرليغ؟",
-      "a": "بتر تشيك",
-      "alt": [
-        "تشيك",
-        "بيتر تشيك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-090"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب ريدينغ حين صعد إلى البريميرليغ؟",
-      "a": "ماديسكي",
-      "alt": [
-        "ملعب ماديسكي"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-091"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من المدرب الذي قاد ريدينغ إلى البريميرليغ لأول مرة في تاريخه؟",
-      "a": "ستيف كوبل",
-      "alt": [
-        "كوبل"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-092"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات وديربيات",
-      "q": "كم هدفًا سجّل شيرر ليتصدر هدّافي البريميرليغ عبر التاريخ؟",
-      "a": "مئتان وستون",
-      "alt": [
-        "260",
-        "مائتان وستون"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-093"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات وديربيات",
-      "q": "من سجّل أول هدف في تاريخ الدوري الإنجليزي الممتاز؟",
-      "a": "براين دين",
-      "alt": [
-        "دين",
-        "براين دِين"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-094"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من مدرب نيوكاسل الذي انفجر غاضبًا على الهواء ضد فيرغسون عام 1996؟",
-      "a": "كيفن كيغان",
-      "alt": [
-        "كيغان"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-095"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب بلاكبيرن العريق؟",
-      "a": "إيوود بارك",
-      "alt": [
-        "ايوود بارك"
-      ],
-      "sourceUrl": "https://www.premierleague.com/",
-      "verified": true,
-      "qid": "premier-1000-096"
+      "difficultyTarget": 0.15,
+      "source": "https://www.premierleague.com/en/stats/records",
+      "verifiedAt": "2026-09-18"
     }
   ]
 }

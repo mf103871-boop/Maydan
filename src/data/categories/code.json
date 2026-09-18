@@ -6,3525 +6,603 @@
   "qs": [
     {
       "p": 200,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "رصم",
+      "q": "م · ص · ر",
       "a": "مصر",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B5%D8%B1",
-      "qid": "code-200-001"
-    },
-    {
-      "p": 200,
+      "qid": "code-200-901",
+      "type": "code",
       "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "رطق",
-      "a": "قطر",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
+      "hint": "صِل الحروف بالترتيب لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B7%D8%B1",
-      "qid": "code-200-002"
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 200,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "لظبظنظاظن",
-      "a": "لبنان",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%A8%D9%86%D8%A7%D9%86",
-      "qid": "code-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "تظوظنظس",
-      "a": "تونس",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D9%86%D8%B3",
-      "qid": "code-200-004"
-    },
-    {
-      "p": 200,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "بظغظدظاظد",
-      "a": "بغداد",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF",
-      "qid": "code-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "يبد",
-      "a": "دبي",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%A8%D9%8A",
-      "qid": "code-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "دسأ",
+      "q": "أ · س · د",
       "a": "أسد",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B3%D8%AF",
-      "qid": "code-200-007"
-    },
-    {
-      "p": 200,
+      "qid": "code-200-902",
+      "type": "code",
       "topic": "حيوانات",
-      "type": "code",
-      "q": "رمن",
-      "a": "نمر",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
+      "hint": "صِل الحروف بالترتيب لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%85%D8%B1",
-      "qid": "code-200-008"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "بئذ",
-      "a": "ذئب",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
+      "difficultyTarget": 0.8,
       "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B0%D8%A6%D8%A8",
-      "qid": "code-200-009"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 200,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "غظزظاظل",
-      "a": "غزال",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%B2%D8%A7%D9%84",
-      "qid": "code-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "قظرظش",
-      "a": "قرش",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سمك القرش"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Shark",
-      "qid": "code-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "بظوظمظة",
-      "a": "بومة",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%85%D8%A9",
-      "qid": "code-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "زبخ",
-      "a": "خبز",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%A8%D8%B2",
-      "qid": "code-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "رمت",
+      "q": "ت · م · ر",
       "a": "تمر",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
+      "qid": "code-200-903",
+      "type": "code",
+      "topic": "أطعمة",
+      "hint": "صِل الحروف بالترتيب لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%85%D8%B1",
-      "qid": "code-200-014"
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 200,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "لسع",
-      "a": "عسل",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B3%D9%84",
-      "qid": "code-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "مظلظح",
-      "a": "ملح",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%AD_%D8%A7%D9%84%D8%B7%D8%B9%D8%A7%D9%85",
-      "qid": "code-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "أظرظز",
-      "a": "أرز",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B1%D8%B2_(%D9%86%D8%A8%D8%A7%D8%AA)",
-      "qid": "code-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "فظوظل",
-      "a": "فول",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%88%D9%84",
-      "qid": "code-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "رحب",
-      "a": "بحر",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%AD%D8%B1",
-      "qid": "code-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "لبج",
-      "a": "جبل",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A8%D9%84",
-      "qid": "code-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "رهن",
-      "a": "نهر",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%87%D8%B1",
-      "qid": "code-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "مظطظر",
-      "a": "مطر",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B7%D8%B1",
-      "qid": "code-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "ثظلظج",
-      "a": "ثلج",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D9%84%D8%AC",
-      "qid": "code-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "رظمظل",
-      "a": "رمل",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D9%84",
-      "qid": "code-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "ةرك",
-      "a": "كرة",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D8%A9",
-      "qid": "code-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "سظبظاظحظة",
-      "a": "سباحة",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A8%D8%A7%D8%AD%D8%A9",
-      "qid": "code-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "يرج",
-      "a": "جري",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B1%D9%8A",
-      "qid": "code-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "سنت",
-      "a": "تنس",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%86%D8%B3",
-      "qid": "code-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "قظفظز",
-      "a": "قفز",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%81%D8%B2",
-      "qid": "code-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "مظلظاظكظمظة",
-      "a": "ملاكمة",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%A7%D9%83%D9%85%D8%A9",
-      "qid": "code-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "ملق",
+      "q": "ق · ل · م",
       "a": "قلم",
+      "qid": "code-200-904",
+      "type": "code",
+      "topic": "أدوات",
+      "hint": "صِل الحروف بالترتيب لتعرف الكلمة",
+      "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "p": 200,
+      "q": "ب · ح · ر",
+      "a": "بحر",
+      "qid": "code-200-905",
+      "type": "code",
+      "topic": "أماكن",
+      "hint": "صِل الحروف بالترتيب لتعرف الكلمة",
+      "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "p": 200,
+      "q": "ش · م · س",
+      "a": "شمس",
+      "qid": "code-200-906",
+      "type": "code",
+      "topic": "طبيعة",
+      "hint": "صِل الحروف بالترتيب لتعرف الكلمة",
+      "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "p": 200,
+      "q": "ه · د · ف",
+      "a": "هدف",
+      "qid": "code-200-907",
+      "type": "code",
+      "topic": "رياضة",
+      "hint": "صِل الحروف بالترتيب لتعرف الكلمة",
+      "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "p": 200,
+      "q": "ب · ا · ب",
+      "a": "باب",
+      "qid": "code-200-908",
+      "type": "code",
+      "topic": "أشياء يومية",
+      "hint": "صِل الحروف بالترتيب لتعرف الكلمة",
+      "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "p": 400,
+      "q": "نانبل",
+      "a": "لبنان",
+      "qid": "code-400-901",
+      "type": "code",
+      "topic": "بلدان ومدن",
       "hint": "اقرأ الحروف من آخرها إلى أولها",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%84%D9%85",
-      "qid": "code-200-031"
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
-      "p": 200,
-      "topic": "أدوات وأشياء",
+      "p": 400,
+      "q": "ناصح",
+      "a": "حصان",
+      "qid": "code-400-902",
       "type": "code",
-      "q": "باتك",
-      "a": "كتاب",
+      "topic": "حيوانات",
       "hint": "اقرأ الحروف من آخرها إلى أولها",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%AA%D8%A7%D8%A8",
-      "qid": "code-200-032"
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
-      "p": 200,
-      "topic": "أدوات وأشياء",
+      "p": 400,
+      "q": "حافت",
+      "a": "تفاح",
+      "qid": "code-400-903",
       "type": "code",
-      "q": "مظفظتظاظح",
-      "a": "مفتاح",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
+      "topic": "أطعمة",
+      "hint": "اقرأ الحروف من آخرها إلى أولها",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%81%D8%AA%D8%A7%D8%AD",
-      "qid": "code-200-033"
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
-      "p": 200,
-      "topic": "أدوات وأشياء",
-      "type": "code",
+      "p": 400,
       "q": "صقم",
       "a": "مقص",
+      "qid": "code-400-904",
+      "type": "code",
+      "topic": "أدوات",
       "hint": "اقرأ الحروف من آخرها إلى أولها",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%82%D8%B5",
-      "qid": "code-200-034"
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
-      "p": 200,
-      "topic": "أدوات وأشياء",
+      "p": 400,
+      "q": "ةقيدح",
+      "a": "حديقة",
+      "qid": "code-400-905",
       "type": "code",
-      "q": "كظرظسظي",
+      "topic": "أماكن",
+      "hint": "اقرأ الحروف من آخرها إلى أولها",
+      "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "p": 400,
+      "q": "ةميغ",
+      "a": "غيمة",
+      "qid": "code-400-906",
+      "type": "code",
+      "topic": "طبيعة",
+      "hint": "اقرأ الحروف من آخرها إلى أولها",
+      "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "p": 400,
+      "q": "سنت",
+      "a": "تنس",
+      "qid": "code-400-907",
+      "type": "code",
+      "topic": "رياضة",
+      "hint": "اقرأ الحروف من آخرها إلى أولها",
+      "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "p": 400,
+      "q": "يسرك",
       "a": "كرسي",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D8%B3%D9%8A",
-      "qid": "code-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "أدوات وأشياء",
+      "qid": "code-400-908",
       "type": "code",
-      "q": "سظاظعظة",
-      "a": "ساعة",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D8%B9%D8%A9",
-      "qid": "code-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "type": "code",
-      "q": "بيبط",
-      "a": "طبيب",
+      "topic": "أشياء يومية",
       "hint": "اقرأ الحروف من آخرها إلى أولها",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B7%D8%A8%D9%8A%D8%A8",
-      "qid": "code-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "type": "code",
-      "q": "ملعم",
-      "a": "معلم",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
+      "difficultyTarget": 0.6,
       "verified": true,
-      "alt": [
-        "مدرس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D9%84%D9%85",
-      "qid": "code-200-038"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
-      "p": 200,
-      "topic": "مهن",
-      "type": "code",
-      "q": "راجن",
-      "a": "نجار",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%AC%D8%A7%D8%B1%D8%A9",
-      "qid": "code-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "type": "code",
-      "q": "خظبظاظز",
-      "a": "خباز",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%A8%D8%A7%D8%B2",
-      "qid": "code-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "type": "code",
-      "q": "سظاظئظق",
-      "a": "سائق",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D8%A6%D9%82",
-      "qid": "code-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "type": "code",
-      "q": "صظيظاظد",
-      "a": "صياد",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D9%8A%D8%A7%D8%AF_%D8%B3%D9%85%D9%83",
-      "qid": "code-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "سمش",
-      "a": "شمس",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%85%D8%B3",
-      "qid": "code-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "رمق",
-      "a": "قمر",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%85%D8%B1",
-      "qid": "code-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "مجن",
-      "a": "نجم",
-      "hint": "اقرأ الحروف من آخرها إلى أولها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%AC%D9%85",
-      "qid": "code-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "زظحظل",
-      "a": "زحل",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D8%AD%D9%84",
-      "qid": "code-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "اظلظمظرظيظخ",
-      "a": "المريخ",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B1%D9%8A%D8%AE",
-      "qid": "code-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "اظلظأظرظض",
-      "a": "الأرض",
-      "hint": "بين كل حرفين حرف دخيل واحد مكرر، احذفه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A3%D8%B1%D8%B6",
-      "qid": "code-200-048"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "لرضااي",
-      "a": "الرياض",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6",
-      "qid": "code-400-001"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "مدشق",
-      "a": "دمشق",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%85%D8%B4%D9%82",
-      "qid": "code-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "بتوير",
-      "a": "بيروت",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D8%B1%D9%88%D8%AA",
-      "qid": "code-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "بمدزظين",
-      "a": "الخرطوم",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AE%D8%B1%D8%B7%D9%88%D9%85",
-      "qid": "code-400-004"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "بمنفزت",
+      "p": 600,
+      "q": "ازلزمزغزرزب",
       "a": "المغرب",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
+      "qid": "code-600-901",
+      "type": "code",
+      "topic": "بلدان ومدن",
+      "hint": "احذف حرف ز الدخيل بين الحروف لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8",
-      "qid": "code-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "بشظهتيم",
-      "a": "اسطنبول",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
+      "difficultyTarget": 0.4,
       "verified": true,
-      "alt": [
-        "إسطنبول",
-        "إستانبول"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B3%D8%B7%D9%86%D8%A8%D9%88%D9%84",
-      "qid": "code-400-006"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
-      "p": 400,
+      "p": 600,
+      "q": "بزطزرزيزق",
+      "a": "بطريق",
+      "qid": "code-600-902",
+      "type": "code",
       "topic": "حيوانات",
-      "type": "code",
-      "q": "افليل",
-      "a": "الفيل",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
+      "hint": "احذف حرف ز الدخيل بين الحروف لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "فيل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%8A%D9%84",
-      "qid": "code-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "بمخضبه",
-      "a": "الحصان",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "حصان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B5%D8%A7%D9%86",
-      "qid": "code-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "ملجال",
-      "a": "الجمل",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "جمل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%85%D9%84",
-      "qid": "code-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "بلدا",
-      "a": "الدب",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "دب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%A8",
-      "qid": "code-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "بمتظزاك",
-      "a": "البطريق",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "بطريق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B7%D8%B1%D9%8A%D9%82",
-      "qid": "code-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "بمفزبت",
-      "a": "الغراب",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "غراب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%B1%D8%A7%D8%A8",
-      "qid": "code-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "بمقمبقم",
-      "a": "الفلافل",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "فلافل",
-        "طعمية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%84%D8%A7%D9%81%D9%84",
-      "qid": "code-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "صاحلم",
-      "a": "الحمص",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "حمص"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%85%D8%B5",
-      "qid": "code-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "بمصبيزنب",
-      "a": "الشاورما",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "شاورما"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%A7%D9%88%D8%B1%D9%85%D8%A7",
-      "qid": "code-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "دلعسا",
-      "a": "العدس",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "عدس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%AF%D8%B3",
-      "qid": "code-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "بمساثيه",
-      "a": "الزيتون",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "زيتون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%8A%D8%AA%D9%88%D9%86",
-      "qid": "code-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "يانتل",
-      "a": "التين",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "تين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%8A%D9%86",
-      "qid": "code-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "بمتزلبه",
-      "a": "البركان",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "بركان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%83%D8%A7%D9%86",
-      "qid": "code-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "االللش",
-      "a": "الشلال",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "شلال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%84%D8%A7%D9%84",
-      "qid": "code-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "بمحماذ",
-      "a": "الجليد",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "جليد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%84%D9%8A%D8%AF",
-      "qid": "code-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "رادعل",
-      "a": "الرعد",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "رعد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%B9%D8%AF",
-      "qid": "code-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "برالق",
-      "a": "البرق",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "برق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%82",
-      "qid": "code-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "بمطتبت",
-      "a": "الضباب",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "ضباب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B6%D8%A8%D8%A7%D8%A8",
-      "qid": "code-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "راجشطلن",
-      "a": "الشطرنج",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "شطرنج"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%B7%D8%B1%D9%86%D8%AC",
-      "qid": "code-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "غالوص",
-      "a": "الغوص",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "غوص"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D9%88%D8%B5",
-      "qid": "code-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "لواوجد",
-      "a": "الجودو",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "جودو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%AF%D9%88",
-      "qid": "code-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "بملبزبثاو",
-      "a": "الكاراتيه",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "كاراتيه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A%D9%87",
-      "qid": "code-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "بمتيماهف",
-      "a": "البولينغ",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "بولينغ",
-        "بولينج"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%84%D9%8A%D9%86%D8%AC",
-      "qid": "code-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "بمذزبحبث",
-      "a": "الدراجات",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سباق الدراجات"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%B1%D8%A7%D8%AC%D8%A9_%D9%87%D9%88%D8%A7%D8%A6%D9%8A%D8%A9",
-      "qid": "code-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "بمضهذيك",
-      "a": "الصندوق",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "صندوق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D9%86%D8%AF%D9%88%D9%82",
-      "qid": "code-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "سالمل",
-      "a": "السلم",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سلم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ladder",
-      "qid": "code-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "بمقبهيش",
-      "a": "الفانوس",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "فانوس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D9%86%D9%88%D8%B3",
-      "qid": "code-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "مسرمالا",
-      "a": "المسمار",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مسمار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D9%85%D8%A7%D8%B1",
-      "qid": "code-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "ملااتخ",
-      "a": "الخاتم",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "خاتم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%A7%D8%AA%D9%85",
-      "qid": "code-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "بمحزش",
-      "a": "الجرس",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "جرس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B1%D8%B3",
-      "qid": "code-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "type": "code",
-      "q": "بمنوهذش",
-      "a": "المهندس",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مهندس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%87%D9%86%D8%AF%D8%B3",
-      "qid": "code-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "type": "code",
-      "q": "يالاطر",
-      "a": "الطيار",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "طيار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B7%D9%8A%D8%A7%D8%B1",
-      "qid": "code-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "type": "code",
-      "q": "اسرالم",
-      "a": "الرسام",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "رسام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%B3%D8%A7%D9%85",
-      "qid": "code-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "type": "code",
-      "q": "قلحاال",
-      "a": "الحلاق",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "حلاق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%84%D8%A7%D9%82",
-      "qid": "code-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "type": "code",
-      "q": "بمضاذما",
-      "a": "الصيدلي",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "صيدلي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D9%8A%D8%AF%D9%84%D9%8A",
-      "qid": "code-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "type": "code",
-      "q": "بمزتبه",
-      "a": "الربان",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "ربان",
-        "قبطان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%A8%D8%A7%D9%86",
-      "qid": "code-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "طراعد",
-      "a": "عطارد",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B7%D8%A7%D8%B1%D8%AF",
-      "qid": "code-400-043"
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
-      "p": 400,
-      "topic": "فضاء وفلك",
+      "p": 600,
+      "q": "بزرزتزقزازل",
+      "a": "برتقال",
+      "qid": "code-600-903",
       "type": "code",
-      "q": "بمنصثزا",
-      "a": "المشتري",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
+      "topic": "أطعمة",
+      "hint": "احذف حرف ز الدخيل بين الحروف لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%8A",
-      "qid": "code-400-044"
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
-      "p": 400,
-      "topic": "فضاء وفلك",
+      "p": 600,
+      "q": "مزفزتزازح",
+      "a": "مفتاح",
+      "qid": "code-600-904",
       "type": "code",
-      "q": "نبنوت",
-      "a": "نبتون",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
+      "topic": "أدوات",
+      "hint": "احذف حرف ز الدخيل بين الحروف لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%A8%D8%AA%D9%88%D9%86",
-      "qid": "code-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "بيزبهيش",
-      "a": "أورانوس",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
+      "difficultyTarget": 0.4,
       "verified": true,
-      "alt": [
-        "اورانوس",
-        "يورانوس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%88%D8%B1%D8%A7%D9%86%D9%88%D8%B3",
-      "qid": "code-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "بمليالت",
-      "a": "الكويكب",
-      "hint": "كل حرف كُتب بالحرف الذي يليه في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "كويكب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%88%D9%8A%D9%83%D8%A8",
-      "qid": "code-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "لنمذبا",
-      "a": "المذنب",
-      "hint": "حروف الكلمة نفسها، لكن ترتيبها مبعثر",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مذنب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B0%D9%86%D8%A8",
-      "qid": "code-400-048"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 600,
-      "topic": "بلدان ومدن",
+      "q": "مزطزازر",
+      "a": "مطار",
+      "qid": "code-600-905",
       "type": "code",
-      "q": "1-23-25-24-12-1",
-      "a": "النمسا",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "نمسا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%86%D9%85%D8%B3%D8%A7",
-      "qid": "code-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "تنروهتسم",
-      "a": "الدنمارك",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
+      "topic": "أماكن",
+      "hint": "احذف حرف ز الدخيل بين الحروف لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "دنمارك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AF%D9%86%D9%85%D8%A7%D8%B1%D9%83",
-      "qid": "code-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "16-13-21-25-8",
-      "a": "طشقند",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B7%D8%B4%D9%82%D9%86%D8%AF",
-      "qid": "code-600-003"
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 600,
-      "topic": "بلدان ومدن",
+      "q": "بزرزكزازن",
+      "a": "بركان",
+      "qid": "code-600-906",
       "type": "code",
-      "q": "24-10-1-22-13",
-      "a": "مراكش",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
+      "topic": "طبيعة",
+      "hint": "احذف حرف ز الدخيل بين الحروف لتعرف الكلمة",
+      "dir": "rtl",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B1%D8%A7%D9%83%D8%B4",
-      "qid": "code-600-004"
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 600,
-      "topic": "بلدان ومدن",
+      "q": "مزضزرزب",
+      "a": "مضرب",
+      "qid": "code-600-907",
       "type": "code",
-      "q": "ثاذتسصج",
-      "a": "بوخارست",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
+      "topic": "رياضة",
+      "hint": "احذف حرف ز الدخيل بين الحروف لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D8%AE%D8%A7%D8%B1%D8%B3%D8%AA",
-      "qid": "code-600-005"
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 600,
-      "topic": "بلدان ومدن",
+      "q": "مزصزبزازح",
+      "a": "مصباح",
+      "qid": "code-600-908",
       "type": "code",
-      "q": "واتمضاع",
-      "a": "نواكشوط",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
+      "topic": "أشياء يومية",
+      "hint": "احذف حرف ز الدخيل بين الحروف لتعرف الكلمة",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%88%D8%A7%D9%83%D8%B4%D9%88%D8%B7",
-      "qid": "code-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "1-23-22-25-19-10",
-      "a": "الكنغر",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
+      "difficultyTarget": 0.4,
       "verified": true,
-      "alt": [
-        "كنغر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%86%D8%BA%D8%B1",
-      "qid": "code-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "تنجهصتد",
-      "a": "التمساح",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "تمساح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%85%D8%B3%D8%A7%D8%AD",
-      "qid": "code-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "تنتذعثاع",
-      "a": "الأخطبوط",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "أخطبوط",
-        "اخطبوط"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AE%D8%B7%D8%A8%D9%88%D8%B7%D9%8A%D8%A7%D8%AA",
-      "qid": "code-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "1-23-25-18-1-24",
-      "a": "النعام",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "نعام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%B9%D8%A7%D9%85",
-      "qid": "code-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "1-23-27-13-21",
-      "a": "الوشق",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "وشق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%B4%D9%82",
-      "qid": "code-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "تنلوكز",
-      "a": "القنفذ",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "قنفذ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%86%D9%81%D8%B0",
-      "qid": "code-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "1-23-22-13-10-28",
-      "a": "الكشري",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "كشري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B4%D8%B1%D9%8A",
-      "qid": "code-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "1-23-24-25-12-20",
-      "a": "المنسف",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "منسف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%B3%D9%81",
-      "qid": "code-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "تنهخثاص",
-      "a": "المجبوس",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مجبوس",
-        "الكبسة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A8%D8%B3%D8%A9",
-      "qid": "code-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "1-23-24-12-7-25",
-      "a": "المسخن",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "مسخن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AE%D9%86",
-      "qid": "code-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "تنهفهان",
-      "a": "المعمول",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "معمول"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D9%85%D9%88%D9%84",
-      "qid": "code-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "تنكجاض",
-      "a": "الفتوش",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "فتوش"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%AA%D9%88%D8%B4",
-      "qid": "code-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "تنتسذثبن",
-      "a": "الأرخبيل",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "أرخبيل",
-        "ارخبيل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B1%D8%AE%D8%A8%D9%8A%D9%84",
-      "qid": "code-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "تنبوثاف",
-      "a": "الينبوع",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "ينبوع"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D9%86%D8%A8%D9%88%D8%B9",
-      "qid": "code-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "1-23-24-15-28-21",
-      "a": "المضيق",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "مضيق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B6%D9%8A%D9%82",
-      "qid": "code-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "1-23-2-10-11-7",
-      "a": "البرزخ",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "برزخ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D8%B2%D8%AE_(%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7)",
-      "qid": "code-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "1-23-12-26-23",
-      "a": "السهل",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "سهل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%87%D9%84",
-      "qid": "code-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "تنذنبخ",
-      "a": "الخليج",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "خليج"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D9%84%D9%8A%D8%AC",
-      "qid": "code-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "تنجخربك",
-      "a": "التجديف",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "تجديف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%AC%D8%AF%D9%8A%D9%81_(%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9)",
-      "qid": "code-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "1-23-3-11-23-5",
-      "a": "التزلج",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "تزلج"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B2%D9%84%D8%AC",
-      "qid": "code-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "1-23-26-27-22-28",
-      "a": "الهوكي",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "هوكي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D9%88%D9%83%D9%8A",
-      "qid": "code-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "1-23-19-27-23-20",
-      "a": "الغولف",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "غولف",
-        "جولف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D9%88%D9%84%D9%81",
-      "qid": "code-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "تنثنبتسرا",
-      "a": "البلياردو",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "بلياردو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%84%D9%8A%D8%A7%D8%B1%D8%AF%D9%88",
-      "qid": "code-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "تنتصماتض",
-      "a": "الإسكواش",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "إسكواش",
-        "اسكواش"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B3%D9%83%D9%88%D8%A7%D8%B4",
-      "qid": "code-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "1-23-24-25-17-1-10",
-      "a": "المنظار",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "منظار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%B8%D8%A7%D8%B1_%D8%AB%D9%86%D8%A7%D8%A6%D9%8A_%D8%A7%D9%84%D8%B9%D9%8A%D9%86%D9%8A%D8%A9",
-      "qid": "code-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "تنهبشتو",
-      "a": "الميزان",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "ميزان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%8A%D8%B2%D8%A7%D9%86",
-      "qid": "code-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "تنهوضتس",
-      "a": "المنشار",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "منشار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%B4%D8%A7%D8%B1",
-      "qid": "code-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "تنتثسبل",
-      "a": "الإبريق",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "إبريق",
-        "ابريق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D8%A8%D8%B1%D9%8A%D9%82",
-      "qid": "code-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "1-23-24-2-10-8",
-      "a": "المبرد",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "مبرد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A8%D8%B1%D8%AF_(%D8%A3%D8%AF%D8%A7%D8%A9)",
-      "qid": "code-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "1-23-8-20-3-10",
-      "a": "الدفتر",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "دفتر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%81%D8%AA%D8%B1",
-      "qid": "code-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "type": "code",
-      "q": "1-23-5-11-1-10",
-      "a": "الجزار",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "جزار",
-        "لحام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B2%D8%A7%D8%B1%D8%A9",
-      "qid": "code-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "type": "code",
-      "q": "تنتصمتكب",
-      "a": "الإسكافي",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "إسكافي",
-        "اسكافي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B3%D9%83%D8%A7%D9%81%D9%8A",
-      "qid": "code-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "type": "code",
-      "q": "1-23-18-16-1-10",
-      "a": "العطار",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "عطار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B7%D8%A7%D8%B1_(%D8%AA%D9%88%D8%B6%D9%8A%D8%AD)",
-      "qid": "code-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "type": "code",
-      "q": "1-23-25-6-1-3",
-      "a": "النحات",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "نحات"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%AD%D8%AA",
-      "qid": "code-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "type": "code",
-      "q": "تنذشتك",
-      "a": "الخزاف",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "خزاف",
-        "فخراني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%B2%D9%81",
-      "qid": "code-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "type": "code",
-      "q": "تنصهمسب",
-      "a": "السمكري",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سمكري",
-        "سباك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A8%D8%A7%D9%83",
-      "qid": "code-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "1-23-12-8-28-24",
-      "a": "السديم",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "سديم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AF%D9%8A%D9%85",
-      "qid": "code-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "1-23-13-26-1-2",
-      "a": "الشهاب",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "شهاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%87%D8%A7%D8%A8",
-      "qid": "code-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "1-23-22-12-27-20",
-      "a": "الكسوف",
-      "hint": "كل رقم ترتيب الحرف في الهجاء: ا=1 وب=2 … وي=28",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "كسوف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B3%D9%88%D9%81",
-      "qid": "code-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "تنذصاك",
-      "a": "الخسوف",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "خسوف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%B3%D9%88%D9%81",
-      "qid": "code-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "تنوبشم",
-      "a": "النيزك",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "نيزك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D8%B2%D9%83",
-      "qid": "code-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "تنهصثتس",
-      "a": "المسبار",
-      "hint": "كل حرف كُتب بالحرف الذي يليه بحرفين في الترتيب الهجائي: ا ب ت ث ج …",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مسبار",
-        "مسبار فضائي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%A8%D8%A7%D8%B1_%D9%81%D8%B6%D8%A7%D8%A6%D9%8A",
-      "qid": "code-600-048"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 800,
-      "topic": "بلدان ومدن",
+      "q": "3 - 27 - 25 - 12",
+      "a": "تونس",
+      "qid": "code-800-901",
       "type": "code",
-      "q": "1-25-1-3-12-1",
-      "a": "أستانا",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "استانا",
-        "آستانا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A2%D8%B3%D8%AA%D8%A7%D9%86%D8%A7",
-      "qid": "code-800-001"
-    },
-    {
-      "p": 800,
       "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "28-12-28-23-2-3",
-      "a": "تبليسي",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
+      "hint": "كل رقم يمثل حرفًا: 1=ا، 2=ب، 3=ت، 4=ث، 5=ج، 6=ح، 7=خ، 8=د، 9=ذ، 10=ر، 11=ز، 12=س، 13=ش، 14=ص، 15=ض، 16=ط، 17=ظ، 18=ع، 19=غ، 20=ف، 21=ق، 22=ك، 23=ل، 24=م، 25=ن، 26=ه، 27=و، 28=ي",
       "dir": "ltr",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A8%D9%84%D9%8A%D8%B3%D9%8A",
-      "qid": "code-800-002"
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 800,
-      "topic": "بلدان ومدن",
+      "q": "8 - 23 - 20 - 28 - 25",
+      "a": "دلفين",
+      "qid": "code-800-902",
       "type": "code",
-      "q": "حابوحايثي",
-      "a": "ليوبليانا",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
+      "topic": "حيوانات",
+      "hint": "كل رقم يمثل حرفًا: 1=ا، 2=ب، 3=ت، 4=ث، 5=ج، 6=ح، 7=خ، 8=د، 9=ذ، 10=ر، 11=ز، 12=س، 13=ش، 14=ص، 15=ض، 16=ط، 17=ظ، 18=ع، 19=غ، 20=ف، 21=ق، 22=ك، 23=ل، 24=م، 25=ن، 26=ه، 27=و، 28=ي",
+      "dir": "ltr",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%88%D8%A8%D9%84%D9%8A%D8%A7%D9%86%D8%A7",
-      "qid": "code-800-003"
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 800,
-      "topic": "بلدان ومدن",
+      "q": "22 - 10 - 22 - 24",
+      "a": "كركم",
+      "qid": "code-800-903",
       "type": "code",
-      "q": "وغاهبغاي",
-      "a": "بريتوريا",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
+      "topic": "أطعمة",
+      "hint": "كل رقم يمثل حرفًا: 1=ا، 2=ب، 3=ت، 4=ث، 5=ج، 6=ح، 7=خ، 8=د، 9=ذ، 10=ر، 11=ز، 12=س، 13=ش، 14=ص، 15=ض، 16=ط، 17=ظ، 18=ع، 19=غ، 20=ف، 21=ق، 22=ك، 23=ل، 24=م، 25=ن، 26=ه، 27=و، 28=ي",
+      "dir": "ltr",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%8A%D8%AA%D9%88%D8%B1%D9%8A%D8%A7",
-      "qid": "code-800-004"
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 800,
-      "topic": "بلدان ومدن",
+      "q": "24 - 25 - 13 - 1 - 10",
+      "a": "منشار",
+      "qid": "code-800-904",
       "type": "code",
-      "q": "ظبغاثيج",
-      "a": "سورينام",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
+      "topic": "أدوات",
+      "hint": "كل رقم يمثل حرفًا: 1=ا، 2=ب، 3=ت، 4=ث، 5=ج، 6=ح، 7=خ، 8=د، 9=ذ، 10=ر، 11=ز، 12=س، 13=ش، 14=ص، 15=ض، 16=ط، 17=ظ، 18=ع، 19=غ، 20=ف، 21=ق، 22=ك، 23=ل، 24=م، 25=ن، 26=ه، 27=و، 28=ي",
+      "dir": "ltr",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%B1%D9%8A%D9%86%D8%A7%D9%85",
-      "qid": "code-800-005"
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 800,
-      "topic": "بلدان ومدن",
+      "q": "24 - 3 - 6 - 20",
+      "a": "متحف",
+      "qid": "code-800-905",
       "type": "code",
-      "q": "25-1-3-27-2",
-      "a": "بوتان",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
+      "topic": "أماكن",
+      "hint": "كل رقم يمثل حرفًا: 1=ا، 2=ب، 3=ت، 4=ث، 5=ج، 6=ح، 7=خ، 8=د، 9=ذ، 10=ر، 11=ز، 12=س، 13=ش، 14=ص، 15=ض، 16=ط، 17=ظ، 18=ع، 19=غ، 20=ف، 21=ق، 22=ك، 23=ل، 24=م، 25=ن، 26=ه، 27=و، 28=ي",
       "dir": "ltr",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D8%AA%D8%A7%D9%86",
-      "qid": "code-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "12-24-25-23-1",
-      "a": "النمس",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
+      "difficultyTarget": 0.25,
       "verified": true,
-      "alt": [
-        "نمس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%85%D8%B3%D9%8A%D8%A7%D8%AA_(%D9%81%D8%B5%D9%8A%D9%84%D8%A9_%D8%AB%D8%AF%D9%8A%D9%8A%D8%A7%D8%AA)",
-      "qid": "code-800-007"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 800,
-      "topic": "حيوانات",
+      "q": "5 - 23 - 28 - 8",
+      "a": "جليد",
+      "qid": "code-800-906",
       "type": "code",
-      "q": "يحاغوبز",
-      "a": "اليربوع",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "يربوع"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D8%B1%D8%A8%D9%88%D8%B9%D9%8A%D8%A7%D8%AA",
-      "qid": "code-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "يحغيخبث",
-      "a": "الراكون",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "راكون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%A7%D9%83%D9%88%D9%86_(%D8%AA%D9%88%D8%B6%D9%8A%D8%AD)",
-      "qid": "code-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "يحخبيحي",
-      "a": "الكوالا",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "كوالا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%88%D8%A7%D9%84%D8%A7",
-      "qid": "code-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "14-28-25-23-1",
-      "a": "النيص",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "نيص",
-        "شيهم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D8%B5",
-      "qid": "code-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "10-2-27-23-1",
-      "a": "الوبر",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "وبر",
-        "وبر صخري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%A8%D8%B1_%D8%B5%D8%AE%D8%B1%D9%8A",
-      "qid": "code-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "يحجذهبح",
-      "a": "المفتول",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مفتول",
-        "مغربية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%81%D8%AA%D9%88%D9%84",
-      "qid": "code-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "8-28-10-4-23-1",
-      "a": "الثريد",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "ثريد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF",
-      "qid": "code-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "13-28-10-5-23-1",
-      "a": "الجريش",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "جريش"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B1%D9%8A%D8%B4",
-      "qid": "code-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "يحجغدبد",
-      "a": "المرقوق",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مرقوق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B1%D9%82%D9%88%D9%82",
-      "qid": "code-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "12-28-10-26-23-1",
-      "a": "الهريس",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "هريس",
-        "هريسة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%B1%D9%8A%D8%B3",
-      "qid": "code-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "يحكواض",
-      "a": "الخبيص",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "خبيص"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D8%A8%D9%8A%D8%B5",
-      "qid": "code-800-018"
-    },
-    {
-      "p": 800,
       "topic": "طبيعة",
-      "type": "code",
-      "q": "1-10-8-25-3-23-1",
-      "a": "التندرا",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
+      "hint": "كل رقم يمثل حرفًا: 1=ا، 2=ب، 3=ت، 4=ث، 5=ج، 6=ح، 7=خ، 8=د، 9=ذ، 10=ر، 11=ز، 12=س، 13=ش، 14=ص، 15=ض، 16=ط، 17=ظ، 18=ع، 19=غ، 20=ف، 21=ق، 22=ك، 23=ل، 24=م، 25=ن، 26=ه، 27=و، 28=ي",
       "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "تندرا",
-        "تندرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%86%D8%AF%D8%B1%D8%A9",
-      "qid": "code-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "يحظيذيثي",
-      "a": "السافانا",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سافانا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D9%81%D8%A7%D9%86%D8%A7",
-      "qid": "code-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "2-27-26-12-23-1",
-      "a": "السهوب",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "سهوب",
-        "سهب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%87%D8%A8",
-      "qid": "code-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "يحجظهثدز",
-      "a": "المستنقع",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مستنقع"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D9%8A%D8%B6%D8%A9",
-      "qid": "code-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "25-1-2-4-22-23-1",
-      "a": "الكثبان",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "كثبان",
-        "كثيب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%AB%D9%8A%D8%A8",
-      "qid": "code-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "يحذابغق",
-      "a": "الفيورد",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "فيورد",
-        "خلل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D9%84%D9%84",
-      "qid": "code-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "يحخغحثر",
-      "a": "الكرلنغ",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "كرلنغ",
-        "الكيرلنغ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D9%84%D9%86%D8%BA",
-      "qid": "code-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "يحويغخبغ",
-      "a": "الباركور",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "باركور"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B1%D9%83%D9%88%D8%B1",
-      "qid": "code-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "27-24-27-12-23-1",
-      "a": "السومو",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "سومو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D9%85%D9%88",
-      "qid": "code-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "27-23-27-2-23-1",
-      "a": "البولو",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "بولو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%84%D9%88",
-      "qid": "code-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "28-2-22-10-23-1",
-      "a": "الركبي",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "ركبي",
-        "رغبي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%BA%D8%A8%D9%8A_(%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9)",
-      "qid": "code-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "تبخا يحمحاق",
-      "a": "هوكي الجليد",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "الهوكي على الجليد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D9%88%D9%83%D9%8A_%D8%A7%D9%84%D8%AC%D9%84%D9%8A%D8%AF",
-      "qid": "code-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "يحيظشغحيو",
-      "a": "الأسطرلاب",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "أسطرلاب",
-        "اسطرلاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B3%D8%B7%D8%B1%D9%84%D8%A7%D8%A8",
-      "qid": "code-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "11-10-7-24-23-1",
-      "a": "المخرز",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "مخرز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AB%D9%82%D8%A8",
-      "qid": "code-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "23-7-25-24-23-1",
-      "a": "المنخل",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "منخل",
-        "غربال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%B1%D8%A8%D8%A7%D9%84",
-      "qid": "code-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "10-26-5-24-23-1",
-      "a": "المجهر",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "مجهر",
-        "ميكروسكوب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%87%D8%B1",
-      "qid": "code-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "يحذغميغ",
-      "a": "الفرجار",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "فرجار",
-        "بيكار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D8%AC%D8%A7%D8%B1",
-      "qid": "code-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "يحجثديط",
-      "a": "المنقاش",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "منقاش",
-        "ملقط"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D9%82%D8%A7%D8%B4",
-      "qid": "code-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "type": "code",
-      "q": "يحلخبيها",
-      "a": "الحكواتي",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "حكواتي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%83%D9%88%D8%A7%D8%AA%D9%8A",
-      "qid": "code-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "type": "code",
-      "q": "يحجظلغيها",
-      "a": "المسحراتي",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مسحراتي",
-        "أبو طبيلة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AD%D8%B1%D8%A7%D8%AA%D9%8A",
-      "qid": "code-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "type": "code",
-      "q": "20-1-8-25-23-1",
-      "a": "النداف",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "نداف",
-        "منجد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%AF%D8%A7%D9%81",
-      "qid": "code-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "type": "code",
-      "q": "19-1-2-8-23-1",
-      "a": "الدباغ",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "دباغ",
-        "دباغة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%A8%D8%A7%D8%BA%D8%A9",
-      "qid": "code-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "type": "code",
-      "q": "يحلحبيثا",
-      "a": "الحلواني",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "حلواني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%84%D9%88%D8%A7%D9%86%D9%8A",
-      "qid": "code-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "type": "code",
-      "q": "24-1-5-6-23-1",
-      "a": "الحجام",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "حجام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D8%AC%D8%A7%D9%85",
-      "qid": "code-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "25-1-3-28-3",
-      "a": "تيتان",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
-      "alt": [
-        "تيتان قمر زحل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%8A%D8%AA%D8%A7%D9%86_(%D9%82%D9%85%D8%B1)",
-      "qid": "code-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "12-27-2-27-20",
-      "a": "فوبوس",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
-      "dir": "ltr",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%88%D8%A8%D9%88%D8%B3",
-      "qid": "code-800-044"
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 800,
-      "topic": "فضاء وفلك",
+      "q": "3 - 11 - 23 - 5",
+      "a": "تزلج",
+      "qid": "code-800-907",
       "type": "code",
-      "q": "8-28-24-28-25-1-19",
-      "a": "غانيميد",
-      "hint": "كل رقم ترتيب الحرف في الهجاء (ا=1 … ي=28)، والأرقام من آخر الكلمة إلى أولها",
+      "topic": "رياضة",
+      "hint": "كل رقم يمثل حرفًا: 1=ا، 2=ب، 3=ت، 4=ث، 5=ج، 6=ح، 7=خ، 8=د، 9=ذ، 10=ر، 11=ز، 12=س، 13=ش، 14=ص، 15=ض، 16=ط، 17=ظ، 18=ع، 19=غ، 20=ف، 21=ق، 22=ك، 23=ل، 24=م، 25=ن، 26=ه، 27=و، 28=ي",
       "dir": "ltr",
+      "alt": [],
+      "difficultyTarget": 0.25,
       "verified": true,
-      "alt": [
-        "جانيميد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%A7%D9%86%D9%8A%D9%85%D9%8A%D8%AF",
-      "qid": "code-800-045"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 800,
-      "topic": "فضاء وفلك",
+      "q": "14 - 25 - 8 - 27 - 21",
+      "a": "صندوق",
+      "qid": "code-800-908",
       "type": "code",
-      "q": "يحطذد يحدشوا",
-      "a": "الشفق القطبي",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "الشفق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%81%D9%82_%D9%82%D8%B7%D8%A8%D9%8A",
-      "qid": "code-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "لعيج خياوغ",
-      "a": "حزام كايبر",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "حزام كويبر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A7%D9%85_%D9%83%D8%A7%D9%8A%D8%A8%D8%B1",
-      "qid": "code-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "يحندو يحيظبق",
-      "a": "الثقب الأسود",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء: ا↔ي وب↔و وت↔ه",
-      "dir": "rtl",
-      "verified": true,
+      "topic": "أشياء يومية",
+      "hint": "كل رقم يمثل حرفًا: 1=ا، 2=ب، 3=ت، 4=ث، 5=ج، 6=ح، 7=خ، 8=د، 9=ذ، 10=ر، 11=ز، 12=س، 13=ش، 14=ص، 15=ض، 16=ط، 17=ظ، 18=ع، 19=غ، 20=ف، 21=ق، 22=ك، 23=ل، 24=م، 25=ن، 26=ه، 27=و، 28=ي",
+      "dir": "ltr",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D9%82%D8%A8_%D8%A3%D8%B3%D9%88%D8%AF",
-      "qid": "code-800-048"
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 1000,
-      "topic": "بلدان ومدن",
+      "q": "نبماساب",
+      "a": "ماليزيا",
+      "qid": "code-1000-901",
       "type": "code",
-      "q": "بهخوجه",
-      "a": "تمبكتو",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "تومبوكتو",
-        "تنبكت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%85%D8%A8%D9%83%D8%AA%D9%88",
-      "qid": "code-1000-001"
-    },
-    {
-      "p": 1000,
       "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "غيومثع",
-      "a": "زنجبار",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
+      "hint": "أعد كل حرف خطوة للخلف في هذا الترتيب؛ ا يعود إلى ي: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
       "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%86%D8%AC%D8%A8%D8%A7%D8%B1",
-      "qid": "code-1000-002"
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 1000,
-      "topic": "بلدان ومدن",
+      "q": "كهقر",
+      "a": "قنفذ",
+      "qid": "code-1000-902",
       "type": "code",
-      "q": "هتثض",
-      "a": "شبام",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
+      "topic": "حيوانات",
+      "hint": "أعد كل حرف خطوة للخلف في هذا الترتيب؛ ا يعود إلى ي: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
       "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "شبام حضرموت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%A8%D8%A7%D9%85",
-      "qid": "code-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "صهترق",
-      "a": "غدامس",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%AF%D8%A7%D9%85%D8%B3",
-      "qid": "code-1000-004"
+      "difficultyTarget": 0.15,
+      "verified": true,
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 1000,
-      "topic": "بلدان ومدن",
+      "q": "لشلش",
+      "a": "كسكس",
+      "qid": "code-1000-903",
       "type": "code",
-      "q": "سهرج",
-      "a": "تدمر",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
+      "topic": "أطعمة",
+      "hint": "أعد كل حرف خطوة للخلف في هذا الترتيب؛ ا يعود إلى ي: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
       "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "بالميرا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%AF%D9%85%D8%B1",
-      "qid": "code-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان ومدن",
-      "type": "code",
-      "q": "قثدغجظ",
-      "a": "سمرقند",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%85%D8%B1%D9%82%D9%86%D8%AF",
-      "qid": "code-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "اغيولحي",
-      "a": "الحبارى",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
+      "difficultyTarget": 0.15,
       "verified": true,
-      "alt": [
-        "حبارى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D8%A8%D8%A7%D8%B1%D9%89_(%D8%AC%D9%86%D8%B3)",
-      "qid": "code-1000-007"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 1000,
-      "topic": "حيوانات",
+      "q": "ثزنينثز",
+      "a": "ترمومتر",
+      "qid": "code-1000-904",
       "type": "code",
-      "q": "تعلنت",
-      "a": "القطا",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
+      "topic": "أدوات",
+      "hint": "أعد كل حرف خطوة للخلف في هذا الترتيب؛ ا يعود إلى ي: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
       "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.15,
       "verified": true,
-      "alt": [
-        "قطا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B7%D8%A7_(%D8%AA%D9%88%D8%B6%D9%8A%D8%AD)",
-      "qid": "code-1000-008"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 1000,
-      "topic": "حيوانات",
+      "q": "نشثيذغ",
+      "a": "مستودع",
+      "qid": "code-1000-905",
       "type": "code",
-      "q": "نسانت",
-      "a": "الورل",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
+      "topic": "أماكن",
+      "hint": "أعد كل حرف خطوة للخلف في هذا الترتيب؛ ا يعود إلى ي: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
       "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.15,
       "verified": true,
-      "alt": [
-        "ورل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%B1%D9%84",
-      "qid": "code-1000-009"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 1000,
-      "topic": "حيوانات",
+      "q": "لوزنبه",
+      "a": "كهرمان",
+      "qid": "code-1000-906",
       "type": "code",
-      "q": "لفلفنت",
-      "a": "العقعق",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "عقعق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%82%D8%B9%D9%82",
-      "qid": "code-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "وبظزاحي",
-      "a": "اليعسوب",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "يعسوب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D8%B9%D8%B3%D9%88%D8%A8",
-      "qid": "code-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "حيوانات",
-      "type": "code",
-      "q": "اويخبيحي",
-      "a": "الأوكابي",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "أوكابي",
-        "اوكابي",
-        "أكاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%83%D8%A7%D8%A8",
-      "qid": "code-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "ثيضغدحي",
-      "a": "القرصان",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "قرصان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%82%D8%B1%D8%B5%D8%A7%D9%86_(%D8%AE%D8%A8%D8%B2)",
-      "qid": "code-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "عاعيشجحي",
-      "a": "المطازيز",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مطازيز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B7%D8%A7%D8%B2%D9%8A%D8%B2",
-      "qid": "code-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "زبودنت",
-      "a": "الحنيذ",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "حنيذ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%86%D9%8A%D8%B0",
-      "qid": "code-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "دعكهنت",
-      "a": "المفطح",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مفطح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%81%D8%B7%D8%AD",
-      "qid": "code-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "لبنصنت",
-      "a": "السليق",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سليق",
-        "سليق طائفي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%84%D9%8A%D9%82_%D8%B7%D8%A7%D8%A6%D9%81%D9%8A",
-      "qid": "code-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "طعام وشراب",
-      "type": "code",
-      "q": "وبضزجحي",
-      "a": "المعصوب",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "معصوب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B5%D9%88%D8%A8",
-      "qid": "code-1000-018"
-    },
-    {
-      "p": 1000,
       "topic": "طبيعة",
-      "type": "code",
-      "q": "ثاظيجكحي",
-      "a": "الخماسين",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
+      "hint": "أعد كل حرف خطوة للخلف في هذا الترتيب؛ ا يعود إلى ي: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
       "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.15,
       "verified": true,
-      "alt": [
-        "خماسين",
-        "رياح الخماسين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AE%D9%85%D8%A7%D8%B3%D9%8A%D9%86_(%D8%AA%D9%88%D8%B6%D9%8A%D8%AD)",
-      "qid": "code-1000-019"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 1000,
-      "topic": "طبيعة",
+      "q": "حنتبس",
+      "a": "جمباز",
+      "qid": "code-1000-907",
       "type": "code",
-      "q": "هاهصنت",
-      "a": "السموم",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سموم",
-        "ريح السموم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%85%D9%88%D9%85_(%D8%B1%D9%8A%D8%A7%D8%AD)",
-      "qid": "code-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "ثاثينت",
-      "a": "الهبوب",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "هبوب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%A8%D9%88%D8%A8",
-      "qid": "code-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "ثبظثبجحي",
-      "a": "المونسون",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "مونسون",
-        "الرياح الموسمية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%8A%D8%A7%D8%AD_%D9%85%D9%88%D8%B3%D9%85%D9%8A%D8%A9",
-      "qid": "code-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "هسلنت",
-      "a": "القرم",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "قرم",
-        "المانغروف",
-        "الشورى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D9%85_(%D9%86%D8%A8%D8%A7%D8%AA)",
-      "qid": "code-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "طبيعة",
-      "type": "code",
-      "q": "هظغيخحي",
-      "a": "الكارست",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "كارست"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%B1%D8%B3%D8%AA",
-      "qid": "code-1000-024"
-    },
-    {
-      "p": 1000,
       "topic": "رياضة",
-      "type": "code",
-      "q": "بضتمشاث",
-      "a": "بوزكاشي",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
+      "hint": "أعد كل حرف خطوة للخلف في هذا الترتيب؛ ا يعود إلى ي: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
       "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.15,
       "verified": true,
-      "alt": [
-        "بزكشي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D8%B2%D9%83%D8%A7%D8%B4%D9%8A",
-      "qid": "code-1000-025"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     },
     {
       "p": 1000,
-      "topic": "رياضة",
+      "q": "نهتو",
+      "a": "منبه",
+      "qid": "code-1000-908",
       "type": "code",
-      "q": "صاسمتننت",
-      "a": "اللاكروس",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
+      "topic": "أشياء يومية",
+      "hint": "أعد كل حرف خطوة للخلف في هذا الترتيب؛ ا يعود إلى ي: ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي",
       "dir": "rtl",
+      "alt": [],
+      "difficultyTarget": 0.15,
       "verified": true,
-      "alt": [
-        "لاكروس",
-        "لكروس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%83%D8%B1%D9%88%D8%B3",
-      "qid": "code-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "خثيهاوحي",
-      "a": "البيتانك",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "بيتانك",
-        "الكرة الحديدية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D8%A9_%D8%AD%D8%AF%D9%8A%D8%AF%D9%8A%D8%A9",
-      "qid": "code-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "اقيويخحي",
-      "a": "الكابادي",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "كابادي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%A8%D8%A7%D8%AF%D9%8A",
-      "qid": "code-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "ارومنت",
-      "a": "الكندو",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "كندو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%86%D8%AF%D9%88",
-      "qid": "code-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضة",
-      "type": "code",
-      "q": "بقاخايحي",
-      "a": "الأيكيدو",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "أيكيدو",
-        "ايكيدو",
-        "آيكيدو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A2%D9%8A%D9%83%D9%8A%D8%AF%D9%88",
-      "qid": "code-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "كارتضنت",
-      "a": "الشادوف",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "شادوف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%A7%D8%AF%D9%88%D9%81",
-      "qid": "code-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "داثمثجحي",
-      "a": "المنجنيق",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "منجنيق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%AC%D9%86%D9%8A%D9%82",
-      "qid": "code-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "صرصنت",
-      "a": "السدس",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سدس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AF%D8%B3_(%D8%A2%D9%84%D8%A9)",
-      "qid": "code-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "داوثيحي",
-      "a": "الإنبيق",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "إنبيق",
-        "انبيق",
-        "الأنبيق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%86%D8%A8%D9%8A%D9%82",
-      "qid": "code-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "وتثلنت",
-      "a": "القبان",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "قبان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A8%D8%A7%D9%86",
-      "qid": "code-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "أدوات وأشياء",
-      "type": "code",
-      "q": "غهجبغيوحي",
-      "a": "البارومتر",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "بارومتر",
-        "مقياس ضغط جوي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%82%D9%8A%D8%A7%D8%B3_%D8%B6%D8%BA%D8%B7_%D8%AC%D9%88%D9%8A",
-      "qid": "code-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "type": "code",
-      "q": "ضتاعنت",
-      "a": "الطواش",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "طواش",
-        "طواشة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B7%D9%88%D8%A7%D8%B4%D8%A9",
-      "qid": "code-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "type": "code",
-      "q": "تلصنت",
-      "a": "السقا",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سقا",
-        "سقاء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%82%D8%A7%D8%A1_(%D8%AA%D9%88%D8%B6%D9%8A%D8%AD)",
-      "qid": "code-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "type": "code",
-      "q": "غيشاوحي",
-      "a": "البيطار",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "بيطار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B7%D8%A8%D9%8A%D8%A8_%D8%A8%D9%8A%D8%B7%D8%B1%D9%8A",
-      "qid": "code-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "type": "code",
-      "q": "امبغظحي",
-      "a": "السروجي",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سروجي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%B1%D8%AC",
-      "qid": "code-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "type": "code",
-      "q": "لتسانت",
-      "a": "الوراق",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "وراق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%B1%D8%A7%D9%82_(%D8%AA%D9%88%D8%B6%D9%8A%D8%AD)",
-      "qid": "code-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "type": "code",
-      "q": "اهبثحي",
-      "a": "النوتي",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "نوتي",
-        "بحار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%88%D8%AA%D9%8A",
-      "qid": "code-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "نبيص",
-      "a": "سهيل",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سهيل اليماني",
-        "كانوبوس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%87%D9%8A%D9%84_(%D9%86%D8%AC%D9%85)",
-      "qid": "code-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "وتسثرنت",
-      "a": "الدبران",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "دبران"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AF%D8%A8%D8%B1%D8%A7%D9%86_(%D9%86%D8%AC%D9%85)",
-      "qid": "code-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "تبسحنت",
-      "a": "الثريا",
-      "hint": "اقرأ حروف كل كلمة من آخرها، وكل حرف كُتب بالحرف الذي يليه بحرفين في الهجاء",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "ثريا",
-        "عنقود الثريا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%A7",
-      "qid": "code-1000-045"
-    },
-    {
-      "p": 1000,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "غيعيبخحي",
-      "a": "الكوازار",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "كوازار",
-        "نجم زائف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%AC%D9%85_%D8%B2%D8%A7%D8%A6%D9%81",
-      "qid": "code-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "جمثحي صويثحي",
-      "a": "النجم النابض",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "النباض",
-        "بلسار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%A8%D8%A7%D8%B6",
-      "qid": "code-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "فضاء وفلك",
-      "type": "code",
-      "q": "غزهظجحي جسزيحي",
-      "a": "المستعر الأعظم",
-      "hint": "بدّل كل حرف بمقابله من الطرف الآخر للهجاء (ا↔ي وب↔و)، ثم اقرأ كل كلمة من آخرها",
-      "dir": "rtl",
-      "verified": true,
-      "alt": [
-        "سوبرنوفا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%B9%D8%B1_%D8%A3%D8%B9%D8%B8%D9%85",
-      "qid": "code-1000-048"
+      "source": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
     }
   ]
 }

@@ -5,2909 +5,505 @@
   "style": "story",
   "qs": [
     {
+      "qid": "arabseries-200-901",
       "p": 200,
-      "topic": "شخصيات",
-      "q": "في «الهيبة»، ما اسم زعيم العائلة الذي تدور حوله الأحداث؟",
+      "topic": "الهيبة",
+      "q": "في «الهيبة»، ما اسم كبير عائلة شيخ الجبل الذي تتزوجه عليا؟",
       "a": "جبل",
       "alt": [
         "جبل شيخ الجبل"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
       "verified": true,
-      "qid": "arabseries-200-049"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "arabseries-200-902",
       "p": 200,
-      "topic": "أماكن",
-      "q": "في «الهيبة»، بين أي بلدين تقع القرية التي تدور فيها الأحداث؟",
-      "a": "لبنان وسوريا",
+      "topic": "رشاش",
+      "q": "في مسلسل «رشاش»، ما اسم الضابط الذي يقود مطاردة العصابة؟",
+      "a": "فهد",
       "alt": [
-        "سوريا ولبنان"
+        "النقيب فهد"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
       "verified": true,
-      "qid": "arabseries-200-050"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "arabseries-200-903",
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «الهيبة»، ما النشاط الممنوع الذي تعتاش عليه العائلة عبر الحدود؟",
-      "a": "التهريب",
+      "topic": "الروابي",
+      "q": "في الموسم الأول من «مدرسة الروابي للبنات»، من الطالبة التي تبدأ خطة الانتقام بعد تعرضها للتنمر؟",
+      "a": "مريم",
       "alt": [
-        "تهريب البضائع"
+        "ماريام"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
       "verified": true,
-      "qid": "arabseries-200-051"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "arabseries-200-904",
       "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "في «الهيبة»، ما البضاعة الخطرة التي تتاجر بها العائلة؟",
-      "a": "السلاح",
-      "alt": [
-        "الأسلحة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-052"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «الهيبة»، ما اسم الأرملة التي عادت إلى القرية ثم تزوجت جبل؟",
-      "a": "عليا",
-      "alt": [
-        "عاليا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-053"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «الهيبة»، ما اسم شقيق جبل الذي فقد بصره في الكمين؟",
-      "a": "صخر",
-      "alt": [
-        "صخر شيخ الجبل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-054"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «الهيبة»، من أي دولة عادت الأرملة بعد وفاة زوجها؟",
-      "a": "كندا",
-      "alt": [
-        "كندا الأمريكية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-055"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «الاختيار»، ما اسم قائد الكتيبة الذي تدور حوله أحداث الجزء الأول؟",
-      "a": "أحمد منسي",
-      "alt": [
-        "احمد منسي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «الاختيار»، في أي محافظة مصرية تقع أحداث الجزء الأول؟",
-      "a": "شمال سيناء",
-      "alt": [
-        "سيناء الشمالية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-057"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «الاختيار»، ما اسم الكمين الذي استُشهد فيه قائد الكتيبة؟",
-      "a": "كمين البرث",
-      "alt": [
-        "مربع البرث",
-        "البرث"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-058"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «الاختيار»، ما اسم الضابط المنشق الذي صار خصمًا للجيش؟",
-      "a": "هشام عشماوي",
-      "alt": [
-        "عشماوي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «الاختيار»، في أي مدينة حدودية وقع الكمين الشهير؟",
-      "a": "رفح",
-      "alt": [
-        "مدينة رفح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «الاختيار»، ما اسم زوجة قائد الكتيبة؟",
-      "a": "منار سليم",
-      "alt": [
-        "منار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، ما اسم العائلة التي تدور حولها الأحداث؟",
-      "a": "اليونس",
-      "alt": [
-        "آل اليونس",
-        "عائلة اليونس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-062"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، من الأخ الأكبر الذي صار قائدًا ثوريًّا؟",
-      "a": "أبو صالح",
-      "alt": [
-        "أحمد",
-        "ابو صالح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-063"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «التغريبة الفلسطينية»، من الأخ الذي يروي أحداث المسلسل؟",
-      "a": "علي",
-      "alt": [
-        "علي الشيخ يونس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-064"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، من الأخت الوحيدة في الأسرة؟",
-      "a": "خضرة",
-      "alt": [
-        "خضره"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-065"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، ما مهنة رب الأسرة أبو أحمد؟",
-      "a": "فلاح",
-      "alt": [
-        "مزارع",
-        "الفلاحة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-066"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «التغريبة الفلسطينية»، أين استقرت الأسرة بعد الحرب؟",
-      "a": "مخيمات اللاجئين",
-      "alt": [
-        "المخيمات",
-        "مخيم اللجوء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-067"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، ما اسم الأخ الثاني في الأسرة؟",
-      "a": "مسعود",
-      "alt": [
-        "مسعود الشيخ يونس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-068"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «صلاح الدين الأيوبي»، ما اسم المعركة التي هزم فيها صلاح الدين الصليبيين؟",
-      "a": "حطين",
-      "alt": [
-        "معركة حطين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-069"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «صلاح الدين الأيوبي»، ما المدينة التي استعادها صلاح الدين من الصليبيين؟",
-      "a": "القدس",
-      "alt": [
-        "بيت المقدس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-070"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «صلاح الدين الأيوبي»، من والد صلاح الدين في العمل؟",
-      "a": "نجم الدين أيوب",
-      "alt": [
-        "نجم الدين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-071"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «صلاح الدين الأيوبي»، من عمّ صلاح الدين الذي قاد الجيش إلى مصر؟",
-      "a": "أسد الدين شيركوه",
-      "alt": [
-        "شيركوه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-072"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «صلاح الدين الأيوبي»، ما اسم زوجة صلاح الدين في العمل؟",
-      "a": "عصمة الدين خاتون",
-      "alt": [
-        "عصمة الدين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-073"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «لعبة نيوتن»، ما اسم الزوجة التي تبقى في الخارج ولا تعود؟",
-      "a": "هنا",
-      "alt": [
-        "هنا سالم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-074"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «لعبة نيوتن»، ما اسم زوج المرأة التي وضعت مولودها في الخارج؟",
-      "a": "حازم",
-      "alt": [
-        "حازم إبراهيم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-075"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «لعبة نيوتن»، لماذا قرر الزوجان إنجاب وليدهما في الخارج؟",
-      "a": "للحصول على الجنسية",
-      "alt": [
-        "الجنسية الأمريكية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-076"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «لعبة نيوتن»، ما اسم الرجل الثالث في مثلث الأحداث؟",
-      "a": "مؤنس",
-      "alt": [
-        "مؤنس عبد الرحمن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-077"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «لعبة نيوتن»، في أي دولة بقيت الزوجة ولم تعد إلى بلدها؟",
-      "a": "أمريكا",
-      "alt": [
-        "الولايات المتحدة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-078"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «سرايا عابدين»، من الحاكم الذي تدور الأحداث في قصره؟",
-      "a": "الخديوي إسماعيل",
-      "alt": [
-        "إسماعيل باشا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-079"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «سرايا عابدين»، ما اسم القصر الذي تدور فيه الأحداث؟",
-      "a": "قصر عابدين",
-      "alt": [
-        "عابدين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-080"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «سرايا عابدين»، في أي بلد تجري الأحداث؟",
-      "a": "مصر",
-      "alt": [
-        "القاهرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-081"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «سرايا عابدين»، بأي مناسبة يُجهَّز القصر في بداية الأحداث؟",
-      "a": "عيد ميلاد الحاكم",
-      "alt": [
-        "عيد ميلاد الخديوي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-082"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «الفتوة»، ما اسم الفتوة الذي تدور حوله أحداث العمل؟",
-      "a": "حسن الجبالي",
-      "alt": [
-        "حسن أحمد الجبالي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-083"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «الفتوة»، ما اسم الحي الذي يتزعمه الفتوة الشاب؟",
-      "a": "الجمالية",
-      "alt": [
-        "حي الجمالية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-084"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «الفتوة»، ما اسم المعلم الذي يقف خصمًا للفتوة الشاب؟",
-      "a": "سيد اللبان",
-      "alt": [
-        "المعلم سيد اللبان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-085"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «الفتوة»، على ماذا تتصارع عصابات الأحياء الشعبية؟",
-      "a": "الفتونة",
-      "alt": [
-        "زعامة الحي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-086"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «نمر بن عدوان»، ما اسم محبوبة نمر التي خلّدها شعره؟",
-      "a": "وضحا",
-      "alt": [
-        "وضحى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-087"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «نمر بن عدوان»، ما اسم القبيلة التي تزعّمها نمر؟",
-      "a": "العدوان",
-      "alt": [
-        "قبيلة العدوان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-088"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات وقبائل",
-      "q": "في «نمر بن عدوان»، من أي قبيلة كانت محبوبة نمر؟",
-      "a": "بني صخر",
-      "alt": [
-        "بنو صخر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-089"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «نمر بن عدوان»، بأي فن خلّد نمر ذكرى محبوبته؟",
-      "a": "الشعر",
-      "alt": [
-        "القصائد",
-        "شعر النبط"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-090"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «ممالك النار»، ما الدولة التي يوثّق المسلسل سقوطها؟",
-      "a": "دولة المماليك",
-      "alt": [
-        "المماليك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ممالك_النار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-091"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «ممالك النار»، على يد من سقطت الدولة في أحداث العمل؟",
-      "a": "العثمانيون",
-      "alt": [
-        "الدولة العثمانية",
-        "العثمانيين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ممالك_النار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-200-092"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ممالك النار»، من آخر سلاطين المماليك الذي قاوم الغزو؟",
-      "a": "طومان باي",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ممالك_النار_(مسلسل)",
-      "verified": true,
-      "alt": [
-        "طومان باي الثاني"
-      ],
-      "qid": "arabseries-200-093"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «طريق»، ما اسم الشاب الذي يشق طريقه من القاع؟",
-      "a": "جابر سلطان",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طريق_(مسلسل)",
-      "verified": true,
-      "alt": [
-        "جابر"
-      ],
-      "qid": "arabseries-200-094"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «طريق»، ما اسم المرأة التي تجمعها بالشاب الطموح علاقة معقدة؟",
-      "a": "أميرة بو مصلح",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طريق_(مسلسل)",
-      "verified": true,
-      "alt": [
-        "أميرة"
-      ],
-      "qid": "arabseries-200-095"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «مليحة»، إلى أي مكان تسعى الأسرة الفلسطينية للعودة؟",
-      "a": "قطاع غزة",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مليحة_(مسلسل)",
-      "verified": true,
-      "alt": [
-        "غزة"
-      ],
-      "qid": "arabseries-200-096"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «الهيبة»، ما اسم ابن عم جبل الذي اعترف بالخيانة ثم أنهى حياته؟",
-      "a": "شاهين",
-      "alt": [
-        "شاهين شيخ الجبل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-049"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «الهيبة»، ما الشرط الذي فُرض على الأرملة كي تبقى إلى جانب ابنها؟",
-      "a": "الزواج من شقيق زوجها",
-      "alt": [
-        "أن تتزوج شقيق زوجها"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-050"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "في «الهيبة»، ما اسم المناطق النائية التي لجأ إليها جبل هاربًا؟",
-      "a": "الجرود",
-      "alt": [
-        "جرود القرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-051"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «الهيبة»، ما اسم الرجل الذي أعدّ الكمين المفخخ لجبل؟",
-      "a": "نضال",
-      "alt": [
-        "نضال الخصم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-052"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «الهيبة»، ما اسم الزوج المتوفى الذي عادت أرملته لدفنه في القرية؟",
-      "a": "عادل",
-      "alt": [
-        "عادل شيخ الجبل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-053"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «الاختيار»، ما رقم الكتيبة التي تدور حولها أحداث الجزء الأول؟",
-      "a": "103",
-      "alt": [
-        "مئة وثلاثة",
-        "الكتيبة 103"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-054"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقبائل",
-      "q": "في «الاختيار»، ما اسم والد قائد الكتيبة؟",
-      "a": "صابر",
-      "alt": [
-        "صابر منسي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-055"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «الاختيار»، ما اسم زوجة الضابط المنشق؟",
-      "a": "نسرين",
-      "alt": [
-        "نسرين زوجة عشماوي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-056"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقبائل",
-      "q": "في «الاختيار»، ما اسم شقيقة الضابط المنشق التي تظهر في الأحداث؟",
-      "a": "مها عشماوي",
-      "alt": [
-        "مها"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-057"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «الاختيار»، إلى أي سلاح في الجيش ينتمي قائد الكتيبة؟",
-      "a": "الصاعقة",
-      "alt": [
-        "قوات الصاعقة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-058"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "في «الاختيار»، ما الرتبة العسكرية لقائد الكتيبة؟",
-      "a": "عقيد",
-      "alt": [
-        "العقيد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-059"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، ما اسم زوجة الأخ الأكبر القادمة من المدينة؟",
-      "a": "فتحية",
-      "alt": [
-        "فتحيه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-060"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «التغريبة الفلسطينية»، من الأخ المندفع الذي لم يكمل تعليمه والتحق بالثورة؟",
-      "a": "حسن",
-      "alt": [
-        "حسن الشيخ يونس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-061"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «التغريبة الفلسطينية»، ما اسم الطفل الذي ضاع من أمه خلال الحرب؟",
-      "a": "رشدي",
-      "alt": [
-        "رشدى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-062"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، ما التخصص الذي درسه ابن الأخ الأكبر في الجامعة؟",
-      "a": "الطب",
-      "alt": [
-        "دراسة الطب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-063"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «التغريبة الفلسطينية»، في ظل أي حكم تبدأ أحداث القرية؟",
-      "a": "الانتداب البريطاني",
-      "alt": [
-        "الاحتلال البريطاني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-064"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «التغريبة الفلسطينية»، ما اسم الفتاة الفقيرة التي أحبها حسن؟",
-      "a": "جميلة",
-      "alt": [
-        "جميله"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-065"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "في «التغريبة الفلسطينية»، في أي مدينة درس ابن الأخ الأكبر؟",
-      "a": "القاهرة",
-      "alt": [
-        "مصر القاهرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-066"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "في «التغريبة الفلسطينية»، ما الذي استخرجه الحفيد من مخبئه في المشهد الأخير؟",
-      "a": "البندقية",
-      "alt": [
-        "بندقية والده"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-067"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «صلاح الدين الأيوبي»، من السلطان الزنكي الذي خدمه صلاح الدين؟",
-      "a": "نور الدين محمود",
-      "alt": [
-        "نور الدين زنكي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-068"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «صلاح الدين الأيوبي»، من الأمير الصليبي الخصم في العمل؟",
-      "a": "رينو دي شاتيون",
-      "alt": [
-        "أرناط"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-069"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «صلاح الدين الأيوبي»، ما الحروب التي تدور في خلفية الأحداث؟",
-      "a": "الحروب الصليبية",
-      "alt": [
-        "الحملات الصليبية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-070"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "في «صلاح الدين الأيوبي»، أي بلاد يحكمها صلاح الدين إلى جانب مصر؟",
-      "a": "بلاد الشام",
-      "alt": [
-        "الشام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-071"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقبائل",
-      "q": "في «لعبة نيوتن»، ما اسم شقيقة الزوجة المسافرة؟",
-      "a": "يارا",
-      "alt": [
-        "يارا سالم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-072"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «لعبة نيوتن»، ما اسم رجل الأعمال الذي تتقاطع مصالحه مع الأبطال؟",
-      "a": "بدر أبو النجا",
-      "alt": [
-        "بدر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-073"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات وقبائل",
-      "q": "في «لعبة نيوتن»، ما اسم والدة الزوجة المسافرة؟",
-      "a": "سميحة",
-      "alt": [
-        "سميحه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-074"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «لعبة نيوتن»، ما اسم زوجة الرجل الثالث في مثلث الأحداث؟",
+      "topic": "الثمن",
+      "q": "في «الثمن»، ما اسم الأم التي تعمل لتوفير علاج ابنها؟",
       "a": "سارة",
       "alt": [
-        "ساره"
+        "سارا"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
       "verified": true,
-      "qid": "arabseries-400-075"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «سرايا عابدين»، ما اللقب الذي ناله حاكم مصر بعد أن كان واليًا؟",
-      "a": "خديوي",
+      "qid": "arabseries-200-905",
+      "p": 200,
+      "topic": "العاصوف",
+      "q": "في «العاصوف»، ما اسم أم خالد التي تجمع الأسرة وتقود شؤونها؟",
+      "a": "هيلة",
       "alt": [
-        "الخديوي"
+        "هيله"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
       "verified": true,
-      "qid": "arabseries-400-076"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "في «سرايا عابدين»، في أي جناح من القصر تدور معظم الأحداث؟",
-      "a": "الحريم",
+      "qid": "arabseries-200-906",
+      "p": 200,
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، من أي بلد جاءت جوزفين للعمل في منزل عائلة الطاروف؟",
+      "a": "الفلبين",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-907",
+      "p": 200,
+      "topic": "ما وراء الطبيعة",
+      "q": "في مسلسل «ما وراء الطبيعة»، ما اسم الطبيب المتشكك الذي يواجه الظواهر الغريبة؟",
+      "a": "رفعت إسماعيل",
       "alt": [
-        "حريم القصر",
-        "السراي"
+        "رفعت",
+        "رفعت اسماعيل"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
       "verified": true,
-      "qid": "arabseries-400-077"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «سره الباتع»، ما اسم الولي الشعبي الذي قاوم الغزاة الفرنسيين؟",
-      "a": "السلطان حامد",
+      "qid": "arabseries-200-908",
+      "p": 200,
+      "topic": "قابيل",
+      "q": "في مسلسل «قابيل»، ما مهنة طارق الذي يطارد صاحب الحساب الغامض؟",
+      "a": "ضابط شرطة",
       "alt": [
-        "سلطان حامد"
+        "محقق",
+        "شرطي",
+        "ضابط"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "qid": "arabseries-400-078"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "arabseries-400-901",
       "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "في «سره الباتع»، ما الذي يعثر عليه الشاب المعاصر فيقوده إلى السر؟",
-      "a": "مخطوطة قديمة",
+      "topic": "الهيبة",
+      "q": "إلى أي دولة تريد عليا العودة مع ابنها في الموسم الأول من «الهيبة»؟",
+      "a": "كندا",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-902",
+      "p": 400,
+      "topic": "رشاش",
+      "q": "إلى أي بلد مجاور يهرب زعيم العصابة قرب نهاية مسلسل «رشاش»؟",
+      "a": "اليمن",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-903",
+      "p": 400,
+      "topic": "الروابي",
+      "q": "في الموسم الأول من «مدرسة الروابي للبنات»، ما اسم الطالبة الجديدة التي تتحالف مع البطلة ضد المتنمرات؟",
+      "a": "نوف",
       "alt": [
-        "ورقة قديمة",
-        "مخطوطة"
+        "نواف",
+        "Noaf"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
       "verified": true,
-      "qid": "arabseries-400-079"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "arabseries-400-904",
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «سره الباتع»، ما حرفة الشاب المعاصر الذي يبحث عن السر؟",
-      "a": "صانع حلي",
+      "topic": "الثمن",
+      "q": "في «الثمن»، ما اسم مدير الشركة الذي تتغير علاقته بالبطلة بعد معرفة مرض ابنها؟",
+      "a": "زين",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-905",
+      "p": 400,
+      "topic": "العاصوف",
+      "q": "في «العاصوف»، من الشقيق الذي يعترف بأنه والد الرضيع الذي عُثر عليه؟",
+      "a": "محسن",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-906",
+      "p": 400,
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، ما اسم الشاب الذي يعود إلى الكويت بحثًا عن عائلة أبيه؟",
+      "a": "عيسى",
       "alt": [
-        "صائغ",
-        "صانع مجوهرات"
+        "هوزيه",
+        "خوسيه"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
       "verified": true,
-      "qid": "arabseries-400-080"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "arabseries-400-907",
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «سره الباتع»، ما اسم الفرنسي الذي وثّق سيرة الولي الشعبي؟",
-      "a": "كليمونت",
+      "topic": "ما وراء الطبيعة",
+      "q": "في مسلسل «ما وراء الطبيعة»، ما اسم الطفلة الشبح المرتبطة بذكريات الطبيب وبيت الخضراوي؟",
+      "a": "شيراز",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "arabseries-400-908",
+      "p": 400,
+      "topic": "قابيل",
+      "q": "في مسلسل «قابيل»، ما الذي يراه طارق من ضحايا القضية ويتحدث معه رغم موتهم؟",
+      "a": "أشباحهم",
       "alt": [
-        "كليمون"
+        "أشباح",
+        "أرواح الضحايا"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "qid": "arabseries-400-081"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «سره الباتع»، ممن يهرب الشاب في الزمن المعاصر؟",
-      "a": "عصابات تهريب الآثار",
+      "qid": "arabseries-600-901",
+      "p": 600,
+      "topic": "الهيبة",
+      "q": "في الموسم الأول من «الهيبة»، ما اسم المحامي الذي يساعد عليا على محاولة الهرب؟",
+      "a": "نعيم",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-902",
+      "p": 600,
+      "topic": "رشاش",
+      "q": "في مسلسل «رشاش»، ما الحلم المهني الذي يساعد الضابط شقيقه على تحقيقه؟",
+      "a": "تعلم الطيران",
       "alt": [
-        "مهربي الآثار"
+        "أن يصبح طيارًا",
+        "طيار",
+        "الطيران"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
       "verified": true,
-      "qid": "arabseries-400-082"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «تشيللو»، ما اسم العازفة الشهيرة التي تدور حولها الأحداث؟",
-      "a": "ياسمين",
+      "qid": "arabseries-600-903",
+      "p": 600,
+      "topic": "الروابي",
+      "q": "في الموسم الثاني من «مدرسة الروابي للبنات»، ما المنصب المدرسي الذي تتنافس عليه الطالبات بحملات انتخابية؟",
+      "a": "رئاسة مجلس الطلبة",
       "alt": [
-        "ياسمين العازفة"
+        "رئيسة المدرسة",
+        "رئاسة الطلبة",
+        "رئاسة مجلس الطالبات"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تشيللو_(مسلسل)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
       "verified": true,
-      "qid": "arabseries-400-083"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «تشيللو»، ما الآلة التي يعزفها زوج العازفة؟",
-      "a": "البيانو",
+      "qid": "arabseries-600-904",
+      "p": 600,
+      "topic": "الثمن",
+      "q": "في «الثمن»، ما اسم صديقة البطلة التي تنصحها بإخفاء أمومتها عند التقدم للعمل؟",
+      "a": "تيما",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-905",
+      "p": 600,
+      "topic": "العاصوف",
+      "q": "في «العاصوف»، ما اسم الفتاة التي يتزوجها خالد ويحبها قبل زواجه؟",
+      "a": "جهير",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-906",
+      "p": 600,
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، ما اسم الجدة التي ترفض الاعتراف بحفيدها القادم من الخارج؟",
+      "a": "غنيمة",
       "alt": [
-        "بيانو"
+        "غنيمه"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تشيللو_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
       "verified": true,
-      "qid": "arabseries-400-084"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «تشيللو»، ما اسم رجل الأعمال الذي يفرض شروطه على الزوجين؟",
-      "a": "تيمور",
+      "qid": "arabseries-600-907",
+      "p": 600,
+      "topic": "ما وراء الطبيعة",
+      "q": "في مسلسل «ما وراء الطبيعة»، ما التخصص الطبي الذي يعمل به البطل؟",
+      "a": "أمراض الدم",
       "alt": [
-        "تيمور رجل الأعمال"
+        "علم الدم",
+        "طب الدم"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تشيللو_(مسلسل)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
       "verified": true,
-      "qid": "arabseries-400-085"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «تشيللو»، ما اسم الزوج العازف في العمل؟",
+      "qid": "arabseries-600-908",
+      "p": 600,
+      "topic": "قابيل",
+      "q": "في مسلسل «قابيل»، من الرجل الذي يتبين أنه وراء شخصية القاتل الإلكترونية؟",
       "a": "آدم",
       "alt": [
         "ادم"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تشيللو_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "qid": "arabseries-400-086"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «نص يوم»، ما اسم الشاب الثري الذي عاد ليدير إقطاعية أبيه؟",
-      "a": "ميار",
+      "qid": "arabseries-800-901",
+      "p": 800,
+      "topic": "الهيبة",
+      "q": "في الموسم الأول من «الهيبة»، من ابن العم الذي يتعاون مع كبير العائلة للإيقاع بدريد؟",
+      "a": "شاهين",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "arabseries-800-902",
+      "p": 800,
+      "topic": "رشاش",
+      "q": "في مسلسل «رشاش»، ما اسم رئيس الضابط المطارد للعصابة الذي يتعاون معه لكشف الجاسوس؟",
+      "a": "عزام",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "arabseries-800-903",
+      "p": 800,
+      "topic": "الروابي",
+      "q": "في الموسم الأول من «مدرسة الروابي للبنات»، من المتنمرة التي تُستهدف أولًا بفضيحة خلال اليوم المفتوح؟",
+      "a": "رقية",
       "alt": [
-        "ميار قلعجي"
+        "رقيّة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نص_يوم_(مسلسل)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
       "verified": true,
-      "qid": "arabseries-400-087"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "في «نص يوم»، ما المحصول الذي تقوم عليه ثروة عائلة الشاب الثري؟",
-      "a": "الزيتون",
+      "qid": "arabseries-800-904",
+      "p": 800,
+      "topic": "الثمن",
+      "q": "في «الثمن»، من صديق المدير الذي يقع هو الآخر في حب البطلة؟",
+      "a": "كرم",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "arabseries-800-905",
+      "p": 800,
+      "topic": "العاصوف",
+      "q": "في الجزء الأول من «العاصوف»، ما المشروع الذي يقيمه خالد ثم يُهدم لأن الأرض ليست له؟",
+      "a": "محطة بنزين",
       "alt": [
-        "زيتون"
+        "محطة وقود"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نص_يوم_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
       "verified": true,
-      "qid": "arabseries-400-088"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «نص يوم»، ما الاسم الحقيقي للفتاة التي ظهرت بأسماء كثيرة؟",
-      "a": "ميساء",
+      "qid": "arabseries-800-906",
+      "p": 800,
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، من صديق الأب الذي يستقبل ابنه عند عودته إلى الكويت؟",
+      "a": "غسان",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "arabseries-800-907",
+      "p": 800,
+      "topic": "ما وراء الطبيعة",
+      "q": "في مسلسل «ما وراء الطبيعة»، من أي بلد تأتي ماغي التي تعرف إليها البطل أيام الدراسة؟",
+      "a": "اسكتلندا",
       "alt": [
-        "ميساء النصابة"
+        "إسكتلندا",
+        "سكوتلندا"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نص_يوم_(مسلسل)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
       "verified": true,
-      "qid": "arabseries-400-089"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «نص يوم»، ما اسم شريك الفتاة في عمليات الاحتيال؟",
-      "a": "جابر",
-      "alt": [
-        "جابر الشريك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نص_يوم_(مسلسل)",
+      "qid": "arabseries-800-908",
+      "p": 800,
+      "topic": "قابيل",
+      "q": "في مسلسل «قابيل»، إلى أي محافظة يُنقل طارق عقب التحقيق التأديبي؟",
+      "a": "قنا",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "qid": "arabseries-400-090"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «خمسة ونص»، ما اسم الرجل الطامح إلى مجد المال؟",
-      "a": "غمار الغانم",
-      "alt": [
-        "غمار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خمسة_ونص_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-091"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «خمسة ونص»، ما اسم الطبيبة التي تدور حولها الأحداث؟",
-      "a": "بيان نجم الدين",
-      "alt": [
-        "بيان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خمسة_ونص_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-092"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «تحت الوصاية»، بأي وسيلة تعيل الأم أسرتها؟",
-      "a": "مركب صيد",
-      "alt": [
-        "قارب صيد",
-        "الصيد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تحت_الوصاية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-093"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "في «تحت الوصاية»، ما البضاعة التي تتاجر بها الأم؟",
-      "a": "السمك والجمبري",
-      "alt": [
-        "الأسماك والجمبري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تحت_الوصاية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-094"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «أولاد آدم»، ما المهنة التي تشغلها ديمة؟",
-      "a": "قاضية",
-      "alt": [
-        "القضاء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أولاد_آدم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-095"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «أولاد آدم»، ما مجال عمل غسان زوج ديمة؟",
-      "a": "إعلامي",
-      "alt": [
-        "الإعلام",
-        "مذيع"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أولاد_آدم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-400-096"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «الهيبة»، ما اسم بنت العمة التي تزوجها صخر؟",
-      "a": "ريما",
-      "alt": [
-        "ريما بنت العمة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-049"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «الهيبة»، ما اسم صديق الزوج المتوفى الذي رافق الأرملة إلى القرية؟",
-      "a": "نعيم",
-      "alt": [
-        "نعيم الصديق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-050"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «الهيبة»، ما اسم الفتاة التي سافرت إلى الخارج في ختام الأحداث؟",
+      "qid": "arabseries-1000-901",
+      "p": 1000,
+      "topic": "الهيبة",
+      "q": "في الموسم الأول من «الهيبة»، من الفتاة التي تساعدها عليا بعد العثور على أموال ومخدرات معها؟",
       "a": "هنادي",
-      "alt": [
-        "هنادى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
       "verified": true,
-      "qid": "arabseries-600-051"
+      "difficultyTarget": 0.15
     },
     {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «الهيبة»، ما اسم المرأة التي بقيت مع عائلتها بعد طلاقها؟",
-      "a": "منى",
-      "alt": [
-        "مني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-052"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "في «الهيبة»، ما الذي فقده صخر نتيجة إصابته الخطيرة؟",
-      "a": "البصر",
-      "alt": [
-        "بصره",
-        "النظر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-053"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «الاختيار»، ما اسم الملازم الذي شارك في الكمين الشهير؟",
-      "a": "سباعي",
-      "alt": [
-        "الملازم سباعي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-054"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «الاختيار»، ما اسم الضابط الذي سقط مع قائد الكتيبة في المعركة؟",
-      "a": "محمد صلاح",
-      "alt": [
-        "النقيب محمد صلاح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-055"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «الاختيار»، ما رتبة «شبراوي» بين رجال الكمين؟",
-      "a": "نقيب",
-      "alt": [
-        "النقيب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-056"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «التغريبة الفلسطينية»، ما اسم الطبيب الناشط القادم من المدينة؟",
-      "a": "أكرم السويدي",
-      "alt": [
-        "أكرم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-057"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «التغريبة الفلسطينية»، ما اسم زوجة علي وابنة الطبيب؟",
-      "a": "سلمى السويدي",
-      "alt": [
-        "سلمى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-058"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «التغريبة الفلسطينية»، من الشاب الذي هاجر ومات في الطريق؟",
-      "a": "سعيد",
-      "alt": [
-        "سعيد المهاجر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-059"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «التغريبة الفلسطينية»، ما اسم زوج الأخت الوحيدة الذي استُشهد في الثورة؟",
-      "a": "العبد",
-      "alt": [
-        "عبد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-060"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «التغريبة الفلسطينية»، أي شهادة علمية نالها راوي الأحداث في الخارج؟",
-      "a": "الدكتوراه",
-      "alt": [
-        "دكتوراه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-061"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «التغريبة الفلسطينية»، بأي حدث يبدأ المسلسل قبل العودة إلى الماضي؟",
-      "a": "وفاة الأخ الأكبر",
-      "alt": [
-        "موت الأخ الأكبر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-062"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «صلاح الدين الأيوبي»، ما الدولة التي أنهى صلاح الدين حكمها في مصر؟",
-      "a": "الدولة الفاطمية",
-      "alt": [
-        "الفاطميون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-063"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «صلاح الدين الأيوبي»، ما اسم الدولة التي أسسها صلاح الدين؟",
-      "a": "الدولة الأيوبية",
-      "alt": [
-        "الأيوبيون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-064"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «صلاح الدين الأيوبي»، ما الهدف الذي سعى إليه صلاح الدين قبل مواجهة الصليبيين؟",
-      "a": "توحيد المسلمين",
-      "alt": [
-        "توحيد الصف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-065"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «لعبة نيوتن»، ما اسم والدة الرجل الثالث التي تعمل في القضاء؟",
-      "a": "ناريمان القاضي",
-      "alt": [
-        "ناريمان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-066"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «لعبة نيوتن»، ما اسم والد الزوج في الأسرة؟",
-      "a": "إبراهيم",
-      "alt": [
-        "ابراهيم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-067"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «لعبة نيوتن»، ما الاسم الفني الذي يُعرف به الشاب زياد؟",
-      "a": "بيج زي",
-      "alt": [
-        "Big Z"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-068"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «طريق»، ما اسم شقيقة الفتاة التي أحبها الشاب الطموح؟",
-      "a": "عبير بو مصلح",
-      "alt": [
-        "عبير"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طريق_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-069"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «طريق»، في أي بلد تدور أحداث العمل؟",
-      "a": "لبنان",
-      "alt": [
-        "لبنان الشقيق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طريق_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-070"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «للموت»، ما الاسم الحقيقي للفتاة المعروفة باسم ريم؟",
-      "a": "وجدان",
-      "alt": [
-        "وجدان ريم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-071"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «للموت»، ما اسم الشاب الثري الذي تزوجته إحدى الفتاتين؟",
-      "a": "هادي",
-      "alt": [
-        "هادى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-072"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «للموت»، ما اسم شقيق الشاب الثري؟",
-      "a": "باسل",
-      "alt": [
-        "باسل الشقيق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-073"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «للموت»، ما اسم والدة الشقيقين في العائلة الثرية؟",
-      "a": "نجاح",
-      "alt": [
-        "نجاح الأم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-074"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «للموت»، أين نشأت الفتاتان قبل أن تهربا؟",
-      "a": "الميتم",
-      "alt": [
-        "دار الأيتام",
-        "الملجأ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-075"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «العربجي»، ما اسم الرجل الذي ينقل البضائع لإعالة عائلته؟",
-      "a": "عبده العربجي",
-      "alt": [
-        "عبده"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العربجي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-076"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "في «العربجي»، ما العربة التي ينقل عليها الرجل بضائعه؟",
-      "a": "الطنبر",
-      "alt": [
-        "طنبر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العربجي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-077"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «العربجي»، من الرجل الذي يظلم عبده ويدخله في صراع طويل؟",
-      "a": "أبو حمزة النشواتي",
-      "alt": [
-        "أبو حمزة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العربجي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-078"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «العربجي»، ما اسم زوجة شقيق الخصم الساعية للانتقام؟",
-      "a": "درية خانم",
-      "alt": [
-        "دريّة خانم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العربجي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-079"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «جن»، في أي مدينة أثرية وردية يدور جانب من الأحداث؟",
-      "a": "البتراء",
-      "alt": [
-        "بترا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-080"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «جن»، ما العاصمة العربية التي تدور فيها الأحداث؟",
-      "a": "عمّان",
-      "alt": [
-        "عمان الأردنية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-081"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «جن»، ما المرحلة الدراسية التي يدرس فيها أبطال العمل؟",
-      "a": "الثانوية",
-      "alt": [
-        "المدرسة الثانوية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-082"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «الفتوة»، ما الذي يفرضه فتوة الحي على التجار والفقراء؟",
-      "a": "الإتاوة",
-      "alt": [
-        "الأتاوة",
-        "الإتاوات"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-083"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «كسر عضم»، ما اسم رجل النفوذ الذي تدور حوله الأحداث؟",
-      "a": "حكم الصياد",
-      "alt": [
-        "حَكم الصياد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسر_عضم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-084"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «كسر عضم»، ما اسم ابن رجل النفوذ؟",
-      "a": "ريان",
-      "alt": [
-        "ريان الصياد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسر_عضم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-085"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «كسر عضم»، في أي جهاز حكومي يعمل ابن رجل النفوذ؟",
-      "a": "الجمارك",
-      "alt": [
-        "الجمرك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسر_عضم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-086"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات وقبائل",
-      "q": "في «نمر بن عدوان»، في كنف من ترعرع نمر بعد صغره؟",
-      "a": "عمه بركات",
-      "alt": [
-        "بركات"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-087"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «نمر بن عدوان»، في أي جامع مصري أتمّ نمر تعليمه؟",
-      "a": "الأزهر",
-      "alt": [
-        "الأزهر الشريف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-088"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «نمر بن عدوان»، ما المرض الذي توفيت به محبوبة نمر؟",
-      "a": "الكوليرا",
-      "alt": [
-        "كوليرا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-089"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «ممالك النار»، في أي قرن ميلادي تدور الأحداث؟",
-      "a": "السادس عشر",
-      "alt": [
-        "القرن السادس عشر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ممالك_النار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-090"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «ممالك النار»، عند أي باب قاهري انتهى مصير آخر سلاطين المماليك؟",
-      "a": "باب زويلة",
-      "alt": [
-        "زويلة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طومان_باي_الثاني",
-      "verified": true,
-      "qid": "arabseries-600-091"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ممالك النار»، من السلطان العثماني الذي قاد الغزو؟",
-      "a": "سليم الأول",
-      "alt": [
-        "السلطان سليم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ممالك_النار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-092"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «مليحة»، على حدود أي بلدين التقت الأسرة بالضابط؟",
-      "a": "مصر وليبيا",
-      "alt": [
-        "الحدود المصرية الليبية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مليحة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-093"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «مليحة»، ما الذي فقدته الأسرة بعد وفاة الوالد فتعقّدت رحلتها؟",
-      "a": "أوراقها الثبوتية",
-      "alt": [
-        "الأوراق الثبوتية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مليحة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-094"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «تحت الوصاية»، ما الاسم الثاني الذي تُعرف به الأم؟",
-      "a": "ليلى",
-      "alt": [
-        "ليلي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تحت_الوصاية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-095"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «سرايا عابدين»، إلى أي أسرة حاكمة ينتمي صاحب القصر؟",
-      "a": "أسرة محمد علي",
-      "alt": [
-        "آل محمد علي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-600-096"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان السوري الذي جسّد شخصية جبل في «الهيبة»؟",
-      "a": "تيم حسن",
-      "alt": [
-        "تيم الحسن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-049"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنانة اللبنانية التي جسّدت الأرملة العائدة في «الهيبة»؟",
-      "a": "نادين نسيب نجيم",
-      "alt": [
-        "نادين نجيم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-050"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنانة السورية التي جسّدت كبيرة آل الجبل في «الهيبة»؟",
-      "a": "منى واصف",
-      "alt": [
-        "مني واصف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-051"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان الذي جسّد قائد الكتيبة في «الاختيار»؟",
-      "a": "أمير كرارة",
-      "alt": [
-        "امير كرارة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-052"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «ممالك النار»، من أمير حلب الذي خان المماليك وانحاز إلى العثمانيين؟",
-      "a": "خاير بك",
-      "alt": [
-        "خاين بك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خاير_بك",
-      "verified": true,
-      "qid": "arabseries-800-053"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان السوري الذي جسّد الأخ الأكبر في «التغريبة الفلسطينية»؟",
-      "a": "جمال سليمان",
-      "alt": [
-        "جمال سليمان السوري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-054"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في «صلاح الدين الأيوبي»، في أي مدينة عراقية وُلد صلاح الدين؟",
-      "a": "تكريت",
-      "alt": [
-        "مدينة تكريت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي",
-      "verified": true,
-      "qid": "arabseries-800-055"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «صلاح الدين الأيوبي»، ما المنصب الذي تولاه صلاح الدين عند الخليفة الفاطمي؟",
-      "a": "الوزارة",
-      "alt": [
-        "وزير",
-        "الوزير"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي",
-      "verified": true,
-      "qid": "arabseries-800-056"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنانة المصرية التي جسّدت بطلة «لعبة نيوتن»؟",
-      "a": "منى زكي",
-      "alt": [
-        "مني زكي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-057"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "في «الفتوة»، ما اللقب الذي عُرف به الفتى وهو يغيث المظاليم متخفيًا؟",
-      "a": "الملثم",
-      "alt": [
-        "ملثم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-058"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان السوري الذي جسّد بطل مسلسل «طريق»؟",
-      "a": "عابد فهد",
-      "alt": [
-        "عابد فهد السوري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طريق_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-059"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "في «ممالك النار»، بأي سلاح حُسم التفوق على فرسان المماليك؟",
-      "a": "المدافع",
-      "alt": [
-        "المدفعية",
-        "البارود"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معركة_مرج_دابق",
-      "verified": true,
-      "qid": "arabseries-800-060"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «الهيبة»، ما اسم كبيرة العائلة التي تدير شؤون آل الجبل؟",
-      "a": "ناهد عمران",
-      "alt": [
-        "ناهد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-061"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «الاختيار»، ما لقب الشاويش الذي شارك في المعركة؟",
-      "a": "ماسا",
-      "alt": [
-        "الشاويش ماسا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-062"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «الاختيار»، ما اسم الضابط الذي حمل لقب مغربي بين رجال الكمين؟",
-      "a": "خالد مغربي",
-      "alt": [
-        "النقيب خالد مغربي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-063"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «التغريبة الفلسطينية»، من القائد الذي ذُكر اسمه ولم تظهر شخصيته؟",
-      "a": "فوزي القاوقجي",
-      "alt": [
-        "القاوقجي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-064"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «التغريبة الفلسطينية»، من الشيخ الذي لم يظهر إلا في مشهد واحد؟",
-      "a": "عز الدين القسام",
-      "alt": [
-        "القسام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-065"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «للموت»، ما اسم الفتاة الثانية التي تحتال مع صديقتها؟",
-      "a": "سحر",
-      "alt": [
-        "سحر سمر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-066"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «سره الباتع»، ما اسم الخبير الذي يساعد الشاب في فك طلاسم المخطوطة؟",
-      "a": "يوسف إسكندر",
-      "alt": [
-        "يوسف اسكندر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-067"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «سره الباتع»، ما مهنة المرأة التي ترافق الشاب في بحثه؟",
-      "a": "مرشدة سياحية",
-      "alt": [
-        "مرشدة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-068"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «العربجي»، ما اسم ابن الرجل الذي يظلم عبده؟",
-      "a": "حمزة",
-      "alt": [
-        "حمزه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العربجي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-069"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «كسر عضم»، ما اسم المجرم الذي طُلب تمرير سيارة الأموال إليه؟",
-      "a": "أبو عبادة",
-      "alt": [
-        "ابو عباده"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسر_عضم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-070"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «الهيبة»، أين قتل جبل خصمه أخذًا بالثأر؟",
-      "a": "ساحة القرية",
-      "alt": [
-        "وسط القرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-071"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «الهيبة»، ما الذي دفع ابن العم إلى الاعتراف بخيانته؟",
-      "a": "ضغط قوات الأمن",
-      "alt": [
-        "ضغط الأمن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-072"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «التغريبة الفلسطينية»، في أي ثورة صار الأخ الأكبر قائد فصيل؟",
-      "a": "الثورة الفلسطينية الكبرى",
-      "alt": [
-        "ثورة 1936"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-073"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «التغريبة الفلسطينية»، من الشخصية الوحيدة التي تتحدث بالفصحى؟",
-      "a": "الراوي",
-      "alt": [
-        "راوي الأحداث"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-074"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «سرايا عابدين»، بأي عيد ميلاد لصاحب القصر تبدأ الأحداث؟",
-      "a": "الثلاثين",
-      "alt": [
-        "الثلاثون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-075"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «كسر عضم»، ما الحادث الذي أودى بحياة العميد طلال ورجاله؟",
-      "a": "انفجار السيارة",
-      "alt": [
-        "تفجير السيارة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسر_عضم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-076"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «للموت»، بأي وسيلة كانت الفتاتان تجمعان المال؟",
-      "a": "الاحتيال على الأثرياء",
-      "alt": [
-        "النصب على الأثرياء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-077"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «نص يوم»، ما الحقيقة التي اكتشفها الشاب الثري عن حبيبته؟",
-      "a": "أنها محتالة",
-      "alt": [
-        "محتالة",
-        "نصابة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نص_يوم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-078"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «تشيللو»، ماذا ساعد رجل الأعمال الزوجين على تأسيسه؟",
-      "a": "مشروع العمر",
-      "alt": [
-        "مشروعهما"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تشيللو_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-079"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في «الفتوة»، ما اسم الحي الذي يسيطر عليه الخصم؟",
-      "a": "المدبح",
-      "alt": [
-        "حي المدبح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-080"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في «العربجي»، في أي بلد تدور أحداث العمل؟",
-      "a": "سوريا",
-      "alt": [
-        "سورية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العربجي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-081"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث",
-      "q": "في «سره الباتع»، في أي حقبة تاريخية يظهر الولي الشعبي؟",
-      "a": "الحملة الفرنسية",
-      "alt": [
-        "زمن الحملة الفرنسية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-082"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في «التغريبة الفلسطينية»، في أي بيئة تعيش الأسرة في بداية الأحداث؟",
-      "a": "الريف الفلسطيني",
-      "alt": [
-        "القرية الفلسطينية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-083"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في «الاختيار»، في أي شبه جزيرة تدور مواجهات الجزء الأول؟",
-      "a": "سيناء",
-      "alt": [
-        "شبه جزيرة سيناء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-084"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في «الهيبة»، أين اختبأ جبل وأخوه بعد نجاتهما من الكمين؟",
-      "a": "بيت نائٍ في القرية",
-      "alt": [
-        "بيت بعيد في القرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-085"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «للموت»، ما اسم الشاب الذي تتشابك خيوطه مع الفتاتين؟",
-      "a": "عمر",
-      "alt": [
-        "عمر الشاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-086"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «لعبة نيوتن»، ما اسم شقيقة الرجل الثالث الصغرى؟",
-      "a": "منة",
-      "alt": [
-        "منه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-087"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «العربجي»، ما اسم المرأة التي تحمل الحقد على عبده؟",
-      "a": "بدور",
-      "alt": [
-        "بدور الحاقدة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العربجي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-088"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «نص يوم»، ما اسم الفتاة التي أحبّت الشاب الثري بصدق؟",
-      "a": "ليال",
-      "alt": [
-        "ليال المحبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نص_يوم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-089"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «أولاد آدم»، ما اسم الشابة التي تقف إلى جانب ديمة في الأحداث؟",
-      "a": "مايا",
-      "alt": [
-        "مايا الشابة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أولاد_آدم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-090"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقبائل",
-      "q": "في «الهيبة»، ما اسم والدة ابن العم الخائن؟",
-      "a": "أم شاهين",
-      "alt": [
-        "ام شاهين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-091"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، ما اسم والدة أبناء الأسرة؟",
-      "a": "أم أحمد",
-      "alt": [
-        "ام احمد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-092"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقبائل",
-      "q": "في «صلاح الدين الأيوبي»، ما اسم الأسرة التي حكمت الشام قبل صلاح الدين؟",
-      "a": "الزنكيون",
-      "alt": [
-        "الدولة الزنكية",
-        "بنو زنكي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-093"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات وقبائل",
-      "q": "في «نمر بن عدوان»، على أي قبائل انتصر نمر قبل أن يتزعّم قومه؟",
-      "a": "قبائل البلقاء",
-      "alt": [
-        "البلقاء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-094"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "في «كسر عضم»، ماذا كانت تحمل السيارة التي انفجرت؟",
-      "a": "أموالًا",
-      "alt": [
-        "أموال",
-        "نقودًا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسر_عضم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-095"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "في «سره الباتع»، ما الذي يملأ قرى مصر تخليدًا للولي الشعبي؟",
-      "a": "الأضرحة والمقامات",
-      "alt": [
-        "المقامات",
-        "الأضرحة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-800-096"
-    },
-    {
+      "qid": "arabseries-1000-902",
       "p": 1000,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان السوري الذي جسّد السلطان الزنكي في «صلاح الدين الأيوبي»؟",
-      "a": "باسم ياخور",
+      "topic": "رشاش",
+      "q": "في نهاية مسلسل «رشاش»، ما الذي يدفع شريك زعيم العصابة إلى تسليمه للشرطة؟",
+      "a": "مكافأة مالية",
       "alt": [
-        "باسم ياخور السوري"
+        "جائزة مالية",
+        "المال",
+        "مكافأة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
       "verified": true,
-      "qid": "arabseries-1000-049"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "arabseries-1000-903",
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «الاختيار»، ما اسم التنظيم الذي أسسه الضابط المنشق بعد فراره؟",
-      "a": "المرابطون",
-      "alt": [
-        "تنظيم المرابطون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/هشام_عشماوي",
+      "topic": "الروابي",
+      "q": "في الموسم الثاني من «مدرسة الروابي للبنات»، من الطالبة الغامضة التي تصادقها نادين؟",
+      "a": "شمس",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
       "verified": true,
-      "qid": "arabseries-1000-050"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "arabseries-1000-904",
       "p": 1000,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان الذي جسّد الرجل الثالث في مثلث «لعبة نيوتن»؟",
-      "a": "محمد فراج",
-      "alt": [
-        "فراج"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
+      "topic": "الثمن",
+      "q": "في «الثمن»، من الشخص الذي يصور فراس ورولا ويستخدم الفيديو لابتزازه؟",
+      "a": "سالم",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
       "verified": true,
-      "qid": "arabseries-1000-051"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "arabseries-1000-905",
       "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «صلاح الدين الأيوبي»، من ملك المملكة الصليبية الذي وقع أسيرًا في يد صلاح الدين؟",
-      "a": "غي دي لوزينيان",
+      "topic": "العاصوف",
+      "q": "في الجزء الأول من «العاصوف»، ما المهنة التي يمارسها خالد بعد خروجه من أزمة مشروعه المهدوم؟",
+      "a": "سائق أجرة",
       "alt": [
-        "جي دي لوزينيان",
-        "لوزينيان"
+        "سائق تاكسي",
+        "سائق سيارة أجرة"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معركة_حطين",
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
       "verified": true,
-      "qid": "arabseries-1000-052"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "arabseries-1000-906",
       "p": 1000,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنانة اللبنانية التي جسّدت شخصية سحر في «للموت»؟",
-      "a": "ماغي بو غصن",
-      "alt": [
-        "ماغي أبو غصن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، ما اسم العمة التي تدافع عن قبول ابن أخيها في العائلة؟",
+      "a": "هند",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
       "verified": true,
-      "qid": "arabseries-1000-053"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "arabseries-1000-907",
       "p": 1000,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنانة التي جسّدت شخصية ريم في «للموت»؟",
-      "a": "دانييلا رحمة",
+      "topic": "ما وراء الطبيعة",
+      "q": "في مسلسل «ما وراء الطبيعة»، ما اسم خطيبة الطبيب التي يصيبها خطر لعنة المومياء؟",
+      "a": "هويدا",
       "alt": [
-        "دانيلا رحمة"
+        "هويدة",
+        "هويدا عبد المنعم"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
       "verified": true,
-      "qid": "arabseries-1000-054"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "arabseries-1000-908",
       "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "في «سرايا عابدين»، ما المشروع الضخم الذي ارتبط بعهد صاحب القصر؟",
-      "a": "قناة السويس",
+      "topic": "قابيل",
+      "q": "في نهاية مسلسل «قابيل»، ماذا تحرق سما لتعرقل هرب شريكها إلى الخارج؟",
+      "a": "جواز سفره",
       "alt": [
-        "حفر قناة السويس"
+        "جواز السفر",
+        "الباسبور"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/إسماعيل_باشا",
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "qid": "arabseries-1000-055"
-    },
-    {
-      "p": 1000,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان السوري الذي جسّد الأخ المندفع في «التغريبة الفلسطينية»؟",
-      "a": "باسل خياط",
-      "alt": [
-        "باسل الخياط"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-056"
-    },
-    {
-      "p": 1000,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان السوري الذي جسّد بطل «خمسة ونص»؟",
-      "a": "قصي خولي",
-      "alt": [
-        "قصي الخولي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خمسة_ونص_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-057"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في «صلاح الدين الأيوبي»، ما المدينة التي اتخذها صلاح الدين قاعدة لحكمه في الشام؟",
-      "a": "دمشق",
-      "alt": [
-        "مدينة دمشق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صلاح_الدين_الأيوبي",
-      "verified": true,
-      "qid": "arabseries-1000-058"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «صلاح الدين الأيوبي»، من آخر الخلفاء الفاطميين الذي زالت دولته في مصر؟",
-      "a": "العاضد لدين الله",
-      "alt": [
-        "العاضد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العاضد_لدين_الله",
-      "verified": true,
-      "qid": "arabseries-1000-059"
-    },
-    {
-      "p": 1000,
-      "topic": "وجوه وأدوار",
-      "q": "من الفنان الأردني الذي جسّد الفارس الشاعر في «نمر بن عدوان»؟",
-      "a": "ياسر المصري",
-      "alt": [
-        "ياسر المصرى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-060"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «الهيبة»، إلى أي جهة رسمية تقدمت الأرملة بشكواها ضد جبل؟",
-      "a": "السفارة الكندية",
-      "alt": [
-        "سفارة كندا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-061"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «الهيبة»، بماذا وُعد ابن العم مقابل الاعتراف على جبل؟",
-      "a": "إمارة القرية",
-      "alt": [
-        "زعامة القرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-062"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «الهيبة»، على اسم من سمّى جبل مولوده الجديد؟",
-      "a": "أخيه الراحل",
-      "alt": [
-        "أخوه المتوفى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-063"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ممالك النار»، ما اسم المعركة التي التقى فيها الجيشان قرب حلب؟",
-      "a": "مرج دابق",
-      "alt": [
-        "دابق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معركة_مرج_دابق",
-      "verified": true,
-      "qid": "arabseries-1000-064"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «ممالك النار»، ما اسم المعركة التي حسمت سقوط القاهرة؟",
-      "a": "الريدانية",
-      "alt": [
-        "معركة الريدانية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/معركة_الريدانية",
-      "verified": true,
-      "qid": "arabseries-1000-065"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «سره الباتع»، إلامَ أراد المماليك أن يسوقوا الفلاحين؟",
-      "a": "القتال ضد الفرنسيين",
-      "alt": [
-        "محاربة الفرنسيين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-066"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «كسر عضم»، ما عنوان الجزء الثاني من العمل؟",
-      "a": "السراديب",
-      "alt": [
-        "كسر عضم السراديب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كسر_عضم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-067"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «مليحة»، ما الحدث الذي دفع الفتاة لمغادرة أرضها في طفولتها؟",
-      "a": "هدم منزلها",
-      "alt": [
-        "تدمير بيتها"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مليحة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-068"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «أولاد آدم»، ما الوجه الخفي لغسان خلف الشاشة؟",
-      "a": "الانتهازية",
-      "alt": [
-        "انتهازي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أولاد_آدم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-069"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «الفتوة»، من صاحب السلطة الرسمية في الحي إلى جانب الفتوات؟",
-      "a": "العمدة",
-      "alt": [
-        "عمدة الحي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-070"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «التغريبة الفلسطينية»، أي نكبة فرّقت الأسرة وأنهت بها إلى اللجوء؟",
-      "a": "النكبة",
-      "alt": [
-        "نكبة فلسطين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-071"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث",
-      "q": "في «تشيللو»، ما المهنة التي يشترك فيها الزوجان معًا؟",
-      "a": "العزف",
-      "alt": [
-        "الموسيقى",
-        "العزف الموسيقي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تشيللو_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-072"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «لعبة نيوتن»، ما الاسم الحقيقي للشاب الملقب بـ«شامبا»؟",
-      "a": "حامد",
-      "alt": [
-        "حامد شامبا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-073"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «ممالك النار»، من سلطان المماليك الذي سقط في المعركة قرب حلب؟",
-      "a": "قانصوه الغوري",
-      "alt": [
-        "الغوري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قانصوه_الغوري",
-      "verified": true,
-      "qid": "arabseries-1000-074"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «أولاد آدم»، ما اسم الشاب الذي يشارك في الأحداث إلى جانب ديمة وزوجها؟",
-      "a": "سعد",
-      "alt": [
-        "سعد الشاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أولاد_آدم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-075"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «سرايا عابدين»، ما اسم الأمير الذي صار لاحقًا ملكًا لمصر؟",
-      "a": "فؤاد",
-      "alt": [
-        "الأمير فؤاد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سرايا_عابدين_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-076"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «مليحة»، ما اسم الضابط الذي يرافق الأسرة في رحلتها؟",
-      "a": "أدهم",
-      "alt": [
-        "الضابط أدهم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مليحة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-077"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في «مليحة»، في أي مدينة مصرية حدودية كانت تعيش الأسرة؟",
-      "a": "السلوم",
-      "alt": [
-        "مدينة السلوم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مليحة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-078"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في «مليحة»، في أي دولة عاشت الفتاة مع جديها قبل رحلة العودة؟",
-      "a": "ليبيا",
-      "alt": [
-        "دولة ليبيا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مليحة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-079"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في «الاختيار»، ما اسم المربع الصحراوي الذي وقع فيه الكمين؟",
-      "a": "مربع البرث",
-      "alt": [
-        "منطقة البرث"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الاختيار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-080"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «جن»، ما اسم الجني المكلّف بحراسة الجن المذنبين؟",
-      "a": "كيراس",
-      "alt": [
-        "الجني كيراس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-081"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في «نمر بن عدوان»، في أي مدينة كان نمر غائبًا حين توفيت محبوبته؟",
-      "a": "نابلس",
-      "alt": [
-        "مدينة نابلس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نمر_بن_عدوان_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-082"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في «سره الباتع»، في أي بيئة مصرية تبدأ أحداث الماضي؟",
-      "a": "ريف مصر",
-      "alt": [
-        "الريف المصري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-083"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في «التغريبة الفلسطينية»، إلى أي بلد سافر راوي الأحداث لإكمال دراسته؟",
-      "a": "الولايات المتحدة",
-      "alt": [
-        "أمريكا الشمالية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-084"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن",
-      "q": "في «ممالك النار»، إلى أي عاصمة انتقلت السلطة بعد سقوط المماليك؟",
-      "a": "إسطنبول",
-      "alt": [
-        "الأستانة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ممالك_النار_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-085"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «لعبة نيوتن»، ما اسم إحدى شقيقات الرجل الثالث؟",
-      "a": "شيرين",
-      "alt": [
-        "شرين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لعبة_نيوتن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-086"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «التغريبة الفلسطينية»، ما صلة سلمى بالطبيب أكرم؟",
-      "a": "ابنته",
-      "alt": [
-        "ابنة أكرم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-087"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «أولاد آدم»، ما الآفة التي تتصدى لها ديمة في عملها؟",
-      "a": "الفساد",
-      "alt": [
-        "فساد القضاء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أولاد_آدم_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-088"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «للموت»، ما اسم الطفلة التي تظهر في الأحداث؟",
-      "a": "خلود",
-      "alt": [
-        "الطفلة خلود"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/للموت_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-089"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «جن»، من الذي فقدته ميرا فصارت مراهقة متمردة؟",
-      "a": "والدتها",
-      "alt": [
-        "أمها"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جن_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-090"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «الفتوة»، ما لقب الأسرة التي ينتمي إليها الفتوة الشاب؟",
-      "a": "الجبالي",
-      "alt": [
-        "آل الجبالي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الفتوة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-091"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقبائل",
-      "q": "في «صلاح الدين الأيوبي»، من مؤسس الدولة التي خدمها صلاح الدين في بدايته؟",
-      "a": "عماد الدين زنكي",
-      "alt": [
-        "عماد الدين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عماد_الدين_زنكي",
-      "verified": true,
-      "qid": "arabseries-1000-092"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقبائل",
-      "q": "في «التغريبة الفلسطينية»، ما اللقب الذي يحمله رب الأسرة إلى جانب اسمه؟",
-      "a": "الشيخ يونس",
-      "alt": [
-        "شيخ يونس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/التغريبة_الفلسطينية_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-093"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات وقبائل",
-      "q": "في «الهيبة»، ما اسم العائلة التي يتزعمها جبل في القرية؟",
-      "a": "شيخ الجبل",
-      "alt": [
-        "آل شيخ الجبل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-094"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "في «سره الباتع»، ما نوع الوثيقة التي كشفت سيرة الولي الشعبي؟",
-      "a": "خطاب",
-      "alt": [
-        "رسالة",
-        "خطاب فرنسي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سره_الباتع_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-095"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "في «الهيبة»، ما الوسيلة التي استُخدمت في الكمين المنصوب لجبل؟",
-      "a": "سيارة مفخخة",
-      "alt": [
-        "السيارة المفخخة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الهيبة_(مسلسل)",
-      "verified": true,
-      "qid": "arabseries-1000-096"
+      "difficultyTarget": 0.15
     }
   ]
 }

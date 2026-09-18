@@ -5,2580 +5,509 @@
   "style": "story",
   "qs": [
     {
+      "qid": "ramadanseries-200-901",
       "p": 200,
-      "topic": "طقوس الموسم",
-      "q": "ما لقب من يجوب الشوارع ليلًا في رمضان ليوقظ الصائمين لسحورهم؟",
-      "a": "المسحراتي",
-      "alt": [],
-      "sourceUrl": "https://darelhilal.com/News/3181263.aspx",
-      "verified": true,
-      "qid": "ramadanseries-200-001"
-    },
-    {
-      "p": 200,
-      "topic": "طقوس الموسم",
-      "q": "في أي وقت من ليالي رمضان تُعرض المسلسلات في معظم البيوت العربية؟",
-      "a": "بعد الإفطار",
-      "alt": [
-        "عقب الإفطار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-200-002"
-    },
-    {
-      "p": 200,
-      "topic": "طقوس الموسم",
-      "q": "ماذا يسمى اللغز الذي يُطرح على المشاهدين كل ليلة من ليالي رمضان؟",
-      "a": "الفزورة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "طقوس الموسم",
-      "q": "ما نوع البرامج التي اشتهر بها رامز جلال في رمضان كل عام؟",
-      "a": "برامج المقالب",
-      "alt": [
-        "المقالب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامز_جلال",
-      "verified": true,
-      "qid": "ramadanseries-200-004"
-    },
-    {
-      "p": 200,
-      "topic": "طقوس الموسم",
-      "q": "ما اسم برنامج العرائس الذي رافق ليالي رمضان لأجيال من الأطفال؟",
-      "a": "بوجي وطمطم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوجي_وطمطم",
-      "verified": true,
-      "qid": "ramadanseries-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "طقوس الموسم",
-      "q": "ماذا يسمى موسم الألغاز اليومي الذي تعرضه الشاشات العربية في رمضان؟",
-      "a": "فوازير رمضان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "طقوس الموسم",
-      "q": "ما المشروب الساخن الذي يرافق سهرة المسلسل بعد مائدة الإفطار عادةً؟",
-      "a": "القهوة",
-      "alt": [
-        "قهوة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-200-007"
-    },
-    {
-      "p": 200,
-      "topic": "طقوس الموسم",
-      "q": "ما الجهاز الذي تلتف حوله العائلة كل ليلة بعد مائدة الإفطار؟",
-      "a": "التلفزيون",
-      "alt": [
-        "التلفاز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-200-008"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات الموسم",
-      "q": "في «لن أعيش في جلباب أبي»، ما اسم التاجر الثري الذي رفض تغيير ملبسه؟",
-      "a": "عبد الغفور البرعي",
-      "alt": [
-        "عبد الغفور",
-        "البرعي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات الموسم",
-      "q": "في «الكبير أوي»، أي الإخوة الثلاثة تربّى في أمريكا وعاد بلكنة غريبة؟",
-      "a": "جوني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
-      "verified": true,
-      "qid": "ramadanseries-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات الموسم",
-      "q": "في «الزير سالم»، من الأخ الذي أشعل مقتلُه حربًا طويلة بين القبائل؟",
-      "a": "كليب",
-      "alt": [
-        "كليب بن ربيعة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات الموسم",
-      "q": "في «صح النوم»، ما اسم الشخصية الشعبية التي تنافس حسني على حب فطوم؟",
-      "a": "غوار الطوشة",
-      "alt": [
-        "غوار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صح_النوم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات الموسم",
-      "q": "في «كلبش»، ما اسم ضابط الشرطة بطل المسلسل؟",
-      "a": "سليم الأنصاري",
-      "alt": [
-        "سليم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كلبش_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات الموسم",
-      "q": "في «ليالي الحلمية»، من الباشا الأرستقراطي صاحب القصر وغريم العمدة؟",
-      "a": "سليم البدري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات الموسم",
-      "q": "في «المداح»، ما اسم الشاب الذي نشأ يتيمًا في كنف شيخ الجامع؟",
-      "a": "صابر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المداح_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "حكايات وأحداث",
-      "q": "في «عائلة الحاج متولي»، بأي حيلة اختبر الحاج وفاء زوجاته له؟",
-      "a": "ادّعى الإفلاس",
-      "alt": [
-        "الإفلاس",
-        "ادعاء الإفلاس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عائلة_الحاج_متولي",
-      "verified": true,
-      "qid": "ramadanseries-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "حكايات وأحداث",
-      "q": "في «الزير سالم»، ما اسم الحرب الطويلة التي دارت بين بكر وتغلب؟",
-      "a": "حرب البسوس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "حكايات وأحداث",
-      "q": "في «الأسطورة»، ما صلة ناصر برفاعي؟",
-      "a": "أخوه التوأم",
-      "alt": [
-        "توأمه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأسطورة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "حكايات وأحداث",
-      "q": "في «ضيعة ضايعة»، ما الذي أبعده أهل الضيعة عن حياتهم عمدًا؟",
-      "a": "التكنولوجيا الحديثة",
-      "alt": [
-        "التكنولوجيا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة",
-      "verified": true,
-      "qid": "ramadanseries-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "حكايات وأحداث",
-      "q": "في «الكبير أوي»، على أي منصب يتنافس الإخوة الثلاثة في القرية؟",
-      "a": "العمودية",
-      "alt": [
-        "منصب العمدة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
-      "verified": true,
-      "qid": "ramadanseries-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "حكايات وأحداث",
-      "q": "في «البرنس»، ما سبب الخصومة الكبرى بين رضوان وإخوته؟",
-      "a": "الميراث",
-      "alt": [
-        "الورث"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البرنس_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن الدراما",
-      "q": "في «زيزينيا»، في أي مدينة مصرية تدور الأحداث؟",
-      "a": "الإسكندرية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن الدراما",
-      "q": "في «العاصوف»، في أي مدينة تعيش العائلة؟",
-      "a": "الرياض",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العاصوف",
-      "verified": true,
-      "qid": "ramadanseries-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن الدراما",
-      "q": "في «الكبير أوي»، ما اسم القرية التي يتنازع عليها الإخوة؟",
+      "topic": "الكبير أوي",
+      "q": "في «الكبير أوي»، ما اسم القرية التي يتنافس الإخوة على عموديتها؟",
       "a": "المزاريطة",
       "alt": [
-        "المزريطة"
+        "المزاريطه"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-024"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "ramadanseries-200-902",
       "p": 200,
-      "topic": "أماكن الدراما",
-      "q": "في «زيزينيا»، على شاطئ أي بحر تقع المدينة التي تدور فيها الأحداث؟",
-      "a": "البحر المتوسط",
-      "alt": [
-        "المتوسط",
-        "البحر الأبيض المتوسط"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
+      "topic": "جعفر العمدة",
+      "q": "في «جعفر العمدة»، ما اسم الابن الذي يبحث عنه جعفر منذ اختطافه رضيعًا؟",
+      "a": "سيف",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-025"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "ramadanseries-200-903",
       "p": 200,
-      "topic": "أماكن الدراما",
-      "q": "في «أفراح القبة»، في أي وسط فني تدور حكاية الأبطال؟",
-      "a": "المسرح",
+      "topic": "تحت الوصاية",
+      "q": "في «تحت الوصاية»، ما العمل البحري الذي تمارسه البطلة لتعيل طفليها؟",
+      "a": "صيد الأسماك",
       "alt": [
-        "فرقة مسرحية"
+        "الصيد",
+        "صيد السمك"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أفراح_القبة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-026"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "ramadanseries-200-904",
       "p": 200,
-      "topic": "أماكن الدراما",
-      "q": "في «ليالي الحلمية»، في أي مدينة يقع الحي الذي حمل المسلسل اسمه؟",
-      "a": "القاهرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
+      "topic": "البرنس",
+      "q": "في «البرنس»، ما اسم الأخ الذي يتآمر إخوته عليه بسبب الميراث؟",
+      "a": "رضوان",
+      "alt": [
+        "رضوان البرنس"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-027"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "ramadanseries-200-905",
       "p": 200,
-      "topic": "فوازير وألغاز",
-      "q": "ما اسم الشخصية القصيرة صاحبة الصوت الحادّ في فوازير الثمانينيات؟",
-      "a": "فطوطة",
+      "topic": "بمئة وش",
+      "q": "في «بـ100 وش»، ما اسم النصابة التي تشكل عصابة مع عمر؟",
+      "a": "سكر",
       "alt": [],
-      "sourceUrl": "https://www.youm7.com/story/2021/4/13/5277254",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-028"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "ramadanseries-200-906",
       "p": 200,
-      "topic": "فوازير وألغاز",
-      "q": "ما لون البدلة التي ارتداها بطل فوازير الثمانينيات القصير؟",
-      "a": "خضراء",
+      "topic": "أشغال شقة",
+      "q": "ما الحدث العائلي الذي يدفع الزوجين إلى توظيف مساعدة منزلية في بداية «أشغال شقة»؟",
+      "a": "ولادة توأم",
       "alt": [
-        "الأخضر",
-        "اللون الأخضر"
+        "إنجاب توأم",
+        "التوأم"
       ],
-      "sourceUrl": "https://www.youm7.com/story/2021/4/13/5277254",
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-029"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "ramadanseries-200-907",
       "p": 200,
-      "topic": "فوازير وألغاز",
-      "q": "ما العنوان الذي حملته فوازير نيللي التي جسّدت فيها باحثة عن عرائس وعرسان؟",
-      "a": "الخاطبة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
+      "topic": "المداح",
+      "q": "في «المداح»، ما اسم البطل الذي يمتلك قدرات غامضة ويتعامل مع الجن؟",
+      "a": "صابر",
+      "alt": [
+        "صابر المداح"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-030"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "ramadanseries-200-908",
       "p": 200,
-      "topic": "فوازير وألغاز",
-      "q": "في فوازير نيللي الشهيرة، ماذا كان على المشاهد أن يخمّن كل ليلة؟",
-      "a": "المهنة",
+      "topic": "اللعبة",
+      "q": "في «اللعبة»، ما لقب منافس وسيم وصديقه منذ الطفولة؟",
+      "a": "مازو",
       "alt": [
-        "الحرفة"
+        "معتز"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيللي_(ممثلة)",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-031"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 200,
-      "topic": "فوازير وألغاز",
-      "q": "من أي تراث حكائي استلهمت شريهان فوازيرها الأشهر في الثمانينيات؟",
-      "a": "ألف ليلة وليلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شريهان",
-      "verified": true,
-      "qid": "ramadanseries-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "كوميديا رمضان",
-      "q": "في «ضيعة ضايعة»، من رفيق أسعد الدائم في الضيعة؟",
-      "a": "جودة أبو خميس",
+      "qid": "ramadanseries-400-901",
+      "p": 400,
+      "topic": "الكبير أوي",
+      "q": "في «الكبير أوي»، أي شقيق يعود من أمريكا وينافس أخاه في الانتخابات؟",
+      "a": "جوني",
       "alt": [
-        "جودة"
+        "جونى",
+        "Johnny"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-033"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "كوميديا رمضان",
-      "q": "في «الكبير أوي»، ما اسم زوجة الكبير في المواسم الأولى؟",
-      "a": "هدية",
+      "qid": "ramadanseries-400-902",
+      "p": 400,
+      "topic": "جعفر العمدة",
+      "q": "في «جعفر العمدة»، ما اسم أم الطفل المختطف التي لا تتوقف عن انتظار عودته؟",
+      "a": "ثريا",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-034"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "كوميديا رمضان",
-      "q": "في «صح النوم»، من صاحبة النُّزل التي تنافس عليها الرجلان؟",
-      "a": "فطوم حيص بيص",
+      "qid": "ramadanseries-400-903",
+      "p": 400,
+      "topic": "تحت الوصاية",
+      "q": "في «تحت الوصاية»، ما اسم الأم التي تهرب بطفليها ومركب زوجها؟",
+      "a": "حنان",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صح_النوم_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-035"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "كوميديا رمضان",
-      "q": "في «بكيزة وزغلول»، على أي تناقض اجتماعي قامت الكوميديا؟",
-      "a": "الغنى والفقر",
+      "qid": "ramadanseries-400-904",
+      "p": 400,
+      "topic": "البرنس",
+      "q": "في «البرنس»، من الأخ الأكبر الذي يقود المؤامرة على البطل؟",
+      "a": "فتحي",
       "alt": [
-        "الفقر والغنى"
+        "فتحى"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بكيزة_وزغلول_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-036"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "كوميديا رمضان",
-      "q": "في «الخربة»، ما اسم الضيعة التي تتنازع فيها عائلتان؟",
-      "a": "ذكير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخربة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "كوميديا رمضان",
-      "q": "«طاش ما طاش» مسلسل كوميدي ساخر من أي بلد عربي؟",
-      "a": "السعودية",
+      "qid": "ramadanseries-400-905",
+      "p": 400,
+      "topic": "بمئة وش",
+      "q": "في بداية «بـ100 وش»، ما المهنة التي ينتحلها عمر ليستولي على المجوهرات المسروقة من البطلة؟",
+      "a": "ضابط",
       "alt": [
-        "المملكة العربية السعودية"
+        "ضابط شرطة",
+        "شرطي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طاش_ما_طاش",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-038"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "كوميديا رمضان",
-      "q": "في «راجل وست ستات»، ما اسم زوجة عادل؟",
-      "a": "رانيا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/راجل_وست_ستات",
-      "verified": true,
-      "qid": "ramadanseries-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات ومهن",
-      "q": "في «عائلة الحاج متولي»، ما التجارة التي بنى عليها الحاج ثروته؟",
-      "a": "تجارة الأقمشة",
+      "qid": "ramadanseries-400-906",
+      "p": 400,
+      "topic": "أشغال شقة",
+      "q": "في «أشغال شقة»، ما تخصص حمدي الطبي؟",
+      "a": "الطب الشرعي",
       "alt": [
-        "الأقمشة",
-        "القماش"
+        "طبيب شرعي",
+        "أخصائي طب شرعي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عائلة_الحاج_متولي",
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "qid": "ramadanseries-200-040"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 200,
-      "topic": "عائلات ومهن",
-      "q": "في «يوميات ونيس»، ما مهنة رب الأسرة؟",
-      "a": "محامٍ",
-      "alt": [
-        "محامي",
-        "المحاماة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يوميات_ونيس",
-      "verified": true,
-      "qid": "ramadanseries-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات ومهن",
-      "q": "في «لن أعيش في جلباب أبي»، ما العمل الذي كانت تعمل به فاطمة قبل زواجها؟",
-      "a": "بائعة كشري",
-      "alt": [
-        "الكشري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات ومهن",
-      "q": "في «أرابيسك»، ما المادة التي ينقشها حسن في ورشته؟",
-      "a": "الخشب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أرابيسك_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات ومهن",
-      "q": "في «جعفر العمدة»، ما مجال عمل جعفر؟",
-      "a": "المقاولات",
-      "alt": [
-        "مقاول"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جعفر_العمدة",
-      "verified": true,
-      "qid": "ramadanseries-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات ومهن",
-      "q": "في «العاصوف»، من أي حرفة جاء لقب عائلة البطل؟",
-      "a": "بناء بيوت الطين",
-      "alt": [
-        "البناء بالطين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العاصوف",
-      "verified": true,
-      "qid": "ramadanseries-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "عناوين وشارات",
-      "q": "ما الجملة التي تُفتتح بها أشهر أغنية سحور مصرية؟",
-      "a": "اصحى يا نايم وحد الدايم",
-      "alt": [
-        "اصحى يا نايم"
-      ],
-      "sourceUrl": "https://darelhilal.com/News/3181263.aspx",
-      "verified": true,
-      "qid": "ramadanseries-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "عناوين وشارات",
-      "q": "في «ليالي الحلمية»، بأي عبارة تبدأ كلمات شارة المسلسل؟",
-      "a": "ومنين بيجي الشجن",
-      "alt": [
-        "منين بيجي الشجن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "عناوين وشارات",
-      "q": "ما الاسم الشائع لأغنية المقدمة التي تُعرض قبل كل حلقة من المسلسل؟",
-      "a": "التتر",
-      "alt": [
-        "الشارة",
-        "تتر المقدمة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-200-048"
-    },
-    {
+      "qid": "ramadanseries-400-907",
       "p": 400,
-      "topic": "شخصيات الموسم",
-      "q": "في «ليالي الحلمية»، ما اسم العمدة الذي ترك قريته واستقر في الحي؟",
-      "a": "سليمان غانم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-400-001"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات الموسم",
-      "q": "في «لن أعيش في جلباب أبي»، ما اسم الابن الوحيد الذي أرهقته عقدة أبيه؟",
-      "a": "عبد الوهاب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات الموسم",
-      "q": "في «ضيعة ضايعة»، ما اسم زوجة أسعد؟",
-      "a": "بديعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة",
-      "verified": true,
-      "qid": "ramadanseries-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات الموسم",
-      "q": "في «الخوالي»، ما اسم الشاب الدمشقي الذي تحوّل إلى ثائر مطارد؟",
-      "a": "نصار",
-      "alt": [
-        "نصار بن عريبي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوالي",
-      "verified": true,
-      "qid": "ramadanseries-400-004"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات الموسم",
-      "q": "في «زيزينيا»، ما اسم البطل الذي تنازعته هويتان؟",
-      "a": "بشر",
-      "alt": [
-        "بشر عامر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات الموسم",
-      "q": "في «ذئاب الجبل»، من قتل الخادمة مهجة ليُخفي علاقته بها؟",
-      "a": "علوان",
-      "alt": [
-        "علوان أبو البكري",
-        "أبو البكري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ذئاب_الجبل_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-006"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات الموسم",
-      "q": "في «حمام القيشاني»، ما اسم العائلة التي تدور حولها الأحداث؟",
-      "a": "القناديلي",
-      "alt": [
-        "آل القناديلي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حمام_القيشاني",
-      "verified": true,
-      "qid": "ramadanseries-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات ومهن",
-      "q": "في «نسر الصعيد»، ما مهنة بطل المسلسل؟",
-      "a": "ضابط شرطة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نسر_الصعيد",
-      "verified": true,
-      "qid": "ramadanseries-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «عائلة الحاج متولي»، أي زوجة رفضت أن تعطيه مالها فطلبت الطلاق؟",
-      "a": "ألفت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عائلة_الحاج_متولي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «ذئاب الجبل»، ما الاسم الجديد الذي عاش به البطل في المدينة؟",
-      "a": "فاروق القناوي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ذئاب_الجبل",
-      "verified": true,
-      "qid": "ramadanseries-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «المداح»، ما الذي أفسد قلب البطل وقاده إلى الجريمة؟",
-      "a": "حبّه لرحاب",
-      "alt": [
-        "حب رحاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المداح_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «كلبش»، ما التهمة التي لُفّقت للضابط فدخل خلفها المحاكمة؟",
-      "a": "تهمة القتل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كلبش_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «الزير سالم»، من قتل أخا البطل فأشعل نار الثأر؟",
-      "a": "جساس",
-      "alt": [
-        "جساس بن مرة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «البرنس»، أين أمضى رضوان سنوات قبل عودته للانتقام؟",
-      "a": "السجن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البرنس_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «الكبير أوي»، ما جنسية والدة الإخوة الثلاثة؟",
-      "a": "أمريكية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
-      "verified": true,
-      "qid": "ramadanseries-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «أفراح القبة»، ماذا اكتشف الممثلون في نص المسرحية الجديدة؟",
-      "a": "حكاياتهم الحقيقية",
-      "alt": [
-        "أسرارهم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أفراح_القبة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الدراما",
-      "q": "في «ضيعة ضايعة»، ما اسم الضيعة التي تدور فيها الأحداث؟",
-      "a": "أم الطنافس الفوقا",
-      "alt": [
-        "أم الطنافس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة",
-      "verified": true,
-      "qid": "ramadanseries-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الدراما",
-      "q": "في «العاصوف»، في أي عقد من القرن العشرين تدور الأحداث؟",
-      "a": "السبعينيات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العاصوف",
-      "verified": true,
-      "qid": "ramadanseries-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الدراما",
-      "q": "في «زيزينيا»، في أي عقد تدور حكايات الجاليات الأجنبية؟",
-      "a": "الأربعينيات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الدراما",
-      "q": "في «ذئاب الجبل»، ما اسم القرية الصعيدية التي تدور فيها الأحداث؟",
-      "a": "بهتون الجبل",
-      "alt": [
-        "بهتون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ذئاب_الجبل",
-      "verified": true,
-      "qid": "ramadanseries-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الدراما",
-      "q": "في «صح النوم»، ما اسم الحارة التي تدور فيها الأحداث؟",
-      "a": "كل مين إيدو إلو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صح_النوم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الدراما",
-      "q": "في «بوابة الحلواني»، أي مشروع ضخم تزامن مع أحداث المسلسل؟",
-      "a": "حفر قناة السويس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوابة_الحلواني",
-      "verified": true,
-      "qid": "ramadanseries-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "فوازير وألغاز",
-      "q": "في فوازير الثمانينيات، ما اسم رفيق الشخصية القصيرة الذي أدّاه النجم نفسه؟",
-      "a": "سمورة",
-      "alt": [],
-      "sourceUrl": "https://www.youm7.com/story/2021/4/13/5277254",
-      "verified": true,
-      "qid": "ramadanseries-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "فوازير وألغاز",
-      "q": "ما اسم فوازير شريهان التي ظهرت فيها بشخصية «زردة»؟",
-      "a": "حاجات ومحتاجات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شريهان",
-      "verified": true,
-      "qid": "ramadanseries-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان حكاية شريهان الأولى في فوازيرها عام 1985؟",
-      "a": "عروس البحور",
-      "alt": [
-        "عروسة البحور"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شريهان",
-      "verified": true,
-      "qid": "ramadanseries-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "فوازير وألغاز",
-      "q": "ما اسم الثلاثي الكوميدي الذي قدّم أولى الفوازير على الشاشة المصرية؟",
-      "a": "ثلاثي أضواء المسرح",
-      "alt": [
-        "أضواء المسرح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "فوازير وألغاز",
-      "q": "ما نوع الفقرات التي تُقدَّم بها الفوازير على الشاشة؟",
-      "a": "استعراضات غنائية",
-      "alt": [
-        "استعراض غنائي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان فوازير أواخر التسعينيات التي حملت اسم لونين متضادين؟",
-      "a": "أبيض وأسود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "كوميديا رمضان",
-      "q": "في «الكبير أوي»، ما اسم الأخ الثالث الذي نشأ في العاصمة؟",
-      "a": "حزلقوم",
-      "alt": [
-        "هزلقوم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
-      "verified": true,
-      "qid": "ramadanseries-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "كوميديا رمضان",
-      "q": "في «الخربة»، من زعيم عائلة بو قعقور؟",
-      "a": "أبو نمر",
-      "alt": [
-        "بو نمر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخربة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "كوميديا رمضان",
-      "q": "في «مرايا»، ما نوع الكوميديا التي اشتهر بها المسلسل؟",
-      "a": "الكوميديا السوداء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مرايا_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "كوميديا رمضان",
-      "q": "في «راجل وست ستات»، ما اسم الرجل الوحيد الذي يؤنس عادل وسط بيت النساء؟",
-      "a": "رمزي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/راجل_وست_ستات_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "كوميديا رمضان",
-      "q": "في «الكبير أوي»، ما اسم المرأة التي تزوجها الكبير في المواسم المتأخرة؟",
-      "a": "مربوحة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "كوميديا رمضان",
-      "q": "في «بكيزة وزغلول»، ما اسم الزوج الثري الذي توفي في أول الأحداث؟",
-      "a": "العشماوي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بكيزة_وزغلول_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "كوميديا رمضان",
-      "q": "في «سيلفي»، ما شكل الحلقات التي يقدّمها المسلسل؟",
-      "a": "حلقات منفصلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سيلفي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات ومهن",
-      "q": "في «المال والبنون»، ما اسم صاحب البيت الكبير في الحارة؟",
-      "a": "سلامة فراويلة",
-      "alt": [
-        "الحاج سلامة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المال_والبنون_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات ومهن",
-      "q": "في «بوابة الحلواني»، ما مهنة عبده الحامولي في المسلسل؟",
-      "a": "مطرب",
-      "alt": [
-        "مغني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوابة_الحلواني",
-      "verified": true,
-      "qid": "ramadanseries-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات ومهن",
-      "q": "في «يوميات ونيس»، ما اسم زوجة ونيس؟",
-      "a": "ميسة",
-      "alt": [
-        "ميساء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يوميات_ونيس_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات ومهن",
-      "q": "في «ليالي الحلمية»، ما اسم عائلة الباشا صاحب القصر؟",
-      "a": "البدري",
-      "alt": [
-        "آل البدري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات ومهن",
-      "q": "في «لن أعيش في جلباب أبي»، عند أي تاجر عمل عبد الغفور في شبابه؟",
-      "a": "إبراهيم سردينة",
-      "alt": [
-        "سردينة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "طقوس الموسم",
-      "q": "ما اسم أول برنامج مقالب رمضاني قدّمه رامز جلال؟",
-      "a": "رامز قلب الأسد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامز_جلال",
-      "verified": true,
-      "qid": "ramadanseries-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "طقوس الموسم",
-      "q": "في برنامج العرائس الرمضاني الشهير، من رفيقة بوجي؟",
-      "a": "طمطم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوجي_وطمطم",
-      "verified": true,
-      "qid": "ramadanseries-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "طقوس الموسم",
-      "q": "ماذا يسمى العمل الدرامي الذي يُنتج خصيصًا ليُعرض في شهر الصوم؟",
-      "a": "المسلسل الرمضاني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "طقوس الموسم",
-      "q": "في ليالي رمضان، ما الآلة التي يحملها موقظ السحور في جولته؟",
-      "a": "الطبلة",
-      "alt": [
-        "طبلة"
-      ],
-      "sourceUrl": "https://darelhilal.com/News/3181263.aspx",
-      "verified": true,
-      "qid": "ramadanseries-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "حكايات وأحداث",
-      "q": "في «الأسطورة»، في أي كلية تخرّج ناصر متفوقًا على دفعته؟",
-      "a": "كلية الحقوق",
-      "alt": [
-        "الحقوق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأسطورة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "عناوين وشارات",
-      "q": "ما العنوان الفرعي الذي حمله مسلسل «أرابيسك» باسم بطله؟",
-      "a": "أيام حسن النعماني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أرابيسك_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "عناوين وشارات",
-      "q": "ما العنوان الذي عاد به «طاش ما طاش» إلى الشاشة بعد سنوات غياب؟",
-      "a": "طاش العودة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طاش_ما_طاش",
-      "verified": true,
-      "qid": "ramadanseries-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "عناوين وشارات",
-      "q": "ما عنوان الفوازير التي قدّمها محمد هنيدي وحاكى بها المسلسلات؟",
-      "a": "مسلسليكو",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "alt": [],
-      "qid": "ramadanseries-400-048"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «ليالي الحلمية»، ما اسم السيدة التي تزوجت مرارًا وشغلت الحي بحكاياتها؟",
-      "a": "نازك السلحدار",
-      "alt": [
-        "نازك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «لن أعيش في جلباب أبي»، ما اسم الابنة الصغرى التي بقيت معتزّة بأصل أبيها؟",
-      "a": "نظيرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «ضيعة ضايعة»، ما اسم زوجة جودة؟",
-      "a": "ديبة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة",
-      "verified": true,
-      "qid": "ramadanseries-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «الخوالي»، ما اسم ابنة أبي هاشم التي أحبها البطل؟",
-      "a": "لطفية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوالي",
-      "verified": true,
-      "qid": "ramadanseries-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «أفراح القبة»، ما اسم صاحب الفرقة المسرحية؟",
-      "a": "سرحان الهلالي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أفراح_القبة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «حمام القيشاني»، ما اسم زوجة كبير العائلة؟",
-      "a": "امتثال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حمام_القيشاني",
-      "verified": true,
-      "qid": "ramadanseries-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «المال والبنون»، من الرجل الذي رفض المال الحرام وعاش في فقر؟",
-      "a": "عباس الضو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المال_والبنون_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «ليالي الحلمية»، ما اسم ابنة العمدة سليمان؟",
-      "a": "زهرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "حكايات وأحداث",
-      "q": "في «عائلة الحاج متولي»، بم كان الحاج يخدع زوجته بدلًا من الألماس الحقيقي؟",
-      "a": "زجاج مقلد",
-      "alt": [
-        "مجوهرات مزيفة",
-        "ماس مزيف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عائلة_الحاج_متولي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "حكايات وأحداث",
-      "q": "في «المال والبنون»، ما التجارة المحرّمة التي جُمعت منها ثروة الخواجة؟",
-      "a": "تهريب الآثار",
-      "alt": [
-        "الآثار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المال_والبنون_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "حكايات وأحداث",
-      "q": "في «أرابيسك»، ما اسم ابنة حسن وتوحيدة في المشهد الأخير؟",
-      "a": "دنيا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أرابيسك_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "حكايات وأحداث",
-      "q": "في «ذئاب الجبل»، ما اسم ابنة الشيخ بدار التي زوّجها من غريب عن العائلة؟",
-      "a": "وردة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ذئاب_الجبل_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "حكايات وأحداث",
-      "q": "في «الزير سالم»، ما اسم زوجة القتيل وهي ابنة مُرّة؟",
-      "a": "الجليلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "حكايات وأحداث",
-      "q": "في «جعفر العمدة»، ما اسم الزوجة الرابعة التي أشعلت الخلافات؟",
-      "a": "عايدة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جعفر_العمدة",
-      "verified": true,
-      "qid": "ramadanseries-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "حكايات وأحداث",
-      "q": "في «البرنس»، من أكبر إخوة رضوان؟",
-      "a": "عبد المحسن",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البرنس_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "حكايات وأحداث",
-      "q": "في «أفراح القبة»، ما اسم الممثلة الشابة التي تدور حولها أسرار الفرقة؟",
-      "a": "تحية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أفراح_القبة_(رواية)",
-      "verified": true,
-      "qid": "ramadanseries-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الدراما",
-      "q": "في «الأسطورة»، في أي حي قاهري تدور الأحداث؟",
-      "a": "السبتية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأسطورة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الدراما",
-      "q": "في «الخوالي»، في أي عهد تدور أحداث المسلسل؟",
-      "a": "أواخر العهد العثماني",
-      "alt": [
-        "العهد العثماني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوالي",
-      "verified": true,
-      "qid": "ramadanseries-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الدراما",
-      "q": "في «بوابة الحلواني»، ما اسم القرية التي قامت مكانها مدينة القناة؟",
-      "a": "الفرما",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوابة_الحلواني",
-      "verified": true,
-      "qid": "ramadanseries-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الدراما",
-      "q": "في «العاصوف»، ما اسم العائلة التي تدور حولها الأحداث؟",
-      "a": "الطيان",
-      "alt": [
-        "آل الطيان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العاصوف",
-      "verified": true,
-      "qid": "ramadanseries-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الدراما",
-      "q": "في «حمام القيشاني»، في أي مدينة تقع الحارة؟",
-      "a": "دمشق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حمام_القيشاني",
-      "verified": true,
-      "qid": "ramadanseries-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «المداح»، ما اسم المرأة التي تعلّق بها البطل فأهلكه حبّها؟",
+      "topic": "المداح",
+      "q": "في «المداح»، ما اسم ابنة غالب التي يحبها البطل؟",
       "a": "رحاب",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المداح_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "qid": "ramadanseries-600-022"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "فوازير وألغاز",
-      "q": "ما اسم فوازير نيللي التي عُرضت عام 1991؟",
-      "a": "عجايب صندوق الدنيا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيللي_(ممثلة)",
-      "verified": true,
-      "qid": "ramadanseries-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان الفوازير التي قدّمتها نيللي عن عالم من الورق؟",
-      "a": "عالم ورق",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيللي_(ممثلة)",
-      "verified": true,
-      "qid": "ramadanseries-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "فوازير وألغاز",
-      "q": "ما اسم الفوازير الإذاعية التي بُنيت على الأمثال الشعبية عام 1961؟",
-      "a": "فوازير الأمثال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "فوازير وألغاز",
-      "q": "في فوازير شريهان عام 1986، ما الاسمان اللذان حملهما العنوان؟",
-      "a": "وردشان ومندو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شريهان",
-      "verified": true,
-      "qid": "ramadanseries-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "فوازير وألغاز",
-      "q": "ما اسم الفوازير التي قدّمتها لوسي في أواخر التسعينيات؟",
-      "a": "قيمة وسيما",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان أولى فوازير نيللي التي بدأت بها مشوارها؟",
-      "a": "صورة وفزورة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيللي_(ممثلة)",
-      "verified": true,
-      "qid": "ramadanseries-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان فوازير نيللي الأخيرة في منتصف التسعينيات؟",
-      "a": "زي النهاردة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيللي_(ممثلة)",
-      "verified": true,
-      "qid": "ramadanseries-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "كوميديا رمضان",
-      "q": "في «الكبير أوي»، ما اسم خفير العمدة المعروف بولائه الشديد له؟",
-      "a": "فزاع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "كوميديا رمضان",
-      "q": "في «الخربة»، من زعيم عائلة بو مالحة؟",
-      "a": "أبو نايف",
+      "qid": "ramadanseries-400-908",
+      "p": 400,
+      "topic": "اللعبة",
+      "q": "في «اللعبة»، ما اسم زوجة وسيم؟",
+      "a": "إسراء",
       "alt": [
-        "بو نايف"
+        "اسراء"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخربة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
-      "qid": "ramadanseries-600-031"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "ramadanseries-600-901",
       "p": 600,
-      "topic": "كوميديا رمضان",
-      "q": "في «ضيعة ضايعة»، ما اسم رئيس الشرطة في الضيعة؟",
-      "a": "أبو نادر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة",
-      "verified": true,
-      "qid": "ramadanseries-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "كوميديا رمضان",
-      "q": "في «طاش ما طاش»، ما الأسلوب الذي عالج به المسلسل قضايا المجتمع؟",
-      "a": "الكوميديا الساخرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طاش_ما_طاش",
-      "verified": true,
-      "qid": "ramadanseries-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "كوميديا رمضان",
-      "q": "في «شباب البومب»، ما اسم الشخصية المحورية في العمل؟",
-      "a": "عامر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شباب_البومب",
-      "verified": true,
-      "qid": "ramadanseries-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "كوميديا رمضان",
-      "q": "في «راجل وست ستات»، ما اسم ابنة عادل؟",
-      "a": "ياسمين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/راجل_وست_ستات",
-      "verified": true,
-      "qid": "ramadanseries-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "كوميديا رمضان",
-      "q": "في «الكبير أوي»، ما اسم الشاب الذي يرافق العمدة في مغامراته؟",
-      "a": "حجرس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
-      "verified": true,
-      "qid": "ramadanseries-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات ومهن",
-      "q": "في «الخوالي»، ما مهنة رب البيت الذي غاب عن أسرته طويلًا؟",
-      "a": "بائع عطارة",
+      "topic": "الكبير أوي",
+      "q": "على أي منصب محلي يتنافس الشقيقان في بداية «الكبير أوي»؟",
+      "a": "العمدة",
       "alt": [
-        "العطارة",
-        "تاجر عطارة",
-        "عطار"
+        "عمودية القرية",
+        "العمودية"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوالي_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
-      "qid": "ramadanseries-600-037"
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "ramadanseries-600-902",
       "p": 600,
-      "topic": "عائلات ومهن",
-      "q": "في «لن أعيش في جلباب أبي»، ما اسم الرجل المتعلم الذي عاون التاجر في أعماله؟",
-      "a": "فهيم أفندي",
+      "topic": "جعفر العمدة",
+      "q": "أي زوجة تقف وراء خطف ابن جعفر في «جعفر العمدة»؟",
+      "a": "دلال",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "qid": "ramadanseries-600-038"
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "ramadanseries-600-903",
       "p": 600,
-      "topic": "عائلات ومهن",
-      "q": "في «ليالي الحلمية»، ما اسم الابن الأكبر للباشا؟",
-      "a": "علي البدري",
+      "topic": "تحت الوصاية",
+      "q": "إلى أي مدينة تنقل البطلة المركب وتبدأ حياتها الجديدة في «تحت الوصاية»؟",
+      "a": "دمياط",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "qid": "ramadanseries-600-039"
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "ramadanseries-600-904",
       "p": 600,
-      "topic": "عائلات ومهن",
-      "q": "في «المال والبنون»، ما اسم ابنة الحاج سلامة؟",
-      "a": "فريال",
+      "topic": "البرنس",
+      "q": "في «البرنس»، ما اسم الابنة الصغيرة التي يبحث عنها الأب بعد خروجه من السجن؟",
+      "a": "مريم",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المال_والبنون_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "qid": "ramadanseries-600-040"
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "ramadanseries-600-905",
       "p": 600,
-      "topic": "عائلات ومهن",
-      "q": "في «بوابة الحلواني»، ما اسم المطربة التي ارتبط اسمها بعبده الحامولي؟",
-      "a": "ألمظ",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوابة_الحلواني",
+      "topic": "بمئة وش",
+      "q": "في «بـ100 وش»، من عضو العصابة الذي يتنكر في هيئة غزال لسحب أمواله؟",
+      "a": "سباعي",
+      "alt": [
+        "سباعى"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "qid": "ramadanseries-600-041"
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "ramadanseries-600-906",
       "p": 600,
-      "topic": "طقوس الموسم",
-      "q": "ما العنوان الذي حمله ثاني برنامج مقالب قدّمه رامز جلال؟",
-      "a": "رامز ثعلب الصحراء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامز_جلال",
-      "verified": true,
-      "qid": "ramadanseries-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات الموسم",
-      "q": "في «نسر الصعيد»، ما اسم شقيق زين الذي أدّاه الممثل نفسه؟",
-      "a": "صالح القناوي",
-      "alt": [
-        "صالح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نسر_الصعيد_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "كوميديا رمضان",
-      "q": "في «صح النوم»، ما اسم صديق غوار الذي يساعده في تنفيذ مقالبه؟",
-      "a": "أبو عنتر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صح_النوم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "طقوس الموسم",
-      "q": "في «بقعة ضوء»، ما الذي تعرضه كل حلقة على حدة؟",
-      "a": "قصة مستقلة",
-      "alt": [
-        "قصة منفصلة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بقعة_ضوء_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "عناوين وشارات",
-      "q": "في «الزير سالم»، ما الوصية التي كتبها القتيل بدمه قبل موته؟",
-      "a": "لا تصالح",
-      "alt": [
-        "لا تصالحوا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "عناوين وشارات",
-      "q": "في «زيزينيا»، ما العنوان الذي حمله الجزء الأول قبل أن يشتهر؟",
-      "a": "الولي والخواجة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "عناوين وشارات",
-      "q": "في «زيزينيا»، ما العنوان الذي حمله الجزء الثاني؟",
-      "a": "الليل والفنار",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
-      "verified": true,
-      "alt": [],
-      "qid": "ramadanseries-600-048"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه رمضان",
-      "q": "من أدى شخصية التاجر صاحب الجلباب في «لن أعيش في جلباب أبي»؟",
-      "a": "نور الشريف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-001"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه رمضان",
-      "q": "من أدى شخصية ونيس؟",
-      "a": "محمد صبحي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يوميات_ونيس",
-      "verified": true,
-      "qid": "ramadanseries-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه رمضان",
-      "q": "من أدى شخصية الكبير وإخوته في «الكبير أوي»؟",
-      "a": "أحمد مكي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
-      "verified": true,
-      "qid": "ramadanseries-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "حكايات وأحداث",
-      "q": "في «الزير سالم»، ما اسم ابنة القتيل التي أوصى الزير بها قبل موته؟",
-      "a": "اليمامة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن الدراما",
-      "q": "في «المداح»، من أي محافظة مصرية جاءت قرية بطل المسلسل؟",
-      "a": "الفيوم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المداح_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-005"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه رمضان",
-      "q": "من أدى دور البطولة في «الزير سالم»؟",
-      "a": "سلوم حداد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه رمضان",
-      "q": "من أدى الشخصية الكوميدية القصيرة الأشهر في فوازير الثمانينيات؟",
-      "a": "سمير غانم",
-      "alt": [],
-      "sourceUrl": "https://www.youm7.com/story/2021/4/13/5277254",
-      "verified": true,
-      "qid": "ramadanseries-800-007"
-    },
-    {
-      "p": 800,
-      "topic": "وجوه رمضان",
-      "q": "من أدى شخصية العمدة في «ليالي الحلمية»؟",
-      "a": "صلاح السعدني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "حكايات وأحداث",
-      "q": "في «نسر الصعيد»، ما لقب رجل الأعمال الصعيدي الذي صار خصم زين الأول؟",
-      "a": "هتلر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نسر_الصعيد_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات ومهن",
-      "q": "في «المداح»، من الرجل الذي رفض تزويج ابنته لبطل المسلسل؟",
-      "a": "غالب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المداح_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "عناوين وشارات",
-      "q": "في «زيزينيا»، ما العنوان الفرعي الذي حمله الفصل الأول من الجزء الثاني؟",
-      "a": "إبحار في العاصفة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات الموسم",
-      "q": "في «أفراح القبة»، ما اسم الممثل الشاب الذي تخفي حياته سرًّا؟",
-      "a": "طارق رمضان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أفراح_القبة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات الموسم",
-      "q": "في «حمام القيشاني»، ما اسم الشاب الذي تدور حوله حكايات الجيل الثاني؟",
-      "a": "ماجد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حمام_القيشاني",
-      "verified": true,
-      "qid": "ramadanseries-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات الموسم",
-      "q": "ما الاسم الأجنبي الذي اختارته إحدى بنات عبد الغفور بدل اسمها الشعبي؟",
-      "a": "نوفا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات الموسم",
-      "q": "في «الخوالي»، ما اسم حلاق الحارة؟",
-      "a": "أبو حسني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوالي",
-      "verified": true,
-      "qid": "ramadanseries-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات الموسم",
-      "q": "في «ليالي الحلمية»، ما اسم الابن الثاني للباشا؟",
-      "a": "عادل البدري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "حكايات وأحداث",
-      "q": "في «المال والبنون»، ما اسم ابن عباس الذي أحب ابنة الحاج؟",
-      "a": "يوسف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المال_والبنون_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "حكايات وأحداث",
-      "q": "في «بوابة الحلواني»، في عهد أي خديوي تدور معظم الأحداث؟",
-      "a": "الخديوي إسماعيل",
-      "alt": [
-        "إسماعيل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوابة_الحلواني",
-      "verified": true,
-      "qid": "ramadanseries-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "حكايات وأحداث",
-      "q": "في «الخوالي»، من أصابته رصاصة البطل خطأً فبدأت مطاردته؟",
-      "a": "الطفل هاشم",
-      "alt": [
-        "هاشم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوالي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "حكايات وأحداث",
-      "q": "في «أرابيسك»، ما العمل الذي أعاد حسن إلى حرفته بعد انقطاع؟",
-      "a": "تزيين فيلا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أرابيسك_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "حكايات وأحداث",
-      "q": "في «الزير سالم»، ما اسم الناقة التي كانت شرارة اشتعال الحرب؟",
-      "a": "سراب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن الدراما",
-      "q": "في «ضيعة ضايعة»، ما الجهة الرسمية الوحيدة الموجودة في الضيعة؟",
-      "a": "المخفر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة",
-      "verified": true,
-      "qid": "ramadanseries-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن الدراما",
-      "q": "في «الخربة»، في أي محافظة سورية تقع الضيعة؟",
-      "a": "السويداء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخربة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن الدراما",
-      "q": "في «زيزينيا»، ما جنسية أم البطل؟",
-      "a": "إيطالية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن الدراما",
-      "q": "في «ليالي الحلمية»، إلى أي طبقة تحوّل الحي مع مرور الزمن؟",
-      "a": "الطبقة الشعبية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات الموسم",
-      "q": "في «ليالي الحلمية»، ما اسم خادمة القصر التي لازمت الأحداث؟",
-      "a": "وصيفة المرزوقي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات ومهن",
-      "q": "في «الأسطورة»، ما الجهة التي حلم ناصر بالالتحاق بها بعد تخرجه؟",
-      "a": "النيابة العامة",
-      "alt": [
-        "النيابة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأسطورة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات ومهن",
-      "q": "في «يوميات ونيس»، ما اسم والد ونيس؟",
-      "a": "أبو الفضل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يوميات_ونيس",
-      "verified": true,
-      "qid": "ramadanseries-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات ومهن",
-      "q": "في «لن أعيش في جلباب أبي»، ما اسم مساعد التاجر الذي حمل لقب زوجته؟",
-      "a": "سيد كشري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات ومهن",
-      "q": "في «العاصوف»، ما اسم الابن الطموح الذي تدور حوله الحكاية؟",
-      "a": "خالد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العاصوف",
-      "verified": true,
-      "qid": "ramadanseries-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "كوميديا رمضان",
-      "q": "في «ضيعة ضايعة»، ما لقب عادل عضو الجمعية الفلاحية الذي يرفع التقارير؟",
-      "a": "الفسّاد",
-      "alt": [
-        "الفساد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "طقوس الموسم",
-      "q": "ما عنوان برنامج مقالب رامز جلال الذي دارت مقالبه في أعماق البحر؟",
-      "a": "رامز قرش البحر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامز_جلال",
-      "verified": true,
-      "qid": "ramadanseries-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات الموسم",
-      "q": "في «ذئاب الجبل»، ما اسم العائلة الصعيدية الكبيرة التي تدور حولها الأحداث؟",
-      "a": "هوارة",
-      "alt": [
-        "الهوارة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ذئاب_الجبل_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "طقوس الموسم",
-      "q": "ما عنوان برنامج مقالب رامز جلال الذي دارت مقالبه تحت الأرض؟",
-      "a": "رامز تحت الأرض",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامز_جلال",
-      "verified": true,
-      "qid": "ramadanseries-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "فوازير وألغاز",
-      "q": "من قدّمت أولى الفوازير على الإذاعة المصرية مطلع الستينيات؟",
-      "a": "آمال فهمي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان فوازير نيللي التي أُنتجت عام 1992؟",
-      "a": "أم العريف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيللي_(ممثلة)",
-      "verified": true,
-      "qid": "ramadanseries-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان أولى فوازير الثمانينيات التي ظهر فيها البطل القصير؟",
-      "a": "فطوطة والأفلام",
-      "alt": [],
-      "sourceUrl": "https://www.youm7.com/story/2021/4/13/5277254",
-      "verified": true,
-      "qid": "ramadanseries-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان الفوازير التي شارك فيها محمد سعد وعبد الله محمود؟",
-      "a": "العيال اتجننت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان فوازير شريهان التي طافت بها بلدان العالم؟",
-      "a": "حول العالم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شريهان",
-      "verified": true,
-      "qid": "ramadanseries-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "كوميديا رمضان",
-      "q": "في «ضيعة ضايعة»، بأي وسيلة يسلب جودة نقود أسعد في كل مرة؟",
-      "a": "المراهنات",
-      "alt": [
-        "الرهان",
-        "المراهنة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "كوميديا رمضان",
-      "q": "في «صح النوم»، ما لقب حسني في المسلسل؟",
-      "a": "البورظان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صح_النوم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "كوميديا رمضان",
-      "q": "في «الخربة»، ما الذي تقضي فيه العائلتان أيامهما؟",
-      "a": "المكايدة",
-      "alt": [
-        "الكيد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخربة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "كوميديا رمضان",
-      "q": "في «راجل وست ستات»، من المرأة التي تشارك عادل بيته إلى جانب زوجته وأمه وأخته وابنته؟",
-      "a": "حماته",
-      "alt": [
-        "أم زوجته"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/راجل_وست_ستات_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "كوميديا رمضان",
-      "q": "في «راجل وست ستات»، ما نوع الكوميديا التي يقوم عليها المسلسل؟",
-      "a": "كوميديا الموقف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/راجل_وست_ستات",
-      "verified": true,
-      "qid": "ramadanseries-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "عناوين وشارات",
-      "q": "في «الزير سالم»، ما اللقب التاريخي الذي عُرف به البطل؟",
-      "a": "المهلهل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الزير_سالم_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "عناوين وشارات",
-      "q": "ما عنوان فوازير شريهان التي حمل عنوانها أسماء ثلاث فتيات؟",
-      "a": "فاطيمة وحليمة وكريمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "عناوين وشارات",
-      "q": "ما العنوان الذي حملته فوازير نيللي عام 1995؟",
-      "a": "الدنيا لعبة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيللي_(ممثلة)",
-      "verified": true,
-      "qid": "ramadanseries-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات الموسم",
-      "q": "في «نسر الصعيد»، ما الاسم الكامل لبطل المسلسل؟",
-      "a": "زين القناوي",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نسر_الصعيد",
-      "verified": true,
-      "alt": [],
-      "qid": "ramadanseries-800-048"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «ليالي الحلمية»، في أي حرب شارك أحد أبناء الباشا قبل أن يدير المصنع؟",
-      "a": "حرب أكتوبر",
-      "alt": [
-        "أكتوبر",
-        "حرب 1973"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-001"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات ومهن",
-      "q": "في «يوميات ونيس»، بأي عمل التحقت الابنة الصغرى بعد دراستها؟",
+      "topic": "أشغال شقة",
+      "q": "في «أشغال شقة»، ما مهنة ياسمين التي تحاول العودة إليها بعد الولادة؟",
       "a": "مذيعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يوميات_ونيس_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-002"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «أفراح القبة»، ما اسم والد عباس صاحب النص المسرحي الفاضح؟",
-      "a": "كرم يونس",
       "alt": [
-        "كرم"
+        "مقدمة برامج",
+        "إعلامية"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أفراح_القبة_(رواية)",
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-003"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "وجوه رمضان",
-      "q": "من أدى دور البطولة في «الخوالي»؟",
-      "a": "بسام كوسا",
+      "qid": "ramadanseries-600-907",
+      "p": 600,
+      "topic": "المداح",
+      "q": "في الموسم الأول من «المداح»، من شقيق البطل الذي يُسجن بعد العثور على حقيبة مخدرات في البيت؟",
+      "a": "حسن",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوالي",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-004"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "وجوه رمضان",
-      "q": "من أدى شخصية زعيم عائلة بو قعقور في «الخربة»؟",
-      "a": "دريد لحام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخربة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "عناوين وشارات",
-      "q": "ما العنوان الذي حملته أولى الفوازير على الإذاعة المصرية؟",
-      "a": "فوازير الإذاعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات الموسم",
-      "q": "في «الأسطورة»، ما اسم عائلة التوأمين ناصر ورفاعي؟",
-      "a": "الدسوقي",
+      "qid": "ramadanseries-600-908",
+      "p": 600,
+      "topic": "اللعبة",
+      "q": "في الموسم الأول من «اللعبة»، ما المطلوب تصويره وجمع مشاهدات عالية له للفوز بأحد التحديات؟",
+      "a": "فيديو",
       "alt": [
-        "آل الدسوقي"
+        "مقطع فيديو",
+        "فيديو على الإنترنت"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأسطورة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-007"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "وجوه رمضان",
-      "q": "من أدت شخصية زغلول؟",
-      "a": "إسعاد يونس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بكيزة_وزغلول_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-008"
-    },
-    {
-      "p": 1000,
-      "topic": "وجوه رمضان",
-      "q": "من أدى دور البطولة في «العاصوف»؟",
-      "a": "ناصر القصبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/العاصوف",
-      "verified": true,
-      "qid": "ramadanseries-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "عناوين وشارات",
-      "q": "في «بوابة الحلواني»، ما اسم الرجل الذي حملت البوابة اسم عائلته؟",
-      "a": "سلامة الحلواني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوابة_الحلواني_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "وجوه رمضان",
-      "q": "من أدت شخصية فاطمة في «لن أعيش في جلباب أبي»؟",
-      "a": "عبلة كامل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات الموسم",
-      "q": "في «حمام القيشاني»، ما اسم رب الأسرة؟",
-      "a": "شوكت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حمام_القيشاني",
-      "verified": true,
-      "qid": "ramadanseries-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات الموسم",
-      "q": "في «لن أعيش في جلباب أبي»، ما اسم الابنة الكبرى التي صاهرت الأرستقراطية؟",
-      "a": "سنية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات الموسم",
-      "q": "في «أفراح القبة»، ما اسم المرأة الأم داخل الفرقة؟",
-      "a": "حليمة الكبش",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أفراح_القبة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات الموسم",
-      "q": "في «يوميات ونيس»، ما اسم الابن الذي صار طبيبًا؟",
-      "a": "شرف الدين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يوميات_ونيس",
-      "verified": true,
-      "qid": "ramadanseries-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات الموسم",
-      "q": "في «ليالي الحلمية»، ما اسم ابن العمدة سليمان؟",
-      "a": "زاهر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية",
-      "verified": true,
-      "qid": "ramadanseries-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «عائلة الحاج متولي»، ما اسم الزوجة الثالثة للحاج؟",
-      "a": "نعمة الله",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عائلة_الحاج_متولي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «أرابيسك»، ما تخصص صاحب الفيلا الذي استدعى حسن؟",
-      "a": "عالم ذرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أرابيسك_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «الخوالي»، ما الذي سرقه البطل ورفاقه ليطعموا الجياع؟",
-      "a": "القمح",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخوالي",
-      "verified": true,
-      "qid": "ramadanseries-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «عائلة الحاج متولي»، ما اسم زوجة الحاج الأولى؟",
-      "a": "زبيدة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عائلة_الحاج_متولي_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «الأسطورة»، ما التجارة المحرّمة التي عمل بها رفاعي؟",
-      "a": "تجارة السلاح",
+      "qid": "ramadanseries-800-901",
+      "p": 800,
+      "topic": "الكبير أوي",
+      "q": "في الجزء الأول من «الكبير أوي»، ما التقنية التي يمنعها الكبير ثم يتعلم استخدامها سرًا؟",
+      "a": "الإنترنت",
       "alt": [
-        "السلاح"
+        "النت",
+        "انترنت"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الأسطورة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-021"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "أماكن الدراما",
-      "q": "في «المال والبنون»، أين كانت تسكن أسرة عباس داخل البيت الكبير؟",
-      "a": "فوق السطح",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المال_والبنون_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن الدراما",
-      "q": "في «الكبير أوي»، أي لهجة مصرية يتحدث بها العمدة؟",
-      "a": "اللهجة الصعيدية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الكبير_أوي",
-      "verified": true,
-      "qid": "ramadanseries-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن الدراما",
-      "q": "في «ضيعة ضايعة»، بلهجة أي منطقة سورية يتحدث أهل الضيعة؟",
-      "a": "الساحل السوري",
+      "qid": "ramadanseries-800-902",
+      "p": 800,
+      "topic": "جعفر العمدة",
+      "q": "في «جعفر العمدة»، ما اسم الرجل الذي نفذ خطف الطفل ويطارده الأب لمعرفة الحقيقة؟",
+      "a": "بلال شامة",
       "alt": [
-        "اللاذقية",
-        "الساحل"
+        "بلال شامه",
+        "بلال"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-024"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "أماكن الدراما",
-      "q": "في «زيزينيا»، ما الجاليتان الأجنبيتان الأبرز في الحي؟",
-      "a": "الإيطاليون واليونانيون",
+      "qid": "ramadanseries-800-903",
+      "p": 800,
+      "topic": "تحت الوصاية",
+      "q": "في «تحت الوصاية»، من البحار الذي يساعد البطلة في خطة لإعادة الطاقم إلى العمل؟",
+      "a": "ربيع",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زيزينيا_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-025"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "أماكن الدراما",
-      "q": "في «بوابة الحلواني»، أي مدينة قناة وُلدت خلال أحداث المسلسل؟",
-      "a": "بورسعيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بوابة_الحلواني",
-      "verified": true,
-      "qid": "ramadanseries-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات ومهن",
-      "q": "في «المداح»، ما صفة الرجل الذي تبنّى البطل وربّاه؟",
-      "a": "إمام مسجد",
+      "qid": "ramadanseries-800-904",
+      "p": 800,
+      "topic": "البرنس",
+      "q": "في «البرنس»، ما الحرفة التي يمارسها البطل في ورشة والده؟",
+      "a": "دهان السيارات",
       "alt": [
-        "إمام"
+        "الدوكو",
+        "رش السيارات",
+        "طلاء السيارات"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المداح_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-027"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "عائلات ومهن",
-      "q": "في «يوميات ونيس»، ما التخصص الذي درسته الابنة الكبرى؟",
-      "a": "علم النفس",
+      "qid": "ramadanseries-800-905",
+      "p": 800,
+      "topic": "بمئة وش",
+      "q": "في «بـ100 وش»، ما اسم الممرضة التي تنضم إلى العصابة بعد سماع خطة الاستيلاء على ثروة غزال؟",
+      "a": "نجلاء",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يوميات_ونيس",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-028"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "عائلات ومهن",
-      "q": "في «أفراح القبة»، ما مهنة أبطال المسلسل جميعًا؟",
-      "a": "ممثلون مسرحيون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أفراح_القبة_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات ومهن",
-      "q": "في «المال والبنون»، ما اسم الابن الثاني لعباس؟",
-      "a": "عبد المنعم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المال_والبنون_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "طقوس الموسم",
-      "q": "ما عنوان برنامج مقالب رامز جلال الذي دارت مقالبه في الصقيع؟",
-      "a": "رامز تحت الصفر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامز_جلال",
-      "verified": true,
-      "qid": "ramadanseries-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات ومهن",
-      "q": "في «ليالي الحلمية»، ما اسم الزوجة الفلسطينية لابن الباشا الثاني؟",
-      "a": "سهيلة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ليالي_الحلمية_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «لن أعيش في جلباب أبي»، في سوق أي سلعة بدأ عبد الغفور حياته عاملًا؟",
-      "a": "الغلال",
+      "qid": "ramadanseries-800-906",
+      "p": 800,
+      "topic": "أشغال شقة",
+      "q": "في «أشغال شقة»، ما اسم المساعدة المنزلية التي تسرق أثاث الشقة؟",
+      "a": "آيلا",
       "alt": [
-        "الغِلال"
+        "أيلا",
+        "ايلا"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/لن_أعيش_في_جلباب_أبي_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-033"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "طقوس الموسم",
-      "q": "ما عنوان برنامج مقالب رامز جلال الذي جعل ضيوفه نجوم أفلام؟",
-      "a": "رامز موفي ستار",
+      "qid": "ramadanseries-800-907",
+      "p": 800,
+      "topic": "المداح",
+      "q": "في الموسم الأول من «المداح»، إلى أي مدينة يسافر البطل للقاء رجل الأعمال سمير؟",
+      "a": "القاهرة",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رامز_جلال",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-034"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان الفوازير التي جمعت صابرين ويحيى الفخراني عام 1988؟",
-      "a": "المناسبات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان فوازير عام 1989 التي قدّمها مدحت صالح وشيرين رضا؟",
-      "a": "الفنون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان الفوازير التي قدّمتها نيللي كريم عام 2002؟",
-      "a": "حلم ولا علم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان فوازير نيللي التي عُرضت عام 1980؟",
-      "a": "عروستي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نيللي_(ممثلة)",
-      "verified": true,
-      "qid": "ramadanseries-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان فوازير عام 1993 المستوحاة من قصة حب عذري شهيرة؟",
-      "a": "قيس وليلى",
+      "qid": "ramadanseries-800-908",
+      "p": 800,
+      "topic": "اللعبة",
+      "q": "في الموسم الأول من «اللعبة»، ما الشيء الذي يُطلب من المتنافسين سرقته من منزل مهجور؟",
+      "a": "لوحة",
       "alt": [
-        "قيس وليلي"
+        "لوحة فنية"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-039"
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "ramadanseries-1000-901",
       "p": 1000,
-      "topic": "كوميديا رمضان",
-      "q": "في «الخربة»، بأي شيء تشتهر الضيعة وتجذب به الزوار؟",
-      "a": "آثارها القديمة",
+      "topic": "الكبير أوي",
+      "q": "في «الكبير أوي»، ما اسم الأم الأمريكية للشقيقين؟",
+      "a": "سامانثا",
       "alt": [
-        "الآثار",
-        "المعالم الأثرية"
+        "سمانثا",
+        "Samantha"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الخربة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-040"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "ramadanseries-1000-902",
       "p": 1000,
-      "topic": "شخصيات الموسم",
-      "q": "في «حمام القيشاني»، ما اسم شقيق رب الأسرة الذي ترمّلت زوجته؟",
-      "a": "منير",
+      "topic": "جعفر العمدة",
+      "q": "إلى أي مدينة تسافر عايدة بعدما تختار عدم العودة إلى زوجها في نهاية «جعفر العمدة»؟",
+      "a": "دبي",
       "alt": [
-        "منير القناديلي"
+        "دبى"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حمام_القيشاني_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-041"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "ramadanseries-1000-903",
       "p": 1000,
-      "topic": "فوازير وألغاز",
-      "q": "ما عنوان الفوازير التي قدّمتها سماح أنور عام 1994؟",
-      "a": "إحنا فين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
-      "verified": true,
-      "qid": "ramadanseries-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "كوميديا رمضان",
-      "q": "في «ضيعة ضايعة»، ما اسم عائلة أسعد في الضيعة؟",
-      "a": "خشروف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة",
-      "verified": true,
-      "qid": "ramadanseries-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "كوميديا رمضان",
-      "q": "في «ضيعة ضايعة»، ما الآلة الزراعية الوحيدة التي تملكها الضيعة؟",
-      "a": "الجرّار",
+      "topic": "تحت الوصاية",
+      "q": "في «تحت الوصاية»، من يتبين أنه سارق برميلي السمك بعد اتهام عيد؟",
+      "a": "شنهابي",
       "alt": [
-        "التراكتور",
-        "الجرار الزراعي"
+        "شنهابى"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ضيعة_ضايعة_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-044"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "ramadanseries-1000-904",
       "p": 1000,
-      "topic": "عناوين وشارات",
-      "q": "ما العنوان الذي حملته فوازير عام 1997 من بطولة نادين ووائل نور؟",
-      "a": "جيران الهنا",
+      "topic": "البرنس",
+      "q": "في «البرنس»، من الشقيق الذي يسجل تآمر إخوته ويقدم التسجيل للبطل؟",
+      "a": "عادل",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-045"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "ramadanseries-1000-905",
       "p": 1000,
-      "topic": "وجوه رمضان",
-      "q": "من أدى دور البطولة في «مرايا» طوال أجزائه؟",
-      "a": "ياسر العظمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مرايا_(مسلسل)",
-      "verified": true,
-      "qid": "ramadanseries-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "حكايات وأحداث",
-      "q": "في «بكيزة وزغلول»، كيف حاول الزوج الثري أن يعثر على ابنته قبل وفاته؟",
-      "a": "بإعلان في الصحف",
+      "topic": "بمئة وش",
+      "q": "من عضو العصابة الذي يحتال على رفاقه ويستولي على المال في نهاية «بـ100 وش»؟",
+      "a": "كابتن فتحي",
       "alt": [
-        "إعلان في الجريدة"
+        "فتحي",
+        "كابتن فتحى"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بكيزة_وزغلول_(مسلسل)",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "qid": "ramadanseries-1000-047"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "ramadanseries-1000-906",
       "p": 1000,
-      "topic": "عناوين وشارات",
-      "q": "ما العنوان الذي حملته فوازير نادين المنفردة عام 1998؟",
-      "a": "منستغناش",
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوازير_رمضان",
+      "topic": "أشغال شقة",
+      "q": "في «أشغال شقة»، ما اسم المساعدة التي تضع سعرًا منفصلًا لكل طلب وشرطًا جزائيًا لترك العمل؟",
+      "a": "معتزة",
+      "alt": [
+        "معتزه"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "ramadanseries-1000-907",
+      "p": 1000,
+      "topic": "المداح",
+      "q": "في الموسم الأول من «المداح»، من الرجل الذي يقرأ أفكار البطل ويواجهه بحادثة غالب؟",
+      "a": "مصباح",
       "alt": [],
-      "qid": "ramadanseries-1000-048"
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "ramadanseries-1000-908",
+      "p": 1000,
+      "topic": "اللعبة",
+      "q": "في نهاية الموسم الأول من «اللعبة»، ما اسم الرجل الذي ينكشف أنه يدير التحديات الغامضة؟",
+      "a": "سمير",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
     }
   ]
 }

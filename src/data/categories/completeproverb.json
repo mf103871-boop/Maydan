@@ -6,3286 +6,498 @@
   "qs": [
     {
       "p": 200,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: الضحك من غير سبب من قلّة ___",
-      "a": "الأدب",
+      "q": "أكمل: من جدّ ___",
+      "a": "وجد",
+      "qid": "completeproverb-200-901",
       "type": "complete",
-      "alt": [
-        "أدب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "السعي",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-200-001"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 200,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: عامل الناس كما تحبّ أن ___",
-      "a": "يعاملوك",
+      "q": "أكمل: الصبر مفتاح ___",
+      "a": "الفرج",
+      "qid": "completeproverb-200-902",
       "type": "complete",
-      "alt": [
-        "يعاملوك الناس",
-        "أن يعاملوك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "الصبر",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-200-002"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 200,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: العجلة من الشيطان والتأنّي من ___",
-      "a": "الرحمن",
+      "q": "أكمل: يد واحدة لا ___",
+      "a": "تصفق",
+      "qid": "completeproverb-200-903",
       "type": "complete",
-      "alt": [
-        "الرحمان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "العلاقات",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-200-003"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 200,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: ما في دخان بلا ___",
-      "a": "نار",
+      "q": "أكمل: الوقاية خير من ___",
+      "a": "العلاج",
+      "qid": "completeproverb-200-904",
       "type": "complete",
-      "alt": [
-        "نارٍ",
-        "النار"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "التدبير",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-200-004"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 200,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: العين بالعين والسنّ ___",
-      "a": "بالسنّ",
+      "q": "أكمل: الطيور على أشكالها ___",
+      "a": "تقع",
+      "qid": "completeproverb-200-905",
       "type": "complete",
-      "alt": [
-        "بالسن",
-        "السنّ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "العلاقات",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-200-005"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 200,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: ما في شدّة إلا وراها ___",
-      "a": "فرج",
+      "q": "أكمل: خير الكلام ما قلّ و___",
+      "a": "دلّ",
+      "qid": "completeproverb-200-906",
       "type": "complete",
-      "alt": [
-        "فرجًا",
-        "الفرج"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
+      "topic": "الكلام",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-200-006"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 200,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: الموت مع الناس ___",
-      "a": "رحمة",
+      "q": "أكمل: الوقت كالسيف إن لم تقطعه ___",
+      "a": "قطعك",
+      "qid": "completeproverb-200-907",
       "type": "complete",
-      "alt": [
-        "رحمه",
-        "الرحمة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "التدبير",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-200-007"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 200,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أطعم الفم ___",
-      "a": "تستحي العين",
+      "q": "أكمل: لكل جواد ___",
+      "a": "كبوة",
+      "qid": "completeproverb-200-908",
       "type": "complete",
-      "alt": [
-        "تستحى العين",
-        "تستحي عينه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
+      "topic": "الحظ",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-200-008"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال شامية",
-      "q": "أكمل: طنجرة ولقيت ___",
-      "a": "غطاها",
-      "type": "complete",
-      "alt": [
-        "غطاءها",
-        "غطا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال شامية",
-      "q": "أكمل: اللي بيته من قزاز ما يرمي الناس ___",
-      "a": "حجارة",
-      "type": "complete",
-      "alt": [
-        "بحجارة",
-        "الحجارة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال شامية",
-      "q": "أكمل: اللي بيدقّ الباب بيسمع ___",
-      "a": "الجواب",
-      "type": "complete",
-      "alt": [
-        "جواب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال شامية",
-      "q": "أكمل: إذا كبروا ولادك ___",
-      "a": "خاويهم",
-      "type": "complete",
-      "alt": [
-        "خاويهن",
-        "خاويهُن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال شامية",
-      "q": "أكمل: أكبر منك بيوم أعرف منك ___",
-      "a": "بسنة",
-      "type": "complete",
-      "alt": [
-        "بسنه",
-        "سنة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال شامية",
-      "q": "أكمل: الأعور بين العميان ___",
-      "a": "ملك",
-      "type": "complete",
-      "alt": [
-        "ملك مفتّح",
-        "الملك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال شامية",
-      "q": "أكمل: بعيد عن العين بعيد عن ___",
-      "a": "القلب",
-      "type": "complete",
-      "alt": [
-        "قلب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال شامية",
-      "q": "أكمل: المكتوب ما منه ___",
-      "a": "هروب",
-      "type": "complete",
-      "alt": [
-        "مهروب",
-        "هرب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اللي ما يشوفش من الغربال يبقى ___",
-      "a": "أعمى",
-      "type": "complete",
-      "alt": [
-        "اعمى",
-        "عمي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اللي تحسبه موسى يطلع ___",
-      "a": "فرعون",
-      "type": "complete",
-      "alt": [
-        "فرعونًا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: ابعد عن الشرّ و___",
-      "a": "غنّي له",
-      "type": "complete",
-      "alt": [
-        "غنيله",
-        "غنّيله"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: يعمل من الحبّة ___",
-      "a": "قبّة",
-      "type": "complete",
-      "alt": [
-        "قبة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: أعلى ما خيلك ___",
-      "a": "اركبه",
-      "type": "complete",
-      "alt": [
-        "إركبه",
-        "اركب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اتمسكن لحدّ ما ___",
-      "a": "تتمكّن",
-      "type": "complete",
-      "alt": [
-        "اتمكن",
-        "تتمكن",
-        "أتمكّن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اصرف ما في الجيب يأتيك ما في ___",
-      "a": "الغيب",
-      "type": "complete",
-      "alt": [
-        "غيب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اللي يخاف من العفريت ___",
-      "a": "يطلع له",
-      "type": "complete",
-      "alt": [
-        "يطلعله",
-        "يطلّع له"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: ما يعرف كوعه من ___",
-      "a": "بوعه",
-      "type": "complete",
-      "alt": [
-        "بوعة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: اسأل مجرّب ولا تسأل ___",
-      "a": "طبيب",
-      "type": "complete",
-      "alt": [
-        "الطبيب",
-        "حكيم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: إذا فات الفوت ما ينفع ___",
-      "a": "الصوت",
-      "type": "complete",
-      "alt": [
-        "صوت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: نام مظلوم ولا تنام ___",
-      "a": "ظالم",
-      "type": "complete",
-      "alt": [
-        "ظالمًا",
-        "ظالما"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: لو فيه خير ما عافه ___",
-      "a": "الطير",
-      "type": "complete",
-      "alt": [
-        "طير"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: طارت الطيور ___",
-      "a": "بأرزاقها",
-      "type": "complete",
-      "alt": [
-        "بارزاقها",
-        "بأرزاقهم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: إذا طاح الجمل كثرت ___",
-      "a": "سكاكينه",
-      "type": "complete",
-      "alt": [
-        "سكاكينة",
-        "السكاكين"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: اللي ما يستحي منك لا تستحي ___",
-      "a": "منه",
-      "type": "complete",
-      "alt": [
-        "منّه",
-        "منه انت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: الطول طول نخلة والعقل عقل ___",
-      "a": "صخلة",
-      "type": "complete",
-      "alt": [
-        "الصخلة",
-        "سخلة",
-        "زخلة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: اصبر عالحصرم تاكل ___",
-      "a": "عنب",
-      "type": "complete",
-      "alt": [
-        "العنب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-034"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: تيتي تيتي مثل ما رحتي ___",
-      "a": "جيتي",
-      "type": "complete",
-      "alt": [
-        "متل ما جيتي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: مثل الأطرش ___",
-      "a": "بالزفّة",
-      "type": "complete",
-      "alt": [
-        "بالزفة",
-        "في الزفّة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: ثلثين الولد على ___",
-      "a": "الخال",
-      "type": "complete",
-      "alt": [
-        "خاله"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: طبل صوته عالي ومن جوّه ___",
-      "a": "خالي",
-      "type": "complete",
-      "alt": [
-        "فاضي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: جوّع كلبك ___",
-      "a": "يتبعك",
-      "type": "complete",
-      "alt": [
-        "يتبعوك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: الدوام يثقب ___",
-      "a": "الرخام",
-      "type": "complete",
-      "alt": [
-        "رخام"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: قلبي على ابني وقلب ابني على ___",
-      "a": "حجرة",
-      "type": "complete",
-      "alt": [
-        "الحجرة",
-        "حجر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: حتى يشيب ___",
-      "a": "الغراب",
-      "type": "complete",
-      "alt": [
-        "غراب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: قطرة قطرة كيحمل ___",
-      "a": "الواد",
-      "type": "complete",
-      "alt": [
-        "الوادي",
-        "لواد",
-        "لوادي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: اللي قال لك قال ___",
-      "a": "عليك",
-      "type": "complete",
-      "alt": [
-        "عليك أنت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: الحمار ما بيوقع بالجورة ___",
-      "a": "مرتين",
-      "type": "complete",
-      "alt": [
-        "مرّتين",
-        "مرتان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: الدجاجة اللي بتقاقي ما ___",
-      "a": "بتبيض",
-      "type": "complete",
-      "alt": [
-        "بتبيّض",
-        "ما تبيض"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: نام بكير وفيّق بكير وشوف الصحّة كيف ___",
-      "a": "بتصير",
-      "type": "complete",
-      "alt": [
-        "تصير",
-        "كيف بتصير"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: دقّ الحديد وهو ___",
-      "a": "حامي",
-      "type": "complete",
-      "alt": [
-        "حامٍ",
-        "ساخن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%8A%D9%85%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-200-048"
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 400,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: رحلة الألف ميل تبدأ ب___",
-      "a": "خطوة",
+      "q": "أكمل: على قدّ لحافك مدّ ___",
+      "a": "رجليك",
+      "qid": "completeproverb-400-901",
       "type": "complete",
+      "topic": "التدبير",
       "alt": [
-        "بخطوة",
-        "خطوةٍ"
+        "رجلك"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
-      "qid": "completeproverb-400-001"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
     },
     {
       "p": 400,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: ما خفي كان ___",
-      "a": "أعظم",
+      "q": "أكمل: اللي بيته من زجاج لا يرمي الناس بـ___",
+      "a": "الحجارة",
+      "qid": "completeproverb-400-902",
       "type": "complete",
+      "topic": "العواقب",
       "alt": [
-        "اعظم"
+        "حجارة"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
-      "qid": "completeproverb-400-002"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
     },
     {
       "p": 400,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: العصا لمن ___",
-      "a": "عصى",
+      "q": "أكمل: من حفر حفرة لأخيه ___",
+      "a": "وقع فيها",
+      "qid": "completeproverb-400-903",
       "type": "complete",
-      "alt": [
-        "عصا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "العواقب",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-400-003"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 400,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: عذر أقبح من ___",
-      "a": "ذنب",
+      "q": "أكمل: لسانك حصانك إن صنته ___",
+      "a": "صانك",
+      "qid": "completeproverb-400-904",
       "type": "complete",
-      "alt": [
-        "الذنب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "الكلام",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-400-004"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 400,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: فاقد الشيء لا ___",
-      "a": "يعطيه",
+      "q": "أكمل: عصفور في اليد خير من عشرة على ___",
+      "a": "الشجرة",
+      "qid": "completeproverb-400-905",
       "type": "complete",
-      "alt": [
-        "يعطي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "التدبير",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-400-005"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 400,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: إرضاء الناس غاية لا ___",
-      "a": "تُدرك",
+      "q": "أكمل: دخول الحمّام مش زي ___",
+      "a": "خروجه",
+      "qid": "completeproverb-400-906",
       "type": "complete",
-      "alt": [
-        "تدرك",
-        "تُدركُ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "الخبرة",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-400-006"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
     },
     {
       "p": 400,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: وراء كل رجل عظيم ___",
-      "a": "امرأة",
-      "type": "complete",
-      "alt": [
-        "إمرأة",
-        "امرأةٌ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: إذا لم تستحِ فاصنع ما ___",
-      "a": "شئت",
-      "type": "complete",
-      "alt": [
-        "شيت",
-        "ما شئت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال شامية",
-      "q": "أكمل: الله بيعطي الكعك للي ما إله ___",
-      "a": "سنان",
-      "type": "complete",
-      "alt": [
-        "أسنان",
-        "سنون"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال شامية",
-      "q": "أكمل: السكافي حافي والحايك ___",
-      "a": "عريان",
-      "type": "complete",
-      "alt": [
-        "عريانة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال شامية",
-      "q": "أكمل: اللي عقله براسه بيعرف ___",
-      "a": "خلاصه",
-      "type": "complete",
-      "alt": [
-        "خلاصو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال شامية",
-      "q": "أكمل: بطّيختين بإيد وحدة ما ___",
-      "a": "بينحملوا",
-      "type": "complete",
-      "alt": [
-        "ما بتنحمل",
-        "بينشالوا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال شامية",
-      "q": "أكمل: بكّي ابنك ولا ___",
-      "a": "تبكي عليه",
-      "type": "complete",
-      "alt": [
-        "تبكي عليه بعدين"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال شامية",
-      "q": "أكمل: الناس على دين ___",
-      "a": "ملوكهم",
-      "type": "complete",
-      "alt": [
-        "ملوكها"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال شامية",
-      "q": "أكمل: اللي بيزرع الشرّ ___",
-      "a": "بيحصده",
-      "type": "complete",
-      "alt": [
-        "بيحصدو",
-        "يحصده"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال شامية",
-      "q": "أكمل: إذا حضر الماء بطل ___",
-      "a": "التيمّم",
-      "type": "complete",
-      "alt": [
-        "التيمم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: خرج من المولد بلا ___",
-      "a": "حمّص",
-      "type": "complete",
-      "alt": [
-        "حمص",
-        "حمّصة",
-        "الحمّص"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اتّبع الكذّاب لحدّ ___",
-      "a": "باب الدار",
-      "type": "complete",
-      "alt": [
-        "بابا الدار",
-        "باب البيت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: علّمناهم الشحاتة سبقونا على ___",
-      "a": "الأبواب",
-      "type": "complete",
-      "alt": [
-        "الابواب",
-        "البيبان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: عشم إبليس في ___",
-      "a": "الجنّة",
-      "type": "complete",
-      "alt": [
-        "الجنة",
-        "جنّة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: من برّه هالله هالله ومن جوّه ___",
-      "a": "يعلم الله",
-      "type": "complete",
-      "alt": [
-        "يعلم ربنا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اللي يعيش ياما ___",
-      "a": "يشوف",
-      "type": "complete",
-      "alt": [
-        "بيشوف"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: يخلق من الشبه ___",
-      "a": "أربعين",
-      "type": "complete",
-      "alt": [
-        "اربعين",
-        "40"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: غالي والطلب ___",
-      "a": "رخيص",
-      "type": "complete",
-      "alt": [
-        "رخيصة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: كل شارب وله ___",
-      "a": "مقص",
-      "type": "complete",
-      "alt": [
-        "مقصّ",
-        "المقص"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: ما يمدح السوق إلا من ___",
-      "a": "ربح فيه",
-      "type": "complete",
-      "alt": [
-        "ربح منه",
-        "اللي ربح"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: قالوا ثور قال ___",
-      "a": "احلبوه",
-      "type": "complete",
-      "alt": [
-        "إحلبوه",
-        "احلبه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: حبل الكذب ___",
-      "a": "قصير",
-      "type": "complete",
-      "alt": [
-        "قصيّر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: كأنك يا بو زيد ما ___",
-      "a": "غزيت",
-      "type": "complete",
-      "alt": [
-        "غزوت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: حمارتك العرجا تغنيك عن سؤال ___",
-      "a": "اللئيم",
-      "type": "complete",
-      "alt": [
-        "اللىيم",
-        "لئيم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: إذا شبع الحمار ___",
-      "a": "نهق",
-      "type": "complete",
-      "alt": [
-        "نهقَ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: إذا بغيت صاحبك دوم حاسبه كل ___",
-      "a": "يوم",
-      "type": "complete",
-      "alt": [
-        "يومًا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: اسمه بالحصاد ومنجله ___",
-      "a": "مكسور",
-      "type": "complete",
-      "alt": [
-        "مكسّر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: مو كل مدعبل ___",
-      "a": "جوز",
-      "type": "complete",
-      "alt": [
-        "جوزة",
-        "الجوز"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: مع الخيل يا ___",
-      "a": "شقرة",
-      "type": "complete",
-      "alt": [
-        "شگرة",
-        "الشقرة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: اللي يتفل على السماء ترجع ___",
-      "a": "بلحيته",
-      "type": "complete",
-      "alt": [
-        "على وجهه",
-        "بلحيتة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: صفّي النيّة ونام ___",
-      "a": "بالبريّة",
-      "type": "complete",
-      "alt": [
-        "بالبرية"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: الكحيلة ما يعيبها ___",
-      "a": "جلالها",
-      "type": "complete",
-      "alt": [
-        "جلّها",
-        "جلالة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: الحرّ بالغمزة والعبد ___",
-      "a": "بالدبزة",
-      "type": "complete",
-      "alt": [
-        "بالدبّزة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: إذا شبعت الكرش تقول للراس ___",
-      "a": "غنّي",
-      "type": "complete",
-      "alt": [
-        "غني",
-        "تغنّي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: ضربة اللي ما تقتلك ___",
-      "a": "تقوّيك",
-      "type": "complete",
-      "alt": [
-        "تقويك",
-        "كتقويك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: اللي دارها بيديه يفكّها ___",
-      "a": "بسنيه",
-      "type": "complete",
-      "alt": [
-        "بسنونه",
-        "بأسنانه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: المندبة كبيرة والميّت ___",
-      "a": "فار",
-      "type": "complete",
-      "alt": [
-        "فأر",
-        "فارة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: اتّبع حرفة بوك لا ___",
-      "a": "يغلبوك",
-      "type": "complete",
-      "alt": [
-        "يغلبوك الناس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: اللي بيلاعب القط بدّه يتحمّل ___",
-      "a": "خراميشه",
-      "type": "complete",
-      "alt": [
-        "خراميشو",
-        "مخالبه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: ولد الفار ___",
-      "a": "حفّار",
-      "type": "complete",
-      "alt": [
-        "حفار"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: ربّ صدفة خير من ألف ___",
-      "a": "ميعاد",
-      "type": "complete",
-      "alt": [
-        "الميعاد",
-        "موعد",
-        "ألف ميعاد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: وجع ساعة ولا ___",
-      "a": "كل ساعة",
-      "type": "complete",
-      "alt": [
-        "كل الساعات",
-        "وجع كل ساعة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-400-048"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: ما حكّ جلدك مثل ___",
-      "a": "ظفرك",
-      "type": "complete",
-      "alt": [
-        "ظفرِك",
-        "إلا ظفرك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: مصائب قوم عند قوم ___",
-      "a": "فوائد",
-      "type": "complete",
-      "alt": [
-        "فوايد",
-        "فوائدُ",
-        "الفوائد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: من اغتاب الناس عندك اغتابك ___",
-      "a": "عندهم",
-      "type": "complete",
-      "alt": [
-        "عندهمُ",
-        "عند الناس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: كل فتاة بأبيها ___",
-      "a": "معجبة",
-      "type": "complete",
-      "alt": [
-        "معجبةٌ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: وعد الحرّ ___",
-      "a": "دين عليه",
-      "type": "complete",
-      "alt": [
-        "دَين عليه",
-        "دين"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال فصيحة مشهورة",
       "q": "أكمل: لكل مقام ___",
       "a": "مقال",
+      "qid": "completeproverb-400-907",
       "type": "complete",
-      "alt": [
-        "مقالٌ",
-        "المقال"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "الكلام",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-600-006"
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
+    },
+    {
+      "p": 400,
+      "q": "أكمل: ما ضاع حقّ وراءه ___",
+      "a": "مطالب",
+      "qid": "completeproverb-400-908",
+      "type": "complete",
+      "topic": "السعي",
+      "alt": [],
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 600,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: رحم الله امرأً عرف ___",
-      "a": "قدر نفسه",
+      "q": "أكمل: الباب اللي يجيك منه الريح سدّه و___",
+      "a": "استريح",
+      "qid": "completeproverb-600-901",
       "type": "complete",
+      "topic": "التدبير",
       "alt": [
-        "قدرَ نفسه"
+        "استرح"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
-      "qid": "completeproverb-600-007"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
     },
     {
       "p": 600,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: خذ الحكمة من ___",
-      "a": "أفواه المجانين",
+      "q": "أكمل: الحاجة أمّ ___",
+      "a": "الاختراع",
+      "qid": "completeproverb-600-902",
       "type": "complete",
-      "alt": [
-        "أفواه المجانين ولو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "السعي",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-600-008"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 600,
-      "topic": "أمثال شامية",
-      "q": "أكمل: الدبّانة بتعرف دقن ___",
-      "a": "الحلواني",
+      "q": "أكمل: إذا كان الكلام من فضة فالسكوت من ___",
+      "a": "ذهب",
+      "qid": "completeproverb-600-903",
       "type": "complete",
-      "alt": [
-        "اللبّان",
-        "حلواني"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "الكلام",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-600-009"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 600,
-      "topic": "أمثال شامية",
-      "q": "أكمل: التلم الأعوج من الثور ___",
-      "a": "الكبير",
+      "q": "أكمل: رُبّ ضارّة ___",
+      "a": "نافعة",
+      "qid": "completeproverb-600-904",
       "type": "complete",
-      "alt": [
-        "كبير"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "الحظ",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-600-010"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 600,
-      "topic": "أمثال شامية",
-      "q": "أكمل: الحجر اللي ما بيعجبك ___",
-      "a": "بيفجّك",
+      "q": "أكمل: الجواب يبان من ___",
+      "a": "عنوانه",
+      "qid": "completeproverb-600-905",
       "type": "complete",
-      "alt": [
-        "بيفجك",
-        "يفجّك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "الخبرة",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-600-011"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://downloads.hindawi.org/books/75241938.pdf"
     },
     {
       "p": 600,
-      "topic": "أمثال شامية",
-      "q": "أكمل: اللي بيبيعك بالفول بيعه ___",
-      "a": "بالقشور",
+      "q": "أكمل: رُبّ أخٍ لك لم تلده ___",
+      "a": "أمك",
+      "qid": "completeproverb-600-906",
       "type": "complete",
-      "alt": [
-        "بقشوره",
-        "بالقشر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "العلاقات",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-600-012"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 600,
-      "topic": "أمثال شامية",
-      "q": "أكمل: البرطيل بيحلّ دكّة ___",
-      "a": "القاضي",
+      "q": "أكمل: أهل مكة أدرى بـ___",
+      "a": "شعابها",
+      "qid": "completeproverb-600-907",
       "type": "complete",
-      "alt": [
-        "قاضي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "الخبرة",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-600-013"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 600,
-      "topic": "أمثال شامية",
-      "q": "أكمل: إذا ما عندك كبير حطّ حجر كبير ___",
-      "a": "ببيتك",
+      "q": "أكمل: تجري الرياح بما لا تشتهي ___",
+      "a": "السفن",
+      "qid": "completeproverb-600-908",
       "type": "complete",
-      "alt": [
-        "في بيتك",
-        "بدارك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
+      "topic": "العواقب",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال شامية",
-      "q": "أكمل: من تحت الدلفة لتحت ___",
-      "a": "المزراب",
-      "type": "complete",
-      "alt": [
-        "مزراب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال شامية",
-      "q": "أكمل: مجنون يحكي وعاقل ___",
-      "a": "يفهم",
-      "type": "complete",
-      "alt": [
-        "بيفهم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: ديل الكلب عمره ما ___",
-      "a": "يتعدل",
-      "type": "complete",
-      "alt": [
-        "ينعدل",
-        "يستقيم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: يقتل القتيل ويمشي في ___",
-      "a": "جنازته",
-      "type": "complete",
-      "alt": [
-        "الجنازة",
-        "جنازتو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اللي إيده في الميّة مش زيّ اللي إيده في ___",
-      "a": "النار",
-      "type": "complete",
-      "alt": [
-        "نار"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: أعمل حاجتي بإيدي ولا أقول للكلب ___",
-      "a": "يا سيدي",
-      "type": "complete",
-      "alt": [
-        "يا سيّدي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: يا واخد القرد على ماله يروح المال ويفضل القرد على ___",
-      "a": "حاله",
-      "type": "complete",
-      "alt": [
-        "حالو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: جت الحزينة تفرح ما ___",
-      "a": "لقتلهاش مطرح",
-      "type": "complete",
-      "alt": [
-        "لقيتلهاش مطرح",
-        "لقتلهاش مكان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اللي أوّله شرط آخره ___",
-      "a": "نور",
-      "type": "complete",
-      "alt": [
-        "سلامة",
-        "النور"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: من فات قديمه ___",
-      "a": "تاه",
-      "type": "complete",
-      "alt": [
-        "ضاع"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: كثر الدقّ يفكّ ___",
-      "a": "اللحام",
-      "type": "complete",
-      "alt": [
-        "لحام",
-        "التلحيم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: خبز خبزتيه يا الرفلة ___",
-      "a": "كليه",
-      "type": "complete",
-      "alt": [
-        "إكليه",
-        "كليه كله"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: انطر يا حمار على ما يجيك ___",
-      "a": "الربيع",
-      "type": "complete",
-      "alt": [
-        "ربيع"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: إذا تباعدت المخدّة تباعدت ___",
-      "a": "المودّة",
-      "type": "complete",
-      "alt": [
-        "المودة",
-        "الموده"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: مدّاح نفسه يبي له ___",
-      "a": "رفسة",
-      "type": "complete",
-      "alt": [
-        "رفسه",
-        "الرفسة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: ما كل أبيض شحم وما كل أسود ___",
-      "a": "فحم",
-      "type": "complete",
-      "alt": [
-        "فحمًا",
-        "الفحم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: الحيّ يحييك والميّت ___",
-      "a": "يزيدك غبن",
-      "type": "complete",
-      "alt": [
-        "يزيدك غبنًا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: الباب يوسّع ___",
-      "a": "جمل",
-      "type": "complete",
-      "alt": [
-        "جملًا",
-        "بعير"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: بالوجه مراية وبالكفا ___",
-      "a": "سلاية",
-      "type": "complete",
-      "alt": [
-        "سلّاية",
-        "صرماية",
-        "السلاية"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: ماكو سعفة ما هزّها ___",
-      "a": "ريح",
-      "type": "complete",
-      "alt": [
-        "الريح"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: يمّ العقرب لا تقرب ويمّ الحيّة افرش و___",
-      "a": "نام",
-      "type": "complete",
-      "alt": [
-        "نم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: جبت الأقرع يونّسني طلّع راسه و___",
-      "a": "خرّعني",
-      "type": "complete",
-      "alt": [
-        "خرعني",
-        "فزّعني"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: راح الخيط و___",
-      "a": "العصفور",
-      "type": "complete",
-      "alt": [
-        "عصفور"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: المبلّل ما يخاف من ___",
-      "a": "المطر",
-      "type": "complete",
-      "alt": [
-        "مطر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: كون كان الخوخ يداوي كون داوى ___",
-      "a": "راسو",
-      "type": "complete",
-      "alt": [
-        "رأسه",
-        "راسه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: حرّك الما يبان ___",
-      "a": "العطشان",
-      "type": "complete",
-      "alt": [
-        "عطشان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: خبز الدار ياكله ___",
-      "a": "البرّاني",
-      "type": "complete",
-      "alt": [
-        "البراني",
-        "الغريب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: الله يرحم من زار و___",
-      "a": "خفّف",
-      "type": "complete",
-      "alt": [
-        "خفف",
-        "خفّ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: اخدم يا صغري على ___",
-      "a": "كبري",
-      "type": "complete",
-      "alt": [
-        "كِبري",
-        "كبرتي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: اللي مشى بلا عراضة يجلس بلا ___",
-      "a": "فراش",
-      "type": "complete",
-      "alt": [
-        "الفراش"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: لا يموت الذيب ولا تفنى ___",
-      "a": "الغنم",
-      "type": "complete",
-      "alt": [
-        "غنم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: قرد موالف ولا غزال ___",
-      "a": "شرود",
-      "type": "complete",
-      "alt": [
-        "شارد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: الصيت أطول من ___",
-      "a": "العمر",
-      "type": "complete",
-      "alt": [
-        "عمر",
-        "العمر والعمر وقفة عزّ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: نومة أهل ___",
-      "a": "الكهف",
-      "type": "complete",
-      "alt": [
-        "كهف"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-600-048"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 800,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أسمع جعجعة ولا أرى ___",
-      "a": "طحنًا",
+      "q": "أكمل: وافق شنّ ___",
+      "a": "طبقة",
+      "qid": "completeproverb-800-901",
       "type": "complete",
-      "alt": [
-        "طحنا",
-        "طحن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "العلاقات",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-800-001"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 800,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: لكل داء دواء يُستطبّ به إلا ___",
-      "a": "الحماقة",
+      "q": "أكمل: بلغ السيل ___",
+      "a": "الزُّبى",
+      "qid": "completeproverb-800-902",
       "type": "complete",
+      "topic": "الصبر",
       "alt": [
-        "الحماقه",
-        "حماقة"
+        "الزبى"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
-      "qid": "completeproverb-800-002"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 800,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أيقنت أن المستحيل ثلاثة: الغول والعنقاء و___",
-      "a": "الخلّ الوفي",
+      "q": "أكمل: عند جهينة الخبر ___",
+      "a": "اليقين",
+      "qid": "completeproverb-800-903",
       "type": "complete",
-      "alt": [
-        "الخل الوفي",
-        "الخلّ الوفيّ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "الخبرة",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-800-003"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 800,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: من لم يمت بالسيف مات ___",
-      "a": "بغيره",
+      "q": "أكمل: رجع بخُفّي ___",
+      "a": "حنين",
+      "qid": "completeproverb-800-904",
       "type": "complete",
-      "alt": [
-        "بغيرِه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "العواقب",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-800-004"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 800,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: عدوّ عاقل خير من صديق ___",
-      "a": "جاهل",
+      "q": "أكمل: أعطِ القوس ___",
+      "a": "باريها",
+      "qid": "completeproverb-800-905",
       "type": "complete",
-      "alt": [
-        "الجاهل",
-        "جاهلٍ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "الخبرة",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-800-005"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 800,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: في الليلة الظلماء يُفتقد ___",
-      "a": "البدر",
+      "q": "أكمل: الصيف ضيّعتِ ___",
+      "a": "اللبن",
+      "qid": "completeproverb-800-906",
       "type": "complete",
-      "alt": [
-        "بدر",
-        "القمر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "التدبير",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-800-006"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 800,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أكل عليه الدهر و___",
-      "a": "شرب",
+      "q": "أكمل: سبق السيف ___",
+      "a": "العذل",
+      "qid": "completeproverb-800-907",
       "type": "complete",
-      "alt": [
-        "وشرب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "العواقب",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-800-007"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 800,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: إذا أردت أن تُطاع فأمُر بما ___",
-      "a": "يُستطاع",
+      "q": "أكمل: زمّار الحيّ لا ___",
+      "a": "يطرب",
+      "qid": "completeproverb-800-908",
       "type": "complete",
-      "alt": [
-        "يستطاع",
-        "يُستطاعُ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "العلاقات",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال شامية",
-      "q": "أكمل: أهلك اللي اشتروك ولا أهلك اللي ___",
-      "a": "باعوك",
-      "type": "complete",
-      "alt": [
-        "باعوكي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال شامية",
-      "q": "أكمل: الرجل ما بتدبّ غير مطرح ما ___",
-      "a": "بتحبّ",
-      "type": "complete",
-      "alt": [
-        "بتحب",
-        "تحب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال شامية",
-      "q": "أكمل: العيرة ما بتدفّي وإن دفّت ما ___",
-      "a": "بتوفّي",
-      "type": "complete",
-      "alt": [
-        "بتوفي",
-        "توفّي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال شامية",
-      "q": "أكمل: الحجر مطرحه قنطار وإن اتزحزح بيصير ___",
-      "a": "وقيّة",
-      "type": "complete",
-      "alt": [
-        "وقية",
-        "أوقية",
-        "الوقية"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال شامية",
-      "q": "أكمل: اللي ما بتسعه الدور بتسعه ___",
-      "a": "الصدور",
-      "type": "complete",
-      "alt": [
-        "صدور"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال شامية",
-      "q": "أكمل: إن كرهت جارك غيّر باب ___",
-      "a": "دارك",
-      "type": "complete",
-      "alt": [
-        "بيتك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال شامية",
-      "q": "أكمل: الحكي إلك يا ___ اسمعي يا جارة",
-      "a": "كنّة",
-      "type": "complete",
-      "alt": [
-        "كنه",
-        "الكنّة",
-        "يا كنّة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال شامية",
-      "q": "أكمل: إذا خضّيت الميّ ما بتطلع ___",
-      "a": "زبدة",
-      "type": "complete",
-      "alt": [
-        "زبده",
-        "زبدةً",
-        "الزبدة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: عشّمني بالحلق خرّمت ___",
-      "a": "وداني",
-      "type": "complete",
-      "alt": [
-        "ودني",
-        "أذني"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: كل فولة مسوّسة لها ___",
-      "a": "كيّال أعور",
-      "type": "complete",
-      "alt": [
-        "كيال اعور"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: اجتمع المتعوس على خايب ___",
-      "a": "الرجا",
-      "type": "complete",
-      "alt": [
-        "الرجاء"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: يا مستنّي السمنة من دهن النملة عمرك ما ___",
-      "a": "حتقلي",
-      "type": "complete",
-      "alt": [
-        "هتقلي",
-        "ح تقلي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: قليل البخت يلاقي العضم في ___",
-      "a": "الكرشة",
-      "type": "complete",
-      "alt": [
-        "الكرشه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: عاملة ودن من طين وودن من ___",
-      "a": "عجين",
-      "type": "complete",
-      "alt": [
-        "العجين"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: الحدايّة ما بتحدفش ___",
-      "a": "كتاكيت",
-      "type": "complete",
-      "alt": [
-        "الكتاكيت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: من رقّعت ما عريت ومن دبّرت ___",
-      "a": "ما جاعت",
-      "type": "complete",
-      "alt": [
-        "ماجاعت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: مال البخيل ياكله ___",
-      "a": "العيّار",
-      "type": "complete",
-      "alt": [
-        "العيار"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: ما أردى من المربوط إلا ___",
-      "a": "المفتلت",
-      "type": "complete",
-      "alt": [
-        "المفلت",
-        "المتفلّت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: تجيك التهايم و___",
-      "a": "إنت نايم",
-      "type": "complete",
-      "alt": [
-        "انت نايم",
-        "وأنت نائم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: زرع المجانين يطلّعه ___",
-      "a": "رب العالمين",
-      "type": "complete",
-      "alt": [
-        "ربّ العالمين",
-        "الله"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: راعي النصيفة ___",
-      "a": "سالم",
-      "type": "complete",
-      "alt": [
-        "سالمٌ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: إذا ضيّع الأعرج عكّازه لازم ___",
-      "a": "مركازه",
-      "type": "complete",
-      "alt": [
-        "مركزه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: اللي ما ذاق الكبدة تعجبه ___",
-      "a": "الفشّة",
-      "type": "complete",
-      "alt": [
-        "الفشه",
-        "الفشّ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: خطّط في ماء واقرص في ___",
-      "a": "حجر",
-      "type": "complete",
-      "alt": [
-        "الحجارة",
-        "صخر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: سالفة الحيّة كلما تنحكى تطول ___",
-      "a": "ذراع",
-      "type": "complete",
-      "alt": [
-        "ذراعًا",
-        "ذراع زيادة",
-        "الذراع"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: عصفور كفل زرزور واثنينهم ___",
-      "a": "طيّارة",
-      "type": "complete",
-      "alt": [
-        "طيارة",
-        "طيّار"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: خلّي لك بكل خرابة ___",
-      "a": "قرابة",
-      "type": "complete",
-      "alt": [
-        "گرابة",
-        "قرابه",
-        "القرابة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: نايم ورجليه ___",
-      "a": "بالشمس",
-      "type": "complete",
-      "alt": [
-        "في الشمس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: مو كل من صخّم وجهه قال آني ___",
-      "a": "حدّاد",
-      "type": "complete",
-      "alt": [
-        "حداد",
-        "الحدّاد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: اشكد ما يموت من الشياطين تستريح ___",
-      "a": "الملائكة",
-      "type": "complete",
-      "alt": [
-        "الملايكة",
-        "الملائكه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: طاحت الصومعة علّقوا ___",
-      "a": "الحجّام",
-      "type": "complete",
-      "alt": [
-        "الحجام",
-        "الحلاق"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: الحمار مخبّي وودنيه ___",
-      "a": "برّا",
-      "type": "complete",
-      "alt": [
-        "برا",
-        "خارج"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: إيلا رخص الشعير ___",
-      "a": "غلات الحمير",
-      "type": "complete",
-      "alt": [
-        "اغلات الحمير"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: اللي مدّت يدها للحنّة تمدّها ___",
-      "a": "كلّها",
-      "type": "complete",
-      "alt": [
-        "كلها"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: البصلة عمرها ما تولّي ___",
-      "a": "تفّاحة",
-      "type": "complete",
-      "alt": [
-        "تفاحة",
-        "تفاحه",
-        "التفاحة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: طول العشرة تعرّفك الذهب من ___",
-      "a": "القشرة",
-      "type": "complete",
-      "alt": [
-        "القشره"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: البوم ما بينعق إلا ___",
-      "a": "بالخراب",
-      "type": "complete",
-      "alt": [
-        "على الخراب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: الكلبة إذا جاعت تأكل ___",
-      "a": "عيالها",
-      "type": "complete",
-      "alt": [
-        "أولادها",
-        "جراها"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%8A%D9%85%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: أطول من ليلة ما فيها ___",
-      "a": "العشاء",
-      "type": "complete",
-      "alt": [
-        "العشا",
-        "عشاء",
-        "عشا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: احصد زرعك فطير قبل ما ___",
-      "a": "يطير",
-      "type": "complete",
-      "alt": [
-        "يطيرَ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-800-048"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أطهر الناس أعراقًا أحسنهم ___",
-      "a": "أخلاقًا",
+      "q": "أكمل: رُبّ رمية من غير ___",
+      "a": "رامٍ",
+      "qid": "completeproverb-1000-901",
       "type": "complete",
+      "topic": "الحظ",
       "alt": [
-        "أخلاقا",
-        "اخلاقا",
-        "خلقًا"
+        "رام",
+        "رامي"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
-      "qid": "completeproverb-1000-001"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikiquote.org/wiki/أمثال_عربية"
     },
     {
       "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أوهن من بيت ___",
-      "a": "العنكبوت",
+      "q": "أكمل: جازاه جزاء ___",
+      "a": "سنمّار",
+      "qid": "completeproverb-1000-902",
       "type": "complete",
+      "topic": "العواقب",
       "alt": [
-        "عنكبوت"
+        "سنمار"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
       "verified": true,
-      "qid": "completeproverb-1000-002"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أحبّ شيء إلى الإنسان ما ___",
-      "a": "مُنع",
+      "q": "أكمل: في خلف الوعود يقال: مواعيد ___",
+      "a": "عرقوب",
+      "qid": "completeproverb-1000-903",
       "type": "complete",
-      "alt": [
-        "منع",
-        "مُنِعا",
-        "منعا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "العلاقات",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-1000-003"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: ربّ أخٍ لك لم ___",
-      "a": "تلده أمّك",
+      "q": "أكمل: قطعت جهيزة قول كل ___",
+      "a": "خطيب",
+      "qid": "completeproverb-1000-904",
       "type": "complete",
-      "alt": [
-        "تلده امك",
-        "تلدْه أمّك",
-        "تلده أمه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "الكلام",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-1000-004"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: لا تكن صلبًا فتُكسر ولا ليّنًا ___",
-      "a": "فتُعصر",
+      "q": "أكمل: تسمع بالمُعَيْدي خير من أن ___",
+      "a": "تراه",
+      "qid": "completeproverb-1000-905",
       "type": "complete",
-      "alt": [
-        "فتعصر",
-        "تُعصر",
-        "تعصر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "الخبرة",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-1000-005"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: لا ترمِ سهمًا يعييك ___",
-      "a": "ردّه",
+      "q": "أكمل: أحشفًا وسوء ___",
+      "a": "كيلة",
+      "qid": "completeproverb-1000-906",
       "type": "complete",
-      "alt": [
-        "رده",
-        "ردّهُ",
-        "ردَّه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "التدبير",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-1000-006"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: سرّك أسيرك فإن أفشيته صرت ___",
-      "a": "أسيره",
+      "q": "أكمل: يداك أوكتا وفوك ___",
+      "a": "نفخ",
+      "qid": "completeproverb-1000-907",
       "type": "complete",
-      "alt": [
-        "اسيره",
-        "أسيرهُ",
-        "أسيرًا له"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "topic": "العواقب",
+      "alt": [],
       "verified": true,
-      "qid": "completeproverb-1000-007"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     },
     {
       "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: أضيق من سمّ ___",
-      "a": "الخياط",
+      "q": "أكمل: آخر الدواء ___",
+      "a": "الكيّ",
+      "qid": "completeproverb-1000-908",
       "type": "complete",
+      "topic": "التدبير",
       "alt": [
-        "الخيّاط",
-        "خياط"
+        "الكي"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
       "verified": true,
-      "qid": "completeproverb-1000-008"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: آمن من حمام ___",
-      "a": "الحرم",
-      "type": "complete",
-      "alt": [
-        "حرم",
-        "مكة",
-        "حمام مكة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: كفى المرء فضلًا أن تُعدّ ___",
-      "a": "معايبه",
-      "type": "complete",
-      "alt": [
-        "معايبُه",
-        "عيوبه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: من قال لا أعلم فقد ___",
-      "a": "أفتى",
-      "type": "complete",
-      "alt": [
-        "افتي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال فصيحة مشهورة",
-      "q": "أكمل: إن من البيان ___",
-      "a": "لسحرًا",
-      "type": "complete",
-      "alt": [
-        "لسحرا",
-        "سحرًا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال شامية",
-      "q": "أكمل: بعاق الجدي ولا سواد ___",
-      "a": "العنقود",
-      "type": "complete",
-      "alt": [
-        "عنقود"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال شامية",
-      "q": "أكمل: العسراوي بعمره ما قتل ___",
-      "a": "واوي",
-      "type": "complete",
-      "alt": [
-        "ابن آوى",
-        "الواوي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال شامية",
-      "q": "أكمل: البقّة تولد ميّة وتقول يا قلّة ___",
-      "a": "الذريّة",
-      "type": "complete",
-      "alt": [
-        "الذرية"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال شامية",
-      "q": "أكمل: بعد أربعينه عدّ ___",
-      "a": "سنينه",
-      "type": "complete",
-      "alt": [
-        "سنينو",
-        "سنوات عمره"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال شامية",
-      "q": "أكمل: بزمان اللولو ما ___",
-      "a": "هللولو",
-      "type": "complete",
-      "alt": [
-        "هلّلوا له",
-        "هلّلولو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال شامية",
-      "q": "أكمل: بدّه قط من خشب يصطاد ما ___",
-      "a": "ياكل",
-      "type": "complete",
-      "alt": [
-        "يأكل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: سكّة الأقرع من على سوق ___",
-      "a": "الطواقي",
-      "type": "complete",
-      "alt": [
-        "الطواقى"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: ادّيني عمر و___",
-      "a": "ارميني البحر",
-      "type": "complete",
-      "alt": [
-        "ارمينى البحر",
-        "ارميني في البحر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: لا عمر الميّة الساقعة تروب ولا عمر الغلس يبقى ___",
-      "a": "حبوب",
-      "type": "complete",
-      "alt": [
-        "حبيب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: زيّ الصرّاف لما يتعزّر يقلّب في دفاتره ___",
-      "a": "القديمة",
-      "type": "complete",
-      "alt": [
-        "القديمه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: هيّ الكحكة في إيد اليتيم ___",
-      "a": "عجبة",
-      "type": "complete",
-      "alt": [
-        "عجبه",
-        "عجيبة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مصرية",
-      "q": "أكمل: مطرح ما يسري ___",
-      "a": "يمري",
-      "type": "complete",
-      "alt": [
-        "يِمري"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: شاق القاع وقايل ___",
-      "a": "امباع",
-      "type": "complete",
-      "alt": [
-        "إمباع",
-        "مباع"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: يغطّه في البحر ويطلّعه ___",
-      "a": "ناشف",
-      "type": "complete",
-      "alt": [
-        "ناشفًا",
-        "يابس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: أضبط ساعتك على ___",
-      "a": "الملّا",
-      "type": "complete",
-      "alt": [
-        "الملا",
-        "المُلّا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: دفعة مردي والهوا ___",
-      "a": "شردي",
-      "type": "complete",
-      "alt": [
-        "شرقي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: الملزّق يطيح والمسكّت ___",
-      "a": "يصيح",
-      "type": "complete",
-      "alt": [
-        "يصيحُ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال خليجية",
-      "q": "أكمل: ما أخسّ من قديد إلا ___",
-      "a": "عسفان",
-      "type": "complete",
-      "alt": [
-        "عُسفان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: اللطم لطم ___",
-      "a": "شمهودة",
-      "type": "complete",
-      "alt": [
-        "شمهوده"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: اللي ما يدني زبيله محد ___",
-      "a": "يعبّي له",
-      "type": "complete",
-      "alt": [
-        "يعبيله",
-        "يملّي له"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: اللي ما يعرف تدابيره حنطته تاكل ___",
-      "a": "شعيرة",
-      "type": "complete",
-      "alt": [
-        "شعير",
-        "الشعيرة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: واصل لأبو ___",
-      "a": "موزة",
-      "type": "complete",
-      "alt": [
-        "موزه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: المرحوم سبع ___",
-      "a": "نجوم",
-      "type": "complete",
-      "alt": [
-        "نجوّم",
-        "النجوم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عراقية",
-      "q": "أكمل: اشتعل بيت الكذّاب محد ___",
-      "a": "صدّقه",
-      "type": "complete",
-      "alt": [
-        "صدقه",
-        "صدّگه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A7%D9%82%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: زغرتي يا موكة بلارج دار ___",
-      "a": "العرس",
-      "type": "complete",
-      "alt": [
-        "عرس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: دابزوا يا الفيران على خميرة ___",
-      "a": "الجيران",
-      "type": "complete",
-      "alt": [
-        "جيران"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: تا تطلب الزيت من ___",
-      "a": "السفناج",
-      "type": "complete",
-      "alt": [
-        "السفنّاج"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: ما عند القرعة ما ترعى من غير مشيط ___",
-      "a": "رأسها",
-      "type": "complete",
-      "alt": [
-        "راسها"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: الحيط الراشي ما عندك لاش ___",
-      "a": "تعليه",
-      "type": "complete",
-      "alt": [
-        "تعلّيه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال مغاربية",
-      "q": "أكمل: الزير المليان ما ___",
-      "a": "يرنّش",
-      "type": "complete",
-      "alt": [
-        "يرنش",
-        "يرنّ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: إنّ البعوضة تُدمي مقلة ___",
-      "a": "الأسد",
-      "type": "complete",
-      "alt": [
-        "أسد",
-        "الاسد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: إذا رأيت نيوب الليث بارزة فلا تحسبنّ أنّ الليث ___",
-      "a": "يبتسم",
-      "type": "complete",
-      "alt": [
-        "يبتسمُ",
-        "مبتسم",
-        "يضحك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: أيش عرّف الحمير بأكل ___",
-      "a": "الزنجبيل",
-      "type": "complete",
-      "alt": [
-        "زنجبيل",
-        "الزنجفيل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%88%D8%B1%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-045"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عن الحيوان",
-      "q": "أكمل: لا تأمن على فار ___",
-      "a": "شحمه",
-      "type": "complete",
-      "alt": [
-        "شحمة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%83%D9%88%D9%8A%D8%AA%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: حدّ العجب سبع ___",
-      "a": "أيّام",
-      "type": "complete",
-      "alt": [
-        "أيام",
-        "ايام",
-        "الأيّام"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D9%84%D9%8A%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "أمثال عن الوقت والصبر",
-      "q": "أكمل: من أطال الأمل ___",
-      "a": "أساء العمل",
-      "type": "complete",
-      "alt": [
-        "اساء العمل",
-        "أساء عمله",
-        "ساء عمله"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/wiki/%D8%A3%D9%85%D8%AB%D8%A7%D9%84_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
-      "verified": true,
-      "qid": "completeproverb-1000-048"
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://ar.wikisource.org/wiki/مجمع_الأمثال"
     }
   ]
 }
