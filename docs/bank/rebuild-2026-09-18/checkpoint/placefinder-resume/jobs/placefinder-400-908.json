@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-400-908",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 400,
+  "a": "معبد أبو سمبل",
+  "alt": [
+    "أبو سمبل",
+    "معبد رمسيس الثاني بأبو سمبل",
+    "Abu Simbel"
+  ],
+  "topic": "العالم العربي",
+  "q": "ما اسم هذا المعبد المصري ذي التماثيل الجالسة الضخمة؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/88/",
+  "sourceEvidence": "Recovered UNESCO review 2026-09-23: Ramses II rock-cut temples; Great Temple facade with four seated colossi.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. The Great Temple of Abu Simbel in Egypt, wide frontal view of warm sandstone cliff facade: four colossal seated pharaoh figures in a row, central dark temple doorway, small standing figures near the legs, row of small baboon sculptures along upper facade. Historically recognizable damage: second colossus from viewer left missing upper torso with fallen fragments near base; the other three seated heads remain. Entire rock-cut facade visible, sandy foreground, no Nile touching feet.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Four seated-colossus positions with second from viewer left broken, central doorway and rock-cut sandstone facade.",
+  "runtimeReviewStatus": "approved"
+}

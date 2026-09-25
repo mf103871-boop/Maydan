@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-1000-901-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the RIGHTMOST of the five black peppercorns at x=90 y=58, leaving exactly FOUR peppercorns in their original positions. Keep linen weave, salt bowl, scoop and light exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

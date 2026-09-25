@@ -13,7 +13,15 @@
   "sha256": "56b2e10413becf41c169ac2951a06e74737f2481ae1ad19630358b0161398dbe",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "56b2e10413becf41c169ac2951a06e74737f2481ae1ad19630358b0161398dbe",
+    "sourceUrl": "https://www.hendsabry.com/",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "The official-site profile and generated portrait both show dark swept hair, arched brows and full lips. The reference is a monochrome side portrait with pinned-up hair and jewelry; generated view is frontal with long loose hair and a plain black shirt.",
+    "limits": "Only profile-angle traits are comparable. The initially checked WFP field image was too distant and side-turned for fine review, so the official-site image was also viewed.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

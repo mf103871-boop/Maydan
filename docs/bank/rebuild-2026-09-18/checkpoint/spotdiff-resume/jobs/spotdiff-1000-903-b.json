@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-1000-903-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the lower IMAGE-RIGHT black spot on red ladybug wing at x=57 y=62, replacing it with matching red shell. Other three spots, seam, black head, six legs, leaf veins and entire background unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

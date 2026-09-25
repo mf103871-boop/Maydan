@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-400-903-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-400-903-b.webp",
+  "asset": "media/spotdiff/spotdiff-400-903-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the hand garden TROWEL with orange handle at center-right and its shadow, preserving pot, plant, gloves, bench texture and framing. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 204842,
+  "sha256": "39c611dee11fe06ba6f0473166a4a62f39c4db4e76b43f542bc6b9c0dd041616",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Only the orange-handled garden trowel disappears. Basil leaves, pot and gloves keep their shape/positions; fine material rendering changes are not separate game answers. Marker indicates a decisive part of the former object and is fully inside the4:3image; it need not enclose the whole removed object.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

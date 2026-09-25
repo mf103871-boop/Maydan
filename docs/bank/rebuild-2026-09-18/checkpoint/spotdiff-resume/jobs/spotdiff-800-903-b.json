@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-800-903-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the isolated upper RIGHT green LEAF at x=67 y=14 to autumn ORANGE, keeping its shape, veins, stem and all other five green leaves exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

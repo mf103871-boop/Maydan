@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-600-908",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-600-908.webp",
+  "asset": "media/placefinder/placefinder-600-908.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Hassan II Mosque in Casablanca Morocco: recognizable cream-stone mosque on Atlantic seawall, very tall single SQUARE minaret with intricate Moroccan carved geometric panels and green-tiled upper lantern, broad low prayer hall with green tiled roof and horseshoe arcades, paved esplanade; ocean waves along side. Three-quarter wide view, entire minaret and building visible, no bulbous domes or extra minarets, no text.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 206160,
+  "sha256": "335ead71eddb961717308abb43a733d03b513d35ede0ac9c8e6a2302ac99a25e",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Single tall square decorated minaret, green roofs, broad prayer hall and Atlantic seawall; Moroccan architectural identity.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

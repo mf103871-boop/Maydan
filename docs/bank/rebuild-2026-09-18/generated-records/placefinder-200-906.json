@@ -13,9 +13,20 @@
   "sha256": "6532a1ca825e1b3a4279f6a40998893df2f14b938ae474617f89ad941919d340",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "reviewed",
-    "reviewedAt": "2026-09-23",
-    "note": "Viewed generated image: white marble central onion dome, pointed entrance arch, smaller pavilions, four distinct minarets and central reflecting pool; Taj Mahal is unambiguous, no answer text.",
-    "notDocumentaryPhoto": true
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "White onion dome, central pointed arch, smaller pavilions and four separate minarets with reflecting pool.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
   }
 }

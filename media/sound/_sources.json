@@ -5118,5 +5118,53 @@
     "excerptStartSec": 26.5,
     "excerptLengthSec": 6.0,
     "sourceAcquisition": "downloaded-authorized-public-audio"
+  },
+  {
+    "file": "sound-400-902-r2.mp3",
+    "kind": "audio",
+    "provider": "freesound",
+    "title": "Calm ocean waves (مقتطف مقصوص ومعدّل المستوى)",
+    "sourceUrl": "https://freesound.org/people/SamsterBirdies/sounds/578524/",
+    "originalUrl": "https://cdn.freesound.org/previews/578/578524_5487341-hq.mp3",
+    "author": "SamsterBirdies",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change.",
+    "bytes": 121252,
+    "durationSec": 7.5,
+    "fetchedAt": "2026-09-25T03:53:10.872Z",
+    "sha256": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2"
+  },
+  {
+    "file": "sound-400-905-r2.mp3",
+    "kind": "audio",
+    "provider": "freesound",
+    "title": "Sneezing.wav (مقتطف مقصوص ومعدّل المستوى)",
+    "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
+    "originalUrl": "https://cdn.freesound.org/previews/464/464232_6114721-hq.mp3",
+    "author": "edschaefer",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change. Transient dynamic compression applied.",
+    "bytes": 20942,
+    "durationSec": 1.25,
+    "fetchedAt": "2026-09-25T03:53:11.213Z",
+    "sha256": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9"
+  },
+  {
+    "file": "sound-800-908-r2.mp3",
+    "kind": "audio",
+    "provider": "freesound",
+    "title": "Bowling.wav (مقتطف مقصوص ومعدّل المستوى)",
+    "sourceUrl": "https://freesound.org/people/Rehanjo/sounds/593593/",
+    "originalUrl": "https://cdn.freesound.org/previews/593/593593_12589944-hq.mp3",
+    "author": "Rehanjo",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change. Transient dynamic compression applied.",
+    "bytes": 43093,
+    "durationSec": 2.62,
+    "fetchedAt": "2026-09-25T03:53:12.318Z",
+    "sha256": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5"
   }
 ]

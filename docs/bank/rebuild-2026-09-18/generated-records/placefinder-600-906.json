@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-600-906",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-600-906.webp",
+  "asset": "media/placefinder/placefinder-600-906.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Angkor Wat in Cambodia: iconic west-facing view from across a reflecting pond, long low sandstone galleries and stepped central shrine with FIVE lotus-bud towers arranged in quincunx, central tower tallest, towers may partially overlap naturally in perspective but no invented extra spires. Weathered dark warm sandstone, broad reflection, tropical trees on sides, entire shrine complex centered and readable.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 253318,
+  "sha256": "213ee516667ca668e5dad3a471f8b8afe94a05ef91b58113f8dd590e37a9adb3",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Five principal lotus-like towers over low galleries and pond reflection; recognition illustration, not exact temple plan.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

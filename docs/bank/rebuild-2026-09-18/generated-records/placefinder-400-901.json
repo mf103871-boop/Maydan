@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-400-901",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-400-901.webp",
+  "asset": "media/placefinder/placefinder-400-901.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. The Colosseum in Rome, three-quarter elevated exterior view of the immense oval Roman amphitheatre: weathered pale travertine, repeated tiers of open rounded arches, high surviving curved outer wall at left and the recognizably broken lower outer arc to the right exposing inner concentric structure. Broad paved foreground, subdued Rome context. Correct elliptical arena; not a complete circular fantasy stadium.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 232542,
+  "sha256": "1637715dbf77228592354ca65c4aba06d319f20df9cb5b715cacae8f91c60d48",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Oval Roman amphitheatre, repeated stone arcades, high surviving wall and lower broken arc; recognizable Colosseum.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

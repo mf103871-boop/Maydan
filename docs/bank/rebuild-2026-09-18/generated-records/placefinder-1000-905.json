@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-1000-905",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-1000-905.webp",
+  "asset": "media/placefinder/placefinder-1000-905.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Nan Madol archaeological ruins on Pohnpei Micronesia: massive dark grey naturally polygonal columnar basalt logs stacked horizontally in alternating header-and-stretcher crisscross courses, forming thick rectangular roofless ceremonial enclosure walls rising beside a shallow tropical water canal. Distinctive large basalt-log corner masonry clearly visible, irregular coral rubble foundations, lush jungle and a few mangroves behind. Three-quarter medium-wide view; no smooth cut ashlar, no Mayan pyramid or wooden fort, no roof.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1152,
+  "height": 864,
+  "bytes": 228666,
+  "sha256": "596c2343ffe5082c93c30ee6681523d78754014c32cae0a688092417cb37ebdf",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Dark polygonal basalt logs in alternating masonry courses beside tropical canal; Nan Madol identity.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

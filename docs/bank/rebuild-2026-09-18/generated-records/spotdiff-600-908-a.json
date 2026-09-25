@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-600-908-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-600-908-a.webp",
+  "asset": "media/spotdiff/spotdiff-600-908-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A large flat paintbrush lies diagonally center-right on cream workbench, plain blue handle, silver ferrule, broad clean BLACK bristles at x=70 y=48, bristle block 17 percent image width. Closed plain red paint tin at far left, no labels, clean dry scene. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 75098,
+  "sha256": "53cdac817bd8a880cc35fe29728bfd502b97e91ed2eb8778ab3a998f9be7ff3b",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Brush bristles change black to white; ferrule, its rivets, blue handle and red paint tin remain.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-200-905-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-200-905-a.webp",
+  "asset": "media/spotdiff/spotdiff-200-905-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large simple RED cylindrical hand drum upright at center-right, cream skin head, tan wood rim, no lacing, on gray studio floor. A tan wooden mallet and closed plain blue instrument pouch lie at left. Drum fills 45 percent width. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 79160,
+  "sha256": "756650c9d71b49cac407ab60c8090fa5eaf8f3ab24ab36027a7126b5ed044457",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Drum shell changes red to green, cream skin and wooden rim retained; pouch and mallet same.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

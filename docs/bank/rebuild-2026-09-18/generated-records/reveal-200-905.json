@@ -13,7 +13,15 @@
   "sha256": "6f10f8c6e350aed0df875441e00a6fd5ec9768e032b2fad3c6f4ba2dcb103952",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "6f10f8c6e350aed0df875441e00a6fd5ec9768e032b2fad3c6f4ba2dcb103952",
+    "sourceUrl": "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show untidy swept hair and a broad moustache. The generated portrait adds much longer white hair, deeper facial lines and a black sweater; the Nobel reference has darker shorter hair and a formal collar.",
+    "limits": "The generated and reference views depict visibly different ages; older white-hair styling is not established by this one reference.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

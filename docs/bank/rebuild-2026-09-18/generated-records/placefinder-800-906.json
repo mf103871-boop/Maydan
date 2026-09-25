@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-800-906",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-800-906.webp",
+  "asset": "media/placefinder/placefinder-800-906.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Great Zimbabwe ruins in Zimbabwe: authentic Great Enclosure, view inside across short grass toward the massive dry-stone curved wall built of small regular grey-brown granite blocks with no mortar, famous solid tapering conical stone tower rising inside near the wall, clear curving narrow passage and weathered masonry. Subtle chevron stone pattern high on wall, no roofs or crenellations, no European castle. Full conical tower and sweeping enclosure visible.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 245290,
+  "sha256": "d96d01e99a4363823954f93ed4c324cdcae6c05fb021705aaaac403f6687f989",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Curved dry-stone granite enclosure, chevron pattern and tapering conical tower distinguish Great Zimbabwe.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

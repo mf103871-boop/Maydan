@@ -13,7 +13,15 @@
   "sha256": "a9ba39bff872beb1779e76f9f622b14474d586828cc12277b921e96cdcf25613",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "a9ba39bff872beb1779e76f9f622b14474d586828cc12277b921e96cdcf25613",
+    "sourceUrl": "https://www.obamalibrary.gov/obamas",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show close-cropped graying hair, prominent ears, clean-shaven cheeks and a dark suit. Generated image is frontal and smiling; official library photograph is an office telephone scene.",
+    "limits": null,
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

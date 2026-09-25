@@ -1,0 +1,4940 @@
+{
+  "id": "reveal",
+  "name": "إكشفني",
+  "icon": "🪟",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "من الذي تكشفه البلاطات؟",
+      "a": "جمال عبد الناصر",
+      "qid": "reveal-200-001",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "عبد الناصر"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-001.webp",
+        "type": "image",
+        "title": "President Gamal Abdel Nasser of Egypt in an official reception ceremony in Cairo Airport, 1969",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nasser_in_1969.jpg",
+        "author": "Not credited",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما اسم هذا الشخص؟",
+      "a": "ليوناردو دا فينشي",
+      "qid": "reveal-200-002",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "دافنشي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-002.webp",
+        "type": "image",
+        "title": "Self-portrait of Leonardo da Vinci.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_self.jpg",
+        "author": "Leonardo da Vinci",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "كم بلاطة تحتاجون لتعرفوه؟",
+      "a": "ألبرت أينشتاين",
+      "qid": "reveal-200-003",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "اينشتاين"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-003.webp",
+        "type": "image",
+        "title": "Albert Einstein during a lecture in Vienna in 1921",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
+        "author": "Ferdinand Schmutzer / Adam Cuerden",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من ينكشف بلاطة بعد بلاطة؟",
+      "a": "ويليام شكسبير",
+      "qid": "reveal-200-004",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "شكسبير"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-004.webp",
+        "type": "image",
+        "title": "This was long thought to be the only portrait of William Shakespeare that had any claim to have been painted from life,…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shakespeare.jpg",
+        "author": "Attributed to John Taylor",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذا الذي ينكشف؟",
+      "a": "ابن بطوطة",
+      "qid": "reveal-200-005",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-005.webp",
+        "type": "image",
+        "title": "Bust of Ibn Battuta at Ibn Battuta museum, Tangier, Morocco.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bust_of_Ibn_Battuta_at_Ibn_Battuta_museum.jpg",
+        "author": "Ideophagous",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "لمن هذه الملامح؟",
+      "a": "أرسطو",
+      "qid": "reveal-200-006",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-006.webp",
+        "type": "image",
+        "title": "Bust of Aristotle. Marble, Roman copy after a Greek bronze original by Lysippos from 330 BC; the alabaster mantle is a…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg",
+        "author": "After Lysippos",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من الذي في الصورة؟",
+      "a": "بيليه",
+      "qid": "reveal-200-007",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-007.webp",
+        "type": "image",
+        "title": "Pelé with Brazil.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pele_con_brasil_(cropped).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من في الصورة؟",
+      "a": "ابن سينا",
+      "qid": "reveal-200-008",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-008.webp",
+        "type": "image",
+        "title": "Avicenna Portrait on Silver Vase - Museum at BuAli Sina (Avicenna) Mausoleum - Hamadan - Western Iran",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Avicenna_Portrait_on_Silver_Vase_-_Museum_at_BuAli_Sina_(Avicenna)_Mausoleum_-_Hamadan_-_Western_Iran_(7423560860).jpg",
+        "author": "Adam Jones from Kelowna, BC, Canada",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذا؟",
+      "a": "أنور السادات",
+      "qid": "reveal-200-009",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "السادات"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-009.webp",
+        "type": "image",
+        "title": "Official Portrait of President Anwar El Sadat",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Official_Portrait_-_Anwar_Sadat.jpg",
+        "author": "Press",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذا الوجه المألوف؟",
+      "a": "فنسنت فان جوخ",
+      "qid": "reveal-200-010",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "فان كوخ"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-010.webp",
+        "type": "image",
+        "title": "Self-portrait - Vincent van Gogh",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Self-portrait_-_Vincent_van_Gogh.jpg",
+        "author": "Vincent van Gogh",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذا الشخص؟",
+      "a": "إسحاق نيوتن",
+      "qid": "reveal-200-011",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "نيوتن"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-011.webp",
+        "type": "image",
+        "title": "Portrait of Isaac Newton (1642-1727). This is a copy of a painting by Sir Godfrey Kneller (1689).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GodfreyKneller-IsaacNewton-1689.jpg",
+        "author": "James Thronill after Sir Godfrey Kneller",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "لمن هذه الصورة؟",
+      "a": "نجيب محفوظ",
+      "qid": "reveal-200-012",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-012.webp",
+        "type": "image",
+        "title": "Portrait photograph of Egyptian writer Naguib Mahfouz.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naguib_Mahfouz_HR.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من صاحب هذه الملامح؟",
+      "a": "كريستوفر كولومبوس",
+      "qid": "reveal-200-013",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "كولومبوس"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-013.webp",
+        "type": "image",
+        "title": "Christopher Columbus",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ridolfo_del_Ghirlandaio_-_Ritratto_di_Cristoforo_Colombo_(1520).jpg",
+        "author": "Ridolfo del Ghirlandaio",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من يكون هذا؟",
+      "a": "أفلاطون",
+      "qid": "reveal-200-014",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-014.webp",
+        "type": "image",
+        "title": "Platon",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Platon-_Samir_Terkih.jpg",
+        "author": "Terki hassaine samir",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من يختبئ خلف البلاطات؟",
+      "a": "دييغو مارادونا",
+      "qid": "reveal-200-015",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "مارادونا"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-015.webp",
+        "type": "image",
+        "title": "Players of Argentina celebrating at Estadio Azteca.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Argentina_celebrando_copa_(cropped).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "هل عرفتم من هذا؟",
+      "a": "الخوارزمي",
+      "qid": "reveal-200-016",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-016.webp",
+        "type": "image",
+        "title": "An imaginary portrait for Al-Khwarizmi derived from a soviet stamp.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Khwarizmi_portrait.jpg",
+        "author": "Michel Bakni",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذا يا ترى؟",
+      "a": "صلاح الدين الأيوبي",
+      "qid": "reveal-200-017",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "صلاح الدين"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-017.webp",
+        "type": "image",
+        "title": "صورة تخيلية لصلاح الدين الأيوبي",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saladin%27s_imaginary_portrait.jpg",
+        "author": "Michel Bakni",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من تعرفون في هذه الصورة؟",
+      "a": "بابلو بيكاسو",
+      "qid": "reveal-200-018",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بيكاسو"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-018.webp",
+        "type": "image",
+        "title": "Pablo Picasso 1969",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pablo_picasso_1.jpg",
+        "author": "Argentina. Revista Vea y Lea",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من صاحبة هذا الوجه؟",
+      "a": "ماري كوري",
+      "qid": "reveal-200-019",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-019.webp",
+        "type": "image",
+        "title": "Portrait of Maria Skłodowska-Curie (November 7, 1867 – July 4, 1934), sometime prior to 1907. Curie and her husband Pie…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mariecurie.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذا خلف البلاطات؟",
+      "a": "طه حسين",
+      "qid": "reveal-200-020",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-020.webp",
+        "type": "image",
+        "title": "w:en:Taha Hussein, Egyptian writer",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:TahaHussein.jpg",
+        "author": "Original uploader was Zerida at en.wikipedia (Original text: Zerida)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من صاحب هذه الصورة؟",
+      "a": "نيل أرمسترونغ",
+      "qid": "reveal-200-021",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ارمسترونج"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-021.webp",
+        "type": "image",
+        "title": "Portrait of Astronaut Neil A. Armstrong, commander of the Apollo 11 Lunar Landing mission in his space suit, with his h…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_pose.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "لمن هذا الوجه؟",
+      "a": "سقراط",
+      "qid": "reveal-200-022",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-022.webp",
+        "type": "image",
+        "title": "Portrait of Socrates. Marble, Roman artwork (1st century), perhaps a copy of a lost bronze statue made by Lysippos.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg",
+        "author": "Copy of Lysippos (?)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذا المطلّ من الصورة؟",
+      "a": "محمد علي كلاي",
+      "qid": "reveal-200-023",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "كاسيوس كلاي"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-023.webp",
+        "type": "image",
+        "title": "Bust photographic portrait of Muhammad Ali in 1967. World Journal Tribune photo by Ira Rosenberg.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muhammad_Ali_NYWTS.jpg",
+        "author": "Ira Rosenberg",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من ترون في الصورة؟",
+      "a": "ابن خلدون",
+      "qid": "reveal-200-024",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-024.webp",
+        "type": "image",
+        "title": "An imaginary sketch representing Muslim sociologist, philosopher and historian Abdulraḥmān ibn Khaldūn.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_Khald%C5%ABn,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من يظهر خلف البلاطات؟",
+      "a": "عمر المختار",
+      "qid": "reveal-200-025",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-025.webp",
+        "type": "image",
+        "title": "Omar Mukhtar",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Omar_Mukhtar_13.jpg",
+        "author": "Italian colonial administration of Libya [1]",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من صاحب هذا الوجه؟",
+      "a": "لودفيغ فان بيتهوفن",
+      "qid": "reveal-200-026",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بيتهوفن"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-026.webp",
+        "type": "image",
+        "title": "Beethoven with the manuscript of the Missa solemnis",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+        "author": "Joseph Karl Stieler",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما اسم من في الصورة؟",
+      "a": "توماس إديسون",
+      "qid": "reveal-200-027",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "اديسون"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-027.webp",
+        "type": "image",
+        "title": "\"Thomas Alva Edison, three-quarter length portrait, seated, facing front\". Photographic print.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Edison2.jpg",
+        "author": "Louis Bachrach, Bachrach Studios, restored by Michel Vuijlsteke",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "انظروا جيدًا: من في الصورة؟",
+      "a": "جبران خليل جبران",
+      "qid": "reveal-200-028",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "جبران"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-028.webp",
+        "type": "image",
+        "title": "جبران خليل جبران كما صُوِّر في العدد الأول من مجلة الفنون أبريل 1913",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kahlil_Gibran_1913.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بنصف الصورة فقط: من هذا الشخص؟",
+      "a": "يوري غاغارين",
+      "qid": "reveal-200-029",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "جاجارين"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-029.webp",
+        "type": "image",
+        "title": "Портрет первого в мире космонавта Юрия Гагарина.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yuri_Gagarin_portrait.png",
+        "author": "В. Жихаренко / ТАСС Обработка: Roman Kubanskiy",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بنصف الصورة فقط: من هذا؟",
+      "a": "سيغموند فرويد",
+      "qid": "reveal-200-030",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "فرويد"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-030.webp",
+        "type": "image",
+        "title": "Photographic portrait of Sigmund Freud, signed by the sitter (\"Prof. Sigmund Freud\")",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sigmund_Freud,_by_Max_Halberstadt_(cropped).jpg",
+        "author": "Max Halberstadt",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "لا تنتظروا كل البلاطات: من في الصورة؟",
+      "a": "مايكل جوردان",
+      "qid": "reveal-200-031",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-031.webp",
+        "type": "image",
+        "title": "Michael Jordan, former basketball star and majority owner of the Charlotte Bobcats, at the National Basketball Associat…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Jordan_in_2014.jpg",
+        "author": "DOD photo by D. Myles Cullen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بلاطة بعد بلاطة: من ترون في الصورة؟",
+      "a": "نابليون بونابرت",
+      "qid": "reveal-200-032",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "نابليون"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-032.webp",
+        "type": "image",
+        "title": "Painting of Napoleon Bonaparte by Jacques-Louis David, 1813",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Painting_of_Napoleon_Bonaparte_by_Jacques-Louis_David,_1813.jpg",
+        "author": "Jacques-Louis David",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تنتهي البلاطات: لمن هذا الوجه؟",
+      "a": "موتسارت",
+      "qid": "reveal-200-033",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "موزارت"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-033.webp",
+        "type": "image",
+        "title": "Family portrait: Maria Anna (\"Nannerl\"), Wolfgang, Anna Maria (medallion) and Leopold Mozart",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Mozart_Family_-_Wolfgang_Amadeus_Mozart_headshot.jpg",
+        "author": "Johann Nepomuk della Croce",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من أول بلاطة: من صاحب هذه الصورة؟",
+      "a": "غاليليو غاليلي",
+      "qid": "reveal-200-034",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "جاليليو"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-034.webp",
+        "type": "image",
+        "title": "Galileo Galilei (1564-1642) A half-length portrait, in old age, of the Italian mathematician, philosopher and astronome…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galileo_Galilei_(1564-1642)_RMG_BHC2700.tiff",
+        "author": "Justus Sustermans",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "شيئًا فشيئًا: من هذا الشخص؟",
+      "a": "محمود درويش",
+      "qid": "reveal-200-035",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-035.webp",
+        "type": "image",
+        "title": "الشاعر الفلسطيني محمود درويش في جامعة بيت لحم.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MahmoudDarwish.jpg",
+        "author": "Amer Shomali",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بنصف الصورة فقط: من صاحب هذه الملامح؟",
+      "a": "ونستون تشرشل",
+      "qid": "reveal-200-036",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "تشرشل"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-036.webp",
+        "type": "image",
+        "title": "Karsh called this picture \"The Roaring Lion\" at the Wayback Machine",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sir_Winston_Churchill_-_19086236948.jpg",
+        "author": "Yousuf Karsh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "لا تنتظروا كل البلاطات: من تعرفون في هذه الصورة؟",
+      "a": "تشارلي تشابلن",
+      "qid": "reveal-200-037",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "شارلي شابلن"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-037.webp",
+        "type": "image",
+        "title": "Portrait of Charles Chaplin.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charlie_Chaplin_portrait_Getty_1739411952.jpg",
+        "author": "Strauss-Peyton Studio",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تكتمل الصورة: من صاحب هذه الملامح؟",
+      "a": "تشارلز داروين",
+      "qid": "reveal-200-038",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "داروين"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-038.webp",
+        "type": "image",
+        "title": "Portrait of Charles Darwin by Herbert Rose Barraud (1845 - 1896) taken in 1881, thought to be the last photograph of Da…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charles_Darwin_portrait.jpg",
+        "author": "Herbert Rose Barraud",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "مع كل بلاطة تنكشف: ما اسم هذا الشخص؟",
+      "a": "أحمد شوقي",
+      "qid": "reveal-200-039",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-039.webp",
+        "type": "image",
+        "title": "A picture of the egyptian poet Ahmad Shawqy.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmad_shawqy.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بلاطة بعد بلاطة: من هذا؟",
+      "a": "أبراهام لينكون",
+      "qid": "reveal-200-040",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "لينكولن"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-040.webp",
+        "type": "image",
+        "title": "Scholars and enthusiasts alike believe this portrait of Abraham Lincoln, taken on November 8, 1863, eleven days before…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln_O-77_matte_collodion_print.jpg",
+        "author": "Alexander Gardner",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تنتهي البلاطات: من الذي في الصورة؟",
+      "a": "والت ديزني",
+      "qid": "reveal-200-041",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-041.webp",
+        "type": "image",
+        "title": "Portrait of Walt Disney, 1954 Here is a picture of Walter Disney cropped from a NASA photograph.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Walt_disney_portrait.jpg",
+        "author": "NASA",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تنتهي البلاطات: من هذا يا ترى؟",
+      "a": "نيكولا تسلا",
+      "qid": "reveal-200-042",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "تيسلا"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-042.webp",
+        "type": "image",
+        "title": "A photograph image of Nikola Tesla (1856-1943) at age 34.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg",
+        "author": "Napoleon Sarony",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بأقل عدد من البلاطات: من الذي في الصورة؟",
+      "a": "نزار قباني",
+      "qid": "reveal-200-043",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-043.webp",
+        "type": "image",
+        "title": "الشاعر السوري نزار قباني (1923 - 1998)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nizar_qabbani_01.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بأقل عدد من البلاطات: من ترون في الصورة؟",
+      "a": "جورج واشنطن",
+      "qid": "reveal-200-044",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-044.webp",
+        "type": "image",
+        "title": "Portrait of George Washington (1732–99)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg",
+        "author": "Gilbert Stuart",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذه في الصورة؟",
+      "a": "مارلين مونرو",
+      "qid": "reveal-200-045",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-045.webp",
+        "type": "image",
+        "title": "Photo of actress in a late 1953 issue of Modern Screen. A search revealed that this was taken for 1954 film River of No…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monroecirca1953.jpg",
+        "author": "Bert Parry",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تكتمل الصورة: من في الصورة؟",
+      "a": "أحمد زويل",
+      "qid": "reveal-200-046",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-046.webp",
+        "type": "image",
+        "title": "Photograph of Ahmed Zewail, with the Othmer Gold Medal, awarded 14 May 2009, at the Chemical Heritage Foundation.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmed_Zewail_HD2009_Othmer_Gold_Medal_portrait.JPG",
+        "author": "Douglas A. Lockard",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بسرعة: من صاحب هذه الملامح؟",
+      "a": "المهاتما غاندي",
+      "qid": "reveal-200-047",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "غاندي"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-047.webp",
+        "type": "image",
+        "title": "Studio photograph of Mahatma Gandhi ji, London, 1931.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahatma-Gandhi,_studio,_1931.jpg",
+        "author": "Elliott & Fry",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من هذه خلف البلاطات؟",
+      "a": "أم كلثوم",
+      "qid": "reveal-200-048",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-200-048.webp",
+        "type": "image",
+        "title": "Egyptian singer and actress Umm Kulthum in the 1947 film Fatimah",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Umm_Kulthum_as_Fatimah.jpg",
+        "author": "Production company",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "لا تنتظروا كل البلاطات: لمن هذه الملامح؟",
+      "a": "المتنبي",
+      "qid": "reveal-400-001",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-001.webp",
+        "type": "image",
+        "title": "رسم لِأبي الطيِّب المُتنبي بِريشة جُبران خليل جُبران.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Mutanabbi_by_Kahlil_Gibran.png",
+        "author": "Kahlil Gibran",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "دون تردد: من هذا الوجه المألوف؟",
+      "a": "جون كينيدي",
+      "qid": "reveal-400-002",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "كنيدي"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-002.webp",
+        "type": "image",
+        "title": "John F. Kennedy, photograph in the Oval Office.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_F._Kennedy,_White_House_color_photo_portrait.jpg",
+        "author": "Cecil W. Stoughton",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تكتمل الصورة: من تعرفون في هذه الصورة؟",
+      "a": "يوهان سباستيان باخ",
+      "qid": "reveal-400-003",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "باخ"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-003.webp",
+        "type": "image",
+        "title": "Johann Sebastian Bach (aged 61) in a portrait by Elias Gottlob Haussmann, second version of his 1746 canvas. Bach is ho…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johann_Sebastian_Bach.jpg",
+        "author": "Elias Gottlob Haussmann",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "انظروا جيدًا: ما اسم هذا الشخص؟",
+      "a": "ابن الهيثم",
+      "qid": "reveal-400-004",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الحسن بن الهيثم"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-004.webp",
+        "type": "image",
+        "title": "An imaginary drawing by Ibn Al-Haytham.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_Al-Haytham_portrait.jpg",
+        "author": "Michel Bakni",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بنصف الصورة فقط: من هذا الوجه المألوف؟",
+      "a": "ألكسندر غراهام بيل",
+      "qid": "reveal-400-005",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "جراهام بيل"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-005.webp",
+        "type": "image",
+        "title": "Portrait of Alexander Graham Bell",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexander_Graham_Bell.jpg",
+        "author": "Moffett Studio",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بنصف الصورة فقط: من في الصورة؟",
+      "a": "ماركو بولو",
+      "qid": "reveal-400-006",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-006.webp",
+        "type": "image",
+        "title": "Marco Polo portrait",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marco_Polo_portrait.jpg",
+        "author": "[1], but also many other copies online.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل آخر بلاطة: لمن هذه الملامح؟",
+      "a": "يوهان كرويف",
+      "qid": "reveal-400-007",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "كرويف"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-007.webp",
+        "type": "image",
+        "title": "Koppen Nederlandse voetballers; Johan Cruyff 30 april 1974",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johan_Cruijff_(1974).jpg",
+        "author": "Rob Mieremet / Anefo",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بلاطة بعد بلاطة: هل عرفتم من هذا؟",
+      "a": "كارل ماركس",
+      "qid": "reveal-400-008",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ماركس"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-008.webp",
+        "type": "image",
+        "title": "Portrait photograph of Karl Marx.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Karl_Marx_by_John_Jabez_Edwin_Mayall_1875_-_Restored.png",
+        "author": "John Jabez Edwin Mayall",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تنتهي البلاطات: من هذا؟",
+      "a": "توفيق الحكيم",
+      "qid": "reveal-400-009",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-009.webp",
+        "type": "image",
+        "title": "Tawfik el-Hakim (October 9, 1898 – July 26, 1987) was a prominent Egyptian writer and visionary.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tawfiq_al-Hakim.jpg",
+        "author": "alriyadh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تنتهي البلاطات: ما اسم هذا الشخص؟",
+      "a": "فرانكلين روزفلت",
+      "qid": "reveal-400-010",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "روزفلت"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-010.webp",
+        "type": "image",
+        "title": "Original color transparency of FDR taken at 1944 Official Campaign Portrait session by Leon A. Perskie, Hyde Park, New…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:FDR_1944_Color_Portrait.jpg",
+        "author": "Leon Perskie",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بسرعة: من صاحب هذه الصورة؟",
+      "a": "فريدريك شوبان",
+      "qid": "reveal-400-011",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "شوبان"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-011.webp",
+        "type": "image",
+        "title": "The younger and better of only two known photographs of Frédéric Chopin. This is from 1849, the older from 1847 you fin…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frederic_Chopin_photo.jpeg",
+        "author": "Louis-Auguste Bisson",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بأقل عدد من البلاطات: لمن هذا الوجه؟",
+      "a": "ابن رشد",
+      "qid": "reveal-400-012",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-012.webp",
+        "type": "image",
+        "title": "Estatua de Averroes (Ibn Rushd) en Córdoba Statue of Averroes (Ibn Rushd) in Córdoba, Spain, Averroes was an Islamic th…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Averroes_in_C%C3%B3rdoba,_Spain.jpg",
+        "author": "Saleemzohaib",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "شيئًا فشيئًا: من ترون في الصورة؟",
+      "a": "لويس باستور",
+      "qid": "reveal-400-013",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "باستير"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-013.webp",
+        "type": "image",
+        "title": "French biologist Louis Pasteur (1822-1895), 1878 (detail).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louis_Pasteur.jpg",
+        "author": "Paul Nadar",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "مع كل بلاطة تنكشف: من صاحب هذه الملامح؟",
+      "a": "فرديناند ماجلان",
+      "qid": "reveal-400-014",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ماجلان"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-014.webp",
+        "type": "image",
+        "title": "Portrait of the Portuguese soldier and navigator Fernando de Magallanes (1480-1521). This portrait is a cut-out variant…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Retrato_de_Hernando_de_Magallanes.jpg",
+        "author": "Unknown artistUnknown artist",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بنصف الصورة فقط: من صاحب هذا الوجه؟",
+      "a": "فرانتس بكنباور",
+      "qid": "reveal-400-015",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بكنباور"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-015.webp",
+        "type": "image",
+        "title": "Franz Beckenbauer (1975), 'Calciatori 1975 - 1976', Panini figurina n°619.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franz_Beckenbauer_(1975).jpg",
+        "author": "Panini Group",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "دون تردد: من في الصورة؟",
+      "a": "عباس محمود العقاد",
+      "qid": "reveal-400-016",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "العقاد"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-016.webp",
+        "type": "image",
+        "title": "Egyptian writer and poet Abbās Mahmūd al-Aqqād in his youth.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abbas_Mahmud_al-Aqqad.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما اسم هذه الشخصية؟",
+      "a": "مارغريت تاتشر",
+      "qid": "reveal-400-017",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "تاتشر"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-017.webp",
+        "type": "image",
+        "title": "Prime Minister Thatcherlabel QS:Len,\"Prime Minister Thatcher\"label QS:Lnl,\"Premier Thatcher\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margaret_Thatcher_(1983).jpg",
+        "author": "Rob Bogaerts",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بنصف الصورة فقط: هل عرفتم من هذا؟",
+      "a": "تشايكوفسكي",
+      "qid": "reveal-400-018",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-018.webp",
+        "type": "image",
+        "title": "Cabinet card portrait of Pyotr Ilyich Tchaikovsky",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tchaikovsky_by_Reutlinger_(cropped).jpg",
+        "author": "Émile Reutlinger",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "والصورة تنكشف: لمن هذه الملامح؟",
+      "a": "أبو بكر الرازي",
+      "qid": "reveal-400-019",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الرازي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-019.webp",
+        "type": "image",
+        "title": "Portrait of Rhazes (al-Razi) (AD 865 - 925), physician and alchemist who lived in Baghdad Wellcome Images Keywords: Rha…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Rhazes_(al-Razi)_(AD_865_-_925)_Wellcome_L0005053_(cropped).jpg",
+        "author": "https://wellcomeimages.org/indexplus/obf_images/40/fd/f7548c12356bc6802be29b9a5fba.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0005053.html Wellcome Collection gallery (2018-04-01): https://wellcomecollection.org/works/vv9w9wg4 CC-BY-4.0",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بلاطة بعد بلاطة: ما اسم من في الصورة؟",
+      "a": "ألكسندر فلمنغ",
+      "qid": "reveal-400-020",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "فليمنج"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-020.webp",
+        "type": "image",
+        "title": "Synthetic Production of Penicillin Professor Alexander Fleming, holder of the Chair of Bacteriology at London Universit…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Synthetic_Production_of_Penicillin_TR1468.jpg",
+        "author": "Official photographer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "لا تنتظروا كل البلاطات: ما اسم من في الصورة؟",
+      "a": "فاسكو دا غاما",
+      "qid": "reveal-400-021",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-021.webp",
+        "type": "image",
+        "title": "Vasco da Gama, anonymous portrait, c. 1525",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ignoto_portoghese,_ritratto_di_un_cavaliere_dell%27ordine_di_cristo,_1525-50_ca._02.jpg",
+        "author": "Sailko",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من هذه المطلّة من الصورة؟",
+      "a": "نادية كومانيتشي",
+      "qid": "reveal-400-022",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-022.webp",
+        "type": "image",
+        "title": "Nadia Comăneci at Sports Festival 2026, Cluj-Napoca, Romania",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nadia_Com%C4%83neci_at_Sports_Festival_2026.jpg",
+        "author": "Nuță Lucian",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "مع كل بلاطة تنكشف: من في الصورة؟",
+      "a": "يوسف إدريس",
+      "qid": "reveal-400-023",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-023.webp",
+        "type": "image",
+        "title": "L'écrivain égyptien Youssef Idriss",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Youssef_idriss.jpg",
+        "author": "Note: In Germany and possibly other countries, certain anonymous works published before July 1, 1995 are copyrighted until 70 years after the death of the author. See Übergangsrecht. Please use this template only if the author never claimed authorship or their authorship never became public in any other way. If the work is anonymous or pseudonymous (e.g., published only under a corporate or organization's name), use this template for images published more than 70 years ago. For a work made available to the public in the United Kingdom, please use Template:PD-UK-unknown instead.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بأقل عدد من البلاطات: من صاحب هذا الوجه؟",
+      "a": "فلاديمير لينين",
+      "qid": "reveal-400-024",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "لينين"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-024.webp",
+        "type": "image",
+        "title": "Vladimir Lenin.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vladimir_Lenin_in_July_1920_by_Pavel_Zhukov.jpg",
+        "author": "Pavel Zhukov",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "والصورة تنكشف: من الذي في الصورة؟",
+      "a": "أنطونيو فيفالدي",
+      "qid": "reveal-400-025",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "فيفالدي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-025.webp",
+        "type": "image",
+        "title": "\"An anonymous portrait in oils in the Museo Internazionale e Biblioteca della Musica di Bologna is generally believed t…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vivaldi.jpg",
+        "author": "Unidentified painter",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "لا تنتظروا كل البلاطات: من ترون في الصورة؟",
+      "a": "الفارابي",
+      "qid": "reveal-400-026",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-026.webp",
+        "type": "image",
+        "title": "صورة قديمة للفارابي",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%B5%D9%88%D8%B1%D8%A9_%D9%82%D8%AF%D9%8A%D9%85%D8%A9_%D9%84%D9%84%D9%81%D8%A7%D8%B1%D8%A7%D8%A8%D9%8A.jpg",
+        "author": "Michel Bakni",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من أول بلاطة: من يكون هذا؟",
+      "a": "ديمتري مندلييف",
+      "qid": "reveal-400-027",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "مندليف"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-027.webp",
+        "type": "image",
+        "title": "Portrait of Dmitry Ivanovich Mendeleev wearing the Edinburgh University professor robe. Watercolour on paper. 57.5 × 46…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Medeleeff_by_repin.jpg",
+        "author": "Ilya Repin",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من هذه الشخصية؟",
+      "a": "أميليا إيرهارت",
+      "qid": "reveal-400-028",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-028.webp",
+        "type": "image",
+        "title": "Portrait of American aviation pioneer Amelia Earhart.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Earhart.jpg",
+        "author": "Copyright by Underwood and Underwood (not renewed)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بسرعة: لمن هذه الملامح؟",
+      "a": "جيسي أوينز",
+      "qid": "reveal-400-029",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-029.webp",
+        "type": "image",
+        "title": "Photo of Jesse Owens in 1936.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jesse_Owens_1936.jpg",
+        "author": "Acme News Photos",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تنتهي البلاطات: من يكون هذا؟",
+      "a": "الطيب صالح",
+      "qid": "reveal-400-030",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-030.webp",
+        "type": "image",
+        "title": "An Image of the late Sudanese Novelist Tayeb Saleh",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tayeb_saleh.jpg",
+        "author": "Engfrompalestine",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "شيئًا فشيئًا: من الذي في الصورة؟",
+      "a": "ماو تسي تونغ",
+      "qid": "reveal-400-031",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ماو"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-031.webp",
+        "type": "image",
+        "title": "This is an official portrait of Mao Tse-Tung (aka Mao Zedong), chairman of the Chinese Communist Party, taken on Novemb…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mao_Tse_Tung.jpg",
+        "author": "Chen Zhengqing (1917–1966)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "انظروا جيدًا: من صاحب هذا الوجه؟",
+      "a": "مايكل أنجلو",
+      "qid": "reveal-400-032",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ميكيلانجيلو"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-032.webp",
+        "type": "image",
+        "title": "Michelangelo Buonarroti (1475–1564) title QS:P1476,en:\"Michelangelo Buonarroti (1475–1564) \"label QS:Len,\"Michelangelo…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michelangelo_Daniele_da_Volterra_(dettaglio).jpg",
+        "author": "Attributed to Daniele da Volterra",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "مع كل بلاطة تنكشف: من ترون في الصورة؟",
+      "a": "البيروني",
+      "qid": "reveal-400-033",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-033.webp",
+        "type": "image",
+        "title": "USSR stamp, Abū Rayhān al-Bīrūnī, 6 copecks, 1973.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Biruni-russian.jpg",
+        "author": "The original uploader was Romanm at Slovenian Wikipedia.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بنصف الصورة فقط: من تعرفون في هذه الصورة؟",
+      "a": "آلان تورينغ",
+      "qid": "reveal-400-034",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "تورنج"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-034.webp",
+        "type": "image",
+        "title": "Photograph portrait of Alan Turing, taken on 29 March 1951.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alan_Turing_(1951)_(crop).jpg",
+        "author": "Elliott & Fry",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بأقل عدد من البلاطات: من تعرفون في هذه الصورة؟",
+      "a": "ليو تولستوي",
+      "qid": "reveal-400-035",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "تولستوي"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-035.webp",
+        "type": "image",
+        "title": "\"Lev Tolstoy in Yasnaya Polyana\", 1908, the first color photo portrait in Russia.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leo_Tolstoy_1908_Portrait_(3x4_cropped).jpg",
+        "author": "Sergei Prokudin-Gorskii",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "والصورة تنكشف: من هذا؟",
+      "a": "يوليوس قيصر",
+      "qid": "reveal-400-036",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-036.webp",
+        "type": "image",
+        "title": "Portrait of Julius Caesar",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Retrato_de_Julio_C%C3%A9sar_(26724093101)_(cropped).jpg",
+        "author": "Ángel M. Felicísimo from Mérida, España",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بأقل عدد من البلاطات: ما اسم من في الصورة؟",
+      "a": "كلود مونيه",
+      "qid": "reveal-400-037",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "مونيه"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-037.webp",
+        "type": "image",
+        "title": "Portrait photograph of the French impressionist painter Claude Monet by Nadar",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Monet_1899_Nadar_crop.jpg",
+        "author": "Nadar",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بسرعة: ما اسم هذا الشخص؟",
+      "a": "جابر بن حيان",
+      "qid": "reveal-400-038",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-038.webp",
+        "type": "image",
+        "title": "An imaginary sketch representing Muslim chemist Jābir ibn Ḥayyān.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:J%C4%81bir_ibn_%E1%B8%A4ayy%C4%81n,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بنصف الصورة فقط: ما اسم هذا الشخص؟",
+      "a": "فيودور دوستويفسكي",
+      "qid": "reveal-400-039",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "دوستويفسكي"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-039.webp",
+        "type": "image",
+        "title": "لوحة شخصيّة لِدوستويفسكي بريشة ڤاسيلي پيروف عام 1872.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg",
+        "author": "Vasily Perov",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "هل عرفتم من هذه؟",
+      "a": "الملكة فيكتوريا",
+      "qid": "reveal-400-040",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-040.webp",
+        "type": "image",
+        "title": "Queen Victoria, 1819–1901, by Bassano, 1882. Glass copy negative, half-plate.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Queen_Victoria_by_Bassano.jpg",
+        "author": "Alexander Bassano",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بأقل عدد من البلاطات: من هذا الشخص؟",
+      "a": "سلفادور دالي",
+      "qid": "reveal-400-041",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "دالي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-041.webp",
+        "type": "image",
+        "title": "Salvador Dalí 1939",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salvador_Dal%C3%AD_1939.jpg",
+        "author": "Van Vechten, Carl, 1880-1964.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بلاطة بعد بلاطة: من يكون هذا؟",
+      "a": "عمر الخيام",
+      "qid": "reveal-400-042",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الخيام"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-042.webp",
+        "type": "image",
+        "title": "Omar Khayyam Photo scannée par Utilisateur:Atilin depuis la source soviétique sans droits d'auteur. auteur du dessin :…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Omar_Khayyam2.JPG",
+        "author": "The original uploader was Atilin at French Wikipedia.",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "انظروا جيدًا: من هذا؟",
+      "a": "أنطون تشيخوف",
+      "qid": "reveal-400-043",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "تشيخوف"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-043.webp",
+        "type": "image",
+        "title": "Anton Pavlovich Chekov (1860-1904)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anton_Chekhov_1889.jpg",
+        "author": "V. Chekhovskii, Moscow",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من هذه التي تنكشف؟",
+      "a": "جان دارك",
+      "qid": "reveal-400-044",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-044.webp",
+        "type": "image",
+        "title": "Joan of Arc depicted in an historiated initial. Miniature probably produced in the late 19th century by an anonymous ar…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joan_of_Arc_miniature_graded.jpg",
+        "author": "Derived from original commons upload at which is now in the history version: 01:39, 13. 8. 2005 Colour-graded to reveal more detail using GIMP software \"curves\" tool",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "كم بلاطة تحتاجون لتعرفوها؟",
+      "a": "فريدا كاهلو",
+      "qid": "reveal-400-045",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-045.webp",
+        "type": "image",
+        "title": "Frida Kahlo (gelatin silver print, 15.2 by 10.8 cm)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frida_Kahlo,_by_Guillermo_Kahlo_(cropped).jpg",
+        "author": "Guillermo Kahlo",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بلاطة بعد بلاطة: ما اسم هذا الشخص؟",
+      "a": "جلال الدين الرومي",
+      "qid": "reveal-400-046",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "مولانا الرومي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-046.webp",
+        "type": "image",
+        "title": "مولانا",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D9%85%D9%88%D9%84%D8%A7%D9%86%D8%A7_%D8%A7%D8%AB%D8%B1_%D8%AD%D8%B3%DB%8C%D9%86_%D8%A8%D9%87%D8%B2%D8%A7%D8%AF_(cropped).jpg",
+        "author": "Hossein Behzad",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تكتمل الصورة: من صاحب هذا الوجه؟",
+      "a": "تشارلز ديكنز",
+      "qid": "reveal-400-047",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ديكنز"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-047.webp",
+        "type": "image",
+        "title": "Charles Dickens (1812-1870)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dickens_Gurney_head.jpg",
+        "author": "Jeremiah Gurney",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بلاطة بعد بلاطة: من هذا الشخص؟",
+      "a": "محمد علي باشا",
+      "qid": "reveal-400-048",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-400-048.webp",
+        "type": "image",
+        "title": "Mısır Valisi, Kavalalı Mehmet Ali Paşa .",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ModernEgypt,_Muhammad_Ali_by_Auguste_Couder,_BAP_17996.jpg",
+        "author": "Auguste Couder",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "شيئًا فشيئًا: من تعرفون في هذه الصورة؟",
+      "a": "مجدي يعقوب",
+      "qid": "reveal-600-001",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-001.webp",
+        "type": "image",
+        "title": "Sir Magdi Yacoub, FRS , is Professor of Cardiothoracic Surgery at Imperial College London.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:M_Yacoub.JPG",
+        "author": "Raafat",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بأقل عدد من البلاطات: ما اسم هذا الشخص؟",
+      "a": "أبو العلاء المعري",
+      "qid": "reveal-600-002",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "المعري"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-002.webp",
+        "type": "image",
+        "title": "رسم لِأبي العلاء المعرِّي بِريشة جُبران خليل جُبران.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Ma%CA%BFarri_by_Khalil_Gibran_(cropped).png",
+        "author": "Kahlil Gibran",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "لا تنتظروا كل البلاطات: من هذا الوجه المألوف؟",
+      "a": "إدوارد سعيد",
+      "qid": "reveal-600-003",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-003.webp",
+        "type": "image",
+        "title": "The picture shows a meeting of Edward Said and Daniel Barenboim in Sevilla in 2002",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edward_Said_and_Daniel_Barenboim_in_Sevilla,_2002_(Said).jpg",
+        "author": "Barenboim-Said Akademie gGmbH",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بنصف الصورة فقط: من الذي في الصورة؟",
+      "a": "رامبرانت",
+      "qid": "reveal-600-004",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-004.webp",
+        "type": "image",
+        "title": "Self-portrait.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn_-_Self-Portrait_(1659).jpg",
+        "author": "Rembrandt",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل آخر بلاطة: ما اسم من في الصورة؟",
+      "a": "الجاحظ",
+      "qid": "reveal-600-005",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-005.webp",
+        "type": "image",
+        "title": "An imaginary sketch representing Muslim polymath Abū ʿUthman ʿAmr ibn Baḥr, known as Al-Jāḥiẓ.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-J%C4%81%E1%B8%A5i%E1%BA%93,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من صاحبة هذه الملامح؟",
+      "a": "هدى شعراوي",
+      "qid": "reveal-600-006",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-006.webp",
+        "type": "image",
+        "title": "en:Hoda Shaarawi",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huda_Shaarawy.gif",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "والصورة تنكشف: ما اسم من في الصورة؟",
+      "a": "روالد أموندسن",
+      "qid": "reveal-600-007",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "أموندسن"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-007.webp",
+        "type": "image",
+        "title": "Roald Amundsen (1872-1928) in fur",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amundsen_in_fur_skins.jpg",
+        "author": "AnonymousUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "انظروا جيدًا: من صاحب هذه الملامح؟",
+      "a": "ليف ياشين",
+      "qid": "reveal-600-008",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ياشين"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-008.webp",
+        "type": "image",
+        "title": "Lev Yashin",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:LevYashin.JPG",
+        "author": "Kroon, Ron for Anefo",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "والصورة تنكشف: من تعرفون في هذه الصورة؟",
+      "a": "فاروق الباز",
+      "qid": "reveal-600-009",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-009.webp",
+        "type": "image",
+        "title": "Farooq El-Baaz at KFAS.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:F_Al-Baz.jpg",
+        "author": "Ahmad Shahin",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بنصف الصورة فقط: لمن هذا الوجه؟",
+      "a": "الفردوسي",
+      "qid": "reveal-600-010",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-010.webp",
+        "type": "image",
+        "title": "Imaginary depiction of the poet Firdausi. Folio from a Khavarannama (The Book of the East) of ibn Husam al-Din, 1476-14…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imaginary_depiction_of_the_poet_Firdausi._Folio_from_a_Khavarannama_(The_Book_of_the_East)_of_ibn_Husam_al-Din,_1476-1486_(cropped).jpg",
+        "author": "ca. 1476–86 artist",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "والصورة تنكشف: من هذا الشخص؟",
+      "a": "قاسم أمين",
+      "qid": "reveal-600-011",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-011.webp",
+        "type": "image",
+        "title": "Qasim Amin, The Egyptian jurist and one of the founders of the Egyptian national movement and Cairo University.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qasim_Amin.jpg",
+        "author": "not mentioned",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل أن تكتمل الصورة: لمن هذه الصورة؟",
+      "a": "غوستاف كليمت",
+      "qid": "reveal-600-012",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "كليمت"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-012.webp",
+        "type": "image",
+        "title": "Photographic portrait of Gustav Klimt",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Klimt.jpg",
+        "author": "Josef Anton Trčka",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "شيئًا فشيئًا: ما اسم من في الصورة؟",
+      "a": "الشريف الرضي",
+      "qid": "reveal-600-013",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الرضي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-013.webp",
+        "type": "image",
+        "title": "Sayed razi holy shrine",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sayed_razi_shrine.jpg",
+        "author": "Handsome1985",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بنصف الصورة فقط: من هذا المطلّ من الصورة؟",
+      "a": "بطرس الأكبر",
+      "qid": "reveal-600-014",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-014.webp",
+        "type": "image",
+        "title": "Russian: «Портрет Петра I (1672–1725)»Portrait of Peter I (1672–1725)title QS:P1476,ru:\"Портрет Петра I (1672–1725)\"lab…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inconnu_d%27apr%C3%A8s_J.-M._Nattier,_Portrait_de_Pierre_Ier_(mus%C3%A9e_de_l%E2%80%99Ermitage).jpg",
+        "author": "Attributed to Jean-Marc Nattier",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "شيئًا فشيئًا: من هذا المطلّ من الصورة؟",
+      "a": "جيمس كوك",
+      "qid": "reveal-600-015",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الكابتن كوك"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-015.webp",
+        "type": "image",
+        "title": "Official portrait of Captain James Cook",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Captainjamescookportrait.jpg",
+        "author": "Nathaniel Dance-Holland",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بسرعة: من في الصورة؟",
+      "a": "ألفريدو دي ستيفانو",
+      "qid": "reveal-600-016",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "دي ستيفانو"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-016.webp",
+        "type": "image",
+        "title": "Alfredo Di Stéfano with the Argentina national team.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Di_stefano_argentina_(cropped).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بنصف الصورة فقط: من يكون هذا؟",
+      "a": "علي مصطفى مشرفة",
+      "qid": "reveal-600-017",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "مشرفة"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-017.webp",
+        "type": "image",
+        "title": "This is a photo of Ali Moustafa Mosharafa, a famous Egyptian Scientist, shown on the back of the cover of one of his bo…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ali_Mosharrafa.jpg",
+        "author": "Own Scan by User",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "شيئًا فشيئًا: لمن هذا الوجه؟",
+      "a": "سعدي الشيرازي",
+      "qid": "reveal-600-018",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "السعدي"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-018.webp",
+        "type": "image",
+        "title": "سعدی",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saadi_by_Hossein_Behzad_(1894%E2%80%931968)_(Inverted).jpg",
+        "author": "Hossein Behzad",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "والصورة تنكشف: من صاحب هذه الملامح؟",
+      "a": "رفاعة الطهطاوي",
+      "qid": "reveal-600-019",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الطهطاوي"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-019.webp",
+        "type": "image",
+        "title": "en:Rifa'a el-Tahtawi (1801-1873), Egyptian renaissance intellectual",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tahtawi.jpg",
+        "author": "The original uploader was Zerida at English Wikipedia.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بسرعة: من هذا؟",
+      "a": "إدفارد مونك",
+      "qid": "reveal-600-020",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "مونك"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-020.webp",
+        "type": "image",
+        "title": "Portrait of Edvard Munch (1863-1944) c. 1889. National Library of Norway",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Edvard_Munch_(cropped).png",
+        "author": "Unknown authorUnknown author",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من أول بلاطة: من هذا الشخص؟",
+      "a": "ابن عربي",
+      "qid": "reveal-600-021",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-021.webp",
+        "type": "image",
+        "title": "Image of unknown source or nature titled \"Ibn Arabi\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_Arabi.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من تكون هذه؟",
+      "a": "كاترين العظيمة",
+      "qid": "reveal-600-022",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "كاترين الثانية"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-022.webp",
+        "type": "image",
+        "title": "Portrait of Catherine II, Empress of Russia. Bust facing right. On her head a diamond tiara.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Catherine_II_by_V.Eriksen_(1782,_Rijksmuseum,_Amsterdam).jpg",
+        "author": "Vigilius Eriksen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من أول بلاطة: من ترون في الصورة؟",
+      "a": "ديفيد ليفينغستون",
+      "qid": "reveal-600-023",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ليفينجستون"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-023.webp",
+        "type": "image",
+        "title": "\"David Livingstone, 1813 - 1873. Missionary and explorer\", a carbon print of a photograph by Thomas Annan, 36.90 x 30.2…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_Livingstone_by_Thomas_Annan.jpg",
+        "author": "Thomas Annan / Adam Cuerden",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بأقل عدد من البلاطات: من صاحب هذه الملامح؟",
+      "a": "نيلز بور",
+      "qid": "reveal-600-024",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-024.webp",
+        "type": "image",
+        "title": "Niels Bohr, physicist.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Niels_Bohr.jpg",
+        "author": "The American Institute of Physics credits the photo [1] to AB Lagrelius & Westphal, which is the Swedish company used by the Nobel Foundation for most photos of its book series Les Prix Nobel.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "والصورة تنكشف: هل عرفتم من هذا؟",
+      "a": "حافظ الشيرازي",
+      "qid": "reveal-600-025",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-025.webp",
+        "type": "image",
+        "title": "An imaginary sketch representing Persian poet Ḥāfeẓ Al-Shīrāzī.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E1%B8%A4%C4%81fe%E1%BA%93_Al-Sh%C4%ABr%C4%81z%C4%AB,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بلاطة بعد بلاطة: من صاحب هذه الصورة؟",
+      "a": "جمال الدين الأفغاني",
+      "qid": "reveal-600-026",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الأفغاني"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-026.webp",
+        "type": "image",
+        "title": "Dschamal ad-Din al-Afghani",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al_afghani.jpg",
+        "author": "Yacquub cAbd al-cAziiz Abul Ala Maududi",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "انظروا جيدًا: لمن هذه الملامح؟",
+      "a": "أوغست رودان",
+      "qid": "reveal-600-027",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "رودان"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-027.webp",
+        "type": "image",
+        "title": "Auguste Rodin by George Charles Beresford, half-plate glass negative, 1902",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Auguste_Rodin_by_George_Charles_Beresford_(NPG_x6573).jpg",
+        "author": "George Charles Beresford",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "دون تردد: من يكون هذا؟",
+      "a": "أبو القاسم الزهراوي",
+      "qid": "reveal-600-028",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الزهراوي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-028.webp",
+        "type": "image",
+        "title": "An imaginary drawing for Al-Zahrawi derived from Syrian postage issued in 1964.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Zahrawi_Portrait.jpg",
+        "author": "Michel Bakni",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "مع كل بلاطة تنكشف: من هذا الوجه المألوف؟",
+      "a": "سليمان القانوني",
+      "qid": "reveal-600-029",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-029.webp",
+        "type": "image",
+        "title": "Kanuni Sultan Suleiman, or Suleiman the Magnificent.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kanuni_Sultan_Suleiman_Han_-_%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D9%86_%D8%A7%D9%84%D8%BA%D8%A7%D8%B2%D9%8A_%D8%B3%D9%84%D9%8A%D9%85%D8%A7%D9%86_%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A.jpg",
+        "author": "Konstantin Kapıdağlı",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل آخر بلاطة: من هذا الشخص؟",
+      "a": "ماكس بلانك",
+      "qid": "reveal-600-030",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-030.webp",
+        "type": "image",
+        "title": "Max Planck from wp-de and http://clendening.kumc.edu/dc/: It is not necessary to request permission to use any ofa the…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Max_Planck.png",
+        "author": "Courtesy of the Clendening History of Medicine Library, University of Kansas Medical Center.",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بسرعة: هل عرفتم من هذا؟",
+      "a": "عنترة بن شداد",
+      "qid": "reveal-600-031",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "عنترة"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-031.webp",
+        "type": "image",
+        "title": "Antarah ibn Shaddad, old manuscript",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antarah_on_horse.jpg",
+        "author": "form arabic folklore",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "لا تنتظروا كل البلاطات: من هذا الشخص؟",
+      "a": "محمد عبده",
+      "qid": "reveal-600-032",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الشيخ محمد عبده"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-032.webp",
+        "type": "image",
+        "title": "The late Grand Moufti",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_late_Grand_Moufti.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "مع كل بلاطة تنكشف: من الذي في الصورة؟",
+      "a": "بيير أوغست رينوار",
+      "qid": "reveal-600-033",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "رينوار"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-033.webp",
+        "type": "image",
+        "title": "PARenoir",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:PARenoir.jpg",
+        "author": "مؤلف غير معروف",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "والصورة تنكشف: من هذا الوجه المألوف؟",
+      "a": "ابن النفيس",
+      "qid": "reveal-600-034",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-034.webp",
+        "type": "image",
+        "title": "Photograph of statue of Ibn Al Nafis",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_Al_Nafis_statue.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من أول بلاطة: لمن هذا الوجه؟",
+      "a": "سيمون بوليفار",
+      "qid": "reveal-600-035",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بوليفار"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-035.webp",
+        "type": "image",
+        "title": "Posthumous portrait of Simón Bolívar by Colombian painter Ricardo Acevedo Bernal, 1922.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sim%C3%B3n_Bol%C3%ADvar_by_Acevedo_Bernal,_1922.jpg",
+        "author": "Ricardo Acevedo Bernal",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "شيئًا فشيئًا: لمن هذه الصورة؟",
+      "a": "إرفين شرودنغر",
+      "qid": "reveal-600-036",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "شرودنجر"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-036.webp",
+        "type": "image",
+        "title": "Le physicien, philosophe et théoricien scientifique autrichien Erwin Schrödinger en 1933.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erwin_Schr%C3%B6dinger_-_Narodowe_Archiwum_Cyfrowe_(1-E-939).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من صاحبة هذه الصورة؟",
+      "a": "الخنساء",
+      "qid": "reveal-600-037",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-037.webp",
+        "type": "image",
+        "title": "رسم مُتخيل للخنساء بريشة جبران خليل جبران",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Khansa.jpg",
+        "author": "Kahlil Gibran",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بلاطة بعد بلاطة: من تعرفون في هذه الصورة؟",
+      "a": "عبد الرحمن الكواكبي",
+      "qid": "reveal-600-038",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الكواكبي"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-038.webp",
+        "type": "image",
+        "title": "صورة شخصية للكواكبي",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abd_al-Rahman_al-Kawakibi_Portrait.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "انظروا جيدًا: هل عرفتم من هذا؟",
+      "a": "يوهانس برامز",
+      "qid": "reveal-600-039",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "برامس"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-039.webp",
+        "type": "image",
+        "title": "Portrait of Johannes Brahms (1833-1897)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:JohannesBrahms.jpg",
+        "author": "C. Brasch, Berlin (biography)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بسرعة: من هذا المطلّ من الصورة؟",
+      "a": "الكندي",
+      "qid": "reveal-600-040",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-040.webp",
+        "type": "image",
+        "title": "An imaginary drawing of al-Kindi, derived from an Egyptian postage.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Kindi_Portrait.jpg",
+        "author": "Michel Bakni",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من أول بلاطة: من هذا الوجه المألوف؟",
+      "a": "فيرنر هايزنبرغ",
+      "qid": "reveal-600-041",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "هايزنبرج"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-041.webp",
+        "type": "image",
+        "title": "For documentary purposes the German Federal Archive often retained the original image captions, which may be erroneous,…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild183-R57262,_Werner_Heisenberg.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل أن تنتهي البلاطات: من صاحب هذه الصورة؟",
+      "a": "بدر شاكر السياب",
+      "qid": "reveal-600-042",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "السياب"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-042.webp",
+        "type": "image",
+        "title": "picture of Bader Shaker al-Sayyab",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sayab0.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من أول بلاطة: من في الصورة؟",
+      "a": "إيمانويل كانط",
+      "qid": "reveal-600-043",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "كانط"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-043.webp",
+        "type": "image",
+        "title": "Immanuel Kant",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Immanuel_Kant_-_Gemaelde_2.jpg",
+        "author": "Becker",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "مع كل بلاطة تنكشف: لمن هذه الصورة؟",
+      "a": "ريتشارد فاغنر",
+      "qid": "reveal-600-044",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "فاجنر"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-044.webp",
+        "type": "image",
+        "title": "Richard Wagner, Munich",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:RichardWagner.jpg",
+        "author": "Franz Hanfstaengl",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "مع كل بلاطة تنكشف: ما اسم من في الصورة؟",
+      "a": "عباس بن فرناس",
+      "qid": "reveal-600-045",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-045.webp",
+        "type": "image",
+        "title": "Retrato de Abbás Ibn Firnás, o Armen Firman. Fundación Española para la Ciencia y la Tecnología, Eulogia Merle.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Armen_Firman_Abb%C3%A1s_Ibn_Firn%C3%A1s_(MUNCYT,_Eulogia_Merle).jpg",
+        "author": "Eulogia Merle",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "مع كل بلاطة تنكشف: لمن هذا الوجه؟",
+      "a": "ريتشارد فاينمان",
+      "qid": "reveal-600-046",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "فاينمن"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-046.webp",
+        "type": "image",
+        "title": "Photo of Richard Feynman, taken in 1984 in the woods of the Robert Treat Paine Estate in Waltham, MA, while he and the…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg",
+        "author": "Copyright Tamiko Thiel 1984",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من هذه؟",
+      "a": "نازك الملائكة",
+      "qid": "reveal-600-047",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-047.webp",
+        "type": "image",
+        "title": "تمثال الشاعرة العراقية نازك الملائكة في بغداد",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%AA%D9%85%D8%AB%D8%A7%D9%84_%D8%A7%D9%84%D8%B4%D8%A7%D8%B9%D8%B1%D8%A9_%D9%86%D8%A7%D8%B2%D9%83_%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%A6%D9%83%D8%A9_02.jpg",
+        "author": "Ayat Jaryan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من أول بلاطة: من هذا المطلّ من الصورة؟",
+      "a": "رينيه ديكارت",
+      "qid": "reveal-600-048",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ديكارت"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-600-048.webp",
+        "type": "image",
+        "title": "Portrait of the French philosopher and mathematician René Descartes (1596-1650) title QS:P1476,en:\"Portrait of the Fren…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg",
+        "author": "After Frans Hals",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "انظروا جيدًا: لمن هذا الوجه؟",
+      "a": "محمود مختار",
+      "qid": "reveal-800-001",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-001.webp",
+        "type": "image",
+        "title": "Mahmoud Mokhtar (1891 -1934) a famous Egyptian sculptor.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahmoud_Mokhtar.jpg",
+        "author": "روز اليوسف",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بسرعة: ما اسم من في الصورة؟",
+      "a": "ابن المقفع",
+      "qid": "reveal-800-002",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-002.webp",
+        "type": "image",
+        "title": "رسم تخيُّلي لِعبد الله بن المُقفَّع بِريشة جُبران خليل جُبران.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_al-Muqaffa%27_by_Khalil_Gibran.png",
+        "author": "Kahlil Gibran",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "دون تردد: من هذا؟",
+      "a": "طارق بن زياد",
+      "qid": "reveal-800-003",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-003.webp",
+        "type": "image",
+        "title": "An imaginary sketch representing the Muslim conquerer Ṭāriq ibn Ziyād.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E1%B9%AC%C4%81riq_ibn_Ziy%C4%81d,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "شيئًا فشيئًا: من هذا الوجه المألوف؟",
+      "a": "إرنست شاكلتون",
+      "qid": "reveal-800-004",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "شاكلتون"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-004.webp",
+        "type": "image",
+        "title": "Sir Ernest Henry Shackleton",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ernest_Henry_Shackleton_Nadar.jpg",
+        "author": "Nadar",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لا تنتظروا كل البلاطات: من هذا؟",
+      "a": "كارل لويس",
+      "qid": "reveal-800-005",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-005.webp",
+        "type": "image",
+        "title": "Carol and Carl Lewis at the Philadelphia Sports Hall of Fame ceremony",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carl_Lewis_(cropped).jpg",
+        "author": "Bertolinephotos",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تكتمل الصورة: من صاحب هذه الصورة؟",
+      "a": "البتاني",
+      "qid": "reveal-800-006",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-006.webp",
+        "type": "image",
+        "title": "Al-Battani (850-926)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albategnius.jpeg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "شيئًا فشيئًا: من صاحب هذه الملامح؟",
+      "a": "أحمد لطفي السيد",
+      "qid": "reveal-800-007",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-007.webp",
+        "type": "image",
+        "title": "en:Ahmed Lutfi el-Sayed (1872-1963), Egyptian anti-colonial nationalist",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lutfi_elsayed.jpg",
+        "author": "The original uploader was Zerida at English Wikipedia.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من أول بلاطة: من الذي في الصورة؟",
+      "a": "سيد درويش",
+      "qid": "reveal-800-008",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-008.webp",
+        "type": "image",
+        "title": "Sayed Darwish (1892-1923)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sayed_Darwish.JPG",
+        "author": "Unknown authorUnknown author",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من أول بلاطة: ما اسم هذا الشخص؟",
+      "a": "أبو نواس",
+      "qid": "reveal-800-009",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-009.webp",
+        "type": "image",
+        "title": "Abu Nuwas, Drawing by Kahlil Gibran al-Funun 2, no. 1 (June 1916) Abu Nuwas was born in al-Ahwaz between 130 and 145 A.…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abu_Nuwas.jpg",
+        "author": "Kahlil Gibran",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تكتمل الصورة: هل عرفتم من هذا؟",
+      "a": "هارون الرشيد",
+      "qid": "reveal-800-010",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-010.webp",
+        "type": "image",
+        "title": "رسمٌ تخيُّليٌ للخليفة العبَّاسي أبُو جعفر هارُون الرَّشيد.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:H%C4%81r%C5%ABn_al-Rash%C4%ABd.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "مع كل بلاطة تنكشف: لمن هذه الملامح؟",
+      "a": "روبرت فالكون سكوت",
+      "qid": "reveal-800-011",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-011.webp",
+        "type": "image",
+        "title": "Crop of Robert Falcon Scott in full regalia: this was reproduced as a frontispiece for Scott's The Voyage of the Discov…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scott_of_the_Antarctic_crop.jpg",
+        "author": "Henry Maull (1829–1914) and John Fox (1832–1907)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تكتمل الصورة: من هذا الوجه المألوف؟",
+      "a": "سيرغي بوبكا",
+      "qid": "reveal-800-012",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بوبكا"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-012.webp",
+        "type": "image",
+        "title": "Sergei Bubka, pole vault champion",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sergei_Bubka_(2007)_cropped.jpg",
+        "author": "Zureks, cropped by MachoCarioca",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من أول بلاطة: ما اسم من في الصورة؟",
+      "a": "سيبويه",
+      "qid": "reveal-800-013",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-013.webp",
+        "type": "image",
+        "title": "سردیس سیبَوَیه شیرازی، از دانشمندان ایرانی صرف و نحو زبان عربی",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bust_of_Sibawayh,_28_February_2022_(cropped).jpg",
+        "author": "Maometto",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "شيئًا فشيئًا: من يكون هذا؟",
+      "a": "سلامة موسى",
+      "qid": "reveal-800-014",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-014.webp",
+        "type": "image",
+        "title": "Salama Musa portrait",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salama_Musa_(around_1924).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من أول بلاطة: من هذا يا ترى؟",
+      "a": "رياض السنباطي",
+      "qid": "reveal-800-015",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "السنباطي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-015.webp",
+        "type": "image",
+        "title": "Riad Sunbati",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Riad_Sunbati.jpg",
+        "author": "none",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لا تنتظروا كل البلاطات: لمن هذه الصورة؟",
+      "a": "أبو تمام",
+      "qid": "reveal-800-016",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-016.webp",
+        "type": "image",
+        "title": "An imaginary picture of Abu Tammam Al-Taie, derived from a stamp issued in the United Arab Republic in the year 1961 AD.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abu_Tammam_portrait.jpg",
+        "author": "Michel Bakni",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من هذه يا ترى؟",
+      "a": "روزا باركس",
+      "qid": "reveal-800-017",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-017.webp",
+        "type": "image",
+        "title": "Sept. 14, 1996 Black caucus Wash. D.C.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_1997.jpg",
+        "author": "John Mathew Smith & www.celebrity-photos.com from Laurel Maryland, USA",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تنتهي البلاطات: هل عرفتم من هذا؟",
+      "a": "هنري مورتون ستانلي",
+      "qid": "reveal-800-018",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-018.webp",
+        "type": "image",
+        "title": "Sir Henry Morton Stanley, britisk-amerikansk journalist og oppdagelsesreisende. Etter reiser i Amerika og Asia tiltrådt…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:No-nb_bldsa_1c051_Henry_Morton_Stanley.jpg",
+        "author": "Creator:J. Russel & Sons",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تنتهي البلاطات: من في الصورة؟",
+      "a": "هشام الكروج",
+      "qid": "reveal-800-019",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-019.webp",
+        "type": "image",
+        "title": "With Hisham El-Guerrouj",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hicham_El_Guerrouj_cropped.jpg",
+        "author": "Sebastien from Montreal, Canada",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بأقل عدد من البلاطات: من هذا المطلّ من الصورة؟",
+      "a": "ابن الجزري",
+      "qid": "reveal-800-020",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-020.webp",
+        "type": "image",
+        "title": "مخطوطة ابن الجزري",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%A7%D8%A8%D9%86_%D8%A7%D9%84%D8%AC%D8%B2%D8%B1%D9%8A.png",
+        "author": "Abd Alrahman Omer Kareem",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بلاطة بعد بلاطة: من صاحبة هذا الوجه؟",
+      "a": "هيباتيا",
+      "qid": "reveal-800-021",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-021.webp",
+        "type": "image",
+        "title": "Hypatia (born c. 350–370; died 415 AD) was a Hellenistic Neoplatonist philosopher, astronomer, and mathematician, who l…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hipatia67.jpg",
+        "author": "Elbert Hubbard (June 19, 1856 – May 7, 1915)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "والصورة تنكشف: من في الصورة؟",
+      "a": "بليغ حمدي",
+      "qid": "reveal-800-022",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-022.webp",
+        "type": "image",
+        "title": "Photo of composer Baligh Hamdi (1932-1993)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baligh_hamdy.jpg",
+        "author": "See the source at ar.wikipedia.org, http://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%81:Baligh_hamdy.jpg",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "انظروا جيدًا: من تعرفون في هذه الصورة؟",
+      "a": "امرؤ القيس",
+      "qid": "reveal-800-023",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-023.webp",
+        "type": "image",
+        "title": "Pre-Islamic Arab Poet ʾImruʾ al-Qays.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imru_al-Qays.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "شيئًا فشيئًا: من هذه في الصورة؟",
+      "a": "هارييت توبمان",
+      "qid": "reveal-800-024",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-024.webp",
+        "type": "image",
+        "title": "A carte-de-visite of a young Harriet Tubman seated in an interior room. Photographed by Benjamin F. Powelson in 1868-69…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carte-de-visite_portrait_of_Harriet_Tubman_(cropped).jpg",
+        "author": "Powelson, Benjamin F. 1823 - 1885",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل آخر بلاطة: لمن هذا الوجه؟",
+      "a": "إدموند هيلاري",
+      "qid": "reveal-800-025",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-025.webp",
+        "type": "image",
+        "title": "Graeme Mulholland uploaded this 2006-01-28 photo of Sir Edmund Hillary on Flickr and gave permission for it to be used…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edmundhillarycropped.jpg",
+        "author": "The original uploader was Andeggs at English Wikipedia.",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لا تنتظروا كل البلاطات: من هذا المطلّ من الصورة؟",
+      "a": "سعيد عويطة",
+      "qid": "reveal-800-026",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-026.webp",
+        "type": "image",
+        "title": "1987 World Championships",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Said_Aouita.jpg",
+        "author": "GingerBeast at English Wikipedia",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "والصورة تنكشف: ما اسم هذا الشخص؟",
+      "a": "مصطفى السيد",
+      "qid": "reveal-800-027",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-027.webp",
+        "type": "image",
+        "title": "Cover Photo C&EN Magazine March 14, 2016",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MAE_Profile_I_031516.jpg",
+        "author": "Elledw",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تنتهي البلاطات: ما اسم من في الصورة؟",
+      "a": "زكريا أحمد",
+      "qid": "reveal-800-028",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-028.webp",
+        "type": "image",
+        "title": "Zakariyya Ahmad",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmad_zakaryia.jpg",
+        "author": "The original uploader was Classic 971 at Arabic Wikipedia.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "مع كل بلاطة تنكشف: هل عرفتم من هذا؟",
+      "a": "مصطفى لطفي المنفلوطي",
+      "qid": "reveal-800-029",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "المنفلوطي"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-029.webp",
+        "type": "image",
+        "title": "It's a photography of al-Manfaluti, an egyptian author",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MustafaLutfial-Manfaluti.gif",
+        "author": "Al-Ahram",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بسرعة: من هذه؟",
+      "a": "الأم تيريزا",
+      "qid": "reveal-800-030",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-030.webp",
+        "type": "image",
+        "title": "Mother Teresa Photograph taken at St Aloysius Church 19 I St NW, Washington, DC 20001 June 10, 1995 Contact me for usag…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mother_Teresa_1.jpg",
+        "author": "Kingkongphoto & www.celebrity-photos.com from Laurel Maryland, USA",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تكتمل الصورة: ما اسم هذا الشخص؟",
+      "a": "تنزينغ نورغاي",
+      "qid": "reveal-800-031",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-031.webp",
+        "type": "image",
+        "title": "Sherpa Tenzing Norgay in Stockholm",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tenzing_Norgay_(cropped).jpg",
+        "author": "SAS Scandinavian Airlines",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "شيئًا فشيئًا: من هذه؟",
+      "a": "نوال المتوكل",
+      "qid": "reveal-800-032",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-032.webp",
+        "type": "image",
+        "title": "Nawal El Moutawakel",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nawal_El_Moutawakel_(cropped).JPG",
+        "author": "Atr1992",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لا تنتظروا كل البلاطات: من يكون هذا؟",
+      "a": "طلال مداح",
+      "qid": "reveal-800-033",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-033.webp",
+        "type": "image",
+        "title": "المطرب السعودي طلال مداح",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D9%81%D9%86%D8%A7%D9%86_%D8%B7%D9%84%D8%A7%D9%84_%D9%85%D8%AF%D8%A7%D8%AD.png",
+        "author": "بيت الفن",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "انظروا جيدًا: لمن هذه الصورة؟",
+      "a": "إبراهيم ناجي",
+      "qid": "reveal-800-034",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-034.webp",
+        "type": "image",
+        "title": "A Picture of Ibrahim Nagi from Al-Alam by al-Zirikli",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibrahim_Nagi-_Al-Alam,_V1,_Page_76.jpg",
+        "author": "Khayr al-Din al-Zirikli",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "والصورة تنكشف: من هذا المطلّ من الصورة؟",
+      "a": "هو تشي منه",
+      "qid": "reveal-800-035",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-035.webp",
+        "type": "image",
+        "title": "Portrait of Ho Chi Minh, also known as Nguyen Ai Quoc",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_-_1946_Portrait.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "والصورة تنكشف: من هذه يا ترى؟",
+      "a": "وردة الجزائرية",
+      "qid": "reveal-800-036",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "وردة"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-036.webp",
+        "type": "image",
+        "title": "Warda Al Jazairia (1939-2012), surnommée (وردة الجزائرية, « La rose algérienne »), chanteuse algérienne de musique clas…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Warda_Al_Jazairia.jpg",
+        "author": "Saber68",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تكتمل الصورة: من هذه؟",
+      "a": "ملك حفني ناصف",
+      "qid": "reveal-800-037",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-037.webp",
+        "type": "image",
+        "title": "ملك حفني ناصف",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malak.jpg",
+        "author": "موقع المعرفه",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لا تنتظروا كل البلاطات: لمن هذا الوجه؟",
+      "a": "سعد زغلول",
+      "qid": "reveal-800-038",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-038.webp",
+        "type": "image",
+        "title": "Photograph of Saad Zaghloul (1859–1927), former Prime Minister of Egypt. This is one of the most famous photographic po…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ModernEgypt,_Saad_Zaghloul,_BAP_14785.jpg",
+        "author": "W. Hanselman",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "انظروا جيدًا: من هذه في الصورة؟",
+      "a": "صباح",
+      "qid": "reveal-800-039",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-039.webp",
+        "type": "image",
+        "title": "Sabah - 1960s",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sabah_-_1960s_(1).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بسرعة: من يكون هذا؟",
+      "a": "خورخي لويس بورخيس",
+      "qid": "reveal-800-040",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بورخيس"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-040.webp",
+        "type": "image",
+        "title": "Jorge Luís Borges 1951",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jorge_Luis_Borges_1951,_by_Grete_Stern_(full).jpg",
+        "author": "Grete Stern",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "مع كل بلاطة تنكشف: من هذا الشخص؟",
+      "a": "مصطفى النحاس",
+      "qid": "reveal-800-041",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "النحاس باشا"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-041.webp",
+        "type": "image",
+        "title": "Mustafa el-Nahhas basha",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mustafa_el-Nahhas.PNG",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل آخر بلاطة: ما اسم هذا الشخص؟",
+      "a": "نجيب الريحاني",
+      "qid": "reveal-800-042",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-042.webp",
+        "type": "image",
+        "title": "Naguib el-Rihani",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naguib_el-Rihani_2.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "مع كل بلاطة تنكشف: من هذه في الصورة؟",
+      "a": "فرجينيا وولف",
+      "qid": "reveal-800-043",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-043.webp",
+        "type": "image",
+        "title": "Photograph of Virginia Woolf with hand on face wearing a fur stole (10 x 15 centimeters).This is a picture from one of…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Virginia_Woolf_1927.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من أول بلاطة: من تعرفون في هذه الصورة؟",
+      "a": "إسماعيل ياسين",
+      "qid": "reveal-800-044",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-044.webp",
+        "type": "image",
+        "title": "en:Ismail Yasin, the famous Egyptian actor",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ismail_Yassin.jpg",
+        "author": "Some Photographer working for the production company",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بسرعة: هل عرفتم من هذه؟",
+      "a": "جين أوستن",
+      "qid": "reveal-800-045",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-045.webp",
+        "type": "image",
+        "title": "Portrait of Jane Austen in watercolor and pencil",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CassandraAusten-JaneAusten(c.1810)_hires.jpg",
+        "author": "Cassandra Austen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بسرعة: من صاحب هذا الوجه؟",
+      "a": "أحمد زكي",
+      "qid": "reveal-800-046",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-046.webp",
+        "type": "image",
+        "title": "Ahmed Zaki (1979)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmed_Zaki_(1979).jpg",
+        "author": "Production Company",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بسرعة: لمن هذا الوجه؟",
+      "a": "إدغار آلان بو",
+      "qid": "reveal-800-047",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ألان بو"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-047.webp",
+        "type": "image",
+        "title": "Edgar Allan Poe, June 1849. Daguerreotype \"Annie\", given to Poe's friend Mrs. Annie L. Richmond; probably taken in June…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edgar_Allan_Poe,_circa_1849,_restored,_squared_off.jpg",
+        "author": "Unknown authorUnknown author; Restored by Yann Forget and Adam Cuerden",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تنتهي البلاطات: من هذا المطلّ من الصورة؟",
+      "a": "نيكولو باغانيني",
+      "qid": "reveal-800-048",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "باغانيني"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-800-048.webp",
+        "type": "image",
+        "title": "Portrait of Niccolò Paganini (1782-1840)label QS:Len,\"Portrait of Niccolò Paganini (1782-1840)\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paganini.jpeg",
+        "author": "John Whittle (active in Preston, early 19th century)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "لا تنتظروا كل البلاطات: من صاحب هذا الوجه؟",
+      "a": "سانتياغو رامون إي كاخال",
+      "qid": "reveal-1000-001",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "رامون كاخال"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-001.webp",
+        "type": "image",
+        "title": "Cajal-mi",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cajal-mi.jpg",
+        "author": "مؤلف غير معروف",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "لا تنتظروا كل البلاطات: من الذي في الصورة؟",
+      "a": "باروخ سبينوزا",
+      "qid": "reveal-1000-002",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "سبينوزا"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-002.webp",
+        "type": "image",
+        "title": "Portrait of Benedictus de Spinoza (1632-1677)label QS:Lfr,\"Portrait de Benedictus de Spinoza (1632-1677)\"label QS:Len,\"…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spinoza.jpg",
+        "author": "anonymous",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "دون تردد: ما اسم من في الصورة؟",
+      "a": "ابن الفارض",
+      "qid": "reveal-1000-003",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-003.webp",
+        "type": "image",
+        "title": "رسمٌ تخيُليّ لابن الفارض بِريشة جُبران خليل جُبران.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_al-Farid_by_Khalil_Gibran.png",
+        "author": "Kahlil Gibran",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "مع كل بلاطة تنكشف: من يكون هذا؟",
+      "a": "أبو خليل القباني",
+      "qid": "reveal-1000-004",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-004.webp",
+        "type": "image",
+        "title": "A Picture of Abu Khalil Qabbani from Al-Alam by al-Zirikli",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abu_Khalil_Qabbani_-_Al-Alam,_V1,_Page_325.jpg",
+        "author": "Khayr al-Din al-Zirikli",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بلاطة بعد بلاطة: لمن هذا الوجه؟",
+      "a": "جوزيبي غاريبالدي",
+      "qid": "reveal-1000-005",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "غاريبالدي"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-005.webp",
+        "type": "image",
+        "title": "Ritratto di Giuseppe Garibaldi",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garibaldi_(1866).jpg",
+        "author": "Fratelli Alinari",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بسرعة: من ترون في الصورة؟",
+      "a": "نصير الدين الطوسي",
+      "qid": "reveal-1000-006",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الطوسي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-006.webp",
+        "type": "image",
+        "title": "An imaginary image of Nasir al-Din al-Tusi, derived from an Azeri stamp issued in 2001.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nasir_al-Din_al-Tusi_portrait.jpg",
+        "author": "Michel Bakni",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "لا تنتظروا كل البلاطات: هل عرفتم من هذا؟",
+      "a": "فرينتس بوشكاش",
+      "qid": "reveal-1000-007",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بوشكاش"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-007.webp",
+        "type": "image",
+        "title": "Ferenc Puskas en 1965 - Campioni dello Sport 1966-1967, n°173",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ferenc_Puskas_en_1965.jpg",
+        "author": "Panini",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "انظروا جيدًا: ما اسم من في الصورة؟",
+      "a": "ألكسندر فون هومبولت",
+      "qid": "reveal-1000-008",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "هومبولت"
+      ],
+      "topic": "مستكشفون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-008.webp",
+        "type": "image",
+        "title": "sitting next to a globe with a manuscript for his life's work \"Cosmos\" 1845-1862",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stieler,_Joseph_Karl_-_Alexander_von_Humboldt_-_1843.jpg",
+        "author": "Joseph Karl Stieler",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بسرعة: من هذه يا ترى؟",
+      "a": "إيمي نويثر",
+      "qid": "reveal-1000-009",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "إيمي نويتر"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-009.webp",
+        "type": "image",
+        "title": "Portrait of Emmy Noether, around 1900",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emmy_Noether_(3x4_cropped).jpg",
+        "author": "Unknown authorUnknown author Publisher: Mathematical Association of America [3], Brooklyn Museum [4], Agnes Scott College [5], [6]",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بسرعة: من هذا الوجه المألوف؟",
+      "a": "آرثر شوبنهاور",
+      "qid": "reveal-1000-010",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "شوبنهاور"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-010.webp",
+        "type": "image",
+        "title": "Portrait photograph of Arthur Schopenhauer",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arthur_Schopenhauer_by_J_Sch%C3%A4fer,_1859b.jpg",
+        "author": "Johann Schäfer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل آخر بلاطة: من الذي في الصورة؟",
+      "a": "أحمد فارس الشدياق",
+      "qid": "reveal-1000-011",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الشدياق"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-011.webp",
+        "type": "image",
+        "title": "Ahmad Faris Shidyaq: Lebanese scholar, writer and journalist (1804 - 1887).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmad_Faris_Shidyaq.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "دون تردد: من تعرفون في هذه الصورة؟",
+      "a": "محمد القصبجي",
+      "qid": "reveal-1000-012",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "القصبجي"
+      ],
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-012.webp",
+        "type": "image",
+        "title": "Compositor Egipcio Mohamed El Qasabgi. Fotografía tomada antes de 1966 - Ministerio de cultura de Egipto",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qasabgi.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بأقل عدد من البلاطات: من هذا الوجه المألوف؟",
+      "a": "أوتو فون بسمارك",
+      "qid": "reveal-1000-013",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بسمارك"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-013.webp",
+        "type": "image",
+        "title": "Otto von Bismarck-Schönhausen (Reichskanzler of Germany, 1871 - 1890), after his resignation in 1890.Image cropped by E…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-2005-0057,_Otto_von_Bismarck_(cropped).jpg",
+        "author": "Jacques Pilartz",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "انظروا جيدًا: من هذا المطلّ من الصورة؟",
+      "a": "أبو الوفاء البوزجاني",
+      "qid": "reveal-1000-014",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "البوزجاني"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-014.webp",
+        "type": "image",
+        "title": "Buzjani, Persian mathematician and astronomer.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buzjani,_the_Persian.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "انظروا جيدًا: من ترون في الصورة؟",
+      "a": "غارينشا",
+      "qid": "reveal-1000-015",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-015.webp",
+        "type": "image",
+        "title": "Brazilian football player, Manoel Francisco dos Santos (Garrincha), during the 1962 FIFA World Cup",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manoel_Francisco_dos_Santos-Garrincha.jpg",
+        "author": "El Gráfico, n° 2233",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تنتهي البلاطات: من تكون هذه؟",
+      "a": "ليزا مايتنر",
+      "qid": "reveal-1000-016",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ليز مايتنر"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-016.webp",
+        "type": "image",
+        "title": "Creator: Briggs, C.A Subject: Meitner, Lise 1878-1968 Catholic University of America Type: Black-and-white photographs…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lise_Meitner_(1878-1968),_lecturing_at_Catholic_University,_Washington,_D.C.,_1946.jpg",
+        "author": "Smithsonian Institution",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تنتهي البلاطات: من صاحب هذه الملامح؟",
+      "a": "سورين كيركغور",
+      "qid": "reveal-1000-017",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "كيركجارد"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-017.webp",
+        "type": "image",
+        "title": "Boceto inacabado de Søren Kierkegaard c. 1840 por su primo Niels Christian Kierkegaard",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:S%C3%B8ren_Kierkegaard_(1813-1855)_-_(cropped).jpg",
+        "author": "La Biblioteca Real de Dinamarca",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بأقل عدد من البلاطات: من هذا يا ترى؟",
+      "a": "بطرس البستاني",
+      "qid": "reveal-1000-018",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-018.webp",
+        "type": "image",
+        "title": "Al Mu'allim Butrus al-Bustani",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al_Mu%27allim_Butrus_al-Bustani.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تنتهي البلاطات: من صاحب هذا الوجه؟",
+      "a": "سلامة حجازي",
+      "qid": "reveal-1000-019",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-019.webp",
+        "type": "image",
+        "title": "A portrait of Salama Hejazi from Al-Alam by al-Zirikli",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salama_Hejazi_-_Al-Alam,_V_3,_P_173.jpg",
+        "author": "Khayr al-Din al-Zirikli",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بأقل عدد من البلاطات: من في الصورة؟",
+      "a": "شاكا زولو",
+      "qid": "reveal-1000-020",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-020.webp",
+        "type": "image",
+        "title": "Sketch of King Shaka (1781 - 1828) from 1825. Attributed to James King, it appeared in Nathanial Isaacs' Travels and Ad…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:KingShaka.jpg",
+        "author": "James King",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل آخر بلاطة: من صاحب هذه الصورة؟",
+      "a": "غياث الدين الكاشي",
+      "qid": "reveal-1000-021",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "الكاشي"
+      ],
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-021.webp",
+        "type": "image",
+        "title": "JAMSHID BIN MAS'UD BIN MAHMUD AL-TABIB AL-KASHI KNOWN AS GHIYATH (D. 1429 AD): MIFTAH AL-HISAB SIGNED IBN MUHAMMAD MU'M…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jamshid_bin_Mas%27ud_bin_Mahmud_al-Tabib_al-Kashi,_known_as_Ghiyath_(d._1429);_Miftah_al-Hisab_signed_ibn_Muhammad_Mu%27min_Taj_al-Din_al-Shirazi,_Iran,_dated_31_May_1656.jpg",
+        "author": "Christies.com",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من أول بلاطة: من صاحب هذا الوجه؟",
+      "a": "إميل زاتوبيك",
+      "qid": "reveal-1000-022",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "زاتوبيك"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-022.webp",
+        "type": "image",
+        "title": "Emil Zatopek, 1952.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fotothek_df_roe-neg_0006305_003_Emil_Z%C3%A1topek-2.jpg",
+        "author": "Fotothek_df_roe-neg_0006305_003_Emil_Zátopek.jpg: Roger Rössing derivative work: MachoCarioca",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "شيئًا فشيئًا: لمن هذه الملامح؟",
+      "a": "بول ديراك",
+      "qid": "reveal-1000-023",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "ديراك"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-023.webp",
+        "type": "image",
+        "title": "Paul Dirac",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_Dirac,_1933.jpg",
+        "author": "Nobel Foundation",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "دون تردد: من صاحب هذا الوجه؟",
+      "a": "جان بول سارتر",
+      "qid": "reveal-1000-024",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "سارتر"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-024.webp",
+        "type": "image",
+        "title": "Jean Paul Sartre",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_Paul_Sartre_1965.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "شيئًا فشيئًا: من هذا يا ترى؟",
+      "a": "جرجي زيدان",
+      "qid": "reveal-1000-025",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "جورجي زيدان"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-025.webp",
+        "type": "image",
+        "title": "Jurji Zaydan (Edited version)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jurji_Zaydan_(Edited2).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "مع كل بلاطة تنكشف: من هذه؟",
+      "a": "منيرة المهدية",
+      "qid": "reveal-1000-026",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-026.webp",
+        "type": "image",
+        "title": "Egyptian Singer Mounira El-Mahdeya in the 1920s",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mounira_El-Mandela.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "والصورة تنكشف: من هذا يا ترى؟",
+      "a": "منليك الثاني",
+      "qid": "reveal-1000-027",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-027.webp",
+        "type": "image",
+        "title": "Emperor Menelik II photographed on the throne in coronation garb.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Menelik_II_in_coronation_garb,_Emperor_of_Ethiopia.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل آخر بلاطة: من تعرفون في هذه الصورة؟",
+      "a": "الزمخشري",
+      "qid": "reveal-1000-028",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-028.webp",
+        "type": "image",
+        "title": "Abu'l Qasim Mahmud ibn 'Umar al-Zamakhshri (d. AH 538/1144 AD):Al-Mufassal Near East, Wednesday AH 16 Jumada II 651/13…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abu%27l_Qasim_Mahmud_ibn_%27Umar_al-Zamakhshri_(d.1144);_Al-Mufassal,_Near_East,_Wednesday_13_August_1253.jpg",
+        "author": "Christies.com",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تكتمل الصورة: من يكون هذا؟",
+      "a": "بوبي تشارلتون",
+      "qid": "reveal-1000-029",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "رياضيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-029.webp",
+        "type": "image",
+        "title": "Bobby Charlton at the opening of the London House in Amsterdam",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:LondonHouseAmsterdam1966_Bobby_Charlton.jpg",
+        "author": "ANEFO",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "انظروا جيدًا: من هذا الوجه المألوف؟",
+      "a": "سرينيفاسا رامانوجان",
+      "qid": "reveal-1000-030",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "رامانوجان"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-030.webp",
+        "type": "image",
+        "title": "Srinivasa Ramanujan",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Srinivasa_Ramanujan_-_OPC_-_2_(cleaned).jpg",
+        "author": "Konrad Jacobs",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بسرعة: من هذه الشخصية؟",
+      "a": "سيمون دي بوفوار",
+      "qid": "reveal-1000-031",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "دي بوفوار"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-031.webp",
+        "type": "image",
+        "title": "Simone de Beauvoir en 1967",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Simone_de_Beauvoir2.png",
+        "author": "Moshe Milner",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "انظروا جيدًا: من صاحب هذه الصورة؟",
+      "a": "إيليا أبو ماضي",
+      "qid": "reveal-1000-032",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-032.webp",
+        "type": "image",
+        "title": "Elia Abu Madi",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elia_Abu_Madi.jpg",
+        "author": "poetassigloXXI",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بنصف الصورة فقط: ما اسم من في الصورة؟",
+      "a": "يوسف وهبي",
+      "qid": "reveal-1000-033",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-033.webp",
+        "type": "image",
+        "title": "a photo for the egyptian actor yousef_wahby",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yousef_wahby.jpg",
+        "author": "http://egyptiancastle.com/movies/celebrities/images/yousef_wahby1.jpg",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "والصورة تنكشف: لمن هذه الصورة؟",
+      "a": "الظاهر بيبرس",
+      "qid": "reveal-1000-034",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "بيبرس"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-034.webp",
+        "type": "image",
+        "title": "رسم للسلطان الظاهر بيبرس.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%B1%D8%B3%D9%85_%D8%A7%D9%84%D8%B8%D8%A7%D9%87%D8%B1_%D8%A8%D9%8A%D8%A8%D8%B1%D8%B3.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بأقل عدد من البلاطات: من صاحب هذه الصورة؟",
+      "a": "المسعودي",
+      "qid": "reveal-1000-035",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أعلام العرب والإسلام",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-035.webp",
+        "type": "image",
+        "title": "Roof figurer Al Masudi, Artist: Emmerich Alexius Swoboda, Naturhistorisches Museum, Vienna, Bellariastraße,Risalit at t…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:NHM_Bellariastra%C3%9Fe_side_risalit_right_-_Al_Masudi_-_Emmerich_Alexius_Swoboda_3890.jpg",
+        "author": "Hubertl",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بلاطة بعد بلاطة: من الذي في الصورة؟",
+      "a": "ليونهارت أويلر",
+      "qid": "reveal-1000-036",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "أويلر"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-036.webp",
+        "type": "image",
+        "title": "Portrait of Leonhard Euler (1707-1783)label QS:Len,\"Portrait of Leonhard Euler (1707-1783)\"label QS:Lru,\"Портрет Леонар…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonhard_Euler.jpg",
+        "author": "Jakob Emanuel Handmann",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تنتهي البلاطات: من ترون في الصورة؟",
+      "a": "برتراند راسل",
+      "qid": "reveal-1000-037",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "راسل"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-037.webp",
+        "type": "image",
+        "title": "Bertrand Russell, by Bassano (1936).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bertrand_Russell_photo.jpg",
+        "author": "Bassano Ltd",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل آخر بلاطة: هل عرفتم من هذا؟",
+      "a": "أمين الريحاني",
+      "qid": "reveal-1000-038",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-038.webp",
+        "type": "image",
+        "title": "Ameen Rihani - 1916",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ameen_Rihani_-_1916.png",
+        "author": "ameenrihani.org",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "دون تردد: هل عرفتم من هذا؟",
+      "a": "جورج أبيض",
+      "qid": "reveal-1000-039",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-039.webp",
+        "type": "image",
+        "title": "George Abyad",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gabyad.jpg",
+        "author": "The original uploader was Barbarosa at Arabic Wikipedia.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "مع كل بلاطة تنكشف: من هذا المطلّ من الصورة؟",
+      "a": "سيف الدين قطز",
+      "qid": "reveal-1000-040",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "قطز"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-040.webp",
+        "type": "image",
+        "title": "صورة لتمثال سيف الدين قطز من قلعة صلاح الدين في القاهرة",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%B5%D9%88%D8%B1%D8%A9_%D8%AA%D9%85%D8%AB%D8%A7%D9%84_%D8%B3%D9%8A%D9%81_%D8%A7%D9%84%D8%AF%D9%8A%D9%86_%D9%82%D8%B7%D8%B2_crop.jpg",
+        "author": "User:SoultanOmar",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تنتهي البلاطات: لمن هذه الصورة؟",
+      "a": "كارل فريدريش غاوس",
+      "qid": "reveal-1000-041",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "غاوس"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-041.webp",
+        "type": "image",
+        "title": "Portrait of the mathematician and philosopher Carl Friedrich Gauss",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carl_Friedrich_Gauss.jpg",
+        "author": "Gottlieb Biermann / After Christian Albrecht Jensen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل آخر بلاطة: من صاحب هذه الملامح؟",
+      "a": "لودفيغ فتغنشتاين",
+      "qid": "reveal-1000-042",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "فتجنشتاين"
+      ],
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-042.webp",
+        "type": "image",
+        "title": "Moriz Nähr, Ludwig Wittgenstein. Portrait for the conferment of the Trinity College scholarship 1929, 1928/29",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ludwig_Wittgenstein_1929.jpg",
+        "author": "Moritz Nähr",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "والصورة تنكشف: من يكون هذا؟",
+      "a": "محمود سامي البارودي",
+      "qid": "reveal-1000-043",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "البارودي"
+      ],
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-043.webp",
+        "type": "image",
+        "title": "Photograph of Mahmoud Sami Al Baroudy Pasha (1839-1904), former Prime minister of Egypt.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahmoud_Sami_Al_Baroudy_Pasha.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من أول بلاطة: من تكون هذه؟",
+      "a": "تحية كاريوكا",
+      "qid": "reveal-1000-044",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فنانون وموسيقيون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-044.webp",
+        "type": "image",
+        "title": "Egyptian actress and dancer Taheyya Kariokka",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taheyya_Kariokka.jpg",
+        "author": "Not credited",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "انظروا جيدًا: من هذا يا ترى؟",
+      "a": "عبد الرحمن الداخل",
+      "qid": "reveal-1000-045",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "صقر قريش"
+      ],
+      "topic": "قادة وزعماء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-045.webp",
+        "type": "image",
+        "title": "19th-century illustrative portrait of Umayyad emir Abd al-Rahman I, from the Crónica general de España (1865–1871)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abd_al-Rahman_I,_Cr%C3%B3nica_general_de_Espa%C3%B1a.jpg",
+        "author": "Cayetano Rosell",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "لا تنتظروا كل البلاطات: ما اسم هذا الشخص؟",
+      "a": "مايكل فاراداي",
+      "qid": "reveal-1000-046",
+      "type": "image",
+      "effect": "reveal",
+      "alt": [
+        "فاراداي"
+      ],
+      "topic": "علماء ومخترعون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-046.webp",
+        "type": "image",
+        "title": "Michael Faraday",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michael_Faraday_sitting_crop.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "دون تردد: من ترون في الصورة؟",
+      "a": "ابن باجة",
+      "qid": "reveal-1000-047",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "فلاسفة ومفكرون",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-047.webp",
+        "type": "image",
+        "title": "An imaginary sketch representing Muslim polymath Ibn Bājja.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_B%C4%81jja,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بلاطة بعد بلاطة: لمن هذه الصورة؟",
+      "a": "حافظ إبراهيم",
+      "qid": "reveal-1000-048",
+      "type": "image",
+      "effect": "reveal",
+      "topic": "أدباء وشعراء",
+      "verified": true,
+      "media": {
+        "src": "reveal-1000-048.webp",
+        "type": "image",
+        "title": "Egyptian poet Hafez Ibrahim.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hafez_Ibrahim.JPG",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    }
+  ]
+}

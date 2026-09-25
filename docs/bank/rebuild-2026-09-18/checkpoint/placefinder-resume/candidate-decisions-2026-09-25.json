@@ -1,0 +1,28 @@
+[
+  {
+    "id": "placefinder-800-905",
+    "planned": "قصر الفريد في الحِجر",
+    "selected": "الحِجر",
+    "reason": "Question asks the archaeological site, matching directly opened UNESCO and AlUla primary scope. The illustrative tomb remains Qasr al-Farid; official Saudipedia was read as supplemental architecture description, not mislabeled as primary archaeological evidence.",
+    "supplementalUrl": "https://saudipedia.com/en/hegra"
+  },
+  {
+    "id": "placefinder-1000-907",
+    "planned": "كنيسة لاس لاخاس",
+    "selected": "تيكال",
+    "reason": "English/Spanish Colombia Travel and alternate official article opens returned502. Replaced unstarted candidate with source-backed visually distinct Tikal in same Americas topic/tier; did not claim search-index evidence as successful page retrieval.",
+    "failedUrls": [
+      "https://colombia.travel/en/ipiales",
+      "https://colombia.travel/es/ipiales",
+      "https://colombia.travel/es/encanto/descubre-el-santuario-de-las-lajas-una-maravilla-en-medio-de-la"
+    ]
+  },
+  {
+    "id": "placefinder-400-901",
+    "reason": "Operator Colosseum page timed out; UNESCO Rome page directly opened and names Colosseum. Geometry precision not claimed."
+  },
+  {
+    "id": "placefinder-400-906",
+    "reason": "Recovered Louvre URL404 replaced by directly opened official A pyramid for a symbol page."
+  }
+]

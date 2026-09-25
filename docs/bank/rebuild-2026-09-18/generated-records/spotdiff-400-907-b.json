@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-400-907-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-400-907-b.webp",
+  "asset": "media/spotdiff/spotdiff-400-907-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the folded RED SCARF at center-right, restoring the blue bench underneath and leaving hat and gloves exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 95156,
+  "sha256": "15ab18d161e52dd0b6e2517547d98a9eca42ac28daeee07f2e248e50b53a5e3b",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Red folded scarf and own shadow disappear; knit hat with pompom, brown gloves and blue bench remain.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

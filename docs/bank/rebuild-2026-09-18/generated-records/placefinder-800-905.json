@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-800-905",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-800-905.webp",
+  "asset": "media/placefinder/placefinder-800-905.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Hegra archaeological site near AlUla Saudi Arabia, the isolated Qasr al-Farid tomb: one huge standalone honey-colored sandstone outcrop in open sandy desert, carefully carved flat monumental Nabataean tomb facade in its front, symmetric stepped crown with cornices, four engaged rock pilasters, small central dark door with triangular pediment, rough unfinished lower portion visibly merging into natural rock. Three-quarter view showing bulky natural uncarved rock on side, full top and base with space; no Petra Treasury tholos, no canyon, no invented palace buildings.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 237420,
+  "sha256": "8a45ef29bcffc583343b280e3a12d1d08da39cbfad3b3bc120ca2b6c781264fa",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Isolated sandstone mass with decorated stepped Nabataean facade and unfinished lower rock; question asks Hegra archaeological site.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

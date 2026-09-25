@@ -1,8 +1,8 @@
 {
   "category": "sound",
-  "reviewedAt": "2026-09-23",
-  "status": "pending-auditory-review",
-  "verifiedQuestionCount": 0,
+  "reviewedAt": "2026-09-25",
+  "status": "three-replacements-await-human-listening",
+  "verifiedQuestionCount": 37,
   "questionCount": 40,
   "perTier": {
     "200": 8,
@@ -12,13 +12,13 @@
     "1000": 8
   },
   "topicCount": 9,
-  "categorySha256": "2e7bd879ca6449221e155fb4e0021bf108a261c1d7c4ca437c30acbc9ed5e2b4",
-  "scope": "Rebuilt 40-question draft, source declarations and actual file signal checks only. Not approved for release.",
+  "categorySha256": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
+  "scope": "37 exact clips approved by the owner. Three unclear clips replaced with source-reviewed licensed candidates; the three replacements await fresh listening.",
   "capabilityBlocker": {
     "attempt": "One existing MP3 was submitted through the available audio output helper. No further unsupported calls were made.",
     "actualResult": "audio content omitted because you do not support audio input",
-    "consequence": "This model could not listen to any file. All 40 questions remain verified:false. Audio decoding and metadata do not establish audible identity or ambiguity.",
-    "requiredNextStep": "A capable human reviewer must hear every exact rebuilt clip, confirm identity, no competing sound/voice/answer leakage, complete event, clarity, aliases and difficulty, then record per-clip result and hashes before verified:true."
+    "consequence": "The model still cannot listen. Human results received25Sep approve37 exact hashes;3 unclear clips remain verified:false.",
+    "requiredNextStep": "Prepare licensed replacements for the3 unclear clips and obtain human listening decisions on their exact final hashes."
   },
   "downloadConstraints": {
     "commonsOriginalProbe": "Normal HTTPS download of Doorbell-classic-dingdong.ogg returned HTTP 403 Forbidden. Existing local Commons derivatives reused; no escalation or access-control workaround.",
@@ -27,15 +27,15 @@
     "legacyLocalSourcesReused": 20
   },
   "format": {
-    "activeBytes": 3220025,
-    "wholeMediaDirectoryBytesIncludingPreservedLegacyAndIndex": 7490299,
-    "maximumClipBytes": 97010,
-    "maximumDurationSeconds": 6.034286,
+    "activeBytes": 3210830,
+    "wholeMediaDirectoryBytesIncludingPreservedLegacyAndIndex": 7677986,
+    "maximumClipBytes": 121252,
+    "maximumDurationSeconds": 7.5,
     "codec": "MP3",
     "channels": 1,
     "bitRate": 128000,
-    "normalisation": "FFmpeg loudnorm target -18 LUFS, true peak -5 dBTP, LRA 7; short edge fades",
-    "selectionMethod": "For newly downloaded recordings longer than six seconds, a six-second window maximising RMS on a half-second grid. Short existing derivatives retained in full. Selection is mechanical and still needs listening.",
+    "normalisation": "Original37: loudnorm -18LUFS/-5dBTP. Three replacement candidates: mono with short fades and peak adjustment; sneeze/bowling transient compression. Exact filters recorded.",
+    "selectionMethod": "Original37 retained after explicit human approval. Three replacements selected from documented events using signal-envelope/silence analysis; await human listening.",
     "notListening": "Signal checks are non-silence, decode, peak/clipping, format, size and unique file hashes; none counts as listening."
   },
   "excludedLegacyExamples": [
@@ -132,11 +132,16 @@
         "fractionBelowMinus80DbFS": 0.00141
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "89c5ac0ad2f2d7f3b6e4cbb4f16a112b796fd89d320ce67e70012bf4d2289d4d",
+        "listenedAt": "2026-09-25T03:10:59.652Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -180,11 +185,16 @@
         "fractionBelowMinus80DbFS": 0.03101
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "cfae30c0c17168dd957b809c56ee8a4b583e720ce16e615b1c8507ec14ada9fc",
+        "listenedAt": "2026-09-25T03:11:14.660Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -228,11 +238,16 @@
         "fractionBelowMinus80DbFS": 0.00546
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "548f2712e93914a616670c0a488bec3febae9f74bc579aa31e3097bf82051c4c",
+        "listenedAt": "2026-09-25T03:11:29.770Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -276,11 +291,16 @@
         "fractionBelowMinus80DbFS": 0.04435
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "3c3c0879835da5e8eb3bea873b48f1924e21e7b63df84f79d285f5a3461a530d",
+        "listenedAt": "2026-09-25T03:11:49.995Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -324,11 +344,16 @@
         "fractionBelowMinus80DbFS": 0.00528
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "7fe6da4612125b62bb5d2a7cad49ae4f29eded6b6864d86ce49b2052eb17c678",
+        "listenedAt": "2026-09-25T03:12:07.111Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -372,11 +397,16 @@
         "fractionBelowMinus80DbFS": 0.08516
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "f668cf314486c33baebf9c2dcc99e7d25ca6e2909e0f6d4f11738c01208919e5",
+        "listenedAt": "2026-09-25T03:12:17.793Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -420,11 +450,16 @@
         "fractionBelowMinus80DbFS": 0.05925
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "c44eb465edb544f356e6638bd956cba5fa792e584ca0db2e1516a147e106d2c0",
+        "listenedAt": "2026-09-25T03:12:29.703Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -468,11 +503,16 @@
         "fractionBelowMinus80DbFS": 0.13563
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "e4e6105a3c017d2d8f0b36741a470b8dbc3b86d410a0db38683ac6b1e265f909",
+        "listenedAt": "2026-09-25T03:12:40.393Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -516,11 +556,16 @@
         "fractionBelowMinus80DbFS": 0.26171
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "a592e3819e0425ca9f45ce6ca18fedb53b96c02b360c737237a55abfa3262704",
+        "listenedAt": "2026-09-25T03:12:52.243Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -529,48 +574,69 @@
       "answer": "أمواج البحر",
       "tier": 400,
       "topic": "طبيعة",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_Waves_on_a_Tropical_Beach.ogg",
-      "sourceTitle": "Ocean Waves on a Tropical Beach (مقتطف مقصوص ومطبّع)",
-      "author": "Jarrod stanley",
+      "sourceUrl": "https://freesound.org/people/SamsterBirdies/sounds/578524/",
+      "sourceTitle": "Calm ocean waves (مقتطف مقصوص ومعدّل المستوى)",
+      "author": "SamsterBirdies",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "sourcePageReviewed": true,
       "licenseDeclarationReviewed": true,
-      "sourceEvidence": "Jarrod stanley identifies own ocean-wave recording; CC0.",
+      "sourceEvidence": "Author describes calm ocean waves crashing and fizzing water, recorded on Whidbey Island with Zoom H1n. A 7.5-second region with a strong central swell and lower-amplitude beginning/end was selected using signal-envelope analysis.",
       "legacyQid": "sound-200-019",
       "legacyFile": "sound-200-019.mp3",
-      "inputFileSha256": "00cf4deaa7e68bc2ff706477ea5f2057e5c321ec6ff006a21d083b6694f5e1f8",
+      "inputFileSha256": "fd505dbd43cb1c3508f884279bf5d3e060bb14f2bc3d9b4cce334eb7a75b5d7f",
       "sourceAcquisition": {
-        "status": "reused-existing-local-derivative",
-        "reason": "Commons original download test returned HTTP 403; preserved existing licensed clip.",
-        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Ocean_Waves_on_a_Tropical_Beach.ogg"
+        "status": "downloaded-authorized-public-audio",
+        "originalUrl": "https://cdn.freesound.org/previews/578/578524_5487341-hq.mp3",
+        "sha256": "fd505dbd43cb1c3508f884279bf5d3e060bb14f2bc3d9b4cce334eb7a75b5d7f",
+        "retrievedAt": "2026-09-25T03:53:10.872Z",
+        "quality": "Public HQ lossy preview; original WAV/FLAC not obtained."
       },
-      "inputDurationSeconds": 5.0,
-      "excerptStartSeconds": 0.0,
-      "excerptLengthSeconds": 5.0,
-      "sourceFidelity": "Existing low-bitrate derivative reused; 128 kbps output does not restore original fidelity.",
+      "excerptStartSeconds": 2,
+      "excerptLengthSeconds": 7.5,
+      "sourceFidelity": "Fresh authorized creator preview; lossy preview and processing are disclosed.",
       "audioSignalCheck": {
         "decode": "passed",
         "codec": "mp3",
         "channels": 1,
         "sampleRate": 44100,
         "bitRate": 128000,
-        "durationSeconds": 5.041633,
-        "bytes": 81128,
-        "sha256": "e52cef1268d82fe8a34957a75a970e740deabff1a873f23a211d1ae37be68bbb",
-        "peakDbFS": -5.444,
-        "rmsDbFS": -17.379,
-        "samplesAtOrAboveFullScale": 0,
-        "fractionBelowMinus80DbFS": 0.02307
+        "durationSeconds": 7.5,
+        "bytes": 121252,
+        "sha256": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+        "peakDbFS": -3.5460016036233806,
+        "rmsDbFS": -22.379512354271203,
+        "nonFiniteSamples": 0,
+        "notDigitallyClipped": true
       },
       "auditoryReview": {
         "status": "pending",
         "listened": false,
         "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "required": "Human must listen to this replacement exact hash; original approval or unclear decision does not apply."
       },
-      "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
+      "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening.",
+      "replacementEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/replacements-2026-09-25/replacement-candidates.json",
+      "previousMedia": {
+        "src": "sound-400-902.mp3",
+        "type": "audio",
+        "title": "Ocean Waves on a Tropical Beach (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_Waves_on_a_Tropical_Beach.ogg",
+        "author": "Jarrod stanley",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      },
+      "processing": {
+        "sourceStartSeconds": 2,
+        "sourceDurationSeconds": 7.5,
+        "ffmpegFilter": "atrim=start=2:duration=7.5,asetpts=PTS-STARTPTS,aformat=channel_layouts=mono,afade=t=in:st=0:d=0.05,afade=t=out:st=7.45:d=0.05,volume=1.00714783dB",
+        "targetDecodedPreEncodePeakDbFS": -3,
+        "speedUnchanged": true,
+        "synthetic": false,
+        "composite": false,
+        "metadataRemoved": true
+      }
     },
     {
       "qid": "sound-400-903",
@@ -612,11 +678,16 @@
         "fractionBelowMinus80DbFS": 0.05115
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "03154c52a0b77bb2093131893f71b262ad1aa4beb3f648e6cb7cfd0ac99a23bf",
+        "listenedAt": "2026-09-25T03:13:31.409Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -660,11 +731,16 @@
         "fractionBelowMinus80DbFS": 0.00939
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "98ebfb9a063a3c08ffe8a8fe270b8c779f799959649f824c5b9bc1cc44459fc5",
+        "listenedAt": "2026-09-25T03:13:42.609Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -673,48 +749,69 @@
       "answer": "عطاس",
       "tier": 400,
       "topic": "جسم وحركة",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_sneeze_(man).ogg",
-      "sourceTitle": "A man sneezes two times (مقتطف مقصوص ومطبّع)",
-      "author": "Nikolay Komarov",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
+      "sourceTitle": "Sneezing.wav (مقتطف مقصوص ومعدّل المستوى)",
+      "author": "edschaefer",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "sourcePageReviewed": true,
       "licenseDeclarationReviewed": true,
-      "sourceEvidence": "Nikolay Komarov describes own recording of a man sneezing twice; CC BY-SA 4.0.",
+      "sourceEvidence": "Author labels it a recording of a sneezing person. Full short recording retained; transient compression and peak normalization improve the available average level without changing speed.",
       "legacyQid": "sound-200-038",
       "legacyFile": "sound-200-038.mp3",
-      "inputFileSha256": "af12cc4b6e386d43ced5e108a698df502a181a8758844ef88af96e55b1eadc79",
+      "inputFileSha256": "b6e08afd4a37153d20cee249b4b9aa21acf4754f05cf8ed619cd0731e500665a",
       "sourceAcquisition": {
-        "status": "reused-existing-local-derivative",
-        "reason": "Commons original download test returned HTTP 403; preserved existing licensed clip.",
-        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Double_sneeze_%28man%29.ogg"
+        "status": "downloaded-authorized-public-audio",
+        "originalUrl": "https://cdn.freesound.org/previews/464/464232_6114721-hq.mp3",
+        "sha256": "b6e08afd4a37153d20cee249b4b9aa21acf4754f05cf8ed619cd0731e500665a",
+        "retrievedAt": "2026-09-25T03:53:11.213Z",
+        "quality": "Public HQ lossy preview; original WAV/FLAC not obtained."
       },
-      "inputDurationSeconds": 2.57741,
-      "excerptStartSeconds": 0.0,
-      "excerptLengthSeconds": 2.57741,
-      "sourceFidelity": "Existing low-bitrate derivative reused; 128 kbps output does not restore original fidelity.",
+      "excerptStartSeconds": 0,
+      "excerptLengthSeconds": 1.25,
+      "sourceFidelity": "Fresh authorized creator preview; lossy preview and processing are disclosed.",
       "audioSignalCheck": {
         "decode": "passed",
         "codec": "mp3",
         "channels": 1,
         "sampleRate": 44100,
         "bitRate": 128000,
-        "durationSeconds": 2.612245,
-        "bytes": 42257,
-        "sha256": "4cd3d2b3c10cabf8cebd36a385a00c8f0a827c17d35b70272ff8a498d2850b47",
-        "peakDbFS": -6.357,
-        "rmsDbFS": -28.15,
-        "samplesAtOrAboveFullScale": 0,
-        "fractionBelowMinus80DbFS": 0.05659
+        "durationSeconds": 1.25,
+        "bytes": 20942,
+        "sha256": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+        "peakDbFS": -3.774727504624573,
+        "rmsDbFS": -22.238103766874445,
+        "nonFiniteSamples": 0,
+        "notDigitallyClipped": true
       },
       "auditoryReview": {
         "status": "pending",
         "listened": false,
         "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "required": "Human must listen to this replacement exact hash; original approval or unclear decision does not apply."
       },
-      "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
+      "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening.",
+      "replacementEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/replacements-2026-09-25/replacement-candidates.json",
+      "previousMedia": {
+        "src": "sound-400-905.mp3",
+        "type": "audio",
+        "title": "A man sneezes two times (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_sneeze_(man).ogg",
+        "author": "Nikolay Komarov",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      },
+      "processing": {
+        "sourceStartSeconds": 0,
+        "sourceDurationSeconds": 1.25,
+        "ffmpegFilter": "atrim=start=0:duration=1.25,asetpts=PTS-STARTPTS,aformat=channel_layouts=mono,acompressor=threshold=0.125:ratio=2:attack=3:release=80:makeup=1,afade=t=in:st=0:d=0.005,afade=t=out:st=1.245:d=0.005,volume=2.71659855dB",
+        "targetDecodedPreEncodePeakDbFS": -3,
+        "speedUnchanged": true,
+        "synthetic": false,
+        "composite": false,
+        "metadataRemoved": true
+      }
     },
     {
       "qid": "sound-400-906",
@@ -756,11 +853,16 @@
         "fractionBelowMinus80DbFS": 0.0165
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "e9996aa6a04f144af35437ab8083bac6c5004b1adc06944e46f4f28ff8ef2a0a",
+        "listenedAt": "2026-09-25T03:14:26.250Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -804,11 +906,16 @@
         "fractionBelowMinus80DbFS": 0.01788
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "2b2b1d2546153503d783adb710ef515b29c160f90927c8154aa729b5ecec9e68",
+        "listenedAt": "2026-09-25T03:14:36.406Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -853,11 +960,16 @@
         "fractionBelowMinus80DbFS": 0.00334
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "09749f04cc0ed7fb0186c82b5c2da4afb93a9d5e0007eac8d54533bb47be02f6",
+        "listenedAt": "2026-09-25T03:14:48.668Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -901,11 +1013,16 @@
         "fractionBelowMinus80DbFS": 0.0066
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "0ed26f214ab75d3983c5b0136085220d1eda144ee272978a9b5e9cb38a19636c",
+        "listenedAt": "2026-09-25T03:14:58.941Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -949,11 +1066,16 @@
         "fractionBelowMinus80DbFS": 0.02054
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "72fc53d2e3ddaea296ce136b8abf8e5aeb08d764cb2b9f0236e6d906c55d0795",
+        "listenedAt": "2026-09-25T03:15:11.633Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -998,11 +1120,16 @@
         "fractionBelowMinus80DbFS": 0.03271
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "ee88fabb93ef2a2045a821c1ebd4415c010cd67ca3163646a4b573ef404cf805",
+        "listenedAt": "2026-09-25T03:15:24.416Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1046,11 +1173,16 @@
         "fractionBelowMinus80DbFS": 0.0373
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "924b5768ca9ea4b380f251179ae2c0f0af8668cf8242340404f526b9782b4e38",
+        "listenedAt": "2026-09-25T03:15:33.933Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1094,11 +1226,16 @@
         "fractionBelowMinus80DbFS": 0.00361
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "9bf8914594d06ba678b5ed71d71017540953c174e8b92aa67863426a09b4b30c",
+        "listenedAt": "2026-09-25T03:15:46.485Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1142,11 +1279,16 @@
         "fractionBelowMinus80DbFS": 0.02339
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "2140d0124a3bd882d35e4bdd3a4764a16c2d195159964447965ced83c6e1bbfc",
+        "listenedAt": "2026-09-25T03:16:17.837Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1191,11 +1333,16 @@
         "fractionBelowMinus80DbFS": 0.07556
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "69d8dbe9f0ba8a5d0afcfa9a5e0ebdd36189ca99cc2d2e07f871c7495e987dd3",
+        "listenedAt": "2026-09-25T03:16:31.179Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1240,11 +1387,16 @@
         "fractionBelowMinus80DbFS": 0.00707
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "84bd2002f2058dfbbbec8f23c19944ca1919ae1be6cff55378155cde90a82a4a",
+        "listenedAt": "2026-09-25T03:16:48.466Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1289,11 +1441,16 @@
         "fractionBelowMinus80DbFS": 0.00526
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "51ed3175afefb27be9b30f7dfa384ba8f076c814b5095a2a4cfe8bc46246166b",
+        "listenedAt": "2026-09-25T03:17:00.664Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1338,11 +1495,16 @@
         "fractionBelowMinus80DbFS": 0.28091
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "9e053a728ebd55640fe152d00bd04d184efdd5dad705d62e42ca0f9c05019d9f",
+        "listenedAt": "2026-09-25T03:17:24.582Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1387,11 +1549,16 @@
         "fractionBelowMinus80DbFS": 0.00029
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "9af8a71e0cbab95528f6e6aa8ba5ce7208285355fb22b47bcbf9e25552aad20a",
+        "listenedAt": "2026-09-25T03:17:39.657Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1436,11 +1603,16 @@
         "fractionBelowMinus80DbFS": 0.00526
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "0c77c0970f8fe75c3717a8d9c861f507485be85a368a20ef63cbcd3b0721d36e",
+        "listenedAt": "2026-09-25T03:17:51.573Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1485,11 +1657,16 @@
         "fractionBelowMinus80DbFS": 0.00053
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "f2591b629e438c28a70fcf5037c858343e5756cfc0a30c92e1ff590b104c74cc",
+        "listenedAt": "2026-09-25T03:18:02.990Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1534,11 +1711,16 @@
         "fractionBelowMinus80DbFS": 0.00073
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "0c85e8aa9f2b1c43b39435062886b2f79018707a475443938e3322e042c8de63",
+        "listenedAt": "2026-09-25T03:18:16.272Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1583,11 +1765,16 @@
         "fractionBelowMinus80DbFS": 0.00227
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "d3659f8f4c892d1e0adf2cc5f8607dda02cc065ead8e125f69f42480d7f8cb8d",
+        "listenedAt": "2026-09-25T03:18:28.670Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1596,49 +1783,69 @@
       "answer": "بولينغ",
       "tier": 800,
       "topic": "رياضة وألعاب",
-      "sourceUrl": "https://freesound.org/people/driftworks/sounds/128969/",
-      "sourceTitle": "Bowling Ball.wav (مقتطف مقصوص ومطبّع)",
-      "author": "driftworks",
+      "sourceUrl": "https://freesound.org/people/Rehanjo/sounds/593593/",
+      "sourceTitle": "Bowling.wav (مقتطف مقصوص ومعدّل المستوى)",
+      "author": "Rehanjo",
       "license": "CC0 1.0",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "sourcePageReviewed": true,
       "licenseDeclarationReviewed": true,
-      "sourceEvidence": "driftworks describes a bowling ball rolling along an alley, explicitly with no pin impact; CC0.",
+      "sourceEvidence": "Author explicitly describes a bowling ball hitting pins with a crash and scatter, recorded using Zoom H6/Rode NTG. The file contains variations; only the first event before the zero-signal gap is retained, including its decay. No old rolling recording is mixed in.",
       "legacyQid": "sound-800-044",
       "legacyFile": "sound-800-044.mp3",
-      "inputFileSha256": "c15957d39488ce0167ee9d92d8c61b24b8683ebfa2b8ad5aa0cec15c4dc99578",
+      "inputFileSha256": "eb6e48cf5ecbeb7e495f79aa01411ea77f9c006883d6793be4733c84fa2f17a2",
       "sourceAcquisition": {
         "status": "downloaded-authorized-public-audio",
-        "bytes": 102992,
-        "originalUrl": "https://cdn.freesound.org/previews/128/128969_2354545-hq.mp3",
-        "sha256": "c15957d39488ce0167ee9d92d8c61b24b8683ebfa2b8ad5aa0cec15c4dc99578"
+        "originalUrl": "https://cdn.freesound.org/previews/593/593593_12589944-hq.mp3",
+        "sha256": "eb6e48cf5ecbeb7e495f79aa01411ea77f9c006883d6793be4733c84fa2f17a2",
+        "retrievedAt": "2026-09-25T03:53:12.318Z",
+        "quality": "Public HQ lossy preview; original WAV/FLAC not obtained."
       },
-      "inputDurationSeconds": 4.43175,
-      "excerptStartSeconds": 0.0,
-      "excerptLengthSeconds": 4.43175,
-      "sourceFidelity": "Fresh authorized publisher/creator preview downloaded; preview remains lossy.",
+      "excerptStartSeconds": 0,
+      "excerptLengthSeconds": 2.62,
+      "sourceFidelity": "Fresh authorized creator preview; lossy preview and processing are disclosed.",
       "audioSignalCheck": {
         "decode": "passed",
         "codec": "mp3",
         "channels": 1,
         "sampleRate": 44100,
         "bitRate": 128000,
-        "durationSeconds": 4.414694,
-        "bytes": 71097,
-        "sha256": "8db26a4476113524c4b90d0d34c522bc951941fd8dfd3c63ce98a4ca7651ba82",
-        "peakDbFS": -5.209,
-        "rmsDbFS": -23.898,
-        "samplesAtOrAboveFullScale": 0,
-        "fractionBelowMinus80DbFS": 0.00211
+        "durationSeconds": 2.62,
+        "bytes": 43093,
+        "sha256": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5",
+        "peakDbFS": -3.423858775770674,
+        "rmsDbFS": -25.80311008598993,
+        "nonFiniteSamples": 0,
+        "notDigitallyClipped": true
       },
       "auditoryReview": {
         "status": "pending",
         "listened": false,
         "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "required": "Human must listen to this replacement exact hash; original approval or unclear decision does not apply."
       },
-      "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
+      "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening.",
+      "replacementEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/replacements-2026-09-25/replacement-candidates.json",
+      "previousMedia": {
+        "src": "sound-800-908.mp3",
+        "type": "audio",
+        "title": "Bowling Ball.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/driftworks/sounds/128969/",
+        "author": "driftworks",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      },
+      "processing": {
+        "sourceStartSeconds": 0,
+        "sourceDurationSeconds": 2.62,
+        "ffmpegFilter": "atrim=start=0:duration=2.62,asetpts=PTS-STARTPTS,aformat=channel_layouts=mono,acompressor=threshold=0.125:ratio=2:attack=3:release=80:makeup=1,afade=t=in:st=0:d=0.01,afade=t=out:st=2.6100000000000003:d=0.01,volume=3.06496144dB",
+        "targetDecodedPreEncodePeakDbFS": -3,
+        "speedUnchanged": true,
+        "synthetic": false,
+        "composite": false,
+        "metadataRemoved": true
+      }
     },
     {
       "qid": "sound-1000-901",
@@ -1680,11 +1887,16 @@
         "fractionBelowMinus80DbFS": 0.00553
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "a29bff7a3ac7343503fa7ef1502b9927ec7d0727a4254b0ca8f236868078a2ad",
+        "listenedAt": "2026-09-25T03:19:19.197Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1729,11 +1941,16 @@
         "fractionBelowMinus80DbFS": 0.00455
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "9396e66859681dada825326b9f73ea8b85c0af7def5c75b85d2f9d9a3b660f1a",
+        "listenedAt": "2026-09-25T03:19:33.339Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1778,11 +1995,16 @@
         "fractionBelowMinus80DbFS": 0.00275
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "9e98d6d8dc74b9effe65d2c4ab961c2bb493f848c28751de1345d2fbd6a8f51e",
+        "listenedAt": "2026-09-25T03:19:46.722Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1827,11 +2049,16 @@
         "fractionBelowMinus80DbFS": 0.00065
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "99d9b25267779605da5d8bb4955adf82fed098fdb85b26b08ad92274480653eb",
+        "listenedAt": "2026-09-25T03:19:59.481Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1876,11 +2103,16 @@
         "fractionBelowMinus80DbFS": 0.00124
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "0896efd7bd0cd433f0896d657072837adf8b261398116b87206ace43c584cd81",
+        "listenedAt": "2026-09-25T03:20:12.873Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1925,11 +2157,16 @@
         "fractionBelowMinus80DbFS": 0.00163
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "ef71ae6150d543123d478b38cd03cc736e12d06fd2ae56fbb3ac0b88b990730c",
+        "listenedAt": "2026-09-25T03:20:28.570Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -1974,11 +2211,16 @@
         "fractionBelowMinus80DbFS": 0.00206
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "71dfd327015a43f50f201da510680de5a31cce518b631b8b0784632e66dde8c8",
+        "listenedAt": "2026-09-25T03:20:43.839Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     },
@@ -2023,11 +2265,16 @@
         "fractionBelowMinus80DbFS": 0.00661
       },
       "auditoryReview": {
-        "status": "pending",
-        "listened": false,
-        "identityConfirmedByListening": false,
-        "ambiguityReviewedByListening": false,
-        "excerptCompletenessReviewedByListening": false
+        "status": "approved",
+        "listened": true,
+        "reviewer": "Project owner using local listening page",
+        "identityConfirmedByListening": true,
+        "clarityConfirmedByListening": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+        "sha256": "2e803817230117d1aa7dfced938b7fe1229a7e7765188df43639802da87fcd8c",
+        "listenedAt": "2026-09-25T03:21:26.944Z",
+        "note": "",
+        "scope": "Human heard the clip, revealed the question answer and explicitly selected clear/matching or unclear. Editorial difficulty targets remain unmeasured."
       },
       "difficultyReview": "Provisional editorial target; must be checked against exact excerpt during listening."
     }
@@ -2054,5 +2301,13 @@
       "categoryHashMatches": true,
       "note": "All final file hashes rechecked after restoring a transient zero-byte projector output to its previously measured exact hash."
     }
+  },
+  "humanReviewEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+  "replacementTechnicalGameplay": {
+    "passed": 56,
+    "failed": 0,
+    "questions": 3,
+    "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/sound-replacements/results.json",
+    "scope": "Real app playback/loading, pause/resume/restart,3-play limit, reveal and sound toggle. No auditory identity approval."
   }
 }

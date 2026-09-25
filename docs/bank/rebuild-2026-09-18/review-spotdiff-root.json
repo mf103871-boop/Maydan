@@ -1,0 +1,445 @@
+{
+  "pack": "spotdiff",
+  "reviewedAt": "2026-09-25",
+  "scope": "Root200/400/600:24pairs, all48 original and edited outputs actually seen. Runtime/mobile approval pending.",
+  "status": "visual-pairs-reviewed-runtime-pending",
+  "items": [
+    {
+      "qid": "spotdiff-200-901",
+      "tier": 200,
+      "question": "ما التغيير بين صورتي ركن الشاي؟",
+      "answer": "تغيّر لون الغلاية",
+      "alt": [
+        "لون الغلاية"
+      ],
+      "topic": "مطبخ",
+      "spot": {
+        "x": 66,
+        "y": 56,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "observation": "Kettle enamel changes red to cobalt blue; mug, black handle, knob, navy cloth and scene remain semantically identical.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-200-902",
+      "tier": 200,
+      "question": "ما الاختلاف بين صورتي مكتب الطالب؟",
+      "answer": "تغيّر لون الدفتر",
+      "alt": [
+        "لون الدفتر"
+      ],
+      "topic": "مكتب ودراسة",
+      "spot": {
+        "x": 63,
+        "y": 57,
+        "r": 27
+      },
+      "actualImageObserved": true,
+      "observation": "Plain notebook cover changes green to orange; pencil, cup, both pens, notebook shape and desk unchanged.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-200-903",
+      "tier": 200,
+      "question": "ما الذي تبدّل في صورتي زاوية الزراعة؟",
+      "answer": "تغيّر لون إبريق الري",
+      "alt": [
+        "لون إبريق الري"
+      ],
+      "topic": "حديقة",
+      "spot": {
+        "x": 63,
+        "y": 54,
+        "r": 27
+      },
+      "actualImageObserved": true,
+      "observation": "Watering can metal changes blue to red; fern leaves, terracotta pot, glove and stone patio retained.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-200-904",
+      "tier": 200,
+      "question": "ما التغيير الظاهر في صورتي رف الألعاب؟",
+      "answer": "تغيّر لون السيارة",
+      "alt": [
+        "لون السيارة"
+      ],
+      "topic": "ألعاب وهوايات",
+      "spot": {
+        "x": 68,
+        "y": 49,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "observation": "Wooden toy car body changes yellow to blue; black windows/wheels, bear and colored stacking rings unchanged.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-200-905",
+      "tier": 200,
+      "question": "ما الذي اختلف بين صورتي ركن الإيقاع؟",
+      "answer": "تغيّر لون الطبلة",
+      "alt": [
+        "لون الطبلة"
+      ],
+      "topic": "موسيقى",
+      "spot": {
+        "x": 69,
+        "y": 56,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "observation": "Drum shell changes red to green, cream skin and wooden rim retained; pouch and mallet same.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-200-906",
+      "tier": 200,
+      "question": "ما الفرق بين صورتي تجهيز الرحلة؟",
+      "answer": "تغيّر لون الحقيبة",
+      "alt": [
+        "لون الحقيبة"
+      ],
+      "topic": "سفر",
+      "spot": {
+        "x": 71,
+        "y": 53,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "observation": "Suitcase hard shell changes blue to yellow; handles/wheels black, straw hat, towel, bench and framing same.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-200-907",
+      "tier": 200,
+      "question": "ما الذي تبدّل بين صورتي الملابس الشتوية؟",
+      "answer": "تغيّر لون القبعة",
+      "alt": [
+        "لون القبعة"
+      ],
+      "topic": "ملابس وإكسسوارات",
+      "spot": {
+        "x": 72,
+        "y": 44,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "observation": "Beanie knit changes red to purple; scarf shape/fringe and mittens retained. Fine fiber texture varies slightly, no second semantic change.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-200-908",
+      "tier": 200,
+      "question": "ما الاختلاف بين صورتي طاولة الصيانة؟",
+      "answer": "تغيّر لون صندوق الأدوات",
+      "alt": [
+        "لون صندوق الأدوات"
+      ],
+      "topic": "ورشة وأدوات",
+      "spot": {
+        "x": 64,
+        "y": 49,
+        "r": 25
+      },
+      "actualImageObserved": true,
+      "observation": "Toolbox body/lid changes orange to green; silver latch, black handle, hammer and wrench retained.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-400-901",
+      "tier": 400,
+      "question": "ما الذي اختفى من صورتي مائدة الحساء؟",
+      "answer": "اختفت الملعقة",
+      "alt": [
+        "الملعقة"
+      ],
+      "topic": "مطبخ",
+      "spot": {
+        "x": 85,
+        "y": 33,
+        "r": 10
+      },
+      "actualImageObserved": true,
+      "observation": "Only the spoon and its shadow disappear. Soup bowl, orange soup surface, folded napkin and oak table retained; mark covers spoon's former location. Marker indicates a decisive part of the former object and is fully inside the4:3image; it need not enclose the whole removed object.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-400-902",
+      "tier": 400,
+      "question": "ما الذي غاب عن صورتي التحضير للرسم؟",
+      "answer": "اختفى القلم الأحمر",
+      "alt": [
+        "القلم الأحمر"
+      ],
+      "topic": "مكتب ودراسة",
+      "spot": {
+        "x": 83,
+        "y": 55,
+        "r": 12
+      },
+      "actualImageObserved": true,
+      "observation": "Only the red pencil disappears; blank spiral sketchbook, blue eraser and empty tan pencil cup stay in place. Marker indicates a decisive part of the former object and is fully inside the4:3image; it need not enclose the whole removed object.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-400-903",
+      "tier": 400,
+      "question": "ما العنصر المفقود في صورتي أدوات الزراعة؟",
+      "answer": "اختفت المجرفة الصغيرة",
+      "alt": [
+        "المجرفة الصغيرة"
+      ],
+      "topic": "حديقة",
+      "spot": {
+        "x": 76,
+        "y": 67,
+        "r": 19
+      },
+      "actualImageObserved": true,
+      "observation": "Only the orange-handled garden trowel disappears. Basil leaves, pot and gloves keep their shape/positions; fine material rendering changes are not separate game answers. Marker indicates a decisive part of the former object and is fully inside the4:3image; it need not enclose the whole removed object.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-400-904",
+      "tier": 400,
+      "question": "ما التغيير في صورتي مكعبات اللعب؟",
+      "answer": "اختفى المكعب العلوي",
+      "alt": [
+        "المكعب الأزرق",
+        "المكعب العلوي"
+      ],
+      "topic": "ألعاب وهوايات",
+      "spot": {
+        "x": 67,
+        "y": 26,
+        "r": 16
+      },
+      "actualImageObserved": true,
+      "observation": "Top blue cube disappears; green cube still rests on red cube with original positions. Wooden horse unchanged; newly exposed green top is a direct consequence of removing the blue cube.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-400-905",
+      "tier": 400,
+      "question": "ما العنصر الذي اختفى من صورتي التدريب الإيقاعي؟",
+      "answer": "اختفت الماراكاس",
+      "alt": [
+        "الماراكاس",
+        "الخشخيشة"
+      ],
+      "topic": "موسيقى",
+      "spot": {
+        "x": 75,
+        "y": 57,
+        "r": 23
+      },
+      "actualImageObserved": true,
+      "observation": "Single red/yellow maraca disappears, tambourine and its existing jingles, blue cloth, composition retained; skin microtexture differs slightly without a second semantic object change.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-400-906",
+      "tier": 400,
+      "question": "ما الشيء الناقص في صورتي مستلزمات التنزه؟",
+      "answer": "اختفت البوصلة",
+      "alt": [
+        "البوصلة"
+      ],
+      "topic": "سفر",
+      "spot": {
+        "x": 64,
+        "y": 62,
+        "r": 14
+      },
+      "actualImageObserved": true,
+      "observation": "Brass compass disappears; orange bottle, cap, rolled unlettered map and wood table retained.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-400-907",
+      "tier": 400,
+      "question": "ما المفقود من صورتي الاستعداد للبرد؟",
+      "answer": "اختفى الوشاح",
+      "alt": [
+        "الوشاح"
+      ],
+      "topic": "ملابس وإكسسوارات",
+      "spot": {
+        "x": 71,
+        "y": 48,
+        "r": 25
+      },
+      "actualImageObserved": true,
+      "observation": "Red folded scarf and own shadow disappear; knit hat with pompom, brown gloves and blue bench remain.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-400-908",
+      "tier": 400,
+      "question": "ما الأداة التي غابت عن صورتي طاولة الإصلاح؟",
+      "answer": "اختفى المفك",
+      "alt": [
+        "المفك"
+      ],
+      "topic": "ورشة وأدوات",
+      "spot": {
+        "x": 73,
+        "y": 53,
+        "r": 22
+      },
+      "actualImageObserved": true,
+      "observation": "Only red screwdriver disappears, hammer and adjustable wrench retained in their original positions.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-600-901",
+      "tier": 600,
+      "question": "ما التفصيل المختلف في صورتي تقديم الماء؟",
+      "answer": "تغيّر لون مقبض الإبريق",
+      "alt": [
+        "مقبض الإبريق"
+      ],
+      "topic": "مطبخ",
+      "spot": {
+        "x": 75,
+        "y": 40,
+        "r": 16
+      },
+      "actualImageObserved": true,
+      "observation": "Only the pitcher loop handle changes turquoise to red. Ivory body, spout, water glass, lemon and counter unchanged.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-600-902",
+      "tier": 600,
+      "question": "ما الاختلاف في صورتي أدوات الهندسة؟",
+      "answer": "تغيّر اتجاه المسطرة",
+      "alt": [
+        "اتجاه المسطرة",
+        "دوران المسطرة"
+      ],
+      "topic": "مكتب ودراسة",
+      "spot": {
+        "x": 73,
+        "y": 47,
+        "r": 23
+      },
+      "actualImageObserved": true,
+      "observation": "Marked wooden ruler rotates from horizontal to diagonal clockwise, same object at same midpoint; notebook and eraser retained. Prior unmarked-strip original was corrected before comparison.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-600-903",
+      "tier": 600,
+      "question": "ما التفصيل الذي تبدّل في صورتي زاوية النباتات؟",
+      "answer": "تغيّر لون حافة الأصيص",
+      "alt": [
+        "حافة الأصيص"
+      ],
+      "topic": "حديقة",
+      "spot": {
+        "x": 49,
+        "y": 49,
+        "r": 22
+      },
+      "actualImageObserved": true,
+      "observation": "Only flowerpot top rim changes cobalt to yellow; terracotta body, fern foliage, white watering pitcher and patio remain.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-600-904",
+      "tier": 600,
+      "question": "ما الذي اختلف بين صورتي القطار الخشبي؟",
+      "answer": "تغيّر لون مدخنة القطار",
+      "alt": [
+        "مدخنة القطار"
+      ],
+      "topic": "ألعاب وهوايات",
+      "spot": {
+        "x": 44,
+        "y": 28,
+        "r": 10
+      },
+      "actualImageObserved": true,
+      "observation": "Only toy train chimney changes red to yellow; green locomotive, tan cab, three visible black wheels and two blue blocks retained.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-600-905",
+      "tier": 600,
+      "question": "ما التفصيل المتبدّل في صورتي ضبط الإيقاع؟",
+      "answer": "تغيّر اتجاه بندول المسرّع",
+      "alt": [
+        "بندول المسرّع",
+        "ذراع المسرّع"
+      ],
+      "topic": "موسيقى",
+      "spot": {
+        "x": 48,
+        "y": 41,
+        "r": 17
+      },
+      "actualImageObserved": true,
+      "observation": "Silver metronome pendulum swings from leaning left to right around the same lower pivot; its slider stays on the arm. Case, scale, winding knob and tan case retained.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-600-906",
+      "tier": 600,
+      "question": "ما الاختلاف بين صورتي مراقبة الطبيعة؟",
+      "answer": "اختفى غطاء عدسة المنظار",
+      "alt": [
+        "غطاء العدسة",
+        "غطاء عدسة المنظار"
+      ],
+      "topic": "سفر",
+      "spot": {
+        "x": 84,
+        "y": 68,
+        "r": 12
+      },
+      "actualImageObserved": true,
+      "observation": "Red cap on image-right objective is removed, exposing matching dark glass. Other objective, binocular body, pouch and table retained.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-600-907",
+      "tier": 600,
+      "question": "ما التفصيل المختلف في صورتي القفاز الجلدي؟",
+      "answer": "اختفى زر القفاز",
+      "alt": [
+        "زر القفاز"
+      ],
+      "topic": "ملابس وإكسسوارات",
+      "spot": {
+        "x": 87,
+        "y": 54,
+        "r": 7
+      },
+      "actualImageObserved": true,
+      "observation": "Only the round brown cuff button disappears; glove's five fingers, seam layout, cuff and gray scarf retain form. Slight grain rendering variation is not a separate semantic difference.",
+      "status": "pair-reviewed-runtime-pending"
+    },
+    {
+      "qid": "spotdiff-600-908",
+      "tier": 600,
+      "question": "ما التغيير في صورتي أدوات الطلاء؟",
+      "answer": "تغيّر لون شعيرات الفرشاة",
+      "alt": [
+        "شعيرات الفرشاة"
+      ],
+      "topic": "ورشة وأدوات",
+      "spot": {
+        "x": 48,
+        "y": 73,
+        "r": 17
+      },
+      "actualImageObserved": true,
+      "observation": "Brush bristles change black to white; ferrule, its rivets, blue handle and red paint tin remain.",
+      "status": "pair-reviewed-runtime-pending"
+    }
+  ]
+}

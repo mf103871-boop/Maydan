@@ -1,0 +1,33 @@
+{
+  "id": "spotdiff-1000-901-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-1000-901-b.webp",
+  "asset": "media/spotdiff/spotdiff-1000-901-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the RIGHTMOST of the five black peppercorns at x=90 y=58, leaving exactly FOUR peppercorns in their original positions. Keep linen weave, salt bowl, scoop and light exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 170540,
+  "sha256": "4fb9a9f8e398c4244f41c26bd108f40c6ac33dba9c261568daf154de0dcae31b",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "The rightmost of five peppercorns is removed, leaving the other four in matching arc positions. Salt bowl, scoop and cloth remain in place. The bowl is cropped equally on the left in both images.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "generationInput": {
+    "type": "raw-generated-image-a",
+    "rawImageSha256": "bdd9ea3ed92d3c4c5fc09c40fff4ce66e74c790d4fc69f5239543d09a5349362",
+    "installedImageA": "media/spotdiff/spotdiff-1000-901-a.webp",
+    "installedImageASha256": "85eae32e1e48364ac737bebcc50d43790f5fddc5ba1c242e17b6e869b7d9bb9b"
+  },
+  "rawGeneratedImageSha256": "cc9838fb15a3a7653c5b18c3afa35d9d6f845555b2ae2cdf2b361bb769408bb4"
+}

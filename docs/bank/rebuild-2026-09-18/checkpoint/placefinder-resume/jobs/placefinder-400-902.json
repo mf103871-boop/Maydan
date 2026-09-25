@@ -1,0 +1,20 @@
+{
+  "id": "placefinder-400-902",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 400,
+  "a": "البتراء",
+  "alt": [
+    "مدينة البتراء",
+    "Petra"
+  ],
+  "topic": "العالم العربي",
+  "q": "ما اسم المدينة الأثرية الأردنية التي تنتمي إليها هذه الواجهة؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/326/",
+  "sourceEvidence": "Recovered primary review 2026-09-23: Nabataean rock-cut city amid red sandstone cliffs and tombs.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Petra in Jordan, the Treasury Al-Khazneh rock-cut facade centered in tall rose-red sandstone cliffs, frontal view from the end of the narrow Siq: six Corinthian columns on lower story with broken upper pediment framing the central round tholos, dark central doorway, warm natural sandstone strata. Entire facade visible from ground to urn with side rock walls; no invented freestanding temple.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Rose sandstone Treasury facade in cliffs, lower columns, upper tholos and pediments; question specifically asks Petra site.",
+  "runtimeReviewStatus": "approved"
+}

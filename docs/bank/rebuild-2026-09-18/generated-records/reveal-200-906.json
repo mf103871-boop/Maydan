@@ -13,7 +13,15 @@
   "sha256": "2fe97be774dd2c5650196905276d5122caf47233892385496229def08fb7347d",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "2fe97be774dd2c5650196905276d5122caf47233892385496229def08fb7347d",
+    "sourceUrl": "https://www.nobelprize.org/prizes/peace/1993/mandela/facts/",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show short silver-gray hair, broad smile lines and clean-shaven cheeks. The generated portrait has an open smile and patterned shirt; the Nobel reference is monochrome with a suit and tie.",
+    "limits": null,
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

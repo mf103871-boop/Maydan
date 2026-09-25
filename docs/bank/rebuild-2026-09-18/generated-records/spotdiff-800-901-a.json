@@ -1,0 +1,27 @@
+{
+  "id": "spotdiff-800-901-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-800-901-a.webp",
+  "asset": "media/spotdiff/spotdiff-800-901-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large ivory coffee cup on matching saucer center-right, empty inside visible. Its very thin top rim is cobalt BLUE; rim centered x=63 y=45, width 25 percent image, thickness 1.5 percent image height. Plain silver spoon far left, small brown biscuit front-left on cream linen. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 155036,
+  "sha256": "89287fe2d65b9667ef5910a15f9a3e3cbfe55bbb52fccd2996b276f056864727",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "Only the thin top rim of the ivory coffee cup changes from blue to red. Cup, saucer, spoon and biscuit remain in the same positions. The mark targets the central rim region, not the whole cup. Fine linen/biscuit texture drift is not a second distinct object difference.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "rawGeneratedImageSha256": "b2cbbdcce38f7d1518803dcbbbd37d6dc69628e56109a5cb6310bba570a6400a"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "spotdiff-800-905-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-800-905-b.webp",
+  "asset": "media/spotdiff/spotdiff-800-905-b.webp",
+  "prompt": "Use case: precise-object-edit. The supplied image A shows SEVEN visible silver jingle locations on a tambourine. Remove EXACTLY ONE: the rightmost silver jingle at the 3-o'clock position, centered approximately x=80%, y=47%. Replace that silver jingle with background, leaving its tiny support pin and existing empty slot. CRITICAL: preserve the LOWER-RIGHT jingle at 5-o'clock, centered x=75%, y=66%, fully present and silver. Also preserve the top, upper-right, bottom, lower-left and upper-left silver jingles; there must be SIX visible silver jingle locations after editing. Do not remove the lower-right jingle. Preserve drum skin pattern, wooden rim, all six remaining jingle geometries/reflections, camera, background and shadows. ONE semantic difference only: one rightmost jingle pair disappears. Same framing and dimensions. No text.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 64480,
+  "sha256": "3219aa9cba5c8a77d014f619f9b872469bb431ab9a08521f121f9178b1b5a09a",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "A has seven visible silver jingle locations. Final B removes only the rightmost3-o-clock pair, leaving its support and six other locations, including the lower-right5-o-clock pair. The rejected first B removed two locations and is excluded.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "generationInput": {
+    "type": "raw-generated-image-a",
+    "rawImageSha256": "bfc62f683a3f336705efd7590726634c8e1384cac076f97200414b5c5a856221",
+    "installedImageA": "media/spotdiff/spotdiff-800-905-a.webp",
+    "installedImageASha256": "83b336130a14ca150656b29fee2a1a5ca98d26988b1c6b8acf309f06a0eadb42"
+  },
+  "correctionHistory": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/corrections-800-1000.json",
+  "rawGeneratedImageSha256": "2e2f83c3bd7ed55a83fe35636797c2aec820b1b4a1ee7f7bbeb87656a3d3691f"
+}

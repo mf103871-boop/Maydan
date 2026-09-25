@@ -1,0 +1,20 @@
+{
+  "id": "placefinder-400-903",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 400,
+  "a": "جسر البرج",
+  "alt": [
+    "تاور بريدج",
+    "Tower Bridge"
+  ],
+  "topic": "أوروبا الغربية",
+  "q": "ما اسم هذا الجسر اللندني ذي البرجين؟",
+  "sourceUrl": "https://www.towerbridge.org.uk/discover/history",
+  "sourceEvidence": "Recovered primary operator review 2026-09-23: Gothic towers, lifting road bridge and suspension elements across Thames.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Tower Bridge in London across the River Thames: exactly two pale stone Victorian Gothic towers with pointed dark roofs, connected by high horizontal twin walkways; blue suspension chains to the shores and a closed level bascule roadway between towers. Three-quarter riverside view, both complete towers and river visible. Not London Bridge; no extra towers.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Two Gothic stone towers, high connecting walkways, blue suspension members and lower roadway across river.",
+  "runtimeReviewStatus": "approved"
+}

@@ -13,7 +13,15 @@
   "sha256": "8b0bd4d1d567739ea7e212c2686e824ff9730ad1563aaf0feb834ee2d3c76941",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "8b0bd4d1d567739ea7e212c2686e824ff9730ad1563aaf0feb834ee2d3c76941",
+    "sourceUrl": "https://inside.fifa.com/news/a-tribute-to-diego-maradona",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show dark curly hair, strong brows and a broad lower face. The generated illustration has longer fuller curls and a serious expression; the FIFA reference is an older smiling event view holding a named shirt.",
+    "limits": "Different apparent ages and hair volume; source labels establish the photograph subject, not a measured facial match.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

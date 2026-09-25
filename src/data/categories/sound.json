@@ -16,7 +16,7 @@
         "قيثارة",
         "غيتار صوتي"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.8,
       "sourceUrl": "https://audionautix.com/free-music/acoustic",
       "media": {
@@ -41,7 +41,7 @@
         "جرس الباب",
         "جرس المنزل"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.8,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doorbell-classic-dingdong.ogg",
       "media": {
@@ -66,7 +66,7 @@
         "ساعة حائط",
         "ساعة عقارب"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.8,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clock_ticking.ogg",
       "media": {
@@ -92,7 +92,7 @@
         "زمور سيارة",
         "هرن سيارة"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.8,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Car_Horn.wav",
       "media": {
@@ -116,7 +116,7 @@
       "alt": [
         "الرعد"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.8,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thunder_01.ogg",
       "media": {
@@ -140,7 +140,7 @@
       "alt": [
         "الكلب"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.8,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dog_barking.webm",
       "media": {
@@ -164,7 +164,7 @@
       "alt": [
         "الديك"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.8,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rooster_crowing.ogg",
       "media": {
@@ -190,7 +190,7 @@
         "بسة",
         "هرة"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.8,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meow_of_a_pleading_cat.oga",
       "media": {
@@ -216,7 +216,7 @@
         "طبل جانبي",
         "سنير"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snare_drum_muffled.ogg",
       "media": {
@@ -244,16 +244,16 @@
       ],
       "verified": false,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_Waves_on_a_Tropical_Beach.ogg",
+      "sourceUrl": "https://freesound.org/people/SamsterBirdies/sounds/578524/",
       "media": {
-        "src": "sound-400-902.mp3",
+        "src": "sound-400-902-r2.mp3",
         "type": "audio",
-        "title": "Ocean Waves on a Tropical Beach (مقتطف مقصوص ومطبّع)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_Waves_on_a_Tropical_Beach.ogg",
-        "author": "Jarrod stanley",
+        "title": "Calm ocean waves (مقتطف مقصوص ومعدّل المستوى)",
+        "sourceUrl": "https://freesound.org/people/SamsterBirdies/sounds/578524/",
+        "author": "SamsterBirdies",
         "license": "CC0 1.0",
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+        "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change."
       }
     },
     {
@@ -267,7 +267,7 @@
         "خيل",
         "فرس"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wiehern.ogg",
       "media": {
@@ -292,7 +292,7 @@
         "جدجد",
         "صرار الليل"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cricket_Gryllus_bimaculatus_Chirps.oga",
       "media": {
@@ -319,16 +319,16 @@
       ],
       "verified": false,
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_sneeze_(man).ogg",
+      "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
       "media": {
-        "src": "sound-400-905.mp3",
+        "src": "sound-400-905-r2.mp3",
         "type": "audio",
-        "title": "A man sneezes two times (مقتطف مقصوص ومطبّع)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_sneeze_(man).ogg",
-        "author": "Nikolay Komarov",
-        "license": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+        "title": "Sneezing.wav (مقتطف مقصوص ومعدّل المستوى)",
+        "sourceUrl": "https://freesound.org/people/edschaefer/sounds/464232/",
+        "author": "edschaefer",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change. Transient dynamic compression applied."
       }
     },
     {
@@ -342,7 +342,7 @@
         "دباب",
         "موتوسيكل"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jawa250_motorbike_exhaust_sound.ogg",
       "media": {
@@ -366,7 +366,7 @@
       "alt": [
         "مكنسة شفط"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Het_aanstaan_van_een_stofzuiger_-_SoundCloud_-_Beeld_en_Geluid.ogg",
       "media": {
@@ -391,7 +391,7 @@
         "كيبورد",
         "لوحة المفاتيح"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.6,
       "sourceUrl": "https://freesound.org/people/Anton/sounds/137/",
       "media": {
@@ -415,7 +415,7 @@
       "alt": [
         "آلة القانون"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:ArabicQanunSample.ogg",
       "media": {
@@ -440,7 +440,7 @@
         "ريح",
         "الرياح"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howling_wind.ogg",
       "media": {
@@ -465,7 +465,7 @@
         "الوقواق",
         "كوكو"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://freesound.org/people/Benboncan/sounds/72699/",
       "media": {
@@ -490,7 +490,7 @@
         "آلة تصوير",
         "كاميرا تصوير"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canon_T50_shutter_noise.ogg",
       "media": {
@@ -515,7 +515,7 @@
         "صافرة ضباب",
         "صفارة الضباب"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fog_signal_Bremerhaven.ogg",
       "media": {
@@ -539,7 +539,7 @@
       "alt": [
         "الحمار"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://freesound.org/people/felix.blume/sounds/157763/",
       "media": {
@@ -564,7 +564,7 @@
         "تصفير",
         "صفير بالفم"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://freesound.org/people/georgisound/sounds/369296/",
       "media": {
@@ -588,7 +588,7 @@
       "alt": [
         "المقص"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.4,
       "sourceUrl": "https://freesound.org/people/Jagadamba/sounds/257032/",
       "media": {
@@ -613,7 +613,7 @@
         "الحصى",
         "حصباء"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://freesound.org/people/Joozz/sounds/531952/",
       "media": {
@@ -637,7 +637,7 @@
       "alt": [
         "نقار خشب"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://freesound.org/people/Benboncan/sounds/66955/",
       "media": {
@@ -662,7 +662,7 @@
         "تراكتور",
         "جرار زراعي"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://freesound.org/people/Erdie/sounds/34372/",
       "media": {
@@ -687,7 +687,7 @@
         "القلي",
         "قلي الطعام"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://freesound.org/people/BenjaminNelan/sounds/353124/",
       "media": {
@@ -713,7 +713,7 @@
         "وابيتي",
         "أيل أمريكي"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://freesound.org/people/Hyperionn/sounds/250188/",
       "media": {
@@ -738,7 +738,7 @@
         "سيلو",
         "فيولونسيل"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://freesound.org/people/juskiddink/sounds/68373/",
       "media": {
@@ -763,7 +763,7 @@
         "حبات البرد",
         "بَرَد"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.25,
       "sourceUrl": "https://freesound.org/people/joly1/sounds/81452/",
       "media": {
@@ -779,7 +779,7 @@
     },
     {
       "p": 800,
-      "q": "ما الرياضة التي تسمع تدحرج كرتها في الممر؟",
+      "q": "ما الرياضة التي تسمع اصطدام كرتها بالقوارير؟",
       "a": "بولينغ",
       "qid": "sound-800-908",
       "type": "audio",
@@ -790,16 +790,16 @@
       ],
       "verified": false,
       "difficultyTarget": 0.25,
-      "sourceUrl": "https://freesound.org/people/driftworks/sounds/128969/",
+      "sourceUrl": "https://freesound.org/people/Rehanjo/sounds/593593/",
       "media": {
-        "src": "sound-800-908.mp3",
+        "src": "sound-800-908-r2.mp3",
         "type": "audio",
-        "title": "Bowling Ball.wav (مقتطف مقصوص ومطبّع)",
-        "sourceUrl": "https://freesound.org/people/driftworks/sounds/128969/",
-        "author": "driftworks",
+        "title": "Bowling.wav (مقتطف مقصوص ومعدّل المستوى)",
+        "sourceUrl": "https://freesound.org/people/Rehanjo/sounds/593593/",
+        "author": "Rehanjo",
         "license": "CC0 1.0",
         "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+        "changes": "Excerpt selected, downmixed to mono, short edge fades, level adjusted and encoded as128kbps MP3; no speed or pitch change. Transient dynamic compression applied."
       }
     },
     {
@@ -813,7 +813,7 @@
         "سعدان عواء",
         "قرد عاوٍ"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.15,
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howler_monkey.ogg",
       "media": {
@@ -838,7 +838,7 @@
         "اللقلق",
         "لقلق أبيض"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.15,
       "sourceUrl": "https://freesound.org/people/dobroide/sounds/153500/",
       "media": {
@@ -863,7 +863,7 @@
         "كالمبا",
         "بيانو الإبهام"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.15,
       "sourceUrl": "https://freesound.org/people/iluppai/sounds/100474/",
       "media": {
@@ -889,7 +889,7 @@
         "تيرمين",
         "Theremin"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.15,
       "sourceUrl": "https://freesound.org/people/kirkoid/sounds/40816/",
       "media": {
@@ -915,7 +915,7 @@
         "عارض أفلام",
         "بروجيكتور أفلام"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.15,
       "sourceUrl": "https://freesound.org/people/Dr.%20Macak/sounds/253758/",
       "media": {
@@ -942,7 +942,7 @@
         "غيزر",
         "سخان مائي طبيعي"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.15,
       "sourceUrl": "https://freesound.org/people/YleArkisto/sounds/263878/",
       "media": {
@@ -967,7 +967,7 @@
         "مودم هاتفي",
         "مودم اتصال هاتفي"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.15,
       "sourceUrl": "https://freesound.org/people/BoilingSand/sounds/49608/",
       "media": {
@@ -992,7 +992,7 @@
         "التزلج الجليدي",
         "تزلج جليدي"
       ],
-      "verified": false,
+      "verified": true,
       "difficultyTarget": 0.15,
       "sourceUrl": "https://freesound.org/people/splodge123/sounds/249833/",
       "media": {

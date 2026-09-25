@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-1000-906-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the small BLUE plastic front strap buckle to ORANGE. Preserve olive backpack, tan straps, buckle geometry, blanket, stone and background exactly. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

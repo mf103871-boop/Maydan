@@ -13,7 +13,15 @@
   "sha256": "331ec2331f4adb1d35180bf33b77f082b49d55fe5cde083c624b85e99ba803a8",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "331ec2331f4adb1d35180bf33b77f082b49d55fe5cde083c624b85e99ba803a8",
+    "sourceUrl": "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show voluminous shoulder-length hair and elongated facial contours. Generated portrait has dark eye makeup, a black high-neck garment and a frontal pose; the AUB source is a side-turned stage photograph.",
+    "limits": "The source is only156px wide, with a small face and stage lighting. Fine facial correspondence cannot be judged reliably; use this as broad-feature comparison only.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

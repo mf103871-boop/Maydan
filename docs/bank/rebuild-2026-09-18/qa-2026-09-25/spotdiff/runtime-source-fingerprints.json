@@ -1,0 +1,21 @@
+{
+  "capturedAtUtc": "2026-09-25T03:36:09.4113352Z",
+  "note": "Captured during this runtime QA after root confirmed the reveal App/style fixes were saved.",
+  "files": [
+    {
+      "path": "src/games/badeeha/App.js",
+      "sha256": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+      "lastWriteTimeUtc": "2026-09-25T03:33:54.0546736Z"
+    },
+    {
+      "path": "src/games/badeeha/styles.css",
+      "sha256": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+      "lastWriteTimeUtc": "2026-09-25T03:33:54.0546736Z"
+    },
+    {
+      "path": "src/data/categories/spotdiff.json",
+      "sha256": "922d2f552b64f158837561ec48589f19ecf70d85ce77ed559c940e6e67aa69ae",
+      "lastWriteTimeUtc": "2026-09-25T03:34:22.0043373Z"
+    }
+  ]
+}

@@ -5,7 +5,6 @@
   "p": 200,
   "a": "تاج محل",
   "alt": [
-    "تاج مهَل",
     "Taj Mahal"
   ],
   "topic": "جنوب وجنوب شرق آسيا",
@@ -15,5 +14,7 @@
   "referenceFile": "media/placefinder/placefinder-200-032.webp",
   "sourceEvidence": "UNESCO describes the Agra white-marble mausoleum and four free-standing minarets.",
   "sourceReviewed": true,
-  "visualReviewStatus": "pending"
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "White onion dome, central pointed arch, smaller pavilions and four separate minarets with reflecting pool.",
+  "runtimeReviewStatus": "approved"
 }

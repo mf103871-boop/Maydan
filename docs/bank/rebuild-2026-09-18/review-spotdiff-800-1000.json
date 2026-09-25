@@ -1,0 +1,1007 @@
+{
+  "pack": "spotdiff",
+  "scope": {
+    "tiers": [
+      800,
+      1000
+    ],
+    "pairs": 16,
+    "images": 32
+  },
+  "reviewedAt": "2026-09-25",
+  "reviewer": "audit_current_repo",
+  "status": "visual-approved-runtime-pending",
+  "actualImageObserved": true,
+  "method": "All32 selected original and edited images were viewed at native output size; all16 final installed pairs were then reviewed in300px per-image contact sheets and140px per-image side-by-side previews. No app renderer or gameplay claim is made here.",
+  "semanticTolerance": "A single intentional object/color/count/shape difference is present in each pair. Fine generated texture drift in cloth, soil or metal is disclosed where notable and is not pixel identity. This review does not claim the images are pixel-identical outside the target.",
+  "difficultyCalibration": "Editorial estimates only; no measured success rates. Several high-tier sparse/color scenes remain easier than their point value may suggest. Small-target pairs are all visible at140px. Root should retain this caveat or revise tier calibration with player evidence.",
+  "coordinates": "x/y are percentages from physical left/top. r is width-relative radius used by the app. Coordinates were located from the actual final image. Cup marker targets the central rim region and is kept inside the image; final app overlay review remains pending.",
+  "checks": {
+    "files32": true,
+    "recordAndJobPromptsMatch": true,
+    "sha256Verified": true,
+    "dimensions1280x960": true,
+    "maxBytes262144": true,
+    "uniqueQuestions16": true,
+    "oneOfEachEightTopicsPerTier": true,
+    "fullAnswerAndAliasPromptLeakCount": 0,
+    "appRuntime": "not-run"
+  },
+  "correctionHistory": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/corrections-800-1000.json",
+  "evidence": [
+    "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/pairs-1.png",
+    "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/pairs-2.png",
+    "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/pairs-3.png",
+    "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/pairs-4.png"
+  ],
+  "items": [
+    {
+      "qid": "spotdiff-800-901",
+      "tier": 800,
+      "topic": "مطبخ",
+      "question": "ما التفصيل الدقيق في صورتي جلسة القهوة؟",
+      "answer": "تغيّر لون حافة الفنجان",
+      "alt": [
+        "حافة الفنجان"
+      ],
+      "spot": {
+        "x": 63,
+        "y": 25,
+        "r": 18
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "Only the thin top rim of the ivory coffee cup changes from blue to red. Cup, saucer, spoon and biscuit remain in the same positions. The mark targets the central rim region, not the whole cup. Fine linen/biscuit texture drift is not a second distinct object difference.",
+      "sha256": {
+        "a": "89287fe2d65b9667ef5910a15f9a3e3cbfe55bbb52fccd2996b276f056864727",
+        "b": "139381880824e6e83a2e88281d4fc3ae3b5517855151ec454d633eb34ef01d02"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-800-901-a.webp",
+          "sha256": "89287fe2d65b9667ef5910a15f9a3e3cbfe55bbb52fccd2996b276f056864727",
+          "width": 1280,
+          "height": 960,
+          "bytes": 155036,
+          "rawImageSha256": "b2cbbdcce38f7d1518803dcbbbd37d6dc69628e56109a5cb6310bba570a6400a",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large ivory coffee cup on matching saucer center-right, empty inside visible. Its very thin top rim is cobalt BLUE; rim centered x=63 y=45, width 25 percent image, thickness 1.5 percent image height. Plain silver spoon far left, small brown biscuit front-left on cream linen. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-901-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-901-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-800-901-b.webp",
+          "sha256": "139381880824e6e83a2e88281d4fc3ae3b5517855151ec454d633eb34ef01d02",
+          "width": 1280,
+          "height": 960,
+          "bytes": 132710,
+          "rawImageSha256": "e57771dc27b5eb12dd5f6207360f469f4d1453dc61761c4740f77a6063249be8",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the thin cobalt BLUE line around the coffee cup top rim to RED; keep ivory cup, saucer, spoon, biscuit and textures identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-901-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-901-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-800-901-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Thin contour change, although the large cup makes this easier than several other 800 targets."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-800-902",
+      "tier": 800,
+      "topic": "مكتب ودراسة",
+      "question": "ما التفصيل المتغير في صورتي مساحة العمل؟",
+      "answer": "تغيّر لون ورقة الملاحظات",
+      "alt": [
+        "ورقة الملاحظات"
+      ],
+      "spot": {
+        "x": 80,
+        "y": 74,
+        "r": 14
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "The yellow blank sticky-note pad becomes pink. Laptop, mug, pen, pad position and outline remain stable. The generated object is a shallow note pad rather than one loose sheet; the accepted answer describes its visible top note accurately.",
+      "sha256": {
+        "a": "433157c823c9162f9a98f314a536971736887f7b3fde52ce59fe2e4bc057e7f4",
+        "b": "0bc5bb3850a1de0523b5335adb023c9e65e33eec4400003d900ddc413a86daf7"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-800-902-a.webp",
+          "sha256": "433157c823c9162f9a98f314a536971736887f7b3fde52ce59fe2e4bc057e7f4",
+          "width": 1280,
+          "height": 960,
+          "bytes": 28024,
+          "rawImageSha256": "b9c998f0b91da22425b9acaa0d41460c560b2b840b412acde80060bb12b91b19",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A closed gray laptop on white desk centered-left, black plain pen near lower-left, small blank YELLOW square sticky note on tabletop at x=76 y=62, square side 13 percent picture width. Plain white mug rear-right. No writing, logo or screen. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-902-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-902-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-800-902-b.webp",
+          "sha256": "0bc5bb3850a1de0523b5335adb023c9e65e33eec4400003d900ddc413a86daf7",
+          "width": 1280,
+          "height": 960,
+          "bytes": 29124,
+          "rawImageSha256": "21f48093e85bd924213ea7b4912985729073d6b78e046fa971d3563411610084",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the blank YELLOW square sticky note to PINK, preserving its size, position, subtle paper fold and shadows. Laptop, pen, mug and desktop unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-902-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-902-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-800-902-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "The target occupies about26% of image width, larger than requested13%; a relatively easy 800 item."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-800-903",
+      "tier": 800,
+      "topic": "حديقة",
+      "question": "ما التفصيل غير المتطابق في صورتي النبتة المنزلية؟",
+      "answer": "تغيّر لون ورقة النبات",
+      "alt": [
+        "ورقة النبات"
+      ],
+      "spot": {
+        "x": 67,
+        "y": 14,
+        "r": 9
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "The isolated upper-right leaf changes from green to orange. Five other green leaves, stems, ivory pot and gray pebble remain present in matching positions. Minor soil/pebble texture drift is not an additional semantic difference.",
+      "sha256": {
+        "a": "e228bea4a565af8b583c060abe0fe330569059664dfc26651c4ce5238d4d27ca",
+        "b": "5553918c6a0a92a1f1bdfc9e7f9693ecf6affe8dfde4e2aad9f9b2e4ec71e537"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-800-903-a.webp",
+          "sha256": "e228bea4a565af8b583c060abe0fe330569059664dfc26651c4ce5238d4d27ca",
+          "width": 1280,
+          "height": 960,
+          "bytes": 79942,
+          "rawImageSha256": "6b36b4cc32803eddf9e0ba93afeb3ea0f8b6099fbf5065471f9f43e43d588a04",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Small elegant potted plant in ivory pot center, exactly six smooth oval green leaves on thin branching stems against pale gray wall, leaf positions separate. The isolated upper RIGHT leaf at x=65 y=30 is vivid GREEN, about 13 percent image width, unobscured. Plain small gray pebble left of pot. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-903-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-903-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-800-903-b.webp",
+          "sha256": "5553918c6a0a92a1f1bdfc9e7f9693ecf6affe8dfde4e2aad9f9b2e4ec71e537",
+          "width": 1280,
+          "height": 960,
+          "bytes": 69072,
+          "rawImageSha256": "9a46a7d0a55ea2a0cf822e4e61bdd3a0fa14d2597f515ccbeb7fb4a38de895c3",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the isolated upper RIGHT green LEAF at x=67 y=14 to autumn ORANGE, keeping its shape, veins, stem and all other five green leaves exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-903-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-903-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-800-903-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Localized leaf among six; visible and fair at140px per image."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-800-904",
+      "tier": 800,
+      "topic": "ألعاب وهوايات",
+      "question": "ما التفصيل المختلف في صورتي الروبوت الصغير؟",
+      "answer": "تغيّر لون عين الروبوت",
+      "alt": [
+        "عين الروبوت"
+      ],
+      "spot": {
+        "x": 57,
+        "y": 25,
+        "r": 5
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "Only the image-right round robot eye changes from black to white. The other eye, mouth, cube head, blue torso, orange arms and gray feet remain unchanged in geometry.",
+      "sha256": {
+        "a": "c2b3ddda9c338bc682185934497286a63daf3ee66edd8cbae017365f1aad5c6b",
+        "b": "d3128a7a84b0b6ede6550c18f6dd16e063e901ff38248367c8e3df12d2805484"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-800-904-a.webp",
+          "sha256": "c2b3ddda9c338bc682185934497286a63daf3ee66edd8cbae017365f1aad5c6b",
+          "width": 1280,
+          "height": 960,
+          "bytes": 55332,
+          "rawImageSha256": "fc32759e783018acdeac5d605e7413b10dfe811486caa4f25875016097b36878",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Friendly large toy robot sitting center, plain silver cube head with exactly two round BLACK eye disks, no other facial marks except straight short mouth line. Image-right eye center x=58 y=33, disk diameter 7 percent width. Blue rectangular body, orange arms, gray legs; ivory backdrop. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-904-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-904-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-800-904-b.webp",
+          "sha256": "d3128a7a84b0b6ede6550c18f6dd16e063e901ff38248367c8e3df12d2805484",
+          "width": 1280,
+          "height": 960,
+          "bytes": 51834,
+          "rawImageSha256": "cce8bfe865990bb26341d74eec758ef08ca1140ed496f20c2e44ae8b9f7ed76a",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the toy robot's IMAGE-RIGHT round BLACK eye disk to WHITE, keeping disk boundary visible via thin silver recess. Left eye remains black; preserve all geometry, mouth, body and scene. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-904-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-904-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-800-904-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Small eye target; high contrast remains readable at140px."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-800-905",
+      "tier": 800,
+      "topic": "موسيقى",
+      "question": "ما التفصيل الناقص في صورتي آلة الإيقاع الدائرية؟",
+      "answer": "اختفى زوج الصنوج",
+      "alt": [
+        "زوج الصنوج",
+        "صنوج الدف"
+      ],
+      "spot": {
+        "x": 80,
+        "y": 47,
+        "r": 6
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "A has seven visible silver jingle locations. Final B removes only the rightmost3-o-clock pair, leaving its support and six other locations, including the lower-right5-o-clock pair. The rejected first B removed two locations and is excluded.",
+      "sha256": {
+        "a": "83b336130a14ca150656b29fee2a1a5ca98d26988b1c6b8acf309f06a0eadb42",
+        "b": "3219aa9cba5c8a77d014f619f9b872469bb431ab9a08521f121f9178b1b5a09a"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-800-905-a.webp",
+          "sha256": "83b336130a14ca150656b29fee2a1a5ca98d26988b1c6b8acf309f06a0eadb42",
+          "width": 1280,
+          "height": 960,
+          "bytes": 92218,
+          "rawImageSha256": "bfc62f683a3f336705efd7590726634c8e1384cac076f97200414b5c5a856221",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A large wooden tambourine shown face-on centered on light gray wall, tan drum skin, six equally spaced pairs of silver metal jingles around rim. One jingle pair at rightmost 3-o'clock position center x=75 y=50, visibly seated in rectangular rim slot; tambourine diameter 58 percent image width. Plain clean isolated instrument. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-905-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-905-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-800-905-b.webp",
+          "sha256": "3219aa9cba5c8a77d014f619f9b872469bb431ab9a08521f121f9178b1b5a09a",
+          "width": 1280,
+          "height": 960,
+          "bytes": 64480,
+          "rawImageSha256": "2e2f83c3bd7ed55a83fe35636797c2aec820b1b4a1ee7f7bbeb87656a3d3691f",
+          "actualPrompt": "Use case: precise-object-edit. The supplied image A shows SEVEN visible silver jingle locations on a tambourine. Remove EXACTLY ONE: the rightmost silver jingle at the 3-o'clock position, centered approximately x=80%, y=47%. Replace that silver jingle with background, leaving its tiny support pin and existing empty slot. CRITICAL: preserve the LOWER-RIGHT jingle at 5-o'clock, centered x=75%, y=66%, fully present and silver. Also preserve the top, upper-right, bottom, lower-left and upper-left silver jingles; there must be SIX visible silver jingle locations after editing. Do not remove the lower-right jingle. Preserve drum skin pattern, wooden rim, all six remaining jingle geometries/reflections, camera, background and shadows. ONE semantic difference only: one rightmost jingle pair disappears. Same framing and dimensions. No text.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-905-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-905-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-800-905-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Small missing rim element; challenging but visible at140px."
+      },
+      "corrections": [
+        "spotdiff-800-905-b"
+      ]
+    },
+    {
+      "qid": "spotdiff-800-906",
+      "tier": 800,
+      "topic": "سفر",
+      "question": "ما التفصيل المتبدّل في صورتي المخيم؟",
+      "answer": "تغيّر لون حلقة باب الخيمة",
+      "alt": [
+        "حلقة باب الخيمة",
+        "حلقة السحاب"
+      ],
+      "spot": {
+        "x": 77,
+        "y": 71,
+        "r": 5
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "Only the enlarged open zipper pull loop on the lower-right tent-door edge changes from blue to red. Orange tent, zip seam, rolled green mat, trees and grass preserve scene geometry. Original A with a tiny loop was replaced before making B.",
+      "sha256": {
+        "a": "83016119c71c00a93d53ec1e8f1580e70c9df60054f546a1079676f366841a91",
+        "b": "79218680d494c0ddb57ecc58a72e0aebde560eb16855feac6708071ced7e668d"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-800-906-a.webp",
+          "sha256": "83016119c71c00a93d53ec1e8f1580e70c9df60054f546a1079676f366841a91",
+          "width": 1280,
+          "height": 960,
+          "bytes": 247310,
+          "rawImageSha256": "1a0b110f35e046e237588a5071dfa4226ddc8755cb660a5a4eec3e7c91088c39",
+          "actualPrompt": "Use case: precise-object-edit. Edit the supplied original campsite photograph only to make its BLUE fabric zipper pull loop clearly large enough for a mobile spot-the-difference game. Keep the loop attached to the same lower-right end of the tent door zipper, but enlarge ONLY the blue oval loop to approximately 7 percent of total image width and 9 percent of image height, extending down and slightly to the right from its attachment. It must remain an open blue fabric oval with a visible hole, not solid. Keep all orange tent fabric, zipper seam, trees, grass, green rolled mat, framing and every other object exactly unchanged. No text. This corrected image will become image A.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-906-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-906-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-800-906-b.webp",
+          "sha256": "79218680d494c0ddb57ecc58a72e0aebde560eb16855feac6708071ced7e668d",
+          "width": 1280,
+          "height": 960,
+          "bytes": 221930,
+          "rawImageSha256": "fa3052b0be0188176bf975a7c82e2d0d48c3dc2fe5133d6989df5e2ec0a0121f",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the BLUE oval fabric zipper-pull loop at lower-right of tent door to RED. Tent fabric, zipper seam, grass, mat and all background identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-906-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-906-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-800-906-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Loop remains small but discernible at140px; moderate-to-hard localized color cue."
+      },
+      "corrections": [
+        "spotdiff-800-906-a"
+      ]
+    },
+    {
+      "qid": "spotdiff-800-907",
+      "tier": 800,
+      "topic": "ملابس وإكسسوارات",
+      "question": "ما التفصيل المختلف في صورتي الحزام الجلدي؟",
+      "answer": "تغيّر شكل مشبك الحزام",
+      "alt": [
+        "شكل مشبك الحزام"
+      ],
+      "spot": {
+        "x": 64,
+        "y": 73,
+        "r": 12
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "The silver belt buckle changes from square corners to rounded corners. It does NOT become a perfect circle. The generic answer about buckle shape is accurate; brown belt, holes, tongue and cloth bag remain in place.",
+      "sha256": {
+        "a": "f5bb3eda59608dd756e86180663346e4c037e0123681579fb6ba255030f948e0",
+        "b": "b76bf102da31454e4982b1b42c05030f085362e92512ec26d1ce9dafe4836845"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-800-907-a.webp",
+          "sha256": "f5bb3eda59608dd756e86180663346e4c037e0123681579fb6ba255030f948e0",
+          "width": 1280,
+          "height": 960,
+          "bytes": 127342,
+          "rawImageSha256": "ac3d564f04d5ea7b9354207c13897c6ad8a832dd7ba4f6d1c467d5fd75b67234",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A brown leather belt neatly curled in a loose open oval centered on cream fabric, its silver SQUARE metal buckle fully visible at center-right x=68 y=56, outer width 16 percent image. Plain beige cloth bag at back-left. Buckle has simple single crossbar and tongue, no decorative detail. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-907-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-907-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-800-907-b.webp",
+          "sha256": "b76bf102da31454e4982b1b42c05030f085362e92512ec26d1ce9dafe4836845",
+          "width": 1280,
+          "height": 960,
+          "bytes": 110002,
+          "rawImageSha256": "022813ffc1b074689254adba3febca7f358e7717935bfee3dbceea40c9db02fe",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Change only the silver belt buckle outer frame from SQUARE to ROUND, same center and same outer width, keeping buckle tongue, leather strap, holes, bag, fabric and shadows consistent and unchanged elsewhere. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-907-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-907-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-800-907-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Corner-shape comparison is subtle at140px but visible; suitable relative challenge."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-800-908",
+      "tier": 800,
+      "topic": "ورشة وأدوات",
+      "question": "ما التفصيل المتغير في صورتي قياس الخشب؟",
+      "answer": "تغيّر لون زر شريط القياس",
+      "alt": [
+        "زر شريط القياس"
+      ],
+      "spot": {
+        "x": 65,
+        "y": 34,
+        "r": 7
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "Only the locking button of the gray tape measure changes from yellow to red. Extended blank tape, wood block, pencil, body and strap retain matching geometry.",
+      "sha256": {
+        "a": "2bfa4357776f90ff15ad3a9813d2453f0e1a2bd828c6703cf653b781f64625a0",
+        "b": "2e31dc386ab437ae2787cc97bfe6faf1d6e6e27f87c9f4604c15022f0ebd7ad9"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-800-908-a.webp",
+          "sha256": "2bfa4357776f90ff15ad3a9813d2453f0e1a2bd828c6703cf653b781f64625a0",
+          "width": 1280,
+          "height": 960,
+          "bytes": 109746,
+          "rawImageSha256": "d4072efdcd7c6dd991d36ff2bbb7cd0a9170dd7d803f91e2474015ee0f3b3df3",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A dark gray retractable tape measure sits center-right on a pale workbench, short plain unmarked silver tape extended toward left. A distinct YELLOW rectangular lock button on top front housing at x=67 y=49, 10 percent image width. Small smooth wood block rear-left and plain graphite pencil lower-left. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-908-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-908-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-800-908-b.webp",
+          "sha256": "2e31dc386ab437ae2787cc97bfe6faf1d6e6e27f87c9f4604c15022f0ebd7ad9",
+          "width": 1280,
+          "height": 960,
+          "bytes": 100856,
+          "rawImageSha256": "820c168716fe2d8e2c402c83e49ab668b35c4bef8bee0ce8eb61a83cc6991ecd",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the YELLOW rectangular tape-measure lock button to RED; preserve dark gray housing, plain extended tape, wood block, pencil and all other scene details. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-800-908-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-800-908-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-800-908-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Small but saturated color target remains clear."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-1000-901",
+      "tier": 1000,
+      "topic": "مطبخ",
+      "question": "ما التغيير الصغير في صورتي تحضير التوابل؟",
+      "answer": "نقصت حبة فلفل",
+      "alt": [
+        "حبة فلفل"
+      ],
+      "spot": {
+        "x": 90,
+        "y": 58,
+        "r": 5
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "The rightmost of five peppercorns is removed, leaving the other four in matching arc positions. Salt bowl, scoop and cloth remain in place. The bowl is cropped equally on the left in both images.",
+      "sha256": {
+        "a": "85eae32e1e48364ac737bebcc50d43790f5fddc5ba1c242e17b6e869b7d9bb9b",
+        "b": "4fb9a9f8e398c4244f41c26bd108f40c6ac33dba9c261568daf154de0dcae31b"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-1000-901-a.webp",
+          "sha256": "85eae32e1e48364ac737bebcc50d43790f5fddc5ba1c242e17b6e869b7d9bb9b",
+          "width": 1280,
+          "height": 960,
+          "bytes": 185962,
+          "rawImageSha256": "bdd9ea3ed92d3c4c5fc09c40fff4ce66e74c790d4fc69f5239543d09a5349362",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Close still-life on cream kitchen linen, small ivory bowl of coarse white salt at left, tan wooden spice scoop rear-left. Exactly FIVE separate large black peppercorns in a neat shallow arc at center-right. Rightmost peppercorn at x=77 y=63, diameter 4 percent image width, not touching others, all five sharply detailed. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-901-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-901-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-1000-901-b.webp",
+          "sha256": "4fb9a9f8e398c4244f41c26bd108f40c6ac33dba9c261568daf154de0dcae31b",
+          "width": 1280,
+          "height": 960,
+          "bytes": 170540,
+          "rawImageSha256": "cc9838fb15a3a7653c5b18c3afa35d9d6f845555b2ae2cdf2b361bb769408bb4",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the RIGHTMOST of the five black peppercorns at x=90 y=58, leaving exactly FOUR peppercorns in their original positions. Keep linen weave, salt bowl, scoop and light exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-901-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-901-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-1000-901-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Localized count change; sparse arrangement makes this easier than several other1000 items."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-1000-902",
+      "tier": 1000,
+      "topic": "مكتب ودراسة",
+      "question": "ما التفصيل الصغير الذي تغيّر في صورتي الأوراق المرتبة؟",
+      "answer": "تغيّر لون مشبك الورق",
+      "alt": [
+        "مشبك الورق"
+      ],
+      "spot": {
+        "x": 81,
+        "y": 57,
+        "r": 8
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "The separate paperclip changes from green to purple. Blank card stack, blue pen, gray eraser, clip outline and positions remain stable.",
+      "sha256": {
+        "a": "5b79e4cd256d1cd1068474e424759ad37e3f2ef54a49d0d6b77f3b0a3372bb28",
+        "b": "efae7f163f6e8723e2bc46836b9344ecb4e4f7bda4467796061de50d6bcdbb47"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-1000-902-a.webp",
+          "sha256": "5b79e4cd256d1cd1068474e424759ad37e3f2ef54a49d0d6b77f3b0a3372bb28",
+          "width": 1280,
+          "height": 960,
+          "bytes": 44094,
+          "rawImageSha256": "319b80fb0fb7967ca7b2a0277809dcbfac240fd7b0bf09be7dfbe7feece945c3",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Cream desktop with small stack of blank ivory index cards center-left, dark blue plain pen lower-left, single GREEN wire paperclip lying separately near right edge of cards at x=70 y=59, length 12 percent image width, thick enough clearly visible. Small plain gray eraser rear-right. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-902-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-902-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-1000-902-b.webp",
+          "sha256": "efae7f163f6e8723e2bc46836b9344ecb4e4f7bda4467796061de50d6bcdbb47",
+          "width": 1280,
+          "height": 960,
+          "bytes": 40442,
+          "rawImageSha256": "cd89cac4ce6a6d9c1005be82da0e98a3367dc7c584a93bf4420ec0e9c0d0bd8b",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the single GREEN wire paperclip to PURPLE, preserving its exact bent wire geometry, position and shadow. All paper, pen, eraser and tabletop unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-902-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-902-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-1000-902-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Small color target; high saturation makes the change accessible."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-1000-903",
+      "tier": 1000,
+      "topic": "حديقة",
+      "question": "ما التغيير الدقيق في صورتي الحشرة على الورقة؟",
+      "answer": "نقصت بقعة على الدعسوقة",
+      "alt": [
+        "بقعة الدعسوقة"
+      ],
+      "spot": {
+        "x": 57,
+        "y": 62,
+        "r": 4
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "The lower image-right black wing spot on the ladybug disappears. The other three black spots remain, as do the wing seam, black head, six legs and leaf position.",
+      "sha256": {
+        "a": "5ad583c11e4abd382380bb9db24a903f910e344980aca45ef07efa77fb640445",
+        "b": "16265252f9eb8502f9aa90a074301fd4d93cf8b008d5c8d3000cd543feca9086"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-1000-903-a.webp",
+          "sha256": "5ad583c11e4abd382380bb9db24a903f910e344980aca45ef07efa77fb640445",
+          "width": 1280,
+          "height": 960,
+          "bytes": 212902,
+          "rawImageSha256": "01dce5406f230d51d7362826c0cccbf87e0c604a6e3bb72c08048b0ba4d59e14",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Close realistic macro of one red ladybug resting on large green leaf, ladybug centered x=60 y=51 and width 34 percent image, viewed from above. Exactly FOUR round black spots on red wing covers, two on each side symmetrically. Lower IMAGE-RIGHT spot center x=68 y=59, diameter 5 percent image width. Black head, six legs, distinct central seam, natural blurred green background. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-903-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-903-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-1000-903-b.webp",
+          "sha256": "16265252f9eb8502f9aa90a074301fd4d93cf8b008d5c8d3000cd543feca9086",
+          "width": 1280,
+          "height": 960,
+          "bytes": 203134,
+          "rawImageSha256": "f9d49df1c8385956e69b11fd4de5fe32a71c28009b65f01e55f93368808f52e0",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the lower IMAGE-RIGHT black spot on red ladybug wing at x=57 y=62, replacing it with matching red shell. Other three spots, seam, black head, six legs, leaf veins and entire background unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-903-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-903-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-1000-903-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Small dark marking among four; a stronger1000 comparison."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-1000-904",
+      "tier": 1000,
+      "topic": "ألعاب وهوايات",
+      "question": "ما التفصيل المختلف في صورتي لعبة الطاولة؟",
+      "answer": "زادت نقطة على النرد",
+      "alt": [
+        "نقطة النرد"
+      ],
+      "spot": {
+        "x": 65,
+        "y": 36,
+        "r": 4
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "A central pip is added to the ivory die top face, changing two diagonal pips to three. Existing pips, blank side faces and two red tokens retain their positions.",
+      "sha256": {
+        "a": "6a5027726d9e15ded72c194220dfb6dd358b23bac1b715bc694a2a8de78ea652",
+        "b": "1431d69374783d27429a29ef2f4c41a38947ee680c351730759083aadaa7d175"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-1000-904-a.webp",
+          "sha256": "6a5027726d9e15ded72c194220dfb6dd358b23bac1b715bc694a2a8de78ea652",
+          "width": 1280,
+          "height": 960,
+          "bytes": 71906,
+          "rawImageSha256": "a0dc98a8ac703d2385685239e440e6fb24a3db9a591d317a12cda6acd720193c",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. One large ivory die at center-right on matte blue tabletop, viewed three-quarter from above with top face clearly visible. Top face has exactly TWO black round pips in opposite corners, side faces blank. Die occupies 32 percent image width, top face center x=65 y=45. Two flat red game tokens at far left, no other objects. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-904-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-904-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-1000-904-b.webp",
+          "sha256": "1431d69374783d27429a29ef2f4c41a38947ee680c351730759083aadaa7d175",
+          "width": 1280,
+          "height": 960,
+          "bytes": 34190,
+          "rawImageSha256": "cdb66d38b4a7bcab99d53e6d83a14bd5d72dc96f414e4792b15a71eb71d344b0",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Add exactly ONE black round pip at the CENTER of the die's top face so top changes from TWO pips to THREE in a diagonal. Keep the existing two pips, blank side faces, cube geometry, blue table, red tokens and shadows identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-904-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-904-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-1000-904-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Small added mark, though uncluttered composition makes the count change relatively easy."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-1000-905",
+      "tier": 1000,
+      "topic": "موسيقى",
+      "question": "ما التفصيل الناقص في صورتي ضبط الآلات؟",
+      "answer": "اختفى شريط الشوكة الرنانة",
+      "alt": [
+        "شريط الشوكة الرنانة"
+      ],
+      "spot": {
+        "x": 90,
+        "y": 66,
+        "r": 9
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "Only the red ribbon attached near the tuning-fork handle end disappears. Silver end and prongs, wooden resonator and object positions remain. Felt microtexture is somewhat smoother in B without a second discrete object difference.",
+      "sha256": {
+        "a": "0f09b805b1c00f1da274ec26f120b7ffdf5fd37cf686bb5fa94db79a2d07a5cd",
+        "b": "79bdae58b0cb9d8185cb5fd01d7d729c3d86cbcb9d514dc08165772fc3d6e1e8"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-1000-905-a.webp",
+          "sha256": "0f09b805b1c00f1da274ec26f120b7ffdf5fd37cf686bb5fa94db79a2d07a5cd",
+          "width": 1280,
+          "height": 960,
+          "bytes": 227288,
+          "rawImageSha256": "ac8d85f95a898004668ffc851202082d3026de312f6b4c4f852a5a278299a42c",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A polished silver tuning fork lies diagonally across a dark gray felt surface at center-right, U-shaped two parallel prongs pointing upper-left, handle lower-right. One small RED ribbon tied around the very end of its handle at x=74 y=69, ribbon width 8 percent image. Plain small tan wooden resonator block at far left. No text. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-905-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-905-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-1000-905-b.webp",
+          "sha256": "79bdae58b0cb9d8185cb5fd01d7d729c3d86cbcb9d514dc08165772fc3d6e1e8",
+          "width": 1280,
+          "height": 960,
+          "bytes": 148836,
+          "rawImageSha256": "400a8a1c79477485432ddae55ef08acdc3deb2da6b4750857bd8be72c34cbe51",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the small RED ribbon from the end of tuning fork handle at x=89 y=66, reveal matching silver handle beneath. Fork prongs, handle geometry, wooden block, felt and shadows otherwise exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-905-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-905-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-1000-905-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Local accessory removal; the red ribbon is conspicuous, so this is a relatively easy1000 item."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-1000-906",
+      "tier": 1000,
+      "topic": "سفر",
+      "question": "ما التفصيل الدقيق المتبدّل في صورتي حقيبة التخييم؟",
+      "answer": "تغيّر لون مشبك حقيبة الظهر",
+      "alt": [
+        "مشبك حقيبة الظهر"
+      ],
+      "spot": {
+        "x": 52,
+        "y": 63,
+        "r": 4
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "Only the small front buckle on the olive backpack changes from blue to orange. Pack, straps, rolled blanket, stone bench and woodland-lake composition remain stable. Fine cloth texture variation is not a second semantic difference.",
+      "sha256": {
+        "a": "2b555858274f2d96c632f88b5e1797c3cab57ff886442a74249255e91fa03e3a",
+        "b": "a309cf003de436ee8a3c4fcb911e281a11451097f9d3c95615ea4cc002f2e06e"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-1000-906-a.webp",
+          "sha256": "2b555858274f2d96c632f88b5e1797c3cab57ff886442a74249255e91fa03e3a",
+          "width": 1280,
+          "height": 960,
+          "bytes": 191944,
+          "rawImageSha256": "9ac7d01cf2b0db030ea15d73d76f3c7e41324c17ff9dab18a050a5cfa45044e4",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Olive green hiking backpack standing center on stone bench, no logos. Two tan shoulder straps neatly behind, a single small BLUE rectangular plastic quick-release buckle on front lower strap at x=60 y=69, width 9 percent image. Rolled plain gray blanket at far left, neutral woodland backdrop. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-906-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-906-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-1000-906-b.webp",
+          "sha256": "a309cf003de436ee8a3c4fcb911e281a11451097f9d3c95615ea4cc002f2e06e",
+          "width": 1280,
+          "height": 960,
+          "bytes": 225690,
+          "rawImageSha256": "102ef9491c06e6cc9e734fae36e5c5eb0b84fb642ddbab680fbe007d22c3790b",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the small BLUE plastic front strap buckle to ORANGE. Preserve olive backpack, tan straps, buckle geometry, blanket, stone and background exactly. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-906-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-906-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-1000-906-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Small buckle amid a detailed but matching scene; stronger1000 localization."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-1000-907",
+      "tier": 1000,
+      "topic": "ملابس وإكسسوارات",
+      "question": "ما التفصيل المختلف في صورتي كم القميص؟",
+      "answer": "تغيّر لون فص زر الكم",
+      "alt": [
+        "فص زر الكم"
+      ],
+      "spot": {
+        "x": 68,
+        "y": 55,
+        "r": 3
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "Only the inset stone of the silver cufflink changes from blue to black. Cuff folds, metal bezel and gray tie remain in matching positions.",
+      "sha256": {
+        "a": "3f8071d8ed5d68e1f03e1137cd567d01ab6335415f0a901d27ee363dbe68a6cb",
+        "b": "22ccfc8377ff4e838d1b43d01bb0a47f5632614c8989ba3f15e8779ab472dcba"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-1000-907-a.webp",
+          "sha256": "3f8071d8ed5d68e1f03e1137cd567d01ab6335415f0a901d27ee363dbe68a6cb",
+          "width": 1280,
+          "height": 960,
+          "bytes": 193776,
+          "rawImageSha256": "b9ea7c77f7dacabc0ad8f68fe7e813726afa432a6130a99fafd5a09397ab1ffc",
+          "actualPrompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Close still-life of neatly folded ivory shirt cuff resting on plain light gray surface, no person. One silver square cufflink in center-right cuff has a small BLUE square inset, inset centered x=68 y=55, side 7 percent image width. Plain dark gray necktie loosely folded far left. Fine sharp fabric texture. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-907-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-907-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-1000-907-b.webp",
+          "sha256": "22ccfc8377ff4e838d1b43d01bb0a47f5632614c8989ba3f15e8779ab472dcba",
+          "width": 1280,
+          "height": 960,
+          "bytes": 136028,
+          "rawImageSha256": "eb8ae1ecd10746f3c8723c887be9211e6728b13feec63f521164b0de1d9fb855",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the small BLUE square inset of the silver cufflink to BLACK. Keep silver frame, shirt folds and stitching, tie and surface exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-907-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-907-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-1000-907-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Very small low-area color target; visible at140px on inspection and the hardest color target in this group."
+      },
+      "corrections": []
+    },
+    {
+      "qid": "spotdiff-1000-908",
+      "tier": 1000,
+      "topic": "ورشة وأدوات",
+      "question": "ما التغيير الصغير في صورتي القطع المعدنية؟",
+      "answer": "تغيّر لون الحلقة المطاطية",
+      "alt": [
+        "الحلقة المطاطية"
+      ],
+      "spot": {
+        "x": 81,
+        "y": 32,
+        "r": 6
+      },
+      "spotStatus": "visually-located-app-overlay-pending",
+      "actualImageObserved": true,
+      "observation": "Only the reduced-size O-ring changes from red to black. Three silver nuts and the bolt retain their arrangement. Original A with an oversized ring was replaced before B generation.",
+      "sha256": {
+        "a": "2d4e515cccd0a67e75e57d97ed1726af26f93d2a6018de3617b29bcc244c8dd1",
+        "b": "4b6bc6cd9b73363ad916ecc1334d176fc64548d27ad1b3e25125693b292c2b59"
+      },
+      "assets": {
+        "a": {
+          "file": "media/spotdiff/spotdiff-1000-908-a.webp",
+          "sha256": "2d4e515cccd0a67e75e57d97ed1726af26f93d2a6018de3617b29bcc244c8dd1",
+          "width": 1280,
+          "height": 960,
+          "bytes": 72450,
+          "rawImageSha256": "fd071f8372c2611ba010ceafeeee1b16791adacaebffb68b6cec621b18009146",
+          "actualPrompt": "Use case: precise-object-edit. Correct only the size of the red rubber O-ring in the supplied still-life. The red O-ring is too large; reduce its outer diameter to approximately HALF its current diameter, about 9 percent of the total image width. Keep its exact center at x=81%, y=33%, retain its round ring geometry and visible central hole, and scale its natural contact shadow accordingly. Preserve all three hex nuts, the silver bolt, thread detail, background, framing and every other visible detail exactly. Do not relocate the O-ring or add objects. This corrected version becomes image A of a difficult spot-the-difference pair. No text.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-908-a.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-908-a.json"
+        },
+        "b": {
+          "file": "media/spotdiff/spotdiff-1000-908-b.webp",
+          "sha256": "4b6bc6cd9b73363ad916ecc1334d176fc64548d27ad1b3e25125693b292c2b59",
+          "width": 1280,
+          "height": 960,
+          "bytes": 60246,
+          "rawImageSha256": "00bb65cf90ace4491504c66aaa1b0f225365cb4621e7279d011ee62ba9e0270a",
+          "actualPrompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the small RED rubber O-ring at x=81 y=33 to BLACK. Preserve its shape and inner hole, all three nuts, bolt, mat weave and shadows. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+          "job": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/jobs/spotdiff-1000-908-b.json",
+          "record": "docs/bank/rebuild-2026-09-18/generated-records/spotdiff-1000-908-b.json"
+        }
+      },
+      "status": "visual-approved-runtime-pending",
+      "singleSemanticDifference": true,
+      "smallPreview": {
+        "widthPerImage": 140,
+        "heightPerImage": 105,
+        "observed": true,
+        "pass": true,
+        "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/review-800-1000/spotdiff-1000-908-small.png"
+      },
+      "difficulty": {
+        "basis": "Editorial judgment only, not measured player calibration.",
+        "note": "Small isolated target; clearer than the cufflink despite same tier."
+      },
+      "corrections": [
+        "spotdiff-1000-908-a"
+      ]
+    }
+  ]
+}

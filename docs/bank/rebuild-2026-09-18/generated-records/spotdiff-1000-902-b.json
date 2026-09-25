@@ -1,0 +1,33 @@
+{
+  "id": "spotdiff-1000-902-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-1000-902-b.webp",
+  "asset": "media/spotdiff/spotdiff-1000-902-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the single GREEN wire paperclip to PURPLE, preserving its exact bent wire geometry, position and shadow. All paper, pen, eraser and tabletop unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 40442,
+  "sha256": "efae7f163f6e8723e2bc46836b9344ecb4e4f7bda4467796061de50d6bcdbb47",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "The separate paperclip changes from green to purple. Blank card stack, blue pen, gray eraser, clip outline and positions remain stable.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "generationInput": {
+    "type": "raw-generated-image-a",
+    "rawImageSha256": "319b80fb0fb7967ca7b2a0277809dcbfac240fd7b0bf09be7dfbe7feece945c3",
+    "installedImageA": "media/spotdiff/spotdiff-1000-902-a.webp",
+    "installedImageASha256": "5b79e4cd256d1cd1068474e424759ad37e3f2ef54a49d0d6b77f3b0a3372bb28"
+  },
+  "rawGeneratedImageSha256": "cd89cac4ce6a6d9c1005be82da0e98a3367dc7c584a93bf4420ec0e9c0d0bd8b"
+}

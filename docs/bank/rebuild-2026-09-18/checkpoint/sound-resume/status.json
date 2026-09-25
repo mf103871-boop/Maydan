@@ -1,0 +1,14 @@
+{
+  "updatedAt": "2026-09-25",
+  "status": "three-replacements-await-human-listening",
+  "approved": 37,
+  "unclear": [
+    "sound-400-902",
+    "sound-400-905",
+    "sound-800-908"
+  ],
+  "categorySha256": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
+  "originalReview": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json",
+  "replacementCandidates": "replacements-2026-09-25/replacement-candidates.json",
+  "listeningPage": "listen-to-replacements.html"
+}

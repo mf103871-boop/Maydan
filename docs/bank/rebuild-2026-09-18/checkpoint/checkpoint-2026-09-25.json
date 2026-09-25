@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "status": "in_progress",
+  "status": "awaiting_audio_replacements",
   "userInstruction": "اكمل",
   "repository": "mf103871-boop/Maydan",
   "branch": "codex/badeeha-curated-bank-2026-09-18",
@@ -14,9 +14,12 @@
       "silhouette",
       "blur",
       "guesscar",
-      "tilepuzzle"
+      "tilepuzzle",
+      "placefinder",
+      "reveal",
+      "spotdiff"
     ],
-    "newQuestions": 200,
+    "newQuestions": 320,
     "newSilhouetteAssets": 8,
     "correctedSilhouetteAssets": [
       "silhouette-200-905",
@@ -32,7 +35,10 @@
       "media/silhouette/",
       "media/blur/",
       "media/guesscar/",
-      "media/tilepuzzle/"
+      "media/tilepuzzle/",
+      "media/placefinder/",
+      "media/reveal/",
+      "media/spotdiff/"
     ],
     "promptRecords": "docs/bank/rebuild-2026-09-18/generated-records/",
     "flagsReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
@@ -53,64 +59,87 @@
         "runtimeChecks": 606,
         "review": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json"
       }
+    },
+    "completedImageReviews": {
+      "flags": {
+        "review": "docs/bank/rebuild-2026-09-18/review-flags.json",
+        "scope": "40 صورة و5 أسئلة فعلية؛ 41 فحصًا"
+      },
+      "silhouette": {
+        "review": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "scope": "40 صورة وسؤالًا؛ 486 فحصًا وشفافية حقيقية"
+      },
+      "blur": {
+        "review": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "scope": "40 صورة وسؤالًا؛ 486 فحصًا"
+      },
+      "guesscar": {
+        "review": "docs/bank/rebuild-2026-09-18/review-guesscar-final.json",
+        "scope": "40 صورة وسؤالًا؛ 486 فحصًا"
+      },
+      "tilepuzzle": {
+        "review": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+        "scope": "40 صورة وسؤالًا؛ 606 فحوص"
+      },
+      "placefinder": {
+        "review": "docs/bank/rebuild-2026-09-18/review-placefinder-final.json",
+        "scope": "40 صورة وسؤالًا؛ 446 فحصًا"
+      },
+      "reveal": {
+        "review": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+        "scope": "40 صورة وسؤالًا؛ 1450 فحصًا و43 للحركة العادية"
+      },
+      "spotdiff": {
+        "review": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+        "scope": "80 صورة و40 سؤالًا بعرض320 و390؛ 1089 فحصًا"
+      }
+    },
+    "humanListening": {
+      "heard": 40,
+      "currentlyApproved": 37,
+      "originalEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json"
+    },
+    "rendererFix": {
+      "files": [
+        "src/games/badeeha/App.js",
+        "src/games/badeeha/styles.css"
+      ],
+      "reason": "Reveal overlay intercepted the reveal-piece button. Button now sits beside the image stage; real-click regression evidence retained."
     }
   },
   "completedContent": {
-    "packs": 74,
-    "questions": 2960,
-    "note": "Content status only; historical recovered text-pack status rows may remain pending; do not invent runtime approval."
+    "packs": 77,
+    "questions": 3080,
+    "verifiedQuestionsIncludingPartialPacks": 3117,
+    "note": "Content counts reflect exact40 new IDs, verified flags and zero validator errors. Historical status rows are not blanket runtime approval."
   },
-  "activeBankQuestions": 3706,
-  "integratedGeneratedArtRecords": 318,
+  "activeBankQuestions": 3120,
+  "integratedGeneratedArtRecords": 478,
   "validation": "docs/bank/rebuild-2026-09-18/validation-2026-09-25.json",
   "remaining": [
     {
-      "id": "placefinder",
-      "name": "وين المكان؟",
-      "questions": 226,
-      "newIdCount": 0,
-      "verified": 226,
-      "errors": 910,
-      "sha256": "2fb0fe3b99e6dc76c13412913001be1a12d6ff9352516c541e55954fee7e2b41",
-      "nextAction": "Complete current40-question image replacement, retain old assets, verify all sources and actual gameplay"
+      "id": "sound-400-902",
+      "answer": "أمواج البحر",
+      "category": "sound",
+      "nextAction": "Replace unclear clip with source-reviewed licensed candidate, obtain human listening approval on exact final hash."
     },
     {
-      "id": "reveal",
-      "name": "إكشفني",
-      "questions": 240,
-      "newIdCount": 0,
-      "verified": 240,
-      "errors": 965,
-      "sha256": "217602241ccba3ad0d2c1808172173ead32168b82614e0cd7eb994c75a94d922",
-      "nextAction": "Complete current40-question image replacement, retain old assets, verify all sources and actual gameplay"
+      "id": "sound-400-905",
+      "answer": "عطاس",
+      "category": "sound",
+      "nextAction": "Replace unclear clip with source-reviewed licensed candidate, obtain human listening approval on exact final hash."
     },
     {
-      "id": "sound",
-      "name": "خمن الصوت",
-      "questions": 40,
-      "newIdCount": 40,
-      "verified": 0,
-      "errors": 40,
-      "sha256": "2e7bd879ca6449221e155fb4e0021bf108a261c1d7c4ca437c30acbc9ed5e2b4",
-      "nextAction": "Human listening required before verified:true"
-    },
-    {
-      "id": "spotdiff",
-      "name": "اكتشف الفرق",
-      "questions": 240,
-      "newIdCount": 0,
-      "verified": 240,
-      "errors": 965,
-      "sha256": "3ec7c9bceae4e2975af44b6c07dd363d9b10d3c02b65bc8c851a6f296d33d139",
-      "nextAction": "Complete current40-question image replacement, retain old assets, verify all sources and actual gameplay"
+      "id": "sound-800-908",
+      "answer": "بولينغ",
+      "category": "sound",
+      "nextAction": "Replace unclear clip with source-reviewed licensed candidate, obtain human listening approval on exact final hash."
     }
   ],
-  "nextPack": "placefinder / reveal / spotdiff in parallel",
+  "nextPack": "sound",
   "releaseBlockers": [
-    "Three image packs remain unfinished:placefinder,reveal,spotdiff.",
-    "All40 sound questions require actual listening and remain verified:false.",
-    "Four whole-bank test gates fail;2880validator errors are confined to these four unfinished packs.",
-    "No release/offline-wide approval, merge or deployment."
+    "3 sound clips await approval of corrected audio.",
+    "No merge, deployment, full offline/device release review or production account/payment validation claimed."
   ],
   "preserved": [
     "Existing78 category names/order",

@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-200-901-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. The supplied image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: recolor the kettle's red enamel body, red lid and red spout to deep cobalt BLUE enamel. They are parts of the same kettle color change. Preserve its black handle and knob, metal trim, geometry, exact size and position, reflections and lighting. Keep the yellow mug, navy cloth, tabletop wood grain, wall, shadows, camera, crop and EVERY other visible feature exactly unchanged. Do not add, remove, move, resize or reshape anything. Do not alter the yellow mug or navy napkin. Same landscape4:3 dimensions. No words or labels. The viewer must find a single difference: the kettle changes from red to blue."
+}

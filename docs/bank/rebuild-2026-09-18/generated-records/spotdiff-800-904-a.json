@@ -1,0 +1,27 @@
+{
+  "id": "spotdiff-800-904-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-800-904-a.webp",
+  "asset": "media/spotdiff/spotdiff-800-904-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Friendly large toy robot sitting center, plain silver cube head with exactly two round BLACK eye disks, no other facial marks except straight short mouth line. Image-right eye center x=58 y=33, disk diameter 7 percent width. Blue rectangular body, orange arms, gray legs; ivory backdrop. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 55332,
+  "sha256": "c2b3ddda9c338bc682185934497286a63daf3ee66edd8cbae017365f1aad5c6b",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "Only the image-right round robot eye changes from black to white. The other eye, mouth, cube head, blue torso, orange arms and gray feet remain unchanged in geometry.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "rawGeneratedImageSha256": "fc32759e783018acdeac5d605e7413b10dfe811486caa4f25875016097b36878"
+}

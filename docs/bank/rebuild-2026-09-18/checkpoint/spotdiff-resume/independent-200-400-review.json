@@ -1,0 +1,346 @@
+{
+  "pack": "spotdiff",
+  "reviewedAt": "2026-09-25",
+  "scope": "Independent static review of root200/400 pairs",
+  "status": "16pairs-visually-reviewed-runtime-pending",
+  "method": "Actual installed WebP pairs viewed side-by-side at308px per image. No pixel-identity or app-runtime claim. Fine texture variation is tolerated only where it does not create another discrete semantic answer.",
+  "difficulty": "Large color swaps in200 and whole-object removals in400 are clear; relative difficulty remains editorial and unmeasured.",
+  "items": [
+    {
+      "qid": "spotdiff-200-901",
+      "answer": "تغيّر لون الغلاية",
+      "spotProposedByRoot": {
+        "x": 66,
+        "y": 56,
+        "r": 24
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-1.png",
+      "observation": "Kettle enamel is red in A, cobalt blue in B. Yellow mug, dark folded cloth, black handle and lid knob stay present and aligned.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "33057f44f41c8d8f521c494a201506bdf0dc7ddf0c354e63d1446133a128a65c",
+        "b": "a4240e1f6c1404e8c22d8b9db63f0745e96bb2e97ec815f8d0f5d75dfb169f4e"
+      }
+    },
+    {
+      "qid": "spotdiff-200-902",
+      "answer": "تغيّر لون الدفتر",
+      "spotProposedByRoot": {
+        "x": 63,
+        "y": 57,
+        "r": 27
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-1.png",
+      "observation": "The large blank notebook changes green to orange; the cup, two pens and diagonal wooden pencil retain their positions.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "72b6d33813d561cd976149099e7f2ea463616bb4107eeae7e4319ceb62fa4ff6",
+        "b": "e794b3732ab1a83d932dad9ceda8fd04006725a9d14357ea083e8daa1dee69f7"
+      }
+    },
+    {
+      "qid": "spotdiff-200-903",
+      "answer": "تغيّر لون إبريق الري",
+      "spotProposedByRoot": {
+        "x": 63,
+        "y": 54,
+        "r": 27
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-1.png",
+      "observation": "Watering can changes blue to red, including its handle and spout. Fern, terracotta pot and gardening glove remain semantically the same.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "20db8af44a1613a9aa08d3317aac9cb78c1f8202ea5cdce86a4ed9fe1b566c47",
+        "b": "208bd31ee30c0ba93cf76c59b93f90e10191d64ca2e983b8a9bdf3d365326caf"
+      }
+    },
+    {
+      "qid": "spotdiff-200-904",
+      "answer": "تغيّر لون السيارة",
+      "spotProposedByRoot": {
+        "x": 68,
+        "y": 49,
+        "r": 24
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-1.png",
+      "observation": "Toy-car body changes yellow to blue. Black wheels/windows, bear and both ring stacks remain in place.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "fb9548186adc05cee4583bb027731744e9bd004a68c286061ad018111bdbd141",
+        "b": "197c25d40abf36598e080437ced61ca899a1ae1ac2a076f709f01908a8ee31c7"
+      }
+    },
+    {
+      "qid": "spotdiff-200-905",
+      "answer": "تغيّر لون الطبلة",
+      "spotProposedByRoot": {
+        "x": 69,
+        "y": 56,
+        "r": 24
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-2.png",
+      "observation": "Large drum shell changes red to green. Cream top, wood rim, blue pouch and single mallet remain unchanged as objects.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "756650c9d71b49cac407ab60c8090fa5eaf8f3ab24ab36027a7126b5ed044457",
+        "b": "222f0e339eeba11349f9f5710371427b725cf925d9556c29d5b2052ac39393ff"
+      }
+    },
+    {
+      "qid": "spotdiff-200-906",
+      "answer": "تغيّر لون الحقيبة",
+      "spotProposedByRoot": {
+        "x": 71,
+        "y": 53,
+        "r": 24
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-2.png",
+      "observation": "Suitcase shell changes blue to yellow. Black handle/wheels, straw hat, towel and bench remain in matching positions.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "cbb159ef79002390f55d958c4d0e74063a3f9d29998bb33abf4088c2ec60016c",
+        "b": "e6336448ab5505f1e0473d095809b9d08b6dbd745f2536f82f1d483cfcf62434"
+      }
+    },
+    {
+      "qid": "spotdiff-200-907",
+      "answer": "تغيّر لون القبعة",
+      "spotProposedByRoot": {
+        "x": 72,
+        "y": 44,
+        "r": 24
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-2.png",
+      "observation": "Knit hat changes red to purple. Gray scarf and beige mittens remain present; fine fibers vary without a second distinct game difference.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "74e48bc3187c72cac82857815c36b34f5e4544ff33615792fa92737b028cda2e",
+        "b": "d0815358b4f88568b4099f53d698ff11e96981939598bbbc3f2b458a7d339de5"
+      }
+    },
+    {
+      "qid": "spotdiff-200-908",
+      "answer": "تغيّر لون صندوق الأدوات",
+      "spotProposedByRoot": {
+        "x": 64,
+        "y": 49,
+        "r": 25
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-2.png",
+      "observation": "Toolbox body and lid change orange to green. Black handle, latch, hammer and wrench retain geometry.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "38c04ca5f4ae9646689927773bcdc9452670ed14be1cba9368c0182b43aa341f",
+        "b": "64292e1ef91b0ab3b2631d95a8fb544fba31dbaeda076ee0f0e4341f0254305e"
+      }
+    },
+    {
+      "qid": "spotdiff-400-901",
+      "answer": "اختفت الملعقة",
+      "spotProposedByRoot": {
+        "x": 85,
+        "y": 33,
+        "r": 10
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-3.png",
+      "observation": "Only the large silver soup spoon is removed. Bowl/soup, folded napkin and tabletop are preserved.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "6bda203b0ac31f3d7f01472a2aefe1ea15f83a10abef96e24efed6c3f3f58cd8",
+        "b": "5d6cae468a72bbd00685f2359f197102d76fd2d971d5db3b25d3ade9c066f11a"
+      }
+    },
+    {
+      "qid": "spotdiff-400-902",
+      "answer": "اختفى القلم الأحمر",
+      "spotProposedByRoot": {
+        "x": 83,
+        "y": 55,
+        "r": 12
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-3.png",
+      "observation": "Only the red pencil at right is removed. Blank spiral book, blue eraser and tan cup retain their arrangement.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "18f01f770900f9de7ab6bc328943249e94d857494731f50814871008235df002",
+        "b": "7659d346b929cd957b6754b14a29717da343addec0ad868f268e2f6ab5c03682"
+      }
+    },
+    {
+      "qid": "spotdiff-400-903",
+      "answer": "اختفت المجرفة الصغيرة",
+      "spotProposedByRoot": {
+        "x": 76,
+        "y": 67,
+        "r": 19
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-3.png",
+      "observation": "Only the orange-handled garden trowel is removed. Basil, pot and gloves remain in matching positions.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "0dec6bf7cf4874c7a126403785235f6c0c081730f982eb05846ac6fb366ccfc4",
+        "b": "39c611dee11fe06ba6f0473166a4a62f39c4db4e76b43f542bc6b9c0dd041616"
+      }
+    },
+    {
+      "qid": "spotdiff-400-904",
+      "answer": "اختفى المكعب العلوي",
+      "spotProposedByRoot": {
+        "x": 67,
+        "y": 26,
+        "r": 16
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-3.png",
+      "observation": "Only the top blue cube is removed, exposing the previously covered green top. Green/red stack and wood horse remain aligned.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "959facf6175dc8c27d9044e24e2c435f5a7b536a7a880d5098ad7a954f0d23d4",
+        "b": "c197375a3e0152bee67b7d98bfdcf1ed269aa2bedf2a0435f664757fa0120538"
+      }
+    },
+    {
+      "qid": "spotdiff-400-905",
+      "answer": "اختفت الماراكاس",
+      "spotProposedByRoot": {
+        "x": 75,
+        "y": 57,
+        "r": 23
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-4.png",
+      "observation": "Only the red/yellow maraca is removed. Tambourine and cloth remain present; some drum-skin texture smoothing is visible but is not another object change.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "f8420d1ac4587c46c99aa568b0dabefa45bf3117a839c7a78e38fb9f9981b8a3",
+        "b": "bf79307afa6f9d13502a5c517f62290de958d01a9ad96b8fce74fbd325e2787a"
+      }
+    },
+    {
+      "qid": "spotdiff-400-906",
+      "answer": "اختفت البوصلة",
+      "spotProposedByRoot": {
+        "x": 64,
+        "y": 62,
+        "r": 14
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-4.png",
+      "observation": "Only the brass compass is removed. Orange bottle and rolled map preserve position and shape.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "44ea754efd26d8d776675454cbbedea392df59dabfd74f62d9efb67dace72a9e",
+        "b": "8aeff4fd26b2ff7567e931b5bb5ba1625b890c46e31c0485484586e5161a0722"
+      }
+    },
+    {
+      "qid": "spotdiff-400-907",
+      "answer": "اختفى الوشاح",
+      "spotProposedByRoot": {
+        "x": 71,
+        "y": 48,
+        "r": 25
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-4.png",
+      "observation": "Only the folded red scarf and its own contact shadow are removed. Hat, gloves and blue bench remain.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "f8ec506cf58a7f26caece4ed624f4b8aa81673429df858f2cffe5c87143b9f4d",
+        "b": "15ab18d161e52dd0b6e2517547d98a9eca42ac28daeee07f2e248e50b53a5e3b"
+      }
+    },
+    {
+      "qid": "spotdiff-400-908",
+      "answer": "اختفى المفك",
+      "spotProposedByRoot": {
+        "x": 73,
+        "y": 53,
+        "r": 22
+      },
+      "actualImagesObserved": true,
+      "previewWidthPerImage": 308,
+      "evidence": "work/spotdiff-root-independent-preview/contact-4.png",
+      "observation": "Only the red-handled screwdriver is removed. Hammer and adjustable wrench retain position and geometry.",
+      "singleSemanticDifference": true,
+      "answerMatchesObservedChange": true,
+      "requiredImageCorrection": null,
+      "coordinateReview": "Center is consistent with target region by static inspection; actual rendered markers and bounds await integrated runtime.",
+      "sha256": {
+        "a": "e0f8a405de102d87609f783bcff64acff2aa169c97fb84a077c186501f5d36f8",
+        "b": "0d98671f3d5e916a14ea84235f20a17a28ccce4a37f418e294a442970695f019"
+      }
+    }
+  ]
+}

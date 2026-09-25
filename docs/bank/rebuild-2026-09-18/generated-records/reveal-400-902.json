@@ -13,7 +13,15 @@
   "sha256": "c407fc5b6f71b2b0ffddfee19e249bf7ef9414d87b6e33d64679e58d8baa852c",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "c407fc5b6f71b2b0ffddfee19e249bf7ef9414d87b6e33d64679e58d8baa852c",
+    "sourceUrl": "https://about.netflix.com/en/news/netflix-announces-man-vs-baby-starring-rowan-atkinson",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show strongly arched thick brows, short side-parted hair, prominent ears and a small cheek mark. The generated portrait uses wide-open eyes, brown tweed jacket and red tie; the Netflix headshot has graying hair and an open pink collar.",
+    "limits": "The game artwork uses character-like wardrobe. Actor-name questions should accept the actor name; Mr Bean is a role, so do not silently conflate the two.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

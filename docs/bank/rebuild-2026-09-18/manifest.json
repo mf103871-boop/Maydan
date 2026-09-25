@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "in_progress",
+  "status": "awaiting_audio_replacements",
   "scope": "all_existing_packs",
   "audience": "Arabic-speaking families and adults aged 16+",
   "tiers": {
@@ -579,5 +579,8 @@
   "checkpoint": "checkpoint/checkpoint-2026-09-25.json",
   "updatedAt": "2026-09-25",
   "releasable": false,
-  "latestHandoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md"
+  "latestHandoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md",
+  "activeQuestions": 3120,
+  "verifiedQuestions": 3117,
+  "bankContentReady": false
 }

@@ -13,7 +13,15 @@
   "sha256": "eac88d640e4b69270544d6e7e0f45c328f154cc631f43a68b8f8317981d7a1c8",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "eac88d640e4b69270544d6e7e0f45c328f154cc631f43a68b8f8317981d7a1c8",
+    "sourceUrl": "https://inside.fifa.com/organisation/news/pele-immortal-forever-with-us",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show close-cropped dark hair, prominent ears, clean-shaven cheeks and a wide smile. The generated jersey is plain yellow with a green collar; the FIFA photograph has a lighter jersey and badge.",
+    "limits": "Different clothing and pose; illustration is not a reproduction of the source photograph.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

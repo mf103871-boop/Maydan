@@ -871,6 +871,9 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
     { url, className: `fx-frame-${effect}`, alt: question.q || "صورة السؤال" },
     ({ onReady, onError }) =>
       hBeta(
+        React.Fragment,
+        null,
+        hBeta(
         "div",
         {
           className: `m-media-stage ${canEnlarge ? "can-enlarge" : ""}`,
@@ -972,6 +975,8 @@ function MediaImage({ question, url, effect, revealed, onSfx }) {
               hBeta("i", { key: i, className: shown.includes(i) ? "" : "is-open", style: { "--k": revealed ? i : 0 } }),
             ),
           ),
+        ),
+        // يبقى زر القطعة خارج إطار الصورة كي لا يغطيه غطاء البلاطات.
         effect === "reveal" &&
           !revealed &&
           hBeta(

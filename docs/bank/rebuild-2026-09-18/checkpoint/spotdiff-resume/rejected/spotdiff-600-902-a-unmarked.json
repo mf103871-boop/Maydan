@@ -1,0 +1,19 @@
+{
+  "id": "spotdiff-600-902-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-600-902-a.webp",
+  "asset": "media/spotdiff/spotdiff-600-902-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Plain closed blue exercise book at left on ivory desk, plain white eraser behind-left. A short unmarked natural wood ruler lies perfectly horizontal at center-right, midpoint x=72 y=63, length 28 percent image width. No numerals or writing. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 46480,
+  "sha256": "b69af0b8b4fedfd3bfa473d7368fda9fbf8ca35e948fa4ff695af46d7f2823a7",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

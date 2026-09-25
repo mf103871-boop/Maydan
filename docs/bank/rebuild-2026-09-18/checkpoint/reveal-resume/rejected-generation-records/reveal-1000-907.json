@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-09-25",
+  "originalEntry": [
+    1000,
+    907,
+    "فريدي ميركوري",
+    "Freddie Mercury",
+    "موسيقى وغناء",
+    [
+      "فريدي مركوري",
+      "Freddie Mercury"
+    ],
+    "",
+    "Queen singer Freddie Mercury in his iconic mid-1980s appearance, short black hair combed back, thick dark moustache, distinctive mouth and prominent teeth with a warm smile, plain white crew-neck shirt."
+  ],
+  "originalJob": {
+    "id": "reveal-1000-907",
+    "kind": "question",
+    "pack": "reveal",
+    "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Freddie Mercury. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Queen singer Freddie Mercury in his iconic mid-1980s appearance, short black hair combed back, thick dark moustache, distinctive mouth and prominent teeth with a warm smile, plain white crew-neck shirt.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+  },
+  "outcome": {
+    "id": "reveal-1000-907",
+    "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 55e9d4c1-276c-4a88-b7b1-5ff8ec6c81cc.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"input\\\",\\n      \\\"categories\\\": [\\n        \\\"public-figure\\\"\\n      ]\\n    }\\n  }\\n}\")",
+    "retried": false
+  },
+  "retried": false,
+  "disposition": "Different person selected in the same topic and point tier under continuation authorization."
+}

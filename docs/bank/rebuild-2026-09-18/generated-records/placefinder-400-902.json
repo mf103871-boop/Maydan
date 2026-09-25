@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-400-902",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-400-902.webp",
+  "asset": "media/placefinder/placefinder-400-902.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Petra in Jordan, the Treasury Al-Khazneh rock-cut facade centered in tall rose-red sandstone cliffs, frontal view from the end of the narrow Siq: six Corinthian columns on lower story with broken upper pediment framing the central round tholos, dark central doorway, warm natural sandstone strata. Entire facade visible from ground to urn with side rock walls; no invented freestanding temple.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 259828,
+  "sha256": "e39a126abb17ee7ba916b5c8937b9f9bb44fb0cd0420bed20b0b8ee93bd9aa2f",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Rose sandstone Treasury facade in cliffs, lower columns, upper tholos and pediments; question specifically asks Petra site.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

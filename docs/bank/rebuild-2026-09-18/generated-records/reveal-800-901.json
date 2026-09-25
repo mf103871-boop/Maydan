@@ -13,7 +13,15 @@
   "sha256": "d7e7fd6e7eafe94647492870b9f38f11aa1325ee10d8441cac40ec3ab2378c0e",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "d7e7fd6e7eafe94647492870b9f38f11aa1325ee10d8441cac40ec3ab2378c0e",
+    "sourceUrl": "https://www.unicef.org/mena/ar/اليونيسف-تُعيّن-الفنان-أحمد-حلمي-سفيراً-إقليمياً-في-الشرق-الاوسط-وشمال-افريقيا/البيانات-الصحفية",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show curly dark hair, rectangular glasses and a gray-flecked beard. Generated portrait is frontal and smiling with a plain dark sweater; the clearer UNICEF signing view looks down with a blue shirt.",
+    "limits": "Signing image supplements the earlier very small group photograph; exact eye-area comparison remains limited by the downward pose.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

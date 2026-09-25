@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-400-906",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 400,
+  "a": "متحف اللوفر",
+  "alt": [
+    "اللوفر",
+    "Louvre",
+    "Louvre Museum"
+  ],
+  "topic": "أوروبا الغربية",
+  "q": "ما اسم المتحف الذي يتوسط فناؤه هذا الهرم الزجاجي؟",
+  "sourceUrl": "https://www.louvre.fr/en/explore/the-palace/a-pyramid-for-a-symbol",
+  "sourceEvidence": "Opened 2026-09-25: Louvre describes transparent glass pyramid in Cour Napoleon, metal frame and surrounding historic palace.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Louvre Museum Cour Napoleon in Paris: complete central transparent glass pyramid with fine diagonal metal lattice seen in three-quarter view, low reflecting pool and courtyard, long pale-stone richly detailed French Renaissance palace facades with mansard slate roofs behind. Pyramid centered foreground and palace establishes identity; natural daylight. No unrelated pyramid monument, no labels.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Transparent metal-framed pyramid with historic palace courtyard facades; identifies Louvre museum.",
+  "runtimeReviewStatus": "approved"
+}

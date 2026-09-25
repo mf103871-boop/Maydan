@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-1000-908-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Correct only the size of the red rubber O-ring in the supplied still-life. The red O-ring is too large; reduce its outer diameter to approximately HALF its current diameter, about 9 percent of the total image width. Keep its exact center at x=81%, y=33%, retain its round ring geometry and visible central hole, and scale its natural contact shadow accordingly. Preserve all three hex nuts, the silver bolt, thread detail, background, framing and every other visible detail exactly. Do not relocate the O-ring or add objects. This corrected version becomes image A of a difficult spot-the-difference pair. No text."
+}

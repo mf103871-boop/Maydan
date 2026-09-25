@@ -13,7 +13,15 @@
   "sha256": "d89cf242ccec5d8ac93c71ead2ad8569f974b89b84db3c04ae5d435c51943b00",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "d89cf242ccec5d8ac93c71ead2ad8569f974b89b84db3c04ae5d435c51943b00",
+    "sourceUrl": "https://www.oscars.org/governors-awards/2016/jackie-chan",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show short side-swept dark hair, narrow smiling eyes and clean-shaven cheeks. Generated art has a larger smile and dark jacket; the Academy reference has a white jacket and folded arms.",
+    "limits": null,
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

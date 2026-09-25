@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-600-907-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-600-907-b.webp",
+  "asset": "media/spotdiff/spotdiff-600-907-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the single BROWN button on the glove cuff at right, leave its former position as smooth matching tan leather without a hole. Glove fingers, seams, scarf and shadows unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 155380,
+  "sha256": "59c703cc9bf87276628415784820ded51b17eb14f779ac9abd3b812006ec8961",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Only the round brown cuff button disappears; glove's five fingers, seam layout, cuff and gray scarf retain form. Slight grain rendering variation is not a separate semantic difference.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

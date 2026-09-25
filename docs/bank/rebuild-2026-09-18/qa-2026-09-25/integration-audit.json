@@ -1,0 +1,46 @@
+{
+  "reviewedAt": "2026-09-25",
+  "reviewer": "audit_current_repo independent sub-agent",
+  "status": "passed",
+  "packs": [
+    "flags",
+    "silhouette",
+    "blur",
+    "guesscar",
+    "tilepuzzle",
+    "placefinder",
+    "reveal",
+    "spotdiff"
+  ],
+  "questions": 320,
+  "activeImages": 360,
+  "checks": {
+    "uniqueQuestions": 320,
+    "uniqueImages": 360,
+    "recordAndGlobalManifestShaBytesDimensionsPromptAndApprovalMatch": 360,
+    "maximumAssetBytes": 260968,
+    "maximumImageSidePixels": 1280,
+    "generatedArtRecords": 478,
+    "generatedArtSha256": "dce9be1519127713de82757c9dd130da9f6b206060ca4704448167a3970a7d4c",
+    "preservedMediaFilesComparedWithHead92dd06e": 3046,
+    "deletedOrChangedExistingMedia": 0,
+    "categoryIdentityOrderAndIndexUnchanged": 78
+  },
+  "codeScope": "Only React.Fragment placement of reveal tile button and its margin. No game-rule changes. Independent actual-gameplay regression passed52/52; evidence in reveal-wrapper-regression/.",
+  "minorNotes": [
+    "Equivalent AI-disclosure wording differs between silhouette/blur category and record.",
+    "guesscar tool display omits built-in qualifier present in detailed actual generation record."
+  ],
+  "limits": [
+    "Audit covers360 question images in these8 packs;78 covers and40zoom records are counted separately.",
+    "No new gameplay repetition or production account/payment review in this integration audit."
+  ],
+  "afterAudioReplacementIntegration": {
+    "reviewer": "root",
+    "existingBinaryMediaChanged": 0,
+    "existingMediaIndexUpdates": [
+      "media/sound/_sources.json"
+    ],
+    "note": "Added3 new r2MP3s; all original audio files retained. Existing index extended with new attribution rows."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-600-901",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 600,
+  "a": "ماتشو بيتشو",
+  "alt": [
+    "ماتشوبيتشو",
+    "ماشو بيتشو",
+    "Machu Picchu"
+  ],
+  "topic": "الأمريكتان",
+  "q": "ما اسم هذه المدينة الأثرية فوق جبال الأنديز؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/274/",
+  "sourceEvidence": "Opened 2026-09-25: Inca mountain sanctuary with stone walls, terraces and ramps amid Andean forest.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Machu Picchu in Peru, classic elevated view over the complete Inca stone city on a narrow green mountain saddle, stepped agricultural terraces in foreground, tightly fitted roofless grey stone buildings and clear plazas in middle ground, steep distinctive Huayna Picchu peak centered behind and deep forested Andean ridges. No modern buildings, no invented intact roofs.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Stone city and terraces on steep Andean saddle with distinctive peak behind; site identity readable.",
+  "runtimeReviewStatus": "approved"
+}

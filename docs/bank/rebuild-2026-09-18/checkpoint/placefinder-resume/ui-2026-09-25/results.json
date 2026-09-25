@@ -1,0 +1,2086 @@
+{
+  "executedAt": "2026-09-25T03:35:39.149Z",
+  "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+  "mockAccountOnly": true,
+  "sourcePackQuestions": 40,
+  "selection": "8 isolated browser contexts; each test-only in-memory deck contains one untouched actual question per tier; all40 questions exercised",
+  "errors": [],
+  "networkErrors": [],
+  "manualVisualReview": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "all40RenderedMediaInspected": true,
+    "method": "Viewed all five contact sheets of actual before/revealed media states plus five full-page mobile question/answer examples. Original identities reviewed separately."
+  },
+  "checksPassed": 446,
+  "checksTotal": 446,
+  "questionsReviewed": 40,
+  "results": [
+    {
+      "name": "all40 neutral media filenames",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-901: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-901: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-901: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-901: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-901: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-902: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-902: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-902: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-902: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-902: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-903: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-903: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-903: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-903: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-903: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-904: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-904: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-904: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-904: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-904: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-905: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-905: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-905: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-905: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-905: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-906: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-906: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-906: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-906: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-906: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-907: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-907: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-907: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-907: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-907: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-200-908: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-400-908: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-600-908: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-800-908: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: complete original visible before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: no distortion filter or answer leak",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: original can enlarge before reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: enlarged question retains generic alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: complete original remains visible after reveal",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: correct revealed answer",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: hide restores neutral answer text",
+      "ok": true
+    },
+    {
+      "name": "placefinder-1000-908: hide keeps original visible and enlargeable",
+      "ok": true
+    },
+    {
+      "name": "all40 media decode in Chromium",
+      "ok": true
+    },
+    {
+      "name": "all40 own About rows disclose AI creation",
+      "ok": true
+    },
+    {
+      "name": "all40 individually exercised",
+      "ok": true
+    },
+    {
+      "name": "no browser runtime errors",
+      "ok": true
+    },
+    {
+      "name": "no missing assets",
+      "ok": true
+    }
+  ],
+  "questions": [
+    {
+      "qid": "placefinder-200-901",
+      "answer": "برج إيفل",
+      "tier": 200,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-400-901",
+      "answer": "الكولوسيوم",
+      "tier": 400,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-600-901",
+      "answer": "ماتشو بيتشو",
+      "tier": 600,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-800-901",
+      "answer": "قلعة نويشفانشتاين",
+      "tier": 800,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-1000-901",
+      "answer": "معبد كايلاسا",
+      "tier": 1000,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-200-902",
+      "answer": "برج بيزا المائل",
+      "tier": 200,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-400-902",
+      "answer": "البتراء",
+      "tier": 400,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-600-902",
+      "answer": "تشيتشن إيتزا",
+      "tier": 600,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-800-902",
+      "answer": "قصر الحمراء",
+      "tier": 800,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-1000-902",
+      "answer": "برامبانان",
+      "tier": 1000,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-200-903",
+      "answer": "برج خليفة",
+      "tier": 200,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-400-903",
+      "answer": "جسر البرج",
+      "tier": 400,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-600-903",
+      "answer": "ستونهنج",
+      "tier": 600,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-800-903",
+      "answer": "بوروبودور",
+      "tier": 800,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-1000-903",
+      "answer": "قلعة هيميجي",
+      "tier": 1000,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-200-904",
+      "answer": "أهرامات الجيزة",
+      "tier": 200,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-400-904",
+      "answer": "جسر البوابة الذهبية",
+      "tier": 400,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-600-904",
+      "answer": "بوابة براندنبورغ",
+      "tier": 600,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-800-904",
+      "answer": "بوابة إتسوكوشيما",
+      "tier": 800,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-1000-904",
+      "answer": "بوذا ليشان",
+      "tier": 1000,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-200-905",
+      "answer": "سور الصين العظيم",
+      "tier": 200,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-400-905",
+      "answer": "تمثال المسيح الفادي",
+      "tier": 400,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-600-905",
+      "answer": "ساغرادا فاميليا",
+      "tier": 600,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-800-905",
+      "answer": "الحِجر",
+      "tier": 800,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-1000-905",
+      "answer": "نان مادول",
+      "tier": 1000,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-200-906",
+      "answer": "تاج محل",
+      "tier": 200,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-400-906",
+      "answer": "متحف اللوفر",
+      "tier": 400,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-600-906",
+      "answer": "أنغكور وات",
+      "tier": 600,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-800-906",
+      "answer": "زيمبابوي العظمى",
+      "tier": 800,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-1000-906",
+      "answer": "مسجد جينيه الكبير",
+      "tier": 1000,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-200-907",
+      "answer": "تمثال الحرية",
+      "tier": 200,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-400-907",
+      "answer": "جبل فوجي",
+      "tier": 400,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-600-907",
+      "answer": "معبد السماء",
+      "tier": 600,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-800-907",
+      "answer": "تماثيل المواي",
+      "tier": 800,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-1000-907",
+      "answer": "تيكال",
+      "tier": 1000,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-200-908",
+      "answer": "دار أوبرا سيدني",
+      "tier": 200,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-400-908",
+      "answer": "معبد أبو سمبل",
+      "tier": 400,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-600-908",
+      "answer": "مسجد الحسن الثاني",
+      "tier": 600,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-800-908",
+      "answer": "أولورو",
+      "tier": 800,
+      "ok": true,
+      "checksPassed": 11
+    },
+    {
+      "qid": "placefinder-1000-908",
+      "answer": "قناة شقوبية",
+      "tier": 1000,
+      "ok": true,
+      "checksPassed": 11
+    }
+  ]
+}

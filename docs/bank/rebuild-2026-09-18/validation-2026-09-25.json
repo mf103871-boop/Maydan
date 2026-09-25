@@ -1,18 +1,17 @@
 {
   "date": "2026-09-25",
   "releasable": false,
+  "bankContentReady": false,
+  "verifiedQuestions": 3117,
   "categoryCount": 78,
-  "totalQuestions": 3706,
-  "completedContentPacks": 74,
-  "completedContentQuestions": 2960,
+  "totalQuestions": 3120,
+  "completedContentPacks": 77,
+  "completedContentQuestions": 3080,
   "fullBank": {
     "passed": false,
-    "errorCount": 2880,
+    "errorCount": 3,
     "errorsByPack": {
-      "placefinder": 910,
-      "reveal": 965,
-      "sound": 40,
-      "spotdiff": 965
+      "sound": 3
     },
     "warnings": [
       "arabliterature: arabliterature-400-902: إجابته «العروض» مكشوفة في نص arabliterature-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
@@ -121,7 +120,7 @@
       "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-1000-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
       "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-1000-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
       "worldcup: worldcup-400-908: إجابته «إسبانيا» مكشوفة في نص worldcup-400-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
-      "174 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «النمله» في animals،quran · «الحبر» في animals،arabart · «خلد الماء» في animals،emoji،silhouette · «بيكاتشو» في anime،videogames · «كره القدم» في anime،commonbond،emoji،hints،videogames · «هاكو» في anime،naruto · «حجر الفلاسفه» في anime،cartoon · «محمود مختار» في arabart،reveal …"
+      "139 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «احمد حلمي» في actors،reveal · «النمله» في animals،quran · «الحبر» في animals،arabart · «خلد الماء» في animals،emoji،silhouette · «بيكاتشو» في anime،videogames · «كره القدم» في anime،commonbond،emoji،hints،videogames · «هاكو» في anime،naruto · «حجر الفلاسفه» في anime،cartoon …"
     ],
     "placeholderCount": 0
   },
@@ -245,6 +244,79 @@
           "total": 40,
           "topics": 8,
           "mediaBytes": 8553940,
+          "media": true
+        }
+      ]
+    },
+    "placefinder": {
+      "errors": [],
+      "warnings": [
+        "7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «برج ايفل» في blur،hints،history،placefinder · «تمثال الحريه» في emoji،placefinder · «تاج محل» في emoji،hints،placefinder · «اهرامات الجيزه» في hints،placefinder · «البتراء» في hints،placefinder · «ساغرادا فاميليا» في hints،placefinder · «الكولوسيوم» في history،placefinder"
+      ],
+      "placeholders": [],
+      "categories": [
+        {
+          "id": "placefinder",
+          "name": "وين المكان؟",
+          "status": "done",
+          "counts": {
+            "200": 8,
+            "400": 8,
+            "600": 8,
+            "800": 8,
+            "1000": 8
+          },
+          "total": 40,
+          "topics": 9,
+          "mediaBytes": 9210176,
+          "media": true
+        }
+      ]
+    },
+    "reveal": {
+      "errors": [],
+      "warnings": [
+        "18 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «احمد حلمي» في actors،reveal · «محمد صلاح» في arabcelebs،premier،reveal · «رياض محرز» في arabcelebs،reveal · «احمد زويل» في arabcelebs،reveal · «نجيب محفوظ» في arabcelebs،arabliterature،books،quotes،reveal · «عادل امام» في arabcelebs،reveal · «انس جابر» في arabcelebs،reveal · «معتز برشم» في arabcelebs،reveal …"
+      ],
+      "placeholders": [],
+      "categories": [
+        {
+          "id": "reveal",
+          "name": "إكشفني",
+          "status": "done",
+          "counts": {
+            "200": 8,
+            "400": 8,
+            "600": 8,
+            "800": 8,
+            "1000": 8
+          },
+          "total": 40,
+          "topics": 8,
+          "mediaBytes": 8485386,
+          "media": true
+        }
+      ]
+    },
+    "spotdiff": {
+      "errors": [],
+      "warnings": [],
+      "placeholders": [],
+      "categories": [
+        {
+          "id": "spotdiff",
+          "name": "اكتشف الفرق",
+          "status": "done",
+          "counts": {
+            "200": 8,
+            "400": 8,
+            "600": 8,
+            "800": 8,
+            "1000": 8
+          },
+          "total": 40,
+          "topics": 8,
+          "mediaBytes": 9760200,
           "media": true
         }
       ]
@@ -686,11 +758,11 @@
     {
       "id": "placefinder",
       "name": "وين المكان؟",
-      "questions": 226,
-      "newIdCount": 0,
-      "verified": 226,
-      "errors": 910,
-      "sha256": "2fb0fe3b99e6dc76c13412913001be1a12d6ff9352516c541e55954fee7e2b41"
+      "questions": 40,
+      "newIdCount": 40,
+      "verified": 40,
+      "errors": 0,
+      "sha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a"
     },
     {
       "id": "premier",
@@ -767,11 +839,11 @@
     {
       "id": "reveal",
       "name": "إكشفني",
-      "questions": 240,
-      "newIdCount": 0,
-      "verified": 240,
-      "errors": 965,
-      "sha256": "217602241ccba3ad0d2c1808172173ead32168b82614e0cd7eb994c75a94d922"
+      "questions": 40,
+      "newIdCount": 40,
+      "verified": 40,
+      "errors": 0,
+      "sha256": "bca69ef0b6d6a4e6a739ba701646c81a349e70040bd579848fa0bec4c39c9325"
     },
     {
       "id": "science",
@@ -814,9 +886,9 @@
       "name": "خمن الصوت",
       "questions": 40,
       "newIdCount": 40,
-      "verified": 0,
-      "errors": 40,
-      "sha256": "2e7bd879ca6449221e155fb4e0021bf108a261c1d7c4ca437c30acbc9ed5e2b4"
+      "verified": 37,
+      "errors": 3,
+      "sha256": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5"
     },
     {
       "id": "spacetoon",
@@ -839,11 +911,11 @@
     {
       "id": "spotdiff",
       "name": "اكتشف الفرق",
-      "questions": 240,
-      "newIdCount": 0,
-      "verified": 240,
-      "errors": 965,
-      "sha256": "3ec7c9bceae4e2975af44b6c07dd363d9b10d3c02b65bc8c851a6f296d33d139"
+      "questions": 40,
+      "newIdCount": 40,
+      "verified": 40,
+      "errors": 0,
+      "sha256": "922d2f552b64f158837561ec48589f19ecf70d85ce77ed559c940e6e67aa69ae"
     },
     {
       "id": "squidgame",
@@ -956,24 +1028,21 @@
   ],
   "tests": {
     "total": 463,
-    "passed": 459,
-    "failed": 4,
+    "passed": 462,
+    "failed": 1,
     "cancelled": 0,
     "failures": [
-      "كل حزمة مسجّلة وتحتوي 8 أسئلة بالضبط لكل شريحة حسب طلب المالك",
-      "المعرّفات فريدة عبر البنك كله، ولا سؤال بلا نص أو إجابة",
-      "كل سؤال «اكتشف الفرق» يحمل spot داخل حدود الصورة",
       "البنك الفعلي يجتاز bank:validate بلا أخطاء"
     ],
-    "note": "Final rerun after shared count synchronization. Remaining image packs and human audio listening are unfinished."
+    "note": "Full suite after all image packs, reveal-button fix and human listening results. Exact failing question IDs are in the test log."
   },
   "build": {
     "passed": true,
-    "scope": "Local production build with active packs; generated media in concurrent unfinished work may also be copied. No deployment."
+    "scope": "Local production build with current78 active packs. No deployment."
   },
   "limits": [
     "Difficulty rates are editorial targets, not measured.",
-    "All40 sound questions await actual human listening.",
+    "Any sound question remaining unverified requires new human approval after correction.",
     "No complete-bank release, production authentication or payment testing claimed."
   ]
 }

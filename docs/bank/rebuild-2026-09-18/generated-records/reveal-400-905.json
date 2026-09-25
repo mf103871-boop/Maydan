@@ -13,7 +13,15 @@
   "sha256": "90bbd42f5bec6303bc8be25cca8b768457355939bed36e36337571132898d34d",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "90bbd42f5bec6303bc8be25cca8b768457355939bed36e36337571132898d34d",
+    "sourceUrl": "https://www.hawking.org.uk/biography",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show thin side-parted hair, rectangular glasses, a seated posture and a black headrest. Generated image uses a formal jacket and slightly different head tilt. No duplicate glasses, incomplete face or merged headrest is visible.",
+    "limits": null,
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

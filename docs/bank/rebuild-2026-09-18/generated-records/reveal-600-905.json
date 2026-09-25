@@ -13,7 +13,15 @@
   "sha256": "b7bf4e634ff65b1b622e620fe39e6abaa65709d084eb4fe934a51863359e0f68",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "b7bf4e634ff65b1b622e620fe39e6abaa65709d084eb4fe934a51863359e0f68",
+    "sourceUrl": "https://www.nobelprize.org/laureate/292",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "The Nobel portrait visibly HAS a dark moustache; the generated portrait also has a moustache. Both show full cheeks, short textured hair and a suit. Generated hair is grayer and face more lined.",
+    "limits": "Do not remove the moustache merely to match the old clean-shaven draft prompt. Preserve the actual historical generation prompt and explain the observed output.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

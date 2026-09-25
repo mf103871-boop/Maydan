@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-1000-904",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-1000-904.webp",
+  "asset": "media/placefinder/placefinder-1000-904.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Leshan Giant Buddha in Sichuan China, entire immense seated stone Maitreya carved directly into reddish sandstone cliff, knees bent and huge bare feet resting below, both hands laid flat on knees, broad calm face with tightly curled dark stone hair and elongated ears. Dense green foliage along cliff top and sides, narrow zigzag cliffside stairs for scale, sliver of river foreground. Front three-quarter view from river, head and both feet visible, no crosslegged seated Buddha, no freestanding gold statue.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1152,
+  "height": 864,
+  "bytes": 229638,
+  "sha256": "8e71336579e834fb07b74d6439d6eead5cdb79efb9e2a0013a98f6e7b868bf50",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Giant seated cliff Buddha with hands on knees, feet below, curled hair, long ears and river; Leshan identity.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

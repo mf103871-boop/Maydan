@@ -13,7 +13,15 @@
   "sha256": "96154a53701b68709480bdbb6c226ba138141bdd10e22752ba33a4ddbf3849e7",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "96154a53701b68709480bdbb6c226ba138141bdd10e22752ba33a4ddbf3849e7",
+    "sourceUrl": "https://goldenglobes.com/person/omar-sharif/",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show thick wavy hair, strong brows and a broad smile. The generated portrait has gray temples, a pronounced moustache and open dark collar; the Golden Globes view is younger, clean-shaven and wears a bow tie.",
+    "limits": "Age and moustache differ from this reference. A later official photograph would be needed to support those styling details specifically.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

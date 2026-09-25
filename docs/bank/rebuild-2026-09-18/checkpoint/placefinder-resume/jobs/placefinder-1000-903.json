@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-1000-903",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 1000,
+  "a": "قلعة هيميجي",
+  "alt": [
+    "هيميجي",
+    "هيميجي جو",
+    "Himeji Castle"
+  ],
+  "topic": "شرق آسيا",
+  "q": "ما اسم هذه القلعة اليابانية ذات الجدران البيضاء والأسقف المتراكبة؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/661/",
+  "sourceEvidence": "Opened UNESCO 2026-09-25: white plastered walls, wooden architecture and multiple roof layers of Himeji-jo.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Himeji Castle in Japan, true White Heron Castle, complete main white-plaster multistorey keep with five visible exterior roof levels, smaller connected white keeps, sweeping grey tiled eaves with alternating triangular and curved gables, dark slit windows, massive sloping rough-stone foundation, low white defensive walls. Three-quarter view from broad open lawn, entire roof apex and base clear, no red pagoda or generic single symmetrical temple.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "White plaster keeps with layered grey gabled roofs and sloped stone foundations; Himeji identity.",
+  "runtimeReviewStatus": "approved"
+}

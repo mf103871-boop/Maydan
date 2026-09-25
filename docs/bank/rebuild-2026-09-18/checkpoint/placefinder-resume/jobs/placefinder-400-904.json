@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-400-904",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 400,
+  "a": "جسر البوابة الذهبية",
+  "alt": [
+    "غولدن غيت",
+    "جولدن جيت",
+    "Golden Gate Bridge"
+  ],
+  "topic": "الأمريكتان",
+  "q": "ما اسم هذا الجسر المعلّق عند مدخل خليج سان فرانسيسكو؟",
+  "sourceUrl": "https://www.goldengate.org/bridge/history-research/statistics-data/design-construction-stats/",
+  "sourceEvidence": "Recovered primary operator review 2026-09-23: two towers, two main cables and vertical suspenders.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Golden Gate Bridge in San Francisco, wide three-quarter view from the Marin shore: international-orange suspension bridge with exactly two tall rectangular art-deco steel towers with horizontal portal bracing, two sweeping main cables and many vertical suspenders, roadway across blue channel, low green-brown coastal hills. Full two towers unclipped, no lettering, no imaginary third tower.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Two international-orange portal towers with suspension cables and vertical hangers above blue channel; skyline illustrative.",
+  "runtimeReviewStatus": "approved"
+}

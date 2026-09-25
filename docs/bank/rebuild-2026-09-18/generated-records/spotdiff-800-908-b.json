@@ -1,0 +1,33 @@
+{
+  "id": "spotdiff-800-908-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-800-908-b.webp",
+  "asset": "media/spotdiff/spotdiff-800-908-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the YELLOW rectangular tape-measure lock button to RED; preserve dark gray housing, plain extended tape, wood block, pencil and all other scene details. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 100856,
+  "sha256": "2e31dc386ab437ae2787cc97bfe6faf1d6e6e27f87c9f4604c15022f0ebd7ad9",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "Only the locking button of the gray tape measure changes from yellow to red. Extended blank tape, wood block, pencil, body and strap retain matching geometry.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "generationInput": {
+    "type": "raw-generated-image-a",
+    "rawImageSha256": "d4072efdcd7c6dd991d36ff2bbb7cd0a9170dd7d803f91e2474015ee0f3b3df3",
+    "installedImageA": "media/spotdiff/spotdiff-800-908-a.webp",
+    "installedImageASha256": "2bfa4357776f90ff15ad3a9813d2453f0e1a2bd828c6703cf653b781f64625a0"
+  },
+  "rawGeneratedImageSha256": "820c168716fe2d8e2c402c83e49ab668b35c4bef8bee0ce8eb61a83cc6991ecd"
+}

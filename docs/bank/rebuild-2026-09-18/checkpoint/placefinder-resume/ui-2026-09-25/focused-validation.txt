@@ -1,0 +1,13 @@
+placefinder        8   8   8   8   8 =   40  pending · media · 9 مواضيع
+
+النطاق: الفئة placefinder · القواعد العابرة للبنك (تكرار المعرّف، تكرار النص، الإجابة المشتركة، index.js، done بلا ملف) مطبَّقة مقابل البنك كله
+
+تحذيرات (1):
+  ⚠ 7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «برج ايفل» في blur،hints،history،placefinder · «تمثال الحريه» في emoji،placefinder · «تاج محل» في emoji،hints،placefinder · «اهرامات الجيزه» في hints،placefinder · «البتراء» في hints،placefinder · «ساغرادا فاميليا» في hints،placefinder · «الكولوسيوم» في history،placefinder
+
+أخطاء (5):
+  ✗ placefinder: bank-status: خانة 200 مسجّلة 43 والفعلي 8
+  ✗ placefinder: bank-status: خانة 400 مسجّلة 45 والفعلي 8
+  ✗ placefinder: bank-status: خانة 600 مسجّلة 47 والفعلي 8
+  ✗ placefinder: bank-status: خانة 800 مسجّلة 45 والفعلي 8
+  ✗ placefinder: bank-status: خانة 1000 مسجّلة 46 والفعلي 8

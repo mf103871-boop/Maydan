@@ -1,0 +1,794 @@
+{
+  "executedAt": "2026-09-25T04:01:39.048Z",
+  "scope": "Technical load and actual MediaAudio/gameplay controls only. No auditory identity review or human approval.",
+  "browser": "Installed Chrome, headless, 390px and320px mobile, actual playback clock, default playback rate",
+  "selection": "Full unchanged production bank; disposable localhost browser history prioritizes one exact unseen target per context. No bank/module overrides.",
+  "limitations": "Local loading times are not production network measurements. Headless technical playback cannot establish semantic audio identity.",
+  "humanReviewPageVisited": false,
+  "humanReviewSubmitted": false,
+  "sourceOrBankEdited": false,
+  "hashesBefore": {
+    "src/games/badeeha/App.js": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+    "src/games/badeeha/styles.css": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+    "src/data/categories/sound.json": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
+    "media/sound/sound-400-902-r2.mp3": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+    "media/sound/sound-400-905-r2.mp3": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+    "media/sound/sound-800-908-r2.mp3": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5"
+  },
+  "hashesAfter": {
+    "src/games/badeeha/App.js": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+    "src/games/badeeha/styles.css": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+    "src/data/categories/sound.json": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
+    "media/sound/sound-400-902-r2.mp3": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+    "media/sound/sound-400-905-r2.mp3": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+    "media/sound/sound-800-908-r2.mp3": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5"
+  },
+  "results": [
+    {
+      "name": "only the three replacements remain unverified in current bank",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: exact replacement path loads",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-902-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-902-r2.mp3",
+        "duration": 7.5,
+        "currentTime": 0,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "تشغيل",
+        "meta": "اضغط للاستماع\n3 مرات متبقية من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-400-902: metadata ready and no decoder error",
+      "ok": true,
+      "detail": {
+        "readyMs": 224,
+        "duration": 7.5,
+        "readyState": 4
+      }
+    },
+    {
+      "name": "sound-400-902: no autoplay and three plays available",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: player fits narrow mobile",
+      "ok": true,
+      "detail": {
+        "x": 32,
+        "right": 288,
+        "width": 320,
+        "scroll": 320
+      }
+    },
+    {
+      "name": "sound-400-902: first play advances clock and consumes one play",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-902-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-902-r2.mp3",
+        "duration": 7.5,
+        "currentTime": 0.065391,
+        "paused": false,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "إيقاف",
+        "meta": "يعمل الآن\nمرتان متبقيتان من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-400-902: pause retains remaining count",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-902-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-902-r2.mp3",
+        "duration": 7.5,
+        "currentTime": 0.080965,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "تشغيل",
+        "meta": "اضغط للاستماع\nمرتان متبقيتان من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-400-902: resume consumes no additional play",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: restart counts as second play",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: third start exhausts fresh-play budget",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-902-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-902-r2.mp3",
+        "duration": 7.5,
+        "currentTime": 0.067465,
+        "paused": false,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": true,
+        "toggleLabel": "إيقاف",
+        "meta": "يعمل الآن\nاكشفوا الإجابة لإعادة السماع",
+        "spent": true
+      }
+    },
+    {
+      "name": "sound-400-902: third play can still pause and resume",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: natural end blocks a fourth fresh play",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-902-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-902-r2.mp3",
+        "duration": 7.5,
+        "currentTime": 7.5,
+        "paused": true,
+        "ended": true,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": true,
+        "restartDisabled": true,
+        "toggleLabel": "تشغيل",
+        "meta": "انتهت مرات السماع\nاكشفوا الإجابة لإعادة السماع",
+        "spent": true
+      }
+    },
+    {
+      "name": "sound-400-902: revealing lifts playback limit",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: fourth playback runs after reveal",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: platform mute pauses and disables controls",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-902-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-902-r2.mp3",
+        "duration": 7.5,
+        "currentTime": 0.087792,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": true,
+        "volume": 0.75,
+        "toggleDisabled": true,
+        "restartDisabled": true,
+        "toggleLabel": "تشغيل",
+        "meta": "الصوت مكتوم — فعّله من زر الصوت\nبعد الكشف يمكنكم إعادة السماع بلا حدّ",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-400-902: unmute re-enables controls without autoplay",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: playback resumes after unmute",
+      "ok": true
+    },
+    {
+      "name": "sound-400-902: replacement fetched successfully",
+      "ok": true,
+      "detail": [
+        {
+          "path": "/media/sound/sound-400-902-r2.mp3",
+          "initiatorType": "fetch",
+          "durationMs": 11,
+          "responseMs": 10.799999997019768,
+          "transferSize": 0,
+          "encodedBodySize": 121252
+        },
+        {
+          "path": "/media/sound/sound-400-902-r2.mp3",
+          "initiatorType": "audio",
+          "durationMs": 2.399999998509884,
+          "responseMs": 2,
+          "transferSize": 0,
+          "encodedBodySize": 121252
+        }
+      ]
+    },
+    {
+      "name": "sound-400-905: exact replacement path loads",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-905-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-905-r2.mp3",
+        "duration": 1.25,
+        "currentTime": 0,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "تشغيل",
+        "meta": "اضغط للاستماع\n3 مرات متبقية من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-400-905: metadata ready and no decoder error",
+      "ok": true,
+      "detail": {
+        "readyMs": 103,
+        "duration": 1.25,
+        "readyState": 4
+      }
+    },
+    {
+      "name": "sound-400-905: no autoplay and three plays available",
+      "ok": true
+    },
+    {
+      "name": "sound-400-905: player fits narrow mobile",
+      "ok": true,
+      "detail": {
+        "x": 32,
+        "right": 288,
+        "width": 320,
+        "scroll": 320
+      }
+    },
+    {
+      "name": "sound-400-905: first play advances clock and consumes one play",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-905-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-905-r2.mp3",
+        "duration": 1.25,
+        "currentTime": 0.065428,
+        "paused": false,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "إيقاف",
+        "meta": "يعمل الآن\nمرتان متبقيتان من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-400-905: pause retains remaining count",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-905-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-905-r2.mp3",
+        "duration": 1.25,
+        "currentTime": 0.082687,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "تشغيل",
+        "meta": "اضغط للاستماع\nمرتان متبقيتان من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-400-905: resume consumes no additional play",
+      "ok": true
+    },
+    {
+      "name": "sound-400-905: restart counts as second play",
+      "ok": true
+    },
+    {
+      "name": "sound-400-905: third start exhausts fresh-play budget",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-905-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-905-r2.mp3",
+        "duration": 1.25,
+        "currentTime": 0.065881,
+        "paused": false,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": true,
+        "toggleLabel": "إيقاف",
+        "meta": "يعمل الآن\nاكشفوا الإجابة لإعادة السماع",
+        "spent": true
+      }
+    },
+    {
+      "name": "sound-400-905: third play can still pause and resume",
+      "ok": true
+    },
+    {
+      "name": "sound-400-905: natural end blocks a fourth fresh play",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-905-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-905-r2.mp3",
+        "duration": 1.25,
+        "currentTime": 1.25,
+        "paused": true,
+        "ended": true,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": true,
+        "restartDisabled": true,
+        "toggleLabel": "تشغيل",
+        "meta": "انتهت مرات السماع\nاكشفوا الإجابة لإعادة السماع",
+        "spent": true
+      }
+    },
+    {
+      "name": "sound-400-905: revealing lifts playback limit",
+      "ok": true
+    },
+    {
+      "name": "sound-400-905: fourth playback runs after reveal",
+      "ok": true
+    },
+    {
+      "name": "sound-400-905: platform mute pauses and disables controls",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-400-905-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-400-905-r2.mp3",
+        "duration": 1.25,
+        "currentTime": 0.087828,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": true,
+        "volume": 0.75,
+        "toggleDisabled": true,
+        "restartDisabled": true,
+        "toggleLabel": "تشغيل",
+        "meta": "الصوت مكتوم — فعّله من زر الصوت\nبعد الكشف يمكنكم إعادة السماع بلا حدّ",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-400-905: unmute re-enables controls without autoplay",
+      "ok": true
+    },
+    {
+      "name": "sound-400-905: playback resumes after unmute",
+      "ok": true
+    },
+    {
+      "name": "sound-400-905: replacement fetched successfully",
+      "ok": true,
+      "detail": [
+        {
+          "path": "/media/sound/sound-400-905-r2.mp3",
+          "initiatorType": "fetch",
+          "durationMs": 4.9000000059604645,
+          "responseMs": 4.600000001490116,
+          "transferSize": 0,
+          "encodedBodySize": 20942
+        },
+        {
+          "path": "/media/sound/sound-400-905-r2.mp3",
+          "initiatorType": "audio",
+          "durationMs": 1.7000000029802322,
+          "responseMs": 1.3999999985098839,
+          "transferSize": 0,
+          "encodedBodySize": 20942
+        }
+      ]
+    },
+    {
+      "name": "sound-800-908: exact replacement path loads",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-800-908-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-800-908-r2.mp3",
+        "duration": 2.62,
+        "currentTime": 0,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "تشغيل",
+        "meta": "اضغط للاستماع\n3 مرات متبقية من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-800-908: metadata ready and no decoder error",
+      "ok": true,
+      "detail": {
+        "readyMs": 103,
+        "duration": 2.62,
+        "readyState": 4
+      }
+    },
+    {
+      "name": "sound-800-908: no autoplay and three plays available",
+      "ok": true
+    },
+    {
+      "name": "sound-800-908: player fits narrow mobile",
+      "ok": true,
+      "detail": {
+        "x": 32,
+        "right": 288,
+        "width": 320,
+        "scroll": 320
+      }
+    },
+    {
+      "name": "sound-800-908: first play advances clock and consumes one play",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-800-908-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-800-908-r2.mp3",
+        "duration": 2.62,
+        "currentTime": 0.055179,
+        "paused": false,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "إيقاف",
+        "meta": "يعمل الآن\nمرتان متبقيتان من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-800-908: pause retains remaining count",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-800-908-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-800-908-r2.mp3",
+        "duration": 2.62,
+        "currentTime": 0.073749,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": false,
+        "toggleLabel": "تشغيل",
+        "meta": "اضغط للاستماع\nمرتان متبقيتان من 3",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-800-908: resume consumes no additional play",
+      "ok": true
+    },
+    {
+      "name": "sound-800-908: restart counts as second play",
+      "ok": true
+    },
+    {
+      "name": "sound-800-908: third start exhausts fresh-play budget",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-800-908-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-800-908-r2.mp3",
+        "duration": 2.62,
+        "currentTime": 0.05462,
+        "paused": false,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": false,
+        "restartDisabled": true,
+        "toggleLabel": "إيقاف",
+        "meta": "يعمل الآن\nاكشفوا الإجابة لإعادة السماع",
+        "spent": true
+      }
+    },
+    {
+      "name": "sound-800-908: third play can still pause and resume",
+      "ok": true
+    },
+    {
+      "name": "sound-800-908: natural end blocks a fourth fresh play",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-800-908-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-800-908-r2.mp3",
+        "duration": 2.62,
+        "currentTime": 2.62,
+        "paused": true,
+        "ended": true,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": false,
+        "volume": 0.75,
+        "toggleDisabled": true,
+        "restartDisabled": true,
+        "toggleLabel": "تشغيل",
+        "meta": "انتهت مرات السماع\nاكشفوا الإجابة لإعادة السماع",
+        "spent": true
+      }
+    },
+    {
+      "name": "sound-800-908: revealing lifts playback limit",
+      "ok": true
+    },
+    {
+      "name": "sound-800-908: fourth playback runs after reveal",
+      "ok": true
+    },
+    {
+      "name": "sound-800-908: platform mute pauses and disables controls",
+      "ok": true,
+      "detail": {
+        "src": "media/sound/sound-800-908-r2.mp3",
+        "currentSrc": "http://127.0.0.1:62677/media/sound/sound-800-908-r2.mp3",
+        "duration": 2.62,
+        "currentTime": 0.08779,
+        "paused": true,
+        "ended": false,
+        "readyState": 4,
+        "networkState": 1,
+        "error": null,
+        "muted": true,
+        "volume": 0.75,
+        "toggleDisabled": true,
+        "restartDisabled": true,
+        "toggleLabel": "تشغيل",
+        "meta": "الصوت مكتوم — فعّله من زر الصوت\nبعد الكشف يمكنكم إعادة السماع بلا حدّ",
+        "spent": false
+      }
+    },
+    {
+      "name": "sound-800-908: unmute re-enables controls without autoplay",
+      "ok": true
+    },
+    {
+      "name": "sound-800-908: playback resumes after unmute",
+      "ok": true
+    },
+    {
+      "name": "sound-800-908: replacement fetched successfully",
+      "ok": true,
+      "detail": [
+        {
+          "path": "/media/sound/sound-800-908-r2.mp3",
+          "initiatorType": "fetch",
+          "durationMs": 6.200000002980232,
+          "responseMs": 5.800000004470348,
+          "transferSize": 0,
+          "encodedBodySize": 43093
+        },
+        {
+          "path": "/media/sound/sound-800-908-r2.mp3",
+          "initiatorType": "audio",
+          "durationMs": 1.8999999985098839,
+          "responseMs": 1.6000000014901161,
+          "transferSize": 0,
+          "encodedBodySize": 43093
+        }
+      ]
+    },
+    {
+      "name": "all three replacement clips tested in actual gameplay",
+      "ok": true
+    },
+    {
+      "name": "no browser runtime errors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "no missing assets",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "source, bank and replacement audio bytes unchanged",
+      "ok": true,
+      "detail": {
+        "hashesBefore": {
+          "src/games/badeeha/App.js": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+          "src/games/badeeha/styles.css": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+          "src/data/categories/sound.json": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
+          "media/sound/sound-400-902-r2.mp3": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+          "media/sound/sound-400-905-r2.mp3": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+          "media/sound/sound-800-908-r2.mp3": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5"
+        },
+        "hashesAfter": {
+          "src/games/badeeha/App.js": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+          "src/games/badeeha/styles.css": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+          "src/data/categories/sound.json": "1fa0caeef8b414ed6f6b7cd5cf84460b1370e88d9afe6bd051fd1d1c498011c5",
+          "media/sound/sound-400-902-r2.mp3": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+          "media/sound/sound-400-905-r2.mp3": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+          "media/sound/sound-800-908-r2.mp3": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5"
+        }
+      }
+    }
+  ],
+  "samples": [
+    {
+      "qid": "sound-400-902",
+      "src": "sound-400-902-r2.mp3",
+      "durationSeconds": 7.5,
+      "questionOpenToReadyMs": 224,
+      "resourceTimings": [
+        {
+          "path": "/media/sound/sound-400-902-r2.mp3",
+          "initiatorType": "fetch",
+          "durationMs": 11,
+          "responseMs": 10.799999997019768,
+          "transferSize": 0,
+          "encodedBodySize": 121252
+        },
+        {
+          "path": "/media/sound/sound-400-902-r2.mp3",
+          "initiatorType": "audio",
+          "durationMs": 2.399999998509884,
+          "responseMs": 2,
+          "transferSize": 0,
+          "encodedBodySize": 121252
+        }
+      ],
+      "verifiedAtRead": false,
+      "technicalChecks": 17,
+      "passed": true,
+      "identityAudited": false
+    },
+    {
+      "qid": "sound-400-905",
+      "src": "sound-400-905-r2.mp3",
+      "durationSeconds": 1.25,
+      "questionOpenToReadyMs": 103,
+      "resourceTimings": [
+        {
+          "path": "/media/sound/sound-400-905-r2.mp3",
+          "initiatorType": "fetch",
+          "durationMs": 4.9000000059604645,
+          "responseMs": 4.600000001490116,
+          "transferSize": 0,
+          "encodedBodySize": 20942
+        },
+        {
+          "path": "/media/sound/sound-400-905-r2.mp3",
+          "initiatorType": "audio",
+          "durationMs": 1.7000000029802322,
+          "responseMs": 1.3999999985098839,
+          "transferSize": 0,
+          "encodedBodySize": 20942
+        }
+      ],
+      "verifiedAtRead": false,
+      "technicalChecks": 17,
+      "passed": true,
+      "identityAudited": false
+    },
+    {
+      "qid": "sound-800-908",
+      "src": "sound-800-908-r2.mp3",
+      "durationSeconds": 2.62,
+      "questionOpenToReadyMs": 103,
+      "resourceTimings": [
+        {
+          "path": "/media/sound/sound-800-908-r2.mp3",
+          "initiatorType": "fetch",
+          "durationMs": 6.200000002980232,
+          "responseMs": 5.800000004470348,
+          "transferSize": 0,
+          "encodedBodySize": 43093
+        },
+        {
+          "path": "/media/sound/sound-800-908-r2.mp3",
+          "initiatorType": "audio",
+          "durationMs": 1.8999999985098839,
+          "responseMs": 1.6000000014901161,
+          "transferSize": 0,
+          "encodedBodySize": 43093
+        }
+      ],
+      "verifiedAtRead": false,
+      "technicalChecks": 17,
+      "passed": true,
+      "identityAudited": false
+    }
+  ],
+  "requests": [
+    {
+      "path": "/media/sound/sound-400-902-r2.mp3",
+      "bytes": 121252,
+      "status": 200,
+      "contentType": "audio/mpeg",
+      "requestRange": null
+    },
+    {
+      "path": "/media/sound/sound-400-905-r2.mp3",
+      "bytes": 20942,
+      "status": 200,
+      "contentType": "audio/mpeg",
+      "requestRange": null
+    },
+    {
+      "path": "/media/sound/sound-800-908-r2.mp3",
+      "bytes": 43093,
+      "status": 200,
+      "contentType": "audio/mpeg",
+      "requestRange": null
+    }
+  ],
+  "errors": [],
+  "networkErrors": []
+}

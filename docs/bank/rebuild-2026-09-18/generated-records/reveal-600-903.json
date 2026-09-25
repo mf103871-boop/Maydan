@@ -13,7 +13,15 @@
   "sha256": "813ac878e874bea68be55208202793d400cd2be62aeee7f54506dc3384901c42",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "813ac878e874bea68be55208202793d400cd2be62aeee7f54506dc3384901c42",
+    "sourceUrl": "https://en.psg.fr/teams/first-team/squad/achraf-hakimi",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show short textured hair, thick brows, a small chin beard and a smile. The generated shirt is plain red; the PSG reference is a standing team portrait with blue-red-white kit.",
+    "limits": "The official photo is full-body; fine face detail is smaller than the generated close-up.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

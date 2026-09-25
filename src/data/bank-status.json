@@ -410,7 +410,7 @@
       "name": "أغاني عربية",
       "icon": "🎵",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -418,14 +418,14 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T03:51:52.896188+00:00",
       "order": 27
     },
     "tarab": {
       "name": "طرب وأغاني زمان",
       "icon": "📻",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -433,7 +433,7 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T03:51:52.897188+00:00",
       "order": 28
     },
     "arabart": {
@@ -963,7 +963,7 @@
       "name": "إيموجي",
       "icon": "😀",
       "media": false,
-      "status": "pending",
+      "status": "done",
       "counts": {
         "200": 8,
         "400": 8,
@@ -971,7 +971,7 @@
         "800": 8,
         "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T03:51:52.897188+00:00",
       "order": 62,
       "defaultType": "emoji"
     },
@@ -1126,15 +1126,15 @@
       "name": "إكشفني",
       "icon": "🪟",
       "media": true,
-      "status": "pending",
+      "status": "done",
       "counts": {
-        "200": 48,
-        "400": 48,
-        "600": 48,
-        "800": 48,
-        "1000": 48
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T03:46:38.877790+00:00",
       "order": 72,
       "mediaKind": "image",
       "defaultType": "image:reveal"
@@ -1177,15 +1177,15 @@
       "name": "وين المكان؟",
       "icon": "📍",
       "media": true,
-      "status": "pending",
+      "status": "done",
       "counts": {
-        "200": 43,
-        "400": 45,
-        "600": 47,
-        "800": 45,
-        "1000": 46
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T03:46:38.701223+00:00",
       "order": 75,
       "mediaKind": "image",
       "defaultType": "image"
@@ -1211,15 +1211,15 @@
       "name": "اكتشف الفرق",
       "icon": "🧐",
       "media": true,
-      "status": "pending",
+      "status": "done",
       "counts": {
-        "200": 48,
-        "400": 48,
-        "600": 48,
-        "800": 48,
-        "1000": 48
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
       },
-      "doneAt": null,
+      "doneAt": "2026-09-25T03:50:32.628394+00:00",
       "order": 78,
       "mediaKind": "image",
       "defaultType": "diff"

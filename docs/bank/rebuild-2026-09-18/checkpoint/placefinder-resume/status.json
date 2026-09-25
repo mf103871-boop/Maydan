@@ -1,0 +1,21 @@
+{
+  "updatedAt": "2026-09-25",
+  "status": "approved-awaiting-shared-merge",
+  "pack": "placefinder",
+  "questions": 40,
+  "images": 40,
+  "topics": 9,
+  "perTier": 8,
+  "categorySha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+  "review": "../../review-placefinder-final.json",
+  "runtimeChecks": {
+    "passed": 446,
+    "total": 446,
+    "questions": 40
+  },
+  "remainingPackWork": [],
+  "remainingSharedWork": [
+    "Synchronize generated-art and bank-status/manifest through root coordinator."
+  ],
+  "releaseReady": false
+}

@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-800-906-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the BLUE oval fabric zipper-pull loop at lower-right of tent door to RED. Tent fabric, zipper seam, grass, mat and all background identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

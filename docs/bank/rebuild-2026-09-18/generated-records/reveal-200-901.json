@@ -13,7 +13,15 @@
   "sha256": "a18a5e62f6808fa19614cdc02d36e533cc18951104652172fdfccefdaeeb73de",
   "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
   "review": {
-    "status": "pending",
-    "note": "Generation and file checks do not imply subject or gameplay verification."
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "a18a5e62f6808fa19614cdc02d36e533cc18951104652172fdfccefdaeeb73de",
+    "sourceUrl": "https://elgounafilmfestival.com/?news=adel-imam-to-receive-career-achievement-award-at-first-edition-of-el-gouna-film-festival",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both views show short swept dark hair, forehead lines, clean-shaven cheeks and a broad smile. Generated art uses a closer frontal crop, open white collar and dark jacket; the festival image is a distant stage view with a bow tie.",
+    "limits": "Reference face is small within a1104px-wide event image; broad traits only.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
   }
 }

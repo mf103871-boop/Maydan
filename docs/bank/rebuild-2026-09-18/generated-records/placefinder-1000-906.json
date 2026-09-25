@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-1000-906",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-1000-906.webp",
+  "asset": "media/placefinder/placefinder-1000-906.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Great Mosque of Djenne in Mali, iconic mud-brick Sudano-Sahelian facade, warm earth-brown plaster, THREE main tapering square towers with conical top finials, many thick vertical rounded buttresses, numerous horizontal wooden toron beams protruding regularly from walls and towers, broad raised earthen platform and staircase, open sandy market square with no crowds. Frontal slight three-quarter view, full mosque silhouette, no domes, no decorative tile or stone minarets.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 199674,
+  "sha256": "ff8d6698636a5a18ec59855e8e77f3ef7925c24687b22f9927fc73eef879f762",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Earthen mosque with three main tapering towers, buttresses and protruding toron beams; Great Mosque of Djenne identity.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

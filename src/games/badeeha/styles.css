@@ -367,7 +367,7 @@
   .m-reveal-tiles i { background:#F7EDD9; border:1px solid rgba(255,249,237,.9); transform-origin:50% 100%; }
   .m-reveal-tiles i.is-open { pointer-events:none; animation:m-tile-open .4s ease-in forwards; animation-delay:calc(var(--k,0) * 25ms); }
   @keyframes m-tile-open { to { opacity:0; transform:perspective(500px) rotateX(75deg); } }
-  .m-reveal-tile-btn { margin-top:10px; }
+  .m-reveal-tile-btn { margin:10px 0; }
   .m-media-error { display:grid; justify-items:center; gap:6px; padding:22px 16px; text-align:center; color:var(--muted); }
   .m-media-error span { font-size:30px; }
   .m-media-error b { color:var(--text); font-size:15px; }

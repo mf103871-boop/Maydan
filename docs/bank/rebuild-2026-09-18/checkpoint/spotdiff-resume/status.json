@@ -1,0 +1,11 @@
+{
+  "updatedAt": "2026-09-25",
+  "status": "approved-and-integrated",
+  "installedPairs": 40,
+  "installedImages": 80,
+  "packWritten": true,
+  "review": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+  "runtime": "pending",
+  "categorySha256": "922d2f552b64f158837561ec48589f19ecf70d85ce77ed559c940e6e67aa69ae",
+  "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+}

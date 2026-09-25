@@ -1,0 +1,1010 @@
+{
+  "id": "sound",
+  "name": "خمن الصوت",
+  "icon": "🔊",
+  "defaultType": "audio",
+  "qs": [
+    {
+      "p": 200,
+      "q": "ما الآلة الوترية المعزوفة في هذا المقطع؟",
+      "a": "غيتار",
+      "qid": "sound-200-901",
+      "type": "audio",
+      "topic": "آلات موسيقية",
+      "alt": [
+        "جيتار",
+        "قيثارة",
+        "غيتار صوتي"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://audionautix.com/free-music/acoustic",
+      "media": {
+        "src": "sound-200-901.mp3",
+        "type": "audio",
+        "title": "Acoustic Guitar #1 (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://audionautix.com/free-music/acoustic",
+        "author": "Jason Shaw / Audionautix.com",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما التنبيه المنزلي الذي تسمعه عند وصول زائر؟",
+      "a": "جرس باب",
+      "qid": "sound-200-902",
+      "type": "audio",
+      "topic": "البيت والمطبخ",
+      "alt": [
+        "جرس الباب",
+        "جرس المنزل"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doorbell-classic-dingdong.ogg",
+      "media": {
+        "src": "sound-200-902.mp3",
+        "type": "audio",
+        "title": "Doorbell-classic-dingdong (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doorbell-classic-dingdong.ogg",
+        "author": "Dub",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما الشيء المنزلي الذي يصدر هذا التكتك المنتظم؟",
+      "a": "ساعة",
+      "qid": "sound-200-903",
+      "type": "audio",
+      "topic": "البيت والمطبخ",
+      "alt": [
+        "ساعة حائط",
+        "ساعة عقارب"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clock_ticking.ogg",
+      "media": {
+        "src": "sound-200-903.mp3",
+        "type": "audio",
+        "title": "Title Clock, ticking Artist natalie Original mp3 data Length:0:18 minutes (357.19 KB) Format:MP3 Stereo 44kHz 160Kbps (… (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clock_ticking.ogg",
+        "author": "natalie",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما أداة التنبيه المرورية التي تسمعها؟",
+      "a": "بوق سيارة",
+      "qid": "sound-200-904",
+      "type": "audio",
+      "topic": "مركبات وإشارات",
+      "alt": [
+        "كلاكس",
+        "زمور سيارة",
+        "هرن سيارة"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Car_Horn.wav",
+      "media": {
+        "src": "sound-200-904.mp3",
+        "type": "audio",
+        "title": "The sound made by a car horn. (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Car_Horn.wav",
+        "author": "15HPanska_Ruttner_Jan",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما الظاهرة الجوية التي يصدر عنها هذا الدوي؟",
+      "a": "رعد",
+      "qid": "sound-200-905",
+      "type": "audio",
+      "topic": "طبيعة",
+      "alt": [
+        "الرعد"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thunder_01.ogg",
+      "media": {
+        "src": "sound-200-905.mp3",
+        "type": "audio",
+        "title": "Thunder (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thunder_01.ogg",
+        "author": "Amuzujoe",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "أي حيوان أليف يصدر هذا النباح؟",
+      "a": "كلب",
+      "qid": "sound-200-906",
+      "type": "audio",
+      "topic": "حيوانات",
+      "alt": [
+        "الكلب"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dog_barking.webm",
+      "media": {
+        "src": "sound-200-906.mp3",
+        "type": "audio",
+        "title": "A dog barking. (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dog_barking.webm",
+        "author": "User:Dr. Nono YesMaybe",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "أي طائر داجن يصدر هذا الصياح؟",
+      "a": "ديك",
+      "qid": "sound-200-907",
+      "type": "audio",
+      "topic": "طيور وحشرات",
+      "alt": [
+        "الديك"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rooster_crowing.ogg",
+      "media": {
+        "src": "sound-200-907.mp3",
+        "type": "audio",
+        "title": "A rooster crowing (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rooster_crowing.ogg",
+        "author": "Filo gèn'",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 200,
+      "q": "أي حيوان أليف تسمع مواءه؟",
+      "a": "قطة",
+      "qid": "sound-200-908",
+      "type": "audio",
+      "topic": "حيوانات",
+      "alt": [
+        "قط",
+        "بسة",
+        "هرة"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meow_of_a_pleading_cat.oga",
+      "media": {
+        "src": "sound-200-908.mp3",
+        "type": "audio",
+        "title": "Cat asking to get out. (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meow_of_a_pleading_cat.oga",
+        "author": "Heismark",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الآلة الإيقاعية التي تسمع ضرباتها في التسجيل؟",
+      "a": "طبل",
+      "qid": "sound-400-901",
+      "type": "audio",
+      "topic": "آلات موسيقية",
+      "alt": [
+        "طبلة",
+        "طبل جانبي",
+        "سنير"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snare_drum_muffled.ogg",
+      "media": {
+        "src": "sound-400-901.mp3",
+        "type": "audio",
+        "title": "Snare drum muffled (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snare_drum_muffled.ogg",
+        "author": "Clngre",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الحركة المائية التي تسمعها على الشاطئ؟",
+      "a": "أمواج البحر",
+      "qid": "sound-400-902",
+      "type": "audio",
+      "topic": "طبيعة",
+      "alt": [
+        "موج البحر",
+        "موج",
+        "أمواج"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_Waves_on_a_Tropical_Beach.ogg",
+      "media": {
+        "src": "sound-400-902.mp3",
+        "type": "audio",
+        "title": "Ocean Waves on a Tropical Beach (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_Waves_on_a_Tropical_Beach.ogg",
+        "author": "Jarrod stanley",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "أي حيوان يصدر هذا الصهيل؟",
+      "a": "حصان",
+      "qid": "sound-400-903",
+      "type": "audio",
+      "topic": "حيوانات",
+      "alt": [
+        "خيل",
+        "فرس"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wiehern.ogg",
+      "media": {
+        "src": "sound-400-903.mp3",
+        "type": "audio",
+        "title": "A sounding recording of a neighing horse. (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wiehern.ogg",
+        "author": "Hü.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الحشرة التي تصدر هذا الصرير المتكرر؟",
+      "a": "صرصور الليل",
+      "qid": "sound-400-904",
+      "type": "audio",
+      "topic": "طيور وحشرات",
+      "alt": [
+        "جدجد",
+        "صرار الليل"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cricket_Gryllus_bimaculatus_Chirps.oga",
+      "media": {
+        "src": "sound-400-904.mp3",
+        "type": "audio",
+        "title": "Chirps of the cricket Gryllus bimaculatus in Kfar Saba, Israel (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cricket_Gryllus_bimaculatus_Chirps.oga",
+        "author": "Rickjpelleg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما الفعل البشري المسموع في هذا المقطع؟",
+      "a": "عطاس",
+      "qid": "sound-400-905",
+      "type": "audio",
+      "topic": "جسم وحركة",
+      "alt": [
+        "عطسة",
+        "عطس"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_sneeze_(man).ogg",
+      "media": {
+        "src": "sound-400-905.mp3",
+        "type": "audio",
+        "title": "A man sneezes two times (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_sneeze_(man).ogg",
+        "author": "Nikolay Komarov",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما المركبة ذات العجلتين التي تسمع صوت محركها؟",
+      "a": "دراجة نارية",
+      "qid": "sound-400-906",
+      "type": "audio",
+      "topic": "مركبات وإشارات",
+      "alt": [
+        "دباب",
+        "موتوسيكل"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jawa250_motorbike_exhaust_sound.ogg",
+      "media": {
+        "src": "sound-400-906.mp3",
+        "type": "audio",
+        "title": "Jawa 250 motorbike exhaust sound (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jawa250_motorbike_exhaust_sound.ogg",
+        "author": "Віктор Ходєєв /Viktor Khodyeyev",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما جهاز التنظيف المنزلي الذي يصدر هذا الأزيز؟",
+      "a": "مكنسة كهربائية",
+      "qid": "sound-400-907",
+      "type": "audio",
+      "topic": "البيت والمطبخ",
+      "alt": [
+        "مكنسة شفط"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Het_aanstaan_van_een_stofzuiger_-_SoundCloud_-_Beeld_en_Geluid.ogg",
+      "media": {
+        "src": "sound-400-907.mp3",
+        "type": "audio",
+        "title": "Aanstaan van een stofzuiger, onbelast (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Het_aanstaan_van_een_stofzuiger_-_SoundCloud_-_Beeld_en_Geluid.ogg",
+        "author": "Beeld en Geluid",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما أداة الحاسوب التي تسمع نقراتها أثناء الكتابة؟",
+      "a": "لوحة مفاتيح",
+      "qid": "sound-400-908",
+      "type": "audio",
+      "topic": "أجهزة وأدوات",
+      "alt": [
+        "كيبورد",
+        "لوحة المفاتيح"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://freesound.org/people/Anton/sounds/137/",
+      "media": {
+        "src": "sound-400-908.mp3",
+        "type": "audio",
+        "title": "keyboard-typing.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/Anton/sounds/137/",
+        "author": "Anton",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الآلة الوترية العربية التي يصدر عنها هذا العزف؟",
+      "a": "قانون",
+      "qid": "sound-600-901",
+      "type": "audio",
+      "topic": "آلات موسيقية",
+      "alt": [
+        "آلة القانون"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:ArabicQanunSample.ogg",
+      "media": {
+        "src": "sound-600-901.mp3",
+        "type": "audio",
+        "title": "ArabicQanunSample (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ArabicQanunSample.ogg",
+        "author": "Ariel Qassis",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما العامل الجوي الذي تسمع عواءه داخل مبنى؟",
+      "a": "رياح",
+      "qid": "sound-600-902",
+      "type": "audio",
+      "topic": "طبيعة",
+      "alt": [
+        "ريح",
+        "الرياح"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howling_wind.ogg",
+      "media": {
+        "src": "sound-600-902.mp3",
+        "type": "audio",
+        "title": "The wind is howling in a building (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howling_wind.ogg",
+        "author": "Tvabutzku1234",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الطائر الذي يتكرر نداؤه في هذا التسجيل الربيعي؟",
+      "a": "وقواق",
+      "qid": "sound-600-903",
+      "type": "audio",
+      "topic": "طيور وحشرات",
+      "alt": [
+        "الوقواق",
+        "كوكو"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://freesound.org/people/Benboncan/sounds/72699/",
+      "media": {
+        "src": "sound-600-903.mp3",
+        "type": "audio",
+        "title": "Cuckoo.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/Benboncan/sounds/72699/",
+        "author": "Benboncan",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما مصدر هذه النقرة الميكانيكية القصيرة؟",
+      "a": "كاميرا",
+      "qid": "sound-600-904",
+      "type": "audio",
+      "topic": "أجهزة وأدوات",
+      "alt": [
+        "آلة تصوير",
+        "كاميرا تصوير"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canon_T50_shutter_noise.ogg",
+      "media": {
+        "src": "sound-600-904.mp3",
+        "type": "audio",
+        "title": "Bruit du déclencheur d'un reflex Canon T50 (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canon_T50_shutter_noise.ogg",
+        "author": "FrancoisC / F. Collard",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما وسيلة التنبيه البحري المسموعة قرب الميناء؟",
+      "a": "بوق ضباب",
+      "qid": "sound-600-905",
+      "type": "audio",
+      "topic": "مركبات وإشارات",
+      "alt": [
+        "صافرة ضباب",
+        "صفارة الضباب"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fog_signal_Bremerhaven.ogg",
+      "media": {
+        "src": "sound-600-905.mp3",
+        "type": "audio",
+        "title": "Fog signal Bremerhaven (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fog_signal_Bremerhaven.ogg",
+        "author": "Tvabutzku1234",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "أي حيوان يصدر هذا النهيق في التسجيل؟",
+      "a": "حمار",
+      "qid": "sound-600-906",
+      "type": "audio",
+      "topic": "حيوانات",
+      "alt": [
+        "الحمار"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://freesound.org/people/felix.blume/sounds/157763/",
+      "media": {
+        "src": "sound-600-906.mp3",
+        "type": "audio",
+        "title": "A donkey is braying in his enclosure, in south of France (Minvervois, my homeland). Balthazar (my donkey) is braying wh… (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/felix.blume/sounds/157763/",
+        "author": "Felix Blume",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما الصوت البشري المسموع في هذا اللحن القصير؟",
+      "a": "صفير",
+      "qid": "sound-600-907",
+      "type": "audio",
+      "topic": "جسم وحركة",
+      "alt": [
+        "تصفير",
+        "صفير بالفم"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://freesound.org/people/georgisound/sounds/369296/",
+      "media": {
+        "src": "sound-600-907.mp3",
+        "type": "audio",
+        "title": "Whistling_Tunes.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/georgisound/sounds/369296/",
+        "author": "georgisound",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما أداة القص التي تسمع عملها على الورق؟",
+      "a": "مقص",
+      "qid": "sound-600-908",
+      "type": "audio",
+      "topic": "أجهزة وأدوات",
+      "alt": [
+        "المقص"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://freesound.org/people/Jagadamba/sounds/257032/",
+      "media": {
+        "src": "sound-600-908.mp3",
+        "type": "audio",
+        "title": "Sound of scissors cutting paper (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/Jagadamba/sounds/257032/",
+        "author": "Jagadamba",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما السطح الذي تسمع وقع الخطوات فوقه؟",
+      "a": "حصى",
+      "qid": "sound-800-901",
+      "type": "audio",
+      "topic": "جسم وحركة",
+      "alt": [
+        "الحصى",
+        "حصباء"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Joozz/sounds/531952/",
+      "media": {
+        "src": "sound-800-901.mp3",
+        "type": "audio",
+        "title": "Footsteps on gravel (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/Joozz/sounds/531952/",
+        "author": "Joozz",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الطائر الذي يصدر هذا النقر المتتابع؟",
+      "a": "نقار الخشب",
+      "qid": "sound-800-902",
+      "type": "audio",
+      "topic": "طيور وحشرات",
+      "alt": [
+        "نقار خشب"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Benboncan/sounds/66955/",
+      "media": {
+        "src": "sound-800-902.mp3",
+        "type": "audio",
+        "title": "Woodpeckers Pecking 4.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/Benboncan/sounds/66955/",
+        "author": "Benboncan",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما المركبة الزراعية التي تسمع محركها؟",
+      "a": "جرار",
+      "qid": "sound-800-903",
+      "type": "audio",
+      "topic": "مركبات وإشارات",
+      "alt": [
+        "تراكتور",
+        "جرار زراعي"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Erdie/sounds/34372/",
+      "media": {
+        "src": "sound-800-903.mp3",
+        "type": "audio",
+        "title": "Deutz-Tractor-Engine-1972.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/Erdie/sounds/34372/",
+        "author": "Erdie",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما طريقة الطهي التي تسمع أزيزها داخل المقلاة؟",
+      "a": "قلي",
+      "qid": "sound-800-904",
+      "type": "audio",
+      "topic": "البيت والمطبخ",
+      "alt": [
+        "القلي",
+        "قلي الطعام"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/BenjaminNelan/sounds/353124/",
+      "media": {
+        "src": "sound-800-904.mp3",
+        "type": "audio",
+        "title": "Frying Pan Sizzle (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/BenjaminNelan/sounds/353124/",
+        "author": "BenjaminNelan",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الحيوان صاحب هذا النداء، والمسجل في برية كولورادو؟",
+      "a": "أيل",
+      "qid": "sound-800-905",
+      "type": "audio",
+      "topic": "حيوانات",
+      "alt": [
+        "إلك",
+        "وابيتي",
+        "أيل أمريكي"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/Hyperionn/sounds/250188/",
+      "media": {
+        "src": "sound-800-905.mp3",
+        "type": "audio",
+        "title": "Elk 3.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/Hyperionn/sounds/250188/",
+        "author": "Hyperionn",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الآلة الوترية ذات النغمات الغليظة في التسجيل؟",
+      "a": "تشيلو",
+      "qid": "sound-800-906",
+      "type": "audio",
+      "topic": "آلات موسيقية",
+      "alt": [
+        "سيلو",
+        "فيولونسيل"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/juskiddink/sounds/68373/",
+      "media": {
+        "src": "sound-800-906.mp3",
+        "type": "audio",
+        "title": "Cello open string bowed.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/juskiddink/sounds/68373/",
+        "author": "juskiddink",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الهطول الذي تسمع ارتطامه بزجاج النافذة؟",
+      "a": "برد",
+      "qid": "sound-800-907",
+      "type": "audio",
+      "topic": "طبيعة",
+      "alt": [
+        "حبات البرد",
+        "بَرَد"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/joly1/sounds/81452/",
+      "media": {
+        "src": "sound-800-907.mp3",
+        "type": "audio",
+        "title": "HAIL .wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/joly1/sounds/81452/",
+        "author": "joly1",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 800,
+      "q": "ما الرياضة التي تسمع تدحرج كرتها في الممر؟",
+      "a": "بولينغ",
+      "qid": "sound-800-908",
+      "type": "audio",
+      "topic": "رياضة وألعاب",
+      "alt": [
+        "بولنج",
+        "البولينج"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://freesound.org/people/driftworks/sounds/128969/",
+      "media": {
+        "src": "sound-800-908.mp3",
+        "type": "audio",
+        "title": "Bowling Ball.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/driftworks/sounds/128969/",
+        "author": "driftworks",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما نوع القرد الذي يصدر هذا النداء الجهوري؟",
+      "a": "قرد عواء",
+      "qid": "sound-1000-901",
+      "type": "audio",
+      "topic": "حيوانات",
+      "alt": [
+        "سعدان عواء",
+        "قرد عاوٍ"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howler_monkey.ogg",
+      "media": {
+        "src": "sound-1000-901.mp3",
+        "type": "audio",
+        "title": "Howler monkey, taken from video recorded near Yesal camp, Petén, Guatemala. (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howler_monkey.ogg",
+        "author": "David O'Hara",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الطائر الذي تسمع طقطقة منقاره فوق العش؟",
+      "a": "لقلق",
+      "qid": "sound-1000-902",
+      "type": "audio",
+      "topic": "طيور وحشرات",
+      "alt": [
+        "اللقلق",
+        "لقلق أبيض"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/dobroide/sounds/153500/",
+      "media": {
+        "src": "sound-1000-902.mp3",
+        "type": "audio",
+        "title": "20120429_stork_05.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/dobroide/sounds/153500/",
+        "author": "dobroide",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الآلة الأفريقية التي تسمع ألحانها في هذا التسجيل؟",
+      "a": "كاليمبا",
+      "qid": "sound-1000-903",
+      "type": "audio",
+      "topic": "آلات موسيقية",
+      "alt": [
+        "كالمبا",
+        "بيانو الإبهام"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/iluppai/sounds/100474/",
+      "media": {
+        "src": "sound-1000-903.mp3",
+        "type": "audio",
+        "title": "Kalimba african (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/iluppai/sounds/100474/",
+        "author": "iluppai",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الآلة الإلكترونية التي استُخدمت في هذا المقطع؟",
+      "a": "ثيرمين",
+      "qid": "sound-1000-904",
+      "type": "audio",
+      "topic": "آلات موسيقية",
+      "alt": [
+        "ثيرمن",
+        "تيرمين",
+        "Theremin"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/kirkoid/sounds/40816/",
+      "media": {
+        "src": "sound-1000-904.mp3",
+        "type": "audio",
+        "title": "Theremin 1.mp3 (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/kirkoid/sounds/40816/",
+        "author": "kirkoid",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الجهاز السينمائي القديم الذي تسمع دوران آليته؟",
+      "a": "آلة عرض أفلام",
+      "qid": "sound-1000-905",
+      "type": "audio",
+      "topic": "أجهزة وأدوات",
+      "alt": [
+        "جهاز عرض أفلام",
+        "عارض أفلام",
+        "بروجيكتور أفلام"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/Dr.%20Macak/sounds/253758/",
+      "media": {
+        "src": "sound-1000-905.mp3",
+        "type": "audio",
+        "title": "Cinema-Projector.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/Dr.%20Macak/sounds/253758/",
+        "author": "Dr. Macak",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الظاهرة الطبيعية التي تسمع اندفاعها في هذا التسجيل من آيسلندا؟",
+      "a": "ينبوع فوّار",
+      "qid": "sound-1000-906",
+      "type": "audio",
+      "topic": "طبيعة",
+      "alt": [
+        "نافورة حارة",
+        "نافورة ماء حار",
+        "غيزر",
+        "سخان مائي طبيعي"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/YleArkisto/sounds/263878/",
+      "media": {
+        "src": "sound-1000-906.mp3",
+        "type": "audio",
+        "title": "Islanti, geysir purkautuu, turistit / Iceland, geyser erupting twice, tourists reacting, talking (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/YleArkisto/sounds/263878/",
+        "author": "YleArkisto",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما جهاز الاتصال القديم الذي يصدر هذه النغمات أثناء الاتصال بالإنترنت؟",
+      "a": "مودم",
+      "qid": "sound-1000-907",
+      "type": "audio",
+      "topic": "أجهزة وأدوات",
+      "alt": [
+        "مودم هاتفي",
+        "مودم اتصال هاتفي"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/BoilingSand/sounds/49608/",
+      "media": {
+        "src": "sound-1000-907.mp3",
+        "type": "audio",
+        "title": "dialup login dec 2001 24 bit.wav (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/BoilingSand/sounds/49608/",
+        "author": "BoilingSand",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ما الرياضة التي سُجّل صوت حركتها في قاعة خالية؟",
+      "a": "تزلج على الجليد",
+      "qid": "sound-1000-908",
+      "type": "audio",
+      "topic": "رياضة وألعاب",
+      "alt": [
+        "التزلج الجليدي",
+        "تزلج جليدي"
+      ],
+      "verified": false,
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://freesound.org/people/splodge123/sounds/249833/",
+      "media": {
+        "src": "sound-1000-908.mp3",
+        "type": "audio",
+        "title": "skate fx.mp3 (مقتطف مقصوص ومطبّع)",
+        "sourceUrl": "https://freesound.org/people/splodge123/sounds/249833/",
+        "author": "splodge123",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Excerpt selected, level normalized, downmixed to mono, encoded as 128 kbps MP3; no pitch or speed change."
+      }
+    }
+  ]
+}
