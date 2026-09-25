@@ -1,0 +1,282 @@
+{
+  "version": "bubble-direction-v3",
+  "sample_rate": 48000,
+  "bit_depth": 24,
+  "source_author": "Romain Raynal",
+  "source_url": "https://romainraynal.gumroad.com/l/Modern-UI-Vol1",
+  "status": "Approved by the project owner on 2026-09-25 for integration into Maydan.",
+  "sources": {
+    "Pop_Classic_002": {
+      "file": "Romain_Raynal_UI_Pop_Classic_002.wav",
+      "sha256": "fc135cc55f9e11b3795e87dc344ae6ebc13b0aec28a43ea9e230f2461278f4a0"
+    },
+    "Pop_Classic_003": {
+      "file": "Romain_Raynal_UI_Pop_Classic_003.wav",
+      "sha256": "73f265592221152611ec220d4fa3ff13c95cb727cc0b81ebc43edcf7961dc20b"
+    },
+    "Pop_Classic_001": {
+      "file": "Romain_Raynal_UI_Pop_Classic_001.wav",
+      "sha256": "181cc7841945ca3c4b1030888da6e62ec2f23406594a6432518367c1bd13fa74"
+    },
+    "Click_Bubble_003": {
+      "file": "Romain_Raynal_UI_Click_Bubble_003.wav",
+      "sha256": "ffbe49cc71e96b859023968666af972f5263fdd25d58156054dc1c72f341202a"
+    },
+    "Click_Error_Pop_005": {
+      "file": "Romain_Raynal_UI_Click_Error_Pop_005.wav",
+      "sha256": "4b2472ddda173094009ff8ae88dc57ce946bd9a8f1e6bd3f25ea1fd688d5bc49"
+    },
+    "Click_Bubble_006": {
+      "file": "Romain_Raynal_UI_Click_Bubble_006.wav",
+      "sha256": "3a64b67e1ebefa5551be4a099526da904388e2005cb527e039e556599e0d0892"
+    }
+  },
+  "edits": {
+    "tap": {
+      "events": [
+        {
+          "at_seconds": 0,
+          "sample": "Pop_Classic_002",
+          "playback_rate": 0.96,
+          "peak_dbfs": -12,
+          "pan": 0,
+          "source_trim_frames": [
+            473,
+            4219
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        }
+      ],
+      "bus_gain_db": 0.0,
+      "output_sha256": "a14b2beab9a7e22c754339840a3b1ae8860df7897299059e6bea20c5b6449297"
+    },
+    "tap-2": {
+      "events": [
+        {
+          "at_seconds": 0,
+          "sample": "Pop_Classic_003",
+          "playback_rate": 1.03,
+          "peak_dbfs": -12,
+          "pan": 0,
+          "source_trim_frames": [
+            451,
+            4143
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        }
+      ],
+      "bus_gain_db": 0.0,
+      "output_sha256": "0a09a7116fcc897ae8eb2cf4346f8578e2deac419c4ba786ab56e9505f330d59"
+    },
+    "tap-3": {
+      "events": [
+        {
+          "at_seconds": 0,
+          "sample": "Pop_Classic_001",
+          "playback_rate": 0.87,
+          "peak_dbfs": -12.5,
+          "pan": 0,
+          "source_trim_frames": [
+            147,
+            3681
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        }
+      ],
+      "bus_gain_db": 0.0,
+      "output_sha256": "9a1a35b86e6e130ac163c748bef09a19f133f1ae10439dd3c3c9c48570090761"
+    },
+    "correct": {
+      "events": [
+        {
+          "at_seconds": 0,
+          "sample": "Click_Bubble_003",
+          "playback_rate": 0.85,
+          "peak_dbfs": -12,
+          "pan": -0.18,
+          "source_trim_frames": [
+            1802,
+            16339
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.12,
+          "sample": "Pop_Classic_002",
+          "playback_rate": 1.07,
+          "peak_dbfs": -10.5,
+          "pan": 0.1,
+          "source_trim_frames": [
+            473,
+            4219
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.205,
+          "sample": "Pop_Classic_003",
+          "playback_rate": 1.24,
+          "peak_dbfs": -12,
+          "pan": 0.22,
+          "source_trim_frames": [
+            451,
+            4143
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        }
+      ],
+      "bus_gain_db": 0.0,
+      "output_sha256": "5c2d5950a58a69fa9185fd637984f9f5265c6ee6df8e6b812dbec046d8d8e83d"
+    },
+    "wrong": {
+      "events": [
+        {
+          "at_seconds": 0,
+          "sample": "Click_Error_Pop_005",
+          "playback_rate": 0.9,
+          "peak_dbfs": -14,
+          "pan": -0.08,
+          "source_trim_frames": [
+            1729,
+            10413
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.145,
+          "sample": "Click_Bubble_006",
+          "playback_rate": 0.66,
+          "peak_dbfs": -14.8,
+          "pan": 0.06,
+          "source_trim_frames": [
+            1788,
+            15363
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        }
+      ],
+      "bus_gain_db": 0.0,
+      "output_sha256": "9d88b1c43b75f613808fc5659ce78e90a701135c048a9de29d9a3053ceb08ba1"
+    },
+    "reveal": {
+      "events": [
+        {
+          "at_seconds": 0,
+          "sample": "Click_Bubble_006",
+          "playback_rate": 0.82,
+          "peak_dbfs": -13,
+          "pan": -0.12,
+          "source_trim_frames": [
+            1788,
+            15363
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.115,
+          "sample": "Pop_Classic_001",
+          "playback_rate": 1.04,
+          "peak_dbfs": -11.5,
+          "pan": 0.1,
+          "source_trim_frames": [
+            147,
+            3681
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        }
+      ],
+      "bus_gain_db": 0.0,
+      "output_sha256": "fee1dff708e0a9b7a4fe3b250ed326ecbfc745ce9a96d4bea94c928613138530"
+    },
+    "win": {
+      "events": [
+        {
+          "at_seconds": 0,
+          "sample": "Click_Bubble_003",
+          "playback_rate": 0.78,
+          "peak_dbfs": -13,
+          "pan": -0.25,
+          "source_trim_frames": [
+            1802,
+            16339
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.16,
+          "sample": "Pop_Classic_002",
+          "playback_rate": 0.98,
+          "peak_dbfs": -12,
+          "pan": 0.22,
+          "source_trim_frames": [
+            473,
+            4219
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.3,
+          "sample": "Pop_Classic_003",
+          "playback_rate": 1.15,
+          "peak_dbfs": -11.2,
+          "pan": -0.18,
+          "source_trim_frames": [
+            451,
+            4143
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.415,
+          "sample": "Pop_Classic_001",
+          "playback_rate": 1.3,
+          "peak_dbfs": -12,
+          "pan": 0.26,
+          "source_trim_frames": [
+            147,
+            3681
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.62,
+          "sample": "Click_Bubble_006",
+          "playback_rate": 0.91,
+          "peak_dbfs": -10,
+          "pan": 0,
+          "source_trim_frames": [
+            1788,
+            15363
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.705,
+          "sample": "Pop_Classic_003",
+          "playback_rate": 1.4,
+          "peak_dbfs": -17,
+          "pan": 0.18,
+          "source_trim_frames": [
+            451,
+            4143
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        },
+        {
+          "at_seconds": 0.83,
+          "sample": "Pop_Classic_002",
+          "playback_rate": 1.12,
+          "peak_dbfs": -20,
+          "pan": -0.16,
+          "source_trim_frames": [
+            473,
+            4219
+          ],
+          "processing": "4.2 kHz gentle damping; bandlimited rate change; edge fades; reduced stereo width"
+        }
+      ],
+      "bus_gain_db": 0.0,
+      "output_sha256": "3fb028c99ed0e360ca79052ff271df7338f409468bdca6732a179e9f5a4ce836"
+    }
+  }
+}
