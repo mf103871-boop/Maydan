@@ -28,6 +28,8 @@ import { PaywallHost } from '../shared/account/PaywallHost.jsx';
 import accountCss from '../shared/account/account.css';
 import { SocialProvider } from '../social/SocialProvider.jsx';
 import { SocialScreen } from '../social/SocialScreen.jsx';
+import { ProfileProvider } from '../profiles/ProfileProvider.jsx';
+import { ProfileScreen } from '../profiles/ProfileScreen.jsx';
 
 export const VERSION = typeof __MAYDAN_VERSION__ !== 'undefined' ? __MAYDAN_VERSION__ : '1.0.0';
 const platformStorage = createStorage('platform');
@@ -47,6 +49,7 @@ function ScreenHost({ route }) {
   else if (route.name === 'play') screen = <Play key={`play-${route.params.id}`} id={route.params.id} />;
   else if (route.name === 'players') screen = <Players key="players" />;
   else if (route.name === 'friends') screen = <SocialScreen key="friends" friendId={route.params.id || null} />;
+  else if (route.name === 'profile') screen = <ProfileScreen key={`profile-${route.params.id || 'me'}`} profileId={route.params.id || null} />;
   else if (route.name === 'settings') screen = <Settings key="settings" />;
   else if (route.name === 'about') screen = <About key="about" />;
   else if (route.name === 'terms') screen = <Terms key="terms" />;
@@ -87,7 +90,7 @@ function Providers({ children }) {
 
   const value = useMemo(() => ({ sound, haptics, confetti, toast, settings, setSettings, roster, setRoster, navigate, storage: platformStorage, version: VERSION }), [sound, haptics, toast, settings, setSettings, roster, setRoster]);
   // الحساب داخل مزوّد المنصة: يحتاج التنبيهات (toast) والإعدادات، وتحتاجه كل الشاشات.
-  return <PlatformContext.Provider value={value}><AccountProvider><SocialProvider>{children}</SocialProvider></AccountProvider></PlatformContext.Provider>;
+  return <PlatformContext.Provider value={value}><AccountProvider><SocialProvider><ProfileProvider>{children}</ProfileProvider></SocialProvider></AccountProvider></PlatformContext.Provider>;
 }
 
 function Shell() {

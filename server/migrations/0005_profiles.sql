@@ -1,0 +1,11 @@
+-- Editable public profiles and earned awards share existing account/social identities.
+CREATE TABLE IF NOT EXISTS player_profiles (user_id TEXT PRIMARY KEY, bio TEXT NOT NULL DEFAULT '', theme TEXT NOT NULL DEFAULT 'teal', avatar_preset TEXT NOT NULL DEFAULT 'spark', avatar_version TEXT, cover_version TEXT, selected_title TEXT, featured_badges TEXT NOT NULL DEFAULT '[]', revision INTEGER NOT NULL DEFAULT 0, last_mutation TEXT, created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS player_images (user_id TEXT NOT NULL, kind TEXT NOT NULL CHECK(kind IN ('avatar','cover')), version TEXT NOT NULL, data_base64 TEXT NOT NULL, width INTEGER NOT NULL, height INTEGER NOT NULL, byte_length INTEGER NOT NULL, updated_at INTEGER NOT NULL, PRIMARY KEY(user_id,kind));
+CREATE TABLE IF NOT EXISTS player_stats (user_id TEXT PRIMARY KEY, local_sessions INTEGER NOT NULL DEFAULT 0, online_matches INTEGER NOT NULL DEFAULT 0, online_wins INTEGER NOT NULL DEFAULT 0, online_draws INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS player_events (user_id TEXT NOT NULL, event_id TEXT NOT NULL, source TEXT NOT NULL CHECK(source IN ('local','online')), game TEXT NOT NULL, won INTEGER NOT NULL DEFAULT 0, draw INTEGER NOT NULL DEFAULT 0, created_at INTEGER NOT NULL, PRIMARY KEY(user_id,event_id));
+CREATE INDEX IF NOT EXISTS player_events_user_source_time ON player_events(user_id,source,created_at);
+CREATE TABLE IF NOT EXISTS player_sessions (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, game TEXT NOT NULL, started_at INTEGER NOT NULL, completed_at INTEGER);
+CREATE INDEX IF NOT EXISTS player_sessions_user_time ON player_sessions(user_id,started_at);
+CREATE TABLE IF NOT EXISTS player_achievements (user_id TEXT NOT NULL, achievement_id TEXT NOT NULL, earned_at INTEGER NOT NULL, PRIMARY KEY(user_id,achievement_id));
+INSERT OR IGNORE INTO social_profiles(user_id,code,created_at) SELECT id,'MDN-' || upper(hex(randomblob(5))),created_at FROM users WHERE NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=users.id);
+INSERT OR IGNORE INTO player_profiles(user_id,created_at,updated_at) SELECT id,created_at,created_at FROM users WHERE NOT EXISTS(SELECT 1 FROM account_deletions d WHERE d.user_id=users.id);

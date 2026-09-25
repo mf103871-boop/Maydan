@@ -125,3 +125,7 @@
   .social-screen { padding-inline: 8px; }.social-page-head h1 { font-size: 21px; }.social-add-button { padding-inline: 9px; }.social-code-card, .social-tabs, .social-list-search { margin-inline: 10px; }.social-tabs > button { font-size: 11px; }.social-person-main { gap: 7px; }.social-avatar { width: 40px; height: 40px; flex-basis: 40px; }.social-person-title strong { font-size: 13px; }.social-message-actions > .social-icon-button { width: 44px; }.social-bubble > p { font-size: 14px; }.social-signin-perks { gap: 12px; font-size: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { .social-typing > span { animation: none; } }
+
+.social-profile-link { font: inherit; color: inherit; text-align: start; min-height: 44px; }
+.social-open-chat { color: var(--accent); flex-shrink: 0; }
+.social-avatar > .player-avatar { width: 100% !important; height: 100% !important; }

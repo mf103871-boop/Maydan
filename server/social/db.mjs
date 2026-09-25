@@ -2,6 +2,7 @@ import { randomHex } from '../accounts/jwt.mjs';
 import { fail } from '../room-model.mjs';
 import { sha256 } from '../protocol.mjs';
 import { pairOf, publicProfile, messageView } from './model.mjs';
+import { ensurePlayerProfile, profileAchievementStatements } from '../profiles/db.mjs';
 
 const stmt = (env, sql, ...args) => env.DB.prepare(sql).bind(...args);
 const first = (env, sql, ...args) => stmt(env, sql, ...args).first();
@@ -118,12 +119,17 @@ export async function requestFriend(env, userId, otherId, now) {
   return { id: row.id, user: publicProfile(profile), createdAt: row.created_at };
 }
 export async function acceptRequest(env, userId, id, now) {
+  const pending = await first(env, 'SELECT * FROM social_friendships WHERE id=? AND (user_low=? OR user_high=?) AND requester_id!=?', id, userId, userId, userId);
+  if (!pending) fail('NOT_FOUND', 404);
+  const participants = [pending.user_low, pending.user_high];
+  for (const participant of participants) await ensurePlayerProfile(env, participant);
   await env.DB.batch([
     stmt(env, `UPDATE social_friendships AS f SET status='accepted',accepted_at=? WHERE id=?
       AND (user_low=? OR user_high=?) AND requester_id!=? AND status='pending' AND ${unblocked('f')} AND ${livePair('f')}`, now, id, userId, userId, userId),
     stmt(env, `INSERT OR IGNORE INTO social_conversations(id,user_low,user_high,created_at)
       SELECT ?,f.user_low,f.user_high,? FROM social_friendships f WHERE f.id=? AND (f.user_low=? OR f.user_high=?)
       AND f.requester_id!=? AND f.status='accepted' AND ${unblocked('f')} AND ${livePair('f')}`, crypto.randomUUID(), now, id, userId, userId, userId),
+    ...participants.flatMap(participant => profileAchievementStatements(env, participant, now)),
   ]);
   const row = await first(env, `SELECT c.* FROM social_conversations c JOIN social_friendships f
     ON f.user_low=c.user_low AND f.user_high=c.user_high WHERE f.id=? AND f.requester_id!=?

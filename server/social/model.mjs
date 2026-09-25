@@ -1,4 +1,5 @@
 import { fail } from '../room-model.mjs';
+import { publicName } from '../profiles/model.mjs';
 
 export const ONLINE_WINDOW = 45_000;
 export const MAX_TEXT = 2000;
@@ -32,8 +33,7 @@ export function pagination(search) {
   return { before, after, limit };
 }
 export function publicProfile(row, { presence = false, now = Date.now() } = {}) {
-  const name = typeof row.name === 'string' && !row.name.includes('@') ? row.name.trim().slice(0, 80) : '';
-  const result = { id: row.user_id || row.id, name: name || 'لاعب ميدان', code: row.code };
+  const result = { id: row.user_id || row.id, name: publicName(row.name), code: row.code };
   if (presence) {
     result.lastActiveAt = Number(row.last_active_at) || 0;
     result.online = Number(row.online_until) > now && result.lastActiveAt > now - ONLINE_WINDOW;

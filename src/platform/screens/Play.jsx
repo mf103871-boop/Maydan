@@ -8,6 +8,8 @@ import { createWakeLock } from '../../shared/lib/wakeLock.js';
 import { flashScreen, stampScreen, vignette, prefersReducedMotion, wait } from '../../shared/fx/index.js';
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
+import { useProfiles } from '../../profiles/ProfileProvider.jsx';
+import { LocalSessionRecorder } from '../../profiles/record-session.js';
 import { navigate, getDirection } from '../router.js';
 import { getGame } from '../registry.js';
 import { GameFrame } from '../GameFrame.jsx';
@@ -21,6 +23,22 @@ export function Play({ id }) {
   const game = getGame(id);
   const platform = usePlatform();
   const account = useAccount();
+  const profiles = useProfiles();
+  const profilesRef = useRef(profiles); profilesRef.current = profiles;
+  const recorderRef = useRef(null);
+  if (!recorderRef.current) recorderRef.current = new LocalSessionRecorder({
+    storage: createStorage('profile-sessions'),
+    beginSession: (gameId) => profilesRef.current.beginSession(gameId),
+    completeSession: (sessionId) => profilesRef.current.completeSession(sessionId),
+  });
+  const recorder = recorderRef.current;
+  const owner = account.signedIn ? account.user?.id || null : null;
+  recorder.updateOwner(owner);
+  useEffect(() => {
+    const flush = () => recorder.flush().catch(() => {});
+    flush(); window.addEventListener('online', flush);
+    return () => { window.removeEventListener('online', flush); recorder.stop(); };
+  }, [recorder, owner]);
   const { ready, progress } = useVisualReadiness();
   const [stage, setStage] = useState(game && game.setup === 'self' ? 'play' : 'setup');
   const [players, setPlayers] = useState([]);
@@ -51,7 +69,10 @@ export function Play({ id }) {
   const api = useMemo(() => ({
     // الحساب والاستحقاقات: اللعبة تقرأ api.account، وتعلن انتهاء مباراة كاملة بـ api.matchOver().
     account,
-    matchOver: () => account.markTrial(id),
+    matchStart: () => recorder.start(id),
+    matchSnapshot: () => recorder.marker(),
+    matchResume: (marker) => recorder.resume(marker, id),
+    matchOver: ({ completed = false } = {}) => { account.markTrial(id); recorder.complete(completed); },
     sound: platform.sound,
     haptics: platform.haptics,
     confetti: platform.confetti,
@@ -67,12 +88,13 @@ export function Play({ id }) {
     setExitMessage,
     setBeforeExit: (handler) => setBeforeExit(() => handler),
     resumeGame: (saved) => {
+      recorder.resume(saved.profileSession, id);
       setPlayers(saved.players); setGameOptions(saved.settings || null); setSavedSession(saved); setInGame(true);
       setStage('play'); setSession((s) => s + 1);
       raiseCurtain();
     },
     requestExit: () => { setInGame(false); navigate('/', { replace: true }); },
-    restart: () => { setSavedSession(null); setSession((s) => s + 1); raiseCurtain(); },
+    restart: () => { recorder.start(id); setSavedSession(null); setSession((s) => s + 1); raiseCurtain(); },
     backToSetup: () => { setInGame(false); setSavedSession(null); setStage('setup'); setSetupValid(true); raiseCurtain(); },
   }), [platform, storage, raiseCurtain, account, id]);
 
@@ -80,6 +102,7 @@ export function Play({ id }) {
     // حراسة دفاعية: لعبة استُهلكت مباراتها المجانية لا تبدأ من الإعداد إلا بـ«ميدان بلس»
     // (بَديهة setup:'self' لا تمرّ من هنا أصلًا، وقفلها في الحزم لا في المباراة).
     if (account.gameAccess(id) === 'locked') { account.openPaywall({ reason: 'trial', game: id }); return; }
+    recorder.start(id);
     setSavedSession(null);
     if (mode === 'teams') setTeams(list); else setPlayers(list);
     setInGame(true);

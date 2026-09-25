@@ -10,6 +10,7 @@ const ROUTES = [
   ['room', /^\/room\/(\d{6})$/],
   ['players', /^\/players$/],
   ['friends', /^\/friends(?:\/([a-zA-Z0-9_-]+))?$/],
+  ['profile', /^\/profile(?:\/([a-zA-Z0-9_-]+))?$/],
   ['settings', /^\/settings$/],
   ['about', /^\/about$/],
   ['terms', /^\/terms$/],

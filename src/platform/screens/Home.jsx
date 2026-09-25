@@ -5,6 +5,8 @@ import { IconSettings, IconUsers, IconClock, IconInfo } from '../../shared/ui/ic
 import { usePlatform } from '../context.js';
 import { useAccount } from '../../shared/account/context.js';
 import { useSocial } from '../../social/SocialProvider.jsx';
+import { useProfiles } from '../../profiles/ProfileProvider.jsx';
+import { ProfileAvatar } from '../../profiles/ProfileAvatar.jsx';
 import { PUBLIC_SITE_ORIGIN, LEGAL_ROUTES } from '../../shared/account/config.js';
 import { navigate, getDirection } from '../router.js';
 import { GAMES } from '../registry.js';
@@ -81,6 +83,7 @@ export function Home() {
   const { roster, sound, haptics, version } = usePlatform();
   const account = useAccount();
   const social = useSocial() || { friends: [], incoming: [], unreadCount: 0 };
+  const profiles = useProfiles();
   // فتح لعبة: البطاقة تنطلق (is-launch) ثم الملاحة بعد 140ms (صفر تحت تقليل الحركة)؛ النقر المزدوج محروس بمرجع.
   const launching = useRef(false);
   const launchTimer = useRef(0);
@@ -104,6 +107,7 @@ export function Home() {
         <div className="row">
           <IconButton label="عن المنصة" onClick={() => navigate('/about')}><IconInfo /></IconButton>
           <IconButton label="الإعدادات" onClick={() => navigate('/settings')}><IconSettings /></IconButton>
+          <button type="button" aria-label="بروفايلي" title="بروفايلي" onClick={() => navigate('/profile')} style={{ border: 0, padding: 0, background: 'transparent', borderRadius: 14, cursor: 'pointer' }}><ProfileAvatar user={profiles?.mine || account.user} /></button>
         </div>
       </header>
 

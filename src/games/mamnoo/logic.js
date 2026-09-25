@@ -25,6 +25,7 @@ export function initialState(teams, options) {
     teams: teams.map((t) => ({ id: t.id, name: t.name, color: t.color, emoji: t.emoji })),
     scores: Object.fromEntries(teams.map((t) => [t.id, 0])),
     phase: 'intro', // intro | play | roundEnd | over
+    completed: false,
     round: 1,
     turn: 0,
     card: null,
@@ -77,11 +78,11 @@ export function reduce(state, action) {
       if (state.phase !== 'roundEnd') return state;
       const last = state.turn === state.teams.length - 1;
       const round = last ? state.round + 1 : state.round;
-      if (last && state.round >= state.rounds) return { ...state, phase: 'over', card: null };
+      if (last && state.round >= state.rounds) return { ...state, phase: 'over', card: null, completed: true };
       return { ...state, phase: 'intro', turn: last ? 0 : state.turn + 1, round, card: null };
     }
     case 'END':
-      return { ...state, phase: 'over' };
+      return { ...state, phase: 'over', completed: false };
     default:
       return state;
   }

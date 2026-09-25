@@ -181,7 +181,7 @@ export function Game({ api, players, onExit }) {
     api.sound.play('fanfare');
     api.haptics.vibrate('win');
     api.confetti.fire();
-    api.matchOver?.();   // مباراة كاملة = تجربة «ميدان بلس» المجانية لهذه اللعبة
+    api.matchOver?.({ completed: state.completed === true });
   }, [state.phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const restart = () => { api.sound.play('whoosh'); setSession((s) => s + 1); api.restart(); };

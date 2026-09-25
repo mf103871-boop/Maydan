@@ -3,19 +3,23 @@ import { readJson, json, errorResponse, sha256, credentials } from './protocol.m
 import { fail } from './room-model.mjs';
 import { isPublicAccountPath, markRoomTrial, roomGate, routeAccounts } from './accounts/router.mjs';
 import { cleanup } from './accounts/cleanup.mjs';
+import { readSession } from './accounts/session.mjs';
 import packageInfo from '../package.json' with { type: 'json' };
 import { routeSocial } from './social/router.mjs';
 import { routeSocialLive } from './social/realtime.mjs';
+import { routeProfiles, isPublicProfileImagePath } from './profiles/router.mjs';
 export { SocialHub } from './social/realtime.mjs';
 export { Room };
 
 // Small per-IP limits for accidental floods and room-code guessing.
 // Keys contain only a digest; no raw address is persisted. These are not DDoS protection.
 export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000,
-  auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000 };
+  auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000,
+  profileRead: 60_000, profileWrite: 60_000, profileImage: 60_000 };
 // حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
 export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
-  auth: 40, me: 120, billing: 30, trial: 60, socialRead: 240, socialWrite: 60 };
+  auth: 40, me: 120, billing: 30, trial: 60, socialRead: 240, socialWrite: 60,
+  profileRead: 240, profileWrite: 30, profileImage: 600 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
   async fetch(request) {
@@ -59,6 +63,11 @@ function allowedOrigin(request, env) {
   try { const referer = request.headers.get('referer'); if (referer && new URL(referer).origin === self) return self; } catch { /* مرجع تالف */ }
   return null;
 }
+async function roomAccountId(request, env) {
+  if (!env.DB) return null;
+  try { return (await readSession(env, request, { rotate: false }))?.user.id || null; }
+  catch (error) { if (error.status === 401) return null; throw error; }
+}
 export async function routeRequest(request, env) {
   const url = new URL(request.url);
   // HEAD keeps `curl -I` and uptime monitors working; it must not fall through
@@ -70,9 +79,10 @@ export async function routeRequest(request, env) {
   const origin = allowedOrigin(request, env);
   // إعادة توجيه المزوّدات وwebhooks تصل بلا Origin: فحص الأصل لا ينطبق عليها،
   // وحمايتها هي توقيع المزوّد نفسه (state موقّع، HMAC، أو JWS من آبل).
-  if (!origin && !isPublicAccountPath(url.pathname)) return json({ error: 'ORIGIN' }, 403);
+  const publicImage = ['GET', 'HEAD'].includes(request.method) && isPublicProfileImagePath(url.pathname);
+  if (!origin && !isPublicAccountPath(url.pathname) && !publicImage) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
-    'access-control-allow-methods': 'GET, POST, PATCH, DELETE, OPTIONS',
+    'access-control-allow-methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
     'access-control-allow-headers': 'Content-Type, Authorization',
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
@@ -91,6 +101,7 @@ export async function routeRequest(request, env) {
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
     response = await routeSocialLive(request, env, url, charge)
+      || await routeProfiles(request, env, url, charge)
       || await routeSocial(request, env, url, charge)
       || await routeAccounts(request, env, url, charge);
     if (!response) {
@@ -108,6 +119,9 @@ export async function routeRequest(request, env) {
         // إنشاء الغرفة يُحسب مباراة للّعبة: المسجّل غير المشترك يُرفض بـPLUS_REQUIRED
         // بعد تجربته، والمجهول يبقى مسموحًا (علامته محلية عند العميل).
         const gate = await roomGate(request, env, input);
+        // Ignore any account ID supplied by the client. The seat's account
+        // association comes only from the authenticated bearer session.
+        input.accountUserId = gate?.userId || null;
         // Attempt 0 stays derived from the token so a retried creation is idempotent
         // without a global directory; later attempts are random so a collision run
         // never reproduces the same five codes.
@@ -126,7 +140,14 @@ export async function routeRequest(request, env) {
         if (response.status === 201) await markRoomTrial(env, gate);
       } else {
         const room = env.ROOMS.get(env.ROOMS.idFromName(match[1]));
-        response = await room.fetch(request);
+        if (kind === 'join') {
+          const input = await readJson(request);
+          await credentials(input);
+          input.accountUserId = await roomAccountId(request, env);
+          response = await room.fetch(new Request(`https://internal/${match[1]}/join`, {
+            method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(input),
+          }));
+        } else response = await room.fetch(request);
       }
     }
   } catch (error) { response = errorResponse(error); }

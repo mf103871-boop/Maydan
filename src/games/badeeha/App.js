@@ -1430,6 +1430,7 @@ function MaydanBeta({ api } = {}) {
       if (judgingRef.current) return;
       const session = {
         version: 2,
+        profileSession: api?.matchSnapshot?.() || null,
         contentVersion: BANK_CONTENT_VERSION,
         updatedAt: Date.now(),
         screen,
@@ -1679,6 +1680,7 @@ function MaydanBeta({ api } = {}) {
       return;
     }
     const freshTeams = teams.map((team, index) => betaTeam(index, validation.names[index]));
+    api?.matchStart?.();
     (setTeams(freshTeams),
       setDeck(nextDeck),
       setUsed({}),
@@ -1716,6 +1718,7 @@ function MaydanBeta({ api } = {}) {
       return;
     }
     const restoredDeck = logic.idsToDeck(CATS, savedActive.deck);
+    api?.matchResume?.(savedActive.profileSession || null);
     (setTeams(betaCloneTeams(savedActive.teams)),
       setSelectedCategories([...savedActive.selectedCategories]),
       setTimerLength(savedActive.timerLength),
@@ -1860,6 +1863,7 @@ function MaydanBeta({ api } = {}) {
     };
   }
   function finishGame(early, finishedTeams = teams, finishedUsed = used) {
+    api?.matchOver?.({ completed: !early && (totalQuestions || roundSize) > 0 && Object.keys(finishedUsed).length >= (totalQuestions || roundSize) });
     const maximum = Math.max(...finishedTeams.map((team) => team.score)),
       winners = finishedTeams.filter((team) => team.score === maximum),
       record = {
