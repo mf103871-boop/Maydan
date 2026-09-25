@@ -17,6 +17,7 @@ function Credits() {
   return (
     <Card className="stack" aria-label="المصادر والتراخيص">
       <span className="card-title">المصادر والتراخيص</span>
+      <p className="card-muted">المؤثرات الصوتية: <a href="https://dustyroom.com/free-casual-game-sounds/" target="_blank" rel="noreferrer noopener">Dustyroom</a> و<a href="https://ci.itch.io/400-sounds-pack" target="_blank" rel="noreferrer noopener">Chequered Ink</a>، مع ضبط مستويات الصوت لميدان.</p>
       {items.length === 0 ? (
         <p className="card-muted">تظهر هنا بيانات إنشاء وسائط الأسئلة، ومصادر الملفات الخارجية وتراخيصها.</p>
       ) : (
