@@ -10,7 +10,7 @@ import { accountErrorText } from './errors.js';
 import { accountStore, ACCOUNT_PREFIX, KEYS } from './store.js';
 import {
   ClientError, accountOffline, authStartUrl, appleNative, createPaddleCheckout, deleteAccountRequest,
-  exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout,
+  exchangeCode, getBillingConfig, getMe, getPaddlePortal, mergeTrialsRequest, postAppleTransaction, postTrial, redeemRequest, signout, request,
 } from './api.js';
 import { deliverAppleTransaction, waitForEntitlement } from './purchases.js';
 import { callNative, isNativeShell, onNativeEvent } from './native.js';
@@ -126,6 +126,16 @@ export function AccountProvider({ children }) {
     setError(code);
     return code;
   }, [clearLocalAuth]);
+
+  // Reuse session rotation, guarding late authentication failures across accounts.
+  const requestAuthenticated = useCallback(async (path, settings = {}) => {
+    const epoch = authEpochRef.current;
+    try { return await request(path, { ...settings, ...options() }); }
+    catch (error) {
+      if (epoch === authEpochRef.current && isAuthError(codeOf(error))) handleError(error);
+      throw error;
+    }
+  }, [options, handleError]);
 
   // ── التحديث ─────────────────────────────────────────────────────────────
   const flushPending = useCallback(async () => {
@@ -616,7 +626,7 @@ export function AccountProvider({ children }) {
     ready, user, me, premium, promo, trials, platform, products,
     offline, signedIn: !!session, busy, error, paywall, billing, activationPending,
     redeem,
-    signIn, signOut, refresh,
+    signIn, signOut, refresh, requestAuthenticated,
     markTrial,
     trialAvailable: (game) => trialAvailableOf(me, localTrials.marks, game, premium),
     lockedPack: (id) => lockedPackOf(id, premium),
@@ -626,7 +636,7 @@ export function AccountProvider({ children }) {
     clearError: () => setError(null),
     authHeaders: () => (sessionRef.current ? { Authorization: `Bearer ${sessionRef.current}` } : {}),
   }), [ready, user, me, premium, promo, trials, platform, products, offline, session, busy, error, paywall, billing, activationPending,
-    signIn, signOut, refresh, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, redeem]);
+    signIn, signOut, refresh, requestAuthenticated, markTrial, localTrials, openPaywall, closePaywall, restore, deleteAccount, purchase, manageSubscription, loadProducts, redeem]);
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
 }

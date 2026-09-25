@@ -13,7 +13,7 @@ export const AUTH_CODE_TTL_S = 60;
 
 // الصفحات القانونية: بريد الدعم (فارغ = الإحالة إلى صفحة الدعم في المتجر) وتاريخ آخر تحديث.
 export const SUPPORT_EMAIL = 'mf103871@gmail.com';
-export const LEGAL_UPDATED = '2026-09-18';
+export const LEGAL_UPDATED = '2026-09-25';
 export const LEGAL_ROUTES = { terms: '#/terms', privacy: '#/privacy' };
 // وجهة عرض ثابتة وموثوقة، لا تغيّر خادم API ولا تسمح للمعاينة باستعمال جلسة الموقع.
 export const PUBLIC_SITE_ORIGIN = 'https://maydan-game.mf103871.workers.dev';

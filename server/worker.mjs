@@ -4,15 +4,18 @@ import { fail } from './room-model.mjs';
 import { isPublicAccountPath, markRoomTrial, roomGate, routeAccounts } from './accounts/router.mjs';
 import { cleanup } from './accounts/cleanup.mjs';
 import packageInfo from '../package.json' with { type: 'json' };
+import { routeSocial } from './social/router.mjs';
+import { routeSocialLive } from './social/realtime.mjs';
+export { SocialHub } from './social/realtime.mjs';
 export { Room };
 
 // Small per-IP limits for accidental floods and room-code guessing.
 // Keys contain only a digest; no raw address is persisted. These are not DDoS protection.
 export const LIMIT_WINDOWS = { create: 600_000, join: 60_000, leave: 60_000, socket: 60_000,
-  auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000 };
+  auth: 600_000, me: 60_000, billing: 600_000, trial: 60_000, socialRead: 60_000, socialWrite: 60_000 };
 // حدّ كل نوع داخل نافذته. مسارات الحسابات أقلّ سخاءً من قراءة الحالة لأنها تكتب أو تنادي مزوّدًا.
 export const LIMITS = { create: 8, join: 40, leave: 100, socket: 100,
-  auth: 40, me: 120, billing: 30, trial: 60 };
+  auth: 40, me: 120, billing: 30, trial: 60, socialRead: 240, socialWrite: 60 };
 export class RequestLimiter {
   constructor(ctx) { this.ctx = ctx; }
   async fetch(request) {
@@ -69,7 +72,7 @@ export async function routeRequest(request, env) {
   // وحمايتها هي توقيع المزوّد نفسه (state موقّع، HMAC، أو JWS من آبل).
   if (!origin && !isPublicAccountPath(url.pathname)) return json({ error: 'ORIGIN' }, 403);
   const headers = origin ? { 'access-control-allow-origin': origin, vary: 'Origin',
-    'access-control-allow-methods': 'GET, POST, DELETE, OPTIONS',
+    'access-control-allow-methods': 'GET, POST, PATCH, DELETE, OPTIONS',
     'access-control-allow-headers': 'Content-Type, Authorization',
     'access-control-expose-headers': 'x-maydan-session',
     'access-control-max-age': '600' } : {};
@@ -87,7 +90,9 @@ export async function routeRequest(request, env) {
   }
   try {
     // الحسابات أولًا: مساراتها تحت /api/ ولا تتقاطع مع تعبير الغرف.
-    response = await routeAccounts(request, env, url, charge);
+    response = await routeSocialLive(request, env, url, charge)
+      || await routeSocial(request, env, url, charge)
+      || await routeAccounts(request, env, url, charge);
     if (!response) {
       const create = request.method === 'POST' && url.pathname === '/api/rooms';
       const match = url.pathname.match(/^\/api\/rooms\/(\d{6})\/(join|leave|socket)$/);

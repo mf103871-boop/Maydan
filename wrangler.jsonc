@@ -26,7 +26,8 @@
   "durable_objects": {
     "bindings": [
       { "name": "ROOMS", "class_name": "Room" },
-      { "name": "LIMITERS", "class_name": "RequestLimiter" }
+      { "name": "LIMITERS", "class_name": "RequestLimiter" },
+      { "name": "SOCIAL_HUB", "class_name": "SocialHub" }
     ]
   },
   // قاعدة الحسابات (اختيارية حتى تُنشأ): بدون الربط ينشر العامل ويعمل، والغرف كما
@@ -38,7 +39,8 @@
     { "binding": "DB", "database_name": "maydan-accounts", "database_id": "9d863a31-6a5c-45f1-91f5-79ad400c3f6e", "migrations_dir": "server/migrations" }
   ],
   "migrations": [
-    { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] }
+    { "tag": "v1", "new_sqlite_classes": ["Room", "RequestLimiter"] },
+    { "tag": "v2-social", "new_sqlite_classes": ["SocialHub"] }
   ],
   // تنظيف يومي للجلسات المنتهية ورموز الدخول وسجل webhooks (server/accounts/cleanup.mjs).
   "triggers": { "crons": ["17 3 * * *"] },

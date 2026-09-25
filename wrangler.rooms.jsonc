@@ -20,7 +20,8 @@
   "durable_objects": {
     "bindings": [
       { "name": "ROOMS", "class_name": "Room" },
-      { "name": "LIMITERS", "class_name": "RequestLimiter" }
+      { "name": "LIMITERS", "class_name": "RequestLimiter" },
+      { "name": "SOCIAL_HUB", "class_name": "SocialHub", "script_name": "maydan-game" }
     ]
   },
   // القاعدة نفسها التي يستعملها maydan-game (حساب واحد يخدم الواجهتين). اختيارية
