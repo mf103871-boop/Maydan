@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-800-904-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the toy robot's IMAGE-RIGHT round BLACK eye disk to WHITE, keeping disk boundary visible via thin silver recess. Left eye remains black; preserve all geometry, mouth, body and scene. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

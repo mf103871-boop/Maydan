@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-200-902",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 200,
+  "a": "برج بيزا المائل",
+  "alt": [
+    "برج بيزا",
+    "برج بيزا المنحني"
+  ],
+  "topic": "أوروبا الجنوبية",
+  "q": "ما اسم هذا البرج الإيطالي المائل؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/395/",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Leaning Tower of Pisa: the real white marble cylindrical bell tower visibly leaning roughly four degrees, ground arcade, six stacked open arcaded galleries and narrower belfry, on green lawn of Piazza dei Miracoli. Slight three-quarter eye level view, complete structure with physical tilt and correct horizontal ground.",
+  "referenceFile": "media/placefinder/placefinder-200-025.webp",
+  "sourceEvidence": "UNESCO identifies the leaning campanile and its marble and arched galleries.",
+  "sourceReviewed": true,
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "White cylindrical Pisa campanile visibly leaning relative to level lawn; stacked arcades and narrower belfry.",
+  "runtimeReviewStatus": "approved"
+}

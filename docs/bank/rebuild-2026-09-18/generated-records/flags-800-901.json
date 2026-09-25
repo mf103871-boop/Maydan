@@ -1,0 +1,39 @@
+{
+  "id": "flags-800-901",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-800-901.webp",
+  "asset": "media/flags/flags-800-901.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Togo. Width:height approximately1.618:1. FIVE equal horizontal stripes from TOP: green #006A4E, yellow #FFCE00, green, yellow, green. In TOP LEFT a red #D21034 SQUARE canton, its side60% of imageHEIGHT, covers topTHREEstripes only. Centered in square is one WHITE upright five-pointed star, diameter40%imageHEIGHT. Noothermarks.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 791,
+  "bytes": 12340,
+  "sha256": "e87dde839677b19cef13875e7382fa3fbc0cda1de8e51065895bc4b68d1b78d8",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "Five alternating green/yellow bands with a white five-point star in a red canton.",
+    "limitations": "Canton is close to square but not exact; accepted only for identity recognition.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "approved-sampled",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 791,
+      "directGameplaySample": true,
+      "gameplayReview": "approved-sampled",
+      "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
+  }
+}

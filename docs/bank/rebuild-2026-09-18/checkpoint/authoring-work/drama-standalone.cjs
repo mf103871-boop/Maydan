@@ -1,0 +1,4 @@
+const fs=require('fs'),path=require('path');const base='C:/Users/user/Desktop/maydan/src/data/categories';
+for(const id of ['arabmovies','anime','syriandrama','foreignseries','movies']){const file=path.join(base,id+'.json');const p=JSON.parse(fs.readFileSync(file));for(const r of p.qs)if(!r.q.includes('«'))r.q=`في «${r.topic}»، ${r.q}`;fs.writeFileSync(file,JSON.stringify(p,null,2)+'\n');}
+const ids=['arabseries','ramadanseries','babalhara','syriandrama','egyptdrama','turkishdrama','ertugrul','foreignseries','breakingbad','squidgame','movies','arabmovies','actors','anime'];
+const sums={};for(const id of ids){let p=JSON.parse(fs.readFileSync(path.join(base,id+'.json')));for(const r of p.qs){if(r.q.split(/\s+/).length>22)console.log('LONG',r.qid,r.q);let k=decodeURI(r.sourceUrl);sums[k]=(sums[k]||0)+[r.q,r.a,...r.alt].join(' ').split(/\s+/).length;}}console.log('SOURCES',Object.entries(sums).filter(([k,v])=>v>200));

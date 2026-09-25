@@ -5,2507 +5,544 @@
   "style": "story",
   "qs": [
     {
+      "qid": "egyptdrama-200-901",
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «رأفت الهجان»، ما الجهاز الذي جنّد البطل وزرعه في قلب العدو؟",
-      "a": "المخابرات المصرية",
+      "topic": "جلباب أبي",
+      "q": "في «لن أعيش في جلباب أبي»، ما الأكلة التي تبيعها فاطمة في بداية الحكاية؟",
+      "a": "الكشري",
       "alt": [
-        "المخابرات العامة"
+        "كشري"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
       "verified": true,
-      "qid": "egyptdrama-200-001"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "egyptdrama-200-902",
       "p": 200,
-      "topic": "أحداث",
-      "q": "في «رأفت الهجان»، لأي حرب مهّدت معلومات البطل الطريق؟",
-      "a": "حرب أكتوبر",
-      "alt": [
-        "حرب ٧٣",
-        "أكتوبر 1973"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-002"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «رأفت الهجان»، في أي دولة عاش البطل متخفيًا سنوات طويلة؟",
-      "a": "إسرائيل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "q": "في «رأفت الهجان»، أي نشاط تجاري اتخذه البطل غطاءً لعمله؟",
-      "a": "شركة سياحة",
-      "alt": [
-        "مكتب سياحة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-004"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «رأفت الهجان»، ما اسم الزوجة التي تزوجها البطل وهو متخفٍّ؟",
-      "a": "هيلين سمحون",
-      "alt": [
-        "هيلين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «دموع في عيون وقحة»، ما اسم الجاسوس المصري بطل الأحداث؟",
-      "a": "جمعة الشوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «دموع في عيون وقحة»، ما الجهاز الإسرائيلي الذي اخترقه البطل؟",
-      "a": "الموساد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-007"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات",
-      "q": "في «دموع في عيون وقحة»، ما اسم شقيق جمعة؟",
-      "a": "مصطفى الشوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-008"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «الراية البيضا»، من السيدة الثرية التي طمعت في قصر السفير المتقاعد؟",
-      "a": "فضة المعداوي",
-      "alt": [
-        "فضة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، من أي تجارة جمعت فضة ثروتها؟",
-      "a": "تجارة السمك",
-      "alt": [
-        "السمك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "ألقاب وأسماء",
-      "q": "في «الراية البيضا»، بم تُلقَّب فضة بين رجال السوق؟",
-      "a": "المعلمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، ما مهنة أمل صبور؟",
-      "a": "صحفية",
-      "alt": [
-        "صحافية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «الشهد والدموع»، من الأخ الذي استولى على حق أخيه فمات الأخ قهرًا؟",
-      "a": "حافظ رضوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «الشهد والدموع»، ما الشعور الذي حرّك أبناء شوقي طوال الأحداث؟",
-      "a": "الانتقام",
-      "alt": [
-        "الثأر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات",
-      "q": "في «الشهد والدموع»، ما اسم العائلة التي دار حولها الصراع كله؟",
-      "a": "آل رضوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «الشهد والدموع»، من زوجة شوقي التي أقسمت أن تثأر لزوجها؟",
-      "a": "زينب جعفر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «الشهد والدموع»، من الأخ الذي مات كمدًا بعد ضياع حقه؟",
-      "a": "شوقي رضوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «الوتد»، من الأم التي تحكم قبضتها على بيت أبنائها جميعًا؟",
-      "a": "فاطمة تعلبة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «الوتد»، بم كانت الأم تؤمّن مستقبل أبنائها؟",
-      "a": "شراء الأراضي الزراعية",
-      "alt": [
-        "شراء الأرض"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «الوتد»، من الابن الأكبر لفاطمة وكبير العائلة؟",
-      "a": "الحاج درويش",
-      "alt": [
-        "درويش"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «الوتد»، ما القرية التي تدور فيها أحداث آل تعلبة؟",
-      "a": "شباس عمير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «وجه القمر»، ما اسم المذيعة الشهيرة بطلة الأحداث؟",
-      "a": "ابتسام البستاني",
-      "alt": [
-        "ابتسام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «وجه القمر»، من الزوج الأول لابتسام؟",
-      "a": "مصطفى قورة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «وجه القمر»، ما اسما ابنتي ابتسام من زوجها الأول؟",
-      "a": "سارة وسماح",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، كم جيلًا من الأسرة تتابعه الأحداث؟",
-      "a": "أربعة أجيال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، من كبير آل المراكيبي في الجيل الأول؟",
-      "a": "عطا المراكيبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «هوانم جاردن سيتي»، أي ثورة قلبت موازين الطبقات في الأحداث؟",
-      "a": "ثورة يوليو",
-      "alt": [
-        "ثورة 23 يوليو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «هوانم جاردن سيتي»، في أي عهد تبدأ أحداث الجزء الأول؟",
-      "a": "العهد الملكي",
-      "alt": [
-        "الملكية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «هوانم جاردن سيتي»، من الفتاة الصغيرة التي تزوجها محمود بك الشاذلي الستيني؟",
-      "a": "منيرة كاظم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «يتربى في عزو»، ما الطبع الذي اشتهر به حمادة في زيجاته؟",
-      "a": "تعدد الزوجات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "ألقاب وأسماء",
-      "q": "في «يتربى في عزو»، بم تُعرف والدة حمادة التي دلّلته حتى أفسدته؟",
-      "a": "ماما نونة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «يتربى في عزو»، ما اسم بطل المسلسل صاحب الزيجات الكثيرة؟",
-      "a": "حمادة عزو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ونوس»، ما حقيقة الضيف الذي حلّ على الأسرة في العمل؟",
-      "a": "الشيطان",
-      "alt": [
-        "إبليس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «ونوس»، كم سنة غاب الأب عن أبنائه قبل ظهور الضيف؟",
-      "a": "عشرون سنة",
-      "alt": [
-        "20 سنة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-034"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «ونوس»، بم قدّم ونوس نفسه لأسرة الرجل الغائب؟",
-      "a": "صديق والدهم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «ونوس»، ما اسم الأب الذي ترك أبناءه وسافر؟",
-      "a": "ياقوت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «نسل الأغراب»، من الرجل الذي خرج من السجن فوجد امرأته زوجة لابن عمه؟",
-      "a": "عساف الغريب",
-      "alt": [
-        "عساف"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «نسل الأغراب»، من ابن العم الذي تزوج امرأة عساف ونسب ابنه إليه؟",
-      "a": "غفران الغريب",
-      "alt": [
-        "غفران"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «نسل الأغراب»، في أي بيئة مصرية تدور الأحداث؟",
-      "a": "الصعيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «نسل الأغراب»، ما اسم المرأة التي تنازع عليها عساف وغفران؟",
-      "a": "جليلة عثمان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن",
-      "q": "في «جراند أوتيل»، في أي مدينة يقع الفندق؟",
-      "a": "أسوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «جراند أوتيل»، ما اسم شقيقة علي التي قُتلت في الفندق؟",
-      "a": "ضحى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «جراند أوتيل»، لماذا التحق علي بالعمل في الفندق؟",
-      "a": "للبحث عن قاتل شقيقته",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات",
-      "q": "في «جراند أوتيل»، ما اسم ابنة صاحب الفندق التي أحبها علي؟",
-      "a": "نازلي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "مهن",
-      "q": "في «سجن النسا»، ما وظيفة غالية داخل السجن؟",
-      "a": "سجّانة",
-      "alt": [
-        "سجانة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «سجن النسا»، ما اسم الرجل الذي أوهم غالية بحبه؟",
-      "a": "صابر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "شخصيات",
-      "q": "في «ملوك الجدعنة»، ما اسما الصديقين اللذين سرقا حقيبة زاهي؟",
-      "a": "سفينة وسرية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث",
-      "q": "في «ملوك الجدعنة»، ماذا كانت تحوي الحقيبة المسروقة؟",
-      "a": "ألماس",
-      "alt": [
-        "الألماس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-200-048"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، من ضابط المخابرات الذي تولّى تشغيل البطل وتدريبه؟",
-      "a": "محسن ممتاز",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-001"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «رأفت الهجان»، ما اسم شقيقة البطل التي بقيت في مصر؟",
-      "a": "شريفة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "ألقاب وأسماء",
-      "q": "في «رأفت الهجان»، ما الاسم اليهودي الذي عاش به البطل بين الإسرائيليين؟",
+      "topic": "رأفت الهجان",
+      "q": "في «رأفت الهجان»، ما الهوية التي يتخذها البطل للعمل داخل إسرائيل؟",
       "a": "ديفيد شارل سمحون",
       "alt": [
-        "شارل سمحون"
+        "ديفيد سمحون",
+        "ديفيد سامحون"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-003"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، ما اسم ضابط المخابرات الآخر في فريق البطل؟",
-      "a": "عزيز الجبالي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-004"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «دموع في عيون وقحة»، من ضابط المخابرات الذي أدار عمل جمعة؟",
-      "a": "مدحت عبد الباقي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "في «دموع في عيون وقحة»، أي بلد أوروبي شهد جانبًا من الأحداث مع إنجلترا وفرنسا؟",
-      "a": "اليونان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-006"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «الراية البيضا»، من السفير المتقاعد صاحب القصر الذي طمعت فيه فضة؟",
-      "a": "مفيد أبو الغار",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات",
-      "q": "في «الراية البيضا»، ما اسم ابن فضة المهندس؟",
-      "a": "خيري الشاطر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات",
-      "q": "في «الراية البيضا»، ما اسم ابنة فضة؟",
-      "a": "سمحة الشاطر",
+      "qid": "egyptdrama-200-903",
+      "p": 200,
+      "topic": "الراية البيضاء",
+      "q": "من المرأة الثرية التي تريد هدم الفيلا الأثرية في «الراية البيضاء»؟",
+      "a": "فضة المعداوي",
       "alt": [
-        "سمحة"
+        "فضة",
+        "فضة المعداوى"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-009"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، ما مهنة العربي حنفي؟",
-      "a": "أستاذ فلسفة",
+      "qid": "egyptdrama-200-904",
+      "p": 200,
+      "topic": "المال والبنون",
+      "q": "في «المال والبنون»، من صاحب الثروة الذي يختلف معه عباس الضو حول مصدر أمواله؟",
+      "a": "سلامة فراويلة",
       "alt": [
-        "أستاذ الفلسفة"
+        "سلامة",
+        "سلامة فراويله"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-010"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "topic": "عائلات",
-      "q": "في «الشهد والدموع»، من الأب الذي تحمل الأسرة اسمه؟",
-      "a": "الحاج رضوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «الشهد والدموع»، ما اسم ابنة حافظ التي دفعت ثمن ظلم أبيها؟",
-      "a": "ناهد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات",
-      "q": "في «الشهد والدموع»، ما اسم شقيقة حافظ وشوقي؟",
-      "a": "إحسان رضوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «الشهد والدموع»، من صديق حافظ ورفيق صفقاته؟",
-      "a": "مختار البرهامي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «الوتد»، ما القرار الذي كانت فاطمة تفرضه على أبنائها عند زواجهم؟",
-      "a": "اختيار زوجاتهم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «الوتد»، ما اسم زوجة درويش وابنة عمه؟",
-      "a": "مريم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «الوتد»، ما الهدف الذي عاشت فاطمة من أجله؟",
-      "a": "عائلة كبيرة مترابطة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "ألقاب وأسماء",
-      "q": "في «الوتد»، بم توصف كلمة درويش بين أهل البلد؟",
-      "a": "مسموعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «وجه القمر»، من تزوّج ابتسام بعد زوجها الأول وكان صديقًا قديمًا له؟",
-      "a": "كريم أبو العز",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «وجه القمر»، من المطرب الذي تزوج سماح؟",
-      "a": "هاشم نور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «وجه القمر»، من الطبيب الذي عالج مصطفى ثم صار زوج ابنته؟",
-      "a": "حسام كامل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "q": "في «وجه القمر»، ما اسم محامي مصطفى؟",
-      "a": "رشدي عامر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من المرأة التي تزوجها يزيد المصري في أول الأحداث؟",
-      "a": "فرجة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، من ابن يزيد المصري الذي صار باشا؟",
-      "a": "داود المصري",
+      "qid": "egyptdrama-200-905",
+      "p": 200,
+      "topic": "ليالي الحلمية",
+      "q": "من صاحب المصنع الذي يدخل في صراع طويل مع خصمه الريفي في «ليالي الحلمية»؟",
+      "a": "سليم البدري",
       "alt": [
-        "داود"
+        "سليم البدرى",
+        "سليم"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-024"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "egyptdrama-200-906",
+      "p": 200,
+      "topic": "الشهد والدموع",
+      "q": "في «الشهد والدموع»، ما اسم شقيق شوقي الذي يستولي على حقوقه؟",
+      "a": "حافظ",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-907",
+      "p": 200,
+      "topic": "يوميات ونيس",
+      "q": "في «يوميات ونيس»، ما اسم زوجة ونيس وشريكته في تربية الأبناء؟",
+      "a": "مايسة",
+      "alt": [
+        "مايسه",
+        "مايسة ونيس"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-200-908",
+      "p": 200,
+      "topic": "ذات",
+      "q": "في مسلسل «ذات»، ما اسم الرجل الذي تتزوجه البطلة؟",
+      "a": "عبد المجيد",
+      "alt": [
+        "عبدالمجيد"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "egyptdrama-400-901",
       "p": 400,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، من زوج جليلة؟",
-      "a": "الشيخ معاوية",
+      "topic": "جلباب أبي",
+      "q": "في «لن أعيش في جلباب أبي»، ما اسم الابن الوحيد لعبد الغفور؟",
+      "a": "عبد الوهاب",
       "alt": [
-        "معاوية القليوبي"
+        "عبدالوهاب"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-025"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "egyptdrama-400-902",
       "p": 400,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، ما لقب أسرة جليلة؟",
-      "a": "الطرابيشي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "topic": "رأفت الهجان",
+      "q": "في المسلسل، لأي دولة يعمل رأفت الهجان سرًا رغم هويته الإسرائيلية؟",
+      "a": "مصر",
+      "alt": [
+        "جمهورية مصر العربية"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-026"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "egyptdrama-400-903",
       "p": 400,
-      "topic": "شخصيات",
-      "q": "في «هوانم جاردن سيتي»، من ابن الشاذلي الذي دبّر لهدم زواج أبيه؟",
-      "a": "محسن الشاذلي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "topic": "الراية البيضاء",
+      "q": "ما نوع المبنى الذي تتمحور حول حمايته أحداث «الراية البيضاء»؟",
+      "a": "فيلا أثرية",
+      "alt": [
+        "فيلا تاريخية",
+        "قصر أثري",
+        "فيلا"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-027"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "egyptdrama-400-904",
       "p": 400,
-      "topic": "أحداث",
-      "q": "في «هوانم جاردن سيتي»، ماذا فعل محمود الشاذلي بمنيرة بعد مؤامرة ابنه؟",
-      "a": "طلّقها",
+      "topic": "المال والبنون",
+      "q": "ما النشاط غير المشروع الذي يرتبط بأصل ثروة سلامة في «المال والبنون»؟",
+      "a": "تهريب الآثار",
       "alt": [
-        "طلقها"
+        "تجارة الآثار",
+        "الآثار"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-028"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "egyptdrama-400-905",
       "p": 400,
-      "topic": "علاقات",
-      "q": "في «هوانم جاردن سيتي»، من تزوجت منيرة بعد طلاقها؟",
-      "a": "مراد السعيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "topic": "ليالي الحلمية",
+      "q": "من خصم سليم القادم من الريف الذي يشتري حصة في المصنع في «ليالي الحلمية»؟",
+      "a": "سليمان غانم",
+      "alt": [
+        "سليمان"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
       "verified": true,
-      "qid": "egyptdrama-400-029"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "egyptdrama-400-906",
       "p": 400,
-      "topic": "عائلات",
-      "q": "في «هوانم جاردن سيتي»، ما اسم ابن الشاذلي الآخر غير محسن؟",
-      "a": "حسين الشاذلي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «يتربى في عزو»، من ابنة عم حمادة التي حاولت تقويمه وصارت زوجته؟",
-      "a": "الدكتورة نوال",
-      "alt": [
-        "نوال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «يتربى في عزو»، كم زوجة تزوج حمادة حتى ابنة عمه؟",
-      "a": "ست زوجات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «يتربى في عزو»، ما اسم زوجة حمادة الأولى؟",
-      "a": "فوزية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات",
-      "q": "في «يتربى في عزو»، ما اسم ابن حمادة الأكبر؟",
-      "a": "حسام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «ونوس»، بماذا أغرى ونوس الأبناء وهو يدلّهم على مكان أبيهم؟",
-      "a": "أنه يملك الملايين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "q": "في «ونوس»، ما اسم صاحبة الكباريه في العمل؟",
-      "a": "حياة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "ألقاب وأسماء",
-      "q": "في «ونوس»، ما لقب نبيل في العمل؟",
-      "a": "بلبل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «نسل الأغراب»، ما الحكم الذي خُفِّف عن عساف إلى السجن؟",
-      "a": "الإعدام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات",
-      "q": "في «نسل الأغراب»، ما اسم ابن عساف؟",
-      "a": "حمزة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "عائلات",
-      "q": "في «نسل الأغراب»، ما اسم ابن غفران؟",
-      "a": "سليم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "مهن",
-      "q": "في «نسل الأغراب»، ما منصب علي الغريب الذي قتله غفران؟",
-      "a": "رئيس مباحث البلدة",
-      "alt": [
-        "رئيس المباحث"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن",
-      "q": "في «جراند أوتيل»، أين أخفت شقيقة علي مذكراتها داخل الفندق؟",
-      "a": "تحت سريرها",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «جراند أوتيل»، في أي عقد من القرن الماضي تدور الأحداث؟",
-      "a": "الخمسينيات",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «جراند أوتيل»، مع من كانت شقيقة علي على علاقة كشفتها مذكراتها؟",
-      "a": "مراد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات",
-      "q": "في «سجن النسا»، ما السر الذي أخفاه حبيب غالية عنها؟",
-      "a": "أنه متزوج بأخرى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «سجن النسا»، ما اسم النزيلة التي دخلت السجن بتهمة الدعارة؟",
-      "a": "دلال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث",
-      "q": "في «ملوك الجدعنة»، ما الحادث الذي فتح باب الصراع كله؟",
-      "a": "مقتل صديقهما علي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "شخصيات",
-      "q": "في «ملوك الجدعنة»، من الرجل الذي سُرقت حقيبته فأشعل الحرب؟",
-      "a": "زاهي العتال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-400-048"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وأسماء",
-      "q": "في «رأفت الهجان»، ما لقب نديم هاشم في العمل؟",
-      "a": "قلب الأسد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «رأفت الهجان»، من زوج شقيقة البطل الضابط المصري؟",
-      "a": "الصاغ رفيق",
-      "alt": [
-        "رفيق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وأسماء",
-      "q": "في «رأفت الهجان»، ما أحد الأسماء اليهودية الأخرى التي تقمّصها البطل؟",
-      "a": "ليفي كوهين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، ما اسم مساعدة زوجة البطل؟",
-      "a": "ليندا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وأسماء",
-      "q": "في «دموع في عيون وقحة»، ما اللقب الذي عُرف به ضابط المخابرات مدحت؟",
-      "a": "الريس زكريا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وأسماء",
-      "q": "في «دموع في عيون وقحة»، ما الاسم العربي المستعار للعميل إبراهام كلود؟",
-      "a": "حسن سوكه",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «الراية البيضا»، ما اسم ابن فضة الطبيب؟",
-      "a": "فكري الشاطر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، ما اسم صاحب مطعم السمك في العمل؟",
-      "a": "حنفي السماك",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، من يدير شؤون فيلا أبو الغار؟",
-      "a": "مطاوع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، ما اسم الساعي في مكتب المحامي؟",
-      "a": "رجب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «الشهد والدموع»، بم انشغل حافظ مع أبيه بينما انغمس شوقي في اللهو؟",
-      "a": "التجارة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «الشهد والدموع»، من زوجة حافظ؟",
-      "a": "دولت",
-      "alt": [
-        "دولت هانم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «الشهد والدموع»، ما اسما ابنتي شوقي؟",
-      "a": "سهير ونوال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "q": "في «الشهد والدموع»، ما اسم الأسطى الميكانيكي في العمل؟",
-      "a": "قطب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وأسماء",
-      "q": "في «الشهد والدموع»، ما لقب جابر في العمل؟",
-      "a": "الأشوح",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «الوتد»، ما اسما ابنتي فاطمة؟",
-      "a": "بهية وبسيمة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «الوتد»، ما اسم ابن فاطمة الذي يحمل اسم نبي؟",
-      "a": "عيسى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "نهايات ومصائر",
-      "q": "في «الوتد»، كيف مات درويش في آخر الأحداث؟",
-      "a": "حزنًا على أمه",
-      "alt": [
-        "حزنا على والدته"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "q": "في «وجه القمر»، ما اسم السكرتيرة في العمل؟",
-      "a": "صفاء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «وجه القمر»، ما اسم ابن ابتسام من زوجها الثاني؟",
-      "a": "وائل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "q": "في «وجه القمر»، ما مهنة أم سيد؟",
-      "a": "بائعة الفل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من زوجة عمرو المصري وابنة معاوية؟",
-      "a": "راضية",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، من ابنة صادق بركات؟",
-      "a": "دنانير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، من ابنة عزيز المصري التي تزوجت صادق بركات؟",
-      "a": "رشوانة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «حديث الصباح والمساء»، ما اسم زوجة عطا التي ماتت في أول الأحداث؟",
-      "a": "سكينة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "q": "في «هوانم جاردن سيتي»، ما الصفة التي جمعها محمود الشاذلي إلى المحاماة؟",
-      "a": "عضو مجلس الشيوخ",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «هوانم جاردن سيتي»، من ابنة كاظم التي تزوجها عمر عز الدين؟",
-      "a": "نعمت كاظم",
-      "alt": [
-        "نعمت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «هوانم جاردن سيتي»، ما اسما ابنتي محمود الشاذلي؟",
-      "a": "نجوى وسلمى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «هوانم جاردن سيتي»، ما اسم زوج كاتينة اليوناني؟",
-      "a": "مانولي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «يتربى في عزو»، ما اسم ابنة حمادة التي أحبت الرسام؟",
-      "a": "داليا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «يتربى في عزو»، من أخو نوال وابن عم حمادة؟",
-      "a": "كمال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «يتربى في عزو»، ما اسم ابن عم حمادة الثاني؟",
-      "a": "علاء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «يتربى في عزو»، أين كانت نوال تعمل قبل عودتها؟",
-      "a": "ألمانيا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «ونوس»، ما اسم صديقة إنشراح؟",
-      "a": "سومة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «ونوس»، ما اسما ابنتي هالة وفاروق؟",
-      "a": "ندى ومي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ونوس»، ما اسم الشيخ الذي ظهر في الأحداث؟",
-      "a": "فوزي علّام",
-      "alt": [
-        "فوزي علام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «نسل الأغراب»، ما اسم زعيم الغجر الذي قتله عساف؟",
-      "a": "بكري زلط",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «نسل الأغراب»، ما اسم شقيقة عساف؟",
-      "a": "عزيزة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "نهايات ومصائر",
-      "q": "في «نسل الأغراب»، ماذا فعل أهل القرية بمنزلي الرجلين في النهاية؟",
-      "a": "أحرقوهما",
-      "alt": [
-        "أحرقوها"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «جراند أوتيل»، ما اسم السيدة التي تحكم قبضتها على الفندق وأسراره؟",
-      "a": "قسمت هانم",
-      "alt": [
-        "قسمت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "مهن",
-      "q": "في «جراند أوتيل»، ما اسم كبيرة الخادمات في الفندق؟",
-      "a": "الست سكينة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث",
-      "q": "في «سجن النسا»، ما الذي يعيد النساء إلى السجن بعد خروجهن؟",
-      "a": "قسوة المجتمع ورفضه",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «ملوك الجدعنة»، ما الاسم الكامل للصديق الذي قُتل؟",
-      "a": "علي العجمي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وأسماء",
-      "q": "في «ملوك الجدعنة»، ما لقب فاتن في العمل؟",
-      "a": "حرفوش",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "شخصيات",
-      "q": "في «الراية البيضا»، ما اسم الصبي العامل في وكالة السمك؟",
-      "a": "حمو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات",
-      "q": "في «الشهد والدموع»، من زوج إحسان شقيقة حافظ؟",
-      "a": "عبد البديع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، من تزوجها عزيز بن يزيد المصري؟",
-      "a": "نعمة المراكيبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن",
-      "q": "في «هوانم جاردن سيتي»، أي شارع قاهري اشتهرت عوالمه في الأحداث؟",
-      "a": "شارع محمد علي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-600-048"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، ما اسم العميلة التي كُلّفت بمراقبة البطل على ظهر السفينة؟",
-      "a": "لوسيان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-001"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في «رأفت الهجان»، ما اسم القهوة التي يجتمع فيها الزبائن في الأحداث؟",
-      "a": "قهوة ستامبيلوس",
-      "alt": [
-        "ستامبيلوس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "q": "في «رأفت الهجان»، ما مهنة يوسف الأزرع أحد كوادر جهاز العدو؟",
-      "a": "محامٍ",
-      "alt": [
-        "محامي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «رأفت الهجان»، ما أسماء إخوة البطل الثلاثة؟",
-      "a": "سليم وعادل ومحمود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وأسماء",
-      "q": "في «دموع في عيون وقحة»، ما الاسم الذي عُرف به الضابط الإسرائيلي أبو داوود؟",
-      "a": "إيزاك حاييم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-005"
-    },
-    {
-      "p": 800,
-      "topic": "ممثلون",
-      "q": "في «دموع في عيون وقحة»، من جسّد شخصية الجاسوس جمعة؟",
-      "a": "عادل إمام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «دموع في عيون وقحة»، ما اسم الشخصية اليونانية في الأحداث؟",
-      "a": "ديموس كيرياكوس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-007"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «الراية البيضا»، ما اسم ابنة عم سمحة؟",
-      "a": "فاطمة الشاطر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، ما تخصص الدكتور صبور والد أمل؟",
-      "a": "المخ والأعصاب",
-      "alt": [
-        "مخ وأعصاب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «الشهد والدموع»، ما اسم زوجة ميلاد أفندي وأم مكرم؟",
-      "a": "إيفون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "q": "في «الشهد والدموع»، بم يشتهر أبو سمرة في العمل؟",
-      "a": "العجلاتي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «الشهد والدموع»، ما اسم ابن ميلاد أفندي صديق أبناء العائلة؟",
-      "a": "مكرم ميلاد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «الوتد»، ما اسما ابني فاطمة اللذان يبدأ اسماهما بعبد؟",
-      "a": "عبد العزيز وعبد الباقي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "ممثلون",
-      "q": "في «الوتد»، من جسّدت شخصية الأم فاطمة؟",
-      "a": "هدى سلطان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "نهايات ومصائر",
-      "q": "في «الوتد»، كم عاشت فاطمة بعد وفاة ابنها الأكبر؟",
-      "a": "أسبوعًا",
-      "alt": [
-        "أسبوع"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «وجه القمر»، ما اسم زوجة هاشم الأولى المليونيرة؟",
-      "a": "سميرة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «حديث الصباح والمساء»، من الزعيم الوطني الذي ظهر خطيبًا في الأحداث؟",
-      "a": "عبد الله النديم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «حديث الصباح والمساء»، من قائد الثورة الذي مرّ ذكره في أحداث الأسرة؟",
-      "a": "أحمد عرابي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وأسماء",
-      "q": "في «حديث الصباح والمساء»، من ابن عمرو المصري الذي عُرف بالنقشبندي؟",
-      "a": "قاسم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من تزوجها عطا بعد وفاة زوجته؟",
-      "a": "هدى هانم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «حديث الصباح والمساء»، ما اسم خال زوجة عطا الثانية؟",
-      "a": "رستم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وأسماء",
-      "q": "في «حديث الصباح والمساء»، ما الاسم اللافت الذي حملته إحدى بنات آل المراكيبي؟",
-      "a": "شاكيرا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، من ابن داود؟",
-      "a": "عبد العظيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «هوانم جاردن سيتي»، ما اسم الأميرة التي تنتمي للعائلة المالكة في الجزء الأول؟",
-      "a": "شاهندة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «هوانم جاردن سيتي»، ما اسم الأخوين الضابطين في العمل؟",
-      "a": "يوسف وعاطف ناصف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "q": "في «هوانم جاردن سيتي»، ما اسم الصحفي في الأحداث؟",
-      "a": "رفعت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "q": "في «هوانم جاردن سيتي»، ما اسم السفرجي في بيت الشاذلي؟",
-      "a": "فرج",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "مهن",
-      "q": "في «يتربى في عزو»، ما نوع المصنع الذي شارك فيه حمادة صديقه؟",
-      "a": "مصنع لعب أطفال",
-      "alt": [
-        "لعب الأطفال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «يتربى في عزو»، ما اسم الرسام الذي تزوج ابنة حمادة؟",
-      "a": "شادي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «يتربى في عزو»، من زميل نوال في الخارج؟",
-      "a": "الدكتور عماد",
-      "alt": [
-        "عماد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «يتربى في عزو»، ما اسم زوجة حمادة الثانية؟",
-      "a": "عائشة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «ونوس»، ما اسم ابنة صاحبة الكباريه؟",
-      "a": "كوكي",
-      "alt": [
-        "معاني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «ونوس»، ما اسم ابن نيرمين؟",
-      "a": "ياسو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «نسل الأغراب»، ما اسم شقيق عساف؟",
-      "a": "نميري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "ممثلون",
-      "q": "في «نسل الأغراب»، من جسّد شخصية عساف؟",
-      "a": "أحمد السقا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «نسل الأغراب»، ما الاسم الذي يجمع جليلة وعلي وحسيب في نسبهم؟",
-      "a": "عثمان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "ممثلون",
-      "q": "في «جراند أوتيل»، من جسّد شخصية علي؟",
-      "a": "عمرو يوسف",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "نهايات ومصائر",
-      "q": "في «جراند أوتيل»، كيف انتهت قصة حب علي بابنة صاحب الفندق؟",
-      "a": "افترقا وتزوجت غيره",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «جراند أوتيل»، من السيدة الثرثارة التي تقرّب منها علي ليعرف الأسرار؟",
-      "a": "فخر هانم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "ممثلون",
-      "q": "في «سجن النسا»، من جسّدت شخصية غالية؟",
-      "a": "نيللي كريم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وأسماء",
-      "q": "في «ملوك الجدعنة»، ما لقب رجل المافيا في العمل؟",
-      "a": "ويندي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "عائلات",
-      "q": "في «يتربى في عزو»، ما اسم زوجة حمادة الرابعة؟",
-      "a": "إيناس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «الراية البيضا»، ما اسم العامل في فيلا أبو الغار؟",
-      "a": "الضاوي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن",
-      "q": "في «رأفت الهجان»، أي قسم شرطة قاهري تكرّر ذكره في الأحداث؟",
-      "a": "قسم الزيتون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من الضابط الذي تزوج مطرية بنت عمرو؟",
-      "a": "محمد إبراهيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من اليوزباشي الذي تزوج جميلة بنت سرور؟",
-      "a": "إبراهيم الأسواني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "نهايات ومصائر",
-      "q": "في «هوانم جاردن سيتي»، ماذا حلّ بزوج منيرة الثاني بعد الزواج؟",
-      "a": "قُتل",
-      "alt": [
-        "قتل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "شخصيات",
-      "q": "في «الشهد والدموع»، ما اسم صديق شوقي ابن حافظ؟",
-      "a": "مستكاوي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-800-048"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، ما اسم الجاسوس الحقيقي الذي استُلهمت منه شخصية البطل؟",
-      "a": "رفعت الجمال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-001"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «رأفت الهجان»، ما الاسم الحقيقي لزوجة البطل الأجنبية؟",
-      "a": "فلتراود بيتون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-002"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، أي وزير مصري شهير تخفّى وراء شخصية شريف والي؟",
-      "a": "شعراوي جمعة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، أي وزير داخلية تخفّى وراء شخصية اليوزباشي رشدي؟",
-      "a": "أحمد رشدي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "ممثلون",
-      "q": "في «رأفت الهجان»، من جسّد شخصية نديم هاشم؟",
-      "a": "نبيل الحلفاوي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «دموع في عيون وقحة»، ما الاسم الحقيقي للجاسوس الذي استُلهمت منه شخصية جمعة؟",
-      "a": "أحمد الهوان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «دموع في عيون وقحة»، أي سياسي إسرائيلي تقنّعت به شخصية الضابط جيمي؟",
-      "a": "شيمون بيريز",
-      "alt": [
-        "شمعون بيريز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-007"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، ما الاسم الكامل للمحامي أنيس؟",
-      "a": "أنيس عبد الحليم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-008"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، ما اسم المحامي الآخر في العمل؟",
-      "a": "أبو طالب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وأسماء",
-      "q": "في «الشهد والدموع»، ما اسم والد زوجة شوقي كما ينادونه؟",
-      "a": "الأسطى جعفر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «الشهد والدموع»، ما اسم قريبة زوجة حافظ في العمل؟",
-      "a": "نازلي هانم الدرملي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "ممثلون",
-      "q": "في «الشهد والدموع»، من جسّد شخصية حافظ؟",
-      "a": "يوسف شعبان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "ممثلون",
-      "q": "في «وجه القمر»، من جسّدت شخصية ابتسام؟",
-      "a": "فاتن حمامة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من الزوجة الأولى لصادق بركات؟",
-      "a": "ما شاء الله",
-      "alt": [
-        "ماشاء الله"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من طليقة داود؟",
-      "a": "سنية الوراق",
-      "alt": [
-        "سنية هانم الوراق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، ما اسم أرملة داود التي ماتت بعده؟",
-      "a": "جوهر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من الرجل الذي تزوج صدرية بنت عمرو ثم انفصل عنها؟",
-      "a": "حمادة القناوي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من زوج شهيرة بنت معاوية؟",
-      "a": "الشيخ بلال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، ما اسم زوج صديقة بنت جليلة الذي توفي؟",
-      "a": "باسم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «هوانم جاردن سيتي»، ما اسم أميرة العائلة المالكة التي عادت مريضة نفسيًا؟",
-      "a": "ماهينار",
-      "alt": [
-        "الأميرة ماهينار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «هوانم جاردن سيتي»، ما اسم الضابط الذي كلّف شهرت بمهمة خاصة؟",
-      "a": "أحمد البحيري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «يتربى في عزو»، ما اسم شريك حمادة صاحب المصنع؟",
-      "a": "فتحي سلّام",
-      "alt": [
-        "فتحي سلام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «يتربى في عزو»، ما اسم ابن حمادة الأصغر الذي تأثر بأفكار الطلبة؟",
-      "a": "إبراهيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "ممثلون",
-      "q": "في «ونوس»، من جسّد شخصية ونوس؟",
-      "a": "يحيى الفخراني",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "q": "في «ونوس»، ما اسم سايس الكباريه؟",
-      "a": "هلال",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «نسل الأغراب»، ما اسم والد عساف؟",
-      "a": "أدهم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "ممثلون",
-      "q": "في «هوانم جاردن سيتي»، من جسّد شخصية عمر عز الدين؟",
-      "a": "حسين فهمي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، ما اسم الجندي الإسرائيلي الذي ظهر في الأحداث؟",
-      "a": "شلومو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «رأفت الهجان»، أي فنان مصري تخفّى وراء شخصية نهاد كامل؟",
-      "a": "إيهاب نافع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «رأفت الهجان»، ما اسم العائلة اليهودية التي ضمّت شاؤول وحنا؟",
-      "a": "بلومبرج",
-      "alt": [
-        "بلومبرغ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "q": "في «رأفت الهجان»، من الخادم الذي تبيّن أنه كولونيل في الجيش النازي؟",
-      "a": "فرانز",
-      "alt": [
-        "فرانس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "q": "في «رأفت الهجان»، أي شركة بترول عالمية ظهر مندوبها في الأحداث؟",
-      "a": "شركة شل",
-      "alt": [
-        "شل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "مهن",
-      "q": "في «الراية البيضا»، ما اسم الفنان في العمل؟",
-      "a": "هشام أنيس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وأسماء",
-      "q": "في «الراية البيضا»، ما الاسم الذي عُرف به ابن أخت تركية العاملة عند فضة؟",
-      "a": "النونو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «الشهد والدموع»، ما اسم ابنة حافظ الثانية؟",
-      "a": "سوزان",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «الشهد والدموع»، ما أسماء أبناء حافظ الذكور الثلاثة؟",
-      "a": "هاني وسمير وشوقي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، ما اسما ابني عطا اللذين تزوجا يوم وفاته؟",
-      "a": "أحمد ومحمود",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، من ابن جليلة من زوجها الشيخ؟",
-      "a": "بليغ",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «حديث الصباح والمساء»، من زوجة سرور المصري؟",
+      "topic": "الشهد والدموع",
+      "q": "في «الشهد والدموع»، ما اسم زوجة شوقي التي تكافح بعد وفاته؟",
       "a": "زينب",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
       "verified": true,
-      "qid": "egyptdrama-1000-039"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «حديث الصباح والمساء»، ما اسما ابني عزيز المصري؟",
-      "a": "عمرو وسرور",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «هوانم جاردن سيتي»، من الرجل الذي تودّدت إليه شهرت لكشف تهريب التحف؟",
-      "a": "جميل طوسون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
-      "verified": true,
-      "qid": "egyptdrama-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "شخصيات",
-      "q": "في «هوانم جاردن سيتي»، ما اسم أمير العائلة المالكة في الجزء الثاني؟",
-      "a": "شاهر",
+      "qid": "egyptdrama-400-907",
+      "p": 400,
+      "topic": "يوميات ونيس",
+      "q": "في «يوميات ونيس»، ما اسم والد ونيس الذي يشارك الأسرة حياتها؟",
+      "a": "أبو الفضل",
       "alt": [
-        "الأمير شاهر"
+        "ابو الفضل",
+        "أبوالفضل"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1011316/cast",
       "verified": true,
-      "qid": "egyptdrama-1000-042"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «هوانم جاردن سيتي»، ما اسما الصحفي وابنته في الجزء الثاني؟",
-      "a": "رشدي ونرمين هدايت",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "qid": "egyptdrama-400-908",
+      "p": 400,
+      "topic": "ذات",
+      "q": "في مسلسل «ذات»، في أي مبنى تلفزيوني تحصل البطلة على وظيفة؟",
+      "a": "ماسبيرو",
+      "alt": [
+        "مبنى ماسبيرو"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
       "verified": true,
-      "qid": "egyptdrama-1000-043"
+      "difficultyTarget": 0.6
     },
     {
-      "p": 1000,
-      "topic": "مهن",
-      "q": "في «يتربى في عزو»، ما اسم رئيس مركز البحوث الذي عملت فيه نوال؟",
-      "a": "الدكتور أحمد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "qid": "egyptdrama-600-901",
+      "p": 600,
+      "topic": "جلباب أبي",
+      "q": "من المعلم الذي يعمل عنده عبد الغفور ويتعلم منه التجارة في «لن أعيش في جلباب أبي»؟",
+      "a": "إبراهيم سردينة",
+      "alt": [
+        "الحاج سردينة",
+        "سردينة",
+        "ابراهيم سردينة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
       "verified": true,
-      "qid": "egyptdrama-1000-044"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "علاقات",
-      "q": "في «ونوس»، ما اسم الزوجة الثانية لطليق نيرمين؟",
-      "a": "رانيا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "qid": "egyptdrama-600-902",
+      "p": 600,
+      "topic": "رأفت الهجان",
+      "q": "في «رأفت الهجان»، من الضابط الذي يتولى إعداد البطل للمهمة؟",
+      "a": "محسن ممتاز",
+      "alt": [
+        "محسن"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
       "verified": true,
-      "qid": "egyptdrama-1000-045"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "مهن",
-      "q": "في «ونوس»، ما اسم صاحب القناة الذي ظهر في الأحداث؟",
-      "a": "وليد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "qid": "egyptdrama-600-903",
+      "p": 600,
+      "topic": "الراية البيضاء",
+      "q": "ما الوظيفة التي شغلها مفيد أبو الغار قبل تقاعده في «الراية البيضاء»؟",
+      "a": "سفير",
+      "alt": [
+        "دبلوماسي",
+        "السفير"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
       "verified": true,
-      "qid": "egyptdrama-1000-046"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «نسل الأغراب»، ما اسم ابنة مصطفى الغريب؟",
-      "a": "رغدة",
+      "qid": "egyptdrama-600-904",
+      "p": 600,
+      "topic": "المال والبنون",
+      "q": "في «المال والبنون»، ما اسم ابنة سلامة التي يحبها ابن عباس الضو؟",
+      "a": "فريال",
       "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
       "verified": true,
-      "qid": "egyptdrama-1000-047"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "عائلات",
-      "q": "في «نسل الأغراب»، ما اسم الرجل الآخر من آل زلط في الأحداث؟",
-      "a": "سالم زلط",
-      "alt": [],
-      "sourceUrl": "https://ar.wikipedia.org/",
+      "qid": "egyptdrama-600-905",
+      "p": 600,
+      "topic": "ليالي الحلمية",
+      "q": "ما اسم الزوجة الأرستقراطية التي يطلقها سليم في بداية «ليالي الحلمية»؟",
+      "a": "نازك السلحدار",
+      "alt": [
+        "نازك"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
       "verified": true,
-      "qid": "egyptdrama-1000-048"
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "egyptdrama-600-906",
+      "p": 600,
+      "topic": "الشهد والدموع",
+      "q": "ما الحيلة التي ينفذها الأخ الأكبر في مخزن الشركة لحرمان شقيقه من نصيبه في «الشهد والدموع»؟",
+      "a": "حرق المخزن",
+      "alt": [
+        "إحراق المخزن",
+        "إشعال حريق",
+        "الحريق"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "egyptdrama-600-907",
+      "p": 600,
+      "topic": "يوميات ونيس",
+      "q": "في «يوميات ونيس»، من يكسر نباتات الزينة ويُتّهم شرف الدين ظلمًا بدلًا منه؟",
+      "a": "قطة الجيران",
+      "alt": [
+        "قطة",
+        "القطة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "egyptdrama-600-908",
+      "p": 600,
+      "topic": "ذات",
+      "q": "في مسلسل «ذات»، في أي قسم فني تعمل البطلة بالتلفزيون؟",
+      "a": "المونتاج",
+      "alt": [
+        "قسم المونتاج",
+        "تحرير الفيديو"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "egyptdrama-800-901",
+      "p": 800,
+      "topic": "جلباب أبي",
+      "q": "ما الشيء الضخم الذي يشتريه عبد الغفور في مزاد ليفككه ويبيع أجزاءه في «لن أعيش في جلباب أبي»؟",
+      "a": "طائرة جامبو",
+      "alt": [
+        "طائرة",
+        "طيارة جامبو",
+        "طائرة ركاب"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "egyptdrama-800-902",
+      "p": 800,
+      "topic": "رأفت الهجان",
+      "q": "في «رأفت الهجان»، ما اسم زوجة البطل الألمانية التي يكشف لها سره قبيل وفاته؟",
+      "a": "هيلين",
+      "alt": [
+        "هيلن",
+        "Helen"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "egyptdrama-800-903",
+      "p": 800,
+      "topic": "الراية البيضاء",
+      "q": "في أي مدينة ساحلية تدور معركة الحفاظ على المبنى في «الراية البيضاء»؟",
+      "a": "الإسكندرية",
+      "alt": [
+        "اسكندرية",
+        "الاسكندرية"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "egyptdrama-800-904",
+      "p": 800,
+      "topic": "المال والبنون",
+      "q": "في «المال والبنون»، من الشاب الذي يُتهم بقتل لولا قبل انكشاف القاتل الحقيقي؟",
+      "a": "يوسف",
+      "alt": [
+        "يوسف عباس الضو"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "egyptdrama-800-905",
+      "p": 800,
+      "topic": "ليالي الحلمية",
+      "q": "في «ليالي الحلمية»، ما اسم خالة علي التي ترعاه بعد وفاة والدته؟",
+      "a": "أنيسة",
+      "alt": [
+        "انيسة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "egyptdrama-800-906",
+      "p": 800,
+      "topic": "الشهد والدموع",
+      "q": "في «الشهد والدموع»، ما اسم زوجة الأخ الأكبر التي تسانده ضد أسرة شقيقه؟",
+      "a": "دولت",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "egyptdrama-800-907",
+      "p": 800,
+      "topic": "يوميات ونيس",
+      "q": "في «يوميات ونيس»، إلى من تعود القصة التي ينقلها عز الدين وينسبها لنفسه؟",
+      "a": "يوسف إدريس",
+      "alt": [
+        "يوسف ادريس"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "egyptdrama-800-908",
+      "p": 800,
+      "topic": "ذات",
+      "q": "ما الأداة التي تشتريها بطلة «ذات» لتعمل من المنزل وتزيد دخل الأسرة؟",
+      "a": "ماكينة خياطة",
+      "alt": [
+        "آلة خياطة",
+        "مكنة خياطة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "egyptdrama-1000-901",
+      "p": 1000,
+      "topic": "جلباب أبي",
+      "q": "في «لن أعيش في جلباب أبي»، ما الاسم الذي تختاره روزالين بعد إسلامها؟",
+      "a": "أمينة",
+      "alt": [
+        "امينة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "egyptdrama-1000-902",
+      "p": 1000,
+      "topic": "رأفت الهجان",
+      "q": "في «رأفت الهجان»، ما الشيء الذي يتركه البطل لزوجته لتتعرف به إلى رجال المخابرات الموثوقين؟",
+      "a": "نصف عملة ورقية",
+      "alt": [
+        "نصف ورقة نقدية",
+        "نصف ورقة مالية",
+        "نصف جنيه"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "egyptdrama-1000-903",
+      "p": 1000,
+      "topic": "الراية البيضاء",
+      "q": "في «الراية البيضاء»، من ابن حنفي الذي يعيد عقد الإيجار المزور إلى مفيد؟",
+      "a": "العربي",
+      "alt": [
+        "العربى"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "egyptdrama-1000-904",
+      "p": 1000,
+      "topic": "المال والبنون",
+      "q": "في «المال والبنون»، ما مهنة علي الحقيقية التي يخفيها وراء ادعاء العمل بالشرطة؟",
+      "a": "ضابط إيقاع",
+      "alt": [
+        "عازف إيقاع",
+        "طبال",
+        "عازف طبلة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "egyptdrama-1000-905",
+      "p": 1000,
+      "topic": "ليالي الحلمية",
+      "q": "ما الشرط المتعلق بالطلاق الذي تفرضه نازك عند زواجها من سليمان في «ليالي الحلمية»؟",
+      "a": "العصمة في يدها",
+      "alt": [
+        "أن تكون العصمة بيدها",
+        "حق تطليق نفسها"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "egyptdrama-1000-906",
+      "p": 1000,
+      "topic": "الشهد والدموع",
+      "q": "في «الشهد والدموع»، ما السلعة التي يبيعها الأخ الأكبر في السوق السوداء قبل وفاة والده؟",
+      "a": "السكر",
+      "alt": [
+        "سكر"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "egyptdrama-1000-907",
+      "p": 1000,
+      "topic": "يوميات ونيس",
+      "q": "في «يوميات ونيس»، ما نوع الشركة التي يعمل بها الأب خلافًا لما تدعيه جهاد أمام المدرسة؟",
+      "a": "شركة مقاولات",
+      "alt": [
+        "مقاولات"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "egyptdrama-1000-908",
+      "p": 1000,
+      "topic": "ذات",
+      "q": "ما المنتج المنزلي الكهربائي الذي يجرب زوج بطلة «ذات» الاتجار به ثم يفشل بسبب عيوبه؟",
+      "a": "قدر كهربائي",
+      "alt": [
+        "حلة كهربائية",
+        "طنجرة كهربائية",
+        "حلة بالكهرباء"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "verified": true,
+      "difficultyTarget": 0.15
     }
   ]
 }

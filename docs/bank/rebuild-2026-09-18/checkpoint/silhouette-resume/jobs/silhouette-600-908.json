@@ -1,0 +1,41 @@
+{
+  "id": "silhouette-600-908",
+  "kind": "question",
+  "pack": "silhouette",
+  "a": "مروحة",
+  "p": 600,
+  "topic": "أثاث ومنزل",
+  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a desktop electric fan in three-quarter profile with circular protective cage.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+  "question": {
+    "p": 600,
+    "q": "ما الجهاز المنزلي ذو الشبك الدائري الظاهر في الظل؟",
+    "a": "مروحة",
+    "qid": "silhouette-600-908",
+    "type": "image",
+    "effect": "silhouette",
+    "alt": [
+      "مروحة كهربائية",
+      "مروحة طاولة",
+      "مروحة مكتب",
+      "Fan"
+    ],
+    "topic": "أثاث ومنزل",
+    "difficultyTarget": 0.4,
+    "verified": true,
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "media": {
+      "src": "silhouette-600-908.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation (built-in)",
+        "createdAt": "2026-09-23",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json"
+      }
+    }
+  },
+  "requireAlpha": true
+}

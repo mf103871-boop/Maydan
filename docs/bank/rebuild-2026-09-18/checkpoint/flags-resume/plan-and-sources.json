@@ -1,0 +1,425 @@
+{
+  "status": "STOPPED_USER_REQUEST_CHECKPOINT_ONLY",
+  "date": "2026-09-23",
+  "questionsWritten": false,
+  "existingPackPreserved": true,
+  "assetCount": 40,
+  "allAssetReviewStatuses": "pending",
+  "requirement": {
+    "count": 40,
+    "perTier": 8,
+    "difficultyTarget": {
+      "200": 0.8,
+      "400": 0.6,
+      "600": 0.4,
+      "800": 0.25,
+      "1000": 0.15
+    },
+    "topics": 10,
+    "maxTopicPerTier": 2,
+    "maxQuestionWords": 22,
+    "maxAnswerWords": 6
+  },
+  "items": [
+    {
+      "id": "flags-200-901",
+      "tier": 200,
+      "answer": "الإمارات",
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "sourceUrl": "https://vig.gmo.gov.ae/en/guideline/the-uae-flag",
+      "evidenceStatus": "opened",
+      "notes": "Red hoist quarter; green white black horizontal bands; ratio 2:1.",
+      "asset": "media/flags/flags-200-901.webp"
+    },
+    {
+      "id": "flags-200-902",
+      "tier": 200,
+      "answer": "الكويت",
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "sourceUrl": "https://www.kuwaitmission.ch/KUFacts.aspx",
+      "evidenceStatus": "opened",
+      "notes": "Green white red equal stripes, black hoist trapezoid; ratio 2:1.",
+      "asset": "media/flags/flags-200-902.webp"
+    },
+    {
+      "id": "flags-200-903",
+      "tier": 200,
+      "answer": "اليابان",
+      "topic": "آسيا الشرقية",
+      "sourceUrl": "https://web-japan.org/factsheet/en/pdf/11NFlagAnthem.pdf",
+      "evidenceStatus": "opened",
+      "notes": "White field central red disk; ratio 3:2 and diameter 3/5 height.",
+      "asset": "media/flags/flags-200-903.webp"
+    },
+    {
+      "id": "flags-200-904",
+      "tier": 200,
+      "answer": "الصين",
+      "topic": "آسيا الشرقية",
+      "sourceUrl": "https://english.court.gov.cn/2016-04/14/c_761456.htm",
+      "evidenceStatus": "opened",
+      "notes": "National Flag Law appendix: red field, one large and four small yellow stars; small stars point toward large star.",
+      "asset": "media/flags/flags-200-904.webp"
+    },
+    {
+      "id": "flags-200-905",
+      "tier": 200,
+      "answer": "فرنسا",
+      "topic": "أوروبا",
+      "sourceUrl": "https://www.elysee.fr/en/french-presidency/the-french-flag",
+      "evidenceStatus": "opened",
+      "notes": "Blue white red vertical tricolor.",
+      "asset": "media/flags/flags-200-905.webp"
+    },
+    {
+      "id": "flags-200-906",
+      "tier": 200,
+      "answer": "ألمانيا",
+      "topic": "أوروبا",
+      "sourceUrl": "https://www.bundestag.de/en/parliament/symbols/flag",
+      "evidenceStatus": "opened-recheck-extract",
+      "notes": "Black red gold; last combined tool output truncated relevant excerpt. Reopen individually before verified.",
+      "asset": "media/flags/flags-200-906.webp"
+    },
+    {
+      "id": "flags-200-907",
+      "tier": 200,
+      "answer": "كندا",
+      "topic": "أمريكا الشمالية",
+      "sourceUrl": "https://www.canada.ca/en/canadian-heritage/services/flag-canada-description.html",
+      "evidenceStatus": "opened-recheck-extract",
+      "notes": "2:1 red white red flag with eleven-point maple leaf. Reopen relevant excerpt individually.",
+      "asset": "media/flags/flags-200-907.webp"
+    },
+    {
+      "id": "flags-200-908",
+      "tier": 200,
+      "answer": "بنغلاديش",
+      "topic": "جنوب وجنوب شرق آسيا",
+      "sourceUrl": "https://bdlaws.minlaw.gov.bd/act-print-367/section-print-24551.html",
+      "evidenceStatus": "opened",
+      "notes": "Constitution article 4 supports red circle on green; geometry rules PDF direct fetch failed.",
+      "asset": "media/flags/flags-200-908.webp"
+    },
+    {
+      "id": "flags-400-901",
+      "tier": 400,
+      "answer": "المغرب",
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "sourceUrl": "https://www.sgg.gov.ma/BO/bo_fr/2005/bo_5378_fr.pdf",
+      "evidenceStatus": "indexed-only-direct-failed",
+      "notes": "Dahir 1-05-99: opaque red 3:2, green open pentagram. Official portal https://maroc.ma/fr/le-maroc/emblemes opened, flag image not inspected.",
+      "asset": "media/flags/flags-400-901.webp"
+    },
+    {
+      "id": "flags-400-902",
+      "tier": 400,
+      "answer": "الجزائر",
+      "topic": "غرب آسيا وشمال أفريقيا",
+      "sourceUrl": "https://embwashington.mfa.gov.dz/discover-algeria-1/state-symbols-1",
+      "evidenceStatus": "opened",
+      "notes": "Equal green/white vertical halves, red crescent and five-point star. Page's 90x150 size conflicts with standard ratio; do not claim geometry verified from it.",
+      "asset": "media/flags/flags-400-902.webp"
+    },
+    {
+      "id": "flags-400-903",
+      "tier": 400,
+      "answer": "السويد",
+      "topic": "أوروبا",
+      "sourceUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1982269-om-sveriges-flagga_sfs-1982-269/",
+      "evidenceStatus": "opened",
+      "notes": "Flag Act sections 1–2 blue yellow Nordic cross; 10:16, subdivisions 4:2:4 and 5:2:9.",
+      "asset": "media/flags/flags-400-903.webp"
+    },
+    {
+      "id": "flags-400-904",
+      "tier": 400,
+      "answer": "النرويج",
+      "topic": "أوروبا",
+      "sourceUrl": "https://www.regjeringen.no/no/dep/ud/dep/diplomatiske-forbindelser-og-protokoll/norges-flagg-forskrift/id449230/",
+      "evidenceStatus": "opened",
+      "notes": "Red, white-bordered navy cross; 16:22; exact subdivisions in text.",
+      "asset": "media/flags/flags-400-904.webp"
+    },
+    {
+      "id": "flags-400-905",
+      "tier": 400,
+      "answer": "تايلاند",
+      "topic": "جنوب وجنوب شرق آسيا",
+      "sourceUrl": "https://thailand.go.th/page/flag",
+      "evidenceStatus": "opened",
+      "notes": "Red white blue white red horizontal bands, central blue double width; 6x9.",
+      "asset": "media/flags/flags-400-905.webp"
+    },
+    {
+      "id": "flags-400-906",
+      "tier": 400,
+      "answer": "باكستان",
+      "topic": "جنوب وجنوب شرق آسيا",
+      "sourceUrl": "https://pcgv.org/national-flag/",
+      "evidenceStatus": "opened",
+      "notes": "Dark green field, white hoist, white crescent and five-point star. Additional geometry https://mofa.gov.pk/ankara-national-symbols-of-pakistan indexed but direct timeout.",
+      "asset": "media/flags/flags-400-906.webp"
+    },
+    {
+      "id": "flags-400-907",
+      "tier": 400,
+      "answer": "كولومبيا",
+      "topic": "أمريكا الجنوبية",
+      "sourceUrl": "https://www.cancilleria.gov.co/normograma/compilacion/docs/circular_minrelaciones_0036_2021.htm",
+      "evidenceStatus": "opened",
+      "notes": "Yellow half, blue quarter, red quarter. Civil flag has no emblem.",
+      "asset": "media/flags/flags-400-907.webp"
+    },
+    {
+      "id": "flags-400-908",
+      "tier": 400,
+      "answer": "تشيلي",
+      "topic": "أمريكا الجنوبية",
+      "sourceUrl": "https://www.bcn.cl/leychile/navegar?idNorma=23382",
+      "evidenceStatus": "indexed-law-only-reopen",
+      "notes": "Law 2597 indexed full text: red lower half, upper blue one-third and white two-thirds, five-point white star. Short PDF redirect failed; this canonical URL still needs opening.",
+      "asset": "media/flags/flags-400-908.webp"
+    },
+    {
+      "id": "flags-600-901",
+      "tier": 600,
+      "answer": "رومانيا",
+      "topic": "أوروبا",
+      "sourceUrl": "https://legislatie.just.ro/Public/DetaliiDocument/268010",
+      "evidenceStatus": "opened-recheck-extract",
+      "notes": "Blue yellow red vertical tricolor. MUST include Europe in question to disambiguate Chad. Reopen article 1.",
+      "asset": "media/flags/flags-600-901.webp"
+    },
+    {
+      "id": "flags-600-902",
+      "tier": 600,
+      "answer": "إستونيا",
+      "topic": "أوروبا",
+      "sourceUrl": "https://president.ee/en/republic-of-estonia/symbols/",
+      "evidenceStatus": "opened",
+      "notes": "Blue black white equal horizontal bands; 11:7.",
+      "asset": "media/flags/flags-600-902.webp"
+    },
+    {
+      "id": "flags-600-903",
+      "tier": 600,
+      "answer": "نيجيريا",
+      "topic": "أفريقيا الغربية",
+      "sourceUrl": "https://ntda.gov.ng/media.assets.php",
+      "evidenceStatus": "opened",
+      "notes": "Green white green vertical bands.",
+      "asset": "media/flags/flags-600-903.webp"
+    },
+    {
+      "id": "flags-600-904",
+      "tier": 600,
+      "answer": "غانا",
+      "topic": "أفريقيا الغربية",
+      "sourceUrl": "https://gis.gov.gh/wp-content/uploads/2024/02/FACTS-ABOUT-GHANA.pdf",
+      "evidenceStatus": "opened",
+      "notes": "Red gold green horizontal bands, central black five-point star.",
+      "asset": "media/flags/flags-600-904.webp"
+    },
+    {
+      "id": "flags-600-905",
+      "tier": 600,
+      "answer": "بوتسوانا",
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "sourceUrl": "https://www.gov.bw/about-our-country-0",
+      "evidenceStatus": "opened-image-not-inspected",
+      "notes": "Official page flag image not clicked. Government news https://dailynews.gov.bw/news-detail/31255 indexed text supports blue, black center, white borders; open or inspect official image.",
+      "asset": "media/flags/flags-600-905.webp"
+    },
+    {
+      "id": "flags-600-906",
+      "tier": 600,
+      "answer": "تنزانيا",
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "sourceUrl": "https://embassyoftanzaniarome.info/en/about-tanzania/national-symbols",
+      "evidenceStatus": "opened",
+      "notes": "Green upper left, blue lower right, rising black diagonal with yellow borders.",
+      "asset": "media/flags/flags-600-906.webp"
+    },
+    {
+      "id": "flags-600-907",
+      "tier": 600,
+      "answer": "فيتنام",
+      "topic": "جنوب وجنوب شرق آسيا",
+      "sourceUrl": "https://vietnam.gov.vn/default.aspx?catname=national-flag-emblem-anthem-declaration-of-independence-68960",
+      "evidenceStatus": "opened-recheck-extract",
+      "notes": "Red field with gold five-point star; ratio 2:3. Search indexed exact, reopen relevant extract.",
+      "asset": "media/flags/flags-600-907.webp"
+    },
+    {
+      "id": "flags-600-908",
+      "tier": 600,
+      "answer": "لاوس",
+      "topic": "جنوب وجنوب شرق آسيا",
+      "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/5829",
+      "evidenceStatus": "opened-primary-law-mirror",
+      "notes": "Article 91 read: red blue red with white central circle. 2003 constitutional text, not a claim this law remains current.",
+      "asset": "media/flags/flags-600-908.webp"
+    },
+    {
+      "id": "flags-800-901",
+      "tier": 800,
+      "answer": "توغو",
+      "topic": "أفريقيا الغربية",
+      "sourceUrl": "https://presidenceduconseil.gouv.tg/symbole-des-de-la-republique-togolaise/",
+      "evidenceStatus": "opened",
+      "notes": "Five green/yellow alternating horizontal bands, red canton, white five-point star. 1960 law canton geometry indexed at https://legitogo.gouv.tg/be/wp-content/uploads/2017/03/Pages-from-jo_1960-121-3.pdf but not opened.",
+      "asset": "media/flags/flags-800-901.webp"
+    },
+    {
+      "id": "flags-800-902",
+      "tier": 800,
+      "answer": "بنين",
+      "topic": "أفريقيا الغربية",
+      "sourceUrl": "https://sgg.gouv.bj/doc/loi-90-020/download",
+      "evidenceStatus": "opened",
+      "notes": "Constitution PDF: full-height green 2/5 at hoist; yellow above red on remainder.",
+      "asset": "media/flags/flags-800-902.webp"
+    },
+    {
+      "id": "flags-800-903",
+      "tier": 800,
+      "answer": "الغابون",
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "sourceUrl": "https://affaires-etrangeres.gouv.ga/le-gabon-en-bref/fondements-et-symboles",
+      "evidenceStatus": "indexed-only-timeout",
+      "notes": "Green yellow blue equal horizontal bands. Both ministry and https://journal-officiel.ga/constitution timed out. Embassy fallback indexed, not opened: https://www.gabonembassynewdelhi.com/about-us/ .",
+      "asset": "media/flags/flags-800-903.webp"
+    },
+    {
+      "id": "flags-800-904",
+      "tier": 800,
+      "answer": "جمهورية الكونغو",
+      "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+      "sourceUrl": "https://www.ambacongo-us.org/index.php/en/about-congo/national-symbols",
+      "evidenceStatus": "opened-recheck-extract",
+      "notes": "Green/yellow/red flag page opened but combined output lacked relevant excerpt. Primary Constitution on UN mirror https://faolex.fao.org/docs/pdf/con183097E.pdf indexed article 4, not opened. Avoid DRC ambiguity.",
+      "asset": "media/flags/flags-800-904.webp"
+    },
+    {
+      "id": "flags-800-905",
+      "tier": 800,
+      "answer": "الباهاما",
+      "topic": "الكاريبي",
+      "sourceUrl": "https://www.bahamasembdc.org/about/national-symbols/",
+      "evidenceStatus": "opened",
+      "notes": "Black hoist triangle; aquamarine gold aquamarine bands.",
+      "asset": "media/flags/flags-800-905.webp"
+    },
+    {
+      "id": "flags-800-906",
+      "tier": 800,
+      "answer": "ترينيداد وتوباغو",
+      "topic": "الكاريبي",
+      "sourceUrl": "https://foreign.gov.tt/about/trinidad-tobago/national-symbols/national-flag/",
+      "evidenceStatus": "opened",
+      "notes": "Red, white and black plus official illustration. Precise geometry PDF found but not opened: https://natt.gov.tt/sites/default/files/pdfs/National%20Identity%20Guidelines_FINALReduced%20Size.pdf",
+      "asset": "media/flags/flags-800-906.webp"
+    },
+    {
+      "id": "flags-800-907",
+      "tier": 800,
+      "answer": "جزر سليمان",
+      "topic": "أوقيانوسيا",
+      "sourceUrl": null,
+      "evidenceStatus": "SOURCE-GAP",
+      "notes": "CIA archived indexed description matches blue upper triangle, green lower triangle, yellow rising diagonal, five white stars in X; direct page redirects to retired-Factbook farewell. Do not cite as successfully opened flag page. Need precise country-primary source or inspect flag in official government materials. Leads https://solomons.gov.sb/18670-2/ and https://solomons.gov.sb/rsipf-participates-in-46th-independence-anniversary-and-swearing-in-of-new-gg/ .",
+      "asset": "media/flags/flags-800-907.webp"
+    },
+    {
+      "id": "flags-800-908",
+      "tier": 800,
+      "answer": "ساموا",
+      "topic": "أوقيانوسيا",
+      "sourceUrl": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Flag-of-Samoa.pdf",
+      "evidenceStatus": "opened",
+      "notes": "Official flag PDF fully read: red field, upper hoist blue quarter, five white stars (four large one small), ratio 1:2.",
+      "asset": "media/flags/flags-800-908.webp"
+    },
+    {
+      "id": "flags-1000-901",
+      "tier": 1000,
+      "answer": "بالاو",
+      "topic": "أوقيانوسيا",
+      "sourceUrl": "https://www.palaugov.pw/about-palau/flag/",
+      "evidenceStatus": "opened",
+      "notes": "Pale blue field and yellow circle slightly left of center.",
+      "asset": "media/flags/flags-1000-901.webp"
+    },
+    {
+      "id": "flags-1000-902",
+      "tier": 1000,
+      "answer": "ناورو",
+      "topic": "أوقيانوسيا",
+      "sourceUrl": "https://www.nauru.gov.nr/government-information-office/fact-sheet.aspx",
+      "evidenceStatus": "opened",
+      "notes": "Blue field, gold horizontal line, white twelve-point star below toward hoist.",
+      "asset": "media/flags/flags-1000-902.webp"
+    },
+    {
+      "id": "flags-1000-903",
+      "tier": 1000,
+      "answer": "سانت لوسيا",
+      "topic": "الكاريبي",
+      "sourceUrl": "https://www.govt.lc/stluciaflag",
+      "evidenceStatus": "opened-then-timeout-recheck",
+      "notes": "First open succeeded but combined output truncated; later timeout. Indexed text describes blue field, white/black triangle with gold triangle below. Geometry gazette discovered, not opened: https://npc.govt.lc/files/documents/gazettes/2010/3/Gazette_March_1_2010.pdf .",
+      "asset": "media/flags/flags-1000-903.webp"
+    },
+    {
+      "id": "flags-1000-904",
+      "tier": 1000,
+      "answer": "سانت فنسنت والغرينادين",
+      "topic": "الكاريبي",
+      "sourceUrl": "https://foreign.gov.vc/foreign/index.php/the-national-flag",
+      "evidenceStatus": "opened",
+      "notes": "Blue gold green vertical bands and three green diamonds in V; official image link present.",
+      "asset": "media/flags/flags-1000-904.webp"
+    },
+    {
+      "id": "flags-1000-905",
+      "tier": 1000,
+      "answer": "سيراليون",
+      "topic": "أفريقيا الغربية",
+      "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/20542",
+      "evidenceStatus": "opened-primary-law-mirror",
+      "notes": "Constitution article 3 read: green white blue horizontal, 9:6. Parliament original timed out https://parliament.gov.sl/constitution-of-sierra-leone.html .",
+      "asset": "media/flags/flags-1000-905.webp"
+    },
+    {
+      "id": "flags-1000-906",
+      "tier": 1000,
+      "answer": "غامبيا",
+      "topic": "أفريقيا الغربية",
+      "sourceUrl": "https://www.wipo.int/wipolex/en/text/221243",
+      "evidenceStatus": "opened-primary-law-mirror",
+      "notes": "Constitution Schedule 1 read: red white blue white green, ratio 27:18. OCR of precise stripe units ambiguous; recheck PDF before claiming numerical proportions.",
+      "asset": "media/flags/flags-1000-906.webp"
+    },
+    {
+      "id": "flags-1000-907",
+      "tier": 1000,
+      "answer": "سورينام",
+      "topic": "أمريكا الجنوبية",
+      "sourceUrl": "https://gov.sr/suriname/",
+      "evidenceStatus": "opened",
+      "notes": "Green white red white green 2:1:4:1:2, central yellow five-point star; ratio 2:3.",
+      "asset": "media/flags/flags-1000-907.webp"
+    },
+    {
+      "id": "flags-1000-908",
+      "tier": 1000,
+      "answer": "غيانا",
+      "topic": "أمريكا الجنوبية",
+      "sourceUrl": "https://factpage.glsc.gov.gy/golden-arrowhead/",
+      "evidenceStatus": "opened",
+      "notes": "Green field, gold arrow with white edge, shorter red triangle with black edge; official Lands and Surveys page.",
+      "asset": "media/flags/flags-1000-908.webp"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "spotdiff-1000-904-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-1000-904-a.webp",
+  "asset": "media/spotdiff/spotdiff-1000-904-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. One large ivory die at center-right on matte blue tabletop, viewed three-quarter from above with top face clearly visible. Top face has exactly TWO black round pips in opposite corners, side faces blank. Die occupies 32 percent image width, top face center x=65 y=45. Two flat red game tokens at far left, no other objects. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 71906,
+  "sha256": "6a5027726d9e15ded72c194220dfb6dd358b23bac1b715bc694a2a8de78ea652",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "A central pip is added to the ivory die top face, changing two diagonal pips to three. Existing pips, blank side faces and two red tokens retain their positions.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "rawGeneratedImageSha256": "a0dc98a8ac703d2385685239e440e6fb24a3db9a591d317a12cda6acd720193c"
+}

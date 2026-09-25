@@ -1,0 +1,39 @@
+{
+  "id": "tilepuzzle-1000-906",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "file": "media/tilepuzzle/tilepuzzle-1000-906.webp",
+  "asset": "media/tilepuzzle/tilepuzzle-1000-906.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a natural cliff of tall hexagonal basalt columns.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 243938,
+  "sha256": "d131c44501c1a04feb38a5843f6d54467d78d09c9b94928fed4f541653efe6f3",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "scope": "Source image identity/anatomy/framing and actual12-tile jumble/reveal/hide gameplay for this specific question.",
+    "note": "Coastal rock exposure has repeated tall polygonal columnar joints and broken column tops; intended basalt-column formation, not a particular site or exact hexagon count.",
+    "sourceReviewRecord": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+    "runtimeReview": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "checksPassed": 15,
+      "checksTotal": 15,
+      "viewports": [
+        390,
+        320
+      ],
+      "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+    },
+    "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27"
+  },
+  "originalGeneration": {
+    "fileBasename": "exec-7fbf471b-fe02-4b2d-bcaf-a0f9d9e04a87.png",
+    "sha256": "07496d62a8388ddbd5418500b6d4ccbf3a14f7d3f0463ff13f68bc343ba4c2df"
+  },
+  "generationMode": "generate"
+}

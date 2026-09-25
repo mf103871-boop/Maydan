@@ -1,0 +1,33 @@
+{
+  "id": "spotdiff-800-903-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-800-903-b.webp",
+  "asset": "media/spotdiff/spotdiff-800-903-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the isolated upper RIGHT green LEAF at x=67 y=14 to autumn ORANGE, keeping its shape, veins, stem and all other five green leaves exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 69072,
+  "sha256": "5553918c6a0a92a1f1bdfc9e7f9693ecf6affe8dfde4e2aad9f9b2e4ec71e537",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "The isolated upper-right leaf changes from green to orange. Five other green leaves, stems, ivory pot and gray pebble remain present in matching positions. Minor soil/pebble texture drift is not an additional semantic difference.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "generationInput": {
+    "type": "raw-generated-image-a",
+    "rawImageSha256": "6b36b4cc32803eddf9e0ba93afeb3ea0f8b6099fbf5065471f9f43e43d588a04",
+    "installedImageA": "media/spotdiff/spotdiff-800-903-a.webp",
+    "installedImageASha256": "e228bea4a565af8b583c060abe0fe330569059664dfc26651c4ce5238d4d27ca"
+  },
+  "rawGeneratedImageSha256": "9a46a7d0a55ea2a0cf822e4e61bdd3a0fa14d2597f515ccbeb7fb4a38de895c3"
+}

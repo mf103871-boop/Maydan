@@ -1,0 +1,40 @@
+{
+  "id": "silhouette-200-907",
+  "kind": "question",
+  "pack": "silhouette",
+  "a": "ساكسفون",
+  "p": 200,
+  "topic": "موسيقى",
+  "prompt": "Use case: precise-object-edit. The input is the edit target. Preserve the same recognizable realistic golden saxophone, its single continuous curved tube, mouthpiece, keys and upward bell, but correct the framing only. Zoom out significantly to show the entire instrument including top of neck and bottom of curved bow with at least 15% fully transparent padding above and below, 20% at left and right. The entire saxophone must be wholly within central 65% of the landscape 4:3 canvas. No clipped part and nothing touching frame edges. Realistic full natural-color instrument, not a black silhouette. Actual transparent PNG alpha=0 surroundings and through all open gaps, no white/black/checkerboard painted backdrop, no cast shadow, no text or watermark. It will be displayed as a black silhouette via game CSS and revealed in color, so preserve a distinct complete outline.",
+  "question": {
+    "p": 200,
+    "q": "ما آلة النفخ ذات الأنبوب المنحني الظاهرة في الظل؟",
+    "a": "ساكسفون",
+    "qid": "silhouette-200-907",
+    "type": "image",
+    "effect": "silhouette",
+    "alt": [
+      "ساكسوفون",
+      "سكسفون",
+      "Saxophone"
+    ],
+    "topic": "موسيقى",
+    "difficultyTarget": 0.8,
+    "verified": true,
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "media": {
+      "src": "silhouette-200-907.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation (built-in)",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json"
+      }
+    }
+  },
+  "requireAlpha": true
+}

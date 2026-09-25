@@ -1,0 +1,39 @@
+{
+  "id": "flags-400-908",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-400-908.webp",
+  "asset": "media/flags/flags-400-908.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Chile. Width:height3:2. Bottom HALF all red #D52B1E. Top half: square blue #0039A6 canton at LEFT of width one-third total image width and height half totalimageheight; remaining top right WHITE. One white upright five-point star centered in blue square, diameter half canton height. No extra stars.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 9124,
+  "sha256": "a49253c6ce96d2d1801eead3528d15e839ce5bc781e17f677a06e157feacb09b",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "White star on blue upper hoist square; white upper fly and red lower half.",
+    "limitations": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "not-individually-exercised",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 853,
+      "directGameplaySample": false,
+      "gameplayReview": "not-individually-exercised",
+      "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
+  }
+}

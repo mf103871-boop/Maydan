@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-400-905",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-400-905.webp",
+  "asset": "media/placefinder/placefinder-400-905.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Christ the Redeemer statue atop Corcovado in Rio de Janeiro: full pale grey art-deco robed male stone figure, arms extending straight sideways horizontally, small pedestal, front three-quarter view slightly below chest height, forested mountain shoulder and distant coastal city and bay behind. Both hands, head and pedestal fully in frame, serene stone sculptural facial features. Recognizable statue, not a living human or crucifix.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 248474,
+  "sha256": "b2a56723c06c504a7877bb4219dc921ad69a1d59ff143fefa0d1ccb7df4726f9",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Pale art-deco statue with horizontal outstretched arms on Corcovado-like summit above bay; full hands and pedestal.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

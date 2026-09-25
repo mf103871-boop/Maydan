@@ -4,2834 +4,570 @@
   "name": "أفلام عالمية",
   "qs": [
     {
-      "a": "وودي",
+      "qid": "movies-200-901",
       "p": 200,
-      "q": "في «حكاية لعبة»، ما اسم لعبة راعي البقر التي تقود بقية الألعاب؟",
-      "qid": "movies-200-049",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "باز",
+      "topic": "هاري بوتر",
+      "q": "في «هاري بوتر»، في أفلام هاري بوتر، ما اسم مدرسة السحر التي ينضم إليها البطل؟",
+      "a": "هوغوورتس",
       "alt": [
-        "باز يطير",
-        "Buzz Lightyear"
+        "هوجوورتس",
+        "هوجورتس",
+        "Hogwarts"
       ],
-      "p": 200,
-      "q": "في «حكاية لعبة»، ما اسم لعبة رائد الفضاء التي تنافس راعي البقر؟",
-      "qid": "movies-200-050",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.8
     },
     {
-      "a": "دوري",
-      "alt": [
-        "Dory"
-      ],
+      "qid": "movies-200-902",
       "p": 200,
-      "q": "في «البحث عن نيمو»، ما اسم السمكة الزرقاء كثيرة النسيان؟",
-      "qid": "movies-200-051",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "بو",
-      "alt": [
-        "Boo"
-      ],
-      "p": 200,
-      "q": "في «شركة المرعبين المحدودة»، ما اسم الطفلة التي تدخل عالم الوحوش؟",
-      "qid": "movies-200-052",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "السرعة الخارقة",
-      "p": 200,
-      "q": "في «الخارقون»، ما القدرة التي تميز داش عند الجري؟",
-      "qid": "movies-200-053",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "طاهٍ",
-      "alt": [
-        "شيف"
-      ],
-      "p": 200,
-      "q": "في «الفأر الطباخ»، ما المهنة التي يحلم بطل القصة بممارستها؟",
-      "qid": "movies-200-054",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "باريس",
-      "p": 200,
-      "q": "في «الفأر الطباخ»، في أي عاصمة تدور مغامرة المطعم؟",
-      "qid": "movies-200-055",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "ماتر",
-      "alt": [
-        "Mater"
-      ],
-      "p": 200,
-      "q": "في «سيارات»، ما اسم شاحنة السحب الصدئة التي تصادق المتسابق الأحمر؟",
-      "qid": "movies-200-056",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "جمع النفايات",
-      "alt": [
-        "تنظيف الأرض"
-      ],
-      "p": 200,
-      "q": "في «وول إي»، ما المهمة الأساسية للروبوت المتروك على الأرض؟",
-      "qid": "movies-200-057",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "داخل عقل رايلي",
-      "p": 200,
-      "q": "في «قلبًا وقالبًا»، أين تعيش الشخصيات التي تجسد المشاعر؟",
-      "qid": "movies-200-058",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "الغيتار",
-      "alt": [
-        "الجيتار",
-        "القيثارة"
-      ],
-      "p": 200,
-      "q": "في «كوكو»، ما الآلة ذات الأوتار التي يحب الفتى عزفها؟",
-      "qid": "movies-200-059",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "دب",
-      "p": 200,
-      "q": "في «شجاعة»، إلى أي حيوان تتحول والدة الأميرة؟",
-      "qid": "movies-200-060",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "قرش أبيض كبير",
-      "alt": [
-        "القرش الأبيض"
-      ],
-      "p": 200,
-      "q": "في «الفك المفترس»، ما الحيوان البحري الذي يهاجم المصطافين؟",
-      "qid": "movies-200-061",
-      "source": "https://www.universalpicturesathome.com/movies/jaws",
-      "topic": "البقاء والمطاردات",
-      "verified": true
-    },
-    {
+      "topic": "الحديقة الجوراسية",
+      "q": "ما المخلوقات المنقرضة التي يعيد العلماء إحياءها في «الحديقة الجوراسية»؟",
       "a": "الديناصورات",
+      "alt": [
+        "ديناصورات"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-200-903",
       "p": 200,
-      "q": "في «الحديقة الجوراسية»، ما المخلوقات المنقرضة التي تعود إلى الحياة داخل الحديقة؟",
-      "qid": "movies-200-062",
-      "source": "https://www.universalpicturesathome.com/movies/jurassic-park",
-      "topic": "البقاء والمطاردات",
-      "verified": true
-    },
-    {
-      "a": "فيونا",
-      "alt": [
-        "Fiona"
-      ],
-      "p": 200,
-      "q": "في «شريك»، ما اسم الأميرة التي يذهب الغول لإنقاذها؟",
-      "qid": "movies-200-063",
-      "source": "https://www.dreamworks.com/movies/shrek",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "حمار",
-      "p": 200,
-      "q": "في «شريك»، ما الحيوان الثرثار الذي يرافق الغول؟",
-      "qid": "movies-200-064",
-      "source": "https://www.dreamworks.com/movies/shrek",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "إلسا",
-      "alt": [
-        "Elsa"
-      ],
-      "p": 200,
-      "q": "في «ملكة الثلج»، ما اسم صاحبة القوى الجليدية؟",
-      "qid": "movies-200-065",
-      "source": "https://movies.disney.com/frozen",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "آنا",
-      "alt": [
-        "Anna"
-      ],
-      "p": 200,
-      "q": "في «ملكة الثلج»، ما اسم الأخت التي تبحث عن الملكة الهاربة؟",
-      "qid": "movies-200-066",
-      "source": "https://movies.disney.com/frozen",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "أولاف",
-      "alt": [
-        "Olaf"
-      ],
-      "p": 200,
-      "q": "في «ملكة الثلج»، ما اسم رجل الثلج المرح؟",
-      "qid": "movies-200-067",
-      "source": "https://movies.disney.com/frozen",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "ياسمين",
-      "alt": [
-        "Jasmine"
-      ],
-      "p": 200,
-      "q": "في «علاء الدين»، ما اسم الأميرة ابنة السلطان؟",
-      "qid": "movies-200-068",
-      "source": "https://movies.disney.com/aladdin",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "الجني",
-      "alt": [
-        "Genie"
-      ],
-      "p": 200,
-      "q": "في «علاء الدين»، من الشخصية الزرقاء التي تحقق الأمنيات؟",
-      "qid": "movies-200-069",
-      "source": "https://movies.disney.com/aladdin",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "العرابة الجنية",
-      "alt": [
-        "Fairy Godmother"
-      ],
-      "p": 200,
-      "q": "في «سندريلا»، من تمنح الفتاة السحر اللازم لحضور الحفل الملكي؟",
-      "qid": "movies-200-070",
-      "source": "https://movies.disney.com/cinderella-1950",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "آرييل",
-      "alt": [
-        "Ariel",
-        "أرييل"
-      ],
-      "p": 200,
-      "q": "في «حورية البحر الصغيرة»، ما اسم الأميرة التي تحلم بعالم البشر؟",
-      "qid": "movies-200-071",
-      "source": "https://movies.disney.com/the-little-mermaid",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "شعرها",
-      "alt": [
-        "الشعر"
-      ],
-      "p": 200,
-      "q": "في «رابونزل»، ما الجزء من جسم البطلة الذي يحمل قوتها السحرية؟",
-      "qid": "movies-200-072",
-      "source": "https://movies.disney.com/tangled",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "سيمبا",
-      "alt": [
-        "Simba"
-      ],
-      "p": 200,
-      "q": "في «الأسد الملك»، ما اسم الشبل الذي يستعيد عرش أبيه؟",
-      "qid": "movies-200-073",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "موفاسا",
-      "alt": [
-        "Mufasa"
-      ],
-      "p": 200,
-      "q": "في «الأسد الملك»، ما اسم الأب الذي يرشد الشبل الصغير؟",
-      "qid": "movies-200-074",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "سكار",
-      "alt": [
-        "Scar"
-      ],
-      "p": 200,
-      "q": "في «الأسد الملك»، ما اسم العم الذي يتآمر للاستيلاء على العرش؟",
-      "qid": "movies-200-075",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "بومبا",
-      "alt": [
-        "Pumbaa"
-      ],
-      "p": 200,
-      "q": "في «الأسد الملك»، ما اسم الخنزير البري الذي يصادق الشبل؟",
-      "qid": "movies-200-076",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "تفاحة",
-      "p": 200,
-      "q": "في «سنو وايت»، ما الفاكهة المسحورة التي تقدمها الملكة للأميرة؟",
-      "qid": "movies-200-077",
-      "source": "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "المرآة",
-      "p": 200,
-      "q": "في «سنو وايت»، ما الشيء السحري الذي يخبر الملكة بمن هي الأجمل؟",
-      "qid": "movies-200-078",
-      "source": "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "بيل",
-      "alt": [
-        "Belle"
-      ],
-      "p": 200,
-      "q": "في «الجميلة والوحش»، ما اسم الفتاة التي تعيش في القلعة؟",
-      "qid": "movies-200-079",
-      "source": "https://movies.disney.com/beauty-and-the-beast",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "دارث فيدر",
-      "alt": [
-        "Darth Vader"
-      ],
-      "p": 200,
-      "q": "في «الإمبراطورية ترد الضربة»، من يكشف للوك أنه والده؟",
-      "qid": "movies-200-080",
-      "source": "https://www.starwars.com/databank/darth-vader",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "يودا",
-      "alt": [
-        "Yoda"
-      ],
-      "p": 200,
-      "q": "في «الإمبراطورية ترد الضربة»، من معلم الجيداي الصغير الحجم الذي يدرب لوك؟",
-      "qid": "movies-200-081",
-      "source": "https://www.starwars.com/databank/yoda",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "البطاريق",
-      "p": 200,
-      "q": "في «مدغشقر»، ما الطيور الأربعة الماكرة المرافقة لحيوانات الحديقة؟",
-      "qid": "movies-200-082",
-      "source": "https://www.dreamworks.com/movies/madagascar",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "النودلز",
-      "alt": [
-        "الشعيرية"
-      ],
-      "p": 200,
-      "q": "في «كونغ فو باندا»، ما الطعام الطويل الخيوط الذي يعشقه البطل؟",
-      "qid": "movies-200-083",
-      "source": "https://www.dreamworks.com/movies/kung-fu-panda",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "عديم الأسنان",
-      "alt": [
-        "Toothless",
-        "توثليس"
-      ],
-      "p": 200,
-      "q": "في «كيف تروض تنينك»، ما اسم التنين الذي يصادقه الفتى؟",
-      "qid": "movies-200-084",
-      "source": "https://www.dreamworks.com/movies/how-to-train-your-dragon",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "بدلة",
-      "p": 200,
-      "q": "في «الطفل الزعيم»، ما الملابس الرسمية التي يرتديها الرضيع؟",
-      "qid": "movies-200-085",
-      "source": "https://www.dreamworks.com/movies/the-boss-baby",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "الجامعة",
-      "p": 200,
-      "q": "في «حكاية لعبة 3»، إلى أين يستعد صاحب الألعاب للرحيل من أجل الدراسة؟",
-      "qid": "movies-200-087",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "ملعقة شوكية",
-      "alt": [
-        "Spork"
-      ],
-      "p": 200,
-      "q": "في «حكاية لعبة 4»، من أي أداة طعام صنعت الطفلة لعبتها الجديدة؟",
-      "qid": "movies-200-088",
-      "source": "https://www.pixar.com/toy-story-4",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "النار",
-      "p": 200,
-      "q": "في «إليمنتال»، من أي عنصر تتكون البطلة وأسرتها؟",
-      "qid": "movies-200-089",
-      "source": "https://www.pixar.com/elemental",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "وحوش بحرية",
-      "p": 200,
-      "q": "في «لوكا»، ما حقيقة الولدين اللذين يتظاهران بأنهما بشر؟",
-      "qid": "movies-200-090",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "أذناه",
-      "alt": [
-        "الأذنان"
-      ],
-      "p": 200,
-      "q": "في «دامبو»، ما العضوان الكبيران اللذان يساعدان البطل على الطيران؟",
-      "qid": "movies-200-091",
-      "source": "https://movies.disney.com/dumbo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "العسل",
-      "p": 200,
-      "q": "في «ويني الدبدوب»، ما الطعام الذي ينطلق البطل بحثًا عنه؟",
-      "qid": "movies-200-092",
-      "source": "https://movies.disney.com/winnie-the-pooh",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "ذيله",
-      "alt": [
-        "الذيل"
-      ],
-      "p": 200,
-      "q": "في «ويني الدبدوب»، ما الجزء الذي يفقده إيور الحزين من جسمه؟",
-      "qid": "movies-200-093",
-      "source": "https://movies.disney.com/winnie-the-pooh",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "أرنبة",
-      "alt": [
-        "أرنب"
-      ],
-      "p": 200,
-      "q": "في «زوتوبيا»، ما نوع الحيوان الذي تنتمي إليه الشرطية جودي؟",
-      "qid": "movies-200-094",
-      "source": "https://movies.disney.com/zootopia",
-      "topic": "البقاء والمطاردات",
-      "verified": true
-    },
-    {
-      "a": "ثعلب",
-      "p": 200,
-      "q": "في «زوتوبيا»، ما نوع الحيوان الذي ينتمي إليه المحتال نيك؟",
-      "qid": "movies-200-095",
-      "source": "https://movies.disney.com/zootopia",
-      "topic": "البقاء والمطاردات",
-      "verified": true
-    },
-    {
-      "a": "ماوي",
-      "alt": [
-        "Maui"
-      ],
-      "p": 200,
-      "q": "في «موانا»، ما اسم الرفيق الذي يساعد البطلة في رحلتها البحرية؟",
-      "qid": "movies-200-096",
-      "source": "https://movies.disney.com/moana",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "أزرق",
-      "alt": [
-        "الأزرق"
-      ],
-      "p": 200,
-      "q": "في فيلم «أفاتار»، ما لون بشرة سكان القمر الأصليين؟",
-      "qid": "movies-200-097",
-      "source": "https://www.20thcenturystudios.com/movies/avatar",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "آندي",
-      "alt": [
-        "Andy"
-      ],
-      "p": 400,
-      "q": "في «حكاية لعبة»، ما اسم الطفل صاحب الألعاب؟",
-      "qid": "movies-400-049",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "ريكس",
-      "alt": [
-        "Rex"
-      ],
-      "p": 400,
-      "q": "في «حكاية لعبة»، ما اسم لعبة الديناصور؟",
-      "qid": "movies-400-050",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "سيد",
-      "alt": [
-        "Sid"
-      ],
-      "p": 400,
-      "q": "في «حكاية لعبة»، ما اسم جار الطفل الذي يعذب الألعاب؟",
-      "qid": "movies-400-051",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "مارلن",
-      "alt": [
-        "مارلين",
-        "Marlin"
-      ],
-      "p": 400,
-      "q": "في «البحث عن نيمو»، ما اسم الأب الذي يعبر المحيط بحثًا عن ابنه؟",
-      "qid": "movies-400-052",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "سيدني",
-      "alt": [
-        "Sydney"
-      ],
-      "p": 400,
-      "q": "في «البحث عن نيمو»، في أي مدينة تقع عيادة الطبيب التي تحتجز السمكة الصغيرة؟",
-      "qid": "movies-400-053",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "الصرخات",
-      "alt": [
-        "صراخ الأطفال"
-      ],
-      "p": 400,
-      "q": "في «شركة المرعبين المحدودة»، ما الذي تجمعه الشركة من الأطفال لإنتاج الطاقة؟",
-      "qid": "movies-400-054",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "راندال",
-      "alt": [
-        "Randall"
-      ],
-      "p": 400,
-      "q": "في «شركة المرعبين المحدودة»، ما اسم الخصم القادر على التمويه كالحرباء؟",
-      "qid": "movies-400-055",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "فايوليت",
-      "alt": [
-        "Violet"
-      ],
-      "p": 400,
-      "q": "في «الخارقون»، ما اسم البنت التي تستطيع الاختفاء وصنع حقول القوة؟",
-      "qid": "movies-400-056",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "سيندروم",
-      "alt": [
-        "Syndrome"
-      ],
-      "p": 400,
-      "q": "في «الخارقون»، ما اسم الشرير المخترع الذي يحسد أصحاب القوى؟",
-      "qid": "movies-400-057",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "ريمي",
-      "alt": [
-        "Remy"
-      ],
-      "p": 400,
-      "q": "في «الفأر الطباخ»، ما اسم الحيوان الموهوب في الطهي؟",
-      "qid": "movies-400-058",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "لينغويني",
-      "alt": [
-        "Linguini",
-        "لينجويني"
-      ],
-      "p": 400,
-      "q": "في «الفأر الطباخ»، ما اسم الشاب الذي يتعاون سرًا مع الحيوان الطاهي؟",
-      "qid": "movies-400-059",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "رادياتور سبرينغز",
-      "alt": [
-        "Radiator Springs"
-      ],
-      "p": 400,
-      "q": "في «سيارات»، ما اسم البلدة التي يضيع فيها المتسابق الأحمر؟",
-      "qid": "movies-400-060",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "إيف",
-      "alt": [
-        "EVE",
-        "إيفا"
-      ],
-      "p": 400,
-      "q": "في «وول إي»، ما اسم الروبوت الأبيض الذي يصل لاستكشاف الأرض؟",
-      "qid": "movies-400-061",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "صرصور",
-      "p": 400,
-      "q": "في «وول إي»، ما الحشرة التي تعيش مع الروبوت داخل شاحنته؟",
-      "qid": "movies-400-062",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "سان فرانسيسكو",
-      "alt": [
-        "San Francisco"
-      ],
-      "p": 400,
-      "q": "في «قلبًا وقالبًا»، إلى أي مدينة تنتقل أسرة الطفلة؟",
-      "qid": "movies-400-063",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "الغضب",
-      "alt": [
-        "Anger"
-      ],
-      "p": 400,
-      "q": "في «قلبًا وقالبًا»، ما الشعور الذي ينفجر عندما تسير الأمور بعكس خطته؟",
-      "qid": "movies-400-064",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "ميغيل",
-      "alt": [
-        "Miguel",
-        "ميجل"
-      ],
-      "p": 400,
-      "q": "في «كوكو»، ما اسم الفتى الذي يحلم بأن يصبح موسيقيًا؟",
-      "qid": "movies-400-065",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "صناعة الأحذية",
-      "p": 400,
-      "q": "في «كوكو»، ما المهنة التي تعمل فيها أسرة الفتى؟",
-      "qid": "movies-400-066",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "ميريدا",
-      "alt": [
-        "Merida"
-      ],
-      "p": 400,
-      "q": "في «شجاعة»، ما اسم الأميرة الحمراء الشعر الماهرة في الرماية؟",
-      "qid": "movies-400-067",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "إسكتلندا",
-      "alt": [
-        "اسكتلندا",
-        "Scotland"
-      ],
-      "p": 400,
-      "q": "في «شجاعة»، في أي بلد تقع المرتفعات التي تعيش فيها الأميرة؟",
-      "qid": "movies-400-068",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "مارتي ماكفلاي",
-      "alt": [
-        "Marty McFly"
-      ],
-      "p": 400,
-      "q": "في «العودة إلى المستقبل»، ما اسم المراهق الذي يسافر إلى الماضي؟",
-      "qid": "movies-400-069",
-      "source": "https://www.universalpicturesathome.com/movies/back-to-the-future",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "إليوت",
-      "alt": [
-        "Elliott"
-      ],
-      "p": 400,
-      "q": "في «إي تي»، ما اسم الطفل الذي يصادق الكائن الفضائي؟",
-      "qid": "movies-400-070",
-      "source": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "مستنقعه",
-      "alt": [
-        "المستنقع"
-      ],
-      "p": 400,
-      "q": "في «شريك»، ما المكان الذي يريد الغول استعادة ملكيته؟",
-      "qid": "movies-400-071",
-      "source": "https://www.dreamworks.com/movies/shrek",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "سفين",
-      "alt": [
-        "Sven"
-      ],
-      "p": 400,
-      "q": "في «ملكة الثلج»، ما اسم حيوان الرنة المرافق لجامع الجليد؟",
-      "qid": "movies-400-072",
-      "source": "https://movies.disney.com/frozen",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "كريستوف",
-      "alt": [
-        "Kristoff"
-      ],
-      "p": 400,
-      "q": "في «ملكة الثلج»، ما اسم الرجل الجبلي الذي يساعد الأخت في رحلتها؟",
-      "qid": "movies-400-073",
-      "source": "https://movies.disney.com/frozen",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "جعفر",
-      "alt": [
-        "Jafar"
-      ],
-      "p": 400,
-      "q": "في «علاء الدين»، ما اسم وزير السلطان المتآمر؟",
-      "qid": "movies-400-074",
-      "source": "https://movies.disney.com/aladdin",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "أورسولا",
-      "alt": [
-        "Ursula"
-      ],
-      "p": 400,
-      "q": "في «حورية البحر الصغيرة»، ما اسم ساحرة البحر التي تعقد صفقة مع الأميرة؟",
-      "qid": "movies-400-075",
-      "source": "https://movies.disney.com/the-little-mermaid",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "إريك",
-      "alt": [
-        "Eric"
-      ],
-      "p": 400,
-      "q": "في «حورية البحر الصغيرة»، ما اسم الأمير البشري الذي تحبه البطلة؟",
-      "qid": "movies-400-076",
-      "source": "https://movies.disney.com/the-little-mermaid",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "غوثل",
-      "alt": [
-        "Mother Gothel",
-        "جوثل"
-      ],
-      "p": 400,
-      "q": "في «رابونزل»، من حبست البطلة داخل البرج منذ طفولتها؟",
-      "qid": "movies-400-077",
-      "source": "https://movies.disney.com/tangled",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "زازو",
-      "alt": [
-        "Zazu"
-      ],
-      "p": 400,
-      "q": "في «الأسد الملك»، ما اسم الطائر مستشار الملك؟",
-      "qid": "movies-400-078",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "نالا",
-      "alt": [
-        "Nala"
-      ],
-      "p": 400,
-      "q": "في «الأسد الملك»، ما اسم صديقة الشبل التي تصبح رفيقته؟",
-      "qid": "movies-400-079",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "ويندي",
-      "alt": [
-        "Wendy"
-      ],
-      "p": 400,
-      "q": "في «بيتر بان»، ما اسم الفتاة التي تسافر مع أخويها إلى العالم السحري؟",
-      "qid": "movies-400-080",
-      "source": "https://movies.disney.com/peter-pan",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "نيفرلاند",
-      "alt": [
-        "Never Land",
-        "أرض الأحلام"
-      ],
-      "p": 400,
-      "q": "في «بيتر بان»، ما اسم الجزيرة التي يسافر إليها الأطفال؟",
-      "qid": "movies-400-081",
-      "source": "https://movies.disney.com/peter-pan",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "جيبيتو",
-      "alt": [
-        "Geppetto"
-      ],
-      "p": 400,
-      "q": "في «بينوكيو»، ما اسم صانع الدمية الخشبية؟",
-      "qid": "movies-400-082",
-      "source": "https://movies.disney.com/pinocchio",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "أناكين",
-      "alt": [
-        "Anakin Skywalker",
-        "أنكين سكاي ووكر"
-      ],
-      "p": 400,
-      "q": "في «انتقام السيث»، ما اسم الفارس الذي يتحول إلى سيد السيث المقنع؟",
-      "qid": "movies-400-084",
-      "source": "https://www.starwars.com/databank/darth-vader",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "ميلينيوم فالكون",
-      "alt": [
-        "Millennium Falcon"
-      ],
-      "p": 400,
-      "q": "في «حرب النجوم»، ما اسم سفينة هان وتشوباكا الشهيرة؟",
-      "qid": "movies-400-085",
-      "source": "https://www.starwars.com/databank/millennium-falcon",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "نيويورك",
-      "alt": [
-        "New York"
-      ],
-      "p": 400,
-      "q": "في «مدغشقر»، من أي مدينة أمريكية تأتي حيوانات الحديقة؟",
-      "qid": "movies-400-086",
-      "source": "https://www.dreamworks.com/movies/madagascar",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "محارب التنين",
-      "alt": [
-        "Dragon Warrior"
-      ],
-      "p": 400,
-      "q": "في «كونغ فو باندا»، ما اللقب الذي يسعى بطل القصة إلى استحقاقه؟",
-      "qid": "movies-400-087",
-      "source": "https://www.dreamworks.com/movies/kung-fu-panda",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "هيكاب",
-      "alt": [
-        "Hiccup",
-        "حازوقة"
-      ],
-      "p": 400,
-      "q": "في «كيف تروض تنينك»، ما اسم الفتى الذي يخالف تقاليد قومه ويصادق التنين؟",
-      "qid": "movies-400-088",
-      "source": "https://www.dreamworks.com/movies/how-to-train-your-dragon",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "تيم",
-      "alt": [
-        "Tim"
-      ],
-      "p": 400,
-      "q": "في «الطفل الزعيم»، ما اسم الأخ الأكبر للرضيع؟",
-      "qid": "movies-400-089",
-      "source": "https://www.dreamworks.com/movies/the-boss-baby",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "باندورا",
-      "alt": [
-        "Pandora"
-      ],
-      "p": 400,
-      "q": "في فيلم «أفاتار»، ما اسم القمر الذي تجري عليه المغامرة؟",
-      "qid": "movies-400-090",
-      "source": "https://www.20thcenturystudios.com/movies/avatar",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "لوتسو",
-      "alt": [
-        "Lotso"
-      ],
-      "p": 400,
-      "q": "في «حكاية لعبة 3»، ما اسم الدب الوردي ذي رائحة الفراولة؟",
-      "qid": "movies-400-091",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "بوني",
-      "alt": [
-        "Bonnie"
-      ],
-      "p": 400,
-      "q": "في «حكاية لعبة 3»، ما اسم الطفلة التي تحب اللعب بألعابها في الحضانة؟",
-      "qid": "movies-400-092",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "فوركي",
-      "alt": [
-        "Forky"
-      ],
-      "p": 400,
-      "q": "في «حكاية لعبة 4»، ما اسم اللعبة التي صنعتها الطفلة في يومها الأول بالروضة؟",
-      "qid": "movies-400-093",
-      "source": "https://www.pixar.com/toy-story-4",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "بو بيب",
-      "alt": [
-        "Bo Peep"
-      ],
-      "p": 400,
-      "q": "في «حكاية لعبة 4»، ما اسم الراعية الخزفية التي يلتقيها راعي البقر مجددًا؟",
-      "qid": "movies-400-094",
-      "source": "https://www.pixar.com/toy-story-4",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "إمبر",
-      "alt": [
-        "Ember"
-      ],
-      "p": 400,
-      "q": "في «إليمنتال»، ما اسم الفتاة النارية بطلة القصة؟",
-      "qid": "movies-400-095",
-      "source": "https://www.pixar.com/elemental",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "ألبرتو",
-      "alt": [
-        "Alberto"
-      ],
-      "p": 400,
-      "q": "في «لوكا»، ما اسم الصديق الذي يشجع البطل على اكتشاف اليابسة؟",
-      "qid": "movies-400-096",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "الوردة",
-      "alt": [
-        "الوردة المسحورة"
-      ],
-      "p": 400,
-      "q": "في «الجميلة والوحش»، ما الشيء السحري الذي تتساقط بتلاته مع مرور الوقت؟",
-      "qid": "movies-400-097",
-      "source": "https://movies.disney.com/beauty-and-the-beast",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "هام",
-      "alt": [
-        "Hamm"
-      ],
-      "p": 600,
-      "q": "في «حكاية لعبة»، ما اسم حصالة النقود التي تشبه خنزيرًا؟",
-      "qid": "movies-600-049",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "سلينكي",
-      "alt": [
-        "Slinky"
-      ],
-      "p": 600,
-      "q": "في «حكاية لعبة»، ما اسم الكلب اللعبة ذي الجسم الزنبركي؟",
-      "qid": "movies-600-050",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "جيل",
-      "alt": [
-        "Gill"
-      ],
-      "p": 600,
-      "q": "في «البحث عن نيمو»، ما اسم قائد الأسماك في حوض العيادة؟",
-      "qid": "movies-600-051",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "بروس",
-      "alt": [
-        "Bruce"
-      ],
-      "p": 600,
-      "q": "في «البحث عن نيمو»، ما اسم القرش الذي يقود مجموعة الامتناع عن أكل الأسماك؟",
-      "qid": "movies-600-052",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "مونستروبوليس",
-      "alt": [
-        "Monstropolis"
-      ],
-      "p": 600,
-      "q": "في «شركة المرعبين المحدودة»، ما اسم مدينة الوحوش؟",
-      "qid": "movies-600-053",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
+      "topic": "تايتانيك",
+      "q": "في «تايتانيك»، ما اسم الفتاة التي تقع في حب جاك على السفينة؟",
       "a": "روز",
       "alt": [
-        "Roz"
+        "Rose"
       ],
-      "p": 600,
-      "q": "في «شركة المرعبين المحدودة»، ما اسم الموظفة التي تلاحق أوراق مايك الإدارية؟",
-      "qid": "movies-600-054",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "verified": true,
+      "difficultyTarget": 0.8
     },
     {
-      "a": "إدنا مود",
+      "qid": "movies-200-904",
+      "p": 200,
+      "topic": "استهلال",
+      "q": "في «Inception»، إلى ماذا يدخل فريق كوب لسرقة الأسرار من عقول الآخرين؟",
+      "a": "الأحلام",
       "alt": [
-        "Edna Mode"
+        "أحلامهم",
+        "الحلم"
       ],
-      "p": 600,
-      "q": "في «الخارقون»، ما اسم مصممة أزياء الأبطال؟",
-      "qid": "movies-600-055",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "verified": true,
+      "difficultyTarget": 0.8
     },
     {
-      "a": "جاك جاك",
+      "qid": "movies-200-905",
+      "p": 200,
+      "topic": "ماتريكس",
+      "q": "في «ماتريكس»، أي حبة يختار البطل ليكتشف حقيقة العالم؟",
+      "a": "الحبة الحمراء",
       "alt": [
-        "Jack-Jack"
+        "الحمراء",
+        "الأحمر"
       ],
-      "p": 600,
-      "q": "في «الخارقون»، ما اسم الطفل الرضيع في الأسرة؟",
-      "qid": "movies-600-056",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "verified": true,
+      "difficultyTarget": 0.8
     },
     {
-      "a": "فروزون",
+      "qid": "movies-200-906",
+      "p": 200,
+      "topic": "سيد الخواتم",
+      "q": "في «رفقة الخاتم»، ما اسم الساحر الرمادي الذي يرشد الهوبيت؟",
+      "a": "غاندالف",
       "alt": [
-        "Frozone"
+        "جاندالف",
+        "Gandalf"
       ],
-      "p": 600,
-      "q": "في «الخارقون»، ما الاسم البطولي لصديق الأب الذي يصنع الجليد؟",
-      "qid": "movies-600-057",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "verified": true,
+      "difficultyTarget": 0.8
     },
     {
-      "a": "كوليت",
+      "qid": "movies-200-907",
+      "p": 200,
+      "topic": "قراصنة الكاريبي",
+      "q": "ما اسم القرصان الماكر بطل سلسلة «قراصنة الكاريبي»؟",
+      "a": "جاك سبارو",
       "alt": [
-        "Colette"
+        "Jack Sparrow",
+        "جاك سبارو الكابتن"
       ],
-      "p": 600,
-      "q": "في «الفأر الطباخ»، ما اسم الطاهية التي تدرب الشاب الجديد؟",
-      "qid": "movies-600-058",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.8
     },
     {
-      "a": "دوك هدسون",
+      "qid": "movies-200-908",
+      "p": 200,
+      "topic": "العودة إلى المستقبل",
+      "q": "في «العودة إلى المستقبل»، ما نوع الآلة التي يصنعها دوك من سيارة؟",
+      "a": "آلة زمن",
       "alt": [
-        "Doc Hudson"
+        "آلة للسفر عبر الزمن",
+        "آلة سفر زمني"
       ],
-      "p": 600,
-      "q": "في «سيارات»، ما اسم الطبيب الذي يشغل أيضًا منصب قاضي البلدة؟",
-      "qid": "movies-600-059",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "verified": true,
+      "difficultyTarget": 0.8
     },
     {
-      "a": "سالي",
+      "qid": "movies-400-901",
+      "p": 400,
+      "topic": "هاري بوتر",
+      "q": "في «حجر الفيلسوف»، إلى أي منزل ينضم هاري وصديقاه في المدرسة؟",
+      "a": "غريفندور",
       "alt": [
-        "Sally"
+        "جريفندور",
+        "Gryffindor"
       ],
-      "p": 600,
-      "q": "في «سيارات»، ما اسم السيارة المحامية في البلدة؟",
-      "qid": "movies-600-060",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
     },
     {
-      "a": "لويجي",
-      "alt": [
-        "Luigi"
-      ],
-      "p": 600,
-      "q": "في «سيارات»، ما اسم صاحب متجر الإطارات الإيطالي؟",
-      "qid": "movies-600-061",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "أكسيوم",
-      "alt": [
-        "Axiom"
-      ],
-      "p": 600,
-      "q": "في «وول إي»، ما اسم السفينة الضخمة التي يعيش فيها البشر؟",
-      "qid": "movies-600-062",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "أوتو",
-      "alt": [
-        "Auto"
-      ],
-      "p": 600,
-      "q": "في «وول إي»، ما اسم الطيار الآلي المتحكم بالسفينة؟",
-      "qid": "movies-600-063",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "بينغ بونغ",
-      "alt": [
-        "Bing Bong"
-      ],
-      "p": 600,
-      "q": "في «قلبًا وقالبًا»، ما اسم صديق الطفلة الخيالي؟",
-      "qid": "movies-600-064",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "الذكريات الأساسية",
-      "alt": [
-        "Core memories"
-      ],
-      "p": 600,
-      "q": "في «قلبًا وقالبًا»، ما الذي يمد جزر الشخصية بالطاقة؟",
-      "qid": "movies-600-065",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "عندما تنام الطفلة",
-      "p": 600,
-      "q": "في «قلبًا وقالبًا»، متى يتوقف مشغلو وسيلة نقل الأفكار عن العمل؟",
-      "qid": "movies-600-066",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "دانتي",
-      "alt": [
-        "Dante"
-      ],
-      "p": 600,
-      "q": "في «كوكو»، ما اسم الكلب الذي يرافق الفتى؟",
-      "qid": "movies-600-067",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "إرنستو دي لا كروز",
-      "alt": [
-        "Ernesto de la Cruz"
-      ],
-      "p": 600,
-      "q": "في «كوكو»، ما اسم الموسيقي الشهير الذي يعده الفتى قدوته؟",
-      "qid": "movies-600-068",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "إلينور",
-      "alt": [
-        "Elinor"
-      ],
-      "p": 600,
-      "q": "في «شجاعة»، ما اسم الملكة والدة الأميرة؟",
-      "qid": "movies-600-069",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "فيرغس",
-      "alt": [
-        "Fergus"
-      ],
-      "p": 600,
-      "q": "في «شجاعة»، ما اسم الملك ذي الساق الخشبية؟",
-      "qid": "movies-600-070",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "أميتي",
-      "alt": [
-        "Amity"
-      ],
-      "p": 600,
-      "q": "في «الفك المفترس»، ما اسم البلدة الساحلية التي تتعرض للهجمات؟",
-      "qid": "movies-600-071",
-      "source": "https://www.universalpicturesathome.com/movies/jaws",
-      "topic": "البقاء والمطاردات",
-      "verified": true
-    },
-    {
-      "a": "ديلوريان",
-      "alt": [
-        "DeLorean"
-      ],
-      "p": 600,
-      "q": "في «العودة إلى المستقبل»، ما طراز السيارة المستخدمة آلةً للزمن؟",
-      "qid": "movies-600-072",
-      "source": "https://www.universalpicturesathome.com/movies/back-to-the-future",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "دوك براون",
-      "alt": [
-        "Doc Brown",
-        "إيميت براون"
-      ],
-      "p": 600,
-      "q": "في «العودة إلى المستقبل»، من مخترع آلة الزمن؟",
-      "qid": "movies-600-073",
-      "source": "https://www.universalpicturesathome.com/movies/back-to-the-future",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "كاليفورنيا",
-      "p": 600,
-      "q": "في «إي تي»، في أي ولاية أمريكية يعيش الطفل صديق الكائن الفضائي؟",
-      "qid": "movies-600-074",
-      "source": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "فاركواد",
-      "alt": [
-        "Farquaad"
-      ],
-      "p": 600,
-      "q": "في «شريك»، ما اسم اللورد الذي يكلف الغول بإنقاذ الأميرة؟",
-      "qid": "movies-600-075",
-      "source": "https://www.dreamworks.com/movies/shrek",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "أرينديل",
-      "alt": [
-        "Arendelle"
-      ],
-      "p": 600,
-      "q": "في «ملكة الثلج»، ما اسم المملكة التي يغطيها الشتاء الأبدي؟",
-      "qid": "movies-600-076",
-      "source": "https://movies.disney.com/frozen",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "ياغو",
-      "alt": [
-        "Iago"
-      ],
-      "p": 600,
-      "q": "في «علاء الدين»، ما اسم الببغاء الذي يساعد الوزير؟",
-      "qid": "movies-600-077",
-      "source": "https://movies.disney.com/aladdin",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "راجا",
-      "alt": [
-        "Rajah"
-      ],
-      "p": 600,
-      "q": "في «علاء الدين»، ما اسم النمر الذي يحمي الأميرة؟",
-      "qid": "movies-600-078",
-      "source": "https://movies.disney.com/aladdin",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "غاس",
-      "alt": [
-        "Gus"
-      ],
-      "p": 600,
-      "q": "في «سندريلا»، ما اسم الفأر الممتلئ صديق البطلة؟",
-      "qid": "movies-600-079",
-      "source": "https://movies.disney.com/cinderella-1950",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "لوسيفر",
-      "alt": [
-        "Lucifer"
-      ],
-      "p": 600,
-      "q": "في «سندريلا»، ما اسم القط الذي يطارد أصدقاء البطلة؟",
-      "qid": "movies-600-080",
-      "source": "https://movies.disney.com/cinderella-1950",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "ترايتون",
-      "alt": [
-        "Triton"
-      ],
-      "p": 600,
-      "q": "في «حورية البحر الصغيرة»، ما اسم والد البطلة ملك البحر؟",
-      "qid": "movies-600-081",
-      "source": "https://movies.disney.com/the-little-mermaid",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "فلوندر",
-      "alt": [
-        "Flounder"
-      ],
-      "p": 600,
-      "q": "في «حورية البحر الصغيرة»، ما اسم السمكة الصديقة للبطلة؟",
-      "qid": "movies-600-082",
-      "source": "https://movies.disney.com/the-little-mermaid",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "باسكال",
-      "alt": [
-        "Pascal"
-      ],
-      "p": 600,
-      "q": "في «رابونزل»، ما اسم الحرباء صديقة البطلة؟",
-      "qid": "movies-600-083",
-      "source": "https://movies.disney.com/tangled",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "ماكسيموس",
-      "alt": [
-        "Maximus"
-      ],
-      "p": 600,
-      "q": "في «رابونزل»، ما اسم حصان الحرس الذي يلاحق اللص؟",
-      "qid": "movies-600-084",
-      "source": "https://movies.disney.com/tangled",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "رفيقي",
-      "alt": [
-        "Rafiki"
-      ],
-      "p": 600,
-      "q": "في «الأسد الملك»، ما اسم القرد الحكيم الذي يرشد البطل؟",
-      "qid": "movies-600-085",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "تينكر بيل",
-      "alt": [
-        "Tinker Bell"
-      ],
-      "p": 600,
-      "q": "في «بيتر بان»، ما اسم الجنية التي يساعد غبارها الأطفال على الطيران؟",
-      "qid": "movies-600-086",
-      "source": "https://movies.disney.com/peter-pan",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "جيميني كريكت",
-      "alt": [
-        "Jiminy Cricket"
-      ],
-      "p": 600,
-      "q": "في «بينوكيو»، ما اسم الحشرة التي ترشد الدمية؟",
-      "qid": "movies-600-087",
-      "source": "https://movies.disney.com/pinocchio",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "موريس",
-      "alt": [
-        "Maurice"
-      ],
-      "p": 600,
-      "q": "في «الجميلة والوحش»، ما اسم والد البطلة؟",
-      "qid": "movies-600-088",
-      "source": "https://movies.disney.com/beauty-and-the-beast",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "كوغسوورث",
-      "alt": [
-        "Cogsworth"
-      ],
-      "p": 600,
-      "q": "في «الجميلة والوحش»، ما اسم كبير الخدم المتحول إلى ساعة؟",
-      "qid": "movies-600-089",
-      "source": "https://movies.disney.com/beauty-and-the-beast",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "مصطفار",
-      "alt": [
-        "Mustafar"
-      ],
-      "p": 600,
-      "q": "في «انتقام السيث»، على أي كوكب بركاني يتبارز التلميذ مع أوبي وان؟",
-      "qid": "movies-600-090",
-      "source": "https://www.starwars.com/databank/darth-vader",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "داغوبا",
-      "alt": [
-        "Dagobah"
-      ],
-      "p": 600,
-      "q": "في «الإمبراطورية ترد الضربة»، ما كوكب المستنقعات الذي يتدرب عليه لوك؟",
-      "qid": "movies-600-091",
-      "source": "https://www.starwars.com/databank/yoda",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "لاندو كالريسيان",
-      "alt": [
-        "Lando Calrissian"
-      ],
-      "p": 600,
-      "q": "في فيلم «سولو»، ممن يربح هان سفينته الشهيرة؟",
-      "qid": "movies-600-092",
-      "source": "https://www.starwars.com/databank/millennium-falcon",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "تاتوين",
-      "alt": [
-        "Tatooine"
-      ],
-      "p": 600,
-      "q": "في «حرب النجوم»، ما اسم الكوكب الصحراوي الذي عاش فيه لوك في طفولته؟",
-      "qid": "movies-600-093",
-      "source": "https://www.starwars.com/databank/tatooine",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "النافي",
-      "alt": [
-        "Na'vi"
-      ],
-      "p": 600,
-      "q": "في فيلم «أفاتار»، ما اسم السكان الأصليين لقمر القصة؟",
-      "qid": "movies-600-094",
-      "source": "https://www.20thcenturystudios.com/movies/avatar",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "سانيسايد",
-      "alt": [
-        "Sunnyside"
-      ],
-      "p": 600,
-      "q": "في «حكاية لعبة 3»، ما اسم الحضانة التي تصل إليها الألعاب؟",
-      "qid": "movies-600-095",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "بورتوروسو",
-      "alt": [
-        "Portorosso"
-      ],
-      "p": 600,
-      "q": "في «لوكا»، ما اسم البلدة الإيطالية التي يخوض فيها الأصدقاء السباق؟",
-      "qid": "movies-600-096",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "بيتزا بلانيت",
-      "alt": [
-        "Pizza Planet"
-      ],
-      "p": 800,
-      "q": "في «حكاية لعبة»، ما اسم مطعم البيتزا ذي الطابع الفضائي؟",
-      "qid": "movies-800-049",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "سكويرت",
-      "alt": [
-        "Squirt"
-      ],
-      "p": 800,
-      "q": "في «البحث عن نيمو»، ما اسم ابن السلحفاة كراش؟",
-      "qid": "movies-800-050",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "نايجل",
-      "alt": [
-        "Nigel"
-      ],
-      "p": 800,
-      "q": "في «البحث عن نيمو»، ما اسم البجع الذي يزور نافذة عيادة الأسنان؟",
-      "qid": "movies-800-051",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "دارلا",
-      "alt": [
-        "Darla"
-      ],
-      "p": 800,
-      "q": "في «البحث عن نيمو»، ما اسم ابنة أخت طبيب الأسنان؟",
-      "qid": "movies-800-052",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "هنري واترنوس",
-      "alt": [
-        "Henry J. Waternoose III"
-      ],
-      "p": 800,
-      "q": "في «شركة المرعبين المحدودة»، ما اسم مدير المصنع المنتمي إلى عائلته المالكة؟",
-      "qid": "movies-800-053",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "سيليا",
-      "alt": [
-        "Celia"
-      ],
-      "p": 800,
-      "q": "في «شركة المرعبين المحدودة»، ما اسم موظفة الاستقبال ذات الشعر الأفعواني؟",
-      "qid": "movies-800-054",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "نومانيسان",
-      "alt": [
-        "Nomanisan"
-      ],
-      "p": 800,
-      "q": "في «الخارقون»، ما اسم الجزيرة التي تضم قاعدة الشرير؟",
-      "qid": "movies-800-055",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "أنطون إيغو",
-      "alt": [
-        "Anton Ego"
-      ],
-      "p": 800,
-      "q": "في «الفأر الطباخ»، ما اسم ناقد المطاعم الذي يخشاه الطهاة؟",
-      "qid": "movies-800-056",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "سكينر",
-      "alt": [
-        "Skinner"
-      ],
-      "p": 800,
-      "q": "في «الفأر الطباخ»، ما اسم رئيس المطبخ قصير القامة؟",
-      "qid": "movies-800-057",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "إميل",
-      "alt": [
-        "Emile"
-      ],
-      "p": 800,
-      "q": "في «الفأر الطباخ»، ما اسم أخ الحيوان الطاهي المحب للطعام؟",
-      "qid": "movies-800-058",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "غويدو",
-      "alt": [
-        "Guido"
-      ],
-      "p": 800,
-      "q": "في «سيارات»، ما اسم الرافعة الشوكية الإيطالية التي تعمل في متجر الإطارات؟",
-      "qid": "movies-800-059",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "فيلمور",
-      "alt": [
-        "Fillmore"
-      ],
-      "p": 800,
-      "q": "في «سيارات»، ما اسم الحافلة التي تصنع وقودها العضوي؟",
-      "qid": "movies-800-060",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "رامون",
-      "alt": [
-        "Ramone"
-      ],
-      "p": 800,
-      "q": "في «سيارات»، ما اسم صاحب متجر الطلاء الذي يعيد تلوين نفسه يوميًا؟",
-      "qid": "movies-800-061",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "إم أو",
-      "alt": [
-        "M-O"
-      ],
-      "p": 800,
-      "q": "في «وول إي»، ما اسم الروبوت الصغير الذي يلاحق التلوث وينظفه؟",
-      "qid": "movies-800-062",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "عجلة قيادة",
-      "p": 800,
-      "q": "في «وول إي»، ما شكل جسم الطيار الآلي؟",
-      "qid": "movies-800-063",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "قطار الأفكار",
-      "alt": [
-        "Train of Thought"
-      ],
-      "p": 800,
-      "q": "في «قلبًا وقالبًا»، ما وسيلة النقل التي تحمل الأفكار إلى مركز التحكم؟",
-      "qid": "movies-800-064",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "غزل البنات",
-      "alt": [
-        "حلوى القطن"
-      ],
-      "p": 800,
-      "q": "في «قلبًا وقالبًا»، من أي حلوى يتكون جسم صديق الطفلة الخيالي؟",
-      "qid": "movies-800-065",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "إيميلدا",
-      "alt": [
-        "Mamá Imelda"
-      ],
-      "p": 800,
-      "q": "في «كوكو»، ما اسم الجدة الكبرى التي أسست تجارة العائلة؟",
-      "qid": "movies-800-066",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "بيبيتا",
-      "alt": [
-        "Pepita"
-      ],
-      "p": 800,
-      "q": "في «كوكو»، ما اسم المخلوق المجنح المرشد للجدة الكبرى؟",
-      "qid": "movies-800-067",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "أنغوس",
-      "alt": [
-        "Angus"
-      ],
-      "p": 800,
-      "q": "في «شجاعة»، ما اسم حصان الأميرة الأسود؟",
-      "qid": "movies-800-068",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "موردو",
-      "alt": [
-        "Mor'du"
-      ],
-      "p": 800,
-      "q": "في «شجاعة»، ما اسم الدب الذي أفقد الملك ساقه؟",
-      "qid": "movies-800-069",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "كاميرون دياز",
-      "alt": [
-        "Cameron Diaz"
-      ],
-      "p": 800,
-      "q": "من تؤدي صوت الأميرة بالإنجليزية في فيلم «شريك»؟",
-      "qid": "movies-800-070",
-      "source": "https://www.dreamworks.com/movies/shrek",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "إيدينا مينزل",
-      "alt": [
-        "Idina Menzel"
-      ],
-      "p": 800,
-      "q": "من تؤدي صوت الملكة ذات القوى الجليدية بالإنجليزية في «ملكة الثلج»؟",
-      "qid": "movies-800-071",
-      "source": "https://movies.disney.com/frozen",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "كوبرا",
-      "alt": [
-        "ثعبان الكوبرا"
-      ],
-      "p": 800,
-      "q": "في «علاء الدين»، رأس أي حيوان يزين عصا الوزير المنومة؟",
-      "qid": "movies-800-072",
-      "source": "https://movies.disney.com/aladdin",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "أناستازيا",
-      "alt": [
-        "Anastasia"
-      ],
-      "p": 800,
-      "q": "في «سندريلا»، ما اسم الأخت غير الشقيقة الأصغر سنًا؟",
-      "qid": "movies-800-073",
-      "source": "https://movies.disney.com/cinderella-1950",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "دريزيلا",
-      "alt": [
-        "Drizella"
-      ],
-      "p": 800,
-      "q": "في «سندريلا»، ما اسم الأخت غير الشقيقة الكبرى؟",
-      "qid": "movies-800-074",
-      "source": "https://movies.disney.com/cinderella-1950",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "سارابي",
-      "alt": [
-        "Sarabi"
-      ],
-      "p": 800,
-      "q": "في «الأسد الملك»، ما اسم أم الشبل؟",
-      "qid": "movies-800-075",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "فيليب",
-      "alt": [
-        "Philippe"
-      ],
-      "p": 800,
-      "q": "في «الجميلة والوحش»، ما اسم حصان البطلة؟",
-      "qid": "movies-800-076",
-      "source": "https://movies.disney.com/beauty-and-the-beast",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "الكربونيت",
-      "alt": [
-        "Carbonite"
-      ],
-      "p": 800,
-      "q": "في «الإمبراطورية ترد الضربة»، ما المادة التي يجمد فيها هان؟",
-      "qid": "movies-800-077",
-      "source": "https://www.starwars.com/databank/darth-vader",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "دوكو",
-      "alt": [
-        "Count Dooku"
-      ],
-      "p": 800,
-      "q": "في «هجوم المستنسخين»، من الكونت الذي كان تلميذًا لمعلم الجيداي صغير الحجم؟",
-      "qid": "movies-800-078",
-      "source": "https://www.starwars.com/databank/yoda",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "كامينو",
-      "alt": [
-        "Kamino"
-      ],
-      "p": 800,
-      "q": "في «هجوم المستنسخين»، ما الكوكب الذي محيت بياناته من أرشيف الجيداي؟",
-      "qid": "movies-800-079",
-      "source": "https://www.starwars.com/databank/yoda",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "ساباك",
-      "alt": [
-        "Sabacc"
-      ],
-      "p": 800,
-      "q": "في فيلم «سولو»، ما اللعبة التي يربح فيها هان سفينته؟",
-      "qid": "movies-800-080",
-      "source": "https://www.starwars.com/databank/millennium-falcon",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "سنترال بارك",
-      "alt": [
-        "Central Park Zoo"
-      ],
-      "p": 800,
-      "q": "في «مدغشقر»، ما اسم الحديقة النيويوركية التي كانت موطن الحيوانات؟",
-      "qid": "movies-800-081",
-      "source": "https://www.dreamworks.com/movies/madagascar",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "جاك بلاك",
-      "alt": [
-        "Jack Black"
-      ],
-      "p": 800,
-      "q": "من يؤدي صوت البطل بالإنجليزية في «كونغ فو باندا»؟",
-      "qid": "movies-800-082",
-      "source": "https://www.dreamworks.com/movies/kung-fu-panda",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "أليك بالدوين",
-      "alt": [
-        "Alec Baldwin"
-      ],
-      "p": 800,
-      "q": "من يؤدي صوت الرضيع بالإنجليزية في «الطفل الزعيم»؟",
-      "qid": "movies-800-083",
-      "source": "https://www.dreamworks.com/movies/the-boss-baby",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "نيتيري",
-      "alt": [
-        "Neytiri"
-      ],
-      "p": 800,
-      "q": "في فيلم «أفاتار»، من أنقذ حياة جيك عند وصوله إلى الغابة؟",
-      "qid": "movies-800-084",
-      "source": "https://www.20thcenturystudios.com/movies/avatar",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "باتركاب",
-      "alt": [
-        "Buttercup"
-      ],
-      "p": 800,
-      "q": "في «حكاية لعبة 3»، ما اسم لعبة وحيد القرن البيضاء؟",
-      "qid": "movies-800-085",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "دولي",
-      "alt": [
-        "Dolly"
-      ],
-      "p": 800,
-      "q": "في «حكاية لعبة 3»، ما اسم الدمية القماشية ذات الشعر البنفسجي؟",
-      "qid": "movies-800-086",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "غابي غابي",
-      "alt": [
-        "Gabby Gabby"
-      ],
-      "p": 800,
-      "q": "في «حكاية لعبة 4»، ما اسم الدمية التي تسعى إلى إصلاح صندوق صوتها؟",
-      "qid": "movies-800-087",
-      "source": "https://www.pixar.com/toy-story-4",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "ديوك كابوم",
-      "alt": [
-        "Duke Caboom"
-      ],
-      "p": 800,
-      "q": "في «حكاية لعبة 4»، ما اسم لعبة راكب الدراجات الاستعراضي الكندي؟",
-      "qid": "movies-800-088",
-      "source": "https://www.pixar.com/toy-story-4",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "بنسون",
-      "alt": [
-        "Benson"
-      ],
-      "p": 800,
-      "q": "في «حكاية لعبة 4»، ما اسم دمية المتكلم البطني التي تقود حراس متجر التحف؟",
-      "qid": "movies-800-089",
-      "source": "https://www.pixar.com/toy-story-4",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "بيرني",
-      "alt": [
-        "Bernie"
-      ],
-      "p": 800,
-      "q": "في «إليمنتال»، ما اسم والد البطلة وصاحب المتجر؟",
-      "qid": "movies-800-090",
-      "source": "https://www.pixar.com/elemental",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "سيندر",
-      "alt": [
-        "Cinder"
-      ],
-      "p": 800,
-      "q": "في «إليمنتال»، ما اسم والدة البطلة التي تدبر الزيجات؟",
-      "qid": "movies-800-091",
-      "source": "https://www.pixar.com/elemental",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "إركولي",
-      "alt": [
-        "Ercole"
-      ],
-      "p": 800,
-      "q": "في «لوكا»، ما اسم متنمر البلدة وبطل سباقها المتكرر؟",
-      "qid": "movies-800-092",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "دانييلا",
-      "alt": [
-        "Daniela"
-      ],
-      "p": 800,
-      "q": "في «لوكا»، ما اسم والدة البطل التي تمنعه من الاقتراب من السطح؟",
-      "qid": "movies-800-093",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "لورينزو",
-      "alt": [
-        "Lorenzo"
-      ],
-      "p": 800,
-      "q": "في «لوكا»، ما اسم والد البطل؟",
-      "qid": "movies-800-094",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "ماسيمو",
-      "alt": [
-        "Massimo"
-      ],
-      "p": 800,
-      "q": "في «لوكا»، ما اسم الصياد والد جوليا؟",
-      "qid": "movies-800-095",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "مستر بريكلبانتس",
-      "alt": [
-        "Mr. Pricklepants"
-      ],
-      "p": 800,
-      "q": "في «حكاية لعبة 3»، ما اسم القنفذ اللعبة الذي يرتدي سراويل ألمانية؟",
-      "qid": "movies-800-096",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "دينوكو",
-      "alt": [
-        "Dinoco"
-      ],
-      "p": 1000,
-      "q": "في «حكاية لعبة»، ما اسم محطة الوقود التي يزورها الأبطال؟",
-      "qid": "movies-1000-049",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "الداما",
-      "alt": [
-        "Checkers"
-      ],
-      "p": 1000,
-      "q": "في «حكاية لعبة»، ما لعبة اللوح التي يمارسها الكلب الزنبركي مع راعي البقر؟",
-      "qid": "movies-1000-050",
-      "source": "https://www.pixar.com/toy-story",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "كورال",
-      "alt": [
-        "Coral"
-      ],
-      "p": 1000,
-      "q": "في «البحث عن نيمو»، ما اسم أم السمكة الصغيرة؟",
-      "qid": "movies-1000-051",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "تيار شرق أستراليا",
-      "alt": [
-        "East Australian Current",
-        "EAC"
-      ],
-      "p": 1000,
-      "q": "في «البحث عن نيمو»، ما التيار البحري الذي تسلكه السلاحف قرب أستراليا؟",
-      "qid": "movies-1000-052",
-      "source": "https://www.pixar.com/finding-nemo",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "مارغولد غراند سنترال",
-      "alt": [
-        "Marigold Grand Central Station"
-      ],
-      "p": 1000,
-      "q": "في «كوكو»، ما اسم المحطة التي تضم إدارة لم شمل العائلة؟",
-      "qid": "movies-1000-053",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "الليمون",
-      "p": 1000,
-      "q": "في «شركة المرعبين المحدودة»، ما نكهة الثلج المحلى الذي يصنعه الوحش المنفي؟",
-      "qid": "movies-1000-054",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "جورج ساندرسون",
-      "alt": [
-        "George Sanderson"
-      ],
-      "p": 1000,
-      "q": "في «شركة المرعبين المحدودة»، ما اسم الوحش الذي تلاحقه وكالة كشف الأطفال بسبب الأغراض البشرية؟",
-      "qid": "movies-1000-055",
-      "source": "https://www.pixar.com/monsters-inc",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "لوسيوس بيست",
-      "alt": [
-        "Lucius Best"
-      ],
-      "p": 1000,
-      "q": "في «الخارقون»، ما الاسم المدني لصانع الجليد؟",
-      "qid": "movies-1000-056",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "إنشوريكير",
-      "alt": [
-        "Insuricare"
-      ],
-      "p": 1000,
-      "q": "في «الخارقون»، ما اسم شركة التأمين التي يعمل فيها الأب؟",
-      "qid": "movies-1000-057",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "غيلبرت هاف",
-      "alt": [
-        "Gilbert Huph"
-      ],
-      "p": 1000,
-      "q": "في «الخارقون»، ما اسم مدير الأب قصير القامة في شركة التأمين؟",
-      "qid": "movies-1000-058",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "جانغو",
-      "alt": [
-        "Django"
-      ],
-      "p": 1000,
-      "q": "في «الفأر الطباخ»، ما اسم والد الحيوان الطاهي؟",
-      "qid": "movies-1000-059",
-      "source": "https://www.pixar.com/ratatouille",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "أوسكار",
-      "alt": [
-        "Tío Oscar"
-      ],
-      "p": 1000,
-      "q": "في «كوكو»، ما اسم شقيق فيليبي التوأم من أسلاف العائلة؟",
-      "qid": "movies-1000-060",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "كاربوريتور",
-      "alt": [
-        "Carburetor County"
-      ],
-      "p": 1000,
-      "q": "في «سيارات»، ما اسم المقاطعة التي تمتلك فيها الشاحنة الصدئة أسرع حبل سحب؟",
-      "qid": "movies-1000-061",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "هدسون هورنت",
-      "alt": [
-        "Hudson Hornet"
-      ],
-      "p": 1000,
-      "q": "في «سيارات»، ما طراز سيارة الطبيب والقاضي المحلي؟",
-      "qid": "movies-1000-062",
-      "source": "https://www.pixar.com/cars",
-      "topic": "المنافسات والطموح",
-      "verified": true
-    },
-    {
-      "a": "باي إن لارج",
-      "alt": [
-        "Buy n' Large",
-        "BnL"
-      ],
-      "p": 1000,
-      "q": "في «وول إي»، ما اسم الشركة التي بنت سفينة البشر؟",
-      "qid": "movies-1000-063",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "هالو دوللي",
-      "alt": [
-        "Hello, Dolly!"
-      ],
-      "p": 1000,
-      "q": "في «وول إي»، ما الفيلم الغنائي الذي يشاهده الروبوت داخل شاحنته؟",
-      "qid": "movies-1000-064",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "المسبار الأول",
-      "alt": [
-        "Probe One"
-      ],
-      "p": 1000,
-      "q": "في «وول إي»، ما التسمية التي تُطلق على الروبوت الأبيض في السفينة؟",
-      "qid": "movies-1000-065",
-      "source": "https://www.pixar.com/wall-e",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "أندرسن",
-      "alt": [
-        "Andersen"
-      ],
-      "p": 1000,
-      "q": "في «قلبًا وقالبًا»، ما اسم عائلة الطفلة رايلي؟",
-      "qid": "movies-1000-066",
-      "source": "https://www.pixar.com/inside-out",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "جوز الهند",
-      "p": 1000,
-      "q": "في «الخارقون»، بأي ثمرة يضرب الأب أحد حراس الجزيرة؟",
-      "qid": "movies-1000-067",
-      "source": "https://www.pixar.com/the-incredibles",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "سانتا سيسيليا",
-      "alt": [
-        "Santa Cecilia"
-      ],
-      "p": 1000,
-      "q": "في «كوكو»، ما اسم بلدة عائلة الفتى؟",
-      "qid": "movies-1000-068",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "تشيتشارون",
-      "alt": [
-        "Chicharrón"
-      ],
-      "p": 1000,
-      "q": "في «كوكو»، ما اسم صديق هيكتور الذي يوشك الآخرون على نسيانه؟",
-      "qid": "movies-1000-069",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "شولوإيتزكوينتلي",
-      "alt": [
-        "Xoloitzcuintli",
-        "Xolo"
-      ],
-      "p": 1000,
-      "q": "في «كوكو»، ما سلالة كلب الفتى المكسيكية عديمة الشعر تقريبًا؟",
-      "qid": "movies-1000-070",
-      "source": "https://www.pixar.com/coco",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "دانبروخ",
-      "alt": [
-        "DunBroch"
-      ],
-      "p": 1000,
-      "q": "في «شجاعة»، ما اسم قلعة العائلة الملكية؟",
-      "qid": "movies-1000-071",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "كلايدزديل",
-      "alt": [
-        "Clydesdale"
-      ],
-      "p": 1000,
-      "q": "في «شجاعة»، ما سلالة حصان الأميرة؟",
-      "qid": "movies-1000-072",
-      "source": "https://www.pixar.com/brave",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "أسماك الماعز",
-      "alt": [
-        "Goatfish"
-      ],
-      "p": 1000,
-      "q": "في «لوكا»، ما الأسماك التي يرعاها البطل قبل مغامرته على اليابسة؟",
-      "qid": "movies-1000-073",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "جوناثان غروف",
-      "alt": [
-        "Jonathan Groff"
-      ],
-      "p": 1000,
-      "q": "من يؤدي صوت جامع الجليد بالإنجليزية في «ملكة الثلج»؟",
-      "qid": "movies-1000-074",
-      "source": "https://movies.disney.com/frozen",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "البسكويت المالح",
-      "alt": [
-        "الكراكرز"
-      ],
-      "p": 1000,
-      "q": "في «علاء الدين»، ما الطعام الذي يكرهه ببغاء الوزير؟",
-      "qid": "movies-1000-075",
-      "source": "https://movies.disney.com/aladdin",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "برونو",
-      "alt": [
-        "Bruno"
-      ],
-      "p": 1000,
-      "q": "في «سندريلا»، ما اسم الكلب الذي يساعد الفئران ضد القط؟",
-      "qid": "movies-1000-076",
-      "source": "https://movies.disney.com/cinderella-1950",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "الفلوت",
-      "alt": [
-        "الناي"
-      ],
-      "p": 1000,
-      "q": "في «سندريلا»، ما الآلة الموسيقية التي تعزفها الأخت غير الشقيقة الأصغر؟",
-      "qid": "movies-1000-077",
-      "source": "https://movies.disney.com/cinderella-1950",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "70 قدمًا",
-      "alt": [
-        "سبعون قدمًا"
-      ],
-      "p": 1000,
-      "q": "في «رابونزل»، كم قدمًا يبلغ طول شعر البطلة السحري؟",
-      "qid": "movies-1000-078",
-      "source": "https://movies.disney.com/tangled",
-      "topic": "الأميرات والسحر",
-      "verified": true
-    },
-    {
-      "a": "إد",
-      "alt": [
-        "Ed"
-      ],
-      "p": 1000,
-      "q": "في «الأسد الملك»، ما اسم الضبع الذي يكتفي بالضحك بدل الكلام؟",
-      "qid": "movies-1000-079",
-      "source": "https://movies.disney.com/the-lion-king",
-      "topic": "رحلات الحيوانات",
-      "verified": true
-    },
-    {
-      "a": "الثاني إلى اليمين",
-      "p": 1000,
-      "q": "في «بيتر بان»، أي نجم يتجه الأطفال نحوه للوصول إلى الجزيرة؟",
-      "qid": "movies-1000-080",
-      "source": "https://movies.disney.com/peter-pan",
-      "topic": "الخيال والممالك",
-      "verified": true
-    },
-    {
-      "a": "تاي أدفانسد",
-      "alt": [
-        "TIE Advanced"
-      ],
-      "p": 1000,
-      "q": "في «أمل جديد»، ما طراز المقاتلة التي يقودها سيد السيث المقنع بنفسه؟",
-      "qid": "movies-1000-083",
-      "source": "https://www.starwars.com/databank/darth-vader",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "كاشييك",
-      "alt": [
-        "Kashyyyk"
-      ],
-      "p": 1000,
-      "q": "في «انتقام السيث»، على أي كوكب يقاتل معلم الجيداي الصغير إلى جانب الووكي؟",
-      "qid": "movies-1000-084",
-      "source": "https://www.starwars.com/databank/yoda",
-      "topic": "الأبطال والقوى",
-      "verified": true
-    },
-    {
-      "a": "نوميديان برايم",
-      "alt": [
-        "Numidian Prime"
-      ],
-      "p": 1000,
-      "q": "في فيلم «سولو»، على أي كوكب يربح هان سفينته في لعبة ورق؟",
-      "qid": "movies-1000-085",
-      "source": "https://www.starwars.com/databank/millennium-falcon",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "سافارين",
-      "alt": [
-        "Savareen"
-      ],
-      "p": 1000,
-      "q": "في فيلم «سولو»، على أي كوكب تهبط السفينة بعد رحلة كيسل المرهقة؟",
-      "qid": "movies-1000-086",
-      "source": "https://www.starwars.com/databank/millennium-falcon",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "L3-37",
-      "alt": [
-        "إل ثري سبعة وثلاثون"
-      ],
-      "p": 1000,
-      "q": "في فيلم «سولو»، ما رمز الروبوت الطيار المرافق لمالك السفينة قبل هان؟",
-      "qid": "movies-1000-087",
-      "source": "https://www.starwars.com/databank/millennium-falcon",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "سباركس",
-      "alt": [
-        "Sparks"
-      ],
-      "p": 1000,
-      "q": "في «حكاية لعبة 3»، ما اسم الروبوت الذي يقذف شررًا عند تحريكه على عجلاته؟",
-      "qid": "movies-1000-088",
-      "source": "https://www.pixar.com/toy-story-3",
-      "topic": "الألعاب والمقتنيات",
-      "verified": true
-    },
-    {
-      "a": "فيرن",
-      "alt": [
-        "Fern"
-      ],
-      "p": 1000,
-      "q": "في «إليمنتال»، ما اسم الموظف النباتي المرهق الملتزم بالقواعد؟",
-      "qid": "movies-1000-093",
-      "source": "https://www.pixar.com/elemental",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "ويترو",
-      "alt": [
-        "Wetro"
-      ],
-      "p": 1000,
-      "q": "في «إليمنتال»، ما اسم شبكة النقل القائمة على القنوات المائية؟",
-      "qid": "movies-1000-094",
-      "source": "https://www.pixar.com/elemental",
-      "topic": "العائلة والمشاعر",
-      "verified": true
-    },
-    {
-      "a": "أوغو",
-      "alt": [
-        "Ugo"
-      ],
-      "p": 1000,
-      "q": "في «لوكا»، ما اسم عم البطل القادم من أعماق المحيط؟",
-      "qid": "movies-1000-095",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "مكيافيلي",
-      "alt": [
-        "Machiavelli"
-      ],
-      "p": 1000,
-      "q": "في «لوكا»، ما اسم قطة جوليا التي ترتاب في الولدين؟",
-      "qid": "movies-1000-096",
-      "source": "https://www.pixar.com/luca",
-      "topic": "عوالم الوحوش",
-      "verified": true
-    },
-    {
-      "a": "سنحتاج قاربًا أكبر",
-      "alt": [
-        "نحتاج قاربًا أكبر",
-        "سنحتاج إلى قارب أكبر"
-      ],
-      "p": 1000,
-      "q": "في «الفك المفترس»، ماذا يقول برودي فور رؤيته القرش لأول مرة؟",
-      "qid": "movies-1000-097",
-      "source": "https://en.wikiquote.org/wiki/Jaws_(film)",
-      "topic": "البقاء والمطاردات",
-      "verified": true
-    },
-    {
-      "a": "أوركا",
-      "alt": [
-        "Orca"
-      ],
-      "p": 1000,
-      "q": "في «الفك المفترس»، ما اسم قارب الصيد الذي يخرج به الثلاثة لملاحقة القرش؟",
-      "qid": "movies-1000-098",
-      "source": "https://en.wikipedia.org/wiki/Jaws_(film)",
-      "topic": "البقاء والمطاردات",
-      "verified": true
-    },
-    {
+      "qid": "movies-400-902",
+      "p": 400,
+      "topic": "الحديقة الجوراسية",
+      "q": "في «الحديقة الجوراسية»، في الفيلم الأول، ما المادة التي حفظت البعوضة الحاملة للحمض النووي القديم؟",
       "a": "الكهرمان",
       "alt": [
-        "العنبر"
+        "كهرمان"
       ],
-      "p": 1000,
-      "q": "في «الحديقة الجوراسية»، داخل أي مادة حُفظت البعوضة التي استُخرج منها الحمض النووي؟",
-      "qid": "movies-1000-099",
-      "source": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
-      "topic": "البقاء والمطاردات",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "movies-400-903",
+      "p": 400,
+      "topic": "تايتانيك",
+      "q": "في «تايتانيك»، ما مهنة جاك التي تمكّنه من رسم حبيبته؟",
+      "a": "رسام",
+      "alt": [
+        "فنان تشكيلي",
+        "رسم"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-904",
+      "p": 400,
+      "topic": "استهلال",
+      "q": "في نهاية «Inception»، ما الجسم الصغير الذي يديره كوب لاختبار الواقع؟",
+      "a": "بلبل دوار",
+      "alt": [
+        "دوامة",
+        "البلبل",
+        "خذروف",
+        "النحلة الدوارة"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-905",
+      "p": 400,
+      "topic": "ماتريكس",
+      "q": "في «ماتريكس»، ما الاسم الحركي للمبرمج توماس أندرسون؟",
+      "a": "نيو",
+      "alt": [
+        "Neo"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-906",
+      "p": 400,
+      "topic": "سيد الخواتم",
+      "q": "في «رفقة الخاتم»، من الهوبيت الذي يتطوع لحمل الخاتم إلى موردور؟",
+      "a": "فرودو باغنز",
+      "alt": [
+        "فرودو",
+        "Frodo Baggins"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-907",
+      "p": 400,
+      "topic": "قراصنة الكاريبي",
+      "q": "ما اسم سفينة القرصان الرئيسية في الجزء الأول من «قراصنة الكاريبي»؟",
+      "a": "بلاك بيرل",
+      "alt": [
+        "اللؤلؤة السوداء",
+        "Black Pearl"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-908",
+      "p": 400,
+      "topic": "العودة إلى المستقبل",
+      "q": "في «العودة إلى المستقبل»، ما اسم العالم صديق مارتي؟",
+      "a": "إيميت براون",
+      "alt": [
+        "دوك براون",
+        "Doc Brown",
+        "Emmett Brown"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-600-901",
+      "p": 600,
+      "topic": "هاري بوتر",
+      "q": "في «حجر الفيلسوف»، ما اسم المرآة التي تعرض أعمق رغبات من ينظر إليها؟",
+      "a": "مرآة إريسيد",
+      "alt": [
+        "إريسيد",
+        "Mirror of Erised",
+        "مرآة اريسيد"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-902",
+      "p": 600,
+      "topic": "الحديقة الجوراسية",
+      "q": "في «الحديقة الجوراسية»، في الفيلم الأول، من المبرمج الذي يعطّل أنظمة الأمان ليسرق الأجنة؟",
+      "a": "دينيس نيدري",
+      "alt": [
+        "نيدري",
+        "Dennis Nedry"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-903",
+      "p": 600,
+      "topic": "تايتانيك",
+      "q": "ما اسم القلادة الزرقاء التي يبحث عنها فريق استكشاف الحطام في «تايتانيك»؟",
+      "a": "قلب المحيط",
+      "alt": [
+        "Heart of the Ocean"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-904",
+      "p": 600,
+      "topic": "استهلال",
+      "q": "في «Inception»، من طالبة العمارة التي تصمم عوالم المهمة؟",
+      "a": "أريادني",
+      "alt": [
+        "أريادني",
+        "أريادن",
+        "Ariadne"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-905",
+      "p": 600,
+      "topic": "ماتريكس",
+      "q": "في «ماتريكس»، من قائد الطاقم الذي يؤمن بأن البطل هو المختار؟",
+      "a": "مورفيوس",
+      "alt": [
+        "Morpheus"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-906",
+      "p": 600,
+      "topic": "سيد الخواتم",
+      "q": "في «رفقة الخاتم»، ما الجبل الذي يمكن في نيرانه تدمير الخاتم؟",
+      "a": "جبل الهلاك",
+      "alt": [
+        "جبل الموت",
+        "Mount Doom",
+        "أورودروين"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-907",
+      "p": 600,
+      "topic": "قراصنة الكاريبي",
+      "q": "في «لعنة اللؤلؤة السوداء»، ما حرفة ويل ترنر قبل انطلاقه في المغامرة؟",
+      "a": "الحدادة",
+      "alt": [
+        "حداد",
+        "صانع سيوف"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-908",
+      "p": 600,
+      "topic": "العودة إلى المستقبل",
+      "q": "في «العودة إلى المستقبل»، ما الظاهرة التي يستغلها دوك لتوفير طاقة رحلة العودة من الماضي؟",
+      "a": "ضربة برق",
+      "alt": [
+        "صاعقة",
+        "البرق",
+        "صاعقة البرج"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-800-901",
+      "p": 800,
+      "topic": "هاري بوتر",
+      "q": "في «حجر الفيلسوف»، من الخيميائي الذي صنع الحجر؟",
+      "a": "نيكولاس فلاميل",
+      "alt": [
+        "نيكولا فلاميل",
+        "Nicholas Flamel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "movies-800-902",
+      "p": 800,
+      "topic": "الحديقة الجوراسية",
+      "q": "في «الحديقة الجوراسية»، ما اسم الجزيرة التي تقع عليها الحديقة في الفيلم الأول؟",
+      "a": "إيسلا نوبلار",
+      "alt": [
+        "نوبلار",
+        "Isla Nublar",
+        "جزيرة نوبلار"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "movies-800-903",
+      "p": 800,
+      "topic": "تايتانيك",
+      "q": "في «تايتانيك»، ما اسم الخطيب الثري الذي يتهم جاك بالسرقة؟",
+      "a": "كال هوكلي",
+      "alt": [
+        "كال",
+        "Cal Hockley"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "movies-800-904",
+      "p": 800,
+      "topic": "استهلال",
+      "q": "في «Inception»، من عضو الفريق الذي يبقى في مستوى الفندق ويدبّر إيقاظ رفاقه؟",
+      "a": "آرثر",
+      "alt": [
+        "أرثر",
+        "Arthur"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "movies-800-905",
+      "p": 800,
+      "topic": "ماتريكس",
+      "q": "في «ماتريكس»، ما اسم الملجأ البشري الأخير تحت الأرض؟",
+      "a": "زيون",
+      "alt": [
+        "زايون",
+        "صهيون",
+        "Zion"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "movies-800-906",
+      "p": 800,
+      "topic": "سيد الخواتم",
+      "q": "في «رفقة الخاتم»، أي ساحر يحبس صديقه في آيزنغارد بعد تحالفه مع ساورون؟",
+      "a": "سارومان",
+      "alt": [
+        "سارومون",
+        "Saruman"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "movies-800-907",
+      "p": 800,
+      "topic": "قراصنة الكاريبي",
+      "q": "في «قراصنة الكاريبي»، في الجزء الأول، ماذا تحرق إليزابيث في الجزيرة لإرسال إشارة استغاثة؟",
+      "a": "مخزون الروم",
+      "alt": [
+        "الروم",
+        "براميل الروم",
+        "مؤونة الروم"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "movies-800-908",
+      "p": 800,
+      "topic": "العودة إلى المستقبل",
+      "q": "في «العودة إلى المستقبل»، ما الشيء الذي يبدأ أفراد عائلة مارتي بالاختفاء منه عندما يغيّر لقاء والديه؟",
+      "a": "صورة عائلية",
+      "alt": [
+        "الصورة",
+        "صورة معه",
+        "صورة إخوته"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "movies-1000-901",
+      "p": 1000,
+      "topic": "هاري بوتر",
+      "q": "في «حجر الفيلسوف»، من المدرس الذي يخفي فولدمورت خلف عمامته؟",
+      "a": "كويريل",
+      "alt": [
+        "كويرل",
+        "Quirrell"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "movies-1000-902",
+      "p": 1000,
+      "topic": "الحديقة الجوراسية",
+      "q": "في «الحديقة الجوراسية»، في الفيلم الأول، من حفيدي هاموند يعيد تشغيل النظام في مركز التحكم؟",
+      "a": "ليكس",
+      "alt": [
+        "Lex",
+        "ليكس مورفي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "movies-1000-903",
+      "p": 1000,
+      "topic": "تايتانيك",
+      "q": "في «تايتانيك»، ما الاسم الذي تعطيه البطلة عند وصولها إلى نيويورك؟",
+      "a": "روز داوسون",
+      "alt": [
+        "روز دوسون",
+        "Rose Dawson"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "movies-1000-904",
+      "p": 1000,
+      "topic": "استهلال",
+      "q": "في «Inception»، ما اسم وريث الشركة الذي تستهدفه مهمة زرع الفكرة؟",
+      "a": "روبرت فيشر",
+      "alt": [
+        "فيشر",
+        "Robert Fischer"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "movies-1000-905",
+      "p": 1000,
+      "topic": "ماتريكس",
+      "q": "في «ماتريكس»، من يخون الطاقم مقابل وعد بإعادته إلى الحياة الوهمية المريحة؟",
+      "a": "سايفر",
+      "alt": [
+        "سايڤر",
+        "Cypher"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "movies-1000-906",
+      "p": 1000,
+      "topic": "سيد الخواتم",
+      "q": "في «رفقة الخاتم»، ما اسم قائد الأورك الذي يصيب بورومير بالسهام؟",
+      "a": "لورتز",
+      "alt": [
+        "Lurtz",
+        "لورتس"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "movies-1000-907",
+      "p": 1000,
+      "topic": "قراصنة الكاريبي",
+      "q": "في «قراصنة الكاريبي»، في الجزء الأول، إلى أي جزيرة يتجه البطل مع ويل لتجنيد طاقم؟",
+      "a": "تورتوغا",
+      "alt": [
+        "تورتوجا",
+        "Tortuga"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "movies-1000-908",
+      "p": 1000,
+      "topic": "العودة إلى المستقبل",
+      "q": "في «العودة إلى المستقبل»، ما اسم المركز التجاري عند تجربة دوك الأولى قبل أن يغيّر مارتي الماضي؟",
       "a": "توين باينز",
       "alt": [
-        "Twin Pines Mall",
-        "مركز توين باينز"
+        "توين باينز مول",
+        "Twin Pines Mall"
       ],
-      "p": 1000,
-      "q": "في «العودة إلى المستقبل»، ما اسم المركز التجاري الذي جُربت فيه آلة الزمن؟",
-      "qid": "movies-1000-100",
-      "source": "https://en.wikipedia.org/wiki/Back_to_the_Future",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "ريسيس بيسز",
-      "alt": [
-        "Reese's Pieces",
-        "حلوى ريسيس"
-      ],
-      "p": 1000,
-      "q": "في «إي تي»، ما الحلوى التي يستدرج بها الطفل الكائن الفضائي إلى بيته؟",
-      "qid": "movies-1000-101",
-      "source": "https://en.wikipedia.org/wiki/E.T._the_Extra-Terrestrial",
-      "topic": "المستقبل والفضاء",
-      "verified": true
-    },
-    {
-      "a": "أعلم",
-      "alt": [
-        "أنا أعلم",
-        "أعرف",
-        "I know"
-      ],
-      "p": 1000,
-      "q": "في «الإمبراطورية ترد الضربة»، بماذا يرد هان على قول ليا «أحبك»؟",
-      "qid": "movies-1000-102",
-      "source": "https://en.wikiquote.org/wiki/The_Empire_Strikes_Back",
-      "topic": "الأبطال والقوى",
-      "verified": true
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "verified": true,
+      "difficultyTarget": 0.15
     }
   ],
   "style": "story"

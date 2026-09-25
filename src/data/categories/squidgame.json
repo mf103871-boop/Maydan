@@ -5,3104 +5,585 @@
   "style": "story",
   "qs": [
     {
+      "qid": "squidgame-200-901",
       "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما اللعبة الأولى التي واجهها المتسابقون في الجزيرة؟",
+      "topic": "ألعاب الطفولة",
+      "q": "ما اللعبة الأولى التي تتوقف فيها الحركة حين تستدير الدمية؟",
       "a": "الضوء الأحمر والضوء الأخضر",
       "alt": [
-        "الضوء الأحمر",
-        "ضوء أحمر ضوء أخضر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-001"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الحلوى التي على اللاعبين اقتطاع شكل منها دون كسره؟",
-      "a": "الدالغونا",
-      "alt": [
-        "دالغونا",
-        "حلوى السكر"
+        "ضوء أحمر ضوء أخضر",
+        "الضوء الأحمر"
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "qid": "squidgame-200-002"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "squidgame-200-902",
       "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما اسم اللعبة التي تتبارى فيها فرق من عشرة لاعبين فوق منصتين؟",
-      "a": "شد الحبل",
-      "alt": [
-        "لعبة الحبل",
-        "جذب الحبل"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "على ماذا يخطو اللاعبون في لعبة الجسر المعلّق؟",
-      "a": "ألواح زجاجية",
-      "alt": [
-        "الزجاج",
-        "ألواح من زجاج"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-200-004"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "بم يلعب المتسابقون مثنى مثنى في اللعبة الرابعة؟",
-      "a": "الكرات الزجاجية",
-      "alt": [
-        "البلي",
-        "كرات زجاجية",
-        "الجلول"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم لعبة خاضها المتسابقون حتى النهاية في الموسم الأول؟",
-      "a": "ست",
-      "alt": [
-        "6",
-        "ستة",
-        "ست ألعاب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الاسم الذي حمله المسلسل مأخوذًا من لعبته الأخيرة؟",
-      "a": "لعبة الحبار",
-      "alt": [
-        "سكويد غيم",
-        "الحبار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%B9%D8%A8%D8%A9_%D8%A7%D9%84%D8%AD%D8%A8%D8%A7%D8%B1",
-      "verified": true,
-      "qid": "squidgame-200-007"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "متى يُسمح للمتسابقين بالحركة في اللعبة الأولى؟",
-      "a": "عند الضوء الأخضر",
-      "alt": [
-        "الضوء الأخضر"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-200-008"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما اللعبة الورقية التي لعبها الرجل الأنيق مع غي هون في المحطة؟",
-      "a": "الددكجي",
-      "alt": [
-        "ددكجي",
-        "طي الورق"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "من تدير ظهرها ثم تلتفت لترصد كل متحرّك في اللعبة الأولى؟",
-      "a": "الدمية العملاقة",
-      "alt": [
-        "الدمية",
-        "الدمية الضخمة"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما نوع الألعاب التي اختيرت لهذه المسابقة الغريبة؟",
-      "a": "ألعاب أطفال",
-      "alt": [
-        "ألعاب الأطفال",
-        "ألعاب طفولة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "الألعاب وقواعدها",
-      "q": "ماذا يحدث للوح الزجاج العادي حين يقف عليه لاعب؟",
-      "a": "ينكسر",
-      "alt": [
-        "يتحطم",
-        "ينهار"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما الرقم الذي يحمله البطل غي هون؟",
+      "topic": "رحلة جيهون",
+      "q": "ما رقم جيهون الذي يعود به إلى المسابقة؟",
       "a": "456",
       "alt": [
         "٤٥٦"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
       "verified": true,
-      "qid": "squidgame-200-013"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "squidgame-200-903",
       "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "من صديق الطفولة الذي فوجئ غي هون بوجوده بين اللاعبين؟",
+      "topic": "الحلفاء والخصوم",
+      "q": "من صديق جيهون منذ الطفولة الذي يواجهه في نهائي الموسم الأول؟",
       "a": "تشو سانغ وو",
       "alt": [
         "سانغ وو",
-        "شو سانغ وو"
+        "سانغو",
+        "Cho Sang-woo"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
       "verified": true,
-      "qid": "squidgame-200-014"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "squidgame-200-904",
       "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "من الشابة التي هربت من كوريا الشمالية ودخلت الألعاب؟",
-      "a": "كانغ سي بيوك",
+      "topic": "أسرار المنظمين",
+      "q": "ما اللقب الإنجليزي لقائد المسابقة ذي القناع الأسود؟",
+      "a": "فرونت مان",
       "alt": [
-        "سي بيوك",
-        "ساي بيوك",
-        "كانغ ساي بيوك"
+        "الرجل الأمامي",
+        "Front Man",
+        "الفرونت مان"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
       "verified": true,
-      "qid": "squidgame-200-015"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "squidgame-200-905",
       "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما جنسية اللاعب علي الذي كان يعمل في مصنع؟",
-      "a": "باكستاني",
+      "topic": "القرارات المصيرية",
+      "q": "لماذا يعود جيهون إلى المسابقة في الموسم الثاني؟",
+      "a": "لإيقاف الألعاب",
       "alt": [
-        "باكستان",
-        "من باكستان"
+        "إنهاء الألعاب",
+        "تدمير المسابقة",
+        "إيقاف المسابقة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
       "verified": true,
-      "qid": "squidgame-200-016"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "squidgame-200-906",
       "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما اسم العجوز الذي شارك في الألعاب رغم كبر سنه؟",
-      "a": "أوه إيل نام",
+      "topic": "قواعد النجاة",
+      "q": "في لعبة الحلوى، ماذا يجب ألا يحدث للشكل أثناء استخراجه؟",
+      "a": "أن ينكسر",
       "alt": [
-        "إيل نام",
-        "أو إيل نام",
-        "أوه إل نام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "بمَ يدفع اللاعب الخاسر ثمن خسارته في هذه الألعاب؟",
-      "a": "بحياته",
-      "alt": [
-        "حياته",
-        "بروحه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "من الشرطي الذي تسلل إلى الجزيرة بحثًا عن أخيه المفقود؟",
-      "a": "هوانغ جون هو",
-      "alt": [
-        "جون هو",
-        "هوانج جون هو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "بمَ يُنادى المتسابقون داخل الجزيرة بدل أسمائهم؟",
-      "a": "بأرقامهم",
-      "alt": [
-        "الأرقام",
-        "بالأرقام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "من اللاعب الذي أمسك بغي هون ومنعه من السقوط في اللعبة الأولى؟",
-      "a": "علي عبدول",
-      "alt": [
-        "علي",
-        "علي عبد الله"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما المهنة التي كان يعمل بها غي هون قبل دخوله الألعاب؟",
-      "a": "سائق",
-      "alt": [
-        "سائق سيارة",
-        "شوفير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "كم لاعبًا دخل ألعاب الموسم الأول؟",
-      "a": "456 لاعبًا",
-      "alt": [
-        "456",
-        "٤٥٦"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "كم لاعبًا يبقى في النهاية ليأخذ الجائزة كلها؟",
-      "a": "لاعب واحد",
-      "alt": [
-        "واحد فقط",
-        "واحد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "الحراس والأقنعة",
-      "q": "ما لون بذلات الحراس؟",
-      "a": "وردي",
-      "alt": [
-        "الوردي",
-        "زهري",
-        "أحمر وردي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "الحراس والأقنعة",
-      "q": "ما لون البذلات الرياضية التي يرتديها اللاعبون؟",
-      "a": "أخضر",
-      "alt": [
-        "الأخضر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "الحراس والأقنعة",
-      "q": "ما الذي يخفي وجوه الحراس طوال الألعاب؟",
-      "a": "أقنعة سوداء",
-      "alt": [
-        "الأقنعة",
-        "قناع أسود"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "الحراس والأقنعة",
-      "q": "من يشرف على الألعاب مرتديًا قناعًا أسود ورداءً طويلًا؟",
-      "a": "الرجل الأمامي",
-      "alt": [
-        "فرونت مان",
-        "القائد المقنّع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "الحراس والأقنعة",
-      "q": "ما لون أقنعة الضيوف الأثرياء الذين يتفرجون على الألعاب؟",
-      "a": "ذهبي",
-      "alt": [
-        "الذهبي",
-        "ذهبية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما شكل الحصالة العملاقة المعلّقة فوق رؤوس اللاعبين؟",
-      "a": "خنزير",
-      "alt": [
-        "حصالة خنزير",
-        "خنزير وردي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات وعائلات",
-      "q": "ما المناسبة التي خرج فيها غي هون مع ابنته في أول حلقة؟",
-      "a": "عيد ميلادها",
-      "alt": [
-        "عيد ميلاد ابنته",
-        "ميلادها"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ماذا أعطى الرجل الأنيق لغي هون بعد أن لعب معه؟",
-      "a": "بطاقة دعوة",
-      "alt": [
-        "بطاقة",
-        "دعوة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما الأشكال الثلاثة المطبوعة على بطاقة الدعوة؟",
-      "a": "دائرة ومثلث ومربع",
-      "alt": [
-        "الدائرة والمثلث والمربع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما الأداة الصغيرة التي يقتطع بها اللاعبون شكل الحلوى؟",
-      "a": "إبرة",
-      "alt": [
-        "الإبرة",
-        "دبوس"
+        "كسر الشكل",
+        "الكسر",
+        "ينكسر"
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "qid": "squidgame-200-034"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "squidgame-200-907",
       "p": 200,
-      "topic": "أشياء ورموز",
-      "q": "ما الذي يوقّعه اللاعبون قبل أن تبدأ الألعاب؟",
-      "a": "استمارة موافقة",
-      "alt": [
-        "عقد موافقة",
-        "الاستمارة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن الجزيرة",
-      "q": "أين تُقام الألعاب بعيدًا عن العالم؟",
-      "a": "في جزيرة",
-      "alt": [
-        "جزيرة",
-        "جزيرة معزولة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "الحراس والأقنعة",
-      "q": "ما السلاح الذي يشهره الحراس في وجه اللاعبين؟",
-      "a": "بنادق",
-      "alt": [
-        "البنادق",
-        "أسلحة نارية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن الجزيرة",
-      "q": "في أي مدينة يعيش غي هون قبل دخوله الألعاب؟",
-      "a": "سيول",
-      "alt": [
-        "سيؤول"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "أماكن الجزيرة",
-      "q": "من أي بلد المسلسل وأبطاله؟",
-      "a": "كوريا الجنوبية",
-      "alt": [
-        "كوريا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%B9%D8%A8%D8%A9_%D8%A7%D9%84%D8%AD%D8%A8%D8%A7%D8%B1",
-      "verified": true,
-      "qid": "squidgame-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات وعائلات",
-      "q": "مع من كان يعيش غي هون قبل دخوله الألعاب؟",
-      "a": "مع أمه",
-      "alt": [
-        "أمه",
-        "والدته"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات وعائلات",
-      "q": "ما صلة الرجل صاحب القناع الأسود بالشرطي جون هو؟",
-      "a": "أخوه",
-      "alt": [
-        "شقيقه",
-        "أخوه الأكبر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "علاقات وعائلات",
-      "q": "من أرادت سي بيوك أن تخرجه من دار الأيتام؟",
+      "topic": "العائلة خارج الجزيرة",
+      "q": "من طلبت ساي بيوك من جيهون الاعتناء به إذا نجح في الخروج؟",
       "a": "أخوها الصغير",
       "alt": [
-        "أخوها",
-        "شقيقها"
+        "أخيها",
+        "شقيقها",
+        "أخوها"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
       "verified": true,
-      "qid": "squidgame-200-042"
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "squidgame-200-908",
       "p": 200,
-      "topic": "علاقات وعائلات",
-      "q": "إلى أي بلد ستنتقل ابنة غي هون؟",
-      "a": "أمريكا",
+      "topic": "أحداث الموسم الأخير",
+      "q": "من تصبح الفائزة بالمسابقة في نهاية الموسم الثالث؟",
+      "a": "رضيعة جون هي",
       "alt": [
-        "الولايات المتحدة",
-        "أميركا"
+        "الطفلة",
+        "الرضيعة",
+        "مولودة جون هي"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "qid": "squidgame-200-043"
+      "difficultyTarget": 0.8
     },
     {
-      "p": 200,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعل غي هون بشعره في نهاية الموسم الأول؟",
-      "a": "صبغه بالأحمر",
-      "alt": [
-        "صبغ شعره",
-        "لوّنه بالأحمر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعل غي هون بالحلوى ليسهّل عليه اقتطاع الشكل؟",
-      "a": "لعقها",
-      "alt": [
-        "لحسها",
-        "أذابها بلسانه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعل اللاعبون بعضهم ببعض في ليلة الفوضى داخل المهجع؟",
-      "a": "تقاتلوا",
-      "alt": [
-        "اقتتلوا",
-        "تضاربوا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "مشاهد لا تُنسى",
-      "q": "من فاز بألعاب الموسم الأول؟",
-      "a": "سيونغ غي هون",
-      "alt": [
-        "غي هون",
-        "سيونغ جي هون",
-        "سونغ غي هون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعل اللاعبون بعد اللعبة الأولى ليخرجوا من الجزيرة؟",
-      "a": "صوّتوا",
-      "alt": [
-        "التصويت",
-        "صوّتوا على الإيقاف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-200-048"
-    },
-    {
+      "qid": "squidgame-400-901",
       "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "ماذا كان الحراس يذيبون ليلًا قبل اللعبة الثانية؟",
-      "a": "السكر",
+      "topic": "ألعاب الطفولة",
+      "q": "ما اسم الحلوى الكورية التي يخاطر اللاعبون بكسر شكلها المحفور؟",
+      "a": "دالغونا",
       "alt": [
-        "سكرًا",
-        "السكر والصودا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-001"
-    },
-    {
-      "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الشكل الذي وقع في نصيب غي هون في لعبة الحلوى؟",
-      "a": "المظلة",
-      "alt": [
-        "مظلة",
-        "شكل المظلة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما مصير الفريق الخاسر في مباراة الحبل؟",
-      "a": "يسقط في الهاوية",
-      "alt": [
-        "السقوط في الهاوية",
-        "يهوي من عل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما نوع الزجاج الذي يتحمّل وزن اللاعب في لعبة الجسر؟",
-      "a": "الزجاج المقسّى",
-      "alt": [
-        "المقسى",
-        "زجاج مقوّى"
+        "الدالغونا",
+        "Dalgona"
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "qid": "squidgame-400-004"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "squidgame-400-902",
       "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "ماذا يحدث للاعب الذي يتحرك أثناء الضوء الأحمر؟",
-      "a": "يخرج من اللعبة",
+      "topic": "رحلة جيهون",
+      "q": "إلى أي لون يصبغ جيهون شعره بعد فوزه الأول؟",
+      "a": "الأحمر",
       "alt": [
-        "يُستبعد",
-        "يُقصى"
+        "أحمر"
       ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
       "verified": true,
-      "qid": "squidgame-400-005"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "squidgame-400-903",
       "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم كرة أُعطيت لكل لاعب في اللعبة الرابعة؟",
-      "a": "عشر كرات",
-      "alt": [
-        "10 كرات",
-        "عشرة"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-400-006"
-    },
-    {
-      "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "على ماذا يقف الفريقان المتنافسان في اللعبة الثالثة؟",
-      "a": "على منصتين مرتفعتين",
-      "alt": [
-        "منصات مرتفعة",
-        "منصتين"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "في اللعبة الرابعة، ماذا يختار كل لاعب قبل معرفة القواعد؟",
-      "a": "شريكًا",
-      "alt": [
-        "شريك",
-        "زميلًا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الشكل الذي وقع في نصيب العجوز ومي نيو في لعبة الحلوى؟",
-      "a": "النجمة",
-      "alt": [
-        "نجمة",
-        "شكل النجمة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم سانغ وو بين اللاعبين؟",
-      "a": "218",
-      "alt": [
-        "٢١٨"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم اللاعبة سي بيوك؟",
-      "a": "067",
-      "alt": [
-        "67",
-        "٠٦٧"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم اللاعب علي؟",
-      "a": "199",
-      "alt": [
-        "١٩٩"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "كم تبلغ الجائزة الكبرى في الموسم الأول؟",
-      "a": "45.6 مليار وون",
-      "alt": [
-        "45.6 مليار",
-        "456 مليار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ماذا كان يعمل علي قبل دخوله الألعاب؟",
-      "a": "عامل مصنع",
-      "alt": [
-        "في مصنع",
-        "عاملًا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "على أي سباق كان غي هون يقامر قبل دخوله الألعاب؟",
-      "a": "سباق الخيل",
-      "alt": [
-        "الخيل",
-        "سباقات الخيل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "بمَ تذرّعت مي نيو أمام الحراس لتخرج من الألعاب؟",
-      "a": "بأن لها رضيعًا",
-      "alt": [
-        "برضيع لم تسمّه",
-        "بأن لها طفلًا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "لماذا عاد أكثر اللاعبين إلى الجزيرة بعد خروجهم منها؟",
-      "a": "بسبب الديون",
-      "alt": [
-        "الديون",
-        "الفقر والديون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "من اللاعب الذي كان زعيمًا لعصابة قبل دخوله الألعاب؟",
-      "a": "جانغ ديوك سو",
-      "alt": [
-        "ديوك سو",
-        "دوك سو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "الحراس والأقنعة",
-      "q": "ما التجارة السرية التي أدارها بعض الحراس داخل الجزيرة؟",
-      "a": "تجارة الأعضاء",
-      "alt": [
-        "بيع الأعضاء",
-        "الأعضاء البشرية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "الحراس والأقنعة",
-      "q": "ماذا يُمنع الحراس من فعله مع اللاعبين؟",
-      "a": "التحدث إليهم",
-      "alt": [
-        "الكلام معهم",
-        "الحديث"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "الحراس والأقنعة",
-      "q": "بأي زي تسلل جون هو إلى داخل الجزيرة؟",
-      "a": "زي الحراس",
-      "alt": [
-        "بزي حارس",
-        "زي عامل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "الحراس والأقنعة",
-      "q": "ما شكل الأقنعة الذهبية التي يرتديها الضيوف الأثرياء؟",
-      "a": "أقنعة حيوانات",
-      "alt": [
-        "حيوانات",
-        "رؤوس حيوانات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ماذا ينتعل اللاعبون جميعًا داخل الجزيرة؟",
-      "a": "حذاء أبيض",
-      "alt": [
-        "أحذية بيضاء",
-        "حذاء رياضي أبيض"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "بم خُدِّر اللاعبون قبل نقلهم إلى الجزيرة؟",
-      "a": "بغاز منوّم",
-      "alt": [
-        "غاز منوم",
-        "غاز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما الأداة التي تُركت مع العشاء الأخير فصارت سلاحًا؟",
-      "a": "السكين",
-      "alt": [
-        "سكين",
-        "سكين المائدة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما العملة التي تُدفع بها جائزة الألعاب؟",
-      "a": "الوون",
-      "alt": [
-        "الوون الكوري",
-        "وون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما الشيء الذي يحمله كل لاعب مطبوعًا على صدره وظهره؟",
-      "a": "رقمه",
-      "alt": [
-        "رقم اللاعب",
-        "الرقم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "أشياء ورموز",
-      "q": "ما الذي يتدلى من سقف قاعة النوم وتتراكم فيه الأموال؟",
-      "a": "حصالة زجاجية",
-      "alt": [
-        "الحصالة",
-        "حصالة شفافة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الجزيرة",
-      "q": "أين يقضي اللاعبون لياليهم بين لعبة وأخرى؟",
-      "a": "في أسرّة طابقية",
-      "alt": [
-        "أسرة بطابقين",
-        "أسرّة متراصّة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الجزيرة",
-      "q": "كيف وصل اللاعبون إلى الجزيرة أول مرة؟",
-      "a": "وهم نائمون",
-      "alt": [
-        "نائمين",
-        "مخدَّرين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "أماكن الجزيرة",
-      "q": "في أي غرفة يراقب مشرف الألعاب كل ما يجري؟",
-      "a": "غرفة التحكم",
-      "alt": [
-        "غرفة المراقبة",
-        "غرفة الشاشات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات وعائلات",
-      "q": "مع من كانت تعيش ابنة غي هون؟",
-      "a": "مع أمها",
-      "alt": [
-        "أمها",
-        "والدتها"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات وعائلات",
-      "q": "ماذا طلب سانغ وو من غي هون قبل أن يفارق الحياة؟",
-      "a": "أن يرعى أمه",
-      "alt": [
-        "رعاية أمه",
-        "الاعتناء بأمه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات وعائلات",
-      "q": "لمن يجمع عليٌّ المال الذي دخل الألعاب من أجله؟",
-      "a": "زوجته وطفله",
-      "alt": [
-        "أسرته",
-        "زوجته وابنه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "علاقات وعائلات",
-      "q": "ما الذي خسره سانغ وو وجعل الشرطة تلاحقه؟",
-      "a": "أموال زبائنه",
-      "alt": [
-        "أموال العملاء",
-        "أموال الناس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "الموسم الثاني",
-      "q": "متى يصوّت اللاعبون في الموسم الثاني على إكمال الألعاب؟",
-      "a": "بعد كل لعبة",
-      "alt": [
-        "عقب كل لعبة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "الموسم الثاني",
-      "q": "بأي رمزين يصوّت اللاعبون في الموسم الثاني؟",
-      "a": "O وX",
-      "alt": [
-        "دائرة وإكس",
-        "أو وإكس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "الموسم الثاني",
-      "q": "ماذا عاد غي هون إلى الجزيرة ليفعله بالألعاب في الموسم الثاني؟",
-      "a": "إيقافها",
-      "alt": [
-        "أن يوقفها",
-        "إنهاءها"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "الموسم الثاني",
-      "q": "كم لعبة خاضها اللاعبون في الموسم الثاني قبل ليلة التمرّد؟",
-      "a": "ثلاث",
-      "alt": [
-        "3",
-        "ثلاث ألعاب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "الموسم الثاني",
-      "q": "ماذا فعل المجنِّد بالخبز الذي رفضه المشرّدون؟",
-      "a": "داسه بقدمه",
-      "alt": [
-        "سحقه بقدمه",
-        "دهسه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "الموسم الثاني",
-      "q": "ماذا يحدث للمال المتجمّع إذا صوّت أكثر لاعبي الموسم الثاني بالخروج؟",
-      "a": "يُقسم بينهم",
-      "alt": [
-        "يقتسمونه",
-        "يتقاسمونه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "مشاهد لا تُنسى",
-      "q": "إلى أين عاد اللاعبون بعد التصويت على إيقاف الألعاب؟",
-      "a": "إلى بيوتهم",
-      "alt": [
-        "بيوتهم",
-        "حياتهم السابقة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعل غي هون في المطار في آخر الموسم الأول؟",
-      "a": "عاد أدراجه",
-      "alt": [
-        "لم يسافر",
-        "ألغى سفره"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ما الذي أنقذ فريق غي هون في اللعبة الثالثة؟",
-      "a": "خطة العجوز",
-      "alt": [
-        "نصيحة العجوز",
-        "حيلة العجوز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "مشاهد لا تُنسى",
-      "q": "من الذي شرح قواعد اللعبة الأخيرة في مشهد افتتاح المسلسل؟",
-      "a": "غي هون نفسه",
-      "alt": [
-        "البطل",
-        "الراوي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ما السرّ الذي كشفه إيل نام لغي هون قبل موته؟",
-      "a": "أنه صانع الألعاب",
-      "alt": [
-        "أنه من ابتكر الألعاب",
-        "أنه صاحب الألعاب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "مشاهد لا تُنسى",
-      "q": "بمَ فوجئ غي هون حين عاد إلى بيته بعد فوزه؟",
-      "a": "بوفاة أمه",
-      "alt": [
-        "أمه ماتت",
-        "موت أمه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعل مشرف الألعاب بأخيه الشرطي حين كشف أمره؟",
-      "a": "أطلق عليه النار",
-      "alt": [
-        "أرداه بالرصاص",
-        "رماه بالرصاص"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-400-048"
-    },
-    {
-      "p": 600,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم دقيقة أُعطيت للاعبين في لعبة الحلوى؟",
-      "a": "عشر دقائق",
-      "alt": [
-        "10 دقائق",
-        "عشرة"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم دقيقة كانت مهلة اللعبة الأولى؟",
-      "a": "خمس دقائق",
-      "alt": [
-        "5 دقائق",
-        "خمسة"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الشكل الذي اقتطعه سانغ وو من حلواه؟",
-      "a": "المثلث",
-      "alt": [
-        "مثلث"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الذي يرصد به تمثال اللعبة الأولى حركة المتسابقين؟",
-      "a": "مجسّات الحركة",
-      "alt": [
-        "حساسات الحركة",
-        "أجهزة استشعار"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما اسم الدمية الضخمة التي تراقب اللاعبين في اللعبة الأولى؟",
-      "a": "يونغ هي",
-      "alt": [
-        "يونغهي",
-        "يونغ-هي"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم يومًا استغرقت ألعاب الموسم الأول؟",
-      "a": "ستة أيام",
-      "alt": [
-        "6 أيام",
-        "ستة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما النصيحة التي أنقذت فريق غي هون في مباراة الحبل؟",
-      "a": "الميل إلى الخلف",
-      "alt": [
-        "الانحناء للخلف",
-        "الاتكاء للخلف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "الألعاب وقواعدها",
-      "q": "في اللعبة الرابعة، ما الذي على اللاعب أن يأخذه من شريكه؟",
-      "a": "كل كراته",
-      "alt": [
-        "كراته",
-        "الكرات كلها"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم زعيم العصابة ديوك سو؟",
-      "a": "101",
-      "alt": [
-        "١٠١"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما الجامعة التي تخرّج فيها سانغ وو وافتخر بها حيّه؟",
-      "a": "جامعة سيول الوطنية",
-      "alt": [
-        "سيول الوطنية",
-        "جامعة سول"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "أين كان يعمل سانغ وو قبل دخوله الألعاب؟",
-      "a": "شركة استثمار",
-      "alt": [
-        "في شركة أوراق مالية",
-        "مكتب استثمار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "كم يُضاف إلى الجائزة عن كل لاعب يخرج من الألعاب؟",
-      "a": "100 مليون وون",
-      "alt": [
-        "مئة مليون وون",
-        "100 مليون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "من الذي حسم التصويت وأنهى ألعاب الموسم الأول؟",
-      "a": "اللاعب 001",
-      "alt": [
-        "إيل نام",
-        "العجوز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما اسم ابنة غي هون؟",
-      "a": "غا يونغ",
-      "alt": [
-        "كا يونغ",
-        "غايونغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "من شريكة سي بيوك في اللعبة الرابعة؟",
-      "a": "جي يونغ",
-      "alt": [
-        "الفتاة 240",
-        "جي-يونغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما مهنة سي بيوك في الشوارع قبل دخولها الألعاب؟",
-      "a": "نشّالة",
-      "alt": [
-        "نشالة",
-        "سرقة الجيوب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "الحراس والأقنعة",
-      "q": "ما الرتبة التي يحملها الحراس أصحاب الدائرة؟",
-      "a": "العمّال",
-      "alt": [
-        "العمال",
-        "عمال"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "الحراس والأقنعة",
-      "q": "ما الشكل الذي يميّز الحارس المشرف على بقية الحراس؟",
-      "a": "المربع",
-      "alt": [
-        "مربع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "الحراس والأقنعة",
-      "q": "ما الاسم الحقيقي لمشرف الألعاب صاحب القناع الأسود؟",
-      "a": "هوانغ إن هو",
-      "alt": [
-        "إن هو",
-        "هوانج إن هو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "الحراس والأقنعة",
-      "q": "ماذا كان مشرف الألعاب في نسخة سابقة من هذه المسابقة؟",
-      "a": "فائزًا",
-      "alt": [
-        "فائزًا سابقًا",
-        "بطل نسخة سابقة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "الحراس والأقنعة",
-      "q": "ماذا وجد جون هو في غرفة الملفات السرية؟",
-      "a": "صور الفائزين",
-      "alt": [
-        "ملفات الفائزين",
-        "سجلات الفائزين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "الحراس والأقنعة",
-      "q": "ما الذي يفعله الضيوف الأثرياء أثناء متابعتهم الألعاب؟",
-      "a": "يراهنون",
-      "alt": [
-        "المراهنة",
-        "يراهنون على اللاعبين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "كم بندًا تضم استمارة الموافقة التي يوقّعها اللاعبون؟",
-      "a": "ثلاثة بنود",
-      "alt": [
-        "3",
-        "ثلاثة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "أي بنود الاستمارة يسمح بإيقاف الألعاب؟",
-      "a": "البند الثالث",
-      "alt": [
-        "الثالث",
-        "البند رقم ثلاثة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "بأي شرط تتوقف الألعاب حسب الاستمارة؟",
-      "a": "بموافقة الأغلبية",
-      "alt": [
-        "أغلبية الأصوات",
-        "تصويت الأغلبية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ما الطبق الذي قُدّم للثلاثة الباقين في عشائهم الأخير؟",
-      "a": "شريحة لحم",
-      "alt": [
-        "ستيك",
-        "لحم مشوي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "أشياء ورموز",
-      "q": "ماذا فعل غي هون بالجائزة طوال سنة كاملة؟",
-      "a": "لم يمسّها",
-      "alt": [
-        "تركها",
-        "لم ينفق منها"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الجزيرة",
-      "q": "كيف تبدو السلالم المؤدية بين قاعات الألعاب؟",
-      "a": "سلالم ملوّنة متشابكة",
-      "alt": [
-        "سلالم متاهة",
-        "سلالم ملونة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الجزيرة",
-      "q": "أين كان يعمل غي هون قبل أن يفقد وظيفته؟",
-      "a": "مصنع سيارات",
-      "alt": [
-        "في مصنع سيارات",
-        "شركة سيارات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الجزيرة",
-      "q": "ما المكان الذي يشبهه ملعب اللعبة الأولى؟",
-      "a": "ساحة مدرسة",
-      "alt": [
-        "فناء مدرسة",
-        "ملعب مدرسة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "أماكن الجزيرة",
-      "q": "أين جرت أحداث اللعبة الرابعة؟",
-      "a": "في زقاق قديم",
-      "alt": [
-        "حي قديم",
-        "أزقة قديمة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات وعائلات",
-      "q": "ما الكلمة الكورية التي تعني الرفيق الذي يتقاسم كل شيء؟",
-      "a": "غانبو",
-      "alt": [
-        "كانبو",
-        "قانبو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات وعائلات",
-      "q": "بأي كلمة كان علي ينادي سانغ وو في الألعاب؟",
-      "a": "أخي",
-      "alt": [
-        "يا أخي",
-        "هيونغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات وعائلات",
-      "q": "من صديق غي هون القديم الذي التقاه بين اللاعبين في الموسم الثاني؟",
-      "a": "جونغ باي",
-      "alt": [
-        "بارك جونغ باي",
-        "جونغ-باي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "علاقات وعائلات",
-      "q": "من كانت تنتظر سي بيوك أن تُخرجها من الشمال؟",
-      "a": "أمها",
-      "alt": [
-        "والدتها"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "الموسم الثاني",
-      "q": "ما اللعبة الثانية في الموسم الثاني؟",
-      "a": "السباق الخماسي",
-      "alt": [
-        "الخماسي بستة أرجل",
-        "سباق الأرجل الستة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "الموسم الثاني",
-      "q": "كم لاعبًا يضم كل فريق في اللعبة الثانية من الموسم الثاني؟",
-      "a": "خمسة",
-      "alt": [
-        "5",
-        "خمسة لاعبين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "الموسم الثاني",
-      "q": "ماذا فعل المنظّمون بجهاز تعقّب غي هون في الموسم الثاني؟",
-      "a": "نقلوه إلى جزيرة أخرى",
-      "alt": [
-        "ألقوه في جزيرة بعيدة",
-        "نقلوه بعيدًا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "الموسم الثاني",
-      "q": "ماذا يعرض المجنِّد على المشرّدين ليختاروا بينهما؟",
-      "a": "خبزًا أو ورقة يانصيب",
-      "alt": [
-        "الخبز أو اليانصيب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "الموسم الثاني",
-      "q": "ما عمل اللاعب صاحب الرقم 333 قبل دخوله الألعاب؟",
-      "a": "يوتيوبر",
-      "alt": [
-        "صانع محتوى",
-        "مشهور إنترنت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "الموسم الثاني",
-      "q": "ما لقب اللاعب المغنّي الصاخب في الموسم الثاني؟",
+      "topic": "الحلفاء والخصوم",
+      "q": "ما اسم مغني الراب ذي الشعر البنفسجي الذي يشارك في الموسم الثاني؟",
       "a": "ثانوس",
       "alt": [
         "تانوس",
-        "ثانوس المغني",
-        "تشوي سو بونغ"
+        "Thanos"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
       "verified": true,
-      "qid": "squidgame-600-041"
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "squidgame-400-904",
+      "p": 400,
+      "topic": "أسرار المنظمين",
+      "q": "ما صلة القرابة بين قائد المسابقة والمحقق الذي يتسلل إلى الجزيرة؟",
+      "a": "أخوان",
+      "alt": [
+        "شقيقان",
+        "أخوه",
+        "أخوة"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-905",
+      "p": 400,
+      "topic": "القرارات المصيرية",
+      "q": "ما الذي يقوده جيهون ضد الحراس في ختام الموسم الثاني؟",
+      "a": "تمرد مسلح",
+      "alt": [
+        "ثورة",
+        "انتفاضة",
+        "تمرد"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-906",
+      "p": 400,
+      "topic": "قواعد النجاة",
+      "q": "في لعبة الاختباء بالموسم الثالث، ماذا يحصل عليه الفريق الأزرق لفتح الأبواب؟",
+      "a": "مفاتيح",
+      "alt": [
+        "المفاتيح"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-907",
+      "p": 400,
+      "topic": "العائلة خارج الجزيرة",
+      "q": "ما المجال الذي روّج له ميونغ جي وأوقع متابعيه في خسائر مالية؟",
+      "a": "العملات المشفرة",
+      "alt": [
+        "العملات الرقمية",
+        "الكريبتو"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-400-908",
+      "p": 400,
+      "topic": "أحداث الموسم الأخير",
+      "q": "أي لعبة تعبر فيها الشخصيات جسرًا ضيقًا بين دميتين عملاقتين؟",
+      "a": "القفز بالحبل",
+      "alt": [
+        "نط الحبل",
+        "Jump Rope"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "squidgame-600-901",
       "p": 600,
-      "topic": "الموسم الثاني",
-      "q": "بم انتهى الموسم الثاني؟",
-      "a": "بفشل التمرّد",
+      "topic": "ألعاب الطفولة",
+      "q": "ما اسم اللعبة التي يستخدمها المجنّد مع جيهون في محطة المترو؟",
+      "a": "داكجي",
       "alt": [
-        "فشل الثورة",
-        "انهيار التمرد"
+        "داكجي الورقية",
+        "Ddakji",
+        "تاكجي"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
       "verified": true,
-      "qid": "squidgame-600-042"
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "squidgame-600-902",
       "p": 600,
-      "topic": "الموسم الثاني",
-      "q": "ماذا على اللاعبين أن يفعلوا حين يُنادى رقم في لعبة التجمّع؟",
-      "a": "يشكّلون مجموعة بعدده",
+      "topic": "رحلة جيهون",
+      "q": "ما وسيلة التعقب التي يخفيها جيهون في فمه قبل العودة للمسابقة؟",
+      "a": "جهاز داخل ضرس",
       "alt": [
-        "يتجمعون بالعدد",
-        "تكوين مجموعة"
+        "شريحة في ضرس",
+        "جهاز تعقب في السن",
+        "متتبع في الضرس"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
       "verified": true,
-      "qid": "squidgame-600-043"
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "squidgame-600-903",
       "p": 600,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا طلب غي هون من سانغ وو في اللعبة الأخيرة بدل المواصلة؟",
-      "a": "إيقاف اللعبة",
+      "topic": "الحلفاء والخصوم",
+      "q": "من صديق جيهون الذي يُقتل أمامه بعد فشل التمرد؟",
+      "a": "جونغ باي",
       "alt": [
-        "أن يوقفا اللعبة",
-        "الانسحاب"
+        "جونغ بي",
+        "Jung-bae"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
       "verified": true,
-      "qid": "squidgame-600-044"
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "squidgame-600-904",
       "p": 600,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعلت مي نيو بزعيم العصابة فوق الجسر؟",
-      "a": "أسقطته معها",
-      "alt": [
-        "جرّته معها",
-        "رمته من الجسر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ما الذي وجده غي هون في محطة المترو بعد سنة من فوزه؟",
-      "a": "رجلًا يلعب الددكجي",
-      "alt": [
-        "المجنّد",
-        "الرجل الأنيق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعل اللاعبون في المهجع ليتعارفوا بعد لعبة الحبل؟",
-      "a": "تبادلوا أسماءهم",
-      "alt": [
-        "قالوا أسماءهم",
-        "تعارفوا بالأسماء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ما الرقم الذي كتب على بطاقة الدعوة ليتصل به المدعوّ؟",
-      "a": "رقم هاتف",
-      "alt": [
-        "هاتف",
-        "رقم تلفون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-600-048"
-    },
-    {
-      "p": 800,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم دقيقة كانت مهلة عبور الجسر الزجاجي؟",
-      "a": "ست عشرة دقيقة",
-      "alt": [
-        "16 دقيقة",
-        "ستة عشر"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-800-001"
-    },
-    {
-      "p": 800,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم زوجًا من الألواح يضم الجسر الزجاجي؟",
-      "a": "ثمانية عشر",
-      "alt": [
-        "18",
-        "18 زوجًا"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم لاعبًا دخل لعبة الجسر الزجاجي؟",
-      "a": "ستة عشر",
-      "alt": [
-        "16",
-        "ستة عشر لاعبًا"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم دقيقة كانت مهلة اللعبة الرابعة؟",
-      "a": "ثلاثون دقيقة",
-      "alt": [
-        "30 دقيقة",
-        "نصف ساعة"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "الألعاب وقواعدها",
-      "q": "كيف حُدّد ترتيب اللاعبين في عبور الجسر؟",
-      "a": "بسحب الأرقام",
-      "alt": [
-        "اختاروا أرقامًا",
-        "بالقرعة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-005"
-    },
-    {
-      "p": 800,
-      "topic": "الألعاب وقواعدها",
-      "q": "ماذا فعل المنظّمون ليصعّبوا عبور الجسر على اللاعبين؟",
-      "a": "أطفأوا الأنوار",
-      "alt": [
-        "إطفاء الأضواء",
-        "أطفأوا الإضاءة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الذي يختاره اللاعبون قبل أن يعرفوا اللعبة الثانية؟",
-      "a": "شكلًا على الباب",
-      "alt": [
-        "شكلًا",
-        "الشكل على الباب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-007"
-    },
-    {
-      "p": 800,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما المهنة التي جعلت اللاعب 017 يميّز الزجاج الآمن؟",
-      "a": "صانع زجاج",
-      "alt": [
-        "عامل في مصنع زجاج",
-        "زجّاج"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم اللاعبة مي نيو؟",
-      "a": "212",
-      "alt": [
-        "٢١٢"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم اللاعبة التي تخلّت عن الفوز لصالح سي بيوك؟",
-      "a": "240",
-      "alt": [
-        "٢٤٠"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما نتيجة أول تصويت في الموسم الأول؟",
-      "a": "101 مقابل 100",
-      "alt": [
-        "101-100",
-        "مئة وواحد مقابل مئة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما المرض الذي كشف العجوز عنه في نهاية الموسم الأول؟",
-      "a": "ورم في الدماغ",
-      "alt": [
-        "ورم دماغي",
-        "ورم في المخ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما اسم أخي سي بيوك الصغير؟",
-      "a": "تشول",
-      "alt": [
-        "كانغ تشول",
-        "تشيول"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم صديق غي هون القديم في ألعاب الموسم الثاني؟",
-      "a": "390",
-      "alt": [
-        "٣٩٠"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "الموسم الثاني",
-      "q": "ما اللعبة التي خسرها المجنِّد أمام غي هون في الموسم الثاني؟",
-      "a": "الروليت الروسية",
-      "alt": [
-        "روليت روسية",
-        "لعبة المسدس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما اسم اللاعب الذي روّج لعملة رقمية في الموسم الثاني؟",
-      "a": "ميونغ غي",
-      "alt": [
-        "لي ميونغ غي",
-        "ميونغي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم اللاعبة الحامل في الموسم الثاني؟",
-      "a": "222",
-      "alt": [
-        "٢٢٢"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "الحراس والأقنعة",
-      "q": "بأي لغة يتحدث الضيوف الأثرياء أثناء متابعة الألعاب؟",
-      "a": "الإنجليزية",
-      "alt": [
-        "الإنكليزية",
-        "اللغة الإنجليزية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "الحراس والأقنعة",
-      "q": "كم كان يدفع الرجل الأنيق عن كل جولة يخسرها في المحطة؟",
-      "a": "100 ألف وون",
-      "alt": [
-        "مئة ألف وون",
-        "100000 وون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "الحراس والأقنعة",
-      "q": "ماذا كان الرجل الأنيق يفعل بغي هون كلما خسر جولة؟",
-      "a": "يصفعه",
-      "alt": [
-        "صفعة",
-        "يصفع وجهه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "الحراس والأقنعة",
-      "q": "ما الاسم المستعار الذي دخل به مشرف الألعاب الموسم الثاني؟",
-      "a": "يونغ إيل",
-      "alt": [
-        "أوه يونغ إيل",
-        "يونغ-إيل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "الحراس والأقنعة",
-      "q": "ما رقم اللاعب الذي كان مشرف الألعاب متخفّيًا تحته؟",
-      "a": "001",
-      "alt": [
-        "1",
-        "٠٠١"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "أين كانت صور الألعاب الست معروضة أمام اللاعبين طوال الوقت؟",
-      "a": "على جدار المهجع",
-      "alt": [
-        "جدارية المهجع",
-        "على الجدار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "بمَ خدع سانغ وو عليًا في اللعبة الرابعة؟",
-      "a": "بكيس فيه حجارة",
-      "alt": [
-        "كيس حجارة",
-        "بدّل الكيس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "أين أخفى غي هون جهاز التعقّب قبل عودته إلى الألعاب؟",
-      "a": "في ضرسه",
-      "alt": [
-        "في سنّه",
-        "داخل ضرسه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "أين وجد غي هون الدعوة التي جاءته بعد سنة من فوزه؟",
-      "a": "في باقة ورد",
-      "alt": [
-        "ورود",
-        "باقة زهور"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ماذا كانت تبيع أم سانغ وو في السوق؟",
-      "a": "السمك",
-      "alt": [
-        "سمك",
-        "الأسماك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "أشياء ورموز",
-      "q": "ماذا ارتدى اللاعبون فوق بذلاتهم في لعبة الجسر؟",
-      "a": "سترات مرقّمة",
-      "alt": [
-        "سترات بأرقام",
-        "صدريات مرقمة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن الجزيرة",
-      "q": "أين التقى غي هون بالعجوز بعد سنة من فوزه؟",
-      "a": "في غرفة مستشفى",
-      "alt": [
-        "مستشفى",
-        "على سرير المرض"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "أماكن الجزيرة",
-      "q": "ماذا كان يحاكي الزقاق الذي جرت فيه اللعبة الرابعة؟",
-      "a": "حي الطفولة",
-      "alt": [
-        "أزقة الطفولة",
-        "الحي القديم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "الموسم الثاني",
-      "q": "ما الذي وجده غي هون في جيب المجنِّد بعد موته؟",
-      "a": "دعوة حفل هالوين",
-      "alt": [
-        "بطاقة حفل هالوين",
-        "دعوة إلى هالوين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات وعائلات",
-      "q": "من أم اللاعب 007 في الموسم الثاني؟",
-      "a": "غوم جا",
-      "alt": [
-        "جانغ غوم جا",
-        "كوم جا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات وعائلات",
-      "q": "ما صلة اللاعب 333 باللاعبة الحامل في الموسم الثاني؟",
-      "a": "حبيبها السابق",
-      "alt": [
-        "خطيبها السابق",
-        "صديقها السابق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات وعائلات",
-      "q": "بمَ برّر سانغ وو غيابه الطويل لأمه؟",
-      "a": "بأنه في رحلة عمل",
-      "alt": [
-        "رحلة عمل",
-        "سفر للعمل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "علاقات وعائلات",
-      "q": "ماذا ادّعى اللاعب داي هو عن ماضيه في الموسم الثاني؟",
-      "a": "أنه من مشاة البحرية",
-      "alt": [
-        "جندي بحرية",
-        "من المارينز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "الموسم الثاني",
-      "q": "ما رقم اللاعب داي هو؟",
-      "a": "388",
-      "alt": [
-        "٣٨٨"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "الموسم الثاني",
-      "q": "كم ثانية يُمنحها اللاعبون لتكوين مجموعاتهم في لعبة التجمّع؟",
-      "a": "ثلاثون ثانية",
-      "alt": [
-        "30 ثانية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "الموسم الثاني",
-      "q": "ما الذي يدور باللاعبين في وسط ساحة لعبة التجمّع؟",
-      "a": "قرص دوّار",
-      "alt": [
-        "دوّامة",
-        "منصة دوارة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "الموسم الثاني",
-      "q": "كم لعبة صغيرة تضمّها اللعبة الثانية في الموسم الثاني؟",
-      "a": "خمس",
-      "alt": [
-        "5",
-        "خمس ألعاب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "الموسم الثاني",
-      "q": "على كم رجل تسير كل فرقة في اللعبة الثانية من الموسم الثاني؟",
-      "a": "ست أرجل",
-      "alt": [
-        "6 أرجل",
-        "ستة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعلت سي بيوك بأموال غي هون حين التقاها أول مرة؟",
-      "a": "سرقتها",
-      "alt": [
-        "سرقت ماله",
-        "نشلتها"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "مشاهد لا تُنسى",
-      "q": "لماذا نجت مي نيو من اللعبة الرابعة دون أن تلعب؟",
-      "a": "لأن العدد كان فرديًا",
-      "alt": [
-        "بقيت بلا شريك",
-        "العدد فردي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "مشاهد لا تُنسى",
-      "q": "كم لاعبًا بقي قبل أن تبدأ اللعبة الأخيرة في الموسم الأول؟",
-      "a": "ثلاثة لاعبين",
-      "alt": [
-        "3",
-        "ثلاثة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من أدى شخصية غي هون؟",
-      "a": "لي جونغ جاي",
-      "alt": [
-        "لي جونغ-جاي",
-        "لي جونج جاي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من أدت شخصية سي بيوك؟",
-      "a": "جونغ هو يون",
-      "alt": [
-        "هويون جونغ",
-        "جونغ هو-يون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من أدى شخصية مشرف الألعاب صاحب القناع الأسود؟",
-      "a": "لي بيونغ هون",
-      "alt": [
-        "لي بيونج هون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من أدى شخصية الرجل الأنيق الذي يجنّد اللاعبين؟",
-      "a": "غونغ يو",
-      "alt": [
-        "كونغ يو",
-        "جونج يو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "الممثلون",
-      "q": "من أدى شخصية سانغ وو؟",
-      "a": "بارك هاي سو",
-      "alt": [
-        "بارك هي سو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-800-048"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الجملة الكورية التي تردّدها الدمية في اللعبة الأولى؟",
-      "a": "زهرة الكركديه تفتّحت",
-      "alt": [
-        "موغونغهوا",
-        "تفتحت زهرة الكركديه"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-1000-001"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "على كم قدم يقفز المهاجم في اللعبة الأخيرة؟",
-      "a": "قدم واحدة",
-      "alt": [
-        "رجل واحدة",
-        "قدم"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-1000-002"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الذي يتيح للمهاجم أن يمشي على قدميه في اللعبة الأخيرة؟",
-      "a": "تجاوز خصر الملعب",
-      "alt": [
-        "عبور الخصر",
-        "اجتياز الخصر"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما اسم الدمية الذكر التي تقف إلى جانب دمية الفتاة؟",
-      "a": "تشول سو",
-      "alt": [
-        "تشولسو",
-        "تشيول سو"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "من أين استُلهمت شخصيتا الدميتين العملاقتين؟",
-      "a": "الكتب المدرسية الكورية",
-      "alt": [
-        "كتب الأطفال",
-        "قصص الأطفال"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما الاسم الكوري الآخر للعبة اقتطاع الحلوى في المسلسل؟",
-      "a": "بوبغي",
-      "alt": [
-        "ppopgi",
-        "بّوبكي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "بم تُركل ريشة لعبة الجيغي الكورية؟",
-      "a": "بالقدم",
-      "alt": [
-        "بقدم واحدة",
-        "بالأقدام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-1000-007"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم حجرًا صغيرًا تُلعب به لعبة الغونغي الكورية؟",
-      "a": "خمسة أحجار",
-      "alt": [
-        "5",
-        "خمسة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-1000-008"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "ما شكل الملعب المرسوم على الأرض في اللعبة الأخيرة؟",
-      "a": "حبار",
-      "alt": [
-        "شكل حبار",
-        "الحبّار"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
-      "verified": true,
-      "qid": "squidgame-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "الألعاب وقواعدها",
-      "q": "كم مرة صوّت اللاعبون على إيقاف الألعاب في الموسم الأول؟",
-      "a": "مرة واحدة",
-      "alt": [
-        "واحدة",
-        "مرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "كم لاعبًا نجا من اللعبة الأولى في الموسم الأول؟",
-      "a": "201",
-      "alt": [
-        "٢٠١"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "كم لاعبًا عاد إلى الجزيرة بعد التصويت بالخروج؟",
-      "a": "187",
-      "alt": [
-        "١٨٧"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "كم لاعبًا اختار ألا يعود إلى الألعاب بعد خروجه؟",
-      "a": "14",
-      "alt": [
-        "١٤",
-        "أربعة عشر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم اللاعب الطبيب الذي تعاون مع بعض الحراس؟",
-      "a": "111",
-      "alt": [
-        "١١١"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم اللاعب القسّ بين متسابقي الموسم الأول؟",
-      "a": "244",
-      "alt": [
-        "٢٤٤"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما صلة اللاعبين 069 و070 أحدهما بالآخر؟",
-      "a": "زوجان",
-      "alt": [
-        "زوج وزوجة",
-        "متزوجان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم اللاعب الذي يرعى ابنة مريضة في الموسم الثاني؟",
-      "a": "246",
-      "alt": [
-        "٢٤٦"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "ما رقم العرّافة التي شاركت في ألعاب الموسم الثاني؟",
-      "a": "044",
-      "alt": [
-        "44",
-        "٠٤٤"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون وأرقامهم",
-      "q": "كم لاعبًا تبقّى بعد لعبة التجمّع في الموسم الثاني؟",
-      "a": "100",
-      "alt": [
-        "مئة",
-        "١٠٠"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "الحراس والأقنعة",
-      "q": "ما رقم الحارسة الفارّة من الشمال في الموسم الثاني؟",
-      "a": "011",
-      "alt": [
-        "11",
-        "٠١١"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "الحراس والأقنعة",
-      "q": "بمَ كان العجوز يتظاهر ليخفي حقيقته عن اللاعبين؟",
-      "a": "بالخرف",
-      "alt": [
-        "الخرف",
-        "فقدان الذاكرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "الحراس والأقنعة",
-      "q": "من قبطان القارب الذي خدع جون هو في الموسم الثاني؟",
-      "a": "القبطان بارك",
-      "alt": [
-        "بارك",
-        "الكابتن بارك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "الحراس والأقنعة",
-      "q": "كم عامًا كانت الألعاب تُقام قبل أن يكتشفها جون هو؟",
-      "a": "أكثر من ثلاثين",
-      "alt": [
-        "30 عامًا",
-        "ثلاثون عامًا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما الهدية التي انتزعها غي هون من ماكينة الألعاب لابنته؟",
-      "a": "ولاعة على شكل مسدس",
-      "alt": [
-        "ولاعة",
-        "قداحة مسدس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما رقم الحصان الذي ربح به غي هون رهانه؟",
-      "a": "6",
-      "alt": [
-        "ستة",
-        "٦"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "ما الطعام الذي يوزَّع على اللاعبين مع مشروبهم في المهجع؟",
-      "a": "بيضة مسلوقة",
-      "alt": [
-        "بيض مسلوق",
-        "بيضة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "كم غرفة ملوّنة تحيط بساحة لعبة التجمّع؟",
-      "a": "خمسون",
-      "alt": [
-        "50",
-        "خمسين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
-      "verified": true,
-      "qid": "squidgame-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن الجزيرة",
-      "q": "ما اسم الحي الذي نشأ فيه غي هون وصديقه؟",
-      "a": "سانغمون دونغ",
-      "alt": [
-        "سانغمون",
-        "حي سانغمون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن الجزيرة",
-      "q": "إلى أي مدينة أمريكية كانت ابنة غي هون قد انتقلت؟",
-      "a": "لوس أنجلوس",
-      "alt": [
-        "لوس أنجليس",
-        "لوس انجلوس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "أماكن الجزيرة",
-      "q": "ما الذي أوحى بتصميم السلالم الملوّنة داخل الجزيرة؟",
-      "a": "لوحات إيشر",
-      "alt": [
-        "إيشر",
-        "رسوم إيشر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات وعائلات",
-      "q": "إلى من سلّم غي هون أخا سي بيوك بعد فوزه؟",
-      "a": "إلى أم سانغ وو",
-      "alt": [
-        "أم صديقه",
-        "والدة سانغ وو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات وعائلات",
-      "q": "على ماذا راهن العجوز غي هون في لقائهما الأخير؟",
-      "a": "على إنقاذ رجل في الشارع",
-      "alt": [
-        "أن ينقذ أحد الرجل",
-        "على نجدة رجل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
-      "verified": true,
-      "qid": "squidgame-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "علاقات وعائلات",
-      "q": "من الشريك الذي لعب معه غي هون اللعبة الرابعة؟",
-      "a": "العجوز إيل نام",
+      "topic": "أسرار المنظمين",
+      "q": "ما اسم العجوز الذي يتضح أنه أحد منشئي المسابقة؟",
+      "a": "أوه إيل نام",
       "alt": [
         "إيل نام",
-        "العجوز"
+        "Oh Il-nam"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
       "verified": true,
-      "qid": "squidgame-1000-033"
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "topic": "الموسم الثاني",
-      "q": "من الذي حسم تصويت اللاعبين مرارًا في الموسم الثاني؟",
-      "a": "اللاعب يونغ إيل",
+      "qid": "squidgame-600-905",
+      "p": 600,
+      "topic": "القرارات المصيرية",
+      "q": "ماذا ينتظر المتمردون أن يجلب لهم داي هو حين يعود إلى المهجع؟",
+      "a": "الذخيرة",
+      "alt": [
+        "ذخيرة",
+        "مخازن الذخيرة",
+        "الرصاص"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-906",
+      "p": 600,
+      "topic": "قواعد النجاة",
+      "q": "في لعبة الاختباء، أي فريق يتسلم السكاكين بدل أدوات فتح الأبواب؟",
+      "a": "الفريق الأحمر",
+      "alt": [
+        "الأحمر",
+        "الباحثون",
+        "المطاردون"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-907",
+      "p": 600,
+      "topic": "العائلة خارج الجزيرة",
+      "q": "مع من يترك جيهون شقيق ساي بيوك في ختام الموسم الأول؟",
+      "a": "أم صديقه من الطفولة",
+      "alt": [
+        "والدة سانغ وو",
+        "أم سانغ وو",
+        "والدة سانغو"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-600-908",
+      "p": 600,
+      "topic": "أحداث الموسم الأخير",
+      "q": "أي لعبة تكون جارية عندما تلد جون هي طفلتها؟",
+      "a": "الغميضة",
+      "alt": [
+        "الاختباء",
+        "Hide and Seek",
+        "الاستغماية"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "squidgame-800-901",
+      "p": 800,
+      "topic": "ألعاب الطفولة",
+      "q": "في أي لعبة تتوقف منصة دوارة ويُطلب من اللاعبين دخول غرف في مجموعات؟",
+      "a": "مينغل",
+      "alt": [
+        "Mingle",
+        "الاختلاط",
+        "التجمع"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-902",
+      "p": 800,
+      "topic": "رحلة جيهون",
+      "q": "ما الشيء غير المتوقع الذي يقدّمه جيهون لابنته هدية، ظنًا منه أنه مناسب؟",
+      "a": "ولاعة بشكل مسدس",
+      "alt": [
+        "ولاعة مسدس",
+        "قداحة على شكل مسدس"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-1-ending-explainer",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-903",
+      "p": 800,
+      "topic": "الحلفاء والخصوم",
+      "q": "ما اسم الحارسة المنشقة من كوريا الشمالية التي تبحث عن طفلتها؟",
+      "a": "نو أول",
+      "alt": [
+        "نول",
+        "No-eul",
+        "نو إيل"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-cast",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "squidgame-800-904",
+      "p": 800,
+      "topic": "أسرار المنظمين",
+      "q": "ما الاسم المستعار الذي يستخدمه قائد المسابقة حين يلعب إلى جانب جيهون؟",
+      "a": "أوه يونغ إيل",
       "alt": [
         "يونغ إيل",
-        "مشرف الألعاب"
+        "Young-il",
+        "Oh Young-il"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
       "verified": true,
-      "qid": "squidgame-1000-034"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "الموسم الثاني",
-      "q": "ما الذي كان يوزّعه غي هون في المحطات بحثًا عن المجنِّد؟",
-      "a": "نقودًا",
+      "qid": "squidgame-800-905",
+      "p": 800,
+      "topic": "القرارات المصيرية",
+      "q": "أي مهنة يعود إليها الأب غيونغ سوك بعد إنقاذه وشفاء ابنته؟",
+      "a": "رسم الوجوه في الملاهي",
       "alt": [
-        "أوراقًا نقدية",
-        "أموالًا"
+        "رسام بورتريه",
+        "رسم البورتريه",
+        "رسام في الملاهي"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "qid": "squidgame-1000-035"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "أشياء ورموز",
-      "q": "أين وجد غي هون البطاقة المصرفية بعد فوزه بالجائزة؟",
-      "a": "في فمه",
+      "qid": "squidgame-800-906",
+      "p": 800,
+      "topic": "قواعد النجاة",
+      "q": "ما الذي يجب ضغطه أولًا كي يُحسب سقوط لاعب ضمن جولة النهائي فوق الأبراج؟",
+      "a": "زر بدء الجولة",
       "alt": [
-        "داخل فمه",
-        "في فمّه"
+        "زر البداية",
+        "الزر",
+        "زر التشغيل"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "qid": "squidgame-1000-036"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "الموسم الثاني",
-      "q": "ما اسم الحارسة التي صادقت اللاعب 246 في الموسم الثاني؟",
-      "a": "نو إيل",
+      "qid": "squidgame-800-907",
+      "p": 800,
+      "topic": "العائلة خارج الجزيرة",
+      "q": "من الشخص الذي يسلّمه قائد المسابقة الطفلة والجائزة بعد انتهاء الألعاب؟",
+      "a": "المحقق جون هو",
       "alt": [
-        "كانغ نو إيل",
-        "نوإيل"
+        "جون هو",
+        "هوانغ جون هو",
+        "Jun-ho"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_2",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "qid": "squidgame-1000-037"
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ما الأغنية التي تُذاع أثناء اللعبة الأولى في الموسم الأول؟",
-      "a": "فلاي مي تو ذا مون",
+      "qid": "squidgame-800-908",
+      "p": 800,
+      "topic": "أحداث الموسم الأخير",
+      "q": "ما الأشكال الهندسية لمنصات النهائي العلوية، بالترتيب من أول منصة؟",
+      "a": "مربع ثم مثلث ثم دائرة",
       "alt": [
-        "Fly Me to the Moon",
-        "خذني إلى القمر"
+        "مربع مثلث دائرة",
+        "المربع والمثلث والدائرة"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "qid": "squidgame-1000-038"
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "squidgame-1000-901",
       "p": 1000,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ما اللحن الكلاسيكي الذي يوقظ اللاعبين كل صباح؟",
-      "a": "كونشيرتو البوق لهايدن",
+      "topic": "ألعاب الطفولة",
+      "q": "في الخماسي بالموسم الثاني، ما اللعبة التي يركل فيها اللاعب جسمًا خفيفًا لإبقائه في الهواء؟",
+      "a": "جيغي تشاغي",
       "alt": [
-        "كونشيرتو البوق",
-        "هايدن"
+        "جيجي تشاغي",
+        "Jegi-chagi",
+        "جيغي"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "qid": "squidgame-1000-039"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "squidgame-1000-902",
       "p": 1000,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ما اللحن الذي يُذاع عند سَوق اللاعبين إلى لعبة جديدة؟",
-      "a": "الدانوب الأزرق",
+      "topic": "رحلة جيهون",
+      "q": "أي مدينة يصل إليها قائد المسابقة لإيصال مقتنيات جيهون إلى ابنته؟",
+      "a": "لوس أنجلوس",
       "alt": [
-        "الدانوب",
-        "فالس الدانوب"
+        "لوس انجليس",
+        "Los Angeles"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "qid": "squidgame-1000-040"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "squidgame-1000-903",
       "p": 1000,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا قال غي هون في مكالمته الأخيرة للمسؤول عن الألعاب؟",
-      "a": "لست حصانًا",
+      "topic": "الحلفاء والخصوم",
+      "q": "ما اسم القبطان الذي يعرقل بحث المحقق عن الجزيرة لحساب المنظمين؟",
+      "a": "بارك",
       "alt": [
-        "أنا لست حصانًا",
-        "لست فرسًا"
+        "الكابتن بارك",
+        "Captain Park"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-2-ending-explained",
       "verified": true,
-      "qid": "squidgame-1000-041"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "squidgame-1000-904",
       "p": 1000,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ما الطقس الذي رافق اللعبة الأخيرة في الموسم الأول؟",
-      "a": "المطر",
+      "topic": "أسرار المنظمين",
+      "q": "أين كانت رسومات ألعاب الموسم الأول مخبأة على مرأى من اللاعبين؟",
+      "a": "جدران المهجع",
       "alt": [
-        "مطر غزير",
-        "ليلة ممطرة"
+        "جدران غرفة النوم",
+        "حائط المهجع",
+        "على جدران عنبر النوم"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/videos/squid-game-easter-eggs",
       "verified": true,
-      "qid": "squidgame-1000-042"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "squidgame-1000-905",
       "p": 1000,
-      "topic": "مشاهد لا تُنسى",
-      "q": "ماذا فعل سانغ وو بخبير الزجاج حين ضاق الوقت؟",
-      "a": "دفعه من فوق الجسر",
+      "topic": "القرارات المصيرية",
+      "q": "في الخماسي، بأي يد يلعب قائد المسابقة متعمدًا رغم تفضيله اليد الأخرى؟",
+      "a": "اليمنى",
       "alt": [
-        "أسقطه من الجسر",
-        "دفعه ليسقط"
+        "اليد اليمنى",
+        "يمينه"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game_season_1",
+      "sourceUrl": "https://www.netflix.com/tudum/videos/squid-game-easter-eggs",
       "verified": true,
-      "qid": "squidgame-1000-043"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "squidgame-1000-906",
       "p": 1000,
-      "topic": "الممثلون",
-      "q": "من أدى شخصية العجوز في ألعاب الموسم الأول؟",
-      "a": "أو يونغ سو",
+      "topic": "قواعد النجاة",
+      "q": "في خماسي الألعاب، ما اسم تحدي إسقاط الحجر المنتصب بحجر آخر؟",
+      "a": "بيسوك تشيغي",
       "alt": [
-        "أوه يونغ سو",
-        "او يونج سو"
+        "بيسوكشيغي",
+        "Biseokchigi",
+        "بيسوك تشيجي"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-games-explained",
       "verified": true,
-      "qid": "squidgame-1000-044"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "squidgame-1000-907",
       "p": 1000,
-      "topic": "الممثلون",
-      "q": "من أدى شخصية الشرطي جون هو؟",
-      "a": "وي ها جون",
+      "topic": "العائلة خارج الجزيرة",
+      "q": "ما اسم الابنة الصغيرة للأب الذي تنقذه الحارسة في الموسم الأخير؟",
+      "a": "نا يون",
       "alt": [
-        "وي ها-جون",
-        "وي هاجون"
+        "نايون",
+        "Na-yeon"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "qid": "squidgame-1000-045"
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "squidgame-1000-908",
       "p": 1000,
-      "topic": "الممثلون",
-      "q": "من أدى شخصية علي؟",
-      "a": "أنوبام تريباتي",
+      "topic": "أحداث الموسم الأخير",
+      "q": "في الموسم الثالث، ماذا تحرق الحارسة أثناء هروبها لمحو أثر المنظمة؟",
+      "a": "غرفة السجلات",
       "alt": [
-        "أنوبام",
-        "انوبام تريباثي"
+        "السجلات",
+        "غرفة الملفات",
+        "الأرشيف"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
+      "sourceUrl": "https://www.netflix.com/tudum/articles/squid-game-season-3-ending-explained",
       "verified": true,
-      "qid": "squidgame-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من أدت شخصية اللاعبة 240؟",
-      "a": "لي يو مي",
-      "alt": [
-        "لي يومي",
-        "لي يو-مي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "الممثلون",
-      "q": "من أدت شخصية اللاعبة الصاخبة مي نيو؟",
-      "a": "كيم جو ريونغ",
-      "alt": [
-        "كيم جو-ريونغ",
-        "كيم جوريونغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Squid_Game_characters",
-      "verified": true,
-      "qid": "squidgame-1000-048"
+      "difficultyTarget": 0.15
     }
   ]
 }

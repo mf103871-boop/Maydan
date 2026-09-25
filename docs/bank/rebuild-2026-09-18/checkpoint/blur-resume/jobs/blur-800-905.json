@@ -1,0 +1,41 @@
+{
+  "id": "blur-800-905",
+  "kind": "question",
+  "pack": "blur",
+  "a": "عربة ثلج",
+  "p": 800,
+  "topic": "وسائل نقل",
+  "prompt": "Use case: precise-object-edit. This image is the edit target. Remove only every logo, maker badge, letter, number and pseudo-letter printed on the snowmobile body, including the small side wordmark and the front emblem. Replace these markings with continuous plain body panel material matching adjacent black, gray or red panels. Keep the exact vehicle, two skis, rear track, seat, handlebars, windshield, suspension, composition, colors, mountain snow landscape and lighting unchanged. No readable words or replacement symbols anywhere. Preserve realistic sharp photography and full subject framing.",
+  "question": {
+    "p": 800,
+    "q": "ما المركبة ذات الزلاجتين الأماميتين والجنزير الخلفي في الصورة؟",
+    "a": "عربة ثلج",
+    "qid": "blur-800-905",
+    "type": "image",
+    "effect": "blur",
+    "alt": [
+      "دراجة ثلجية",
+      "مركبة ثلجية",
+      "سكوتر ثلجي",
+      "سنوموبيل",
+      "Snowmobile"
+    ],
+    "topic": "وسائل نقل",
+    "difficultyTarget": 0.25,
+    "verified": true,
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "media": {
+      "src": "blur-800-905.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation (built-in)",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-905.json"
+      }
+    }
+  }
+}

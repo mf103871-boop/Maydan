@@ -6,3134 +6,586 @@
   "qs": [
     {
       "p": 200,
-      "topic": "الشخصيات",
-      "q": "من الفتى الذي أقسم على إبادة العمالقة بعد سقوط مدينته؟",
+      "q": "من الفتى الذي أقسم على محاربة العمالقة بعد مقتل أمه؟",
       "a": "إيرين ييغر",
       "alt": [
-        "إرين ييغر",
+        "إرين",
         "إيرين",
-        "إرين"
+        "Eren Yeager"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
+      "topic": "البدايات",
       "verified": true,
-      "qid": "aot-200-049"
+      "qid": "aot-200-901",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
     },
     {
       "p": 200,
-      "topic": "الشخصيات",
-      "q": "من الفتاة ذات الوشاح التي تحمي رفيقها في كل معركة؟",
+      "q": "من الفتاة التي تحتفظ بالوشاح الذي أعطاها إيرين في طفولتها؟",
       "a": "ميكاسا أكرمان",
       "alt": [
         "ميكاسا",
-        "ميكاسا أكيرمان"
+        "Mikasa Ackerman"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
+      "topic": "العلاقات",
       "verified": true,
-      "qid": "aot-200-050"
+      "qid": "aot-200-902",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://shingeki.tv/season1/character/"
     },
     {
       "p": 200,
-      "topic": "الشخصيات",
-      "q": "من صديق الطفولة الأشقر صاحب الخطط الذكية في الثلاثي؟",
-      "a": "أرمين أرليرت",
-      "alt": [
-        "آرمين",
-        "أرمين",
-        "أرمن أرليرت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-200-051"
-    },
-    {
-      "p": 200,
-      "topic": "الشخصيات",
-      "q": "من الضابط القصير الذي يصرع العمالقة بسرعة خاطفة ويكره الغبار؟",
+      "q": "من المقاتل المعروف بأنه أقوى جنود البشرية في هجوم العمالقة؟",
       "a": "ليفاي أكرمان",
       "alt": [
         "ليفاي",
         "ليفي",
-        "ليفاي أكيرمان"
+        "Levi Ackerman"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
+      "topic": "المعارك",
       "verified": true,
-      "qid": "aot-200-052"
+      "qid": "aot-200-903",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://shingeki.tv/season1/character/"
     },
     {
       "p": 200,
-      "topic": "الشخصيات",
-      "q": "من القائد صاحب الحاجبين العريضين الذي يقود جنوده إلى خارج الأسوار؟",
+      "q": "ما السور الخارجي الذي سقط في بداية هجوم العمالقة؟",
+      "a": "سور ماريا",
+      "alt": [
+        "ماريا",
+        "Wall Maria"
+      ],
+      "topic": "الأسوار",
+      "verified": true,
+      "qid": "aot-200-904",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep2"
+    },
+    {
+      "p": 200,
+      "q": "ما الفيلق الذي يحلم إيرين بالانضمام إليه لاستكشاف العالم خارج الأسوار؟",
+      "a": "فيلق الاستطلاع",
+      "alt": [
+        "الاستطلاع",
+        "فوج الكشافة",
+        "Survey Corps"
+      ],
+      "topic": "البدايات",
+      "verified": true,
+      "qid": "aot-200-905",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
+    },
+    {
+      "p": 200,
+      "q": "ما موضع جسد العملاق الذي يستهدفه الجنود للقضاء عليه؟",
+      "a": "مؤخرة الرقبة",
+      "alt": [
+        "القفا",
+        "قفا الرقبة",
+        "Nape"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-200-906",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep5"
+    },
+    {
+      "p": 200,
+      "q": "بم أغلق إيرين فتحة بوابة تروست بعدما تحوّل؟",
+      "a": "صخرة ضخمة",
+      "alt": [
+        "صخرة",
+        "حجر كبير",
+        "Boulder"
+      ],
+      "topic": "المعارك",
+      "verified": true,
+      "qid": "aot-200-907",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://shingeki.tv/season1/character/"
+    },
+    {
+      "p": 200,
+      "q": "كم سورًا رئيسيًا يحيط بمناطق البشر في بداية القصة؟",
+      "a": "ثلاثة",
+      "alt": [
+        "3",
+        "ثلاثة أسوار",
+        "Three"
+      ],
+      "topic": "الأسوار",
+      "verified": true,
+      "qid": "aot-200-908",
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
+    },
+    {
+      "p": 400,
+      "q": "من الجندية التي اكتشف رفاقها أنها العملاقة الأنثى؟",
+      "a": "آني ليونهارت",
+      "alt": [
+        "آني",
+        "أني",
+        "Annie Leonhart"
+      ],
+      "topic": "الهوية",
+      "verified": true,
+      "qid": "aot-400-901",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep41"
+    },
+    {
+      "p": 400,
+      "q": "من رفيق إيرين الذي كشف أنه العملاق المدرع؟",
+      "a": "راينر براون",
+      "alt": [
+        "راينر",
+        "راينر برون",
+        "Reiner Braun"
+      ],
+      "topic": "الهوية",
+      "verified": true,
+      "qid": "aot-400-902",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep31"
+    },
+    {
+      "p": 400,
+      "q": "من أنقذه ليفاي بالمصل في شيغانشينا بعد أن احترق جسده؟",
+      "a": "أرمين أرليرت",
+      "alt": [
+        "أرمين",
+        "آرمين",
+        "Armin Arlert"
+      ],
+      "topic": "المعارك",
+      "verified": true,
+      "qid": "aot-400-903",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep55"
+    },
+    {
+      "p": 400,
+      "q": "من وريثة عائلة ريس التي أصبحت ملكة الأسوار؟",
+      "a": "هيستوريا ريس",
+      "alt": [
+        "هيستوريا",
+        "هستوريا",
+        "Historia Reiss"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-400-904",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep47"
+    },
+    {
+      "p": 400,
+      "q": "أين أخفى غريشا كتبه التي تكشف حقيقة العالم خارج الأسوار؟",
+      "a": "قبو منزله",
+      "alt": [
+        "قبو منزل إيرين",
+        "القبو",
+        "Basement"
+      ],
+      "topic": "الأسرار",
+      "verified": true,
+      "qid": "aot-400-905",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
+    },
+    {
+      "p": 400,
+      "q": "من قائدة الأبحاث المهووسة بدراسة العمالقة وتجربة قدراتهم؟",
+      "a": "هانجي زوي",
+      "alt": [
+        "هانجي",
+        "هانج",
+        "Hange Zoe"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-400-906",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+    },
+    {
+      "p": 400,
+      "q": "من القائد الذي قاد هجوم الخيالة الأخير لتشتيت العملاق الوحش؟",
       "a": "إروين سميث",
       "alt": [
         "إروين",
         "إيروين",
-        "أروين سميث"
+        "Erwin Smith"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
+      "topic": "المعارك",
       "verified": true,
-      "qid": "aot-200-053"
+      "qid": "aot-400-907",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
     },
     {
-      "p": 200,
-      "topic": "الشخصيات",
-      "q": "من الجندية التي تشتهر بشراهتها في الأكل بين رفاقها؟",
-      "a": "ساشا بلاوز",
+      "p": 400,
+      "q": "ما المسطح المائي الذي شاهده الرفاق لأول مرة بعد استعادة مناطقهم في نهاية الموسم الثالث؟",
+      "a": "المحيط",
       "alt": [
-        "ساشا",
-        "ساشا براوس",
-        "ساشا بلاوس"
+        "البحر",
+        "Ocean"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
+      "topic": "الأسوار",
       "verified": true,
-      "qid": "aot-200-054"
+      "qid": "aot-400-908",
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep59"
     },
     {
-      "p": 200,
-      "topic": "الشخصيات",
-      "q": "من الجندي الأصلع المرح بين متدربي الدفعة؟",
-      "a": "كوني سبرينغر",
+      "p": 600,
+      "q": "من حامل العملاق الضخم الذي ورث أرمين قوته بعد معركة شيغانشينا؟",
+      "a": "بيرتولت هوفر",
       "alt": [
-        "كوني",
-        "كوني سبرينجر"
+        "بيرتولت",
+        "بيرتهولد",
+        "Bertholdt Hoover"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
+      "topic": "الهوية",
       "verified": true,
-      "qid": "aot-200-055"
+      "qid": "aot-600-901",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep55"
     },
     {
-      "p": 200,
-      "topic": "الشخصيات",
-      "q": "من الجندي طويل الوجه الذي يحلم بحياة مرفهة بين المتدربين؟",
+      "p": 600,
+      "q": "ما اسم ابن غريشا ودينا الذي أبلغ السلطات عن والديه؟",
+      "a": "زيك ييغر",
+      "alt": [
+        "زيك",
+        "زيك جيغر",
+        "Zeke Yeager"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-600-902",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 600,
+      "q": "من والد الملكة الذي تحول إلى عملاق هائل بعد لعق المصل المسكوب؟",
+      "a": "رود ريس",
+      "alt": [
+        "رود",
+        "Rod Reiss"
+      ],
+      "topic": "الهوية",
+      "verified": true,
+      "qid": "aot-600-903",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep44"
+    },
+    {
+      "p": 600,
+      "q": "ما السلاح المتفجر الذي طوره الجنود لاختراق درع خصمهم في شيغانشينا؟",
+      "a": "رماح الرعد",
+      "alt": [
+        "الرماح الرعدية",
+        "Thunder Spears"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-600-904",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم قرية كوني التي وجد سكانها قد اختفوا وعملاقًا عالقًا فوق منزله؟",
+      "a": "راغاكو",
+      "alt": [
+        "راجاكو",
+        "Ragako"
+      ],
+      "topic": "الأسوار",
+      "verified": true,
+      "qid": "aot-600-905",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep27"
+    },
+    {
+      "p": 600,
+      "q": "ماذا يطلق العملاق الضخم من جسده ليمنع الجنود من الاقتراب؟",
+      "a": "البخار",
+      "alt": [
+        "بخار حار",
+        "بخار",
+        "Steam"
+      ],
+      "topic": "المعارك",
+      "verified": true,
+      "qid": "aot-600-906",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep32"
+    },
+    {
+      "p": 600,
+      "q": "من كانت المرأة التي تحولت إلى العملاق المبتسم الذي أكل أم إيرين؟",
+      "a": "دينا فريتز",
+      "alt": [
+        "دينا",
+        "Dina Fritz"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-600-907",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الاجتياح الذي تسير فيه عمالقة الأسوار لسحق العالم؟",
+      "a": "الدك",
+      "alt": [
+        "دك الأرض",
+        "Rumbling"
+      ],
+      "topic": "النهاية",
+      "verified": true,
+      "qid": "aot-600-908",
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep88"
+    },
+    {
+      "p": 800,
+      "q": "من الرجل الذي ربّى ليفاي وكشف له عند موته أنه خاله؟",
+      "a": "كيني أكرمان",
+      "alt": [
+        "كيني",
+        "Kenny Ackerman"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-800-901",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman#In_Attack_on_Titan"
+    },
+    {
+      "p": 800,
+      "q": "من ضابط مارلي الذي كشف لغريشا أنه المخبر الملقب بالبومة؟",
+      "a": "إيرين كروغر",
+      "alt": [
+        "كروغر",
+        "إرين كروغر",
+        "Eren Kruger"
+      ],
+      "topic": "الهوية",
+      "verified": true,
+      "qid": "aot-800-902",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+    },
+    {
+      "p": 800,
+      "q": "كم سنة يعيش حامل إحدى قوى العمالقة بعد وراثتها وفق لعنة يمير؟",
+      "a": "ثلاث عشرة سنة",
+      "alt": [
+        "13",
+        "13 سنة",
+        "ثلاث عشرة",
+        "Thirteen years"
+      ],
+      "topic": "الأسرار",
+      "verified": true,
+      "qid": "aot-800-903",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep58"
+    },
+    {
+      "p": 800,
+      "q": "ما نوع الصورة التي كشفت كتب غريشا أنها أُنتجت بتقنية مجهولة داخل الأسوار؟",
+      "a": "صورة فوتوغرافية",
+      "alt": [
+        "صورة ضوئية",
+        "فوتوغرافية",
+        "Photograph"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-800-904",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
+    },
+    {
+      "p": 800,
+      "q": "من رجل الدين الذي عُذّب وقُتل لإخفاء أسرار الأسوار؟",
+      "a": "القس نيك",
+      "alt": [
+        "نيك",
+        "Pastor Nick"
+      ],
+      "topic": "البدايات",
+      "verified": true,
+      "qid": "aot-800-905",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep38"
+    },
+    {
+      "p": 800,
+      "q": "ما الحصن الذي لجأ إليه سكان ليبيريو وشاهدوا قربه المعركة الأخيرة؟",
+      "a": "حصن سالتا",
+      "alt": [
+        "سالتا",
+        "Fort Salta"
+      ],
+      "topic": "النهاية",
+      "verified": true,
+      "qid": "aot-800-906",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep90"
+    },
+    {
+      "p": 800,
+      "q": "داخل أي جزء من رأس عملاق إيرين وجدت ميكاسا جسده البشري في النهاية؟",
+      "a": "الفم",
+      "alt": [
+        "داخل الفم",
+        "Mouth"
+      ],
+      "topic": "المعارك",
+      "verified": true,
+      "qid": "aot-800-907",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep93"
+    },
+    {
+      "p": 800,
+      "q": "ما القلعة التي تحولت عندها يمير لحماية رفاقها من هجوم العمالقة ليلًا؟",
+      "a": "أوتغارد",
+      "alt": [
+        "قلعة أوتغارد",
+        "أوتغارد",
+        "Utgard"
+      ],
+      "topic": "الأسوار",
+      "verified": true,
+      "qid": "aot-800-908",
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
+    },
+    {
+      "p": 1000,
+      "q": "من زميل التدريب الذي حاولت كريستا ويمير إنقاذه خلال العاصفة الثلجية؟",
+      "a": "داز",
+      "alt": [
+        "Daz"
+      ],
+      "topic": "المعارك",
+      "verified": true,
+      "qid": "aot-1000-901",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep30"
+    },
+    {
+      "p": 1000,
+      "q": "ما السمك المكتوب على العلبة التي استطاعت يمير قراءة اسمها فأثارت شك راينر؟",
+      "a": "الرنجة",
+      "alt": [
+        "رنجة",
+        "Herring"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-1000-902",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
+    },
+    {
+      "p": 1000,
+      "q": "ماذا كان يفتح مفتاح غريشا فعليًا داخل الغرفة السرية؟",
+      "a": "درج المكتب",
+      "alt": [
+        "درج مكتبه",
+        "الدرج",
+        "Desk drawer"
+      ],
+      "topic": "الأسرار",
+      "verified": true,
+      "qid": "aot-1000-903",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
+    },
+    {
+      "p": 1000,
+      "q": "من أنقذ هانجي من انفجار تحوّل بيرتولت مضحيًا بحياته؟",
+      "a": "موبليت برنر",
+      "alt": [
+        "موبليت",
+        "موبيت",
+        "Moblit Berner"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-1000-904",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+    },
+    {
+      "p": 1000,
+      "q": "ما اسم أخت كيني التي كانت والدة ليفاي؟",
+      "a": "كوشيل أكرمان",
+      "alt": [
+        "كوشيل",
+        "Kuchel Ackerman"
+      ],
+      "topic": "العلاقات",
+      "verified": true,
+      "qid": "aot-1000-905",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman"
+    },
+    {
+      "p": 1000,
+      "q": "ما المورد النادر في باراديس الذي يشغل العتاد والطائرة التجريبية القادمة من هيزورو؟",
+      "a": "حجر الانفجار الجليدي",
+      "alt": [
+        "حجر الجليد المتفجر",
+        "Iceburst Stone"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "qid": "aot-1000-906",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep69"
+    },
+    {
+      "p": 1000,
+      "q": "من قاد الطائرة التي حملت التحالف لملاحقة إيرين بعد تضحية هانجي؟",
+      "a": "أونيانكوبون",
+      "alt": [
+        "أونيانكوبان",
+        "Onyankopon"
+      ],
+      "topic": "النهاية",
+      "verified": true,
+      "qid": "aot-1000-907",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep89"
+    },
+    {
+      "p": 1000,
+      "q": "إلى من سلّم أرمين القيادة مؤقتًا عندما تقدّم العملاق الضخم داخل شيغانشينا؟",
       "a": "جان كيرشتاين",
       "alt": [
         "جان",
         "جين",
-        "جان كيرشتين"
+        "Jean Kirstein"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
+      "topic": "المعارك",
       "verified": true,
-      "qid": "aot-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "الشخصيات",
-      "q": "من الفتاة الشقراء القصيرة التي تخفي انتماءها إلى سلالة الملوك؟",
-      "a": "هيستوريا ريس",
-      "alt": [
-        "هيستوريا",
-        "هيستوريا رايس",
-        "هستوريا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Historia_Reiss",
-      "verified": true,
-      "qid": "aot-200-057"
-    },
-    {
-      "p": 200,
-      "topic": "الشخصيات",
-      "q": "من الجندي الضخم الأشقر الذي يحمل هموم رفاقه ويلجؤون إليه؟",
-      "a": "راينر براون",
-      "alt": [
-        "راينر",
-        "رينر براون"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Reiner_Braun",
-      "verified": true,
-      "qid": "aot-200-058"
-    },
-    {
-      "p": 200,
-      "topic": "العمالقة التسعة",
-      "q": "ما لقب العملاق الذي ظهر فجأة فوق السور وركل بوابة المدينة؟",
-      "a": "العملاق الهائل",
-      "alt": [
-        "العملاق الضخم",
-        "العملاق الاستعماري"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "العمالقة التسعة",
-      "q": "ما لقب العملاق الذي يكسو جسده درع صلب ويحطّم البوابات بجريه؟",
-      "a": "العملاق المدرّع",
-      "alt": [
-        "المدرع",
-        "عملاق الدرع"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "العمالقة التسعة",
-      "q": "ما لقب العملاقة الرشيقة التي تقاتل بأسلوب فنون القتال؟",
-      "a": "العملاقة الأنثى",
-      "alt": [
-        "العملاق الأنثى",
-        "الأنثى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "العمالقة التسعة",
-      "q": "ما لقب العملاق الذي يشبه القرد ويقذف الصخور من مسافة بعيدة؟",
-      "a": "العملاق الوحشي",
-      "alt": [
-        "العملاق الوحش",
-        "عملاق الوحش"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-200-062"
-    },
-    {
-      "p": 200,
-      "topic": "العمالقة التسعة",
-      "q": "ما اسم العملاق الذي يملك قوة إصدار الأوامر لبقية العمالقة؟",
-      "a": "عملاق التأسيس",
-      "alt": [
-        "العملاق المؤسس",
-        "المؤسس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-200-063"
-    },
-    {
-      "p": 200,
-      "topic": "العمالقة التسعة",
-      "q": "ما الذي يضرب من السماء لحظة تحوّل الإنسان إلى عملاق؟",
-      "a": "صاعقة",
-      "alt": [
-        "برق",
-        "ومضة برق"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Titan",
-      "verified": true,
-      "qid": "aot-200-064"
-    },
-    {
-      "p": 200,
-      "topic": "العمالقة التسعة",
-      "q": "ما الذي تحتاجه العمالقة كي تتحرك فتخمد بدونه ليلًا؟",
-      "a": "أشعة الشمس",
-      "alt": [
-        "ضوء الشمس",
-        "الشمس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Titan",
-      "verified": true,
-      "qid": "aot-200-065"
-    },
-    {
-      "p": 200,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم السور الخارجي الذي انهار أولًا؟",
-      "a": "سور ماريا",
-      "alt": [
-        "ماريا",
-        "وول ماريا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-200-066"
-    },
-    {
-      "p": 200,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم السور الأوسط الذي يلي السور الخارجي؟",
-      "a": "سور روز",
-      "alt": [
-        "روز",
-        "وول روز"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-200-067"
-    },
-    {
-      "p": 200,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم السور الداخلي الذي يسكنه الملك والنبلاء؟",
-      "a": "سور سينا",
-      "alt": [
-        "سينا",
-        "وول سينا",
-        "سور شينا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-200-068"
-    },
-    {
-      "p": 200,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم الجزيرة التي يعيش عليها سكان الأسوار؟",
-      "a": "باراديس",
-      "alt": [
-        "جزيرة باراديس",
-        "بارادايس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-069"
-    },
-    {
-      "p": 200,
-      "topic": "الأسوار والأماكن",
-      "q": "في أي مدينة انهارت البوابة في بداية الحكاية؟",
-      "a": "شيغانشينا",
-      "alt": [
-        "شيجانشينا",
-        "شينغانشينا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-070"
-    },
-    {
-      "p": 200,
-      "topic": "الأسوار والأماكن",
-      "q": "كم سورًا يفصل البشر عن العمالقة؟",
-      "a": "ثلاثة أسوار",
-      "alt": [
-        "ثلاثة",
-        "3"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-200-071"
-    },
-    {
-      "p": 200,
-      "topic": "الأسوار والأماكن",
-      "q": "ما المكان الذي خبّأ فيه والد البطل سرّ العالم تحت بيت العائلة؟",
-      "a": "القبو",
-      "alt": [
-        "السرداب",
-        "قبو المنزل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-072"
-    },
-    {
-      "p": 200,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما شعار الفيلق الذي يخرج خارج الأسوار لاستكشاف الأرض؟",
-      "a": "أجنحة الحرية",
-      "alt": [
-        "جناحا الحرية",
-        "جناحي الحرية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Survey_Corps",
-      "verified": true,
-      "qid": "aot-200-073"
-    },
-    {
-      "p": 200,
-      "topic": "الفيالق والتنظيمات",
-      "q": "أي فيلق يحرس البوابات ويصلح المدافع فوق الأسوار؟",
-      "a": "فيلق الحامية",
-      "alt": [
-        "الحامية",
-        "فيلق المرابطة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Military",
-      "verified": true,
-      "qid": "aot-200-074"
-    },
-    {
-      "p": 200,
-      "topic": "الفيالق والتنظيمات",
-      "q": "أي فيلق يعمل في أضيق الأسوار ويحرس الملك؟",
-      "a": "الشرطة العسكرية",
-      "alt": [
-        "شرطة الملك",
-        "الشرطة الملكية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Military",
-      "verified": true,
-      "qid": "aot-200-075"
-    },
-    {
-      "p": 200,
-      "topic": "الفيالق والتنظيمات",
-      "q": "إلى أي فيلق انضم الثلاثي بعد التخرّج من التدريب؟",
-      "a": "فيلق الاستطلاع",
-      "alt": [
-        "فيلق الاستكشاف",
-        "الاستطلاع"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Survey_Corps",
-      "verified": true,
-      "qid": "aot-200-076"
-    },
-    {
-      "p": 200,
-      "topic": "الفيالق والتنظيمات",
-      "q": "أين يتدرب الشبان قبل أن يختاروا وجهتهم العسكرية؟",
-      "a": "فيلق التدريب",
-      "alt": [
-        "سلاح التدريب",
-        "معسكر التدريب"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Training_Corps",
-      "verified": true,
-      "qid": "aot-200-077"
-    },
-    {
-      "p": 200,
-      "topic": "المعدات والأسلحة",
-      "q": "ما اسم الجهاز الذي يطير به الجنود بين المباني بحبال معدنية؟",
-      "a": "جهاز المناورة الثلاثي",
-      "alt": [
-        "جهاز المناورة",
-        "معدات المناورة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Vertical_Maneuvering_Equipment",
-      "verified": true,
-      "qid": "aot-200-078"
-    },
-    {
-      "p": 200,
-      "topic": "المعدات والأسلحة",
-      "q": "ما نقطة الضعف الوحيدة في جسد العملاق؟",
-      "a": "مؤخرة العنق",
-      "alt": [
-        "القفا",
-        "خلف الرقبة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Titan",
-      "verified": true,
-      "qid": "aot-200-079"
-    },
-    {
-      "p": 200,
-      "topic": "المعدات والأسلحة",
-      "q": "بماذا يقطع الجنود لحم العمالقة؟",
-      "a": "سيوف",
-      "alt": [
-        "نصال",
-        "شفرات"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Vertical_Maneuvering_Equipment",
-      "verified": true,
-      "qid": "aot-200-080"
-    },
-    {
-      "p": 200,
-      "topic": "المعدات والأسلحة",
-      "q": "ما الذي يندفع من أنابيب الجنود فيجعلهم يطيرون؟",
-      "a": "الغاز",
-      "alt": [
-        "غاز مضغوط",
-        "غاز الأسطوانات"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Iceburst_stone",
-      "verified": true,
-      "qid": "aot-200-081"
-    },
-    {
-      "p": 200,
-      "topic": "المعدات والأسلحة",
-      "q": "ما لون عباءة الفيلق الذي يخرج لاستكشاف العالم؟",
-      "a": "الأخضر",
-      "alt": [
-        "أخضر",
-        "الأخضر الفاتح"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Survey_Corps",
-      "verified": true,
-      "qid": "aot-200-082"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث مفصلية",
-      "q": "بماذا سُدّت ثغرة البوابة في أول معركة كبرى خاضها المتدربون؟",
-      "a": "صخرة ضخمة",
-      "alt": [
-        "صخرة",
-        "الصخرة الكبيرة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Battle_of_Trost_District",
-      "verified": true,
-      "qid": "aot-200-083"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث مفصلية",
-      "q": "إلى أي شيء يتحوّل جسد العملاق بعد قتله؟",
-      "a": "بخار",
-      "alt": [
-        "دخان",
-        "أبخرة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Titan",
-      "verified": true,
-      "qid": "aot-200-084"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث مفصلية",
-      "q": "ما الذي ورثه البطل عن أبيه وعلّقه في عنقه؟",
-      "a": "مفتاح",
-      "alt": [
-        "المفتاح",
-        "مفتاح معدني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-085"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث مفصلية",
-      "q": "ما الذي رآه الثلاثي أخيرًا بعد أن حلموا به منذ الطفولة؟",
-      "a": "البحر",
-      "alt": [
-        "المحيط",
-        "بحر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ocean",
-      "verified": true,
-      "qid": "aot-200-086"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث مفصلية",
-      "q": "ما اسم المدينة التي خاض فيها المتدربون أول معركة ضد العمالقة؟",
-      "a": "تروست",
-      "alt": [
-        "مدينة تروست",
-        "تروسط"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Battle_of_Trost_District",
-      "verified": true,
-      "qid": "aot-200-087"
-    },
-    {
-      "p": 200,
-      "topic": "أحداث مفصلية",
-      "q": "في بيت أي عائلة نشأت الفتاة صاحبة الوشاح؟",
-      "a": "عائلة ييغر",
-      "alt": [
-        "آل ييغر",
-        "بيت ييغر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-200-088"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ما التحية التي يرددها الجنود واضعين قبضتهم على قلوبهم؟",
-      "a": "كرّسوا قلوبكم",
-      "alt": [
-        "أهدوا قلوبكم",
-        "شينزو وو ساساغيو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Shinz%C5%8D_wo_Sasageyo!",
-      "verified": true,
-      "qid": "aot-200-089"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "بأي لقب اشتهر الضابط القصير بين الجنود؟",
-      "a": "أقوى جندي في البشرية",
-      "alt": [
-        "أقوى جندي",
-        "أقوى مقاتل في البشرية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-200-090"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ما الكلمة التي يصرخ بها البطل ليدفع رفاقه إلى الاستمرار؟",
-      "a": "قاتل",
-      "alt": [
-        "قاتلوا",
-        "تاتاكيه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-091"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ماذا يسمّي أهل العالم الخارجي سكان الجزيرة احتقارًا؟",
-      "a": "شياطين الجزيرة",
-      "alt": [
-        "الشياطين",
-        "شياطين باراديس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-092"
-    },
-    {
-      "p": 200,
-      "topic": "جمل وألقاب",
-      "q": "ما الجملة التي يتوعّد بها البطل أعداءه منذ طفولته؟",
-      "a": "سأبيدهم جميعًا",
-      "alt": [
-        "سأقتلهم جميعا",
-        "سأمحوهم جميعا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-093"
-    },
-    {
-      "p": 200,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الدولة الكبرى في القارة المقابلة التي تعادي سكان الجزيرة؟",
-      "a": "مارلي",
-      "alt": [
-        "إمبراطورية مارلي",
-        "مارلى"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-094"
-    },
-    {
-      "p": 200,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الشعب الذي يستطيع أفراده التحوّل إلى عمالقة؟",
-      "a": "الإلديون",
-      "alt": [
-        "إلديا",
-        "شعب إلديا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-200-095"
-    },
-    {
-      "p": 200,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الأخ الأكبر للبطل القادم من الدولة المعادية؟",
-      "a": "زيك ييغر",
-      "alt": [
-        "زيك",
-        "زيك جايجر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-200-096"
-    },
-    {
-      "p": 400,
-      "topic": "الشخصيات",
-      "q": "ما اسم والد البطل الطبيب الذي ترك له سرّ العالم؟",
-      "a": "غريشا ييغر",
-      "alt": [
-        "غريشا",
-        "جريشا ييغر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-400-049"
-    },
-    {
-      "p": 400,
-      "topic": "الشخصيات",
-      "q": "ما اسم الفتاة المنمّشة التي أحبّت الفتاة الشقراء وحمتها؟",
-      "a": "يمير",
-      "alt": [
-        "إيمير",
-        "يميير"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ymir",
-      "verified": true,
-      "qid": "aot-400-050"
-    },
-    {
-      "p": 400,
-      "topic": "الشخصيات",
-      "q": "من الجندية الشقراء الهادئة التي تعلّمت فنّ قتال غريبًا من أبيها؟",
-      "a": "آني ليونهارت",
-      "alt": [
-        "آني",
-        "أني ليونهارت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-400-051"
-    },
-    {
-      "p": 400,
-      "topic": "الشخصيات",
-      "q": "من الجندي الطويل الخجول الذي يلازم الشاب الضخم الأشقر؟",
-      "a": "برتولد هوفر",
-      "alt": [
-        "بيرتولدت هوفر",
-        "برتولت",
-        "برتهولد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-400-052"
-    },
-    {
-      "p": 400,
-      "topic": "الشخصيات",
-      "q": "من المدرّب القاسي الذي يصرخ في وجوه المتجنّدين الجدد؟",
-      "a": "كيث شاديس",
-      "alt": [
-        "شاديس",
-        "كيث سادييس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Keith_Shadis",
-      "verified": true,
-      "qid": "aot-400-053"
-    },
-    {
-      "p": 400,
-      "topic": "الشخصيات",
-      "q": "من القائد المسنّ صاحب خطة استعادة المدينة المحتلة؟",
-      "a": "دوت بيكسيس",
-      "alt": [
-        "بيكسيس",
-        "دوت بكسيس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Dot_Pixis",
-      "verified": true,
-      "qid": "aot-400-054"
-    },
-    {
-      "p": 400,
-      "topic": "الشخصيات",
-      "q": "من الشاب الطيب صديق الجندي طويل الوجه في أيام التدريب؟",
-      "a": "ماركو بوت",
-      "alt": [
-        "ماركو",
-        "ماركو بودت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-400-055"
-    },
-    {
-      "p": 400,
-      "topic": "الشخصيات",
-      "q": "من تولّى قيادة الفيلق بعد القائد صاحب الحاجبين العريضين؟",
-      "a": "هانجي زوي",
-      "alt": [
-        "هانجي",
-        "هانج زوي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-400-056"
-    },
-    {
-      "p": 400,
-      "topic": "العمالقة التسعة",
-      "q": "ما لقب العملاق الصغير ذي الفكّ القوي الذي يقضم الدروع؟",
-      "a": "عملاق الفك",
-      "alt": [
-        "الفك",
-        "عملاق الفكّ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-400-057"
-    },
-    {
-      "p": 400,
-      "topic": "العمالقة التسعة",
-      "q": "ما لقب العملاق الذي يمشي على أربع ويحمل المدافع والجنود؟",
-      "a": "عملاق العربة",
-      "alt": [
-        "العملاق العربة",
-        "العربة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-400-058"
-    },
-    {
-      "p": 400,
-      "topic": "العمالقة التسعة",
-      "q": "ما لقب العملاق الذي يصنع الأسلحة من مادة صلبة ويضرب بمطرقة؟",
-      "a": "عملاق المطرقة الحربية",
-      "alt": [
-        "عملاق المطرقة",
-        "المطرقة الحربية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-400-059"
-    },
-    {
-      "p": 400,
-      "topic": "العمالقة التسعة",
-      "q": "ما لقب العملاق الذي ورثه البطل عن أبيه وارتبط اسمه بالهجوم؟",
-      "a": "العملاق المهاجم",
-      "alt": [
-        "عملاق الهجوم",
-        "المهاجم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-400-060"
-    },
-    {
-      "p": 400,
-      "topic": "العمالقة التسعة",
-      "q": "كم سنة يعيش من يرث أحد العمالقة التسعة قبل أن تنتهي مدّته؟",
-      "a": "ثلاث عشرة سنة",
-      "alt": [
-        "13 سنة",
-        "ثلاثة عشر عاما"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Curse_of_Ymir",
-      "verified": true,
-      "qid": "aot-400-061"
-    },
-    {
-      "p": 400,
-      "topic": "العمالقة التسعة",
-      "q": "ما اسم القدرة التي تُسخَّر بها كل العمالقة بأمر واحد؟",
-      "a": "الإحداثية",
-      "alt": [
-        "الإحداثيات",
-        "الكوردينيت"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-400-062"
-    },
-    {
-      "p": 400,
-      "topic": "العمالقة التسعة",
-      "q": "ما اسم السائل الذي يُحقن به الشخص فيصير عملاقًا بلا عقل؟",
-      "a": "مصل العمالقة",
-      "alt": [
-        "حقنة العمالقة",
-        "المصل"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Titan",
-      "verified": true,
-      "qid": "aot-400-063"
-    },
-    {
-      "p": 400,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم العاصمة التي تقع في قلب السور الداخلي؟",
-      "a": "ميتراس",
-      "alt": [
-        "متراس",
-        "ميتراس العاصمة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-400-064"
-    },
-    {
-      "p": 400,
-      "topic": "الأسوار والأماكن",
-      "q": "في أي مدينة داخل السور الداخلي وقعت المواجهة مع العملاقة الرشيقة؟",
-      "a": "ستوهيس",
-      "alt": [
-        "ستوهيز",
-        "مدينة ستوهيس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-400-065"
-    },
-    {
-      "p": 400,
-      "topic": "الأسوار والأماكن",
-      "q": "كم يبلغ ارتفاع السور الواحد تقريبًا؟",
-      "a": "خمسون مترًا",
-      "alt": [
-        "50 مترا",
-        "خمسين مترا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-400-066"
-    },
-    {
-      "p": 400,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم الغابة ذات الأشجار الهائلة التي نُصب فيها فخّ للعملاقة الرشيقة؟",
-      "a": "غابة الأشجار العملاقة",
-      "alt": [
-        "الغابة العملاقة",
-        "غابة الأشجار الضخمة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Forest_of_Giant_Trees",
-      "verified": true,
-      "qid": "aot-400-067"
-    },
-    {
-      "p": 400,
-      "topic": "الأسوار والأماكن",
-      "q": "أين يعيش فقراء العاصمة بعيدًا عن ضوء النهار؟",
-      "a": "المدينة السفلية",
-      "alt": [
-        "تحت الأرض",
-        "الأحياء السفلية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Underground_City",
-      "verified": true,
-      "qid": "aot-400-068"
-    },
-    {
-      "p": 400,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم الحيّ المعزول الذي يُحتجز فيه أبناء الجزيرة داخل الدولة المعادية؟",
-      "a": "ليبريو",
-      "alt": [
-        "ليبيريو",
-        "حي ليبريو"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Liberio",
-      "verified": true,
-      "qid": "aot-400-069"
-    },
-    {
-      "p": 400,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم القلعة المهجورة التي احتمى بها الجنود ليلة هجوم مفاجئ؟",
-      "a": "قلعة أوتغارد",
-      "alt": [
-        "أوتغارد",
-        "قلعة أوتجارد"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Utgard_Castle",
-      "verified": true,
-      "qid": "aot-400-070"
-    },
-    {
-      "p": 400,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما الحيوان الخرافي الذي يزيّن شعار فيلق حراسة الملك؟",
-      "a": "أحادي القرن",
-      "alt": [
-        "يونيكورن",
-        "الحصان ذو القرن"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Military",
-      "verified": true,
-      "qid": "aot-400-071"
-    },
-    {
-      "p": 400,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما الرمز الذي يحمله شعار فيلق حراسة البوابات؟",
-      "a": "وردتان",
-      "alt": [
-        "ورود",
-        "زهرتان"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Military",
-      "verified": true,
-      "qid": "aot-400-072"
-    },
-    {
-      "p": 400,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما الرمز الذي يحمله شعار الوحدة التي تُعدّ المتجنّدين الجدد؟",
-      "a": "سيفان متقاطعان",
-      "alt": [
-        "سيفان",
-        "سيوف متقاطعة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Training_Corps",
-      "verified": true,
-      "qid": "aot-400-073"
-    },
-    {
-      "p": 400,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما رقم الدفعة التي تخرّج فيها أبطال الحكاية من التدريب؟",
-      "a": "الدفعة 104",
-      "alt": [
-        "104",
-        "الرابعة بعد المئة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Training_Corps",
-      "verified": true,
-      "qid": "aot-400-074"
-    },
-    {
-      "p": 400,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما اسم الفرقة النخبة التي اختار أفرادها الضابط القصير بنفسه؟",
-      "a": "فرقة العمليات الخاصة",
-      "alt": [
-        "فرقة ليفاي",
-        "الفرقة الخاصة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Special_Operations_Squad",
-      "verified": true,
-      "qid": "aot-400-075"
-    },
-    {
-      "p": 400,
-      "topic": "المعدات والأسلحة",
-      "q": "من أي معدن تُصنع أسلحة الجنود كي تقطع لحم العمالقة؟",
-      "a": "الفولاذ فائق الصلابة",
-      "alt": [
-        "فولاذ فائق الصلابة",
-        "الفولاذ الصلب"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ultrahard_Steel",
-      "verified": true,
-      "qid": "aot-400-076"
-    },
-    {
-      "p": 400,
-      "topic": "المعدات والأسلحة",
-      "q": "ما اسم السلاح المتفجّر الذي طُوّر لاختراق الدروع الصلبة؟",
-      "a": "الرمح الرعدي",
-      "alt": [
-        "رمح الرعد",
-        "الرماح الرعدية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Thunder_Spear",
-      "verified": true,
-      "qid": "aot-400-077"
-    },
-    {
-      "p": 400,
-      "topic": "المعدات والأسلحة",
-      "q": "ما الحيوان الذي يعتمد عليه الجنود في رحلاتهم خارج الأسوار؟",
-      "a": "الخيول",
-      "alt": [
-        "الحصان",
-        "الخيل"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Survey_Corps",
-      "verified": true,
-      "qid": "aot-400-078"
-    },
-    {
-      "p": 400,
-      "topic": "المعدات والأسلحة",
-      "q": "ما الإشارة التي يطلقها الجنود في السماء ليتواصلوا أثناء المهمة؟",
-      "a": "الطلقات الدخانية",
-      "alt": [
-        "إشارات الدخان",
-        "الرصاص الدخاني"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Survey_Corps",
-      "verified": true,
-      "qid": "aot-400-079"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث مفصلية",
-      "q": "أي عملاق التهم والدة البطل أمام عينيه؟",
-      "a": "العملاق المبتسم",
-      "alt": [
-        "عملاق مبتسم",
-        "المبتسم"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Dina_Fritz",
-      "verified": true,
-      "qid": "aot-400-080"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا اكتشف الجنود داخل جدران الأسوار حين انكشف جزء منها؟",
-      "a": "عمالقة ضخمة",
-      "alt": [
-        "عمالقة داخل الجدران",
-        "عمالقة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-400-081"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا فقد القائد صاحب الحاجبين العريضين وهو يقود هجومًا لاستعادة جندي مخطوف؟",
-      "a": "ذراعه اليمنى",
-      "alt": [
-        "ذراعه",
-        "يده اليمنى"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Erwin_Smith",
-      "verified": true,
-      "qid": "aot-400-082"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا فعلت العملاقة الرشيقة لتفلت من قبضة الجنود في العاصمة؟",
-      "a": "حبست نفسها في بلورة",
-      "alt": [
-        "تبلورت",
-        "صنعت بلورة حولها"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Female_Titan",
-      "verified": true,
-      "qid": "aot-400-083"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا يفعل الفتى بيده كي يتحوّل إلى عملاق؟",
-      "a": "يعضّها",
-      "alt": [
-        "يعض يده",
-        "يجرح يده"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-400-084"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث مفصلية",
-      "q": "ما اللقب الذي نالته الفتاة الشقراء بعد انكشاف نسبها؟",
-      "a": "ملكة الأسوار",
-      "alt": [
-        "الملكة",
-        "ملكة باراديس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Historia_Reiss",
-      "verified": true,
-      "qid": "aot-400-085"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا حدث لأهل قرية أحد الجنود بعد أن مرّ بها العملاق الشبيه بالقرد؟",
-      "a": "تحوّلوا إلى عمالقة",
-      "alt": [
-        "صاروا عمالقة",
-        "تحولوا عمالقة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ragako",
-      "verified": true,
-      "qid": "aot-400-086"
-    },
-    {
-      "p": 400,
-      "topic": "أحداث مفصلية",
-      "q": "كم سنة مرّت بين انهيار السور الخارجي وعودة العمالقة إلى مدينة ثانية؟",
-      "a": "خمس سنوات",
-      "alt": [
-        "5 سنوات",
-        "خمسة أعوام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-400-087"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "بم يُلقّب العملاق الذي يتصرف بغرابة ويتجاهل البشر ليركض نحو هدفه؟",
-      "a": "العملاق الشاذ",
-      "alt": [
-        "الشاذ",
-        "العملاق الغريب"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Titan",
-      "verified": true,
-      "qid": "aot-400-088"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "ما اللقب الذي أطلقه المتدربون على الفتاة الشقراء القصيرة؟",
-      "a": "إلهة",
-      "alt": [
-        "الإلهة",
-        "إلهة المتدربين"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Historia_Reiss",
-      "verified": true,
-      "qid": "aot-400-089"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "ما اللقب الذي التصق بالجندية الشرهة بعد أن سرقت طعامًا أمام مدرّبها؟",
-      "a": "فتاة البطاطا",
-      "alt": [
-        "بنت البطاطا",
-        "ملكة البطاطا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Sasha_Blouse",
-      "verified": true,
-      "qid": "aot-400-090"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "ما الاسم المستعار الذي حملته الفتاة الشقراء لتخفي نسبها؟",
-      "a": "كريستا لينز",
-      "alt": [
-        "كريستا",
-        "خريستا لينز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-400-091"
-    },
-    {
-      "p": 400,
-      "topic": "جمل وألقاب",
-      "q": "ما اللقب الذي تمنحه الدولة المعادية لمن يرث أحد العمالقة التسعة؟",
-      "a": "محارب",
-      "alt": [
-        "المحارب",
-        "واريور"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Warrior_Unit",
-      "verified": true,
-      "qid": "aot-400-092"
-    },
-    {
-      "p": 400,
-      "topic": "مارلي وإلديا",
-      "q": "ماذا يضع أبناء الجزيرة على أذرعهم في الدولة المعادية ليتميّزوا؟",
-      "a": "شارة",
-      "alt": [
-        "الشارة",
-        "رباط الذراع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-400-093"
-    },
-    {
-      "p": 400,
-      "topic": "مارلي وإلديا",
-      "q": "من أي عائلة نبيلة جاءت وارثة قوة المطرقة؟",
-      "a": "عائلة تيبور",
-      "alt": [
-        "آل تيبور",
-        "تيبور"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Tybur_family",
-      "verified": true,
-      "qid": "aot-400-094"
-    },
-    {
-      "p": 400,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الدولة الشرقية الوحيدة التي تحالفت مع أهل الجزيرة؟",
-      "a": "هيزورو",
-      "alt": [
-        "هيزيرو",
-        "مملكة هيزورو"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Hizuru",
-      "verified": true,
-      "qid": "aot-400-095"
-    },
-    {
-      "p": 400,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الفتاة المتحمّسة التي تحلم بوراثة قوة الدرع؟",
-      "a": "غابي براون",
-      "alt": [
-        "غابي",
-        "جابي براون"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Gabi_Braun",
-      "verified": true,
-      "qid": "aot-400-096"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "ما اسم الجندية الوحيدة في الفرقة النخبة التي رافقت الضابط القصير؟",
-      "a": "بيترا رال",
-      "alt": [
-        "بيترا",
-        "بترا رال"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Special_Operations_Squad",
-      "verified": true,
-      "qid": "aot-600-049"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "من خال الضابط القصير الذي ربّاه في أعماق العاصمة؟",
-      "a": "كيني أكرمان",
-      "alt": [
-        "كيني",
-        "كيني أكيرمان"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Kenny_Ackerman",
-      "verified": true,
-      "qid": "aot-600-050"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "من قائد فيلق حراسة الملك في زمن الحكاية؟",
-      "a": "نايل دوك",
-      "alt": [
-        "نايل",
-        "نيل دوك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-600-051"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "من القائد الأعلى الذي يرأس الفيالق الثلاثة جميعًا؟",
-      "a": "داريوس زاكلي",
-      "alt": [
-        "زاكلي",
-        "داريوس زاكيلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-600-052"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "من الضابط الضخم الذي يشمّ رائحة العمالقة قبل أن يراها؟",
-      "a": "مايك زاكاريوس",
-      "alt": [
-        "ميشي زاكارياس",
-        "مايك",
-        "ميشي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-600-053"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "من الرجل الذي تخلّى عن العرش سرًّا وأخفى ابنته بين العامة؟",
-      "a": "رود ريس",
-      "alt": [
-        "رود",
-        "رود رايس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Rod_Reiss",
-      "verified": true,
-      "qid": "aot-600-054"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "من الأخت الكبرى في سلالة الملوك التي ورث والد البطل قوتها؟",
-      "a": "فريدا ريس",
-      "alt": [
-        "فريدا",
-        "فريدا رايس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Frieda_Reiss",
-      "verified": true,
-      "qid": "aot-600-055"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "ما اسم المرأة التي تتحوّل إلى عملاق يمشي على أربع ويحمل العتاد؟",
-      "a": "بييك فينغر",
-      "alt": [
-        "بييك",
-        "بيك فينجر",
-        "بيك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-600-056"
-    },
-    {
-      "p": 600,
-      "topic": "الشخصيات",
-      "q": "من المقاتل الذي استعاد القوة التي حملتها الفتاة المنمّشة؟",
-      "a": "بوركو غاليارد",
-      "alt": [
-        "بوركو",
-        "بوركو جاليارد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-600-057"
-    },
-    {
-      "p": 600,
-      "topic": "العمالقة التسعة",
-      "q": "ما القدرة التي تجعل بعض المتحوّلين يصنعون دروعًا وأسلحة من أجسادهم؟",
-      "a": "التصلّب",
-      "alt": [
-        "التصليب",
-        "التقسية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-600-058"
-    },
-    {
-      "p": 600,
-      "topic": "العمالقة التسعة",
-      "q": "كم يبلغ طول العملاق الذي ورثه البطل عن أبيه؟",
-      "a": "خمسة عشر مترًا",
-      "alt": [
-        "15 مترا",
-        "خمسة عشر متر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-600-059"
-    },
-    {
-      "p": 600,
-      "topic": "العمالقة التسعة",
-      "q": "بماذا يوجّه العملاق الشبيه بالقرد العمالقة العادية في المعركة؟",
-      "a": "بصرخته",
-      "alt": [
-        "صرخته",
-        "بالصراخ"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Beast_Titan",
-      "verified": true,
-      "qid": "aot-600-060"
-    },
-    {
-      "p": 600,
-      "topic": "المعدات والأسلحة",
-      "q": "ما لون الطلقة التي يطلقها الجندي ليعلن أنه رصد عملاقًا؟",
-      "a": "الأحمر",
-      "alt": [
-        "أحمر",
-        "اللون الأحمر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Signal_flare",
-      "verified": true,
-      "qid": "aot-600-061"
-    },
-    {
-      "p": 600,
-      "topic": "العمالقة التسعة",
-      "q": "كم يبلغ طول العملاق الشبيه بالقرد؟",
-      "a": "سبعة عشر مترًا",
-      "alt": [
-        "17 مترا",
-        "سبعة عشر متر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-600-062"
-    },
-    {
-      "p": 600,
-      "topic": "العمالقة التسعة",
-      "q": "ماذا يحدث لمن يلتهم متحوّلًا يحمل إحدى القوى التسع؟",
-      "a": "يرث قوته",
-      "alt": [
-        "يرث عملاقه",
-        "تصير القوة له"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-600-063"
-    },
-    {
-      "p": 600,
-      "topic": "العمالقة التسعة",
-      "q": "كم عملاقًا من التسعة كان في يد الدولة المعادية قبل الحرب؟",
-      "a": "سبعة",
-      "alt": [
-        "7",
-        "سبع"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-600-064"
-    },
-    {
-      "p": 600,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم القرية التي تحوّل جميع أهلها إلى عمالقة في ليلة واحدة؟",
-      "a": "راغاكو",
-      "alt": [
-        "راجاكو",
-        "قرية راغاكو"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ragako",
-      "verified": true,
-      "qid": "aot-600-065"
-    },
-    {
-      "p": 600,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم المدينة الشمالية في السور الداخلي التي زحف نحوها عملاق ضخم؟",
-      "a": "أورفود",
-      "alt": [
-        "أورفد",
-        "مدينة أورفود"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-600-066"
-    },
-    {
-      "p": 600,
-      "topic": "الأسوار والأماكن",
-      "q": "كم تبلغ المسافة بين السور الخارجي والسور الأوسط تقريبًا؟",
-      "a": "مئة كيلومتر",
-      "alt": [
-        "100 كم",
-        "مئة كم"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-600-067"
-    },
-    {
-      "p": 600,
-      "topic": "الأسوار والأماكن",
-      "q": "في أي جهة من السور الخارجي تبرز المدينة التي انهارت أولًا؟",
-      "a": "الجنوب",
-      "alt": [
-        "جنوبا",
-        "الجهة الجنوبية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Shiganshina_District",
-      "verified": true,
-      "qid": "aot-600-068"
-    },
-    {
-      "p": 600,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم المدينة الشرقية التي ينطلق منها الفيلق في حملاته؟",
-      "a": "كاراناس",
-      "alt": [
-        "كارانيس",
-        "مدينة كاراناس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-600-069"
-    },
-    {
-      "p": 600,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما اسم العشيرة التي ينتمي إليها الضابط القصير وصاحبة الوشاح؟",
-      "a": "عشيرة أكرمان",
-      "alt": [
-        "آل أكرمان",
-        "أكرمان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-600-070"
-    },
-    {
-      "p": 600,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما اسم الجماعة المتشددة التي تشكّلت داخل الجيش وتدين بالولاء للبطل؟",
-      "a": "الييغريون",
-      "alt": [
-        "أتباع ييغر",
-        "الييغريست"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-600-071"
-    },
-    {
-      "p": 600,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما اسم الحركة التي انتمى إليها والد البطل في شبابه لاستعادة مجد شعبه؟",
-      "a": "مستعيدو إلديا",
-      "alt": [
-        "حركة استعادة إلديا",
-        "المستعيدون"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Eldian_Restorationists",
-      "verified": true,
-      "qid": "aot-600-072"
-    },
-    {
-      "p": 600,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما اسم الوحدة التي دربتها الدولة المعادية لتوريث أطفالها قوة العمالقة؟",
-      "a": "وحدة المحاربين",
-      "alt": [
-        "فرقة المحاربين",
-        "المحاربون"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Warrior_Unit",
-      "verified": true,
-      "qid": "aot-600-073"
-    },
-    {
-      "p": 600,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما ترتيب القائد صاحب الحاجبين العريضين في تسلسل قادة الفيلق؟",
-      "a": "الثالث عشر",
-      "alt": [
-        "13",
-        "القائد الثالث عشر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Erwin_Smith",
-      "verified": true,
-      "qid": "aot-600-074"
-    },
-    {
-      "p": 600,
-      "topic": "الفيالق والتنظيمات",
-      "q": "كم متدربًا تُعلَن أسماؤهم في قائمة المتفوقين عند التخرّج؟",
-      "a": "عشرة",
-      "alt": [
-        "10",
-        "أفضل عشرة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Training_Corps",
-      "verified": true,
-      "qid": "aot-600-075"
-    },
-    {
-      "p": 600,
-      "topic": "المعدات والأسلحة",
-      "q": "ما مقاس القطعة التي يجب انتزاعها من نقطة ضعف العملاق؟",
-      "a": "متر في عشرة سنتيمترات",
-      "alt": [
-        "متر وعشرة سنتيمترات",
-        "1 متر × 10 سم"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Titan",
-      "verified": true,
-      "qid": "aot-600-076"
-    },
-    {
-      "p": 600,
-      "topic": "المعدات والأسلحة",
-      "q": "ما الذي يحمله الجنود ليطلقوا به الإشارات الملوّنة في السماء؟",
-      "a": "مسدس الإشارة",
-      "alt": [
-        "بندقية الإشارة",
-        "مسدس إشارات"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Survey_Corps",
-      "verified": true,
-      "qid": "aot-600-077"
-    },
-    {
-      "p": 600,
-      "topic": "المعدات والأسلحة",
-      "q": "ما اسم التشكيل الذي يوزّع به الفيلق فرسانه لرصد العمالقة من بعيد؟",
-      "a": "تشكيل الاستطلاع بعيد المدى",
-      "alt": [
-        "التشكيل بعيد المدى",
-        "التشكيل الاستطلاعي"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Long-Distance_Enemy_Scouting_Formation",
-      "verified": true,
-      "qid": "aot-600-078"
-    },
-    {
-      "p": 600,
-      "topic": "المعدات والأسلحة",
-      "q": "ما اسم المعدات التي طوّرها رجال العاصمة لقتال البشر لا العمالقة؟",
-      "a": "معدات مكافحة الأفراد",
-      "alt": [
-        "عتاد مكافحة الأفراد",
-        "معدات ضد الأفراد"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Anti-Personnel_Vertical_Maneuvering_Equipment",
-      "verified": true,
-      "qid": "aot-600-079"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث مفصلية",
-      "q": "ما رقم الحملة الاستطلاعية التي نُصب فيها فخّ للعملاقة الرشيقة؟",
-      "a": "السابعة والخمسون",
-      "alt": [
-        "57",
-        "الحملة 57"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/57th_Exterior_Scouting_Mission",
-      "verified": true,
-      "qid": "aot-600-080"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث مفصلية",
-      "q": "ما الحقيقة الصادمة التي اكتشفها الجنود عن أصل العمالقة العادية؟",
-      "a": "أنها كانت بشرًا",
-      "alt": [
-        "كانوا بشرا",
-        "أنهم بشر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-600-081"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث مفصلية",
-      "q": "كم سنة مرّت بين استعادة المدينة المفقودة وظهور الفيلق في القارة المقابلة؟",
-      "a": "أربع سنوات",
-      "alt": [
-        "4 سنوات",
-        "أربعة أعوام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-600-082"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث مفصلية",
-      "q": "ما الذي أعلنه زعيم العائلة النبيلة في مهرجان الحيّ المعزول؟",
-      "a": "الحرب على الجزيرة",
-      "alt": [
-        "إعلان الحرب",
-        "الحرب على باراديس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Tybur_family",
-      "verified": true,
-      "qid": "aot-600-083"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا فعلت الفتاة المنمّشة فوق القلعة المهجورة لتنقذ رفاقها؟",
-      "a": "تحوّلت إلى عملاقة",
-      "alt": [
-        "كشفت أنها عملاقة",
-        "صارت عملاقة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ymir",
-      "verified": true,
-      "qid": "aot-600-084"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث مفصلية",
-      "q": "كم عامًا عاش البشر خلف الأسوار قبل انهيار أولها؟",
-      "a": "نحو مئة عام",
-      "alt": [
-        "مئة عام",
-        "107 أعوام"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-600-085"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا فعل ملك الأسوار القديم بذكريات شعبه بعد أن بنى الأسوار؟",
-      "a": "محاها",
-      "alt": [
-        "مسحها",
-        "أزالها"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Karl_Fritz",
-      "verified": true,
-      "qid": "aot-600-086"
-    },
-    {
-      "p": 600,
-      "topic": "أحداث مفصلية",
-      "q": "ما اسم اللعنة التي تقصّر عمر كل من يرث عملاقًا؟",
-      "a": "لعنة يمير",
-      "alt": [
-        "لعنة إيمير",
-        "اللعنة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Curse_of_Ymir",
-      "verified": true,
-      "qid": "aot-600-087"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "ما اللقب الذي أطلقه الرفاق على الجندي الضخم الأشقر في أيام التدريب؟",
-      "a": "الأخ الكبير",
-      "alt": [
-        "أخ الجميع",
-        "الأخ"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Reiner_Braun",
-      "verified": true,
-      "qid": "aot-600-088"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "ما الوصف الذي أطلقه العالم الخارجي على البطل بعد إعلانه الحرب؟",
-      "a": "شيطان الأرض",
-      "alt": [
-        "شيطان العالم",
-        "الشيطان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-600-089"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "أكمل قول البطل: «إن لم تقاتلوا فلن …»؟",
-      "a": "تنتصروا",
-      "alt": [
-        "تفوزوا",
-        "تنتصر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-600-090"
-    },
-    {
-      "p": 600,
-      "topic": "جمل وألقاب",
-      "q": "ما اللقب الذي يُطلق على العمالقة عديمة العقل التي تلتهم البشر؟",
-      "a": "العمالقة الخالصة",
-      "alt": [
-        "عمالقة خالصة",
-        "العمالقة العادية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Titan",
-      "verified": true,
-      "qid": "aot-600-091"
-    },
-    {
-      "p": 600,
-      "topic": "مارلي وإلديا",
-      "q": "من قائد قوات الدولة المعادية الذي أشرف على تدريب الأطفال؟",
-      "a": "ثيو ماغات",
-      "alt": [
-        "ماغات",
-        "تيو ماجات"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Theo_Magath",
-      "verified": true,
-      "qid": "aot-600-092"
-    },
-    {
-      "p": 600,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الطاهي الذي جاء من الدولة المعادية وصار يطبخ لأهل الجزيرة؟",
-      "a": "نيكولو",
-      "alt": [
-        "نيكولو الطاهي",
-        "نيقولو"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Niccolo",
-      "verified": true,
-      "qid": "aot-600-093"
-    },
-    {
-      "p": 600,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الفتى الذي يسابق رفيقته على وراثة قوة الدرع؟",
-      "a": "فالكو غرايس",
-      "alt": [
-        "فالكو",
-        "فالكو جرايس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Falco_Grice",
-      "verified": true,
-      "qid": "aot-600-094"
-    },
-    {
-      "p": 600,
-      "topic": "مارلي وإلديا",
-      "q": "من الجندي المتشدد الذي قاد أنصار البطل داخل الجزيرة؟",
-      "a": "فلوك",
-      "alt": [
-        "فلوخ",
-        "فلوك فورستر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Floch_Forster",
-      "verified": true,
-      "qid": "aot-600-095"
-    },
-    {
-      "p": 600,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم المرأة الطويلة التي جاءت من جيش الأعداء وانضمت إلى أنصار البطل؟",
-      "a": "يلينا",
-      "alt": [
-        "يالينا",
-        "إيلينا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Yelena",
-      "verified": true,
-      "qid": "aot-600-096"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم الجندي الذي يقلّد الضابط القصير في كلامه ويعضّ لسانه؟",
-      "a": "أولوو بوزادو",
-      "alt": [
-        "أولو",
-        "أولوو"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Special_Operations_Squad",
-      "verified": true,
-      "qid": "aot-800-049"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم الجندي الأشقر في فرقة الضابط القصير النخبة؟",
-      "a": "إلد جين",
-      "alt": [
-        "إلد",
-        "إلد جن"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Special_Operations_Squad",
-      "verified": true,
-      "qid": "aot-800-050"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم الجندي الرابع في فرقة الضابط القصير النخبة؟",
-      "a": "غونتر شولتز",
-      "alt": [
-        "غونتر",
-        "جونتر شولتز"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Special_Operations_Squad",
-      "verified": true,
-      "qid": "aot-800-051"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم مساعد الباحث المهووس بتجارب العمالقة؟",
-      "a": "موبليت بيرنر",
-      "alt": [
-        "موبليت",
-        "موبليت برنر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D8%A6%D9%85%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A7%D8%AA_%D9%87%D8%AC%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D9%84%D9%82%D8%A9",
-      "verified": true,
-      "qid": "aot-800-052"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم الجندية الكسولة التي شاركت الغرفة مع الجندية الشقراء الهادئة؟",
-      "a": "هيتش دريس",
-      "alt": [
-        "هيتش",
-        "هيتش درايس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-800-053"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم الأخ الأكبر للفتى الذي يحلم بوراثة قوة الدرع؟",
-      "a": "كولت غرايس",
-      "alt": [
-        "كولت",
-        "كولت جرايس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Colt_Grice",
-      "verified": true,
-      "qid": "aot-800-054"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم المرأة التي حملت قوة المطرقة من العائلة النبيلة؟",
-      "a": "لارا تيبور",
-      "alt": [
-        "لارا",
-        "لارا تايبور"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Lara_Tybur",
-      "verified": true,
-      "qid": "aot-800-055"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم الجندي الذي فقدت الدولة المعادية قوته في أول مهمة داخل الجزيرة؟",
-      "a": "مارسيل غاليارد",
-      "alt": [
-        "مارسيل",
-        "مارسيل جاليارد"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Marcel_Galliard",
-      "verified": true,
-      "qid": "aot-800-056"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم والدة البطل؟",
-      "a": "كارلا ييغر",
-      "alt": [
-        "كارلا",
-        "كارلا جايجر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-800-057"
-    },
-    {
-      "p": 800,
-      "topic": "العمالقة التسعة",
-      "q": "ما اسم الملك الخامس والأربعين بعد المئة الذي بنى الأسوار؟",
-      "a": "كارل فريتز",
-      "alt": [
-        "كارل",
-        "كارل فرتز"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Karl_Fritz",
-      "verified": true,
-      "qid": "aot-800-058"
-    },
-    {
-      "p": 800,
-      "topic": "العمالقة التسعة",
-      "q": "ما اسم من حمل قوة الوحش قبل الأخ الأكبر للبطل؟",
-      "a": "توم كسافر",
-      "alt": [
-        "كسافر",
-        "توم زافير"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Tom_Ksaver",
-      "verified": true,
-      "qid": "aot-800-059"
-    },
-    {
-      "p": 800,
-      "topic": "العمالقة التسعة",
-      "q": "كم يبلغ طول العملاق الذي يفوق الأسوار ارتفاعًا؟",
-      "a": "ستون مترًا",
-      "alt": [
-        "60 مترا",
-        "ستين مترا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-800-060"
-    },
-    {
-      "p": 800,
-      "topic": "العمالقة التسعة",
-      "q": "ما العهد الذي منع ملك الأسوار من الدفاع عن شعبه رغم امتلاكه القوة؟",
-      "a": "عهد نبذ الحرب",
-      "alt": [
-        "قسم نبذ الحرب",
-        "عهد السلام"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Karl_Fritz",
-      "verified": true,
-      "qid": "aot-800-061"
-    },
-    {
-      "p": 800,
-      "topic": "العمالقة التسعة",
-      "q": "ما القدرة الفريدة التي يملكها البطل ويرى بها ما سيأتي؟",
-      "a": "ذكريات المستقبل",
-      "alt": [
-        "رؤية المستقبل",
-        "ذكريات قادمة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Attack_Titan",
-      "verified": true,
-      "qid": "aot-800-062"
-    },
-    {
-      "p": 800,
-      "topic": "العمالقة التسعة",
-      "q": "ما الشرط الذي يجب توفّره في حامل قوة التحكّم كي يأمر العمالقة؟",
-      "a": "دم ملكي",
-      "alt": [
-        "الدم الملكي",
-        "دم العائلة المالكة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-800-063"
-    },
-    {
-      "p": 800,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم المدينة التي تحرس البوابة الغربية للسور الداخلي؟",
-      "a": "ياركل",
-      "alt": [
-        "مدينة ياركل",
-        "يارِكل"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Yarckel_District",
-      "verified": true,
-      "qid": "aot-800-064"
-    },
-    {
-      "p": 800,
-      "topic": "الأسوار والأماكن",
-      "q": "كم يبلغ نصف قطر السور الداخلي تقريبًا؟",
-      "a": "مئتان وخمسون كيلومترًا",
-      "alt": [
-        "250 كم",
-        "مئتان وخمسون كم"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-800-065"
-    },
-    {
-      "p": 800,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم المدينة الواقعة على البوابة الشمالية للسور الأوسط؟",
-      "a": "أوتوبيا",
-      "alt": [
-        "يوتوبيا",
-        "مدينة أوتوبيا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-800-066"
-    },
-    {
-      "p": 800,
-      "topic": "الفيالق والتنظيمات",
-      "q": "كم جنديًا عاد حيًّا من الفيلق بعد معركة استعادة المدينة المفقودة؟",
-      "a": "تسعة جنود",
-      "alt": [
-        "تسعة",
-        "تسعة فقط"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Battle_of_Shiganshina_District",
-      "verified": true,
-      "qid": "aot-800-067"
-    },
-    {
-      "p": 800,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما اسم الوحدة السرّية التابعة للشرطة والتي تخدم البلاط داخل أضيق الأسوار؟",
-      "a": "الفرقة الداخلية الأولى",
-      "alt": [
-        "الفرقة الأولى الداخلية",
-        "وحدة البلاط"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/First_Interior_Squad",
-      "verified": true,
-      "qid": "aot-800-068"
-    },
-    {
-      "p": 800,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما ترتيب المدرّب القاسي في قائمة قادة الفيلق قبل اعتزاله؟",
-      "a": "الثاني عشر",
-      "alt": [
-        "12",
-        "القائد الثاني عشر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Keith_Shadis",
-      "verified": true,
-      "qid": "aot-800-069"
-    },
-    {
-      "p": 800,
-      "topic": "المعدات والأسلحة",
-      "q": "ما اسم الحجر النادر الذي يولّد وقود أجهزة المناورة؟",
-      "a": "حجر الجليد المتفجر",
-      "alt": [
-        "حجر الثلج المتفجر",
-        "آيسبرست"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Iceburst_stone",
-      "verified": true,
-      "qid": "aot-800-070"
-    },
-    {
-      "p": 800,
-      "topic": "المعدات والأسلحة",
-      "q": "من أي مادة تُصنع أسطوانات وقود أجهزة المناورة؟",
-      "a": "الخيزران الحديدي",
-      "alt": [
-        "البامبو الحديدي",
-        "خيزران حديدي"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Iceburst_stone",
-      "verified": true,
-      "qid": "aot-800-071"
-    },
-    {
-      "p": 800,
-      "topic": "المعدات والأسلحة",
-      "q": "كم مرحلة ينفجر بها رمح الفيلق المتفجّر عند إصابته الهدف؟",
-      "a": "مرحلتان",
-      "alt": [
-        "مرحلتين",
-        "اثنتان"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Thunder_Spear",
-      "verified": true,
-      "qid": "aot-800-072"
-    },
-    {
-      "p": 800,
-      "topic": "المعدات والأسلحة",
-      "q": "ما الذي يحمله الجندي على ظهره ليستبدل به نصاله المكسورة؟",
-      "a": "صندوق الشفرات",
-      "alt": [
-        "علبة النصال",
-        "حاوية الشفرات"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Vertical_Maneuvering_Equipment",
-      "verified": true,
-      "qid": "aot-800-073"
-    },
-    {
-      "p": 800,
-      "topic": "المعدات والأسلحة",
-      "q": "ما السلاح الثقيل الذي يُثبَّت فوق الأسوار ويدور ليصوّب نحو العمالقة؟",
-      "a": "المدافع الثابتة",
-      "alt": [
-        "مدافع ثابتة",
-        "المدفعية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Military",
-      "verified": true,
-      "qid": "aot-800-074"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث مفصلية",
-      "q": "ما الاسمان اللذان أطلقهما الفيلق على العملاقين الأسيرين في التجارب؟",
-      "a": "سوني وبين",
-      "alt": [
-        "بين وسوني",
-        "سوني و بين"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Sonny",
-      "verified": true,
-      "qid": "aot-800-075"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث مفصلية",
-      "q": "ما اسم الجندية التي كشفت مذكراتها أن عملاقًا نطق بكلمات؟",
-      "a": "إلسه لانغنار",
-      "alt": [
-        "إلسه",
-        "إيلسه لانجنار"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ilse_Langnar",
-      "verified": true,
-      "qid": "aot-800-076"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث مفصلية",
-      "q": "ما التاريخ الذي انهار فيه السور الخارجي بحسب تقويم الحكاية؟",
-      "a": "سنة 845",
-      "alt": [
-        "845",
-        "عام 845"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-800-077"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث مفصلية",
-      "q": "كم كان عمر البطل حين انهار سور مدينته؟",
-      "a": "عشر سنوات",
-      "alt": [
-        "10 سنوات",
-        "عشرة أعوام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-800-078"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث مفصلية",
-      "q": "بأي هيئة تسلّل البطل إلى صفوف جيش العدو قبل هجومه؟",
-      "a": "جندي جريح",
-      "alt": [
-        "جنديًا جريحًا",
-        "جندي فقد ساقه"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Raid_on_Liberio",
-      "verified": true,
-      "qid": "aot-800-079"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث مفصلية",
-      "q": "كم سنة قضتها الفتاة المنمّشة عملاقًا بلا عقل قبل أن تعود بشرًا؟",
-      "a": "ستون عامًا",
-      "alt": [
-        "60 عاما",
-        "ستين سنة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ymir",
-      "verified": true,
-      "qid": "aot-800-080"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث مفصلية",
-      "q": "ما الذي أراد صاحب العرش الخفي أن تفعله ابنته بالبطل؟",
-      "a": "أن تلتهمه",
-      "alt": [
-        "تلتهمه",
-        "أن تأكله"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Rod_Reiss",
-      "verified": true,
-      "qid": "aot-800-081"
-    },
-    {
-      "p": 800,
-      "topic": "أحداث مفصلية",
-      "q": "كم طفلًا أرسلته الدولة المعادية إلى الجزيرة في المهمة الأولى؟",
-      "a": "أربعة",
-      "alt": [
-        "4",
-        "أربع"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Warrior_Unit",
-      "verified": true,
-      "qid": "aot-800-082"
-    },
-    {
-      "p": 800,
-      "topic": "جمل وألقاب",
-      "q": "ما اللقب السرّي الذي راسل به الجاسوس ثوار شعبه؟",
-      "a": "البومة",
-      "alt": [
-        "الرجل البومة",
-        "بومة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Eren_Kruger",
-      "verified": true,
-      "qid": "aot-800-083"
-    },
-    {
-      "p": 800,
-      "topic": "جمل وألقاب",
-      "q": "ما اسم البطل الأسطوري الذي اخترعته العائلة النبيلة لتمجّد به نفسها؟",
-      "a": "هيلوس",
-      "alt": [
-        "هيلوز",
-        "البطل هيلوس"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Helos",
-      "verified": true,
-      "qid": "aot-800-084"
-    },
-    {
-      "p": 800,
-      "topic": "جمل وألقاب",
-      "q": "ما اسم الشبكة الخفية التي تربط أرواح أبناء الجزيرة جميعًا؟",
-      "a": "الدروب",
-      "alt": [
-        "المسارات",
-        "الطرق"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Paths",
-      "verified": true,
-      "qid": "aot-800-085"
-    },
-    {
-      "p": 800,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم السفيرة التي جاءت من الدولة الشرقية لتتحالف مع الجزيرة؟",
-      "a": "كيومي أزومابيتو",
-      "alt": [
-        "كيومي",
-        "كيومي أزوما بيتو"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Kiyomi_Azumabito",
-      "verified": true,
-      "qid": "aot-800-086"
-    },
-    {
-      "p": 800,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الزوجة الأولى لوالد البطل والمنحدرة من سلالة الملوك؟",
-      "a": "دينا فريتز",
-      "alt": [
-        "دينا",
-        "دينا فرتز"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Dina_Fritz",
-      "verified": true,
-      "qid": "aot-800-087"
-    },
-    {
-      "p": 800,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم زعيم العائلة النبيلة الذي خطب في المهرجان؟",
-      "a": "ويلي تيبور",
-      "alt": [
-        "ويلي",
-        "ولي تيبور"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Willy_Tybur",
-      "verified": true,
-      "qid": "aot-800-088"
-    },
-    {
-      "p": 800,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الرجل الذي علّم أهل الجزيرة قيادة المركبات الطائرة؟",
-      "a": "أونيانكوبون",
-      "alt": [
-        "أونيانكابون",
-        "أونيانكوبن"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Onyankopon",
-      "verified": true,
-      "qid": "aot-800-089"
-    },
-    {
-      "p": 800,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الجاسوس الذي حمل قوة الهجوم قبل والد البطل؟",
-      "a": "إيرين كروغر",
-      "alt": [
-        "كروغر",
-        "إرين كروجر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Eren_Kruger",
-      "verified": true,
-      "qid": "aot-800-090"
-    },
-    {
-      "p": 800,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم عشيرة الشرق التي تنحدر منها صاحبة الوشاح من جهة أمها؟",
-      "a": "آل أزومابيتو",
-      "alt": [
-        "عشيرة أزومابيتو",
-        "أزومابيتو"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Azumabito_family",
-      "verified": true,
-      "qid": "aot-800-091"
-    },
-    {
-      "p": 800,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الحرب الكبرى التي خاضتها الدولة المعادية قبل أن تتفرغ للجزيرة؟",
-      "a": "حرب الشرق الأوسط",
-      "alt": [
-        "الحرب الشرق أوسطية",
-        "حرب الأمم الشرقية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Marley_Mid-East_War",
-      "verified": true,
-      "qid": "aot-800-092"
-    },
-    {
-      "p": 800,
-      "topic": "الشخصيات",
-      "q": "ما اسم تاجر المدينة الذي تحالف مع الفيلق بعد أن ساعد الخاطفين؟",
-      "a": "ديمو ريفز",
-      "alt": [
-        "ريفز",
-        "ديمو ريفيز"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Dimo_Reeves",
-      "verified": true,
-      "qid": "aot-800-093"
-    },
-    {
-      "p": 800,
-      "topic": "جمل وألقاب",
-      "q": "ما اسم الحدث الذي زحفت فيه عمالقة الأسوار لتدهس العالم؟",
-      "a": "الزلزلة",
-      "alt": [
-        "الدمدمة",
-        "الرامبلينغ"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Rumbling",
-      "verified": true,
-      "qid": "aot-800-094"
-    },
-    {
-      "p": 800,
-      "topic": "المعدات والأسلحة",
-      "q": "ما السلاح الذي انتزعته الفتاة المتحمّسة لتصيب به جنود الجزيرة؟",
-      "a": "بندقية مضادة للعمالقة",
-      "alt": [
-        "البندقية المضادة للعمالقة",
-        "بندقية ثقيلة مضادة للعمالقة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Gabi_Braun",
-      "verified": true,
-      "qid": "aot-800-095"
-    },
-    {
-      "p": 800,
-      "topic": "جمل وألقاب",
-      "q": "بم نصح الضابط القصير رفيقه حين حار بين خيارين؟",
-      "a": "اختر ما لا تندم عليه",
-      "alt": [
-        "اختر أقلّ ما تندم عليه",
-        "ما لا تندم عليه"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Levi_Ackermann",
-      "verified": true,
-      "qid": "aot-800-096"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم الطفلة التي نجت من قرية العمالقة ورعتها الجندية الشرهة؟",
-      "a": "كايا",
-      "alt": [
-        "كايا الفتاة",
-        "كايه"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Kaya",
-      "verified": true,
-      "qid": "aot-1000-049"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم الفتاة التي أنقذتها صاحبة الوشاح ثم انضمت إلى أنصار البطل؟",
-      "a": "لويز",
-      "alt": [
-        "لويس",
-        "لويزا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Louise",
-      "verified": true,
-      "qid": "aot-1000-050"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم الشقيقة الصغرى لوالد البطل؟",
-      "a": "فاي ييغر",
-      "alt": [
-        "فاي",
-        "فاي جايجر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Faye_Yeager",
-      "verified": true,
-      "qid": "aot-1000-051"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم الشرطي الشاب الذي رافق الجندية الكسولة في العاصمة؟",
-      "a": "مارلو فرويدنبرغ",
-      "alt": [
-        "مارلو",
-        "مارلو فرويدنبيرغ"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Marlowe_Freudenberg",
-      "verified": true,
-      "qid": "aot-1000-052"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم الفتى الفقير الذي أعطاه البطل نقودًا في القارة المقابلة؟",
-      "a": "رمزي",
-      "alt": [
-        "رامزي",
-        "رمزى"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ramzi",
-      "verified": true,
-      "qid": "aot-1000-053"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "كم يبلغ طول الضابط القصير؟",
-      "a": "مئة وستون سنتيمترًا",
-      "alt": [
-        "160 سم",
-        "متر وستون سنتيمترا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-1000-054"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم رفيقَي الضابط القصير اللذين صعدا معه من أعماق العاصمة؟",
-      "a": "فارلان وإيزابيل",
-      "alt": [
-        "إيزابيل وفارلان",
-        "فارلان تشيرش وإيزابيل ماغنوليا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Farlan_Church",
-      "verified": true,
-      "qid": "aot-1000-055"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم الضابطة الشقراء قصيرة الشعر التي دافعت عن البرج مع رفاقها؟",
-      "a": "نانابا",
-      "alt": [
-        "نانابه",
-        "نانابا الجندية"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nanaba",
-      "verified": true,
-      "qid": "aot-1000-056"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "كم يبلغ طول العملاق الذي يحمل أعظم القوى التسع؟",
-      "a": "ثلاثة عشر مترًا",
-      "alt": [
-        "13 مترا",
-        "ثلاثة عشر متر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-1000-057"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "كم يبلغ طول العملاقة الرشيقة؟",
-      "a": "أربعة عشر مترًا",
-      "alt": [
-        "14 مترا",
-        "أربعة عشر متر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-1000-058"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "كم بلغ ارتفاع العملاق الذي تحوّل إليه صاحب العرش الخفي؟",
-      "a": "مئة وعشرون مترًا",
-      "alt": [
-        "120 مترا",
-        "مئة وعشرين مترا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Rod_Reiss",
-      "verified": true,
-      "qid": "aot-1000-059"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "ما اسم أول إنسانة نالت قوة العمالقة وصارت أمًّا لشعبها؟",
-      "a": "يمير فريتز",
-      "alt": [
-        "يمير المؤسسة",
-        "إيمير فريتز"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ymir_Fritz",
-      "verified": true,
-      "qid": "aot-1000-060"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "كم عامًا مضى على نيل أول إنسانة قوة العمالقة؟",
-      "a": "ألفا عام",
-      "alt": [
-        "2000 عام",
-        "ألفي سنة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-1000-061"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "أين يختبئ صاحب قوة المطرقة أثناء القتال؟",
-      "a": "في كتلة صلبة تحت الأرض",
-      "alt": [
-        "في كتلة متصلبة",
-        "تحت الأرض في كتلة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/War_Hammer_Titan",
-      "verified": true,
-      "qid": "aot-1000-062"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "إلى من تنتقل القوة إذا انتهت مدّة حاملها دون أن يورّثها؟",
-      "a": "إلى طفل يولد حديثًا",
-      "alt": [
-        "لطفل حديث الولادة",
-        "إلى مولود جديد"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-1000-063"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "ما الذي يجعل المتحوّل يستعيد أطرافه المبتورة خلال دقائق؟",
-      "a": "قدرة الشفاء",
-      "alt": [
-        "التجدد",
-        "الشفاء السريع"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nine_Titans",
-      "verified": true,
-      "qid": "aot-1000-064"
-    },
-    {
-      "p": 1000,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم المدينة الغربية في السور الأوسط؟",
-      "a": "كرولفا",
-      "alt": [
-        "كرولفا ديستريكت",
-        "مدينة كرولفا"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-1000-065"
-    },
-    {
-      "p": 1000,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم المدينة التي لجأ إليها أهل السور الخارجي بعد انهياره؟",
-      "a": "إيرميش",
-      "alt": [
-        "إرميش",
-        "مدينة إيرميش"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-1000-066"
-    },
-    {
-      "p": 1000,
-      "topic": "الأسوار والأماكن",
-      "q": "كم مدينة بارزة تخرج من كل سور لتجذب العمالقة إليها؟",
-      "a": "أربع مدن",
-      "alt": [
-        "4 مدن",
-        "أربع"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-1000-067"
-    },
-    {
-      "p": 1000,
-      "topic": "الأسوار والأماكن",
-      "q": "ممّن أخذت أسوار الجزيرة أسماءها؟",
-      "a": "بنات يمير الثلاث",
-      "alt": [
-        "بنات يمير",
-        "بنات المؤسِّسة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Walls",
-      "verified": true,
-      "qid": "aot-1000-068"
-    },
-    {
-      "p": 1000,
-      "topic": "الأسوار والأماكن",
-      "q": "ما اسم القرية الجبلية التي جاءت منها الجندية الشرهة؟",
-      "a": "داوبر",
-      "alt": [
-        "قرية داوبر",
-        "دوبر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Dauper",
-      "verified": true,
-      "qid": "aot-1000-069"
-    },
-    {
-      "p": 1000,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما اسم الفرقة التي قادها خال الضابط القصير لمطاردة الجنود في العاصمة؟",
-      "a": "فرقة مكافحة الأفراد",
-      "alt": [
-        "وحدة مكافحة الأفراد",
-        "فرقة مكافحة البشر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Anti-Personnel_Control_Squad",
-      "verified": true,
-      "qid": "aot-1000-070"
-    },
-    {
-      "p": 1000,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما الرتبة التي يحملها الضابط القصير رسميًا في فيلقه؟",
-      "a": "كابتن",
-      "alt": [
-        "نقيب",
-        "قائد سرية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-1000-071"
-    },
-    {
-      "p": 1000,
-      "topic": "الفيالق والتنظيمات",
-      "q": "ما الترتيب الذي نالته صاحبة الوشاح بين متدربي دفعتها؟",
-      "a": "المرتبة الأولى",
-      "alt": [
-        "الأولى",
-        "المركز الأول"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Training_Corps",
-      "verified": true,
-      "qid": "aot-1000-072"
-    },
-    {
-      "p": 1000,
-      "topic": "الفيالق والتنظيمات",
-      "q": "كم جنديًا اختار الضابط القصير في فرقته النخبة أول مرة؟",
-      "a": "أربعة جنود",
-      "alt": [
-        "أربعة",
-        "4 جنود"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Special_Operations_Squad",
-      "verified": true,
-      "qid": "aot-1000-073"
-    },
-    {
-      "p": 1000,
-      "topic": "المعدات والأسلحة",
-      "q": "ما نوع المركبة التي أقلعت من الجزيرة لتعبر إلى القارة المقابلة؟",
-      "a": "قارب طائر",
-      "alt": [
-        "طائرة مائية",
-        "سفينة طائرة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Flying_Boat",
-      "verified": true,
-      "qid": "aot-1000-074"
-    },
-    {
-      "p": 1000,
-      "topic": "المعدات والأسلحة",
-      "q": "كم أسطوانة وقود يحمل الجندي على جانبيه في جهاز المناورة؟",
-      "a": "أسطوانتان",
-      "alt": [
-        "اثنتان",
-        "2"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Vertical_Maneuvering_Equipment",
-      "verified": true,
-      "qid": "aot-1000-075"
-    },
-    {
-      "p": 1000,
-      "topic": "المعدات والأسلحة",
-      "q": "بم قيّد الفيلق العمالقة التي أسرها أحياءً للتجارب؟",
-      "a": "الحبال والأوتاد",
-      "alt": [
-        "أوتاد وحبال",
-        "بالحبال"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Hange_Zoe",
-      "verified": true,
-      "qid": "aot-1000-076"
-    },
-    {
-      "p": 1000,
-      "topic": "المعدات والأسلحة",
-      "q": "ما المشروب الذي يُعرف الضابط القصير بتعلّقه به؟",
-      "a": "الشاي",
-      "alt": [
-        "شاي أسود",
-        "الشاي الأسود"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters",
-      "verified": true,
-      "qid": "aot-1000-077"
-    },
-    {
-      "p": 1000,
-      "topic": "المعدات والأسلحة",
-      "q": "ما اللعبة التي تعلّمها الأخ الأكبر للبطل من معلّمه في القارة المقابلة؟",
-      "a": "رمي الكرة",
-      "alt": [
-        "لعبة الكرة",
-        "البيسبول"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Tom_Ksaver",
-      "verified": true,
-      "qid": "aot-1000-078"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث مفصلية",
-      "q": "ما التاريخ الذي تخرّجت فيه دفعة أبطال الحكاية من التدريب؟",
-      "a": "سنة 850",
-      "alt": [
-        "850",
-        "عام 850"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Training_Corps",
-      "verified": true,
-      "qid": "aot-1000-079"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث مفصلية",
-      "q": "ما ترتيب البطل في قائمة متفوّقي دفعته؟",
-      "a": "المركز الخامس",
-      "alt": [
-        "الخامس",
-        "5"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Training_Corps",
-      "verified": true,
-      "qid": "aot-1000-080"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث مفصلية",
-      "q": "ما الذي انكشف أمام البطل حين لمس يد أبيه؟",
-      "a": "ماضي والده",
-      "alt": [
-        "ذكريات أبيه",
-        "ماضي أبيه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-1000-081"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث مفصلية",
-      "q": "ما الذي ظهر في سماء الجزيرة لأول مرة فأذهل أهلها؟",
-      "a": "منطاد",
-      "alt": [
-        "سفينة هوائية",
-        "بالون طائر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Airship",
-      "verified": true,
-      "qid": "aot-1000-082"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا وجد الأبطال في ماء الشاطئ فأثار دهشتهم؟",
-      "a": "الملح",
-      "alt": [
-        "ماء مالح",
-        "مذاق مالح"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ocean",
-      "verified": true,
-      "qid": "aot-1000-083"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث مفصلية",
-      "q": "كم مرة نجح الفيلق في أسر عملاق حيّ لدراسته؟",
-      "a": "مرتان",
-      "alt": [
-        "مرتين",
-        "2"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Sonny",
-      "verified": true,
-      "qid": "aot-1000-084"
-    },
-    {
-      "p": 1000,
-      "topic": "العمالقة التسعة",
-      "q": "أين اختبأت المؤسِّسة يوم هربت من مطارديها فتغيّر مصيرها؟",
-      "a": "شجرة مجوّفة",
-      "alt": [
-        "في شجرة مجوفة",
-        "جذع شجرة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ymir_Fritz",
-      "verified": true,
-      "qid": "aot-1000-085"
-    },
-    {
-      "p": 1000,
-      "topic": "جمل وألقاب",
-      "q": "ما اسم الطائفة التي قدّست الأسوار واعتبرتها مقدسة؟",
-      "a": "طائفة الجدار",
-      "alt": [
-        "عبدة الجدار",
-        "كنيسة الجدار"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Wall_Cult",
-      "verified": true,
-      "qid": "aot-1000-086"
-    },
-    {
-      "p": 1000,
-      "topic": "جمل وألقاب",
-      "q": "ما الاسم الذي يُطلق على اللحظة التي تستيقظ فيها قوة صاحبة الوشاح؟",
-      "a": "الصحوة",
-      "alt": [
-        "اليقظة",
-        "صحوة العشيرة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Ackerman_clan",
-      "verified": true,
-      "qid": "aot-1000-087"
-    },
-    {
-      "p": 1000,
-      "topic": "جمل وألقاب",
-      "q": "ما اللقب الذي أرعب به خال الضابط القصير أهل العاصمة؟",
-      "a": "كيني السفّاح",
-      "alt": [
-        "السفاح",
-        "كيني القاطع"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Kenny_Ackerman",
-      "verified": true,
-      "qid": "aot-1000-088"
-    },
-    {
-      "p": 1000,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم العائلة التي جلست على عرش الأسوار كواجهة للملك الحقيقي؟",
-      "a": "آل فريتز",
-      "alt": [
-        "عائلة فريتز",
-        "فريتز"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Fritz_family",
-      "verified": true,
-      "qid": "aot-1000-089"
-    },
-    {
-      "p": 1000,
-      "topic": "مارلي وإلديا",
-      "q": "ما اسم الإمبراطورية التي حكمت العالم قرونًا بقوة العمالقة؟",
-      "a": "إمبراطورية إلديا",
-      "alt": [
-        "الإمبراطورية الإلدية",
-        "إلديا القديمة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-1000-090"
-    },
-    {
-      "p": 1000,
-      "topic": "مارلي وإلديا",
-      "q": "ما الاسم الذي يطلقه أهل القارة على أحفاد المؤسِّسة؟",
-      "a": "أبناء يمير",
-      "alt": [
-        "ذرية يمير",
-        "أولاد يمير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan",
-      "verified": true,
-      "qid": "aot-1000-091"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم والدة الضابط القصير التي ماتت وهو صغير؟",
-      "a": "كوشيل أكرمان",
-      "alt": [
-        "كوشيل",
-        "كوشل أكرمان"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Kuchel_Ackermann",
-      "verified": true,
-      "qid": "aot-1000-092"
-    },
-    {
-      "p": 1000,
-      "topic": "الشخصيات",
-      "q": "ما اسم الكاهن الذي كتم سرّ الأسوار حتى قُتل؟",
-      "a": "الأب نيك",
-      "alt": [
-        "نيك",
-        "الكاهن نيك"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Nick",
-      "verified": true,
-      "qid": "aot-1000-093"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث مفصلية",
-      "q": "ما الذي أخفته الجندية الشرهة عن رفاقها خجلًا في أيام التدريب؟",
-      "a": "لهجتها الريفية",
-      "alt": [
-        "لهجتها",
-        "لهجة قريتها"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Sasha_Blouse",
-      "verified": true,
-      "qid": "aot-1000-094"
-    },
-    {
-      "p": 1000,
-      "topic": "أحداث مفصلية",
-      "q": "ماذا كان ينقص البطل وأخاه الأكبر كي تعمل قوّتهما معًا؟",
-      "a": "أن يتلامسا",
-      "alt": [
-        "التلامس",
-        "أن يلمس أحدهما الآخر"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Founding_Titan",
-      "verified": true,
-      "qid": "aot-1000-095"
-    },
-    {
-      "p": 1000,
-      "topic": "مارلي وإلديا",
-      "q": "ما الذي نقشته والدة صاحبة الوشاح على معصم ابنتها؟",
-      "a": "وشم عشيرتها",
-      "alt": [
-        "وشم",
-        "شعار العشيرة"
-      ],
-      "sourceUrl": "https://attackontitan.fandom.com/wiki/Azumabito_family",
-      "verified": true,
-      "qid": "aot-1000-096"
+      "qid": "aot-1000-908",
+      "difficultyTarget": 0.15,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep53"
     }
   ]
 }

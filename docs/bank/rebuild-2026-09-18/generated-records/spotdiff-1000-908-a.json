@@ -1,0 +1,33 @@
+{
+  "id": "spotdiff-1000-908-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-1000-908-a.webp",
+  "asset": "media/spotdiff/spotdiff-1000-908-a.webp",
+  "prompt": "Use case: precise-object-edit. Correct only the size of the red rubber O-ring in the supplied still-life. The red O-ring is too large; reduce its outer diameter to approximately HALF its current diameter, about 9 percent of the total image width. Keep its exact center at x=81%, y=33%, retain its round ring geometry and visible central hole, and scale its natural contact shadow accordingly. Preserve all three hex nuts, the silver bolt, thread detail, background, framing and every other visible detail exactly. Do not relocate the O-ring or add objects. This corrected version becomes image A of a difficult spot-the-difference pair. No text.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 72450,
+  "sha256": "2d4e515cccd0a67e75e57d97ed1726af26f93d2a6018de3617b29bcc244c8dd1",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "Only the reduced-size O-ring changes from red to black. Three silver nuts and the bolt retain their arrangement. Original A with an oversized ring was replaced before B generation.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "correctionHistory": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/corrections-800-1000.json",
+  "generationInput": {
+    "type": "rejected-original-image-a",
+    "file": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/rejected/spotdiff-1000-908-a-rejected-original.png",
+    "sha256": "74f18ae2e8db1d509a70ffb5e2f4484f6a1bc75b10de684d68dcf0d8c13a5903"
+  },
+  "rawGeneratedImageSha256": "fd071f8372c2611ba010ceafeeee1b16791adacaebffb68b6cec621b18009146"
+}

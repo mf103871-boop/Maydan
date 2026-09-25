@@ -1,0 +1,1028 @@
+{
+  "reviewedAt": "2026-09-25",
+  "status": "approved",
+  "scope": {
+    "questions": 40,
+    "originalImagesInspected": 40,
+    "imageRecordsMatch": 40,
+    "sourceIdentityReviewed": 40,
+    "recoveredPrimarySourceReadings": 14,
+    "newPrimarySourceReadings": 26,
+    "actualGameplayQuestionsReviewed": 40,
+    "runtimeChecksPassed": 446,
+    "runtimeChecksTotal": 446,
+    "decodedImages": 40
+  },
+  "categorySha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+  "generationSummary": {
+    "retainedInstalledImages": 8,
+    "newlyInstalledImages": 32,
+    "builtInCallsThisContinuation": 33,
+    "framingCorrections": [
+      "placefinder-600-905"
+    ],
+    "resizedForBudget": [
+      "placefinder-1000-904",
+      "placefinder-1000-905"
+    ],
+    "legacyMediaDeleted": false
+  },
+  "difficulty": "Editorial targets .8/.6/.4/.25/.15; no measured player-success rates.",
+  "sourceLimits": "Identity references support the real landmarks; original generated recognition illustrations are not documentary photographs or measured architectural reconstructions. No borrowed-image license is implied by a source URL. Recovered source readings are explicitly dated23Sep;26 additional primary pages were opened and relevant text read25Sep.",
+  "candidateDecisions": [
+    {
+      "id": "placefinder-800-905",
+      "planned": "قصر الفريد في الحِجر",
+      "selected": "الحِجر",
+      "reason": "Question asks the archaeological site, matching directly opened UNESCO and AlUla primary scope. The illustrative tomb remains Qasr al-Farid; official Saudipedia was read as supplemental architecture description, not mislabeled as primary archaeological evidence.",
+      "supplementalUrl": "https://saudipedia.com/en/hegra"
+    },
+    {
+      "id": "placefinder-1000-907",
+      "planned": "كنيسة لاس لاخاس",
+      "selected": "تيكال",
+      "reason": "English/Spanish Colombia Travel and alternate official article opens returned502. Replaced unstarted candidate with source-backed visually distinct Tikal in same Americas topic/tier; did not claim search-index evidence as successful page retrieval.",
+      "failedUrls": [
+        "https://colombia.travel/en/ipiales",
+        "https://colombia.travel/es/ipiales",
+        "https://colombia.travel/es/encanto/descubre-el-santuario-de-las-lajas-una-maravilla-en-medio-de-la"
+      ]
+    },
+    {
+      "id": "placefinder-400-901",
+      "reason": "Operator Colosseum page timed out; UNESCO Rome page directly opened and names Colosseum. Geometry precision not claimed."
+    },
+    {
+      "id": "placefinder-400-906",
+      "reason": "Recovered Louvre URL404 replaced by directly opened official A pyramid for a symbol page."
+    }
+  ],
+  "focusedValidation": {
+    "contentErrors": 0,
+    "expectedSharedBankStatusCountErrors": 5,
+    "sharedFilesNotUpdatedByThisSubtask": true
+  },
+  "uiEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json",
+  "items": [
+    {
+      "id": "placefinder-200-901",
+      "answer": "برج إيفل",
+      "tier": 200,
+      "sourceReview": {
+        "id": "placefinder-200-901",
+        "sourceUrl": "https://www.toureiffel.paris/en/news/history-and-culture/iron-lady-nicknaming-eiffel-tower",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "Official tower page identifies puddled iron, four pillars and decorative arches.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-200-901",
+        "answer": "برج إيفل",
+        "sha256": "739108414749dc4559d49c76e345b2b89717229acc460fd3348a734ea5e35eed",
+        "status": "approved",
+        "note": "Full lattice Eiffel tower, splayed legs, base arch and two decks; feet and tip visible.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-200-902",
+      "answer": "برج بيزا المائل",
+      "tier": 200,
+      "sourceReview": {
+        "id": "placefinder-200-902",
+        "sourceUrl": "https://whc.unesco.org/en/list/395/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "UNESCO identifies the leaning campanile and its marble and arched galleries.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-200-902",
+        "answer": "برج بيزا المائل",
+        "sha256": "a59997d2f51f367f3cf5bdf0f132d8db1d097ae358349b8d20c5ecadc02071be",
+        "status": "approved",
+        "note": "White cylindrical Pisa campanile visibly leaning relative to level lawn; stacked arcades and narrower belfry.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-200-903",
+      "answer": "برج خليفة",
+      "tier": 200,
+      "sourceReview": {
+        "id": "placefinder-200-903",
+        "sourceUrl": "https://www.burjkhalifa.ae/the-tower/architecture-design/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "Official owner describes three wings around a core, Y plan, setbacks and spire.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-200-903",
+        "answer": "برج خليفة",
+        "sha256": "a6287fd9487de7c88aa86974dfa1bb68f8368459632619f91b4cbc5da52c5f83",
+        "status": "approved",
+        "note": "Full bundled setback Burj Khalifa silhouette with needle spire; lake and subdued lower buildings.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-200-904",
+      "answer": "أهرامات الجيزة",
+      "tier": 200,
+      "sourceReview": {
+        "id": "placefinder-200-904",
+        "sourceUrl": "https://whc.unesco.org/en/list/86/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "UNESCO identifies the three Giza pyramids within the Memphis necropolis.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-200-904",
+        "answer": "أهرامات الجيزة",
+        "sha256": "3514d9269622f204a18fec844d40b8f06469f7db46681de042f85b37b60d3b10",
+        "status": "approved",
+        "note": "Three principal limestone pyramids, one smaller and one retaining apex casing; illustrative spacing, no claimed survey accuracy.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-200-905",
+      "answer": "سور الصين العظيم",
+      "tier": 200,
+      "sourceReview": {
+        "id": "placefinder-200-905",
+        "sourceUrl": "https://whc.unesco.org/en/list/438/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "UNESCO describes walls, tracks and watchtowers integrated into mountain terrain.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-200-905",
+        "answer": "سور الصين العظيم",
+        "sha256": "58a401b4d11e792a8ca9c6d1bb85484f89e070196e0ccb11e5450ef737f313ec",
+        "status": "approved",
+        "note": "Masonry Great Wall winds along mountain ridges with crenellations and rectangular watchtowers.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-200-906",
+      "answer": "تاج محل",
+      "tier": 200,
+      "sourceReview": {
+        "id": "placefinder-200-906",
+        "sourceUrl": "https://whc.unesco.org/en/list/252/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "UNESCO describes the Agra white-marble mausoleum and four free-standing minarets.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-200-906",
+        "answer": "تاج محل",
+        "sha256": "6532a1ca825e1b3a4279f6a40998893df2f14b938ae474617f89ad941919d340",
+        "status": "approved",
+        "note": "White onion dome, central pointed arch, smaller pavilions and four separate minarets with reflecting pool.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-200-907",
+      "answer": "تمثال الحرية",
+      "tier": 200,
+      "sourceReview": {
+        "id": "placefinder-200-907",
+        "sourceUrl": "https://whc.unesco.org/en/list/307/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "UNESCO identifies the monumental statue in New York harbour, torch and tablet.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-200-907",
+        "answer": "تمثال الحرية",
+        "sha256": "d3303c41a316aa83950578049146b671a4facb8fdebcb9803ae7600e13c2277c",
+        "status": "approved",
+        "note": "Green Liberty statue with raised right torch, left tablet, crown and full pedestal; no readable inscription.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-200-908",
+      "answer": "دار أوبرا سيدني",
+      "tier": 200,
+      "sourceReview": {
+        "id": "placefinder-200-908",
+        "sourceUrl": "https://whc.unesco.org/en/list/166/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "UNESCO specifies three groups of interlocking vaulted shells on a peninsula podium.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-200-908",
+        "answer": "دار أوبرا سيدني",
+        "sha256": "de4d86a04e3ee405b663738bd1158d9d524d6fcd1ed192b7751c3aab7522598f",
+        "status": "approved",
+        "note": "Recognizable grouped white Opera House shells on broad brown podium beside harbor.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-400-901",
+      "answer": "الكولوسيوم",
+      "tier": 400,
+      "sourceReview": {
+        "id": "placefinder-400-901",
+        "sourceUrl": "https://whc.unesco.org/en/list/91/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "UNESCO identifies the Colosseum as an ancient monument of Rome; opened 2026-09-25. Operator page timed out; exact arch counts are not claimed.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-400-901",
+        "answer": "الكولوسيوم",
+        "sha256": "1637715dbf77228592354ca65c4aba06d319f20df9cb5b715cacae8f91c60d48",
+        "status": "approved",
+        "note": "Oval Roman amphitheatre, repeated stone arcades, high surviving wall and lower broken arc; recognizable Colosseum.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-400-902",
+      "answer": "البتراء",
+      "tier": 400,
+      "sourceReview": {
+        "id": "placefinder-400-902",
+        "sourceUrl": "https://whc.unesco.org/en/list/326/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "Recovered primary review 2026-09-23: Nabataean rock-cut city amid red sandstone cliffs and tombs.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-400-902",
+        "answer": "البتراء",
+        "sha256": "e39a126abb17ee7ba916b5c8937b9f9bb44fb0cd0420bed20b0b8ee93bd9aa2f",
+        "status": "approved",
+        "note": "Rose sandstone Treasury facade in cliffs, lower columns, upper tholos and pediments; question specifically asks Petra site.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-400-903",
+      "answer": "جسر البرج",
+      "tier": 400,
+      "sourceReview": {
+        "id": "placefinder-400-903",
+        "sourceUrl": "https://www.towerbridge.org.uk/discover/history",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "Recovered primary operator review 2026-09-23: Gothic towers, lifting road bridge and suspension elements across Thames.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-400-903",
+        "answer": "جسر البرج",
+        "sha256": "e8861c8ce8ae5b712574e1c830e26db836cc801b5adb22f8f0e126f1cf17e718",
+        "status": "approved",
+        "note": "Two Gothic stone towers, high connecting walkways, blue suspension members and lower roadway across river.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-400-904",
+      "answer": "جسر البوابة الذهبية",
+      "tier": 400,
+      "sourceReview": {
+        "id": "placefinder-400-904",
+        "sourceUrl": "https://www.goldengate.org/bridge/history-research/statistics-data/design-construction-stats/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "Recovered primary operator review 2026-09-23: two towers, two main cables and vertical suspenders.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-400-904",
+        "answer": "جسر البوابة الذهبية",
+        "sha256": "2b5689137f1c1b9d24c87e26342a28a7a8c6ec86508f940a70faf8b65dc8592c",
+        "status": "approved",
+        "note": "Two international-orange portal towers with suspension cables and vertical hangers above blue channel; skyline illustrative.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-400-905",
+      "answer": "تمثال المسيح الفادي",
+      "tier": 400,
+      "sourceReview": {
+        "id": "placefinder-400-905",
+        "sourceUrl": "https://whc.unesco.org/en/list/1100/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "Recovered UNESCO review 2026-09-23: Corcovado and its statue in Rio's mountain-coastal landscape.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-400-905",
+        "answer": "تمثال المسيح الفادي",
+        "sha256": "b2a56723c06c504a7877bb4219dc921ad69a1d59ff143fefa0d1ccb7df4726f9",
+        "status": "approved",
+        "note": "Pale art-deco statue with horizontal outstretched arms on Corcovado-like summit above bay; full hands and pedestal.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-400-906",
+      "answer": "متحف اللوفر",
+      "tier": 400,
+      "sourceReview": {
+        "id": "placefinder-400-906",
+        "sourceUrl": "https://www.louvre.fr/en/explore/the-palace/a-pyramid-for-a-symbol",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened 2026-09-25: Louvre describes transparent glass pyramid in Cour Napoleon, metal frame and surrounding historic palace.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-400-906",
+        "answer": "متحف اللوفر",
+        "sha256": "47cd4483a08878df3e705d27c1b61869e2decf7d9fc881aaac7bbbb71337e1ea",
+        "status": "approved",
+        "note": "Transparent metal-framed pyramid with historic palace courtyard facades; identifies Louvre museum.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-400-907",
+      "answer": "جبل فوجي",
+      "tier": 400,
+      "sourceReview": {
+        "id": "placefinder-400-907",
+        "sourceUrl": "https://whc.unesco.org/en/list/1418/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "Recovered UNESCO review 2026-09-23: isolated snow-capped stratovolcano and surrounding lakes.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-400-907",
+        "answer": "جبل فوجي",
+        "sha256": "3036b7619828c7cb30f4c6acfe2314bc6fc2ce32b032d5d212254a2f6530812b",
+        "status": "approved",
+        "note": "Solitary broad snow-capped volcanic cone, flattened summit and lake setting identify Fuji.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-400-908",
+      "answer": "معبد أبو سمبل",
+      "tier": 400,
+      "sourceReview": {
+        "id": "placefinder-400-908",
+        "sourceUrl": "https://whc.unesco.org/en/list/88/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-23",
+        "outcome": "Recovered documented primary-page reading",
+        "evidence": "Recovered UNESCO review 2026-09-23: Ramses II rock-cut temples; Great Temple facade with four seated colossi.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-400-908",
+        "answer": "معبد أبو سمبل",
+        "sha256": "f09fc77a99175ea2911858c82942696baa3edeb6eaa3b491eddc7dd66be51056",
+        "status": "approved",
+        "note": "Four seated-colossus positions with second from viewer left broken, central doorway and rock-cut sandstone facade.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-600-901",
+      "answer": "ماتشو بيتشو",
+      "tier": 600,
+      "sourceReview": {
+        "id": "placefinder-600-901",
+        "sourceUrl": "https://whc.unesco.org/en/list/274/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened 2026-09-25: Inca mountain sanctuary with stone walls, terraces and ramps amid Andean forest.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-600-901",
+        "answer": "ماتشو بيتشو",
+        "sha256": "886571c85fa1fabcc0685b48a1e504dbe976088cb952c0214f8727766459130f",
+        "status": "approved",
+        "note": "Stone city and terraces on steep Andean saddle with distinctive peak behind; site identity readable.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-600-902",
+      "answer": "تشيتشن إيتزا",
+      "tier": 600,
+      "sourceReview": {
+        "id": "placefinder-600-902",
+        "sourceUrl": "https://whc.unesco.org/en/list/483/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened 2026-09-25: Maya city whose surviving monuments include El Castillo/Temple of Kukulkan.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-600-902",
+        "answer": "تشيتشن إيتزا",
+        "sha256": "a3c16c17058e33e80f7287b3f52e18084f941d978adc57841c3dd9a2dc327647",
+        "status": "approved",
+        "note": "Broad stepped El Castillo with central staircases and small summit shrine; question asks Chichen Itza site.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-600-903",
+      "answer": "ستونهنج",
+      "tier": 600,
+      "sourceReview": {
+        "id": "placefinder-600-903",
+        "sourceUrl": "https://whc.unesco.org/en/list/373/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened 2026-09-25: prehistoric circle of megaliths in Wiltshire; architectural sophistication of stone circle.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-600-903",
+        "answer": "ستونهنج",
+        "sha256": "0e7ef2c40842070d7cf510367d41b55ac8210e10cf6e2a7783c6ebb33ff3ba87",
+        "status": "approved",
+        "note": "Incomplete sarsen circle with surviving lintelled uprights, inner trilithons and fallen stones on grassy plain.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-600-904",
+      "answer": "بوابة براندنبورغ",
+      "tier": 600,
+      "sourceReview": {
+        "id": "placefinder-600-904",
+        "sourceUrl": "https://www.visitberlin.de/en/brandenburg-gate",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened 2026-09-25: official Berlin tourism identifies two rows of six Doric columns and crowning Quadriga.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-600-904",
+        "answer": "بوابة براندنبورغ",
+        "sha256": "5f3f7bf261050d50f88bc5bf0016c8b0573b49a69342899aed513d11f5b346eb",
+        "status": "approved",
+        "note": "Six front columns, five passages and four-horse bronze Quadriga above attic; whole gate visible.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-600-905",
+      "answer": "ساغرادا فاميليا",
+      "tier": 600,
+      "sourceReview": {
+        "id": "placefinder-600-905",
+        "sourceUrl": "https://sagradafamilia.org/documents/20142/1000561/Booklet_10.pdf/d5c2d0df-43ce-b6d2-0b51-103d5718820e",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened official booklet 2026-09-25: four apostle bell towers belong to Nativity facade; facade is a recognizable component independent of changing construction state.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-600-905",
+        "answer": "ساغرادا فاميليا",
+        "sha256": "f303f5ee5eace680493495480ac4ac1dc4ffc3d3d8107154a358e339baf61199",
+        "status": "approved",
+        "note": "Four tapering perforated Nativity bell towers and ornate portals; targeted edit restored sky and entrance margins. Historic facade study, no current whole-building skyline claim.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-600-906",
+      "answer": "أنغكور وات",
+      "tier": 600,
+      "sourceReview": {
+        "id": "placefinder-600-906",
+        "sourceUrl": "https://whc.unesco.org/en/list/668/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened 2026-09-25: Angkor Wat identified within Khmer architectural complex in Cambodia with temple and hydraulic structures.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-600-906",
+        "answer": "أنغكور وات",
+        "sha256": "213ee516667ca668e5dad3a471f8b8afe94a05ef91b58113f8dd590e37a9adb3",
+        "status": "approved",
+        "note": "Five principal lotus-like towers over low galleries and pond reflection; recognition illustration, not exact temple plan.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-600-907",
+      "answer": "معبد السماء",
+      "tier": 600,
+      "sourceReview": {
+        "id": "placefinder-600-907",
+        "sourceUrl": "https://whc.unesco.org/en/list/881/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened 2026-09-25: circular three-tiered conical-roof Hall of Prayer for Good Harvests within Temple of Heaven.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-600-907",
+        "answer": "معبد السماء",
+        "sha256": "56976d6470bf04412cc544305ccee290ca52597d3c1241c66a6e985d6988450c",
+        "status": "approved",
+        "note": "Round hall, three blue conical eaves, gold finial and white tiered terraces; exact named hall belongs to Temple of Heaven complex.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-600-908",
+      "answer": "مسجد الحسن الثاني",
+      "tier": 600,
+      "sourceReview": {
+        "id": "placefinder-600-908",
+        "sourceUrl": "https://www.fmh2.ma/en/history",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened 2026-09-25: foundation describes Casablanca mosque on Atlantic Ocean and its towering minaret and Moroccan architecture.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-600-908",
+        "answer": "مسجد الحسن الثاني",
+        "sha256": "335ead71eddb961717308abb43a733d03b513d35ede0ac9c8e6a2302ac99a25e",
+        "status": "approved",
+        "note": "Single tall square decorated minaret, green roofs, broad prayer hall and Atlantic seawall; Moroccan architectural identity.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-800-901",
+      "answer": "قلعة نويشفانشتاين",
+      "tier": 800,
+      "sourceReview": {
+        "id": "placefinder-800-901",
+        "sourceUrl": "https://www.neuschwanstein.de/englisch/palace/index.htm",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened Bavarian palace administration 2026-09-25: Ludwig II castle with limestone facades in alpine setting.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-800-901",
+        "answer": "قلعة نويشفانشتاين",
+        "sha256": "e514f5d1dbed2bc4e8b287cf7a5d7f45e58a42d76a47a029c4be0839fc6afbd1",
+        "status": "approved",
+        "note": "White asymmetric palace, square tower, round pointed turrets and red gatehouse on forest ridge; Neuschwanstein recognition, not an architectural survey.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-800-902",
+      "answer": "قصر الحمراء",
+      "tier": 800,
+      "sourceReview": {
+        "id": "placefinder-800-902",
+        "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-court-of-the-lions",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened site custodian 2026-09-25: Court of Lions central fountain and surrounding slender-column arched galleries within Alhambra.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-800-902",
+        "answer": "قصر الحمراء",
+        "sha256": "df5387192795fff671dcf227d565497e3a3cf5a86808fd24d04cdcbedebd4437",
+        "status": "approved",
+        "note": "Nasrid columned arcades, projecting pavilion and central lion-supported basin; Alhambra identity. Small sculptural detail and hidden lion count not tested.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-800-903",
+      "answer": "بوروبودور",
+      "tier": 800,
+      "sourceReview": {
+        "id": "placefinder-800-903",
+        "sourceUrl": "https://whc.unesco.org/en/list/592/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: square terraced base, three circular upper platforms, perforated stupas and monumental central stupa.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-800-903",
+        "answer": "بوروبودور",
+        "sha256": "e337e227d27145028c673c6d1f05397f22b72ed2a1057897ce3d3e1ab98359c6",
+        "status": "approved",
+        "note": "Perforated bell stupas in circular terraces around large central solid stupa; Borobudur identity clear.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-800-904",
+      "answer": "بوابة إتسوكوشيما",
+      "tier": 800,
+      "sourceReview": {
+        "id": "placefinder-800-904",
+        "sourceUrl": "https://www.miyajima.or.jp/english/spot/spot_ootorii.html",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened local tourism authority 2026-09-25: vermilion O-Torii of Itsukushima, Ryobu form with four support posts beside two main posts, bark roof.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-800-904",
+        "answer": "بوابة إتسوكوشيما",
+        "sha256": "f07bc13177a0d5117e71738ace449b19d74660b05fe47409450e0b81cf2306e1",
+        "status": "approved",
+        "note": "Vermilion sea torii with two major pillars and four smaller supporting posts; dark curved upper beam; blank plaque.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-800-905",
+      "answer": "الحِجر",
+      "tier": 800,
+      "sourceReview": {
+        "id": "placefinder-800-905",
+        "sourceUrl": "https://whc.unesco.org/en/list/1293/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: Hegra/al-Hijr monumental decorated sandstone tombs. Opened official Saudipedia as supplemental descriptive reference for isolated Qasr al-Farid facade; question asks site, not unverified named-owner history.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-800-905",
+        "answer": "الحِجر",
+        "sha256": "8a45ef29bcffc583343b280e3a12d1d08da39cbfad3b3bc120ca2b6c781264fa",
+        "status": "approved",
+        "note": "Isolated sandstone mass with decorated stepped Nabataean facade and unfinished lower rock; question asks Hegra archaeological site.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-800-906",
+      "answer": "زيمبابوي العظمى",
+      "tier": 800,
+      "sourceReview": {
+        "id": "placefinder-800-906",
+        "sourceUrl": "https://whc.unesco.org/en/list/364/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: Great Enclosure elliptical cut-granite dry-stone wall and narrow passage leading to high conical tower.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-800-906",
+        "answer": "زيمبابوي العظمى",
+        "sha256": "d96d01e99a4363823954f93ed4c324cdcae6c05fb021705aaaac403f6687f989",
+        "status": "approved",
+        "note": "Curved dry-stone granite enclosure, chevron pattern and tapering conical tower distinguish Great Zimbabwe.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-800-907",
+      "answer": "تماثيل المواي",
+      "tier": 800,
+      "sourceReview": {
+        "id": "placefinder-800-907",
+        "sourceUrl": "https://whc.unesco.org/en/list/715/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: Polynesian monumental moai stone figures on Rapa Nui. Topic follows Oceania geography, not Chilean political jurisdiction.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-800-907",
+        "answer": "تماثيل المواي",
+        "sha256": "125530548e473039c0b2092417aa59cf057c19d9002e624779e70ca37f587433",
+        "status": "approved",
+        "note": "Elongated stone heads and torsos with long noses, ears and side arms on ahu; one pukao. Illustrative group, not exact inventory of a named ahu.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-800-908",
+      "answer": "أولورو",
+      "tier": 800,
+      "sourceReview": {
+        "id": "placefinder-800-908",
+        "sourceUrl": "https://whc.unesco.org/en/list/447/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: immense Uluru monolith amid red central-Australian plain; distinct from Kata Tjuta domes.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-800-908",
+        "answer": "أولورو",
+        "sha256": "6f8140e276afe8716b5d59d6dd9a0faf8b563b9dde16d2404854af94bf0d768e",
+        "status": "approved",
+        "note": "Broad solitary red monolith with grooved face on flat arid plain; Uluru rather than Kata Tjuta domes.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-1000-901",
+      "answer": "معبد كايلاسا",
+      "tier": 1000,
+      "sourceReview": {
+        "id": "placefinder-1000-901",
+        "sourceUrl": "https://whc.unesco.org/en/list/243/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: Kailasa cave16 is monolithic rock-cut temple at Ellora with elaborate workmanship.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-1000-901",
+        "answer": "معبد كايلاسا",
+        "sha256": "279b07c677371d20e773be2d2ba5f516867679aba93ee3983df0a58e1cd03d04",
+        "status": "approved",
+        "note": "Monolithic tiered temple, elephant plinth and pillared pavilion surrounded by excavated basalt cliff courtyard; Kailasa identity.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-1000-902",
+      "answer": "برامبانان",
+      "tier": 1000,
+      "sourceReview": {
+        "id": "placefinder-1000-902",
+        "sourceUrl": "https://whc.unesco.org/en/list/642/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: Prambanan Hindu complex of Shiva/Vishnu/Brahma temples in Java.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-1000-902",
+        "answer": "برامبانان",
+        "sha256": "98302183392852aff754dda5c1cffa4a46f8bebf224b1e8b732617c0e8cdf8be",
+        "status": "approved",
+        "note": "Tall narrow richly tiered pointed andesite shrines with central larger tower; distinct from Borobudur and Angkor.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-1000-903",
+      "answer": "قلعة هيميجي",
+      "tier": 1000,
+      "sourceReview": {
+        "id": "placefinder-1000-903",
+        "sourceUrl": "https://whc.unesco.org/en/list/661/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: white plastered walls, wooden architecture and multiple roof layers of Himeji-jo.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-1000-903",
+        "answer": "قلعة هيميجي",
+        "sha256": "cbf4d468fcd1bffa02722aa77298e3cc222a8bf0ff164ee162ac9507471ad69e",
+        "status": "approved",
+        "note": "White plaster keeps with layered grey gabled roofs and sloped stone foundations; Himeji identity.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-1000-904",
+      "answer": "بوذا ليشان",
+      "tier": 1000,
+      "sourceReview": {
+        "id": "placefinder-1000-904",
+        "sourceUrl": "https://whc.unesco.org/en/list/779/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: enormous Leshan Buddha carved from hillside overlooking river confluence.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-1000-904",
+        "answer": "بوذا ليشان",
+        "sha256": "8e71336579e834fb07b74d6439d6eead5cdb79efb9e2a0013a98f6e7b868bf50",
+        "status": "approved",
+        "note": "Giant seated cliff Buddha with hands on knees, feet below, curled hair, long ears and river; Leshan identity.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-1000-905",
+      "answer": "نان مادول",
+      "tier": 1000,
+      "sourceReview": {
+        "id": "placefinder-1000-905",
+        "sourceUrl": "https://whc.unesco.org/en/list/1503/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: Pohnpei islets with megalithic basalt construction in distinctive header-stretcher technique.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-1000-905",
+        "answer": "نان مادول",
+        "sha256": "596c2343ffe5082c93c30ee6681523d78754014c32cae0a688092417cb37ebdf",
+        "status": "approved",
+        "note": "Dark polygonal basalt logs in alternating masonry courses beside tropical canal; Nan Madol identity.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-1000-906",
+      "answer": "مسجد جينيه الكبير",
+      "tier": 1000,
+      "sourceReview": {
+        "id": "placefinder-1000-906",
+        "sourceUrl": "https://whc.unesco.org/en/list/116/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: Djenné mosque monumental earthen architecture with buttresses; no claim of exact current restoration state.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-1000-906",
+        "answer": "مسجد جينيه الكبير",
+        "sha256": "ff8d6698636a5a18ec59855e8e77f3ef7925c24687b22f9927fc73eef879f762",
+        "status": "approved",
+        "note": "Earthen mosque with three main tapering towers, buttresses and protruding toron beams; Great Mosque of Djenne identity.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-1000-907",
+      "answer": "تيكال",
+      "tier": 1000,
+      "sourceReview": {
+        "id": "placefinder-1000-907",
+        "sourceUrl": "https://whc.unesco.org/en/list/64/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25; replaces Las Lajas because three official Colombia Travel direct opens failed502, avoiding index-only approval.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-1000-907",
+        "answer": "تيكال",
+        "sha256": "25e776e32d65e51ef35608eab439aeb783d621664875397b92e102f1c97769c2",
+        "status": "approved",
+        "note": "Steep tall Temple I pyramid with narrow staircase and tall roof comb in jungle plaza; question asks Tikal site.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    },
+    {
+      "id": "placefinder-1000-908",
+      "answer": "قناة شقوبية",
+      "tier": 1000,
+      "sourceReview": {
+        "id": "placefinder-1000-908",
+        "sourceUrl": "https://whc.unesco.org/en/list/311/",
+        "sourceReviewed": true,
+        "retrievedAt": "2026-09-25",
+        "outcome": "Primary page opened and relevant text read",
+        "evidence": "Opened UNESCO 2026-09-25: Segovia Roman aqueduct distinguished by two tiers of arches.",
+        "limits": "Reference supports landmark identity, not a license for borrowed images or every generated detail."
+      },
+      "imageReview": {
+        "id": "placefinder-1000-908",
+        "answer": "قناة شقوبية",
+        "sha256": "c959bda2bebe103aee86558bc884d79e539af2abe98c61a634c0a5486ac6819d",
+        "status": "approved",
+        "note": "Two tiers of round granite arches on town plaza with receding piers; Segovia aqueduct, no river or third arch tier.",
+        "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+        "reviewedAt": "2026-09-25"
+      },
+      "runtimeStatus": "approved"
+    }
+  ]
+}

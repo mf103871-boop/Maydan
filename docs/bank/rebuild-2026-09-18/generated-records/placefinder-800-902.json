@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-800-902",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-800-902.webp",
+  "asset": "media/placefinder/placefinder-800-902.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Alhambra Palace in Granada, Spain: Court of the Lions, low perspective across pale marble courtyard towards delicate Nasrid arched galleries on many slender white marble columns, intricate cream stucco arabesque carving with no legible writing, projecting pavilion with tiled roof. Central famous low twelve-sided basin supported by a radial ring of twelve stylized stone lions, some naturally hidden by front lions; shallow narrow water channels in marble ground. Fountain prominent but show whole surrounding courtyard architecture; no modern plaza or generic mosque.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 237204,
+  "sha256": "df5387192795fff671dcf227d565497e3a3cf5a86808fd24d04cdcbedebd4437",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Nasrid columned arcades, projecting pavilion and central lion-supported basin; Alhambra identity. Small sculptural detail and hidden lion count not tested.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

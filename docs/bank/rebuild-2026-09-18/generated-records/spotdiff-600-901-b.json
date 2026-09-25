@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-600-901-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-600-901-b.webp",
+  "asset": "media/spotdiff/spotdiff-600-901-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the TURQUOISE loop handle of the ivory pitcher to RED. Keep ivory body and spout, handle geometry, glass, lemon, counter exactly unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 92898,
+  "sha256": "501ec2dd183da37cff7a8932357776f03a26019e2c6e2eeec57990f2c2adcde4",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Only the pitcher loop handle changes turquoise to red. Ivory body, spout, water glass, lemon and counter unchanged.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

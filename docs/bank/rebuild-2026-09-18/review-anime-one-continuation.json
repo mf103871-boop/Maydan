@@ -1,0 +1,858 @@
+{
+  "date": "2026-09-18",
+  "scope": [
+    "onepiece",
+    "dragonball",
+    "aot",
+    "deathnote",
+    "demonslayer"
+  ],
+  "method": "Source content reviewed; original Arabic factual questions; focused validation only. Difficulty targets are editorial, not measured.",
+  "packs": [
+    {
+      "id": "onepiece",
+      "questionCount": 40,
+      "storyQuestions": 40,
+      "castQuestions": 0,
+      "topicCount": 8,
+      "questions": [
+        {
+          "qid": "onepiece-200-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_1#ep4"
+        },
+        {
+          "qid": "onepiece-200-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_1#ep1"
+        },
+        {
+          "qid": "onepiece-200-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_1#ep5"
+        },
+        {
+          "qid": "onepiece-200-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_1#ep1"
+        },
+        {
+          "qid": "onepiece-200-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_6#ep144"
+        },
+        {
+          "qid": "onepiece-200-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_9#ep264"
+        },
+        {
+          "qid": "onepiece-200-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_10#ep337"
+        },
+        {
+          "qid": "onepiece-200-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep93"
+        },
+        {
+          "qid": "onepiece-400-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_1#ep3"
+        },
+        {
+          "qid": "onepiece-400-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep94"
+        },
+        {
+          "qid": "onepiece-400-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep121"
+        },
+        {
+          "qid": "onepiece-400-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep122"
+        },
+        {
+          "qid": "onepiece-400-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_14#ep457"
+        },
+        {
+          "qid": "onepiece-400-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_6#ep192"
+        },
+        {
+          "qid": "onepiece-400-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_10#ep343"
+        },
+        {
+          "qid": "onepiece-400-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_20#ep912"
+        },
+        {
+          "qid": "onepiece-600-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_9#ep277"
+        },
+        {
+          "qid": "onepiece-600-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_9#ep277"
+        },
+        {
+          "qid": "onepiece-600-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_6#ep149"
+        },
+        {
+          "qid": "onepiece-600-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_6#ep193"
+        },
+        {
+          "qid": "onepiece-600-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_14#ep487"
+        },
+        {
+          "qid": "onepiece-600-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_6#ep151"
+        },
+        {
+          "qid": "onepiece-600-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_13#ep440"
+        },
+        {
+          "qid": "onepiece-600-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_20#ep911"
+        },
+        {
+          "qid": "onepiece-800-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep118"
+        },
+        {
+          "qid": "onepiece-800-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep125"
+        },
+        {
+          "qid": "onepiece-800-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_9#ep275"
+        },
+        {
+          "qid": "onepiece-800-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_10#ep340"
+        },
+        {
+          "qid": "onepiece-800-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_20#ep910"
+        },
+        {
+          "qid": "onepiece-800-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_6#ep148"
+        },
+        {
+          "qid": "onepiece-800-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_14#ep460"
+        },
+        {
+          "qid": "onepiece-800-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_13#ep442"
+        },
+        {
+          "qid": "onepiece-1000-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_9#ep276"
+        },
+        {
+          "qid": "onepiece-1000-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_9#ep275"
+        },
+        {
+          "qid": "onepiece-1000-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_13#ep442"
+        },
+        {
+          "qid": "onepiece-1000-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_13#ep444"
+        },
+        {
+          "qid": "onepiece-1000-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep118"
+        },
+        {
+          "qid": "onepiece-1000-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_6#ep148"
+        },
+        {
+          "qid": "onepiece-1000-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_20#ep912"
+        },
+        {
+          "qid": "onepiece-1000-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/One_Piece_season_4#ep96"
+        }
+      ]
+    },
+    {
+      "id": "dragonball",
+      "questionCount": 40,
+      "storyQuestions": 40,
+      "castQuestions": 0,
+      "topicCount": 8,
+      "questions": [
+        {
+          "qid": "dragonball-200-901",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+        },
+        {
+          "qid": "dragonball-200-902",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+        },
+        {
+          "qid": "dragonball-200-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_3#ep95"
+        },
+        {
+          "qid": "dragonball-200-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep2"
+        },
+        {
+          "qid": "dragonball-200-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep3"
+        },
+        {
+          "qid": "dragonball-200-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep6"
+        },
+        {
+          "qid": "dragonball-200-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep8"
+        },
+        {
+          "qid": "dragonball-200-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep5"
+        },
+        {
+          "qid": "dragonball-400-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_3#ep95"
+        },
+        {
+          "qid": "dragonball-400-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep2"
+        },
+        {
+          "qid": "dragonball-400-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep269"
+        },
+        {
+          "qid": "dragonball-400-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep173"
+        },
+        {
+          "qid": "dragonball-400-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_3#ep87"
+        },
+        {
+          "qid": "dragonball-400-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep6"
+        },
+        {
+          "qid": "dragonball-400-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep185"
+        },
+        {
+          "qid": "dragonball-400-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_3#ep78"
+        },
+        {
+          "qid": "dragonball-600-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep2"
+        },
+        {
+          "qid": "dragonball-600-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep286"
+        },
+        {
+          "qid": "dragonball-600-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_3#ep81"
+        },
+        {
+          "qid": "dragonball-600-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep285"
+        },
+        {
+          "qid": "dragonball-600-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep184"
+        },
+        {
+          "qid": "dragonball-600-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep167"
+        },
+        {
+          "qid": "dragonball-600-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep8"
+        },
+        {
+          "qid": "dragonball-600-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_1#ep1"
+        },
+        {
+          "qid": "dragonball-800-901",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4424.html"
+        },
+        {
+          "qid": "dragonball-800-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep283"
+        },
+        {
+          "qid": "dragonball-800-903",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4315.html"
+        },
+        {
+          "qid": "dragonball-800-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep184"
+        },
+        {
+          "qid": "dragonball-800-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep188"
+        },
+        {
+          "qid": "dragonball-800-906",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+        },
+        {
+          "qid": "dragonball-800-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep257"
+        },
+        {
+          "qid": "dragonball-800-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_6#ep183"
+        },
+        {
+          "qid": "dragonball-1000-901",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+        },
+        {
+          "qid": "dragonball-1000-902",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+        },
+        {
+          "qid": "dragonball-1000-903",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4332.html"
+        },
+        {
+          "qid": "dragonball-1000-904",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4437.html"
+        },
+        {
+          "qid": "dragonball-1000-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep254"
+        },
+        {
+          "qid": "dragonball-1000-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Dragon_Ball_Z_season_9#ep258"
+        },
+        {
+          "qid": "dragonball-1000-907",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4437.html"
+        },
+        {
+          "qid": "dragonball-1000-908",
+          "sourceUrl": "https://en.dragon-ball-official.com/news/01_4410.html"
+        }
+      ]
+    },
+    {
+      "id": "aot",
+      "questionCount": 40,
+      "storyQuestions": 40,
+      "castQuestions": 0,
+      "topicCount": 8,
+      "questions": [
+        {
+          "qid": "aot-200-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
+        },
+        {
+          "qid": "aot-200-902",
+          "sourceUrl": "https://shingeki.tv/season1/character/"
+        },
+        {
+          "qid": "aot-200-903",
+          "sourceUrl": "https://shingeki.tv/season1/character/"
+        },
+        {
+          "qid": "aot-200-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep2"
+        },
+        {
+          "qid": "aot-200-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
+        },
+        {
+          "qid": "aot-200-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep5"
+        },
+        {
+          "qid": "aot-200-907",
+          "sourceUrl": "https://shingeki.tv/season1/character/"
+        },
+        {
+          "qid": "aot-200-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_1#ep1"
+        },
+        {
+          "qid": "aot-400-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep41"
+        },
+        {
+          "qid": "aot-400-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep31"
+        },
+        {
+          "qid": "aot-400-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep55"
+        },
+        {
+          "qid": "aot-400-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep47"
+        },
+        {
+          "qid": "aot-400-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
+        },
+        {
+          "qid": "aot-400-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+        },
+        {
+          "qid": "aot-400-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+        },
+        {
+          "qid": "aot-400-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep59"
+        },
+        {
+          "qid": "aot-600-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep55"
+        },
+        {
+          "qid": "aot-600-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+        },
+        {
+          "qid": "aot-600-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep44"
+        },
+        {
+          "qid": "aot-600-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+        },
+        {
+          "qid": "aot-600-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep27"
+        },
+        {
+          "qid": "aot-600-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep32"
+        },
+        {
+          "qid": "aot-600-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+        },
+        {
+          "qid": "aot-600-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep88"
+        },
+        {
+          "qid": "aot-800-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman#In_Attack_on_Titan"
+        },
+        {
+          "qid": "aot-800-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Eldian_Restorationists"
+        },
+        {
+          "qid": "aot-800-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep58"
+        },
+        {
+          "qid": "aot-800-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
+        },
+        {
+          "qid": "aot-800-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep38"
+        },
+        {
+          "qid": "aot-800-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep90"
+        },
+        {
+          "qid": "aot-800-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep93"
+        },
+        {
+          "qid": "aot-800-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
+        },
+        {
+          "qid": "aot-1000-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep30"
+        },
+        {
+          "qid": "aot-1000-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_2#ep29"
+        },
+        {
+          "qid": "aot-1000-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep56"
+        },
+        {
+          "qid": "aot-1000-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Attack_on_Titan_characters#Survey_Corps"
+        },
+        {
+          "qid": "aot-1000-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Levi_Ackerman"
+        },
+        {
+          "qid": "aot-1000-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep69"
+        },
+        {
+          "qid": "aot-1000-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_4#ep89"
+        },
+        {
+          "qid": "aot-1000-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Attack_on_Titan_season_3#ep53"
+        }
+      ]
+    },
+    {
+      "id": "deathnote",
+      "questionCount": 40,
+      "storyQuestions": 40,
+      "castQuestions": 0,
+      "topicCount": 8,
+      "questions": [
+        {
+          "qid": "deathnote-200-901",
+          "sourceUrl": "https://www.viz.com/death-note"
+        },
+        {
+          "qid": "deathnote-200-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Ryuk_(Death_Note)#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-200-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Ryuk_(Death_Note)#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-200-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-200-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-200-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters"
+        },
+        {
+          "qid": "deathnote-200-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Near"
+        },
+        {
+          "qid": "deathnote-200-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)#ep10"
+        },
+        {
+          "qid": "deathnote-400-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-400-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-400-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Misa_Amane#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-400-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Yotsuba_Group"
+        },
+        {
+          "qid": "deathnote-400-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note_(2006_TV_series)#ep8"
+        },
+        {
+          "qid": "deathnote-400-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Touta_Matsuda"
+        },
+        {
+          "qid": "deathnote-400-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Mello_(Death_Note)#Appearances"
+        },
+        {
+          "qid": "deathnote-400-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-600-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/L_(Death_Note)#In_Death_Note"
+        },
+        {
+          "qid": "deathnote-600-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Raye_Penber"
+        },
+        {
+          "qid": "deathnote-600-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Naomi_Misora"
+        },
+        {
+          "qid": "deathnote-600-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Teru_Mikami"
+        },
+        {
+          "qid": "deathnote-600-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#SPK"
+        },
+        {
+          "qid": "deathnote-600-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kiyomi_Takada"
+        },
+        {
+          "qid": "deathnote-600-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kyosuke_Higuchi"
+        },
+        {
+          "qid": "deathnote-600-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Sidoh"
+        },
+        {
+          "qid": "deathnote-800-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Lind_L._Tailor"
+        },
+        {
+          "qid": "deathnote-800-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Death_Note#Plot"
+        },
+        {
+          "qid": "deathnote-800-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Aiber"
+        },
+        {
+          "qid": "deathnote-800-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Wedy"
+        },
+        {
+          "qid": "deathnote-800-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Near"
+        },
+        {
+          "qid": "deathnote-800-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Mello_(Death_Note)"
+        },
+        {
+          "qid": "deathnote-800-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kyosuke_Higuchi"
+        },
+        {
+          "qid": "deathnote-800-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Stephen_Gevanni"
+        },
+        {
+          "qid": "deathnote-1000-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Watari"
+        },
+        {
+          "qid": "deathnote-1000-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Watari"
+        },
+        {
+          "qid": "deathnote-1000-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Other_members_of_the_Yotsuba_Group"
+        },
+        {
+          "qid": "deathnote-1000-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Other_members_of_the_Yotsuba_Group"
+        },
+        {
+          "qid": "deathnote-1000-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Aiber"
+        },
+        {
+          "qid": "deathnote-1000-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Wedy"
+        },
+        {
+          "qid": "deathnote-1000-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Kanzo_Mogi"
+        },
+        {
+          "qid": "deathnote-1000-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Death_Note_characters#Shuichi_Aizawa"
+        }
+      ]
+    },
+    {
+      "id": "demonslayer",
+      "questionCount": 40,
+      "storyQuestions": 40,
+      "castQuestions": 0,
+      "topicCount": 8,
+      "questions": [
+        {
+          "qid": "demonslayer-200-901",
+          "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=02"
+        },
+        {
+          "qid": "demonslayer-200-902",
+          "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=02"
+        },
+        {
+          "qid": "demonslayer-200-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji"
+        },
+        {
+          "qid": "demonslayer-200-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters"
+        },
+        {
+          "qid": "demonslayer-200-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Inosuke_Hashibira"
+        },
+        {
+          "qid": "demonslayer-200-906",
+          "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=03"
+        },
+        {
+          "qid": "demonslayer-200-907",
+          "sourceUrl": "https://demonslayer-anime.com/mugentrainarc/character/?chara=05"
+        },
+        {
+          "qid": "demonslayer-200-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba"
+        },
+        {
+          "qid": "demonslayer-400-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Tanjiro_Kamado"
+        },
+        {
+          "qid": "demonslayer-400-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Ubuyashiki_family"
+        },
+        {
+          "qid": "demonslayer-400-903",
+          "sourceUrl": "https://demonslayer-anime.com/risshihen/story/04.html"
+        },
+        {
+          "qid": "demonslayer-400-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Lower_Ranks"
+        },
+        {
+          "qid": "demonslayer-400-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+        },
+        {
+          "qid": "demonslayer-400-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Butterfly_Mansion"
+        },
+        {
+          "qid": "demonslayer-400-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba"
+        },
+        {
+          "qid": "demonslayer-400-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Demons"
+        },
+        {
+          "qid": "demonslayer-600-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Nezuko_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba"
+        },
+        {
+          "qid": "demonslayer-600-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#ep45"
+        },
+        {
+          "qid": "demonslayer-600-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+        },
+        {
+          "qid": "demonslayer-600-904",
+          "sourceUrl": "https://demonslayer-anime.com/sva/character/"
+        },
+        {
+          "qid": "demonslayer-600-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba"
+        },
+        {
+          "qid": "demonslayer-600-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Tanjiro_Kamado#In_Demon_Slayer:_Kimetsu_no_Yaiba"
+        },
+        {
+          "qid": "demonslayer-600-907",
+          "sourceUrl": "https://demonslayer-anime.com/risshihen/story/15.html"
+        },
+        {
+          "qid": "demonslayer-600-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+        },
+        {
+          "qid": "demonslayer-800-901",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Ubuyashiki_family"
+        },
+        {
+          "qid": "demonslayer-800-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters"
+        },
+        {
+          "qid": "demonslayer-800-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+        },
+        {
+          "qid": "demonslayer-800-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Rengoku_family"
+        },
+        {
+          "qid": "demonslayer-800-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks"
+        },
+        {
+          "qid": "demonslayer-800-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes"
+        },
+        {
+          "qid": "demonslayer-800-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba_%E2%80%93_Swordsmith_Village_Arc#Episodes"
+        },
+        {
+          "qid": "demonslayer-800-908",
+          "sourceUrl": "https://demonslayer-anime.com/sva/story/02.html"
+        },
+        {
+          "qid": "demonslayer-1000-901",
+          "sourceUrl": "https://demonslayer-anime.com/sva/story/05.html"
+        },
+        {
+          "qid": "demonslayer-1000-902",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Swordsmith_Village"
+        },
+        {
+          "qid": "demonslayer-1000-903",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Muzan_Kibutsuji"
+        },
+        {
+          "qid": "demonslayer-1000-904",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Upper_Ranks"
+        },
+        {
+          "qid": "demonslayer-1000-905",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Hashira"
+        },
+        {
+          "qid": "demonslayer-1000-906",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Supporting_characters"
+        },
+        {
+          "qid": "demonslayer-1000-907",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters"
+        },
+        {
+          "qid": "demonslayer-1000-908",
+          "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Demon_Slayer:_Kimetsu_no_Yaiba_characters#Minor_characters"
+        }
+      ]
+    }
+  ]
+}

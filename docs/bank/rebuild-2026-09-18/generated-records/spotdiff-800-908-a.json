@@ -1,0 +1,27 @@
+{
+  "id": "spotdiff-800-908-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-800-908-a.webp",
+  "asset": "media/spotdiff/spotdiff-800-908-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A dark gray retractable tape measure sits center-right on a pale workbench, short plain unmarked silver tape extended toward left. A distinct YELLOW rectangular lock button on top front housing at x=67 y=49, 10 percent image width. Small smooth wood block rear-left and plain graphite pencil lower-left. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 109746,
+  "sha256": "2bfa4357776f90ff15ad3a9813d2453f0e1a2bd828c6703cf653b781f64625a0",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "Only the locking button of the gray tape measure changes from yellow to red. Extended blank tape, wood block, pencil, body and strap retain matching geometry.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "rawGeneratedImageSha256": "d4072efdcd7c6dd991d36ff2bbb7cd0a9170dd7d803f91e2474015ee0f3b3df3"
+}

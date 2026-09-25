@@ -1,0 +1,39 @@
+{
+  "id": "flags-400-901",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-400-901.webp",
+  "asset": "media/flags/flags-400-901.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Morocco. Width:height3:2. Crimson red field #C1272D. At exact center a green #006233 OPEN five-pointed interlaced pentagram (five straight crossing line strokes), one point upright. The inside central pentagon remains RED, not filled green. Pentagram outer radius one-sixth of flag WIDTH. No other symbols.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 12626,
+  "sha256": "23c5dc05889c539cda1032f378c1e2e0f36e4c3f12a2792b9610ac728daee7d4",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "Open green pentagram centered on the red field.",
+    "limitations": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "approved-sampled",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 853,
+      "directGameplaySample": true,
+      "gameplayReview": "approved-sampled",
+      "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
+  }
+}

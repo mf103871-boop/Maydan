@@ -1,0 +1,30 @@
+{
+  "id": "blur-600-907",
+  "kind": "question",
+  "pack": "blur",
+  "file": "media/blur/blur-600-907.webp",
+  "asset": "media/blur/blur-600-907.webp",
+  "prompt": "Use case: precise-object-edit. Edit the supplied archery photograph. Preserve the adult archer, two natural arms and hands, recurve bow, outdoor range, target, colors and realistic photography. Correct one structural issue: the thin black ARROW SHAFT at the level of his draw hand (with red fletching beside his face) must extend straight horizontally through the arrow rest and at least 10 cm beyond the front of the wooden bow riser, ending in a clearly visible small metal target point. Keep it a single continuous arrow; do not confuse it with the thicker stabilizer rod lower down. Preserve that lower stabilizer separately. Also widen the framing just enough to include the top tip of the bow with a small sky margin. Maintain landscape 4:3, no text or logos. Keep the arrow and the image sharply focused; the game applies blur later.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 153056,
+  "sha256": "836d2c3a3d64fea543dc83fe0681adcaf6f7d52f6b92e3d72e9b1738ad5cc1eb",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Revised full-size archery image has a complete recurve bow, drawn string, continuous arrow shaft with fletching and a visible point, plus target to the right. Lower athlete body is normally cropped; equipment is complete. Static blur loses the thin arrow but retains the pose/target, so the question's arrow clue is appropriate.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+  },
+  "previousGenerations": [
+    {
+      "record": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/rejected-generation-records/blur-600-907-first-generation.json",
+      "status": "replaced",
+      "reason": "Arrow ended at bow and upper bow tip was cropped."
+    }
+  ]
+}

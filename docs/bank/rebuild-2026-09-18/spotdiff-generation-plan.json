@@ -1,0 +1,1337 @@
+{
+  "pack": "spotdiff",
+  "createdAt": "2026-09-25",
+  "difficultyCalibration": "Editorial targets, not measured; changes become more localized with increasing tier. Actual mobile visual review required.",
+  "method": "One built-in generation per original and one built-in image edit per comparison; single intended semantic difference. Never fabricate visual approval.",
+  "items": [
+    {
+      "id": "spotdiff-200-901",
+      "tier": 200,
+      "topic": "مطبخ",
+      "question": "ما التغيير بين صورتي ركن الشاي؟",
+      "answer": "تغيّر لون الغلاية",
+      "alt": [
+        "لون الغلاية"
+      ],
+      "spot": {
+        "x": 66,
+        "y": 56,
+        "r": 24
+      },
+      "scene": "A glossy red enamel kettle with black handle at center-right, yellow mug at left and folded navy linen napkin on a pale oak counter against ivory wall.",
+      "change": "Recolor only the kettle enamel body, lid and spout from RED to deep cobalt BLUE. Preserve black handle and knob, metal trim and shape.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-200-901-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. One sharp realistic still-life photograph for a family spot-the-difference game. Landscape 4:3. A small tidy tea counter with warm ivory wall and pale oak countertop. Exactly three distinct objects: a large glossy RED enamel kettle with black handle at center-right (center x=62%, y=52%), a plain yellow ceramic mug at left (x=25%, y=64%), and one folded deep-blue linen napkin behind the mug. The complete red kettle including spout, lid, handle and base fills about40% of picture width and50% of height; ample margins. Simple soft even studio light, all objects sharp, clean separation, no steam, no people, no visible text, logos, labels, patterns, additional objects or collage. Straight-on three-quarter tabletop camera view. This is the first image of a pair; scene must be very stable and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-200-901-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. The supplied image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: recolor the kettle's red enamel body, red lid and red spout to deep cobalt BLUE enamel. They are parts of the same kettle color change. Preserve its black handle and knob, metal trim, geometry, exact size and position, reflections and lighting. Keep the yellow mug, navy cloth, tabletop wood grain, wall, shadows, camera, crop and EVERY other visible feature exactly unchanged. Do not add, remove, move, resize or reshape anything. Do not alter the yellow mug or navy napkin. Same landscape4:3 dimensions. No words or labels. The viewer must find a single difference: the kettle changes from red to blue."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-200-902",
+      "tier": 200,
+      "topic": "مكتب ودراسة",
+      "question": "ما الاختلاف بين صورتي مكتب الطالب؟",
+      "answer": "تغيّر لون الدفتر",
+      "alt": [
+        "لون الدفتر"
+      ],
+      "spot": {
+        "x": 63,
+        "y": 57,
+        "r": 27
+      },
+      "scene": "A large plain GREEN closed notebook at center-right, an unmarked wooden pencil at left, and small round ivory cup holding two pens behind on a pale wood desk. Notebook fills 45 percent width.",
+      "change": "Recolor only the GREEN notebook cover to bright ORANGE; preserve paper edges and everything else.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-200-902-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A large plain GREEN closed notebook at center-right, an unmarked wooden pencil at left, and small round ivory cup holding two pens behind on a pale wood desk. Notebook fills 45 percent width. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-200-902-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the GREEN notebook cover to bright ORANGE; preserve paper edges and everything else. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-200-903",
+      "tier": 200,
+      "topic": "حديقة",
+      "question": "ما الذي تبدّل في صورتي زاوية الزراعة؟",
+      "answer": "تغيّر لون إبريق الري",
+      "alt": [
+        "لون إبريق الري"
+      ],
+      "spot": {
+        "x": 63,
+        "y": 54,
+        "r": 27
+      },
+      "scene": "A large BLUE metal watering can with top handle and side spout at center-right on stone patio, one terracotta pot with a small green fern at left, small neutral gardening glove flat at lower left. Watering can fills 45 percent width.",
+      "change": "Recolor only the BLUE watering can metal body, spout and handle to RED; keep form, water holes, fern and pot unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-200-903-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A large BLUE metal watering can with top handle and side spout at center-right on stone patio, one terracotta pot with a small green fern at left, small neutral gardening glove flat at lower left. Watering can fills 45 percent width. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-200-903-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the BLUE watering can metal body, spout and handle to RED; keep form, water holes, fern and pot unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-200-904",
+      "tier": 200,
+      "topic": "ألعاب وهوايات",
+      "question": "ما التغيير الظاهر في صورتي رف الألعاب؟",
+      "answer": "تغيّر لون السيارة",
+      "alt": [
+        "لون السيارة"
+      ],
+      "spot": {
+        "x": 68,
+        "y": 49,
+        "r": 24
+      },
+      "scene": "Large plain YELLOW wooden toy car at center-right on a cream shelf, four black wheels, simple rounded body and two dark windows. Two colorful wooden stacking rings stand at left and a small tan teddy bear behind left. Car fills 45 percent width.",
+      "change": "Recolor only the YELLOW toy car body to cobalt BLUE, retaining black wheels and dark windows.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-200-904-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large plain YELLOW wooden toy car at center-right on a cream shelf, four black wheels, simple rounded body and two dark windows. Two colorful wooden stacking rings stand at left and a small tan teddy bear behind left. Car fills 45 percent width. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-200-904-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the YELLOW toy car body to cobalt BLUE, retaining black wheels and dark windows. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-200-905",
+      "tier": 200,
+      "topic": "موسيقى",
+      "question": "ما الذي اختلف بين صورتي ركن الإيقاع؟",
+      "answer": "تغيّر لون الطبلة",
+      "alt": [
+        "لون الطبلة"
+      ],
+      "spot": {
+        "x": 69,
+        "y": 56,
+        "r": 24
+      },
+      "scene": "Large simple RED cylindrical hand drum upright at center-right, cream skin head, tan wood rim, no lacing, on gray studio floor. A tan wooden mallet and closed plain blue instrument pouch lie at left. Drum fills 45 percent width.",
+      "change": "Recolor only the RED cylindrical shell of the drum to GREEN, retaining cream head, wood rim and all other objects.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-200-905-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large simple RED cylindrical hand drum upright at center-right, cream skin head, tan wood rim, no lacing, on gray studio floor. A tan wooden mallet and closed plain blue instrument pouch lie at left. Drum fills 45 percent width. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-200-905-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the RED cylindrical shell of the drum to GREEN, retaining cream head, wood rim and all other objects. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-200-906",
+      "tier": 200,
+      "topic": "سفر",
+      "question": "ما الفرق بين صورتي تجهيز الرحلة؟",
+      "answer": "تغيّر لون الحقيبة",
+      "alt": [
+        "لون الحقيبة"
+      ],
+      "spot": {
+        "x": 71,
+        "y": 53,
+        "r": 24
+      },
+      "scene": "Large BLUE hard shell carry-on suitcase upright at center-right, black wheels and handle, with a wide brim straw hat resting on a bench at left and a plain white rolled towel beside hat. Minimal beige room, suitcase fills 40 percent width.",
+      "change": "Recolor only the BLUE hard shell suitcase body to YELLOW, retaining black wheels and handle and all other details.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-200-906-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large BLUE hard shell carry-on suitcase upright at center-right, black wheels and handle, with a wide brim straw hat resting on a bench at left and a plain white rolled towel beside hat. Minimal beige room, suitcase fills 40 percent width. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-200-906-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the BLUE hard shell suitcase body to YELLOW, retaining black wheels and handle and all other details. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-200-907",
+      "tier": 200,
+      "topic": "ملابس وإكسسوارات",
+      "question": "ما الذي تبدّل بين صورتي الملابس الشتوية؟",
+      "answer": "تغيّر لون القبعة",
+      "alt": [
+        "لون القبعة"
+      ],
+      "spot": {
+        "x": 72,
+        "y": 44,
+        "r": 24
+      },
+      "scene": "Large RED knitted wool beanie with folded cuff at center-right on a pale wooden bench, charcoal gray scarf loosely folded at left, plain beige mittens behind. Beanie fills 40 percent picture width. No pompom.",
+      "change": "Recolor only the RED beanie knit to rich PURPLE, retaining its exact knitted texture and shape.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-200-907-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large RED knitted wool beanie with folded cuff at center-right on a pale wooden bench, charcoal gray scarf loosely folded at left, plain beige mittens behind. Beanie fills 40 percent picture width. No pompom. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-200-907-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the RED beanie knit to rich PURPLE, retaining its exact knitted texture and shape. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-200-908",
+      "tier": 200,
+      "topic": "ورشة وأدوات",
+      "question": "ما الاختلاف بين صورتي طاولة الصيانة؟",
+      "answer": "تغيّر لون صندوق الأدوات",
+      "alt": [
+        "لون صندوق الأدوات"
+      ],
+      "spot": {
+        "x": 64,
+        "y": 49,
+        "r": 25
+      },
+      "scene": "Large closed ORANGE rectangular metal toolbox center-right on clean gray workbench, silver latch and black top handle, one wooden handled hammer and silver wrench at left, bare gray wall. Toolbox fills 45 percent width.",
+      "change": "Recolor only the ORANGE toolbox metal body and lid to GREEN, preserving black handle, silver latch and all other objects.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-200-908-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large closed ORANGE rectangular metal toolbox center-right on clean gray workbench, silver latch and black top handle, one wooden handled hammer and silver wrench at left, bare gray wall. Toolbox fills 45 percent width. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-200-908-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the ORANGE toolbox metal body and lid to GREEN, preserving black handle, silver latch and all other objects. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-400-901",
+      "tier": 400,
+      "topic": "مطبخ",
+      "question": "ما الذي اختفى من صورتي مائدة الحساء؟",
+      "answer": "اختفت الملعقة",
+      "alt": [
+        "الملعقة"
+      ],
+      "spot": {
+        "x": 85,
+        "y": 33,
+        "r": 10
+      },
+      "scene": "On pale oak tabletop a plain white soup bowl containing smooth orange soup sits center-left. A single large stainless soup spoon lies fully visible at center-right, center x=73 y=59, length 25 percent width, beside folded beige napkin farther left. No other cutlery.",
+      "change": "Remove only the single stainless steel SPOON to the right of the soup bowl, naturally filling its exact area with the unchanged tabletop. Keep bowl, soup and napkin identical.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-400-901-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. On pale oak tabletop a plain white soup bowl containing smooth orange soup sits center-left. A single large stainless soup spoon lies fully visible at center-right, center x=73 y=59, length 25 percent width, beside folded beige napkin farther left. No other cutlery. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-400-901-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the single stainless steel SPOON to the right of the soup bowl, naturally filling its exact area with the unchanged tabletop. Keep bowl, soup and napkin identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-400-902",
+      "tier": 400,
+      "topic": "مكتب ودراسة",
+      "question": "ما الذي غاب عن صورتي التحضير للرسم؟",
+      "answer": "اختفى القلم الأحمر",
+      "alt": [
+        "القلم الأحمر"
+      ],
+      "spot": {
+        "x": 83,
+        "y": 55,
+        "r": 12
+      },
+      "scene": "A blank ivory sketchbook lies open at center-left of gray desk. One thick RED unmarked pencil lies diagonally at center-right, center x=75 y=62, length 28 percent width. Small blue eraser at far left, plain tan pencil cup behind. No marks on paper.",
+      "change": "Remove only the RED pencil at center-right and its own shadow, restoring gray desk underneath. Keep sketchbook, eraser and pencil cup exactly unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-400-902-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A blank ivory sketchbook lies open at center-left of gray desk. One thick RED unmarked pencil lies diagonally at center-right, center x=75 y=62, length 28 percent width. Small blue eraser at far left, plain tan pencil cup behind. No marks on paper. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-400-902-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the RED pencil at center-right and its own shadow, restoring gray desk underneath. Keep sketchbook, eraser and pencil cup exactly unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-400-903",
+      "tier": 400,
+      "topic": "حديقة",
+      "question": "ما العنصر المفقود في صورتي أدوات الزراعة؟",
+      "answer": "اختفت المجرفة الصغيرة",
+      "alt": [
+        "المجرفة الصغيرة"
+      ],
+      "spot": {
+        "x": 76,
+        "y": 67,
+        "r": 19
+      },
+      "scene": "Terracotta pot with small leafy basil plant center-left on stone potting bench. A single hand garden TROWEL with wide silver blade and orange handle lies fully visible diagonally at center-right, center x=73 y=62, length 30 percent width. Folded beige gloves far left.",
+      "change": "Remove only the hand garden TROWEL with orange handle at center-right and its shadow, preserving pot, plant, gloves, bench texture and framing.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-400-903-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Terracotta pot with small leafy basil plant center-left on stone potting bench. A single hand garden TROWEL with wide silver blade and orange handle lies fully visible diagonally at center-right, center x=73 y=62, length 30 percent width. Folded beige gloves far left. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-400-903-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the hand garden TROWEL with orange handle at center-right and its shadow, preserving pot, plant, gloves, bench texture and framing. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-400-904",
+      "tier": 400,
+      "topic": "ألعاب وهوايات",
+      "question": "ما التغيير في صورتي مكعبات اللعب؟",
+      "answer": "اختفى المكعب العلوي",
+      "alt": [
+        "المكعب الأزرق",
+        "المكعب العلوي"
+      ],
+      "spot": {
+        "x": 67,
+        "y": 26,
+        "r": 16
+      },
+      "scene": "Three large wooden cubes stacked in a vertical tower at center-right: bottom RED cube, middle GREEN cube, top BLUE cube. Each cube 17 percent image width, tower fully framed with top blue cube center x=66 y=30. Small tan wooden toy horse at far left. Plain cream tabletop.",
+      "change": "Remove only the top BLUE cube from the three-cube tower, leaving the lower GREEN cube resting on RED cube exactly in original positions. Background fills vacated top cube area, horse unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-400-904-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Three large wooden cubes stacked in a vertical tower at center-right: bottom RED cube, middle GREEN cube, top BLUE cube. Each cube 17 percent image width, tower fully framed with top blue cube center x=66 y=30. Small tan wooden toy horse at far left. Plain cream tabletop. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-400-904-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the top BLUE cube from the three-cube tower, leaving the lower GREEN cube resting on RED cube exactly in original positions. Background fills vacated top cube area, horse unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-400-905",
+      "tier": 400,
+      "topic": "موسيقى",
+      "question": "ما العنصر الذي اختفى من صورتي التدريب الإيقاعي؟",
+      "answer": "اختفت الماراكاس",
+      "alt": [
+        "الماراكاس",
+        "الخشخيشة"
+      ],
+      "spot": {
+        "x": 75,
+        "y": 57,
+        "r": 23
+      },
+      "scene": "A round tan wooden tambourine rests at left on gray linen, beside a single painted red and yellow MARACA rattle lying diagonally at center-right, center x=73 y=60, 28 percent image width. A plain folded blue cloth behind tambourine. No other instruments.",
+      "change": "Remove only the single red and yellow MARACA at center-right and its own shadow, restoring gray linen naturally. Tambourine and blue cloth stay identical.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-400-905-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A round tan wooden tambourine rests at left on gray linen, beside a single painted red and yellow MARACA rattle lying diagonally at center-right, center x=73 y=60, 28 percent image width. A plain folded blue cloth behind tambourine. No other instruments. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-400-905-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the single red and yellow MARACA at center-right and its own shadow, restoring gray linen naturally. Tambourine and blue cloth stay identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-400-906",
+      "tier": 400,
+      "topic": "سفر",
+      "question": "ما الشيء الناقص في صورتي مستلزمات التنزه؟",
+      "answer": "اختفت البوصلة",
+      "alt": [
+        "البوصلة"
+      ],
+      "spot": {
+        "x": 64,
+        "y": 62,
+        "r": 14
+      },
+      "scene": "Tan rolled hiking map with abstract terrain colors but absolutely no text lies at far left of dark wood table; large orange water bottle stands rear-left. A single round brass COMPASS lies face-up at center-right, center x=72 y=64, diameter 20 percent picture width, glass dial with simple arrow and marks but no letters.",
+      "change": "Remove only the round brass COMPASS at center-right, preserving map, bottle, shadows unrelated to compass, wooden table and perspective.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-400-906-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Tan rolled hiking map with abstract terrain colors but absolutely no text lies at far left of dark wood table; large orange water bottle stands rear-left. A single round brass COMPASS lies face-up at center-right, center x=72 y=64, diameter 20 percent picture width, glass dial with simple arrow and marks but no letters. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-400-906-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the round brass COMPASS at center-right, preserving map, bottle, shadows unrelated to compass, wooden table and perspective. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-400-907",
+      "tier": 400,
+      "topic": "ملابس وإكسسوارات",
+      "question": "ما المفقود من صورتي الاستعداد للبرد؟",
+      "answer": "اختفى الوشاح",
+      "alt": [
+        "الوشاح"
+      ],
+      "spot": {
+        "x": 71,
+        "y": 48,
+        "r": 25
+      },
+      "scene": "Cream knit hat rests at far left on blue bench, brown gloves at rear-left. A bright RED folded wool SCARF occupies center-right, center x=69 y=63, width 32 percent frame, separate from all other objects. Bare pale wall.",
+      "change": "Remove only the folded RED SCARF at center-right, restoring the blue bench underneath and leaving hat and gloves exact.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-400-907-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Cream knit hat rests at far left on blue bench, brown gloves at rear-left. A bright RED folded wool SCARF occupies center-right, center x=69 y=63, width 32 percent frame, separate from all other objects. Bare pale wall. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-400-907-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the folded RED SCARF at center-right, restoring the blue bench underneath and leaving hat and gloves exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-400-908",
+      "tier": 400,
+      "topic": "ورشة وأدوات",
+      "question": "ما الأداة التي غابت عن صورتي طاولة الإصلاح؟",
+      "answer": "اختفى المفك",
+      "alt": [
+        "المفك"
+      ],
+      "spot": {
+        "x": 73,
+        "y": 53,
+        "r": 22
+      },
+      "scene": "A wood-handled hammer at far left and silver adjustable wrench at rear-left on pale gray workbench. A single RED handled screwdriver lies diagonally alone at center-right, center x=72 y=59, length 30 percent width, metal shaft and flat tip clearly visible.",
+      "change": "Remove only the RED handled screwdriver at center-right and its own shadow, leaving hammer, wrench, gray bench and all framing identical.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-400-908-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A wood-handled hammer at far left and silver adjustable wrench at rear-left on pale gray workbench. A single RED handled screwdriver lies diagonally alone at center-right, center x=72 y=59, length 30 percent width, metal shaft and flat tip clearly visible. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-400-908-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the RED handled screwdriver at center-right and its own shadow, leaving hammer, wrench, gray bench and all framing identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-600-901",
+      "tier": 600,
+      "topic": "مطبخ",
+      "question": "ما التفصيل المختلف في صورتي تقديم الماء؟",
+      "answer": "تغيّر لون مقبض الإبريق",
+      "alt": [
+        "مقبض الإبريق"
+      ],
+      "spot": {
+        "x": 75,
+        "y": 40,
+        "r": 16
+      },
+      "scene": "Large ivory ceramic pitcher at center, its single thick TURQUOISE loop handle on its right side at x=66 y=50, handle outer width 16 percent image. Plain glass of water left, yellow lemon front-left, gray stone kitchen counter.",
+      "change": "Recolor only the TURQUOISE loop handle of the ivory pitcher to RED. Keep ivory body and spout, handle geometry, glass, lemon, counter exactly unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-600-901-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large ivory ceramic pitcher at center, its single thick TURQUOISE loop handle on its right side at x=66 y=50, handle outer width 16 percent image. Plain glass of water left, yellow lemon front-left, gray stone kitchen counter. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-600-901-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the TURQUOISE loop handle of the ivory pitcher to RED. Keep ivory body and spout, handle geometry, glass, lemon, counter exactly unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-600-902",
+      "tier": 600,
+      "topic": "مكتب ودراسة",
+      "question": "ما الاختلاف في صورتي أدوات الهندسة؟",
+      "answer": "تغيّر اتجاه المسطرة",
+      "alt": [
+        "اتجاه المسطرة",
+        "دوران المسطرة"
+      ],
+      "spot": {
+        "x": 73,
+        "y": 47,
+        "r": 23
+      },
+      "scene": "Plain closed blue exercise book at left on ivory desk, plain white eraser behind-left. A short unmarked natural wood ruler lies perfectly horizontal at center-right, midpoint x=72 y=63, length 28 percent image width. No numerals or writing.",
+      "change": "Rotate only the wooden RULER at center-right 35 degrees clockwise around its own center, preserving its exact length, material and location of midpoint. Adjust only ruler shadow; everything else unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-600-902-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is an original spot-the-difference scene. Refine only the plain wooden ruler at right by adding a single orderly row of fine dark measurement tick marks along its upper long edge. Add longer ticks at regular intervals and four short ticks between each long pair, with NO numerals, NO letters and NO label. This should now be unmistakably a ruler. Preserve its exact horizontal position, size, thickness and wood grain. Keep the blue notebook, white eraser, ivory desktop, camera, lighting and all other details unchanged.",
+          "inputRole": "edit target: original unmarked-ruler scene",
+          "reason": "Add nonverbal measurement ticks so the target is unambiguously a ruler."
+        },
+        "b": {
+          "id": "spotdiff-600-902-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Rotate only the wooden RULER at center-right 35 degrees clockwise around its own center, preserving its exact length, material and location of midpoint. Adjust only ruler shadow; everything else unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects. Keep all printed measurement ticks on the ruler exactly unchanged; they rotate together with it."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-600-903",
+      "tier": 600,
+      "topic": "حديقة",
+      "question": "ما التفصيل الذي تبدّل في صورتي زاوية النباتات؟",
+      "answer": "تغيّر لون حافة الأصيص",
+      "alt": [
+        "حافة الأصيص"
+      ],
+      "spot": {
+        "x": 49,
+        "y": 49,
+        "r": 22
+      },
+      "scene": "Large orange terracotta flowerpot at center containing a modest green fern. Only its thick top rim is painted cobalt BLUE; rim centered x=52 y=58, width 38 percent image, thickness 5 percent height. Small ivory watering pitcher at far right, stone patio.",
+      "change": "Recolor only the thin cobalt BLUE painted TOP RIM of the terracotta pot to bright YELLOW. Preserve orange pot body, fern, pitcher, textures and shadows.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-600-903-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large orange terracotta flowerpot at center containing a modest green fern. Only its thick top rim is painted cobalt BLUE; rim centered x=52 y=58, width 38 percent image, thickness 5 percent height. Small ivory watering pitcher at far right, stone patio. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-600-903-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the thin cobalt BLUE painted TOP RIM of the terracotta pot to bright YELLOW. Preserve orange pot body, fern, pitcher, textures and shadows. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-600-904",
+      "tier": 600,
+      "topic": "ألعاب وهوايات",
+      "question": "ما الذي اختلف بين صورتي القطار الخشبي؟",
+      "answer": "تغيّر لون مدخنة القطار",
+      "alt": [
+        "مدخنة القطار"
+      ],
+      "spot": {
+        "x": 44,
+        "y": 28,
+        "r": 10
+      },
+      "scene": "Large simple green wooden toy steam locomotive at center on pale shelf, black wheels, tan cab. Its one short cylindrical chimney on the front top at x=65 y=35 is bright RED, diameter 10 percent image width. Two blue blocks at far left.",
+      "change": "Recolor only the RED cylindrical toy locomotive CHIMNEY to bright YELLOW. Preserve its form and position, locomotive green body, wheels, cab and blue blocks.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-600-904-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large simple green wooden toy steam locomotive at center on pale shelf, black wheels, tan cab. Its one short cylindrical chimney on the front top at x=65 y=35 is bright RED, diameter 10 percent image width. Two blue blocks at far left. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-600-904-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the RED cylindrical toy locomotive CHIMNEY to bright YELLOW. Preserve its form and position, locomotive green body, wheels, cab and blue blocks. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-600-905",
+      "tier": 600,
+      "topic": "موسيقى",
+      "question": "ما التفصيل المتبدّل في صورتي ضبط الإيقاع؟",
+      "answer": "تغيّر اتجاه بندول المسرّع",
+      "alt": [
+        "بندول المسرّع",
+        "ذراع المسرّع"
+      ],
+      "spot": {
+        "x": 48,
+        "y": 41,
+        "r": 17
+      },
+      "scene": "A large classic brown wooden pyramid mechanical metronome front facing at center on cream table, no brand or letters. Its thin silver pendulum arm visible against dark face leans distinctly LEFT, small slider weight visible, center x=50 y=47, arm length 30 percent image height. Plain tan tuning fork case at far right.",
+      "change": "Move only the metronome's silver pendulum arm and its slider from leaning LEFT to symmetrically leaning RIGHT about the same fixed lower pivot. Same arm length and weight; wooden case and everything else identical.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-600-905-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A large classic brown wooden pyramid mechanical metronome front facing at center on cream table, no brand or letters. Its thin silver pendulum arm visible against dark face leans distinctly LEFT, small slider weight visible, center x=50 y=47, arm length 30 percent image height. Plain tan tuning fork case at far right. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-600-905-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Move only the metronome's silver pendulum arm and its slider from leaning LEFT to symmetrically leaning RIGHT about the same fixed lower pivot. Same arm length and weight; wooden case and everything else identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-600-906",
+      "tier": 600,
+      "topic": "سفر",
+      "question": "ما الاختلاف بين صورتي مراقبة الطبيعة؟",
+      "answer": "اختفى غطاء عدسة المنظار",
+      "alt": [
+        "غطاء العدسة",
+        "غطاء عدسة المنظار"
+      ],
+      "spot": {
+        "x": 84,
+        "y": 68,
+        "r": 12
+      },
+      "scene": "Large black binoculars lying diagonally on tan camping table, both large front objective lenses face camera. LEFT objective glass open, RIGHT objective covered by one flat round RED lens cap, cap center x=61 y=56, diameter 15 percent picture width. Folded olive field pouch at far left, no logos.",
+      "change": "Remove only the RED circular cap from the right objective lens of the binoculars, showing normal dark green-black optical glass matching the other objective. Binoculars, other lens, pouch and scene exact.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-600-906-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large black binoculars lying diagonally on tan camping table, both large front objective lenses face camera. LEFT objective glass open, RIGHT objective covered by one flat round RED lens cap, cap center x=61 y=56, diameter 15 percent picture width. Folded olive field pouch at far left, no logos. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-600-906-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the RED circular cap from the right objective lens of the binoculars, showing normal dark green-black optical glass matching the other objective. Binoculars, other lens, pouch and scene exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-600-907",
+      "tier": 600,
+      "topic": "ملابس وإكسسوارات",
+      "question": "ما التفصيل المختلف في صورتي القفاز الجلدي؟",
+      "answer": "اختفى زر القفاز",
+      "alt": [
+        "زر القفاز"
+      ],
+      "spot": {
+        "x": 87,
+        "y": 54,
+        "r": 7
+      },
+      "scene": "Single tan leather glove lying palm-down fully visible across center of cream table, fingers point left, cuff at right. One large round dark BROWN button on cuff, center x=74 y=60, diameter 9 percent picture width. Plain folded gray scarf back-left. No other buttons.",
+      "change": "Remove only the single BROWN button on the glove cuff at right, leave its former position as smooth matching tan leather without a hole. Glove fingers, seams, scarf and shadows unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-600-907-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Single tan leather glove lying palm-down fully visible across center of cream table, fingers point left, cuff at right. One large round dark BROWN button on cuff, center x=74 y=60, diameter 9 percent picture width. Plain folded gray scarf back-left. No other buttons. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-600-907-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the single BROWN button on the glove cuff at right, leave its former position as smooth matching tan leather without a hole. Glove fingers, seams, scarf and shadows unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-600-908",
+      "tier": 600,
+      "topic": "ورشة وأدوات",
+      "question": "ما التغيير في صورتي أدوات الطلاء؟",
+      "answer": "تغيّر لون شعيرات الفرشاة",
+      "alt": [
+        "شعيرات الفرشاة"
+      ],
+      "spot": {
+        "x": 48,
+        "y": 73,
+        "r": 17
+      },
+      "scene": "A large flat paintbrush lies diagonally center-right on cream workbench, plain blue handle, silver ferrule, broad clean BLACK bristles at x=70 y=48, bristle block 17 percent image width. Closed plain red paint tin at far left, no labels, clean dry scene.",
+      "change": "Recolor only the BLACK brush BRISTLES to WHITE, preserving individual bristle shapes, silver ferrule, blue handle, red tin, shadows and all scene details.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-600-908-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A large flat paintbrush lies diagonally center-right on cream workbench, plain blue handle, silver ferrule, broad clean BLACK bristles at x=70 y=48, bristle block 17 percent image width. Closed plain red paint tin at far left, no labels, clean dry scene. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-600-908-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the BLACK brush BRISTLES to WHITE, preserving individual bristle shapes, silver ferrule, blue handle, red tin, shadows and all scene details. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-800-901",
+      "tier": 800,
+      "topic": "مطبخ",
+      "question": "ما التفصيل الدقيق في صورتي جلسة القهوة؟",
+      "answer": "تغيّر لون حافة الفنجان",
+      "alt": [
+        "حافة الفنجان"
+      ],
+      "spot": {
+        "x": 63,
+        "y": 25,
+        "r": 18
+      },
+      "scene": "Large ivory coffee cup on matching saucer center-right, empty inside visible. Its very thin top rim is cobalt BLUE; rim centered x=63 y=45, width 25 percent image, thickness 1.5 percent image height. Plain silver spoon far left, small brown biscuit front-left on cream linen.",
+      "change": "Recolor only the thin cobalt BLUE line around the coffee cup top rim to RED; keep ivory cup, saucer, spoon, biscuit and textures identical.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-800-901-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Large ivory coffee cup on matching saucer center-right, empty inside visible. Its very thin top rim is cobalt BLUE; rim centered x=63 y=45, width 25 percent image, thickness 1.5 percent image height. Plain silver spoon far left, small brown biscuit front-left on cream linen. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-800-901-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the thin cobalt BLUE line around the coffee cup top rim to RED; keep ivory cup, saucer, spoon, biscuit and textures identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-800-902",
+      "tier": 800,
+      "topic": "مكتب ودراسة",
+      "question": "ما التفصيل المتغير في صورتي مساحة العمل؟",
+      "answer": "تغيّر لون ورقة الملاحظات",
+      "alt": [
+        "ورقة الملاحظات"
+      ],
+      "spot": {
+        "x": 80,
+        "y": 74,
+        "r": 14
+      },
+      "scene": "A closed gray laptop on white desk centered-left, black plain pen near lower-left, small blank YELLOW square sticky note on tabletop at x=76 y=62, square side 13 percent picture width. Plain white mug rear-right. No writing, logo or screen.",
+      "change": "Recolor only the blank YELLOW square sticky note to PINK, preserving its size, position, subtle paper fold and shadows. Laptop, pen, mug and desktop unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-800-902-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A closed gray laptop on white desk centered-left, black plain pen near lower-left, small blank YELLOW square sticky note on tabletop at x=76 y=62, square side 13 percent picture width. Plain white mug rear-right. No writing, logo or screen. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-800-902-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the blank YELLOW square sticky note to PINK, preserving its size, position, subtle paper fold and shadows. Laptop, pen, mug and desktop unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-800-903",
+      "tier": 800,
+      "topic": "حديقة",
+      "question": "ما التفصيل غير المتطابق في صورتي النبتة المنزلية؟",
+      "answer": "تغيّر لون ورقة النبات",
+      "alt": [
+        "ورقة النبات"
+      ],
+      "spot": {
+        "x": 67,
+        "y": 14,
+        "r": 9
+      },
+      "scene": "Small elegant potted plant in ivory pot center, exactly six smooth oval green leaves on thin branching stems against pale gray wall, leaf positions separate. The isolated upper RIGHT leaf at x=65 y=30 is vivid GREEN, about 13 percent image width, unobscured. Plain small gray pebble left of pot.",
+      "change": "Recolor only the isolated upper RIGHT green LEAF at x=65 y=30 to autumn ORANGE, keeping its shape, veins, stem and all other five green leaves exact.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-800-903-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Small elegant potted plant in ivory pot center, exactly six smooth oval green leaves on thin branching stems against pale gray wall, leaf positions separate. The isolated upper RIGHT leaf at x=65 y=30 is vivid GREEN, about 13 percent image width, unobscured. Plain small gray pebble left of pot. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-800-903-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the isolated upper RIGHT green LEAF at x=67 y=14 to autumn ORANGE, keeping its shape, veins, stem and all other five green leaves exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-800-904",
+      "tier": 800,
+      "topic": "ألعاب وهوايات",
+      "question": "ما التفصيل المختلف في صورتي الروبوت الصغير؟",
+      "answer": "تغيّر لون عين الروبوت",
+      "alt": [
+        "عين الروبوت"
+      ],
+      "spot": {
+        "x": 57,
+        "y": 25,
+        "r": 5
+      },
+      "scene": "Friendly large toy robot sitting center, plain silver cube head with exactly two round BLACK eye disks, no other facial marks except straight short mouth line. Image-right eye center x=58 y=33, disk diameter 7 percent width. Blue rectangular body, orange arms, gray legs; ivory backdrop.",
+      "change": "Recolor only the toy robot's IMAGE-RIGHT round BLACK eye disk to WHITE, keeping disk boundary visible via thin silver recess. Left eye remains black; preserve all geometry, mouth, body and scene.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-800-904-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Friendly large toy robot sitting center, plain silver cube head with exactly two round BLACK eye disks, no other facial marks except straight short mouth line. Image-right eye center x=58 y=33, disk diameter 7 percent width. Blue rectangular body, orange arms, gray legs; ivory backdrop. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-800-904-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the toy robot's IMAGE-RIGHT round BLACK eye disk to WHITE, keeping disk boundary visible via thin silver recess. Left eye remains black; preserve all geometry, mouth, body and scene. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-800-905",
+      "tier": 800,
+      "topic": "موسيقى",
+      "question": "ما التفصيل الناقص في صورتي آلة الإيقاع الدائرية؟",
+      "answer": "اختفى زوج الصنوج",
+      "alt": [
+        "زوج الصنوج",
+        "صنوج الدف"
+      ],
+      "spot": {
+        "x": 80,
+        "y": 47,
+        "r": 6
+      },
+      "scene": "A large wooden tambourine shown face-on centered on light gray wall, tan drum skin, six equally spaced pairs of silver metal jingles around rim. One jingle pair at rightmost 3-o'clock position center x=75 y=50, visibly seated in rectangular rim slot; tambourine diameter 58 percent image width. Plain clean isolated instrument.",
+      "change": "Remove only the pair of silver jingles in the rightmost 3-o'clock rim slot, leaving that one rectangular slot empty with tiny fixed support pin. Other five jingle pairs, wooden rim and skin remain exact.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-800-905-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A large wooden tambourine shown face-on centered on light gray wall, tan drum skin, six equally spaced pairs of silver metal jingles around rim. One jingle pair at rightmost 3-o'clock position center x=75 y=50, visibly seated in rectangular rim slot; tambourine diameter 58 percent image width. Plain clean isolated instrument. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-800-905-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. The supplied image A shows SEVEN visible silver jingle locations on a tambourine. Remove EXACTLY ONE: the rightmost silver jingle at the 3-o'clock position, centered approximately x=80%, y=47%. Replace that silver jingle with background, leaving its tiny support pin and existing empty slot. CRITICAL: preserve the LOWER-RIGHT jingle at 5-o'clock, centered x=75%, y=66%, fully present and silver. Also preserve the top, upper-right, bottom, lower-left and upper-left silver jingles; there must be SIX visible silver jingle locations after editing. Do not remove the lower-right jingle. Preserve drum skin pattern, wooden rim, all six remaining jingle geometries/reflections, camera, background and shadows. ONE semantic difference only: one rightmost jingle pair disappears. Same framing and dimensions. No text."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-800-906",
+      "tier": 800,
+      "topic": "سفر",
+      "question": "ما التفصيل المتبدّل في صورتي المخيم؟",
+      "answer": "تغيّر لون حلقة باب الخيمة",
+      "alt": [
+        "حلقة باب الخيمة",
+        "حلقة السحاب"
+      ],
+      "spot": {
+        "x": 77,
+        "y": 71,
+        "r": 5
+      },
+      "scene": "A small orange dome tent fills center of a quiet campsite, entrance closed by gray zip seam. A clear BLUE oval fabric loop attached to bottom-right end of door zipper at x=65 y=73, loop 8 percent image width. Folded green sleeping mat at far left, soft grass, neutral trees background, no text.",
+      "change": "Recolor only the BLUE oval fabric zipper-pull loop at lower-right of tent door to RED. Tent fabric, zipper seam, grass, mat and all background identical.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-800-906-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Edit the supplied original campsite photograph only to make its BLUE fabric zipper pull loop clearly large enough for a mobile spot-the-difference game. Keep the loop attached to the same lower-right end of the tent door zipper, but enlarge ONLY the blue oval loop to approximately 7 percent of total image width and 9 percent of image height, extending down and slightly to the right from its attachment. It must remain an open blue fabric oval with a visible hole, not solid. Keep all orange tent fabric, zipper seam, trees, grass, green rolled mat, framing and every other object exactly unchanged. No text. This corrected image will become image A."
+        },
+        "b": {
+          "id": "spotdiff-800-906-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the BLUE oval fabric zipper-pull loop at lower-right of tent door to RED. Tent fabric, zipper seam, grass, mat and all background identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-800-907",
+      "tier": 800,
+      "topic": "ملابس وإكسسوارات",
+      "question": "ما التفصيل المختلف في صورتي الحزام الجلدي؟",
+      "answer": "تغيّر شكل مشبك الحزام",
+      "alt": [
+        "شكل مشبك الحزام"
+      ],
+      "spot": {
+        "x": 64,
+        "y": 73,
+        "r": 12
+      },
+      "scene": "A brown leather belt neatly curled in a loose open oval centered on cream fabric, its silver SQUARE metal buckle fully visible at center-right x=68 y=56, outer width 16 percent image. Plain beige cloth bag at back-left. Buckle has simple single crossbar and tongue, no decorative detail.",
+      "change": "Change only the silver belt buckle outer frame from SQUARE to ROUND, same center and same outer width, keeping buckle tongue, leather strap, holes, bag, fabric and shadows consistent and unchanged elsewhere.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-800-907-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A brown leather belt neatly curled in a loose open oval centered on cream fabric, its silver SQUARE metal buckle fully visible at center-right x=68 y=56, outer width 16 percent image. Plain beige cloth bag at back-left. Buckle has simple single crossbar and tongue, no decorative detail. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-800-907-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Change only the silver belt buckle outer frame from SQUARE to ROUND, same center and same outer width, keeping buckle tongue, leather strap, holes, bag, fabric and shadows consistent and unchanged elsewhere. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-800-908",
+      "tier": 800,
+      "topic": "ورشة وأدوات",
+      "question": "ما التفصيل المتغير في صورتي قياس الخشب؟",
+      "answer": "تغيّر لون زر شريط القياس",
+      "alt": [
+        "زر شريط القياس"
+      ],
+      "spot": {
+        "x": 65,
+        "y": 34,
+        "r": 7
+      },
+      "scene": "A dark gray retractable tape measure sits center-right on a pale workbench, short plain unmarked silver tape extended toward left. A distinct YELLOW rectangular lock button on top front housing at x=67 y=49, 10 percent image width. Small smooth wood block rear-left and plain graphite pencil lower-left.",
+      "change": "Recolor only the YELLOW rectangular tape-measure lock button to RED; preserve dark gray housing, plain extended tape, wood block, pencil and all other scene details.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-800-908-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A dark gray retractable tape measure sits center-right on a pale workbench, short plain unmarked silver tape extended toward left. A distinct YELLOW rectangular lock button on top front housing at x=67 y=49, 10 percent image width. Small smooth wood block rear-left and plain graphite pencil lower-left. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-800-908-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the YELLOW rectangular tape-measure lock button to RED; preserve dark gray housing, plain extended tape, wood block, pencil and all other scene details. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-1000-901",
+      "tier": 1000,
+      "topic": "مطبخ",
+      "question": "ما التغيير الصغير في صورتي تحضير التوابل؟",
+      "answer": "نقصت حبة فلفل",
+      "alt": [
+        "حبة فلفل"
+      ],
+      "spot": {
+        "x": 90,
+        "y": 58,
+        "r": 5
+      },
+      "scene": "Close still-life on cream kitchen linen, small ivory bowl of coarse white salt at left, tan wooden spice scoop rear-left. Exactly FIVE separate large black peppercorns in a neat shallow arc at center-right. Rightmost peppercorn at x=77 y=63, diameter 4 percent image width, not touching others, all five sharply detailed.",
+      "change": "Remove only the RIGHTMOST of the five black peppercorns at x=77 y=63, leaving exactly FOUR peppercorns in their original positions. Keep linen weave, salt bowl, scoop and light exact.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-1000-901-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Close still-life on cream kitchen linen, small ivory bowl of coarse white salt at left, tan wooden spice scoop rear-left. Exactly FIVE separate large black peppercorns in a neat shallow arc at center-right. Rightmost peppercorn at x=77 y=63, diameter 4 percent image width, not touching others, all five sharply detailed. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-1000-901-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the RIGHTMOST of the five black peppercorns at x=90 y=58, leaving exactly FOUR peppercorns in their original positions. Keep linen weave, salt bowl, scoop and light exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-1000-902",
+      "tier": 1000,
+      "topic": "مكتب ودراسة",
+      "question": "ما التفصيل الصغير الذي تغيّر في صورتي الأوراق المرتبة؟",
+      "answer": "تغيّر لون مشبك الورق",
+      "alt": [
+        "مشبك الورق"
+      ],
+      "spot": {
+        "x": 81,
+        "y": 57,
+        "r": 8
+      },
+      "scene": "Cream desktop with small stack of blank ivory index cards center-left, dark blue plain pen lower-left, single GREEN wire paperclip lying separately near right edge of cards at x=70 y=59, length 12 percent image width, thick enough clearly visible. Small plain gray eraser rear-right.",
+      "change": "Recolor only the single GREEN wire paperclip to PURPLE, preserving its exact bent wire geometry, position and shadow. All paper, pen, eraser and tabletop unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-1000-902-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Cream desktop with small stack of blank ivory index cards center-left, dark blue plain pen lower-left, single GREEN wire paperclip lying separately near right edge of cards at x=70 y=59, length 12 percent image width, thick enough clearly visible. Small plain gray eraser rear-right. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-1000-902-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the single GREEN wire paperclip to PURPLE, preserving its exact bent wire geometry, position and shadow. All paper, pen, eraser and tabletop unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-1000-903",
+      "tier": 1000,
+      "topic": "حديقة",
+      "question": "ما التغيير الدقيق في صورتي الحشرة على الورقة؟",
+      "answer": "نقصت بقعة على الدعسوقة",
+      "alt": [
+        "بقعة الدعسوقة"
+      ],
+      "spot": {
+        "x": 57,
+        "y": 62,
+        "r": 4
+      },
+      "scene": "Close realistic macro of one red ladybug resting on large green leaf, ladybug centered x=60 y=51 and width 34 percent image, viewed from above. Exactly FOUR round black spots on red wing covers, two on each side symmetrically. Lower IMAGE-RIGHT spot center x=68 y=59, diameter 5 percent image width. Black head, six legs, distinct central seam, natural blurred green background.",
+      "change": "Remove only the lower IMAGE-RIGHT black spot on red ladybug wing at x=68 y=59, replacing it with matching red shell. Other three spots, seam, black head, six legs, leaf veins and entire background unchanged.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-1000-903-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Close realistic macro of one red ladybug resting on large green leaf, ladybug centered x=60 y=51 and width 34 percent image, viewed from above. Exactly FOUR round black spots on red wing covers, two on each side symmetrically. Lower IMAGE-RIGHT spot center x=68 y=59, diameter 5 percent image width. Black head, six legs, distinct central seam, natural blurred green background. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-1000-903-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the lower IMAGE-RIGHT black spot on red ladybug wing at x=57 y=62, replacing it with matching red shell. Other three spots, seam, black head, six legs, leaf veins and entire background unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-1000-904",
+      "tier": 1000,
+      "topic": "ألعاب وهوايات",
+      "question": "ما التفصيل المختلف في صورتي لعبة الطاولة؟",
+      "answer": "زادت نقطة على النرد",
+      "alt": [
+        "نقطة النرد"
+      ],
+      "spot": {
+        "x": 65,
+        "y": 36,
+        "r": 4
+      },
+      "scene": "One large ivory die at center-right on matte blue tabletop, viewed three-quarter from above with top face clearly visible. Top face has exactly TWO black round pips in opposite corners, side faces blank. Die occupies 32 percent image width, top face center x=65 y=45. Two flat red game tokens at far left, no other objects.",
+      "change": "Add exactly ONE black round pip at the CENTER of the die's top face so top changes from TWO pips to THREE in a diagonal. Keep the existing two pips, blank side faces, cube geometry, blue table, red tokens and shadows identical.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-1000-904-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. One large ivory die at center-right on matte blue tabletop, viewed three-quarter from above with top face clearly visible. Top face has exactly TWO black round pips in opposite corners, side faces blank. Die occupies 32 percent image width, top face center x=65 y=45. Two flat red game tokens at far left, no other objects. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-1000-904-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Add exactly ONE black round pip at the CENTER of the die's top face so top changes from TWO pips to THREE in a diagonal. Keep the existing two pips, blank side faces, cube geometry, blue table, red tokens and shadows identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-1000-905",
+      "tier": 1000,
+      "topic": "موسيقى",
+      "question": "ما التفصيل الناقص في صورتي ضبط الآلات؟",
+      "answer": "اختفى شريط الشوكة الرنانة",
+      "alt": [
+        "شريط الشوكة الرنانة"
+      ],
+      "spot": {
+        "x": 90,
+        "y": 66,
+        "r": 9
+      },
+      "scene": "A polished silver tuning fork lies diagonally across a dark gray felt surface at center-right, U-shaped two parallel prongs pointing upper-left, handle lower-right. One small RED ribbon tied around the very end of its handle at x=74 y=69, ribbon width 8 percent image. Plain small tan wooden resonator block at far left. No text.",
+      "change": "Remove only the small RED ribbon from the end of tuning fork handle at x=74 y=69, reveal matching silver handle beneath. Fork prongs, handle geometry, wooden block, felt and shadows otherwise exact.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-1000-905-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A polished silver tuning fork lies diagonally across a dark gray felt surface at center-right, U-shaped two parallel prongs pointing upper-left, handle lower-right. One small RED ribbon tied around the very end of its handle at x=74 y=69, ribbon width 8 percent image. Plain small tan wooden resonator block at far left. No text. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-1000-905-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the small RED ribbon from the end of tuning fork handle at x=89 y=66, reveal matching silver handle beneath. Fork prongs, handle geometry, wooden block, felt and shadows otherwise exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-1000-906",
+      "tier": 1000,
+      "topic": "سفر",
+      "question": "ما التفصيل الدقيق المتبدّل في صورتي حقيبة التخييم؟",
+      "answer": "تغيّر لون مشبك حقيبة الظهر",
+      "alt": [
+        "مشبك حقيبة الظهر"
+      ],
+      "spot": {
+        "x": 52,
+        "y": 63,
+        "r": 4
+      },
+      "scene": "Olive green hiking backpack standing center on stone bench, no logos. Two tan shoulder straps neatly behind, a single small BLUE rectangular plastic quick-release buckle on front lower strap at x=60 y=69, width 9 percent image. Rolled plain gray blanket at far left, neutral woodland backdrop.",
+      "change": "Recolor only the small BLUE plastic front strap buckle to ORANGE. Preserve olive backpack, tan straps, buckle geometry, blanket, stone and background exactly.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-1000-906-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Olive green hiking backpack standing center on stone bench, no logos. Two tan shoulder straps neatly behind, a single small BLUE rectangular plastic quick-release buckle on front lower strap at x=60 y=69, width 9 percent image. Rolled plain gray blanket at far left, neutral woodland backdrop. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-1000-906-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the small BLUE plastic front strap buckle to ORANGE. Preserve olive backpack, tan straps, buckle geometry, blanket, stone and background exactly. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-1000-907",
+      "tier": 1000,
+      "topic": "ملابس وإكسسوارات",
+      "question": "ما التفصيل المختلف في صورتي كم القميص؟",
+      "answer": "تغيّر لون فص زر الكم",
+      "alt": [
+        "فص زر الكم"
+      ],
+      "spot": {
+        "x": 68,
+        "y": 55,
+        "r": 3
+      },
+      "scene": "Close still-life of neatly folded ivory shirt cuff resting on plain light gray surface, no person. One silver square cufflink in center-right cuff has a small BLUE square inset, inset centered x=68 y=55, side 7 percent image width. Plain dark gray necktie loosely folded far left. Fine sharp fabric texture.",
+      "change": "Recolor only the small BLUE square inset of the silver cufflink to BLACK. Keep silver frame, shirt folds and stitching, tie and surface exact.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-1000-907-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Close still-life of neatly folded ivory shirt cuff resting on plain light gray surface, no person. One silver square cufflink in center-right cuff has a small BLUE square inset, inset centered x=68 y=55, side 7 percent image width. Plain dark gray necktie loosely folded far left. Fine sharp fabric texture. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+        },
+        "b": {
+          "id": "spotdiff-1000-907-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the small BLUE square inset of the silver cufflink to BLACK. Keep silver frame, shirt folds and stitching, tie and surface exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    },
+    {
+      "id": "spotdiff-1000-908",
+      "tier": 1000,
+      "topic": "ورشة وأدوات",
+      "question": "ما التغيير الصغير في صورتي القطع المعدنية؟",
+      "answer": "تغيّر لون الحلقة المطاطية",
+      "alt": [
+        "الحلقة المطاطية"
+      ],
+      "spot": {
+        "x": 81,
+        "y": 32,
+        "r": 6
+      },
+      "scene": "Clean tabletop still-life on light gray workshop mat. Three silver hexagonal nuts of different sizes arranged at left, one silver small metal bolt lying center-right. A single small RED rubber O-ring lies separate at x=75 y=68, outer diameter 9 percent image width. Crisp realistic metal, no markings.",
+      "change": "Recolor only the small RED rubber O-ring at x=75 y=68 to BLACK. Preserve its shape and inner hole, all three nuts, bolt, mat weave and shadows.",
+      "jobs": {
+        "a": {
+          "id": "spotdiff-1000-908-a",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Correct only the size of the red rubber O-ring in the supplied still-life. The red O-ring is too large; reduce its outer diameter to approximately HALF its current diameter, about 9 percent of the total image width. Keep its exact center at x=81%, y=33%, retain its round ring geometry and visible central hole, and scale its natural contact shadow accordingly. Preserve all three hex nuts, the silver bolt, thread detail, background, framing and every other visible detail exactly. Do not relocate the O-ring or add objects. This corrected version becomes image A of a difficult spot-the-difference pair. No text."
+        },
+        "b": {
+          "id": "spotdiff-1000-908-b",
+          "kind": "question",
+          "pack": "spotdiff",
+          "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the small RED rubber O-ring at x=81 y=33 to BLACK. Preserve its shape and inner hole, all three nuts, bolt, mat weave and shadows. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+        }
+      },
+      "status": "integrated-visual-approved-runtime-pending",
+      "spotStatus": "visually-located-runtime-pending"
+    }
+  ]
+}

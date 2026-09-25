@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-400-908",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-400-908.webp",
+  "asset": "media/placefinder/placefinder-400-908.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. The Great Temple of Abu Simbel in Egypt, wide frontal view of warm sandstone cliff facade: four colossal seated pharaoh figures in a row, central dark temple doorway, small standing figures near the legs, row of small baboon sculptures along upper facade. Historically recognizable damage: second colossus from viewer left missing upper torso with fallen fragments near base; the other three seated heads remain. Entire rock-cut facade visible, sandy foreground, no Nile touching feet.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 210342,
+  "sha256": "f09fc77a99175ea2911858c82942696baa3edeb6eaa3b491eddc7dd66be51056",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Four seated-colossus positions with second from viewer left broken, central doorway and rock-cut sandstone facade.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

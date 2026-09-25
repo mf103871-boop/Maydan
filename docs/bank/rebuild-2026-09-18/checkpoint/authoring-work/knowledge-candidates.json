@@ -1,0 +1,730 @@
+{
+  "general": {
+    "200": [
+      "general-200-001",
+      "general-200-007",
+      "general-200-013",
+      "general-200-019",
+      "general-200-027",
+      "general-200-031",
+      "general-200-037",
+      "general-200-044"
+    ],
+    "400": [
+      "general-400-002",
+      "general-400-007",
+      "general-400-012",
+      "general-400-017",
+      "general-400-022",
+      "general-400-023",
+      "general-400-026",
+      "general-400-019"
+    ],
+    "600": [
+      "general-600-002",
+      "general-600-003",
+      "general-600-005",
+      "general-600-008",
+      "general-600-015",
+      "general-600-023",
+      "general-600-036",
+      "general-600-013"
+    ],
+    "800": [
+      "general-800-007",
+      "general-800-012",
+      "general-800-015",
+      "general-800-025",
+      "general-800-026",
+      "general-800-031",
+      "general-800-034",
+      "general-800-003"
+    ],
+    "1000": [
+      "general-1000-002",
+      "general-1000-003",
+      "general-1000-005",
+      "general-1000-006",
+      "general-1000-009",
+      "general-1000-010",
+      "general-1000-013",
+      "general-1000-021"
+    ]
+  },
+  "geo": {
+    "200": [
+      "geo-200-002",
+      "geo-200-005",
+      "geo-200-008",
+      "geo-200-011",
+      "geo-200-016",
+      "geo-200-018",
+      "geo-200-022",
+      "geo-200-025"
+    ],
+    "400": [
+      "geo-400-003",
+      "geo-400-005",
+      "geo-400-009",
+      "geo-400-012",
+      "geo-400-015",
+      "geo-400-019",
+      "geo-400-023",
+      "geo-400-032"
+    ],
+    "600": [
+      "geo-600-001",
+      "geo-600-002",
+      "geo-600-011",
+      "geo-600-014",
+      "geo-600-018",
+      "geo-600-023",
+      "geo-600-028",
+      "geo-600-048"
+    ],
+    "800": [
+      "geo-800-001",
+      "geo-800-003",
+      "geo-800-006",
+      "geo-800-014",
+      "geo-800-017",
+      "geo-800-020",
+      "geo-800-024",
+      "geo-800-032"
+    ],
+    "1000": [
+      "geo-1000-001",
+      "geo-1000-007",
+      "geo-1000-017",
+      "geo-1000-024",
+      "geo-1000-025",
+      "geo-1000-029",
+      "geo-1000-035",
+      "geo-1000-040"
+    ]
+  },
+  "capitals": {
+    "200": [
+      "capitals-200-001",
+      "capitals-200-008",
+      "capitals-200-015",
+      "capitals-200-019",
+      "capitals-200-021",
+      "capitals-200-022",
+      "capitals-200-024",
+      "capitals-200-002"
+    ],
+    "400": [
+      "capitals-400-001",
+      "capitals-400-002",
+      "capitals-400-003",
+      "capitals-400-005",
+      "capitals-400-008",
+      "capitals-400-022",
+      "capitals-400-030",
+      "capitals-400-032"
+    ],
+    "600": [
+      "capitals-600-001",
+      "capitals-600-007",
+      "capitals-600-009",
+      "capitals-600-013",
+      "capitals-600-019",
+      "capitals-600-025",
+      "capitals-600-032",
+      "capitals-600-039"
+    ],
+    "800": [
+      "capitals-800-001",
+      "capitals-800-002",
+      "capitals-800-006",
+      "capitals-800-012",
+      "capitals-800-015",
+      "capitals-800-018",
+      "capitals-800-026",
+      "capitals-800-028"
+    ],
+    "1000": [
+      "capitals-1000-001",
+      "capitals-1000-002",
+      "capitals-1000-005",
+      "capitals-1000-006",
+      "capitals-1000-011",
+      "capitals-1000-024",
+      "capitals-1000-032",
+      "capitals-1000-044"
+    ]
+  },
+  "science": {
+    "200": [
+      "science-200-001",
+      "science-200-007",
+      "science-200-013",
+      "science-200-014",
+      "science-200-018",
+      "science-200-020",
+      "science-200-026",
+      "science-200-033"
+    ],
+    "400": [
+      "science-400-001",
+      "science-400-002",
+      "science-400-008",
+      "science-400-012",
+      "science-400-016",
+      "science-400-019",
+      "science-400-026",
+      "science-400-027"
+    ],
+    "600": [
+      "science-600-001",
+      "science-600-002",
+      "science-600-008",
+      "science-600-012",
+      "science-600-013",
+      "science-600-017",
+      "science-600-019",
+      "science-600-025"
+    ],
+    "800": [
+      "science-800-001",
+      "science-800-007",
+      "science-800-011",
+      "science-800-013",
+      "science-800-016",
+      "science-800-017",
+      "science-800-019",
+      "science-800-029"
+    ],
+    "1000": [
+      "science-1000-001",
+      "science-1000-002",
+      "science-1000-003",
+      "science-1000-004",
+      "science-1000-010",
+      "science-1000-014",
+      "science-1000-016",
+      "science-1000-023"
+    ]
+  },
+  "animals": {
+    "200": [
+      "animals-200-001",
+      "animals-200-007",
+      "animals-200-014",
+      "animals-200-020",
+      "animals-200-028",
+      "animals-200-033",
+      "animals-200-038",
+      "animals-200-045"
+    ],
+    "400": [
+      "animals-400-002",
+      "animals-400-009",
+      "animals-400-017",
+      "animals-400-023",
+      "animals-400-030",
+      "animals-400-038",
+      "animals-400-042",
+      "animals-400-004"
+    ],
+    "600": [
+      "animals-600-001",
+      "animals-600-010",
+      "animals-600-019",
+      "animals-600-027",
+      "animals-600-031",
+      "animals-600-038",
+      "animals-600-041",
+      "animals-600-046"
+    ],
+    "800": [
+      "animals-800-004",
+      "animals-800-008",
+      "animals-800-015",
+      "animals-800-022",
+      "animals-800-029",
+      "animals-800-034",
+      "animals-800-040",
+      "animals-800-047"
+    ],
+    "1000": [
+      "animals-1000-002",
+      "animals-1000-007",
+      "animals-1000-015",
+      "animals-1000-021",
+      "animals-1000-028",
+      "animals-1000-032",
+      "animals-1000-037",
+      "animals-1000-045"
+    ]
+  },
+  "history": {
+    "200": [
+      "history-200-001",
+      "history-200-007",
+      "history-200-009",
+      "history-200-012",
+      "history-200-016",
+      "history-200-018",
+      "history-200-019",
+      "history-200-023"
+    ],
+    "400": [
+      "history-400-001",
+      "history-400-005",
+      "history-400-007",
+      "history-400-012",
+      "history-400-013",
+      "history-400-033",
+      "history-400-038",
+      "history-400-039"
+    ],
+    "600": [
+      "history-600-001",
+      "history-600-005",
+      "history-600-009",
+      "history-600-015",
+      "history-600-023",
+      "history-600-028",
+      "history-600-033",
+      "history-600-034"
+    ],
+    "800": [
+      "history-800-001",
+      "history-800-005",
+      "history-800-013",
+      "history-800-016",
+      "history-800-021",
+      "history-800-027",
+      "history-800-034",
+      "history-800-036"
+    ],
+    "1000": [
+      "history-1000-001",
+      "history-1000-007",
+      "history-1000-014",
+      "history-1000-020",
+      "history-1000-028",
+      "history-1000-035",
+      "history-1000-039",
+      "history-1000-041"
+    ]
+  },
+  "food": {
+    "200": [
+      "food-200-001",
+      "food-200-009",
+      "food-200-016",
+      "food-200-023",
+      "food-200-030",
+      "food-200-035",
+      "food-200-036",
+      "food-200-044"
+    ],
+    "400": [
+      "food-400-001",
+      "food-400-009",
+      "food-400-018",
+      "food-400-024",
+      "food-400-031",
+      "food-400-037",
+      "food-400-041",
+      "food-400-048"
+    ],
+    "600": [
+      "food-600-001",
+      "food-600-008",
+      "food-600-014",
+      "food-600-021",
+      "food-600-026",
+      "food-600-030",
+      "food-600-033",
+      "food-600-039"
+    ],
+    "800": [
+      "food-800-001",
+      "food-800-010",
+      "food-800-016",
+      "food-800-021",
+      "food-800-030",
+      "food-800-038",
+      "food-800-043",
+      "food-800-002"
+    ],
+    "1000": [
+      "food-1000-001",
+      "food-1000-008",
+      "food-1000-015",
+      "food-1000-021",
+      "food-1000-029",
+      "food-1000-034",
+      "food-1000-038",
+      "food-1000-046"
+    ]
+  },
+  "fruitsveg": {
+    "200": [
+      "fruitsveg-200-001",
+      "fruitsveg-200-006",
+      "fruitsveg-200-011",
+      "fruitsveg-200-016",
+      "fruitsveg-200-021",
+      "fruitsveg-200-027",
+      "fruitsveg-200-029",
+      "fruitsveg-200-030"
+    ],
+    "400": [
+      "fruitsveg-400-001",
+      "fruitsveg-400-005",
+      "fruitsveg-400-009",
+      "fruitsveg-400-013",
+      "fruitsveg-400-019",
+      "fruitsveg-400-024",
+      "fruitsveg-400-025",
+      "fruitsveg-400-002"
+    ],
+    "600": [
+      "fruitsveg-600-001",
+      "fruitsveg-600-007",
+      "fruitsveg-600-012",
+      "fruitsveg-600-018",
+      "fruitsveg-600-025",
+      "fruitsveg-600-030",
+      "fruitsveg-600-033",
+      "fruitsveg-600-038"
+    ],
+    "800": [
+      "fruitsveg-800-002",
+      "fruitsveg-800-011",
+      "fruitsveg-800-017",
+      "fruitsveg-800-024",
+      "fruitsveg-800-029",
+      "fruitsveg-800-032",
+      "fruitsveg-800-035",
+      "fruitsveg-800-040"
+    ],
+    "1000": [
+      "fruitsveg-1000-001",
+      "fruitsveg-1000-007",
+      "fruitsveg-1000-010",
+      "fruitsveg-1000-017",
+      "fruitsveg-1000-026",
+      "fruitsveg-1000-030",
+      "fruitsveg-1000-036",
+      "fruitsveg-1000-035"
+    ]
+  },
+  "sports": {
+    "200": [
+      "sports-200-009",
+      "sports-200-013",
+      "sports-200-018",
+      "sports-200-024",
+      "sports-200-032",
+      "sports-200-044",
+      "sports-200-049",
+      "sports-200-050"
+    ],
+    "400": [
+      "sports-400-008",
+      "sports-400-017",
+      "sports-400-027",
+      "sports-400-031",
+      "sports-400-035",
+      "sports-400-042",
+      "sports-400-045",
+      "sports-400-049"
+    ],
+    "600": [
+      "sports-600-009",
+      "sports-600-015",
+      "sports-600-024",
+      "sports-600-031",
+      "sports-600-036",
+      "sports-600-049",
+      "sports-600-001",
+      "sports-600-044"
+    ],
+    "800": [
+      "sports-800-007",
+      "sports-800-017",
+      "sports-800-023",
+      "sports-800-032",
+      "sports-800-037",
+      "sports-800-047",
+      "sports-800-002",
+      "sports-800-012"
+    ],
+    "1000": [
+      "sports-1000-008",
+      "sports-1000-013",
+      "sports-1000-024",
+      "sports-1000-027",
+      "sports-1000-034",
+      "sports-1000-046",
+      "sports-1000-003",
+      "sports-1000-041"
+    ]
+  },
+  "football": {
+    "200": [
+      "football-200-003",
+      "football-200-004",
+      "football-200-008",
+      "football-200-010",
+      "football-200-012",
+      "football-200-021",
+      "football-200-024",
+      "football-200-028"
+    ],
+    "400": [
+      "football-400-001",
+      "football-400-008",
+      "football-400-015",
+      "football-400-022",
+      "football-400-024",
+      "football-400-030",
+      "football-400-032",
+      "football-400-039"
+    ],
+    "600": [
+      "football-600-004",
+      "football-600-007",
+      "football-600-010",
+      "football-600-016",
+      "football-600-023",
+      "football-600-031",
+      "football-600-036",
+      "football-600-043"
+    ],
+    "800": [
+      "football-800-001",
+      "football-800-010",
+      "football-800-015",
+      "football-800-016",
+      "football-800-022",
+      "football-800-026",
+      "football-800-041",
+      "football-800-046"
+    ],
+    "1000": [
+      "football-1000-002",
+      "football-1000-009",
+      "football-1000-016",
+      "football-1000-024",
+      "football-1000-032",
+      "football-1000-040",
+      "football-1000-047",
+      "football-1000-005"
+    ]
+  },
+  "worldcup": {
+    "200": [
+      "worldcup-200-002",
+      "worldcup-200-003",
+      "worldcup-200-008",
+      "worldcup-200-011",
+      "worldcup-200-021",
+      "worldcup-200-025",
+      "worldcup-200-026",
+      "worldcup-200-029"
+    ],
+    "400": [
+      "worldcup-400-002",
+      "worldcup-400-005",
+      "worldcup-400-008",
+      "worldcup-400-009",
+      "worldcup-400-016",
+      "worldcup-400-020",
+      "worldcup-400-024",
+      "worldcup-400-029"
+    ],
+    "600": [
+      "worldcup-600-003",
+      "worldcup-600-007",
+      "worldcup-600-012",
+      "worldcup-600-015",
+      "worldcup-600-024",
+      "worldcup-600-028",
+      "worldcup-600-029",
+      "worldcup-600-030"
+    ],
+    "800": [
+      "worldcup-800-001",
+      "worldcup-800-002",
+      "worldcup-800-004",
+      "worldcup-800-005",
+      "worldcup-800-011",
+      "worldcup-800-018",
+      "worldcup-800-028",
+      "worldcup-800-034"
+    ],
+    "1000": [
+      "worldcup-1000-002",
+      "worldcup-1000-007",
+      "worldcup-1000-015",
+      "worldcup-1000-023",
+      "worldcup-1000-031",
+      "worldcup-1000-040",
+      "worldcup-1000-047",
+      "worldcup-1000-036"
+    ]
+  },
+  "ucl": {
+    "200": [
+      "ucl-200-056",
+      "ucl-200-057",
+      "ucl-200-064",
+      "ucl-200-070",
+      "ucl-200-073",
+      "ucl-200-077",
+      "ucl-200-082",
+      "ucl-200-049"
+    ],
+    "400": [
+      "ucl-400-050",
+      "ucl-400-054",
+      "ucl-400-058",
+      "ucl-400-060",
+      "ucl-400-069",
+      "ucl-400-076",
+      "ucl-400-081",
+      "ucl-400-086"
+    ],
+    "600": [
+      "ucl-600-049",
+      "ucl-600-053",
+      "ucl-600-060",
+      "ucl-600-068",
+      "ucl-600-074",
+      "ucl-600-081",
+      "ucl-600-083",
+      "ucl-600-084"
+    ],
+    "800": [
+      "ucl-800-049",
+      "ucl-800-059",
+      "ucl-800-063",
+      "ucl-800-072",
+      "ucl-800-080",
+      "ucl-800-086",
+      "ucl-800-088",
+      "ucl-800-090"
+    ],
+    "1000": [
+      "ucl-1000-049",
+      "ucl-1000-056",
+      "ucl-1000-059",
+      "ucl-1000-062",
+      "ucl-1000-076",
+      "ucl-1000-083",
+      "ucl-1000-086",
+      "ucl-1000-050"
+    ]
+  },
+  "premier": {
+    "200": [
+      "premier-200-050",
+      "premier-200-052",
+      "premier-200-055",
+      "premier-200-056",
+      "premier-200-060",
+      "premier-200-062",
+      "premier-200-070",
+      "premier-200-071"
+    ],
+    "400": [
+      "premier-400-050",
+      "premier-400-053",
+      "premier-400-058",
+      "premier-400-062",
+      "premier-400-067",
+      "premier-400-070",
+      "premier-400-072",
+      "premier-400-096"
+    ],
+    "600": [
+      "premier-600-052",
+      "premier-600-054",
+      "premier-600-059",
+      "premier-600-063",
+      "premier-600-067",
+      "premier-600-070",
+      "premier-600-073",
+      "premier-600-092"
+    ],
+    "800": [
+      "premier-800-050",
+      "premier-800-053",
+      "premier-800-056",
+      "premier-800-060",
+      "premier-800-066",
+      "premier-800-069",
+      "premier-800-081",
+      "premier-800-091"
+    ],
+    "1000": [
+      "premier-1000-049",
+      "premier-1000-054",
+      "premier-1000-058",
+      "premier-1000-061",
+      "premier-1000-065",
+      "premier-1000-068",
+      "premier-1000-088",
+      "premier-1000-050"
+    ]
+  },
+  "tech": {
+    "200": [
+      "tech-200-001",
+      "tech-200-007",
+      "tech-200-014",
+      "tech-200-021",
+      "tech-200-029",
+      "tech-200-031",
+      "tech-200-037",
+      "tech-200-040"
+    ],
+    "400": [
+      "tech-400-001",
+      "tech-400-006",
+      "tech-400-008",
+      "tech-400-016",
+      "tech-400-023",
+      "tech-400-031",
+      "tech-400-040",
+      "tech-400-042"
+    ],
+    "600": [
+      "tech-600-001",
+      "tech-600-007",
+      "tech-600-014",
+      "tech-600-021",
+      "tech-600-022",
+      "tech-600-028",
+      "tech-600-039",
+      "tech-600-040"
+    ],
+    "800": [
+      "tech-800-002",
+      "tech-800-008",
+      "tech-800-015",
+      "tech-800-021",
+      "tech-800-029",
+      "tech-800-030",
+      "tech-800-035",
+      "tech-800-044"
+    ],
+    "1000": [
+      "tech-1000-001",
+      "tech-1000-003",
+      "tech-1000-008",
+      "tech-1000-013",
+      "tech-1000-020",
+      "tech-1000-027",
+      "tech-1000-040",
+      "tech-1000-033"
+    ]
+  }
+}

@@ -1,0 +1,630 @@
+{
+  "reviewedAt": "2026-09-25T01:55:23.578Z",
+  "sourcePackSha256": "109c9eb446071f059c5eb6e788c5cc0e71a18889fabdd67c29155988706e089a",
+  "status": "passed",
+  "reviewer": "Codex visual inspection of actual renderer screenshots",
+  "scope": "All40 black/color pairs in five tier contact sheets; additional full mobile screen and thin-feature inspections as noted. Full40 runtime rerun after two prompt corrections.",
+  "contactSheets": [
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+    "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png"
+  ],
+  "actionableDefects": [],
+  "runtimeChecks": {
+    "passed": 486,
+    "total": 486
+  },
+  "questions": [
+    {
+      "qid": "silhouette-200-901",
+      "answer": "قط",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-901"
+      }
+    },
+    {
+      "qid": "silhouette-400-901",
+      "answer": "أرنب",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-901"
+      }
+    },
+    {
+      "qid": "silhouette-600-901",
+      "answer": "كنغر",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-901"
+      }
+    },
+    {
+      "qid": "silhouette-800-901",
+      "answer": "مالك الحزين",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-901"
+      }
+    },
+    {
+      "qid": "silhouette-1000-901",
+      "answer": "خلد الماء",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-901"
+      }
+    },
+    {
+      "qid": "silhouette-200-902",
+      "answer": "مطرقة",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-902"
+      }
+    },
+    {
+      "qid": "silhouette-400-902",
+      "answer": "مفتاح ربط",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-902"
+      }
+    },
+    {
+      "qid": "silhouette-600-902",
+      "answer": "فتاحة فلين",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-902"
+      }
+    },
+    {
+      "qid": "silhouette-800-902",
+      "answer": "مثقاب يدوي",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-902"
+      }
+    },
+    {
+      "qid": "silhouette-1000-902",
+      "answer": "السدس",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-902"
+      }
+    },
+    {
+      "qid": "silhouette-200-903",
+      "answer": "مظلة",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-903"
+      }
+    },
+    {
+      "qid": "silhouette-400-903",
+      "answer": "مجفف شعر",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-903"
+      }
+    },
+    {
+      "qid": "silhouette-600-903",
+      "answer": "زجاجة عطر",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-903"
+      }
+    },
+    {
+      "qid": "silhouette-800-903",
+      "answer": "إبرة خياطة",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Needle and red thread inspected separately at native256px-wide stage size; thin needle and eye remain visible before and after reveal.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-903"
+      }
+    },
+    {
+      "qid": "silhouette-1000-903",
+      "answer": "مكبس رموش",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-903"
+      }
+    },
+    {
+      "qid": "silhouette-200-904",
+      "answer": "مروحية",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-904"
+      }
+    },
+    {
+      "qid": "silhouette-400-904",
+      "answer": "قارب بمحرك",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Final prompt rechecked in actual mobile screenshot after removing the accepted-answer word قارب.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-904"
+      }
+    },
+    {
+      "qid": "silhouette-600-904",
+      "answer": "غواصة",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-904"
+      }
+    },
+    {
+      "qid": "silhouette-800-904",
+      "answer": "طائرة ثنائية السطح",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-904"
+      }
+    },
+    {
+      "qid": "silhouette-1000-904",
+      "answer": "قاطرة بخارية",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-904"
+      }
+    },
+    {
+      "qid": "silhouette-200-905",
+      "answer": "صبار",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Corrected cactus now has a complete base and transparent padding.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-905"
+      }
+    },
+    {
+      "qid": "silhouette-400-905",
+      "answer": "نخلة",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-905"
+      }
+    },
+    {
+      "qid": "silhouette-600-905",
+      "answer": "ورقة بلوط",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-905"
+      }
+    },
+    {
+      "qid": "silhouette-800-905",
+      "answer": "مونستيرا",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Corrected Monstera petiole attaches at the basal notch; splits and internal holes remain visible in silhouette. Full revealed mobile screen inspected.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-905"
+      }
+    },
+    {
+      "qid": "silhouette-1000-905",
+      "answer": "ورقة جنكة",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-905"
+      }
+    },
+    {
+      "qid": "silhouette-200-906",
+      "answer": "كمثرى",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-906"
+      }
+    },
+    {
+      "qid": "silhouette-400-906",
+      "answer": "فلفل",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-906"
+      }
+    },
+    {
+      "qid": "silhouette-600-906",
+      "answer": "أناناس",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-906"
+      }
+    },
+    {
+      "qid": "silhouette-800-906",
+      "answer": "زنجبيل",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-906"
+      }
+    },
+    {
+      "qid": "silhouette-1000-906",
+      "answer": "فاكهة النجمة",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Whole fruit and five-point star cross section are both readable in silhouette and reveal.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-906"
+      }
+    },
+    {
+      "qid": "silhouette-200-907",
+      "answer": "ساكسفون",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Corrected saxophone has its mouthpiece and bell completely visible; checked full mobile screen.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-907"
+      }
+    },
+    {
+      "qid": "silhouette-400-907",
+      "answer": "تشيلو",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-907"
+      }
+    },
+    {
+      "qid": "silhouette-600-907",
+      "answer": "غيتار كهربائي",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-907"
+      }
+    },
+    {
+      "qid": "silhouette-800-907",
+      "answer": "هورن",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-907"
+      }
+    },
+    {
+      "qid": "silhouette-1000-907",
+      "answer": "بالالايكا",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-907"
+      }
+    },
+    {
+      "qid": "silhouette-200-908",
+      "answer": "كرسي هزاز",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Corrected chair has full backrest, legs and curved rockers visible.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-200.png",
+        "pairLabel": "silhouette-200-908"
+      }
+    },
+    {
+      "qid": "silhouette-400-908",
+      "answer": "إبريق ري",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-400.png",
+        "pairLabel": "silhouette-400-908"
+      }
+    },
+    {
+      "qid": "silhouette-600-908",
+      "answer": "مروحة",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-600.png",
+        "pairLabel": "silhouette-600-908"
+      }
+    },
+    {
+      "qid": "silhouette-800-908",
+      "answer": "مصباح زيت",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Black silhouette and revealed subject match; no opaque rectangle, clipping, or invisible outline observed at mobile stage size.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-800.png",
+        "pairLabel": "silhouette-800-908"
+      }
+    },
+    {
+      "qid": "silhouette-1000-908",
+      "answer": "بابور كاز",
+      "runtimePassed": true,
+      "visualPassed": true,
+      "blackBefore": true,
+      "colorAfter": true,
+      "outlineComplete": true,
+      "recognizableSubject": true,
+      "note": "Pressure stove is distinct from800-908 oil lamp. Final prompt rechecked in mobile screenshot after removing the accepted-answer word موقد.",
+      "visualEvidence": {
+        "contactSheet": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/contact-1000.png",
+        "pairLabel": "silhouette-1000-908"
+      }
+    }
+  ],
+  "limitations": [
+    "Difficulty targets remain editorial; no player calibration was performed.",
+    "This verifies actual local Chromium gameplay and screenshots, not production deployment or offline reload behavior."
+  ],
+  "resolvedPromptLeaks": [
+    "silhouette-400-904",
+    "silhouette-1000-908"
+  ],
+  "lineEndingReplay": "All486 checks replayed after LF normalization with identical question content and images; root additionally inspected current400/600/800 contacts, and200/1000 unchanged pairs were previously viewed."
+}

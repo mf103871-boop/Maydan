@@ -1,6 +1,14 @@
 // منطق لعبة «بَديهة» — نُقل كما هو من الملف الأصلي دون تعديل في السلوك.
 // أوضاع اللعب، بناء الجولة مع أولوية الأسئلة غير المُلعبة، تحقق أسماء الفرق،
 // وتسلسل الجلسة (حفظ/استئناف). خالٍ من React ليُختبر بمعزل.
+export const BANK_CONTENT_VERSION = 'badeeha-curated-2026-09-18';
+
+// Retired identifiers may remain in a player's history. They must neither mark
+// new cards as played nor inflate the progress shown for the current bank.
+export function currentQuestionHistoryCount(categories, history) {
+  return (categories || []).reduce((total, category) => total + category.qs.filter((q) => Boolean(history?.[q.qid])).length, 0);
+}
+
 const MaydanLogicBeta = (() => {
     const MODES = Object.freeze({
         family: Object.freeze({
@@ -161,6 +169,7 @@ const MaydanLogicBeta = (() => {
       if (
         !session ||
         session.version !== 2 ||
+        session.contentVersion !== BANK_CONTENT_VERSION ||
         !Array.isArray(session.teams) ||
         session.teams.length < 2 ||
         session.teams.length > 4 ||

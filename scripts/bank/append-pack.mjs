@@ -12,6 +12,10 @@ const leak = (na, nq) => na.length >= 4 && new RegExp(`(^| )(?:و|ف|ب|ك|ل|ا
 
 const batch = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const status = JSON.parse(readFileSync(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
+const tierCount = status.tierCount ?? status.tierMin ?? 8;
+const topicCap = Math.max(1, Math.floor(tierCount * 0.25));
+const serialStart = status.qidRange?.start ?? 1;
+const serialEnd = status.qidRange?.end ?? 999;
 const retiredQids = await readRetiredQids(ROOT);
 for (const add of batch.packs) {
   if (!Object.hasOwn(status.categories, add.id)) throw new Error(`فئة غير معتمدة: ${add.id}`);
@@ -43,13 +47,13 @@ for (const add of batch.packs) {
     if (bankA.has(na)) console.warn(`${add.id}: إجابة تتكرر في فئة أخرى «${item.a}» — راجع الملاءمة`);
     if (leak(na, nq)) { dropped += 1; return; }
     if (na.split(' ').length > 1 && pool.some((o) => leak(na, N(o.q)))) { dropped += 1; return; }
-    if (pool.filter((o) => o.p === item.p).length >= 48) { dropped += 1; return; }
-    if (pool.filter((o) => o.p === item.p && o.topic === item.topic).length >= 12) { dropped += 1; return; }
+    if (pool.filter((o) => o.p === item.p).length >= tierCount) { dropped += 1; return; }
+    if (pool.filter((o) => o.p === item.p && o.topic === item.topic).length >= topicCap) { dropped += 1; return; }
     seenQ.add(nq); seenA.add(na); pool.push({ ...item, qid: undefined }); added += 1;
   });
   // المعرّفات القديمة ثابتة، حتى بعد الحذف أو إعادة تصنيف الصعوبة.
   const usedIds = new Set([...pack.qs.map((q) => q.qid), ...retiredQids]);
-  const nextIds = new Map(TIERS.map((t) => [t, Math.max(0, ...[...usedIds]
+  const nextIds = new Map(TIERS.map((t) => [t, Math.max(serialStart - 1, ...[...usedIds]
     .filter((qid) => qid?.startsWith(`${add.id}-${t}-`))
     .map((qid) => Number(qid.split('-').at(-1))))]));
   const counters = new Map(TIERS.map((t) => [t, 0]));
@@ -60,14 +64,15 @@ for (const add of batch.packs) {
     if (!qid) {
       let serial = nextIds.get(t);
       do { serial += 1; qid = `${add.id}-${t}-${String(serial).padStart(3, '0')}`; } while (usedIds.has(qid));
-      if (serial > 999) throw new Error(`نفدت المعرّفات في ${add.id}-${t}`);
+      if (serial > serialEnd) throw new Error(`نفدت المعرّفات في ${add.id}-${t}؛ لا يُعاد استعمال المعرّفات المحذوفة`);
       nextIds.set(t, serial); usedIds.add(qid);
     }
-    const out = q.qid ? q : { ...q, q: q.q.trim(), a: q.a.trim(), qid, verified: true };
+    const out = q.qid ? q : { ...q, q: q.q.trim(), a: q.a.trim(), qid, verified: true,
+      ...(status.difficultyTargets ? { difficultyTarget: status.difficultyTargets[t] } : {}) };
     qs.push(out);
   }
   qs.sort((a, b) => a.p - b.p || a.qid.localeCompare(b.qid));
   writeFileSync(file, `${JSON.stringify({ ...pack, qs }, null, indent)}\n`);
-  const gaps = TIERS.filter((t) => counters.get(t) < 48).map((t) => `${t}:${48 - counters.get(t)}`);
+  const gaps = TIERS.filter((t) => counters.get(t) < tierCount).map((t) => `${t}:${tierCount - counters.get(t)}`);
   console.log(`${add.id.padEnd(10)} ${TIERS.map((t) => String(counters.get(t)).padStart(3)).join(' ')} = ${String(qs.length).padStart(4)}  +${added} أُسقط ${dropped}${gaps.length ? `  ⚠ ينقص ${gaps.join(' ')}` : '  ✓ مكتملة'}`);
 }

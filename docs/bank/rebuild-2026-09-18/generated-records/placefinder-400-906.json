@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-400-906",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-400-906.webp",
+  "asset": "media/placefinder/placefinder-400-906.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Louvre Museum Cour Napoleon in Paris: complete central transparent glass pyramid with fine diagonal metal lattice seen in three-quarter view, low reflecting pool and courtyard, long pale-stone richly detailed French Renaissance palace facades with mansard slate roofs behind. Pyramid centered foreground and palace establishes identity; natural daylight. No unrelated pyramid monument, no labels.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 206192,
+  "sha256": "47cd4483a08878df3e705d27c1b61869e2decf7d9fc881aaac7bbbb71337e1ea",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Transparent metal-framed pyramid with historic palace courtyard facades; identifies Louvre museum.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "date": "2026-09-25",
+  "note": "Repository-relative paths are portable. Original PNG basenames are provenance identifiers only; WebP files and records are sufficient without the previous account.",
+  "outputs": [
+    {
+      "id": "reveal-200-901",
+      "generatorOutputBasename": "exec-e12a5d6e-e082-402c-8989-026e12b862c7.png",
+      "preservedAsset": "media/reveal/reveal-200-901.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-901.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "a18a5e62f6808fa19614cdc02d36e533cc18951104652172fdfccefdaeeb73de"
+    },
+    {
+      "id": "reveal-200-902",
+      "generatorOutputBasename": "exec-a1d89179-4aac-48f8-8d62-ce95d2eb4bca.png",
+      "preservedAsset": "media/reveal/reveal-200-902.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-902.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "d89cf242ccec5d8ac93c71ead2ad8569f974b89b84db3c04ae5d435c51943b00"
+    },
+    {
+      "id": "reveal-200-903",
+      "generatorOutputBasename": "exec-ae9dd16e-28c1-4288-a184-6c785cbb375b.png",
+      "preservedAsset": "media/reveal/reveal-200-903.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-903.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "701b19806f9e791dc06ff7cb833fef075fe9df74ffd125eaf7bc221ca723c76c"
+    },
+    {
+      "id": "reveal-200-904",
+      "generatorOutputBasename": "exec-5fd97495-dd67-416a-9373-ea6ff4875422.png",
+      "preservedAsset": "media/reveal/reveal-200-904.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-904.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "eac88d640e4b69270544d6e7e0f45c328f154cc631f43a68b8f8317981d7a1c8"
+    },
+    {
+      "id": "reveal-200-905",
+      "generatorOutputBasename": "exec-3928db80-8ee1-42d1-a9a9-df1183165860.png",
+      "preservedAsset": "media/reveal/reveal-200-905.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-905.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "6f10f8c6e350aed0df875441e00a6fd5ec9768e032b2fad3c6f4ba2dcb103952"
+    },
+    {
+      "id": "reveal-200-906",
+      "generatorOutputBasename": "exec-e3707f60-bf47-4799-85ef-f892256ddc86.png",
+      "preservedAsset": "media/reveal/reveal-200-906.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-906.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "2fe97be774dd2c5650196905276d5122caf47233892385496229def08fb7347d"
+    },
+    {
+      "id": "reveal-200-907",
+      "generatorOutputBasename": "exec-c4f639b5-b7f0-4a7c-8e8c-7959bebf2c43.png",
+      "preservedAsset": "media/reveal/reveal-200-907.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-907.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "d1b04a24e1e5723391ec8d8bf6ecef46d3a38e01f392156b3ac29bc4684ae98f"
+    },
+    {
+      "id": "reveal-200-908",
+      "generatorOutputBasename": "exec-d3b1f803-62bc-4cbb-aa63-4f1d57c97e03.png",
+      "preservedAsset": "media/reveal/reveal-200-908.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-200-908.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "1a6f375e88c1a3e369368214d5a69e387517e03e20308d176eb2beaaad4f32fa"
+    },
+    {
+      "id": "reveal-400-901",
+      "generatorOutputBasename": "exec-55e9acd6-e2bf-42c1-af8a-7cd5dbec50b0.png",
+      "preservedAsset": "media/reveal/reveal-400-901.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-901.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "96154a53701b68709480bdbb6c226ba138141bdd10e22752ba33a4ddbf3849e7"
+    },
+    {
+      "id": "reveal-400-902",
+      "generatorOutputBasename": "exec-36b534ea-79c2-4d5a-813c-f13819d3a7b6.png",
+      "preservedAsset": "media/reveal/reveal-400-902.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-902.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "c407fc5b6f71b2b0ffddfee19e249bf7ef9414d87b6e33d64679e58d8baa852c"
+    },
+    {
+      "id": "reveal-400-903",
+      "generatorOutputBasename": "exec-92555d3a-ca62-422a-a489-3934c6cf3a85.png",
+      "preservedAsset": "media/reveal/reveal-400-903.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-903.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "14e65fd26e8b8e7e3e149510f11c6976abaedf1e131437a7ee4d02322ac41d7f"
+    },
+    {
+      "id": "reveal-400-904",
+      "generatorOutputBasename": "exec-070b95fd-7f7a-47a9-a945-81e4674f1011.png",
+      "preservedAsset": "media/reveal/reveal-400-904.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-904.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "8b0bd4d1d567739ea7e212c2686e824ff9730ad1563aaf0feb834ee2d3c76941"
+    },
+    {
+      "id": "reveal-400-905",
+      "generatorOutputBasename": "exec-c94cd1a7-4bd0-4cd9-8e10-add44fe070db.png",
+      "preservedAsset": "media/reveal/reveal-400-905.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-905.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "90bbd42f5bec6303bc8be25cca8b768457355939bed36e36337571132898d34d"
+    },
+    {
+      "id": "reveal-400-906",
+      "generatorOutputBasename": "exec-77d3af78-261a-4d43-b71e-fcc1f563b0dc.png",
+      "preservedAsset": "media/reveal/reveal-400-906.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-906.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "a9ba39bff872beb1779e76f9f622b14474d586828cc12277b921e96cdcf25613"
+    },
+    {
+      "id": "reveal-400-907",
+      "generatorOutputBasename": "exec-acb2c77d-054b-4273-9194-a4f41ae70bb1.png",
+      "preservedAsset": "media/reveal/reveal-400-907.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-907.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "331ec2331f4adb1d35180bf33b77f082b49d55fe5cde083c624b85e99ba803a8"
+    },
+    {
+      "id": "reveal-400-908",
+      "generatorOutputBasename": "exec-e31027b7-2296-49eb-9ca1-62c5becc0d45.png",
+      "preservedAsset": "media/reveal/reveal-400-908.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-400-908.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "cb8c5d074b4d1ad2e1142aef6eda5803cd60920a871c82c91407b8afbfe3f25d"
+    },
+    {
+      "id": "reveal-600-901",
+      "generatorOutputBasename": "exec-abff7c16-757a-4d87-b50c-8622b5d063c2.png",
+      "preservedAsset": "media/reveal/reveal-600-901.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-901.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "56b2e10413becf41c169ac2951a06e74737f2481ae1ad19630358b0161398dbe"
+    },
+    {
+      "id": "reveal-600-902",
+      "generatorOutputBasename": "exec-fa68d48e-d3f7-4d4c-9d5b-c2b7deb18d92.png",
+      "preservedAsset": "media/reveal/reveal-600-902.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-902.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "8d886b6d8850ac61c99151794f4981e843d857301dee089fe9ce7855f3f19fdf"
+    },
+    {
+      "id": "reveal-600-903",
+      "generatorOutputBasename": "exec-7e506004-1995-47b3-9a3f-25d9b6d8953a.png",
+      "preservedAsset": "media/reveal/reveal-600-903.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-903.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "813ac878e874bea68be55208202793d400cd2be62aeee7f54506dc3384901c42"
+    },
+    {
+      "id": "reveal-600-904",
+      "generatorOutputBasename": "exec-65ae0aae-19d1-47c2-99b9-00a3e72aa537.png",
+      "preservedAsset": "media/reveal/reveal-600-904.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-904.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "a4ae3fb3dd8cd5e60f1a89ca8a61f8f859e664ec490b989e10f32a0b0252a1b8"
+    },
+    {
+      "id": "reveal-600-905",
+      "generatorOutputBasename": "exec-3bd58d0b-118e-41b4-84af-eb73a941b4d8.png",
+      "preservedAsset": "media/reveal/reveal-600-905.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-905.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "b7bf4e634ff65b1b622e620fe39e6abaa65709d084eb4fe934a51863359e0f68"
+    },
+    {
+      "id": "reveal-600-906",
+      "generatorOutputBasename": "exec-0659e7db-03a0-4ee3-bb63-a643fcb1a446.png",
+      "preservedAsset": "media/reveal/reveal-600-906.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-906.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "6f6289a1aa562efcb24b2e7865f654a133b2ceb531c785d7318bcc2295606363"
+    },
+    {
+      "id": "reveal-600-907",
+      "generatorOutputBasename": "exec-b07a7d26-80d6-41f5-969a-9f57f64a262a.png",
+      "preservedAsset": "media/reveal/reveal-600-907.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-907.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "895a6a1f9a2fb4814e101ae8abcb6eb0995275eea756e40658a166b1a79e254a"
+    },
+    {
+      "id": "reveal-600-908",
+      "generatorOutputBasename": "exec-adc1d4d5-b007-4e22-95ee-1d27dda43df7.png",
+      "preservedAsset": "media/reveal/reveal-600-908.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-600-908.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "f1c198d36621dd87a8e44c51e74ff2d2bd50c346ac549bbfb26180e774bb6e31"
+    },
+    {
+      "id": "reveal-800-901",
+      "generatorOutputBasename": "exec-cf8dcc19-67e8-4231-94bb-2d18c376b076.png",
+      "preservedAsset": "media/reveal/reveal-800-901.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-901.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "d7e7fd6e7eafe94647492870b9f38f11aa1325ee10d8441cac40ec3ab2378c0e"
+    },
+    {
+      "id": "reveal-800-902",
+      "generatorOutputBasename": "exec-b0f974ec-576a-41a3-ae13-9744f09998aa.png",
+      "preservedAsset": "media/reveal/reveal-800-902.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-902.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "864e46f32a28c1d566d255930c33c94e052e41f071ddc4f87ed442a973d2adee"
+    },
+    {
+      "id": "reveal-800-903",
+      "generatorOutputBasename": "exec-09bf12a7-9c62-475a-b847-b54f6155216b.png",
+      "preservedAsset": "media/reveal/reveal-800-903.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-903.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "16ede7913b2df63cd2236000d798ae71a699356cdf43b992c58dcbc02a66a3ee"
+    },
+    {
+      "id": "reveal-800-904",
+      "generatorOutputBasename": "exec-3819b1fe-6032-4191-a3bf-d6dd72a0ffc8.png",
+      "preservedAsset": "media/reveal/reveal-800-904.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-904.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "260ccaff846bc6d6742598ee921764a34ea1f1956a6e2900cbe8d0facc75bc94"
+    },
+    {
+      "id": "reveal-800-905",
+      "generatorOutputBasename": "exec-424739ab-48ea-4d4b-8ae0-fe6e36e038f2.png",
+      "preservedAsset": "media/reveal/reveal-800-905.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-905.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "ab4fb3936ba8c5b36122863e00a6eb7a02f0c6938edafb2f5cbf1edf202e5d21"
+    },
+    {
+      "id": "reveal-800-906",
+      "generatorOutputBasename": "exec-ef01a3c1-ad39-4994-9964-4c62694d4c51.png",
+      "preservedAsset": "media/reveal/reveal-800-906.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-906.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "7d1ddc720ef17dd2006dc08248749cc3fffc6a2bdfe2770ac55ca739e0f1963b"
+    },
+    {
+      "id": "reveal-800-907",
+      "generatorOutputBasename": "exec-d71cd57a-e2e7-4fee-876b-ef22126648ee.png",
+      "preservedAsset": "media/reveal/reveal-800-907.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-907.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "e68134b9dbb7e1e4ca0bf92b4e18c4ec4508fbe87800ea15013eeeb6f6183710"
+    },
+    {
+      "id": "reveal-800-908",
+      "generatorOutputBasename": "exec-740a0ab0-be7f-4c15-9694-f5a12302f977.png",
+      "preservedAsset": "media/reveal/reveal-800-908.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-800-908.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "745431b4afbdc07de2476b8ee601f76fda7db0806ce18d1cb35d4e5b947024b6"
+    },
+    {
+      "id": "reveal-1000-901",
+      "generatorOutputBasename": "exec-bf8d1008-f357-4fc9-a638-a866125ec9af.png",
+      "preservedAsset": "media/reveal/reveal-1000-901.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-901.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "f19ff99ff99e2fc885112d47de9a24275c7cf5f68f77953c9d76587ad11ea91f"
+    },
+    {
+      "id": "reveal-1000-902",
+      "generatorOutputBasename": "exec-dc81ccfc-d22e-4c10-949f-40334faec762.png",
+      "preservedAsset": "media/reveal/reveal-1000-902.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-902.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "e3a0d9aea8fbb64ba84f8700cbb64f2216df177306f8c54dfb4f0711cbefee3c"
+    },
+    {
+      "id": "reveal-1000-903",
+      "generatorOutputBasename": "exec-f0c82fb9-23de-448d-a2ac-5ac24a6625b9.png",
+      "preservedAsset": "media/reveal/reveal-1000-903.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-903.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "7433613b2fc7424449470ae2e04a9d97150335fddf4518679d6f8654aee09191"
+    },
+    {
+      "id": "reveal-1000-904",
+      "generatorOutputBasename": "exec-039dc218-3ad7-478f-b1c3-fb2b3ee2b6f2.png",
+      "preservedAsset": "media/reveal/reveal-1000-904.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-904.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "9480b09def36a07c8b6d24c85532b9ec2e99bc8b73b0efe3504e0414000f3e1e"
+    },
+    {
+      "id": "reveal-1000-905",
+      "generatorOutputBasename": "exec-38283dda-9b27-41b9-af3e-a877fb76570d.png",
+      "preservedAsset": "media/reveal/reveal-1000-905.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-905.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "d49fea652ac1a3529ac3b7e1b440c5d3c89026773f131cff841e7d5f2a734adb"
+    },
+    {
+      "id": "reveal-1000-906",
+      "generatorOutputBasename": "exec-ef7fb15c-c25e-4948-aaaa-942f28b540d7.png",
+      "preservedAsset": "media/reveal/reveal-1000-906.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-906.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "8c3903275a34721cf35f8ab7c354231d14cba53ff38f48706ceef560cf705a92"
+    },
+    {
+      "id": "reveal-1000-907",
+      "generatorOutputBasename": "exec-58c94acb-7ccf-4277-b16a-835d316e48ca.png",
+      "preservedAsset": "media/reveal/reveal-1000-907.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-907.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "792e27dbcbee41dc0eb58632af074592a5e1507ca38ec2be9f06951dda2ffc53"
+    },
+    {
+      "id": "reveal-1000-908",
+      "generatorOutputBasename": "exec-1d451237-6b30-4336-ad39-b2bb0413296b.png",
+      "preservedAsset": "media/reveal/reveal-1000-908.webp",
+      "record": "docs/bank/rebuild-2026-09-18/generated-records/reveal-1000-908.json",
+      "status": "installed_source_visual_gameplay_reviewed",
+      "sha256": "792c4dd11fde70de8edee02187fbd1b4e1d9cc436fef07bf70c02c9c950df075"
+    }
+  ]
+}

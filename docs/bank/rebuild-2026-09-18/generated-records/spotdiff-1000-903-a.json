@@ -1,0 +1,27 @@
+{
+  "id": "spotdiff-1000-903-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-1000-903-a.webp",
+  "asset": "media/spotdiff/spotdiff-1000-903-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Close realistic macro of one red ladybug resting on large green leaf, ladybug centered x=60 y=51 and width 34 percent image, viewed from above. Exactly FOUR round black spots on red wing covers, two on each side symmetrically. Lower IMAGE-RIGHT spot center x=68 y=59, diameter 5 percent image width. Black head, six legs, distinct central seam, natural blurred green background. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 212902,
+  "sha256": "5ad583c11e4abd382380bb9db24a903f910e344980aca45ef07efa77fb640445",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "The lower image-right black wing spot on the ladybug disappears. The other three black spots remain, as do the wing seam, black head, six legs and leaf position.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "rawGeneratedImageSha256": "01dce5406f230d51d7362826c0cccbf87e0c604a6e3bb72c08048b0ba4d59e14"
+}

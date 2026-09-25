@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-600-904",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 600,
+  "a": "بوابة براندنبورغ",
+  "alt": [
+    "بوابة براندنبورج",
+    "براندنبورغ",
+    "Brandenburg Gate"
+  ],
+  "topic": "أوروبا الوسطى والشمالية",
+  "q": "ما اسم هذه البوابة ذات العربة البرونزية في برلين؟",
+  "sourceUrl": "https://www.visitberlin.de/en/brandenburg-gate",
+  "sourceEvidence": "Opened 2026-09-25: official Berlin tourism identifies two rows of six Doric columns and crowning Quadriga.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Brandenburg Gate in Berlin, frontal view from Pariser Platz: pale sandstone neoclassical gate with SIX front Doric columns creating FIVE passages, flat heavy entablature and attic, bronze-green Quadriga at center top with four horses pulling a chariot and standing figure. Low colonnaded guardhouses left and right. Whole monument including bronze top and feet, quiet paved plaza. No triumphal arch, no domes.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Six front columns, five passages and four-horse bronze Quadriga above attic; whole gate visible.",
+  "runtimeReviewStatus": "approved"
+}

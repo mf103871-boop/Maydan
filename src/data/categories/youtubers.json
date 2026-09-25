@@ -5,2969 +5,575 @@
   "qs": [
     {
       "p": 200,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم المقاطع العمودية القصيرة داخل تطبيق يوتيوب؟",
+      "q": "ما اللقب الذي اشتهر به حسن سليمان في مقاطع الألعاب والبث الخيري؟",
+      "a": "أبو فلة",
+      "alt": [
+        "أبوفلة",
+        "أبو فله",
+        "AboFlah"
+      ],
+      "topic": "صنّاع عرب",
+      "verified": true,
+      "sourceUrl": "https://www.guinnessworldrecords.com/news/2022/1/youtuber-aboflahs-268-hour-livestream-breaks-two-world-records-689421",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-901"
+    },
+    {
+      "p": 200,
+      "q": "من صانع المحتوى المصري الذي يقدم برنامج تبسيط العلوم «الدحيح»؟",
+      "a": "أحمد الغندور",
+      "alt": [
+        "أحمد غندور"
+      ],
+      "topic": "علوم وتعليم",
+      "verified": true,
+      "sourceUrl": "https://course.nma.ae/",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-902"
+    },
+    {
+      "p": 200,
+      "q": "ما المجال الرئيسي لمقاطع قناة MKBHD ومراجعاتها؟",
+      "a": "التقنية",
+      "alt": [
+        "التكنولوجيا",
+        "مراجعة الأجهزة",
+        "الأجهزة التقنية"
+      ],
+      "topic": "تقنية",
+      "verified": true,
+      "sourceUrl": "https://www.mkb-hd.com/",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-903"
+    },
+    {
+      "p": 200,
+      "q": "في أي بلد أوروبي وُلد صانع محتوى الألعاب بيوديباي؟",
+      "a": "السويد",
+      "alt": [
+        "Sweden"
+      ],
+      "topic": "ألعاب",
+      "verified": true,
+      "sourceUrl": "https://www.youtube.com/watch?v=yAy5nX6VXXo",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-904"
+    },
+    {
+      "p": 200,
+      "q": "ما الاسم الذي اشتهر به صانع التحديات جيمي دونالدسون؟",
+      "a": "مستر بيست",
+      "alt": [
+        "مستربيست",
+        "MrBeast"
+      ],
+      "topic": "تحديات ومبادرات",
+      "verified": true,
+      "sourceUrl": "https://blog.youtube/creator-and-artist-stories/mrbeast-500-million-youtube-subscribers/",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-905"
+    },
+    {
+      "p": 200,
+      "q": "ما لقب الشيف الفلسطيني محمد اسبيتة المعروف بوصفات الطبخ على الإنترنت؟",
+      "a": "أبو جوليا",
+      "alt": [
+        "ابو جوليا",
+        "Abu Julia"
+      ],
+      "topic": "طبخ ومهارات",
+      "verified": true,
+      "sourceUrl": "https://www.aljazeera.net/lifestyle/2021/11/19/ابو-جوليا",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-906"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم قسم الفيديوهات العمودية القصيرة في يوتيوب؟",
       "a": "شورتس",
       "alt": [
         "Shorts",
+        "YouTube Shorts",
         "يوتيوب شورتس"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube",
+      "topic": "منصات وأدوات",
       "verified": true,
-      "qid": "youtubers-200-001"
+      "sourceUrl": "https://blog.youtube/news-and-events/building-youtube-shorts/",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-907"
     },
     {
       "p": 200,
-      "topic": "منصات ومصطلحات",
-      "q": "ما المنصة الصينية الأصل التي اشتهرت عالميًا بمقاطع الرقص القصيرة؟",
-      "a": "تيك توك",
+      "q": "أي مسلسل كوري استُلهمت منه تحديات فيديو واقعي بجائزة 456 ألف دولار؟",
+      "a": "لعبة الحبار",
       "alt": [
-        "TikTok",
-        "تيكتوك"
+        "Squid Game",
+        "سكويد غيم",
+        "سكويد جيم"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/TikTok",
+      "topic": "مشاريع وبرامج",
       "verified": true,
-      "qid": "youtubers-200-002"
+      "sourceUrl": "https://blog.youtube/creator-and-artist-stories/mrbeast-500-million-youtube-subscribers/",
+      "difficultyTarget": 0.8,
+      "qid": "youtubers-200-908"
     },
     {
-      "p": 200,
-      "topic": "منصات ومصطلحات",
-      "q": "ما منصة بث الألعاب المباشر التي اشترتها أمازون عام 2014؟",
-      "a": "تويتش",
+      "p": 400,
+      "q": "من المحاور الإماراتي الذي أطلق سلسلة المقابلات «ABtalks»؟",
+      "a": "أنس بوخش",
       "alt": [
-        "Twitch"
+        "انس بوخش",
+        "Anas Bukhash"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Twitch_(service)",
+      "topic": "صنّاع عرب",
       "verified": true,
-      "qid": "youtubers-200-003"
+      "sourceUrl": "https://www.abtalks.ae/",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-901"
     },
     {
-      "p": 200,
-      "topic": "منصات ومصطلحات",
-      "q": "أي درع يمنحه يوتيوب لقناة بلغت عشرة ملايين مشترك؟",
-      "a": "الدرع الماسي",
+      "p": 400,
+      "q": "من صانع المحتوى الذي أسس قناة «فيريتاسيوم» العلمية؟",
+      "a": "ديريك مولر",
       "alt": [
-        "ماسي",
-        "الألماسي",
-        "دايموند"
+        "Derek Muller",
+        "ديريك ميلر"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube_Creator_Awards",
+      "topic": "علوم وتعليم",
       "verified": true,
-      "qid": "youtubers-200-004"
+      "sourceUrl": "https://www.veritasium.com/about",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-902"
     },
     {
-      "p": 200,
-      "topic": "منصات ومصطلحات",
-      "q": "في أي مدينة أمريكية صُوّر أول مقطع رُفع على يوتيوب؟",
-      "a": "سان دييغو",
+      "p": 400,
+      "q": "ما اسم قناة مراجعة الحواسيب الرئيسية التي اشتهر بها لينوس سيباستيان؟",
+      "a": "لينوس تيك تيبس",
       "alt": [
-        "San Diego",
-        "سان دييجو"
+        "Linus Tech Tips",
+        "LTT"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Me_at_the_zoo",
+      "topic": "تقنية",
       "verified": true,
-      "qid": "youtubers-200-005"
+      "sourceUrl": "https://linusmediagroup.com/",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-903"
     },
     {
-      "p": 200,
-      "topic": "منصات ومصطلحات",
-      "q": "ما تطبيق المونتاج على الهاتف الذي طوّرته شركة بايت دانس؟",
-      "a": "كاب كت",
-      "alt": [
-        "CapCut",
-        "كاب كات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/CapCut",
-      "verified": true,
-      "qid": "youtubers-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "منصات ومصطلحات",
-      "q": "ما تطبيق مشاركة الصور الذي تملكه ميتا وشعاره كاميرا ملوّنة؟",
-      "a": "إنستغرام",
-      "alt": [
-        "Instagram",
-        "إنستقرام",
-        "انستجرام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Instagram",
-      "verified": true,
-      "qid": "youtubers-200-007"
-    },
-    {
-      "p": 200,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة المكعبات التي ابتكرها السويدي ماركوس بيرسون؟",
+      "p": 400,
+      "q": "في أي لعبة تدور تحديات المطاردة الشهيرة التي يصورها اليوتيوبر دريم؟",
       "a": "ماينكرافت",
       "alt": [
         "Minecraft",
         "ماين كرافت"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Minecraft",
+      "topic": "ألعاب",
       "verified": true,
-      "qid": "youtubers-200-008"
+      "sourceUrl": "https://www.youtube.com/watch?v=tylNqtyj0gs",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-904"
     },
     {
-      "p": 200,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة الباتل رويال التي أطلقتها شركة إبيك غيمز؟",
-      "a": "فورتنايت",
-      "alt": [
-        "Fortnite",
-        "فورت نايت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fortnite",
-      "verified": true,
-      "qid": "youtubers-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "ألعاب وبث",
-      "q": "ما اللعبة التي يبحث فيها طاقم سفينة فضاء عن خائن بينهم؟",
-      "a": "أمونغ أس",
-      "alt": [
-        "Among Us",
-        "أمونق أس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Among_Us",
-      "verified": true,
-      "qid": "youtubers-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "ألعاب وبث",
-      "q": "ما المنصة التي يصنع فيها اللاعبون ألعابهم بشخصيات مكعّبة الأطراف؟",
-      "a": "روبلوكس",
-      "alt": [
-        "Roblox"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Roblox",
-      "verified": true,
-      "qid": "youtubers-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "ألعاب وبث",
-      "q": "ما اسم جهاز الألعاب المنزلي الذي تصنعه شركة سوني؟",
-      "a": "بلايستيشن",
-      "alt": [
-        "PlayStation",
-        "بلاي ستيشن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PlayStation",
-      "verified": true,
-      "qid": "youtubers-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "ألعاب وبث",
-      "q": "ما الشركة اليابانية التي تصنع جهاز سويتش وشخصية ماريو؟",
-      "a": "نينتندو",
-      "alt": [
-        "Nintendo"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nintendo",
-      "verified": true,
-      "qid": "youtubers-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "ألعاب وبث",
-      "q": "ما سلسلة ألعاب السيارات والعصابات التي تصنعها روكستار غيمز؟",
-      "a": "جي تي أي",
-      "alt": [
-        "GTA",
-        "جراند ثفت أوتو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Grand_Theft_Auto",
-      "verified": true,
-      "qid": "youtubers-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "قنوات معرفية",
-      "q": "ما اسم برنامج أحمد الغندور الذي يبسّط العلوم بلهجة مصرية؟",
-      "a": "الدحيح",
-      "alt": [
-        "برنامج الدحيح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_الغندور_(صانع_محتوى)",
-      "verified": true,
-      "qid": "youtubers-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "قنوات معرفية",
-      "q": "ما قناة الطبخ التي أطلقتها شبكة بازفيد وتُصوَّر وصفاتها من أعلى؟",
-      "a": "تايستي",
-      "alt": [
-        "Tasty",
-        "تاستي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tasty_(brand)",
-      "verified": true,
-      "qid": "youtubers-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة الوثائقية الشهيرة صاحبة شعار الإطار الأصفر؟",
-      "a": "ناشيونال جيوغرافيك",
-      "alt": [
-        "National Geographic",
-        "ناشونال جيوغرافيك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/National_Geographic",
-      "verified": true,
-      "qid": "youtubers-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "قنوات معرفية",
-      "q": "من مهندس ناسا السابق الذي صنع قنبلة اللمعان لصيد سارقي الطرود؟",
-      "a": "مارك روبر",
-      "alt": [
-        "Mark Rober"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Rober",
-      "verified": true,
-      "qid": "youtubers-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "قنوات معرفية",
-      "q": "ما المنصة التعليمية المجانية التي أسّسها سلمان خان؟",
-      "a": "خان أكاديمي",
-      "alt": [
-        "Khan Academy",
-        "أكاديمية خان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khan_Academy",
-      "verified": true,
-      "qid": "youtubers-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "قنوات معرفية",
-      "q": "من الطاهي البريطاني الذي صارت مقاطع غضبه على الطعام مادة للسخرية؟",
-      "a": "غوردون رامزي",
-      "alt": [
-        "Gordon Ramsay",
-        "جوردون رامزي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Gordon_Ramsay",
-      "verified": true,
-      "qid": "youtubers-200-020"
-    },
-    {
-      "p": 200,
-      "topic": "تحديات وبرامج",
-      "q": "ما الحملة التي انتشرت بصبّ ماء مثلج على الرأس لدعم مرضى التصلب؟",
-      "a": "تحدي الدلو المثلج",
-      "alt": [
-        "الدلو المثلج",
-        "آيس باكيت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ice_Bucket_Challenge",
-      "verified": true,
-      "qid": "youtubers-200-021"
-    },
-    {
-      "p": 200,
-      "topic": "تحديات وبرامج",
-      "q": "ما المسلسل الكوري الذي أعاد صانع تحديات أمريكي تمثيل ألعابه بجوائز حقيقية؟",
-      "a": "لعبة الحبار",
-      "alt": [
-        "سكويد غيم",
-        "Squid Game"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Squid_Game",
-      "verified": true,
-      "qid": "youtubers-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم البث الكوري الأصل الذي يأكل فيه المقدّم كميات كبيرة أمام الكاميرا؟",
-      "a": "موكبانغ",
-      "alt": [
-        "Mukbang",
-        "موكبانج"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mukbang",
-      "verified": true,
-      "qid": "youtubers-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم مشروب الطاقة الذي أطلقه ملاكمان من صنّاع المحتوى بعد نزالين بينهما؟",
-      "a": "برايم",
-      "alt": [
-        "Prime",
-        "برايم هايدريشن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Prime_(drink)",
-      "verified": true,
-      "qid": "youtubers-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم حملة البث الخيري التي جمع بها صانع محتوى كويتي تبرعات للاجئين؟",
-      "a": "لنجعل شتاءهم أدفأ",
-      "alt": [
-        "شتاءهم أدفأ"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
-      "verified": true,
-      "qid": "youtubers-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم الحملة التي جمعت تبرعات لزرع عشرين مليون شجرة بقيادة صنّاع محتوى؟",
+      "p": 400,
+      "q": "ما اسم حملة صناع المحتوى التي انطلقت بهدف زراعة عشرين مليون شجرة؟",
       "a": "تيم تريز",
       "alt": [
+        "TeamTrees",
         "Team Trees",
         "فريق الأشجار"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Team_Trees",
+      "topic": "تحديات ومبادرات",
       "verified": true,
-      "qid": "youtubers-200-026"
+      "sourceUrl": "https://teamtrees.org/?q=RM1380",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-905"
     },
     {
-      "p": 200,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد صانع المحتوى المعروف بلقب أبو فلة؟",
-      "a": "الكويت",
+      "p": 400,
+      "q": "في أي دولة آسيوية اتخذ الرحالة الغذائي مارك وينز مدينة بانكوك مقرًا له؟",
+      "a": "تايلاند",
       "alt": [
-        "كويتي"
+        "Thailand"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
+      "topic": "طبخ ومهارات",
       "verified": true,
-      "qid": "youtubers-200-027"
+      "sourceUrl": "https://www.eatingthaifood.com/about/",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-906"
     },
     {
-      "p": 200,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد صانع المحتوى التقني أمين رغيب؟",
-      "a": "المغرب",
+      "p": 400,
+      "q": "أي درع يوتيوب يرتبط ببلوغ القناة عشرة ملايين مشترك مع استيفاء شروط الأهلية؟",
+      "a": "الدرع الماسي",
       "alt": [
-        "مغربي"
+        "الماسي",
+        "Diamond",
+        "الدرع الألماسي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أمين_رغيب",
+      "topic": "منصات وأدوات",
       "verified": true,
-      "qid": "youtubers-200-028"
+      "sourceUrl": "https://support.google.com/youtube/answer/7682560?hl=en",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-907"
     },
     {
-      "p": 200,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد صانع المحتوى المعروف ببيوديباي؟",
-      "a": "السويد",
+      "p": 400,
+      "q": "ما علامة الشوكولاتة التي أطلقها اليوتيوبر جيمي دونالدسون؟",
+      "a": "فيستابلز",
       "alt": [
-        "سويدي"
+        "Feastables",
+        "فيستبلز"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie",
+      "topic": "مشاريع وبرامج",
       "verified": true,
-      "qid": "youtubers-200-029"
+      "sourceUrl": "https://www.prnewswire.com/news-releases/mrbeast-launches-better-for-you-snacking-brand-feastables-301471133.html",
+      "difficultyTarget": 0.6,
+      "qid": "youtubers-400-908"
     },
     {
-      "p": 200,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد صانع المحتوى المعروف بجاكسيبتك آي؟",
-      "a": "إيرلندا",
+      "p": 600,
+      "q": "من المحلل الكروي الذي شارك عبد الله الغافري في برنامج «تحدي المعلومات»؟",
+      "a": "محمد عدنان",
       "alt": [
-        "أيرلندا"
+        "Mohamad Adnan"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jacksepticeye",
+      "topic": "صنّاع عرب",
       "verified": true,
-      "qid": "youtubers-200-030"
+      "sourceUrl": "https://etbilarabi.com/ميكس/محمد-عدنان-وعبدالله-الغافري-ينفذان-تحدي-المعلومات-أمام-et-بالعربي?sort_by=created",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-901"
     },
     {
-      "p": 200,
-      "topic": "بلدان وجذور",
-      "q": "في أي بلد أفريقي وُلد نجم المقاطع الصامتة الذي نشأ قرب مدينة تورينو؟",
-      "a": "السنغال",
+      "p": 600,
+      "q": "ما اسم القناة العلمية الألمانية الذي يعني «باختصار» وتشتهر بالرسوم المتحركة؟",
+      "a": "كورتسغيزاغت",
       "alt": [
-        "سنغالي"
+        "Kurzgesagt",
+        "كورزغزاغت",
+        "In a Nutshell"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khaby_Lame",
+      "topic": "علوم وتعليم",
       "verified": true,
-      "qid": "youtubers-200-031"
+      "sourceUrl": "https://www.linkedin.com/company/in-a-nutshell-kurzgesagt-gmbh/",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-902"
     },
     {
-      "p": 200,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد فرقة أناشيد الأطفال «طيور الجنة»؟",
-      "a": "الأردن",
+      "p": 600,
+      "q": "ما الاسم الحقيقي لصانع مراجعات الأجهزة المعروف بلقب Mrwhosetheboss؟",
+      "a": "أرون مايني",
       "alt": [
-        "أردني"
+        "Arun Maini",
+        "أرون ميني",
+        "آرون مايني"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طيور_الجنة_(قناة)",
+      "topic": "تقنية",
       "verified": true,
-      "qid": "youtubers-200-032"
+      "sourceUrl": "https://www.guinnessworldrecords.com/news/2024/9/tech-youtuber-mrwhosetheboss-builds-worlds-largest-scaled-up-iphone-to-break-record",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-903"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى الأمريكي الذي اشتهر بتحديات ضخمة وجوائز مالية هائلة؟",
-      "a": "مستر بيست",
+      "p": 600,
+      "q": "من اليوتيوبر الذي كان معروفًا باسم «The Diamond Minecart»؟",
+      "a": "دان تي دي إم",
       "alt": [
-        "MrBeast",
-        "مسر بيست"
+        "DanTDM",
+        "دان تي دي ام",
+        "دانيال ميدلتون"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/MrBeast",
+      "topic": "ألعاب",
       "verified": true,
-      "qid": "youtubers-200-033"
+      "sourceUrl": "https://play.google.com/store/books/details?id=FRcZDAAAQBAJ",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-904"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عالميون",
-      "q": "ما اسم المجموعة البريطانية السباعية التي تنشر مقطعها الجماعي كل أحد؟",
-      "a": "سيدمن",
+      "p": 600,
+      "q": "ما المؤسسة التي تلقت تبرعات حملة اليوتيوبرز لزراعة عشرين مليون شجرة؟",
+      "a": "مؤسسة يوم الشجرة",
+      "alt": [
+        "Arbor Day Foundation",
+        "مؤسسة أربور داي"
+      ],
+      "topic": "تحديات ومبادرات",
+      "verified": true,
+      "sourceUrl": "https://teamtrees.org/?q=RM1380",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-905"
+    },
+    {
+      "p": 600,
+      "q": "من صاحب برنامج الطبخ «Binging with Babish» المستوحى من أطباق الأفلام والمسلسلات؟",
+      "a": "أندرو ريا",
+      "alt": [
+        "Andrew Rea",
+        "أندرو ري"
+      ],
+      "topic": "طبخ ومهارات",
+      "verified": true,
+      "sourceUrl": "https://www.eater.com/press-room/962747/andrew-rea-babish-in-the-booth-with-babish-podcast",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-906"
+    },
+    {
+      "p": 600,
+      "q": "ما عنوان أول فيديو نُشر على يوتيوب، وظهر فيه شاب أمام الفيلة؟",
+      "a": "أنا في حديقة الحيوان",
+      "alt": [
+        "Me at the zoo",
+        "أنا في حديقة الحيوانات"
+      ],
+      "topic": "منصات وأدوات",
+      "verified": true,
+      "sourceUrl": "https://blog.youtube/news-and-events/va-museum-youtube-first-video/",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-907"
+    },
+    {
+      "p": 600,
+      "q": "ما شركة صناديق التجارب الهندسية التي أسسها مارك روبر؟",
+      "a": "كرانش لابز",
+      "alt": [
+        "CrunchLabs",
+        "كرانشلابز",
+        "كرنش لابز"
+      ],
+      "topic": "مشاريع وبرامج",
+      "verified": true,
+      "sourceUrl": "https://www.crunchlabs.com/pages/affiliates",
+      "difficultyTarget": 0.4,
+      "qid": "youtubers-600-908"
+    },
+    {
+      "p": 800,
+      "q": "من المحاور السعودي الذي يقدم بودكاست «فنجان»؟",
+      "a": "عبد الرحمن أبو مالح",
+      "alt": [
+        "عبدالرحمن أبو مالح",
+        "عبدالرحمن أبومالح"
+      ],
+      "topic": "صنّاع عرب",
+      "verified": true,
+      "sourceUrl": "https://company.thmanyah.com/in-media/تفاعلكم-السعودي-عبد-الرحمن-أبو-مالح-يح",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-901"
+    },
+    {
+      "p": 800,
+      "q": "ما قناة غرانت ساندرسون المعروفة بشرح الرياضيات بالرسوم المتحركة؟",
+      "a": "ثري بلو ون براون",
+      "alt": [
+        "3Blue1Brown",
+        "ثري بلو وان براون"
+      ],
+      "topic": "علوم وتعليم",
+      "verified": true,
+      "sourceUrl": "https://www.3blue1brown.com/about/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-902"
+    },
+    {
+      "p": 800,
+      "q": "ما القناة التي يقدمها زاك نيلسون لاختبارات الأجهزة وإصلاحها؟",
+      "a": "جيري ريغ إيفريثينغ",
+      "alt": [
+        "JerryRigEverything",
+        "جيري ريج إيفريثينج"
+      ],
+      "topic": "تقنية",
+      "verified": true,
+      "sourceUrl": "https://jerryrigeverything.com/about/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-903"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم مجموعة اليوتيوبرز البريطانية التي تضم KSI وMiniminter وخمسة أصدقاء آخرين؟",
+      "a": "سايدمن",
       "alt": [
         "Sidemen",
-        "السيدمن"
+        "سيدمن"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sidemen",
+      "topic": "ألعاب",
       "verified": true,
-      "qid": "youtubers-200-034"
+      "sourceUrl": "https://www.sidemen.com/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-904"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عالميون",
-      "q": "ما اسم الفريق الأمريكي الخماسي المتخصص في التسديدات المستحيلة؟",
-      "a": "دود بيرفكت",
+      "p": 800,
+      "q": "ما المنظمة التي تستخدم جهاز «Interceptor» لتنظيف الأنهار ضمن مبادرة TeamSeas؟",
+      "a": "ذا أوشن كلين أب",
       "alt": [
-        "Dude Perfect",
-        "دود برفكت"
+        "The Ocean Cleanup",
+        "أوشن كلين أب",
+        "تنظيف المحيط"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dude_Perfect",
+      "topic": "تحديات ومبادرات",
       "verified": true,
-      "qid": "youtubers-200-035"
+      "sourceUrl": "https://theoceancleanup.com/teamseas/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-905"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى البريطاني الذي جمع بين المقاطع والملاكمة وغناء الراب؟",
-      "a": "كي إس آي",
+      "p": 800,
+      "q": "ما قناة جون بلانت التي يستعرض فيها صنع أدوات ومبانٍ بمواد طبيعية؟",
+      "a": "بريمتيف تكنولوجي",
       "alt": [
-        "KSI",
-        "كيه إس آي"
+        "Primitive Technology",
+        "بريميتيف تكنولوجي",
+        "التكنولوجيا البدائية"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/KSI",
+      "topic": "طبخ ومهارات",
       "verified": true,
-      "qid": "youtubers-200-036"
+      "sourceUrl": "https://www.penguinrandomhouse.com/books/600727/primitive-technology-by-john-plant/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-906"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى الأمريكي الذي اشتهر بردّات فعله الصاخبة على ألعاب الرعب؟",
-      "a": "ماركبلاير",
+      "p": 800,
+      "q": "في أي شركة للدفع الإلكتروني عمل مؤسسو يوتيوب قبل إطلاق المنصة؟",
+      "a": "باي بال",
       "alt": [
-        "Markiplier",
-        "ماركيبلاير"
+        "PayPal",
+        "بايبال"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Markiplier",
+      "topic": "منصات وأدوات",
       "verified": true,
-      "qid": "youtubers-200-037"
+      "sourceUrl": "https://youtube.googleblog.com/2005/11/",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-907"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى الإيطالي الذي يسخر صامتًا من الحيل المنزلية المعقّدة؟",
-      "a": "خبي لامي",
+      "p": 800,
+      "q": "ما اسم البرنامج اليومي على يوتيوب الذي يقدمه ريت ولينك؟",
+      "a": "غود ميثيكال مورنينغ",
       "alt": [
-        "Khaby Lame",
-        "خابي لامي"
+        "Good Mythical Morning",
+        "GMM",
+        "جود ميثيكال مورنينج"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khaby_Lame",
+      "topic": "مشاريع وبرامج",
       "verified": true,
-      "qid": "youtubers-200-038"
+      "sourceUrl": "https://mythical.com/pages/about-us",
+      "difficultyTarget": 0.25,
+      "qid": "youtubers-800-908"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عالميون",
-      "q": "من لاعب البث الأمريكي الذي يصرخ متحمّسًا لكريستيانو رونالدو في بثوثه؟",
-      "a": "آي شو سبيد",
+      "p": 1000,
+      "q": "ما الاسم الحقيقي لمعلم البرمجة وصانع المحتوى المصري المعروف بلقب «الزيرو»؟",
+      "a": "أسامة محمد",
       "alt": [
-        "IShowSpeed",
-        "اي شو سبيد"
+        "Osama Mohamed",
+        "أسامة محمد السيد"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/IShowSpeed",
-      "verified": true,
-      "qid": "youtubers-200-039"
-    },
-    {
-      "p": 200,
       "topic": "صنّاع عرب",
-      "q": "ما الاسم الحقيقي لصاحب قناة أبو فلة؟",
-      "a": "حسن سليمان",
-      "alt": [
-        "حسن سليمان أحمد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
       "verified": true,
-      "qid": "youtubers-200-040"
+      "sourceUrl": "https://elzero.org/author/elzero/",
+      "difficultyTarget": 0.15,
+      "qid": "youtubers-1000-901"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عرب",
-      "q": "ما الاسم الحقيقي لصانع محتوى الألعاب بندريتا؟",
-      "a": "بندر مدخلي",
+      "p": 1000,
+      "q": "ما قناة كيمياء يوتيوب التي يشارك فيها البروفيسور مارتن بولياكوف من جامعة نوتنغهام؟",
+      "a": "بيريوديك فيديوز",
       "alt": [
-        "بندر المدخلي"
+        "Periodic Videos",
+        "The Periodic Table of Videos",
+        "فيديوهات الجدول الدوري"
       ],
-      "sourceUrl": "https://jazanfigures.com/?p=9953",
+      "topic": "علوم وتعليم",
       "verified": true,
-      "qid": "youtubers-200-041"
+      "sourceUrl": "https://www.periodicvideos.com/about.htm",
+      "difficultyTarget": 0.15,
+      "qid": "youtubers-1000-902"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عرب",
-      "q": "ما اسم القناة التقنية التي أسّسها المغربي أمين رغيب؟",
-      "a": "المحترف",
+      "p": 1000,
+      "q": "ما الرياضة التي مارسها ماركيز براونلي تنافسيًا إلى جانب صناعة الفيديو؟",
+      "a": "ألتميت فريسبي",
       "alt": [
-        "المحترف TV"
+        "Ultimate",
+        "Ultimate Frisbee",
+        "الألتميت",
+        "الفريسبي"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أمين_رغيب",
+      "topic": "تقنية",
       "verified": true,
-      "qid": "youtubers-200-042"
+      "sourceUrl": "https://usaultimate.org/team-usa/world-games-players/marques-brownlee/",
+      "difficultyTarget": 0.15,
+      "qid": "youtubers-1000-903"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عرب",
-      "q": "من الأب صاحب قناة التدوين العائلي السعودية التي انطلقت عام 2010 بأبنائه؟",
-      "a": "محمد مشيع الغامدي",
+      "p": 1000,
+      "q": "ما الاسم الحقيقي لصانع محتوى الألعاب المعروف بلقب جاكسيبتيك آي؟",
+      "a": "شون ماكلوغلين",
       "alt": [
-        "محمد الغامدي",
-        "محمد مشيع"
+        "Seán McLoughlin",
+        "Sean McLoughlin",
+        "شون ماكلولين"
       ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_مشيع_الغامدي",
+      "topic": "ألعاب",
       "verified": true,
-      "qid": "youtubers-200-043"
+      "sourceUrl": "https://causes.tiltify.com/case-studies/thankmas-youtube-fundraiser-with-jacksepticeye/",
+      "difficultyTarget": 0.15,
+      "qid": "youtubers-1000-904"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عرب",
-      "q": "ما اسم قناة صانعة المحتوى العراقية نور نعيم؟",
-      "a": "نور ستارز",
+      "p": 1000,
+      "q": "ما المركبة المريخية التي عمل عليها مارك روبر قبل شهرته بمقاطع التجارب؟",
+      "a": "كيوريوسيتي",
       "alt": [
-        "Noor Stars"
+        "Curiosity",
+        "كيوريوستي"
       ],
-      "sourceUrl": "https://www.arabnews.com/node/2027151/noor-stars-123-million-followers",
+      "topic": "تحديات ومبادرات",
       "verified": true,
-      "qid": "youtubers-200-044"
+      "sourceUrl": "https://www.crunchlabs.com/",
+      "difficultyTarget": 0.15,
+      "qid": "youtubers-1000-905"
     },
     {
-      "p": 200,
-      "topic": "صنّاع عرب",
-      "q": "ما اسم القناة العائلية التي يقدّمها السوري أنس مروة وزوجته؟",
-      "a": "أنس وأصالة",
+      "p": 1000,
+      "q": "ما عنوان كتاب بابيش لوصفات الأفلام الذي نُشر عام 2017؟",
+      "a": "إيت وات يو ووتش",
       "alt": [
-        "Anasala",
-        "أنسالة"
+        "Eat What You Watch",
+        "كل ما تشاهده"
       ],
-      "sourceUrl": "https://www.arageek.com/bio/أنس-مروة",
+      "topic": "طبخ ومهارات",
       "verified": true,
-      "qid": "youtubers-200-045"
+      "sourceUrl": "https://books.apple.com/gb/book/eat-what-you-watch/id1291868806",
+      "difficultyTarget": 0.15,
+      "qid": "youtubers-1000-906"
     },
     {
-      "p": 200,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم شخصية الفراولة في فرقة الأطفال «فوزي موزي»؟",
-      "a": "توتي",
-      "alt": [
-        "Tooti"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوزي_موزي",
-      "verified": true,
-      "qid": "youtubers-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم تحية القبضة التي يختم بها بيوديباي مقاطعه؟",
-      "a": "بروفيست",
-      "alt": [
-        "Brofist",
-        "برو فيست"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie",
-      "verified": true,
-      "qid": "youtubers-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم قناة الطفل رايان كاجي التي يراجع فيها الألعاب؟",
-      "a": "عالم رايان",
-      "alt": [
-        "Ryan's World",
-        "رايانز وورلد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ryan_Kaji",
-      "verified": true,
-      "qid": "youtubers-200-048"
-    },
-    {
-      "p": 400,
-      "topic": "منصات ومصطلحات",
-      "q": "ما الشركة التي اشترت يوتيوب عام 2006 مقابل مليار وستمئة مليون دولار؟",
-      "a": "غوغل",
-      "alt": [
-        "Google",
-        "جوجل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube",
-      "verified": true,
-      "qid": "youtubers-400-001"
-    },
-    {
-      "p": 400,
-      "topic": "منصات ومصطلحات",
-      "q": "ما التطبيق الذي كانت مقاطعه ست ثوانٍ فقط وأُغلق عام 2017؟",
-      "a": "فاين",
-      "alt": [
-        "Vine"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Vine_(service)",
-      "verified": true,
-      "qid": "youtubers-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "منصات ومصطلحات",
-      "q": "ما تطبيق مزامنة الشفاه الذي ابتلعته منصة المقاطع الصينية القصيرة عام 2018؟",
-      "a": "ميوزيكلي",
-      "alt": [
-        "Musical.ly",
-        "ميوزكلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Musical.ly",
-      "verified": true,
-      "qid": "youtubers-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "منصات ومصطلحات",
-      "q": "ما الاسم الذي حملته منصة بث الألعاب قبل إعادة تسميتها عام 2011؟",
-      "a": "جستن تي في",
-      "alt": [
-        "Justin.tv",
-        "جاستن تي في"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Justin.tv",
-      "verified": true,
-      "qid": "youtubers-400-004"
-    },
-    {
-      "p": 400,
-      "topic": "منصات ومصطلحات",
-      "q": "أي درع يمنحه يوتيوب لقناة بلغت مليون مشترك؟",
-      "a": "الدرع الذهبي",
-      "alt": [
-        "ذهبي",
-        "غولد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube_Creator_Awards",
-      "verified": true,
-      "qid": "youtubers-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "منصات ومصطلحات",
-      "q": "من مؤسس يوتيوب الذي ظهر بنفسه في أول مقطع رُفع على الموقع؟",
-      "a": "جاود كريم",
+      "p": 1000,
+      "q": "من شريك تأسيس يوتيوب الذي ظهر بنفسه في أول فيديو على المنصة؟",
+      "a": "جاويد كريم",
       "alt": [
         "Jawed Karim",
         "جواد كريم"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jawed_Karim",
+      "topic": "منصات وأدوات",
       "verified": true,
-      "qid": "youtubers-400-006"
+      "sourceUrl": "https://blog.youtube/news-and-events/va-museum-youtube-first-video/",
+      "difficultyTarget": 0.15,
+      "qid": "youtubers-1000-907"
     },
     {
-      "p": 400,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم المقاطع القصيرة داخل تطبيق الصور المملوك لشركة ميتا؟",
-      "a": "ريلز",
-      "alt": [
-        "Reels"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Instagram",
-      "verified": true,
-      "qid": "youtubers-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "ألعاب وبث",
-      "q": "ما سلسلة ألعاب إطلاق النار الحربية التي يصدر جزء منها كل عام تقريبًا؟",
-      "a": "كول أوف ديوتي",
-      "alt": [
-        "Call of Duty",
-        "كول أوف ديوتي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Call_of_Duty",
-      "verified": true,
-      "qid": "youtubers-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة رايوت غيمز التي تُلعب خمسة ضد خمسة وتُقام لها بطولة عالمية؟",
-      "a": "ليغ أوف ليجندز",
-      "alt": [
-        "League of Legends",
-        "ليق أوف ليجندز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends",
-      "verified": true,
-      "qid": "youtubers-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة الباتل رويال التي اشتهرت على الهواتف باسم مختصر من أربعة حروف؟",
-      "a": "ببجي",
-      "alt": [
-        "PUBG",
-        "بابجي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PUBG:_Battlegrounds",
-      "verified": true,
-      "qid": "youtubers-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة فروم سوفتوير المفتوحة التي شارك جورج مارتن في بناء عالمها؟",
-      "a": "إلدن رينغ",
-      "alt": [
-        "Elden Ring",
-        "إلدن رنغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Elden_Ring",
-      "verified": true,
-      "qid": "youtubers-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة الرعب التي تدور في مطعم بيتزا بشخصيات آلية متحركة؟",
-      "a": "فايف نايتس آت فريديز",
-      "alt": [
-        "FNAF",
-        "فناف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Five_Nights_at_Freddy%27s",
-      "verified": true,
-      "qid": "youtubers-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة سباق الكارتينغ التي يقودها سبّاك إيطالي بقبعة حمراء؟",
-      "a": "ماريو كارت",
-      "alt": [
-        "Mario Kart"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mario_Kart",
-      "verified": true,
-      "qid": "youtubers-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة التصويب التكتيكية من رايوت غيمز التي صدرت عام 2020؟",
-      "a": "فالورانت",
-      "alt": [
-        "Valorant",
-        "فالورنت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Valorant",
-      "verified": true,
-      "qid": "youtubers-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "قنوات معرفية",
-      "q": "ما اسم قناة ديريك مولر التي تبسّط الفيزياء بالتجارب؟",
-      "a": "فيريتاسيوم",
-      "alt": [
-        "Veritasium",
-        "فيريتازيوم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Veritasium",
-      "verified": true,
-      "qid": "youtubers-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "قنوات معرفية",
-      "q": "ما اسم قناة الأخوين غرين التي تشرح المواد الدراسية في حلقات سريعة؟",
-      "a": "كراش كورس",
-      "alt": [
-        "CrashCourse",
-        "كراش كورص"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/CrashCourse",
-      "verified": true,
-      "qid": "youtubers-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة الكندية الشهيرة بمراجعات عتاد الحاسوب وتجميع الأجهزة؟",
-      "a": "لينوس تك تيبس",
-      "alt": [
-        "Linus Tech Tips",
-        "لينس تك تيبس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Linus_Tech_Tips",
-      "verified": true,
-      "qid": "youtubers-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "قنوات معرفية",
-      "q": "من مراجع التقنية الأمريكي المعروف باختصار إم كي بي إتش دي؟",
-      "a": "ماركيز براونلي",
-      "alt": [
-        "Marques Brownlee",
-        "ماركيس براونلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Marques_Brownlee",
-      "verified": true,
-      "qid": "youtubers-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "قنوات معرفية",
-      "q": "من مقدّم برنامج «خواطر» السعودي الذي انتقلت حلقاته إلى الإنترنت؟",
-      "a": "أحمد الشقيري",
-      "alt": [
-        "الشقيري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_الشقيري",
-      "verified": true,
-      "qid": "youtubers-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "قنوات معرفية",
-      "q": "ما اسم استوديو الرسوم العلمية الألماني الذي يعني اسمه «باختصار»؟",
-      "a": "كورتزجيزاغت",
-      "alt": [
-        "Kurzgesagt",
-        "كورزجيزاجت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kurzgesagt",
-      "verified": true,
-      "qid": "youtubers-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "تحديات وبرامج",
-      "q": "كم كان طول كل مقطع في سلسلة «ناس ديلي» اليومية؟",
-      "a": "دقيقة واحدة",
-      "alt": [
-        "دقيقة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nas_Daily",
-      "verified": true,
-      "qid": "youtubers-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم التحدي الذي يحاول فيه لاعب إنهاء لعبة المكعبات بينما يطارده آخرون؟",
-      "a": "مانهانت",
-      "alt": [
-        "Manhunt",
-        "مان هنت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dream_(YouTuber)",
-      "verified": true,
-      "qid": "youtubers-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم برنامج المسابقات الذي نقل صانع التحديات الأمريكي تجربته إلى خدمة بث أمازون؟",
-      "a": "بيست غيمز",
-      "alt": [
-        "Beast Games"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Beast_Games",
-      "verified": true,
-      "qid": "youtubers-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم المؤتمر السنوي الذي يجمع صنّاع المحتوى بجمهورهم وأسّسه الأخوان غرين؟",
-      "a": "فيدكون",
-      "alt": [
-        "VidCon",
-        "فيد كون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/VidCon",
-      "verified": true,
-      "qid": "youtubers-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم الحملة التي جمعت تبرعات لتنظيف المحيطات من النفايات عام 2021؟",
-      "a": "تيم سيز",
-      "alt": [
-        "Team Seas",
-        "فريق البحار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Team_Seas",
-      "verified": true,
-      "qid": "youtubers-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم المقطع السنوي الذي كان يوتيوب ينتجه بمشاركة نجومه وأوقفه عام 2020؟",
-      "a": "يوتيوب ريوايند",
-      "alt": [
-        "YouTube Rewind",
-        "ريوايند"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube_Rewind",
-      "verified": true,
-      "qid": "youtubers-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم علامة الشوكولاتة التي أطلقها صانع التحديات الأمريكي؟",
-      "a": "فيستابلز",
-      "alt": [
-        "Feastables"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Feastables",
-      "verified": true,
-      "qid": "youtubers-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان وجذور",
-      "q": "ما البلد الذي هاجرت إليه أسرة لاعبة البث إيمان أنيس ونشأت فيه؟",
-      "a": "كندا",
-      "alt": [
-        "كندي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pokimane",
-      "verified": true,
-      "qid": "youtubers-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان وجذور",
-      "q": "إلى أي بلد آسيوي انتقل صاحب قناة بيوديباي للعيش عام 2022؟",
-      "a": "اليابان",
-      "alt": [
-        "ياباني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie",
-      "verified": true,
-      "qid": "youtubers-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد صانع المحتوى العلمي أحمد الغندور؟",
-      "a": "مصر",
-      "alt": [
-        "مصري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_الغندور_(صانع_محتوى)",
-      "verified": true,
-      "qid": "youtubers-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان وجذور",
-      "q": "في أي بلد وُلدت صانعة المحتوى المعروفة باسم نور نعيم؟",
-      "a": "العراق",
-      "alt": [
-        "عراقي"
-      ],
-      "sourceUrl": "https://www.arabnews.com/node/2027151/noor-stars-123-million-followers",
-      "verified": true,
-      "qid": "youtubers-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد صانع المحتوى أنس مروة؟",
-      "a": "سوريا",
-      "alt": [
-        "سوري"
-      ],
-      "sourceUrl": "https://www.arageek.com/bio/أنس-مروة",
-      "verified": true,
-      "qid": "youtubers-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان وجذور",
-      "q": "في أي مدينة انطلقت فرقة الأطفال «فوزي موزي»؟",
-      "a": "حيفا",
-      "alt": [
-        "Haifa"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوزي_موزي",
-      "verified": true,
-      "qid": "youtubers-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عالميون",
-      "q": "ما الاسم الحقيقي لصاحب قناة بيوديباي؟",
-      "a": "فيليكس شيلبيرغ",
-      "alt": [
-        "Felix Kjellberg",
-        "فيليكس كيلبرغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie",
-      "verified": true,
-      "qid": "youtubers-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عالميون",
-      "q": "ما الاسم الحقيقي لصانع التحديات الأمريكي صاحب الجوائز المليونية؟",
-      "a": "جيمي دونالدسون",
-      "alt": [
-        "Jimmy Donaldson"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/MrBeast",
-      "verified": true,
-      "qid": "youtubers-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عالميون",
-      "q": "من لاعب البث الأمريكي الذي حطّم أرقام المشاهدة ببث جمعه بالمغني دريك عام 2018؟",
-      "a": "نينجا",
-      "alt": [
-        "Ninja",
-        "تايلر بليفنز"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ninja_(gamer)",
-      "verified": true,
-      "qid": "youtubers-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى الأمريكي الذي أثار غضبًا عالميًا بتصويره غابة يابانية عام 2018؟",
-      "a": "لوغان بول",
-      "alt": [
-        "Logan Paul",
-        "لوجان بول"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Logan_Paul",
-      "verified": true,
-      "qid": "youtubers-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عالميون",
-      "q": "ما اسم الثنائي الأمريكي الذي اشتهر بمقاطع تمثيل صامت على أغنية بوكيمون؟",
-      "a": "سموش",
-      "alt": [
-        "Smosh"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Smosh",
-      "verified": true,
-      "qid": "youtubers-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عالميون",
-      "q": "ما شركة الأغاني الهندية التي نازعت بيوديباي صدارة المشتركين عام 2018؟",
-      "a": "تي سيريز",
-      "alt": [
-        "T-Series",
-        "تي سيريس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie_vs_T-Series",
-      "verified": true,
-      "qid": "youtubers-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى الأمريكي الذي يصنع خدعًا بصرية تبدو سحرًا في ثوانٍ؟",
-      "a": "زاك كينغ",
-      "alt": [
-        "Zach King",
-        "زاك كنغ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Zach_King",
-      "verified": true,
-      "qid": "youtubers-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عرب",
-      "q": "من مؤسس فرقة أناشيد الأطفال «طيور الجنة»؟",
-      "a": "خالد مقداد",
-      "alt": [
-        "خالد عبدالله مقداد"
-      ],
-      "sourceUrl": "https://mawdoo3.com/خالد_عبد_الله_جبريل_مقداد_(مؤسس_ومدير_قناة_طيور_الجنة)",
-      "verified": true,
-      "qid": "youtubers-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عرب",
-      "q": "ما اسم البرنامج الساخر الذي يقدّمه المصري يوسف حسين؟",
-      "a": "جو شو",
-      "alt": [
-        "Joe Show",
-        "جوشو"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جو_شو_(برنامج)",
-      "verified": true,
-      "qid": "youtubers-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عرب",
-      "q": "ما اسم القناة الكوميدية السعودية التي أسّسها الأخوان عبدالله وعبدالعزيز بكر؟",
-      "a": "سعودي ريبورترز",
-      "alt": [
-        "Saudi Reporters"
-      ],
-      "sourceUrl": "https://www.forbesmiddleeast.com/ar/innovation/under-30/saudi-reporters",
-      "verified": true,
-      "qid": "youtubers-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عرب",
-      "q": "ما الاسم اللاتيني لقناة صانع محتوى الألعاب بندريتا؟",
-      "a": "بانديريتا إكس",
-      "alt": [
-        "BanderitaX"
-      ],
-      "sourceUrl": "https://jazanfigures.com/?p=9953",
-      "verified": true,
-      "qid": "youtubers-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عرب",
-      "q": "في أي عام أنشأ صانع المحتوى المعروف بأبو فلة قناته؟",
-      "a": "2016",
-      "alt": [
-        "ألفين وستة عشر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
-      "verified": true,
-      "qid": "youtubers-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "صنّاع عرب",
-      "q": "ما الاسم الأول الذي حملته قناة أبو فلة قبل تغييره؟",
-      "a": "قيمز فلة",
-      "alt": [
-        "Games Fella"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
-      "verified": true,
-      "qid": "youtubers-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم شخصية البرتقالة في فرقة الأطفال «فوزي موزي»؟",
-      "a": "المندلينا",
-      "alt": [
-        "مندلينا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوزي_موزي",
-      "verified": true,
-      "qid": "youtubers-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم سلسلة المطاعم الافتراضية التي أطلقها صانع التحديات الأمريكي؟",
-      "a": "مستر بيست برغر",
-      "alt": [
-        "MrBeast Burger"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/MrBeast",
-      "verified": true,
-      "qid": "youtubers-400-048"
-    },
-    {
-      "p": 600,
-      "topic": "منصات ومصطلحات",
-      "q": "أي مقطع غنائي كوري كسر عدّاد المشاهدات في يوتيوب فاضطر لتوسيعه؟",
-      "a": "غانغام ستايل",
-      "alt": [
-        "Gangnam Style",
-        "قانقام ستايل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Gangnam_Style",
-      "verified": true,
-      "qid": "youtubers-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "منصات ومصطلحات",
-      "q": "ما أول مقطع في يوتيوب يتجاوز خمسة مليارات مشاهدة؟",
-      "a": "ديسباسيتو",
-      "alt": [
-        "Despacito"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Despacito",
-      "verified": true,
-      "qid": "youtubers-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "منصات ومصطلحات",
-      "q": "ما أول مقطع في يوتيوب يتجاوز عشرة مليارات مشاهدة؟",
-      "a": "بيبي شارك",
-      "alt": [
-        "Baby Shark",
-        "بيبي شارك دانس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Baby_Shark",
-      "verified": true,
-      "qid": "youtubers-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم خدمة الاشتراك المدفوعة التي تزيل الإعلانات عن مقاطع يوتيوب؟",
-      "a": "يوتيوب بريميوم",
-      "alt": [
-        "Premium",
-        "بريميوم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube_Premium",
-      "verified": true,
-      "qid": "youtubers-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "منصات ومصطلحات",
-      "q": "ما الميزة التي تتيح للمشاهد دعم البث المباشر برسالة ملوّنة مدفوعة؟",
-      "a": "سوبر شات",
-      "alt": [
-        "Super Chat",
-        "سوبرشات"
-      ],
-      "sourceUrl": "https://support.google.com/youtube/answer/7277005",
-      "verified": true,
-      "qid": "youtubers-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "منصات ومصطلحات",
-      "q": "ما الصيغة التي حلّت محل فلاش في تشغيل مقاطع يوتيوب؟",
-      "a": "إتش تي إم إل خمسة",
-      "alt": [
-        "HTML5",
-        "إتش تي إم إل 5"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube",
-      "verified": true,
-      "qid": "youtubers-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة المزرعة المستقلة التي صنعها إريك بارون وحده؟",
-      "a": "ستارديو فالي",
-      "alt": [
-        "Stardew Valley"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Stardew_Valley",
-      "verified": true,
-      "qid": "youtubers-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "ألعاب وبث",
-      "q": "ما اللعبة المستقلة التي تروي رحلة فتاة اسمها مادلين لتسلّق جبل؟",
-      "a": "سيليست",
-      "alt": [
-        "Celeste"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Celeste_(video_game)",
-      "verified": true,
-      "qid": "youtubers-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "ألعاب وبث",
-      "q": "ما اللعبة المستقلة التي يخوض فيها فارس حشري مملكة هالونست؟",
-      "a": "هولو نايت",
-      "alt": [
-        "Hollow Knight",
-        "هالو نايت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hollow_Knight",
-      "verified": true,
-      "qid": "youtubers-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "ألعاب وبث",
-      "q": "ما اللعبة التي أسّست نمط «السولز لايك» شديد الصعوبة عام 2011؟",
-      "a": "دارك سولز",
-      "alt": [
-        "Dark Souls"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dark_Souls",
-      "verified": true,
-      "qid": "youtubers-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة إطلاق النار المجانية من ريسباون التي تدور في عالم تايتنفول؟",
-      "a": "أبيكس ليجندز",
-      "alt": [
-        "Apex Legends"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Apex_Legends",
-      "verified": true,
-      "qid": "youtubers-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "ألعاب وبث",
-      "q": "ما اللعبة التي بُنيت حول بوابتين برتقالية وزرقاء واختبارات علمية؟",
-      "a": "بورتال",
-      "alt": [
-        "Portal"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Portal_(video_game)",
-      "verified": true,
-      "qid": "youtubers-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "قنوات معرفية",
-      "q": "من مقدّم القناة العلمية الذي يفتتح حلقاته بتحية تحمل اسمها ثم اسمه مايكل؟",
-      "a": "في سوس",
-      "alt": [
-        "Vsauce",
-        "فيسوس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Vsauce",
-      "verified": true,
-      "qid": "youtubers-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة التي يشرح فيها غرانت ساندرسون الرياضيات برسوم زرقاء متحركة؟",
-      "a": "ثري بلو ون براون",
-      "alt": [
-        "3Blue1Brown"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/3Blue1Brown",
-      "verified": true,
-      "qid": "youtubers-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة التي يقدّمها برادي هاران ويستضيف فيها رياضيين يشرحون الأعداد؟",
-      "a": "نمبرفايل",
-      "alt": [
-        "Numberphile",
-        "نمبر فايل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Numberphile",
-      "verified": true,
-      "qid": "youtubers-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة التي يصوّر فيها غافن ودانيال كل شيء بكاميرا فائقة البطء؟",
-      "a": "ذا سلو مو غايز",
-      "alt": [
-        "The Slow Mo Guys"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Slow_Mo_Guys",
-      "verified": true,
-      "qid": "youtubers-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "قنوات معرفية",
-      "q": "ما قناة ديستن ساندلن التي اشتهرت بتجربة الدراجة المعكوسة التوجيه؟",
-      "a": "سمارتر إيفري داي",
-      "alt": [
-        "SmarterEveryDay"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/SmarterEveryDay",
-      "verified": true,
-      "qid": "youtubers-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "قنوات معرفية",
-      "q": "من صانع المحتوى البريطاني بالقميص الأحمر الذي أنهى سلسلته الأسبوعية عام 2023؟",
-      "a": "توم سكوت",
-      "alt": [
-        "Tom Scott"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tom_Scott_(entertainer)",
-      "verified": true,
-      "qid": "youtubers-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "تحديات وبرامج",
-      "q": "إلى أي رقم عدّ صانع التحديات الأمريكي في مقطعه الذي استمر نحو أربع وعشرين ساعة؟",
-      "a": "مئة ألف",
-      "alt": [
-        "100000",
-        "مية ألف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/MrBeast",
-      "verified": true,
-      "qid": "youtubers-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم سلسلة السفر التي تدفع ضيوفها لخوض ما يزعجهم؟",
-      "a": "يس ثيوري",
-      "alt": [
-        "Yes Theory"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yes_Theory",
-      "verified": true,
-      "qid": "youtubers-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم البرنامج اليومي الذي يقدّمه الثنائي ريت ولينك منذ سنوات؟",
-      "a": "غود ميثيكال مورنينغ",
-      "alt": [
-        "Good Mythical Morning"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Good_Mythical_Morning",
-      "verified": true,
-      "qid": "youtubers-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم القناة التي يعيد فيها أندرو ريا طبخ أطعمة ظهرت في الأفلام؟",
-      "a": "بينجينغ ويذ بابيش",
-      "alt": [
-        "Binging with Babish",
-        "بابيش"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Babish_Culinary_Universe",
-      "verified": true,
-      "qid": "youtubers-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم فريق المقالب الذي كوّنه ديفيد دوبريك حول مقاطعه اليومية؟",
-      "a": "فلوغ سكواد",
-      "alt": [
-        "Vlog Squad"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/David_Dobrik",
-      "verified": true,
-      "qid": "youtubers-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "تحديات وبرامج",
-      "q": "ما الرقصة التي أطلقت شهرة تشارلي دميليو على منصة المقاطع القصيرة؟",
-      "a": "رينيغيد",
-      "alt": [
-        "Renegade",
-        "الرينيغيد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Charli_D%27Amelio",
-      "verified": true,
-      "qid": "youtubers-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان وجذور",
-      "q": "ما الأصل الأفريقي الذي ينتمي إليه صانع المحتوى الكويتي صاحب أطول بث مباشر؟",
-      "a": "الصومال",
-      "alt": [
-        "صومالي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
-      "verified": true,
-      "qid": "youtubers-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان وجذور",
-      "q": "في أي مدينة ألمانية يقع استوديو الرسوم العلمية صاحب اسم «باختصار»؟",
-      "a": "ميونخ",
-      "alt": [
-        "ميونيخ",
-        "Munich"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kurzgesagt",
-      "verified": true,
-      "qid": "youtubers-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان وجذور",
-      "q": "في أي جامعة أمريكية تعارف أعضاء فريق التسديدات المستحيلة الخمسة؟",
-      "a": "تكساس إيه أند إم",
-      "alt": [
-        "Texas A&M",
-        "جامعة تكساس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dude_Perfect",
-      "verified": true,
-      "qid": "youtubers-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد صانع المحتوى التقني أرون ميني صاحب مراجعات الهواتف؟",
-      "a": "بريطانيا",
-      "alt": [
-        "المملكة المتحدة",
-        "إنجلترا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mrwhosetheboss",
-      "verified": true,
-      "qid": "youtubers-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد شركة الأغاني التي نازعت صاحب بيوديباي صدارة المشتركين؟",
-      "a": "الهند",
-      "alt": [
-        "هندي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie_vs_T-Series",
-      "verified": true,
-      "qid": "youtubers-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان وجذور",
-      "q": "في أي ولاية أمريكية نشأ صانع التحديات صاحب الجوائز المليونية؟",
-      "a": "كارولاينا الشمالية",
-      "alt": [
-        "نورث كارولاينا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/MrBeast",
-      "verified": true,
-      "qid": "youtubers-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد لاعب البث لانان إيكوت صاحب مقاطع الألعاب الساخرة؟",
-      "a": "أستراليا",
-      "alt": [
-        "أسترالي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/LazarBeam",
-      "verified": true,
-      "qid": "youtubers-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى الذي ودّع جمهوره بمقطع «إلى اللقاء أيها المهوسون» بعد صراعه مع السرطان؟",
-      "a": "تكنوبليد",
-      "alt": [
-        "Technoblade",
-        "تكنو بليد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Technoblade",
-      "verified": true,
-      "qid": "youtubers-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى الذي ظل مقنّعًا بوجه مبتسم حتى كشف ملامحه عام 2022؟",
-      "a": "دريم",
-      "alt": [
-        "Dream"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dream_(YouTuber)",
-      "verified": true,
-      "qid": "youtubers-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عالميون",
-      "q": "من لاعب البث الذي حطّم رقم الاشتراكات ببث متواصل طوال نوفمبر 2024؟",
-      "a": "كاي سينات",
-      "alt": [
-        "Kai Cenat"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kai_Cenat",
-      "verified": true,
-      "qid": "youtubers-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع الفلوغ الأمريكي الذي باع تطبيقه «بيمي» لشبكة سي إن إن؟",
-      "a": "كيسي نيستات",
-      "alt": [
-        "Casey Neistat"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Casey_Neistat",
-      "verified": true,
-      "qid": "youtubers-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عالميون",
-      "q": "من صانعة المحتوى الكندية التي عُرفت بلقب «سوبروومان» ثم قدّمت برنامجًا ليليًا؟",
-      "a": "ليلي سينغ",
-      "alt": [
-        "Lilly Singh"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Lilly_Singh",
-      "verified": true,
-      "qid": "youtubers-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عالميون",
-      "q": "من صانعة المحتوى الأمريكية التي أطلقت علامة قهوة تحمل اسم عائلتها؟",
-      "a": "إيما تشامبرلين",
-      "alt": [
-        "Emma Chamberlain"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Emma_Chamberlain",
-      "verified": true,
-      "qid": "youtubers-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عرب",
-      "q": "ما لقب صانع محتوى الألعاب السعودي الذي يحمل اسم قناته الرقم تسعة ثلاث مرات؟",
-      "a": "دحومي",
-      "alt": [
-        "دحومي999",
-        "d7oomy"
-      ],
-      "sourceUrl": "https://youtube.fandom.com/wiki/D7oomy_999",
-      "verified": true,
-      "qid": "youtubers-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عرب",
-      "q": "ما اسم القناة الموجّهة للرضّع من شبكة أناشيد «طيور الجنة»؟",
-      "a": "طيور بيبي",
-      "alt": [
-        "Toyor Baby"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/طيور_الجنة_(قناة)",
-      "verified": true,
-      "qid": "youtubers-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عرب",
-      "q": "ما الجهة الإماراتية التي أنتجت برنامج أحمد الغندور بعد عام 2021؟",
-      "a": "أكاديمية الإعلام الجديد",
-      "alt": [
-        "نيو ميديا أكاديمي"
-      ],
-      "sourceUrl": "https://nma.ae/news/الدحيح-يعود-إلى-مشاهديه-من-بوابة-أكاديمية-الإعلام-الجديد",
-      "verified": true,
-      "qid": "youtubers-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عرب",
-      "q": "من مؤسس فرقة الأطفال «فوزي موزي» الذي بدأ مهرّجًا في حفلات أعياد الميلاد؟",
-      "a": "فوزي سعيد",
-      "alt": [
-        "Fozi Said"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوزي_موزي",
-      "verified": true,
-      "qid": "youtubers-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عرب",
-      "q": "ما الموسوعة التي سجّل فيها صانع محتوى كويتي رقمًا قياسيًا بأطول بث متواصل؟",
-      "a": "موسوعة غينيس",
-      "alt": [
-        "غينيس",
-        "جينيس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
-      "verified": true,
-      "qid": "youtubers-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "صنّاع عرب",
-      "q": "ما اسم السلسلة التي بدأ بها المصري يوسف حسين قبل برنامجه التلفزيوني الساخر؟",
-      "a": "جو تيوب",
-      "alt": [
-        "Joe Tube"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جو_شو_(برنامج)",
-      "verified": true,
-      "qid": "youtubers-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم القناة الأولى التي أنشأها صاحب بيوديباي عام 2006 ثم نسي كلمة مرورها؟",
-      "a": "بيودي",
-      "alt": [
-        "PewDie"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie",
-      "verified": true,
-      "qid": "youtubers-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وشعارات",
-      "q": "ما الاسم الذي اختاره صانع التحديات الأمريكي لقناته لأن الاسم الأقصر كان محجوزًا؟",
-      "a": "مستر بيست 6000",
-      "alt": [
-        "MrBeast6000"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/MrBeast",
-      "verified": true,
-      "qid": "youtubers-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وشعارات",
-      "q": "أي درع يمنحه يوتيوب للقنوات التي تجاوزت مئة مليون مشترك؟",
-      "a": "الدرع الماسي الأحمر",
-      "alt": [
-        "ريد دايموند"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube_Creator_Awards",
-      "verified": true,
-      "qid": "youtubers-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم القناة الفرعية التي يخصّص صانع التحديات الأمريكي ريعها للأعمال الخيرية؟",
-      "a": "بيست فيلانثروبي",
-      "alt": [
-        "Beast Philanthropy"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/MrBeast",
-      "verified": true,
-      "qid": "youtubers-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "ألقاب وشعارات",
-      "q": "ما الاسم المستعار الذي عُرف به مايكل غرزيسيك بعد احترافه ألعاب التصويب؟",
-      "a": "شراود",
-      "alt": [
-        "Shroud"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Shroud_(gamer)",
-      "verified": true,
-      "qid": "youtubers-600-048"
-    },
-    {
-      "p": 800,
-      "topic": "منصات ومصطلحات",
-      "q": "ما نظام يوتيوب الذي يطابق المقاطع آليًا للكشف عن المواد المحمية؟",
-      "a": "كونتنت آي دي",
-      "alt": [
-        "Content ID"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Content_ID",
-      "verified": true,
-      "qid": "youtubers-800-001"
-    },
-    {
-      "p": 800,
-      "topic": "منصات ومصطلحات",
-      "q": "من الرئيسة التنفيذية التي قادت يوتيوب من 2014 حتى 2023؟",
-      "a": "سوزان ووجسيكي",
-      "alt": [
-        "Susan Wojcicki",
-        "سوزان وجسيكي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Susan_Wojcicki",
-      "verified": true,
-      "qid": "youtubers-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم خدمة البث التلفزيوني المدفوعة التي أطلقها يوتيوب في أمريكا؟",
-      "a": "يوتيوب تي في",
-      "alt": [
-        "YouTube TV"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube",
-      "verified": true,
-      "qid": "youtubers-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "منصات ومصطلحات",
-      "q": "من الرئيس التنفيذي الذي تولّى إدارة يوتيوب عام 2023؟",
-      "a": "نيل موهان",
-      "alt": [
-        "Neal Mohan"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Neal_Mohan",
-      "verified": true,
-      "qid": "youtubers-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم الاشتراك المدفوع الذي أطلقه يوتيوب عام 2015 قبل تغيير اسمه؟",
-      "a": "يوتيوب ريد",
-      "alt": [
-        "YouTube Red"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube_Premium",
-      "verified": true,
-      "qid": "youtubers-800-005"
-    },
-    {
-      "p": 800,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم الميزة التي كان المتطوعون يترجمون بها المقاطع قبل إلغائها عام 2022؟",
-      "a": "المساهمات المجتمعية",
-      "alt": [
-        "Community Contributions"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube",
-      "verified": true,
-      "qid": "youtubers-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "ألعاب وبث",
-      "q": "ما اللعبة المستقلة التي تروي تحقيقًا بوليسيًا في مدينة ريفاشول؟",
-      "a": "ديسكو إليزيوم",
-      "alt": [
-        "Disco Elysium"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Disco_Elysium",
-      "verified": true,
-      "qid": "youtubers-800-007"
-    },
-    {
-      "p": 800,
-      "topic": "ألعاب وبث",
-      "q": "ما اللعبة التي يكرّر فيها اللاعب اثنتين وعشرين دقيقة قبل انفجار الشمس؟",
-      "a": "أوتر وايلدز",
-      "alt": [
-        "Outer Wilds"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Outer_Wilds",
-      "verified": true,
-      "qid": "youtubers-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة الأساطير اليونانية المستقلة التي يهرب فيها زاغريوس من العالم السفلي؟",
-      "a": "هيديس",
-      "alt": [
-        "Hades",
-        "هاديس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hades_(video_game)",
-      "verified": true,
-      "qid": "youtubers-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "ألعاب وبث",
-      "q": "ما سلسلة التسلل اليابانية التي ابتكرها هيديو كوجيما؟",
-      "a": "ميتال غير",
-      "alt": [
-        "Metal Gear"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Metal_Gear",
-      "verified": true,
-      "qid": "youtubers-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "ألعاب وبث",
-      "q": "ما سلسلة الألعاب البولندية المقتبسة من روايات أندجي سابكوفسكي؟",
-      "a": "الويتشر",
-      "alt": [
-        "The Witcher",
-        "ويتشر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_(video_game_series)",
-      "verified": true,
-      "qid": "youtubers-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة البقاء التي يبني فيها اللاعبون قواعد ويروّضون الديناصورات؟",
-      "a": "آرك",
-      "alt": [
-        "ARK",
-        "أرك سرفايفل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ark:_Survival_Evolved",
-      "verified": true,
-      "qid": "youtubers-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "ألعاب وبث",
-      "q": "ما لعبة الرعب التي تدور في مدينة ضبابية مهجورة من إنتاج كونامي؟",
-      "a": "سايلنت هيل",
-      "alt": [
-        "Silent Hill"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Silent_Hill",
-      "verified": true,
-      "qid": "youtubers-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة التي يقدّمها أرون ميني لمراجعة الهواتف الذكية؟",
-      "a": "مستر هوذا بوس",
-      "alt": [
-        "Mrwhosetheboss"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mrwhosetheboss",
-      "verified": true,
-      "qid": "youtubers-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "قنوات معرفية",
-      "q": "ما اسم فريق المؤثرات البصرية الذي يحلّل مشاهد الأفلام في قناته؟",
-      "a": "كوريدور كرو",
-      "alt": [
-        "Corridor Crew"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Corridor_Digital",
-      "verified": true,
-      "qid": "youtubers-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة الأسترالية التي تبني أكواخًا في الغابة دون كلام ولا أدوات حديثة؟",
-      "a": "بريمتيف تكنولوجي",
-      "alt": [
-        "Primitive Technology"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Primitive_Technology",
-      "verified": true,
-      "qid": "youtubers-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "قنوات معرفية",
-      "q": "من صانعة المحتوى السويدية التي لُقّبت بملكة الروبوتات عديمة الفائدة؟",
-      "a": "سيمون غيرتز",
-      "alt": [
-        "Simone Giertz"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Simone_Giertz",
-      "verified": true,
-      "qid": "youtubers-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة التي يقدّمها برادي هاران لشرح علوم الحاسوب؟",
-      "a": "كمبيوترفايل",
-      "alt": [
-        "Computerphile"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Brady_Haran",
-      "verified": true,
-      "qid": "youtubers-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "قنوات معرفية",
-      "q": "ما اسم مكتبة الرسوم الرياضية المفتوحة التي طوّرها غرانت ساندرسون؟",
+      "p": 1000,
+      "q": "ما مكتبة تحريك الرسوم الرياضية المفتوحة التي ابتكرها غرانت ساندرسون لفيديوهاته؟",
       "a": "مانيم",
       "alt": [
         "Manim"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/3Blue1Brown",
-      "verified": true,
-      "qid": "youtubers-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم الفريق الرباعي الذي انفصل عن شبكة بازفيد وأسّس قناته الخاصة؟",
-      "a": "ذا تراي غايز",
-      "alt": [
-        "The Try Guys"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Try_Guys",
-      "verified": true,
-      "qid": "youtubers-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم المقطع الشهير لطفلين عضّ أحدهما إصبع أخيه وبيع لاحقًا كرمز رقمي؟",
-      "a": "تشارلي عضّ إصبعي",
-      "alt": [
-        "Charlie Bit My Finger"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Charlie_Bit_My_Finger",
-      "verified": true,
-      "qid": "youtubers-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "تحديات وبرامج",
-      "q": "ما المقطع الذي رقص فيه جودسون لايبلي تاريخ الرقص وتصدّر الموقع عام 2006؟",
-      "a": "تطور الرقص",
-      "alt": [
-        "Evolution of Dance"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Evolution_of_Dance",
-      "verified": true,
-      "qid": "youtubers-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "تحديات وبرامج",
-      "q": "ما الفرقة التي صوّرت أغنيتها على أجهزة المشي في لقطة واحدة عام 2006؟",
-      "a": "أو كي غو",
-      "alt": [
-        "OK Go"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Here_It_Goes_Again",
-      "verified": true,
-      "qid": "youtubers-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "تحديات وبرامج",
-      "q": "من صانعة محتوى التجميل التي شاركت في تأسيس شركة الاشتراكات إبسي؟",
-      "a": "ميشيل فان",
-      "alt": [
-        "Michelle Phan"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Michelle_Phan",
-      "verified": true,
-      "qid": "youtubers-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "تحديات وبرامج",
-      "q": "ما الفريق الأسترالي الذي يسقط كرات السلة والأجسام من أبراج عالية؟",
-      "a": "هاو ريديكيلوس",
-      "alt": [
-        "How Ridiculous"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/How_Ridiculous",
-      "verified": true,
-      "qid": "youtubers-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد شركة بينك فونغ صاحبة أغنية الأطفال ذات المليارات العشرة؟",
-      "a": "كوريا الجنوبية",
-      "alt": [
-        "كوريا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Baby_Shark",
-      "verified": true,
-      "qid": "youtubers-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "بلدان وجذور",
-      "q": "في أي مدينة أمريكية وُلد لاعب البث الصاخب داريان واتكينز؟",
-      "a": "سينسيناتي",
-      "alt": [
-        "Cincinnati"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/IShowSpeed",
-      "verified": true,
-      "qid": "youtubers-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "بلدان وجذور",
-      "q": "من أي بلد الشركة التي تنشر لعبة الباتل رويال المجانية «فري فاير»؟",
-      "a": "سنغافورة",
-      "alt": [
-        "Singapore"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Garena_Free_Fire",
-      "verified": true,
-      "qid": "youtubers-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "بلدان وجذور",
-      "q": "ما المدينة السورية التي وُلد فيها أنس مروة صاحب القناة العائلية؟",
-      "a": "اللاذقية",
-      "alt": [
-        "لاذقية"
-      ],
-      "sourceUrl": "https://www.arageek.com/bio/أنس-مروة",
-      "verified": true,
-      "qid": "youtubers-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "بلدان وجذور",
-      "q": "ما الأصول التي ينتمي إليها مؤسس شبكة أناشيد الأطفال الأردنية؟",
-      "a": "فلسطينية",
-      "alt": [
-        "فلسطين",
-        "فلسطيني"
-      ],
-      "sourceUrl": "https://mawdoo3.com/خالد_عبد_الله_جبريل_مقداد_(مؤسس_ومدير_قناة_طيور_الجنة)",
-      "verified": true,
-      "qid": "youtubers-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "بلدان وجذور",
-      "q": "ما المدينة المغربية التي وُلد فيها صانع المحتوى التقني أمين رغيب؟",
-      "a": "مراكش",
-      "alt": [
-        "Marrakesh"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أمين_رغيب",
-      "verified": true,
-      "qid": "youtubers-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع محتوى الألعاب الذي عُرفت قناته سابقًا باسم «ذا دايموند ماينكارت»؟",
-      "a": "دان تي دي إم",
-      "alt": [
-        "DanTDM"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/DanTDM",
-      "verified": true,
-      "qid": "youtubers-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عالميون",
-      "q": "من لاعب البث الأمريكي الذي حُظر من منصة الألعاب عام 2020 دون توضيح علني؟",
-      "a": "دكتور ديسربكت",
-      "alt": [
-        "Dr Disrespect"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dr_Disrespect",
-      "verified": true,
-      "qid": "youtubers-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عالميون",
-      "q": "من صاحب سلسلة «ناس ديلي» الذي أنهاها بعد ألف يوم من النشر؟",
-      "a": "نصير ياسين",
-      "alt": [
-        "Nuseir Yassin"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nas_Daily",
-      "verified": true,
-      "qid": "youtubers-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عالميون",
-      "q": "من مقدّمة شخصية «ميراندا سينغز» الكوميدية على الإنترنت؟",
-      "a": "كولين بالينجر",
-      "alt": [
-        "Colleen Ballinger"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Colleen_Ballinger",
-      "verified": true,
-      "qid": "youtubers-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عالميون",
-      "q": "من لاعب البث الأمريكي الذي بثّ شهرًا متواصلًا عام 2021 وحطّم رقم الاشتراكات؟",
-      "a": "لودفيغ",
-      "alt": [
-        "Ludwig",
-        "لودفيغ أهرين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ludwig_Ahgren",
-      "verified": true,
-      "qid": "youtubers-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عالميون",
-      "q": "من عازفة الكمان الأمريكية التي بنت شهرتها على عروض راقصة مصوّرة؟",
-      "a": "ليندسي ستيرلنغ",
-      "alt": [
-        "Lindsey Stirling"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Lindsey_Stirling",
-      "verified": true,
-      "qid": "youtubers-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عالميون",
-      "q": "من صانع المحتوى الأمريكي الذي يقدّم نشرة أخبار يومية مستقلة منذ 2006؟",
-      "a": "فيليب ديفرانكو",
-      "alt": [
-        "Philip DeFranco"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Philip_DeFranco",
-      "verified": true,
-      "qid": "youtubers-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عرب",
-      "q": "ما القناة الإخبارية التي أنتجت برنامج أحمد الغندور بين 2017 و2020؟",
-      "a": "الجزيرة بلس",
-      "alt": [
-        "AJ+",
-        "اي جي بلس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أحمد_الغندور_(صانع_محتوى)",
-      "verified": true,
-      "qid": "youtubers-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عرب",
-      "q": "ما المنطقة السعودية التي ينتمي إليها صانع محتوى الألعاب بندريتا؟",
-      "a": "جازان",
-      "alt": [
-        "جيزان"
-      ],
-      "sourceUrl": "https://jazanfigures.com/?p=9953",
-      "verified": true,
-      "qid": "youtubers-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عرب",
-      "q": "في أي مدينة أردنية تأسّست فرقة أناشيد الأطفال «طيور الجنة»؟",
-      "a": "عمّان",
-      "alt": [
-        "عمان"
-      ],
-      "sourceUrl": "https://mawdoo3.com/خالد_عبد_الله_جبريل_مقداد_(مؤسس_ومدير_قناة_طيور_الجنة)",
-      "verified": true,
-      "qid": "youtubers-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عرب",
-      "q": "ما الجائزة التي نالها أمين رغيب من حاكم دبي عام 2015؟",
-      "a": "رواد التواصل الاجتماعي",
-      "alt": [
-        "جائزة رواد التواصل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أمين_رغيب",
-      "verified": true,
-      "qid": "youtubers-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عرب",
-      "q": "ما اسم القناة العائلية السعودية التي يظهر فيها الأبناء أنس ويوسف وجاد؟",
-      "a": "مشيع",
-      "alt": [
-        "mmoshaya",
-        "إم مشيع"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمد_مشيع_الغامدي",
-      "verified": true,
-      "qid": "youtubers-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "صنّاع عرب",
-      "q": "ما المدينة التي وُلد فيها الإعلامي الساخر المصري يوسف حسين؟",
-      "a": "القاهرة",
-      "alt": [
-        "Cairo"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جو_شو_(برنامج)",
-      "verified": true,
-      "qid": "youtubers-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي اشتهرت به جينا موري التي اعتزلت النشر عام 2020؟",
-      "a": "جينا ماربلز",
-      "alt": [
-        "Jenna Marbles"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jenna_Marbles",
-      "verified": true,
-      "qid": "youtubers-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اللقب الذي يُعرف به لاعب البث الأسترالي لانان إيكوت؟",
-      "a": "لازر بيم",
-      "alt": [
-        "LazarBeam"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/LazarBeam",
-      "verified": true,
-      "qid": "youtubers-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وشعارات",
-      "q": "ما الاسم المستعار الذي تُعرف به لاعبة البث المغربية الكندية إيمان أنيس؟",
-      "a": "بوكيماين",
-      "alt": [
-        "Pokimane"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pokimane",
-      "verified": true,
-      "qid": "youtubers-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "ألقاب وشعارات",
-      "q": "ما الاسم الحقيقي لصاحب قناة جاكسيبتك آي؟",
-      "a": "شون ماكلوغلين",
-      "alt": [
-        "Seán McLoughlin"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jacksepticeye",
-      "verified": true,
-      "qid": "youtubers-800-048"
-    },
-    {
-      "p": 1000,
-      "topic": "منصات ومصطلحات",
-      "q": "كم بِتًا كان طول عدّاد مشاهدات يوتيوب قبل توسيعه عام 2014؟",
-      "a": "اثنان وثلاثون بت",
-      "alt": [
-        "32 بت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Gangnam_Style",
-      "verified": true,
-      "qid": "youtubers-1000-001"
-    },
-    {
-      "p": 1000,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم أول مقطع رُفع على يوتيوب؟",
-      "a": "أنا في حديقة الحيوان",
-      "alt": [
-        "Me at the zoo"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Me_at_the_zoo",
-      "verified": true,
-      "qid": "youtubers-1000-002"
-    },
-    {
-      "p": 1000,
-      "topic": "منصات ومصطلحات",
-      "q": "في أي شركة دفع إلكتروني عمل مؤسسو يوتيوب الثلاثة قبل تأسيسه؟",
-      "a": "باي بال",
-      "alt": [
-        "PayPal"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube",
-      "verified": true,
-      "qid": "youtubers-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "منصات ومصطلحات",
-      "q": "ما الفكرة الأولى التي وُلد بها يوتيوب قبل تحوّله لموقع فيديو عام؟",
-      "a": "موقع مواعدة",
-      "alt": [
-        "موقع تعارف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/YouTube",
-      "verified": true,
-      "qid": "youtubers-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم القط الكرتوني الطائر ذي جسد الفطيرة الذي صار أيقونة إنترنت عام 2011؟",
-      "a": "نيان كات",
-      "alt": [
-        "Nyan Cat"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nyan_Cat",
-      "verified": true,
-      "qid": "youtubers-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "منصات ومصطلحات",
-      "q": "ما اسم الشريك الذي أسّس يوتيوب مع ستيف تشن وصاحب أول مقطع؟",
-      "a": "تشاد هيرلي",
-      "alt": [
-        "Chad Hurley"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Chad_Hurley",
-      "verified": true,
-      "qid": "youtubers-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "ألعاب وبث",
-      "q": "ما اسم الاستوديو الأسترالي الذي طوّر لعبة الفارس الحشري المستقلة؟",
-      "a": "تيم تشيري",
-      "alt": [
-        "Team Cherry"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Team_Cherry",
-      "verified": true,
-      "qid": "youtubers-1000-007"
-    },
-    {
-      "p": 1000,
-      "topic": "ألعاب وبث",
-      "q": "ما أول لعبة أصدرها استوديو كوجيما بعد استقلاله؟",
-      "a": "ديث ستراندينغ",
-      "alt": [
-        "Death Stranding"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Death_Stranding",
-      "verified": true,
-      "qid": "youtubers-1000-008"
-    },
-    {
-      "p": 1000,
-      "topic": "ألعاب وبث",
-      "q": "ما الاستوديو البولندي الذي طوّر سلسلة الساحر المقتبسة من الروايات؟",
-      "a": "سي دي بروجكت",
-      "alt": [
-        "CD Projekt"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/CD_Projekt",
-      "verified": true,
-      "qid": "youtubers-1000-009"
-    },
-    {
-      "p": 1000,
-      "topic": "ألعاب وبث",
-      "q": "ما الاستوديو الذي طوّر لعبة العالم السفلي المستقلة وأنتج قبلها «باستيون»؟",
-      "a": "سوبر جاينت",
-      "alt": [
-        "Supergiant Games"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Supergiant_Games",
-      "verified": true,
-      "qid": "youtubers-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "ألعاب وبث",
-      "q": "ما اللعبة التي سبقت سلسلة السولز وأسّست أسلوبها لدى فروم سوفتوير؟",
-      "a": "ديمونز سولز",
-      "alt": [
-        "Demon's Souls"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Demon%27s_Souls",
-      "verified": true,
-      "qid": "youtubers-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "ألعاب وبث",
-      "q": "ما الشركة التي تنشر لعبة «فري فاير» وتحمل اسمًا يبدأ بحرف الغين؟",
-      "a": "غارينا",
-      "alt": [
-        "Garena"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Garena_Free_Fire",
-      "verified": true,
-      "qid": "youtubers-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "قنوات معرفية",
-      "q": "ما معنى كلمة «فيريتاس» اللاتينية التي اشتُقّ منها اسم قناة ديريك مولر؟",
-      "a": "الحقيقة",
-      "alt": [
-        "حقيقة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Veritasium",
-      "verified": true,
-      "qid": "youtubers-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "قنوات معرفية",
-      "q": "ما اسم القناة التي يقدّمها برادي هاران عن العناصر الكيميائية؟",
-      "a": "بيريوديك فيديوز",
-      "alt": [
-        "Periodic Videos"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Brady_Haran",
-      "verified": true,
-      "qid": "youtubers-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "قنوات معرفية",
-      "q": "ما القناة التي يشرح فيها أساتذة جامعة نوتنغهام رموز الفيزياء؟",
-      "a": "سيكستي سيمبولز",
-      "alt": [
-        "Sixty Symbols"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sixty_Symbols",
-      "verified": true,
-      "qid": "youtubers-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "قنوات معرفية",
-      "q": "من مؤسس استوديو الرسوم العلمية الألماني صاحب اسم «باختصار»؟",
-      "a": "فيليب ديتمر",
-      "alt": [
-        "Philipp Dettmer"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kurzgesagt",
-      "verified": true,
-      "qid": "youtubers-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "قنوات معرفية",
-      "q": "كم سنة عمل مهندس قنبلة اللمعان في وكالة الفضاء قبل تفرّغه للمقاطع؟",
-      "a": "تسع سنوات",
-      "alt": [
-        "9 سنوات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Rober",
-      "verified": true,
-      "qid": "youtubers-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "قنوات معرفية",
-      "q": "ما المركبة التي عمل عليها مهندس قنبلة اللمعان سبع سنوات في مختبر الدفع النفاث؟",
-      "a": "كيوريوسيتي",
-      "alt": [
-        "Curiosity",
-        "مسبار كيوريوسيتي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mark_Rober",
-      "verified": true,
-      "qid": "youtubers-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "تحديات وبرامج",
-      "q": "كم بلغت جائزة مقطع إعادة تمثيل المسلسل الكوري بالدولار؟",
-      "a": "أربعمئة وستة وخمسون ألفًا",
-      "alt": [
-        "456000"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/MrBeast",
-      "verified": true,
-      "qid": "youtubers-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم المؤسسة التي ذهبت إليها تبرعات حملة زرع الأشجار؟",
-      "a": "مؤسسة يوم الشجرة",
-      "alt": [
-        "Arbor Day Foundation"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Team_Trees",
-      "verified": true,
-      "qid": "youtubers-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "تحديات وبرامج",
-      "q": "كم عدد المتسابقين في الموسم الأول من برنامج المسابقات على خدمة أمازون؟",
-      "a": "ألف متسابق",
-      "alt": [
-        "1000 متسابق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Beast_Games",
-      "verified": true,
-      "qid": "youtubers-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "تحديات وبرامج",
-      "q": "كم مقطعًا نشر صاحب سلسلة «ناس ديلي» قبل أن ينهيها؟",
-      "a": "ألف مقطع",
-      "alt": [
-        "1000 مقطع"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nas_Daily",
-      "verified": true,
-      "qid": "youtubers-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "تحديات وبرامج",
-      "q": "كم تجاوز عدد المشتركين في البث المتواصل القياسي على منصة الألعاب عام 2024؟",
-      "a": "سبعمئة ألف",
-      "alt": [
-        "727 ألف"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kai_Cenat",
-      "verified": true,
-      "qid": "youtubers-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "تحديات وبرامج",
-      "q": "ما اسم الحدث الذي حطّم به لاعب بث أمريكي رقم الاشتراكات في نوفمبر 2024؟",
-      "a": "مافياثون",
-      "alt": [
-        "Mafiathon"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kai_Cenat",
-      "verified": true,
-      "qid": "youtubers-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان وجذور",
-      "q": "في أي بلدة إيطالية نشأ نجم المقاطع الصامتة قرب تورينو؟",
-      "a": "كيفاسو",
-      "alt": [
-        "Chivasso"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khaby_Lame",
-      "verified": true,
-      "qid": "youtubers-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان وجذور",
-      "q": "من أي جامعة أمريكية تخرّج صاحب سلسلة «ناس ديلي»؟",
-      "a": "هارفارد",
-      "alt": [
-        "Harvard"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nas_Daily",
-      "verified": true,
-      "qid": "youtubers-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان وجذور",
-      "q": "في أي بلد وُلد مؤسس يوتيوب صاحب أول مقطع قبل انتقاله لأمريكا؟",
-      "a": "ألمانيا",
-      "alt": [
-        "ألماني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jawed_Karim",
-      "verified": true,
-      "qid": "youtubers-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان وجذور",
-      "q": "في أي مدينة سعودية نشأ أنس مروة بعد انتقال أسرته؟",
-      "a": "جدة",
-      "alt": [
-        "Jeddah"
-      ],
-      "sourceUrl": "https://www.arageek.com/bio/أنس-مروة",
-      "verified": true,
-      "qid": "youtubers-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان وجذور",
-      "q": "إلى أي بلد انتقلت نور نعيم لدراسة الإنجليزية قبل سفرها لأمريكا؟",
-      "a": "تركيا",
-      "alt": [
-        "تركي"
-      ],
-      "sourceUrl": "https://www.arabnews.com/node/2027151/noor-stars-123-million-followers",
-      "verified": true,
-      "qid": "youtubers-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان وجذور",
-      "q": "ما الجامعة المغربية التي درس فيها أمين رغيب القانون؟",
-      "a": "القاضي عياض",
-      "alt": [
-        "جامعة القاضي عياض"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أمين_رغيب",
-      "verified": true,
-      "qid": "youtubers-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عالميون",
-      "q": "ما الصوت الذي يحاكيه المقطع «بيو» في اسم صاحب أشهر قناة سويدية؟",
-      "a": "صوت المسدس الليزري",
-      "alt": [
-        "طلقة ليزر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie",
-      "verified": true,
-      "qid": "youtubers-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عالميون",
-      "q": "ما اسم زوجة صاحب قناة بيوديباي التي ظهرت في مقاطعه كثيرًا؟",
-      "a": "مارزيا",
-      "alt": [
-        "Marzia"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/PewDiePie",
-      "verified": true,
-      "qid": "youtubers-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عالميون",
-      "q": "ما العبارة التي تردّدها جماهير صانع محتوى الألعاب الراحل تكريمًا له؟",
-      "a": "تكنوبليد لا يموت",
-      "alt": [
-        "Technoblade never dies"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Technoblade",
-      "verified": true,
-      "qid": "youtubers-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عالميون",
-      "q": "ما الاسم الحقيقي لصانع المحتوى المقنّع الذي كشف وجهه عام 2022؟",
-      "a": "كلاي",
-      "alt": [
-        "Clay"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dream_(YouTuber)",
-      "verified": true,
-      "qid": "youtubers-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عالميون",
-      "q": "ما شركة الأسطوانات التي وقّع معها لاعب البث الصاخب أغنيته عام 2022؟",
-      "a": "وارنر ريكوردز",
-      "alt": [
-        "Warner Records"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/IShowSpeed",
-      "verified": true,
-      "qid": "youtubers-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عالميون",
-      "q": "ما الرياضة الاحترافية التي يمارسها صاحب قناة إم كي بي إتش دي التقنية؟",
-      "a": "الفريسبي",
-      "alt": [
-        "ألتيميت فريزبي",
-        "الطبق الطائر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Marques_Brownlee",
-      "verified": true,
-      "qid": "youtubers-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عرب",
-      "q": "من الشقيقة التي تؤدي شخصية البرتقالة في فرقة الأطفال الحيفاوية؟",
-      "a": "مجدليون",
-      "alt": [
-        "مجدليون سعيد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوزي_موزي",
-      "verified": true,
-      "qid": "youtubers-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عرب",
-      "q": "في أي عام أطلقت فرقة الأطفال الحيفاوية قناتها على يوتيوب؟",
-      "a": "2009",
-      "alt": [
-        "ألفين وتسعة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فوزي_موزي",
-      "verified": true,
-      "qid": "youtubers-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عرب",
-      "q": "ما اسما ابنَي أنس مروة وأصالة اللذين يظهران في قناتهما؟",
-      "a": "ميلا وآدم",
-      "alt": [
-        "ميلا و آدم"
-      ],
-      "sourceUrl": "https://www.arageek.com/bio/أنس-مروة",
-      "verified": true,
-      "qid": "youtubers-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عرب",
-      "q": "كم تجاوز ما جمعته حملة البث الخيري الكويتية بالدولار؟",
-      "a": "أحد عشر مليونًا",
-      "alt": [
-        "11 مليون دولار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
-      "verified": true,
-      "qid": "youtubers-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "صنّاع عرب",
-      "q": "كم سنة استمرت شراكة أحمد الغندور مع الأكاديمية الإماراتية قبل انتهائها؟",
-      "a": "خمس سنوات",
-      "alt": [
-        "5 سنوات"
-      ],
-      "sourceUrl": "https://nma.ae/news/الدحيح-يعود-إلى-مشاهديه-من-بوابة-أكاديمية-الإعلام-الجديد",
-      "verified": true,
-      "qid": "youtubers-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان وجذور",
-      "q": "ما مدينة مولد صانع المحتوى المعروف بلقب أبو فلة؟",
-      "a": "مدينة الكويت",
-      "alt": [
-        "العاصمة الكويتية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_فلة",
-      "verified": true,
-      "qid": "youtubers-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم الفرقة التي ينتمي إليها لاعب البث الذي حطّم رقم الاشتراكات عام 2024؟",
-      "a": "أيه إم بي",
-      "alt": [
-        "AMP"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kai_Cenat",
-      "verified": true,
-      "qid": "youtubers-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم شبكة الأصدقاء التي تضم لاعبة البث إيمان أنيس؟",
-      "a": "أوفلاين تي في",
-      "alt": [
-        "OfflineTV"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pokimane",
-      "verified": true,
-      "qid": "youtubers-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وشعارات",
-      "q": "ما الاسم الذي كانت تحمله قناة الطفل رايان كاجي قبل تغييره؟",
-      "a": "رايان توي ريفيو",
-      "alt": [
-        "Ryan ToysReview"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ryan_Kaji",
-      "verified": true,
-      "qid": "youtubers-1000-045"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وشعارات",
-      "q": "ما الاسم الأول الذي حملته مجموعة صنّاع المحتوى البريطانية السباعية؟",
-      "a": "ألتيميت سيدمن",
-      "alt": [
-        "Ultimate Sidemen"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sidemen",
-      "verified": true,
-      "qid": "youtubers-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم السلسلة الأسبوعية التي تنشرها المجموعة البريطانية السباعية يوم الأحد؟",
-      "a": "سيدمن صنداي",
-      "alt": [
-        "Sidemen Sunday"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sidemen",
-      "verified": true,
-      "qid": "youtubers-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "ألقاب وشعارات",
-      "q": "ما اسم العالم الجماعي في لعبة المكعبات الذي جمع صنّاع محتوى حول قصة تمثيلية؟",
-      "a": "دريم إس إم بي",
-      "alt": [
-        "Dream SMP"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dream_(YouTuber)",
-      "verified": true,
-      "qid": "youtubers-1000-048"
+      "topic": "مشاريع وبرامج",
+      "verified": true,
+      "sourceUrl": "https://docs.manim.community/en/stable/",
+      "difficultyTarget": 0.15,
+      "qid": "youtubers-1000-908"
     }
   ]
 }

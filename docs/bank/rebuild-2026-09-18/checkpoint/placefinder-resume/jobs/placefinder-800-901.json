@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-800-901",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 800,
+  "a": "قلعة نويشفانشتاين",
+  "alt": [
+    "نويشفانشتاين",
+    "نويشوانشتاين",
+    "Neuschwanstein"
+  ],
+  "topic": "أوروبا الوسطى والشمالية",
+  "q": "ما اسم هذه القلعة البافارية فوق التلّ المشجّر؟",
+  "sourceUrl": "https://www.neuschwanstein.de/englisch/palace/index.htm",
+  "sourceEvidence": "Opened Bavarian palace administration 2026-09-25: Ludwig II castle with limestone facades in alpine setting.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Neuschwanstein Castle in Bavaria, Germany, recognizable elevated three-quarter view from the Marienbrucke direction: white limestone Romanesque revival palace on a steep forested ridge, asymmetrical long main palace with stepped gables, tall square tower and slender round turret with dark blue-grey pointed cone roof, smaller towers and red-brick gatehouse section at rear. Real asymmetric grouped architecture and alpine foothills, no Disney fantasy redesign; entire castle and ridge silhouette visible.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "White asymmetric palace, square tower, round pointed turrets and red gatehouse on forest ridge; Neuschwanstein recognition, not an architectural survey.",
+  "runtimeReviewStatus": "approved"
+}

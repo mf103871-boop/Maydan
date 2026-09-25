@@ -1,0 +1,19 @@
+{
+  "id": "zoom-800-902",
+  "kind": "question",
+  "pack": "zoom",
+  "file": "media/zoom/zoom-800-902.webp",
+  "asset": "media/zoom/zoom-800-902.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a four-sided stainless steel cheese grater.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed. Keep the most distinctive surface detail near the exact center; this full image will be digitally zoomed by the game. \nBackground: seamless warm off-white studio background, subtle contact shadow.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 98448,
+  "sha256": "bb7c92e1f2ffb1bdda4c30c57b7d2b52feddba6885f5d3ac179728b3c1e38553",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

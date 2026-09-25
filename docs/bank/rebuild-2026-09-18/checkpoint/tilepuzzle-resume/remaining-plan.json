@@ -1,0 +1,303 @@
+[
+  {
+    "id": "tilepuzzle-1000-901",
+    "kind": "question",
+    "pack": "tilepuzzle",
+    "a": "آكل النمل الحرشفي",
+    "p": 1000,
+    "topic": "حيوانات",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a pangolin on a natural log, overlapping scales and long tapered tail.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+    "question": {
+      "p": 1000,
+      "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+      "a": "آكل النمل الحرشفي",
+      "qid": "tilepuzzle-1000-901",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بنغولين",
+        "بانغولين"
+      ],
+      "topic": "حيوانات",
+      "difficultyTarget": 0.15,
+      "verified": false,
+      "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "media": {
+        "src": "tilepuzzle-1000-901.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    }
+  },
+  {
+    "id": "tilepuzzle-1000-902",
+    "kind": "question",
+    "pack": "tilepuzzle",
+    "a": "رومانسكو",
+    "p": 1000,
+    "topic": "أطعمة",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a fresh romanesco broccoli head with pale green spiral fractal florets.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+    "question": {
+      "p": 1000,
+      "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+      "a": "رومانسكو",
+      "qid": "tilepuzzle-1000-902",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بروكلي رومانسكو"
+      ],
+      "topic": "أطعمة",
+      "difficultyTarget": 0.15,
+      "verified": false,
+      "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "media": {
+        "src": "tilepuzzle-1000-902.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    }
+  },
+  {
+    "id": "tilepuzzle-1000-903",
+    "kind": "question",
+    "pack": "tilepuzzle",
+    "a": "عارض شفافيات",
+    "p": 1000,
+    "topic": "أجهزة",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a vintage overhead transparency projector with a flat lit base, rising arm and mirror head.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+    "question": {
+      "p": 1000,
+      "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+      "a": "عارض شفافيات",
+      "qid": "tilepuzzle-1000-903",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بروجكتر شفافيات"
+      ],
+      "topic": "أجهزة",
+      "difficultyTarget": 0.15,
+      "verified": false,
+      "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "media": {
+        "src": "tilepuzzle-1000-903.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    }
+  },
+  {
+    "id": "tilepuzzle-1000-904",
+    "kind": "question",
+    "pack": "tilepuzzle",
+    "a": "حوامة",
+    "p": 1000,
+    "topic": "وسائل نقل",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a hovercraft with inflated rubber skirt on a sandy beach.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+    "question": {
+      "p": 1000,
+      "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+      "a": "حوامة",
+      "qid": "tilepuzzle-1000-904",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "وسائل نقل",
+      "difficultyTarget": 0.15,
+      "verified": false,
+      "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "media": {
+        "src": "tilepuzzle-1000-904.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    }
+  },
+  {
+    "id": "tilepuzzle-1000-905",
+    "kind": "question",
+    "pack": "tilepuzzle",
+    "a": "برج رياح",
+    "p": 1000,
+    "topic": "أماكن",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a traditional Gulf windcatcher tower with openings on all four sides, earthen architecture.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+    "question": {
+      "p": 1000,
+      "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+      "a": "برج رياح",
+      "qid": "tilepuzzle-1000-905",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بارجيل",
+        "بادكير"
+      ],
+      "topic": "أماكن",
+      "difficultyTarget": 0.15,
+      "verified": false,
+      "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "media": {
+        "src": "tilepuzzle-1000-905.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    }
+  },
+  {
+    "id": "tilepuzzle-1000-906",
+    "kind": "question",
+    "pack": "tilepuzzle",
+    "a": "أعمدة بازلتية",
+    "p": 1000,
+    "topic": "طبيعة",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a natural cliff of tall hexagonal basalt columns.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+    "question": {
+      "p": 1000,
+      "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+      "a": "أعمدة بازلتية",
+      "qid": "tilepuzzle-1000-906",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "طبيعة",
+      "difficultyTarget": 0.15,
+      "verified": false,
+      "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "media": {
+        "src": "tilepuzzle-1000-906.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    }
+  },
+  {
+    "id": "tilepuzzle-1000-907",
+    "kind": "question",
+    "pack": "tilepuzzle",
+    "a": "هاندبان",
+    "p": 1000,
+    "topic": "موسيقى",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a steel handpan drum with central dome and circular tone fields.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+    "question": {
+      "p": 1000,
+      "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+      "a": "هاندبان",
+      "qid": "tilepuzzle-1000-907",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "هانغ درام",
+        "هاند بان"
+      ],
+      "topic": "موسيقى",
+      "difficultyTarget": 0.15,
+      "verified": false,
+      "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "media": {
+        "src": "tilepuzzle-1000-907.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    }
+  },
+  {
+    "id": "tilepuzzle-1000-908",
+    "kind": "question",
+    "pack": "tilepuzzle",
+    "a": "أسطرلاب",
+    "p": 1000,
+    "topic": "هوايات وأدوات",
+    "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a traditional brass astrolabe with pierced rete, circular scales and suspension ring, no legible text.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  Spread meaningful details across the frame because it will be shuffled into twelve tiles.\nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+    "question": {
+      "p": 1000,
+      "q": "ما الشيء الذي تكوّنه القطع المبعثرة؟",
+      "a": "أسطرلاب",
+      "qid": "tilepuzzle-1000-908",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [],
+      "topic": "هوايات وأدوات",
+      "difficultyTarget": 0.15,
+      "verified": false,
+      "source": "مشهد توضيحي أصلي؛ تُراجع مطابقة الصورة للإجابة قبل اعتمادها",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/visual-evidence.md",
+      "media": {
+        "src": "tilepuzzle-1000-908.webp",
+        "type": "image",
+        "title": "لغز بصري مولّد",
+        "author": "Maydan / OpenAI image generation",
+        "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+        "provenance": {
+          "kind": "ai-generated",
+          "tool": "OpenAI image generation",
+          "createdAt": "2026-09-18",
+          "record": "docs/bank/rebuild-2026-09-18/generated-art.json"
+        }
+      }
+    }
+  }
+]

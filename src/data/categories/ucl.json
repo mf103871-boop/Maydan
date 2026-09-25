@@ -5,2518 +5,538 @@
   "qs": [
     {
       "p": 200,
-      "topic": "الأبطال والنهائيات",
-      "q": "من فاز بدوري الأبطال موسم 2025؟",
-      "a": "باريس سان جيرمان",
-      "alt": [
-        "باريس",
-        "ب س ج",
-        "PSG"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
+      "q": "أي نادٍ أحرز دوري الأبطال ثلاث مرات متتالية بين 2016 و 2018؟",
+      "a": "ريال مدريد",
+      "qid": "ucl-200-901",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "ucl-200-049"
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0245-0e98d7318379-716954065574-1000/",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 200,
-      "topic": "الأبطال والنهائيات",
-      "q": "من الوصيف في نهائي 2026 أمام باريس؟",
-      "a": "أرسنال",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-050"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "كم لقباً أوروبياً يملك ريال مدريد صاحب الرقم القياسي؟",
-      "a": "خمسة عشر",
-      "alt": [
-        "15"
-      ],
-      "verified": true,
-      "qid": "ucl-200-051"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "كم لقباً أوروبياً يملك ميلان؟",
-      "a": "سبعة",
-      "alt": [
-        "7"
-      ],
-      "verified": true,
-      "qid": "ucl-200-052"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "كم لقباً أوروبياً يملك بايرن؟",
-      "a": "ستة",
-      "alt": [
-        "6"
-      ],
-      "verified": true,
-      "qid": "ucl-200-053"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "كم لقباً يملك برشلونة في المسابقة؟",
-      "a": "خمسة",
-      "alt": [
-        "5"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-054"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "كم لقباً يملك أياكس أمستردام؟",
-      "a": "أربعة",
-      "alt": [
-        "4"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-055"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "من أي بلد نادي ريال مدريد؟",
-      "a": "إسبانيا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-056"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الهداف التاريخي لدوري أبطال أوروبا؟",
-      "a": "كريستيانو رونالدو",
-      "alt": [
-        "رونالدو",
-        "كريستيانو"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-057"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الهداف التاريخي الثاني بعد رونالدو في المسابقة؟",
-      "a": "ليونيل ميسي",
-      "alt": [
-        "ميسي"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-058"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من هدّاف دوري الأبطال في موسم 2025-2026؟",
-      "a": "كيليان مبابي",
-      "alt": [
-        "مبابي"
-      ],
-      "verified": true,
-      "qid": "ucl-200-059"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من مهاجم الريال الفرنسي صاحب الكرة الذهبية 2022؟",
-      "a": "كريم بنزيما",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-060"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من البرازيلي الذي سجّل في نهائي 2024 لريال مدريد؟",
-      "a": "فينيسيوس جونيور",
-      "alt": [
-        "فينيسيوس"
-      ],
-      "verified": true,
-      "qid": "ucl-200-061"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من درّب باريس في لقبي 2025 و2026؟",
-      "a": "لويس إنريكي",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-062"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من درّب ريال مدريد في لقبي 2022 و2024؟",
-      "a": "كارلو أنشيلوتي",
-      "alt": [
-        "أنشيلوتي"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-063"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من درّب مانشستر سيتي في لقب 2023؟",
-      "a": "بيب غوارديولا",
-      "alt": [
-        "غوارديولا"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-064"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من درّب ليفربول في لقب 2019؟",
-      "a": "يورغن كلوب",
-      "alt": [
-        "كلوب"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-065"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "في أي مدينة أُقيم نهائي 2026؟",
-      "a": "بودابست",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-066"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما اسم ملعب نهائي 2026؟",
-      "a": "بوشكاش أرينا",
-      "alt": [
-        "ملعب بوشكاش"
-      ],
-      "verified": true,
-      "qid": "ucl-200-067"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "في أي مدينة أُقيم نهائي 2024؟",
-      "a": "لندن",
-      "verified": true,
-      "qid": "ucl-200-068"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نهائي 2024؟",
-      "a": "ويمبلي",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-069"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب ريال مدريد الشهير؟",
-      "a": "سانتياغو برنابيو",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-070"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب ليفربول الشهير؟",
-      "a": "أنفيلد",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-071"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب مانشستر يونايتد؟",
-      "a": "أولد ترافورد",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-072"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "بماذا تُلقَّب كأس دوري الأبطال بسبب مقبضيها الكبيرين؟",
-      "a": "ذات الأذنين",
-      "alt": [
-        "الأذنان",
-        "الأذن الكبيرة"
-      ],
-      "verified": true,
-      "qid": "ucl-200-073"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "أي اتحاد أوروبي ينظم المسابقة؟",
-      "a": "يويفا",
-      "alt": [
-        "الاتحاد الأوروبي",
-        "UEFA"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-074"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم فريقاً يشارك في مرحلة الدوري بالنظام الحالي؟",
-      "a": "ستة وثلاثون",
-      "alt": [
-        "36"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-075"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "في أي يومين من الأسبوع تُلعب مباريات دوري الأبطال عادة؟",
-      "a": "الثلاثاء والأربعاء",
-      "verified": true,
-      "qid": "ucl-200-076"
-    },
-    {
-      "p": 200,
-      "topic": "العرب في أوروبا",
-      "q": "من أي بلد محمد صلاح؟",
-      "a": "مصر",
-      "verified": true,
-      "qid": "ucl-200-077"
-    },
-    {
-      "p": 200,
-      "topic": "العرب في أوروبا",
-      "q": "من أي بلد أشرف حكيمي مدافع باريس؟",
-      "a": "المغرب",
-      "verified": true,
-      "qid": "ucl-200-078"
-    },
-    {
-      "p": 200,
-      "topic": "العرب في أوروبا",
-      "q": "من أي بلد رياض محرز؟",
-      "a": "الجزائر",
-      "verified": true,
-      "qid": "ucl-200-079"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "في أي دولة أُقيم نهائي 2026؟",
-      "a": "المجر",
-      "verified": true,
-      "qid": "ucl-200-080"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم مباراة يخوض كل فريق في مرحلة الدوري؟",
-      "a": "ثماني مباريات",
-      "alt": [
-        "ثمانٍ",
-        "8"
-      ],
-      "verified": true,
-      "qid": "ucl-200-081"
-    },
-    {
-      "p": 200,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف بايرن في نهائي 2020 أمام باريس؟",
-      "a": "كومان",
-      "alt": [
-        "كينغسلي كومان"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-082"
-    },
-    {
-      "p": 200,
-      "topic": "لحظات تاريخية",
-      "q": "بأي نتيجة فازت باريس بنهائي 2025؟",
-      "a": "خمسة صفر",
-      "alt": [
-        "5-0",
-        "5–0"
-      ],
-      "verified": true,
-      "qid": "ucl-200-083"
-    },
-    {
-      "p": 200,
-      "topic": "لحظات تاريخية",
-      "q": "كيف حُسم نهائي 2026 بعد التعادل؟",
-      "a": "ركلات الترجيح",
-      "alt": [
-        "الترجيح"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-084"
-    },
-    {
-      "p": 200,
-      "topic": "لحظات تاريخية",
-      "q": "في أي مدينة حدثت أشهر عودة في تاريخ النهائيات عام 2005؟",
-      "a": "إسطنبول",
-      "verified": true,
-      "qid": "ucl-200-085"
-    },
-    {
-      "p": 200,
-      "topic": "لحظات تاريخية",
-      "q": "بأي نتيجة انتهى الوقت الأصلي في نهائي 2005؟",
-      "a": "ثلاثة ثلاثة",
-      "alt": [
-        "3-3",
-        "3–3"
-      ],
-      "verified": true,
-      "qid": "ucl-200-086"
-    },
-    {
-      "p": 200,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 2024؟",
-      "a": "بوروسيا دورتموند",
-      "alt": [
-        "دورتموند"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-087"
-    },
-    {
-      "p": 200,
-      "topic": "المدربون",
-      "q": "من درّب وصيف نهائي 2024؟",
-      "a": "إدين تيرزيتش",
-      "verified": true,
-      "qid": "ucl-200-088"
-    },
-    {
-      "p": 200,
-      "topic": "اللاعبون والهدافون",
-      "q": "من قائد باريس في لقبَي 2025 و2026؟",
-      "a": "ماركوينيوس",
-      "verified": true,
-      "qid": "ucl-200-089"
-    },
-    {
-      "p": 200,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نادي تشيلسي؟",
-      "a": "ستامفورد بريدج",
-      "verified": true,
-      "qid": "ucl-200-090"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم شوطاً في المباراة الواحدة؟",
-      "a": "شوطان",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-091"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم دقيقة الشوط الأساسي الواحد؟",
-      "a": "خمس وأربعون",
-      "alt": [
-        "45"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-092"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "من أي بلد نادي بايرن؟",
-      "a": "ألمانيا",
-      "verified": true,
-      "qid": "ucl-200-093"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "من أي بلد نادي ليفربول؟",
-      "a": "إنجلترا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-094"
-    },
-    {
-      "p": 200,
-      "topic": "الأندية والأرقام",
-      "q": "من أي بلد نادي يوفنتوس؟",
-      "a": "إيطاليا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-200-095"
-    },
-    {
-      "p": 200,
-      "topic": "النظام والكأس",
-      "q": "كم نقطة يمنحها الفوز في مرحلة الدوري؟",
-      "a": "ثلاث نقاط",
-      "alt": [
-        "3"
-      ],
-      "verified": true,
-      "qid": "ucl-200-096"
-    },
-    {
-      "p": 400,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 2025 أمام باريس؟",
-      "a": "إنتر ميلان",
-      "alt": [
-        "إنتر"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-049"
-    },
-    {
-      "p": 400,
-      "topic": "الأبطال والنهائيات",
-      "q": "من فاز بدوري الأبطال موسم 2021؟",
-      "a": "تشيلسي",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-050"
-    },
-    {
-      "p": 400,
-      "topic": "الأبطال والنهائيات",
-      "q": "من فاز بدوري الأبطال موسم 2015؟",
+      "q": "أي نادٍ هزم يونايتد بهدفَي إيتو وميسي في نهائي 2009؟",
       "a": "برشلونة",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
+      "qid": "ucl-200-902",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "ucl-400-051"
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/01e0-0e7398054ce6-4b27ea9955b6-1000--messi-leads-barca-to-rome-glory/",
+      "verifiedAt": "2026-09-18"
     },
     {
-      "p": 400,
-      "topic": "الأندية والأرقام",
-      "q": "كم لقباً ليوفنتوس في المسابقة؟",
-      "a": "اثنان",
+      "p": 200,
+      "q": "من أحرز 17 هدفًا في نسخة دوري الأبطال 2013/14؟",
+      "a": "كريستيانو رونالدو",
+      "qid": "ucl-200-903",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0252-0cdc68c5ee7f-854c7d82fcc8-1000--record-breaking-ronaldo-takes-scoring-honours/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "لقبان",
-        "2"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-052"
+        "كريستيانو"
+      ]
     },
     {
-      "p": 400,
-      "topic": "الأندية والأرقام",
-      "q": "كم لقباً لمانشستر يونايتد؟",
-      "a": "ثلاثة",
+      "p": 200,
+      "q": "من الويلزي الذي سجل هدفًا مقصيًا في نهائي دوري الأبطال 2018؟",
+      "a": "غاريث بيل",
+      "qid": "ucl-200-904",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0245-0e98d7318379-716954065574-1000/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "3"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-053"
+        "جاريث بيل"
+      ]
     },
     {
-      "p": 400,
-      "topic": "الأندية والأرقام",
-      "q": "من أي بلد نادي بورتو؟",
-      "a": "البرتغال",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-054"
-    },
-    {
-      "p": 400,
-      "topic": "الأندية والأرقام",
-      "q": "من أي بلد نادي أياكس؟",
-      "a": "هولندا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-055"
-    },
-    {
-      "p": 400,
-      "topic": "الأندية والأرقام",
-      "q": "ما لقب نادي ريال مدريد الشائع؟",
-      "a": "الملكي",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-056"
-    },
-    {
-      "p": 400,
-      "topic": "الأندية والأرقام",
-      "q": "ما لقب نادي برشلونة الشائع؟",
-      "a": "البلوغرانا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-057"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف التعادل القاتل لريال مدريد في نهائي 2014؟",
-      "a": "سيرخيو راموس",
-      "alt": [
-        "راموس"
-      ],
-      "verified": true,
-      "qid": "ucl-400-058"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من سجّل هدف مانشستر سيتي الوحيد في نهائي 2023؟",
-      "a": "رودري",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-059"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من حارس ريال مدريد الرائع في نهائي 2022؟",
-      "a": "تيبو كورتوا",
-      "alt": [
-        "كورتوا"
-      ],
-      "verified": true,
-      "qid": "ucl-400-060"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من قائد ليفربول في نهائي 2005؟",
-      "a": "ستيفن جيرارد",
-      "alt": [
-        "جيرارد"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-061"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المهاجم البولندي هدّاف بايرن التاريخي؟",
-      "a": "روبرت ليفاندوفسكي",
-      "alt": [
-        "ليفاندوفسكي"
-      ],
-      "verified": true,
-      "qid": "ucl-400-062"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من مهاجم سيتي النرويجي؟",
-      "a": "إيرلينغ هالاند",
-      "alt": [
-        "هالاند"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-063"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من حارس بايرن الألماني في ثلاثية 2020؟",
-      "a": "مانويل نوير",
-      "alt": [
-        "نوير"
-      ],
-      "verified": true,
-      "qid": "ucl-400-064"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صانع ألعاب الريال الكرواتي السابق؟",
-      "a": "لوكا مودريتش",
-      "alt": [
-        "مودريتش"
-      ],
-      "verified": true,
-      "qid": "ucl-400-065"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من وسط ريال مدريد الألماني الذي اعتزل بعد نهائي 2024؟",
-      "a": "توني كروس",
-      "alt": [
-        "كروس"
-      ],
-      "verified": true,
-      "qid": "ucl-400-066"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المهاجم الإيفواري صاحب هدف التعادل في نهائي 2012؟",
-      "a": "ديدييه دروغبا",
-      "alt": [
-        "دروغبا"
-      ],
-      "verified": true,
-      "qid": "ucl-400-067"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من قائد تشيلسي الذي أوقِف عن نهائي 2012؟",
-      "a": "جون تيري",
-      "alt": [
-        "تيري"
-      ],
-      "verified": true,
-      "qid": "ucl-400-068"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من درّب بايرن في ثلاثية 2020؟",
-      "a": "هانزي فليك",
-      "alt": [
-        "فليك"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-069"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من درّب تشيلسي في لقب 2021؟",
-      "a": "توماس توخيل",
-      "alt": [
-        "توخيل"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-070"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من درّب الريال في ثلاثية 2016-2018؟",
-      "a": "زين الدين زيدان",
-      "alt": [
-        "زيدان"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-071"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من درّب يونايتد في لقب 2008؟",
+      "p": 200,
+      "q": "من مدرب يونايتد حين رفع الكأس الأوروبية في 1999 و 2008؟",
       "a": "أليكس فيرغسون",
+      "qid": "ucl-200-905",
+      "topic": "المدربون",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/01cf-0e6f71aacef6-834e3e001fd3-1000--fate-favours-triumphant-sir-alex/",
+      "verifiedAt": "2026-09-18",
       "alt": [
+        "أليكس فيرجسون",
         "فيرغسون"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-072"
+      ]
     },
     {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من درّب برشلونة في لقب 2006؟",
-      "a": "فرانك رايكارد",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-073"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "في أي مدينة أُقيم نهائي 2025؟",
-      "a": "ميونخ",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-074"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نهائي 2025؟",
-      "a": "أليانز أرينا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-075"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب ميلان وإنتر المشترك؟",
-      "a": "سان سيرو",
-      "alt": [
-        "جوزيبه مياتسا"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-076"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب يوفنتوس الحالي؟",
-      "a": "أليانز ستاديوم",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-077"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب باريس؟",
-      "a": "بارك دي برانس",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-078"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب مانشستر سيتي؟",
-      "a": "الاتحاد",
-      "alt": [
-        "ملعب الاتحاد",
-        "الإتحاد"
-      ],
-      "verified": true,
-      "qid": "ucl-400-079"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب دورتموند الشهير بجداره الأصفر؟",
-      "a": "سيغنال إيدونا بارك",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-080"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "في أي عام تغيّر اسم كأس أوروبا إلى دوري الأبطال؟",
-      "a": "1992",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-081"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "كم فريقاً يتأهل مباشرة إلى ثمن النهائي من مرحلة الدوري؟",
-      "a": "ثمانية",
-      "alt": [
-        "8"
-      ],
-      "verified": true,
-      "qid": "ucl-400-082"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "كم دقيقة للأشواط الإضافية في النهائي؟",
-      "a": "ثلاثون",
-      "alt": [
-        "30"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-083"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "في أي شهر يُقام نهائي دوري الأبطال عادة؟",
-      "a": "مايو",
-      "alt": [
-        "أيار"
-      ],
-      "verified": true,
-      "qid": "ucl-400-084"
-    },
-    {
-      "p": 400,
-      "topic": "النظام والكأس",
-      "q": "ما اسم المسابقة الأوروبية الثانية بعد دوري الأبطال؟",
-      "a": "الدوري الأوروبي",
-      "alt": [
-        "يوروبا ليغ"
-      ],
-      "verified": true,
-      "qid": "ucl-400-085"
-    },
-    {
-      "p": 400,
-      "topic": "العرب في أوروبا",
-      "q": "من المغربي الذي لعب لأياكس وتشيلسي في دوري الأبطال؟",
-      "a": "حكيم زياش",
-      "alt": [
-        "زياش"
-      ],
-      "verified": true,
-      "qid": "ucl-400-086"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات تاريخية",
-      "q": "بأي نتيجة انتهى نهائي 2024؟",
-      "a": "اثنان صفر",
-      "alt": [
-        "2-0"
-      ],
-      "verified": true,
-      "qid": "ucl-400-087"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف تشيلسي في نهائي 2021؟",
-      "a": "كاي هافرتز",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-400-088"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف باريس في نهائي 2026؟",
-      "a": "عثمان ديمبيلي",
-      "alt": [
-        "ديمبيلي"
-      ],
-      "verified": true,
-      "qid": "ucl-400-089"
-    },
-    {
-      "p": 400,
-      "topic": "الأندية والأرقام",
-      "q": "ما اللقب الشائع لنادي مانشستر يونايتد؟",
-      "a": "الشياطين الحمر",
-      "verified": true,
-      "qid": "ucl-400-090"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صانع ألعاب مانشستر سيتي البلجيكي في لقب 2023؟",
-      "a": "كيفن دي بروين",
-      "alt": [
-        "دي بروين"
-      ],
-      "verified": true,
-      "qid": "ucl-400-091"
-    },
-    {
-      "p": 400,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الحارس البرازيلي بطل نهائي 2019؟",
-      "a": "أليسون",
-      "verified": true,
-      "qid": "ucl-400-092"
-    },
-    {
-      "p": 400,
-      "topic": "المدربون",
-      "q": "من درّب إنتر الخاسر في نهائي 2023؟",
-      "a": "سيموني إنزاغي",
-      "verified": true,
-      "qid": "ucl-400-093"
-    },
-    {
-      "p": 400,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب أتلتيكو الحالي في مدريد؟",
-      "a": "الميتروبوليتانو",
-      "verified": true,
-      "qid": "ucl-400-094"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات تاريخية",
-      "q": "من قائد مانشستر سيتي الذي رفع كأس 2023؟",
-      "a": "إلكاي غوندوغان",
-      "alt": [
-        "غوندوغان"
-      ],
-      "verified": true,
-      "qid": "ucl-400-095"
-    },
-    {
-      "p": 400,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف المقصية الشهير في نهائي 2018؟",
-      "a": "غارث بيل",
-      "alt": [
-        "بيل"
-      ],
-      "verified": true,
-      "qid": "ucl-400-096"
-    },
-    {
-      "p": 600,
-      "topic": "الأبطال والنهائيات",
-      "q": "أي نادٍ اسكتلندي فاز بكأس أوروبا عام 1967؟",
-      "a": "سلتيك",
-      "alt": [
-        "سيلتيك"
-      ],
-      "verified": true,
-      "qid": "ucl-600-049"
-    },
-    {
-      "p": 600,
-      "topic": "الأبطال والنهائيات",
-      "q": "من فاز بدوري الأبطال موسم 2004؟",
-      "a": "بورتو",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-050"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "كم مرة فاز نوتنغهام فورست بكأس أوروبا؟",
-      "a": "مرتان",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-051"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "أي نادٍ فرنسي فاز بالنسخة الأولى بعد تغيير الاسم عام 1993؟",
-      "a": "مارسيليا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-052"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "أي نادٍ روماني فاز بكأس أوروبا عام 1986؟",
-      "a": "ستيوا بوخارست",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-053"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "كم نسخة متتالية فاز بها ريال مدريد في بداية المسابقة؟",
-      "a": "خمس نسخ",
-      "alt": [
-        "خمس",
-        "5"
-      ],
-      "verified": true,
-      "qid": "ucl-600-054"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "كم مرة خسر بايرن نهائي المسابقة؟",
-      "a": "خمس مرات",
-      "alt": [
-        "5"
-      ],
-      "verified": true,
-      "qid": "ucl-600-055"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "في أي عام فاز مانشستر يونايتد بكأس أوروبا لأول مرة؟",
-      "a": "1968",
-      "verified": true,
-      "qid": "ucl-600-056"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "ما لقب نادي ميلان الشائع؟",
-      "a": "الروسونيري",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-057"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "ما لقب نادي إنتر الشائع؟",
-      "a": "النيراتزوري",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-058"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "ما اللقب الشائع لنادي بايرن؟",
-      "a": "البافاري",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-059"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من سجّل الهدف الثاني في نهائي 2019؟",
-      "a": "ديفي أوريجي",
-      "alt": [
-        "أوريجي"
-      ],
-      "verified": true,
-      "qid": "ucl-600-060"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من قائد ميلان في لقبَي 2003 و2007؟",
-      "a": "باولو مالديني",
-      "alt": [
-        "مالديني"
-      ],
-      "verified": true,
-      "qid": "ucl-600-061"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المهاجم الهولندي صاحب هدفين في نهائي 1989؟",
-      "a": "ماركو فان باستن",
-      "alt": [
-        "فان باستن"
-      ],
-      "verified": true,
-      "qid": "ucl-600-062"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من حارس ريال مدريد الذي رفع الكأس العاشرة؟",
+      "p": 200,
+      "q": "من حارس الريال وقائده في نهائي اللقب العاشر عام 2014؟",
       "a": "إيكر كاسياس",
+      "qid": "ucl-200-906",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/MultimediaFiles/Download/uefaorg/General/02/13/86/55/2138655_DOWNLOAD.pdf",
+      "verifiedAt": "2026-09-18",
       "alt": [
         "كاسياس"
-      ],
-      "verified": true,
-      "qid": "ucl-600-063"
+      ]
     },
     {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من البرازيلي الذي قاد ميلان للقب 2007 ونال الكرة الذهبية؟",
-      "a": "كاكا",
+      "p": 200,
+      "q": "ما الملعب اللندني الذي استضاف النهائي الألماني الخالص عام 2013؟",
+      "a": "ويمبلي",
+      "qid": "ucl-200-907",
+      "topic": "الملاعب",
       "verified": true,
-      "qid": "ucl-600-064"
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50ff9a7f18-7e59ddb15025-1000/",
+      "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من هدّاف يوفنتوس التاريخي الذي خسر نهائيَي 1997 و1998؟",
-      "a": "أليساندرو ديل بييرو",
+      "p": 200,
+      "q": "أي نادٍ عاد من تأخره بثلاثة أهداف ليتوج بطلًا لأوروبا في إسطنبول 2005؟",
+      "a": "ليفربول",
+      "qid": "ucl-200-908",
+      "topic": "العودة في النتيجة",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d7b89fe7b7f-c91716d11bdf-1000--2004-05-liverpool-belief-defies-milan/",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 400,
+      "q": "أي فريق ألماني هزم دورتموند في نهائي دوري الأبطال 2013؟",
+      "a": "بايرن ميونخ",
+      "qid": "ucl-400-901",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50ff9a7f18-7e59ddb15025-1000/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "ديل بييرو"
-      ],
-      "verified": true,
-      "qid": "ucl-600-065"
+        "بايرن"
+      ]
     },
     {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من هدّاف تشيلسي التاريخي الفائز بلقب 2012؟",
-      "a": "فرانك لامبارد",
+      "p": 400,
+      "q": "أي فريق لندني أحرز أول ألقابه بدوري الأبطال في نهائي ميونيخ 2012؟",
+      "a": "تشيلسي",
+      "qid": "ucl-400-902",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50fb78a384-1434bbcadbcb-1000/",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 400,
+      "q": "من سجل رأسية التعادل وركلة الترجيح الحاسمة للبلوز في نهائي 2012؟",
+      "a": "ديدييه دروغبا",
+      "qid": "ucl-400-903",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0252-0cd3fae4b776-06473dd5a037-1000--chelsea-success-leaves-drogba-speechless/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "لامبارد"
-      ],
-      "verified": true,
-      "qid": "ucl-600-066"
+        "دروغبا"
+      ]
     },
     {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من المدافع الهولندي نجم ليفربول في لقب 2019؟",
-      "a": "فيرجيل فان دايك",
+      "p": 400,
+      "q": "من الهولندي الذي سجل هدف الحسم للبايرن في نهائي 2013؟",
+      "a": "آريين روبن",
+      "qid": "ucl-400-904",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50ff9a7f18-7e59ddb15025-1000/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "فان دايك"
-      ],
-      "verified": true,
-      "qid": "ucl-600-067"
+        "أريين روبن",
+        "أرين روبن"
+      ]
     },
     {
-      "p": 600,
+      "p": 400,
+      "q": "من قاد البارسا إلى لقب أوروبا في أول موسم له مدربًا للفريق الأول عام 2009؟",
+      "a": "بيب غوارديولا",
+      "qid": "ucl-400-905",
       "topic": "المدربون",
-      "q": "من درّب إنتر في ثلاثية 2010؟",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/01e0-0e7398054ce6-4b27ea9955b6-1000--messi-leads-barca-to-rome-glory/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "جوسيب غوارديولا",
+        "بيب جوارديولا"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "من تصدى لركلة روبن في الوقت الإضافي لنهائي 2012؟",
+      "a": "بيتر تشيك",
+      "qid": "ucl-400-906",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50fb78a384-1434bbcadbcb-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "بيتر تشيك"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الملعب الذي شهد هدفي يونايتد المتأخرين في نهائي 1999؟",
+      "a": "كامب نو",
+      "qid": "ucl-400-907",
+      "topic": "الملاعب",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d800ac7cffa-8147de94780e-1000--the-1999-champions-league-final-20-years-on-most-dramatic/",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 400,
+      "q": "من سجل رأسية التعادل للريال في الوقت بدل الضائع لنهائي 2014؟",
+      "a": "سيرخيو راموس",
+      "qid": "ucl-400-908",
+      "topic": "العودة في النتيجة",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.uefa.com/MultimediaFiles/Download/uefaorg/General/02/13/86/55/2138655_DOWNLOAD.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "راموس"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "أي نادٍ برتغالي هزم موناكو بثلاثية في نهائي دوري الأبطال 2004؟",
+      "a": "بورتو",
+      "qid": "ucl-600-901",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c5101f9aa40-9dbe7a990dfe-1000--mourinho-recalls-porto-s-2004-victory-march/",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 600,
+      "q": "أي نادٍ فاز بلقبه الأوروبي السابع في نهائي أثينا 2007؟",
+      "a": "إيه سي ميلان",
+      "qid": "ucl-600-902",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/01c1-0e6e500c2c66-db2412e7ba39-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "ميلان"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من أحرز هدف سيتي الوحيد في نهائي دوري الأبطال 2023؟",
+      "a": "رودري",
+      "qid": "ucl-600-903",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0282-1839b24603ef-36e94e63621d-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "رودريغو هيرنانديز"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من سجل تسديدة طائرة بيسراه لتحسم نهائي 2002 للريال؟",
+      "a": "زين الدين زيدان",
+      "qid": "ucl-600-904",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0245-0e98d9a21e9a-535a6472da2d-1000--bale-larsson-kluivert-the-champions-league-final-super-subs/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "زيدان"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من المدرب البرتغالي الفائز بدوري الأبطال مع فريق من بلاده عام 2004؟",
       "a": "جوزيه مورينيو",
+      "qid": "ucl-600-905",
+      "topic": "المدربون",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c5101f9aa40-9dbe7a990dfe-1000--mourinho-recalls-porto-s-2004-victory-march/",
+      "verifiedAt": "2026-09-18",
       "alt": [
         "مورينيو"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-068"
+      ]
     },
     {
       "p": 600,
-      "topic": "المدربون",
-      "q": "من درّب بايرن في لقب 2013؟",
-      "a": "يوب هاينكس",
+      "q": "من الحارس البولندي الذي صد ركلة شيفتشينكو الحاسمة في نهائي 2005؟",
+      "a": "يرزي دوديك",
+      "qid": "ucl-600-906",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50f2820ac1-0d73022c807f-1000--liverpool-triumph-in-turkey/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "هاينكس"
-      ],
-      "verified": true,
-      "qid": "ucl-600-069"
+        "جيرزي دوديك",
+        "دوديك"
+      ]
     },
     {
       "p": 600,
-      "topic": "المدربون",
-      "q": "من درّب برشلونة في أول لقب أوروبي له؟",
-      "a": "يوهان كرويف",
-      "alt": [
-        "كرويف"
-      ],
-      "verified": true,
-      "qid": "ucl-600-070"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من درّب ليفربول في لقب 2005؟",
-      "a": "رافائيل بينيتيز",
-      "alt": [
-        "بينيتيز"
-      ],
-      "verified": true,
-      "qid": "ucl-600-071"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من درّب ميلان في لقب 1994؟",
-      "a": "فابيو كابيلو",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-072"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من درّب الريال في لقب 2002؟",
-      "a": "فيسنتي ديل بوسكي",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-073"
-    },
-    {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "في أي مدينة أُقيم نهائي 2018؟",
-      "a": "كييف",
-      "verified": true,
-      "qid": "ucl-600-074"
-    },
-    {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما الملعب الذي احتضن نهائي 2005؟",
+      "q": "ما اسم الملعب الأولمبي الذي استضاف نهائي إسطنبول 2005؟",
       "a": "أتاتورك",
+      "qid": "ucl-600-907",
+      "topic": "الملاعب",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/news/025d-0f782b45c942-3e20b8c30dfa-1000--miracle-of-istanbul-an-oral-history/",
+      "verifiedAt": "2026-09-18",
       "alt": [
         "ملعب أتاتورك الأولمبي"
-      ],
-      "verified": true,
-      "qid": "ucl-600-075"
+      ]
     },
     {
       "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نهائي 2006 في باريس؟",
-      "a": "ستاد دو فرانس",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
+      "q": "من سجل ثلاثية توتنهام أمام أياكس ليقوده لنهائي 2019؟",
+      "a": "لوكاس مورا",
+      "qid": "ucl-600-908",
+      "topic": "العودة في النتيجة",
       "verified": true,
-      "qid": "ucl-600-076"
+      "difficultyTarget": 0.4,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0251-0e9ce1f530f2-d243cb498094-1000/",
+      "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نهائي 2008 في موسكو؟",
-      "a": "لوجنيكي",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
+      "p": 800,
+      "q": "أي نادٍ فرنسي أحرز اللقب الأوروبي عام 1993؟",
+      "a": "أولمبيك مارسيليا",
+      "qid": "ucl-800-901",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "ucl-600-077"
-    },
-    {
-      "p": 600,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نابولي الحالي؟",
-      "a": "دييغو أرماندو مارادونا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-078"
-    },
-    {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "كم فريقاً كان في مرحلة المجموعات قبل توسيع 2024؟",
-      "a": "اثنان وثلاثون",
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0119-0e6a0ed00b00-432257e362a9-1000/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "32"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-079"
+        "مارسيليا"
+      ]
     },
     {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "كم تبديلاً يُسمح به لكل فريق في المباراة؟",
-      "a": "خمسة تبديلات",
+      "p": 800,
+      "q": "أي نادٍ هولندي توج بدوري الأبطال بهدف كلويفرت عام 1995؟",
+      "a": "أياكس أمستردام",
+      "qid": "ucl-800-902",
+      "topic": "الأبطال",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefasupercup/history/1995/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "خمسة",
-        "5"
-      ],
-      "verified": true,
-      "qid": "ucl-600-080"
-    },
-    {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "ما المسابقة التي تجمع بطل دوري الأبطال ببطل المسابقة الأوروبية الثانية؟",
-      "a": "كأس السوبر الأوروبي",
-      "alt": [
-        "السوبر الأوروبي"
-      ],
-      "verified": true,
-      "qid": "ucl-600-081"
-    },
-    {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "ما اسم الدور الفاصل بين مرحلة الدوري وثمن النهائي؟",
-      "a": "الملحق",
-      "alt": [
-        "ملحق خروج المغلوب"
-      ],
-      "verified": true,
-      "qid": "ucl-600-082"
-    },
-    {
-      "p": 600,
-      "topic": "العرب في أوروبا",
-      "q": "من صاحب هدف الكعب الشهير في نهائي 1987 مع بورتو؟",
-      "a": "رابح ماجر",
-      "alt": [
-        "ماجر"
-      ],
-      "verified": true,
-      "qid": "ucl-600-083"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات تاريخية",
-      "q": "من الحارس البرازيلي الذي صدّ ثلاث ركلات ترجيح في نهائي 2003؟",
-      "a": "ديدا",
-      "verified": true,
-      "qid": "ucl-600-084"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدفَي الفوز في نهائي 2007؟",
-      "a": "فيليبو إنزاغي",
-      "alt": [
-        "إنزاغي"
-      ],
-      "verified": true,
-      "qid": "ucl-600-085"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات تاريخية",
-      "q": "في أي دقيقة سجّل زيدان هدفه الطائر الشهير في نهائي 2002؟",
-      "a": "الدقيقة 45",
-      "alt": [
-        "45"
-      ],
-      "verified": true,
-      "qid": "ucl-600-086"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات تاريخية",
-      "q": "بأي نتيجة فاز بايرن على سان جيرمان في نهائي 2020؟",
-      "a": "واحد صفر",
-      "alt": [
-        "1-0"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-087"
-    },
-    {
-      "p": 600,
-      "topic": "لحظات تاريخية",
-      "q": "من قائد إنتر في ثلاثية 2010؟",
-      "a": "خافيير زانيتي",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-088"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "ما اللقب الشائع لنادي أرسنال؟",
-      "a": "الغانرز",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-089"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من درّب أرسنال في نهائي 2006؟",
-      "a": "أرسين فينغر",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-090"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الفرنسي هدّاف أرسنال التاريخي؟",
-      "a": "تييري هنري",
-      "alt": [
-        "هنري"
-      ],
-      "verified": true,
-      "qid": "ucl-600-091"
-    },
-    {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "كم فريقاً يُقصى مباشرة بعد نهاية مرحلة الدوري؟",
-      "a": "اثنا عشر",
-      "alt": [
-        "12"
-      ],
-      "verified": true,
-      "qid": "ucl-600-092"
-    },
-    {
-      "p": 600,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صانع ألعاب ميلان الإيطالي المتوّج عامي 2003 و2007؟",
-      "a": "أندريا بيرلو",
-      "alt": [
-        "بيرلو"
-      ],
-      "verified": true,
-      "qid": "ucl-600-093"
-    },
-    {
-      "p": 600,
-      "topic": "المدربون",
-      "q": "من درّب بايرن في نهائي 1999 الخاسر؟",
-      "a": "أوتمار هيتسفيلد",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-600-094"
-    },
-    {
-      "p": 600,
-      "topic": "الأندية والأرقام",
-      "q": "كم نادياً إنجليزياً توّج بدوري أبطال أوروبا؟",
-      "a": "ستة أندية",
-      "alt": [
-        "ستة",
-        "6"
-      ],
-      "verified": true,
-      "qid": "ucl-600-095"
-    },
-    {
-      "p": 600,
-      "topic": "النظام والكأس",
-      "q": "ما اسم الشارة التي يضعها النادي على قميصه بعد لقبه الخامس؟",
-      "a": "شارة البطل المتعدد",
-      "alt": [
-        "شارة الشرف"
-      ],
-      "verified": true,
-      "qid": "ucl-600-096"
+        "أياكس"
+      ]
     },
     {
       "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "أي نادٍ هولندي فاز بكأس أوروبا عام 1970 قبل أياكس؟",
-      "a": "فاينورد",
-      "verified": true,
-      "qid": "ucl-800-049"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "أي نادٍ ألماني فاز بكأس أوروبا عام 1983؟",
-      "a": "هامبورغ",
-      "verified": true,
-      "qid": "ucl-800-050"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "أي نادٍ هولندي توّج بكأس أوروبا عام 1988؟",
-      "a": "بي إس في آيندهوفن",
-      "alt": [
-        "آيندهوفن",
-        "PSV"
-      ],
-      "verified": true,
-      "qid": "ucl-800-051"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 2002 أمام الريال؟",
-      "a": "باير ليفركوزن",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-052"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 2004؟",
-      "a": "موناكو",
-      "verified": true,
-      "qid": "ucl-800-053"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 2000 و2001؟",
-      "a": "فالنسيا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-054"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 2014 و2016 أمام الريال؟",
-      "a": "أتلتيكو مدريد",
-      "alt": [
-        "أتلتيكو"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-055"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "من خسر نهائي 2019 الإنجليزي الخالص؟",
-      "a": "توتنهام",
-      "verified": true,
-      "qid": "ucl-800-056"
-    },
-    {
-      "p": 800,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي كأس أوروبا الأخير أمام برشلونة؟",
-      "a": "سامبدوريا",
-      "verified": true,
-      "qid": "ucl-800-057"
-    },
-    {
-      "p": 800,
-      "topic": "الأندية والأرقام",
-      "q": "كم نادياً برتغالياً توّج بالمسابقة؟",
-      "a": "ناديان",
-      "alt": [
-        "اثنان",
-        "2"
-      ],
-      "verified": true,
-      "qid": "ucl-800-058"
-    },
-    {
-      "p": 800,
-      "topic": "الأندية والأرقام",
-      "q": "في أي مدينة يلعب نادي النجم الأحمر؟",
-      "a": "بلغراد",
-      "verified": true,
-      "qid": "ucl-800-059"
-    },
-    {
-      "p": 800,
-      "topic": "الأندية والأرقام",
-      "q": "ما لقب نادي يوفنتوس الشائع؟",
-      "a": "السيدة العجوز",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-060"
-    },
-    {
-      "p": 800,
-      "topic": "الأندية والأرقام",
-      "q": "ما لقب نادي ليفربول الشائع؟",
-      "a": "الريدز",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-061"
-    },
-    {
-      "p": 800,
-      "topic": "الأندية والأرقام",
-      "q": "ما اللقب الشائع لنادي بورتو؟",
-      "a": "التنين",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-062"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من هدّاف كأس أوروبا التاريخي قبل تغيير اسم المسابقة؟",
-      "a": "ألفريدو دي ستيفانو",
-      "alt": [
-        "دي ستيفانو"
-      ],
-      "verified": true,
-      "qid": "ucl-800-063"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من قائد بايرن في ثلاثية 2013؟",
-      "a": "فيليب لام",
-      "alt": [
-        "لام"
-      ],
-      "verified": true,
-      "qid": "ucl-800-064"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من الهولندي صاحب هدف الفوز في نهائي 2013؟",
-      "a": "آريين روبن",
-      "alt": [
-        "روبن"
-      ],
-      "verified": true,
-      "qid": "ucl-800-065"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صانع ألعاب برشلونة الإسباني في لقبَي 2009 و2011؟",
-      "a": "تشافي",
-      "verified": true,
-      "qid": "ucl-800-066"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من وسط برشلونة الإسباني الذي توّج أربع مرات بالمسابقة؟",
-      "a": "أندريس إنييستا",
-      "alt": [
-        "إنييستا"
-      ],
-      "verified": true,
-      "qid": "ucl-800-067"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من التشيكي الفائز بالكرة الذهبية 2003 لاعباً ليوفنتوس؟",
-      "a": "بافيل نيدفيد",
-      "alt": [
-        "نيدفيد"
-      ],
-      "verified": true,
-      "qid": "ucl-800-068"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من البرتغالي الذي انتقل من برشلونة إلى ريال مدريد عام 2000؟",
-      "a": "لويس فيغو",
-      "alt": [
-        "فيغو"
-      ],
-      "verified": true,
-      "qid": "ucl-800-069"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من حارس مانشستر يونايتد في نهائي موسكو 2008؟",
-      "a": "إدوين فان در سار",
-      "alt": [
-        "فان در سار"
-      ],
-      "verified": true,
-      "qid": "ucl-800-070"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من صانع ألعاب بورتو في لقب 2004؟",
-      "a": "ديكو",
-      "verified": true,
-      "qid": "ucl-800-071"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من درّب سيلتيك في لقب 1967؟",
-      "a": "جوك شتاين",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-072"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من درّب نوتنغهام فورست في مجده الأوروبي؟",
-      "a": "برايان كلوف",
-      "alt": [
-        "كلوف"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-073"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من درّب أياكس في ثلاثية مطلع السبعينيات أولاً؟",
-      "a": "رينوس ميتشلز",
-      "alt": [
-        "ميشلز"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-074"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من درّب النادي الفرنسي بطل 1993؟",
-      "a": "ريمون غويتالز",
-      "alt": [
-        "غويتالز"
-      ],
-      "verified": true,
-      "qid": "ucl-800-075"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من درّب يوفنتوس في لقب 1996؟",
-      "a": "مارتشيلو ليبي",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-076"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من درّب أياكس في لقب 1995؟",
-      "a": "لويس فان خال",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-077"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من درّب ميلان في لقبَي 1989 و1990؟",
-      "a": "أريغو ساكي",
-      "alt": [
-        "ساكي"
-      ],
-      "verified": true,
-      "qid": "ucl-800-078"
-    },
-    {
-      "p": 800,
-      "topic": "المدربون",
-      "q": "من درّب أياكس في لقبَي 1972 و1973؟",
-      "a": "شتيفان كوفاتش",
-      "alt": [
-        "كوفاتش"
-      ],
-      "verified": true,
-      "qid": "ucl-800-079"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "في أي مدينة أُقيم نهائي 2002 صاحب هدف زيدان الطائر؟",
-      "a": "غلاسكو",
-      "verified": true,
-      "qid": "ucl-800-080"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نهائي 2002؟",
-      "a": "هامبدن بارك",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-081"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "في أي مدينة أُقيم نهائي 2007؟",
-      "a": "أثينا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-082"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نهائي 2017 في كارديف؟",
-      "a": "ملعب الألفية",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-083"
-    },
-    {
-      "p": 800,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب أياكس الحالي؟",
-      "a": "يوهان كرويف أرينا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-084"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "بكم لغة يُغنّى نشيد دوري أبطال أوروبا؟",
-      "a": "ثلاث لغات",
-      "alt": [
-        "ثلاث",
-        "3"
-      ],
-      "verified": true,
-      "qid": "ucl-800-085"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "ما القاعدة الملغاة منذ 2021 في الأدوار الإقصائية؟",
-      "a": "أهداف خارج الأرض",
-      "alt": [
-        "قاعدة أهداف خارج الأرض"
-      ],
-      "verified": true,
-      "qid": "ucl-800-086"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "كم لاعباً تضم قائمة الفريق الأساسية المسجّلة للمسابقة؟",
-      "a": "خمسة وعشرون",
-      "alt": [
-        "25"
-      ],
-      "verified": true,
-      "qid": "ucl-800-087"
-    },
-    {
-      "p": 800,
-      "topic": "العرب في أوروبا",
-      "q": "من المدافع المغربي الذي لعب لبايرن بين 2014 و2017؟",
-      "a": "مهدي بنعطية",
-      "alt": [
-        "بنعطية"
-      ],
-      "verified": true,
-      "qid": "ucl-800-088"
-    },
-    {
-      "p": 800,
-      "topic": "العرب في أوروبا",
-      "q": "ما النادي الإسباني الذي حرس مرماه المغربي ياسين بونو؟",
-      "a": "إشبيلية",
-      "verified": true,
-      "qid": "ucl-800-089"
-    },
-    {
-      "p": 800,
-      "topic": "لحظات تاريخية",
-      "q": "من رفع كأس 2009 قائداً لبرشلونة؟",
-      "a": "كارليس بويول",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-800-090"
-    },
-    {
-      "p": 800,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف ريال مدريد الأول في نهائي 2002؟",
-      "a": "راؤول",
-      "verified": true,
-      "qid": "ucl-800-091"
-    },
-    {
-      "p": 800,
-      "topic": "اللاعبون والهدافون",
-      "q": "من فاز بالمسابقة مع أياكس وريال مدريد وميلان؟",
-      "a": "كلارنس سيدورف",
-      "alt": [
-        "سيدورف"
-      ],
-      "verified": true,
-      "qid": "ucl-800-092"
-    },
-    {
-      "p": 800,
-      "topic": "لحظات تاريخية",
-      "q": "من أصغر لاعب سجّل في نهائي دوري أبطال أوروبا؟",
-      "a": "باتريك كلايفرت",
-      "alt": [
-        "كلايفرت"
-      ],
-      "verified": true,
-      "qid": "ucl-800-093"
-    },
-    {
-      "p": 800,
-      "topic": "لحظات تاريخية",
-      "q": "من رفع كأس 1995 قائداً لأياكس؟",
-      "a": "داني بليند",
-      "alt": [
-        "بليند"
-      ],
-      "verified": true,
-      "qid": "ucl-800-094"
-    },
-    {
-      "p": 800,
-      "topic": "الأندية والأرقام",
-      "q": "كم لقباً أوروبياً يملك بنفيكا؟",
-      "a": "لقبان",
-      "alt": [
-        "اثنان",
-        "2"
-      ],
-      "verified": true,
-      "qid": "ucl-800-095"
-    },
-    {
-      "p": 800,
-      "topic": "النظام والكأس",
-      "q": "ما المسابقة الأوروبية الثالثة التي انطلقت عام 2021؟",
-      "a": "دوري المؤتمر الأوروبي",
-      "alt": [
-        "كونفرنس ليغ"
-      ],
-      "verified": true,
-      "qid": "ucl-800-096"
-    },
-    {
-      "p": 1000,
-      "topic": "الأبطال والنهائيات",
-      "q": "من الوصيف في نهائي 1966 أمام الريال؟",
-      "a": "بارتيزان",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-049"
-    },
-    {
-      "p": 1000,
-      "topic": "الأبطال والنهائيات",
-      "q": "أي نادٍ إنجليزي فاز بكأس أوروبا عام 1982؟",
-      "a": "أستون فيلا",
-      "verified": true,
-      "qid": "ucl-1000-050"
-    },
-    {
-      "p": 1000,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف أول نهائي في تاريخ المسابقة؟",
-      "a": "ريمس",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-051"
-    },
-    {
-      "p": 1000,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 1960 الذي انتهى 7-3؟",
-      "a": "آينتراخت فرانكفورت",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-052"
-    },
-    {
-      "p": 1000,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 1971 أمام أياكس؟",
-      "a": "باناثينايكوس",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-053"
-    },
-    {
-      "p": 1000,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 1976 أمام بايرن؟",
-      "a": "سانت إتيان",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-054"
-    },
-    {
-      "p": 1000,
-      "topic": "الأبطال والنهائيات",
-      "q": "من وصيف نهائي 1975 أمام بايرن؟",
-      "a": "ليدز يونايتد",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-055"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والأرقام",
-      "q": "أي نادٍ بلجيكي وصل النهائي عام 1978 وخسر؟",
-      "a": "كلوب بروج",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-056"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والأرقام",
-      "q": "أي نادٍ سويدي وصل النهائي عام 1979 وخسر؟",
-      "a": "مالمو",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-057"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والأرقام",
-      "q": "كم نادياً من الدوري الإيطالي توّج بالمسابقة؟",
-      "a": "ثلاثة أندية",
-      "alt": [
-        "ثلاثة",
-        "3"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-058"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من درّب الفريق السويدي الخاسر في نهائي 1979؟",
-      "a": "بوب هوتون",
-      "alt": [
-        "هوتون"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-059"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والأرقام",
-      "q": "كم نهائياً أوروبياً خسره ليفربول؟",
-      "a": "أربعة نهائيات",
-      "alt": [
-        "أربعة",
-        "4"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-060"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والأرقام",
-      "q": "ما اللقب الشائع لنادي بنفيكا؟",
-      "a": "النسور",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-061"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من سجّل رباعية في نهائي 1960 التاريخي؟",
-      "a": "فيرينتس بوشكاش",
-      "alt": [
-        "بوشكاش"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-062"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من سجّل هدفين لبنفيكا في نهائي 1962؟",
-      "a": "يوزبيو",
-      "verified": true,
-      "qid": "ucl-1000-063"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من قائد يوفنتوس في نهائي 2017؟",
-      "a": "جيانلويجي بوفون",
-      "alt": [
-        "بوفون"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-064"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من سجّل هدفَي إنتر في نهائي 2010؟",
+      "q": "من سجل هدفي الإنتر في نهائي دوري الأبطال 2010؟",
       "a": "دييغو ميليتو",
+      "qid": "ucl-800-903",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0250-0c50f3b81a1b-4c43e12a6520-1000--2009-10-inter-back-on-top-at-last/",
+      "verifiedAt": "2026-09-18",
       "alt": [
         "ميليتو"
-      ],
+      ]
+    },
+    {
+      "p": 800,
+      "q": "من المهاجم الإيطالي الذي سجل هدفي فريقه في نهائي 2007؟",
+      "a": "فيليبو إنزاغي",
+      "qid": "ucl-800-904",
+      "topic": "الهدافون",
       "verified": true,
-      "qid": "ucl-1000-065"
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefachampionsleague/news/01c1-0e6e500c2c66-db2412e7ba39-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "إنزاغي",
+        "فيليبو إينزاغي"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "من المدرب الإسباني الذي قاد الريدز إلى لقب إسطنبول 2005؟",
+      "a": "رافاييل بينيتيز",
+      "qid": "ucl-800-905",
+      "topic": "المدربون",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/news/025d-0f782b45c942-3e20b8c30dfa-1000--miracle-of-istanbul-an-oral-history/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "رافا بينيتيز",
+        "رافائيل بينيتيز"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "من الحارس الذي تصدى لركلة أنيلكا وحسم نهائي موسكو 2008؟",
+      "a": "إدوين فان دير سار",
+      "qid": "ucl-800-906",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/news-media/news/0254-0d7bddc3ee84-0d3ef5ff88a0-1000--van-der-sar-delights-in-decisive-moment/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "فان دير سار"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما الاسم الشائع لملعب بنفيكا الذي استضاف نهائي دوري الأبطال 2014؟",
+      "a": "دا لوز",
+      "qid": "ucl-800-907",
+      "topic": "الملاعب",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefachampionsleague/news/01fb-0e7d59a108bb-e85a09cb5276-1000--lisbon-to-stage-2014-uefa-champions-league-final/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "ملعب النور",
+        "إستاديو دا لوز"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "من سجل الهدف السادس والحاسم للبارسا أمام باريس في ريمونتادا 2017؟",
+      "a": "سيرجي روبرتو",
+      "qid": "ucl-800-908",
+      "topic": "العودة في النتيجة",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0237-0e966c1b69f6-14f87a701fd9-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "سيرخي روبرتو"
+      ]
     },
     {
       "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من مدافع ميلان الإيطالي في نهائيَي 2003 و2005؟",
-      "a": "أليساندرو نيستا",
-      "alt": [
-        "نيستا"
-      ],
+      "q": "أي نادٍ إسكتلندي توج بطلًا لأوروبا في لشبونة عام 1967؟",
+      "a": "سلتيك",
+      "qid": "ucl-1000-901",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "ucl-1000-066"
+      "difficultyTarget": 0.15,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0258-0e6a053a5775-dc924599f3ea-1000--1966-67-celtic-adventure-reaps-reward/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "سيلتيك"
+      ]
     },
     {
       "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من وسط ميلان الإيطالي الذي درّب النادي لاحقاً عام 2017؟",
-      "a": "جينارو غاتوزو",
-      "alt": [
-        "غاتوزو"
-      ],
+      "q": "أي نادٍ إنجليزي هزم مالمو بهدف تريفور فرانسيس في نهائي 1979؟",
+      "a": "نوتنغهام فورست",
+      "qid": "ucl-1000-902",
+      "topic": "الأبطال",
       "verified": true,
-      "qid": "ucl-1000-067"
+      "difficultyTarget": 0.15,
+      "source": "https://www.uefa.com/uefachampionsleague/news/025a-0ea6687c95ea-1cc4f4a550f7-1000--1978-79-forest-join-elite-club/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "نوتينغهام فورست"
+      ]
     },
     {
       "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من سجّل هدف الفوز ليونايتد في الوقت بدل الضائع عام 1999؟",
-      "a": "أوليه غونار سولشاير",
+      "q": "من البديل النرويجي صاحب هدف الفوز ليونايتد في نهائي 1999؟",
+      "a": "أولي غونار سولشاير",
+      "qid": "ucl-1000-903",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d800ac7cffa-8147de94780e-1000--the-1999-champions-league-final-20-years-on-most-dramatic/",
+      "verifiedAt": "2026-09-18",
       "alt": [
+        "أولي غونار سولسكاير",
         "سولشاير"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-068"
+      ]
     },
     {
       "p": 1000,
+      "q": "من سجل الهدف الوحيد في نهائي دوري الأبطال 1993؟",
+      "a": "باسيل بولي",
+      "qid": "ucl-1000-904",
+      "topic": "الهدافون",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0119-0e6a0ed00b00-432257e362a9-1000/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "بازيل بولي"
+      ]
+    },
+    {
+      "p": 1000,
+      "q": "من المدرب النمساوي الذي قاد هامبورغ إلى لقب أوروبا عام 1983؟",
+      "a": "إرنست هابل",
+      "qid": "ucl-1000-905",
       "topic": "المدربون",
-      "q": "من درّب إنتر في لقبي الستينيات المتتاليين؟",
-      "a": "هيلينيو هيريرا",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "source": "https://www.uefa.com/uefachampionsleague/news/00a1-0e6a0ac0571c-8d8943df8967-1000--1982-83-magath-thunderbolt-downs-juve/",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 1000,
+      "q": "من حارس ستيوا بوخارست الذي تصدى لأربع ركلات ترجيح في نهائي 1986؟",
+      "a": "هيلموت دوكادام",
+      "qid": "ucl-1000-906",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "source": "https://www.uefa.com/uefachampionsleague/news/00c5-0e6a0bc49898-3c69a840d79b-1000/",
+      "verifiedAt": "2026-09-18",
       "alt": [
-        "هيريرا"
-      ],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-069"
+        "هيلموت دوكدام"
+      ]
     },
     {
       "p": 1000,
-      "topic": "المدربون",
-      "q": "من درّب تشيلسي في لقب 2012؟",
-      "a": "روبرتو دي ماتيو",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
+      "q": "ما الملعب الإسكتلندي الذي شهد نهائي 1960 المنتهي بنتيجة 7–3؟",
+      "a": "هامبدن بارك",
+      "qid": "ucl-1000-907",
+      "topic": "الملاعب",
       "verified": true,
-      "qid": "ucl-1000-070"
+      "difficultyTarget": 0.15,
+      "source": "https://www.uefa.com/uefachampionsleague/news/0253-0d7b1dc17e3e-c896eaba1732-1000--1959-60-dazzling-madrid-crush-frankfurt/",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 1000,
-      "topic": "المدربون",
-      "q": "من درّب بايرن في لقبَي 1975 و1976؟",
-      "a": "ديتمار كرامر",
-      "alt": [
-        "كرامر"
-      ],
+      "q": "من افتتح رباعية ديبورتيفو لاكورونيا أمام ميلان في إياب ربع نهائي 2004؟",
+      "a": "والتر باندياني",
+      "qid": "ucl-1000-908",
+      "topic": "العودة في النتيجة",
       "verified": true,
-      "qid": "ucl-1000-071"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من درّب بايرن في أول لقب أوروبي 1974؟",
-      "a": "أودو لاتيك",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-072"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من درّب ليفربول في لقبَي 1977 و1978؟",
-      "a": "بوب بيزلي",
-      "alt": [
-        "بيزلي"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-073"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من درّب ميلان في لقب 1963؟",
-      "a": "نيريو روكو",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-074"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من درّب الريال في لقب 1966؟",
-      "a": "ميغيل مونيوز",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-075"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نهائي 2014 في لشبونة؟",
-      "a": "إستاديو دا لوز",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-076"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما الملعب الذي شهد نهائي 1999 الدرامي؟",
-      "a": "كامب نو",
-      "verified": true,
-      "qid": "ucl-1000-077"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما الملعب الذي شهد نهائي 1996؟",
-      "a": "الأولمبيكو",
-      "alt": [
-        "الملعب الأولمبي بروما"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-078"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب نهائي 1998 في أمستردام؟",
-      "a": "أمستردام أرينا",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-079"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب أياكس القديم قبل الأرينا؟",
-      "a": "دي ميير",
-      "verified": true,
-      "qid": "ucl-1000-080"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "في أي مدينة أُقيم نهائي 2009؟",
-      "a": "روما",
-      "verified": true,
-      "qid": "ucl-1000-081"
-    },
-    {
-      "p": 1000,
-      "topic": "النظام والكأس",
-      "q": "كم نادياً توّج بالمسابقة حتى عام 2026؟",
-      "a": "أربعة وعشرون",
-      "alt": [
-        "24"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-082"
-    },
-    {
-      "p": 1000,
-      "topic": "النظام والكأس",
-      "q": "في أي موسم اعتُمد نظام 36 فريقاً في مرحلة الدوري؟",
-      "a": "2024-2025",
-      "alt": [
-        "موسم 2024-2025",
-        "2024"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-083"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل آخر ركلات باريس في ترجيح نهائي 2026؟",
-      "a": "لوكاس بيرالدو",
-      "alt": [
-        "بيرالدو"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-084"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات تاريخية",
-      "q": "من الحكم الألماني الذي أدار نهائي 2026؟",
-      "a": "دانيال سيبرت",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-085"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف التعادل في نهائي 2006؟",
-      "a": "صامويل إيتو",
-      "alt": [
-        "إيتو"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-086"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل ركلة الترجيح الحاسمة في نهائي 2003؟",
-      "a": "أندري شيفتشينكو",
-      "alt": [
-        "شيفتشينكو"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-087"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف التعادل ليونايتد في الدقيقة 91 عام 1999؟",
-      "a": "تيدي شيرينغهام",
-      "alt": [
-        "شيرينغهام"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-088"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات تاريخية",
-      "q": "من حارس يونايتد الذي رفع كأس 1999 قائداً؟",
-      "a": "بيتر شمايكل",
-      "alt": [
-        "شمايكل"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-089"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل هدف يوفنتوس في نهائي 1996؟",
-      "a": "فابريتسيو رافانيلي",
-      "alt": [
-        "رافانيلي"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-090"
-    },
-    {
-      "p": 1000,
-      "topic": "النظام والكأس",
-      "q": "كم مباراة يخوضها الفريق على الأكثر في النظام الجديد؟",
-      "a": "سبع عشرة",
-      "alt": [
-        "17"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-091"
-    },
-    {
-      "p": 1000,
-      "topic": "الأندية والأرقام",
-      "q": "ما اسم مدرج ليفربول الشهير؟",
-      "a": "ذا كوب",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-092"
-    },
-    {
-      "p": 1000,
-      "topic": "اللاعبون والهدافون",
-      "q": "من وسط أياكس الهولندي الذي لعب لاحقاً ليوفنتوس وميلان؟",
-      "a": "إدغار دافيدز",
-      "alt": [
-        "دافيدز"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-093"
-    },
-    {
-      "p": 1000,
-      "topic": "المدربون",
-      "q": "من درّب النجم الأحمر في لقب 1991؟",
-      "a": "ليوبكو بتروفيتش",
-      "alt": [],
-      "sourceUrl": "https://www.uefa.com/uefachampionsleague/",
-      "verified": true,
-      "qid": "ucl-1000-094"
-    },
-    {
-      "p": 1000,
-      "topic": "الملاعب والمدن",
-      "q": "ما ملعب بورتو الحالي؟",
-      "a": "إستاديو دو دراغاو",
-      "alt": [
-        "دو دراغاو",
-        "ملعب التنين"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-095"
-    },
-    {
-      "p": 1000,
-      "topic": "لحظات تاريخية",
-      "q": "من سجّل ركلة الترجيح الحاسمة للنجم الأحمر عام 1991؟",
-      "a": "داركو بانشيف",
-      "alt": [
-        "بانشيف"
-      ],
-      "verified": true,
-      "qid": "ucl-1000-096"
+      "difficultyTarget": 0.15,
+      "source": "https://www.uefa.com/uefachampionsleague/news/019c-0e6c12450ff2-294c584e2602-1000--dazzling-depor-ditch-milan/",
+      "verifiedAt": "2026-09-18"
     }
   ]
 }

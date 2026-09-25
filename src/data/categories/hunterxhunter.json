@@ -5,3114 +5,564 @@
   "style": "story",
   "qs": [
     {
+      "qid": "hunterxhunter-200-901",
       "p": 200,
-      "q": "من بطل «هنتر × هنتر» الفتى الذي يبحث عن أبيه الصياد؟",
-      "a": "غون",
+      "q": "من الفتى الذي يغادر جزيرة الحوت بحثًا عن أبيه في هنتر × هنتر؟",
+      "a": "غون فريكس",
       "alt": [
-        "غون فريكس"
+        "غون",
+        "غون فريكس",
+        "Gon Freecss"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "رحلة غون",
       "verified": true,
-      "qid": "hunterxhunter-200-049",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "hunterxhunter-200-902",
       "p": 200,
-      "q": "من والد غون الصياد الذي تركه صغيرًا ورحل عن الجزيرة؟",
-      "a": "غينغ فريكس",
+      "q": "من صديق غون صاحب الشعر الفضي القادم من عائلة قتلة محترفين؟",
+      "a": "كيلوا",
       "alt": [
-        "غينغ",
-        "جينج فريكس"
+        "كيلوا زولديك",
+        "Killua"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "عائلة زولديك",
       "verified": true,
-      "qid": "hunterxhunter-200-050",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Killua_Zoldyck",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "hunterxhunter-200-903",
       "p": 200,
-      "q": "من التي ربّت غون في بيت العائلة بعد رحيل أبيه؟",
-      "a": "ميتو",
+      "q": "ما الوثيقة التي يحصل عليها الناجح في امتحان الصيادين؟",
+      "a": "رخصة صياد",
       "alt": [
-        "ميتو فريكس"
+        "رخصة الصياد",
+        "رخصة الصيد"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "امتحان الصيادين",
       "verified": true,
-      "qid": "hunterxhunter-200-051",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Setting",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "hunterxhunter-200-904",
       "p": 200,
-      "q": "ما اسم الجزيرة الهادئة التي نشأ فيها غون؟",
-      "a": "جزيرة الحوت",
+      "q": "ما اسم طاقة الحياة التي يتحكم بها مستخدمو النين؟",
+      "a": "الهالة",
       "alt": [
-        "وايل آيلاند",
-        "جزيرة الحيتان"
+        "الأورا",
+        "Aura"
       ],
-      "topic": "الشخصيات الرئيسية",
+      "topic": "قدرات النين",
       "verified": true,
-      "qid": "hunterxhunter-200-052",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Setting",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "hunterxhunter-200-905",
       "p": 200,
-      "q": "ما الأداة التي يقاتل بها غون في بداية القصة؟",
-      "a": "صنارة الصيد",
-      "alt": [
-        "الصنارة",
-        "القصبة",
-        "سنارة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-200-053",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "ما اللون الغالب على ملابس غون؟",
-      "a": "الأخضر",
-      "alt": [
-        "أخضر"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-200-054",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "من صديق غون صاحب الشعر الفضي الذي رافقه منذ الامتحان الأول؟",
-      "a": "كيلوا زولديك",
-      "alt": [
-        "كيلوا",
-        "كلوا"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-200-055",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "من صديق غون الذي يحلم بأن يصير طبيبًا؟",
-      "a": "ليوريو",
-      "alt": [
-        "ليوريو بالادينايت",
-        "ليوريو باراديناي"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-200-056",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "من المهرج الذي يزيّن وجهه برسمَي نجمة ودمعة؟",
-      "a": "هيسوكا",
-      "alt": [
-        "هيزوكا",
-        "هسوكا"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-200-057",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "من الفتى الأشقر الذي نجا وحده من عشيرة كورتا؟",
+      "q": "من الناجي من عشيرة كورتا الذي يطارد قتلتها؟",
       "a": "كورابيكا",
       "alt": [
-        "كرابيكا",
-        "كورا بيكا"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-200-058",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-kurta-clan-massacre-explained/"
-    },
-    {
-      "p": 200,
-      "q": "ما اللون الذي تتحول إليه عيون أبناء عشيرة كورتا عند اشتداد مشاعرهم؟",
-      "a": "القرمزي",
-      "alt": [
-        "أحمر قرمزي",
-        "قرمزي"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-200-059",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-kurta-clan-massacre-explained/"
-    },
-    {
-      "p": 200,
-      "q": "ما الشيء الذي يلبسه الناجي من عشيرة كورتا في عينيه ليكتم لونهما الحقيقي؟",
-      "a": "عدسات لاصقة سوداء",
-      "alt": [
-        "عدسات لاصقة",
-        "العدسات اللاصقة",
-        "عدسات سوداء"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-200-060",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Kurapika"
-    },
-    {
-      "p": 200,
-      "q": "ما الحلوى التي يحبها كيلوا ولا تكاد تفارق يده؟",
-      "a": "الشوكولاتة",
-      "alt": [
-        "شوكولاتة",
-        "الشوكولا",
-        "حبّات الشوكولاتة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-200-061",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Killua_Zoldyck"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم العصابة التي أبادت عشيرة كورتا؟",
-      "a": "الفرقة الشبح",
-      "alt": [
-        "عصابة العناكب",
-        "غين ريو دان",
-        "فانتوم تروب"
+        "Kurapika"
       ],
       "topic": "الفرقة الشبح",
       "verified": true,
-      "qid": "hunterxhunter-200-062",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-kurta-clan-massacre-explained/"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kurapika",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "hunterxhunter-200-906",
       "p": 200,
-      "q": "أين باعت عصابة العناكب أعين عشيرة كورتا بعد مذبحتها؟",
-      "a": "السوق السوداء",
+      "q": "في أي شكل يحتفظ اللاعب بأغراضه وتعاويذه داخل غريد آيلاند؟",
+      "a": "بطاقات",
       "alt": [
-        "سوق سوداء",
-        "السوق السرّي"
+        "البطاقات",
+        "كروت"
       ],
-      "topic": "الفرقة الشبح",
+      "topic": "غريد آيلاند",
       "verified": true,
-      "qid": "hunterxhunter-200-063",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-kurta-clan-massacre-explained/"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "hunterxhunter-200-907",
       "p": 200,
-      "q": "من زعيم عصابة العناكب صاحب الصليب المقلوب على جبينه؟",
-      "a": "كرولو لوسيلفر",
-      "alt": [
-        "كرولو",
-        "كورولو"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-200-064",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "كم عدد أفراد عصابة العناكب مع زعيمهم؟",
-      "a": "ثلاثة عشر",
-      "alt": [
-        "13",
-        "ثلاثة عشر فردًا"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-200-065",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "ما الحدث السنوي الكبير الذي جاءت عصابة العناكب لتسرق كنوزه؟",
-      "a": "المزاد",
-      "alt": [
-        "المزاد العلني",
-        "مزاد المدينة"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-200-066",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/HunterXHunterPhantomTroupe"
-    },
-    {
-      "p": 200,
-      "q": "كم نوعًا تنقسم إليه قدرات النين؟",
-      "a": "ستة",
-      "alt": [
-        "6",
-        "ستة أنواع"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-200-067",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 200,
-      "q": "ما الذي يوضع فوق كوب الماء في اختبار كشف نوع النين؟",
-      "a": "ورقة شجر",
-      "alt": [
-        "ورقة",
-        "ورق الشجر"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-200-068",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 200,
-      "q": "ما نوع نين غون الذي يقوم على تقوية قوته الجسدية؟",
-      "a": "التعزيز",
-      "alt": [
-        "التقوية",
-        "معزّز"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-200-069",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم البرج الذي تعلّم فيه غون وكيلوا النين أول مرة؟",
-      "a": "برج السماء",
-      "alt": [
-        "هيفنز أرينا",
-        "برج الجنة"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-200-070",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/heavens-arena"
-    },
-    {
-      "p": 200,
-      "q": "ما الاسم الذي يُطلق على طاقة الحياة التي يتحكم بها مقاتلو النين؟",
-      "a": "الأورا",
-      "alt": [
-        "الهالة",
-        "طاقة الحياة"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-200-071",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 200,
-      "q": "على أي جبل يقع بيت عائلة زولديك؟",
-      "a": "جبل كوكورو",
-      "alt": [
-        "كوكورو",
-        "جبل كوكرو"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-200-072",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الحارس الضخم رباعي الأرجل الذي يجول في أرض آل زولديك؟",
-      "a": "مايك",
-      "alt": [
-        "مايك الحارس"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-200-073",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 200,
-      "q": "من أخو كيلوا الأكبر الذي يتحكم بالآخرين عن بعد؟",
-      "a": "إيلومي",
-      "alt": [
-        "إلومي",
-        "إيلومي زولديك"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-200-074",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم شقيقة كيلوا الصغرى التي تحقق الأمنيات؟",
-      "a": "ألوكا",
-      "alt": [
-        "الوكا",
-        "ألوكا زولديك"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-200-075",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "بأي لعبة أطفال معدنية يقاتل كيلوا؟",
-      "a": "اليويو",
-      "alt": [
-        "يويو",
-        "اليويوهات"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-200-076",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "ما المهنة التي اشتهرت بها عائلة زولديك جيلًا بعد جيل؟",
-      "a": "الاغتيال",
-      "alt": [
-        "القتل المأجور",
-        "قتلة مأجورون"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-200-077",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 200,
-      "q": "ما الشيء الذي لا يفارق يد صديق غون الطامح للطب ويشبه متاع رجل أعمال؟",
-      "a": "حقيبة",
-      "alt": [
-        "حقيبة يد",
-        "الحقيبة",
-        "شنطة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-200-078",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "بم يجمع اللاعبون قدراتهم وأغراضهم داخل غريد آيلاند؟",
-      "a": "البطاقات",
-      "alt": [
-        "الكروت",
-        "كروت اللعبة"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-200-079",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 200,
-      "q": "من المدرّبة التي تبدو فتاة صغيرة ودرّبت غون وكيلوا داخل اللعبة؟",
-      "a": "بيسكيت كروغر",
-      "alt": [
-        "بيسكي",
-        "بسكويت كروغر"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-200-080",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 200,
-      "q": "كم بطاقة مخصصة يجب جمعها لإنهاء لعبة غريد آيلاند؟",
-      "a": "مئة بطاقة",
-      "alt": [
-        "100 بطاقة",
-        "مائة بطاقة"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-200-081",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 200,
-      "q": "ما الذي يرتديه اللاعب في إصبعه ليستعمل أوامر غريد آيلاند؟",
-      "a": "الخاتم",
-      "alt": [
-        "خاتم اللعبة"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-200-082",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم المجلّد الذي يحفظ فيه لاعب غريد آيلاند بطاقاته؟",
-      "a": "الكتاب",
-      "alt": [
-        "كتاب اللاعب",
-        "المجلّد"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-200-083",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم المخلوقات التي تكتسب صفات كل ما تأكله من كائنات؟",
-      "a": "نمل الكيميرا",
-      "alt": [
-        "النمل الكيميري",
-        "كيميرا آنت"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-200-084",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم ملك النمل الذي وُلد ليحكم البشر؟",
+      "q": "ما اسم ملك نمل الكيميرا الذي يواجه نيترو؟",
       "a": "ميرويم",
       "alt": [
-        "ميروم",
-        "ميرويم الملك"
+        "ميريم",
+        "Meruem"
       ],
       "topic": "نمل الكيميرا",
       "verified": true,
-      "qid": "hunterxhunter-200-085",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/HunterXHunterMeruem"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/102.html",
+      "difficultyTarget": 0.8
     },
     {
+      "qid": "hunterxhunter-200-908",
       "p": 200,
-      "q": "ما اسم لعبة اللوح التي أدمنها ملك النمل؟",
-      "a": "غونغي",
+      "q": "من صديق غون الذي يطمح للعمل طبيبًا ويترشح لرئاسة الصيادين؟",
+      "a": "ليوريو",
       "alt": [
-        "جونجي",
-        "قونقي"
+        "Leorio"
       ],
-      "topic": "نمل الكيميرا",
+      "topic": "الانتخابات",
       "verified": true,
-      "qid": "hunterxhunter-200-086",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/HunterXHunterMeruem"
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Leorio_Paradinight",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 200,
-      "q": "من الفتاة العمياء التي هزمت ملك النمل في لعبة اللوح مرارًا؟",
-      "a": "كوموغي",
-      "alt": [
-        "كومغي",
-        "كوموجي"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-200-087",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/HunterXHunterMeruem"
-    },
-    {
-      "p": 200,
-      "q": "ما اللقب الذي حمله الأقوياء الذين وُلدوا لحماية ملك النمل؟",
-      "a": "الحرس الملكي",
-      "alt": [
-        "حرس الملك",
-        "حراس الملك"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-200-088",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 200,
-      "q": "من التي وضعت ملك النمل وأنجبت جيشه من لحوم البشر؟",
-      "a": "الملكة",
-      "alt": [
-        "ملكة النمل",
-        "الملكة الأم"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-200-089",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 200,
-      "q": "ما الذي يناله من يجتاز امتحان الصيادين؟",
-      "a": "رخصة الصياد",
-      "alt": [
-        "بطاقة الصياد",
-        "الرخصة"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-200-090",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-benefits-pros-becoming-hunter/"
-    },
-    {
-      "p": 200,
-      "q": "من رئيس جمعية الصيادين الذي أشرف على المرحلة الأخيرة من الامتحان؟",
-      "a": "إسحاق نيترو",
-      "alt": [
-        "نيترو",
-        "اسحق نيترو"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-200-091",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-chairman-netero-100-type-guanyin-bodhisattva-explained/"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم البرج الذي كان على متسابقي المرحلة الثالثة أن يهبطوا منه؟",
-      "a": "برج الخدع",
-      "alt": [
-        "تريك تاور",
-        "برج الحيل"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-200-092",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 200,
-      "q": "ما الذي أرهق متسابقي المرحلة الأولى خلف ممتحنهم في نفق طويل؟",
-      "a": "الركض",
-      "alt": [
-        "الجري",
-        "الماراثون"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-200-093",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 200,
-      "q": "ما المكان الذي كان مدخلًا سريًّا ينزل به المتسابقون إلى قاعة الامتحان؟",
-      "a": "مطعم",
-      "alt": [
-        "مطعم صغير",
-        "المطعم"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-200-094",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/287th_Hunter_Exam_Site_Restaurant"
-    },
-    {
-      "p": 200,
-      "q": "كم مرة في السنة يُقام امتحان الصيادين؟",
-      "a": "مرة واحدة",
-      "alt": [
-        "مرة في السنة",
-        "سنويًا"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-200-095",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 200,
-      "q": "ماذا فعل كيلوا في المرحلة الأخيرة من الامتحان فأُقصي منه؟",
-      "a": "قتل منافسًا",
-      "alt": [
-        "قتل متسابقًا",
-        "قتل أحد المتسابقين"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-200-096",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
+      "qid": "hunterxhunter-400-901",
       "p": 400,
-      "q": "ما اسم الكائن المتحوّل الذي أرشد غون ورفاقه إلى موقع امتحان الصيادين؟",
-      "a": "كيريكو",
+      "q": "ما اسم والد غون الذي يبحث عنه طوال رحلته؟",
+      "a": "غينغ فريكس",
       "alt": [
-        "الكيريكو",
-        "كيريكوس"
+        "جين فريكس",
+        "جينغ",
+        "Ging Freecss"
       ],
-      "topic": "امتحان الصيادين",
+      "topic": "رحلة غون",
       "verified": true,
-      "qid": "hunterxhunter-400-049",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Kiriko"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "hunterxhunter-400-902",
       "p": 400,
-      "q": "كم كان عمر غون حين خاض امتحان الصيادين أول مرة؟",
-      "a": "اثنتا عشرة سنة",
-      "alt": [
-        "12 سنة",
-        "12"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-400-050",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم ضربة غون المستوحاة من لعبة حجر ورقة مقص؟",
-      "a": "جاجانكين",
-      "alt": [
-        "جان كين بو",
-        "ججانكن"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-400-051",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم السمكة العملاقة التي اصطادها غون لينال الإذن بخوض الامتحان؟",
-      "a": "سيد المستنقع",
-      "alt": [
-        "سيد البركة",
-        "وحش المستنقع"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-400-052",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "من الصياد طويل الشعر تلميذ والد غون الذي أنقذ غون في طفولته؟",
-      "a": "كايت",
-      "alt": [
-        "كيت",
-        "كايت الصياد"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-400-053",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الشجرة الضخمة التي التقى غون أباه على قمتها؟",
-      "a": "شجرة العالم",
-      "alt": [
-        "الشجرة العالمية",
-        "وورلد تري"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-400-054",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "من الممتحن الطويل الذي قاد متسابقي المرحلة الأولى في نفق تحت الأرض؟",
-      "a": "ساتوتس",
-      "alt": [
-        "ساتوتز",
-        "ساتوس"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-400-055",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 400,
-      "q": "من طاهية اللجنة التي رفضت كل أطباق المتسابقين في المرحلة الثانية؟",
-      "a": "مينتشي",
-      "alt": [
-        "منشي",
-        "مينشي"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-400-056",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 400,
-      "q": "كم من الوقت مُنح المتسابقون للخروج من برج المرحلة الثالثة؟",
-      "a": "اثنتان وسبعون ساعة",
-      "alt": [
-        "72 ساعة",
-        "ثلاثة أيام"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-400-057",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 400,
-      "q": "أين أقيمت مرحلة صيد الشارات من امتحان الصيادين؟",
-      "a": "جزيرة زيفيل",
-      "alt": [
-        "زيفيل",
-        "جزيرة زفيل"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-400-058",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 400,
-      "q": "كم نقطة كان على كل متسابق أن يجمعها في مرحلة صيد الشارات؟",
-      "a": "ست نقاط",
-      "alt": [
-        "6 نقاط",
-        "ستة"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-400-059",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 400,
-      "q": "كم استغرقت مرحلة صيد الشارات على الجزيرة؟",
-      "a": "أسبوع",
-      "alt": [
-        "سبعة أيام",
-        "أسبوع واحد"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-400-060",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 400,
-      "q": "من النينجا الحليق الرأس الذي واجه غون في نزال المرحلة الأخيرة؟",
+      "q": "من النينجا الذي يرفض غون الاستسلام له في آخر مراحل الامتحان؟",
       "a": "هانزو",
       "alt": [
-        "هانزو النينجا"
+        "Hanzo"
       ],
       "topic": "امتحان الصيادين",
       "verified": true,
-      "qid": "hunterxhunter-400-061",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/019.html",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "hunterxhunter-400-903",
       "p": 400,
-      "q": "ما نوع النين الذي ينتمي إليه كيلوا؟",
-      "a": "التحويل",
-      "alt": [
-        "تحويل",
-        "التحوير"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-062",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "إلى أي شيء يحوّل كيلوا هالته في قتاله؟",
-      "a": "الكهرباء",
-      "alt": [
-        "التيار",
-        "الصعق"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-063",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم مبدأ النين الذي يُبقي الهالة محيطة بالجسد للدفاع؟",
-      "a": "تين",
-      "alt": [
-        "الطوق",
-        "تن"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-064",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم مبدأ النين الذي يُخفي الهالة تمامًا فلا يُحسّ بصاحبها؟",
-      "a": "زيتسو",
-      "alt": [
-        "الكتم",
-        "زتسو"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-065",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم مبدأ النين الذي يضاعف كمية الهالة قبل الهجوم؟",
-      "a": "رين",
-      "alt": [
-        "التكثيف",
-        "رن"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-066",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم المبدأ الذي يطلق به كل شخص قدرته الخاصة من النين؟",
-      "a": "هاتسو",
-      "alt": [
-        "هتسو",
-        "الإطلاق الشخصي"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-067",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "عند أي طابق من برج المصارعة الشهير يبدأ مقاتلو النين؟",
-      "a": "الطابق المئتان",
-      "alt": [
-        "الطابق 200",
-        "200"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-068",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/heavens-arena"
-    },
-    {
-      "p": 400,
-      "q": "ما نوع النين الذي يجعل صاحبه يتحكم بالآخرين أو بالأشياء؟",
-      "a": "التلاعب",
-      "alt": [
-        "السيطرة",
-        "التحكم"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-069",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "ما نوع النين الذي يطلق فيه صاحبه هالته بعيدًا عن جسده؟",
-      "a": "الإطلاق",
-      "alt": [
-        "البث",
-        "الإرسال"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-070",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الاختبار الذي يكشف نوع نين الشخص بكوب ماء؟",
-      "a": "اختبار الماء",
-      "alt": [
-        "قراءة الماء",
-        "تنبؤ الماء"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-400-071",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم والد كيلوا رب عائلة زولديك؟",
+      "q": "ما اسم والد كيلوا الذي يسمح له بالعودة إلى أصدقائه؟",
       "a": "سيلفا",
       "alt": [
         "سيلفا زولديك",
-        "سلفا"
+        "Silva"
       ],
       "topic": "عائلة زولديك",
       "verified": true,
-      "qid": "hunterxhunter-400-072",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/024.html",
+      "difficultyTarget": 0.6
     },
     {
+      "qid": "hunterxhunter-400-904",
       "p": 400,
-      "q": "ما اسم جد كيلوا في عائلة زولديك؟",
-      "a": "زينو",
-      "alt": [
-        "زينو زولديك",
-        "زنو"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-400-073",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الخادمة الصغيرة التي تحرس مدخل أرض آل زولديك؟",
-      "a": "كناريا",
-      "alt": [
-        "كناري",
-        "كاناريا"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-400-074",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم البوابة الثقيلة التي تُقاس بها قوة الداخل إلى أرض آل زولديك؟",
-      "a": "بوابة الاختبار",
-      "alt": [
-        "البوابة الاختبارية",
-        "بوابة الامتحان"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-400-075",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 400,
-      "q": "ما الأداة التي يزرعها أخو كيلوا الأكبر في رؤوس الناس ليتحكم بهم؟",
-      "a": "الإبر",
-      "alt": [
-        "إبر",
-        "الدبابيس"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-400-076",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم مدينة النفايات التي نشأ فيها أغلب أفراد عصابة العناكب؟",
-      "a": "مدينة النيازك",
-      "alt": [
-        "مدينة الشهب",
-        "ميتور سيتي"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-400-077",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-meteor-city-explained/"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم المدينة الكبرى التي هاجمتها عصابة العناكب وسرقت كنوزها؟",
-      "a": "يورك شين",
-      "alt": [
-        "يوركشين",
-        "يورك نيو"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-400-078",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/HunterXHunterPhantomTroupe"
-    },
-    {
-      "p": 400,
-      "q": "من عضوة عصابة العناكب التي تخيط الجروح بخيوط النين؟",
-      "a": "ماتشي",
-      "alt": [
-        "ماشي",
-        "ماتشي كوماتشيني"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-400-079",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "من عضو عصابة العناكب الذي يقاتل بالسيف الياباني؟",
-      "a": "نوبوناغا",
-      "alt": [
-        "نوبوناجا",
-        "نوبوناغا هازاما"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-400-080",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "من أقوى أفراد عصابة العناكب جسديًا الذي وقع في سلاسل الناجي من عشيرة كورتا؟",
-      "a": "أوفوغين",
-      "alt": [
-        "أوفو",
-        "أوبوغين"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-400-081",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما الرقم الذي حمله المهرج في وشم العصابة قبل خروجه منها؟",
-      "a": "الرقم أربعة",
-      "alt": [
-        "4",
-        "أربعة"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-400-082",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "لدى أي عائلة عمل الناجي من عشيرة كورتا حارسًا شخصيًا؟",
-      "a": "عائلة نوستراد",
-      "alt": [
-        "نوستراد",
-        "آل نوستراد"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-400-083",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما نوع نين الناجي من عشيرة كورتا في حالته المعتادة؟",
-      "a": "التجسيد",
-      "alt": [
-        "تجسيد",
-        "الخلق"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-400-084",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "كم سلسلة تخرج من أصابع يد الناجي من عشيرة كورتا؟",
-      "a": "خمس سلاسل",
-      "alt": [
-        "خمس",
-        "5"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-400-085",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما الأداة التي يقاتل بها المهرج ويخفيها بين أصابعه؟",
-      "a": "أوراق اللعب",
-      "alt": [
-        "الكوتشينة",
-        "ورق الشدة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-400-086",
-      "sourceUrl": "https://www.cbr.com/bungee-gum-best-nen-ability-hunter-x-hunter/"
-    },
-    {
-      "p": 400,
-      "q": "كم نسخة من لعبة غريد آيلاند صُنعت في العالم؟",
-      "a": "مئة نسخة",
-      "alt": [
-        "100 نسخة",
-        "مائة نسخة"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-400-087",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 400,
-      "q": "كم صيادًا شارك مع والد غون في صنع لعبة غريد آيلاند؟",
-      "a": "عشرة صيادين",
-      "alt": [
-        "10",
-        "عشرة"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-400-088",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 400,
-      "q": "من اللاعب صاحب لقب المفجّر الذي طارد بطاقات لاعبي غريد آيلاند؟",
-      "a": "جينثرو",
-      "alt": [
-        "غينثرو",
-        "جنثرو"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-400-089",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 400,
-      "q": "من سيد اللعبة القرصان الذي تحدّى غون وكيلوا داخل غريد آيلاند؟",
-      "a": "ريزور",
-      "alt": [
-        "رازور",
-        "ريزر"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-400-090",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 400,
-      "q": "من النملة الشبيهة بالقط التي لازمت الملك وقاتلت الصيادين؟",
-      "a": "نيفربيتو",
-      "alt": [
-        "بيتو",
-        "نفربيتو"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-400-091",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم البلد الذي يمنع التقنية الحديثة وبدأ منه غزو النمل؟",
-      "a": "إن جي إل",
-      "alt": [
-        "نيو غرين لايف",
-        "NGL"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-400-092",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الجمهورية التي احتلها النمل وجعلها مملكته؟",
-      "a": "شرق غورتو",
-      "alt": [
-        "جمهورية شرق غورتو",
-        "إيست غورتو"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-400-093",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 400,
-      "q": "من الصياد صاحب الغليون الذي يقاتل بالدخان؟",
-      "a": "موريل",
-      "alt": [
-        "موريل ماكرنسي",
-        "مورل"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-400-094",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-knuckle-facts-trivia/"
-    },
-    {
-      "p": 400,
-      "q": "من تلميذ صاحب الغليون ذو القبضة القوية الذي درّب غون على النين؟",
-      "a": "ناكل",
-      "alt": [
-        "ناكل باين",
-        "نكل"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-400-095",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-knuckle-facts-trivia/"
-    },
-    {
-      "p": 400,
-      "q": "من النملة التي تشبه الفراشة بجناحيها ولازمت الملك حتى النهاية؟",
-      "a": "شايابوف",
-      "alt": [
-        "بوف",
-        "شيابوف"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-400-096",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "من المتسابق المخضرم الذي يخدع المشاركين الجدد بعصير فاسد؟",
-      "a": "تونبا",
-      "alt": [
-        "تومبا",
-        "طونبا"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-600-049",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 600,
-      "q": "ما الحيوان الذي زعم رجل أن ممتحن المرحلة الأولى واحد منه يأكل البشر؟",
-      "a": "قرد بوجه إنسان",
-      "alt": [
-        "القرد ذو الوجه البشري",
-        "قرد بشري الوجه"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-600-050",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/287th_Hunter_Exam"
-    },
-    {
-      "p": 600,
-      "q": "كم نجمة يمكن أن تُزيَّن بها رخصة أمهر الصيادين؟",
-      "a": "ثلاث نجوم",
-      "alt": [
-        "3 نجوم",
-        "ثلاث"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-600-051",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 600,
-      "q": "ما الكلمة التي على الخصم أن ينطقها لتُحسم مباريات المرحلة الأخيرة؟",
-      "a": "أستسلم",
-      "alt": [
-        "استسلمت",
-        "أنا أستسلم"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-600-052",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 600,
-      "q": "كم مرحلة خاضها غون في امتحان الصيادين حتى نال رخصته؟",
-      "a": "خمس مراحل",
-      "alt": [
-        "5 مراحل",
-        "خمس"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-600-053",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 600,
-      "q": "بأي طريقة اختار غون ورفاقه مسارهم داخل برج المرحلة الثالثة؟",
-      "a": "بتصويت الأغلبية",
-      "alt": [
-        "التصويت بالأغلبية",
-        "الأغلبية",
-        "بالتصويت"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-600-054",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Trick_Tower"
-    },
-    {
-      "p": 600,
-      "q": "من المعلم الذي كشف لغون وكيلوا حقيقة النين داخل برج المصارعة؟",
+      "q": "من المعلّم الذي عرّف غون وكيلوا بالنين في برج السماء؟",
       "a": "وينغ",
       "alt": [
         "وينج",
-        "ونغ"
+        "Wing"
       ],
-      "topic": "نظام النين",
+      "topic": "قدرات النين",
       "verified": true,
-      "qid": "hunterxhunter-600-055",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/heavens-arena"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "q": "كم مبدأً أساسيًّا يتعلّمه مبتدئ النين قبل أن يُطلق قدرته الخاصة؟",
-      "a": "أربعة مبادئ",
+      "qid": "hunterxhunter-400-905",
+      "p": 400,
+      "q": "من زعيم الفرقة الشبح الذي قايضه كورابيكا بإطلاق صديقيه؟",
+      "a": "كرولو لوسيلفر",
       "alt": [
-        "4 مبادئ",
-        "أربعة أساسيات"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-600-056",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 600,
-      "q": "ماذا حدث لماء كوب الاختبار حين جرّبه كيلوا؟",
-      "a": "تغيّر طعمه",
-      "alt": [
-        "تبدّل طعمه",
-        "تغيّر مذاقه"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-600-057",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 600,
-      "q": "ماذا فعل ملك النمل بأمّه لحظة أن خرج من قوقعته؟",
-      "a": "قتلها",
-      "alt": [
-        "أجهز عليها",
-        "قضى عليها"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-600-058",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Meruem"
-    },
-    {
-      "p": 600,
-      "q": "أي لقب حملته الفتاة العمياء في لعبة اللوح قبل لقائها ملك النمل؟",
-      "a": "بطلة العالم",
-      "alt": [
-        "البطلة العالمية",
-        "بطلة عالمية"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-600-059",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Komugi"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم تقنية النين التي تجمع الهالة في العينين لكشف ما خفي؟",
-      "a": "غيو",
-      "alt": [
-        "جيو",
-        "غيوو"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-600-060",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم أخي كيلوا الثاني المولع بالحاسوب والألعاب؟",
-      "a": "ميلوكي",
-      "alt": [
-        "ميلوكي زولديك",
-        "مالوكي"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-600-061",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم كبير خدم عائلة زولديك الذي يقاتل بالعملات المعدنية؟",
-      "a": "غوتو",
-      "alt": [
-        "جوتو",
-        "غوتوه"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-600-062",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 600,
-      "q": "ما الشيء الذي دُرّب كيلوا على تحمّله منذ صغره فلم يعد يؤذيه؟",
-      "a": "السموم",
-      "alt": [
-        "السم",
-        "المواد السامة"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-600-063",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 600,
-      "q": "في أي جمهورية يقع بيت عائلة زولديك؟",
-      "a": "بادوكيا",
-      "alt": [
-        "جمهورية بادوكيا",
-        "بادوكيه"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-600-064",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 600,
-      "q": "من عضو عصابة العناكب القصير الملثم الذي يقاتل بمظلة تخفي سيفًا؟",
-      "a": "فيتان",
-      "alt": [
-        "فيتان بورتور",
-        "فايتان"
+        "كرولو",
+        "Chrollo Lucilfer"
       ],
       "topic": "الفرقة الشبح",
       "verified": true,
-      "qid": "hunterxhunter-600-065",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/058.html",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "q": "من عضوة عصابة العناكب التي تبتلع الأشياء بمكنسة من النين؟",
-      "a": "شيزوكو",
+      "qid": "hunterxhunter-400-906",
+      "p": 400,
+      "q": "من المعلّمة صغيرة الهيئة التي تدرب غون وكيلوا داخل غريد آيلاند؟",
+      "a": "بيسكيت كروغر",
       "alt": [
-        "شيزكو",
-        "شيزوكو موراساكي"
+        "بيسكي",
+        "بيسكيت",
+        "Biscuit Krueger"
       ],
-      "topic": "الفرقة الشبح",
+      "topic": "غريد آيلاند",
       "verified": true,
-      "qid": "hunterxhunter-600-066",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "q": "من عضو عصابة العناكب العملاق الذي يطلق من أصابعه رصاص الهالة؟",
-      "a": "فرانكلين",
+      "qid": "hunterxhunter-400-907",
+      "p": 400,
+      "q": "من الفتاة العمياء التي يرتبط بها ملك النمل عبر لعبة غونغي؟",
+      "a": "كوموغي",
       "alt": [
-        "فرانكلن",
-        "فرانكلين بوردو"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-600-067",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم قدرة زعيم عصابة العناكب التي يسرق بها قدرات الآخرين؟",
-      "a": "صياد المهارات",
-      "alt": [
-        "سكيل هنتر",
-        "كتاب اللص"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-600-068",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "كم رجلًا للعنكبوت الموشوم على أجساد أفراد العصابة؟",
-      "a": "اثنتا عشرة",
-      "alt": [
-        "12",
-        "اثنتا عشرة رجلًا"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-600-069",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/HunterXHunterPhantomTroupe"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الحالة التي يتقن فيها الناجي من عشيرة كورتا أنواع النين كلها؟",
-      "a": "وقت الإمبراطور",
-      "alt": [
-        "إمبرور تايم",
-        "زمن الإمبراطور"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-600-070",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم السلسلة التي تسلب أفراد عصابة العناكب قدرتهم على النين؟",
-      "a": "سلسلة السجن",
-      "alt": [
-        "تشين جيل",
-        "سلسلة القيد"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-600-071",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم السلسلة التي يداوي بها الناجي من عشيرة كورتا جراح غيره؟",
-      "a": "السلسلة المقدسة",
-      "alt": [
-        "هولي تشين",
-        "سلسلة الشفاء"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-600-072",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "على أي إصبع توجد السلسلة التي تقيّد أفراد عصابة العناكب؟",
-      "a": "الوسطى",
-      "alt": [
-        "الإصبع الوسطى",
-        "الأوسط"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-600-073",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم البطاقة التي نقلت غون إلى تلميذ أبيه بدل أبيه نفسه؟",
-      "a": "بطاقة المرافقة",
-      "alt": [
-        "أكومباني",
-        "بطاقة الرفقة"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-600-074",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 600,
-      "q": "ما اللعبة الرياضية التي خاضها غون ضد سيد اللعبة القرصان؟",
-      "a": "الكرة الحارقة",
-      "alt": [
-        "الدودج بول",
-        "كرة الحرق"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-600-075",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 600,
-      "q": "ما الأمر الذي يحوّل البطاقة إلى شيء حقيقي داخل غريد آيلاند؟",
-      "a": "غين",
-      "alt": [
-        "جين",
-        "أمر غين"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-600-076",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 600,
-      "q": "كم لاعبًا في كل فريق من فريقَي مباراة الكرة في غريد آيلاند؟",
-      "a": "ثمانية لاعبين",
-      "alt": [
-        "8 لاعبين",
-        "ثمانية"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-600-077",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 600,
-      "q": "ما الاسم الذي يُطلق على بطاقات غريد آيلاند التي تُشترى وتُستهلك؟",
-      "a": "بطاقات التعاويذ",
-      "alt": [
-        "بطاقات السحر",
-        "سبيل كاردز"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-600-078",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الفريق الذي جمعه رئيس الجمعية للقضاء على النمل؟",
-      "a": "فريق الإبادة",
-      "alt": [
-        "فريق الاستئصال",
-        "فرقة الإبادة"
+        "كوموجي",
+        "Komugi"
       ],
       "topic": "نمل الكيميرا",
       "verified": true,
-      "qid": "hunterxhunter-600-079",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-knuckle-facts-trivia/"
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Komugi",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "q": "ما الطبق الذي طلبته طاهية اللجنة ولم يعرف المتسابقون صنعه؟",
-      "a": "السوشي",
+      "qid": "hunterxhunter-400-908",
+      "p": 400,
+      "q": "من شقيقة كيلوا التي يخرجها من بيت العائلة لإنقاذ غون؟",
+      "a": "ألوكا",
       "alt": [
-        "سوشي"
+        "Alluka"
+      ],
+      "topic": "الانتخابات",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/139.html",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "hunterxhunter-600-901",
+      "p": 600,
+      "q": "من ربّت غون وسلّمته صندوقًا تركه أبوه له؟",
+      "a": "ميتو",
+      "alt": [
+        "Mito"
+      ],
+      "topic": "رحلة غون",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/037.html",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "hunterxhunter-600-902",
+      "p": 600,
+      "q": "ما المهارة التي اختبرها مينتشي وبوهارا في المرحلة الثانية؟",
+      "a": "الطبخ",
+      "alt": [
+        "الطهو",
+        "إعداد الطعام"
       ],
       "topic": "امتحان الصيادين",
       "verified": true,
-      "qid": "hunterxhunter-600-080",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/006.html",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "hunterxhunter-600-903",
       "p": 600,
-      "q": "من الفتاة التي وعدها غون بموعد بعد انتهاء مهمته في قصر الملك؟",
-      "a": "بالم",
+      "q": "من الخادمة المتدرّبة التي تعترض أصدقاء كيلوا بعد اجتيازهم البوابة؟",
+      "a": "كناريا",
       "alt": [
-        "بالم سيبيريا",
-        "بالم الصيادة"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-600-081",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم القارة المجهولة التي يخطط الصيادون لاستكشافها؟",
-      "a": "القارة المظلمة",
-      "alt": [
-        "دارك كونتيننت",
-        "القارة السوداء"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-600-082",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 600,
-      "q": "بم فاجأ صديق غون الطامح للطب والدَ غون في قاعة الانتخابات؟",
-      "a": "لكمة عن بعد",
-      "alt": [
-        "اللكم عن بعد",
-        "لكمة بعيدة المدى"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-600-083",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Recap/HunterXHunter13thHunterChairmanElectionArc"
-    },
-    {
-      "p": 600,
-      "q": "من فاز برئاسة جمعية الصيادين ثم تنازل عنها فور فوزه؟",
-      "a": "باريستون هيل",
-      "alt": [
-        "باريستون",
-        "باريستون هل"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-600-084",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Recap/HunterXHunter13thHunterChairmanElectionArc"
-    },
-    {
-      "p": 600,
-      "q": "ما المنصب الذي كان يشغله الفائز برئاسة جمعية الصيادين قبل الانتخابات؟",
-      "a": "نائب الرئيس",
-      "alt": [
-        "نائب رئيس الجمعية",
-        "النائب"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-600-085",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Recap/HunterXHunter13thHunterChairmanElectionArc"
-    },
-    {
-      "p": 600,
-      "q": "ما الاسم الرمزي الذي يحمله والد غون بين البروج الاثني عشر؟",
-      "a": "الخنزير البري",
-      "alt": [
-        "الخنزير",
-        "بوار"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-600-086",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ضمن كم لونًا من أجمل ألوان العالم تُعدّ أعين عشيرة كورتا؟",
-      "a": "سبعة ألوان",
-      "alt": [
-        "7 ألوان",
-        "سبعة من أجمل الألوان"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-600-087",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Kurapika"
-    },
-    {
-      "p": 600,
-      "q": "ما الذي تركه والد غون لابنه في صندوق لا يُفتح إلا برخصة صياد؟",
-      "a": "شريط مسجّل",
-      "alt": [
-        "تسجيل صوتي",
-        "كاسيت"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-600-088",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما لقب الصيادين الذين يطاردون المجرمين وصار إليه الناجي من عشيرة كورتا؟",
-      "a": "صياد القائمة السوداء",
-      "alt": [
-        "صياد قائمة سوداء",
-        "بلاك ليست هنتر"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-600-089",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 600,
-      "q": "ما اسم قدرة المهرج اللزجة المطاطية؟",
-      "a": "بانجي غم",
-      "alt": [
-        "بنجي غم",
-        "العلكة المطاطية"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-600-090",
-      "sourceUrl": "https://www.cbr.com/bungee-gum-best-nen-ability-hunter-x-hunter/"
-    },
-    {
-      "p": 600,
-      "q": "كم بابًا في البوابة الضخمة التي تحرس مدخل أرض آل زولديك؟",
-      "a": "سبعة أبواب",
-      "alt": [
-        "7 أبواب",
-        "سبعة أبواب ضخمة"
+        "كاناريا",
+        "Canary"
       ],
       "topic": "عائلة زولديك",
       "verified": true,
-      "qid": "hunterxhunter-600-091",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Testing_Gate"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/023.html",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "hunterxhunter-600-904",
       "p": 600,
-      "q": "كم طلبًا يجب تلبيته للكائن الذي في شقيقة كيلوا قبل أن يحقق أمنية؟",
-      "a": "ثلاثة طلبات",
+      "q": "ما اسم قدرة غون المستوحاة من حجر وورقة ومقص؟",
+      "a": "جاجانكين",
       "alt": [
-        "3 طلبات"
+        "جاجانكن",
+        "Jajanken"
       ],
-      "topic": "عائلة زولديك",
+      "topic": "قدرات النين",
       "verified": true,
-      "qid": "hunterxhunter-600-092",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Nanika"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "hunterxhunter-600-905",
       "p": 600,
-      "q": "ما الذي تخفيه مدرّبة غون وكيلوا الصغيرة الحجم وتُظهره حين تجدّ في القتال؟",
-      "a": "جسدها العضلي الحقيقي",
+      "q": "من المبارز الذي يحتجز غون وكيلوا رغبةً في ضمهما إلى الفرقة؟",
+      "a": "نوبوناغا",
       "alt": [
-        "هيئتها الحقيقية",
-        "جسدها الضخم"
+        "نوبوناجا",
+        "Nobunaga"
       ],
-      "topic": "جزيرة الجشع",
+      "topic": "الفرقة الشبح",
       "verified": true,
-      "qid": "hunterxhunter-600-093",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Biscuit_Krueger"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/050.html",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "hunterxhunter-600-906",
       "p": 600,
-      "q": "ما اسم قدرة المفجّر التي تزرع في خصمه قنبلة موقوتة؟",
-      "a": "العد التنازلي",
+      "q": "من زعيم قراصنة غريد آيلاند الذي يجب تحديه للحصول على بطاقة الساحل؟",
+      "a": "ريزور",
       "alt": [
-        "كاونت داون",
-        "العدّ التنازلي"
+        "ريزر",
+        "Razor"
       ],
-      "topic": "جزيرة الجشع",
+      "topic": "غريد آيلاند",
       "verified": true,
-      "qid": "hunterxhunter-600-094",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/068.html",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "hunterxhunter-600-907",
       "p": 600,
-      "q": "ما الاسم الذي يطلقه المهرج على من ينتظر اشتداد عودهم ليقاتلهم؟",
-      "a": "الثمار",
+      "q": "ما اسم المنطقة التي تحظر الآلات وبدأ فيها خطر نمل الكيميرا؟",
+      "a": "إن جي إل",
       "alt": [
-        "الفاكهة",
-        "ثمار ناضجة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-600-095",
-      "sourceUrl": "https://www.cbr.com/bungee-gum-best-nen-ability-hunter-x-hunter/"
-    },
-    {
-      "p": 600,
-      "q": "ما الاسم الذي يُطلق على الشرط الذي يفرضه المقاتل على قدرته فتزداد قوة؟",
-      "a": "القيد والعهد",
-      "alt": [
-        "الشرط والعهد",
-        "القيد"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-600-096",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم قدرة الصياد صاحب المنجل التي تمنحه في كل نزال سلاحًا عشوائيًا؟",
-      "a": "كرايزي سلوتس",
-      "alt": [
-        "كريزي سلوتس",
-        "مقامرة الأسلحة"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-800-049",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Kite"
-    },
-    {
-      "p": 800,
-      "q": "كم كان عمر الناجي من عشيرة كورتا حين عزم أن يصير صيادًا؟",
-      "a": "سبعة عشر عامًا",
-      "alt": [
-        "17 عامًا",
-        "سبعة عشر سنة"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-800-050",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Kurapika"
-    },
-    {
-      "p": 800,
-      "q": "ما الرقم الذي حمله غون على شارته في امتحان الصيادين؟",
-      "a": "أربعمئة وخمسة",
-      "alt": [
-        "405"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-800-051",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم المدينة التي انعقد فيها امتحان الصيادين الذي خاضه غون؟",
-      "a": "زابان",
-      "alt": [
-        "مدينة زابان",
-        "زابن"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-800-052",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Zaban_City"
-    },
-    {
-      "p": 800,
-      "q": "من الممتحن البدين الذي التهم أطباق المتسابقين في المرحلة الثانية؟",
-      "a": "بوهارا",
-      "alt": [
-        "بهارا",
-        "بوحارا"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-800-053",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 800,
-      "q": "من الممتحن الذي كان حارس البرج وأعلن قواعد مرحلة صيد الشارات؟",
-      "a": "ليبو",
-      "alt": [
-        "ليبّو",
-        "لبو"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-800-054",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 800,
-      "q": "كم طابقًا في برج المصارعة الذي قاتل فيه غون وكيلوا؟",
-      "a": "مئتان وواحد وخمسون",
-      "alt": [
-        "251"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-800-055",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/heavens-arena"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الصياد الذي يفتح غرفًا خفية بقدرته ونقل الفريق إلى قصر الملك؟",
-      "a": "نوف",
-      "alt": [
-        "نوفو",
-        "نوف الصياد"
+        "NGL",
+        "Neo-Green Life"
       ],
       "topic": "نمل الكيميرا",
       "verified": true,
-      "qid": "hunterxhunter-800-056",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-knuckle-facts-trivia/"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Plot",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
-      "q": "ما اسم فنّ الكونغ فو الذي يعلّمه معلّم النين وتلميذه الصغير في برج المصارعة؟",
-      "a": "شينغن ريو",
-      "alt": [
-        "شينجن ريو",
-        "شينغن-ريو"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-800-057",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Shingen-ryu"
-    },
-    {
-      "p": 800,
-      "q": "ما اللقب الذي يُمنح لأقوى مقاتلي برج المصارعة فيُخصَّص لكل واحد طابق؟",
-      "a": "سيد الطابق",
-      "alt": [
-        "أسياد الطوابق",
-        "سادة الطوابق"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-800-058",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/heavens-arena"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم التقنية التي تبسط الهالة دائرةً حول صاحبها ليستشعر من فيها؟",
-      "a": "إن",
-      "alt": [
-        "إين",
-        "دائرة الإحساس"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-800-059",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 800,
-      "q": "من المقاتل الذي واجه المهرج في حلبة البرج بقدرة الشبيه؟",
-      "a": "كاسترو",
-      "alt": [
-        "كاسترو المقاتل"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-800-060",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/heavens-arena"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم تلميذ معلّم النين الصغير الذي تدرّب مع غون في البرج؟",
-      "a": "زوشي",
-      "alt": [
-        "زوشي الصغير",
-        "زشي"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-800-061",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/heavens-arena"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الكائن الذي يظهر في شقيقة كيلوا الصغرى ويحقق الأمنيات؟",
+      "qid": "hunterxhunter-600-908",
+      "p": 600,
+      "q": "ما اسم الكيان داخل ألوكا الذي يشفي غون؟",
       "a": "نانيكا",
       "alt": [
-        "نانكا",
-        "ناني كا"
+        "Nanika"
       ],
-      "topic": "عائلة زولديك",
+      "topic": "الانتخابات",
       "verified": true,
-      "qid": "hunterxhunter-800-062",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/145.html",
+      "difficultyTarget": 0.4
     },
     {
+      "qid": "hunterxhunter-800-901",
       "p": 800,
-      "q": "ما اسم تقنية كيلوا التي تشحن جسده بالتيار فيتحرك بسرعة خاطفة؟",
-      "a": "الخطى الإلهية",
+      "q": "فوق أي شجرة هائلة يجلس غون مع أبيه في ختام أنمي 2011؟",
+      "a": "شجرة العالم",
       "alt": [
-        "غودسبيد",
-        "كامي إيل"
+        "World Tree"
       ],
-      "topic": "عائلة زولديك",
+      "topic": "رحلة غون",
       "verified": true,
-      "qid": "hunterxhunter-800-063",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/148.html",
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "hunterxhunter-800-902",
       "p": 800,
-      "q": "ما الترتيب الذي يحتله كيلوا بين أبناء عائلة زولديك؟",
-      "a": "الثالث",
+      "q": "ما اسم الجزيرة التي استضافت اختبار جمع الشارات؟",
+      "a": "زيفيل",
       "alt": [
-        "الابن الثالث",
-        "ثالثًا"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-800-064",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم تقنية جد كيلوا التي يركبها ويحمل بها غيره في الهواء؟",
-      "a": "رأس التنين",
-      "alt": [
-        "دراغون هيد",
-        "هجوم التنين"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-800-065",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم أصغر إخوة كيلوا الذي انضم لاحقًا إلى عصابة العناكب؟",
-      "a": "كالوتو",
-      "alt": [
-        "كالوتو زولديك",
-        "كاللوتو"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-800-066",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم والدة كيلوا؟",
-      "a": "كيكيو",
-      "alt": [
-        "كيكيو زولديك",
-        "كيكيو الأم"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-800-067",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "من عضو عصابة العناكب الأشقر الذي يلوي ذراعه لتقوية لكمته؟",
-      "a": "فينكس",
-      "alt": [
-        "فينكس ماغكب",
-        "فنكس"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-800-068",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "من عضو عصابة العناكب الذي يصنع نسخًا من الأشياء بلمستها؟",
-      "a": "كورتوبي",
-      "alt": [
-        "كورتوبي الصغير",
-        "كرتوبي"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-800-069",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "من عضو عصابة العناكب الملفوف بالضمادات الذي يقاتل بالإيقاع؟",
-      "a": "بونولينوف",
-      "alt": [
-        "بونولنوف",
-        "بونو"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-800-070",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "ما الرقم الذي يحمله زعيم عصابة العناكب في وشمه؟",
-      "a": "صفر",
-      "alt": [
-        "0",
-        "رقم صفر"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-800-071",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "كم قدرة مسروقة استعمل زعيم عصابة العناكب ليحسم نزاله مع المهرج؟",
-      "a": "خمس قدرات",
-      "alt": [
-        "خمس",
-        "5 قدرات"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-800-072",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Chrollo_Lucilfer"
-    },
-    {
-      "p": 800,
-      "q": "من عضو عصابة العناكب الذي يتحكم بالآخرين عبر هوائيات هاتفه؟",
-      "a": "شالنارك",
-      "alt": [
-        "شالناك",
-        "شالنارك ريوسي"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-800-073",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "من عضوة عصابة العناكب التي تقرأ ذكريات من تلمسه؟",
-      "a": "باكونودا",
-      "alt": [
-        "باكنودا",
-        "باكونودة"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-800-074",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "من الفتاة التي تكتب نبوءات شعرية وحرسها الناجي من عشيرة كورتا؟",
-      "a": "نيون نوستراد",
-      "alt": [
-        "نيون",
-        "نيون نستراد"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-800-075",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "إلى أي أصحاب النين يتحول الناجي من عشيرة كورتا حين تحمرّ عيناه؟",
-      "a": "المتخصص",
-      "alt": [
-        "متخصص",
-        "صاحب التخصص"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-800-076",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم السلسلة التي يفرض بها الناجي من عشيرة كورتا شروطه على أسيره؟",
-      "a": "سلسلة الحكم",
-      "alt": [
-        "جدجمنت تشين",
-        "سلسلة القضاء"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-800-077",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "كم خانة حرة في كتاب لاعب غريد آيلاند إلى جانب الخانات المخصصة؟",
-      "a": "خمس وأربعون",
-      "alt": [
-        "45",
-        "خمس وأربعون خانة"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-800-078",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 800,
-      "q": "كم بطاقة تعويذة تُباع داخل غريد آيلاند؟",
-      "a": "أربعون",
-      "alt": [
-        "40",
-        "أربعون بطاقة"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-800-079",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الجهاز المنزلي الذي تُشغَّل به نسخة غريد آيلاند؟",
-      "a": "جوي ستيشن",
-      "alt": [
-        "جويستيشن",
-        "جوي ستايشن"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-800-080",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 800,
-      "q": "كم شيطانًا استدعى سيد اللعبة القرصان ليكمل فريق الكرة؟",
-      "a": "أربعة عشر",
-      "alt": [
-        "14",
-        "14 شيطانًا"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-800-081",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 800,
-      "q": "كم بطاقة يحق للفائز بغريد آيلاند أن يأخذها معه إلى العالم الحقيقي؟",
-      "a": "ثلاث بطاقات",
-      "alt": [
-        "3 بطاقات",
-        "ثلاث"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-800-082",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 800,
-      "q": "من الصياد الثري الذي اشترى نسخ اللعبة ليجد من يُنهيها؟",
-      "a": "باتيرا",
-      "alt": [
-        "باطيرا",
-        "باتّيرا"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-800-083",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 800,
-      "q": "من أضخم النمل الثلاثة الملازمين للملك والذي يغيّر شكل جسده في القتال؟",
-      "a": "مينثوثويوبي",
-      "alt": [
-        "يوبي",
-        "مينتوتويوبي"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-800-084",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "ما معنى الاسم الذي سمّت به أمُّ ملك النمل وليدها؟",
-      "a": "النور الذي يضيء الجميع",
-      "alt": [
-        "نور يضيء كل شيء",
-        "النور الذي يعمّ الجميع"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-800-085",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Meruem"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم تقنية رئيس الجمعية التي تستدعي تمثالًا ضخمًا بمئة ذراع؟",
-      "a": "بوذا ذو المئة ذراع",
-      "alt": [
-        "غوانين",
-        "تمثال المئة ذراع"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-800-086",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-chairman-netero-100-type-guanyin-bodhisattva-explained/"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم القدرة التي تمنع الخصم من استعمال النين ثلاثين يومًا؟",
-      "a": "بوتكلين",
-      "alt": [
-        "هاكواري",
-        "بوت كلين"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-800-087",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-knuckle-facts-trivia/"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم قدرة الدخان التي يستعملها الصياد صاحب الغليون؟",
-      "a": "ديب بيربل",
-      "alt": [
-        "ديب بربل",
-        "الأرجواني العميق"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-800-088",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-knuckle-facts-trivia/"
-    },
-    {
-      "p": 800,
-      "q": "من تلميذ صاحب الغليون الصامت الذي يقاتل بأيدٍ طائرة؟",
-      "a": "شوت",
-      "alt": [
-        "شوت مكماهون",
-        "شووت"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-800-089",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-knuckle-facts-trivia/"
-    },
-    {
-      "p": 800,
-      "q": "كم لكمة كان رئيس الجمعية يسددها يوميًا في تدريبه الجبلي؟",
-      "a": "عشرة آلاف",
-      "alt": [
-        "10000",
-        "عشرة آلاف لكمة"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-800-090",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-chairman-netero-100-type-guanyin-bodhisattva-explained/"
-    },
-    {
-      "p": 800,
-      "q": "كم ساعة كان رئيس الجمعية يستغرقها أول تدريبه ليكمل لكمات يومه؟",
-      "a": "ثماني عشرة ساعة",
-      "alt": [
-        "18 ساعة",
-        "ثماني عشرة"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-800-091",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-chairman-netero-100-type-guanyin-bodhisattva-explained/"
-    },
-    {
-      "p": 800,
-      "q": "ما الرمز الحيواني الذي يحمله ميزايستوم بين البروج الاثني عشر؟",
-      "a": "الثور",
-      "alt": [
-        "ثور"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-800-092",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "ما الرمز الحيواني الذي يحمله بوتوباي بين البروج الاثني عشر؟",
-      "a": "التنين",
-      "alt": [
-        "تنين"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-800-093",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 800,
-      "q": "كم دورة اقتضاها انتخاب رئيس جمعية الصيادين الجديد؟",
-      "a": "تسع دورات",
-      "alt": [
-        "تسع",
-        "9 دورات"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-800-094",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Recap/HunterXHunter13thHunterChairmanElectionArc"
-    },
-    {
-      "p": 800,
-      "q": "ما نسبة المرافق العامة التي يدخلها الصياد المرخّص مجانًا؟",
-      "a": "خمسة وتسعون بالمئة",
-      "alt": [
-        "95%",
-        "95 بالمئة"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-800-095",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-benefits-pros-becoming-hunter/"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم رفيق طفولة الناجي من عشيرة كورتا الذي قضى في المذبحة؟",
-      "a": "بايرو",
-      "alt": [
-        "بيرو",
-        "بايرو الصغير"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-800-096",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Pairo"
-    },
-    {
-      "p": 1000,
-      "q": "كم عمر المدرّبة صغيرة الحجم التي درّبت غون وكيلوا في اللعبة؟",
-      "a": "سبعة وخمسون عامًا",
-      "alt": [
-        "57 عامًا",
-        "سبعة وخمسون"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-1000-049",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Biscuit_Krueger"
-    },
-    {
-      "p": 1000,
-      "q": "كم طلبًا مسبقًا سُجّل على لعبة غريد آيلاند حين صدرت؟",
-      "a": "عشرون ألف طلب",
-      "alt": [
-        "20 ألفًا",
-        "عشرون ألفًا"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-1000-050",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Greed_Island"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم المدينة التي تُقام فيها مسابقة كل شهر قرب نقطة بداية اللعبة؟",
-      "a": "أنتوكيبا",
-      "alt": [
-        "انتوكيبا",
-        "أنطوكيبا"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-1000-051",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Greed_Island_Starting_Point"
-    },
-    {
-      "p": 1000,
-      "q": "على أي يد يجمع الناجي من عشيرة كورتا سلاسله الخمس؟",
-      "a": "اليد اليمنى",
-      "alt": [
-        "يده اليمنى",
-        "اليمنى"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-1000-052",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Kurapika"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم قدرة النملة الشبيهة بالقط التي تشفي الجروح وتُعيد بناء الأجساد؟",
-      "a": "دكتور بلايث",
-      "alt": [
-        "دكتور بلايت",
-        "الطبيبة بلايث"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-1000-053",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Neferpitou"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم قدرة النملة الشبيهة بالفراشة التي تنقسم إلى نسخ صغيرة منها؟",
-      "a": "بعلزبوب",
-      "alt": [
-        "بيلزيبوب",
-        "بعلزبول"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-1000-054",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Shaiapouf"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم قدرة المهرج التي تغيّر ملمس الأشياء ومظهرها؟",
-      "a": "تكستشر سربرايز",
-      "alt": [
-        "تكسشر سربرايز",
-        "مفاجأة الملمس"
-      ],
-      "topic": "الشخصيات الرئيسية",
-      "verified": true,
-      "qid": "hunterxhunter-1000-055",
-      "sourceUrl": "https://www.cbr.com/bungee-gum-best-nen-ability-hunter-x-hunter/"
-    },
-    {
-      "p": 1000,
-      "q": "ما الرقم الذي حمله المهرج على شارته في امتحان الصيادين؟",
-      "a": "أربعة وأربعون",
-      "alt": [
-        "44"
+        "جزيرة زيفيل",
+        "Zevil Island"
       ],
       "topic": "امتحان الصيادين",
       "verified": true,
-      "qid": "hunterxhunter-1000-056",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/014.html",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "كم متسابقًا خاض المرحلة الأولى من امتحان الصيادين مع غون؟",
-      "a": "أربعمئة وأربعة",
+      "qid": "hunterxhunter-800-903",
+      "p": 800,
+      "q": "من الخادم الذي يختبر أصدقاء كيلوا بلعبة عملة معدنية؟",
+      "a": "غوتو",
       "alt": [
-        "404",
-        "أربعمئة وأربعة متسابقًا"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-057",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/287th_Hunter_Exam"
-    },
-    {
-      "p": 1000,
-      "q": "ما الجزاء الذي وُعد به سجناء المرحلة الثالثة عن كل ساعة يعطّلون فيها متسابقًا؟",
-      "a": "سنة من حكمه",
-      "alt": [
-        "تخفيف سنة",
-        "سنة واحدة"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-058",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Trick_Tower"
-    },
-    {
-      "p": 1000,
-      "q": "كم كان طول نفق المرحلة الأولى من امتحان الصيادين؟",
-      "a": "ثمانون كيلومترًا",
-      "alt": [
-        "80 كم",
-        "ثمانون كم"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-059",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 1000,
-      "q": "ما رقم امتحان الصيادين الذي خاضه غون ورفاقه؟",
-      "a": "السابع والثمانون بعد المئتين",
-      "alt": [
-        "287"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-060",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 1000,
-      "q": "ما الذي جمعه المتسابقون من وادٍ سحيق في اختبار التعويض؟",
-      "a": "بيض النسور",
-      "alt": [
-        "بيض نسر العنكبوت",
-        "البيض"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-061",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم التقنية التي توزّع الهالة بين الهجوم والدفاع في أجزاء الجسد؟",
-      "a": "ريو",
-      "alt": [
-        "ريوو",
-        "ريو النين"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-062",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم التقنية التي تركّز كل الهالة في موضع من الجسد؟",
-      "a": "كو",
-      "alt": [
-        "كوو",
-        "كو النين"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-063",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم التقنية التي تشدّ الهالة على سلاح أو أداة لتقويتها؟",
-      "a": "شو",
-      "alt": [
-        "شوو",
-        "شو النين"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-064",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم التقنية التي تُبقي الهالة المكثّفة تغطي الجسد كله مدة طويلة؟",
-      "a": "كين",
-      "alt": [
-        "كن",
-        "كين النين"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-065",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم رفيقَي المفجّر اللذين عاوناه على مطاردة لاعبي غريد آيلاند؟",
-      "a": "سوب وبارا",
-      "alt": [
-        "ساب وبارا",
-        "سوب وبارا"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-1000-066",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-greed-island-arc-explained/"
-    },
-    {
-      "p": 1000,
-      "q": "كم عدد أبناء رب عائلة زولديك وزوجته؟",
-      "a": "خمسة أبناء",
-      "alt": [
-        "5",
-        "خمسة"
+        "غوتوه",
+        "Gotoh"
       ],
       "topic": "عائلة زولديك",
       "verified": true,
-      "qid": "hunterxhunter-1000-067",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/025.html",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "كم طنًا مجموع ما كان كيلوا يفتحه من أبواب بوابة بيته قبل النين؟",
-      "a": "ستة عشر طنًا",
+      "qid": "hunterxhunter-800-904",
+      "p": 800,
+      "q": "ما اسم مبدأ النين الذي يغلق تدفق الهالة لإخفاء الحضور؟",
+      "a": "زيتسو",
       "alt": [
-        "16 طنًا",
-        "ستة عشر"
+        "زتسو",
+        "Zetsu"
       ],
-      "topic": "عائلة زولديك",
+      "topic": "قدرات النين",
       "verified": true,
-      "qid": "hunterxhunter-1000-068",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Testing_Gate"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter#Setting",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "ما اسم الخادم العجوز الذي استضاف غون ورفاقه قرب بوابة آل زولديك؟",
-      "a": "زيبرو",
+      "qid": "hunterxhunter-800-905",
+      "p": 800,
+      "q": "من أول أعضاء الفرقة الشبح الذي يقتله كورابيكا في مواجهته الفردية؟",
+      "a": "أوفوغين",
       "alt": [
-        "زبرو",
-        "زيبرو الخادم"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-1000-069",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-zoldyck-family/"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم تقنية جد كيلوا التي يفرّق بها الأعداء بسيل من التنانين؟",
-      "a": "غطسة التنين",
-      "alt": [
-        "دراغون دايف",
-        "انقضاض التنين"
-      ],
-      "topic": "عائلة زولديك",
-      "verified": true,
-      "qid": "hunterxhunter-1000-070",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Zeno_Zoldyck"
-    },
-    {
-      "p": 1000,
-      "q": "كم من الوقت يُمهل زعيم عصابة العناكب نفسه لإتمام شروط سرقة القدرة؟",
-      "a": "ساعة واحدة",
-      "alt": [
-        "ساعة من الزمن",
-        "ستون دقيقة"
+        "أوفوجين",
+        "يوفوغين",
+        "Uvogin"
       ],
       "topic": "الفرقة الشبح",
       "verified": true,
-      "qid": "hunterxhunter-1000-071",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Chrollo_Lucilfer"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kurapika#Appearances",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "ما الرقم الذي تحمله من أعادت وصل ذراع المهرج المقطوعة في وشم الفرقة؟",
-      "a": "الرقم ثلاثة",
+      "qid": "hunterxhunter-800-906",
+      "p": 800,
+      "q": "ما اسم اللاعب الملقب بالمفجّر الذي يهزمه غون؟",
+      "a": "جينثرو",
       "alt": [
-        "3",
-        "الرقم 3"
+        "غينثرو",
+        "جينسورو",
+        "Genthru"
       ],
-      "topic": "الفرقة الشبح",
+      "topic": "غريد آيلاند",
       "verified": true,
-      "qid": "hunterxhunter-1000-072",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gon_Freecss#In_the_Hunter_%C3%97_Hunter_manga",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "أين يقع وشم العنكبوت على جسد أقوى أفراد العصابة جسديًا؟",
-      "a": "أسفل ظهره",
-      "alt": [
-        "أسفل الظهر",
-        "ظهره الأسفل"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-1000-073",
-      "sourceUrl": "https://tattoo-ja.com/en/blog/genei-ryodan"
-    },
-    {
-      "p": 1000,
-      "q": "كم في المئة تنمو فائدة الدَّين في قدرة صاحب القبضة كل عشر ثوانٍ؟",
-      "a": "عشرة بالمئة",
-      "alt": [
-        "10%",
-        "عشرة في المئة"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-1000-074",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-knuckle-facts-trivia/"
-    },
-    {
-      "p": 1000,
-      "q": "كم بلاءً عظيمًا عاد به المستكشفون من وراء العالم المعروف؟",
-      "a": "خمسة بلاءات",
-      "alt": [
-        "خمسة",
-        "5 بلاءات"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-1000-075",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Five_Threats"
-    },
-    {
-      "p": 1000,
-      "q": "ما الذي يجب أن يتركه صاحب القدرة في كتاب زعيم العصابة كي تُسرق؟",
-      "a": "بصمة كفّه",
-      "alt": [
-        "بصمة اليد",
-        "بصمة راحته"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-1000-076",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 1000,
-      "q": "أي إصبع يحمل السلسلة التي يشفي بها الناجي من عشيرة كورتا؟",
-      "a": "الإبهام",
-      "alt": [
-        "إصبع الإبهام",
-        "الابهام"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-1000-077",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 1000,
-      "q": "أي إصبع تخرج منه السلسلة التي تُلزم الأسير بشروط الناجي من عشيرة كورتا؟",
-      "a": "الخنصر",
-      "alt": [
-        "الإصبع الصغير",
-        "إصبع الخنصر"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-1000-078",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم السلسلة التي يتحسس بها الناجي من عشيرة كورتا مواضع الأشياء؟",
-      "a": "سلسلة البحث",
-      "alt": [
-        "داوزنغ تشين",
-        "سلسلة البندول"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-1000-079",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم بطاقة غريد آيلاند التي تشفي أي إصابة؟",
-      "a": "نفس الملاك",
-      "alt": [
-        "أنجلز بريث",
-        "بطاقة الشفاء"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-1000-080",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم صديقة طفولة زعيم عصابة العناكب في مدينة النفايات؟",
-      "a": "ساراسا",
-      "alt": [
-        "سارازا",
-        "ساراسا الصغيرة"
-      ],
-      "topic": "الفرقة الشبح",
-      "verified": true,
-      "qid": "hunterxhunter-1000-081",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-meteor-city-explained/"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم المدينة السحرية التي يشتري منها لاعبو غريد آيلاند تعاويذهم؟",
-      "a": "ماسادورا",
-      "alt": [
-        "ماسدورا",
-        "مسادورا"
-      ],
-      "topic": "جزيرة الجشع",
-      "verified": true,
-      "qid": "hunterxhunter-1000-082",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/greed-island"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم النملة التي خدمت الملك ثم كشفت أسرار القصر للصيادين؟",
-      "a": "ويلفين",
-      "alt": [
-        "ولفين",
-        "ويلفن"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-1000-083",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم النملة التي تختفي عن الأنظار تمامًا وساعدت الصيادين؟",
-      "a": "ميليورون",
-      "alt": [
-        "ميلورون",
-        "ميليرون"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-1000-084",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم النملة الأخطبوط التي صارت صديقة كيلوا؟",
+      "qid": "hunterxhunter-800-907",
+      "p": 800,
+      "q": "من النملة الأخطبوطية التي تنقذ كيلوا وتتخلى عن رفاقها؟",
       "a": "إيكالغو",
       "alt": [
         "إيكالجو",
-        "إكالغو"
+        "Ikalgo"
       ],
       "topic": "نمل الكيميرا",
       "verified": true,
-      "qid": "hunterxhunter-1000-085",
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters"
+      "sourceUrl": [
+        "https://www.ntv.co.jp/hunterhunter/story/102.html",
+        "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Chimera_Ants"
+      ],
+      "difficultyTarget": 0.25
     },
     {
+      "qid": "hunterxhunter-800-908",
+      "p": 800,
+      "q": "من يفوز برئاسة جمعية الصيادين ثم يستقيل فورًا؟",
+      "a": "باريستون هيل",
+      "alt": [
+        "باريستون",
+        "Pariston Hill"
+      ],
+      "topic": "الانتخابات",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Pariston_Hill",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "hunterxhunter-1000-901",
       "p": 1000,
-      "q": "من تولّت رئاسة جمعية الصيادين بعد تنازل الفائز عن المنصب؟",
+      "q": "من صائد الجوائز الذي جعلته بيسكي خصمًا تدريبيًا لغون وكيلوا مدة أسبوعين؟",
+      "a": "بينولت",
+      "alt": [
+        "بينولتو",
+        "Binolt"
+      ],
+      "topic": "غريد آيلاند",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/063.html",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "hunterxhunter-1000-902",
+      "p": 1000,
+      "q": "من عضو الفرقة الشبح الذي يتحكم بضحاياه بهوائي وهاتف؟",
+      "a": "شالنارك",
+      "alt": [
+        "Shalnark"
+      ],
+      "topic": "الفرقة الشبح",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Shalnark",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "hunterxhunter-1000-903",
+      "p": 1000,
+      "q": "مع من يتبارز كيلوا من رفيقَي المفجّر في المواجهة النهائية؟",
+      "a": "سوب",
+      "alt": [
+        "ساب",
+        "Sub"
+      ],
+      "topic": "غريد آيلاند",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/073.html",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "hunterxhunter-1000-904",
+      "p": 1000,
+      "q": "ما اسم قدرة هيسوكا التي تغيّر مظهر سطح مستوٍ كتحويل منديل إلى جلد؟",
+      "a": "تكستشر سربرايز",
+      "alt": [
+        "Texture Surprise",
+        "المفاجأة الملمسية"
+      ],
+      "topic": "قدرات النين",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Hisoka",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "hunterxhunter-1000-905",
+      "p": 1000,
+      "q": "ما اسم قدرة نيفربيتو العلاجية التي تستدعي جراحًا دمية؟",
+      "a": "دكتور بلايث",
+      "alt": [
+        "Doctor Blythe",
+        "دكتور بليث"
+      ],
+      "topic": "نمل الكيميرا",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Neferpitou",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "hunterxhunter-1000-906",
+      "p": 1000,
+      "q": "من الخادمة التي تطارد منطاد كيلوا برفقة تسوبوني؟",
+      "a": "أماني",
+      "alt": [
+        "أمانيه",
+        "Amane"
+      ],
+      "topic": "عائلة زولديك",
+      "verified": true,
+      "sourceUrl": "https://www.ntv.co.jp/hunterhunter/story/143.html",
+      "difficultyTarget": 0.15
+    },
+    {
+      "qid": "hunterxhunter-1000-907",
+      "p": 1000,
+      "q": "من تتولى رئاسة جمعية الصيادين بعد استقالة الفائز بالانتخابات؟",
       "a": "تشيدل يورك شاير",
       "alt": [
         "تشيدل",
-        "شيدل يوركشاير"
+        "تشيدل يوركشاير",
+        "Cheadle Yorkshire"
       ],
-      "topic": "جمعية الصيادين والرخصة",
+      "topic": "الانتخابات",
       "verified": true,
-      "qid": "hunterxhunter-1000-086",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Recap/HunterXHunter13thHunterChairmanElectionArc"
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Cheadle_Yorkshire",
+      "difficultyTarget": 0.15
     },
     {
+      "qid": "hunterxhunter-1000-908",
       "p": 1000,
-      "q": "من ابن رئيس الجمعية الراحل الذي يقود البعثة إلى ما وراء العالم المعروف؟",
-      "a": "بيوند نيترو",
+      "q": "ما الحيوان الذي يمثله غينغ ضمن البروج الاثني عشر؟",
+      "a": "الخنزير البري",
       "alt": [
-        "بيوند",
-        "بياند نيترو"
+        "Boar"
       ],
-      "topic": "جمعية الصيادين والرخصة",
+      "topic": "رحلة غون",
       "verified": true,
-      "qid": "hunterxhunter-1000-087",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الإمبراطورية التي تنظّم الرحلة إلى ما وراء العالم المعروف؟",
-      "a": "كاكين",
-      "alt": [
-        "إمبراطورية كاكين",
-        "كاكن"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-1000-088",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter"
-    },
-    {
-      "p": 1000,
-      "q": "كم جيلًا تكفي قيمة بيع رخصة صياد واحدة لإعالة عائلة صاحبها؟",
-      "a": "سبعة أجيال",
-      "alt": [
-        "سبعة",
-        "7 أجيال"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-1000-089",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-benefits-pros-becoming-hunter/"
-    },
-    {
-      "p": 1000,
-      "q": "ما نسبة المناطق المحظورة التي يستطيع الصياد المرخّص دخولها؟",
-      "a": "خمسة وسبعون بالمئة",
-      "alt": [
-        "75%",
-        "75 بالمئة"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-1000-090",
-      "sourceUrl": "https://www.cbr.com/hunter-x-hunter-benefits-pros-becoming-hunter/"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الشكل الهندسي الذي تُرتَّب عليه أنواع النين في مخطّطها؟",
-      "a": "السداسي",
-      "alt": [
-        "المسدس",
-        "الشكل السداسي"
-      ],
-      "topic": "نظام النين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-091",
-      "sourceUrl": "https://hxhtracker.com/nen-guide"
-    },
-    {
-      "p": 1000,
-      "q": "كم أميرًا يتنافسون على عرش الإمبراطورية التي تنظّم الرحلة؟",
-      "a": "أربعة عشر أميرًا",
-      "alt": [
-        "14 أميرًا",
-        "أربعة عشر"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-1000-092",
-      "sourceUrl": "https://wiki.animeprinted.com/glossary/hunter-x-hunter/dark-continent-arc"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم قدرة فتاة الأثرياء التي تكتب بها نبوءات شعرية دون أن تدري؟",
-      "a": "كاتبة الأشباح",
-      "alt": [
-        "لوفلي غوست رايتر",
-        "كاتبة الأشباح اللطيفة"
-      ],
-      "topic": "عشيرة كورتا والثأر",
-      "verified": true,
-      "qid": "hunterxhunter-1000-093",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Neon_Nostrade"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم قائد فرقة النمل الذي يشبه الفهد وكان أسرعهم؟",
-      "a": "تشيتو",
-      "alt": [
-        "شيتو",
-        "تشيتو النملة"
-      ],
-      "topic": "نمل الكيميرا",
-      "verified": true,
-      "qid": "hunterxhunter-1000-094",
-      "sourceUrl": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/HunterXHunterMeruem"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الداء الذي يمنح الخلود وعُدّ أحد بلاءات ما وراء العالم؟",
-      "a": "داء زوباي",
-      "alt": [
-        "زوباي",
-        "مرض زوباي"
-      ],
-      "topic": "جمعية الصيادين والرخصة",
-      "verified": true,
-      "qid": "hunterxhunter-1000-095",
-      "sourceUrl": "https://hunterxhunter.fandom.com/wiki/Five_Threats"
-    },
-    {
-      "p": 1000,
-      "q": "كم متسابقًا اجتاز اختبار التعويض في المرحلة الثانية من الامتحان؟",
-      "a": "اثنان وأربعون",
-      "alt": [
-        "42"
-      ],
-      "topic": "امتحان الصيادين",
-      "verified": true,
-      "qid": "hunterxhunter-1000-096",
-      "sourceUrl": "https://gamerant.com/hunter-x-hunter-hunter-exam-arc/"
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Hunter_%C3%97_Hunter_characters#Ging_Freecss",
+      "difficultyTarget": 0.15
     }
   ]
 }

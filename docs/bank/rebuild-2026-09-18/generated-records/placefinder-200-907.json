@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-200-907",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-200-907.webp",
+  "asset": "media/placefinder/placefinder-200-907.webp",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Statue of Liberty on Liberty Island: full green copper robed female allegorical figure, seven-ray crown, torch raised high in her RIGHT hand, tablet held by LEFT arm close to body, stone pedestal on harbour island. Frontal three-quarter view with ocean and very distant skyline. Correct anatomy, no readable inscription.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 198788,
+  "sha256": "d3303c41a316aa83950578049146b671a4facb8fdebcb9803ae7600e13c2277c",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Green Liberty statue with raised right torch, left tablet, crown and full pedestal; no readable inscription.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

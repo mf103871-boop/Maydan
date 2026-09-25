@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-600-905",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-600-905.webp",
+  "asset": "media/placefinder/placefinder-600-905.webp",
+  "prompt": "Use case: precise-object-edit. Edit the attached generated architectural illustration of the historic Nativity facade of Sagrada Familia. Keep the same facade identity, four perforated bell towers, colored mosaic pinnacles, ornate portals, natural stone and daylight. Change only framing: pull back roughly 25 percent so all four pinnacle tops have a generous sky margin and the full entrance-door bases, steps and a strip of paved ground are visible. Keep landscape 4:3. No text, labels or watermark. Preserve architectural identity; no extra towers.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 257022,
+  "sha256": "f303f5ee5eace680493495480ac4ac1dc4ffc3d3d8107154a358e339baf61199",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Four tapering perforated Nativity bell towers and ornate portals; targeted edit restored sky and entrance margins. Historic facade study, no current whole-building skyline claim.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

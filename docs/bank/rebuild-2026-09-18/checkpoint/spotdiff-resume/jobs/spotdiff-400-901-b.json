@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-400-901-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the single stainless steel SPOON to the right of the soup bowl, naturally filling its exact area with the unchanged tabletop. Keep bowl, soup and napkin identical. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "spotdiff-1000-902-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-1000-902-a.webp",
+  "asset": "media/spotdiff/spotdiff-1000-902-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Cream desktop with small stack of blank ivory index cards center-left, dark blue plain pen lower-left, single GREEN wire paperclip lying separately near right edge of cards at x=70 y=59, length 12 percent image width, thick enough clearly visible. Small plain gray eraser rear-right. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 44094,
+  "sha256": "5b79e4cd256d1cd1068474e424759ad37e3f2ef54a49d0d6b77f3b0a3372bb28",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "The separate paperclip changes from green to purple. Blank card stack, blue pen, gray eraser, clip outline and positions remain stable.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "rawGeneratedImageSha256": "319b80fb0fb7967ca7b2a0277809dcbfac240fd7b0bf09be7dfbe7feece945c3"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-1000-905-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the small RED ribbon from the end of tuning fork handle at x=89 y=66, reveal matching silver handle beneath. Fork prongs, handle geometry, wooden block, felt and shadows otherwise exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

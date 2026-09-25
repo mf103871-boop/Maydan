@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-09-25T03:55:13.233Z",
+  "scope": "Three candidate replacements only; production media and category data remain untouched.",
+  "humanReviewRequired": true,
+  "sourceDownloads": "Public Freesound HQ MP3 previews, ordinary unauthenticated HTTP downloads; original WAV/FLAC downloads were not represented as obtained.",
+  "items": [
+    {
+      "id": "sound-400-902",
+      "file": "sound-400-902.mp3",
+      "sha256": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+      "bytes": 121252,
+      "technical": {
+        "durationSeconds": 7.5,
+        "decodedSamples": 330750,
+        "sampleRateHz": 44100,
+        "channels": 1,
+        "peakDbFS": -3.5460016036233806,
+        "rmsDbFS": -22.379512354271203,
+        "nonFinite": 0,
+        "codec": "mp3",
+        "bitRate": 128000,
+        "decodeSucceeded": true,
+        "within160KiB": true,
+        "within8Seconds": true,
+        "notDigitallyClipped": true
+      },
+      "source": {
+        "title": "Calm ocean waves",
+        "author": "SamsterBirdies",
+        "published": "2021-06-29",
+        "url": "https://freesound.org/people/SamsterBirdies/sounds/578524/",
+        "downloadUrl": "https://cdn.freesound.org/previews/578/578524_5487341-hq.mp3",
+        "previewSha256": "fd505dbd43cb1c3508f884279bf5d3e060bb14f2bc3d9b4cce334eb7a75b5d7f",
+        "sourcePageOpened": true,
+        "sourcePageHttpStatus": 200,
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licensePageOpened": true,
+        "retrievedAt": "2026-09-25T03:53:10.872Z",
+        "evidence": "Author describes calm ocean waves crashing and fizzing water, recorded on Whidbey Island with Zoom H1n. A 7.5-second region with a strong central swell and lower-amplitude beginning/end was selected using signal-envelope analysis."
+      },
+      "processing": {
+        "sourceStartSeconds": 2,
+        "sourceDurationSeconds": 7.5,
+        "ffmpegFilter": "atrim=start=2:duration=7.5,asetpts=PTS-STARTPTS,aformat=channel_layouts=mono,afade=t=in:st=0:d=0.05,afade=t=out:st=7.45:d=0.05,volume=1.00714783dB",
+        "targetDecodedPreEncodePeakDbFS": -3,
+        "speedUnchanged": true,
+        "synthetic": false,
+        "composite": false,
+        "metadataRemoved": true
+      },
+      "proposedQuestion": "ما الحركة المائية التي تسمعها على الشاطئ؟",
+      "answer": "أمواج البحر",
+      "review": {
+        "sourceAndTechnicalReviewed": true,
+        "listened": false,
+        "status": "pending-human-listening",
+        "limits": "No listening performed. Wave identity, absence of distracting sounds, and perceived clarity still require human listening."
+      }
+    },
+    {
+      "id": "sound-400-905",
+      "file": "sound-400-905.mp3",
+      "sha256": "207b9491c6274b563b183906468edaf8cfc5a37ea22e7c6ed0834675bba5eff9",
+      "bytes": 20942,
+      "technical": {
+        "durationSeconds": 1.25,
+        "decodedSamples": 55125,
+        "sampleRateHz": 44100,
+        "channels": 1,
+        "peakDbFS": -3.774727504624573,
+        "rmsDbFS": -22.238103766874445,
+        "nonFinite": 0,
+        "codec": "mp3",
+        "bitRate": 128000,
+        "decodeSucceeded": true,
+        "within160KiB": true,
+        "within8Seconds": true,
+        "notDigitallyClipped": true
+      },
+      "source": {
+        "title": "Sneezing.wav",
+        "author": "edschaefer",
+        "published": "2019-03-21",
+        "url": "https://freesound.org/people/edschaefer/sounds/464232/",
+        "downloadUrl": "https://cdn.freesound.org/previews/464/464232_6114721-hq.mp3",
+        "previewSha256": "b6e08afd4a37153d20cee249b4b9aa21acf4754f05cf8ed619cd0731e500665a",
+        "sourcePageOpened": true,
+        "sourcePageHttpStatus": 200,
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licensePageOpened": true,
+        "retrievedAt": "2026-09-25T03:53:11.213Z",
+        "evidence": "Author labels it a recording of a sneezing person. Full short recording retained; transient compression and peak normalization improve the available average level without changing speed."
+      },
+      "processing": {
+        "sourceStartSeconds": 0,
+        "sourceDurationSeconds": 1.25,
+        "ffmpegFilter": "atrim=start=0:duration=1.25,asetpts=PTS-STARTPTS,aformat=channel_layouts=mono,acompressor=threshold=0.125:ratio=2:attack=3:release=80:makeup=1,afade=t=in:st=0:d=0.005,afade=t=out:st=1.245:d=0.005,volume=2.71659855dB",
+        "targetDecodedPreEncodePeakDbFS": -3,
+        "speedUnchanged": true,
+        "synthetic": false,
+        "composite": false,
+        "metadataRemoved": true
+      },
+      "proposedQuestion": "ما الفعل البشري المسموع في هذا المقطع؟",
+      "answer": "عطاس",
+      "review": {
+        "sourceAndTechnicalReviewed": true,
+        "listened": false,
+        "status": "pending-human-listening",
+        "limits": "No listening performed. Author notes possible cartoon use; naturalness, absence of speech, and clarity are not confirmed until human listening."
+      }
+    },
+    {
+      "id": "sound-800-908",
+      "file": "sound-800-908.mp3",
+      "sha256": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5",
+      "bytes": 43093,
+      "technical": {
+        "durationSeconds": 2.62,
+        "decodedSamples": 115542,
+        "sampleRateHz": 44100,
+        "channels": 1,
+        "peakDbFS": -3.423858775770674,
+        "rmsDbFS": -25.80311008598993,
+        "nonFinite": 0,
+        "codec": "mp3",
+        "bitRate": 128000,
+        "decodeSucceeded": true,
+        "within160KiB": true,
+        "within8Seconds": true,
+        "notDigitallyClipped": true
+      },
+      "source": {
+        "title": "Bowling.wav",
+        "author": "Rehanjo",
+        "published": "2021-10-22",
+        "url": "https://freesound.org/people/Rehanjo/sounds/593593/",
+        "downloadUrl": "https://cdn.freesound.org/previews/593/593593_12589944-hq.mp3",
+        "previewSha256": "eb6e48cf5ecbeb7e495f79aa01411ea77f9c006883d6793be4733c84fa2f17a2",
+        "sourcePageOpened": true,
+        "sourcePageHttpStatus": 200,
+        "license": "CC0-1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "licensePageOpened": true,
+        "retrievedAt": "2026-09-25T03:53:12.318Z",
+        "evidence": "Author explicitly describes a bowling ball hitting pins with a crash and scatter, recorded using Zoom H6/Rode NTG. The file contains variations; only the first event before the zero-signal gap is retained, including its decay. No old rolling recording is mixed in."
+      },
+      "processing": {
+        "sourceStartSeconds": 0,
+        "sourceDurationSeconds": 2.62,
+        "ffmpegFilter": "atrim=start=0:duration=2.62,asetpts=PTS-STARTPTS,aformat=channel_layouts=mono,acompressor=threshold=0.125:ratio=2:attack=3:release=80:makeup=1,afade=t=in:st=0:d=0.01,afade=t=out:st=2.6100000000000003:d=0.01,volume=3.06496144dB",
+        "targetDecodedPreEncodePeakDbFS": -3,
+        "speedUnchanged": true,
+        "synthetic": false,
+        "composite": false,
+        "metadataRemoved": true
+      },
+      "proposedQuestion": "ما الرياضة التي تسمع اصطدام كرتها بالقوارير؟",
+      "answer": "بولينغ",
+      "review": {
+        "sourceAndTechnicalReviewed": true,
+        "listened": false,
+        "status": "pending-human-listening",
+        "limits": "No listening performed. The source supports collision with pins; a clear rolling lead-in is not claimed. Correct identification and clipping/processing artifacts must be checked by human listening."
+      }
+    }
+  ],
+  "encoder": "ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers"
+}

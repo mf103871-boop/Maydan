@@ -1,0 +1,36 @@
+{
+  "count": 40,
+  "uniqueQuestions": 40,
+  "uniqueAnswers": 40,
+  "maxQuestionWords": 10,
+  "maxAnswerWords": 3,
+  "topicCount": 8,
+  "tiers": [
+    {
+      "tier": 200,
+      "count": 8,
+      "topics": 8
+    },
+    {
+      "tier": 400,
+      "count": 8,
+      "topics": 8
+    },
+    {
+      "tier": 600,
+      "count": 8,
+      "topics": 8
+    },
+    {
+      "tier": 800,
+      "count": 8,
+      "topics": 8
+    },
+    {
+      "tier": 1000,
+      "count": 8,
+      "topics": 8
+    }
+  ],
+  "errors": []
+}

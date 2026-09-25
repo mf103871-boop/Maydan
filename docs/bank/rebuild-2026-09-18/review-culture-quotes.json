@@ -1,0 +1,303 @@
+{
+  "category": "quotes",
+  "reviewedAt": "2026-09-23",
+  "oldCount": 240,
+  "newCount": 40,
+  "method": "All 240 legacy prompts inspected for scope, ambiguity and attribution. Source-led selection and rewriting of 40; not count-only truncation. Each selected answer and quoted passage reviewed in actual retrieved text or indexed primary-text excerpt, distinguished item by item. Foreign passages translated or paraphrased in Arabic; no claim of canonical translation.",
+  "difficultyCalibration": "editorial-not-measured",
+  "topics": [
+    "خطب وكلمات",
+    "رواية ونثر عالمي",
+    "شعر عالمي",
+    "شعر عربي حديث",
+    "شعر عربي قديم",
+    "علم واكتشاف",
+    "فكر وفلسفة",
+    "مسرح عالمي"
+  ],
+  "tierRationale": {
+    "200": "Familiar Arabic school poetry, widely known philosophical phrase and iconic lunar words.",
+    "400": "Common literary openings and quotations requiring recall of author association.",
+    "600": "Reader/enthusiast knowledge of a named work or source context.",
+    "800": "Less familiar prose, poetry and scientific-paper quotations with identifying context.",
+    "1000": "Specialist poets, philosophy and computing sources. Targets are editorial estimates, not tested success rates."
+  },
+  "retiredPolicy": "All 240 old IDs replaced with 901–908 range; shared retired registry is integration-owned.",
+  "corrections": [
+    {
+      "oldQid": "quotes-200-005",
+      "issue": "Wrongly attributed وطني لو شغلت بالخلد عنه to Ibrahim Touqan; corrected to Ahmad Shawqi after reading the published Shawqiyyat text."
+    },
+    {
+      "oldQid": "quotes-400-003",
+      "issue": "Malformed تعب كلهم في الحياة replaced by exact تعب كلها الحياة."
+    },
+    {
+      "oldQid": "quotes-200-027",
+      "issue": "Newton wording now specifies his letter to Hooke; no claim that Newton originated the older giants metaphor."
+    },
+    {
+      "oldQid": "quotes-200-038",
+      "issue": "Jobs retained as the Stanford speech speaker, not originator of Whole Earth Catalog wording."
+    },
+    {
+      "oldQid": "quotes-1000-047",
+      "issue": "Mahfouz wrote the Nobel lecture; question no longer implies he personally delivered it."
+    },
+    {
+      "oldQid": "quotes-800-044",
+      "issue": "Beckett quote correctly grouped as prose, not theater."
+    }
+  ],
+  "scopeDecision": "Retired political/ruler speeches, religious teaching outside designated religious packs, disputed anecdotes, and nonselected material. Retirement alone does not label every rejected quotation false.",
+  "items": [
+    {
+      "qid": "quotes-200-901",
+      "sourceUrl": "https://ar.wikisource.org/wiki/على_قدر_أهل_العزم_تأتي_العزائم",
+      "evidence": "Poem text and author; first hemistich.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-200-902",
+      "sourceUrl": "https://www.safahat.org/books/70706142/62/",
+      "evidence": "الشوقيات، باب الوصف، سينية شوقي؛ lines 2960–2962. Corrects false legacy attribution to Ibrahim Touqan.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-200-903",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/66026-إذا-الشعب-يوما-أراد-الحياة",
+      "evidence": "DCT poetry encyclopedia, named author and first hemistich.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-200-904",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/1118-السيف-أصدق-أنباء-من-الكتب",
+      "evidence": "DCT poetry encyclopedia, named author and first hemistich.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-200-905",
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/59/pg59-images.html",
+      "evidence": "Discourse on the Method, Part IV: I think, therefore I am; title metadata identifies Descartes.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-200-906",
+      "sourceUrl": "https://www.cc.kyoto-su.ac.jp/~hara/einstein4.html",
+      "evidence": "University-hosted reproduction of1929 interview; lines 79–84, imagination and knowledge.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-200-907",
+      "sourceUrl": "https://www.nasa.gov/history/50-years-ago-one-small-step-one-giant-leap/",
+      "evidence": "NASA history, paragraph describing Armstrong’s first lunar step; line 286.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-200-908",
+      "sourceUrl": "https://www.folger.edu/explore/shakespeares-works/hamlet/read/",
+      "evidence": "Folger edition of Hamlet, Act 3 Scene 1. Asks playwright, not the fictional speaker.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-400-901",
+      "sourceUrl": "https://www.aldiwan.net/poem9094.html",
+      "evidence": "Named poem text under Mahmoud Darwish; direct page inaccessible, indexed poem text reviewed.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-400-902",
+      "sourceUrl": "https://www.safahat.org/books/94053925/6/",
+      "evidence": "Published شعراء الوطنية text, section on Hafiz Ibrahim, lines 3804–3822 prints the verse.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-400-903",
+      "sourceUrl": "https://ar.wikisource.org/wiki/قفا_نبك_من_ذكرى_حبيب_ومنزل_(معلقة)",
+      "evidence": "Poem text opening line 93 and author category 398; cross-checked against AlDiwan poem 50 and university Classical Literature material.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-400-904",
+      "sourceUrl": "https://www.aldiwan.net/poem85.html",
+      "evidence": "Named full poem, opening hemistich. Corroborated by NYU Library of Arabic Literature DiwanAntarahPDF.pdf.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-400-905",
+      "sourceUrl": "https://www.gutenberg.org/files/52263/52263-h/52263-h.htm",
+      "evidence": "Twilight of the Idols, Maxims and Missiles 8: What does not kill me makes me stronger.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-400-906",
+      "sourceUrl": "https://newtonproject.ox.ac.uk/view/texts/normalized/OTHE00018",
+      "evidence": "Newton Project scholarly chapter quotes Newton’s 1676 letter to Hooke, line 171. Wording identifies this letter, not origin of older metaphor.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-400-907",
+      "sourceUrl": "https://www.gutenberg.org/files/98/98-h/98-h.htm",
+      "evidence": "A Tale of Two Cities, Book First Chapter 1 opening, named author.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-400-908",
+      "sourceUrl": "https://poets.org/poem/children-1/print",
+      "evidence": "Academy of American Poets publication, On Children; line 9 text, lines 25–34 book and author.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-600-901",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/16598-غير-مجد-في-ملتي-واعتقادي",
+      "evidence": "DCT named poem غير مجد في ملتي واعتقادي; verse تعب كلها الحياة. Corrects malformed legacy quotation. Exact verse located at extracted line 48; edition source is 1884 Saqt al-Zand, p67.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-600-902",
+      "sourceUrl": "https://ar.wikisource.org/wiki/ابتسم",
+      "evidence": "Poem ابتسم, opening lines 95–97; author category 184; cross-check AlDiwan poem 62735.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-600-903",
+      "sourceUrl": "https://www.gutenberg.org/files/18269/18269-h/18269-h.htm",
+      "evidence": "Pensées, fragment 277: The heart has its reasons, which reason does not know.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-600-904",
+      "sourceUrl": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
+      "evidence": "Caltech transcript Cargo Cult Science 1974, first principle against self-deception; also corroborated Caltech magazine Feynman at 100.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-600-905",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Idiot/Part_III/Chapter_V",
+      "evidence": "The Idiot Part III Chapter V, Ippolit asks the prince about beauty saving the world; attributed as fictional text, not personal credo.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-600-906",
+      "sourceUrl": "https://penguinrandomhousehighereducation.com/book/?isbn=9780143035008",
+      "evidence": "Publisher’s Anna Karenina excerpt, Part One Chapter 1 opening.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-600-907",
+      "sourceUrl": "https://www.gutenberg.org/files/790/old/lwfan10h.htm",
+      "evidence": "Lady Windermere’s Fan, Act I, Lord Darlington’s line; asks playwright.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-600-908",
+      "sourceUrl": "https://stevejobsarchive.com/stories/stay-hungry-stay-foolish",
+      "evidence": "Steve Jobs Archive account of 2005 Stanford address. Jobs quotes Whole Earth Catalog; question asks speech closer, not phrase originator.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-800-901",
+      "sourceUrl": "https://ar.wikisource.org/wiki/لكل_شيء_اذا_ماتم_(رثاء_الأندلس)",
+      "evidence": "رثاء الأندلس, named poet and opening hemistich; corroborated AlDiwan poem 29425.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-800-902",
+      "sourceUrl": "https://poetsgate.com/poem.php?pm=623",
+      "evidence": "Named poet at lines 113–116 and poem text 171–222. Used legible second line; did not copy website typo in first line.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-800-903",
+      "sourceUrl": "https://digitalthoreau.org/walden/fluid/text/01.html",
+      "evidence": "Digital Thoreau scholarly edition, Economy section, sentence about quiet desperation with draft variants.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-800-904",
+      "sourceUrl": "https://www.cs.tufts.edu/comp/50cog/readings/turing.html",
+      "evidence": "University-hosted full primary 1950 Computing Machinery and Intelligence, final sentence.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-800-905",
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/1342/pg1342.html",
+      "evidence": "Pride and Prejudice, Chapter 1 first sentence, named author.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-800-906",
+      "sourceUrl": "https://www.allenandunwin.com/browse/book/Samuel-Beckett-Company--Ill-Seen-Ill-Said--Worstward-Ho--Stirrings-Still-9780571244737",
+      "evidence": "Publisher excerpt of Beckett’s prose Worstward Ho, Try again / Fail again / Fail better. It is prose, not a play.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-800-907",
+      "sourceUrl": "https://www.poetryfoundation.org/poems/42889/hope-is-the-thing-with-feathers-314",
+      "evidence": "Poetry Foundation publication, title/opening and author Emily Dickinson; publication credit present.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-800-908",
+      "sourceUrl": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/lecture/",
+      "evidence": "Official Nobel lecture: I am the son of two civilizations. Written by Mahfouz; question does not imply he attended or delivered it.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-1000-901",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/28285-ألا-ليت-شعري-هل-أبيتن-ليلة",
+      "evidence": "DCT named poet and elegy opening.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-1000-902",
+      "sourceUrl": "https://www.aldiwan.net/poem24106.html",
+      "evidence": "Named poem أمن المنون وريبها تتوجع, exact hemistich; confirmed by published university literary-text PDF.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-1000-903",
+      "sourceUrl": "https://www.poetryfoundation.org/poems/44469/endymion-56d2239287ca5",
+      "evidence": "Published poem Endymion, opening A thing of beauty is a joy forever; named John Keats.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-1000-904",
+      "sourceUrl": "https://www.poetryfoundation.org/poems/47311/the-waste-land",
+      "evidence": "Published The Waste Land, opening April is the cruellest month, author and publication credit.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-1000-905",
+      "sourceUrl": "https://metaphors.lib.virginia.edu/metaphors/18227",
+      "evidence": "University of Virginia primary-text quotation from Hume’s Treatise, Book II Part III Section III.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-1000-906",
+      "sourceUrl": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD249/EWD249.html",
+      "evidence": "U Texas EWD249 archive, Notes on Structured Programming, On the reliability of mechanisms: program testing shows presence not absence of bugs. Exact corollary at extracted line 108.",
+      "reviewMode": "page-text"
+    },
+    {
+      "qid": "quotes-1000-907",
+      "sourceUrl": "https://en.wikisource.org/wiki/Ulysses_(1922)/Chapter_2",
+      "evidence": "Proofread 1922 Ulysses Chapter 2, Stephen’s line on history being a nightmare.",
+      "reviewMode": "indexed-primary-text"
+    },
+    {
+      "qid": "quotes-1000-908",
+      "sourceUrl": "https://www.gutenberg.org/files/15000/15000-h/15000-h.htm",
+      "evidence": "The Life of Reason, Reason in Common Sense Chapter XII, sentence on remembering the past.",
+      "reviewMode": "page-text"
+    }
+  ],
+  "validation": {
+    "command": "npm run bank:validate -- quotes",
+    "contentErrors": 0,
+    "expectedSharedStatusErrors": 5,
+    "warning": "Allowed author answers shared with other categories; no within-pack duplicate answers.",
+    "maxQuestionWords": 17,
+    "maxAnswerWords": 3
+  }
+}

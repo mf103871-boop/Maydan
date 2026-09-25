@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-1000-908",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-1000-908.webp",
+  "asset": "media/placefinder/placefinder-1000-908.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Roman Aqueduct of Segovia Spain, monumental long line of two stacked tiers of semicircular arches built from large unmortared grey granite blocks, tall slender rectangular piers crossing Plaza del Azoguejo, diagonal view showing dramatic receding perspective and full height from square pavement to top water channel, warm low historic tiled-roof town houses beyond. Exactly two arch levels in tall central span, no river beneath, no three-storey Pont du Gard, no bridges with road traffic.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 253508,
+  "sha256": "c959bda2bebe103aee86558bc884d79e539af2abe98c61a634c0a5486ac6819d",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Two tiers of round granite arches on town plaza with receding piers; Segovia aqueduct, no river or third arch tier.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

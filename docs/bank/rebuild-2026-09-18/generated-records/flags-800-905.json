@@ -1,0 +1,39 @@
+{
+  "id": "flags-800-905",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-800-905.webp",
+  "asset": "media/flags/flags-800-905.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. The Bahamas. Width:height2:1. THREEequalHORIZONTALstripes from TOP: aquamarine #00778B, golden yellow #FFC72C, aquamarine. Solid BLACK equilateral triangle on LEFT whosebase entireleftedge andtipx43.3%totalwidth,y50%height. Noothermarks.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 640,
+  "bytes": 10490,
+  "sha256": "3d3202b446dc464fb3d5480c435d0604e231907ee9ea062903c0c65d68ff5f31",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "Black hoist triangle and aquamarine, gold, aquamarine horizontal fields.",
+    "limitations": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "not-individually-exercised",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 640,
+      "directGameplaySample": false,
+      "gameplayReview": "not-individually-exercised",
+      "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
+  }
+}

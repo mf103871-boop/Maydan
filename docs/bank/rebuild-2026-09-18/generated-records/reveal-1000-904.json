@@ -1,0 +1,27 @@
+{
+  "id": "reveal-1000-904",
+  "kind": "question",
+  "pack": "reveal",
+  "file": "media/reveal/reveal-1000-904.webp",
+  "asset": "media/reveal/reveal-1000-904.webp",
+  "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Roger Federer. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Swiss tennis champion Roger Federer in his familiar mature appearance, dark brown hair swept back with a light wave, thick brows, long angular nose and warm smile, plain white collared sports shirt.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1254,
+  "height": 1254,
+  "bytes": 169572,
+  "sha256": "9480b09def36a07c8b6d24c85532b9ec2e99bc8b73b0efe3504e0414000f3e1e",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "9480b09def36a07c8b6d24c85532b9ec2e99bc8b73b0efe3504e0414000f3e1e",
+    "sourceUrl": "https://rogerfederer.com/",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "The player-owned site portrait and illustration show swept brown hair, thick brows, a long prominent nose and a warm smile.",
+    "limits": "Reference includes the full body; clothing and age detail differ.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
+  }
+}

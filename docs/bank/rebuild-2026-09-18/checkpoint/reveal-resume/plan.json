@@ -1,0 +1,821 @@
+{
+  "status": "completed_local_reviewed",
+  "date": "2026-09-23",
+  "replacements": [
+    {
+      "qid": "reveal-200-904",
+      "original": "Lionel Messi",
+      "selected": "Pelé",
+      "reason": "Original generation request rejected by tool; a different public figure was selected without attempts to bypass the block."
+    },
+    {
+      "qid": "reveal-600-908",
+      "original": "Frida Kahlo",
+      "selected": "Vincent van Gogh",
+      "reason": "Original generation rejected; no retry. Different person selected within the same unchanged topic and tier.",
+      "record": "rejected-generation-records/reveal-600-908.json"
+    },
+    {
+      "qid": "reveal-800-906",
+      "original": "Mahatma Gandhi",
+      "selected": "Martin Luther King Jr.",
+      "reason": "Original generation rejected; no retry. Different person selected within the same unchanged topic and tier.",
+      "record": "rejected-generation-records/reveal-800-906.json"
+    },
+    {
+      "qid": "reveal-800-907",
+      "original": "Michael Jackson",
+      "selected": "Ludwig van Beethoven",
+      "reason": "Original generation rejected; no retry. Different person selected within the same unchanged topic and tier.",
+      "record": "rejected-generation-records/reveal-800-907.json"
+    },
+    {
+      "qid": "reveal-1000-907",
+      "original": "Freddie Mercury",
+      "selected": "Wolfgang Amadeus Mozart",
+      "reason": "Original generation rejected; no retry. Different person selected within the same unchanged topic and tier.",
+      "record": "rejected-generation-records/reveal-1000-907.json"
+    },
+    {
+      "qid": "reveal-1000-908",
+      "original": "Salvador Dalí",
+      "selected": "Mark Twain",
+      "reason": "Original generation rejected; no retry. Different person selected within the same unchanged topic and tier.",
+      "record": "rejected-generation-records/reveal-1000-908.json"
+    }
+  ],
+  "entries": [
+    [
+      200,
+      901,
+      "عادل إمام",
+      "Adel Imam",
+      "نجوم عرب",
+      [
+        "عادل امام"
+      ],
+      "https://elgounafilmfestival.com/?news=adel-imam-to-receive-career-achievement-award-at-first-edition-of-el-gouna-film-festival",
+      "Egyptian actor Adel Imam in his familiar late-middle-age appearance: receding dark hair with grey sides, broad distinctive ears, expressive slightly hooded eyes, friendly crooked smile, clean shaven."
+    ],
+    [
+      200,
+      902,
+      "جاكي شان",
+      "Jackie Chan",
+      "سينما عالمية",
+      [
+        "Jackie Chan",
+        "جاكي تشان"
+      ],
+      "https://www.oscars.org/governors-awards/2016/jackie-chan",
+      "Jackie Chan in his familiar mature appearance: short dark side-swept hair, broad rounded nose, warm broad smile and distinctive cheeks."
+    ],
+    [
+      200,
+      903,
+      "محمد صلاح",
+      "Mohamed Salah",
+      "رياضة عربية",
+      [
+        "مو صلاح"
+      ],
+      "https://www.liverpoolfc.com/team/first-team/player/mohamed-salah",
+      "Egyptian footballer Mohamed Salah with his familiar dense short black curls, thick full dark beard, brown eyes and warm smile; plain red training top with no logo."
+    ],
+    [
+      200,
+      904,
+      "بيليه",
+      "Pelé",
+      "رياضة عالمية",
+      [
+        "بيلي",
+        "Pele",
+        "Pelé"
+      ],
+      "https://inside.fifa.com/organisation/news/pele-immortal-forever-with-us",
+      "Brazilian football legend Pelé in his familiar mature prime appearance, short close-cropped curly black hair, warm broad smile, distinctive high cheekbones, clean shaven, yellow sports shirt with green collar and no crest or writing."
+    ],
+    [
+      200,
+      905,
+      "ألبرت أينشتاين",
+      "Albert Einstein",
+      "علوم وابتكار",
+      [
+        "أينشتاين",
+        "البرت اينشتاين"
+      ],
+      "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/",
+      "Albert Einstein as an elderly physicist with his unmistakable wild white hair, bushy white moustache, deeply lined expressive face, plain dark sweater; gentle thoughtful expression."
+    ],
+    [
+      200,
+      906,
+      "نيلسون مانديلا",
+      "Nelson Mandela",
+      "قادة وشخصيات عامة",
+      [
+        "مانديلا",
+        "Nelson Mandela"
+      ],
+      "https://www.nobelprize.org/prizes/peace/1993/mandela/facts/",
+      "Nelson Mandela in his familiar elderly appearance, closely cropped white hair, warm broad smile, prominent expressive cheekbones and facial lines, simple patterned collared shirt."
+    ],
+    [
+      200,
+      907,
+      "أم كلثوم",
+      "Umm Kulthum",
+      "موسيقى وغناء",
+      [
+        "ام كلثوم",
+        "أمكلثوم"
+      ],
+      "https://modernegypt.bibalex.org/Types/Persons/Details.aspx?ID=CDcmBxJuXhHlWohOwZ8cuw%3D%3D",
+      "Egyptian singer Umm Kulthum in her iconic mature appearance, black coiffed hair pulled into a neat bun, dark cat-eye sunglasses, pearl earrings and necklace, elegant modest dark dress; her recognizably broad full face and poised expression."
+    ],
+    [
+      200,
+      908,
+      "نجيب محفوظ",
+      "Naguib Mahfouz",
+      "أدب وفنون",
+      [
+        "محفوظ"
+      ],
+      "https://www.nobelprize.org/laureate/665",
+      "Egyptian novelist Naguib Mahfouz as an elderly man, receding grey hair with bald crown, heavy dark eyeglasses, small narrow grey moustache, long slim expressive face, simple dark suit and necktie."
+    ],
+    [
+      400,
+      901,
+      "عمر الشريف",
+      "Omar Sharif",
+      "نجوم عرب",
+      [
+        "عمر شريف"
+      ],
+      "https://goldenglobes.com/person/omar-sharif/",
+      "Omar Sharif in his iconic middle-aged film-star appearance, wavy salt-and-pepper hair, neat dark moustache, deep brown eyes, broad warm smile; simple dark jacket."
+    ],
+    [
+      400,
+      902,
+      "روان أتكينسون",
+      "Rowan Atkinson",
+      "سينما عالمية",
+      [
+        "روان اتكنسون",
+        "Rowan Atkinson",
+        "مستر بين"
+      ],
+      "https://about.netflix.com/en/news/netflix-announces-man-vs-baby-starring-rowan-atkinson",
+      "British actor Rowan Atkinson in his familiar Mr Bean era, short tidy dark hair, striking heavy eyebrows, large expressive eyes, long narrow face; neutral friendly smile, brown jacket."
+    ],
+    [
+      400,
+      903,
+      "رياض محرز",
+      "Riyad Mahrez",
+      "رياضة عربية",
+      [
+        "محرز"
+      ],
+      "https://www.cafonline.com/news/riyad-mahrez-at-100-caps-a-century-of-brilliance-for-algeria/",
+      "Algerian footballer Riyad Mahrez, short black fade haircut, closely trimmed dark beard, expressive brown eyes and recognizable angular cheekbones, plain green sports shirt."
+    ],
+    [
+      400,
+      904,
+      "دييغو مارادونا",
+      "Diego Maradona",
+      "رياضة عالمية",
+      [
+        "مارادونا",
+        "دييجو مارادونا"
+      ],
+      "https://inside.fifa.com/news/a-tribute-to-diego-maradona",
+      "Diego Maradona at the height of his 1986 football career, dense curly black hair, stocky neck, youthful round expressive face, plain sky-blue sports jersey without logos."
+    ],
+    [
+      400,
+      905,
+      "ستيفن هوكينغ",
+      "Stephen Hawking",
+      "علوم وابتكار",
+      [
+        "ستيفن هوكنغ",
+        "هوكينغ"
+      ],
+      "https://www.hawking.org.uk/biography",
+      "Stephen Hawking in his familiar later-life appearance, rectangular eyeglasses, short fine grey hair, characteristic tilted head and face, shoulders supported by his recognizable wheelchair headrest; simple suit."
+    ],
+    [
+      400,
+      906,
+      "باراك أوباما",
+      "Barack Obama",
+      "قادة وشخصيات عامة",
+      [
+        "اوباما",
+        "أوباما"
+      ],
+      "https://www.obamalibrary.gov/obamas",
+      "Barack Obama in his familiar mature appearance, short salt-and-pepper hair, distinctive long face and ears, warm smile, plain dark suit with blue tie. No flags or political slogans."
+    ],
+    [
+      400,
+      907,
+      "فيروز",
+      "Fairuz",
+      "موسيقى وغناء",
+      [
+        "فيروز اللبنانية",
+        "نهاد حداد"
+      ],
+      "https://www.aub.edu.lb/doctorates/recipients/Pages/fairuz-profile.aspx",
+      "Lebanese singer Fairuz in her familiar mature concert-era appearance, dark brown swept-back hair, distinctive long narrow face, high cheekbones, expressive dark almond eyes, long straight nose, subtle makeup and elegant dark high-neck blouse."
+    ],
+    [
+      400,
+      908,
+      "محمود درويش",
+      "Mahmoud Darwish",
+      "أدب وفنون",
+      [
+        "درويش"
+      ],
+      "https://poets.org/poet/mahmoud-darwish",
+      "Palestinian poet Mahmoud Darwish in his recognizable mature appearance, wavy grey-brown hair brushed back, fine wire-rimmed eyeglasses, narrow refined face, clean shaven, thoughtful expression and dark blazer."
+    ],
+    [
+      600,
+      901,
+      "هند صبري",
+      "Hend Sabri",
+      "نجوم عرب",
+      [
+        "هند صبرى",
+        "Hend Sabry"
+      ],
+      "https://www.hendsabry.com/",
+      "Tunisian actress Hend Sabri in her recognizable mature appearance, long dark brown hair, warm brown eyes, distinctive full eyebrows and warm smile, simple elegant dark blouse."
+    ],
+    [
+      600,
+      902,
+      "كيانو ريفز",
+      "Keanu Reeves",
+      "سينما عالمية",
+      [
+        "Keanu Reeves",
+        "كيانو ريفس"
+      ],
+      "https://www.canadaswalkoffame.com/inductees/keanu-reeves/",
+      "Actor Keanu Reeves in his familiar mature appearance with shoulder-length dark straight hair parted near the center, short dark beard, narrow thoughtful face and kind eyes, plain dark jacket."
+    ],
+    [
+      600,
+      903,
+      "أشرف حكيمي",
+      "Achraf Hakimi",
+      "رياضة عربية",
+      [
+        "اشرف حكيمي",
+        "حكيمي"
+      ],
+      "https://en.psg.fr/teams/first-team/squad/achraf-hakimi",
+      "Moroccan footballer Achraf Hakimi, short dark fade haircut, close-trimmed goatee beard, distinctive narrow youthful face, brown eyes and friendly smile, plain red athletic top."
+    ],
+    [
+      600,
+      904,
+      "مايكل جوردان",
+      "Michael Jordan",
+      "رياضة عالمية",
+      [
+        "مايكل جوردن",
+        "Michael Jordan"
+      ],
+      "https://www.hoophall.com/hall-of-famers/michael-jordan",
+      "Michael Jordan in his iconic mature basketball-star appearance, bald head, dark skin, neatly trimmed small moustache, warm charismatic smile, plain red sleeveless sports jersey without text."
+    ],
+    [
+      600,
+      905,
+      "أحمد زويل",
+      "Ahmed Zewail",
+      "علوم وابتكار",
+      [
+        "احمد زويل",
+        "زويل"
+      ],
+      "https://www.nobelprize.org/laureate/292",
+      "Egyptian chemist Ahmed Zewail in his familiar mature appearance, thick grey hair swept back, prominent dark eyebrows, round full smiling face, clean shaven, dark suit and simple tie."
+    ],
+    [
+      600,
+      906,
+      "جمال عبد الناصر",
+      "Gamal Abdel Nasser",
+      "قادة وشخصيات عامة",
+      [
+        "عبد الناصر",
+        "جمال عبدالناصر"
+      ],
+      "https://modernegypt.bibalex.org/Types/Persons/Details.aspx?ID=RlOg5J1kYl6wut3rBkIoQA%3D%3D&type=ruler",
+      "Gamal Abdel Nasser in his familiar 1960s appearance, short dark hair combed back with receding temples, broad face, characteristic thin dark moustache, warm broad smile; civilian dark suit and tie without insignia."
+    ],
+    [
+      600,
+      907,
+      "عبد الحليم حافظ",
+      "Abdel Halim Hafez",
+      "موسيقى وغناء",
+      [
+        "عبدالحليم حافظ",
+        "عبد الحليم"
+      ],
+      "https://www.bibalex.org/en/events/eventdetails?id=79316",
+      "Egyptian singer Abdel Halim Hafez in his familiar 1960s appearance, voluminous wavy black hair swept back, slender clean-shaven face, expressive eyebrows, soulful brown eyes, dark suit and tie."
+    ],
+    [
+      600,
+      908,
+      "فينسنت فان غوخ",
+      "Vincent van Gogh",
+      "أدب وفنون",
+      [
+        "فان غوخ",
+        "فان جوخ",
+        "فان كوخ",
+        "Vincent van Gogh"
+      ],
+      "https://www.vangoghmuseum.nl/en/collection/s0016V1962",
+      "Dutch painter Vincent van Gogh as recognizable from his mature self-portraits: reddish hair and full reddish beard, angular pale face, deep-set light eyes, simple dark jacket and grey felt hat."
+    ],
+    [
+      800,
+      901,
+      "أحمد حلمي",
+      "Ahmed Helmy",
+      "نجوم عرب",
+      [
+        "احمد حلمي"
+      ],
+      "https://www.unicef.org/mena/ar/اليونيسف-تُعيّن-الفنان-أحمد-حلمي-سفيراً-إقليمياً-في-الشرق-الاوسط-وشمال-افريقيا/البيانات-الصحفية",
+      "Egyptian actor Ahmed Helmy in his recognizable mature appearance, short curly dark hair with grey, black rectangular glasses, short salt-and-pepper beard, broad smiling face, simple dark sweater."
+    ],
+    [
+      800,
+      902,
+      "كيت بلانشيت",
+      "Cate Blanchett",
+      "سينما عالمية",
+      [
+        "Cate Blanchett",
+        "كيت بلانشيت"
+      ],
+      "https://www.festival-cannes.com/en/p/cate-blanchett-2/",
+      "Australian actress Cate Blanchett in her familiar mature appearance, chin-length softly swept blonde bob, pale complexion, distinctive sharp cheekbones and light blue eyes, understated expression and dark blouse."
+    ],
+    [
+      800,
+      903,
+      "أنس جابر",
+      "Ons Jabeur",
+      "رياضة عربية",
+      [
+        "انس جابر",
+        "Ons Jabeur"
+      ],
+      "https://www.wtatennis.com/players/316847/Ons_Jabeur",
+      "Tunisian tennis player Ons Jabeur, dark curly hair pulled into a simple ponytail, round smiling face, expressive brown eyes and distinctive broad nose, simple white athletic shirt."
+    ],
+    [
+      800,
+      904,
+      "سيرينا ويليامز",
+      "Serena Williams",
+      "رياضة عالمية",
+      [
+        "سيرينا وليامز",
+        "Serena Williams"
+      ],
+      "https://www.wtatennis.com/legends/230234/name/record",
+      "American tennis champion Serena Williams, rich brown skin, dark long softly curly hair, characteristic broad expressive smile and athletic shoulders, plain purple athletic shirt."
+    ],
+    [
+      800,
+      905,
+      "ماري كوري",
+      "Marie Curie",
+      "علوم وابتكار",
+      [
+        "ماريا كوري",
+        "ماري سكودوفسكا كوري"
+      ],
+      "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/",
+      "Scientist Marie Curie as a mature woman, dark hair loosely swept back and pinned in a bun, high forehead, serious thoughtful eyes, long narrow lined face, simple dark high-neck early-20th-century dress."
+    ],
+    [
+      800,
+      906,
+      "مارتن لوثر كينغ",
+      "Martin Luther King Jr.",
+      "قادة وشخصيات عامة",
+      [
+        "مارتن لوثر كينج",
+        "Martin Luther King Jr.",
+        "Martin Luther King"
+      ],
+      "https://www.archives.gov/research/african-americans/individuals/martin-luther-king",
+      "American civil-rights leader Martin Luther King Jr. in his familiar 1960s appearance, short neat black hair, small dark moustache, broad recognizable face and expressive eyes, dark suit and plain tie."
+    ],
+    [
+      800,
+      907,
+      "لودفيغ فان بيتهوفن",
+      "Ludwig van Beethoven",
+      "موسيقى وغناء",
+      [
+        "بيتهوفن",
+        "بيتهوفين",
+        "Ludwig van Beethoven",
+        "Beethoven"
+      ],
+      "https://www.beethoven.de/en/media/view/6093903937667072/scan/0",
+      "Composer Ludwig van Beethoven as recognizable from Joseph Karl Stieler’s 1820 portrait: thick unruly grey-brown hair, strong brow and broad serious face, dark coat and red neck scarf."
+    ],
+    [
+      800,
+      908,
+      "بابلو بيكاسو",
+      "Pablo Picasso",
+      "أدب وفنون",
+      [
+        "بيكاسو",
+        "Pablo Picasso"
+      ],
+      "https://cep.museepicassoparis.fr/en/node/107791",
+      "Pablo Picasso as an older man with bald crown and short grey side hair, dark intense wide-set eyes, strong nose and lined face, familiar blue-and-white striped shirt, no painting tools."
+    ],
+    [
+      1000,
+      901,
+      "نادين لبكي",
+      "Nadine Labaki",
+      "نجوم عرب",
+      [
+        "نادين لبكي",
+        "Nadine Labaki"
+      ],
+      "https://www.festival-cannes.com/en/p/nadine-labaki/",
+      "Lebanese director and actress Nadine Labaki in her recognizable mature appearance, long wavy dark brown hair, expressive dark almond-shaped eyes, arched brows, oval face and warm reserved smile, simple dark blouse."
+    ],
+    [
+      1000,
+      902,
+      "هاياو ميازاكي",
+      "Hayao Miyazaki",
+      "سينما عالمية",
+      [
+        "هاياو ميازكي",
+        "Hayao Miyazaki",
+        "ميازاكي"
+      ],
+      "https://www.oscars.org/governors-awards/2014/hayao-miyazaki",
+      "Japanese animation director Hayao Miyazaki in his iconic elderly appearance, tousled white hair, bushy white eyebrows, large dark-rimmed roundish glasses, thick white moustache and short white beard, simple cardigan."
+    ],
+    [
+      1000,
+      903,
+      "معتز برشم",
+      "Mutaz Barshim",
+      "رياضة عربية",
+      [
+        "معتز عيسى برشم"
+      ],
+      "https://mutazbarshim.net/for-you/",
+      "Qatari high jumper Mutaz Essa Barshim, tall slim face and long neck, close-cropped short black hair, neatly trimmed goatee and moustache, recognizable expressive dark eyes, plain burgundy sports shirt, no sunglasses."
+    ],
+    [
+      1000,
+      904,
+      "روجر فيدرر",
+      "Roger Federer",
+      "رياضة عالمية",
+      [
+        "روجيه فيدرر",
+        "فيدرر",
+        "Roger Federer"
+      ],
+      "https://rogerfederer.com/",
+      "Swiss tennis champion Roger Federer in his familiar mature appearance, dark brown hair swept back with a light wave, thick brows, long angular nose and warm smile, plain white collared sports shirt."
+    ],
+    [
+      1000,
+      905,
+      "نيكولا تسلا",
+      "Nikola Tesla",
+      "علوم وابتكار",
+      [
+        "نيقولا تسلا",
+        "تسلا"
+      ],
+      "https://loc.gov/pictures/resource/cph.3a37106/",
+      "Inventor Nikola Tesla in his famous mature appearance around 1900, sleek dark hair with a precise side part, very slim elongated face, intense dark eyes, neat dark moustache, dark three-piece suit and high white collar."
+    ],
+    [
+      1000,
+      906,
+      "أنغيلا ميركل",
+      "Angela Merkel",
+      "قادة وشخصيات عامة",
+      [
+        "انجيلا ميركل",
+        "أنجيلا ميركل",
+        "ميركل"
+      ],
+      "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzlerin-angela-merkel-2009-194686",
+      "Angela Merkel in her familiar mature appearance, short neat light-brown blonde bob with bangs, calm recognizable broad face, light blue eyes, understated smile, plain teal blazer without symbols."
+    ],
+    [
+      1000,
+      907,
+      "فولفغانغ أماديوس موزارت",
+      "Wolfgang Amadeus Mozart",
+      "موسيقى وغناء",
+      [
+        "موزارت",
+        "موتسارت",
+        "فولفغانغ اماديوس موتسارت",
+        "Wolfgang Amadeus Mozart",
+        "Mozart"
+      ],
+      "https://mozarteum.at/static/657ebd427f68d1ce539a8301931f22ec/Mozart225_presseinfo.pdf",
+      "Composer Wolfgang Amadeus Mozart as traditionally recognizable from the Barbara Krafft portrait: adult slender pale clean-shaven face, prominent straight nose, small expressive eyes, powdered light-grey curled hair at the sides, red eighteenth-century coat and white neckcloth."
+    ],
+    [
+      1000,
+      908,
+      "مارك توين",
+      "Mark Twain",
+      "أدب وفنون",
+      [
+        "مارك تواين",
+        "صمويل كليمنس",
+        "Mark Twain",
+        "Samuel Clemens"
+      ],
+      "https://marktwainhouse.org/about/mark-twain/",
+      "American writer Mark Twain in his familiar elder appearance: unruly wavy white hair, bushy white moustache, strong expressive eyebrows and thoughtful eyes, plain white suit and simple dark necktie."
+    ]
+  ],
+  "jobs": [
+    {
+      "id": "reveal-200-901",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Adel Imam. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Egyptian actor Adel Imam in his familiar late-middle-age appearance: receding dark hair with grey sides, broad distinctive ears, expressive slightly hooded eyes, friendly crooked smile, clean shaven.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-200-902",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Jackie Chan. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Jackie Chan in his familiar mature appearance: short dark side-swept hair, broad rounded nose, warm broad smile and distinctive cheeks.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-200-903",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Mohamed Salah. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Egyptian footballer Mohamed Salah with his familiar dense short black curls, thick full dark beard, brown eyes and warm smile; plain red training top with no logo.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-200-904",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Pelé. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Brazilian football legend Pelé in his familiar mature prime appearance, short close-cropped curly black hair, warm broad smile, distinctive high cheekbones, clean shaven, yellow sports shirt with green collar and no crest or writing.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-200-905",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Albert Einstein. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Albert Einstein as an elderly physicist with his unmistakable wild white hair, bushy white moustache, deeply lined expressive face, plain dark sweater; gentle thoughtful expression.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-200-906",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Nelson Mandela. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Nelson Mandela in his familiar elderly appearance, closely cropped white hair, warm broad smile, prominent expressive cheekbones and facial lines, simple patterned collared shirt.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-200-907",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Umm Kulthum. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Egyptian singer Umm Kulthum in her iconic mature appearance, black coiffed hair pulled into a neat bun, dark cat-eye sunglasses, pearl earrings and necklace, elegant modest dark dress; her recognizably broad full face and poised expression.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-200-908",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Naguib Mahfouz. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Egyptian novelist Naguib Mahfouz as an elderly man, receding grey hair with bald crown, heavy dark eyeglasses, small narrow grey moustache, long slim expressive face, simple dark suit and necktie.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-400-901",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Omar Sharif. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Omar Sharif in his iconic middle-aged film-star appearance, wavy salt-and-pepper hair, neat dark moustache, deep brown eyes, broad warm smile; simple dark jacket.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-400-902",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Rowan Atkinson. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: British actor Rowan Atkinson in his familiar Mr Bean era, short tidy dark hair, striking heavy eyebrows, large expressive eyes, long narrow face; neutral friendly smile, brown jacket.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-400-903",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Riyad Mahrez. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Algerian footballer Riyad Mahrez, short black fade haircut, closely trimmed dark beard, expressive brown eyes and recognizable angular cheekbones, plain green sports shirt.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-400-904",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Diego Maradona. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Diego Maradona at the height of his 1986 football career, dense curly black hair, stocky neck, youthful round expressive face, plain sky-blue sports jersey without logos.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-400-905",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Stephen Hawking. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Stephen Hawking in his familiar later-life appearance, rectangular eyeglasses, short fine grey hair, characteristic tilted head and face, shoulders supported by his recognizable wheelchair headrest; simple suit.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-400-906",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Barack Obama. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Barack Obama in his familiar mature appearance, short salt-and-pepper hair, distinctive long face and ears, warm smile, plain dark suit with blue tie. No flags or political slogans.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-400-907",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Fairuz. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Lebanese singer Fairuz in her familiar mature concert-era appearance, dark brown swept-back hair, distinctive long narrow face, high cheekbones, expressive dark almond eyes, long straight nose, subtle makeup and elegant dark high-neck blouse.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-400-908",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Mahmoud Darwish. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Palestinian poet Mahmoud Darwish in his recognizable mature appearance, wavy grey-brown hair brushed back, fine wire-rimmed eyeglasses, narrow refined face, clean shaven, thoughtful expression and dark blazer.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-600-901",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Hend Sabri. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Tunisian actress Hend Sabri in her recognizable mature appearance, long dark brown hair, warm brown eyes, distinctive full eyebrows and warm smile, simple elegant dark blouse.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-600-902",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Keanu Reeves. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Actor Keanu Reeves in his familiar mature appearance with shoulder-length dark straight hair parted near the center, short dark beard, narrow thoughtful face and kind eyes, plain dark jacket.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-600-903",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Achraf Hakimi. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Moroccan footballer Achraf Hakimi, short dark fade haircut, close-trimmed goatee beard, distinctive narrow youthful face, brown eyes and friendly smile, plain red athletic top.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-600-904",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Michael Jordan. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Michael Jordan in his iconic mature basketball-star appearance, bald head, dark skin, neatly trimmed small moustache, warm charismatic smile, plain red sleeveless sports jersey without text.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-600-905",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Ahmed Zewail. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Egyptian chemist Ahmed Zewail in his familiar mature appearance, thick grey hair swept back, prominent dark eyebrows, round full smiling face, clean shaven, dark suit and simple tie.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-600-906",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Gamal Abdel Nasser. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Gamal Abdel Nasser in his familiar 1960s appearance, short dark hair combed back with receding temples, broad face, characteristic thin dark moustache, warm broad smile; civilian dark suit and tie without insignia.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-600-907",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Abdel Halim Hafez. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Egyptian singer Abdel Halim Hafez in his familiar 1960s appearance, voluminous wavy black hair swept back, slender clean-shaven face, expressive eyebrows, soulful brown eyes, dark suit and tie.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-600-908",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Vincent van Gogh. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Dutch painter Vincent van Gogh as recognizable from his mature self-portraits: reddish hair and full reddish beard, angular pale face, deep-set light eyes, simple dark jacket and grey felt hat.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-800-901",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Ahmed Helmy. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Egyptian actor Ahmed Helmy in his recognizable mature appearance, short curly dark hair with grey, black rectangular glasses, short salt-and-pepper beard, broad smiling face, simple dark sweater.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-800-902",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Cate Blanchett. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Australian actress Cate Blanchett in her familiar mature appearance, chin-length softly swept blonde bob, pale complexion, distinctive sharp cheekbones and light blue eyes, understated expression and dark blouse.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-800-903",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Ons Jabeur. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Tunisian tennis player Ons Jabeur, dark curly hair pulled into a simple ponytail, round smiling face, expressive brown eyes and distinctive broad nose, simple white athletic shirt.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-800-904",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Serena Williams. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: American tennis champion Serena Williams, rich brown skin, dark long softly curly hair, characteristic broad expressive smile and athletic shoulders, plain purple athletic shirt.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-800-905",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Marie Curie. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Scientist Marie Curie as a mature woman, dark hair loosely swept back and pinned in a bun, high forehead, serious thoughtful eyes, long narrow lined face, simple dark high-neck early-20th-century dress.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-800-906",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Martin Luther King Jr.. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: American civil-rights leader Martin Luther King Jr. in his familiar 1960s appearance, short neat black hair, small dark moustache, broad recognizable face and expressive eyes, dark suit and plain tie.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-800-907",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Ludwig van Beethoven. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Composer Ludwig van Beethoven as recognizable from Joseph Karl Stieler’s 1820 portrait: thick unruly grey-brown hair, strong brow and broad serious face, dark coat and red neck scarf.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-800-908",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Pablo Picasso. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Pablo Picasso as an older man with bald crown and short grey side hair, dark intense wide-set eyes, strong nose and lined face, familiar blue-and-white striped shirt, no painting tools.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-1000-901",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Nadine Labaki. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Lebanese director and actress Nadine Labaki in her recognizable mature appearance, long wavy dark brown hair, expressive dark almond-shaped eyes, arched brows, oval face and warm reserved smile, simple dark blouse.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-1000-902",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Hayao Miyazaki. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Japanese animation director Hayao Miyazaki in his iconic elderly appearance, tousled white hair, bushy white eyebrows, large dark-rimmed roundish glasses, thick white moustache and short white beard, simple cardigan.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-1000-903",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Mutaz Barshim. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Qatari high jumper Mutaz Essa Barshim, tall slim face and long neck, close-cropped short black hair, neatly trimmed goatee and moustache, recognizable expressive dark eyes, plain burgundy sports shirt, no sunglasses.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-1000-904",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Roger Federer. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Swiss tennis champion Roger Federer in his familiar mature appearance, dark brown hair swept back with a light wave, thick brows, long angular nose and warm smile, plain white collared sports shirt.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-1000-905",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Nikola Tesla. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Inventor Nikola Tesla in his famous mature appearance around 1900, sleek dark hair with a precise side part, very slim elongated face, intense dark eyes, neat dark moustache, dark three-piece suit and high white collar.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-1000-906",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Angela Merkel. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Angela Merkel in her familiar mature appearance, short neat light-brown blonde bob with bangs, calm recognizable broad face, light blue eyes, understated smile, plain teal blazer without symbols.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-1000-907",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Wolfgang Amadeus Mozart. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Composer Wolfgang Amadeus Mozart as traditionally recognizable from the Barbara Krafft portrait: adult slender pale clean-shaven face, prominent straight nose, small expressive eyes, powdered light-grey curled hair at the sides, red eighteenth-century coat and white neckcloth.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    },
+    {
+      "id": "reveal-1000-908",
+      "kind": "question",
+      "pack": "reveal",
+      "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Mark Twain. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: American writer Mark Twain in his familiar elder appearance: unruly wavy white hair, bushy white moustache, strong expressive eyebrows and thoughtful eyes, plain white suit and simple dark necktie.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face."
+    }
+  ],
+  "resumedOn": "2026-09-25",
+  "completedOn": "2026-09-25",
+  "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json"
+}

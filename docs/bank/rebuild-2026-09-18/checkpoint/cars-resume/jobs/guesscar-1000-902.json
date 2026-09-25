@@ -1,0 +1,50 @@
+{
+  "id": "guesscar-1000-902",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 1000,
+  "a": "تيريل بي 34",
+  "topic": "سباقات",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1977 Tyrrell P34 six-wheel Formula One racing car, four small front wheels and two large rear wheels, blue, no sponsor lettering.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-1000-009",
+  "identityReference": {
+    "src": "guesscar-1000-009.webp",
+    "type": "image",
+    "title": "Une Tyrrell P34 de 1977 exposée lors du salon Rétromobile 2017.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:R%C3%A9tromobile_2017_-_Tyrrell_P34_-_1977_-_002.jpg",
+    "author": "Thesupermat",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "question": {
+    "p": 1000,
+    "q": "ما طراز سيارة السباق الزرقاء التي تحمل أربع عجلات صغيرة في الأمام؟",
+    "a": "تيريل بي 34",
+    "alt": [
+      "تيرل بي 34",
+      "تيريل P34",
+      "Tyrrell P34",
+      "P34"
+    ],
+    "qid": "guesscar-1000-902",
+    "type": "image",
+    "topic": "سباقات",
+    "difficultyTarget": 0.15,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:R%C3%A9tromobile_2017_-_Tyrrell_P34_-_1977_-_002.jpg",
+    "media": {
+      "src": "guesscar-1000-902.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-1000-902.json"
+      }
+    }
+  },
+  "model": "1977 Tyrrell P34 six-wheel Formula One racing car, four small front wheels and two large rear wheels, blue, no sponsor lettering"
+}

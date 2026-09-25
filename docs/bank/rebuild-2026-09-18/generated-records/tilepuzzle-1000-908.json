@@ -1,0 +1,40 @@
+{
+  "id": "tilepuzzle-1000-908",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "file": "media/tilepuzzle/tilepuzzle-1000-908.webp",
+  "asset": "media/tilepuzzle/tilepuzzle-1000-908.webp",
+  "prompt": "Use case: precise-object-edit.\nAsset type: one realistic 4:3 landscape image for a visual guessing game.\nInput image 1 is the edit target: brass astrolabe.\nPrimary request: reframe to show the COMPLETE astrolabe with the entire suspension ring and any top knob clearly inside the frame, with at least 12% quiet background above it and below the disk. Display it resting upright on a small unobtrusive support; do not suspend it from a cropped chain. Preserve the brass disk, openwork star-pointer rete, central pivot, straight rotating sighting rule and circular engraved scales. Keep the warm study setting and light, but instrument should occupy only 70% of image height.\nConstraints: no cropped instrument parts, no added labels, names, readable text, logos, watermark, tile lines or frames. The depiction is an identification illustration, not a precision astronomical diagram.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 205274,
+  "sha256": "505817d10a5e9c3f3827fa56e1cffe55a61c41bc4d78b6f7b04a657ebe996192",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "scope": "Source image identity/anatomy/framing and actual12-tile jumble/reveal/hide gameplay for this specific question.",
+    "note": "Corrected brass astrolabe is entirely inside frame including top knob and suspension ring; openwork rete, central pivot, rotating straight rule and circular engraved scales are visible. Engraving is illustrative, not a usable calibrated astronomical instrument.",
+    "sourceReviewRecord": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+    "runtimeReview": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "checksPassed": 15,
+      "checksTotal": 15,
+      "viewports": [
+        390,
+        320
+      ],
+      "contactSheet": "docs/bank/rebuild-2026-09-18/checkpoint/tilepuzzle-resume/ui-2026-09-25/contact-1000.webp"
+    },
+    "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27"
+  },
+  "originalGeneration": {
+    "fileBasename": "exec-0f39e7f0-d438-4ba0-b546-b927edc02fd1.png",
+    "sha256": "0acbf079624ecf3ae93cccab1a6ba52e73ffd94edec3950a4a70502f832acc7a"
+  },
+  "generationMode": "edit",
+  "referenceSha256": "9a9dec322db86edc2a92539b3f9672fef48848a8e1a14be83744bce1312f3dcd"
+}

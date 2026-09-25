@@ -1,0 +1,33 @@
+{
+  "id": "spotdiff-800-902-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-800-902-b.webp",
+  "asset": "media/spotdiff/spotdiff-800-902-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Recolor only the blank YELLOW square sticky note to PINK, preserving its size, position, subtle paper fold and shadows. Laptop, pen, mug and desktop unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 29124,
+  "sha256": "0bc5bb3850a1de0523b5335adb023c9e65e33eec4400003d900ddc413a86daf7",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "The yellow blank sticky-note pad becomes pink. Laptop, mug, pen, pad position and outline remain stable. The generated object is a shallow note pad rather than one loose sheet; the accepted answer describes its visible top note accurately.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "generationInput": {
+    "type": "raw-generated-image-a",
+    "rawImageSha256": "b9c998f0b91da22425b9acaa0d41460c560b2b840b412acde80060bb12b91b19",
+    "installedImageA": "media/spotdiff/spotdiff-800-902-a.webp",
+    "installedImageASha256": "433157c823c9162f9a98f314a536971736887f7b3fde52ce59fe2e4bc057e7f4"
+  },
+  "rawGeneratedImageSha256": "21f48093e85bd924213ea7b4912985729073d6b78e046fa971d3563411610084"
+}

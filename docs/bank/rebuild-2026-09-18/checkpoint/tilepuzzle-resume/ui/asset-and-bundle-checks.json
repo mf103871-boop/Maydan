@@ -1,0 +1,790 @@
+{
+  "checks": [
+    {
+      "name": "production application bundles without full-build bank/media gates",
+      "ok": true
+    },
+    {
+      "name": "general: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "geo: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "capitals: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "science: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "animals: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "history: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "food: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "fruitsveg: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "sports: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "football: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "worldcup: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "ucl: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "premier: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "tech: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "apps: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "brands: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "cars: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "shopping: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabic: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "proverbs: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "dialects: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabliterature: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "books: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "quotes: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabcelebs: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "youtubers: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabmusic: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "tarab: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabart: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "theater: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "ramadan: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "islamiyat: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "quran: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "seerah: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "prophets: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabseries: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "ramadanseries: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "babalhara: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "syriandrama: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "egyptdrama: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "turkishdrama: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "ertugrul: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "foreignseries: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "breakingbad: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "squidgame: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "movies: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "arabmovies: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "actors: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "anime: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "naruto: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "onepiece: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "dragonball: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "aot: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "deathnote: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "demonslayer: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "jujutsu: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "hunterxhunter: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "spacetoon: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "cartoon: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "videogames: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "puzzles: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "emoji: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "hidden: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "completeproverb: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "beforeafter: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "commonbond: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "code: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "hints: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "flags: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "zoom: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "blur: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "reveal: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "silhouette: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "guesscar: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "placefinder: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "tilepuzzle: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "spotdiff: decodable 4:3 cover exists",
+      "ok": true
+    },
+    {
+      "name": "sound: decodable 4:3 cover exists",
+      "ok": true
+    }
+  ],
+  "assets": [
+    {
+      "id": "general",
+      "width": 640,
+      "height": 480,
+      "bytes": 30720
+    },
+    {
+      "id": "geo",
+      "width": 640,
+      "height": 480,
+      "bytes": 39962
+    },
+    {
+      "id": "capitals",
+      "width": 640,
+      "height": 480,
+      "bytes": 52962
+    },
+    {
+      "id": "science",
+      "width": 640,
+      "height": 480,
+      "bytes": 20196
+    },
+    {
+      "id": "animals",
+      "width": 640,
+      "height": 480,
+      "bytes": 48564
+    },
+    {
+      "id": "history",
+      "width": 640,
+      "height": 480,
+      "bytes": 24856
+    },
+    {
+      "id": "food",
+      "width": 640,
+      "height": 480,
+      "bytes": 17736
+    },
+    {
+      "id": "fruitsveg",
+      "width": 640,
+      "height": 480,
+      "bytes": 45472
+    },
+    {
+      "id": "sports",
+      "width": 640,
+      "height": 480,
+      "bytes": 33606
+    },
+    {
+      "id": "football",
+      "width": 640,
+      "height": 480,
+      "bytes": 45302
+    },
+    {
+      "id": "worldcup",
+      "width": 640,
+      "height": 480,
+      "bytes": 35538
+    },
+    {
+      "id": "ucl",
+      "width": 640,
+      "height": 480,
+      "bytes": 35844
+    },
+    {
+      "id": "premier",
+      "width": 640,
+      "height": 480,
+      "bytes": 54090
+    },
+    {
+      "id": "tech",
+      "width": 640,
+      "height": 480,
+      "bytes": 16898
+    },
+    {
+      "id": "apps",
+      "width": 640,
+      "height": 480,
+      "bytes": 15828
+    },
+    {
+      "id": "brands",
+      "width": 640,
+      "height": 480,
+      "bytes": 12418
+    },
+    {
+      "id": "cars",
+      "width": 640,
+      "height": 480,
+      "bytes": 30498
+    },
+    {
+      "id": "shopping",
+      "width": 640,
+      "height": 480,
+      "bytes": 28916
+    },
+    {
+      "id": "arabic",
+      "width": 640,
+      "height": 480,
+      "bytes": 26642
+    },
+    {
+      "id": "proverbs",
+      "width": 640,
+      "height": 480,
+      "bytes": 42324
+    },
+    {
+      "id": "dialects",
+      "width": 640,
+      "height": 480,
+      "bytes": 17490
+    },
+    {
+      "id": "arabliterature",
+      "width": 640,
+      "height": 480,
+      "bytes": 41622
+    },
+    {
+      "id": "books",
+      "width": 640,
+      "height": 480,
+      "bytes": 42416
+    },
+    {
+      "id": "quotes",
+      "width": 640,
+      "height": 480,
+      "bytes": 24544
+    },
+    {
+      "id": "arabcelebs",
+      "width": 640,
+      "height": 480,
+      "bytes": 37040
+    },
+    {
+      "id": "youtubers",
+      "width": 640,
+      "height": 480,
+      "bytes": 26932
+    },
+    {
+      "id": "arabmusic",
+      "width": 640,
+      "height": 480,
+      "bytes": 32854
+    },
+    {
+      "id": "tarab",
+      "width": 640,
+      "height": 480,
+      "bytes": 41648
+    },
+    {
+      "id": "arabart",
+      "width": 640,
+      "height": 480,
+      "bytes": 41222
+    },
+    {
+      "id": "theater",
+      "width": 640,
+      "height": 480,
+      "bytes": 37502
+    },
+    {
+      "id": "ramadan",
+      "width": 640,
+      "height": 480,
+      "bytes": 42742
+    },
+    {
+      "id": "islamiyat",
+      "width": 640,
+      "height": 480,
+      "bytes": 44020
+    },
+    {
+      "id": "quran",
+      "width": 640,
+      "height": 480,
+      "bytes": 47580
+    },
+    {
+      "id": "seerah",
+      "width": 640,
+      "height": 480,
+      "bytes": 64752
+    },
+    {
+      "id": "prophets",
+      "width": 640,
+      "height": 480,
+      "bytes": 60162
+    },
+    {
+      "id": "arabseries",
+      "width": 640,
+      "height": 480,
+      "bytes": 55566
+    },
+    {
+      "id": "ramadanseries",
+      "width": 640,
+      "height": 480,
+      "bytes": 21498
+    },
+    {
+      "id": "babalhara",
+      "width": 640,
+      "height": 480,
+      "bytes": 52160
+    },
+    {
+      "id": "syriandrama",
+      "width": 640,
+      "height": 480,
+      "bytes": 71736
+    },
+    {
+      "id": "egyptdrama",
+      "width": 640,
+      "height": 480,
+      "bytes": 54654
+    },
+    {
+      "id": "turkishdrama",
+      "width": 640,
+      "height": 480,
+      "bytes": 43890
+    },
+    {
+      "id": "ertugrul",
+      "width": 640,
+      "height": 480,
+      "bytes": 41656
+    },
+    {
+      "id": "foreignseries",
+      "width": 640,
+      "height": 480,
+      "bytes": 26924
+    },
+    {
+      "id": "breakingbad",
+      "width": 640,
+      "height": 480,
+      "bytes": 28876
+    },
+    {
+      "id": "squidgame",
+      "width": 640,
+      "height": 480,
+      "bytes": 27938
+    },
+    {
+      "id": "movies",
+      "width": 640,
+      "height": 480,
+      "bytes": 40704
+    },
+    {
+      "id": "arabmovies",
+      "width": 640,
+      "height": 480,
+      "bytes": 39128
+    },
+    {
+      "id": "actors",
+      "width": 640,
+      "height": 480,
+      "bytes": 19332
+    },
+    {
+      "id": "anime",
+      "width": 640,
+      "height": 480,
+      "bytes": 44730
+    },
+    {
+      "id": "naruto",
+      "width": 640,
+      "height": 480,
+      "bytes": 28782
+    },
+    {
+      "id": "onepiece",
+      "width": 640,
+      "height": 480,
+      "bytes": 55990
+    },
+    {
+      "id": "dragonball",
+      "width": 640,
+      "height": 480,
+      "bytes": 58104
+    },
+    {
+      "id": "aot",
+      "width": 640,
+      "height": 480,
+      "bytes": 53200
+    },
+    {
+      "id": "deathnote",
+      "width": 640,
+      "height": 480,
+      "bytes": 38842
+    },
+    {
+      "id": "demonslayer",
+      "width": 640,
+      "height": 480,
+      "bytes": 34424
+    },
+    {
+      "id": "jujutsu",
+      "width": 640,
+      "height": 480,
+      "bytes": 27912
+    },
+    {
+      "id": "hunterxhunter",
+      "width": 640,
+      "height": 480,
+      "bytes": 33976
+    },
+    {
+      "id": "spacetoon",
+      "width": 640,
+      "height": 480,
+      "bytes": 29484
+    },
+    {
+      "id": "cartoon",
+      "width": 640,
+      "height": 480,
+      "bytes": 24516
+    },
+    {
+      "id": "videogames",
+      "width": 640,
+      "height": 480,
+      "bytes": 18440
+    },
+    {
+      "id": "puzzles",
+      "width": 640,
+      "height": 480,
+      "bytes": 28106
+    },
+    {
+      "id": "emoji",
+      "width": 640,
+      "height": 480,
+      "bytes": 20290
+    },
+    {
+      "id": "hidden",
+      "width": 640,
+      "height": 480,
+      "bytes": 25124
+    },
+    {
+      "id": "completeproverb",
+      "width": 640,
+      "height": 480,
+      "bytes": 28328
+    },
+    {
+      "id": "beforeafter",
+      "width": 640,
+      "height": 480,
+      "bytes": 22002
+    },
+    {
+      "id": "commonbond",
+      "width": 640,
+      "height": 480,
+      "bytes": 19458
+    },
+    {
+      "id": "code",
+      "width": 640,
+      "height": 480,
+      "bytes": 35832
+    },
+    {
+      "id": "hints",
+      "width": 640,
+      "height": 480,
+      "bytes": 15312
+    },
+    {
+      "id": "flags",
+      "width": 640,
+      "height": 480,
+      "bytes": 25748
+    },
+    {
+      "id": "zoom",
+      "width": 640,
+      "height": 480,
+      "bytes": 50762
+    },
+    {
+      "id": "blur",
+      "width": 640,
+      "height": 480,
+      "bytes": 27342
+    },
+    {
+      "id": "reveal",
+      "width": 640,
+      "height": 480,
+      "bytes": 17042
+    },
+    {
+      "id": "silhouette",
+      "width": 640,
+      "height": 480,
+      "bytes": 28340
+    },
+    {
+      "id": "guesscar",
+      "width": 640,
+      "height": 480,
+      "bytes": 27492
+    },
+    {
+      "id": "placefinder",
+      "width": 640,
+      "height": 480,
+      "bytes": 53272
+    },
+    {
+      "id": "tilepuzzle",
+      "width": 640,
+      "height": 480,
+      "bytes": 34692
+    },
+    {
+      "id": "spotdiff",
+      "width": 640,
+      "height": 480,
+      "bytes": 18244
+    },
+    {
+      "id": "sound",
+      "width": 640,
+      "height": 480,
+      "bytes": 23812
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "anime",
+  "kind": "cover",
+  "pack": "anime",
+  "file": "public/media/badeeha-covers/anime.webp",
+  "asset": "public/media/badeeha-covers/anime.webp",
+  "prompt": "Use case: precise-object-edit. Asset type: anime category cover for a trivia game. Edit target: the attached local cover image. Preserve the photorealistic warm ivory tabletop, fan of textured drawing sheets, brass fastener, two purple pencils, soft daylight, contact shadows, and landscape 4:3 framing. Change only the abstract ink swoosh on the top sheet: replace it with a large, beautifully inked ORIGINAL anime character head-and-shoulders portrait. It must read unmistakably as Japanese anime even at thumbnail size: expressive oversized eyes with highlights, clean angular black ink lines, lively spiky dark hair, a friendly confident expression, and a simple purple jacket with flat cel-shaded accents. The drawing is visibly hand-inked on the paper, while the surrounding stationery stays photorealistic. Make the face and spiky hair large and visually clear, taking up most of the top sheet. Not a specific existing character; no letters, lettering, signatures, numbers, logos, watermarks or extra objects. Keep paper edges and pencils natural. Preserve the restrained cream-and-purple palette and clear top corners. Output one finished landscape 4:3 image.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 640,
+  "height": 480,
+  "bytes": 44730,
+  "sha256": "4d22dc844c9e23db2f651560100d90dc350d71047d7df97204ce3d9360e0b681",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "passed",
+    "reviewedAt": "2026-09-23",
+    "method": "Visual review of original, built-in generated result, installed WebP and a 150px-wide thumbnail.",
+    "checks": [
+      "Original character portrait has clear anime eyes, spiky hair and inked cel-style outlines; replaces abstract swoosh.",
+      "Paper fan, brass fastener, two purple pencils, ivory background and photographic materials retained.",
+      "Viewed installed 640×480 WebP and 150px-wide thumbnail; anime face remains legible."
+    ],
+    "dimensions": "640x480 (4:3)",
+    "within256KiBBudget": true,
+    "textOrWatermarkDetected": false
+  },
+  "generationMode": "edit",
+  "sourceOutput": {
+    "file": "exec-f4343260-1168-42d4-a5f2-ee76d9275528.png",
+    "sha256": "53168ad0a986f919b036ffee385245ec1fe60d2937d21ca24ba3a910467cf8b8"
+  },
+  "editInput": {
+    "asset": "public/media/badeeha-covers/anime.webp",
+    "sha256": "a41043c1c1f38843ac462c8a3029b6a2fa8e26a2431410e06ae5cfdb907ccbbf",
+    "provenanceArchive": "docs/bank/rebuild-2026-09-18/checkpoint/asset-records.json",
+    "originalCreatedAt": "2026-09-18"
+  },
+  "previousGenerations": [
+    {
+      "id": "anime",
+      "kind": "cover",
+      "pack": "anime",
+      "asset": "public/media/badeeha-covers/anime.webp",
+      "prompt": "Use case: product-mockup.\nCreate one premium photorealistic editorial product photograph for an Arabic social trivia game category cover. Landscape 4:3 composition. Real believable materials and proportions; carefully crafted physical miniatures only where the subject requires architecture. Seamless warm ivory background (#FFF7E7), soft daylight from upper left, one restrained group accent color, gentle contact shadow, no busy scenery. One dominant subject with at most two supporting objects; large shapes remain legible at 150px wide. Center all important subject details in the middle 60%, leave generous breathing room and both top corners clear for UI badges. No text, letters, numbers, pseudo-writing, readable labels, watermarks, logos, framed app UI, pictograms, SVG-style graphics, emoji rendering, plastic cartoon gloss, collage, or unnecessary objects. Category title is added by the game UI. Use an original cover composition, never a screenshot, trivia question illustration or answer reveal.\nGroup accent: #8A57AD, used sparingly without overriding natural object colors.\nSubject: One small fan of blank animation drawing sheets held by a peg bar and two colored pencils, with an original abstract ink swoosh rather than a recognizable character.",
+      "tool": "OpenAI image generation",
+      "createdAt": "2026-09-18",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 119312,
+      "sha256": "a41043c1c1f38843ac462c8a3029b6a2fa8e26a2431410e06ae5cfdb907ccbbf",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي"
+    }
+  ],
+  "installCommand": "node scripts/bank-install-generated.mjs /tmp/cover-anime-job.json /workspace/scratch/63296ecfa764/generated_images/exec-f4343260-1168-42d4-a5f2-ee76d9275528.png --replace"
+}

@@ -5,3025 +5,555 @@
   "qs": [
     {
       "p": 200,
-      "topic": "رواد التشكيل",
-      "q": "من نحت تمثال «نهضة مصر» القائم أمام جامعة القاهرة؟",
+      "q": "من نحت تمثال «نهضة مصر»؟",
       "a": "محمود مختار",
+      "qid": "arabart-200-901",
+      "topic": "رواد التشكيل",
+      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
+      "verified": true,
+      "difficultyTarget": 0.8,
       "alt": [
         "مختار"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/محمود_مختار",
-      "verified": true,
-      "qid": "arabart-200-001"
+      ]
     },
     {
       "p": 200,
-      "topic": "رواد التشكيل",
-      "q": "ما اسم الطفل حافي القدمين الذي يدير ظهره في الرسوم الفلسطينية الساخرة؟",
+      "q": "ما اسم الطفل حافي القدمين الذي ظهر في رسوم ناجي العلي؟",
       "a": "حنظلة",
+      "qid": "arabart-200-902",
+      "topic": "أعمال شهيرة",
+      "sourceUrl": "https://freedomarchives.org/La_Lucha_Continua/Handala.html",
+      "verified": true,
+      "difficultyTarget": 0.8,
       "alt": [
         "حنظله"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Handala",
-      "verified": true,
-      "qid": "arabart-200-002"
+      ]
     },
     {
       "p": 200,
-      "topic": "رواد التشكيل",
-      "q": "من الأديب اللبناني الذي رسم بريشته لوحات كتابه «النبي»؟",
-      "a": "جبران خليل جبران",
-      "alt": [
-        "جبران"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kahlil_Gibran",
-      "verified": true,
-      "qid": "arabart-200-003"
-    },
-    {
-      "p": 200,
-      "topic": "خط عربي",
-      "q": "ما الخط العربي الذي تُطبع به معظم المصاحف اليوم؟",
-      "a": "النسخ",
-      "alt": [
-        "خط النسخ"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Naskh_(script)",
-      "verified": true,
-      "qid": "arabart-200-004"
-    },
-    {
-      "p": 200,
-      "topic": "خط عربي",
-      "q": "ما الخط السريع الذي يتعلمه التلاميذ للكتابة اليومية؟",
-      "a": "الرقعة",
-      "alt": [
-        "خط الرقعة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ruqʿah_script",
-      "verified": true,
-      "qid": "arabart-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "خط عربي",
-      "q": "ما أقدم الخطوط العربية وأشدها استقامةً وزاوية؟",
-      "a": "الكوفي",
-      "alt": [
-        "الخط الكوفي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kufic",
-      "verified": true,
-      "qid": "arabart-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "خط عربي",
-      "q": "من أي نبات يُبرى قلم الخطاط التقليدي؟",
-      "a": "القصب",
-      "alt": [
-        "البوص",
-        "قصب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Qalam",
-      "verified": true,
-      "qid": "arabart-200-007"
-    },
-    {
-      "p": 200,
-      "topic": "خط عربي",
-      "q": "ما السائل الذي يغمس فيه الخطاط قلمه؟",
+      "q": "ما السائل الملوّن الذي يغمس فيه الخطاط قلمه للكتابة؟",
       "a": "الحبر",
+      "qid": "arabart-200-903",
+      "topic": "خط عربي",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.8,
       "alt": [
         "حبر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calligraphy",
-      "verified": true,
-      "qid": "arabart-200-008"
+      ]
     },
     {
       "p": 200,
-      "topic": "خط عربي",
-      "q": "بأي عبارة يفتتح الخطاط لوحته عادةً؟",
-      "a": "البسملة",
-      "alt": [
-        "بسم الله الرحمن الرحيم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Basmala",
-      "verified": true,
-      "qid": "arabart-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "رواد التشكيل",
-      "q": "ما اسم الألوان التي تُمزج بالماء ويُرسم بها على الورق؟",
-      "a": "الألوان المائية",
-      "alt": [
-        "ألوان مائية",
-        "المائية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ألوان_مائية",
-      "verified": true,
-      "qid": "arabart-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "خط عربي",
-      "q": "ما الخط الجليل الذي تُطرَّز به كسوة الكعبة؟",
-      "a": "الثلث",
-      "alt": [
-        "خط الثلث"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Thuluth",
-      "verified": true,
-      "qid": "arabart-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم النافذة الخشبية المشبّكة البارزة في البيوت العربية القديمة؟",
-      "a": "المشربية",
-      "alt": [
-        "مشربية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mashrabiya",
-      "verified": true,
-      "qid": "arabart-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم القصر الأندلسي الأشهر القائم في غرناطة؟",
-      "a": "الحمراء",
-      "alt": [
-        "قصر الحمراء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Alhambra",
-      "verified": true,
-      "qid": "arabart-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "عمارة وزخرفة",
-      "q": "في أي مدينة يقوم الجامع الأموي الكبير؟",
-      "a": "دمشق",
-      "alt": [
-        "الشام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Umayyad_Mosque",
-      "verified": true,
-      "qid": "arabart-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "رواد التشكيل",
-      "q": "ماذا نسمّي اللوحة التي تُرسَم مباشرة على الجدار؟",
-      "a": "الجدارية",
-      "alt": [
-        "جدارية",
-        "الرسم الجداري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/جدارية",
-      "verified": true,
-      "qid": "arabart-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الزخرفة النباتية المتشابكة التي تميز الفن الإسلامي؟",
-      "a": "الأرابيسك",
-      "alt": [
-        "أرابيسك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Arabesque",
-      "verified": true,
-      "qid": "arabart-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم البرج الذي يُرفع منه الأذان في المسجد؟",
-      "a": "المئذنة",
-      "alt": [
-        "المنارة",
-        "مئذنة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Minaret",
-      "verified": true,
-      "qid": "arabart-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم التجويف في جدار المسجد الذي يدل على القبلة؟",
-      "a": "المحراب",
-      "alt": [
-        "محراب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mihrab",
-      "verified": true,
-      "qid": "arabart-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الفن الذي يرصف قطعًا صغيرة ملوّنة لتكوين صورة على الجدار؟",
+      "q": "ما الفن الذي يكوّن الصور بجمع قطع صغيرة ملوّنة من الحجر أو الزجاج؟",
       "a": "الفسيفساء",
-      "alt": [
-        "الموزاييك",
-        "فسيفساء"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mosaic",
-      "verified": true,
-      "qid": "arabart-200-019"
-    },
-    {
-      "p": 200,
+      "qid": "arabart-200-904",
       "topic": "عمارة وزخرفة",
-      "q": "في أي مدينة مغربية يقوم مسجد الحسن الثاني على شاطئ المحيط؟",
-      "a": "الدار البيضاء",
-      "alt": [
-        "كازابلانكا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hassan_II_Mosque",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/708072",
       "verified": true,
-      "qid": "arabart-200-020"
+      "difficultyTarget": 0.8,
+      "alt": [
+        "فسيفساء",
+        "موزاييك"
+      ]
     },
     {
       "p": 200,
-      "topic": "خط عربي",
-      "q": "على أي مادة كان يُكتب المصحف قبل أن يُعرف الورق؟",
-      "a": "الرَّق",
-      "alt": [
-        "الرق",
-        "الجلد",
-        "رق الغزال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رق_(مادة_كتابة)",
+      "q": "ما اسم مجمّع القصور الأندلسي في غرناطة الذي يضم بهو السباع؟",
+      "a": "الحمراء",
+      "qid": "arabart-200-905",
+      "topic": "عمارة وزخرفة",
+      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-court-of-the-lions",
       "verified": true,
-      "qid": "arabart-200-021"
+      "difficultyTarget": 0.8,
+      "alt": [
+        "قصر الحمراء",
+        "قصور الحمراء"
+      ]
     },
     {
       "p": 200,
-      "topic": "متاحف ومعالم",
-      "q": "من الملك الفرعوني الذي يُعرض قناعه الذهبي بين كنوز المتاحف المصرية؟",
+      "q": "ما المادة النباتية التي تُرسم بها زخارف مؤقتة على أيدي العرائس في بلدان عربية؟",
+      "a": "الحناء",
+      "qid": "arabart-200-906",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://ich.unesco.org/en/RL/henna-rituals-aesthetic-and-social-practices-02116",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "حناء"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما الحرفة التي تصنع أواني من الطين المحروق؟",
+      "a": "الفخار",
+      "qid": "arabart-200-907",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://www.unesco.org/archives/multimedia/document-4753",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "صناعة الفخار",
+        "الخزف"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "لأي ملك مصري قديم يعود القناع الجنائزي الذهبي الشهير المكتشف مع كنوز مقبرته؟",
       "a": "توت عنخ آمون",
+      "qid": "arabart-200-908",
+      "topic": "متاحف ومجموعات",
+      "sourceUrl": "https://gem.eg/en/collection/artefacts/the-golden-burial-mask-of-tutankhamun",
+      "verified": true,
+      "difficultyTarget": 0.8,
       "alt": [
         "توت عنخ امون",
-        "توت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mask_of_Tutankhamun",
-      "verified": true,
-      "qid": "arabart-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم أشهر سوق للتحف والحرف اليدوية في قلب القاهرة الفاطمية؟",
-      "a": "خان الخليلي",
-      "alt": [
-        "الخليلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khan_el-Khalili",
-      "verified": true,
-      "qid": "arabart-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم الشارع القاهري الذي يُعدّ متحفًا مفتوحًا لعمارة العصور الإسلامية؟",
-      "a": "شارع المعز",
-      "alt": [
-        "المعز",
-        "شارع المعز لدين الله"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شارع_المعز_لدين_الله",
-      "verified": true,
-      "qid": "arabart-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم القلعة الأثرية التي تطل على القاهرة من جبل المقطم؟",
-      "a": "قلعة صلاح الدين",
-      "alt": [
-        "القلعة",
-        "قلعة الجبل"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قلعة_صلاح_الدين_الأيوبي_(القاهرة)",
-      "verified": true,
-      "qid": "arabart-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف الضخم الذي افتُتح على مقربة من أهرامات الجيزة؟",
-      "a": "المتحف المصري الكبير",
-      "alt": [
-        "المتحف الكبير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Grand_Egyptian_Museum",
-      "verified": true,
-      "qid": "arabart-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم النصب الشهير الذي يتوسط ساحة التحرير في بغداد؟",
-      "a": "نصب الحرية",
-      "alt": [
-        "الحرية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نصب_الحرية_(العراق)",
-      "verified": true,
-      "qid": "arabart-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم التمثال العملاق ذي الجسد الحيواني ورأس الإنسان عند أهرامات الجيزة؟",
-      "a": "أبو الهول",
-      "alt": [
-        "ابو الهول",
-        "تمثال أبو الهول"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أبو_الهول",
-      "verified": true,
-      "qid": "arabart-200-028"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال شهيرة",
-      "q": "ما الحيوان الذي تحمل تماثيله أشهر نافورة في قصور الأندلس؟",
-      "a": "الأسد",
-      "alt": [
-        "الأسود",
-        "السبع",
-        "أسد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Court_of_the_Lions",
-      "verified": true,
-      "qid": "arabart-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال شهيرة",
-      "q": "من الراوية التي قصّت حكاياتها على شهريار ونُحت تمثالها في بغداد؟",
-      "a": "شهرزاد",
-      "alt": [
-        "شهرزاد بنت الوزير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mohammed_Ghani_Hikmat",
-      "verified": true,
-      "qid": "arabart-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم الفن الذي يرسم الأشخاص بمبالغة ساخرة في الصحف؟",
-      "a": "الكاريكاتير",
-      "alt": [
-        "فن الكاريكاتير",
-        "كاريكاتير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Caricature",
-      "verified": true,
-      "qid": "arabart-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال شهيرة",
-      "q": "ما الحجر الوردي الذي نُحت منه تمثال «نهضة مصر»؟",
-      "a": "الجرانيت",
-      "alt": [
-        "الغرانيت",
-        "جرانيت أسوان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Egypt%27s_Renaissance",
-      "verified": true,
-      "qid": "arabart-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم السوق التاريخي المسقوف الذي يُعدّ أشهر أسواق الشام القديمة؟",
-      "a": "سوق الحميدية",
-      "alt": [
-        "الحميدية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سوق_الحميدية",
-      "verified": true,
-      "qid": "arabart-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المدينة الوردية المنحوتة في صخور جنوب الأردن؟",
-      "a": "البتراء",
-      "alt": [
-        "بترا",
-        "المدينة الوردية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/البتراء",
-      "verified": true,
-      "qid": "arabart-200-034"
-    },
-    {
-      "p": 200,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم الجامع القاهري الذي صار أقدم جامعة في مصر؟",
-      "a": "الجامع الأزهر",
-      "alt": [
-        "الأزهر",
-        "جامع الأزهر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الأزهر",
-      "verified": true,
-      "qid": "arabart-200-035"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم التمثال النصفي لملكة فرعونية الذي يُعرض في متاحف برلين؟",
-      "a": "نفرتيتي",
-      "alt": [
-        "رأس نفرتيتي",
-        "تمثال نفرتيتي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تمثال_نفرتيتي",
-      "verified": true,
-      "qid": "arabart-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم الحجر الذي مكّن العلماء من فكّ رموز الكتابة الهيروغليفية؟",
-      "a": "حجر رشيد",
-      "alt": [
-        "رشيد",
-        "حجر الرشيد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حجر_رشيد",
-      "verified": true,
-      "qid": "arabart-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم النقش البنّي الذي تزيّن به النساء أيديهن ليلة العرس؟",
-      "a": "الحنّاء",
-      "alt": [
-        "الحناء",
-        "حناء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حناء",
-      "verified": true,
-      "qid": "arabart-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الخيمة السوداء التي ينسجها البدو من شعر الماعز؟",
-      "a": "بيت الشعر",
-      "alt": [
-        "بيت شعر",
-        "الخيمة البدوية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بيت_الشعر_(خيمة)",
-      "verified": true,
-      "qid": "arabart-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما المعدن الأصفر الذي تُطرَق منه الصواني والأباريق في الأسواق القديمة؟",
-      "a": "النحاس",
-      "alt": [
-        "نحاس",
-        "النحاس الأصفر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نحاس",
-      "verified": true,
-      "qid": "arabart-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الآلة الخشبية التي تُشدّ عليها الخيوط لنسج السجاد يدويًا؟",
-      "a": "النول",
-      "alt": [
-        "نول",
-        "المنسج"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نول",
-      "verified": true,
-      "qid": "arabart-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الإبريق الطويل الفوهة الذي تُقدَّم به القهوة العربية؟",
-      "a": "الدلّة",
-      "alt": [
-        "الدلة",
-        "دلة القهوة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/دلة_القهوة",
-      "verified": true,
-      "qid": "arabart-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الوعاء الخشبي الذي يُدَقّ فيه البنّ بيدٍ من خشب؟",
-      "a": "المهباج",
-      "alt": [
-        "مهباج",
-        "النجر",
-        "المنحاز"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مهباج",
-      "verified": true,
-      "qid": "arabart-200-043"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم العباءة المطرّزة بخيوط الذهب التي يلبسها الخليجي في المناسبات؟",
-      "a": "البشت",
-      "alt": [
-        "بشت",
-        "المشلح"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/بشت",
-      "verified": true,
-      "qid": "arabart-200-044"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الحجر الأحمر الذي يشتهر اليمنيون بترصيع خواتمهم به؟",
-      "a": "العقيق",
-      "alt": [
-        "عقيق",
-        "العقيق اليماني"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عقيق_(حجر)",
-      "verified": true,
-      "qid": "arabart-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الجرّة الكبيرة التي كانت تُبرَّد فيها مياه الشرب في البيوت؟",
-      "a": "الزير",
-      "alt": [
-        "زير",
-        "الزير الفخاري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زير_(إناء)",
-      "verified": true,
-      "qid": "arabart-200-046"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم النبات الذي صنع منه المصري القديم أول أوراق الكتابة؟",
-      "a": "البردي",
-      "alt": [
-        "ورق البردي",
-        "البابيروس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ورق_البردي",
-      "verified": true,
-      "qid": "arabart-200-047"
-    },
-    {
-      "p": 200,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الحبل الأسود المزدوج الذي يثبّت الغترة على الرأس؟",
-      "a": "العقال",
-      "alt": [
-        "عقال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عقال_(لباس)",
-      "verified": true,
-      "qid": "arabart-200-048"
+        "توت عنخآمون"
+      ]
     },
     {
       "p": 400,
+      "q": "من الأديب اللبناني الذي رسم لوحات كتابه «النبي» بنفسه؟",
+      "a": "جبران خليل جبران",
+      "qid": "arabart-400-901",
       "topic": "رواد التشكيل",
-      "q": "من الفنان الفلسطيني الذي اغتيل بالرصاص في لندن بسبب رسومه الساخرة؟",
-      "a": "ناجي العلي",
-      "alt": [
-        "ناجي سليم العلي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Naji_al-Ali",
+      "sourceUrl": "https://www.barjeelartfoundation.org/wp-content/uploads/2017/08/Jordan-Catalogue-March8-LowRes-no-bleed.pdf",
       "verified": true,
-      "qid": "arabart-400-001"
+      "difficultyTarget": 0.6,
+      "alt": [
+        "جبران",
+        "خليل جبران"
+      ]
     },
     {
       "p": 400,
-      "topic": "رواد التشكيل",
-      "q": "من الرسام السكندري صاحب لوحة «بنات بحري»؟",
-      "a": "محمود سعيد",
-      "alt": [
-        "محمود سعيد بك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mahmoud_Sa%27id",
-      "verified": true,
-      "qid": "arabart-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "رواد التشكيل",
-      "q": "من النحات العراقي الذي صمم النصب القائم في ساحة التحرير ببغداد؟",
-      "a": "جواد سليم",
-      "alt": [
-        "جواد محمد سليم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jawad_Saleem",
-      "verified": true,
-      "qid": "arabart-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "رواد التشكيل",
-      "q": "من الفنانة المصرية الرائدة التي رسمت لوحاتها داخل سجن القناطر؟",
-      "a": "إنجي أفلاطون",
-      "alt": [
-        "انجي افلاطون",
-        "إنجي افلاطون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Inji_Aflatoun",
-      "verified": true,
-      "qid": "arabart-400-004"
-    },
-    {
-      "p": 400,
-      "topic": "رواد التشكيل",
-      "q": "من النحات العراقي الملقب بـ«شيخ النحاتين» صاحب أبواب بغداد ومنحوتاتها الشهيرة؟",
-      "a": "محمد غني حكمت",
-      "alt": [
-        "محمد غني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mohammed_Ghani_Hikmat",
-      "verified": true,
-      "qid": "arabart-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "رواد التشكيل",
-      "q": "من رسّام لوحة «إلى أين؟» التي تصوّر رحلة التهجير الفلسطيني؟",
-      "a": "إسماعيل شموط",
-      "alt": [
-        "اسماعيل شموط"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ismail_Shammout",
-      "verified": true,
-      "qid": "arabart-400-006"
-    },
-    {
-      "p": 400,
-      "topic": "رواد التشكيل",
-      "q": "من الفنان الفلسطيني صاحب لوحة «جمل المحامل» التي يحمل فيها عتّال مدينةً على ظهره؟",
+      "q": "من الفنان الفلسطيني صاحب لوحة «جمل المحامل» التي يحمل فيها رجل مدينة القدس على ظهره؟",
       "a": "سليمان منصور",
-      "alt": [
-        "سليمان منصور الفلسطيني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sliman_Mansour",
-      "verified": true,
-      "qid": "arabart-400-007"
-    },
-    {
-      "p": 400,
+      "qid": "arabart-400-902",
       "topic": "رواد التشكيل",
-      "q": "من الفنان العراقي الملقب بأبي الفن الحديث الذي اشتهر برسم الخيول؟",
-      "a": "فائق حسن",
-      "alt": [
-        "فايق حسن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Faeq_Hassan",
+      "sourceUrl": "https://dafbeirut.org/collection/sliman-anis-mansour/jamal-al-mahamel-iii-camelcarrier-hardships",
       "verified": true,
-      "qid": "arabart-400-008"
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Sliman Mansour"
+      ]
     },
     {
       "p": 400,
+      "q": "ما الخط العربي القديم الذي يتميز بحروف زاويّة وامتدادات أفقية واضحة؟",
+      "a": "الكوفي",
+      "qid": "arabart-400-903",
       "topic": "خط عربي",
-      "q": "ما الخط العربي المائل الذي اتخذته الدواوين العثمانية لمراسلاتها؟",
-      "a": "الديواني",
-      "alt": [
-        "خط الديواني",
-        "الخط الديواني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diwani",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
       "verified": true,
-      "qid": "arabart-400-009"
+      "difficultyTarget": 0.6,
+      "alt": [
+        "الخط الكوفي",
+        "خط كوفي"
+      ]
     },
     {
       "p": 400,
-      "topic": "خط عربي",
-      "q": "ما الخط الفارسي الأصل الملقب بـ«عروس الخطوط»؟",
-      "a": "النستعليق",
-      "alt": [
-        "الفارسي",
-        "التعليق",
-        "نستعليق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nastaliq",
+      "q": "ما الاسم الشائع للزخارف النباتية المتشابكة في الفن الإسلامي؟",
+      "a": "الأرابيسك",
+      "qid": "arabart-400-904",
+      "topic": "عمارة وزخرفة",
+      "sourceUrl": "https://www.metmuseum.org/essays/vegetal-patterns-in-islamic-art",
       "verified": true,
-      "qid": "arabart-400-010"
+      "difficultyTarget": 0.6,
+      "alt": [
+        "ارابيسك",
+        "العربسة"
+      ]
     },
     {
       "p": 400,
-      "topic": "خط عربي",
-      "q": "من الوزير العباسي الذي يُنسب إليه وضع أول قواعد هندسية للخط العربي؟",
-      "a": "ابن مقلة",
-      "alt": [
-        "ابو علي بن مقلة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_Muqla",
+      "q": "ما اسم النسيج التقليدي الذي تصنعه نساء البادية على نول أرضي؟",
+      "a": "السدو",
+      "qid": "arabart-400-905",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://ich.unesco.org/en/RL/traditional-weaving-of-al-sadu-02158",
       "verified": true,
-      "qid": "arabart-400-011"
+      "difficultyTarget": 0.6,
+      "alt": [
+        "سدو"
+      ]
     },
     {
       "p": 400,
-      "topic": "خط عربي",
-      "q": "ما اسم التوقيع المزخرف الذي يتصدر فرمانات السلاطين العثمانيين؟",
-      "a": "الطغراء",
-      "alt": [
-        "التغراء",
-        "طغرا",
-        "الطغرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tughra",
+      "q": "في أي عاصمة يقع متحف الفن الإسلامي الذي صممه آي إم باي على الكورنيش؟",
+      "a": "الدوحة",
+      "qid": "arabart-400-906",
+      "topic": "متاحف ومجموعات",
+      "sourceUrl": "https://mia.org.qa/en/about-us/",
       "verified": true,
-      "qid": "arabart-400-012"
+      "difficultyTarget": 0.6,
+      "alt": [
+        "دوحة"
+      ]
     },
     {
       "p": 400,
-      "topic": "خط عربي",
-      "q": "ما اسم الخط الدقيق جدًا الذي كان يُكتب ليُحمل مع الحمام الزاجل؟",
-      "a": "الغبار",
-      "alt": [
-        "خط الغبار",
-        "غبار الحلبة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calligraphy",
+      "q": "من رسام لوحة «بنات بحري» المستوحاة من الإسكندرية؟",
+      "a": "محمود سعيد",
+      "qid": "arabart-400-907",
+      "topic": "أعمال شهيرة",
+      "sourceUrl": "https://www.bibalex.gov.eg/Attachments/Publications/Files/2013032016331232778_VOICESFROMCOSMOPOLITANALEXANDRIA.pdf",
       "verified": true,
-      "qid": "arabart-400-013"
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Mahmoud Said"
+      ]
     },
     {
       "p": 400,
-      "topic": "خط عربي",
-      "q": "ما الوحدة التي يُقاس بها امتداد الحرف في الخط العربي؟",
+      "q": "ما الألوان الشفافة التي تُخفّف بالماء ويظهر بياض الورق من خلالها؟",
+      "a": "الألوان المائية",
+      "qid": "arabart-400-908",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://smarthistory.org/material/watercolor-paint/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "ألوان مائية",
+        "الأكواريل"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من الفنانة الجزائرية العصامية التي رسمت نساء وطيورًا ملوّنة وعُرفت باسم فني من كلمة واحدة؟",
+      "a": "باية",
+      "qid": "arabart-600-901",
+      "topic": "رواد التشكيل",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/algeria/baya/",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "بايا",
+        "باية محيي الدين",
+        "فاطمة حداد"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من الفنان السوداني المرتبط بمدرسة الخرطوم وصاحب لوحة «الصوت الأخير»؟",
+      "a": "إبراهيم الصلحي",
+      "qid": "arabart-600-902",
+      "topic": "رواد التشكيل",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/sudan/ibrahim-el-salahi/",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "ابراهيم الصلحي"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما الوحدة المعينية التي يستخدمها الخطاط لضبط تناسب الحروف؟",
       "a": "النقطة",
-      "alt": [
-        "نقطة القلم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_Muqla",
-      "verified": true,
-      "qid": "arabart-400-014"
-    },
-    {
-      "p": 400,
+      "qid": "arabart-600-903",
       "topic": "خط عربي",
-      "q": "ما اسم الفن الذي يحوّل الحرف العربي إلى عنصر تشكيلي في اللوحة الحديثة؟",
-      "a": "الحروفية",
-      "alt": [
-        "فن الحروفية",
-        "الحروفيّة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hurufiyya_movement",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
       "verified": true,
-      "qid": "arabart-400-015"
+      "difficultyTarget": 0.4,
+      "alt": [
+        "نقطة",
+        "النقطة المعينية"
+      ]
     },
     {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "من الخليفة الأموي الذي أمر ببناء المسجد المثمّن ذي القبة الذهبية بالقدس؟",
-      "a": "عبد الملك بن مروان",
-      "alt": [
-        "عبدالملك بن مروان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dome_of_the_Rock",
-      "verified": true,
-      "qid": "arabart-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم المنارة الحلزونية الشهيرة في سامراء؟",
-      "a": "الملوية",
-      "alt": [
-        "منارة الملوية",
-        "المئذنة الملوية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Great_Mosque_of_Samarra",
-      "verified": true,
-      "qid": "arabart-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم أقدم مساجد القاهرة المحتفظ بهيئته الأصلية؟",
-      "a": "جامع ابن طولون",
-      "alt": [
-        "مسجد ابن طولون",
-        "ابن طولون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mosque_of_Ibn_Tulun",
-      "verified": true,
-      "qid": "arabart-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم البلاط المغربي الملوّن الذي يُقطَّع بالإزميل قطعةً قطعة؟",
-      "a": "الزليج",
-      "alt": [
-        "زليج",
-        "الزليج المغربي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Zellij",
-      "verified": true,
-      "qid": "arabart-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الحليات المتدلية كخلايا النحل في أسقف العمارة الإسلامية؟",
+      "p": 600,
+      "q": "ما اسم الزخارف المعمارية المتدلية كهوابط الكهوف التي تُستخدم في أقواس وأسقف القصور الإسلامية؟",
       "a": "المقرنصات",
+      "qid": "arabart-600-904",
+      "topic": "عمارة وزخرفة",
+      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-hall-of-the-muqarnas",
+      "verified": true,
+      "difficultyTarget": 0.4,
       "alt": [
         "المقرنص",
         "مقرنصات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Muqarnas",
-      "verified": true,
-      "qid": "arabart-400-020"
+      ]
     },
     {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "ما لونا الحجارة المتناوبة في أقواس جامع قرطبة الكبير؟",
-      "a": "أحمر وأبيض",
-      "alt": [
-        "الأحمر والأبيض"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mosque%E2%80%93Cathedral_of_C%C3%B3rdoba",
-      "verified": true,
-      "qid": "arabart-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم صومعة مراكش الشهيرة التي بناها الموحدون؟",
-      "a": "الكتبية",
-      "alt": [
-        "صومعة الكتبية",
-        "مسجد الكتبية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kutubiyya_Mosque",
-      "verified": true,
-      "qid": "arabart-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "متاحف ومعالم",
-      "q": "على كورنيش أي عاصمة خليجية يقوم متحف للفن الإسلامي صممه آي. إم. باي؟",
-      "a": "الدوحة",
-      "alt": [
-        "الدوحه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Museum_of_Islamic_Art,_Doha",
-      "verified": true,
-      "qid": "arabart-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "متاحف ومعالم",
-      "q": "أي متحف تونسي يضم أضخم مجموعة في العالم من أرضيات الرومان المزخرفة؟",
-      "a": "متحف باردو",
-      "alt": [
-        "باردو",
-        "المتحف الوطني بباردو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bardo_National_Museum_(Tunis)",
-      "verified": true,
-      "qid": "arabart-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الفن الذي يرسم صورًا صغيرة دقيقة داخل صفحات المخطوطات؟",
-      "a": "المنمنمة",
-      "alt": [
-        "المنمنمات",
-        "التصوير المنمنم"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/منمنمة",
-      "verified": true,
-      "qid": "arabart-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف الذي يحفظ كنوز حضارات بلاد الرافدين في بغداد؟",
-      "a": "المتحف العراقي",
-      "alt": [
-        "متحف العراق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/National_Museum_of_Iraq",
-      "verified": true,
-      "qid": "arabart-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المؤسسة الكويتية التي تضم آلاف القطع من الفن الإسلامي؟",
-      "a": "دار الآثار الإسلامية",
-      "alt": [
-        "مجموعة الصباح"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dar_al-Athar_al-Islamiyyah",
-      "verified": true,
-      "qid": "arabart-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم القصر العثماني في إسطنبول الذي يحفظ مخطوطات ونفائس إسلامية؟",
-      "a": "طوب قابي",
-      "alt": [
-        "توبكابي",
-        "قصر طوبقابي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Topkap%C4%B1_Palace",
-      "verified": true,
-      "qid": "arabart-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "جماعات ومدارس",
-      "q": "من الأمير المصري الذي أسّس أول مدرسة للفنون الجميلة بالقاهرة سنة ١٩٠٨؟",
-      "a": "الأمير يوسف كمال",
-      "alt": [
-        "يوسف كمال"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/يوسف_كمال",
-      "verified": true,
-      "qid": "arabart-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال شهيرة",
-      "q": "ما العبارة التي تتكرر آلاف المرات في نقوش قصور بني الأحمر بالأندلس؟",
-      "a": "ولا غالب إلا الله",
-      "alt": [
-        "لا غالب إلا الله"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Wala_ghaliba_illa_Allah",
-      "verified": true,
-      "qid": "arabart-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم النصب البغدادي ذي القبة الفيروزية المشطورة إلى نصفين؟",
-      "a": "نصب الشهيد",
-      "alt": [
-        "الشهيد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ismail_Fatah_Al_Turk",
-      "verified": true,
-      "qid": "arabart-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم المدرسة الفنية التي تصوّر الأحلام واللاوعي وتأثر بها فنانون عرب؟",
-      "a": "السريالية",
-      "alt": [
-        "السوريالية",
-        "الفن السريالي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سريالية",
-      "verified": true,
-      "qid": "arabart-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم لوحة فان جوخ التي سُرقت من متحف محمود خليل بالقاهرة؟",
-      "a": "زهرة الخشخاش",
-      "alt": [
-        "زهور الخشخاش"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Poppy_Flowers",
-      "verified": true,
-      "qid": "arabart-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم اللوحة الشهيرة التي تزيّن رواق الجامع الأموي الكبير بمشاهد أنهار وقصور؟",
-      "a": "لوحة البرادة",
-      "alt": [
-        "البرادة",
-        "مشهد البرادة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Umayyad_Mosque",
-      "verified": true,
-      "qid": "arabart-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "جماعات ومدارس",
-      "q": "ما المدرسة الفنية التي هجرت تصوير الواقع واكتفت بالألوان والأشكال وحدها؟",
-      "a": "التجريدية",
-      "alt": [
-        "التجريد",
-        "الفن التجريدي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فن_تجريدي",
-      "verified": true,
-      "qid": "arabart-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم الساحة الشهيرة في قلب مراكش التي تعجّ بالحواة والباعة كل مساء؟",
-      "a": "ساحة جامع الفنا",
-      "alt": [
-        "جامع الفنا",
-        "ساحة الفنا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساحة_جامع_الفنا",
-      "verified": true,
-      "qid": "arabart-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المدينة السورية الأثرية الملقبة بعروس الصحراء بأعمدتها وقوسها؟",
-      "a": "تدمر",
-      "alt": [
-        "بالميرا",
-        "مدينة تدمر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تدمر",
-      "verified": true,
-      "qid": "arabart-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم أشهر أبواب القاهرة الفاطمية الباقية وقد عُلّق عليه المحكوم بالإعدام؟",
-      "a": "باب زويلة",
-      "alt": [
-        "زويلة",
-        "بوابة المتولي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/باب_زويلة",
-      "verified": true,
-      "qid": "arabart-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الحي العتيق المسوَّر في مدينة الجزائر المدرج على قائمة التراث العالمي؟",
-      "a": "القصبة",
-      "alt": [
-        "قصبة الجزائر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قصبة_الجزائر",
-      "verified": true,
-      "qid": "arabart-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الزجاج المنفوخ يدويًا الذي تشتهر به مدينة الخليل الفلسطينية؟",
-      "a": "الزجاج الخليلي",
-      "alt": [
-        "زجاج الخليل",
-        "الزجاج اليدوي الخليلي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زجاج_الخليل",
-      "verified": true,
-      "qid": "arabart-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم فن النقش الملوّن الذي تزيّن به نساء عسير جدران بيوتهن؟",
+      "p": 600,
+      "q": "ما اسم الفن التقليدي الذي تزيّن به نساء عسير الجدران الداخلية للمنازل؟",
       "a": "القط العسيري",
-      "alt": [
-        "القط",
-        "نقش القط"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قط_عسيري",
+      "qid": "arabart-600-905",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://ich.unesco.org/en/RL/al-qatt-al-asiri-female-traditional-interior-wall-decoration-in-asir-saudi-arabia-01261",
       "verified": true,
-      "qid": "arabart-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الصندوق الخشبي المزخرف الذي تحفظ فيه العروس العُمانية مصاغها؟",
-      "a": "المندوس",
+      "difficultyTarget": 0.4,
       "alt": [
-        "مندوس",
-        "الصندوق المندوس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مندوس",
-      "verified": true,
-      "qid": "arabart-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم بيت الضيافة المقوّس الذي يبنيه أهل أهوار العراق من النبات؟",
-      "a": "المضيف",
-      "alt": [
-        "مضيف",
-        "مضيف القصب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مضيف_(مبنى)",
-      "verified": true,
-      "qid": "arabart-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "أي مدينة سورية اشتهرت قرونًا بصناعة الصابون من زيت الغار؟",
-      "a": "حلب",
-      "alt": [
-        "مدينة حلب"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صابون_حلب",
-      "verified": true,
-      "qid": "arabart-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم النسيج البدوي المخطط بالأحمر والأسود الذي تنسجه نساء البادية؟",
-      "a": "السدو",
-      "alt": [
-        "سدو",
-        "السدّو"
-      ],
-      "sourceUrl": "https://ich.unesco.org/en/RL/al-sadu-traditional-weaving-skills-in-the-united-arab-emirates-00517",
-      "verified": true,
-      "qid": "arabart-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "ما المادة اللامعة التي يُطعَّم بها الخشب الدمشقي التقليدي؟",
-      "a": "الصدف",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Inlay",
-      "verified": true,
-      "alt": [
-        "صدف",
-        "عرق اللؤلؤ"
-      ],
-      "qid": "arabart-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم شارع القاهرة الشهير بصناعة الخيام والأقمشة المزركشة؟",
-      "a": "الخيامية",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khayamiya",
-      "verified": true,
-      "alt": [
-        "شارع الخيامية"
-      ],
-      "qid": "arabart-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الحرفة التي تشكّل الطين ثم تحرقه في الفرن لصنع الأواني؟",
-      "a": "الفخار",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pottery",
-      "verified": true,
-      "alt": [
-        "الخزف",
-        "صناعة الفخار"
-      ],
-      "qid": "arabart-400-048"
+        "القَط العسيري",
+        "القط"
+      ]
     },
     {
       "p": 600,
+      "q": "من المعماري الذي صمم القبة المثقبة للوفر أبوظبي؟",
+      "a": "جان نوفيل",
+      "qid": "arabart-600-906",
+      "topic": "متاحف ومجموعات",
+      "sourceUrl": "https://www.louvreabudhabi.ae/about-us/architecture",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "Jean Nouvel"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما اسم منحوتة نحّات «نهضة مصر» التي تصوّر فلاحة تقاوم عاصفة رملية بعباءة متطايرة؟",
+      "a": "الخماسين",
+      "qid": "arabart-600-907",
+      "topic": "أعمال شهيرة",
+      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "عاصفة الخماسين",
+        "تمثال الخماسين"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما اسم مادة الكتابة المصنوعة من جلد الحيوان التي استُخدمت للمخطوطات قبل انتشار الورق؟",
+      "a": "الرق",
+      "qid": "arabart-600-908",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "alt": [
+        "الرقوق",
+        "البارشمان"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "من الفنانة اللبنانية التجريدية صاحبة «تكوين بالأصفر» التي استلهمت الرياضيات والعمارة؟",
+      "a": "سلوى روضة شقير",
+      "qid": "arabart-800-901",
       "topic": "رواد التشكيل",
-      "q": "من النحات المصري الذي أسّس ملتقى أسوان الدولي للنحت؟",
-      "a": "آدم حنين",
-      "alt": [
-        "ادم حنين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Adam_Henein",
+      "sourceUrl": "https://www.barjeelartfoundation.org/collection/composition-in-yellow-saloua-raouda-choucair/",
       "verified": true,
-      "qid": "arabart-600-001"
+      "difficultyTarget": 0.25,
+      "alt": [
+        "سلوى شقير"
+      ]
     },
     {
-      "p": 600,
+      "p": 800,
+      "q": "من الفنان العراقي الذي أسّس جماعة «البعد الواحد»؟",
+      "a": "شاكر حسن آل سعيد",
+      "qid": "arabart-800-902",
       "topic": "رواد التشكيل",
-      "q": "ما المهنة التي شغلها رسّام «بنات بحري» حتى سن الخمسين؟",
-      "a": "القضاء",
-      "alt": [
-        "قاضٍ",
-        "قاضي",
-        "القاضي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mahmoud_Sa%27id",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/iraq/dia-azzawi/",
       "verified": true,
-      "qid": "arabart-600-002"
+      "difficultyTarget": 0.25,
+      "alt": [
+        "شاكر حسن ال سعيد",
+        "شاكر حسن"
+      ]
     },
     {
-      "p": 600,
-      "topic": "رواد التشكيل",
-      "q": "من الفنان المصري صاحب لوحة «السد العالي» الذي رسم عوالم الزار والسحر الشعبي؟",
-      "a": "عبد الهادي الجزار",
-      "alt": [
-        "عبدالهادي الجزار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Abdel_Hadi_Al_Gazzar",
-      "verified": true,
-      "qid": "arabart-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "رواد التشكيل",
-      "q": "من الفنان السوداني الذي أقامت له تيت مودرن أول معرض استعادي لفنان أفريقي؟",
-      "a": "إبراهيم الصلحي",
-      "alt": [
-        "ابراهيم الصلحي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ibrahim_El-Salahi",
-      "verified": true,
-      "qid": "arabart-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "رواد التشكيل",
-      "q": "من الفنانة الجزائرية التي عُرفت باسمها المفرد ورسمت عوالم الحكايات الملوّنة؟",
-      "a": "باية",
-      "alt": [
-        "باية محي الدين",
-        "فاطمة حداد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Baya_(artist)",
-      "verified": true,
-      "qid": "arabart-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "رواد التشكيل",
-      "q": "من الفنان الجزائري الذي جدّد فن تصوير المخطوطات مع أخيه في الجزائر؟",
-      "a": "محمد راسم",
-      "alt": [
-        "محمد راسم الجزائري"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mohammed_Racim",
-      "verified": true,
-      "qid": "arabart-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "رواد التشكيل",
-      "q": "من النحات العراقي صاحب نصب الجندي المجهول في بغداد؟",
-      "a": "خالد الرحال",
-      "alt": [
-        "خالد الرحّال"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khaled_al-Rahal",
-      "verified": true,
-      "qid": "arabart-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "رواد التشكيل",
-      "q": "من الفنان السوري الذي درس في روما ومزج الأيقونة بوجوه الفلاحين؟",
-      "a": "فاتح المدرس",
-      "alt": [
-        "فاتح مدرس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fateh_Moudarres",
-      "verified": true,
-      "qid": "arabart-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "خط عربي",
-      "q": "ما اسم الشهادة التي يمنحها الخطاط لتلميذه إعلانًا بإتقانه؟",
-      "a": "الإجازة",
-      "alt": [
-        "الاجازة",
-        "إجازة الخط"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calligraphy",
-      "verified": true,
-      "qid": "arabart-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "خط عربي",
-      "q": "من خطاط بغداد الذي واصل تمرينه على الخط يوم اقتحام المغول للمدينة؟",
-      "a": "ياقوت المستعصمي",
-      "alt": [
-        "ياقوت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yaqut_al-Musta%27simi",
-      "verified": true,
-      "qid": "arabart-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "خط عربي",
-      "q": "ما الخط الفخم الذي كُتبت به المصاحف المملوكية الكبيرة؟",
-      "a": "المحقق",
-      "alt": [
-        "خط المحقق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Muhaqqaq",
-      "verified": true,
-      "qid": "arabart-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "خط عربي",
-      "q": "من الخطاط العراقي صاحب كتاب «قواعد الخط العربي»؟",
-      "a": "هاشم البغدادي",
-      "alt": [
-        "هاشم محمد البغدادي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hashem_Muhammad_al-Baghdadi",
-      "verified": true,
-      "qid": "arabart-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "خط عربي",
-      "q": "ما اسم الخط المدوّر الذي كُتبت به مصاحف بلاد المغرب والأندلس؟",
+      "p": 800,
+      "q": "ما الخط الذي تطوّر في الأندلس وشمال أفريقيا واستُخدم في المصاحف المحلية؟",
       "a": "الخط المغربي",
+      "qid": "arabart-800-903",
+      "topic": "خط عربي",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.25,
       "alt": [
         "المغربي",
-        "المبسوط"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Maghrebi_script",
-      "verified": true,
-      "qid": "arabart-600-013"
+        "خط مغربي"
+      ]
     },
     {
-      "p": 600,
-      "topic": "خط عربي",
-      "q": "من الخطاط البغدادي الذي هذّب الأقلام وكتب المصحف بخط مدوّر؟",
-      "a": "ابن البواب",
-      "alt": [
-        "علي بن هلال",
-        "ابن البوّاب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_al-Bawwab",
-      "verified": true,
-      "qid": "arabart-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "خط عربي",
-      "q": "ما اسم فن زخرفة صفحات المصحف وهوامشه بالذهب والألوان؟",
-      "a": "التذهيب",
-      "alt": [
-        "تذهيب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Illuminated_manuscript",
-      "verified": true,
-      "qid": "arabart-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم البيت الأثري الشهير في حي الدرب الأصفر بالقاهرة؟",
-      "a": "بيت السحيمي",
-      "alt": [
-        "السحيمي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bayt_al-Suhaymi",
-      "verified": true,
-      "qid": "arabart-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الصومعة التي لم تكتمل وتقف شاهدةً وسط الرباط؟",
-      "a": "صومعة حسان",
-      "alt": [
-        "حسان",
-        "برج حسان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hassan_Tower",
-      "verified": true,
-      "qid": "arabart-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم القصر الأموي الصحراوي في الأردن المزيّن بجداريات حمّامه؟",
+      "p": 800,
+      "q": "ما القصر الأموي الأردني المشهور بالجداريات داخل قاعة الاستقبال والحمّام؟",
       "a": "قصير عمرة",
-      "alt": [
-        "قصر عمرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Qusayr_%27Amra",
-      "verified": true,
-      "qid": "arabart-600-018"
-    },
-    {
-      "p": 600,
+      "qid": "arabart-800-904",
       "topic": "عمارة وزخرفة",
-      "q": "ما اسم الجامع التونسي الذي يُعدّ أقدم مساجد المغرب العربي؟",
-      "a": "جامع عقبة بن نافع",
-      "alt": [
-        "جامع القيروان",
-        "مسجد عقبة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Great_Mosque_of_Kairouan",
+      "sourceUrl": "https://whc.unesco.org/en/list/327/",
       "verified": true,
-      "qid": "arabart-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الحصن الطيني الذي يتوسط الرياض القديمة؟",
-      "a": "قصر المصمك",
+      "difficultyTarget": 0.25,
       "alt": [
-        "المصمك"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Masmak_Fort",
-      "verified": true,
-      "qid": "arabart-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الخزف المزجّج الملوّن الذي تُكسى به القباب في العمارة الإسلامية؟",
-      "a": "القاشاني",
-      "alt": [
-        "القيشاني",
-        "الكاشي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_pottery",
-      "verified": true,
-      "qid": "arabart-600-021"
-    },
-    {
-      "p": 600,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف القائم في باب الخلق بالقاهرة ويضم أكبر مجموعة للفن الإسلامي؟",
-      "a": "متحف الفن الإسلامي",
-      "alt": [
-        "متحف الفن الاسلامي بالقاهرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Museum_of_Islamic_Art,_Cairo",
-      "verified": true,
-      "qid": "arabart-600-022"
-    },
-    {
-      "p": 600,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف العُماني الذي كان بيتًا لأسرة الزبير في مسقط؟",
-      "a": "بيت الزبير",
-      "alt": [
-        "متحف بيت الزبير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bait_Al_Zubair",
-      "verified": true,
-      "qid": "arabart-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "متاحف ومعالم",
-      "q": "من المعماري الفرنسي الذي صمم القبة المثقّبة للوفر أبوظبي؟",
-      "a": "جان نوفيل",
-      "alt": [
-        "جون نوفيل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
-      "verified": true,
-      "qid": "arabart-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المعهد الباريسي الذي صممه المعماري نفسه بواجهة عدسات تتسع وتضيق؟",
-      "a": "معهد العالم العربي",
-      "alt": [
-        "معهد العالم العربي بباريس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Arab_World_Institute",
-      "verified": true,
-      "qid": "arabart-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "متاحف ومعالم",
-      "q": "في أي بلدة فلسطينية يقف المتحف الفلسطيني المطل على الكروم؟",
-      "a": "بيرزيت",
-      "alt": [
-        "بير زيت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Palestinian_Museum",
-      "verified": true,
-      "qid": "arabart-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم المخطوط الأدبي الذي زيّنه يحيى الواسطي بمنمنماته الشهيرة؟",
-      "a": "مقامات الحريري",
-      "alt": [
-        "المقامات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
-      "verified": true,
-      "qid": "arabart-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم كتاب الحكايات على ألسنة الحيوانات الذي زُيّن بمنمنمات إسلامية؟",
-      "a": "كليلة ودمنة",
-      "alt": [
-        "كليلة و دمنة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kalila_wa-Dimna",
-      "verified": true,
-      "qid": "arabart-600-028"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم فن تطعيم المعادن بخيوط الذهب والفضة الذي برعت فيه الموصل؟",
-      "a": "التكفيت",
-      "alt": [
-        "تكفيت",
-        "فن التكفيت"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تكفيت",
-      "verified": true,
-      "qid": "arabart-600-029"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الخزف الإسلامي الذي يلمع سطحه كالذهب بعد حرقه مرتين؟",
-      "a": "البريق المعدني",
-      "alt": [
-        "الخزف ذو البريق المعدني",
-        "خزف اللستر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خزف_إسلامي",
-      "verified": true,
-      "qid": "arabart-600-030"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "ما الاسم الشعبي للغرزة المتقاطعة التي يقوم عليها معظم التطريز الفلسطيني؟",
-      "a": "الفلاحي",
-      "alt": [
-        "غرزة الفلاحي",
-        "التصليبة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تطريز_فلسطيني",
-      "verified": true,
-      "qid": "arabart-600-031"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "من أي خشب تُنحت التماثيل والتذكارات التي تشتهر بها ورش بيت لحم؟",
-      "a": "خشب الزيتون",
-      "alt": [
-        "الزيتون",
-        "شجر الزيتون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خشب_الزيتون",
-      "verified": true,
-      "qid": "arabart-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الفولاذ الشامي الذي عُرفت به السيوف بموجاته المائية على النصل؟",
-      "a": "الفولاذ الدمشقي",
-      "alt": [
-        "السيف الدمشقي",
-        "الصلب الدمشقي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فولاذ_دمشقي",
-      "verified": true,
-      "qid": "arabart-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم أقدم نقش معروف بالخط العربي وقد عُثر عليه في البادية السورية؟",
-      "a": "نقش النمارة",
-      "alt": [
-        "النمارة",
-        "نقش امرئ القيس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نقش_النمارة",
-      "verified": true,
-      "qid": "arabart-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال شهيرة",
-      "q": "على أي بناء إسلامي نُقشت أقدم كتابات قرآنية مؤرّخة باقية إلى اليوم؟",
-      "a": "قبة الصخرة",
-      "alt": [
-        "مسجد قبة الصخرة",
-        "قبة الصخرة المشرفة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قبة_الصخرة",
-      "verified": true,
-      "qid": "arabart-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم التمثال الذي نحته صاحب «نهضة مصر» للزعيم المصري الراحل؟",
-      "a": "تمثال سعد زغلول",
-      "alt": [
-        "سعد زغلول",
-        "تمثال سعد باشا"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تمثال_سعد_زغلول",
-      "verified": true,
-      "qid": "arabart-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "أعمال شهيرة",
-      "q": "في أي عاصمة آسيوية يُحفظ أشهر مصحف يُنسب إلى الخليفة عثمان بن عفان؟",
-      "a": "طشقند",
-      "alt": [
-        "طشكند",
-        "أوزبكستان"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مصحف_عثمان",
-      "verified": true,
-      "qid": "arabart-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الفناء المكشوف الذي تحيط به أروقة المسجد الجامع؟",
-      "a": "الصحن",
-      "alt": [
-        "صحن المسجد",
-        "صحن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صحن_(عمارة)",
-      "verified": true,
-      "qid": "arabart-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم المدينة المغربية التي تُطلى جدران أزقتها كلها باللون النيلي؟",
-      "a": "شفشاون",
-      "alt": [
-        "شاون",
-        "مدينة شفشاون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شفشاون",
-      "verified": true,
-      "qid": "arabart-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم المدرسة الفنية الأوروبية التي صوّرت الشرق كما تخيّله رسّاموها؟",
-      "a": "الاستشراق",
-      "alt": [
-        "المدرسة الاستشراقية",
-        "الفن الاستشراقي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/استشراق",
-      "verified": true,
-      "qid": "arabart-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الحركة الفنية الجزائرية التي دعت سنة ١٩٦٧ لإحياء الرموز الأمازيغية؟",
-      "a": "جماعة أوشام",
-      "alt": [
-        "أوشام",
-        "حركة أوشام"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/أوشام_(حركة_فنية)",
-      "verified": true,
-      "qid": "arabart-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الخشب الهندي الثمين الذي بُنيت منه سفن الخليج وأبواب بيوته؟",
-      "a": "الساج",
-      "alt": [
-        "خشب الساج",
-        "التيك"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ساج",
-      "verified": true,
-      "qid": "arabart-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم السجاد اليدوي المسطح الذي يُنسج بلا وبر؟",
-      "a": "الكليم",
-      "alt": [
-        "كليم",
-        "السجاد المسطح"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kilim",
-      "verified": true,
-      "qid": "arabart-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الحرفة الإماراتية التي تُطرَّز بها الأثواب بخيوط فضية مجدولة؟",
-      "a": "التلّي",
-      "alt": [
-        "التلي",
-        "تلي بتلي"
-      ],
-      "sourceUrl": "https://ich.unesco.org/en/RL/altalli-traditional-embroidery-skills-in-the-united-arab-emirates-01682",
-      "verified": true,
-      "qid": "arabart-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم النوافذ الزجاجية الملوّنة المركّبة في الجص في البيوت الشامية؟",
-      "a": "القمرية",
-      "alt": [
-        "القمريات",
-        "الشمسية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Qamariyya",
-      "verified": true,
-      "qid": "arabart-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الجماعة الفنية العراقية التي دعت إلى مزج التراث الرافديني بالفن الحديث؟",
-      "a": "جماعة بغداد للفن الحديث",
-      "alt": [
-        "بغداد للفن الحديث"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Baghdad_Modern_Art_Group",
-      "verified": true,
-      "qid": "arabart-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الجماعة الفنية المصرية التي أصدرت بيان «يحيا الفن المنحط»؟",
-      "a": "جماعة الفن والحرية",
-      "alt": [
-        "الفن والحرية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Art_and_Liberty_Group",
-      "verified": true,
-      "qid": "arabart-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الجماعة الفنية العراقية التي جعلت الحرف العربي منطلق فلسفتها في اللوحة؟",
-      "a": "جماعة البعد الواحد",
-      "alt": [
-        "البعد الواحد"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/One_Dimension_Group",
-      "verified": true,
-      "qid": "arabart-600-048"
+        "قصر عمرة",
+        "قصير عمره"
+      ]
     },
     {
       "p": 800,
-      "topic": "رواد التشكيل",
-      "q": "من النحات العراقي البصري الذي صمم النصب ذا القبة الفيروزية المشطورة؟",
-      "a": "إسماعيل فتاح الترك",
-      "alt": [
-        "إسماعيل فتاح",
-        "اسماعيل فتاح"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ismail_Fatah_Al_Turk",
+      "q": "ما البلدة التونسية التي أدرجت اليونسكو مهارات نسائها في صنع الأواني الطينية المزيّنة؟",
+      "a": "سجنان",
+      "qid": "arabart-800-905",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://www.unesco.org/archives/multimedia/document-4753",
       "verified": true,
-      "qid": "arabart-800-001"
+      "difficultyTarget": 0.25,
+      "alt": [
+        "سجنان التونسية",
+        "Sejnane"
+      ]
     },
     {
       "p": 800,
-      "topic": "رواد التشكيل",
-      "q": "من الفنان العراقي الذي هجر التصوير الواقعي إلى التأمل الصوفي في الجدران المتآكلة؟",
-      "a": "شاكر حسن آل سعيد",
-      "alt": [
-        "شاكر حسن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Shakir_Hassan_Al_Said",
-      "verified": true,
-      "qid": "arabart-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "رواد التشكيل",
-      "q": "من الفنانة العراقية التي تُعدّ أول من أدخل الحرف العربي في اللوحة الحديثة؟",
-      "a": "مديحة عمر",
-      "alt": [
-        "مديحة عمر العراقية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Madiha_Omar",
-      "verified": true,
-      "qid": "arabart-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "رواد التشكيل",
-      "q": "من أول امرأة أقامت معرضًا فرديًا للرسم في السعودية؟",
-      "a": "صفية بن زقر",
-      "alt": [
-        "صفية بنت زقر",
-        "بن زقر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Safeya_Binzagr",
-      "verified": true,
-      "qid": "arabart-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "رواد التشكيل",
-      "q": "من الرسّام المغربي الرائد الذي مات في باريس وتُعدّ لوحاته فاتحة الحداثة المغربية؟",
-      "a": "الجيلالي الغرباوي",
-      "alt": [
-        "جيلالي الغرباوي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jilali_Gharbaoui",
-      "verified": true,
-      "qid": "arabart-800-005"
-    },
-    {
-      "p": 800,
-      "topic": "رواد التشكيل",
-      "q": "من الفنانة المصرية التي اشتهرت بلوحاتها عن النوبة وأهلها والنيل؟",
-      "a": "تحية حليم",
-      "alt": [
-        "تحيه حليم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tahia_Halim",
-      "verified": true,
-      "qid": "arabart-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "رواد التشكيل",
-      "q": "من الشقيقان السكندريان اللذان تقاسما مرسمًا واحدًا ورسما الباليه والسيرك؟",
-      "a": "سيف وأدهم وانلي",
-      "alt": [
-        "الوانلي",
-        "سيف وأدهم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Seif_Wanly",
-      "verified": true,
-      "qid": "arabart-800-007"
-    },
-    {
-      "p": 800,
-      "topic": "رواد التشكيل",
-      "q": "من الفنان اللبناني الأرمني الذي رسم جموع البشر بأجساد ممدودة كالأيقونات؟",
-      "a": "بول غيراغوسيان",
-      "alt": [
-        "بول غيراغوسيان اللبناني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Paul_Guiragossian",
-      "verified": true,
-      "qid": "arabart-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "خط عربي",
-      "q": "من الخطاط العثماني الملقب بـ«قبلة الكُتّاب» ومؤسس المدرسة العثمانية في الخط؟",
-      "a": "الشيخ حمد الله",
-      "alt": [
-        "حمد الله الأماسي",
-        "الشيخ حمدالله"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/%C5%9Eeyh_Hamdullah",
-      "verified": true,
-      "qid": "arabart-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "خط عربي",
-      "q": "من الخطاط العثماني الذي أعاد تصميم توقيع السلاطين وارتقى بالخط الجليّ؟",
-      "a": "مصطفى راقم",
-      "alt": [
-        "مصطفى راقم أفندي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mustafa_R%C3%A2k%C4%B1m",
-      "verified": true,
-      "qid": "arabart-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "خط عربي",
-      "q": "من الخطاط التركي الذي يُعدّ آخر كبار خطاطي القرن العشرين؟",
-      "a": "حامد الآمدي",
-      "alt": [
-        "حامد آيتاش",
-        "حامد الامدي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/H%C3%A2mid_Ayta%C3%A7",
-      "verified": true,
-      "qid": "arabart-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "خط عربي",
-      "q": "ما اسم أضخم الأقلام العربية الذي كُتبت به مراسيم الخلافة العباسية؟",
-      "a": "الطومار",
-      "alt": [
-        "قلم الطومار",
-        "طومار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Islamic_calligraphy",
-      "verified": true,
-      "qid": "arabart-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "خط عربي",
-      "q": "ما اسم اللوح الصلب الذي يُسنَد إليه القلم لحظة قطّ سنّه؟",
-      "a": "المقطّ",
-      "alt": [
-        "المقط",
-        "مقط"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Qalam",
-      "verified": true,
-      "qid": "arabart-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "خط عربي",
-      "q": "ما اسم الخيوط الحريرية التي تُوضَع في محبرة الخطاط لتضبط مدّ القلم؟",
-      "a": "الليقة",
-      "alt": [
-        "ليقة",
-        "اللّيقة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Inkwell",
-      "verified": true,
-      "qid": "arabart-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الجامعة العباسية الباقية بإيوانها على ضفة دجلة ببغداد؟",
-      "a": "المدرسة المستنصرية",
-      "alt": [
-        "المستنصرية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Al-Mustansiriya_Madrasah",
-      "verified": true,
-      "qid": "arabart-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم الخان الدمشقي العثماني ذي القباب في سوق البزورية؟",
-      "a": "خان أسعد باشا",
-      "alt": [
-        "خان اسعد باشا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khan_As%27ad_Pasha",
-      "verified": true,
-      "qid": "arabart-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم قصر مراكش الذي يعني اسمه «البهيّة» وتزينه سقوف خشبية ملوّنة؟",
-      "a": "قصر الباهية",
-      "alt": [
-        "الباهية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bahia_Palace",
-      "verified": true,
-      "qid": "arabart-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم القصر الأميري اللبناني في الشوف بزخارفه وحماماته؟",
-      "a": "قصر بيت الدين",
-      "alt": [
-        "بيت الدين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Beiteddine_Palace",
-      "verified": true,
-      "qid": "arabart-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم أشهر سبيل وكُتّاب أثري في القاهرة الفاطمية؟",
-      "a": "سبيل عبد الرحمن كتخدا",
-      "alt": [
-        "سبيل كتخدا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sabil-Kuttab_of_Abd_al-Rahman_Katkhuda",
-      "verified": true,
-      "qid": "arabart-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم القلعة العُمانية ذات البرج الدائري الضخم في وسط السلطنة؟",
-      "a": "قلعة نزوى",
-      "alt": [
-        "نزوى",
-        "حصن نزوى"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nizwa_Fort",
-      "verified": true,
-      "qid": "arabart-800-020"
-    },
-    {
-      "p": 800,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم منارة جامع إشبيلية الموحدية التي صارت برج أجراس؟",
-      "a": "الخيرالدا",
-      "alt": [
-        "الجيرالدا",
-        "خيرالدا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Giralda",
-      "verified": true,
-      "qid": "arabart-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف القطري المستوحى تصميمه من وردة الصحراء؟",
+      "q": "ما المتحف الذي استُلهمت كتل مبناه المتشابكة من بلورات وردة الصحراء؟",
       "a": "متحف قطر الوطني",
+      "qid": "arabart-800-906",
+      "topic": "متاحف ومجموعات",
+      "sourceUrl": "https://qm.org.qa/en/stories/all-stories/behind-the-scenes-the-making-of-nmoq/",
+      "verified": true,
+      "difficultyTarget": 0.25,
       "alt": [
         "المتحف الوطني القطري"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/National_Museum_of_Qatar",
-      "verified": true,
-      "qid": "arabart-800-022"
+      ]
     },
     {
       "p": 800,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم متحف الشارقة المخصص لفن الكتابة العربية؟",
-      "a": "متحف الشارقة للخط",
-      "alt": [
-        "متحف الخط بالشارقة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sharjah_Calligraphy_Museum",
-      "verified": true,
-      "qid": "arabart-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم متحف الفن الحديث المصري القائم بأرض الأوبرا في الجزيرة؟",
-      "a": "متحف الفن المصري الحديث",
-      "alt": [
-        "متحف الفن الحديث بالقاهرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Museum_of_Modern_Egyptian_Art",
-      "verified": true,
-      "qid": "arabart-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف المغربي في الرباط المخصص للفن الحديث والمعاصر؟",
-      "a": "متحف محمد السادس",
-      "alt": [
-        "متحف محمد السادس للفن الحديث"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mohammed_VI_Museum_of_Modern_and_Contemporary_Art",
-      "verified": true,
-      "qid": "arabart-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المؤسسة التي تنظّم أكبر معرض دوري للفنون في الشارقة؟",
-      "a": "مؤسسة الشارقة للفنون",
-      "alt": [
-        "الشارقة للفنون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sharjah_Biennial",
-      "verified": true,
-      "qid": "arabart-800-026"
-    },
-    {
-      "p": 800,
+      "q": "من زيّن نسخة «مقامات الحريري» البغدادية المحفوظة في المكتبة الوطنية الفرنسية برسومه؟",
+      "a": "يحيى الواسطي",
+      "qid": "arabart-800-907",
       "topic": "أعمال شهيرة",
-      "q": "كم قطعة برونزية يضم النصب الذي يروي تاريخ العراق في ساحته الشهيرة؟",
-      "a": "أربع عشرة",
-      "alt": [
-        "14",
-        "أربعة عشر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نصب_الحرية_(العراق)",
+      "sourceUrl": "https://essentiels.bnf.fr/fr/image/360c5338-9868-4a62-aeb8-12cef666a1e0-dans-une-mosquee",
       "verified": true,
-      "qid": "arabart-800-027"
+      "difficultyTarget": 0.25,
+      "alt": [
+        "يحيى بن محمود الواسطي",
+        "الواسطي"
+      ]
     },
     {
       "p": 800,
-      "topic": "أعمال شهيرة",
-      "q": "في أي مكتبة عالمية يُحفظ أشهر مخطوط مصوَّر بريشة يحيى الواسطي؟",
-      "a": "المكتبة الوطنية الفرنسية",
-      "alt": [
-        "مكتبة باريس الوطنية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yahya_ibn_Mahmud_al-Wasiti",
+      "q": "ما تقنية زخرفة الخزف التي تستخدم مركبات المعادن لإعطاء السطح لمعانًا معدنيًا؟",
+      "a": "البريق المعدني",
+      "qid": "arabart-800-908",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://collections.agakhanmuseum.org/collection/artifact/lustre-painted-ewer-akm763",
       "verified": true,
-      "qid": "arabart-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم مجموعة الحكايات التي نُحت أبطالها على شارع أبي نواس ببغداد؟",
-      "a": "ألف ليلة وليلة",
+      "difficultyTarget": 0.25,
       "alt": [
-        "الليالي العربية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mohammed_Ghani_Hikmat",
-      "verified": true,
-      "qid": "arabart-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "أعمال شهيرة",
-      "q": "من الشاعر الوزير الغرناطي الذي نُقشت قصيدته حول حوض أشهر نافورة أندلسية؟",
-      "a": "ابن زمرك",
-      "alt": [
-        "ابن زمرك الأندلسي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Court_of_the_Lions",
-      "verified": true,
-      "qid": "arabart-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "خط عربي",
-      "q": "ما اسم الفرع المزخرف من خط الدواوين العثمانية الذي تُملأ فراغاته بالحليات؟",
-      "a": "الديواني الجلي",
-      "alt": [
-        "الجلي الديواني",
-        "خط الديواني الجلي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_ديواني",
-      "verified": true,
-      "qid": "arabart-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "خط عربي",
-      "q": "من الخطاط العثماني الذي كتب الألواح الدائرية العملاقة المعلّقة في آيا صوفيا؟",
-      "a": "قاضي عسكر مصطفى عزت",
-      "alt": [
-        "مصطفى عزت",
-        "مصطفى عزت أفندي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قاضي_عسكر_مصطفى_عزت",
-      "verified": true,
-      "qid": "arabart-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف البيروتي الذي كان قصرًا لأسرة لبنانية عريقة وصار للفن الحديث؟",
-      "a": "متحف سرسق",
-      "alt": [
-        "سرسق",
-        "متحف نقولا سرسق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/متحف_نقولا_إبراهيم_سرسق",
-      "verified": true,
-      "qid": "arabart-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم المسجد المملوكي الذي يُعدّ أضخم مساجد القاهرة بإيوانه الهائل؟",
-      "a": "مسجد السلطان حسن",
-      "alt": [
-        "السلطان حسن",
-        "مدرسة السلطان حسن"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مسجد_السلطان_حسن",
-      "verified": true,
-      "qid": "arabart-800-034"
-    },
-    {
-      "p": 800,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الجماعة الفنية المغربية التي عرضت لوحاتها في ساحة عامة بمراكش سنة ١٩٦٩؟",
-      "a": "مجموعة الدار البيضاء",
-      "alt": [
-        "مدرسة الدار البيضاء",
-        "جماعة الدار البيضاء"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مدرسة_الدار_البيضاء_للفنون_الجميلة",
-      "verified": true,
-      "qid": "arabart-800-035"
-    },
-    {
-      "p": 800,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم مدرسة التصوير الإسلامي التي ازدهرت في مصر والشام أيام المماليك؟",
-      "a": "المدرسة المملوكية",
-      "alt": [
-        "مدرسة المماليك",
-        "التصوير المملوكي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/فن_إسلامي",
-      "verified": true,
-      "qid": "arabart-800-036"
-    },
-    {
-      "p": 800,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم قبيلة الأطلس المتوسط التي يُنسب إليها أشهر سجاد مغربي أبيض؟",
-      "a": "بني ورين",
-      "alt": [
-        "بني أوراين",
-        "بني وراين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زربية_مغربية",
-      "verified": true,
-      "qid": "arabart-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم سوق بغداد العريق الذي يُسمع فيه دقّ المعدن على الأواني منذ قرون؟",
-      "a": "سوق الصفافير",
-      "alt": [
-        "الصفافير",
-        "سوق الصفارين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/سوق_الصفافير_(بغداد)",
-      "verified": true,
-      "qid": "arabart-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم العطر الثمين الذي يُقطَّر من ورد مدينة الطائف السعودية؟",
-      "a": "دهن الورد",
-      "alt": [
-        "ورد الطائف",
-        "عطر الورد الطائفي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ورد_الطائف",
-      "verified": true,
-      "qid": "arabart-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الحرفة التي يُزخرف فيها الجلد ويُذهَّب ليكسو أغلفة المصاحف؟",
-      "a": "التجليد",
-      "alt": [
-        "تجليد الكتب",
-        "فن التجليد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/تجليد_الكتب",
-      "verified": true,
-      "qid": "arabart-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الخنجر الذي يتصدر شعار سلطنة عُمان بين سيفين متقاطعين؟",
-      "a": "الخنجر العماني",
-      "alt": [
-        "الخنجر",
-        "خنجر عماني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khanjar",
-      "verified": true,
-      "qid": "arabart-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم المدينة المغربية الشهيرة بأحواض دباغة الجلود الملوّنة؟",
-      "a": "فاس",
-      "alt": [
-        "مدينة فاس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Chouara_Tannery",
-      "verified": true,
-      "qid": "arabart-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم النسيج الحريري الدمشقي المزركش بخيوط الذهب والفضة؟",
-      "a": "البروكار",
-      "alt": [
-        "بروكار",
-        "الديباج"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Brocade",
-      "verified": true,
-      "qid": "arabart-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الحرفة التي تُبنى بها السفن الشراعية الخشبية في موانئ الخليج؟",
-      "a": "القلافة",
-      "alt": [
-        "قلافة",
-        "صناعة السفن الخشبية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/قلافة",
-      "verified": true,
-      "qid": "arabart-800-044"
-    },
-    {
-      "p": 800,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الجماعة الفنية المصرية التي أسّسها حسين يوسف أمين ودعت إلى الفن الشعبي؟",
-      "a": "جماعة الفن المعاصر",
-      "alt": [
-        "الفن المعاصر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Abdel_Hadi_Al_Gazzar",
-      "verified": true,
-      "qid": "arabart-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم أول جماعة فنية عراقية حديثة أسّسها رسّام الخيول العراقي؟",
-      "a": "جماعة الرواد",
-      "alt": [
-        "الرواد",
-        "جماعة الأوائل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Faeq_Hassan",
-      "verified": true,
-      "qid": "arabart-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم المدرسة الفنية السودانية التي مزجت الحرف العربي بالأشكال الأفريقية؟",
-      "a": "مدرسة الخرطوم",
-      "alt": [
-        "الخرطوم للفن الحديث"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khartoum_School",
-      "verified": true,
-      "qid": "arabart-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم مدرسة التصوير الإسلامي التي بلغت ذروتها بمنمنمات يحيى الواسطي؟",
-      "a": "مدرسة بغداد",
-      "alt": [
-        "مدرسة بغداد للتصوير"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Baghdad_School",
-      "verified": true,
-      "qid": "arabart-800-048"
+        "الخزف ذو البريق المعدني",
+        "التلوين بالبريق المعدني"
+      ]
     },
     {
       "p": 1000,
-      "topic": "رواد التشكيل",
-      "q": "في أي عاصمة وُلد النحات العراقي صاحب النصب البرونزي بساحة التحرير؟",
-      "a": "أنقرة",
-      "alt": [
-        "انقرة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jawad_Saleem",
-      "verified": true,
-      "qid": "arabart-1000-001"
-    },
-    {
-      "p": 1000,
-      "topic": "رواد التشكيل",
-      "q": "من الملك العراقي الذي وعد صبيًا رآه يرسم حصانًا ببعثة فنية فمات قبل أن يفي؟",
-      "a": "فيصل الأول",
-      "alt": [
-        "الملك فيصل الأول"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Faeq_Hassan",
-      "verified": true,
-      "qid": "arabart-1000-002"
-    },
-    {
-      "p": 1000,
-      "topic": "رواد التشكيل",
-      "q": "من الشاعرة الرسامة اللبنانية التي رسمت لوحاتها على دفاتر مطوية كالأكورديون؟",
-      "a": "إتيل عدنان",
-      "alt": [
-        "ايتيل عدنان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Etel_Adnan",
-      "verified": true,
-      "qid": "arabart-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "رواد التشكيل",
-      "q": "ما الكلية التي تركها رسّام «السد العالي» المصري ليلتحق بالفنون الجميلة؟",
-      "a": "الطب",
-      "alt": [
-        "كلية الطب",
-        "الطب البشري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عبد_الهادي_الجزار",
-      "verified": true,
-      "qid": "arabart-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "خط عربي",
-      "q": "من الخطاط السوري الذي كتب مصحف المدينة النبوية الذي يُطبع بالملايين؟",
-      "a": "عثمان طه",
-      "alt": [
-        "عثمان عبده طه",
-        "الشيخ عثمان طه"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/عثمان_طه",
-      "verified": true,
-      "qid": "arabart-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "رواد التشكيل",
-      "q": "من الفنان المغربي الذي حوّل الرموز والوشوم الأمازيغية إلى عناصر في لوحاته؟",
+      "q": "من الفنان المغربي صاحب لوحة «أليا» المحفوظة ضمن مجموعة بارجيل؟",
       "a": "أحمد الشرقاوي",
-      "alt": [
-        "احمد الشرقاوي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ahmed_Cherkaoui",
-      "verified": true,
-      "qid": "arabart-1000-006"
-    },
-    {
-      "p": 1000,
+      "qid": "arabart-1000-901",
       "topic": "رواد التشكيل",
-      "q": "من الفنانة الفلسطينية زوجة رسّام «إلى أين؟» التي شاركته توثيق مأساة شعبها؟",
-      "a": "تمام الأكحل",
-      "alt": [
-        "تمام الاكحل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tamam_Al-Akhal",
+      "sourceUrl": "https://www.barjeelartfoundation.org/collection/ahmed-cherkaoui-alea/",
       "verified": true,
-      "qid": "arabart-1000-007"
+      "difficultyTarget": 0.15,
+      "alt": [
+        "احمد الشرقاوي",
+        "Ahmed Cherkaoui"
+      ]
     },
     {
       "p": 1000,
+      "q": "من الشاعرة والرسامة اللبنانية التي صنعت دفاتر فنية مطوية كالأكورديون تُسمى «ليبوريلو»؟",
+      "a": "إتيل عدنان",
+      "qid": "arabart-1000-902",
       "topic": "رواد التشكيل",
-      "q": "من الفنان المكي الذي يُعدّ رائد الحركة التشكيلية في السعودية؟",
-      "a": "عبد الحليم رضوي",
-      "alt": [
-        "عبدالحليم رضوي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Abdulhalim_Radwi",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/lebanon/etel-adnan/",
       "verified": true,
-      "qid": "arabart-1000-008"
+      "difficultyTarget": 0.15,
+      "alt": [
+        "ايتيل عدنان",
+        "إيتيل عدنان",
+        "Etel Adnan"
+      ]
     },
     {
       "p": 1000,
+      "q": "ما اسم الخط العربي بالغ الدقة الذي استُخدم لكتابة الحكم داخل أمواج لوحة «السفينة الخطية»؟",
+      "a": "خط الغبار",
+      "qid": "arabart-1000-903",
       "topic": "خط عربي",
-      "q": "من الخطاطة البغدادية التي جمعت بين إتقان الخط ورواية الحديث في العصر العباسي؟",
-      "a": "شهدة بنت الإبري",
-      "alt": [
-        "شهدة الكاتبة",
-        "شهدة بنت الابري"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Yaqut_al-Musta%27simi",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
       "verified": true,
-      "qid": "arabart-1000-009"
+      "difficultyTarget": 0.15,
+      "alt": [
+        "الغبار",
+        "الغُباري",
+        "الغباري"
+      ]
     },
     {
       "p": 1000,
+      "q": "ما اسم نوع الخط الزاوي الذي تنبت من حروفه زخارف نباتية؟",
+      "a": "الكوفي المورق",
+      "qid": "arabart-1000-904",
       "topic": "خط عربي",
-      "q": "ما اسم مجموعة الخطوط الكلاسيكية التي قنّنها خطاطو بغداد وعددها ستة؟",
-      "a": "الأقلام الستة",
-      "alt": [
-        "الخطوط الستة",
-        "الأقلام الست"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_Muqla",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
       "verified": true,
-      "qid": "arabart-1000-010"
+      "difficultyTarget": 0.15,
+      "alt": [
+        "الكوفي المزهر",
+        "الخط الكوفي المورق"
+      ]
     },
     {
       "p": 1000,
-      "topic": "خط عربي",
-      "q": "ما اسم الطراز الخطي القديم الذي تنبت من حروفه القائمة وريقات نباتية؟",
-      "a": "الكوفي المورّق",
-      "alt": [
-        "الكوفي المورق",
-        "المورق",
-        "الكوفي المشجر"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_كوفي",
-      "verified": true,
-      "qid": "arabart-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "خط عربي",
-      "q": "ما اسم القاعدة التي ضبطت نسب الحروف بالألف والدائرة في بغداد؟",
-      "a": "الخط المنسوب",
-      "alt": [
-        "المنسوب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_Muqla",
-      "verified": true,
-      "qid": "arabart-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "خط عربي",
-      "q": "ما اسم معالجة الورق بالنشا وزلال البيض ليصير صقيلًا يتقبّل القلم؟",
-      "a": "التقهير",
-      "alt": [
-        "تقهير الورق",
-        "قهر الورق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/ورق_(مادة)",
-      "verified": true,
-      "qid": "arabart-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "خط عربي",
-      "q": "ما اسم المكتبة الإيرلندية التي تحفظ أقدم مصحف كامل بخط مدوّر موقّع؟",
-      "a": "مكتبة تشستر بيتي",
-      "alt": [
-        "تشستر بيتي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ibn_al-Bawwab",
-      "verified": true,
-      "qid": "arabart-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم أقدم جامعة ما زالت عاملة في العالم وتقوم في المغرب؟",
-      "a": "جامع القرويين",
-      "alt": [
-        "القرويين",
-        "جامعة القرويين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin",
-      "verified": true,
-      "qid": "arabart-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم المدينة اليمنية الملقبة بـ«مانهاتن الصحراء» لأبراجها الطينية؟",
-      "a": "شبام",
-      "alt": [
-        "شبام حضرموت"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Shibam",
-      "verified": true,
-      "qid": "arabart-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم المدينة الأثرية التي بناها عبد الرحمن الناصر قرب قرطبة؟",
-      "a": "مدينة الزهراء",
-      "alt": [
-        "الزهراء",
-        "مدينة الزهرا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Medina_Azahara",
-      "verified": true,
-      "qid": "arabart-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم القلعة السورية التي عدّها لورنس أجمل قلاع العالم؟",
-      "a": "قلعة الحصن",
-      "alt": [
-        "حصن الأكراد",
-        "كراك دي شوفالييه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Krak_des_Chevaliers",
-      "verified": true,
-      "qid": "arabart-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم المدينة الجزائرية التي تتوسط قصور وادي ميزاب الخمسة في الصحراء؟",
-      "a": "غرداية",
-      "alt": [
-        "قرداية",
-        "مدينة غرداية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/غرداية",
-      "verified": true,
-      "qid": "arabart-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "ما اسم القصر الصحراوي الأموي الذي نُقلت واجهته المنقوشة إلى برلين؟",
+      "q": "ما القصر الصحراوي الأردني الذي نُقلت واجهته الحجرية المزخرفة إلى برلين؟",
       "a": "قصر المشتى",
+      "qid": "arabart-1000-905",
+      "topic": "عمارة وزخرفة",
+      "sourceUrl": "https://www.smb.museum/en/exhibitions/detail/mshatta-in-focus/",
+      "verified": true,
+      "difficultyTarget": 0.15,
       "alt": [
         "المشتى",
-        "قصر المشتّى"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mshatta_Facade",
-      "verified": true,
-      "qid": "arabart-1000-020"
+        "المشتى الأموي"
+      ]
     },
     {
       "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "كم يبلغ ارتفاع برج القاهرة المستوحى شكله من زهرة اللوتس؟",
-      "a": "187 مترًا",
+      "q": "ما اسم الحامل ذي الوسادة الذي تستخدمه الحرفية الإماراتية في نسج التلي؟",
+      "a": "الكاجوجة",
+      "qid": "arabart-1000-906",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://artsandculture.google.com/story/QQVxOxFtPMyAsw",
+      "verified": true,
+      "difficultyTarget": 0.15,
       "alt": [
-        "187 متر",
-        "مئة وسبعة وثمانون مترًا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Cairo_Tower",
-      "verified": true,
-      "qid": "arabart-1000-021"
+        "كاجوجة",
+        "الكاجوجا",
+        "كاجوجا"
+      ]
     },
     {
       "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "ما الميزة الهندسية النادرة في سقف أكبر مساجد المغرب على الأطلسي؟",
-      "a": "سقف متحرك",
+      "q": "ما المكتبة الإيرلندية التي تحفظ مصحف ابن البواب الموقّع؟",
+      "a": "مكتبة تشستر بيتي",
+      "qid": "arabart-1000-907",
+      "topic": "متاحف ومجموعات",
+      "sourceUrl": "https://islamicart.museumwnf.org/database_item.php?id=object%3BEPM%3Bir%3BMus21%3B5%3Ben",
+      "verified": true,
+      "difficultyTarget": 0.15,
       "alt": [
-        "سقف قابل للفتح",
-        "سقف منزلق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Hassan_II_Mosque",
-      "verified": true,
-      "qid": "arabart-1000-022"
+        "تشستر بيتي",
+        "مكتبة شستر بيتي",
+        "Chester Beatty"
+      ]
     },
     {
       "p": 1000,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المؤسسة الفنية في الشارقة التي تضم مجموعة كبرى للفن العربي الحديث؟",
-      "a": "مؤسسة بارجيل",
-      "alt": [
-        "بارجيل",
-        "مؤسسة بارجيل للفنون"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Barjeel_Art_Foundation",
-      "verified": true,
-      "qid": "arabart-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم قصر القاهرة الذي صار متحفًا لمقتنيات الأمير محمد علي توفيق؟",
-      "a": "قصر المنيل",
-      "alt": [
-        "المنيل",
-        "متحف قصر المنيل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Manial_Palace",
-      "verified": true,
-      "qid": "arabart-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف القاهري المخصص لأعمال نحّات «نهضة مصر» على ضفة النيل؟",
-      "a": "متحف مختار",
-      "alt": [
-        "متحف محمود مختار"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mahmoud_Mokhtar",
-      "verified": true,
-      "qid": "arabart-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "خط عربي",
-      "q": "ما اسم الطراز الخطي الذي تُبنى حروفه على شبكة مربّعات فيصلح لزخرفة الجدران؟",
-      "a": "الكوفي المربع",
-      "alt": [
-        "الكوفي الهندسي",
-        "الخط البنائي"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/خط_كوفي",
-      "verified": true,
-      "qid": "arabart-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف القطري المخصص للفن العربي الحديث؟",
-      "a": "المتحف العربي للفن الحديث",
-      "alt": [
-        "متحف",
-        "متحف: المتحف العربي للفن الحديث"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mathaf:_Arab_Museum_of_Modern_Art",
-      "verified": true,
-      "qid": "arabart-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف التونسي القائم في ضاحية أثرية قرب القيروان ويضم نفائس إسلامية؟",
-      "a": "متحف رقادة",
-      "alt": [
-        "رقادة",
-        "المتحف الوطني للفن الإسلامي برقادة"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/المتحف_الوطني_للفن_الإسلامي_برقادة",
-      "verified": true,
-      "qid": "arabart-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم أشهر طست نحاسي مملوكي مطعّم بالفضة يُعرض في اللوفر؟",
-      "a": "طست القديس لويس",
-      "alt": [
-        "حوض القديس لويس"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Baptist%C3%A8re_de_Saint_Louis",
-      "verified": true,
-      "qid": "arabart-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "متاحف ومعالم",
-      "q": "ما اسم المتحف البرليني الذي يضم بوابة عشتار وواجهة قصر أموي صحراوي؟",
-      "a": "متحف بيرغامون",
-      "alt": [
-        "بيرغامون",
-        "متحف برغامون"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/متحف_بيرغامون",
-      "verified": true,
-      "qid": "arabart-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "متاحف ومعالم",
-      "q": "في أي جامع يمني عُثر على أقدم رقوق المصاحف أثناء ترميم سقفه؟",
-      "a": "الجامع الكبير بصنعاء",
-      "alt": [
-        "جامع صنعاء الكبير",
-        "الجامع الكبير"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجامع_الكبير_بصنعاء",
-      "verified": true,
-      "qid": "arabart-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم كتاب الإدريسي المصوَّر بخرائطه الذي وضعه للملك روجر الثاني؟",
-      "a": "نزهة المشتاق",
-      "alt": [
-        "كتاب روجار",
-        "نزهة المشتاق في اختراق الآفاق"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/نزهة_المشتاق_في_اختراق_الآفاق",
-      "verified": true,
-      "qid": "arabart-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم المصحف الشهير المكتوب بالذهب على رقّ مصبوغ بالنيلة؟",
+      "q": "ما اسم المخطوط القرآني الشهير الذي كُتبت حروفه بالذهب على صفحات مصبوغة بالنيلة؟",
       "a": "المصحف الأزرق",
+      "qid": "arabart-1000-908",
+      "topic": "أعمال شهيرة",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/454662",
+      "verified": true,
+      "difficultyTarget": 0.15,
       "alt": [
         "القرآن الأزرق"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Blue_Quran",
-      "verified": true,
-      "qid": "arabart-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال شهيرة",
-      "q": "ما الحكاية التي تجسّدها نافورة الجرار والزيت في إحدى ساحات بغداد؟",
-      "a": "علي بابا والأربعون حرامي",
-      "alt": [
-        "علي بابا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Mohammed_Ghani_Hikmat",
-      "verified": true,
-      "qid": "arabart-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال شهيرة",
-      "q": "ما اسم المنبر الخشبي المطعّم الذي نُقل إلى الأقصى ثم التهمته النار سنة ١٩٦٩؟",
-      "a": "منبر صلاح الدين",
-      "alt": [
-        "منبر نور الدين زنكي",
-        "منبر نور الدين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/منبر_صلاح_الدين",
-      "verified": true,
-      "qid": "arabart-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "أعمال شهيرة",
-      "q": "من العالم المسلم الذي رسم آلاته العجيبة بمنمنمات ملوّنة في كتاب الحيل؟",
-      "a": "الجزري",
-      "alt": [
-        "بديع الزمان الجزري",
-        "إسماعيل الجزري"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/الجزري",
-      "verified": true,
-      "qid": "arabart-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "عمارة وزخرفة",
-      "q": "من المعماري المصري الذي أعاد إحياء البناء بالطوب اللبن في قرية القرنة؟",
-      "a": "حسن فتحي",
-      "alt": [
-        "حسن فتحى"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حسن_فتحي",
-      "verified": true,
-      "qid": "arabart-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الجماعة الفنية التي أسّسها حافظ الدروبي في بغداد على نهج تيار أوروبي؟",
-      "a": "جماعة الانطباعيين",
-      "alt": [
-        "الانطباعيون",
-        "جماعة الانطباعيين العراقيين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/حافظ_الدروبي",
-      "verified": true,
-      "qid": "arabart-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الحركة الفنية السودانية التي قادتها كمالا إسحق وأصدرت بيانها في السبعينيات؟",
-      "a": "المدرسة الكريستالية",
-      "alt": [
-        "الكريستالية",
-        "جماعة الكريستاليين"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كمالا_إبراهيم_إسحق",
-      "verified": true,
-      "qid": "arabart-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "حرف تقليدية",
-      "q": "بأي حرفة اشتهرت مدينة شاطبة الأندلسية فنقلتها إلى أوروبا كلها؟",
-      "a": "صناعة الورق",
-      "alt": [
-        "الورق",
-        "الكاغد"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شاطبة",
-      "verified": true,
-      "qid": "arabart-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم القرية المصرية التي علّم رمسيس ويصا واصف أطفالها نسج السجاد المصوَّر؟",
-      "a": "الحرانية",
-      "alt": [
-        "قرية الحرانية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/رمسيس_ويصا_واصف",
-      "verified": true,
-      "qid": "arabart-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم القبعة الصوفية القرمزية التي تصنعها تونس وتُنسج في سوق باسمها؟",
-      "a": "الشاشية",
-      "alt": [
-        "شاشية",
-        "الشاشية التونسية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/شاشية",
-      "verified": true,
-      "qid": "arabart-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم السجاد التونسي المعقود الذي تشتهر به مدينة القيروان؟",
-      "a": "الزربية",
-      "alt": [
-        "زربية",
-        "الزربية القيروانية"
-      ],
-      "sourceUrl": "https://ich.unesco.org/en/RL/knowledge-and-practices-related-to-the-kairouan-carpet-01881",
-      "verified": true,
-      "qid": "arabart-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الحرفة التي تنسج سعف النخيل لصنع السلال والحصر؟",
-      "a": "الخوص",
-      "alt": [
-        "السفّ",
-        "صناعة الخوص"
-      ],
-      "sourceUrl": "https://ich.unesco.org/en/RL/palm-date-knowledge-skills-traditions-and-practices-01902",
-      "verified": true,
-      "qid": "arabart-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم الخنجر المعقوف الذي يتوسط حزام الرجل في اليمن؟",
-      "a": "الجنبية",
-      "alt": [
-        "جنبية",
-        "الجمبية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jambiya",
-      "verified": true,
-      "qid": "arabart-1000-045"
-    },
-    {
-      "p": 1000,
-      "topic": "حرف تقليدية",
-      "q": "ما اسم غطاء الرأس المرصّع بالنقود الفضية في زي نساء بيت لحم؟",
-      "a": "الشطوة",
-      "alt": [
-        "شطوة",
-        "الشطوة التلحمية"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/زي_تقليدي_فلسطيني",
-      "verified": true,
-      "qid": "arabart-1000-046"
-    },
-    {
-      "p": 1000,
-      "topic": "جماعات ومدارس",
-      "q": "من أي بلد أوروبي جاء الرسامون اللاجئون الذين أثّروا في نهضة الفن ببغداد؟",
-      "a": "بولندا",
-      "alt": [
-        "بولونيا"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Khaled_al-Rahal",
-      "verified": true,
-      "qid": "arabart-1000-047"
-    },
-    {
-      "p": 1000,
-      "topic": "جماعات ومدارس",
-      "q": "ما اسم الجماعة الفنية التي جمعت رسامي العاصمة التونسية ودعت إلى فن محلي الهوية؟",
-      "a": "مدرسة تونس",
-      "alt": [
-        "جماعة مدرسة تونس"
-      ],
-      "sourceUrl": "https://ar.wikipedia.org/wiki/مدرسة_تونس",
-      "verified": true,
-      "qid": "arabart-1000-048"
+      ]
     }
   ]
 }

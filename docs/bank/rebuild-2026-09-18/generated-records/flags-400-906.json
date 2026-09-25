@@ -1,0 +1,39 @@
+{
+  "id": "flags-400-906",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-400-906.webp",
+  "asset": "media/flags/flags-400-906.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Pakistan. Width:height3:2. Leftmost one-quarter width vertical white band, remaining three-quarters dark green #01411C. In center of green portion, white crescent tilted so its opening points upper RIGHT, and a white five-pointed star above-right inside opening. Standard Pakistani national flag. All flag fields fully opaque.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 13916,
+  "sha256": "62a0997982709e58fbc7fe9410d994a81cae46dfad8942e40d9d487ca73f40d7",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "White hoist stripe with white crescent and five-point star on dark green.",
+    "limitations": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "not-individually-exercised",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 853,
+      "directGameplaySample": false,
+      "gameplayReview": "not-individually-exercised",
+      "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
+  }
+}

@@ -1,0 +1,3005 @@
+{
+  "note": "Moved descriptive source labels out of URL fields; original sourceUrl and verification flags retained. This is schema repair, not a new factual verification.",
+  "questions": [
+    {
+      "qid": "animals-200-901",
+      "sourceLabel": "حديقة حيوان سان دييغو: الفيل",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/elephant"
+    },
+    {
+      "qid": "animals-200-902",
+      "sourceLabel": "المسح البريطاني لأنتاركتيكا: بطاريق الإمبراطور والجليد البحري",
+      "sourceUrl": "https://legacy.bas.ac.uk/bas_research/science/earth_observation/penguins_from_space.php"
+    },
+    {
+      "qid": "animals-200-903",
+      "sourceLabel": "سميثسونيان: كيف تلسع قناديل البحر",
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/how-do-jellyfish-sting"
+    },
+    {
+      "qid": "animals-200-904",
+      "sourceLabel": "معهد جورجيا للتقنية: لسان الضفدع واللعاب",
+      "sourceUrl": "https://me.gatech.edu/eating-blink-eye"
+    },
+    {
+      "qid": "animals-200-905",
+      "sourceLabel": "سميثسونيان: النمل النجار ومستعمراته",
+      "sourceUrl": "https://www.si.edu/spotlight/buginfo/carpenter-ants"
+    },
+    {
+      "qid": "animals-200-906",
+      "sourceLabel": "حديقة حيوان سان دييغو: القنفذ",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/hedgehog"
+    },
+    {
+      "qid": "animals-200-907",
+      "sourceLabel": "مجمع اللغة العربية بالقاهرة: شبل",
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/شبل"
+    },
+    {
+      "qid": "animals-200-908",
+      "sourceLabel": "سميثسونيان: الأخطبوط يطلق الحبر",
+      "sourceUrl": "https://ocean.si.edu/ocean-life/invertebrates/octopus-shoots-ink"
+    },
+    {
+      "qid": "animals-400-901",
+      "sourceLabel": "مجمع اللغة العربية بالقاهرة: مهر",
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/مهر"
+    },
+    {
+      "qid": "animals-400-902",
+      "sourceLabel": "حديقة حيوان سان دييغو: الفلامنجو",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/flamingo"
+    },
+    {
+      "qid": "animals-400-903",
+      "sourceLabel": "NOAA: تكاثر حصان البحر",
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/seahorse.html"
+    },
+    {
+      "qid": "animals-400-904",
+      "sourceLabel": "متحف التاريخ الطبيعي: دورة حياة الضفدع",
+      "sourceUrl": "https://www.nhm.ac.uk/discover/frogspawn-tadpoles-and-froglets.html"
+    },
+    {
+      "qid": "animals-400-905",
+      "sourceLabel": "سميثسونيان: إشارات اليراعات المضيئة",
+      "sourceUrl": "https://ssec.si.edu/stemvisions-blog/love-air-cicadas"
+    },
+    {
+      "qid": "animals-400-906",
+      "sourceLabel": "NOAA: حقائق السلمون الأطلسي",
+      "sourceUrl": "https://www.fisheries.noaa.gov/national/outreach-and-education/fun-facts-about-amazing-atlantic-salmon"
+    },
+    {
+      "qid": "animals-400-907",
+      "sourceLabel": "مجمع اللغة العربية بالقاهرة: جحش",
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/جحش"
+    },
+    {
+      "qid": "animals-400-908",
+      "sourceLabel": "حديقة حيوان سان دييغو: الضبع المرقط",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/spotted-hyena"
+    },
+    {
+      "qid": "animals-600-901",
+      "sourceLabel": "حديقة حيوان سان دييغو: خلد الماء",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/platypus"
+    },
+    {
+      "qid": "animals-600-902",
+      "sourceLabel": "الجمعية الملكية لحماية الطيور: الرفراف",
+      "sourceUrl": "https://www.rspb.org.uk/birds-and-wildlife/kingfisher"
+    },
+    {
+      "qid": "animals-600-903",
+      "sourceLabel": "NOAA: حقائق عن أسماك القرش",
+      "sourceUrl": "https://www.fisheries.noaa.gov/feature-story/12-shark-facts-may-surprise-you"
+    },
+    {
+      "qid": "animals-600-904",
+      "sourceLabel": "حديقة سميثسونيان الوطنية: ضفادع السم",
+      "sourceUrl": "https://nationalzoo.si.edu/animals/poison-frogs"
+    },
+    {
+      "qid": "animals-600-905",
+      "sourceLabel": "جامعة ولاية كارولينا الشمالية: الهيكل الخارجي للحشرات",
+      "sourceUrl": "https://genent.cals.ncsu.edu/exo-ii/"
+    },
+    {
+      "qid": "animals-600-906",
+      "sourceLabel": "خدمة الغابات الأمريكية: هجرة فراشة الملك",
+      "sourceUrl": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/documents/Monarch-Monitoring_en.pdf"
+    },
+    {
+      "qid": "animals-600-907",
+      "sourceLabel": "مجمع اللغة العربية بالقاهرة: الحوار",
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/search_engine/roots/حور"
+    },
+    {
+      "qid": "animals-600-908",
+      "sourceLabel": "حديقة سميثسونيان الوطنية: الأنقليس الكهربائي",
+      "sourceUrl": "https://nationalzoo.si.edu/animals/electric-eel"
+    },
+    {
+      "qid": "animals-800-901",
+      "sourceLabel": "حديقة حيوان سان دييغو: فرس النهر",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/hippo"
+    },
+    {
+      "qid": "animals-800-902",
+      "sourceLabel": "حديقة حيوان سان دييغو: كندور الأنديز",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/andean-condor"
+    },
+    {
+      "qid": "animals-800-903",
+      "sourceLabel": "متحف فلوريدا للتاريخ الطبيعي: السمكة اللاصقة",
+      "sourceUrl": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/sharksucker/"
+    },
+    {
+      "qid": "animals-800-904",
+      "sourceLabel": "متحف التاريخ الطبيعي: الأكسولوتل وصفاته اليرقية",
+      "sourceUrl": "https://www.nhm.ac.uk/discover/axolotls-amphibians-that-never-grow-up.html"
+    },
+    {
+      "qid": "animals-800-905",
+      "sourceLabel": "المتحف الأسترالي: حقائق العناكب ووظيفة المغازل",
+      "sourceUrl": "https://australian.museum/learn/animals/spiders/spider-facts/"
+    },
+    {
+      "qid": "animals-800-906",
+      "sourceLabel": "حدائق أستراليا: هجرة السرطانات الحمراء",
+      "sourceUrl": "https://parksaustralia.gov.au/news/millions-of-crabs-march-on-christmas-island/"
+    },
+    {
+      "qid": "animals-800-907",
+      "sourceLabel": "متحف سميثسونيان الوطني: ناب الحوت وحيد القرن",
+      "sourceUrl": "https://naturalhistory.si.edu/exhibits/narwhal-revealing-arctic-legend"
+    },
+    {
+      "qid": "animals-800-908",
+      "sourceLabel": "جامعة ساسكس: فك رموز رقصة النحل",
+      "sourceUrl": "https://www.sussex.ac.uk/lasi/sussexplan/dances"
+    },
+    {
+      "qid": "animals-1000-901",
+      "sourceLabel": "مركز الليمور بجامعة ديوك: الآي آي",
+      "sourceUrl": "https://lemur.duke.edu/discover/meet-the-lemurs/aye-aye/"
+    },
+    {
+      "qid": "animals-1000-902",
+      "sourceLabel": "المتحف الأسترالي: طائر الليرة الرائع",
+      "sourceUrl": "https://australian.museum/learn/animals/birds/superb-lyrebird/"
+    },
+    {
+      "qid": "animals-1000-903",
+      "sourceLabel": "متحف التاريخ الطبيعي: إعادة اكتشاف السيلاكانث",
+      "sourceUrl": "https://www.nhm.ac.uk/discover/coelacanths-the-fish-that-outdid-the-loch-ness-monster.html"
+    },
+    {
+      "qid": "animals-1000-904",
+      "sourceLabel": "كهف بوستوينا: الأولم ومراحل نموه",
+      "sourceUrl": "https://www.postojnska-jama.eu/en/postojna-cave/10-years-of-the-world-famous-baby-dragons-from-postojna-cave"
+    },
+    {
+      "qid": "animals-1000-905",
+      "sourceLabel": "جامعة ولاية كارولينا الشمالية: جهاز الدوران في الحشرات",
+      "sourceUrl": "https://genent.cals.ncsu.edu/bug-bytes/circulatory-system/"
+    },
+    {
+      "qid": "animals-1000-906",
+      "sourceLabel": "المتحف الأسترالي: طائر التعريشة الحريري",
+      "sourceUrl": "https://australian.museum/learn/animals/birds/satin-bowerbird/"
+    },
+    {
+      "qid": "animals-1000-907",
+      "sourceLabel": "جامعة أديلايد: دراسة بصمات الكوالا والإنسان",
+      "sourceUrl": "https://digital.library.adelaide.edu.au/items/ad4f9181-6877-4d5b-bcf9-55a0446bd65b/full"
+    },
+    {
+      "qid": "animals-1000-908",
+      "sourceLabel": "المتحف الأسترالي: الشم وعضو جاكبسون",
+      "sourceUrl": "https://museum-publications.australian.museum/media/dd/Uploads/Documents/38092/ams370_vXIX_05_lowres.19e9251.pdf"
+    },
+    {
+      "qid": "capitals-200-901",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-200-902",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-200-903",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-200-904",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-200-905",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-200-906",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-200-907",
+      "sourceLabel": "الأمم المتحدة: زيارة المقر الرئيسي في نيويورك",
+      "sourceUrl": "https://www.un.org/visit"
+    },
+    {
+      "qid": "capitals-200-908",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-400-901",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-400-902",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-400-903",
+      "sourceLabel": "اليونسكو: برازيليا",
+      "sourceUrl": "https://whc.unesco.org/fr/list/445"
+    },
+    {
+      "qid": "capitals-400-904",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-400-905",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-400-906",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-400-907",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-400-908",
+      "sourceLabel": "حكومة هولندا: تنظيم الدولة ومقر الحكومة",
+      "sourceUrl": "https://www.government.nl/binaries/government/documenten/publications/2017/04/21/culture-at-a-first-glance/CIB2015_ENG_publicatie_v8_DEF.pdf"
+    },
+    {
+      "qid": "capitals-600-901",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-600-902",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-600-903",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-600-904",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-600-905",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-600-906",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-600-907",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-600-908",
+      "sourceLabel": "حكومة جنوب أفريقيا: المحافظات والعواصم",
+      "sourceUrl": "https://www.gov.za/about-sa/south-africas-provinces"
+    },
+    {
+      "qid": "capitals-800-901",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-800-902",
+      "sourceLabel": "الهيئة الملكية لمدينة الرياض: المناخ الاستثماري وتاريخ المدينة",
+      "sourceUrl": "https://www.rcrc.gov.sa/wp-content/uploads/2023/05/المناخ-الاستثماري-في-مدينة-الرياض-1433-هـ-1.pdf"
+    },
+    {
+      "qid": "capitals-800-903",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-800-904",
+      "sourceLabel": "البوابة الرسمية لأذربيجان: باكو",
+      "sourceUrl": "https://azerbaijan.az/en/information/110"
+    },
+    {
+      "qid": "capitals-800-905",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-800-906",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-800-907",
+      "sourceLabel": "شعبة الإحصاء بالأمم المتحدة: الدليل الإحصائي العالمي 2025، عواصم الدول",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "qid": "capitals-800-908",
+      "sourceLabel": "برلمان سريلانكا: أربعون عامًا على انتقال البرلمان إلى كوتي",
+      "sourceUrl": "https://www.parliament.lk/en/home/parliament-news/view/2548"
+    },
+    {
+      "qid": "capitals-1000-901",
+      "sourceLabel": "برلمان أستراليا: تاريخ مقر البرلمان",
+      "sourceUrl": "https://www.aph.gov.au/Visit_Parliament/About_the_Building/History_of_Parliament_House"
+    },
+    {
+      "qid": "capitals-1000-902",
+      "sourceLabel": "هيئة تنشيط السياحة الأردنية: عمّان وفيلادلفيا",
+      "sourceUrl": "https://international.visitjordan.com/uploads/brochures/H%26C-English2022.pdf"
+    },
+    {
+      "qid": "capitals-1000-903",
+      "sourceLabel": "متحف كوبنهاغن: التقرير الأثري لغامل ستراند، التجار واسم المدينة",
+      "sourceUrl": "https://cphmuseum.kk.dk/sites/default/files/2021-10/133_PDFsam_Gammel%20Strand%20Cultural%20historical%20report.pdf"
+    },
+    {
+      "qid": "capitals-1000-904",
+      "sourceLabel": "حكومة جنوب أفريقيا: المحافظات والعواصم",
+      "sourceUrl": "https://www.gov.za/about-sa/south-africas-provinces"
+    },
+    {
+      "qid": "capitals-1000-905",
+      "sourceLabel": "بلدية أوسلو: تغير اسم كريستيانيا عام 1925",
+      "sourceUrl": "https://statistikkbanken.oslo.kommune.no/statbank/pxweb/no/db1/db1__Befolkning__Folkemengde/OK-BEF008.px/"
+    },
+    {
+      "qid": "capitals-1000-906",
+      "sourceLabel": "بلدية يريفان: التاريخ وقلعة إريبوني",
+      "sourceUrl": "https://www.yerevan.am/en/old-yerevan/"
+    },
+    {
+      "qid": "capitals-1000-907",
+      "sourceLabel": "اليونسكو: المركز التاريخي لمكسيكو وسوتشيميلكو",
+      "sourceUrl": "https://whc.unesco.org/en/list/412"
+    },
+    {
+      "qid": "capitals-1000-908",
+      "sourceLabel": "حكومة مدينة كويزون: تاريخ المدينة",
+      "sourceUrl": "https://quezoncity.gov.ph/about-the-city-government/history/"
+    },
+    {
+      "qid": "code-200-901",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-200-902",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-200-903",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-200-904",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-200-905",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-200-906",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-200-907",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-200-908",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-400-901",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-400-902",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-400-903",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-400-904",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-400-905",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-400-906",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-400-907",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-400-908",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-600-901",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-600-902",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-600-903",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-600-904",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-600-905",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-600-906",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-600-907",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-600-908",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-800-901",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-800-902",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-800-903",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-800-904",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-800-905",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-800-906",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-800-907",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-800-908",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-1000-901",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-1000-902",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-1000-903",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-1000-904",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-1000-905",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-1000-906",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-1000-907",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "code-1000-908",
+      "sourceLabel": "لغز شفرة أصلي؛ تحقق عكسي من قاعدة الترميز",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-200-901",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-200-902",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-200-903",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-200-904",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-200-905",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-200-906",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-200-907",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-200-908",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-400-901",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-400-902",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-400-903",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-400-904",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-400-905",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-400-906",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-400-907",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-400-908",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-600-901",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-600-902",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-600-903",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-600-904",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-600-905",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-600-906",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-600-907",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-600-908",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-800-901",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-800-902",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-800-903",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-800-904",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-800-905",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-800-906",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-800-907",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-800-908",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-1000-901",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-1000-902",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-1000-903",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-1000-904",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-1000-905",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-1000-906",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-1000-907",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "emoji-1000-908",
+      "sourceLabel": "لغز بصري أصلي؛ يحدد التلميح مجال الإجابة وتُقبل الصيغ المذكورة",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "food-200-901",
+      "sourceLabel": "اليونسكو: الكشري المصري",
+      "sourceUrl": "https://ich.unesco.org/en/RL/koshary-daily-life-dish-and-practices-associated-with-it-02278"
+    },
+    {
+      "qid": "food-200-902",
+      "sourceLabel": "هيئة السياحة اليابانية: دليل السوشي",
+      "sourceUrl": "https://www.japan.travel/en/guide/sushi-in-japan/"
+    },
+    {
+      "qid": "food-200-903",
+      "sourceLabel": "حدائق كيو: الفلفل الأسود",
+      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A682369-1/general-information"
+    },
+    {
+      "qid": "food-200-904",
+      "sourceLabel": "الفاو: تعريف العسل",
+      "sourceUrl": "https://www.fao.org/4/w0076e/w0076e30.htm"
+    },
+    {
+      "qid": "food-200-905",
+      "sourceLabel": "الفاو: تصنيع الحليب",
+      "sourceUrl": "https://www.fao.org/dairy-production-products/processing/"
+    },
+    {
+      "qid": "food-200-906",
+      "sourceLabel": "سعوديبيديا: الكبسة والجريش",
+      "sourceUrl": "https://saudipedia.com/ما-أشهر-طبق-سعودي؟"
+    },
+    {
+      "qid": "food-200-907",
+      "sourceLabel": "وزارة الزراعة الأمريكية: القلي بالغمر",
+      "sourceUrl": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/deep-fat-frying"
+    },
+    {
+      "qid": "food-200-908",
+      "sourceLabel": "اتحاد مطاحن الدقيق البريطاني: أنواع الدقيق",
+      "sourceUrl": "https://www.ukflourmillers.org/flour-milling/flour"
+    },
+    {
+      "qid": "food-400-901",
+      "sourceLabel": "اليونسكو: المنسف الأردني",
+      "sourceUrl": "https://ich.unesco.org/en/RL/al-mansaf-in-jordan-a-festive-banquet-and-its-social-and-cultural-meanings-01849"
+    },
+    {
+      "qid": "food-400-902",
+      "sourceLabel": "هيئة السياحة الإسبانية: أطباق إسبانيا",
+      "sourceUrl": "https://www.spain.info/es/top/comida-saludable-espana/"
+    },
+    {
+      "qid": "food-400-903",
+      "sourceLabel": "سعوديبيديا: مكونات القهوة السعودية",
+      "sourceUrl": "https://saudipedia.com/ما-مكونات-القهوة-السعودية؟"
+    },
+    {
+      "qid": "food-400-904",
+      "sourceLabel": "لادوريه: الماكارون ذو القرصين",
+      "sourceUrl": "https://www.laduree.fr/en/macarons/"
+    },
+    {
+      "qid": "food-400-905",
+      "sourceLabel": "إذاعة دمشق: صناعة قمر الدين من المشمش",
+      "sourceUrl": "https://damasradio.fm/قمر-الدين-السوري-سفير-المشمش-الدمشقي-م/"
+    },
+    {
+      "qid": "food-400-906",
+      "sourceLabel": "مجلس الترويج السياحي اليمني: المندي",
+      "sourceUrl": "https://www.yementourism.com/ar/food-drinks/47-food/215-2017-07-23-09-13-42"
+    },
+    {
+      "qid": "food-400-907",
+      "sourceLabel": "وزارة الزراعة الأمريكية: تعريف التتبيلة",
+      "sourceUrl": "https://ask.fsis.usda.gov/article/What-is-a-Marinade"
+    },
+    {
+      "qid": "food-400-908",
+      "sourceLabel": "اتحاد منتجي بارميجيانو ريجيانو: الجبن المبشور",
+      "sourceUrl": "https://www.parmigianoreggiano.com/en-US/faq"
+    },
+    {
+      "qid": "food-600-901",
+      "sourceLabel": "مجلس الترويج السياحي اليمني: السلتة",
+      "sourceUrl": "https://www.yementourism.com/ar/food-drinks/47-food/208-2017-07-23-08-50-10"
+    },
+    {
+      "qid": "food-600-902",
+      "sourceLabel": "هيئة السياحة الإسبانية: الغازباتشو",
+      "sourceUrl": "https://www.spain.info/es/top/comida-saludable-espana/"
+    },
+    {
+      "qid": "food-600-903",
+      "sourceLabel": "هيئة السياحة التشيكية: وصفة الغولاش",
+      "sourceUrl": "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/recipes/g-goulash"
+    },
+    {
+      "qid": "food-600-904",
+      "sourceLabel": "موسوعة نيوزيلندا الحكومية: آنا بافلوفا والحلوى",
+      "sourceUrl": "https://teara.govt.nz/en/photograph/38530/anna-pavlova-and-her-baked-namesake"
+    },
+    {
+      "qid": "food-600-905",
+      "sourceLabel": "إيلي: دليل إعداد الإسبريسو",
+      "sourceUrl": "https://www.illy.com/content/dam/channels/website/professional/usa/professional-standtogether/Espresso-Preparation-Guide-Beans_5-2020.pdf"
+    },
+    {
+      "qid": "food-600-906",
+      "sourceLabel": "شركة جبن شيدر جورج: تاريخ الشيدر",
+      "sourceUrl": "https://www.cheddargorgecheese.com/the-history-of-cheddar-cheese/"
+    },
+    {
+      "qid": "food-600-907",
+      "sourceLabel": "لو كوردون بلو: طبخ الكريم كراميل في حمام مائي",
+      "sourceUrl": "https://app.ckbk.com/reference/cook52062c12s001ss003e004/making-creme-caramel"
+    },
+    {
+      "qid": "food-600-908",
+      "sourceLabel": "هيئة السياحة القبرصية: الحلوم",
+      "sourceUrl": "https://www.visitcyprus.com/discover-cyprus/food-drink/local-produce/halloumi-cheese/"
+    },
+    {
+      "qid": "food-800-901",
+      "sourceLabel": "المكتب الوطني للسياحة المغربي: دليل المطبخ المغربي",
+      "sourceUrl": "https://www.visitmorocco.com/sites/default/files/atoms/files/maroc_gastronomie_0111_il_en.pdf"
+    },
+    {
+      "qid": "food-800-902",
+      "sourceLabel": "اليونسكو: السيفيتشي البيروفي",
+      "sourceUrl": "https://ich.unesco.org/en/RL/practices-and-meanings-associated-with-the-preparation-and-consumption-of-ceviche-an-expression-of-peruvian-traditional-cuisine-01952"
+    },
+    {
+      "qid": "food-800-903",
+      "sourceLabel": "هيئة السياحة الإندونيسية: مالوكو وتجارة التوابل",
+      "sourceUrl": "https://www.indonesia.travel/gb/en/destination/maluku-papua/maluku"
+    },
+    {
+      "qid": "food-800-904",
+      "sourceLabel": "فندق زاخر: وصفة الكعكة الأصلية",
+      "sourceUrl": "https://www.sacher.com/en/original-sacher-torte/recipe/"
+    },
+    {
+      "qid": "food-800-905",
+      "sourceLabel": "الأمم المتحدة والفاو: سلسلة قيمة البن اليمني",
+      "sourceUrl": "https://yemen.un.org/en/290202-fao-yemen-assessment-report-coffee-value-chain-yemen-export-potential-and-investment"
+    },
+    {
+      "qid": "food-800-906",
+      "sourceLabel": "متحف كاب نودلز: تاريخ النودلز سريعة التحضير",
+      "sourceUrl": "https://www.cupnoodles-museum.jp/ja/osaka_ikeda/about/"
+    },
+    {
+      "qid": "food-800-907",
+      "sourceLabel": "الجمعية الكيميائية الأمريكية: تفاعل ميلارد",
+      "sourceUrl": "https://cen.acs.org/articles/89/i47/Maillard-Reaction.html"
+    },
+    {
+      "qid": "food-800-908",
+      "sourceLabel": "دراسة ليبية محكمة: البازين في التراث الغذائي",
+      "sourceUrl": "https://alqurtas.alandalus-libya.org.ly/ojs/index.php/qjhar/article/download/1625/1450/1925"
+    },
+    {
+      "qid": "food-1000-901",
+      "sourceLabel": "جامعة غانا: دراسة عن البامية واستخدام الويكة السوداني",
+      "sourceUrl": "https://ugspace.ug.edu.gh/bitstreams/3554962a-5b4c-469d-be68-7975ff863c3a/download"
+    },
+    {
+      "qid": "food-1000-902",
+      "sourceLabel": "هيئة السياحة الجورجية: الخاتشابوري الأجاري",
+      "sourceUrl": "https://georgia.travel/ship-and-sun-the-inspiration-for-ajarian-khachapuri"
+    },
+    {
+      "qid": "food-1000-903",
+      "sourceLabel": "مجلس البحث العلمي والصناعي الهندي: الحلتيت",
+      "sourceUrl": "https://www.csir.res.in/sites/default/files/2023-06/Compendium-of-Social-relevant-technologies-2.6.2021.pdf"
+    },
+    {
+      "qid": "food-1000-904",
+      "sourceLabel": "لو كوردون بلو: وصفة الكروكمبوش",
+      "sourceUrl": "https://www.cordonbleu.edu/news/celebrate-bastille-day-croquembouche-recipe-lcba/en"
+    },
+    {
+      "qid": "food-1000-905",
+      "sourceLabel": "شركة كوكاكولا: نشأة المشروب",
+      "sourceUrl": "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea"
+    },
+    {
+      "qid": "food-1000-906",
+      "sourceLabel": "وزارة الزراعة الأمريكية: التفاح البري في كازاخستان",
+      "sourceUrl": "https://www.ars.usda.gov/news-events/news/research-news/2006/going-back-to-the-source-for-a-heartier-apple-tree/"
+    },
+    {
+      "qid": "food-1000-907",
+      "sourceLabel": "معهد تعليم فنون الطهي: الطبخ داخل الورق",
+      "sourceUrl": "https://www.ice.edu/blog/fish-en-papillote-with-farro-and-asparagus"
+    },
+    {
+      "qid": "food-1000-908",
+      "sourceLabel": "حدائق كيو: الغلاف البسباسي لجوزة الطيب",
+      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A77126699-1/general-information"
+    },
+    {
+      "qid": "fruitsveg-200-901",
+      "sourceLabel": "حدائق كيو: الموز",
+      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A797527-1/general-information"
+    },
+    {
+      "qid": "fruitsveg-200-902",
+      "sourceLabel": "جامعة ماريلاند: أصناف البطيخ",
+      "sourceUrl": "https://extension.umd.edu/sites/extension.umd.edu/files/2021-03/Watermelons.pdf"
+    },
+    {
+      "qid": "fruitsveg-200-903",
+      "sourceLabel": "موقع باباي الرسمي",
+      "sourceUrl": "https://popeye.com/"
+    },
+    {
+      "qid": "fruitsveg-200-904",
+      "sourceLabel": "جامعة مينيسوتا: زراعة الجزر والجزر الأبيض",
+      "sourceUrl": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/growing-carrots-and-parsnips"
+    },
+    {
+      "qid": "fruitsveg-200-905",
+      "sourceLabel": "جامعة ولاية آيوا: زراعة الفشار وحصاده",
+      "sourceUrl": "https://yardandgarden.extension.iastate.edu/how-to/growing-and-harvesting-popcorn-home-garden"
+    },
+    {
+      "qid": "fruitsveg-200-906",
+      "sourceLabel": "جامعة كاليفورنيا: حصاد الحمضيات",
+      "sourceUrl": "https://ipm.ucanr.edu/home-and-landscape/harvesting-and-storing-citrus/"
+    },
+    {
+      "qid": "fruitsveg-200-907",
+      "sourceLabel": "المجلس الدولي للزيتون: زيت الزيتون",
+      "sourceUrl": "https://www.internationaloliveoil.org/olive-world/olive-oil/"
+    },
+    {
+      "qid": "fruitsveg-200-908",
+      "sourceLabel": "المعاهد الوطنية للصحة: فيتامين سي",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/"
+    },
+    {
+      "qid": "fruitsveg-400-901",
+      "sourceLabel": "جامعة فلوريدا: محاصيل الفاكهة الاستوائية",
+      "sourceUrl": "https://edis.ifas.ufl.edu/mg373"
+    },
+    {
+      "qid": "fruitsveg-400-902",
+      "sourceLabel": "حدائق كيو: التين",
+      "sourceUrl": "https://www.kew.org/plants/fig"
+    },
+    {
+      "qid": "fruitsveg-400-903",
+      "sourceLabel": "جامعة ولاية يوتا: الكرفس",
+      "sourceUrl": "https://extension.usu.edu/nutrition/research/celery"
+    },
+    {
+      "qid": "fruitsveg-400-904",
+      "sourceLabel": "هيئة السياحة اليابانية: زراعة الوسابي",
+      "sourceUrl": "https://www.japan.travel/en/gastronomy/article-birthplace-of-tatamiishi-wasabi/"
+    },
+    {
+      "qid": "fruitsveg-400-905",
+      "sourceLabel": "جامعة مينيسوتا: من الحقل إلى التوفو",
+      "sourceUrl": "https://extension.umn.edu/about/our-stories/news/source-magazine/from-field-to-tofu"
+    },
+    {
+      "qid": "fruitsveg-400-906",
+      "sourceLabel": "حدائق كيو: الطماطم",
+      "sourceUrl": "https://www.kew.org/plants/tomato"
+    },
+    {
+      "qid": "fruitsveg-400-907",
+      "sourceLabel": "الجمعية الكيميائية الأمريكية: استخراج حمض الستريك من الليمون",
+      "sourceUrl": "https://pubs.acs.org/doi/10.1021/ie50138a027"
+    },
+    {
+      "qid": "fruitsveg-400-908",
+      "sourceLabel": "جامعة فلوريدا: زراعة فاكهة التنين",
+      "sourceUrl": "https://ask.ifas.ufl.edu/publication/HS303"
+    },
+    {
+      "qid": "fruitsveg-600-901",
+      "sourceLabel": "هيئة الحدائق الوطنية في سنغافورة: الرامبوتان",
+      "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/3/0/3042"
+    },
+    {
+      "qid": "fruitsveg-600-902",
+      "sourceLabel": "بلدية رايد: جراني سميث",
+      "sourceUrl": "https://www.ryde.nsw.gov.au/Library/Local-and-Family-History/Historic-Ryde/Historic-Figures/Granny-Smith"
+    },
+    {
+      "qid": "fruitsveg-600-903",
+      "sourceLabel": "المعاهد الوطنية للصحة: فيتامين ك",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/vitaminK-HealthProfessional/"
+    },
+    {
+      "qid": "fruitsveg-600-904",
+      "sourceLabel": "هيئة الحدائق الوطنية في سنغافورة: التابيوكا",
+      "sourceUrl": "https://gardeningsg.nparks.gov.sg/gardening-resource-library/tapioca/"
+    },
+    {
+      "qid": "fruitsveg-600-905",
+      "sourceLabel": "جامعة رايس، أوبن ستاكس: البذور",
+      "sourceUrl": "https://openstax.org/books/concepts-biology/pages/14-4-seed-plants-angiosperms"
+    },
+    {
+      "qid": "fruitsveg-600-906",
+      "sourceLabel": "الجمعية الملكية للبستنة: السفرجل",
+      "sourceUrl": "https://www.rhs.org.uk/fruit/quince/grow-your-own"
+    },
+    {
+      "qid": "fruitsveg-600-907",
+      "sourceLabel": "حدائق كيو: أصل الموز",
+      "sourceUrl": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A797527-1/general-information"
+    },
+    {
+      "qid": "fruitsveg-600-908",
+      "sourceLabel": "المركز الوطني لحفظ الأغذية، جامعة جورجيا: مكونات المربى",
+      "sourceUrl": "https://nchfp.uga.edu/how/make-jam-jelly/jams-jellies-general-information/jellied-product-ingredients/"
+    },
+    {
+      "qid": "fruitsveg-800-901",
+      "sourceLabel": "هيئة الحدائق الوطنية في سنغافورة: المانجوستين",
+      "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/2/9/2927"
+    },
+    {
+      "qid": "fruitsveg-800-902",
+      "sourceLabel": "مراجعة علمية منشورة: استقلاب الفولات وأصل الاسم",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4175124/"
+    },
+    {
+      "qid": "fruitsveg-800-903",
+      "sourceLabel": "جامعة مينيسوتا: زراعة الفجل الحار",
+      "sourceUrl": "https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/growing-horseradish"
+    },
+    {
+      "qid": "fruitsveg-800-904",
+      "sourceLabel": "مجلس الكانولا الكندي: أصل الكانولا",
+      "sourceUrl": "https://www.canolacouncil.org/about-canola/"
+    },
+    {
+      "qid": "fruitsveg-800-905",
+      "sourceLabel": "الفاو: مراحل نضج ثمار النخيل",
+      "sourceUrl": "https://www.fao.org/4/Y4360E/y4360e05.htm"
+    },
+    {
+      "qid": "fruitsveg-800-906",
+      "sourceLabel": "وزارة الزراعة الأمريكية: تاريخ الجزر",
+      "sourceUrl": "https://www.ars.usda.gov/midwest-area/madison-wi/vegetable-crops-research/docs/simon-carrot-facts/"
+    },
+    {
+      "qid": "fruitsveg-800-907",
+      "sourceLabel": "المركز الوطني للصحة التكميلية: البروميلين",
+      "sourceUrl": "https://www.nccih.nih.gov/health/bromelain"
+    },
+    {
+      "qid": "fruitsveg-800-908",
+      "sourceLabel": "هيئة الحدائق الوطنية في سنغافورة: الأترج ويد بوذا",
+      "sourceUrl": "https://www.nparks.gov.sg/florafaunaweb/flora/5/2/5217"
+    },
+    {
+      "qid": "fruitsveg-1000-901",
+      "sourceLabel": "خدمة معلومات جامايكا: الرموز الوطنية",
+      "sourceUrl": "https://jis.gov.jm/media/2021/11/Report-on-National-Symbols-.pdf"
+    },
+    {
+      "qid": "fruitsveg-1000-902",
+      "sourceLabel": "حدائق كيو: الموز تحت التهديد",
+      "sourceUrl": "https://www.kew.org/read-and-watch/bananas-threat-extinction"
+    },
+    {
+      "qid": "fruitsveg-1000-903",
+      "sourceLabel": "مقاطعة مونتيري: مدينة ساليناس",
+      "sourceUrl": "https://www.countyofmonterey.gov/home/showpublisheddocument/110639/638645006878000000"
+    },
+    {
+      "qid": "fruitsveg-1000-904",
+      "sourceLabel": "هيئة سياحة فالنسيا: الأورتشاتا",
+      "sourceUrl": "https://www.visitvalencia.com/en/what-to-do-valencia/gastronomy/where-to-drink/horchata"
+    },
+    {
+      "qid": "fruitsveg-1000-905",
+      "sourceLabel": "اتحاد مطاحن الدقيق البريطاني: تركيب حبة القمح",
+      "sourceUrl": "https://www.ukflourmillers.org/knowledge-hub/farming-production/wheat/wheat-structure"
+    },
+    {
+      "qid": "fruitsveg-1000-906",
+      "sourceLabel": "جامعة ولاية آيوا: المعاومة في أشجار الفاكهة",
+      "sourceUrl": "https://yardandgarden.extension.iastate.edu/how-to/alternate-bearing-fruit-drop-and-hand-thinning-tree-fruits"
+    },
+    {
+      "qid": "fruitsveg-1000-907",
+      "sourceLabel": "جامعة ماريلاند: الإيثيلين ونضج الثمار",
+      "sourceUrl": "https://www.extension.umd.edu/resource/ethylene-and-regulation-fruit-ripening"
+    },
+    {
+      "qid": "fruitsveg-1000-908",
+      "sourceLabel": "جامعة فلوريدا: أصناف حمضيات فلوريدا",
+      "sourceUrl": "https://citrusagents.ifas.ufl.edu/media/crecifasufledu/citrus-agents/docs/citrus-publications/Fla-Citrus-Varieties.pdf"
+    },
+    {
+      "qid": "general-200-901",
+      "sourceLabel": "NHLBI: How the Heart Works",
+      "sourceUrl": "https://www.nhlbi.nih.gov/health/heart"
+    },
+    {
+      "qid": "general-200-902",
+      "sourceLabel": "NASA: Facts About Earth",
+      "sourceUrl": "https://science.nasa.gov/earth/facts/"
+    },
+    {
+      "qid": "general-200-903",
+      "sourceLabel": "National Park Service: Edison Biography",
+      "sourceUrl": "https://home.nps.gov/edis/learn/historyculture/edison-biography.htm"
+    },
+    {
+      "qid": "general-200-904",
+      "sourceLabel": "National Weather Service: Understanding Lightning Science",
+      "sourceUrl": "https://www.weather.gov/safety/lightning-science-overview"
+    },
+    {
+      "qid": "general-200-905",
+      "sourceLabel": "NOAA Fisheries: Blue Whale",
+      "sourceUrl": "https://www.fisheries.noaa.gov/species/blue-whale"
+    },
+    {
+      "qid": "general-200-906",
+      "sourceLabel": "Bank of Japan: Banknotes and Coins in Use",
+      "sourceUrl": "https://www.boj.or.jp/en/note_tfjgs/note/valid/"
+    },
+    {
+      "qid": "general-200-907",
+      "sourceLabel": "W3C: Arabic and Persian Layout Requirements",
+      "sourceUrl": "https://www.w3.org/TR/alreq/"
+    },
+    {
+      "qid": "general-200-908",
+      "sourceLabel": "Victoria and Albert Museum: Storm Umbrella",
+      "sourceUrl": "https://www.vam.ac.uk/blog/textiles-and-fashion/new-acquisition-storm-umbrella"
+    },
+    {
+      "qid": "general-400-901",
+      "sourceLabel": "NIDDK: What Is Diabetes?",
+      "sourceUrl": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes"
+    },
+    {
+      "qid": "general-400-902",
+      "sourceLabel": "NASA: Venus Facts",
+      "sourceUrl": "https://science.nasa.gov/venus/venus-facts/"
+    },
+    {
+      "qid": "general-400-903",
+      "sourceLabel": "Nobel Prize: Alexander Fleming Biography",
+      "sourceUrl": "https://www.nobelprize.org/prizes/medicine/1945/fleming/biographical/"
+    },
+    {
+      "qid": "general-400-904",
+      "sourceLabel": "NOAA: What Causes Tides?",
+      "sourceUrl": "https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html"
+    },
+    {
+      "qid": "general-400-905",
+      "sourceLabel": "Royal Society of Chemistry: Gold",
+      "sourceUrl": "https://periodic-table.rsc.org/element/79/"
+    },
+    {
+      "qid": "general-400-906",
+      "sourceLabel": "Supremo Tribunal Federal: Brazilian Constitution, Article 13",
+      "sourceUrl": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=13&abrirBase=CF"
+    },
+    {
+      "qid": "general-400-907",
+      "sourceLabel": "Corning Museum of Glass: Sand",
+      "sourceUrl": "https://allaboutglass.cmog.org/definition/sand"
+    },
+    {
+      "qid": "general-400-908",
+      "sourceLabel": "Visit Greenland: Practical Information",
+      "sourceUrl": "https://traveltrade.visitgreenland.com/faq/"
+    },
+    {
+      "qid": "general-600-901",
+      "sourceLabel": "British Museum: The Rosetta Stone",
+      "sourceUrl": "https://www.britishmuseum.org/blog/everything-you-ever-wanted-know-about-rosetta-stone"
+    },
+    {
+      "qid": "general-600-902",
+      "sourceLabel": "NICHD: What Makes Us Sleep?",
+      "sourceUrl": "https://www.nichd.nih.gov/health/topics/sleep/conditioninfo/causes"
+    },
+    {
+      "qid": "general-600-903",
+      "sourceLabel": "National Weather Service: Hurricane Facts",
+      "sourceUrl": "https://www.weather.gov/source/zhu/ZHU_Training_Page/tropical_stuff/hurricane_anatomy/hurricane_anatomy.html"
+    },
+    {
+      "qid": "general-600-904",
+      "sourceLabel": "Computer History Museum: Internet History",
+      "sourceUrl": "https://www.computerhistory.org/internethistory/"
+    },
+    {
+      "qid": "general-600-905",
+      "sourceLabel": "National Bank of Poland: Legal Tender and Zloty Coins",
+      "sourceUrl": "https://nbp.pl/wp-content/uploads/2022/11/2009_06___czeslaw_niemen_en.pdf"
+    },
+    {
+      "qid": "general-600-906",
+      "sourceLabel": "Royal Society of Chemistry: Tungsten",
+      "sourceUrl": "https://periodic-table.rsc.org/element/74/"
+    },
+    {
+      "qid": "general-600-907",
+      "sourceLabel": "NASA: Andromeda Galaxy",
+      "sourceUrl": "https://www.nasa.gov/universe/galaxies/andromeda-galaxy/"
+    },
+    {
+      "qid": "general-600-908",
+      "sourceLabel": "Swiss Federal Railways: Gotthard Base Tunnel",
+      "sourceUrl": "https://company.sbb.ch/de/bahnentwicklung/projekte/tessin/langintervalle.html"
+    },
+    {
+      "qid": "general-800-901",
+      "sourceLabel": "Carrier: Invention of Air Conditioning",
+      "sourceUrl": "https://www.carrier.com/us/en/history/invention-of-air-conditioning/"
+    },
+    {
+      "qid": "general-800-902",
+      "sourceLabel": "National Park Service: Fulgurites",
+      "sourceUrl": "https://www.nps.gov/articles/grsa-fulgurites.htm"
+    },
+    {
+      "qid": "general-800-903",
+      "sourceLabel": "Bank of Mongolia: Currency",
+      "sourceUrl": "https://www.mongolbank.mn/en/p/banknotes"
+    },
+    {
+      "qid": "general-800-904",
+      "sourceLabel": "New Zealand Ministry of Education: New Zealand Sign Language",
+      "sourceUrl": "https://ncea.education.govt.nz/learning-languages/new-zealand-sign-language"
+    },
+    {
+      "qid": "general-800-905",
+      "sourceLabel": "NIAMS: Learning About Bones",
+      "sourceUrl": "https://www.niams.nih.gov/health-topics/educational-resources/health-lesson-learning-about-bones"
+    },
+    {
+      "qid": "general-800-906",
+      "sourceLabel": "NASA: Cosmic Distances",
+      "sourceUrl": "https://science.nasa.gov/solar-system/cosmic-distances/"
+    },
+    {
+      "qid": "general-800-907",
+      "sourceLabel": "Microsoft Surface: Touch and Regular Typing",
+      "sourceUrl": "https://www.microsoft.com/en-us/surface/do-more-with-surface/choosing-between-touch-and-type"
+    },
+    {
+      "qid": "general-800-908",
+      "sourceLabel": "ESA: Proba-V Images Salar de Uyuni",
+      "sourceUrl": "https://www.esa.int/ESA_Multimedia/Images/2017/09/Proba-V_images_Salar_de_Uyuni"
+    },
+    {
+      "qid": "general-1000-901",
+      "sourceLabel": "Harvard Health: Wondering About Goosebumps",
+      "sourceUrl": "https://www.health.harvard.edu/blog/wondering-about-goosebumps-of-course-you-are-2020080320688"
+    },
+    {
+      "qid": "general-1000-902",
+      "sourceLabel": "NASA: Sunset at Mars Gale Crater",
+      "sourceUrl": "https://science.nasa.gov/resource/sunset-at-mars-gale-crater-curiosity/"
+    },
+    {
+      "qid": "general-1000-903",
+      "sourceLabel": "GS1: Historical Timeline",
+      "sourceUrl": "https://support.gs1.org/support/solutions/articles/43000734073-gs1-historical-timeline"
+    },
+    {
+      "qid": "general-1000-904",
+      "sourceLabel": "National Weather Service: Atmospheric Optics, Green Flash, page 8",
+      "sourceUrl": "https://www.weather.gov/media/chs/newsletters/StormCourier_2010.pdf#page=8"
+    },
+    {
+      "qid": "general-1000-905",
+      "sourceLabel": "Bank of Botswana: History of Botswana Currency",
+      "sourceUrl": "https://bankofbotswana.bw/content/history-botswana-currency"
+    },
+    {
+      "qid": "general-1000-906",
+      "sourceLabel": "University of Edinburgh, Roslin Institute: Life of Dolly",
+      "sourceUrl": "https://vet.ed.ac.uk/roslin/about/history/dolly/facts/life-of-dolly"
+    },
+    {
+      "qid": "general-1000-907",
+      "sourceLabel": "Levi Strauss: A Riveting Story",
+      "sourceUrl": "https://www.levi.com/SI/en/blog/article/birth-of-the-blue-jean"
+    },
+    {
+      "qid": "general-1000-908",
+      "sourceLabel": "Met Office: Unusual Cloud Formations",
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/clouds/unusual-cloud-formations"
+    },
+    {
+      "qid": "geo-200-901",
+      "sourceLabel": "المسح البريطاني لأنتاركتيكا: دليل المشاركين",
+      "sourceUrl": "https://www.bas.ac.uk/wp-content/uploads/2015/04/Participants-Handbook-2017.pdf"
+    },
+    {
+      "qid": "geo-200-902",
+      "sourceLabel": "المسح الجيولوجي الأمريكي: تكون الهيمالايا وحركة الصفائح",
+      "sourceUrl": "https://pubs.usgs.gov/gip/dynamic/understanding.html"
+    },
+    {
+      "qid": "geo-200-903",
+      "sourceLabel": "ناسا: صورة بغداد ونهر دجلة من المكوك",
+      "sourceUrl": "https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?frame=87&mission=STS078&roll=740"
+    },
+    {
+      "qid": "geo-200-904",
+      "sourceLabel": "ناسا: كثبان الصحراء الكبرى في شمال أفريقيا",
+      "sourceUrl": "https://science.nasa.gov/blogs/earth-matters/2012/11/02/dune-gallery/"
+    },
+    {
+      "qid": "geo-200-905",
+      "sourceLabel": "هيئة المعلومات والحكومة الإلكترونية: البحرين بالأرقام",
+      "sourceUrl": "https://www.iga.gov.bh/Media/Pdf-Section/Bahrain_in_figures_Booklet.pdf"
+    },
+    {
+      "qid": "geo-200-906",
+      "sourceLabel": "خدمة الطقس الوطنية الأمريكية: قاموس الطقس",
+      "sourceUrl": "https://www.weather.gov/key/glossary"
+    },
+    {
+      "qid": "geo-200-907",
+      "sourceLabel": "هيئة قناة السويس: عن القناة",
+      "sourceUrl": "https://www.suezcanal.gov.eg/Arabic/About/SuezCanal/Pages/AboutSuezCanal.aspx"
+    },
+    {
+      "qid": "geo-200-908",
+      "sourceLabel": "الإدارة الوطنية للمحيطات والغلاف الجوي: تسونامي",
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/tsunami.html"
+    },
+    {
+      "qid": "geo-400-901",
+      "sourceLabel": "مؤسسة تشارلز داروين: حفظ السلاحف العملاقة",
+      "sourceUrl": "https://www.darwinfoundation.org/en/our-work/land/giant-tortoise-conservation/"
+    },
+    {
+      "qid": "geo-400-902",
+      "sourceLabel": "إدارة معلومات الطاقة الأمريكية: مضائق الجزيرة العربية",
+      "sourceUrl": "https://www.eia.gov/todayinenergy/detail.php?id=32352"
+    },
+    {
+      "qid": "geo-400-903",
+      "sourceLabel": "وكالة الفضاء الأوروبية: جبال الأطلس الأفريقية",
+      "sourceUrl": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_Africa_s_Atlas_Mountains"
+    },
+    {
+      "qid": "geo-400-904",
+      "sourceLabel": "هيئة ميناء لندن: زيارة نهر التايمز",
+      "sourceUrl": "https://pla.co.uk/visiting-thames"
+    },
+    {
+      "qid": "geo-400-905",
+      "sourceLabel": "ناسا: عاصفة ترابية في غوبي",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/gobi-dust-storm-46908/"
+    },
+    {
+      "qid": "geo-400-906",
+      "sourceLabel": "وزارة الخارجية السويسرية: جغرافيا سويسرا",
+      "sourceUrl": "https://www.aboutswitzerland.eda.admin.ch/en/geography"
+    },
+    {
+      "qid": "geo-400-907",
+      "sourceLabel": "متحف علم الأحافير بجامعة بيركلي: الأقاليم العشبية",
+      "sourceUrl": "https://ucmp.berkeley.edu/exhibits/biomes/grasslands.php"
+    },
+    {
+      "qid": "geo-400-908",
+      "sourceLabel": "المسح الجيولوجي الأمريكي: حلقة النار",
+      "sourceUrl": "https://www.usgs.gov/faqs/what-ring-fire"
+    },
+    {
+      "qid": "geo-600-901",
+      "sourceLabel": "الإسكوا والمعهد الألماني لعلوم الأرض: حوض نهر العاصي",
+      "sourceUrl": "https://waterinventory.org/sites/waterinventory.org/files/chapters/Chapter-07-Orontes-River-Basin-web_1.pdf"
+    },
+    {
+      "qid": "geo-600-902",
+      "sourceLabel": "المسح البريطاني لأنتاركتيكا: حقائق جغرافية",
+      "sourceUrl": "https://www.bas.ac.uk/about/education-and-schools/antarctic-factsheet/"
+    },
+    {
+      "qid": "geo-600-903",
+      "sourceLabel": "ناسا: دراسة الغابات الشمالية BOREAS",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/introduction-to-boreas/"
+    },
+    {
+      "qid": "geo-600-904",
+      "sourceLabel": "اليونسكو: ملف ترشيح سقطرى ونباتاتها",
+      "sourceUrl": "https://whc.unesco.org/document/168956"
+    },
+    {
+      "qid": "geo-600-905",
+      "sourceLabel": "ناسا: غاليبولي ومضيق الدردنيل",
+      "sourceUrl": "https://earthobservatory.nasa.gov/images/7327/gallipoli-and-dardanelles-strait-turkey"
+    },
+    {
+      "qid": "geo-600-906",
+      "sourceLabel": "المسح الجيولوجي الأمريكي: الصدع الأفريقي الشرقي",
+      "sourceUrl": "https://www.usgs.gov/publications/seismicity-earth-1900-2013-east-african-rift"
+    },
+    {
+      "qid": "geo-600-907",
+      "sourceLabel": "NOAA: التيارات البحرية وتيار الخليج",
+      "sourceUrl": "https://cdn.oceanservice.noaa.gov/oceanserviceprod/education/tutorial_currents/lessons/currents_tutorial.pdf"
+    },
+    {
+      "qid": "geo-600-908",
+      "sourceLabel": "هيئة سياحة تسرمات: جبل ماترهورن",
+      "sourceUrl": "https://zermatt.swiss/en/p/matterhorn-01tVj000005DoH6IAK"
+    },
+    {
+      "qid": "geo-800-901",
+      "sourceLabel": "لجنة حماية بحر البلطيق: طبيعة البحر وملوحته",
+      "sourceUrl": "https://stateofthebalticsea.helcom.fi/overview/about-the-baltic-sea/"
+    },
+    {
+      "qid": "geo-800-902",
+      "sourceLabel": "NOAA: أبعد قمة عن مركز الأرض",
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/highestpoint.html"
+    },
+    {
+      "qid": "geo-800-903",
+      "sourceLabel": "وكالة الفضاء الأوروبية: مضيق مسينا",
+      "sourceUrl": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_The_Strait_of_Messina"
+    },
+    {
+      "qid": "geo-800-904",
+      "sourceLabel": "اتفاقية رامسار: شط الجريد",
+      "sourceUrl": "https://rsis.ramsar.org/ris/1699?language=en"
+    },
+    {
+      "qid": "geo-800-905",
+      "sourceLabel": "ناسا: بحيرة تشاد ومنطقة الساحل",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/lake-chad/"
+    },
+    {
+      "qid": "geo-800-906",
+      "sourceLabel": "حكومة تريستان دا كونا: برنامج الحزام الأزرق",
+      "sourceUrl": "https://www.tristandc.com/news-2018-02-06-bluebelt.php"
+    },
+    {
+      "qid": "geo-800-907",
+      "sourceLabel": "مكتب الأرصاد البريطاني: رياح العالم",
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names"
+    },
+    {
+      "qid": "geo-800-908",
+      "sourceLabel": "هيئة سياحة جنوب أيسلندا: غيسير وأصل الاسم",
+      "sourceUrl": "https://www.south.is/static/files/brochures/south-2015-saman.pdf"
+    },
+    {
+      "qid": "geo-1000-901",
+      "sourceLabel": "NOAA: نقطة نيمو",
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/nemo.html"
+    },
+    {
+      "qid": "geo-1000-902",
+      "sourceLabel": "ناسا: كينشاسا وبرازافيل",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/kinshasa-and-brazzaville-4329/"
+    },
+    {
+      "qid": "geo-1000-903",
+      "sourceLabel": "شركة قناة كورنث: عبور البرزخ",
+      "sourceUrl": "https://corinthcanal.com/images/CORINTHIAN_WEEK.pdf"
+    },
+    {
+      "qid": "geo-1000-904",
+      "sourceLabel": "معهد جنوب أفريقيا للتنوع الحيوي: إقليم الفينبوس",
+      "sourceUrl": "https://pza.sanbi.org/vegetation/fynbos-biome"
+    },
+    {
+      "qid": "geo-1000-905",
+      "sourceLabel": "اليونسكو: جزيرة سورتسي",
+      "sourceUrl": "https://whc.unesco.org/en/list/1267"
+    },
+    {
+      "qid": "geo-1000-906",
+      "sourceLabel": "ناسا: هضبة ألتيبلانو",
+      "sourceUrl": "https://earthobservatory.nasa.gov/IOTD/view.php?id=1152"
+    },
+    {
+      "qid": "geo-1000-907",
+      "sourceLabel": "مكتب الأرصاد البريطاني: رياح العالم",
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names"
+    },
+    {
+      "qid": "geo-1000-908",
+      "sourceLabel": "المسح الجيولوجي الأمريكي: جيولوجيا كهف الماموث والكارست",
+      "sourceUrl": "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-mammoth-cave-national-park"
+    },
+    {
+      "qid": "hidden-200-901",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-200-902",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-200-903",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-200-904",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-200-905",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-200-906",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-200-907",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-200-908",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-400-901",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-400-902",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-400-903",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-400-904",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-400-905",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-400-906",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-400-907",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-400-908",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-600-901",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-600-902",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-600-903",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-600-904",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-600-905",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-600-906",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-600-907",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-600-908",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-800-901",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-800-902",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-800-903",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-800-904",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-800-905",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-800-906",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-800-907",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-800-908",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-1000-901",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-1000-902",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-1000-903",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-1000-904",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-1000-905",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-1000-906",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-1000-907",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "hidden-1000-908",
+      "sourceLabel": "لغز بصري أصلي؛ يُتحقق من الهدف وموقعه والتنوع آليًا",
+      "sourceUrl": "docs/bank/rebuild-2026-09-18/interactive-evidence.md"
+    },
+    {
+      "qid": "history-200-901",
+      "sourceLabel": "وزارة الآثار المصرية: هضبة الجيزة",
+      "sourceUrl": "https://egymonuments.gov.eg/archaeological-sites/giza-plateau/"
+    },
+    {
+      "qid": "history-200-902",
+      "sourceLabel": "متحف المتروبوليتان: فن المدن الأولى",
+      "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2003/art-of-the-first-cities"
+    },
+    {
+      "qid": "history-200-903",
+      "sourceLabel": "المنتزه الأثري للكولوسيوم: المدرج",
+      "sourceUrl": "https://colosseo.it/en/area/the-colosseum/"
+    },
+    {
+      "qid": "history-200-904",
+      "sourceLabel": "جامعة كاليفورنيا، بركلي: رحلات ابن بطوطة",
+      "sourceUrl": "https://orias.berkeley.edu/resources-teachers/travels-ibn-battuta"
+    },
+    {
+      "qid": "history-200-905",
+      "sourceLabel": "مكتبة الكونغرس: كولومبوس ورحلته",
+      "sourceUrl": "https://www.loc.gov/exhibits/1492/columbus.html"
+    },
+    {
+      "qid": "history-200-906",
+      "sourceLabel": "بلدية برلين: فتح الجدار وسقوطه",
+      "sourceUrl": "https://www.berlin.de/en/history/8482274-8619314-opening-and-fall-of-the-berlin-wall.en.html"
+    },
+    {
+      "qid": "history-200-907",
+      "sourceLabel": "موقع برج إيفل: اكتمال البناء وافتتاحه",
+      "sourceUrl": "https://www.toureiffel.paris/en/news/history-and-culture/133-years-and-1083-feet"
+    },
+    {
+      "qid": "history-200-908",
+      "sourceLabel": "متحف اللوفر: الموناليزا",
+      "sourceUrl": "https://www.louvre.fr/decouvrir/le-palais/de-la-joconde-aux-noces-de-cana"
+    },
+    {
+      "qid": "history-400-901",
+      "sourceLabel": "متحف المتروبوليتان: الإسكندر والعالم الهلنستي",
+      "sourceUrl": "https://www.metmuseum.org/exhibitions/listings/2016/pergamon/exhibition-galleries"
+    },
+    {
+      "qid": "history-400-902",
+      "sourceLabel": "جامعة روسكيلده: الفكر العلمي الإسلامي وتأسيس بغداد",
+      "sourceUrl": "https://rucforsk.ruc.dk/ws/portalfiles/portal/63367903/2018_11_03_Shanghai_International_Studies_Islamic_Scientific_Thought.pdf"
+    },
+    {
+      "qid": "history-400-903",
+      "sourceLabel": "المتحف البريطاني: كليوباترا",
+      "sourceUrl": "https://www.britishmuseum.org/collection/term/BIOG57627"
+    },
+    {
+      "qid": "history-400-904",
+      "sourceLabel": "المنتزه الأثري لبومبي: المدينة بعد الثوران",
+      "sourceUrl": "https://pompeiisites.org/en/pompeii-map/analysis/pompeii-after-the-eruption/"
+    },
+    {
+      "qid": "history-400-905",
+      "sourceLabel": "متحف المتروبوليتان: العصر المملوكي",
+      "sourceUrl": "https://www.metmuseum.org/essays/the-art-of-the-mamluk-period-1250-1517"
+    },
+    {
+      "qid": "history-400-906",
+      "sourceLabel": "اليونسكو: أنغكور",
+      "sourceUrl": "https://whc.unesco.org/en/list/668"
+    },
+    {
+      "qid": "history-400-907",
+      "sourceLabel": "معهد لوميير: السينماتوغراف",
+      "sourceUrl": "https://www.institut-lumiere.org/le-cinematographe-lumiere"
+    },
+    {
+      "qid": "history-400-908",
+      "sourceLabel": "مكتبة فولجر لشكسبير: روميو وجولييت",
+      "sourceUrl": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/"
+    },
+    {
+      "qid": "history-600-901",
+      "sourceLabel": "متحف سميثسونيان للهنود الأمريكيين: تقاويم المايا",
+      "sourceUrl": "https://maya.nmai.si.edu/calendar/calendar-system"
+    },
+    {
+      "qid": "history-600-902",
+      "sourceLabel": "المتحف البريطاني: لوح من ملحمة جلجامش",
+      "sourceUrl": "https://www.britishmuseum.org/collection/object/W_K-3588"
+    },
+    {
+      "qid": "history-600-903",
+      "sourceLabel": "المكتبة البريطانية: ترجمة ملحمتي هوميروس",
+      "sourceUrl": "https://searcharchives.bl.uk/catalog/032-002110325"
+    },
+    {
+      "qid": "history-600-904",
+      "sourceLabel": "متحف ويبل، جامعة كامبريدج: الإسطرلاب",
+      "sourceUrl": "https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/astronomy/medieval-astrolabe"
+    },
+    {
+      "qid": "history-600-905",
+      "sourceLabel": "المتاحف الملكية في غرينتش: مسح جيمس كوك لأستراليا",
+      "sourceUrl": "https://www.rmg.co.uk/collections/objects/rmgc-object-543610"
+    },
+    {
+      "qid": "history-600-906",
+      "sourceLabel": "اليونسكو: منتزه رابا نوي",
+      "sourceUrl": "https://whc.unesco.org/en/list/715"
+    },
+    {
+      "qid": "history-600-907",
+      "sourceLabel": "اليونسكو: منهج ابن الهيثم العلمي",
+      "sourceUrl": "https://www.unesco.org/en/articles/sm-razaullah-ansari-ibn-al-haythams-scientific-method"
+    },
+    {
+      "qid": "history-600-908",
+      "sourceLabel": "مركز الدراسات الإسلامية التركي: معركة اليرموك",
+      "sourceUrl": "https://islamansiklopedisi.org.tr/yermuk-savasi"
+    },
+    {
+      "qid": "history-800-901",
+      "sourceLabel": "اليونسكو: موهينجو دارو",
+      "sourceUrl": "https://whc.unesco.org/en/list/138"
+    },
+    {
+      "qid": "history-800-902",
+      "sourceLabel": "مكتبة جامعة لايبزيغ: بردية إيبرس",
+      "sourceUrl": "https://www.ub.uni-leipzig.de/ueber-uns/ausstellungen/dauerausstellung/papyrus-ebers"
+    },
+    {
+      "qid": "history-800-903",
+      "sourceLabel": "متحف هيراكليون: تماثيل معبد كنوسوس المينوية",
+      "sourceUrl": "https://www.heraklionmuseum.gr/en/exhibit/the-snake-goddesses/"
+    },
+    {
+      "qid": "history-800-904",
+      "sourceLabel": "اليونسكو: مدينة الزهراء",
+      "sourceUrl": "https://whc.unesco.org/en/list/1560"
+    },
+    {
+      "qid": "history-800-905",
+      "sourceLabel": "متحف المتروبوليتان: تجارة الذهب عبر الصحراء",
+      "sourceUrl": "https://www.metmuseum.org/essays/the-trans-saharan-gold-trade-7th-14th-century"
+    },
+    {
+      "qid": "history-800-906",
+      "sourceLabel": "رسالة ابن فضلان، طبعة جامعة نيويورك: بعثة إلى الفولغا",
+      "sourceUrl": "https://www.jstor.org/stable/j.ctt1gk093h"
+    },
+    {
+      "qid": "history-800-907",
+      "sourceLabel": "قيادة التاريخ والتراث البحري الأمريكي: نبتون وأوفرلورد",
+      "sourceUrl": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1944/overlord/operation-neptune.html"
+    },
+    {
+      "qid": "history-800-908",
+      "sourceLabel": "مؤسسة العلوم والتكنولوجيا والحضارة: علوم البيروني",
+      "sourceUrl": "https://muslimheritage.com/the-science-of-al-biruni/"
+    },
+    {
+      "qid": "history-1000-901",
+      "sourceLabel": "المتحف الأثري الوطني اليوناني: آلية أنتيكيثيرا",
+      "sourceUrl": "https://antikythera-mechanism.namuseum.gr/en/"
+    },
+    {
+      "qid": "history-1000-902",
+      "sourceLabel": "قلعة هايكلير: المعرض المصري لعائلة كارنارفون",
+      "sourceUrl": "https://www.highclerecastle.co.uk/visit-us/egyptian-exhibition"
+    },
+    {
+      "qid": "history-1000-903",
+      "sourceLabel": "المنتزه الأثري لهيركولانيوم: المكتشفات العضوية",
+      "sourceUrl": "https://ercolano.cultura.gov.it/organic-finds/?lang=en"
+    },
+    {
+      "qid": "history-1000-904",
+      "sourceLabel": "متحف بايو: النسيج المطرز",
+      "sourceUrl": "https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/discover-the-bayeux-tapestry/"
+    },
+    {
+      "qid": "history-1000-905",
+      "sourceLabel": "وزارة الآثار المصرية: معبد حتشبسوت",
+      "sourceUrl": "https://egymonuments.gov.eg/monuments/hatshepsut-temple/"
+    },
+    {
+      "qid": "history-1000-906",
+      "sourceLabel": "سلطة إقليم البترا: تاريخ البترا",
+      "sourceUrl": "https://www.visitpetra.jo/en/page/12/History-of-Petra"
+    },
+    {
+      "qid": "history-1000-907",
+      "sourceLabel": "المتحف البحري المركزي الروسي: الطراد أورورا",
+      "sourceUrl": "https://navalmuseum.ru/news/memorable?id=423"
+    },
+    {
+      "qid": "history-1000-908",
+      "sourceLabel": "دراسة لاتينية وعربية في مكتبة الكونغرس: الحسن الوزان",
+      "sourceUrl": "https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/42/60/25/2020426025/2020426025.pdf"
+    },
+    {
+      "qid": "prophets-200-901",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/hud/36-37"
+    },
+    {
+      "qid": "prophets-200-902",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/al-anbya/69"
+    },
+    {
+      "qid": "prophets-200-903",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/yusuf/17"
+    },
+    {
+      "qid": "prophets-200-904",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/taha/30"
+    },
+    {
+      "qid": "prophets-200-905",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/an-nisa/163"
+    },
+    {
+      "qid": "prophets-200-906",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/maryam/34"
+    },
+    {
+      "qid": "prophets-200-907",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/al-araf/65"
+    },
+    {
+      "qid": "prophets-200-908",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/as-saffat/139-142"
+    },
+    {
+      "qid": "prophets-400-901",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/hud/40"
+    },
+    {
+      "qid": "prophets-400-902",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/hud/71"
+    },
+    {
+      "qid": "prophets-400-903",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/yusuf/43"
+    },
+    {
+      "qid": "prophets-400-904",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/taha/85"
+    },
+    {
+      "qid": "prophets-400-905",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/sad/36"
+    },
+    {
+      "qid": "prophets-400-906",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/al-maidah/112"
+    },
+    {
+      "qid": "prophets-400-907",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/hud/65"
+    },
+    {
+      "qid": "prophets-400-908",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/al-anbya/83"
+    },
+    {
+      "qid": "prophets-600-901",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/hud/40"
+    },
+    {
+      "qid": "prophets-600-902",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/al-anam/74"
+    },
+    {
+      "qid": "prophets-600-903",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/yusuf/55"
+    },
+    {
+      "qid": "prophets-600-904",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/al-araf/143"
+    },
+    {
+      "qid": "prophets-600-905",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/sad/31"
+    },
+    {
+      "qid": "prophets-600-906",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/ali-imran/39"
+    },
+    {
+      "qid": "prophets-600-907",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/ash-shuara/176-177"
+    },
+    {
+      "qid": "prophets-600-908",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/maryam/56-57"
+    },
+    {
+      "qid": "prophets-800-901",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/hud/44"
+    },
+    {
+      "qid": "prophets-800-902",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/adh-dhariyat/29"
+    },
+    {
+      "qid": "prophets-800-903",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/yusuf/92"
+    },
+    {
+      "qid": "prophets-800-904",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/al-kahf/60"
+    },
+    {
+      "qid": "prophets-800-905",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/saba/12"
+    },
+    {
+      "qid": "prophets-800-906",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/ali-imran/39"
+    },
+    {
+      "qid": "prophets-800-907",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/an-naml/48"
+    },
+    {
+      "qid": "prophets-800-908",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/sad/44"
+    },
+    {
+      "qid": "prophets-1000-901",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/taha/115"
+    },
+    {
+      "qid": "prophets-1000-902",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/an-nahl/120"
+    },
+    {
+      "qid": "prophets-1000-903",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/yusuf/84"
+    },
+    {
+      "qid": "prophets-1000-904",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/taha/59"
+    },
+    {
+      "qid": "prophets-1000-905",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/saba/14"
+    },
+    {
+      "qid": "prophets-1000-906",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/al-muminun/50"
+    },
+    {
+      "qid": "prophets-1000-907",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/adh-dhariyat/42"
+    },
+    {
+      "qid": "prophets-1000-908",
+      "sourceLabel": "القرآن الكريم — النص وسياق الآية",
+      "sourceUrl": "https://quran.com/as-saffat/145"
+    },
+    {
+      "qid": "quran-200-901",
+      "sourceLabel": "القرآن الكريم: الفاتحة",
+      "sourceUrl": "https://quran.com/1"
+    },
+    {
+      "qid": "quran-200-902",
+      "sourceLabel": "القرآن الكريم: البقرة 31",
+      "sourceUrl": "https://quran.com/al-baqarah/31"
+    },
+    {
+      "qid": "quran-200-903",
+      "sourceLabel": "القرآن الكريم: النمل 20–22",
+      "sourceUrl": "https://quran.com/an-naml/22"
+    },
+    {
+      "qid": "quran-200-904",
+      "sourceLabel": "القرآن الكريم: الأنبياء 30",
+      "sourceUrl": "https://quran.com/21/30"
+    },
+    {
+      "qid": "quran-200-905",
+      "sourceLabel": "القرآن الكريم: القدر 3",
+      "sourceUrl": "https://quran.com/al-qadr/3"
+    },
+    {
+      "qid": "quran-200-906",
+      "sourceLabel": "القرآن الكريم: الإسراء 1",
+      "sourceUrl": "https://quran.com/17/1"
+    },
+    {
+      "qid": "quran-200-907",
+      "sourceLabel": "القرآن الكريم: يوسف 2",
+      "sourceUrl": "https://quran.com/yusuf/2"
+    },
+    {
+      "qid": "quran-200-908",
+      "sourceLabel": "القرآن الكريم: النمل 18",
+      "sourceUrl": "https://quran.com/27/18"
+    },
+    {
+      "qid": "quran-400-901",
+      "sourceLabel": "القرآن الكريم: البقرة 255",
+      "sourceUrl": "https://quran.com/2/255"
+    },
+    {
+      "qid": "quran-400-902",
+      "sourceLabel": "القرآن الكريم: لقمان 12–13",
+      "sourceUrl": "https://quran.com/31/12-13"
+    },
+    {
+      "qid": "quran-400-903",
+      "sourceLabel": "القرآن الكريم: الرحمن 68",
+      "sourceUrl": "https://quran.com/ar-rahman/68"
+    },
+    {
+      "qid": "quran-400-904",
+      "sourceLabel": "القرآن الكريم: النمل 38–40",
+      "sourceUrl": "https://quran.com/27/38-40"
+    },
+    {
+      "qid": "quran-400-905",
+      "sourceLabel": "القرآن الكريم: الأعراف 54",
+      "sourceUrl": "https://quran.com/7/54"
+    },
+    {
+      "qid": "quran-400-906",
+      "sourceLabel": "القرآن الكريم: هود 44",
+      "sourceUrl": "https://quran.com/11/44"
+    },
+    {
+      "qid": "quran-400-907",
+      "sourceLabel": "القرآن الكريم: المطففين 26",
+      "sourceUrl": "https://quran.com/83/26"
+    },
+    {
+      "qid": "quran-400-908",
+      "sourceLabel": "القرآن الكريم: التوبة، مطلع السورة",
+      "sourceUrl": "https://quran.com/9"
+    },
+    {
+      "qid": "quran-600-901",
+      "sourceLabel": "القرآن الكريم: الحجرات 13",
+      "sourceUrl": "https://quran.com/49/13"
+    },
+    {
+      "qid": "quran-600-902",
+      "sourceLabel": "القرآن الكريم: البقرة 247",
+      "sourceUrl": "https://quran.com/2/247"
+    },
+    {
+      "qid": "quran-600-903",
+      "sourceLabel": "القرآن الكريم: الصافات 146",
+      "sourceUrl": "https://quran.com/as-saffat/146"
+    },
+    {
+      "qid": "quran-600-904",
+      "sourceLabel": "القرآن الكريم: الكهف 96",
+      "sourceUrl": "https://quran.com/18/96"
+    },
+    {
+      "qid": "quran-600-905",
+      "sourceLabel": "القرآن الكريم: ص 23",
+      "sourceUrl": "https://quran.com/38/23"
+    },
+    {
+      "qid": "quran-600-906",
+      "sourceLabel": "القرآن الكريم: البقرة 102",
+      "sourceUrl": "https://quran.com/al-baqarah/102"
+    },
+    {
+      "qid": "quran-600-907",
+      "sourceLabel": "القرآن الكريم: النور 39",
+      "sourceUrl": "https://quran.com/24/39"
+    },
+    {
+      "qid": "quran-600-908",
+      "sourceLabel": "القرآن الكريم: الروم 2–4",
+      "sourceUrl": "https://quran.com/30/2-4"
+    },
+    {
+      "qid": "quran-800-901",
+      "sourceLabel": "القرآن الكريم: الذاريات 21",
+      "sourceUrl": "https://quran.com/adh-dhariyat/21"
+    },
+    {
+      "qid": "quran-800-902",
+      "sourceLabel": "القرآن الكريم: غافر 36",
+      "sourceUrl": "https://quran.com/40/36"
+    },
+    {
+      "qid": "quran-800-903",
+      "sourceLabel": "القرآن الكريم: الواقعة 29",
+      "sourceUrl": "https://quran.com/al-waqiah/29"
+    },
+    {
+      "qid": "quran-800-904",
+      "sourceLabel": "القرآن الكريم: الكهف 19",
+      "sourceUrl": "https://quran.com/18/19"
+    },
+    {
+      "qid": "quran-800-905",
+      "sourceLabel": "القرآن الكريم: الدخان 3",
+      "sourceUrl": "https://quran.com/44/3"
+    },
+    {
+      "qid": "quran-800-906",
+      "sourceLabel": "القرآن الكريم: الأعراف 46",
+      "sourceUrl": "https://quran.com/7/46"
+    },
+    {
+      "qid": "quran-800-907",
+      "sourceLabel": "القرآن الكريم: يس 39",
+      "sourceUrl": "https://quran.com/ya-sin/39"
+    },
+    {
+      "qid": "quran-800-908",
+      "sourceLabel": "القرآن الكريم: العاديات 2",
+      "sourceUrl": "https://quran.com/al-adiyat/2"
+    },
+    {
+      "qid": "quran-1000-901",
+      "sourceLabel": "القرآن الكريم: الأنعام 99",
+      "sourceUrl": "https://quran.com/6/99"
+    },
+    {
+      "qid": "quran-1000-902",
+      "sourceLabel": "القرآن الكريم: المائدة 44",
+      "sourceUrl": "https://quran.com/5/44"
+    },
+    {
+      "qid": "quran-1000-903",
+      "sourceLabel": "القرآن الكريم: الأنعام 99",
+      "sourceUrl": "https://quran.com/6/99"
+    },
+    {
+      "qid": "quran-1000-904",
+      "sourceLabel": "القرآن الكريم: القمر 13",
+      "sourceUrl": "https://quran.com/54/13"
+    },
+    {
+      "qid": "quran-1000-905",
+      "sourceLabel": "القرآن الكريم: الأحقاف 15",
+      "sourceUrl": "https://quran.com/al-ahqaf/15"
+    },
+    {
+      "qid": "quran-1000-906",
+      "sourceLabel": "القرآن الكريم: الإنسان 18",
+      "sourceUrl": "https://quran.com/76/18"
+    },
+    {
+      "qid": "quran-1000-907",
+      "sourceLabel": "القرآن الكريم: الذاريات 7",
+      "sourceUrl": "https://quran.com/adh-dhariyat/7"
+    },
+    {
+      "qid": "quran-1000-908",
+      "sourceLabel": "القرآن الكريم: النور 43",
+      "sourceUrl": "https://quran.com/24/43"
+    },
+    {
+      "qid": "ramadan-200-901",
+      "sourceLabel": "صحيح البخاري — الحديث 1923",
+      "sourceUrl": "https://sunnah.com/bukhari:1923"
+    },
+    {
+      "qid": "ramadan-200-902",
+      "sourceLabel": "محافظة القاهرة — فانوس رمضان",
+      "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/ramadan-lantern/"
+    },
+    {
+      "qid": "ramadan-200-903",
+      "sourceLabel": "سعوديبيديا — شهر رمضان",
+      "sourceUrl": "https://saudipedia.com/شهر-رمضان"
+    },
+    {
+      "qid": "ramadan-200-904",
+      "sourceLabel": "محافظة القاهرة — الكنافة والقطايف",
+      "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/kunafa-and-qatayef/"
+    },
+    {
+      "qid": "ramadan-200-905",
+      "sourceLabel": "سعوديبيديا — شهر رمضان",
+      "sourceUrl": "https://saudipedia.com/شهر-رمضان"
+    },
+    {
+      "qid": "ramadan-200-906",
+      "sourceLabel": "هيئة السياحة القطرية — تقاليد رمضان",
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan"
+    },
+    {
+      "qid": "ramadan-200-907",
+      "sourceLabel": "محافظة القاهرة — فانوس رمضان",
+      "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/ramadan-lantern/"
+    },
+    {
+      "qid": "ramadan-200-908",
+      "sourceLabel": "القرآن الكريم — نص الآية",
+      "sourceUrl": "https://quran.com/al-qadr/1-5"
+    },
+    {
+      "qid": "ramadan-400-901",
+      "sourceLabel": "سعوديبيديا — شهر رمضان",
+      "sourceUrl": "https://saudipedia.com/شهر-رمضان"
+    },
+    {
+      "qid": "ramadan-400-902",
+      "sourceLabel": "هيئة السياحة القطرية — تقاليد رمضان",
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan"
+    },
+    {
+      "qid": "ramadan-400-903",
+      "sourceLabel": "سعوديبيديا — مكونات الهريس وأداة تحضيره",
+      "sourceUrl": "https://saudipedia.com/الهريس"
+    },
+    {
+      "qid": "ramadan-400-904",
+      "sourceLabel": "الأهرام — وصفة التمر الهندي",
+      "sourceUrl": "https://gate.ahram.org.eg/News/5483552.aspx"
+    },
+    {
+      "qid": "ramadan-400-905",
+      "sourceLabel": "دار الإفتاء المصرية — أحداث رمضانية",
+      "sourceUrl": "https://ramadan.dar-alifta.org/event"
+    },
+    {
+      "qid": "ramadan-400-906",
+      "sourceLabel": "اليونسكو — مدينة دمشق القديمة",
+      "sourceUrl": "https://whc.unesco.org/en/list/20/"
+    },
+    {
+      "qid": "ramadan-400-907",
+      "sourceLabel": "صحيح البخاري — الحديث 1503",
+      "sourceUrl": "https://sunnah.com/bukhari:1503"
+    },
+    {
+      "qid": "ramadan-400-908",
+      "sourceLabel": "محافظة القاهرة — بوابة رمضان وإمساكيته",
+      "sourceUrl": "https://cairo.gov.eg/ar/more/seasonal-events/ramadan/"
+    },
+    {
+      "qid": "ramadan-600-901",
+      "sourceLabel": "سعوديبيديا — شهر رمضان",
+      "sourceUrl": "https://saudipedia.com/شهر-رمضان"
+    },
+    {
+      "qid": "ramadan-600-902",
+      "sourceLabel": "هيئة السياحة القطرية — تقاليد رمضان",
+      "sourceUrl": "https://visitqatar.com/intl-en/about-qatar/traditions/ramadan"
+    },
+    {
+      "qid": "ramadan-600-903",
+      "sourceLabel": "ريف اليمن — تقرير ميداني عن صناعة اللحوح",
+      "sourceUrl": "https://reefyemen.net/%D8%A7%D9%84%D9%84%D8%AD%D9%88%D8%AD-%D8%A3%D9%8A%D9%82%D9%88%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D8%AF%D8%A9-%D8%A7%D9%84%D8%B1%D9%85%D8%B6%D8%A7%D9%86%D9%8A%D8%A9-%D9%81"
+    },
+    {
+      "qid": "ramadan-600-904",
+      "sourceLabel": "ديوان السياحة التونسي — القيروان ومقروضها",
+      "sourceUrl": "https://www.discovertunisia.com/decouvrir/autour-de-kairouan"
+    },
+    {
+      "qid": "ramadan-600-905",
+      "sourceLabel": "هيئة المجتمعات العمرانية — مدينة العاشر من رمضان",
+      "sourceUrl": "https://www.newcities.gov.eg/know_cities/Tenth_Ramadan/default.aspx"
+    },
+    {
+      "qid": "ramadan-600-906",
+      "sourceLabel": "صحيح البخاري — الحديث 2017",
+      "sourceUrl": "https://sunnah.com/bukhari:2017"
+    },
+    {
+      "qid": "ramadan-600-907",
+      "sourceLabel": "صحيح البخاري — الحديث 1909",
+      "sourceUrl": "https://sunnah.com/bukhari:1909"
+    },
+    {
+      "qid": "ramadan-600-908",
+      "sourceLabel": "وكالة الأنباء العراقية — تراث ماجينا",
+      "sourceUrl": "https://ina.iq/ar/art/205796--.html"
+    },
+    {
+      "qid": "ramadan-800-901",
+      "sourceLabel": "مجمع اللغة العربية بالقاهرة — رمضان وجموعه",
+      "sourceUrl": "https://www.arabicacademy.gov.eg/ar/محرك-البحث/رَمَضَانُ?exact_search=true"
+    },
+    {
+      "qid": "ramadan-800-902",
+      "sourceLabel": "وزارة الإعلام العمانية — عادات الشهر",
+      "sourceUrl": "https://www.omaninfo.om/images/library/file/Book736319.pdf"
+    },
+    {
+      "qid": "ramadan-800-903",
+      "sourceLabel": "المكتب الوطني المغربي للسياحة — فن الطبخ",
+      "sourceUrl": "https://www.visitmorocco.com/sites/default/files/atoms/files/maroc-ang.pdf"
+    },
+    {
+      "qid": "ramadan-800-904",
+      "sourceLabel": "رصيف22 — مقابلات ميدانية عن مشروبات رمضان",
+      "sourceUrl": "https://raseef22.net/article/1092704-الكشك-الأبريه-السوبيا-القصب-العرديب-عصائر-رمضانية-بعدد-الأقاليم-المصرية"
+    },
+    {
+      "qid": "ramadan-800-905",
+      "sourceLabel": "دار الإفتاء المصرية — أحداث رمضانية",
+      "sourceUrl": "https://ramadan.dar-alifta.org/event"
+    },
+    {
+      "qid": "ramadan-800-906",
+      "sourceLabel": "صحيح البخاري — الحديث 1503",
+      "sourceUrl": "https://sunnah.com/bukhari:1503"
+    },
+    {
+      "qid": "ramadan-800-907",
+      "sourceLabel": "المرصد البحري الأمريكي — رؤية الهلال",
+      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent"
+    },
+    {
+      "qid": "ramadan-800-908",
+      "sourceLabel": "قنا — تقرير ميداني عن المأكولات السودانية",
+      "sourceUrl": "https://qna.org.qa/ar-QA/news/news-details?date=4%2F05%2F2022&id=0013-عيد-الفطر-في-السودان-حرص-على-بياض-الثياب-ونقاء-السريرة"
+    },
+    {
+      "qid": "ramadan-1000-901",
+      "sourceLabel": "هيئة السياحة اليونانية — الحلويات",
+      "sourceUrl": "https://www.visitgreece.gr/fr/experiences/gastronomy/traditional-products/greek-sweets"
+    },
+    {
+      "qid": "ramadan-1000-902",
+      "sourceLabel": "وكالة الأنباء القطرية — التراث الرمضاني",
+      "sourceUrl": "https://qna.org.qa/ar-QA/News-Area/Special-News/2023-3/27/0033-الشعوب-العربية-تستقبل-شهر-الصيام-بالعبادات-والزينات-والتهاني--تقرير"
+    },
+    {
+      "qid": "ramadan-1000-903",
+      "sourceLabel": "اليونسكو — ملف تقاليد الإفطار والدول المقدمة",
+      "sourceUrl": "https://ich.unesco.org/en/RL/iftar-eftari-iftar-iftor-and-its-socio-cultural-traditions-01984"
+    },
+    {
+      "qid": "ramadan-1000-904",
+      "sourceLabel": "تونس الرقمية — تقرير ميداني عن حلويات باجة",
+      "sourceUrl": "https://ar.tunisienumerique.com/%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%B1%D9%82-%D9%88%D8%A7%D9%84%D8%B2%D9%84%D8%A7%D8%A8%D9%8A%D8%A9-%D8%A5%D9%84%D9%89-%D9%85%D8%AE%D8%A7%D8%B1%D9%82-%D8%A8%D9%82%D9%84%D8%A7%D9%88/"
+    },
+    {
+      "qid": "ramadan-1000-905",
+      "sourceLabel": "القرآن الكريم — نص الآية",
+      "sourceUrl": "https://quran.com/al-baqarah/185"
+    },
+    {
+      "qid": "ramadan-1000-906",
+      "sourceLabel": "محافظة القاهرة — فانوس رمضان",
+      "sourceUrl": "https://www.cairo.gov.eg/ar/culture/cultural-variety/ramadan-lantern/"
+    },
+    {
+      "qid": "ramadan-1000-907",
+      "sourceLabel": "المرصد البحري الأمريكي — رؤية الهلال",
+      "sourceUrl": "https://aa.usno.navy.mil/faq/crescent"
+    },
+    {
+      "qid": "ramadan-1000-908",
+      "sourceLabel": "سعوديبيديا — مكونات الهريس وأداة تحضيره",
+      "sourceUrl": "https://saudipedia.com/الهريس"
+    },
+    {
+      "qid": "science-200-901",
+      "sourceLabel": "NASA: What Is Gravity?",
+      "sourceUrl": "https://spaceplace.nasa.gov/what-is-gravity/en/"
+    },
+    {
+      "qid": "science-200-902",
+      "sourceLabel": "OpenStax Biology: Water",
+      "sourceUrl": "https://openstax.org/books/biology/pages/2-2-water"
+    },
+    {
+      "qid": "science-200-903",
+      "sourceLabel": "OpenStax Biology: Overview of Photosynthesis",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/8-1-overview-of-photosynthesis"
+    },
+    {
+      "qid": "science-200-904",
+      "sourceLabel": "NHLBI: How the Heart Works",
+      "sourceUrl": "https://www.nhlbi.nih.gov/health/heart"
+    },
+    {
+      "qid": "science-200-905",
+      "sourceLabel": "NASA: Mars Facts",
+      "sourceUrl": "https://science.nasa.gov/mars/facts/"
+    },
+    {
+      "qid": "science-200-906",
+      "sourceLabel": "US Department of Energy: Solar Photovoltaic Cell Basics",
+      "sourceUrl": "https://www.energy.gov/cmei/systems/solar-photovoltaic-cell-basics"
+    },
+    {
+      "qid": "science-200-907",
+      "sourceLabel": "OpenStax Biology: Water",
+      "sourceUrl": "https://openstax.org/books/biology/pages/2-2-water"
+    },
+    {
+      "qid": "science-200-908",
+      "sourceLabel": "National Weather Service: Weather Education",
+      "sourceUrl": "https://www.weather.gov/jkl/education"
+    },
+    {
+      "qid": "science-400-901",
+      "sourceLabel": "UNESCO: Ibn al-Haytham, Pioneer of Modern Optics",
+      "sourceUrl": "https://www.unesco.org/en/articles/international-year-light-ibn-al-haytham-pioneer-modern-optics-celebrated-unesco"
+    },
+    {
+      "qid": "science-400-902",
+      "sourceLabel": "OpenStax: Dispersion, The Rainbow and Prisms",
+      "sourceUrl": "https://openstax.org/books/college-physics-2e/pages/25-5-dispersion-the-rainbow-and-prisms"
+    },
+    {
+      "qid": "science-400-903",
+      "sourceLabel": "OpenStax Biology: Water",
+      "sourceUrl": "https://openstax.org/books/biology/pages/2-2-water"
+    },
+    {
+      "qid": "science-400-904",
+      "sourceLabel": "OpenStax: Light-Dependent Reaction of Photosynthesis",
+      "sourceUrl": "https://openstax.org/books/biology-ap-courses/pages/8-2-the-light-dependent-reaction-of-photosynthesis"
+    },
+    {
+      "qid": "science-400-905",
+      "sourceLabel": "NASA: Eclipses",
+      "sourceUrl": "https://science.nasa.gov/eclipses/"
+    },
+    {
+      "qid": "science-400-906",
+      "sourceLabel": "OpenStax Physics: Behavior of Electromagnetic Radiation",
+      "sourceUrl": "https://openstax.org/books/physics/pages/15-2-the-behavior-of-electromagnetic-radiation"
+    },
+    {
+      "qid": "science-400-907",
+      "sourceLabel": "Royal Society of Chemistry: Mercury",
+      "sourceUrl": "https://periodic-table.rsc.org/element/80/"
+    },
+    {
+      "qid": "science-400-908",
+      "sourceLabel": "National Weather Service: Weather Education",
+      "sourceUrl": "https://www.weather.gov/jkl/education"
+    },
+    {
+      "qid": "science-600-901",
+      "sourceLabel": "BIPM: SI Base Units",
+      "sourceUrl": "https://www.bipm.org/en/measurement-units/si-base-units"
+    },
+    {
+      "qid": "science-600-902",
+      "sourceLabel": "OpenStax University Physics: Doppler Effect",
+      "sourceUrl": "https://openstax.org/books/university-physics-volume-1/pages/17-7-the-doppler-effect"
+    },
+    {
+      "qid": "science-600-903",
+      "sourceLabel": "OpenStax Chemistry: Covalent Bonding",
+      "sourceUrl": "https://openstax.org/books/chemistry-2e/pages/7-2-covalent-bonding"
+    },
+    {
+      "qid": "science-600-904",
+      "sourceLabel": "OpenStax Biology: Homeostasis",
+      "sourceUrl": "https://openstax.org/books/biology-2e/pages/33-3-homeostasis"
+    },
+    {
+      "qid": "science-600-905",
+      "sourceLabel": "NIGMS: Regeneration",
+      "sourceUrl": "https://www.nigms.nih.gov/education/fact-sheets/Pages/regeneration"
+    },
+    {
+      "qid": "science-600-906",
+      "sourceLabel": "NASA: Andromeda Galaxy",
+      "sourceUrl": "https://www.nasa.gov/universe/galaxies/andromeda-galaxy/"
+    },
+    {
+      "qid": "science-600-907",
+      "sourceLabel": "KU Leuven Materials Engineering: Lithium",
+      "sourceUrl": "https://www.mtm.kuleuven.be/periodic-table/data/fiches/info-li"
+    },
+    {
+      "qid": "science-600-908",
+      "sourceLabel": "Royal Society of Chemistry: Development of the Periodic Table",
+      "sourceUrl": "https://periodic-table.rsc.org/about"
+    },
+    {
+      "qid": "science-800-901",
+      "sourceLabel": "CERN: The Standard Model",
+      "sourceUrl": "https://home.cern/science/physics/standard-model/"
+    },
+    {
+      "qid": "science-800-902",
+      "sourceLabel": "RSC Education: Flame Tests",
+      "sourceUrl": "https://edu.rsc.org/infographics/how-to-carry-out-flame-tests/4024075.article"
+    },
+    {
+      "qid": "science-800-903",
+      "sourceLabel": "European Space Agency: Tiny Animals Survive Exposure to Space",
+      "sourceUrl": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Research/Tiny_animals_survive_exposure_to_space"
+    },
+    {
+      "qid": "science-800-904",
+      "sourceLabel": "NASA: What Is the Sun Corona?",
+      "sourceUrl": "https://spaceplace.nasa.gov/sun-corona/en/"
+    },
+    {
+      "qid": "science-800-905",
+      "sourceLabel": "Royal Society of Chemistry: Tungsten",
+      "sourceUrl": "https://periodic-table.rsc.org/element/74/"
+    },
+    {
+      "qid": "science-800-906",
+      "sourceLabel": "BIPM: SI Base Units",
+      "sourceUrl": "https://www.bipm.org/en/measurement-units/si-base-units"
+    },
+    {
+      "qid": "science-800-907",
+      "sourceLabel": "Science History Institute: Photo 51, Annotated by Raymond Gosling",
+      "sourceUrl": "https://digital.sciencehistory.org/works/mjir8wn"
+    },
+    {
+      "qid": "science-800-908",
+      "sourceLabel": "Harvard Natural Sciences: Kinetic Theory Demonstrations",
+      "sourceUrl": "https://sciencedemonstrations.fas.harvard.edu/kinetic-theory"
+    },
+    {
+      "qid": "science-1000-901",
+      "sourceLabel": "OpenStax University Physics: The Carnot Cycle",
+      "sourceUrl": "https://openstax.org/books/university-physics-volume-2/pages/4-5-the-carnot-cycle"
+    },
+    {
+      "qid": "science-1000-902",
+      "sourceLabel": "IUPAC Gold Book: Weber",
+      "sourceUrl": "https://goldbook.iupac.org/terms/view/W06666"
+    },
+    {
+      "qid": "science-1000-903",
+      "sourceLabel": "Natural History Museum: Natural Selection",
+      "sourceUrl": "https://www.nhm.ac.uk/discover/what-is-natural-selection.html"
+    },
+    {
+      "qid": "science-1000-904",
+      "sourceLabel": "IAEA Safeguards Symposium: Blue Cherenkov Light in Water",
+      "sourceUrl": "https://conferences.iaea.org/event/173/contributions/13356/attachments/7890/10577/Poster_SFM_2019.pdf"
+    },
+    {
+      "qid": "science-1000-905",
+      "sourceLabel": "John Innes Centre: Meet the Molecules, Geosmin",
+      "sourceUrl": "https://jic.ac.uk/blog/meet-the-molecules-geosmin/"
+    },
+    {
+      "qid": "science-1000-906",
+      "sourceLabel": "National Park Service: Kangaroo Rats",
+      "sourceUrl": "https://home.nps.gov/whsa/learn/nature/kangaroo-rats.htm"
+    },
+    {
+      "qid": "science-1000-907",
+      "sourceLabel": "NASA: Pluto in the Kuiper Belt",
+      "sourceUrl": "https://science.nasa.gov/dwarf-planets/pluto/"
+    },
+    {
+      "qid": "science-1000-908",
+      "sourceLabel": "Royal Society of Chemistry: Gallium",
+      "sourceUrl": "https://periodic-table.rsc.org/element/31/"
+    },
+    {
+      "qid": "tech-200-901",
+      "sourceLabel": "مايكروسوفت: إعدادات الفأرة",
+      "sourceUrl": "https://support.microsoft.com/en-us/windows/hardware/input-devices/change-mouse-settings"
+    },
+    {
+      "qid": "tech-200-902",
+      "sourceLabel": "سيسكو: تعريف شبكة واي فاي",
+      "sourceUrl": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-a-wi-fi-network.html"
+    },
+    {
+      "qid": "tech-200-903",
+      "sourceLabel": "غوغل: نظام أندرويد",
+      "sourceUrl": "https://blog.google/products-and-platforms/platforms/android/android-gemini-google-ai/"
+    },
+    {
+      "qid": "tech-200-904",
+      "sourceLabel": "كينغستون: ذاكرة USB المحمولة",
+      "sourceUrl": "https://shop.kingston.com/products/datatraveler-exodia-onyx-usb-flash-drive"
+    },
+    {
+      "qid": "tech-200-905",
+      "sourceLabel": "أمازون: سيرة جيف بيزوس وتأسيس الشركة",
+      "sourceUrl": "https://ir.aboutamazon.com/officers-and-directors/person-details/"
+    },
+    {
+      "qid": "tech-200-906",
+      "sourceLabel": "مايكروسوفت: أيقونات سطح المكتب",
+      "sourceUrl": "https://support.microsoft.com/en-us/topic/how-to-arrange-or-move-icons-on-the-desktop-70e4d22a-d760-5585-449f-2a14c417f84c"
+    },
+    {
+      "qid": "tech-200-907",
+      "sourceLabel": "مايكروسوفت: المؤسسان سنة 1975",
+      "sourceUrl": "https://news.microsoft.com/microsoft-50/"
+    },
+    {
+      "qid": "tech-200-908",
+      "sourceLabel": "أمازون: أليكسا وأجهزة إيكو",
+      "sourceUrl": "https://echo.amazon.com/about"
+    },
+    {
+      "qid": "tech-400-901",
+      "sourceLabel": "آي بي إم: قاموس المصطلحات، بت وبايت",
+      "sourceUrl": "https://www.ibm.com/docs/en/t-tt-and-t?topic=drives-glossary"
+    },
+    {
+      "qid": "tech-400-902",
+      "sourceLabel": "آي بي إم: تعريف البرمجيات",
+      "sourceUrl": "https://www.ibm.com/think/topics/software-development"
+    },
+    {
+      "qid": "tech-400-903",
+      "sourceLabel": "سيسكو: الإيثرنت",
+      "sourceUrl": "https://www.cisco.com/site/us/en/learn/topics/networking/what-is-ethernet.html"
+    },
+    {
+      "qid": "tech-400-904",
+      "sourceLabel": "آبل: نظام iOS",
+      "sourceUrl": "https://developer.apple.com/ios"
+    },
+    {
+      "qid": "tech-400-905",
+      "sourceLabel": "كينغستون: قاموس الذاكرة",
+      "sourceUrl": "https://www.kingston.com/en/memory/kingston-glossary"
+    },
+    {
+      "qid": "tech-400-906",
+      "sourceLabel": "ميتا: إعلان تغيير اسم الشركة سنة 2021",
+      "sourceUrl": "https://about.fb.com/news/2021/10/facebook-company-is-now-meta/"
+    },
+    {
+      "qid": "tech-400-907",
+      "sourceLabel": "آي بي إم: البت والبايت",
+      "sourceUrl": "https://www.ibm.com/think/topics/qubit"
+    },
+    {
+      "qid": "tech-400-908",
+      "sourceLabel": "أوبن إيه آي: تعريف ChatGPT",
+      "sourceUrl": "https://help.openai.com/en/articles/12677804-what-is-chatgpt-faq"
+    },
+    {
+      "qid": "tech-600-901",
+      "sourceLabel": "أوراكل: مقدمة مواصفة جافا ومبتكرها",
+      "sourceUrl": "https://docs.oracle.com/javase/specs/jls/se6/html/j.preface.html"
+    },
+    {
+      "qid": "tech-600-902",
+      "sourceLabel": "سيرن: ميلاد الويب",
+      "sourceUrl": "https://home.cern/science/computing/the-birth-of-the-web/"
+    },
+    {
+      "qid": "tech-600-903",
+      "sourceLabel": "كوالكوم: تعريف معالجات سنابدراجون",
+      "sourceUrl": "https://www.qualcomm.com/snapdragon/what-is-snapdragon"
+    },
+    {
+      "qid": "tech-600-904",
+      "sourceLabel": "موزيلا: تعريف URL",
+      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Glossary/URL"
+    },
+    {
+      "qid": "tech-600-905",
+      "sourceLabel": "كينغستون: قاموس مصطلحات الذاكرة",
+      "sourceUrl": "https://www.kingston.com/en/memory/kingston-glossary"
+    },
+    {
+      "qid": "tech-600-906",
+      "sourceLabel": "أوراكل: تاريخ تأسيس الشركة",
+      "sourceUrl": "https://www.oracle.com/us/corporate/profit/p27anniv-timeline-151918.pdf"
+    },
+    {
+      "qid": "tech-600-907",
+      "sourceLabel": "دينيس ريتشي، مختبرات بيل: تطور لغة سي",
+      "sourceUrl": "https://www.bell-labs.com/usr/dmr/www/chist.pdf"
+    },
+    {
+      "qid": "tech-600-908",
+      "sourceLabel": "أنثروبيك: مساعد كلود",
+      "sourceUrl": "https://www.anthropic.com/claude"
+    },
+    {
+      "qid": "tech-800-901",
+      "sourceLabel": "دينيس ريتشي، مختبرات بيل: تاريخ يونكس المبكر",
+      "sourceUrl": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html"
+    },
+    {
+      "qid": "tech-800-902",
+      "sourceLabel": "مواصفة IETF RFC 5321: بروتوكول نقل البريد",
+      "sourceUrl": "https://www.rfc-editor.org/info/rfc5321/"
+    },
+    {
+      "qid": "tech-800-903",
+      "sourceLabel": "كورنينغ: زجاج جوريلا",
+      "sourceUrl": "https://www.corning.com/gorillaglass/worldwide/en.html"
+    },
+    {
+      "qid": "tech-800-904",
+      "sourceLabel": "مايكروسوفت: نظام ملفات NTFS",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview"
+    },
+    {
+      "qid": "tech-800-905",
+      "sourceLabel": "آبل: افتتاح آبل بارك في كوبرتينو",
+      "sourceUrl": "https://www.apple.com/newsroom/2017/02/apple-park-opens-to-employees-in-april/"
+    },
+    {
+      "qid": "tech-800-906",
+      "sourceLabel": "مجموعة Bluetooth: أصل الاسم",
+      "sourceUrl": "https://www.bluetooth.com/about-us/bluetooth-origin/"
+    },
+    {
+      "qid": "tech-800-907",
+      "sourceLabel": "آي بي إم: ثغرات يوم الصفر",
+      "sourceUrl": "https://www.ibm.com/think/topics/zero-day"
+    },
+    {
+      "qid": "tech-800-908",
+      "sourceLabel": "هوندا: الروبوت أسيمو",
+      "sourceUrl": "https://global.honda/en/ASIMO/about/"
+    },
+    {
+      "qid": "tech-1000-901",
+      "sourceLabel": "متحف سميثسونيان: سجل الحاسوب والعثة",
+      "sourceUrl": "https://americanhistory.si.edu/collections/object/nmah_334663"
+    },
+    {
+      "qid": "tech-1000-902",
+      "sourceLabel": "ناسا: مارغريت هاميلتون",
+      "sourceUrl": "https://science.nasa.gov/people/margaret-hamilton/"
+    },
+    {
+      "qid": "tech-1000-903",
+      "sourceLabel": "آيانا: تفويض نطاق tv لدولة توفالو",
+      "sourceUrl": "https://www.iana.org/domains/root/db/tv"
+    },
+    {
+      "qid": "tech-1000-904",
+      "sourceLabel": "منتدى WAP: مواصفات البروتوكول",
+      "sourceUrl": "https://wapforum.org/what/technical.htm"
+    },
+    {
+      "qid": "tech-1000-905",
+      "sourceLabel": "سيرن: أول خادم ويب وحاسوب نكست",
+      "sourceUrl": "https://cds.cern.ch/record/1997535"
+    },
+    {
+      "qid": "tech-1000-906",
+      "sourceLabel": "إل جي: تاريخ اسم لاكي غولدستار",
+      "sourceUrl": "https://www.lg.com/global/about-lg/company-history/"
+    },
+    {
+      "qid": "tech-1000-907",
+      "sourceLabel": "جامعة ستانفورد: جون مكارثي وصياغة المصطلح",
+      "sourceUrl": "https://news.stanford.edu/stories/2011/10/stanfords-john-mccarthy-seminal-figure-artificial-intelligence-dies-84"
+    },
+    {
+      "qid": "tech-1000-908",
+      "sourceLabel": "مركز NCSA بجامعة إلينوي: موزاييك",
+      "sourceUrl": "https://www.ncsa.illinois.edu/research/project-highlights/ncsa-mosaic/"
+    }
+  ]
+}

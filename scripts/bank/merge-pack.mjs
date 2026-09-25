@@ -19,6 +19,10 @@ for (const f of readdirSync(CATS).filter((x) => x.endsWith('.json'))) {
 
 const batch = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const status = JSON.parse(readFileSync(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
+const tierCount = status.tierCount ?? status.tierMin ?? 8;
+const topicCap = Math.max(1, Math.floor(tierCount * 0.25));
+const serialStart = status.qidRange?.start ?? 1;
+const serialEnd = status.qidRange?.end ?? 999;
 const retiredQids = await readRetiredQids(ROOT);
 
 for (const pack of batch.packs) {
@@ -57,19 +61,28 @@ for (const pack of batch.packs) {
     return !bad;
   });
 
-  const per = (t) => final.filter((q) => q.p === t);
-  const gaps = TIERS.filter((t) => per(t).length < 48).map((t) => `${t}:${48 - per(t).length}`);
-  // نكتب ما توفّر (حتى 48 لكل خانة) ونبلّغ بالنواقص
+  const per = (t) => {
+    const topics = new Map();
+    return final.filter((q) => q.p === t).filter((q) => {
+      const count = topics.get(q.topic) || 0;
+      if (count >= topicCap) return false;
+      topics.set(q.topic, count + 1);
+      return true;
+    }).slice(0, tierCount);
+  };
+  const gaps = TIERS.filter((t) => per(t).length < tierCount).map((t) => `${t}:${tierCount - per(t).length}`);
+  // نكتب ما اجتاز التدقيق ضمن السياسة الحالية ونبلّغ بالنواقص.
   const counters = new Map(TIERS.map((t) => [t, 0]));
-  const retiredMax = new Map(TIERS.map((t) => [t, Math.max(0, ...[...retiredQids]
+  const retiredMax = new Map(TIERS.map((t) => [t, Math.max(serialStart - 1, ...[...retiredQids]
     .filter((qid) => qid.startsWith(`${pack.id}-${t}-`))
     .map((qid) => Number(qid.split('-').at(-1))))]));
   const qs = [];
-  for (const t of TIERS) for (const q of per(t).slice(0, 48)) {
+  for (const t of TIERS) for (const q of per(t)) {
     const n = counters.get(t) + 1; counters.set(t, n);
     const serial = retiredMax.get(t) + n;
-    if (serial > 999) throw new Error(`نفدت المعرّفات في ${pack.id}-${t}`);
-    const out = { ...q, p: t, q: q.q.trim(), a: q.a.trim(), qid: `${pack.id}-${t}-${String(serial).padStart(3, '0')}`, topic: q.topic, verified: true };
+    if (serial > serialEnd) throw new Error(`نفدت المعرّفات في ${pack.id}-${t}؛ لا يُعاد استعمال المعرّفات المحذوفة`);
+    const out = { ...q, p: t, q: q.q.trim(), a: q.a.trim(), qid: `${pack.id}-${t}-${String(serial).padStart(3, '0')}`, topic: q.topic, verified: true,
+      ...(status.difficultyTargets ? { difficultyTarget: status.difficultyTargets[t] } : {}) };
     if (q.alt && q.alt.length) out.alt = q.alt;
     qs.push(out);
   }

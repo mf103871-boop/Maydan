@@ -1,0 +1,33 @@
+{
+  "id": "spotdiff-1000-905-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-1000-905-b.webp",
+  "asset": "media/spotdiff/spotdiff-1000-905-b.webp",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the small RED ribbon from the end of tuning fork handle at x=89 y=66, reveal matching silver handle beneath. Fork prongs, handle geometry, wooden block, felt and shadows otherwise exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 148836,
+  "sha256": "79bdae58b0cb9d8185cb5fd01d7d729c3d86cbcb9d514dc08165772fc3d6e1e8",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "visualStatus": "approved",
+    "actualImageObserved": true,
+    "note": "Only the red ribbon attached near the tuning-fork handle end disappears. Silver end and prongs, wooden resonator and object positions remain. Felt microtexture is somewhat smoother in B without a second discrete object difference.",
+    "partialReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-800-1000.json",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  },
+  "generationInput": {
+    "type": "raw-generated-image-a",
+    "rawImageSha256": "ac8d85f95a898004668ffc851202082d3026de312f6b4c4f852a5a278299a42c",
+    "installedImageA": "media/spotdiff/spotdiff-1000-905-a.webp",
+    "installedImageASha256": "0f09b805b1c00f1da274ec26f120b7ffdf5fd37cf686bb5fa94db79a2d07a5cd"
+  },
+  "rawGeneratedImageSha256": "400a8a1c79477485432ddae55ef08acdc3deb2da6b4750857bd8be72c34cbe51"
+}

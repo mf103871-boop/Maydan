@@ -1,0 +1,24 @@
+{
+  "id": "blur-1000-907",
+  "kind": "question",
+  "pack": "blur",
+  "file": "media/blur/blur-1000-907.webp",
+  "asset": "media/blur/blur-1000-907.webp",
+  "prompt": "Use case: precise-object-edit. The supplied image is the edit target. Remove ONLY the sports-brand logo on the athlete's shoes and any tiny clothing brand marks. Replace each logo with continuous plain white, gray or black fabric/leather matching the adjacent shoe or garment. Keep the exact athlete, hands, fingers, face, pose, feet, single handle held by both hands, taut wire, spherical hammer head, cage, throwing circle, grass, background, colors, framing and lighting unchanged. No added words, logos or symbols. This is an unbranded educational sports illustration.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 130234,
+  "sha256": "ba0264765aa618249b9dd1e779c961f04cfda2a75ca19bd198af905fc362768e",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Independently viewed the current cleaned WebP at full size. Both shoes now have plain panels without the former swoosh-like logos; the athlete, two-handed grip, handle, single continuous taut wire and spherical hammer head remain intact. Both legs/feet and circular throwing area remain coherent and complete. Fresh approximate static blur viewed: fine wire disappears, while athlete/cage/ball context and question about a ball attached to a wire remain important. This is not live-renderer approval.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+  },
+  "replacedGenerationRecord": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/rejected-generation-records/blur-1000-907-before-mark-cleanup.json"
+}

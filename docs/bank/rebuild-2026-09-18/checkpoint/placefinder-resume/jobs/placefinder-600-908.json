@@ -1,0 +1,20 @@
+{
+  "id": "placefinder-600-908",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 600,
+  "a": "مسجد الحسن الثاني",
+  "alt": [
+    "جامع الحسن الثاني",
+    "Hassan II Mosque"
+  ],
+  "topic": "العالم العربي",
+  "q": "ما اسم هذا المسجد المطلّ على الأطلسي في الدار البيضاء؟",
+  "sourceUrl": "https://www.fmh2.ma/en/history",
+  "sourceEvidence": "Opened 2026-09-25: foundation describes Casablanca mosque on Atlantic Ocean and its towering minaret and Moroccan architecture.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Hassan II Mosque in Casablanca Morocco: recognizable cream-stone mosque on Atlantic seawall, very tall single SQUARE minaret with intricate Moroccan carved geometric panels and green-tiled upper lantern, broad low prayer hall with green tiled roof and horseshoe arcades, paved esplanade; ocean waves along side. Three-quarter wide view, entire minaret and building visible, no bulbous domes or extra minarets, no text.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Single tall square decorated minaret, green roofs, broad prayer hall and Atlantic seawall; Moroccan architectural identity.",
+  "runtimeReviewStatus": "approved"
+}

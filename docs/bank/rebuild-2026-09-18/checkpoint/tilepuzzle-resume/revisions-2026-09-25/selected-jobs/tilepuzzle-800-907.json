@@ -1,0 +1,6 @@
+{
+  "id": "tilepuzzle-800-907",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "prompt": "Use case: precise-object-edit.\nAsset type: one standalone realistic 4:3 image for an Arabic visual guessing game.\nInput image 1: edit target of a bamboo pan flute. Correct the anatomy of this instrument.\nPrimary request: show one bamboo pan flute consisting of side-by-side pipes with all OPEN mouth ends aligned in one straight upper horizontal row. The pipes progressively decrease in length from left to right, so the CLOSED natural bamboo-node lower ends form a graduated lower edge. Use a slightly elevated front three-quarter view so the hollow open upper mouths and sealed lower tips are both unambiguous. Keep the bamboo material, binding cord, rustic wood support, natural warm light and quiet background. Keep the complete instrument inside frame with margin.\nConstraints: open ends ONLY at the aligned upper playing edge; NO open holes along the staggered lower edge; no hands, labels, captions, readable text, watermark, frames or tile cuts."
+}

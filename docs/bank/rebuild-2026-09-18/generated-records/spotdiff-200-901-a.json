@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-200-901-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-200-901-a.webp",
+  "asset": "media/spotdiff/spotdiff-200-901-a.webp",
+  "prompt": "Use case: product-mockup. One sharp realistic still-life photograph for a family spot-the-difference game. Landscape 4:3. A small tidy tea counter with warm ivory wall and pale oak countertop. Exactly three distinct objects: a large glossy RED enamel kettle with black handle at center-right (center x=62%, y=52%), a plain yellow ceramic mug at left (x=25%, y=64%), and one folded deep-blue linen napkin behind the mug. The complete red kettle including spout, lid, handle and base fills about40% of picture width and50% of height; ample margins. Simple soft even studio light, all objects sharp, clean separation, no steam, no people, no visible text, logos, labels, patterns, additional objects or collage. Straight-on three-quarter tabletop camera view. This is the first image of a pair; scene must be very stable and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 91504,
+  "sha256": "33057f44f41c8d8f521c494a201506bdf0dc7ddf0c354e63d1446133a128a65c",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Kettle enamel changes red to cobalt blue; mug, black handle, knob, navy cloth and scene remain semantically identical.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

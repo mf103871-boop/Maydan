@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-600-902-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Rotate only the wooden RULER at center-right 35 degrees clockwise around its own center, preserving its exact length, material and location of midpoint. Adjust only ruler shadow; everything else unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects. Keep all printed measurement ticks on the ruler exactly unchanged; they rotate together with it."
+}

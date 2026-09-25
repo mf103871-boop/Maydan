@@ -1,0 +1,40 @@
+{
+  "id": "silhouette-600-908",
+  "kind": "question",
+  "pack": "silhouette",
+  "file": "media/silhouette/silhouette-600-908.webp",
+  "asset": "media/silhouette/silhouette-600-908.webp",
+  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a desktop electric fan in three-quarter profile with circular protective cage.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 216480,
+  "sha256": "80c0fb184e1822b2837a57ffccee9a09ac7bb84b9cafe7d9746600ed6f987f22",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Desk fan with protective cage, three broad blades, upright support and base. Thin cage wires remain visible offline, but their readability on actual mobile UI still needs testing.",
+    "gameplayReview": "approved",
+    "alpha": {
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 216480,
+      "sha256": "80c0fb184e1822b2837a57ffccee9a09ac7bb84b9cafe7d9746600ed6f987f22",
+      "transparentFraction": 0.767132,
+      "nearOpaqueFraction": 0.137351,
+      "bboxAlphaOver128": [
+        431,
+        79,
+        918,
+        884
+      ]
+    },
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  }
+}

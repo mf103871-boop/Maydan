@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-800-905-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. The supplied image A shows SEVEN visible silver jingle locations on a tambourine. Remove EXACTLY ONE: the rightmost silver jingle at the 3-o'clock position, centered approximately x=80%, y=47%. Replace that silver jingle with background, leaving its tiny support pin and existing empty slot. CRITICAL: preserve the LOWER-RIGHT jingle at 5-o'clock, centered x=75%, y=66%, fully present and silver. Also preserve the top, upper-right, bottom, lower-left and upper-left silver jingles; there must be SIX visible silver jingle locations after editing. Do not remove the lower-right jingle. Preserve drum skin pattern, wooden rim, all six remaining jingle geometries/reflections, camera, background and shadows. ONE semantic difference only: one rightmost jingle pair disappears. Same framing and dimensions. No text."
+}

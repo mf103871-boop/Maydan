@@ -1,0 +1,2209 @@
+{
+  "category": "flags",
+  "reviewedAt": "2026-09-25",
+  "status": "approved",
+  "questionCount": 40,
+  "perTier": {
+    "200": 8,
+    "400": 8,
+    "600": 8,
+    "800": 8,
+    "1000": 8
+  },
+  "topicCount": 10,
+  "scope": "Opened primary identity references and independent visual inspection of all 40 installed generated flag illustrations; all 40 assets decoded in Chromium. Actual gameplay, reveal, enlarged view, mobile layout and About disclosure were exercised for five questions, one per tier. Recognition illustrations; exact official print geometry is not certified.",
+  "difficulty": "Editorial target, not player-tested success rate.",
+  "preservedLegacyAssets": true,
+  "replacedLegacyQuestions": 240,
+  "categorySha256": "f1f0a6cece4c03a11360a3a7c7a273685de307f8e9350d65bc481613331d9abb",
+  "items": [
+    {
+      "qid": "flags-200-901",
+      "answer": "الإمارات",
+      "sourceReview": {
+        "id": "flags-200-901",
+        "answer": "الإمارات",
+        "topic": "غرب آسيا وشمال أفريقيا",
+        "tier": 200,
+        "question": "ما الدولة صاحبة هذا العلم ذي الشريط الأحمر العمودي؟",
+        "alt": [
+          "الإمارات العربية المتحدة",
+          "United Arab Emirates",
+          "UAE"
+        ],
+        "sourceUrl": "https://vig.gmo.gov.ae/en/guideline/the-uae-flag",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "Government Media Office specifications explicitly identify a red vertical hoist band covering one quarter of the flag width; equal horizontal green, white and black bands occupy the remainder. Height is half the width.",
+        "limits": "The ordinary national flag is intended, with no presidential emblem. Text specifications were read; local asset, alpha and pixel geometry were not reviewed."
+      },
+      "visualReview": {
+        "id": "flags-200-901",
+        "asset": "media/flags/flags-200-901.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Red hoist panel; green, white, black horizontal fields; no clipped border.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "5fbff646a5fe8a66fec097552f9e61aab93561996cbaf96fc89765ba2dfebdbc",
+        "width": 1280,
+        "height": 640,
+        "bytes": 4114,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": true,
+        "gameplayReview": "approved-sampled",
+        "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-200-902",
+      "answer": "الكويت",
+      "sourceReview": {
+        "id": "flags-200-902",
+        "answer": "الكويت",
+        "topic": "غرب آسيا وشمال أفريقيا",
+        "tier": 200,
+        "question": "أي دولة يمثلها العلم المصوّر ذو شبه المنحرف الأسود؟",
+        "alt": [
+          "دولة الكويت",
+          "Kuwait"
+        ],
+        "sourceUrl": "https://www.kuwaitmission.ch/KUFacts.aspx",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The permanent mission's Current Flag section identifies equal green, white and red horizontal stripes, a black trapezoid at the hoist, and a rectangle twice as long as its height.",
+        "limits": "Source establishes the distinctive trapezoid, not a triangle. No measurement or approval of the local illustration was performed."
+      },
+      "visualReview": {
+        "id": "flags-200-902",
+        "asset": "media/flags/flags-200-902.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Black hoist trapezoid with green, white, red horizontal fields.",
+        "limitation": "Hoist trapezoid is slightly wider than official quarter-width construction; acceptable for identity-only illustration.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "a40ced95b9fc9ec07a88e722df7d8c4269ecd0459208eff5c9f3f1366b2aed57",
+        "width": 1280,
+        "height": 640,
+        "bytes": 7532,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-200-903",
+      "answer": "اليابان",
+      "sourceReview": {
+        "id": "flags-200-903",
+        "answer": "اليابان",
+        "topic": "آسيا الشرقية",
+        "tier": 200,
+        "question": "لأي دولة ينتمي العلم الأبيض الذي تتوسطه دائرة حمراء؟",
+        "alt": [
+          "Japan"
+        ],
+        "sourceUrl": "https://web-japan.org/factsheet/en/pdf/11NFlagAnthem.pdf",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The Ministry of Foreign Affairs' Web Japan factsheet identifies Hinomaru as Japan's flag. Page 1 describes a red circle on white, centered exactly, with diameter three fifths of the flag height and height-to-length ratio 2:3.",
+        "limits": "The source describes the national flag, not a radiating-sun ensign. Reading its measurements does not validate the generated asset's geometry."
+      },
+      "visualReview": {
+        "id": "flags-200-903",
+        "asset": "media/flags/flags-200-903.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Central red circular disc on an opaque white field.",
+        "limitation": "Disc is approximately 63% of height versus official 60%; identity is unambiguous, exact geometry is not certified.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "10c4f4c76bdd240c0979c25517c71eea08c5dc1bd972308ef8b94270cb677db3",
+        "width": 1280,
+        "height": 853,
+        "bytes": 10978,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-200-904",
+      "answer": "الصين",
+      "sourceReview": {
+        "id": "flags-200-904",
+        "answer": "الصين",
+        "topic": "آسيا الشرقية",
+        "tier": 200,
+        "question": "ما الدولة التي يحمل علمها المصوّر خمس نجوم صفراء؟",
+        "alt": [
+          "جمهورية الصين الشعبية",
+          "China",
+          "People's Republic of China"
+        ],
+        "sourceUrl": "https://english.court.gov.cn/2016-04/14/c_761456.htm",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The official court's National Flag Law, article 2 and construction appendix, identify a red flag with five yellow five-pointed stars at upper hoist: one larger star with four smaller stars forming an arc to its right. A point of each small star faces the large star.",
+        "limits": "The opened official text was published in 2016 and is used for flag-design evidence, not a claim that every legal provision remains current. Root must check actual star count, sizes and orientation."
+      },
+      "visualReview": {
+        "id": "flags-200-904",
+        "asset": "media/flags/flags-200-904.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "One large and four small yellow five-point stars on red; small stars arranged around large star.",
+        "limitation": "Star orientation and placement are illustrative approximations, not a certified construction drawing.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "468b7c9f744d6ed1fed959bcabfeadd9ee5ce7847f8dfe0589e2798885777fdb",
+        "width": 1280,
+        "height": 853,
+        "bytes": 14564,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-200-905",
+      "answer": "فرنسا",
+      "sourceReview": {
+        "id": "flags-200-905",
+        "answer": "فرنسا",
+        "topic": "أوروبا",
+        "tier": 200,
+        "question": "لأي دولة ينتمي هذا العلم ذو الأشرطة العمودية الزرقاء والبيضاء والحمراء؟",
+        "alt": [
+          "الجمهورية الفرنسية",
+          "France"
+        ],
+        "sourceUrl": "https://www.elysee.fr/la-presidence/le-drapeau-francais",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The Presidency's French-language flag history states the definitive 1794 layout: vertical bands, blue adjacent to the pole, white in the middle, red at the fly. It identifies the tricolor as the current national emblem.",
+        "limits": "The English version opened too but did not explicitly establish stripe orientation; the French page supplies that detail. Exact digital color values and local image pixels were not checked."
+      },
+      "visualReview": {
+        "id": "flags-200-905",
+        "asset": "media/flags/flags-200-905.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Blue, white, red vertical fields in the correct order.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "d423dc2fbcac072529ca3d098a9a368648837c6f63e1a69496ca4ba20f127c57",
+        "width": 1280,
+        "height": 853,
+        "bytes": 6028,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-200-906",
+      "answer": "ألمانيا",
+      "sourceReview": {
+        "id": "flags-200-906",
+        "answer": "ألمانيا",
+        "topic": "أوروبا",
+        "tier": 200,
+        "question": "ما الدولة صاحبة العلم المكوّن من أشرطة أفقية سوداء وحمراء وذهبية؟",
+        "alt": [
+          "جمهورية ألمانيا الاتحادية",
+          "Germany"
+        ],
+        "sourceUrl": "https://www.gesetze-im-internet.de/flaggano_1996/i_.html",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The official German Flags Order, section I.1, specifies three equally broad horizontal stripes: black at top, red in the middle, gold at bottom, in height-to-length ratio 3:5. The Bundestag's flag-history page independently identifies these national colors.",
+        "limits": "Use the plain national flag rather than the federal service flag with eagle. Gold is the official color name; source review does not certify the local illustration's exact color or dimensions."
+      },
+      "visualReview": {
+        "id": "flags-200-906",
+        "asset": "media/flags/flags-200-906.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Black, red, gold horizontal fields in the correct order.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "affe5d138c9bfb9a6d5123bb4441512fa2a328f618c259ecb166299bc7292e33",
+        "width": 1280,
+        "height": 768,
+        "bytes": 4558,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 768,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-200-907",
+      "answer": "كندا",
+      "sourceReview": {
+        "id": "flags-200-907",
+        "answer": "كندا",
+        "topic": "أمريكا الشمالية",
+        "tier": 200,
+        "question": "ما الدولة التي تتوسط علمها المصوّر ورقة قيقب حمراء؟",
+        "alt": [
+          "Canada"
+        ],
+        "sourceUrl": "https://www.canada.ca/en/canadian-heritage/services/flag-canada-description.html",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "Canadian Heritage's technical description specifies a 2:1 red flag with a white central square and one centered stylized red maple leaf with eleven points. The description explicitly distinguishes the current eleven-point design from the earlier thirteen-point draft.",
+        "limits": "The leaf must remain a recognizable stylized eleven-point maple leaf. No local leaf-outline inspection or pixel-exact approval was conducted."
+      },
+      "visualReview": {
+        "id": "flags-200-907",
+        "asset": "media/flags/flags-200-907.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Red side panels and centered eleven-point maple leaf on the white panel.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "1d2fc9745dc3074c7ecfb188c06677ebaa5d22566149ced59928f672346e3314",
+        "width": 1280,
+        "height": 640,
+        "bytes": 15940,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-200-908",
+      "answer": "بنغلاديش",
+      "sourceReview": {
+        "id": "flags-200-908",
+        "answer": "بنغلاديش",
+        "topic": "جنوب وجنوب شرق آسيا",
+        "tier": 200,
+        "question": "أي دولة يمثلها هذا العلم الأخضر ذو الدائرة الحمراء؟",
+        "alt": [
+          "بنجلاديش",
+          "Bangladesh"
+        ],
+        "sourceUrl": "https://bdlaws.minlaw.gov.bd/act-print-367/section-print-24551.html",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "Constitution article 4(2), opened on the Ministry of Law site, explicitly defines a fully red circle on a green background as the republic's national flag.",
+        "limits": "The constitution excerpt establishes identity and colors, not the off-center placement, radius or aspect ratio. A Ministry of Foreign Affairs flag-rules PDF was indexed but its direct open timed out; its geometry is NOT marked reviewed."
+      },
+      "visualReview": {
+        "id": "flags-200-908",
+        "asset": "media/flags/flags-200-908.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Red disc offset toward the hoist on a green field.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "517fb5c7e60b065efd71affa5bd7a686b85f1a70acb82720d56ac116bd0a48ca",
+        "width": 1280,
+        "height": 768,
+        "bytes": 12820,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 768,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-400-901",
+      "answer": "المغرب",
+      "sourceReview": {
+        "id": "flags-400-901",
+        "answer": "المغرب",
+        "topic": "غرب آسيا وشمال أفريقيا",
+        "tier": 400,
+        "question": "لأي دولة ينتمي العلم الأحمر المصوّر ذو النجمة الخضراء؟",
+        "alt": [
+          "المملكة المغربية",
+          "Morocco"
+        ],
+        "sourceUrl": "https://www.maroc.ma/fr/actualites/lhistoire-des-drapeaux-du-maroc-mise-en-avant-rabat",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The official government portal's report of a Royal Academy history symposium explicitly describes the green pentagram added to a red flag in 1915 and its adoption as independent Morocco's official flag. The government's Emblems page was also opened and its flag PNG link resolved.",
+        "limits": "Identity and red/green pentagram are supported by opened text. The legal decree PDF failed because of response size; the constitution PDF timed out. The official PNG was located but not visually inspected here. Opacity, open pentagram linework, center and numeric geometry require separate visual/specification review."
+      },
+      "visualReview": {
+        "id": "flags-400-901",
+        "asset": "media/flags/flags-400-901.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Open green pentagram centered on the red field.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "23c5dc05889c539cda1032f378c1e2e0f36e4c3f12a2792b9610ac728daee7d4",
+        "width": 1280,
+        "height": 853,
+        "bytes": 12626,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": true,
+        "gameplayReview": "approved-sampled",
+        "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-400-902",
+      "answer": "الجزائر",
+      "sourceReview": {
+        "id": "flags-400-902",
+        "answer": "الجزائر",
+        "topic": "غرب آسيا وشمال أفريقيا",
+        "tier": 400,
+        "question": "ما الدولة صاحبة هذا العلم بنصفيه الأخضر والأبيض وهلاله الأحمر؟",
+        "alt": [
+          "الجمهورية الجزائرية الديمقراطية الشعبية",
+          "Algeria"
+        ],
+        "sourceUrl": "https://embwashington.mfa.gov.dz/discover-algeria-1/state-symbols-1",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The Algerian Embassy's State Symbols section describes equal vertical green and white bands, green at the flagstaff, with a central red crescent surrounding a five-pointed star.",
+        "limits": "The page lists an example size of 90 cm by 1.50 m. This must not be used as proof of the standard flag's exact aspect ratio. Red star and crescent layout are source-supported; asset geometry remains unreviewed."
+      },
+      "visualReview": {
+        "id": "flags-400-902",
+        "asset": "media/flags/flags-400-902.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Green hoist half and white fly half with a red crescent and five-point star.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "17e8fde582fabf56396914b6fedcecfc85c7252681edd929d17e7e827cb1473f",
+        "width": 1280,
+        "height": 853,
+        "bytes": 15204,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-400-903",
+      "answer": "السويد",
+      "sourceReview": {
+        "id": "flags-400-903",
+        "answer": "السويد",
+        "topic": "أوروبا",
+        "tier": 400,
+        "question": "أي دولة يمثلها هذا العلم الأزرق ذو الصليب الأصفر؟",
+        "alt": [
+          "مملكة السويد",
+          "Sweden"
+        ],
+        "sourceUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1982269-om-sveriges-flagga_sfs-1982-269/",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "Sweden's Flag Act sections 1–3 specify a blue flag with a yellow perpendicular cross. The rectangular version has height-to-length ratio 10:16; inner and outer field dimensions are 4:5 and 4:9, and cross width equals half a field's height.",
+        "limits": "Specifications establish the Nordic cross offset toward the hoist. The rectangular national form, not the three-tailed military variant, is intended. Source reading does not constitute local asset approval."
+      },
+      "visualReview": {
+        "id": "flags-400-903",
+        "asset": "media/flags/flags-400-903.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Yellow Nordic cross on blue, with its upright offset toward the hoist.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "1e08fbd932172b908995d9637527108aec82d0e270b38dd339a59ff7d36b4cf8",
+        "width": 1280,
+        "height": 801,
+        "bytes": 6350,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 801,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-400-904",
+      "answer": "النرويج",
+      "sourceReview": {
+        "id": "flags-400-904",
+        "answer": "النرويج",
+        "topic": "أوروبا",
+        "tier": 400,
+        "question": "لأي دولة ينتمي العلم الأحمر بصليب أزرق تحيط به حواف بيضاء؟",
+        "alt": [
+          "مملكة النرويج",
+          "Norway"
+        ],
+        "sourceUrl": "https://www.regjeringen.no/no/dep/ud/dep/diplomatiske-forbindelser-og-protokoll/norges-flagg-forskrift/id449230/",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The Norwegian government's regulation section 1 describes a red field split by a dark blue cross separated from the red by white borders. Height-to-length ratio is 16:22, inner red squares 6 units, blue cross 2 units and white border 1 unit.",
+        "limits": "Use the rectangular national/trade flag, not a swallow-tailed official variant. The opened text supports layout and color identity, while local image measurements remain outside this review."
+      },
+      "visualReview": {
+        "id": "flags-400-904",
+        "asset": "media/flags/flags-400-904.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Dark blue Nordic cross with a white border on red.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "993c343197302baef43a35fb0fc4114ea329768338520cf8c9657081924ae99f",
+        "width": 1280,
+        "height": 932,
+        "bytes": 10030,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 932,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-400-905",
+      "answer": "تايلاند",
+      "sourceReview": {
+        "id": "flags-400-905",
+        "answer": "تايلاند",
+        "topic": "جنوب وجنوب شرق آسيا",
+        "tier": 400,
+        "question": "ما الدولة صاحبة هذا العلم ذي خمسة أشرطة وشريط أزرق عريض في الوسط؟",
+        "alt": [
+          "تايلند",
+          "مملكة تايلاند",
+          "Thailand"
+        ],
+        "sourceUrl": "https://www.boi.go.th/index.php?language=ko&page=social_and_culture",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "Thailand's Board of Investment describes five horizontal bands: outer red bands, inner white bands and a central blue band taking one third of the total area. The government flag page independently specifies a 6-by-9 rectangle divided into five lengthwise stripes.",
+        "limits": "The current tricolor is intended, without an elephant or naval emblem. The wide blue center is supported, but no local illustration was measured or visually approved."
+      },
+      "visualReview": {
+        "id": "flags-400-905",
+        "asset": "media/flags/flags-400-905.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Red, white, blue, white, red bands; blue middle band visibly double width.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "c433f0b26e9db7c81f7070b35c4296306c4442cf7e960b113bd131d995ae443a",
+        "width": 1280,
+        "height": 853,
+        "bytes": 9132,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-400-906",
+      "answer": "باكستان",
+      "sourceReview": {
+        "id": "flags-400-906",
+        "answer": "باكستان",
+        "topic": "جنوب وجنوب شرق آسيا",
+        "tier": 400,
+        "question": "أي دولة يمثلها العلم الأخضر ذو الهلال والنجمة والشريط الأبيض؟",
+        "alt": [
+          "جمهورية باكستان الإسلامية",
+          "Pakistan"
+        ],
+        "sourceUrl": "https://pcgv.org/national-flag/",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The Consulate General of Pakistan's National Flag page explicitly identifies a dark green flag with a white vertical bar, white crescent and five-pointed star.",
+        "limits": "The opened text supports identity, colors and elements but supplies no exact placement or proportions. The additional Ministry of Foreign Affairs geometry page timed out. Local crescent orientation, bar position and star placement need root's visual review."
+      },
+      "visualReview": {
+        "id": "flags-400-906",
+        "asset": "media/flags/flags-400-906.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "White hoist stripe with white crescent and five-point star on dark green.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "62a0997982709e58fbc7fe9410d994a81cae46dfad8942e40d9d487ca73f40d7",
+        "width": 1280,
+        "height": 853,
+        "bytes": 13916,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-400-907",
+      "answer": "كولومبيا",
+      "sourceReview": {
+        "id": "flags-400-907",
+        "answer": "كولومبيا",
+        "topic": "أمريكا الجنوبية",
+        "tier": 400,
+        "question": "ما الدولة المطلة على الكاريبي صاحبة هذا العلم الذي يحتل الأصفر نصفه العلوي؟",
+        "alt": [
+          "كولمبيا",
+          "Colombia"
+        ],
+        "sourceUrl": [
+          "https://www.cancilleria.gov.co/normograma/compilacion/docs/circular_minrelaciones_0036_2021.htm",
+          "https://cancilleria.gov.co/politica-exterior/asuntos-bilaterales/delimitacion-maritima-colombia-panama"
+        ],
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The Foreign Ministry's Circular 36/2021 quotes the national flag definition: horizontal yellow, blue and red; yellow is the top half, blue the middle quarter, red the bottom quarter. The same circular says ordinary national flags used by institutions and diplomatic missions have no central coat of arms. The Ministry's Colombia–Panama maritime-delimitation page explicitly includes both the Caribbean and Pacific.",
+        "limits": "A Caribbean cue is included so identification does not depend only on yellow-blue-red stripe geometry, which resembles an unembellished Ecuadorian civil flag. Use no stars or coat of arms. The local asset and exact aspect ratio remain visually unreviewed."
+      },
+      "visualReview": {
+        "id": "flags-400-907",
+        "asset": "media/flags/flags-400-907.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Yellow upper half, blue and red lower quarters; no emblem.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "70b57cc17bde4b10917bbe6642710fdfbff2e49e444e96ff249700cf3f736a4e",
+        "width": 1280,
+        "height": 853,
+        "bytes": 7950,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-400-908",
+      "answer": "تشيلي",
+      "sourceReview": {
+        "id": "flags-400-908",
+        "answer": "تشيلي",
+        "topic": "أمريكا الجنوبية",
+        "tier": 400,
+        "question": "ما الدولة صاحبة العلم بنجمة بيضاء داخل مربع أزرق في الزاوية العليا؟",
+        "alt": [
+          "شيلي",
+          "Chile"
+        ],
+        "sourceUrl": "https://www.bcn.cl/leychile/navegar?idNorma=23382",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "Chile's National Congress Library opens Law 2597 article 1 in full: equal upper/lower horizontal halves, lower red, upper hoist third blue and remaining upper area white; a white five-pointed star is centered in the blue square. Hoist length is two thirds of fly length.",
+        "limits": "The canonical law page successfully resolved the checkpoint's indexed-only gap. No visual asset approval was made; the blue square occupies one third of the flag width and one half of its height, not the full height as in Texas."
+      },
+      "visualReview": {
+        "id": "flags-400-908",
+        "asset": "media/flags/flags-400-908.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "White star on blue upper hoist square; white upper fly and red lower half.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "a49253c6ce96d2d1801eead3528d15e839ce5bc781e17f677a06e157feacb09b",
+        "width": 1280,
+        "height": 853,
+        "bytes": 9124,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-600-901",
+      "answer": "رومانيا",
+      "sourceReview": {
+        "id": "flags-600-901",
+        "answer": "رومانيا",
+        "topic": "أوروبا",
+        "tier": 600,
+        "question": "ما الدولة الأوروبية صاحبة هذا العلم ذي الأشرطة العمودية الزرقاء والصفراء والحمراء؟",
+        "alt": [
+          "Romania"
+        ],
+        "sourceUrl": "https://www.cdep.ro/ords/pls/steno/steno2015.stenograma?idl=3&ids=6664",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The Romanian Chamber of Deputies' official proceedings of 23 June 2009 explicitly describe the rectangular national flag's equal vertical bands in order blue, yellow, red from the pole.",
+        "limits": "Europe is deliberately included in the question to distinguish Chad without relying on subtle blue shades. The original legal portal and a printable-law retry were unstable; the opened parliamentary record supports the design, not a claim about the current consolidated law. No pixel or emblem review was done."
+      },
+      "visualReview": {
+        "id": "flags-600-901",
+        "asset": "media/flags/flags-600-901.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Blue, yellow, red vertical tricolour; needs Europe in the question to disambiguate Chad.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "724b48ef6fc1b1040d2a0b596b24c8b1b105a3c89c9149aa35af86e3c4f473f8",
+        "width": 1280,
+        "height": 853,
+        "bytes": 6770,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": true,
+        "gameplayReview": "approved-sampled",
+        "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-600-902",
+      "answer": "إستونيا",
+      "sourceReview": {
+        "id": "flags-600-902",
+        "answer": "إستونيا",
+        "topic": "أوروبا",
+        "tier": 600,
+        "question": "أي دولة يمثلها هذا العلم بأشرطته الأفقية الزرقاء والسوداء والبيضاء؟",
+        "alt": [
+          "Estonia"
+        ],
+        "sourceUrl": "https://president.ee/en/republic-of-estonia/symbols/",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "The Estonian President's Symbols page identifies equal horizontal bands: blue upper, black middle and white lower, with length-to-height proportions 11:7.",
+        "limits": "The country's flag identity, stripe order and reference proportions are explicit. The source does not by itself certify local image colors, opacity or measurements."
+      },
+      "visualReview": {
+        "id": "flags-600-902",
+        "asset": "media/flags/flags-600-902.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Blue, black, white horizontal tricolour.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "c1ab08c27f792b624604befd40ec706e6fe270f21ef51055eed2b2bc123b0690",
+        "width": 1280,
+        "height": 816,
+        "bytes": 4416,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 816,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-600-903",
+      "answer": "نيجيريا",
+      "sourceReview": {
+        "id": "flags-600-903",
+        "answer": "نيجيريا",
+        "topic": "أفريقيا الغربية",
+        "tier": 600,
+        "question": "لأي دولة ينتمي العلم ذو الشريط الأبيض العمودي بين شريطين أخضرين؟",
+        "alt": [
+          "جمهورية نيجيريا الاتحادية",
+          "Nigeria"
+        ],
+        "sourceUrl": "https://ntda.gov.ng/media.assets.php",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "Nigeria's Tourism Development Authority identifies the national flag as a vertical green-white-green triband. The page distinguishes the plain flag from the separately described national coat of arms.",
+        "limits": "The intended national flag has no tree or other central emblem. The source establishes stripe order and identity but does not supply a numeric aspect ratio; the local asset remains visually unreviewed."
+      },
+      "visualReview": {
+        "id": "flags-600-903",
+        "asset": "media/flags/flags-600-903.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Green, white, green vertical tricolour.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "3276dcab2c5b03df9b8e401fe689255e7071a518aaaa6d32398fdd53494c265e",
+        "width": 1280,
+        "height": 640,
+        "bytes": 4524,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-600-904",
+      "answer": "غانا",
+      "sourceReview": {
+        "id": "flags-600-904",
+        "answer": "غانا",
+        "topic": "أفريقيا الغربية",
+        "tier": 600,
+        "question": "ما الدولة التي تتوسط علمها نجمة سوداء فوق شريط ذهبي؟",
+        "alt": [
+          "جمهورية غانا",
+          "Ghana"
+        ],
+        "sourceUrl": "https://gis.gov.gh/wp-content/uploads/2024/02/FACTS-ABOUT-GHANA.pdf",
+        "sourceReviewed": true,
+        "reviewedAt": "2026-09-25",
+        "retrievalOutcome": "opened-primary-official-text",
+        "evidence": "Ghana Immigration Service's Facts About Ghana, page 1, identifies horizontal red, gold/yellow and green stripes and a black five-pointed star in the center of the gold stripe.",
+        "limits": "Only the flag-design passage is used; historical dates and other document facts were not adopted. Root must review the local star silhouette, order of stripes and exact geometry."
+      },
+      "visualReview": {
+        "id": "flags-600-904",
+        "asset": "media/flags/flags-600-904.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Red, gold, green horizontal fields with a centered black five-point star.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "dfca9f78cd2aafbb7ba9e19adde9b983e1cfc4ef0ad63ce50148014cdcce272c",
+        "width": 1280,
+        "height": 853,
+        "bytes": 11520,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-600-905",
+      "answer": "بوتسوانا",
+      "sourceReview": {
+        "id": "flags-600-905",
+        "answer": "بوتسوانا",
+        "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+        "tier": 600,
+        "question": "ما الدولة التي يظهر علمها بالأزرق الفاتح، ويتوسطه شريط أسود تحيط به حافتان بيضاوان؟",
+        "alt": [
+          "Botswana",
+          "جمهورية بوتسوانا"
+        ],
+        "sourceUrl": "https://www.gov.bw/about-our-country-0",
+        "sourceReviewed": true,
+        "evidence": "Opened the government page directly and read its embedded flag image https://www.gov.bw/sites/default/files/inline-images/bwflag.png. Visually inspected the official reference: light-blue top and bottom with a black horizontal centre stripe and thin white borders.",
+        "limits": "Official reference is a waving fabric rendering, suitable for identity and color order, not exact stripe measurements. DailyNews 31255 failed to open; the opened 2022 newspaper PDF did not yield the relevant passage on extraction. Local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-600-905",
+        "asset": "media/flags/flags-600-905.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Light blue field with a white-bordered black horizontal stripe.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "64e214795f92a12c9c5b06a0b0be873ec273b0a565d5ba4ccd15121c571a4545",
+        "width": 1280,
+        "height": 853,
+        "bytes": 8766,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-600-906",
+      "answer": "تنزانيا",
+      "sourceReview": {
+        "id": "flags-600-906",
+        "answer": "تنزانيا",
+        "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+        "tier": 600,
+        "question": "ما الدولة صاحبة هذا العلم ذي الشريط الأسود المائل بين الأخضر والأزرق؟",
+        "alt": [
+          "Tanzania",
+          "جمهورية تنزانيا المتحدة"
+        ],
+        "sourceUrl": "https://embassyoftanzaniarome.info/en/about-tanzania/national-symbols",
+        "sourceReviewed": true,
+        "evidence": "Embassy National Symbols page, The Flag: black diagonal rises from lower hoist to upper fly, edged in narrow yellow; green upper-hoist triangle and blue lower-fly triangle.",
+        "limits": "Text establishes identifying layout; exact widths, shades and local generated rendering remain unapproved.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-600-906",
+        "asset": "media/flags/flags-600-906.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Yellow-bordered black rising diagonal separating green upper hoist and blue lower fly.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "8919cb9adb968a21469852daad84a0639cce20abd563bf9eb7927599bfd2f512",
+        "width": 1280,
+        "height": 853,
+        "bytes": 31726,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-600-907",
+      "answer": "فيتنام",
+      "sourceReview": {
+        "id": "flags-600-907",
+        "answer": "فيتنام",
+        "topic": "جنوب وجنوب شرق آسيا",
+        "tier": 600,
+        "question": "ما الدولة صاحبة هذا العلم الأحمر الذي تتوسطه نجمة ذهبية خماسية؟",
+        "alt": [
+          "Vietnam",
+          "Viet Nam",
+          "جمهورية فيتنام الاشتراكية"
+        ],
+        "sourceUrl": "https://vietnam.gov.vn/default.aspx?catname=national-flag-emblem-anthem-declaration-of-independence-68960",
+        "sourceReviewed": true,
+        "evidence": "Government portal National Flag section: rectangle with width two thirds of length and a bright five-point golden star in the middle of a red field.",
+        "limits": "The page quotes an older constitution article number; used for visual identity, not a claim about current legal article numbering. Local star shape and placement not inspected.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-600-907",
+        "asset": "media/flags/flags-600-907.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Single yellow five-point star centered on red.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "5ea3c36dcf72c3365682894eb8f700af0968c54b342cffcc8574963fdca23972",
+        "width": 1280,
+        "height": 853,
+        "bytes": 14664,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-600-908",
+      "answer": "لاوس",
+      "sourceReview": {
+        "id": "flags-600-908",
+        "answer": "لاوس",
+        "topic": "جنوب وجنوب شرق آسيا",
+        "tier": 600,
+        "question": "ما الدولة التي تتوسط علمها دائرة بيضاء على شريط أزرق عريض بين شريطين أحمرين؟",
+        "alt": [
+          "Laos",
+          "Lao PDR",
+          "جمهورية لاو الديمقراطية الشعبية"
+        ],
+        "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/5829",
+        "sourceReviewed": true,
+        "evidence": "Opened the primary constitutional text reproduced by WIPO Lex. Article 91 specifies dark blue, red edges and a white moon in the centre; each red edge is half the blue height; flag height is two thirds its width.",
+        "limits": "This 2003 text is explicitly marked superseded by WIPO. It substantiates the established flag design but was not reviewed as current legal authority. Local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-600-908",
+        "asset": "media/flags/flags-600-908.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Red, blue, red horizontal fields, double-height blue center with white disc.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "232ff61a691c9810ae62b92d82f409198128af8de1151cc51156ce3523060c55",
+        "width": 1280,
+        "height": 853,
+        "bytes": 11776,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-800-901",
+      "answer": "توغو",
+      "sourceReview": {
+        "id": "flags-800-901",
+        "answer": "توغو",
+        "topic": "أفريقيا الغربية",
+        "tier": 800,
+        "question": "ما الدولة التي يحمل علمها نجمة بيضاء في مربع أحمر، مع أشرطة خضراء وصفراء؟",
+        "alt": [
+          "Togo",
+          "جمهورية توغو"
+        ],
+        "sourceUrl": "https://presidenceduconseil.gouv.tg/symbole-des-de-la-republique-togolaise/",
+        "sourceReviewed": true,
+        "evidence": "Presidency of the Council symbols page describes five parallel green/yellow stripes, first/third/fifth green; upper-left red square containing a white five-pointed star.",
+        "limits": "The 1960 flag-law PDF was not needed or opened in this pass; no numerical canton geometry is certified. Local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-800-901",
+        "asset": "media/flags/flags-800-901.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Five alternating green/yellow bands with a white five-point star in a red canton.",
+        "limitation": "Canton is close to square but not exact; accepted only for identity recognition.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "e87dde839677b19cef13875e7382fa3fbc0cda1de8e51065895bc4b68d1b78d8",
+        "width": 1280,
+        "height": 791,
+        "bytes": 12340,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 791,
+        "directGameplaySample": true,
+        "gameplayReview": "approved-sampled",
+        "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-800-902",
+      "answer": "بنين",
+      "sourceReview": {
+        "id": "flags-800-902",
+        "answer": "بنين",
+        "topic": "أفريقيا الغربية",
+        "tier": 800,
+        "question": "ما الدولة صاحبة هذا العلم، بأخضر عمودي إلى جانب الأصفر والأحمر الأفقيين؟",
+        "alt": [
+          "Benin",
+          "جمهورية بنين"
+        ],
+        "sourceUrl": "https://sgg.gouv.bj/doc/loi-90-020/download",
+        "sourceReviewed": true,
+        "evidence": "Opened Flag Law 90-020, Article 3: green full-height hoist band occupies two fifths of length; remaining two equal horizontal bands are yellow above red.",
+        "limits": "Corrects old checkpoint note: this URL is the flag law, not the constitution. The numerical rule was read but the generated image has not been measured or approved.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-800-902",
+        "asset": "media/flags/flags-800-902.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Full-height green hoist field; yellow upper fly and red lower fly.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "4961d4c0d57644d0dd86e83c0ffb22a675172d1a4b28d027d61024b0dd63109d",
+        "width": 1280,
+        "height": 853,
+        "bytes": 6988,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-800-903",
+      "answer": "الغابون",
+      "sourceReview": {
+        "id": "flags-800-903",
+        "answer": "الغابون",
+        "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+        "tier": 800,
+        "question": "ما الدولة التي يتكون علمها من أشرطة أفقية خضراء وصفراء وزرقاء؟",
+        "alt": [
+          "غابون",
+          "الجابون",
+          "Gabon",
+          "جمهورية الغابون"
+        ],
+        "sourceUrl": "https://gabonembassyusa.org/en/about/about-us",
+        "sourceReviewed": true,
+        "evidence": "Actually opened the Embassy of the Gabonese Republic in Washington page. Our Flag explicitly identifies green, yellow and blue horizontal stripes.",
+        "limits": "Resolved previous indexed-only gap using an accessible official embassy. Several ministry/prime-minister sites timed out. No precise aspect ratio or stripe measurements verified from this embassy text; local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-800-903",
+        "asset": "media/flags/flags-800-903.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Green, yellow, blue horizontal tricolour.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "9fd01df4b28c332914e2f4eaa1a31a7e26ccf417a951dd3c39fc0b91bffeee0e",
+        "width": 1280,
+        "height": 960,
+        "bytes": 8080,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 960,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-800-904",
+      "answer": "جمهورية الكونغو",
+      "sourceReview": {
+        "id": "flags-800-904",
+        "answer": "جمهورية الكونغو",
+        "topic": "أفريقيا الشرقية والوسطى والجنوبية",
+        "tier": 800,
+        "question": "ما الدولة صاحبة هذا العلم، الذي يفصل فيه شريط أصفر مائل بين الأخضر والأحمر؟",
+        "alt": [
+          "الكونغو برازافيل",
+          "Congo-Brazzaville",
+          "Republic of the Congo"
+        ],
+        "sourceUrl": "https://www.ambacongo-us.org/index.php/en/about-congo/national-symbols",
+        "sourceReviewed": true,
+        "evidence": "Opened Republic of Congo embassy page: current flag comprises green, yellow and red, divided diagonally; heading explicitly identifies Republic of Congo.",
+        "limits": "Accept Republic of Congo/Congo-Brazzaville, not Democratic Republic of the Congo. Do not add bare Congo as an unqualified alternative. Text verifies identity and diagonal construction, not pixel geometry; local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-800-904",
+        "asset": "media/flags/flags-800-904.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Yellow rising diagonal separating green upper hoist and red lower fly.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "35cc9f56060d697d57ebd099a80bd3e174c6b79f363eca4149f7d4aa7b30bfeb",
+        "width": 1280,
+        "height": 853,
+        "bytes": 19158,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-800-905",
+      "answer": "الباهاما",
+      "sourceReview": {
+        "id": "flags-800-905",
+        "answer": "الباهاما",
+        "topic": "الكاريبي",
+        "tier": 800,
+        "question": "ما الدولة صاحبة هذا العلم ذي المثلث الأسود والأشرطة الفيروزية والذهبية؟",
+        "alt": [
+          "باهاما",
+          "جزر الباهاما",
+          "Bahamas",
+          "The Bahamas"
+        ],
+        "sourceUrl": "https://www.bahamasembdc.org/about/national-symbols/",
+        "sourceReviewed": true,
+        "evidence": "Opened official Bahamas embassy National Symbols page. Text identifies black triangle, gold and aquamarine. Visually inspected its linked official illustration https://www.bahamasembdc.org/wp-content/uploads/2014/11/stock-footage-flag-of-bahamas-e.jpg: black hoist triangle, aquamarine/gold/aquamarine horizontal bands.",
+        "limits": "Reference is a waving illustration; colors/layout establish identification, not exact ratios. Local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-800-905",
+        "asset": "media/flags/flags-800-905.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Black hoist triangle and aquamarine, gold, aquamarine horizontal fields.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "3d3202b446dc464fb3d5480c435d0604e231907ee9ea062903c0c65d68ff5f31",
+        "width": 1280,
+        "height": 640,
+        "bytes": 10490,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-800-906",
+      "answer": "ترينيداد وتوباغو",
+      "sourceReview": {
+        "id": "flags-800-906",
+        "answer": "ترينيداد وتوباغو",
+        "topic": "الكاريبي",
+        "tier": 800,
+        "question": "ما الدولة صاحبة العلم الأحمر الذي يعبره شريط أسود مائل محاط بالأبيض؟",
+        "alt": [
+          "ترينيداد وتوباجو",
+          "Trinidad and Tobago"
+        ],
+        "sourceUrl": "https://foreign.gov.tt/about/trinidad-tobago/national-symbols/national-flag/",
+        "sourceReviewed": true,
+        "evidence": "Opened ministry page and visually inspected its linked official reference (red field, black diagonal descending from upper hoist to lower fly, thin white borders). Also directly opened and extracted National Identity Guidelines PDF https://natt.gov.tt/sites/default/files/pdfs/National%20Identity%20Guidelines_FINALReduced%20Size.pdf, PDF page 47/printed 41: red field, black diagonal from left to right bordered white; combined band width at upper corner one fifth length and each white band one sixth combined width.",
+        "limits": "Detailed construction was read, not measured against the local generated image. Local asset approval belongs to root.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-800-906",
+        "asset": "media/flags/flags-800-906.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "White-bordered black descending diagonal on red.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "fbc1c2d8edddd530a03abe6e5c5a76e18c3c65ba65061a6eefba176e853b8c35",
+        "width": 1280,
+        "height": 768,
+        "bytes": 20794,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 768,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-800-907",
+      "answer": "جزر سليمان",
+      "sourceReview": {
+        "id": "flags-800-907",
+        "answer": "جزر سليمان",
+        "topic": "أوقيانوسيا",
+        "tier": 800,
+        "question": "ما الدولة صاحبة هذا العلم، الذي يفصل فيه شريط أصفر مائل بين الأزرق والأخضر؟",
+        "alt": [
+          "جزر سولومون",
+          "Solomon Islands"
+        ],
+        "sourceUrl": [
+          "https://solomons.gov.sb/wp-content/uploads/2024/06/Policy-Statement-TUESDAY-6PM-Final.pdf",
+          "https://www.dfat.gov.au/geo/solomon-islands/solomon-islands-country-brief"
+        ],
+        "sourceReviewed": true,
+        "evidence": "Opened the Solomon Islands government Policy Statements PDF and rendered/read its cover directly in memory. Government coat of arms/title accompany a stylized waving national flag: blue upper area with white stars, yellow rising diagonal, green lower area. This is a country-government primary visual supporting identification. Also opened Australia's DFAT country brief https://www.dfat.gov.au/geo/solomon-islands/solomon-islands-country-brief, which explicitly labels a linked image Flag of Solomon Islands. Root subsequently opened the actual DFAT-linked image in Chrome and visually inspected it: five white stars in X formation, blue upper hoist, yellow ascending diagonal and green lower fly are visible.",
+        "limits": "The government PDF is stylized; the additional DFAT flag image was actually opened and viewed by root. It verifies the full identifying layout and five-star arrangement. Neither reference is used to claim pixel-exact print geometry.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25",
+        "additionalVisualReference": "https://www.dfat.gov.au/sites/default/files/Solomon-Islands_e679d76d-7d05-385a-939e-852f75bfdb18.png"
+      },
+      "visualReview": {
+        "id": "flags-800-907",
+        "asset": "media/flags/flags-800-907.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Five white stars arranged in an X on blue upper hoist; yellow rising diagonal and green lower fly.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "99c42a19e6c976b031fb32470edb4126542a096b8b18bf2cdd10d360d67cd2ea",
+        "width": 1280,
+        "height": 640,
+        "bytes": 26756,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-800-908",
+      "answer": "ساموا",
+      "sourceReview": {
+        "id": "flags-800-908",
+        "answer": "ساموا",
+        "topic": "أوقيانوسيا",
+        "tier": 800,
+        "question": "ما الدولة صاحبة هذا العلم الأحمر، وفي ركنه الأزرق خمس نجوم بيضاء تمثل الصليب الجنوبي؟",
+        "alt": [
+          "Samoa",
+          "دولة ساموا المستقلة"
+        ],
+        "sourceUrl": "https://www.mfat.gov.ws/wp-content/uploads/2013/10/Flag-of-Samoa.pdf",
+        "sourceReviewed": true,
+        "evidence": "Opened official foreign ministry flag PDF. Red rectangle, blue upper-hoist quadrant bearing Southern Cross with four five-pointed stars and a smaller star; all white; height:length 1:2.",
+        "limits": "Not American Samoa. No visual validation of local star count/positions; only reference specification reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-800-908",
+        "asset": "media/flags/flags-800-908.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Blue upper hoist canton with four larger white stars and one smaller star on a red field.",
+        "limitation": "Blue canton is slightly taller than half-height; correct five-star pattern retained.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "05f8a74b38412118548e750a68259efe29d0564d4e5734f3d7588dbf5a7aaad8",
+        "width": 1280,
+        "height": 640,
+        "bytes": 11732,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-1000-901",
+      "answer": "بالاو",
+      "sourceReview": {
+        "id": "flags-1000-901",
+        "answer": "بالاو",
+        "topic": "أوقيانوسيا",
+        "tier": 1000,
+        "question": "ما الدولة التي يحمل علمها الأزرق الفاتح دائرة صفراء منحازة قليلًا نحو السارية؟",
+        "alt": [
+          "Palau",
+          "جمهورية بالاو"
+        ],
+        "sourceUrl": "https://www.palaugov.pw/about-palau/flag/",
+        "sourceReviewed": true,
+        "evidence": "Opened Palau national government flag page: pale blue sheet with yellow circle placed slightly toward the left; explicitly says it appears centred when hung.",
+        "limits": "No exact circle diameter or offset numbers supplied by this page. The local asset has not been checked for the offset.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-1000-901",
+        "asset": "media/flags/flags-1000-901.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Yellow disc offset toward the hoist on a light blue field.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "7f22e9f1cb09a53c2e23817e0efacac725ba050c455737b80c21117ab24a56fd",
+        "width": 1280,
+        "height": 801,
+        "bytes": 10110,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 801,
+        "directGameplaySample": true,
+        "gameplayReview": "approved-sampled",
+        "scope": "This asset decoded in Chromium; actual in-game interactions and mobile screenshots were checked for this question.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-1000-902",
+      "answer": "ناورو",
+      "sourceReview": {
+        "id": "flags-1000-902",
+        "answer": "ناورو",
+        "topic": "أوقيانوسيا",
+        "tier": 1000,
+        "question": "ما الدولة صاحبة العلم الأزرق الذي يجمع شريطًا ذهبيًا ونجمة بيضاء ذات اثني عشر رأسًا؟",
+        "alt": [
+          "Nauru",
+          "Naoero",
+          "جمهورية ناورو"
+        ],
+        "sourceUrl": "https://www.nauru.gov.nr/government-information-office/fact-sheet.aspx",
+        "sourceReviewed": true,
+        "evidence": "Opened Government Information Office fact sheet: white twelve-pointed star, gold stripe, blue background are expressly identified as the country's flag.",
+        "limits": "Page supports colors and star points but does not specify exact star position/stripe placement in its text. No local visual approval.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-1000-902",
+        "asset": "media/flags/flags-1000-902.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Thin gold horizontal stripe on dark blue, with a twelve-point white star below near the hoist.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "24c10ec2d333ed51a91e2ae3547ce12f2aa01fefd7ccb2df325092bd9c77459c",
+        "width": 1280,
+        "height": 640,
+        "bytes": 9288,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-1000-903",
+      "answer": "سانت لوسيا",
+      "sourceReview": {
+        "id": "flags-1000-903",
+        "answer": "سانت لوسيا",
+        "topic": "الكاريبي",
+        "tier": 1000,
+        "question": "ما الدولة التي يتوسط علمها الأزرق شكل مثلثي بالأسود والأبيض والذهبي؟",
+        "alt": [
+          "Saint Lucia",
+          "St Lucia"
+        ],
+        "sourceUrl": "https://www.govt.lc/stluciaflag",
+        "sourceReviewed": true,
+        "evidence": "Reopened Saint Lucia government flag page successfully. Description states a plain blue field with white and black triangular form, a golden triangle centred at its base; triangles superimposed black over white and gold over black.",
+        "limits": "Government gazette geometry PDF was not opened; this validates identity/composition without checking exact pixel geometry. Local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-1000-903",
+        "asset": "media/flags/flags-1000-903.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "White-edged black triangle with a shorter gold triangle on a light blue field.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "3fd7e61fa8997a1e9896138086b365edebb3efd5255ae8d2aeb507293891f6e2",
+        "width": 1280,
+        "height": 640,
+        "bytes": 13762,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 640,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-1000-904",
+      "answer": "سانت فنسنت والغرينادين",
+      "sourceReview": {
+        "id": "flags-1000-904",
+        "answer": "سانت فنسنت والغرينادين",
+        "topic": "الكاريبي",
+        "tier": 1000,
+        "question": "ما الدولة صاحبة هذا العلم الذي تظهر فيه معينات خضراء على خلفية ذهبية؟",
+        "alt": [
+          "سانت فينسنت والغرينادين",
+          "سانت فنسنت وجزر غرينادين",
+          "Saint Vincent and the Grenadines"
+        ],
+        "sourceUrl": "https://foreign.gov.vc/foreign/index.php/the-national-flag",
+        "sourceReviewed": true,
+        "evidence": "Opened official foreign ministry page: green diamonds arranged as V, blue/gold/green identified. Visually read its linked flag photo https://foreign.gov.vc/foreign/images/stories/svg_flag_2.jpg: blue hoist, gold centre, green fly; three green diamonds on gold.",
+        "limits": "Photo is partly folded; confirms identity/emblems, not exact 1:2:1 stripe proportions or spacing. Local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-1000-904",
+        "asset": "media/flags/flags-1000-904.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Blue, gold, green vertical fields with a wider center and three green diamonds in V arrangement.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "6353f19422a4e9906b235e1a5b753d0d4489c6f7a627580baacbeeaf13252e86",
+        "width": 1280,
+        "height": 853,
+        "bytes": 14540,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-1000-905",
+      "answer": "سيراليون",
+      "sourceReview": {
+        "id": "flags-1000-905",
+        "answer": "سيراليون",
+        "topic": "أفريقيا الغربية",
+        "tier": 1000,
+        "question": "ما الدولة صاحبة العلم المؤلف من أشرطة أفقية خضراء وبيضاء وزرقاء؟",
+        "alt": [
+          "Sierra Leone",
+          "جمهورية سيراليون"
+        ],
+        "sourceUrl": "https://www.wipo.int/wipolex/en/legislation/details/20542",
+        "sourceReviewed": true,
+        "evidence": "Opened constitutional text hosted by WIPO Lex, Article 3(1)(b): green, white and blue horizontal stripes from top to bottom; subsection (c) gives 9 units across to 6 down.",
+        "limits": "Primary constitutional text is mirrored by WIPO; the page identifies a 2008 consolidation. Identity checked, not current comprehensive legal status or local image proportions.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-1000-905",
+        "asset": "media/flags/flags-1000-905.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Green, white, blue horizontal tricolour.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "ceca3c1c2f9007412b3caa27d1dc9a2b8049bbc87a6a3eb9402d1e3742262ce7",
+        "width": 1280,
+        "height": 853,
+        "bytes": 5790,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-1000-906",
+      "answer": "غامبيا",
+      "sourceReview": {
+        "id": "flags-1000-906",
+        "answer": "غامبيا",
+        "topic": "أفريقيا الغربية",
+        "tier": 1000,
+        "question": "ما الدولة التي يفصل الأبيض في علمها بين الأشرطة الحمراء والزرقاء والخضراء؟",
+        "alt": [
+          "The Gambia",
+          "Gambia",
+          "جمهورية غامبيا"
+        ],
+        "sourceUrl": "https://www.wipo.int/wipolex/en/text/221243",
+        "sourceReviewed": true,
+        "evidence": "Opened primary constitution mirrored by WIPO. Schedule 1 gives horizontal colors top-to-bottom red, white, blue, white, green, and overall 27 across by 18 down.",
+        "limits": "OCR stripe-unit wording is internally ambiguous and not treated as verified numerical stripe ratios. Local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-1000-906",
+        "asset": "media/flags/flags-1000-906.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Red, blue, green horizontal fields separated by two narrow white bands.",
+        "limitation": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "7e12c5d5fcf52b72e3dc8ca7ee8932e91b165fbe3fff8a2ec4398a48160e88d3",
+        "width": 1280,
+        "height": 853,
+        "bytes": 6730,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-1000-907",
+      "answer": "سورينام",
+      "sourceReview": {
+        "id": "flags-1000-907",
+        "answer": "سورينام",
+        "topic": "أمريكا الجنوبية",
+        "tier": 1000,
+        "question": "ما الدولة صاحبة هذا العلم ذي النجمة الصفراء وسط شريط أحمر، مع أشرطة خضراء وبيضاء؟",
+        "alt": [
+          "Suriname",
+          "Surinam",
+          "جمهورية سورينام"
+        ],
+        "sourceUrl": "https://gov.sr/suriname/",
+        "sourceReviewed": true,
+        "evidence": "Eventually reopened official government page successfully via https://gov.sr/suriname (redirects to slash URL), and read Surinaamse Vlag section: five stripes green/white/red/white/green, yellow five-point star, heights 2:1:4:1:2, overall height:length 2:3, star on vertical midline.",
+        "limits": "Earlier attempts to reopen timed out; final successful opened text establishes the design. Local generated star, spacing and stripe proportions not inspected.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-1000-907",
+        "asset": "media/flags/flags-1000-907.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Green, white, wide red, white, green bands with one central yellow five-point star.",
+        "limitation": "Minor tonal texture remains in otherwise clear flag fields.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "4a1d76a05be69f4b46179e8cf8fbc49266ed1255f2f1b8f8372c43c8ff6de623",
+        "width": 1280,
+        "height": 853,
+        "bytes": 13476,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 853,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    },
+    {
+      "qid": "flags-1000-908",
+      "answer": "غيانا",
+      "sourceReview": {
+        "id": "flags-1000-908",
+        "answer": "غيانا",
+        "topic": "أمريكا الجنوبية",
+        "tier": 1000,
+        "question": "ما الدولة صاحبة هذا العلم الذي يظهر فيه رأس سهم ذهبي ومثلث أحمر على خلفية خضراء؟",
+        "alt": [
+          "Guyana",
+          "جمهورية غيانا التعاونية"
+        ],
+        "sourceUrl": "https://www.education.gov.gy/web2/index.php/students-resources/secondary-school-resources/grade7/grade7-worksheets/grade-7-worksheets-social-studies/2977-grade-7-social-studies-week-6-lesson-1/file",
+        "sourceReviewed": true,
+        "evidence": "Opened Ministry of Education Grade 7 Social Studies worksheet, PDF page 3/printed 59: national flag named Golden Arrowhead; green background, white border, gold, black, red triangle described. This replaces the Lands and Surveys page whose fetch failed this pass.",
+        "limits": "Question concerns Guyana, not Guinea or French Guiana. Education text identifies motifs/colors, but exact border nesting and numerical construction are not independently certified here. Local asset not reviewed.",
+        "retrievalOutcome": "opened-relevant-evidence-read",
+        "retrievedAt": "2026-09-25"
+      },
+      "visualReview": {
+        "id": "flags-1000-908",
+        "asset": "media/flags/flags-1000-908.webp",
+        "identityVisualReview": "approved",
+        "reviewedAt": "2026-09-25",
+        "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+        "observation": "Green field, long white-edged gold arrow, and shorter black-edged red hoist triangle.",
+        "limitation": "Minor tonal texture remains in otherwise clear flag fields.",
+        "pixelExactOfficialGeometry": false,
+        "sha256": "c712f4517ceacca3e96129ec252cdc4ecde19d11117a4d2bca7180262bf90eee",
+        "width": 1280,
+        "height": 768,
+        "bytes": 32628,
+        "minimumAlpha": 255
+      },
+      "runtimeReview": "approved",
+      "runtimeScope": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "browserDecode": "passed",
+        "decodedWidth": 1280,
+        "decodedHeight": 768,
+        "directGameplaySample": false,
+        "gameplayReview": "not-individually-exercised",
+        "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+        "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+      }
+    }
+  ],
+  "identityReview": "approved",
+  "runtimeReview": "approved",
+  "runtimeEvidence": {
+    "executedAt": "2026-09-25T02:00:50.160Z",
+    "environment": "Headless installed Chrome; production app bundled in memory; local mock Plus account; real repository question objects and media.",
+    "mockAccountOnly": true,
+    "sourcePackQuestions": 40,
+    "gameplaySampleQuestionIds": [
+      "flags-200-901",
+      "flags-400-901",
+      "flags-600-901",
+      "flags-800-901",
+      "flags-1000-901"
+    ],
+    "gameplaySampleCount": 5,
+    "decodedAssetCount": 40,
+    "checksPassed": 41,
+    "checksTotal": 41,
+    "mobileViewports": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 320,
+        "height": 844
+      }
+    ],
+    "mobileScreenshotsVisuallyReviewed": 10,
+    "aboutDisclosureRowsChecked": 5,
+    "results": [
+      {
+        "name": "all flags filenames use neutral question identifiers",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags category is selectable in local mock Plus",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-200-901: real image loads before reveal",
+        "ok": true,
+        "detail": "[{\"alt\":\"صورة السؤال\",\"width\":1280,\"height\":640}]"
+      },
+      {
+        "name": "flags-200-901: generic pre-reveal image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-200-901: no answer in visible text or presentation attributes",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "flags-200-901: 390px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":98.6669921875,\"y\":495.0794677734375,\"width\":192.66598510742188,\"height\":96.3330078125},\"sizing\":{\"width\":390,\"scroll\":390,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-200-901: 320px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":84.35199737548828,\"y\":505.4219665527344,\"width\":151.29601287841797,\"height\":75.64804077148438},\"sizing\":{\"width\":320,\"scroll\":320,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-200-901: enlarged view retains generic alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-200-901: reveal shows matching answer and image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-400-901: real image loads before reveal",
+        "ok": true,
+        "detail": "[{\"alt\":\"صورة السؤال\",\"width\":1280,\"height\":853}]"
+      },
+      {
+        "name": "flags-400-901: generic pre-reveal image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-400-901: no answer in visible text or presentation attributes",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "flags-400-901: 390px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":32,\"y\":457.28125,\"width\":326,\"height\":217.234375},\"sizing\":{\"width\":390,\"scroll\":390,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-400-901: 320px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":32,\"y\":460.984375,\"width\":256,\"height\":170.59375},\"sizing\":{\"width\":320,\"scroll\":320,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-400-901: enlarged view retains generic alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-400-901: reveal shows matching answer and image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-600-901: real image loads before reveal",
+        "ok": true,
+        "detail": "[{\"alt\":\"صورة السؤال\",\"width\":1280,\"height\":853}]"
+      },
+      {
+        "name": "flags-600-901: generic pre-reveal image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-600-901: no answer in visible text or presentation attributes",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "flags-600-901: 390px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":32,\"y\":539.71875,\"width\":326,\"height\":217.234375},\"sizing\":{\"width\":390,\"scroll\":390,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-600-901: 320px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":32,\"y\":543.421875,\"width\":256,\"height\":170.59375},\"sizing\":{\"width\":320,\"scroll\":320,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-600-901: enlarged view retains generic alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-600-901: reveal shows matching answer and image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-800-901: real image loads before reveal",
+        "ok": true,
+        "detail": "[{\"alt\":\"صورة السؤال\",\"width\":1280,\"height\":791}]"
+      },
+      {
+        "name": "flags-800-901: generic pre-reveal image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-800-901: no answer in visible text or presentation attributes",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "flags-800-901: 390px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":32,\"y\":539.71875,\"width\":326,\"height\":201.453125},\"sizing\":{\"width\":390,\"scroll\":390,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-800-901: 320px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":32,\"y\":549.625,\"width\":256,\"height\":158.1875},\"sizing\":{\"width\":320,\"scroll\":320,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-800-901: enlarged view retains generic alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-800-901: reveal shows matching answer and image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-1000-901: real image loads before reveal",
+        "ok": true,
+        "detail": "[{\"alt\":\"صورة السؤال\",\"width\":1280,\"height\":801}]"
+      },
+      {
+        "name": "flags-1000-901: generic pre-reveal image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-1000-901: no answer in visible text or presentation attributes",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "flags-1000-901: 390px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":32,\"y\":539.71875,\"width\":326,\"height\":204},\"sizing\":{\"width\":390,\"scroll\":390,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-1000-901: 320px mobile image fits",
+        "ok": true,
+        "detail": "{\"box\":{\"x\":32,\"y\":548.625,\"width\":256,\"height\":160.1875},\"sizing\":{\"width\":320,\"scroll\":320,\"imgFit\":\"contain\"}}"
+      },
+      {
+        "name": "flags-1000-901: enlarged view retains generic alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "flags-1000-901: reveal shows matching answer and image alt",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "all current flags media decode in Chromium",
+        "ok": true,
+        "detail": "40/40"
+      },
+      {
+        "name": "generated flags have disclosure in their own About credit rows",
+        "ok": true,
+        "detail": "5/5 flags rows"
+      },
+      {
+        "name": "no JavaScript runtime errors",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "name": "no missing local asset responses",
+        "ok": true,
+        "detail": "[]"
+      }
+    ],
+    "errors": [],
+    "networkErrors": [],
+    "visualInspection": "# Flags browser QA\n\nFinal automated result: **41/41 checks passed**, using headless installed Chrome, production app bundled in memory, local mock Plus account, real repository question objects and media.\n\nScope: all40 flags files decoded successfully in Chromium and all40 filenames matched their neutral question IDs. Actual gameplay interactions covered one question from each tier: flags-200-901, flags-400-901, flags-600-901, flags-800-901, flags-1000-901. Allfive passed pre-reveal generic alt, no answer in visible text/title/ARIA/src, enlarged-view generic alt, and correct answer/alt after reveal.\n\nLayout checks passed at390×844 and320×844 with no document horizontal overflow and object-fit:contain. Ten320px screenshots, before/after for each selected question, were visually inspected. The flags remain legible inside their cards, prompts wrap cleanly, and revealed Arabic answers match the displayed flags. No visual defect requiring an app change was found in this sample. The UI uses its existing rounded media corners. Scrolling is expected for lower scoring controls on this narrow screen.\n\nThe five generated flags' own rows in About → sources showed AI disclosure. No browser JavaScript errors or missing local asset responses occurred.\n\nInitial attempt stopped at About because a hash-only route change correctly invoked the live-game leave-confirmation guard. That initial result is preserved in results-initial-harness-navigation-failure.json; the scratch harness now uses a full local document navigation. This was a harness navigation issue, not an app defect.\n\nLimits: this does not claim40 individual full-gameplay visual reviews, offline behavior, measured difficulty, or country/flag historical correctness. Shared source/data/records were not modified. Final machine-readable evidence is results.json and asset-decode.json.\n",
+    "limitations": [
+      "Only five questions were individually exercised in gameplay, one from each tier; decoding all 40 assets is not 40 full-gameplay reviews.",
+      "No offline or service-worker behavior was exercised by this runtime QA.",
+      "Local mock Plus testing is not production authentication, billing or entitlement validation.",
+      "Difficulty remains an editorial target without player measurement.",
+      "Official pixel geometry, digital color matching and current comprehensive legal status are not certified."
+    ],
+    "initialAttempt": "An initial About navigation attempt hit the existing leave-game confirmation guard. The scratch harness was corrected to perform a full local document navigation; final 41 checks passed. No app defect was found from this harness issue.",
+    "sourcePackSha256": "f1f0a6cece4c03a11360a3a7c7a273685de307f8e9350d65bc481613331d9abb",
+    "lineEndingReplay": "Same41checks replayed after LF normalization; content and images unchanged."
+  }
+}

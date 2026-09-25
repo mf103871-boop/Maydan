@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-1000-902",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-1000-902.webp",
+  "asset": "media/placefinder/placefinder-1000-902.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Prambanan temple complex on Java Indonesia, ground-level three-quarter exterior of grouped tall narrow dark andesite Hindu temples. Tallest central Shiva shrine and two slightly shorter major shrines, richly carved stepped square bases, steep central stairs and highly tiered tapering pointed ratna-crowned roofs; smaller temples in foreground. Open pale courtyard, green trees behind. Strong tall vertical needlelike silhouette distinct from squat bell-stupa Borobudur; no Angkor lotus towers, no invented gold.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 211442,
+  "sha256": "98302183392852aff754dda5c1cffa4a46f8bebf224b1e8b732617c0e8cdf8be",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Tall narrow richly tiered pointed andesite shrines with central larger tower; distinct from Borobudur and Angkor.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

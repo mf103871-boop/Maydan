@@ -1,0 +1,7 @@
+{
+  "id": "tilepuzzle-1000-905",
+  "kind": "question",
+  "pack": "tilepuzzle",
+  "reference": "C:\\Users\\user\\.codex\\generated_images\\01a0d62a-cd1f-7af0-81a5-6d9b8fc59969\\exec-e3ee76e4-4865-47f9-9ecc-4c10dd0966eb.png",
+  "prompt": "Use case: precise-object-edit.\nAsset type: one 4:3 landscape image for a visual guessing game.\nInput image 1 is the edit target: traditional Gulf windcatcher tower.\nPrimary request: zoom the camera out substantially so the whole tower, including its complete roof cornice, is visible with a wide clear band of sky above (at least 15% of image height). The tower's entire upper edge must be separated from the image border. Retain this tower's distinctive vertical ventilation openings, earthen plaster, projecting wooden beams and Gulf courtyard setting. Keep the original perspective, lighting and believable architecture. Tower should occupy no more than 65% of image height.\nConstraints: no cropped roof or upper tower; no captions, names, labels, signs, watermark or tile cuts."
+}

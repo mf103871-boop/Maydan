@@ -1,0 +1,49 @@
+{
+  "id": "guesscar-800-906",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 800,
+  "a": "لانشيا ستراتوس",
+  "topic": "سباقات",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1974 Lancia Stratos Stradale, lime green.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-800-026",
+  "identityReference": {
+    "src": "guesscar-800-026.webp",
+    "type": "image",
+    "title": "1974 Lancia Stratos Stradale (chassis no. 001656) on display at the 2021 Greenwich Concours d'Elegance. Belongs to the…",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1974_Lancia_Stratos_Stradale_at_Greenwich_2021,_front_left.jpg",
+    "author": "Mr.choppers",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "question": {
+    "p": 800,
+    "q": "ما طراز السيارة الخضراء الإسفينية ذات المصابيح المرفوعة؟",
+    "a": "لانشيا ستراتوس",
+    "alt": [
+      "ستراتوس",
+      "Lancia Stratos",
+      "Stratos"
+    ],
+    "qid": "guesscar-800-906",
+    "type": "image",
+    "topic": "سباقات",
+    "difficultyTarget": 0.25,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1974_Lancia_Stratos_Stradale_at_Greenwich_2021,_front_left.jpg",
+    "media": {
+      "src": "guesscar-800-906.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-800-906.json"
+      }
+    }
+  },
+  "model": "1974 Lancia Stratos Stradale, lime green"
+}

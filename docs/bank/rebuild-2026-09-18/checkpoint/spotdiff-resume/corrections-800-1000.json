@@ -1,0 +1,53 @@
+{
+  "createdAt": "2026-09-25",
+  "items": [
+    {
+      "id": "spotdiff-800-906-a",
+      "reason": "Original zipper loop too small for intended mobile comparison; enlarged only loop before creating B.",
+      "rejected": {
+        "file": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/rejected/spotdiff-800-906-a-rejected-original.png",
+        "sha256": "bfe31e885a000f77b0d69f501fb76b6c4f7e34ca99b33ac92e347ffb7a89fcd2",
+        "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A small orange dome tent fills center of a quiet campsite, entrance closed by gray zip seam. A clear BLUE oval fabric loop attached to bottom-right end of door zipper at x=65 y=73, loop 8 percent image width. Folded green sleeping mat at far left, soft grass, neutral trees background, no text. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+      },
+      "replacement": {
+        "file": "media/spotdiff/spotdiff-800-906-a.webp",
+        "sha256": "83016119c71c00a93d53ec1e8f1580e70c9df60054f546a1079676f366841a91",
+        "rawImageSha256": "1a0b110f35e046e237588a5071dfa4226ddc8755cb660a5a4eec3e7c91088c39",
+        "prompt": "Use case: precise-object-edit. Edit the supplied original campsite photograph only to make its BLUE fabric zipper pull loop clearly large enough for a mobile spot-the-difference game. Keep the loop attached to the same lower-right end of the tent door zipper, but enlarge ONLY the blue oval loop to approximately 7 percent of total image width and 9 percent of image height, extending down and slightly to the right from its attachment. It must remain an open blue fabric oval with a visible hole, not solid. Keep all orange tent fabric, zipper seam, trees, grass, green rolled mat, framing and every other object exactly unchanged. No text. This corrected image will become image A."
+      },
+      "method": "One built-in image edit; no programmatic game-image modification."
+    },
+    {
+      "id": "spotdiff-800-905-b",
+      "reason": "Rejected B removed both rightmost and lower-right jingles (two semantic differences). Regenerate from original A removing rightmost only.",
+      "rejected": {
+        "file": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/rejected/spotdiff-800-905-b-rejected-original.png",
+        "sha256": "a54245c684fb4ac78b530aeb72c7baba74297ce0454ed0bfb5ec7a861bf2a032",
+        "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the pair of silver jingles in the rightmost 3-o'clock rim slot, leaving that one rectangular slot empty with tiny fixed support pin. Other six visible jingle pairs, wooden rim and skin remain exact. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+      },
+      "replacement": {
+        "file": "media/spotdiff/spotdiff-800-905-b.webp",
+        "sha256": "3219aa9cba5c8a77d014f619f9b872469bb431ab9a08521f121f9178b1b5a09a",
+        "rawImageSha256": "2e2f83c3bd7ed55a83fe35636797c2aec820b1b4a1ee7f7bbeb87656a3d3691f",
+        "prompt": "Use case: precise-object-edit. The supplied image A shows SEVEN visible silver jingle locations on a tambourine. Remove EXACTLY ONE: the rightmost silver jingle at the 3-o'clock position, centered approximately x=80%, y=47%. Replace that silver jingle with background, leaving its tiny support pin and existing empty slot. CRITICAL: preserve the LOWER-RIGHT jingle at 5-o'clock, centered x=75%, y=66%, fully present and silver. Also preserve the top, upper-right, bottom, lower-left and upper-left silver jingles; there must be SIX visible silver jingle locations after editing. Do not remove the lower-right jingle. Preserve drum skin pattern, wooden rim, all six remaining jingle geometries/reflections, camera, background and shadows. ONE semantic difference only: one rightmost jingle pair disappears. Same framing and dimensions. No text."
+      },
+      "method": "One built-in image edit; no programmatic game-image modification."
+    },
+    {
+      "id": "spotdiff-1000-908-a",
+      "reason": "Original O-ring was too large for intended localized 1000-tier target; reduced its diameter before creating B.",
+      "rejected": {
+        "file": "docs/bank/rebuild-2026-09-18/checkpoint/spotdiff-resume/rejected/spotdiff-1000-908-a-rejected-original.png",
+        "sha256": "74f18ae2e8db1d509a70ffb5e2f4484f6a1bc75b10de684d68dcf0d8c13a5903",
+        "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Clean tabletop still-life on light gray workshop mat. Three silver hexagonal nuts of different sizes arranged at left, one silver small metal bolt lying center-right. A single small RED rubber O-ring lies separate at x=75 y=68, outer diameter 9 percent image width. Crisp realistic metal, no markings. This is the first image of a matched pair. All objects stable, stationary and easy to compare."
+      },
+      "replacement": {
+        "file": "media/spotdiff/spotdiff-1000-908-a.webp",
+        "sha256": "2d4e515cccd0a67e75e57d97ed1726af26f93d2a6018de3617b29bcc244c8dd1",
+        "rawImageSha256": "fd071f8372c2611ba010ceafeeee1b16791adacaebffb68b6cec621b18009146",
+        "prompt": "Use case: precise-object-edit. Correct only the size of the red rubber O-ring in the supplied still-life. The red O-ring is too large; reduce its outer diameter to approximately HALF its current diameter, about 9 percent of the total image width. Keep its exact center at x=81%, y=33%, retain its round ring geometry and visible central hole, and scale its natural contact shadow accordingly. Preserve all three hex nuts, the silver bolt, thread detail, background, framing and every other visible detail exactly. Do not relocate the O-ring or add objects. This corrected version becomes image A of a difficult spot-the-difference pair. No text."
+      },
+      "method": "One built-in image edit; no programmatic game-image modification."
+    }
+  ]
+}

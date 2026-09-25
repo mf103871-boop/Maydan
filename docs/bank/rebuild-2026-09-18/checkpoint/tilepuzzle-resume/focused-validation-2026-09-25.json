@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-25",
+  "command": "node scripts/bank.mjs validate tilepuzzle",
+  "categorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27",
+  "contentErrors": [],
+  "sharedStatusCountMismatches": [
+    "tilepuzzle: bank-status: خانة 200 مسجّلة 42 والفعلي 8",
+    "tilepuzzle: bank-status: خانة 400 مسجّلة 47 والفعلي 8",
+    "tilepuzzle: bank-status: خانة 600 مسجّلة 47 والفعلي 8",
+    "tilepuzzle: bank-status: خانة 800 مسجّلة 47 والفعلي 8",
+    "tilepuzzle: bank-status: خانة 1000 مسجّلة 42 والفعلي 8"
+  ],
+  "warnings": [
+    "5 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «بريتزل» في blur،tilepuzzle · «شفق قطبي» في blur،tilepuzzle · «اكسولوتل» في hints،tilepuzzle · «اسطرلاب» في hints،tilepuzzle · «كاميرا» في sound،tilepuzzle"
+  ],
+  "placeholderCount": 0,
+  "scope": "Focused tilepuzzle plus validator cross-bank invariants; shared status synchronization belongs to root."
+}

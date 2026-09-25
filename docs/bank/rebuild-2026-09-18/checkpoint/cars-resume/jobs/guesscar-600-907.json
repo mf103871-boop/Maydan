@@ -1,0 +1,53 @@
+{
+  "id": "guesscar-600-907",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 600,
+  "a": "سيتروين دوشوفو",
+  "topic": "كلاسيكية",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 1960 Citroen 2CV, red.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-600-040",
+  "identityReference": {
+    "src": "guesscar-600-040.webp",
+    "type": "image",
+    "title": "Citroen 2CV at Retro Classics 2018",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Citroen_2CV_1X7A7979.jpg",
+    "author": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "question": {
+    "p": 600,
+    "q": "ما اسم السيارة الفرنسية الحمراء ذات السقف القماشي والرفارف المنفصلة؟",
+    "a": "سيتروين دوشوفو",
+    "alt": [
+      "تو شوفو",
+      "سيتروين 2 سي في",
+      "سيتروين 2CV",
+      "Citroen 2CV",
+      "Citroën 2CV",
+      "2CV",
+      "دوشوفو"
+    ],
+    "qid": "guesscar-600-907",
+    "type": "image",
+    "topic": "كلاسيكية",
+    "difficultyTarget": 0.4,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Citroen_2CV_1X7A7979.jpg",
+    "media": {
+      "src": "guesscar-600-907.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-600-907.json"
+      }
+    }
+  },
+  "model": "1960 Citroen 2CV, red"
+}

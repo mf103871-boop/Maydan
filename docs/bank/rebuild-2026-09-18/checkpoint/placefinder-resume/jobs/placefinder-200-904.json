@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-200-904",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 200,
+  "a": "أهرامات الجيزة",
+  "alt": [
+    "أهرام الجيزة",
+    "الأهرامات"
+  ],
+  "topic": "العالم العربي",
+  "q": "ما اسم هذه المجموعة الأثرية المصرية؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/86/",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. The three great Giza pyramids on their real sandy plateau: Khufu and Khafre large, Menkaure visibly smaller; weathered limestone blocks, remaining pale casing near Khafre apex; viewpoint across desert with the three principal pyramids separated, no invented giant sphinx, no Nile beside them, no lush jungle.",
+  "referenceFile": "media/placefinder/placefinder-200-002.webp",
+  "sourceEvidence": "UNESCO identifies the three Giza pyramids within the Memphis necropolis.",
+  "sourceReviewed": true,
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Three principal limestone pyramids, one smaller and one retaining apex casing; illustrative spacing, no claimed survey accuracy.",
+  "runtimeReviewStatus": "approved"
+}

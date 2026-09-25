@@ -1,0 +1,39 @@
+{
+  "id": "blur-1000-907",
+  "kind": "question",
+  "pack": "blur",
+  "a": "رمي المطرقة",
+  "p": 1000,
+  "topic": "رياضة",
+  "prompt": "Use case: precise-object-edit. The supplied image is the edit target. Remove ONLY the sports-brand logo on the athlete's shoes and any tiny clothing brand marks. Replace each logo with continuous plain white, gray or black fabric/leather matching the adjacent shoe or garment. Keep the exact athlete, hands, fingers, face, pose, feet, single handle held by both hands, taut wire, spherical hammer head, cage, throwing circle, grass, background, colors, framing and lighting unchanged. No added words, logos or symbols. This is an unbranded educational sports illustration.",
+  "question": {
+    "p": 1000,
+    "q": "ما مسابقة ألعاب القوى التي تستخدم كرة معدنية متصلة بسلك؟",
+    "a": "رمي المطرقة",
+    "qid": "blur-1000-907",
+    "type": "image",
+    "effect": "blur",
+    "alt": [
+      "إطاحة المطرقة",
+      "قذف المطرقة",
+      "Hammer throw"
+    ],
+    "topic": "رياضة",
+    "difficultyTarget": 0.15,
+    "verified": true,
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "media": {
+      "src": "blur-1000-907.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation (built-in)",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-907.json"
+      }
+    }
+  }
+}

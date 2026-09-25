@@ -1,0 +1,27 @@
+{
+  "id": "reveal-800-901",
+  "kind": "question",
+  "pack": "reveal",
+  "file": "media/reveal/reveal-800-901.webp",
+  "asset": "media/reveal/reveal-800-901.webp",
+  "prompt": "Use case: illustration-story.\nAsset type: one standalone portrait illustration for an Arabic family portrait-recognition game, age 16+.\nPrimary request: a clearly recognizable faithful portrait of the real public figure Ahmed Helmy. Identity accuracy is essential; do not substitute a generic lookalike.\nSubject details: Egyptian actor Ahmed Helmy in his recognizable mature appearance, short curly dark hair with grey, black rectangular glasses, short salt-and-pepper beard, broad smiling face, simple dark sweater.\nStyle: polished realistic hand-painted editorial portrait, very subtle visible painted texture, natural human facial proportions, authentic familiar appearance; this is an illustration, not a documentary photograph.\nComposition: square 1:1 head and upper shoulders portrait facing the viewer, face centered occupying 65% of height, complete hair and head inside frame with margin. Clear even soft lighting, muted warm grey studio backdrop. Only this one person.\nConstraints: no written name, no lettering, captions, logos, signature, watermark, frame, collage, other people, or added symbolic props. Do not exaggerate or caricature the face.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1254,
+  "height": 1254,
+  "bytes": 242518,
+  "sha256": "d7e7fd6e7eafe94647492870b9f38f11aa1325ee10d8441cac40ec3ab2378c0e",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "reviewedSha256": "d7e7fd6e7eafe94647492870b9f38f11aa1325ee10d8441cac40ec3ab2378c0e",
+    "sourceUrl": "https://www.unicef.org/mena/ar/اليونيسف-تُعيّن-الفنان-أحمد-حلمي-سفيراً-إقليمياً-في-الشرق-الاوسط-وشمال-افريقيا/البيانات-الصحفية",
+    "sourceReview": "Publisher-labeled primary reference and generated portrait actually viewed; visible-trait comparison recorded.",
+    "fullImage": "Both show curly dark hair, rectangular glasses and a gray-flecked beard. Generated portrait is frontal and smiling with a plain dark sweater; the clearer UNICEF signing view looks down with a blue shirt.",
+    "limits": "Signing image supplements the earlier very small group photograph; exact eye-area comparison remains limited by the downward pose.",
+    "revealGameplay": "All12 opaque tiles initially closed; each ordinary click opens one; no early answer metadata or enlargement; show/hide answer and new question reset checked in Chrome.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/runtime.json",
+    "reviewRecord": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json"
+  }
+}

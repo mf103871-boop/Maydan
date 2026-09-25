@@ -1,0 +1,40 @@
+{
+  "id": "silhouette-200-906",
+  "kind": "question",
+  "pack": "silhouette",
+  "file": "media/silhouette/silhouette-200-906.webp",
+  "asset": "media/silhouette/silhouette-200-906.webp",
+  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a pear with short stem and one leaf.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 229504,
+  "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Pear-shaped fruit with short stalk and leaf. Fresh full-size inspection confirms stalk top and fruit base are complete despite narrow 4–5 pixel visible margins.",
+    "gameplayReview": "approved",
+    "alpha": {
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 229504,
+      "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e",
+      "transparentFraction": 0.589436,
+      "nearOpaqueFraction": 0.393607,
+      "bboxAlphaOver128": [
+        297,
+        5,
+        1104,
+        955
+      ]
+    },
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  }
+}

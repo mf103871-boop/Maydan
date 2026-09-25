@@ -1,0 +1,913 @@
+{
+  "executedAt": "2026-09-25T03:51:37.903Z",
+  "selection": "One actual 200-point question in each of blur, silhouette and flags, selected normally from unchanged production bank. No question/deck fixtures or category overrides.",
+  "auth": "Local mock account only; no real account writes",
+  "browser": "Installed Chrome, headless, mobile 390x844 and 320x844, reduced motion",
+  "hashesBefore": {
+    "src/games/badeeha/App.js": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+    "src/games/badeeha/styles.css": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+    "src/data/categories/blur.json": "2ddfe52a59c017b0167055ab30a55be7fac2c2b3970016c4e9a2fccdec6cf8d9",
+    "src/data/categories/silhouette.json": "109c9eb446071f059c5eb6e788c5cc0e71a18889fabdd67c29155988706e089a",
+    "src/data/categories/flags.json": "f1f0a6cece4c03a11360a3a7c7a273685de307f8e9350d65bc481613331d9abb"
+  },
+  "hashesAfter": {
+    "src/games/badeeha/App.js": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+    "src/games/badeeha/styles.css": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+    "src/data/categories/blur.json": "2ddfe52a59c017b0167055ab30a55be7fac2c2b3970016c4e9a2fccdec6cf8d9",
+    "src/data/categories/silhouette.json": "109c9eb446071f059c5eb6e788c5cc0e71a18889fabdd67c29155988706e089a",
+    "src/data/categories/flags.json": "f1f0a6cece4c03a11360a3a7c7a273685de307f8e9350d65bc481613331d9abb"
+  },
+  "results": [
+    {
+      "name": "blur-200-906: actual full-bank question selected",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: fragment adds no DOM wrapper or tile button",
+      "ok": true,
+      "detail": [
+        "m-media-stage "
+      ]
+    },
+    {
+      "name": "blur-200-906: hidden answer and generic alt",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "blur-200-906: original pre-reveal effect preserved",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🌫️ وضّح شوي\n200\nنقطة\nسهل\nالسؤال لـ الفريق الأزرق\n60\n⏸ إيقاف مؤقت\n\nما الذي في الصورة؟\n\nما المعلم الباريسي صاحب الهيكل المعدني في الصورة؟\n\nوسائل الفريق الأزرق\n\n✨\nدبل النقاط\nمتاحة\n✌️\nجوابين\nمتاحة\n⏳\nوقت زيادة\nمتاحة\n◉ أظهر الإجابة",
+        "base": {
+          "src": "media/blur/blur-200-906.webp",
+          "alt": "صورة السؤال",
+          "width": 1280,
+          "height": 960,
+          "filter": "blur(16px) saturate(1.3)"
+        },
+        "clean": {
+          "alt": "",
+          "hidden": "true",
+          "opacity": "0",
+          "filter": "none"
+        },
+        "canEnlarge": false,
+        "stageRole": null,
+        "directBoxChildren": [
+          "m-media-stage "
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": "صورة السؤال",
+            "title": null,
+            "aria": null,
+            "src": "media/blur/blur-200-906.webp"
+          },
+          {
+            "alt": "",
+            "title": null,
+            "aria": null,
+            "src": "media/blur/blur-200-906.webp"
+          },
+          {
+            "alt": null,
+            "title": "نقاط هذا السؤال ×2 إذا جاوبتوا صح",
+            "aria": null,
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": "يحق لفريقكم قول إجابتين",
+            "aria": null,
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": "+30 ثانية على المؤقت",
+            "aria": null,
+            "src": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "blur-200-906: correct enlargement gate before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: clicking hidden effect cannot bypass it",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: 390px image fits and reveal action does not overlap",
+      "ok": true,
+      "detail": {
+        "viewport": 390,
+        "scroll": 390,
+        "fit": "contain",
+        "stage": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 326,
+          "height": 244.5,
+          "top": 457.28125,
+          "right": 358,
+          "bottom": 701.78125,
+          "left": 32
+        },
+        "button": {
+          "x": 12,
+          "y": 778,
+          "width": 366,
+          "height": 58,
+          "top": 778,
+          "right": 378,
+          "bottom": 836,
+          "left": 12
+        },
+        "buttonCenterVisible": true,
+        "buttonHit": true
+      }
+    },
+    {
+      "name": "blur-200-906: 390px reveal action receives pointer",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: 320px image fits and reveal action does not overlap",
+      "ok": true,
+      "detail": {
+        "viewport": 320,
+        "scroll": 320,
+        "fit": "contain",
+        "stage": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 256,
+          "height": 192,
+          "top": 457.28125,
+          "right": 288,
+          "bottom": 649.28125,
+          "left": 32
+        },
+        "button": {
+          "x": 12,
+          "y": 778,
+          "width": 296,
+          "height": 58,
+          "top": 778,
+          "right": 308,
+          "bottom": 836,
+          "left": 12
+        },
+        "buttonCenterVisible": true,
+        "buttonHit": true
+      }
+    },
+    {
+      "name": "blur-200-906: 320px reveal action receives pointer",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: matching answer and clear image revealed",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🌫️ وضّح شوي\n200\nنقطة\nسهل\nالسؤال لـ الفريق الأزرق\n60\n\nما الذي في الصورة؟\n\nما المعلم الباريسي صاحب الهيكل المعدني في الصورة؟\n\nالإجابة\nبرج إيفل\nيُقبل أيضًا: إيفل · Eiffel Tower\n🙈 إخفاء الإجابة\nمن أجاب إجابة صحيحة؟\n⚑ بلّغ عن السؤال\n✓\nالفريق الأزرق\nإجابة صحيحة\n✓\nالفريق الوردي\nإجابة صحيحة · سرقة\nلم يجب أحد",
+        "base": {
+          "src": "media/blur/blur-200-906.webp",
+          "alt": "برج إيفل",
+          "width": 1280,
+          "height": 960,
+          "filter": "blur(16px) saturate(1.3)"
+        },
+        "clean": {
+          "alt": "",
+          "hidden": "true",
+          "opacity": "1",
+          "filter": "none"
+        },
+        "canEnlarge": true,
+        "stageRole": "button",
+        "directBoxChildren": [
+          "m-media-stage can-enlarge"
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": null,
+            "aria": "تكبير الصورة",
+            "src": null
+          },
+          {
+            "alt": "برج إيفل",
+            "title": null,
+            "aria": null,
+            "src": "media/blur/blur-200-906.webp"
+          },
+          {
+            "alt": "",
+            "title": null,
+            "aria": null,
+            "src": "media/blur/blur-200-906.webp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blur-200-906: reveal creates no tile controls or extra wrapper",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: revealed enlargement uses answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: hide restores prior effect, generic alt and gate",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🌫️ وضّح شوي\n200\nنقطة\nسهل\nالسؤال لـ الفريق الأزرق\n60\n\nما الذي في الصورة؟\n\nما المعلم الباريسي صاحب الهيكل المعدني في الصورة؟\n\nالإجابة مخفية\n• • •\n👁 إظهار الإجابة\nمن أجاب إجابة صحيحة؟\n⚑ بلّغ عن السؤال\n✓\nالفريق الأزرق\nإجابة صحيحة\n✓\nالفريق الوردي\nإجابة صحيحة · سرقة\nلم يجب أحد",
+        "base": {
+          "src": "media/blur/blur-200-906.webp",
+          "alt": "صورة السؤال",
+          "width": 1280,
+          "height": 960,
+          "filter": "blur(16px) saturate(1.3)"
+        },
+        "clean": {
+          "alt": "",
+          "hidden": "true",
+          "opacity": "0",
+          "filter": "none"
+        },
+        "canEnlarge": false,
+        "stageRole": null,
+        "directBoxChildren": [
+          "m-media-stage "
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": "صورة السؤال",
+            "title": null,
+            "aria": null,
+            "src": "media/blur/blur-200-906.webp"
+          },
+          {
+            "alt": "",
+            "title": null,
+            "aria": null,
+            "src": "media/blur/blur-200-906.webp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "blur-200-906: hidden answer uses masked placeholder without aliases or tile button",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: answer toggle shows image and answer again",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: actual full-bank question selected",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: fragment adds no DOM wrapper or tile button",
+      "ok": true,
+      "detail": [
+        "m-media-stage "
+      ]
+    },
+    {
+      "name": "silhouette-200-907: hidden answer and generic alt",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "silhouette-200-907: original pre-reveal effect preserved",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🌑 صور غامضة\n200\nنقطة\nسهل\nالسؤال لـ الفريق الوردي\n60\n⏸ إيقاف مؤقت\n\nما الذي في الصورة؟\n\nما آلة النفخ ذات الأنبوب المنحني الظاهرة في الظل؟\n\nوسائل الفريق الوردي\n\n✨\nدبل النقاط\nمتاحة\n✌️\nجوابين\nمتاحة\n⏳\nوقت زيادة\nمتاحة\n◉ أظهر الإجابة",
+        "base": {
+          "src": "media/silhouette/silhouette-200-907.webp",
+          "alt": "صورة السؤال",
+          "width": 1280,
+          "height": 960,
+          "filter": "brightness(0) contrast(2)"
+        },
+        "clean": {
+          "alt": "",
+          "hidden": "true",
+          "opacity": "0",
+          "filter": "none"
+        },
+        "canEnlarge": false,
+        "stageRole": null,
+        "directBoxChildren": [
+          "m-media-stage "
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": "صورة السؤال",
+            "title": null,
+            "aria": null,
+            "src": "media/silhouette/silhouette-200-907.webp"
+          },
+          {
+            "alt": "",
+            "title": null,
+            "aria": null,
+            "src": "media/silhouette/silhouette-200-907.webp"
+          },
+          {
+            "alt": null,
+            "title": "نقاط هذا السؤال ×2 إذا جاوبتوا صح",
+            "aria": null,
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": "يحق لفريقكم قول إجابتين",
+            "aria": null,
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": "+30 ثانية على المؤقت",
+            "aria": null,
+            "src": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "silhouette-200-907: correct enlargement gate before reveal",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: clicking hidden effect cannot bypass it",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: 390px image fits and reveal action does not overlap",
+      "ok": true,
+      "detail": {
+        "viewport": 390,
+        "scroll": 390,
+        "fit": "contain",
+        "stage": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 326,
+          "height": 244.5,
+          "top": 457.28125,
+          "right": 358,
+          "bottom": 701.78125,
+          "left": 32
+        },
+        "button": {
+          "x": 12,
+          "y": 778,
+          "width": 366,
+          "height": 58,
+          "top": 778,
+          "right": 378,
+          "bottom": 836,
+          "left": 12
+        },
+        "buttonCenterVisible": true,
+        "buttonHit": true
+      }
+    },
+    {
+      "name": "silhouette-200-907: 390px reveal action receives pointer",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: 320px image fits and reveal action does not overlap",
+      "ok": true,
+      "detail": {
+        "viewport": 320,
+        "scroll": 320,
+        "fit": "contain",
+        "stage": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 256,
+          "height": 192,
+          "top": 457.28125,
+          "right": 288,
+          "bottom": 649.28125,
+          "left": 32
+        },
+        "button": {
+          "x": 12,
+          "y": 778,
+          "width": 296,
+          "height": 58,
+          "top": 778,
+          "right": 308,
+          "bottom": 836,
+          "left": 12
+        },
+        "buttonCenterVisible": true,
+        "buttonHit": true
+      }
+    },
+    {
+      "name": "silhouette-200-907: 320px reveal action receives pointer",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: matching answer and clear image revealed",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🌑 صور غامضة\n200\nنقطة\nسهل\nالسؤال لـ الفريق الوردي\n60\n\nما الذي في الصورة؟\n\nما آلة النفخ ذات الأنبوب المنحني الظاهرة في الظل؟\n\nالإجابة\nساكسفون\nيُقبل أيضًا: ساكسوفون · سكسفون · Saxophone\n🙈 إخفاء الإجابة\nمن أجاب إجابة صحيحة؟\n⚑ بلّغ عن السؤال\n✓\nالفريق الأزرق\nإجابة صحيحة · سرقة\n✓\nالفريق الوردي\nإجابة صحيحة\nلم يجب أحد",
+        "base": {
+          "src": "media/silhouette/silhouette-200-907.webp",
+          "alt": "ساكسفون",
+          "width": 1280,
+          "height": 960,
+          "filter": "brightness(0) contrast(2)"
+        },
+        "clean": {
+          "alt": "",
+          "hidden": "true",
+          "opacity": "1",
+          "filter": "none"
+        },
+        "canEnlarge": true,
+        "stageRole": "button",
+        "directBoxChildren": [
+          "m-media-stage can-enlarge"
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": null,
+            "aria": "تكبير الصورة",
+            "src": null
+          },
+          {
+            "alt": "ساكسفون",
+            "title": null,
+            "aria": null,
+            "src": "media/silhouette/silhouette-200-907.webp"
+          },
+          {
+            "alt": "",
+            "title": null,
+            "aria": null,
+            "src": "media/silhouette/silhouette-200-907.webp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "silhouette-200-907: reveal creates no tile controls or extra wrapper",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: revealed enlargement uses answer alt",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: hide restores prior effect, generic alt and gate",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🌑 صور غامضة\n200\nنقطة\nسهل\nالسؤال لـ الفريق الوردي\n60\n\nما الذي في الصورة؟\n\nما آلة النفخ ذات الأنبوب المنحني الظاهرة في الظل؟\n\nالإجابة مخفية\n• • •\n👁 إظهار الإجابة\nمن أجاب إجابة صحيحة؟\n⚑ بلّغ عن السؤال\n✓\nالفريق الأزرق\nإجابة صحيحة · سرقة\n✓\nالفريق الوردي\nإجابة صحيحة\nلم يجب أحد",
+        "base": {
+          "src": "media/silhouette/silhouette-200-907.webp",
+          "alt": "صورة السؤال",
+          "width": 1280,
+          "height": 960,
+          "filter": "brightness(0) contrast(2)"
+        },
+        "clean": {
+          "alt": "",
+          "hidden": "true",
+          "opacity": "0",
+          "filter": "none"
+        },
+        "canEnlarge": false,
+        "stageRole": null,
+        "directBoxChildren": [
+          "m-media-stage "
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": "صورة السؤال",
+            "title": null,
+            "aria": null,
+            "src": "media/silhouette/silhouette-200-907.webp"
+          },
+          {
+            "alt": "",
+            "title": null,
+            "aria": null,
+            "src": "media/silhouette/silhouette-200-907.webp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "silhouette-200-907: hidden answer uses masked placeholder without aliases or tile button",
+      "ok": true
+    },
+    {
+      "name": "silhouette-200-907: answer toggle shows image and answer again",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: actual full-bank question selected",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: fragment adds no DOM wrapper or tile button",
+      "ok": true,
+      "detail": [
+        "m-media-stage can-enlarge"
+      ]
+    },
+    {
+      "name": "flags-200-903: hidden answer and generic alt",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "flags-200-903: original pre-reveal effect preserved",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🚩 أعلام\n200\nنقطة\nسهل\nالسؤال لـ الفريق الأزرق\n60\n⏸ إيقاف مؤقت\n\nما الذي في الصورة؟\n\nلأي دولة ينتمي العلم الأبيض الذي تتوسطه دائرة حمراء؟\n\nوسائل الفريق الأزرق\n\n✨\nدبل النقاط\nمتاحة\n✌️\nجوابين\nمتاحة\n⏳\nوقت زيادة\nمتاحة\n◉ أظهر الإجابة",
+        "base": {
+          "src": "media/flags/flags-200-903.webp",
+          "alt": "صورة السؤال",
+          "width": 1280,
+          "height": 853,
+          "filter": "none"
+        },
+        "clean": null,
+        "canEnlarge": true,
+        "stageRole": "button",
+        "directBoxChildren": [
+          "m-media-stage can-enlarge"
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": null,
+            "aria": "تكبير الصورة",
+            "src": null
+          },
+          {
+            "alt": "صورة السؤال",
+            "title": null,
+            "aria": null,
+            "src": "media/flags/flags-200-903.webp"
+          },
+          {
+            "alt": null,
+            "title": "نقاط هذا السؤال ×2 إذا جاوبتوا صح",
+            "aria": null,
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": "يحق لفريقكم قول إجابتين",
+            "aria": null,
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": "+30 ثانية على المؤقت",
+            "aria": null,
+            "src": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "flags-200-903: correct enlargement gate before reveal",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: unrevealed enlargement keeps generic alt",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: 390px image fits and reveal action does not overlap",
+      "ok": true,
+      "detail": {
+        "viewport": 390,
+        "scroll": 390,
+        "fit": "contain",
+        "stage": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 326,
+          "height": 217.234375,
+          "top": 457.28125,
+          "right": 358,
+          "bottom": 674.515625,
+          "left": 32
+        },
+        "button": {
+          "x": 12,
+          "y": 778,
+          "width": 366,
+          "height": 58,
+          "top": 778,
+          "right": 378,
+          "bottom": 836,
+          "left": 12
+        },
+        "buttonCenterVisible": true,
+        "buttonHit": true
+      }
+    },
+    {
+      "name": "flags-200-903: 390px reveal action receives pointer",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: 320px image fits and reveal action does not overlap",
+      "ok": true,
+      "detail": {
+        "viewport": 320,
+        "scroll": 320,
+        "fit": "contain",
+        "stage": {
+          "x": 32,
+          "y": 460.984375,
+          "width": 256,
+          "height": 170.59375,
+          "top": 460.984375,
+          "right": 288,
+          "bottom": 631.578125,
+          "left": 32
+        },
+        "button": {
+          "x": 12,
+          "y": 770.78125,
+          "width": 296,
+          "height": 58,
+          "top": 770.78125,
+          "right": 308,
+          "bottom": 828.78125,
+          "left": 12
+        },
+        "buttonCenterVisible": true,
+        "buttonHit": true
+      }
+    },
+    {
+      "name": "flags-200-903: 320px reveal action receives pointer",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: matching answer and clear image revealed",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🚩 أعلام\n200\nنقطة\nسهل\nالسؤال لـ الفريق الأزرق\n60\n\nما الذي في الصورة؟\n\nلأي دولة ينتمي العلم الأبيض الذي تتوسطه دائرة حمراء؟\n\nالإجابة\nاليابان\nيُقبل أيضًا: Japan\n🙈 إخفاء الإجابة\nمن أجاب إجابة صحيحة؟\n⚑ بلّغ عن السؤال\n✓\nالفريق الأزرق\nإجابة صحيحة\n✓\nالفريق الوردي\nإجابة صحيحة · سرقة\nلم يجب أحد",
+        "base": {
+          "src": "media/flags/flags-200-903.webp",
+          "alt": "اليابان",
+          "width": 1280,
+          "height": 853,
+          "filter": "none"
+        },
+        "clean": null,
+        "canEnlarge": true,
+        "stageRole": "button",
+        "directBoxChildren": [
+          "m-media-stage can-enlarge"
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": null,
+            "aria": "تكبير الصورة",
+            "src": null
+          },
+          {
+            "alt": "اليابان",
+            "title": null,
+            "aria": null,
+            "src": "media/flags/flags-200-903.webp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "flags-200-903: reveal creates no tile controls or extra wrapper",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: revealed enlargement uses answer alt",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: hide restores prior effect, generic alt and gate",
+      "ok": true,
+      "detail": {
+        "text": "إلغاء السؤال\n🚩 أعلام\n200\nنقطة\nسهل\nالسؤال لـ الفريق الأزرق\n60\n\nما الذي في الصورة؟\n\nلأي دولة ينتمي العلم الأبيض الذي تتوسطه دائرة حمراء؟\n\nالإجابة مخفية\n• • •\n👁 إظهار الإجابة\nمن أجاب إجابة صحيحة؟\n⚑ بلّغ عن السؤال\n✓\nالفريق الأزرق\nإجابة صحيحة\n✓\nالفريق الوردي\nإجابة صحيحة · سرقة\nلم يجب أحد",
+        "base": {
+          "src": "media/flags/flags-200-903.webp",
+          "alt": "صورة السؤال",
+          "width": 1280,
+          "height": 853,
+          "filter": "none"
+        },
+        "clean": null,
+        "canEnlarge": true,
+        "stageRole": "button",
+        "directBoxChildren": [
+          "m-media-stage can-enlarge"
+        ],
+        "tileButtons": 0,
+        "tileLayers": 0,
+        "attributes": [
+          {
+            "alt": null,
+            "title": null,
+            "aria": "60 ثانية متبقية",
+            "src": null
+          },
+          {
+            "alt": null,
+            "title": null,
+            "aria": "تكبير الصورة",
+            "src": null
+          },
+          {
+            "alt": "صورة السؤال",
+            "title": null,
+            "aria": null,
+            "src": "media/flags/flags-200-903.webp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "flags-200-903: hidden answer uses masked placeholder without aliases or tile button",
+      "ok": true
+    },
+    {
+      "name": "flags-200-903: answer toggle shows image and answer again",
+      "ok": true
+    },
+    {
+      "name": "three real gameplay samples completed",
+      "ok": true
+    },
+    {
+      "name": "no browser runtime errors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "no missing local assets",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "tested source and three bank files remained unchanged",
+      "ok": true,
+      "detail": {
+        "hashesBefore": {
+          "src/games/badeeha/App.js": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+          "src/games/badeeha/styles.css": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+          "src/data/categories/blur.json": "2ddfe52a59c017b0167055ab30a55be7fac2c2b3970016c4e9a2fccdec6cf8d9",
+          "src/data/categories/silhouette.json": "109c9eb446071f059c5eb6e788c5cc0e71a18889fabdd67c29155988706e089a",
+          "src/data/categories/flags.json": "f1f0a6cece4c03a11360a3a7c7a273685de307f8e9350d65bc481613331d9abb"
+        },
+        "hashesAfter": {
+          "src/games/badeeha/App.js": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+          "src/games/badeeha/styles.css": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13",
+          "src/data/categories/blur.json": "2ddfe52a59c017b0167055ab30a55be7fac2c2b3970016c4e9a2fccdec6cf8d9",
+          "src/data/categories/silhouette.json": "109c9eb446071f059c5eb6e788c5cc0e71a18889fabdd67c29155988706e089a",
+          "src/data/categories/flags.json": "f1f0a6cece4c03a11360a3a7c7a273685de307f8e9350d65bc481613331d9abb"
+        }
+      }
+    }
+  ],
+  "samples": [
+    {
+      "pack": "blur",
+      "qid": "blur-200-906",
+      "question": "ما المعلم الباريسي صاحب الهيكل المعدني في الصورة؟",
+      "answer": "برج إيفل",
+      "effect": "blur",
+      "tier": 200,
+      "checks": 16,
+      "passed": true
+    },
+    {
+      "pack": "silhouette",
+      "qid": "silhouette-200-907",
+      "question": "ما آلة النفخ ذات الأنبوب المنحني الظاهرة في الظل؟",
+      "answer": "ساكسفون",
+      "effect": "silhouette",
+      "tier": 200,
+      "checks": 16,
+      "passed": true
+    },
+    {
+      "pack": "flags",
+      "qid": "flags-200-903",
+      "question": "لأي دولة ينتمي العلم الأبيض الذي تتوسطه دائرة حمراء؟",
+      "answer": "اليابان",
+      "effect": "none",
+      "tier": 200,
+      "checks": 16,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "networkErrors": [],
+  "manualVisualReview": {
+    "reviewed": true,
+    "scope": "Viewed all three before / revealed / hidden contact sheets (nine actual gameplay screenshots), at 320px mobile width. No image clipping, answer leak, or image/button overlap observed.",
+    "contacts": [
+      "contact-blur.png",
+      "contact-silhouette.png",
+      "contact-flags.png"
+    ]
+  },
+  "diffReview": {
+    "status": "no actionable defect found",
+    "files": [
+      "src/games/badeeha/App.js",
+      "src/games/badeeha/styles.css"
+    ],
+    "finding": "React.Fragment wraps the existing stage plus reveal-only tile button; the fragment has no DOM box. The reveal tile overlay remains inside the relative stage and cannot cover the now-sibling button. Other image effects retain the same DOM stage, filters, lightbox logic and reveal behavior. The button margin change is scoped to m-reveal-tile-btn.",
+    "limits": "Read-only targeted regression of three existing image branches. Does not claim revalidation of all40 questions per pack or repeat the reveal pack full QA."
+  },
+  "harnessCorrection": "The preliminary run incorrectly expected the hidden-answer container to be removed. App intentionally retains a masked placeholder. The final assertion verifies the placeholder, absent aliases and generic image alt; no source or data correction was needed. Preliminary evidence is retained separately in ../reveal-wrapper-regression-2026-09-25/."
+}

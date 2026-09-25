@@ -1,7 +1,8 @@
 // Original, category-local visual-search boards. No external facts or media.
 // This pure helper reproduces the checked-in data; it never writes files.
 export const TARGET = '🦆';
-export const SEED_VERSION = 'hidden-duck-v1';
+export const SEED_VERSION = 'hidden-duck-curated-2026-09-18';
+export const HIDDEN_CORRECT_TARGETS = { 200: 0.8, 400: 0.6, 600: 0.4, 800: 0.25, 1000: 0.15 };
 export const HIDDEN_TIERS = [
   { p: 200, side: 4, nearFraction: 0.20 },
   { p: 400, side: 5, nearFraction: 0.40 },
@@ -46,6 +47,16 @@ export const HIDDEN_THEMES = [
     distinct: ['🍎', '🍊', '🍋', '🍅', '🥕', '🌽'],
     similar: ['🥔', '🍐', '🍏', '🌰', '🥑', '🥒', '🥥', '🥬', '🥦', '🍄', '🥝'],
   },
+  {
+    topic: 'حشرات وحدائق',
+    distinct: ['🦋', '🐝', '🐞', '🌷', '🌼'],
+    similar: ['🦗', '🐌', '🪲', '🦟', '🪳', '🐛'],
+  },
+  {
+    topic: 'حيوانات برية',
+    distinct: ['🐘', '🦓', '🦒', '🦛', '🦏'],
+    similar: ['🦫', '🦔', '🦦', '🦥', '🦡', '🐗'],
+  },
 ];
 
 function seedHash(text) {
@@ -86,13 +97,17 @@ function targetsForTier({ p, side }) {
   const random = randomFrom(seedHash(`${SEED_VERSION}:targets:${p}`));
   const cells = Array.from({ length: side * side }, (_, index) => index);
   const corners = [0, side - 1, side * (side - 1), side * side - 1];
-  const quadrants = corners.map((corner, quadrant) => [corner, ...shuffle(cells.filter((index) =>
-    index !== corner && targetQuadrant(Math.floor(index / side), index % side, side) === quadrant), random)]);
+  const interior = (index) => Math.floor(index / side) > 0 && Math.floor(index / side) < side - 1 && index % side > 0 && index % side < side - 1;
+  const quadrants = corners.map((corner, quadrant) => {
+    const remaining = shuffle(cells.filter((index) => index !== corner && targetQuadrant(Math.floor(index / side), index % side, side) === quadrant), random);
+    // Eight boards still cover corners, interior and non-corner edges.
+    const preferred = remaining.findIndex((index) => interior(index) === (quadrant % 2 === 0));
+    if (preferred > 0) [remaining[0], remaining[preferred]] = [remaining[preferred], remaining[0]];
+    return [corner, ...remaining];
+  });
   const used = [0, 0, 0, 0];
-  return Array.from({ length: 48 }, (_, i) => {
-    const themeIndex = i % HIDDEN_THEMES.length;
-    const variant = Math.floor(i / HIDDEN_THEMES.length);
-    const quadrant = (themeIndex + variant) % 4;
+  return Array.from({ length: 8 }, (_, i) => {
+    const quadrant = i % 4;
     return quadrants[quadrant][used[quadrant]++ % quadrants[quadrant].length];
   });
 }
@@ -143,10 +158,10 @@ function createBoard(tier, tierIndex, theme, variant, qid, targetIndex) {
 export function buildHiddenPack() {
   const qs = HIDDEN_TIERS.flatMap((tier, tierIndex) => {
     const targetPositions = targetsForTier(tier);
-    return Array.from({ length: 48 }, (_, i) => {
-      const theme = HIDDEN_THEMES[i % HIDDEN_THEMES.length];
-      const variant = Math.floor(i / HIDDEN_THEMES.length);
-      const qid = `hidden-${tier.p}-${String(i + 1).padStart(3, '0')}`;
+    return Array.from({ length: 8 }, (_, i) => {
+      const theme = HIDDEN_THEMES[(i + tierIndex) % HIDDEN_THEMES.length];
+      const variant = (i + tierIndex * 2) % 8;
+      const qid = `hidden-${tier.p}-${String(i + 901)}`;
       const row = '٠١٢٣٤٥٦٧٨٩'[Math.floor(targetPositions[i] / tier.side) + 1];
       const column = '٠١٢٣٤٥٦٧٨٩'[targetPositions[i] % tier.side + 1];
       return {
@@ -157,6 +172,8 @@ export function buildHiddenPack() {
         type: 'grid',
         topic: theme.topic,
         verified: true,
+        difficultyTarget: HIDDEN_CORRECT_TARGETS[tier.p],
+        sourceUrl: 'docs/bank/rebuild-2026-09-18/interactive-evidence.md',
         target: TARGET,
         grid: createBoard(tier, tierIndex, theme, variant, qid, targetPositions[i]),
       };

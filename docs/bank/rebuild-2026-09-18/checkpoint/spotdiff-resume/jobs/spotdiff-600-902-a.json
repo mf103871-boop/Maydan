@@ -1,0 +1,8 @@
+{
+  "id": "spotdiff-600-902-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is an original spot-the-difference scene. Refine only the plain wooden ruler at right by adding a single orderly row of fine dark measurement tick marks along its upper long edge. Add longer ticks at regular intervals and four short ticks between each long pair, with NO numerals, NO letters and NO label. This should now be unmistakably a ruler. Preserve its exact horizontal position, size, thickness and wood grain. Keep the blue notebook, white eraser, ivory desktop, camera, lighting and all other details unchanged.",
+  "inputRole": "edit target: original unmarked-ruler scene",
+  "reason": "Add nonverbal measurement ticks so the target is unambiguously a ruler."
+}

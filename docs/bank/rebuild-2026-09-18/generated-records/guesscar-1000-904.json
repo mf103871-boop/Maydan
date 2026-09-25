@@ -1,0 +1,49 @@
+{
+  "id": "guesscar-1000-904",
+  "kind": "question",
+  "pack": "guesscar",
+  "file": "media/guesscar/guesscar-1000-904.webp",
+  "asset": "media/guesscar/guesscar-1000-904.webp",
+  "prompt": "Edit this generated car illustration only. Preserve the silver Pagani Huayra model family, exact composition, complete vehicle framing, wheels, lamps, mirrors, lighting, ivory studio background and proportions. Remove the tiny cursive script badge on the lower rear side panel immediately ahead of the visible rear wheel and replace it with uninterrupted matching silver body paint. Also remove any other readable letters, numbers or model-name lettering while retaining simple non-text graphic emblems. The license plate stays blank. Do not add text or watermark.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 95808,
+  "sha256": "d6eb409d6c40250c23a06c5b3b4a97852a1ee2c37220e4813a8b101ac967d9a5",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "subjectReview": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-guesscar-final.json",
+    "note": "Huayra sculpted body, stalk mirrors, grouped small lamps and side intake match family. Tiny side script removed in reviewed edit.",
+    "gameplayReview": "approved",
+    "scope": "Broad model-family identification, complete framing and absence of readable model-name answers. Exact year, trim and fine engineering fidelity are not certified.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/guesscar/runtime.json",
+    "runtimePackSha256": "7a1cd3fd4d4f947d19af7831914c121f0efe5464b64b2d10a44ea2bf81c3eec9"
+  },
+  "previousVersions": [
+    {
+      "id": "guesscar-1000-904",
+      "kind": "question",
+      "pack": "guesscar",
+      "file": "media/guesscar/guesscar-1000-904.webp",
+      "asset": "media/guesscar/guesscar-1000-904.webp",
+      "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2012 Pagani Huayra coupe, silver.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+      "tool": "OpenAI image generation (built-in)",
+      "createdAt": "2026-09-25",
+      "width": 1280,
+      "height": 960,
+      "bytes": 107418,
+      "sha256": "4e44fcaaad4eb73376da07083aba2f64e64e5e2e1cfed262e412ed6b0bada882",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "review": {
+        "status": "pending",
+        "note": "Generation and file checks do not imply subject or gameplay verification."
+      }
+    }
+  ],
+  "inputAssetSha256": "4e44fcaaad4eb73376da07083aba2f64e64e5e2e1cfed262e412ed6b0bada882",
+  "editReason": "Removed side script to prevent model-name hints."
+}

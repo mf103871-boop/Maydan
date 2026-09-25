@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-400-901-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-400-901-a.webp",
+  "asset": "media/spotdiff/spotdiff-400-901-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. On pale oak tabletop a plain white soup bowl containing smooth orange soup sits center-left. A single large stainless soup spoon lies fully visible at center-right, center x=73 y=59, length 25 percent width, beside folded beige napkin farther left. No other cutlery. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 170666,
+  "sha256": "6bda203b0ac31f3d7f01472a2aefe1ea15f83a10abef96e24efed6c3f3f58cd8",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Only the spoon and its shadow disappear. Soup bowl, orange soup surface, folded napkin and oak table retained; mark covers spoon's former location. Marker indicates a decisive part of the former object and is fully inside the4:3image; it need not enclose the whole removed object.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

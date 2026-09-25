@@ -1,0 +1,3376 @@
+[
+  {
+    "id": "silhouette-200-901",
+    "answer": "قط",
+    "asset": "media/silhouette/silhouette-200-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-901.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-200-901",
+      "path": "media/silhouette/silhouette-200-901.webp",
+      "sha256": "3309be76268f26393680b4b84c36c79e6a770cf1d34c77c5bf8a435b2775e5a6",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 769020,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 459780,
+          "minX": 0,
+          "minY": 18,
+          "maxX": 1267,
+          "maxY": 909,
+          "edgeCount": 2,
+          "margins": {
+            "left": 0,
+            "top": 18,
+            "right": 12,
+            "bottom": 50
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 430859,
+          "minX": 129,
+          "minY": 31,
+          "maxX": 1250,
+          "maxY": 889,
+          "edgeCount": 0,
+          "margins": {
+            "left": 129,
+            "top": 31,
+            "right": 29,
+            "bottom": 70
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 415985,
+          "minX": 140,
+          "minY": 35,
+          "maxX": 1244,
+          "maxY": 888,
+          "edgeCount": 0,
+          "margins": {
+            "left": 140,
+            "top": 35,
+            "right": 35,
+            "bottom": 71
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 404123,
+          "minX": 141,
+          "minY": 39,
+          "maxX": 1241,
+          "maxY": 887,
+          "edgeCount": 0,
+          "margins": {
+            "left": 141,
+            "top": 39,
+            "right": 38,
+            "bottom": 72
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 1,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4474,
+        "1": 2
+      }
+    },
+    "sha256": "3309be76268f26393680b4b84c36c79e6a770cf1d34c77c5bf8a435b2775e5a6",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-200-902",
+    "answer": "مطرقة",
+    "asset": "media/silhouette/silhouette-200-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-902.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-200-902",
+      "path": "media/silhouette/silhouette-200-902.webp",
+      "sha256": "a0a91adddaa86a549b330a2a96cb081799bf6e004a250f3023825de540731adb",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 959466,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 269334,
+          "minX": 34,
+          "minY": 18,
+          "maxX": 1253,
+          "maxY": 940,
+          "edgeCount": 0,
+          "margins": {
+            "left": 34,
+            "top": 18,
+            "right": 26,
+            "bottom": 19
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 260495,
+          "minX": 37,
+          "minY": 31,
+          "maxX": 1249,
+          "maxY": 934,
+          "edgeCount": 0,
+          "margins": {
+            "left": 37,
+            "top": 31,
+            "right": 30,
+            "bottom": 25
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 257760,
+          "minX": 38,
+          "minY": 32,
+          "maxX": 1249,
+          "maxY": 934,
+          "edgeCount": 0,
+          "margins": {
+            "left": 38,
+            "top": 32,
+            "right": 30,
+            "bottom": 25
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 254909,
+          "minX": 38,
+          "minY": 33,
+          "maxX": 1248,
+          "maxY": 933,
+          "edgeCount": 0,
+          "margins": {
+            "left": 38,
+            "top": 33,
+            "right": 31,
+            "bottom": 26
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "a0a91adddaa86a549b330a2a96cb081799bf6e004a250f3023825de540731adb",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-200-903",
+    "answer": "مظلة",
+    "asset": "media/silhouette/silhouette-200-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-903.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-200-903",
+      "path": "media/silhouette/silhouette-200-903.webp",
+      "sha256": "94e555e1f9102a9f5b0adc647dff22d15db4e1dac9e0d557a55c0ab840e4b3d3",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 723947,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 504853,
+          "minX": 0,
+          "minY": 12,
+          "maxX": 1223,
+          "maxY": 946,
+          "edgeCount": 7,
+          "margins": {
+            "left": 0,
+            "top": 12,
+            "right": 56,
+            "bottom": 13
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 495809,
+          "minX": 77,
+          "minY": 14,
+          "maxX": 1214,
+          "maxY": 944,
+          "edgeCount": 0,
+          "margins": {
+            "left": 77,
+            "top": 14,
+            "right": 65,
+            "bottom": 15
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 492761,
+          "minX": 77,
+          "minY": 14,
+          "maxX": 1213,
+          "maxY": 943,
+          "edgeCount": 0,
+          "margins": {
+            "left": 77,
+            "top": 14,
+            "right": 66,
+            "bottom": 16
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 489587,
+          "minX": 78,
+          "minY": 15,
+          "maxX": 1212,
+          "maxY": 942,
+          "edgeCount": 0,
+          "margins": {
+            "left": 78,
+            "top": 15,
+            "right": 67,
+            "bottom": 17
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 1,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4469,
+        "1": 7
+      }
+    },
+    "sha256": "94e555e1f9102a9f5b0adc647dff22d15db4e1dac9e0d557a55c0ab840e4b3d3",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-200-904",
+    "answer": "مروحية",
+    "asset": "media/silhouette/silhouette-200-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-904.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-200-904",
+      "path": "media/silhouette/silhouette-200-904.webp",
+      "sha256": "85a56e90ec2f160aa9366b21d9a0b78dd2ce1fb984d56a4a7791dd9dcd028fa9",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 865598,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 363202,
+          "minX": 0,
+          "minY": 8,
+          "maxX": 1279,
+          "maxY": 935,
+          "edgeCount": 55,
+          "margins": {
+            "left": 0,
+            "top": 8,
+            "right": 0,
+            "bottom": 24
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 327750,
+          "minX": 12,
+          "minY": 191,
+          "maxX": 1274,
+          "maxY": 778,
+          "edgeCount": 0,
+          "margins": {
+            "left": 12,
+            "top": 191,
+            "right": 5,
+            "bottom": 181
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 319303,
+          "minX": 13,
+          "minY": 192,
+          "maxX": 1273,
+          "maxY": 777,
+          "edgeCount": 0,
+          "margins": {
+            "left": 13,
+            "top": 192,
+            "right": 6,
+            "bottom": 182
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 309260,
+          "minX": 14,
+          "minY": 193,
+          "maxX": 1272,
+          "maxY": 776,
+          "edgeCount": 0,
+          "margins": {
+            "left": 14,
+            "top": 193,
+            "right": 7,
+            "bottom": 183
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 2,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4421,
+        "1": 53,
+        "2": 2
+      }
+    },
+    "sha256": "85a56e90ec2f160aa9366b21d9a0b78dd2ce1fb984d56a4a7791dd9dcd028fa9",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-200-905",
+    "answer": "صبار",
+    "asset": "media/silhouette/silhouette-200-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-905.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-200-905",
+      "path": "media/silhouette/silhouette-200-905.webp",
+      "sha256": "f71fef1577ba810939767d08180ef11a798c7655e231429b735907cfc02682ba",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 988139,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 240661,
+          "minX": 72,
+          "minY": 46,
+          "maxX": 1247,
+          "maxY": 950,
+          "edgeCount": 0,
+          "margins": {
+            "left": 72,
+            "top": 46,
+            "right": 32,
+            "bottom": 9
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 222935,
+          "minX": 366,
+          "minY": 81,
+          "maxX": 919,
+          "maxY": 894,
+          "edgeCount": 0,
+          "margins": {
+            "left": 366,
+            "top": 81,
+            "right": 360,
+            "bottom": 65
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 208005,
+          "minX": 372,
+          "minY": 87,
+          "maxX": 913,
+          "maxY": 894,
+          "edgeCount": 0,
+          "margins": {
+            "left": 372,
+            "top": 87,
+            "right": 366,
+            "bottom": 65
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 201836,
+          "minX": 374,
+          "minY": 92,
+          "maxX": 911,
+          "maxY": 893,
+          "edgeCount": 0,
+          "margins": {
+            "left": 374,
+            "top": 92,
+            "right": 368,
+            "bottom": 66
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "f71fef1577ba810939767d08180ef11a798c7655e231429b735907cfc02682ba",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-200-906",
+    "answer": "كمثرى",
+    "asset": "media/silhouette/silhouette-200-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-906.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-200-906",
+      "path": "media/silhouette/silhouette-200-906.webp",
+      "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 724299,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 504501,
+          "minX": 29,
+          "minY": 0,
+          "maxX": 1210,
+          "maxY": 959,
+          "edgeCount": 181,
+          "margins": {
+            "left": 29,
+            "top": 0,
+            "right": 69,
+            "bottom": 0
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 494726,
+          "minX": 296,
+          "minY": 4,
+          "maxX": 1104,
+          "maxY": 954,
+          "edgeCount": 0,
+          "margins": {
+            "left": 296,
+            "top": 4,
+            "right": 175,
+            "bottom": 5
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 491952,
+          "minX": 297,
+          "minY": 5,
+          "maxX": 1103,
+          "maxY": 954,
+          "edgeCount": 0,
+          "margins": {
+            "left": 297,
+            "top": 5,
+            "right": 176,
+            "bottom": 5
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 488994,
+          "minX": 298,
+          "minY": 6,
+          "maxX": 1102,
+          "maxY": 953,
+          "edgeCount": 0,
+          "margins": {
+            "left": 298,
+            "top": 6,
+            "right": 177,
+            "bottom": 6
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 4,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4295,
+        "1": 73,
+        "2": 63,
+        "3": 34,
+        "4": 11
+      }
+    },
+    "sha256": "f6f761490a784768f524e5b85a803f03d6d5b4ffdd2340855e5d039b47b0a57e",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-200-907",
+    "answer": "ساكسفون",
+    "asset": "media/silhouette/silhouette-200-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-907.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-200-907",
+      "path": "media/silhouette/silhouette-200-907.webp",
+      "sha256": "54211c5ddd7bbe94421ffa587029709796561e791cab4df5473fbca232731c9c",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1097574,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 131226,
+          "minX": 79,
+          "minY": 46,
+          "maxX": 1162,
+          "maxY": 923,
+          "edgeCount": 0,
+          "margins": {
+            "left": 79,
+            "top": 46,
+            "right": 117,
+            "bottom": 36
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 120698,
+          "minX": 344,
+          "minY": 94,
+          "maxX": 936,
+          "maxY": 860,
+          "edgeCount": 0,
+          "margins": {
+            "left": 344,
+            "top": 94,
+            "right": 343,
+            "bottom": 99
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 117968,
+          "minX": 345,
+          "minY": 94,
+          "maxX": 935,
+          "maxY": 859,
+          "edgeCount": 0,
+          "margins": {
+            "left": 345,
+            "top": 94,
+            "right": 344,
+            "bottom": 100
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 114048,
+          "minX": 346,
+          "minY": 96,
+          "maxX": 934,
+          "maxY": 858,
+          "edgeCount": 0,
+          "margins": {
+            "left": 346,
+            "top": 96,
+            "right": 345,
+            "bottom": 101
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "54211c5ddd7bbe94421ffa587029709796561e791cab4df5473fbca232731c9c",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-200-908",
+    "answer": "كرسي هزاز",
+    "asset": "media/silhouette/silhouette-200-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-200-908.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-200-908",
+      "path": "media/silhouette/silhouette-200-908.webp",
+      "sha256": "69446c9803f7e479e756888a85e43a5711ca271cb003ab1f07b0c9875cb29574",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1011952,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 216848,
+          "minX": 72,
+          "minY": 18,
+          "maxX": 1162,
+          "maxY": 938,
+          "edgeCount": 0,
+          "margins": {
+            "left": 72,
+            "top": 18,
+            "right": 117,
+            "bottom": 21
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 197078,
+          "minX": 305,
+          "minY": 113,
+          "maxX": 990,
+          "maxY": 862,
+          "edgeCount": 0,
+          "margins": {
+            "left": 305,
+            "top": 113,
+            "right": 289,
+            "bottom": 97
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 190292,
+          "minX": 305,
+          "minY": 114,
+          "maxX": 990,
+          "maxY": 862,
+          "edgeCount": 0,
+          "margins": {
+            "left": 305,
+            "top": 114,
+            "right": 289,
+            "bottom": 97
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 182900,
+          "minX": 306,
+          "minY": 115,
+          "maxX": 989,
+          "maxY": 861,
+          "edgeCount": 0,
+          "margins": {
+            "left": 306,
+            "top": 115,
+            "right": 290,
+            "bottom": 98
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "69446c9803f7e479e756888a85e43a5711ca271cb003ab1f07b0c9875cb29574",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-400-901",
+    "answer": "أرنب",
+    "asset": "media/silhouette/silhouette-400-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-901.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-400-901",
+      "path": "media/silhouette/silhouette-400-901.webp",
+      "sha256": "4b50dc7f7e26d807f20b79fc4e4b1b2bdc9fcde00c0296bd98753a70d886b92e",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 968437,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 260363,
+          "minX": 50,
+          "minY": 85,
+          "maxX": 1173,
+          "maxY": 880,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 85,
+            "right": 106,
+            "bottom": 79
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 245089,
+          "minX": 309,
+          "minY": 87,
+          "maxX": 984,
+          "maxY": 847,
+          "edgeCount": 0,
+          "margins": {
+            "left": 309,
+            "top": 87,
+            "right": 295,
+            "bottom": 112
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 238140,
+          "minX": 315,
+          "minY": 88,
+          "maxX": 972,
+          "maxY": 846,
+          "edgeCount": 0,
+          "margins": {
+            "left": 315,
+            "top": 88,
+            "right": 307,
+            "bottom": 113
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 232635,
+          "minX": 321,
+          "minY": 90,
+          "maxX": 971,
+          "maxY": 845,
+          "edgeCount": 0,
+          "margins": {
+            "left": 321,
+            "top": 90,
+            "right": 308,
+            "bottom": 114
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "4b50dc7f7e26d807f20b79fc4e4b1b2bdc9fcde00c0296bd98753a70d886b92e",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-400-902",
+    "answer": "مفتاح ربط",
+    "asset": "media/silhouette/silhouette-400-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-902.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-400-902",
+      "path": "media/silhouette/silhouette-400-902.webp",
+      "sha256": "45ad90cc21e28343e0d908821dda8c2906e65af0c14980dec8ad67af25a49c38",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1112606,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 116194,
+          "minX": 79,
+          "minY": 18,
+          "maxX": 1107,
+          "maxY": 865,
+          "edgeCount": 0,
+          "margins": {
+            "left": 79,
+            "top": 18,
+            "right": 172,
+            "bottom": 94
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 109978,
+          "minX": 179,
+          "minY": 235,
+          "maxX": 1101,
+          "maxY": 764,
+          "edgeCount": 0,
+          "margins": {
+            "left": 179,
+            "top": 235,
+            "right": 178,
+            "bottom": 195
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 108041,
+          "minX": 180,
+          "minY": 236,
+          "maxX": 1100,
+          "maxY": 763,
+          "edgeCount": 0,
+          "margins": {
+            "left": 180,
+            "top": 236,
+            "right": 179,
+            "bottom": 196
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 106038,
+          "minX": 181,
+          "minY": 237,
+          "maxX": 1099,
+          "maxY": 762,
+          "edgeCount": 0,
+          "margins": {
+            "left": 181,
+            "top": 237,
+            "right": 180,
+            "bottom": 197
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "45ad90cc21e28343e0d908821dda8c2906e65af0c14980dec8ad67af25a49c38",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-400-903",
+    "answer": "مجفف شعر",
+    "asset": "media/silhouette/silhouette-400-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-903.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-400-903",
+      "path": "media/silhouette/silhouette-400-903.webp",
+      "sha256": "40b2a550c3d31dc1c4be326370b0bde99cf92f29ef9746693cb1115ede19fe4b",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1021826,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 206974,
+          "minX": 50,
+          "minY": 46,
+          "maxX": 1172,
+          "maxY": 888,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 46,
+            "right": 107,
+            "bottom": 71
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 200132,
+          "minX": 273,
+          "minY": 104,
+          "maxX": 1014,
+          "maxY": 883,
+          "edgeCount": 0,
+          "margins": {
+            "left": 273,
+            "top": 104,
+            "right": 265,
+            "bottom": 76
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 197830,
+          "minX": 274,
+          "minY": 104,
+          "maxX": 1013,
+          "maxY": 883,
+          "edgeCount": 0,
+          "margins": {
+            "left": 274,
+            "top": 104,
+            "right": 266,
+            "bottom": 76
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 195414,
+          "minX": 274,
+          "minY": 105,
+          "maxX": 1012,
+          "maxY": 882,
+          "edgeCount": 0,
+          "margins": {
+            "left": 274,
+            "top": 105,
+            "right": 267,
+            "bottom": 77
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "40b2a550c3d31dc1c4be326370b0bde99cf92f29ef9746693cb1115ede19fe4b",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-400-904",
+    "answer": "قارب بمحرك",
+    "asset": "media/silhouette/silhouette-400-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-904.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-400-904",
+      "path": "media/silhouette/silhouette-400-904.webp",
+      "sha256": "bea692257df255fd7b9c11b9722a4daf9d15881e403dd5bd8be60e87d55b90e2",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 970625,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 258175,
+          "minX": 78,
+          "minY": 18,
+          "maxX": 1221,
+          "maxY": 908,
+          "edgeCount": 0,
+          "margins": {
+            "left": 78,
+            "top": 18,
+            "right": 58,
+            "bottom": 51
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 245597,
+          "minX": 81,
+          "minY": 265,
+          "maxX": 1219,
+          "maxY": 681,
+          "edgeCount": 0,
+          "margins": {
+            "left": 81,
+            "top": 265,
+            "right": 60,
+            "bottom": 278
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 238311,
+          "minX": 82,
+          "minY": 265,
+          "maxX": 1218,
+          "maxY": 681,
+          "edgeCount": 0,
+          "margins": {
+            "left": 82,
+            "top": 265,
+            "right": 61,
+            "bottom": 278
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 231580,
+          "minX": 83,
+          "minY": 266,
+          "maxX": 1217,
+          "maxY": 680,
+          "edgeCount": 0,
+          "margins": {
+            "left": 83,
+            "top": 266,
+            "right": 62,
+            "bottom": 279
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "bea692257df255fd7b9c11b9722a4daf9d15881e403dd5bd8be60e87d55b90e2",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-400-905",
+    "answer": "نخلة",
+    "asset": "media/silhouette/silhouette-400-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-905.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-400-905",
+      "path": "media/silhouette/silhouette-400-905.webp",
+      "sha256": "a961c8f26080ecf76594685231a6c4c652e1d0899ef8c50c8f2957b7425e57a4",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 879564,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 349236,
+          "minX": 26,
+          "minY": 17,
+          "maxX": 1260,
+          "maxY": 959,
+          "edgeCount": 33,
+          "margins": {
+            "left": 26,
+            "top": 17,
+            "right": 19,
+            "bottom": 0
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 297872,
+          "minX": 264,
+          "minY": 32,
+          "maxX": 1036,
+          "maxY": 918,
+          "edgeCount": 0,
+          "margins": {
+            "left": 264,
+            "top": 32,
+            "right": 243,
+            "bottom": 41
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 247440,
+          "minX": 271,
+          "minY": 41,
+          "maxX": 1028,
+          "maxY": 917,
+          "edgeCount": 0,
+          "margins": {
+            "left": 271,
+            "top": 41,
+            "right": 251,
+            "bottom": 42
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 194934,
+          "minX": 285,
+          "minY": 48,
+          "maxX": 1016,
+          "maxY": 916,
+          "edgeCount": 0,
+          "margins": {
+            "left": 285,
+            "top": 48,
+            "right": 263,
+            "bottom": 43
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 1,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4443,
+        "1": 33
+      }
+    },
+    "sha256": "a961c8f26080ecf76594685231a6c4c652e1d0899ef8c50c8f2957b7425e57a4",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-400-906",
+    "answer": "فلفل",
+    "asset": "media/silhouette/silhouette-400-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-906.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-400-906",
+      "path": "media/silhouette/silhouette-400-906.webp",
+      "sha256": "000c3a8f9ae481a8ce9cbdf20bf45866100cbe48fa262fca02cfbd670ffa6430",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1108839,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 119961,
+          "minX": 50,
+          "minY": 48,
+          "maxX": 1172,
+          "maxY": 916,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 48,
+            "right": 107,
+            "bottom": 43
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 115229,
+          "minX": 155,
+          "minY": 218,
+          "maxX": 1124,
+          "maxY": 727,
+          "edgeCount": 0,
+          "margins": {
+            "left": 155,
+            "top": 218,
+            "right": 155,
+            "bottom": 232
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 113452,
+          "minX": 156,
+          "minY": 218,
+          "maxX": 1123,
+          "maxY": 726,
+          "edgeCount": 0,
+          "margins": {
+            "left": 156,
+            "top": 218,
+            "right": 156,
+            "bottom": 233
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 111659,
+          "minX": 156,
+          "minY": 219,
+          "maxX": 1123,
+          "maxY": 725,
+          "edgeCount": 0,
+          "margins": {
+            "left": 156,
+            "top": 219,
+            "right": 156,
+            "bottom": 234
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "000c3a8f9ae481a8ce9cbdf20bf45866100cbe48fa262fca02cfbd670ffa6430",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-400-907",
+    "answer": "تشيلو",
+    "asset": "media/silhouette/silhouette-400-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-907.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-400-907",
+      "path": "media/silhouette/silhouette-400-907.webp",
+      "sha256": "162d494222dfd9d790d6b3db7c57cef27043762ec6e01495718a11c4ed3e0e8e",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1067116,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 161684,
+          "minX": 50,
+          "minY": 12,
+          "maxX": 1172,
+          "maxY": 959,
+          "edgeCount": 4,
+          "margins": {
+            "left": 50,
+            "top": 12,
+            "right": 107,
+            "bottom": 0
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 150924,
+          "minX": 461,
+          "minY": 15,
+          "maxX": 879,
+          "maxY": 945,
+          "edgeCount": 0,
+          "margins": {
+            "left": 461,
+            "top": 15,
+            "right": 400,
+            "bottom": 14
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 146983,
+          "minX": 462,
+          "minY": 15,
+          "maxX": 878,
+          "maxY": 944,
+          "edgeCount": 0,
+          "margins": {
+            "left": 462,
+            "top": 15,
+            "right": 401,
+            "bottom": 15
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 142281,
+          "minX": 463,
+          "minY": 16,
+          "maxX": 877,
+          "maxY": 943,
+          "edgeCount": 0,
+          "margins": {
+            "left": 463,
+            "top": 16,
+            "right": 402,
+            "bottom": 16
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 1,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4472,
+        "1": 4
+      }
+    },
+    "sha256": "162d494222dfd9d790d6b3db7c57cef27043762ec6e01495718a11c4ed3e0e8e",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-400-908",
+    "answer": "إبريق ري",
+    "asset": "media/silhouette/silhouette-400-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-400-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-400-908.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-400-908",
+      "path": "media/silhouette/silhouette-400-908.webp",
+      "sha256": "2a02a902e069e5971ec33605e1abbbef5b12a70c5f5cf25780ad076f0fdd683d",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 997773,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 231027,
+          "minX": 50,
+          "minY": 15,
+          "maxX": 1219,
+          "maxY": 959,
+          "edgeCount": 42,
+          "margins": {
+            "left": 50,
+            "top": 15,
+            "right": 60,
+            "bottom": 0
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 217254,
+          "minX": 198,
+          "minY": 184,
+          "maxX": 1081,
+          "maxY": 805,
+          "edgeCount": 0,
+          "margins": {
+            "left": 198,
+            "top": 184,
+            "right": 198,
+            "bottom": 154
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 213913,
+          "minX": 199,
+          "minY": 185,
+          "maxX": 1081,
+          "maxY": 804,
+          "edgeCount": 0,
+          "margins": {
+            "left": 199,
+            "top": 185,
+            "right": 198,
+            "bottom": 155
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 210421,
+          "minX": 200,
+          "minY": 186,
+          "maxX": 1080,
+          "maxY": 803,
+          "edgeCount": 0,
+          "margins": {
+            "left": 200,
+            "top": 186,
+            "right": 199,
+            "bottom": 156
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 1,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4434,
+        "1": 42
+      }
+    },
+    "sha256": "2a02a902e069e5971ec33605e1abbbef5b12a70c5f5cf25780ad076f0fdd683d",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-600-901",
+    "answer": "كنغر",
+    "asset": "media/silhouette/silhouette-600-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-901.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-600-901",
+      "path": "media/silhouette/silhouette-600-901.webp",
+      "sha256": "9dd74758fc7b9b022c4abcf0ac68b25d49fc6908d18ac55d0069cbfba96dfa8b",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1067364,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 161436,
+          "minX": 49,
+          "minY": 22,
+          "maxX": 1253,
+          "maxY": 931,
+          "edgeCount": 0,
+          "margins": {
+            "left": 49,
+            "top": 22,
+            "right": 26,
+            "bottom": 28
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 150112,
+          "minX": 287,
+          "minY": 102,
+          "maxX": 990,
+          "maxY": 839,
+          "edgeCount": 0,
+          "margins": {
+            "left": 287,
+            "top": 102,
+            "right": 289,
+            "bottom": 120
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 146151,
+          "minX": 289,
+          "minY": 103,
+          "maxX": 989,
+          "maxY": 838,
+          "edgeCount": 0,
+          "margins": {
+            "left": 289,
+            "top": 103,
+            "right": 290,
+            "bottom": 121
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 142109,
+          "minX": 291,
+          "minY": 104,
+          "maxX": 988,
+          "maxY": 837,
+          "edgeCount": 0,
+          "margins": {
+            "left": 291,
+            "top": 104,
+            "right": 291,
+            "bottom": 122
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "9dd74758fc7b9b022c4abcf0ac68b25d49fc6908d18ac55d0069cbfba96dfa8b",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-600-902",
+    "answer": "فتاحة فلين",
+    "asset": "media/silhouette/silhouette-600-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-902.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-600-902",
+      "path": "media/silhouette/silhouette-600-902.webp",
+      "sha256": "27ae4fa1ab2b6540c4de1203d89616da716b4f3d3fe430b977d5ae5afa03d47c",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1077473,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 151327,
+          "minX": 50,
+          "minY": 46,
+          "maxX": 1105,
+          "maxY": 936,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 46,
+            "right": 174,
+            "bottom": 23
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 135086,
+          "minX": 226,
+          "minY": 92,
+          "maxX": 1054,
+          "maxY": 862,
+          "edgeCount": 0,
+          "margins": {
+            "left": 226,
+            "top": 92,
+            "right": 225,
+            "bottom": 97
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 130730,
+          "minX": 227,
+          "minY": 93,
+          "maxX": 1053,
+          "maxY": 861,
+          "edgeCount": 0,
+          "margins": {
+            "left": 227,
+            "top": 93,
+            "right": 226,
+            "bottom": 98
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 125992,
+          "minX": 228,
+          "minY": 94,
+          "maxX": 1052,
+          "maxY": 860,
+          "edgeCount": 0,
+          "margins": {
+            "left": 228,
+            "top": 94,
+            "right": 227,
+            "bottom": 99
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "27ae4fa1ab2b6540c4de1203d89616da716b4f3d3fe430b977d5ae5afa03d47c",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-600-903",
+    "answer": "زجاجة عطر",
+    "asset": "media/silhouette/silhouette-600-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-903.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-600-903",
+      "path": "media/silhouette/silhouette-600-903.webp",
+      "sha256": "f0d32cae423a796846be277fe96c779394c96d9429ba2c6a8ecacc9dee865c57",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 988363,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 240437,
+          "minX": 63,
+          "minY": 31,
+          "maxX": 1146,
+          "maxY": 888,
+          "edgeCount": 0,
+          "margins": {
+            "left": 63,
+            "top": 31,
+            "right": 133,
+            "bottom": 71
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 232176,
+          "minX": 350,
+          "minY": 146,
+          "maxX": 1128,
+          "maxY": 820,
+          "edgeCount": 0,
+          "margins": {
+            "left": 350,
+            "top": 146,
+            "right": 151,
+            "bottom": 139
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 229670,
+          "minX": 351,
+          "minY": 147,
+          "maxX": 1127,
+          "maxY": 819,
+          "edgeCount": 0,
+          "margins": {
+            "left": 351,
+            "top": 147,
+            "right": 152,
+            "bottom": 140
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 226932,
+          "minX": 351,
+          "minY": 148,
+          "maxX": 1126,
+          "maxY": 818,
+          "edgeCount": 0,
+          "margins": {
+            "left": 351,
+            "top": 148,
+            "right": 153,
+            "bottom": 141
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "f0d32cae423a796846be277fe96c779394c96d9429ba2c6a8ecacc9dee865c57",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-600-904",
+    "answer": "غواصة",
+    "asset": "media/silhouette/silhouette-600-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-904.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-600-904",
+      "path": "media/silhouette/silhouette-600-904.webp",
+      "sha256": "80c8c7951f9a9a0ccfc14a2a675eb0cfefea95e7039a41120b2cf1123d8b8c74",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1012235,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 216565,
+          "minX": 50,
+          "minY": 18,
+          "maxX": 1224,
+          "maxY": 844,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 18,
+            "right": 55,
+            "bottom": 115
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 202971,
+          "minX": 113,
+          "minY": 249,
+          "maxX": 1216,
+          "maxY": 683,
+          "edgeCount": 0,
+          "margins": {
+            "left": 113,
+            "top": 249,
+            "right": 63,
+            "bottom": 276
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 199748,
+          "minX": 113,
+          "minY": 249,
+          "maxX": 1215,
+          "maxY": 682,
+          "edgeCount": 0,
+          "margins": {
+            "left": 113,
+            "top": 249,
+            "right": 64,
+            "bottom": 277
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 196161,
+          "minX": 114,
+          "minY": 250,
+          "maxX": 1215,
+          "maxY": 681,
+          "edgeCount": 0,
+          "margins": {
+            "left": 114,
+            "top": 250,
+            "right": 64,
+            "bottom": 278
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "80c8c7951f9a9a0ccfc14a2a675eb0cfefea95e7039a41120b2cf1123d8b8c74",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-600-905",
+    "answer": "ورقة بلوط",
+    "asset": "media/silhouette/silhouette-600-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-905.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-600-905",
+      "path": "media/silhouette/silhouette-600-905.webp",
+      "sha256": "81215c41c7a30eb8157144967b9be7efc7d6b32aa9fc4210166e4ce97b28ee12",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 976004,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 252796,
+          "minX": 50,
+          "minY": 0,
+          "maxX": 1172,
+          "maxY": 935,
+          "edgeCount": 20,
+          "margins": {
+            "left": 50,
+            "top": 0,
+            "right": 107,
+            "bottom": 24
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 239972,
+          "minX": 265,
+          "minY": 182,
+          "maxX": 1058,
+          "maxY": 780,
+          "edgeCount": 0,
+          "margins": {
+            "left": 265,
+            "top": 182,
+            "right": 221,
+            "bottom": 179
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 237509,
+          "minX": 266,
+          "minY": 183,
+          "maxX": 1057,
+          "maxY": 780,
+          "edgeCount": 0,
+          "margins": {
+            "left": 266,
+            "top": 183,
+            "right": 222,
+            "bottom": 179
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 234930,
+          "minX": 267,
+          "minY": 184,
+          "maxX": 1056,
+          "maxY": 779,
+          "edgeCount": 0,
+          "margins": {
+            "left": 267,
+            "top": 184,
+            "right": 223,
+            "bottom": 180
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 1,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4456,
+        "1": 20
+      }
+    },
+    "sha256": "81215c41c7a30eb8157144967b9be7efc7d6b32aa9fc4210166e4ce97b28ee12",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-600-906",
+    "answer": "أناناس",
+    "asset": "media/silhouette/silhouette-600-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-906.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-600-906",
+      "path": "media/silhouette/silhouette-600-906.webp",
+      "sha256": "368818d404903ea9e31c8a0487316ba3d9d2da9db856214e22794b458a6db4d1",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 972236,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 256564,
+          "minX": 50,
+          "minY": 43,
+          "maxX": 1189,
+          "maxY": 936,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 43,
+            "right": 90,
+            "bottom": 23
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 229083,
+          "minX": 425,
+          "minY": 68,
+          "maxX": 867,
+          "maxY": 904,
+          "edgeCount": 0,
+          "margins": {
+            "left": 425,
+            "top": 68,
+            "right": 412,
+            "bottom": 55
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 222846,
+          "minX": 431,
+          "minY": 72,
+          "maxX": 865,
+          "maxY": 903,
+          "edgeCount": 0,
+          "margins": {
+            "left": 431,
+            "top": 72,
+            "right": 414,
+            "bottom": 56
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 215405,
+          "minX": 436,
+          "minY": 76,
+          "maxX": 856,
+          "maxY": 902,
+          "edgeCount": 0,
+          "margins": {
+            "left": 436,
+            "top": 76,
+            "right": 423,
+            "bottom": 57
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "368818d404903ea9e31c8a0487316ba3d9d2da9db856214e22794b458a6db4d1",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-600-907",
+    "answer": "غيتار كهربائي",
+    "asset": "media/silhouette/silhouette-600-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-907.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-600-907",
+      "path": "media/silhouette/silhouette-600-907.webp",
+      "sha256": "02eaa7d950349fe0139530218c87e4bc87a57a3a05d9871e8ba2eca5817229a7",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1094771,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 134029,
+          "minX": 50,
+          "minY": 18,
+          "maxX": 1172,
+          "maxY": 943,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 18,
+            "right": 107,
+            "bottom": 16
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 127376,
+          "minX": 477,
+          "minY": 20,
+          "maxX": 802,
+          "maxY": 938,
+          "edgeCount": 0,
+          "margins": {
+            "left": 477,
+            "top": 20,
+            "right": 477,
+            "bottom": 21
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 125122,
+          "minX": 478,
+          "minY": 21,
+          "maxX": 801,
+          "maxY": 937,
+          "edgeCount": 0,
+          "margins": {
+            "left": 478,
+            "top": 21,
+            "right": 478,
+            "bottom": 22
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 122665,
+          "minX": 479,
+          "minY": 22,
+          "maxX": 801,
+          "maxY": 936,
+          "edgeCount": 0,
+          "margins": {
+            "left": 479,
+            "top": 22,
+            "right": 478,
+            "bottom": 23
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "02eaa7d950349fe0139530218c87e4bc87a57a3a05d9871e8ba2eca5817229a7",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-600-908",
+    "answer": "مروحة",
+    "asset": "media/silhouette/silhouette-600-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-600-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-600-908.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-600-908",
+      "path": "media/silhouette/silhouette-600-908.webp",
+      "sha256": "80c0fb184e1822b2837a57ffccee9a09ac7bb84b9cafe7d9746600ed6f987f22",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 942652,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 286148,
+          "minX": 50,
+          "minY": 43,
+          "maxX": 1174,
+          "maxY": 922,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 43,
+            "right": 105,
+            "bottom": 37
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 257294,
+          "minX": 430,
+          "minY": 78,
+          "maxX": 918,
+          "maxY": 884,
+          "edgeCount": 0,
+          "margins": {
+            "left": 430,
+            "top": 78,
+            "right": 361,
+            "bottom": 75
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 216864,
+          "minX": 431,
+          "minY": 79,
+          "maxX": 917,
+          "maxY": 883,
+          "edgeCount": 0,
+          "margins": {
+            "left": 431,
+            "top": 79,
+            "right": 362,
+            "bottom": 76
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 188705,
+          "minX": 433,
+          "minY": 79,
+          "maxX": 902,
+          "maxY": 882,
+          "edgeCount": 0,
+          "margins": {
+            "left": 433,
+            "top": 79,
+            "right": 377,
+            "bottom": 77
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "80c0fb184e1822b2837a57ffccee9a09ac7bb84b9cafe7d9746600ed6f987f22",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-800-901",
+    "answer": "مالك الحزين",
+    "asset": "media/silhouette/silhouette-800-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-901.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-800-901",
+      "path": "media/silhouette/silhouette-800-901.webp",
+      "sha256": "b6e5ede03192f90d45855e7062d8e6a2bbec21c6b08ab0cc05a6937c921e7bc9",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1085106,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 143694,
+          "minX": 63,
+          "minY": 41,
+          "maxX": 1172,
+          "maxY": 936,
+          "edgeCount": 0,
+          "margins": {
+            "left": 63,
+            "top": 41,
+            "right": 107,
+            "bottom": 23
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 124612,
+          "minX": 369,
+          "minY": 92,
+          "maxX": 938,
+          "maxY": 887,
+          "edgeCount": 0,
+          "margins": {
+            "left": 369,
+            "top": 92,
+            "right": 341,
+            "bottom": 72
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 118076,
+          "minX": 370,
+          "minY": 93,
+          "maxX": 936,
+          "maxY": 886,
+          "edgeCount": 0,
+          "margins": {
+            "left": 370,
+            "top": 93,
+            "right": 343,
+            "bottom": 73
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 111482,
+          "minX": 371,
+          "minY": 94,
+          "maxX": 932,
+          "maxY": 881,
+          "edgeCount": 0,
+          "margins": {
+            "left": 371,
+            "top": 94,
+            "right": 347,
+            "bottom": 78
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "b6e5ede03192f90d45855e7062d8e6a2bbec21c6b08ab0cc05a6937c921e7bc9",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-800-902",
+    "answer": "مثقاب يدوي",
+    "asset": "media/silhouette/silhouette-800-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-902.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-800-902",
+      "path": "media/silhouette/silhouette-800-902.webp",
+      "sha256": "bb3df69b002f9dc10892a8b267519dda28e195b9acf9f5186c94719d7bd181f9",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1048460,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 180340,
+          "minX": 50,
+          "minY": 18,
+          "maxX": 1219,
+          "maxY": 931,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 18,
+            "right": 60,
+            "bottom": 28
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 170033,
+          "minX": 67,
+          "minY": 281,
+          "maxX": 1216,
+          "maxY": 744,
+          "edgeCount": 0,
+          "margins": {
+            "left": 67,
+            "top": 281,
+            "right": 63,
+            "bottom": 215
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 166706,
+          "minX": 69,
+          "minY": 282,
+          "maxX": 1215,
+          "maxY": 743,
+          "edgeCount": 0,
+          "margins": {
+            "left": 69,
+            "top": 282,
+            "right": 64,
+            "bottom": 216
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 163056,
+          "minX": 70,
+          "minY": 283,
+          "maxX": 1214,
+          "maxY": 742,
+          "edgeCount": 0,
+          "margins": {
+            "left": 70,
+            "top": 283,
+            "right": 65,
+            "bottom": 217
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "bb3df69b002f9dc10892a8b267519dda28e195b9acf9f5186c94719d7bd181f9",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-800-903",
+    "answer": "إبرة خياطة",
+    "asset": "media/silhouette/silhouette-800-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-903.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-800-903",
+      "path": "media/silhouette/silhouette-800-903.webp",
+      "sha256": "247d747d6ef8f7e2b5a0896378b92af46e7aa3b72a16e57e637b3456f9b55178",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1167408,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 61392,
+          "minX": 63,
+          "minY": 18,
+          "maxX": 1172,
+          "maxY": 959,
+          "edgeCount": 9,
+          "margins": {
+            "left": 63,
+            "top": 18,
+            "right": 107,
+            "bottom": 0
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 50650,
+          "minX": 257,
+          "minY": 181,
+          "maxX": 1080,
+          "maxY": 816,
+          "edgeCount": 0,
+          "margins": {
+            "left": 257,
+            "top": 181,
+            "right": 199,
+            "bottom": 143
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 46601,
+          "minX": 259,
+          "minY": 182,
+          "maxX": 1079,
+          "maxY": 815,
+          "edgeCount": 0,
+          "margins": {
+            "left": 259,
+            "top": 182,
+            "right": 200,
+            "bottom": 144
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 42215,
+          "minX": 262,
+          "minY": 183,
+          "maxX": 1078,
+          "maxY": 813,
+          "edgeCount": 0,
+          "margins": {
+            "left": 262,
+            "top": 183,
+            "right": 201,
+            "bottom": 146
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 1,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4467,
+        "1": 9
+      }
+    },
+    "sha256": "247d747d6ef8f7e2b5a0896378b92af46e7aa3b72a16e57e637b3456f9b55178",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-800-904",
+    "answer": "طائرة ثنائية السطح",
+    "asset": "media/silhouette/silhouette-800-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-904.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-800-904",
+      "path": "media/silhouette/silhouette-800-904.webp",
+      "sha256": "aae475c12a3e58c1f69bcde0390cf6da516099585607f116c452bbac1e7d1cd1",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 959582,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 269218,
+          "minX": 79,
+          "minY": 18,
+          "maxX": 1220,
+          "maxY": 937,
+          "edgeCount": 0,
+          "margins": {
+            "left": 79,
+            "top": 18,
+            "right": 59,
+            "bottom": 22
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 242482,
+          "minX": 146,
+          "minY": 260,
+          "maxX": 1216,
+          "maxY": 762,
+          "edgeCount": 0,
+          "margins": {
+            "left": 146,
+            "top": 260,
+            "right": 63,
+            "bottom": 197
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 235581,
+          "minX": 147,
+          "minY": 260,
+          "maxX": 1216,
+          "maxY": 761,
+          "edgeCount": 0,
+          "margins": {
+            "left": 147,
+            "top": 260,
+            "right": 63,
+            "bottom": 198
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 228111,
+          "minX": 148,
+          "minY": 261,
+          "maxX": 1215,
+          "maxY": 760,
+          "edgeCount": 0,
+          "margins": {
+            "left": 148,
+            "top": 261,
+            "right": 64,
+            "bottom": 199
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "aae475c12a3e58c1f69bcde0390cf6da516099585607f116c452bbac1e7d1cd1",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-800-905",
+    "answer": "مونستيرا",
+    "asset": "media/silhouette/silhouette-800-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-905.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-800-905",
+      "path": "media/silhouette/silhouette-800-905.webp",
+      "sha256": "b4e9a94499fcdcd8c429b65acecb20db5c4bb6f69f4b82fa9d4c427b7acfe829",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 922366,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 306434,
+          "minX": 29,
+          "minY": 13,
+          "maxX": 1172,
+          "maxY": 931,
+          "edgeCount": 0,
+          "margins": {
+            "left": 29,
+            "top": 13,
+            "right": 107,
+            "bottom": 28
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 289984,
+          "minX": 315,
+          "minY": 35,
+          "maxX": 964,
+          "maxY": 923,
+          "edgeCount": 0,
+          "margins": {
+            "left": 315,
+            "top": 35,
+            "right": 315,
+            "bottom": 36
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 285286,
+          "minX": 316,
+          "minY": 37,
+          "maxX": 963,
+          "maxY": 922,
+          "edgeCount": 0,
+          "margins": {
+            "left": 316,
+            "top": 37,
+            "right": 316,
+            "bottom": 37
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 280406,
+          "minX": 317,
+          "minY": 39,
+          "maxX": 963,
+          "maxY": 921,
+          "edgeCount": 0,
+          "margins": {
+            "left": 317,
+            "top": 39,
+            "right": 316,
+            "bottom": 38
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "b4e9a94499fcdcd8c429b65acecb20db5c4bb6f69f4b82fa9d4c427b7acfe829",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-800-906",
+    "answer": "زنجبيل",
+    "asset": "media/silhouette/silhouette-800-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-906.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-800-906",
+      "path": "media/silhouette/silhouette-800-906.webp",
+      "sha256": "e9aa172449ca14ecadab6809150d7ab6cbc74392d93c9cf872ddc246a6377173",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 901714,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 327086,
+          "minX": 50,
+          "minY": 20,
+          "maxX": 1221,
+          "maxY": 959,
+          "edgeCount": 10,
+          "margins": {
+            "left": 50,
+            "top": 20,
+            "right": 58,
+            "bottom": 0
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 310884,
+          "minX": 220,
+          "minY": 164,
+          "maxX": 1070,
+          "maxY": 794,
+          "edgeCount": 0,
+          "margins": {
+            "left": 220,
+            "top": 164,
+            "right": 209,
+            "bottom": 165
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 307299,
+          "minX": 221,
+          "minY": 166,
+          "maxX": 1069,
+          "maxY": 793,
+          "edgeCount": 0,
+          "margins": {
+            "left": 221,
+            "top": 166,
+            "right": 210,
+            "bottom": 166
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 303258,
+          "minX": 222,
+          "minY": 168,
+          "maxX": 1068,
+          "maxY": 792,
+          "edgeCount": 0,
+          "margins": {
+            "left": 222,
+            "top": 168,
+            "right": 211,
+            "bottom": 167
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 1,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4466,
+        "1": 10
+      }
+    },
+    "sha256": "e9aa172449ca14ecadab6809150d7ab6cbc74392d93c9cf872ddc246a6377173",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-800-907",
+    "answer": "هورن",
+    "asset": "media/silhouette/silhouette-800-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-907.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-800-907",
+      "path": "media/silhouette/silhouette-800-907.webp",
+      "sha256": "4dddd125c4ccd75e78685045e34bba50c5eaab728c9bf8591504ceb67780f0e0",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 956019,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 272781,
+          "minX": 50,
+          "minY": 43,
+          "maxX": 1172,
+          "maxY": 936,
+          "edgeCount": 0,
+          "margins": {
+            "left": 50,
+            "top": 43,
+            "right": 107,
+            "bottom": 23
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 245015,
+          "minX": 236,
+          "minY": 121,
+          "maxX": 1044,
+          "maxY": 808,
+          "edgeCount": 0,
+          "margins": {
+            "left": 236,
+            "top": 121,
+            "right": 235,
+            "bottom": 151
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 238252,
+          "minX": 237,
+          "minY": 121,
+          "maxX": 1043,
+          "maxY": 807,
+          "edgeCount": 0,
+          "margins": {
+            "left": 237,
+            "top": 121,
+            "right": 236,
+            "bottom": 152
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 230491,
+          "minX": 238,
+          "minY": 122,
+          "maxX": 1042,
+          "maxY": 806,
+          "edgeCount": 0,
+          "margins": {
+            "left": 238,
+            "top": 122,
+            "right": 237,
+            "bottom": 153
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "4dddd125c4ccd75e78685045e34bba50c5eaab728c9bf8591504ceb67780f0e0",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-800-908",
+    "answer": "مصباح زيت",
+    "asset": "media/silhouette/silhouette-800-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-800-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-800-908.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-800-908",
+      "path": "media/silhouette/silhouette-800-908.webp",
+      "sha256": "cb79c991227a52c89bce67b66146546be05752e81e6005e6a9b020a1a4951fb9",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1068596,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 160204,
+          "minX": 79,
+          "minY": 48,
+          "maxX": 1169,
+          "maxY": 912,
+          "edgeCount": 0,
+          "margins": {
+            "left": 79,
+            "top": 48,
+            "right": 110,
+            "bottom": 47
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 152005,
+          "minX": 486,
+          "minY": 94,
+          "maxX": 883,
+          "maxY": 867,
+          "edgeCount": 0,
+          "margins": {
+            "left": 486,
+            "top": 94,
+            "right": 396,
+            "bottom": 92
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 149618,
+          "minX": 487,
+          "minY": 95,
+          "maxX": 882,
+          "maxY": 866,
+          "edgeCount": 0,
+          "margins": {
+            "left": 487,
+            "top": 95,
+            "right": 397,
+            "bottom": 93
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 147022,
+          "minX": 488,
+          "minY": 96,
+          "maxX": 881,
+          "maxY": 865,
+          "edgeCount": 0,
+          "margins": {
+            "left": 488,
+            "top": 96,
+            "right": 398,
+            "bottom": 94
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "cb79c991227a52c89bce67b66146546be05752e81e6005e6a9b020a1a4951fb9",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-1000-901",
+    "answer": "خلد الماء",
+    "asset": "media/silhouette/silhouette-1000-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-1000-901.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-1000-901",
+      "path": "media/silhouette/silhouette-1000-901.webp",
+      "sha256": "82c47da48474871156cc56df3feb251f0799221483256ff34a6d4cc57d534001",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1039732,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 189068,
+          "minX": 63,
+          "minY": 18,
+          "maxX": 1149,
+          "maxY": 909,
+          "edgeCount": 0,
+          "margins": {
+            "left": 63,
+            "top": 18,
+            "right": 130,
+            "bottom": 50
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 181918,
+          "minX": 185,
+          "minY": 317,
+          "maxX": 1142,
+          "maxY": 703,
+          "edgeCount": 0,
+          "margins": {
+            "left": 185,
+            "top": 317,
+            "right": 137,
+            "bottom": 256
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 178640,
+          "minX": 186,
+          "minY": 319,
+          "maxX": 1141,
+          "maxY": 702,
+          "edgeCount": 0,
+          "margins": {
+            "left": 186,
+            "top": 319,
+            "right": 138,
+            "bottom": 257
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 175829,
+          "minX": 187,
+          "minY": 320,
+          "maxX": 1140,
+          "maxY": 702,
+          "edgeCount": 0,
+          "margins": {
+            "left": 187,
+            "top": 320,
+            "right": 139,
+            "bottom": 257
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "82c47da48474871156cc56df3feb251f0799221483256ff34a6d4cc57d534001",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-1000-902",
+    "answer": "السدس",
+    "asset": "media/silhouette/silhouette-1000-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-1000-902.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-1000-902",
+      "path": "media/silhouette/silhouette-1000-902.webp",
+      "sha256": "ef1865d5fbd2c26e141a83a95603bb4b973c5e1a6543b06a322246f30e595275",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1004278,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 224522,
+          "minX": 29,
+          "minY": 18,
+          "maxX": 1205,
+          "maxY": 907,
+          "edgeCount": 0,
+          "margins": {
+            "left": 29,
+            "top": 18,
+            "right": 74,
+            "bottom": 52
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 205702,
+          "minX": 267,
+          "minY": 128,
+          "maxX": 1070,
+          "maxY": 835,
+          "edgeCount": 0,
+          "margins": {
+            "left": 267,
+            "top": 128,
+            "right": 209,
+            "bottom": 124
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 200365,
+          "minX": 267,
+          "minY": 129,
+          "maxX": 1070,
+          "maxY": 834,
+          "edgeCount": 0,
+          "margins": {
+            "left": 267,
+            "top": 129,
+            "right": 209,
+            "bottom": 125
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 194510,
+          "minX": 269,
+          "minY": 130,
+          "maxX": 1069,
+          "maxY": 834,
+          "edgeCount": 0,
+          "margins": {
+            "left": 269,
+            "top": 130,
+            "right": 210,
+            "bottom": 125
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "ef1865d5fbd2c26e141a83a95603bb4b973c5e1a6543b06a322246f30e595275",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-1000-903",
+    "answer": "مكبس رموش",
+    "asset": "media/silhouette/silhouette-1000-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-1000-903.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-1000-903",
+      "path": "media/silhouette/silhouette-1000-903.webp",
+      "sha256": "42e065fd6543baae22e2cccbd2938a30747feaf229afa90338386fae32f67074",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1138531,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 90269,
+          "minX": 79,
+          "minY": 49,
+          "maxX": 1160,
+          "maxY": 921,
+          "edgeCount": 0,
+          "margins": {
+            "left": 79,
+            "top": 49,
+            "right": 119,
+            "bottom": 38
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 76925,
+          "minX": 442,
+          "minY": 140,
+          "maxX": 836,
+          "maxY": 818,
+          "edgeCount": 0,
+          "margins": {
+            "left": 442,
+            "top": 140,
+            "right": 443,
+            "bottom": 141
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 73203,
+          "minX": 443,
+          "minY": 141,
+          "maxX": 836,
+          "maxY": 817,
+          "edgeCount": 0,
+          "margins": {
+            "left": 443,
+            "top": 141,
+            "right": 443,
+            "bottom": 142
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 69170,
+          "minX": 444,
+          "minY": 142,
+          "maxX": 835,
+          "maxY": 816,
+          "edgeCount": 0,
+          "margins": {
+            "left": 444,
+            "top": 142,
+            "right": 444,
+            "bottom": 143
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "42e065fd6543baae22e2cccbd2938a30747feaf229afa90338386fae32f67074",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-1000-904",
+    "answer": "قاطرة بخارية",
+    "asset": "media/silhouette/silhouette-1000-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-1000-904.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-1000-904",
+      "path": "media/silhouette/silhouette-1000-904.webp",
+      "sha256": "77f70e6977fdf437cdd3def005a2a69523f1141b503534b059498041df4c37ef",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 963370,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 265430,
+          "minX": 64,
+          "minY": 18,
+          "maxX": 1221,
+          "maxY": 909,
+          "edgeCount": 0,
+          "margins": {
+            "left": 64,
+            "top": 18,
+            "right": 58,
+            "bottom": 50
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 250774,
+          "minX": 99,
+          "minY": 278,
+          "maxX": 1215,
+          "maxY": 656,
+          "edgeCount": 0,
+          "margins": {
+            "left": 99,
+            "top": 278,
+            "right": 64,
+            "bottom": 303
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 245811,
+          "minX": 100,
+          "minY": 279,
+          "maxX": 1214,
+          "maxY": 655,
+          "edgeCount": 0,
+          "margins": {
+            "left": 100,
+            "top": 279,
+            "right": 65,
+            "bottom": 304
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 238765,
+          "minX": 101,
+          "minY": 280,
+          "maxX": 1213,
+          "maxY": 654,
+          "edgeCount": 0,
+          "margins": {
+            "left": 101,
+            "top": 280,
+            "right": 66,
+            "bottom": 305
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "77f70e6977fdf437cdd3def005a2a69523f1141b503534b059498041df4c37ef",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-1000-905",
+    "answer": "ورقة جنكة",
+    "asset": "media/silhouette/silhouette-1000-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-1000-905.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-1000-905",
+      "path": "media/silhouette/silhouette-1000-905.webp",
+      "sha256": "655df36deff0730f91f399947cec09d5acb66fe9c71ec379387ba35f873458b6",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1016773,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 212027,
+          "minX": 79,
+          "minY": 43,
+          "maxX": 1162,
+          "maxY": 923,
+          "edgeCount": 0,
+          "margins": {
+            "left": 79,
+            "top": 43,
+            "right": 117,
+            "bottom": 36
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 205377,
+          "minX": 281,
+          "minY": 173,
+          "maxX": 999,
+          "maxY": 805,
+          "edgeCount": 0,
+          "margins": {
+            "left": 281,
+            "top": 173,
+            "right": 280,
+            "bottom": 154
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 203523,
+          "minX": 281,
+          "minY": 174,
+          "maxX": 998,
+          "maxY": 804,
+          "edgeCount": 0,
+          "margins": {
+            "left": 281,
+            "top": 174,
+            "right": 281,
+            "bottom": 155
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 201588,
+          "minX": 282,
+          "minY": 174,
+          "maxX": 997,
+          "maxY": 803,
+          "edgeCount": 0,
+          "margins": {
+            "left": 282,
+            "top": 174,
+            "right": 282,
+            "bottom": 156
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "655df36deff0730f91f399947cec09d5acb66fe9c71ec379387ba35f873458b6",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-1000-906",
+    "answer": "فاكهة النجمة",
+    "asset": "media/silhouette/silhouette-1000-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-1000-906.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-1000-906",
+      "path": "media/silhouette/silhouette-1000-906.webp",
+      "sha256": "d7ae38303a2e556934d477bf02f1a8c57f9658232c30e864b233abd044ec62b6",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 970086,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 258714,
+          "minX": 72,
+          "minY": 18,
+          "maxX": 1174,
+          "maxY": 950,
+          "edgeCount": 0,
+          "margins": {
+            "left": 72,
+            "top": 18,
+            "right": 105,
+            "bottom": 9
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 253410,
+          "minX": 270,
+          "minY": 241,
+          "maxX": 1032,
+          "maxY": 732,
+          "edgeCount": 0,
+          "margins": {
+            "left": 270,
+            "top": 241,
+            "right": 247,
+            "bottom": 227
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 251734,
+          "minX": 271,
+          "minY": 242,
+          "maxX": 1031,
+          "maxY": 732,
+          "edgeCount": 0,
+          "margins": {
+            "left": 271,
+            "top": 242,
+            "right": 248,
+            "bottom": 227
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 249917,
+          "minX": 272,
+          "minY": 243,
+          "maxX": 1030,
+          "maxY": 731,
+          "edgeCount": 0,
+          "margins": {
+            "left": 272,
+            "top": 243,
+            "right": 249,
+            "bottom": 228
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "d7ae38303a2e556934d477bf02f1a8c57f9658232c30e864b233abd044ec62b6",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-1000-907",
+    "answer": "بالالايكا",
+    "asset": "media/silhouette/silhouette-1000-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-1000-907.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-1000-907",
+      "path": "media/silhouette/silhouette-1000-907.webp",
+      "sha256": "808241872ba97b87decc1257e8192a96dcb8b8744ab159c7b9e818895762ebff",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1087775,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 141025,
+          "minX": 57,
+          "minY": 46,
+          "maxX": 1172,
+          "maxY": 892,
+          "edgeCount": 0,
+          "margins": {
+            "left": 57,
+            "top": 46,
+            "right": 107,
+            "bottom": 67
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 135062,
+          "minX": 378,
+          "minY": 68,
+          "maxX": 901,
+          "maxY": 890,
+          "edgeCount": 0,
+          "margins": {
+            "left": 378,
+            "top": 68,
+            "right": 378,
+            "bottom": 69
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 133174,
+          "minX": 379,
+          "minY": 69,
+          "maxX": 900,
+          "maxY": 889,
+          "edgeCount": 0,
+          "margins": {
+            "left": 379,
+            "top": 69,
+            "right": 379,
+            "bottom": 70
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 131289,
+          "minX": 380,
+          "minY": 69,
+          "maxX": 900,
+          "maxY": 888,
+          "edgeCount": 0,
+          "margins": {
+            "left": 380,
+            "top": 69,
+            "right": 379,
+            "bottom": 71
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "808241872ba97b87decc1257e8192a96dcb8b8744ab159c7b9e818895762ebff",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  },
+  {
+    "id": "silhouette-1000-908",
+    "answer": "بابور كاز",
+    "asset": "media/silhouette/silhouette-1000-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-1000-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/silhouette-resume/jobs/silhouette-1000-908.json",
+    "reviewStatus": "approved",
+    "alpha": {
+      "id": "silhouette-1000-908",
+      "path": "media/silhouette/silhouette-1000-908.webp",
+      "sha256": "2af4e9bf27bbc070e8d968587a0554a4dcce95fdd27d34b6dc1faf9a2537c3ff",
+      "width": 1280,
+      "height": 960,
+      "zeroAlpha": 1028134,
+      "alphaBounds": [
+        {
+          "threshold": 1,
+          "count": 200666,
+          "minX": 29,
+          "minY": 3,
+          "maxX": 1201,
+          "maxY": 945,
+          "edgeCount": 0,
+          "margins": {
+            "left": 29,
+            "top": 3,
+            "right": 78,
+            "bottom": 14
+          }
+        },
+        {
+          "threshold": 16,
+          "count": 186434,
+          "minX": 361,
+          "minY": 155,
+          "maxX": 925,
+          "maxY": 808,
+          "edgeCount": 0,
+          "margins": {
+            "left": 361,
+            "top": 155,
+            "right": 354,
+            "bottom": 151
+          }
+        },
+        {
+          "threshold": 128,
+          "count": 182099,
+          "minX": 362,
+          "minY": 156,
+          "maxX": 924,
+          "maxY": 808,
+          "edgeCount": 0,
+          "margins": {
+            "left": 362,
+            "top": 156,
+            "right": 355,
+            "bottom": 151
+          }
+        },
+        {
+          "threshold": 240,
+          "count": 177615,
+          "minX": 362,
+          "minY": 157,
+          "maxX": 923,
+          "maxY": 807,
+          "edgeCount": 0,
+          "margins": {
+            "left": 362,
+            "top": 157,
+            "right": 356,
+            "bottom": 152
+          }
+        }
+      ],
+      "maxCanvasEdgeAlpha": 0,
+      "canvasEdgeAlphaHistogram": {
+        "0": 4476
+      }
+    },
+    "sha256": "2af4e9bf27bbc070e8d968587a0554a4dcce95fdd27d34b6dc1faf9a2537c3ff",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  }
+]

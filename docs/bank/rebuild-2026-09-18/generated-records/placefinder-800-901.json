@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-800-901",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-800-901.webp",
+  "asset": "media/placefinder/placefinder-800-901.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Neuschwanstein Castle in Bavaria, Germany, recognizable elevated three-quarter view from the Marienbrucke direction: white limestone Romanesque revival palace on a steep forested ridge, asymmetrical long main palace with stepped gables, tall square tower and slender round turret with dark blue-grey pointed cone roof, smaller towers and red-brick gatehouse section at rear. Real asymmetric grouped architecture and alpine foothills, no Disney fantasy redesign; entire castle and ridge silhouette visible.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 220280,
+  "sha256": "e514f5d1dbed2bc4e8b287cf7a5d7f45e58a42d76a47a029c4be0839fc6afbd1",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "White asymmetric palace, square tower, round pointed turrets and red gatehouse on forest ridge; Neuschwanstein recognition, not an architectural survey.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

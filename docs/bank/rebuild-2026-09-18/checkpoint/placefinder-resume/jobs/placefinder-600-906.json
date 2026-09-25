@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-600-906",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 600,
+  "a": "أنغكور وات",
+  "alt": [
+    "أنجكور وات",
+    "انكور وات",
+    "Angkor Wat"
+  ],
+  "topic": "جنوب وجنوب شرق آسيا",
+  "q": "ما اسم هذا المعبد الكمبودي الذي تنعكس أبراجه في الماء؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/668/",
+  "sourceEvidence": "Opened 2026-09-25: Angkor Wat identified within Khmer architectural complex in Cambodia with temple and hydraulic structures.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Angkor Wat in Cambodia: iconic west-facing view from across a reflecting pond, long low sandstone galleries and stepped central shrine with FIVE lotus-bud towers arranged in quincunx, central tower tallest, towers may partially overlap naturally in perspective but no invented extra spires. Weathered dark warm sandstone, broad reflection, tropical trees on sides, entire shrine complex centered and readable.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Five principal lotus-like towers over low galleries and pond reflection; recognition illustration, not exact temple plan.",
+  "runtimeReviewStatus": "approved"
+}

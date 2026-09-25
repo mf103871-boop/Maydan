@@ -1,0 +1,50 @@
+{
+  "id": "guesscar-200-901",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 200,
+  "a": "لاندكروزر",
+  "topic": "دفع رباعي",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2021 Toyota Land Cruiser 300 ZX SUV, white.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "priorQid": "guesscar-200-001",
+  "identityReference": {
+    "src": "guesscar-200-001.webp",
+    "type": "image",
+    "title": "2021 Toyota Land Cruiser 300 3.4 ZX (Colombia) front view",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2021_Toyota_Land_Cruiser_300_3.4_ZX_(Colombia)_front_view_04.png",
+    "author": "Autosdeprimera",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  "question": {
+    "p": 200,
+    "q": "ما طراز سيارة الدفع الرباعي البيضاء ذات الشبك الأفقي العريض؟",
+    "a": "لاندكروزر",
+    "alt": [
+      "لاند كروزر",
+      "تويوتا لاند كروزر",
+      "Toyota Land Cruiser",
+      "Land Cruiser"
+    ],
+    "qid": "guesscar-200-901",
+    "type": "image",
+    "topic": "دفع رباعي",
+    "difficultyTarget": 0.8,
+    "verified": true,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2021_Toyota_Land_Cruiser_300_3.4_ZX_(Colombia)_front_view_04.png",
+    "media": {
+      "src": "guesscar-200-901.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-23",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-200-901.json"
+      }
+    }
+  },
+  "model": "2021 Toyota Land Cruiser 300 ZX SUV, white"
+}

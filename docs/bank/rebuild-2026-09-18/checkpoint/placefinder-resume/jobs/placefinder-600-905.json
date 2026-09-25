@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-600-905",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 600,
+  "a": "ساغرادا فاميليا",
+  "alt": [
+    "ساجرادا فاميليا",
+    "كنيسة العائلة المقدسة",
+    "Sagrada Familia"
+  ],
+  "topic": "أوروبا الجنوبية",
+  "q": "ما اسم الكنيسة التي تظهر واجهتها المزخرفة في برشلونة؟",
+  "sourceUrl": "https://sagradafamilia.org/documents/20142/1000561/Booklet_10.pdf/d5c2d0df-43ce-b6d2-0b51-103d5718820e",
+  "sourceEvidence": "Opened official booklet 2026-09-25: four apostle bell towers belong to Nativity facade; facade is a recognizable component independent of changing construction state.",
+  "sourceReviewed": true,
+  "prompt": "Use case: precise-object-edit. Edit the attached generated architectural illustration of the historic Nativity facade of Sagrada Familia. Keep the same facade identity, four perforated bell towers, colored mosaic pinnacles, ornate portals, natural stone and daylight. Change only framing: pull back roughly 25 percent so all four pinnacle tops have a generous sky margin and the full entrance-door bases, steps and a strip of paved ground are visible. Keep landscape 4:3. No text, labels or watermark. Preserve architectural identity; no extra towers.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Four tapering perforated Nativity bell towers and ornate portals; targeted edit restored sky and entrance margins. Historic facade study, no current whole-building skyline claim.",
+  "runtimeReviewStatus": "approved"
+}

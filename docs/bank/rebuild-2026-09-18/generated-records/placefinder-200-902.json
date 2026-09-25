@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-200-902",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-200-902.webp",
+  "asset": "media/placefinder/placefinder-200-902.webp",
+  "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Leaning Tower of Pisa: the real white marble cylindrical bell tower visibly leaning roughly four degrees, ground arcade, six stacked open arcaded galleries and narrower belfry, on green lawn of Piazza dei Miracoli. Slight three-quarter eye level view, complete structure with physical tilt and correct horizontal ground.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 254602,
+  "sha256": "a59997d2f51f367f3cf5bdf0f132d8db1d097ae358349b8d20c5ecadc02071be",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "White cylindrical Pisa campanile visibly leaning relative to level lawn; stacked arcades and narrower belfry.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

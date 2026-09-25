@@ -1,0 +1,39 @@
+{
+  "id": "flags-1000-904",
+  "kind": "question",
+  "pack": "flags",
+  "file": "media/flags/flags-1000-904.webp",
+  "asset": "media/flags/flags-1000-904.webp",
+  "prompt": "Accurate educational national flag. Completely OPAQUE rectangular canvas, every pixel opaque, all color fields stay visible including white. Flat straight-on diagram with crisp solid color edges. Entire image is the flag, exact aspect ratio. No transparency or cutout, no labels, no words, no folds, no pole, no border, no shading. Saint Vincent and the Grenadines. Width:height3:2. Three vertical panels LEFT toRIGHT:BLUE #0072C6 quarterwidth, YELLOW #FCD116 centralhalfwidth, GREEN #009E60 quarterwidth. Exactly THREEgreen solid DIAMONDS inyellowpanel arranged inV: two upperdiamondcenters at(42%width,45%height),(58%width,45%height);one lowercenterat(50%width,65%height). Eachdiamondhasfourpoints topbottomleftright, height26%imageheight,width9%imagewidth. Diamondsseparate andNOTtouching. Noothermark.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 853,
+  "bytes": 14540,
+  "sha256": "6353f19422a4e9906b235e1a5b753d0d4489c6f7a627580baacbeeaf13252e86",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "method": "Codex visual inspection of actual rendered contact sheets; China, Canada and Nauru additionally viewed full-size.",
+    "note": "Blue, gold, green vertical fields with a wider center and three green diamonds in V arrangement.",
+    "limitations": "AI illustration; minor colour/edge/proportion variation is not a claim of official print accuracy.",
+    "pixelExactOfficialGeometry": false,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "gameplayReview": "not-individually-exercised",
+    "identityReview": "approved",
+    "runtimeReview": "approved",
+    "runtimeScope": {
+      "status": "approved",
+      "reviewedAt": "2026-09-25",
+      "browserDecode": "passed",
+      "decodedWidth": 1280,
+      "decodedHeight": 853,
+      "directGameplaySample": false,
+      "gameplayReview": "not-individually-exercised",
+      "scope": "This asset decoded in Chromium; shared gameplay and mobile behavior were approved using five other questions, one per tier. This question was not individually exercised in gameplay.",
+      "evidenceRecord": "docs/bank/rebuild-2026-09-18/review-flags.json"
+    },
+    "scope": "Approved as a generated flag-recognition illustration after source/identity review and pack runtime QA. Exact official print geometry is not certified."
+  }
+}

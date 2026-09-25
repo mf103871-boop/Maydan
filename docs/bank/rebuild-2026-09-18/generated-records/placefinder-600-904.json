@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-600-904",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-600-904.webp",
+  "asset": "media/placefinder/placefinder-600-904.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Brandenburg Gate in Berlin, frontal view from Pariser Platz: pale sandstone neoclassical gate with SIX front Doric columns creating FIVE passages, flat heavy entablature and attic, bronze-green Quadriga at center top with four horses pulling a chariot and standing figure. Low colonnaded guardhouses left and right. Whole monument including bronze top and feet, quiet paved plaza. No triumphal arch, no domes.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 233386,
+  "sha256": "5f3f7bf261050d50f88bc5bf0016c8b0573b49a69342899aed513d11f5b346eb",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Six front columns, five passages and four-horse bronze Quadriga above attic; whole gate visible.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

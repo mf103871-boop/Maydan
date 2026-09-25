@@ -147,7 +147,7 @@ test('البنك خالٍ من أسئلة الفيديو، والوصف لا ي�
 // ── أنواع أسئلة «اكتشف الفرق»: الإحداثيات التي تبني العلامة ──────────────
 test('كل سؤال «اكتشف الفرق» يحمل spot داخل حدود الصورة', () => {
   const spotdiff = CATS.find((c) => c.id === 'spotdiff');
-  assert.equal(spotdiff.qs.length, 240);
+  assert.equal(spotdiff.qs.length, 40);
   for (const question of spotdiff.qs) {
     assert.equal(question.type, 'diff', question.qid);
     assert.ok(question.spot, `${question.qid} بلا spot`);

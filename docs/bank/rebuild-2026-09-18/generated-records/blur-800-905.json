@@ -1,0 +1,24 @@
+{
+  "id": "blur-800-905",
+  "kind": "question",
+  "pack": "blur",
+  "file": "media/blur/blur-800-905.webp",
+  "asset": "media/blur/blur-800-905.webp",
+  "prompt": "Use case: precise-object-edit. This image is the edit target. Remove only every logo, maker badge, letter, number and pseudo-letter printed on the snowmobile body, including the small side wordmark and the front emblem. Replace these markings with continuous plain body panel material matching adjacent black, gray or red panels. Keep the exact vehicle, two skis, rear track, seat, handlebars, windshield, suspension, composition, colors, mountain snow landscape and lighting unchanged. No readable words or replacement symbols anywhere. Preserve realistic sharp photography and full subject framing.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 196482,
+  "sha256": "2e181f5dc1c866aa50162ce6cc04b81ef4a70f1a12f2798aaa57175ddf3581dd",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "note": "Independently viewed the updated installed WebP at full size: former side-panel lettering and nose emblem are removed. Two front skis, rear drive track, suspension, seat and windshield remain coherent and complete. Current image has no observed readable brand or answer-bearing text. Fresh approximate static blur also viewed.",
+    "gameplayReview": "approved",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+  },
+  "replacedGenerationRecord": "docs/bank/rebuild-2026-09-18/checkpoint/blur-resume/rejected-generation-records/blur-800-905-before-mark-cleanup.json"
+}

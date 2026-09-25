@@ -1,0 +1,708 @@
+{
+  "scope": "Completed 40-question packs only; unfinished media excluded, but cross-bank rules still checked",
+  "reports": [
+    {
+      "id": "actors",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "animals",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "4 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «الحبر» في arabart،animals · «خلد الماء» في emoji،animals · «النمله» في quran،animals · «فرس النهر» في sound،animals"
+      ]
+    },
+    {
+      "id": "anime",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "4 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «حجر الفلاسفه» في cartoon،anime · «كره القدم» في commonbond،emoji،hints،videogames،anime · «هاكو» في naruto،anime · «بيكاتشو» في videogames،anime"
+      ]
+    },
+    {
+      "id": "aot",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "apps",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "arabart",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "9 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «الحبر» في animals،arabart · «الحمراء» في blur،arabart · «المقرنصات» في islamiyat،tilepuzzle،arabart · «قصير عمره» في placefinder،arabart · «جبران خليل جبران» في quotes،reveal،tarab،arabart · «محمود مختار» في reveal،arabart · «الرق» في tarab،arabart · «الارابيسك» في tilepuzzle،arabart …"
+      ]
+    },
+    {
+      "id": "arabcelebs",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «نجيب محفوظ» في arabliterature،books،quotes،reveal،arabcelebs · «محمد صلاح» في premier،arabcelebs · «محمود درويش» في quotes،reveal،arabcelebs · «احمد زويل» في reveal،arabcelebs · «مجدي يعقوب» في reveal،arabcelebs · «فاروق الباز» في reveal،arabcelebs · «مصطفي السيد» في reveal،arabcelebs"
+      ]
+    },
+    {
+      "id": "arabic",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «القلب» في general،arabic"
+      ]
+    },
+    {
+      "id": "arabliterature",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "arabliterature: arabliterature-400-902: إجابته «العروض» مكشوفة في نص arabliterature-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "6 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «نجيب محفوظ» في arabcelebs،books،quotes،reveal،arabliterature · «طه حسين» في books،reveal،arabliterature · «تونس» في code،flags،arabliterature · «حافظ ابراهيم» في quotes،reveal،arabliterature · «ابو العلاء المعري» في quotes،reveal،arabliterature · «توفيق الحكيم» في reveal،arabliterature"
+      ]
+    },
+    {
+      "id": "arabmovies",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "5 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «نايل» في dragonball،arabmovies · «الولايات المتحده» في flags،arabmovies · «اثيوبيا» في flags،arabmovies · «دراجه هواييه» في sound،zoom،arabmovies · «امها» في spacetoon،arabmovies"
+      ]
+    },
+    {
+      "id": "arabmusic",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "arabmusic: arabmusic-200-907: إجابته «الكمان» مكشوفة في نص arabmusic-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «زكريا احمد» في reveal،arabmusic"
+      ]
+    },
+    {
+      "id": "arabseries",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «شمس» في code،arabseries · «اليمن» في flags،food،arabseries · «كندا» في flags،fruitsveg،arabseries · «اسكتلندا» في flags،spacetoon،arabseries · «الفلبين» في flags،arabseries · «مريم» في prophets،ramadanseries،turkishdrama،arabseries · «ادم» في quran،arabseries"
+      ]
+    },
+    {
+      "id": "babalhara",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "6 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «حميده» في books،babalhara · «فلسطين» في flags،babalhara · «الذهب» في general،babalhara · «دلال» في ramadanseries،syriandrama،babalhara · «ورده» في silhouette،babalhara · «هلال» في silhouette،babalhara"
+      ]
+    },
+    {
+      "id": "beforeafter",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "books",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "11 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «نجيب محفوظ» في arabcelebs،arabliterature،quotes،reveal،books · «طه حسين» في arabliterature،reveal،books · «حميده» في babalhara،books · «سويسرا» في flags،geo،books · «هوغوورتس» في movies،books · «فيودور دوستويفسكي» في quotes،reveal،books · «ليو تولستوي» في quotes،reveal،books · «اوسكار وايلد» في quotes،books …"
+      ]
+    },
+    {
+      "id": "brands",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "breakingbad",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «بروك» في onepiece،breakingbad · «الماء» في onepiece،quran،breakingbad · «ذبابه» في sound،breakingbad"
+      ]
+    },
+    {
+      "id": "capitals",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "capitals: capitals-200-901: إجابته «الرياض» مكشوفة في نص capitals-800-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «باريس» في sports،syriandrama،capitals · «طوكيو» في sports،capitals"
+      ]
+    },
+    {
+      "id": "cars",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «فيراري» في sports،cars"
+      ]
+    },
+    {
+      "id": "cartoon",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "5 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «حجر الفلاسفه» في anime،cartoon · «السبانخ» في fruitsveg،cartoon · «الرمل» في general،cartoon · «الطبخ» في hunterxhunter،cartoon · «بينغ بونغ» في sound،cartoon"
+      ]
+    },
+    {
+      "id": "code",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "20 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «تونس» في arabliterature،flags،code · «شمس» في arabseries،code · «قنفذ» في blur،sound،code · «مصر» في commonbond،egyptdrama،flags،football،hints،code · «مضرب» في commonbond،code · «منبه» في emoji،sound،code · «لبنان» في flags،code · «المغرب» في flags،hints،worldcup،code …"
+      ]
+    },
+    {
+      "id": "commonbond",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «كره القدم» في anime،emoji،hints،videogames،commonbond · «مصر» في code،egyptdrama،flags،football،hints،commonbond · «مضرب» في code،commonbond · «اليابان» في flags،food،football،hints،commonbond · «الحليب» في food،commonbond · «التمر» في ramadan،commonbond · «الخط العربي» في tilepuzzle،commonbond"
+      ]
+    },
+    {
+      "id": "completeproverb",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «رام» في silhouette،completeproverb"
+      ]
+    },
+    {
+      "id": "deathnote",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «كانتو» في videogames،deathnote"
+      ]
+    },
+    {
+      "id": "demonslayer",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "dialects",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «الجزر» في fruitsveg،dialects · «قارب» في sound،dialects"
+      ]
+    },
+    {
+      "id": "dragonball",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "dragonball: dragonball-200-905: إجابته «غوهان» مكشوفة في نص dragonball-200-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-905: إجابته «غوهان» مكشوفة في نص dragonball-600-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-905: إجابته «غوهان» مكشوفة في نص dragonball-600-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-905: إجابته «غوهان» مكشوفة في نص dragonball-600-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-905: إجابته «غوهان» مكشوفة في نص dragonball-800-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-906: إجابته «بيكولو» مكشوفة في نص dragonball-600-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-906: إجابته «بيكولو» مكشوفة في نص dragonball-600-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-906: إجابته «بيكولو» مكشوفة في نص dragonball-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-906: إجابته «بيكولو» مكشوفة في نص dragonball-1000-901 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-906: إجابته «بيكولو» مكشوفة في نص dragonball-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-200-906: إجابته «بيكولو» مكشوفة في نص dragonball-1000-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-400-902: إجابته «راديتز» مكشوفة في نص dragonball-200-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-400-902: إجابته «راديتز» مكشوفة في نص dragonball-200-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-400-908: إجابته «فريزا» مكشوفة في نص dragonball-400-901 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-400-908: إجابته «فريزا» مكشوفة في نص dragonball-400-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-400-908: إجابته «فريزا» مكشوفة في نص dragonball-600-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "dragonball: dragonball-400-908: إجابته «فريزا» مكشوفة في نص dragonball-600-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «نايل» في arabmovies،dragonball · «ضفدع» في blur،silhouette،dragonball · «القمر» في hints،islamiyat،onepiece،dragonball"
+      ]
+    },
+    {
+      "id": "egyptdrama",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «مصر» في code،commonbond،flags،football،hints،egyptdrama · «الكشري» في food،egyptdrama · «يوسف ادريس» في reveal،egyptdrama"
+      ]
+    },
+    {
+      "id": "emoji",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "11 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «خلد الماء» في animals،emoji · «كره القدم» في anime،commonbond،hints،videogames،emoji · «منبه» في code،sound،emoji · «بيتزا» في hints،emoji · «تاج محل» في hints،placefinder،silhouette،emoji · «تمثال الحريه» في placefinder،silhouette،emoji · «البندقيه» في placefinder،emoji · «فيل» في silhouette،sound،emoji …"
+      ]
+    },
+    {
+      "id": "ertugrul",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «حلب» في tarab،ertugrul"
+      ]
+    },
+    {
+      "id": "food",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «اليمن» في arabseries،flags،food · «الحليب» في commonbond،food · «اليابان» في commonbond،flags،football،hints،food · «الكشري» في egyptdrama،food · «انجلترا» في flags،food · «كازاخستان» في flags،food · «الويكه» في ramadan،food"
+      ]
+    },
+    {
+      "id": "football",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "football: football-400-904: إجابته «اليونان» مكشوفة في نص football-1000-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "football: football-400-905: إجابته «السعودية» مكشوفة في نص football-600-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "football: football-400-906: إجابته «أستراليا» مكشوفة في نص football-600-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "football: football-400-906: إجابته «أستراليا» مكشوفة في نص football-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "football: football-600-906: إجابته «اليابان» مكشوفة في نص football-200-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "19 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «مصر» في code،commonbond،egyptdrama،flags،hints،football · «اليابان» في commonbond،flags،food،hints،football · «السعوديه» في flags،worldcup،football · «قطر» في flags،worldcup،football · «العراق» في flags،football · «الجزاير» في flags،football · «الارجنتين» في flags،sports،worldcup،football · «فرنسا» في flags،syriandrama،football …"
+      ]
+    },
+    {
+      "id": "foreignseries",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «سلفادور دالي» في reveal،foreignseries · «لوسيل» في worldcup،foreignseries"
+      ]
+    },
+    {
+      "id": "fruitsveg",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "fruitsveg: fruitsveg-200-901: إجابته «الموز» مكشوفة في نص fruitsveg-600-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "fruitsveg: fruitsveg-200-901: إجابته «الموز» مكشوفة في نص fruitsveg-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "fruitsveg: fruitsveg-200-904: إجابته «الجزر» مكشوفة في نص fruitsveg-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "4 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «كندا» في arabseries،flags،fruitsveg · «السبانخ» في cartoon،fruitsveg · «الجزر» في dialects،fruitsveg · «بربادوس» في flags،fruitsveg"
+      ]
+    },
+    {
+      "id": "general",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "general: general-200-902: إجابته «الأرض» مكشوفة في نص general-600-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "general: general-400-902: إجابته «الزهرة» مكشوفة في نص general-200-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "general: general-1000-905: إجابته «المطر» مكشوفة في نص general-200-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "8 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «القلب» في arabic،general · «الذهب» في babalhara،general · «الرمل» في cartoon،general · «نيوزيلندا» في flags،general · «الزهره» في hints،general · «سالار دي اويوني» في placefinder،general · «توماس اديسون» في reveal،general · «الكسندر فلمنغ» في reveal،general"
+      ]
+    },
+    {
+      "id": "geo",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "geo: geo-200-901: إجابته «أنتاركتيكا» مكشوفة في نص geo-600-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "geo: geo-200-904: إجابته «أفريقيا» مكشوفة في نص geo-400-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "geo: geo-200-904: إجابته «أفريقيا» مكشوفة في نص geo-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "geo: geo-200-904: إجابته «أفريقيا» مكشوفة في نص geo-1000-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "geo: geo-400-907: إجابته «السافانا» مكشوفة في نص geo-800-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "4 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «سويسرا» في books،flags،geo · «البحرين» في flags،geo · «ماترهورن» في placefinder،silhouette،geo · «سقطري» في placefinder،geo"
+      ]
+    },
+    {
+      "id": "hidden",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "hints",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "19 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «كره القدم» في anime،commonbond،emoji،videogames،hints · «حرباء» في blur،hints · «تيتان» في blur،hints · «مصر» في code،commonbond،egyptdrama،flags،football،hints · «اسد» في code،silhouette،hints · «المغرب» في code،flags،worldcup،hints · «دلفين» في code،silhouette،sound،hints · «اليابان» في commonbond،flags،food،football،hints …"
+      ]
+    },
+    {
+      "id": "history",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "13 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «تشيلي» في flags،football،history · «كمبوديا» في flags،history · «برج ايفل» في hints،placefinder،silhouette،history · «الكولوسيوم» في placefinder،history · «وليم شكسبير» في quotes،history · «عين جالوت» في ramadan،history · «ابن بطوطه» في reveal،history · «كريستوفر كولومبوس» في reveal،history …"
+      ]
+    },
+    {
+      "id": "hunterxhunter",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-400-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-400-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-400-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-400-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-600-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-600-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-800-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-800-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-1000-901 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-1000-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-902: إجابته «كيلوا» مكشوفة في نص hunterxhunter-1000-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-904: إجابته «الهالة» مكشوفة في نص hunterxhunter-800-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-905: إجابته «كورابيكا» مكشوفة في نص hunterxhunter-400-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-200-905: إجابته «كورابيكا» مكشوفة في نص hunterxhunter-800-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "hunterxhunter: hunterxhunter-400-908: إجابته «ألوكا» مكشوفة في نص hunterxhunter-600-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «الطبخ» في cartoon،hunterxhunter · «هانزو» في naruto،hunterxhunter"
+      ]
+    },
+    {
+      "id": "islamiyat",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «المقرنصات» في arabart،tilepuzzle،islamiyat · «القمر» في dragonball،hints،onepiece،islamiyat · «القاهره» في ramadanseries،islamiyat · «ابن سينا» في reveal،islamiyat · «الخوارزمي» في reveal،islamiyat · «ابن النفيس» في reveal،islamiyat · «الخط الكوفي» في tilepuzzle،islamiyat"
+      ]
+    },
+    {
+      "id": "jujutsu",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "movies",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «هوغوورتس» في books،movies · «رسام» في silhouette،movies"
+      ]
+    },
+    {
+      "id": "naruto",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "naruto: naruto-400-908: إجابته «غارا» مكشوفة في نص naruto-200-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «هاكو» في anime،naruto · «هانزو» في hunterxhunter،naruto · «الناي» في tarab،naruto"
+      ]
+    },
+    {
+      "id": "onepiece",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "onepiece: onepiece-400-904: إجابته «الماء» مكشوفة في نص onepiece-800-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "onepiece: onepiece-400-906: إجابته «إنيل» مكشوفة في نص onepiece-600-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «بروك» في breakingbad،onepiece · «الماء» في breakingbad،quran،onepiece · «القمر» في dragonball،hints،islamiyat،onepiece"
+      ]
+    },
+    {
+      "id": "premier",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "premier: premier-200-901: إجابته «أرسنال» مكشوفة في نص premier-200-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "premier: premier-200-901: إجابته «أرسنال» مكشوفة في نص premier-600-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "premier: premier-200-901: إجابته «أرسنال» مكشوفة في نص premier-600-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "premier: premier-200-901: إجابته «أرسنال» مكشوفة في نص premier-800-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "premier: premier-200-907: إجابته «1992» مكشوفة في نص premier-400-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "premier: premier-400-908: إجابته «تشيلسي» مكشوفة في نص premier-400-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "premier: premier-400-908: إجابته «تشيلسي» مكشوفة في نص premier-800-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "premier: premier-400-908: إجابته «تشيلسي» مكشوفة في نص premier-800-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "6 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «محمد صلاح» في arabcelebs،premier · «11» في football،premier · «اليكس فيرغسون» في ucl،premier · «تشيلسي» في ucl،premier · «بيتر تشيك» في ucl،premier · «جوزيه مورينيو» في ucl،premier"
+      ]
+    },
+    {
+      "id": "prophets",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "prophets: prophets-200-908: إجابته «يونس» مكشوفة في نص prophets-1000-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "prophets: prophets-400-908: إجابته «أيوب» مكشوفة في نص prophets-800-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «مريم» في arabseries،ramadanseries،turkishdrama،prophets · «المحراب» في tilepuzzle،prophets"
+      ]
+    },
+    {
+      "id": "proverbs",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "puzzles",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "quotes",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "24 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «جبران خليل جبران» في arabart،reveal،tarab،quotes · «نجيب محفوظ» في arabcelebs،arabliterature،books،reveal،quotes · «محمود درويش» في arabcelebs،reveal،quotes · «حافظ ابراهيم» في arabliterature،reveal،quotes · «ابو العلاء المعري» في arabliterature،reveal،quotes · «ليو تولستوي» في books،reveal،quotes · «جين اوستن» في books،reveal،quotes · «فيودور دوستويفسكي» في books،reveal،quotes …"
+      ]
+    },
+    {
+      "id": "quran",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "quran: quran-400-901: إجابته «البقرة» مكشوفة في نص quran-600-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "quran: quran-1000-901: إجابته «الأنعام» مكشوفة في نص quran-1000-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "5 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «النمله» في animals،quran · «ادم» في arabseries،quran · «الماء» في breakingbad،onepiece،quran · «بابل» في placefinder،quran · «البقره» في ramadan،quran"
+      ]
+    },
+    {
+      "id": "ramadan",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "ramadan: ramadan-400-903: إجابته «الهريس» مكشوفة في نص ramadan-1000-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "ramadan: ramadan-600-902: إجابته «قرنقعوه» مكشوفة في نص ramadan-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "6 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «التمر» في commonbond،ramadan · «اوزبكستان» في flags،ramadan · «الويكه» في food،ramadan · «عين جالوت» في history،ramadan · «الجامع الاموي» في placefinder،ramadan · «البقره» في quran،ramadan"
+      ]
+    },
+    {
+      "id": "ramadanseries",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "ramadanseries: ramadanseries-600-901: إجابته «العمدة» مكشوفة في نص ramadanseries-200-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "ramadanseries: ramadanseries-600-901: إجابته «العمدة» مكشوفة في نص ramadanseries-400-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "ramadanseries: ramadanseries-600-901: إجابته «العمدة» مكشوفة في نص ramadanseries-600-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "ramadanseries: ramadanseries-600-901: إجابته «العمدة» مكشوفة في نص ramadanseries-800-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "ramadanseries: ramadanseries-600-901: إجابته «العمدة» مكشوفة في نص ramadanseries-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "ramadanseries: ramadanseries-1000-908: إجابته «سمير» مكشوفة في نص ramadanseries-800-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "6 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «مريم» في arabseries،prophets،turkishdrama،ramadanseries · «دلال» في babalhara،syriandrama،ramadanseries · «مصباح» في code،silhouette،ramadanseries · «القاهره» في islamiyat،ramadanseries · «حسن» في syriandrama،ramadanseries · «عادل» في syriandrama،ramadanseries"
+      ]
+    },
+    {
+      "id": "science",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "science: science-400-906: إجابته «الإشعاع» مكشوفة في نص science-1000-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «7» في football،science · «ابن الهيثم» في history،reveal،science · «الطاقه الشمسيه» في spacetoon،science"
+      ]
+    },
+    {
+      "id": "seerah",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "shopping",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": []
+    },
+    {
+      "id": "spacetoon",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "spacetoon: spacetoon-200-907: إجابته «أمها» مكشوفة في نص spacetoon-1000-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "spacetoon: spacetoon-200-908: إجابته «إوزة» مكشوفة في نص spacetoon-600-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "spacetoon: spacetoon-400-905: إجابته «فليد» مكشوفة في نص spacetoon-200-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "spacetoon: spacetoon-400-905: إجابته «فليد» مكشوفة في نص spacetoon-800-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "spacetoon: spacetoon-800-904: إجابته «أميرة» مكشوفة في نص spacetoon-1000-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "7 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «امها» في arabmovies،spacetoon · «اسكتلندا» في arabseries،flags،spacetoon · «استراليا» في flags،football،spacetoon · «بغداد» في history،spacetoon · «الطاقه الشمسيه» في science،spacetoon · «طباخ» في silhouette،spacetoon · «اوزه» في sound،spacetoon"
+      ]
+    },
+    {
+      "id": "sports",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "sports: sports-400-905: إجابته «أثينا» مكشوفة في نص sports-800-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "sports: sports-600-908: إجابته «الأبيض» مكشوفة في نص sports-800-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "5 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «باريس» في capitals،syriandrama،sports · «طوكيو» في capitals،sports · «فيراري» في cars،sports · «الارجنتين» في flags،football،worldcup،sports · «مايكل جوردان» في reveal،sports"
+      ]
+    },
+    {
+      "id": "squidgame",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «مفاتيح» في sound،squidgame"
+      ]
+    },
+    {
+      "id": "syriandrama",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "9 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «دلال» في babalhara،ramadanseries،syriandrama · «ضبع» في blur،sound،syriandrama · «تمساح» في blur،silhouette،sound،syriandrama · «باريس» في capitals،sports،syriandrama · «فرنسا» في flags،football،syriandrama · «فنزويلا» في flags،syriandrama · «حسن» في ramadanseries،syriandrama · «عادل» في ramadanseries،syriandrama …"
+      ]
+    },
+    {
+      "id": "tarab",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "tarab: tarab-200-905: إجابته «العود» مكشوفة في نص tarab-200-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "tarab: tarab-200-906: إجابته «الناي» مكشوفة في نص tarab-400-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "tarab: tarab-400-907: إجابته «القانون» مكشوفة في نص tarab-1000-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "tarab: tarab-600-906: إجابته «البزق» مكشوفة في نص tarab-1000-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "tarab: tarab-800-907: إجابته «التخت» مكشوفة في نص tarab-200-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "tarab: tarab-800-907: إجابته «التخت» مكشوفة في نص tarab-800-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "11 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «جبران خليل جبران» في arabart،quotes،reveal،tarab · «الرق» في arabart،tarab · «حلب» في ertugrul،tarab · «الناي» في naruto،tarab · «بعلبك» في placefinder،tarab · «ام كلثوم» في reveal،tarab · «رياض السنباطي» في reveal،tarab · «بليغ حمدي» في reveal،tarab …"
+      ]
+    },
+    {
+      "id": "tech",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "1 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «توفالو» في flags،tech"
+      ]
+    },
+    {
+      "id": "theater",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «بيتر بان» في books،theater · «الاسد الملك» في emoji،theater"
+      ]
+    },
+    {
+      "id": "turkishdrama",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «مريم» في arabseries،prophets،ramadanseries،turkishdrama · «سليمان القانوني» في reveal،turkishdrama · «كريم» في syriandrama،turkishdrama"
+      ]
+    },
+    {
+      "id": "ucl",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "5 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «اليكس فيرغسون» في premier،ucl · «بيتر تشيك» في premier،ucl · «تشيلسي» في premier،ucl · «جوزيه مورينيو» في premier،ucl · «زين الدين زيدان» في worldcup،ucl"
+      ]
+    },
+    {
+      "id": "videogames",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "videogames: videogames-200-901: إجابته «ماريو» مكشوفة في نص videogames-600-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "videogames: videogames-200-901: إجابته «ماريو» مكشوفة في نص videogames-800-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "videogames: videogames-200-902: إجابته «سونيك» مكشوفة في نص videogames-600-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "videogames: videogames-200-902: إجابته «سونيك» مكشوفة في نص videogames-1000-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "videogames: videogames-400-905: إجابته «الأزرق» مكشوفة في نص videogames-200-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "videogames: videogames-400-908: إجابته «بورتال» مكشوفة في نص videogames-800-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "videogames: videogames-400-908: إجابته «بورتال» مكشوفة في نص videogames-1000-905 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "3 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «بيكاتشو» في anime،videogames · «كره القدم» في anime،commonbond،emoji،hints،videogames · «كانتو» في deathnote،videogames"
+      ]
+    },
+    {
+      "id": "worldcup",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-200-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-200-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-400-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-600-906 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-200-901: إجابته «الأرجنتين» مكشوفة في نص worldcup-1000-908 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-200-902: إجابته «البرازيل» مكشوفة في نص worldcup-400-904 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-200-902: إجابته «البرازيل» مكشوفة في نص worldcup-1000-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-800-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-1000-903 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-400-901: إجابته «أوروغواي» مكشوفة في نص worldcup-1000-907 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "worldcup: worldcup-400-908: إجابته «إسبانيا» مكشوفة في نص worldcup-400-902 (كلمة مفردة — راجعها: أهي كشف فعلي أم ورود عرضي؟)",
+        "12 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «المغرب» في code،flags،hints،worldcup · «السعوديه» في flags،football،worldcup · «قطر» في flags،football،worldcup · «البرازيل» في flags،worldcup · «الارجنتين» في flags،football،sports،worldcup · «ايطاليا» في flags،worldcup · «اسبانيا» في flags،football،worldcup · «جنوب افريقيا» في flags،worldcup …"
+      ]
+    },
+    {
+      "id": "youtubers",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "2 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «السويد» في flags،youtubers · «تايلاند» في flags،youtubers"
+      ]
+    },
+    {
+      "id": "zoom",
+      "questions": 40,
+      "errors": [],
+      "placeholders": [],
+      "warnings": [
+        "12 إجابة تتكرر في أكثر من فئة (مقبول، للعلم): «دراجه هواييه» في arabmovies،sound،zoom · «مقص» في code،silhouette،sound،zoom · «برتقال» في code،zoom · «غيتار» في emoji،silhouette،sound،zoom · «كمان» في silhouette،sound،zoom · «طبل» في silhouette،sound،zoom · «دراجه ناريه» في silhouette،sound،zoom · «سكوتر» في silhouette،zoom …"
+      ]
+    }
+  ]
+}

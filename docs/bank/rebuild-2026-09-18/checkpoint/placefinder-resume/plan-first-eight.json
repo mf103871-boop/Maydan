@@ -1,0 +1,152 @@
+[
+  {
+    "id": "placefinder-200-901",
+    "kind": "question",
+    "pack": "placefinder",
+    "p": 200,
+    "a": "برج إيفل",
+    "alt": [
+      "إيفل",
+      "Eiffel Tower"
+    ],
+    "topic": "أوروبا الغربية",
+    "q": "ما اسم هذا البرج الحديدي الشهير؟",
+    "sourceUrl": "https://www.toureiffel.paris/en/news/history-and-culture/iron-lady-nicknaming-eiffel-tower",
+    "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Eiffel Tower, Paris: full tower from Champ de Mars in daylight, four splayed lattice-iron legs, broad decorative arch at base, first and second horizontal observation platforms, tapering lattice shaft and antenna. A brown iron tower, no night lighting. Full feet and tip visible.",
+    "referenceFile": "media/placefinder/placefinder-200-024.webp",
+    "sourceEvidence": "Official tower page identifies puddled iron, four pillars and decorative arches.",
+    "sourceReviewed": true,
+    "visualReviewStatus": "pending"
+  },
+  {
+    "id": "placefinder-200-902",
+    "kind": "question",
+    "pack": "placefinder",
+    "p": 200,
+    "a": "برج بيزا المائل",
+    "alt": [
+      "برج بيزا",
+      "برج بيزا المنحني"
+    ],
+    "topic": "أوروبا الجنوبية",
+    "q": "ما اسم هذا البرج الإيطالي المائل؟",
+    "sourceUrl": "https://whc.unesco.org/en/list/395/",
+    "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Leaning Tower of Pisa: the real white marble cylindrical bell tower visibly leaning roughly four degrees, ground arcade, six stacked open arcaded galleries and narrower belfry, on green lawn of Piazza dei Miracoli. Slight three-quarter eye level view, complete structure with physical tilt and correct horizontal ground.",
+    "referenceFile": "media/placefinder/placefinder-200-025.webp",
+    "sourceEvidence": "UNESCO identifies the leaning campanile and its marble and arched galleries.",
+    "sourceReviewed": true,
+    "visualReviewStatus": "pending"
+  },
+  {
+    "id": "placefinder-200-903",
+    "kind": "question",
+    "pack": "placefinder",
+    "p": 200,
+    "a": "برج خليفة",
+    "alt": [
+      "Burj Khalifa"
+    ],
+    "topic": "العالم العربي",
+    "q": "ما اسم ناطحة السحاب المصوّرة في دبي؟",
+    "sourceUrl": "https://www.burjkhalifa.ae/the-tower/architecture-design/",
+    "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Burj Khalifa in Dubai: extremely slender silvery glass tower with its true bundled three-wing form, many staggered setbacks tapering upward in a spiral to a central needle spire. Full silhouette from base to tip, surrounding buildings much lower, turquoise artificial lake foreground, blue sky. Do not confuse with Shanghai Tower or generic skyscrapers.",
+    "referenceFile": null,
+    "sourceEvidence": "Official owner describes three wings around a core, Y plan, setbacks and spire.",
+    "sourceReviewed": true,
+    "visualReviewStatus": "pending"
+  },
+  {
+    "id": "placefinder-200-904",
+    "kind": "question",
+    "pack": "placefinder",
+    "p": 200,
+    "a": "أهرامات الجيزة",
+    "alt": [
+      "أهرام الجيزة",
+      "الأهرامات"
+    ],
+    "topic": "العالم العربي",
+    "q": "ما اسم هذه المجموعة الأثرية المصرية؟",
+    "sourceUrl": "https://whc.unesco.org/en/list/86/",
+    "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. The three great Giza pyramids on their real sandy plateau: Khufu and Khafre large, Menkaure visibly smaller; weathered limestone blocks, remaining pale casing near Khafre apex; viewpoint across desert with the three principal pyramids separated, no invented giant sphinx, no Nile beside them, no lush jungle.",
+    "referenceFile": "media/placefinder/placefinder-200-002.webp",
+    "sourceEvidence": "UNESCO identifies the three Giza pyramids within the Memphis necropolis.",
+    "sourceReviewed": true,
+    "visualReviewStatus": "pending"
+  },
+  {
+    "id": "placefinder-200-905",
+    "kind": "question",
+    "pack": "placefinder",
+    "p": 200,
+    "a": "سور الصين العظيم",
+    "alt": [
+      "سور الصين",
+      "السور العظيم"
+    ],
+    "topic": "شرق آسيا",
+    "q": "ما اسم هذا التحصين الممتد فوق التلال؟",
+    "sourceUrl": "https://whc.unesco.org/en/list/438/",
+    "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Great Wall of China, well-preserved Ming masonry section: grey stone and brick crenellated wall with broad walkway and rectangular watchtowers winding continuously along rugged green mountain ridges, clear raised perspective. No moat, no European castles, no writing.",
+    "referenceFile": "media/placefinder/placefinder-200-009.webp",
+    "sourceEvidence": "UNESCO describes walls, tracks and watchtowers integrated into mountain terrain.",
+    "sourceReviewed": true,
+    "visualReviewStatus": "pending"
+  },
+  {
+    "id": "placefinder-200-906",
+    "kind": "question",
+    "pack": "placefinder",
+    "p": 200,
+    "a": "تاج محل",
+    "alt": [
+      "تاج مهَل",
+      "Taj Mahal"
+    ],
+    "topic": "جنوب وجنوب شرق آسيا",
+    "q": "ما اسم هذا الضريح الرخامي الأبيض؟",
+    "sourceUrl": "https://whc.unesco.org/en/list/252/",
+    "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Taj Mahal in Agra, frontal garden-axis view: white marble square mausoleum with large onion dome, four smaller domed corner pavilions, tall central pointed arch, exactly four separate minarets at platform corners, long narrow reflecting pool and cypress garden in foreground. Real proportions, no extra minarets or mixed mosque architecture.",
+    "referenceFile": "media/placefinder/placefinder-200-032.webp",
+    "sourceEvidence": "UNESCO describes the Agra white-marble mausoleum and four free-standing minarets.",
+    "sourceReviewed": true,
+    "visualReviewStatus": "pending"
+  },
+  {
+    "id": "placefinder-200-907",
+    "kind": "question",
+    "pack": "placefinder",
+    "p": 200,
+    "a": "تمثال الحرية",
+    "alt": [
+      "Statue of Liberty"
+    ],
+    "topic": "الأمريكتان",
+    "q": "ما اسم هذا التمثال ذي الشعلة المرفوعة؟",
+    "sourceUrl": "https://whc.unesco.org/en/list/307/",
+    "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Statue of Liberty on Liberty Island: full green copper robed female allegorical figure, seven-ray crown, torch raised high in her RIGHT hand, tablet held by LEFT arm close to body, stone pedestal on harbour island. Frontal three-quarter view with ocean and very distant skyline. Correct anatomy, no readable inscription.",
+    "referenceFile": "media/placefinder/placefinder-200-026.webp",
+    "sourceEvidence": "UNESCO identifies the monumental statue in New York harbour, torch and tablet.",
+    "sourceReviewed": true,
+    "visualReviewStatus": "pending"
+  },
+  {
+    "id": "placefinder-200-908",
+    "kind": "question",
+    "pack": "placefinder",
+    "p": 200,
+    "a": "دار أوبرا سيدني",
+    "alt": [
+      "أوبرا سيدني",
+      "Sydney Opera House"
+    ],
+    "topic": "أوقيانوسيا",
+    "q": "ما اسم هذا المبنى الأسترالي ذي الأسقف الشبيهة بالأشرعة؟",
+    "sourceUrl": "https://whc.unesco.org/en/list/166/",
+    "prompt": "Use case: scientific-educational. Asset: landscape 4:3 architectural landmark recognition card for an Arabic family quiz. Create one original, carefully observed architectural illustration of the real landmark, with realistic proportions and fine material detail, clear daylight, restrained natural colours, clean composition. Show the real defining architecture accurately, not a fantasy redesign. No captions, words, numerals, maps, logos, watermark, border or inset. No people close enough to distract. The entire landmark must be recognizable at phone size. Sydney Opera House seen across Sydney Harbour: actual interlocking white tiled vaulted shell roofs arranged in three groups atop a broad low pink-brown podium at Bennelong Point, two large halls and smaller restaurant shell group. Real shell proportions and dark glass end walls, blue water foreground; no generic smooth tent or extra skyscrapers.",
+    "referenceFile": "media/placefinder/placefinder-200-028.webp",
+    "sourceEvidence": "UNESCO specifies three groups of interlocking vaulted shells on a peninsula podium.",
+    "sourceReviewed": true,
+    "visualReviewStatus": "pending"
+  }
+]

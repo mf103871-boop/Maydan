@@ -1,0 +1,4881 @@
+{
+  "id": "tilepuzzle",
+  "name": "ركّبها صح",
+  "icon": "🧩",
+  "defaultType": "image",
+  "qs": [
+    {
+      "p": 200,
+      "q": "ما هذه اللوحة؟",
+      "a": "الموناليزا",
+      "qid": "tilepuzzle-200-001",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "موناليزا",
+        "الجيوكندا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-001.webp",
+        "type": "image",
+        "title": "Polish: Mona Lisa Mona Lisatitle QS:P1476,pl:\"Mona Lisa \"label QS:Lpl,\"Mona Lisa \"label QS:Lrsk,\"Мона Лиза\"label QS:Lsz…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
+        "author": "Leonardo da Vinci",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قطعة بعد قطعة: ما هذه اللوحة؟",
+      "a": "الصرخة",
+      "qid": "tilepuzzle-200-003",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "صرخة مونك"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-003.webp",
+        "type": "image",
+        "title": "German: Der Schrei der NaturThe scream of naturetitle QS:P1476,de:\"Der Schrei der Natur\"label QS:Lde,\"Der Schrei der Na…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edvard_Munch,_1893,_The_Scream,_oil,_tempera_and_pastel_on_cardboard,_91_x_73_cm,_National_Gallery_of_Norway.jpg",
+        "author": "Edvard Munch",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من القطع المبعثرة: ما هذه اللوحة؟",
+      "a": "الفتاة ذات القرط اللؤلؤي",
+      "qid": "tilepuzzle-200-004",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لؤلؤة القرط"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-004.webp",
+        "type": "image",
+        "title": "Megapixel Girl with a Pearl Earring by Johannes Vermeer.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:1665_Girl_with_a_Pearl_Earring.jpg",
+        "author": "Johannes Vermeer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قطعة بعد قطعة: لأي عمل فني هذه القطع؟",
+      "a": "خلق آدم",
+      "qid": "tilepuzzle-200-005",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-005.webp",
+        "type": "image",
+        "title": "The Creation of Adam",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michelangelo_-_Creation_of_Adam_(cropped).jpg",
+        "author": "Michelangelo",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تكتمل الصورة: ما هذه اللوحة؟",
+      "a": "العشاء الأخير",
+      "qid": "tilepuzzle-200-006",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-006.webp",
+        "type": "image",
+        "title": "The Last Supper Restored - Leonardo Da Vinci",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg",
+        "author": "Leonardo da Vinci",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "رتّب القطع في ذهنك: ما هذه اللوحة؟",
+      "a": "ولادة فينوس",
+      "qid": "tilepuzzle-200-007",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مولد فينوس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-007.webp",
+        "type": "image",
+        "title": "Depicts the goddess Venus, having emerged from the sea as a fully grown woman, arriving at the sea-shore. The seashell…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
+        "author": "Sandro Botticelli",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من القطع المبعثرة: لأي عمل فني هذه القطع؟",
+      "a": "الحرية تقود الشعب",
+      "qid": "tilepuzzle-200-008",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-008.webp",
+        "type": "image",
+        "title": "French: Le 28 juillet 1830. La Liberté guidant le peuple Liberty Leading the Peopletitle QS:P1476,fr:\"Le 28 juillet 183…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Libert%C3%A9_guidant_le_peuple_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_du_Louvre_Peintures_RF_129_-_apr%C3%A8s_restauration_2024.jpg",
+        "author": "Eugène Delacroix",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه اللوحة؟",
+      "a": "خفر الليل",
+      "qid": "tilepuzzle-200-009",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "حرس الليل",
+        "دورية الليل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-009.webp",
+        "type": "image",
+        "title": "Dutch: Officieren en andere schutters van wijk II in Amsterdam, onder leiding van kapitein Frans Banninck Cocq en luite…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_ronda_de_noche,_por_Rembrandt_van_Rijn.jpg",
+        "author": "Rembrandt",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "المواضع مبعثرة: ما هذه اللوحة؟",
+      "a": "الوصيفات",
+      "qid": "tilepuzzle-200-010",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لاس مينيناس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-010.webp",
+        "type": "image",
+        "title": "Spanish: Las MeninasThe Maids of Honourtitle QS:P1476,es:\"Las Meninas\"label QS:Les,\"Las Meninas\"label QS:Lsk,\"Dvorné dá…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Las_Meninas,_by_Diego_Vel%C3%A1zquez,_from_Prado_in_Google_Earth.jpg",
+        "author": "Diego Velázquez",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تكتمل الصورة: لأي عمل فني هذه القطع؟",
+      "a": "حديقة المسرات الأرضية",
+      "qid": "tilepuzzle-200-011",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-011.webp",
+        "type": "image",
+        "title": "Le Jardin des délices par Jérôme Bosch, version haute définition téléchargée par dezoomify-rs",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Garden_of_earthly_delights.jpg",
+        "author": "Hieronymus Bosch",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بلا ترتيب: ما هذه اللوحة؟",
+      "a": "عباد الشمس",
+      "qid": "tilepuzzle-200-012",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زهور عباد الشمس"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-012.webp",
+        "type": "image",
+        "title": "Still Life: Vase with Fifteen Sunflowers",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vincent_Willem_van_Gogh_127.jpg",
+        "author": "Vincent van Gogh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "رتّب القطع في ذهنك: لأي عمل فني هذه القطع؟",
+      "a": "انطباع شروق الشمس",
+      "qid": "tilepuzzle-200-014",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "انطباع، شروق الشمس"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-014.webp",
+        "type": "image",
+        "title": "Impression, Sunrise title QS:P1476,en:\"Impression, Sunrise \"label QS:Len,\"Impression, Sunrise \"label QS:Les,\"Impresión,…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monet_-_Impression,_Sunrise.jpg",
+        "author": "Claude Monet",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "لمّ الشتات: ما هذه اللوحة؟",
+      "a": "زنابق الماء",
+      "qid": "tilepuzzle-200-015",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زنبق الماء"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-015.webp",
+        "type": "image",
+        "title": "Reflections of Clouds on the Water-Lily Pond",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reflections_of_Clouds_on_the_Water-Lily_Pond.jpg",
+        "author": "Claude Monet",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من الألوان والكتل: ما هذه اللوحة؟",
+      "a": "مقهى ليلي",
+      "qid": "tilepuzzle-200-016",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "شرفة المقهى ليلًا"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-016.webp",
+        "type": "image",
+        "title": "Café Terrace at Night title QS:P1476,en:\"Café Terrace at Night \"label QS:Len,\"Café Terrace at Night \"label QS:Les,\"Terr…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Terrace_of_a_Caf%C3%A9_at_Night_(Place_du_Forum)_1888.jpg",
+        "author": "Vincent van Gogh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "اثنتا عشرة قطعة مبدّلة: لأي عمل فني هذه القطع؟",
+      "a": "غرفة النوم في آرل",
+      "qid": "tilepuzzle-200-017",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "غرفة النوم"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-017.webp",
+        "type": "image",
+        "title": "Bedroom in Arles (first version, 1888). Oil on canvas, 72 × 90 cm (28.3 × 35.4 in). Van Gogh Museum, Amsterdam",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_De_slaapkamer_-_Google_Art_Project.jpg",
+        "author": "Google Arts & Culture — KwF-AdF1REQl6w",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل التركيب: ما هذه اللوحة؟",
+      "a": "أحد في جزيرة لا غراند جات",
+      "qid": "tilepuzzle-200-018",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لا غراند جات",
+        "جزيرة لا غراند جات",
+        "أحد بعد الظهر في جزيرة لا غراند جات"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-018.webp",
+        "type": "image",
+        "title": "A Sunday on La Grande Jatte -- 1884 label QS:Lfr,\"Un dimanche après-midi à l'Île de la Grande Jatte\"label QS:Len,\"A Sun…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg",
+        "author": "Georges Seurat",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا التمثال؟",
+      "a": "المفكر",
+      "qid": "tilepuzzle-200-019",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تمثال المفكر"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-019.webp",
+        "type": "image",
+        "title": "Die Plastik \"Der Denker\" (Auguste Rodin) vor der Kunsthalle Bielefeld, Deutschland.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_Penseur_by_Rodin_(Kunsthalle_Bielefeld)_2014-04-10.JPG",
+        "author": "Kaisching",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قطعة بعد قطعة: ما هذا التمثال؟",
+      "a": "تمثال داود",
+      "qid": "tilepuzzle-200-020",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "داود",
+        "داوود"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-020.webp",
+        "type": "image",
+        "title": "David by Michelangelo, Florence, Galleria dell'Accademia, 1501-1504",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%27David%27_by_Michelangelo_Fir_JBU004.jpg",
+        "author": "Jörg Bittner Unna",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من القطع المبعثرة: ما هذا التمثال؟",
+      "a": "فينوس دي ميلو",
+      "qid": "tilepuzzle-200-021",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زهرة ميلوس"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-021.webp",
+        "type": "image",
+        "title": "Front views of the Venus de Milo",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Front_views_of_the_Venus_de_Milo.jpg",
+        "author": "Livioandronico2013",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تكتمل الصورة: ما هذا التمثال؟",
+      "a": "البييتا",
+      "qid": "tilepuzzle-200-022",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بييتا",
+        "الرثاء"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-022.webp",
+        "type": "image",
+        "title": "Michelangelo's Pietà in St. Peter's Basilica in the Vatican.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieta_de_Michelangelo_-_Vaticano.jpg",
+        "author": "original file by Stanislav Traykov",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "رتّب القطع في ذهنك: ما هذا التمثال؟",
+      "a": "نصر ساموثراكي المجنح",
+      "qid": "tilepuzzle-200-023",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "نايكي ساموثراكي"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-023.webp",
+        "type": "image",
+        "title": "Victory of Samothrace",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg",
+        "author": "Shonagon",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا التمثال؟",
+      "a": "تمثال نفرتيتي",
+      "qid": "tilepuzzle-200-024",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "رأس نفرتيتي"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-024.webp",
+        "type": "image",
+        "title": "Picture of the Nefertiti bust in Neues Museum, Berlin.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nofretete_Neues_Museum.jpg",
+        "author": "Philip Pikart",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "المواضع مبعثرة: ما هذا التمثال؟",
+      "a": "رامي القرص",
+      "qid": "tilepuzzle-200-025",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الديسكوبولوس"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-025.webp",
+        "type": "image",
+        "title": "Roman bronze reduction of Myron's Discobolos, 2nd century CE.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roman_bronze_copy_of_Myron%E2%80%99s_Discobolos,_2nd_century_CE_(Glyptothek_Munich).jpg",
+        "author": "No machine-readable author provided. MatthiasKabel assumed (based on copyright claims).",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذه الزخرفة؟",
+      "a": "الخط العربي",
+      "qid": "tilepuzzle-200-026",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "خط عربي"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-026.webp",
+        "type": "image",
+        "title": "Folios 278v-279r of Ibn al-Bawwab’s Qurʾan",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_al-Bawwab_-_Qur%CA%BEan_f._278v-279r.jpg",
+        "author": "Folios 278v and 279r (Chester Beatty Library). Same pages as File:Ibn al-Bawwab - Qur'anic Manuscript.jpg.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قطعة بعد قطعة: ما هذه الزخرفة؟",
+      "a": "الأرابيسك",
+      "qid": "tilepuzzle-200-027",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "أرابيسك"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-027.webp",
+        "type": "image",
+        "title": "Stone relief inside the Umayyad Mosqr of the mosque is mainly white although it contains some fragmentary mosaics and o…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flickr_-_jemasmith_-_Umayyad_Mosque,_Damascus,_Detail..jpg",
+        "author": "Jan Smith from Brisbane, Australia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من القطع المبعثرة: ما هذه الزخرفة؟",
+      "a": "المقرنصات",
+      "qid": "tilepuzzle-200-028",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مقرنص"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-028.webp",
+        "type": "image",
+        "title": "Alhambra",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alhambra_(51949919755).jpg",
+        "author": "Kent Wang from Barcelona, Spain",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل أن تكتمل الصورة: ما هذه الزخرفة؟",
+      "a": "الزليج",
+      "qid": "tilepuzzle-200-029",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زليج"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-029.webp",
+        "type": "image",
+        "title": "نظرة مقربة للزليج في مدرسة ابن يوسف في مراكش",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D9%86%D8%B8%D8%B1%D8%A9_%D9%85%D9%82%D8%B1%D8%A8%D8%A9_%D9%84%D9%84%D8%B2%D9%84%D9%8A%D8%AC_%D9%81%D9%8A_%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D8%A8%D9%86_%D9%8A%D9%88%D8%B3%D9%81.jpeg",
+        "author": "إيان",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "رتّب القطع في ذهنك: ما هذه الزخرفة؟",
+      "a": "المشربية",
+      "qid": "tilepuzzle-200-031",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مشربية"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-031.webp",
+        "type": "image",
+        "title": "The Al-Shafi’i Endowment in Historic Jeddah (2026)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Shafi%E2%80%99i_Endowment,_Historic_Jeddah,_Saudi_Arabia_(2026).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بلا ترتيب: لأي عمل فني هذه القطع؟",
+      "a": "الموجة العظيمة قبالة كاناغاوا",
+      "qid": "tilepuzzle-200-032",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "موجة كاناغاوا",
+        "الموجة العظيمة"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-032.webp",
+        "type": "image",
+        "title": "Although it is often used in tsunami literature, there is no reason to suspect that Hokusai intended it to be interpret…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg",
+        "author": "Katsushika Hokusai",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "القطع في غير أماكنها: لأي عمل فني هذه القطع؟",
+      "a": "جيش التيراكوتا",
+      "qid": "tilepuzzle-200-033",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "جيش الطين",
+        "محاربو التيراكوتا"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-033.webp",
+        "type": "image",
+        "title": "Terracotta Army in Xi'an, China",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه الزخرفة؟",
+      "a": "الخزف الأزرق والأبيض",
+      "qid": "tilepuzzle-200-034",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الخزف الصيني الأزرق"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-034.webp",
+        "type": "image",
+        "title": "China; Vase; Ceramics",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%B8%85%E5%BA%B7%E7%86%99_%E6%99%AF%E5%BE%B7%E9%8E%AE%E7%AA%AF%E9%9D%92%E8%8A%B1%E4%BA%94%E5%80%AB%E5%9C%96%E7%85%A8%E7%93%B7%E7%93%B6-Vase_with_auspicious_animals_MET_DP-14359-001.jpg",
+        "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art. See the Image and Data Resources Open Access Policy",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "بلا ترتيب: ما هذه الزخرفة؟",
+      "a": "الخط الصيني",
+      "qid": "tilepuzzle-200-036",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "خط صيني"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-036.webp",
+        "type": "image",
+        "title": "Tang Dynasty copy of 新婦地黃湯帖 by Wang Xianzhi, currently in the Taito Ward Calligraphy Museum (台東区立書道博物館).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wang_Xianzhi_Imitation_by_Tang_Dynasty.jpg",
+        "author": "Wang Xianzhi（344–386）",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا النقش؟",
+      "a": "حجر رشيد",
+      "qid": "tilepuzzle-200-037",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "حجر الرشيد"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-037.webp",
+        "type": "image",
+        "title": "The Rosetta Stone in the British Museum.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosetta_Stone.JPG",
+        "author": "Hans Hillewaert",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قطعة بعد قطعة: ما هذا النقش؟",
+      "a": "مسلة حمورابي",
+      "qid": "tilepuzzle-200-038",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "شريعة حمورابي",
+        "قانون حمورابي"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-038.webp",
+        "type": "image",
+        "title": "Code de Hammurabi, roi de Babylone ; face avant.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:P1050763_Louvre_code_Hammurabi_face_rwk.JPG",
+        "author": "Mbzt",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "لمّ الشتات: لأي عمل فني هذه القطع؟",
+      "a": "بوابة عشتار",
+      "qid": "tilepuzzle-200-039",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-039.webp",
+        "type": "image",
+        "title": "The Ishtar Gate; Pergamon Museum. Berlin, Germany",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Berl%C3%ADn,_Museo_de_P%C3%A9rgamo_05.jpg",
+        "author": "LBM1948",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من الألوان والكتل: لأي عمل فني هذه القطع؟",
+      "a": "نسيج بايو",
+      "qid": "tilepuzzle-200-040",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مفرش بايو"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-040.webp",
+        "type": "image",
+        "title": "Odo bayeux tapestry",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Odo_bayeux_tapestry.png",
+        "author": "مؤلف غير معروف",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قبل التركيب: لأي عمل فني هذه القطع؟",
+      "a": "نستطيع فعلها",
+      "qid": "tilepuzzle-200-041",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "روزي المبرشمة",
+        "We Can Do It"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-041.webp",
+        "type": "image",
+        "title": "General notes: Use War and Conflict Number 798 when ordering a reproduction or requesting information about this image.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:We_Can_Do_It!_NARA_535413_-_Restoration_2.jpg",
+        "author": "J. Howard Miller",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا الملصق؟",
+      "a": "العم سام",
+      "qid": "tilepuzzle-200-042",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "ملصق العم سام"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-042.webp",
+        "type": "image",
+        "title": "\"I Want You for U.S. Army\", a World War I recruitment poster by James Montgomery Flagg. Dimensions: The lot includes th…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:I_Want_You_for_U.S._Army_by_James_Montgomery_Flagg.jpg",
+        "author": "James Montgomery Flagg / Adam Cuerden",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قطعة بعد قطعة: ما هذا الملصق؟",
+      "a": "صورة تشي جيفارا",
+      "qid": "tilepuzzle-200-043",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "المقاتل البطل",
+        "غيريليرو إيرويكو"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-043.webp",
+        "type": "image",
+        "title": "Popularized cropped version of Guerrillero Heroico - Che Guevara at the funeral for the victims of the La Coubre explos…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Che_Guevara_-_Guerrillero_Heroico_by_Alberto_Korda.jpg",
+        "author": "Alberto Korda, restored by Adam Cuerden",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "من القطع المبعثرة: ما هذا الملصق؟",
+      "a": "ملصق مولان روج",
+      "qid": "tilepuzzle-200-044",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مولان روج لا غولو"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-044.webp",
+        "type": "image",
+        "title": "Moulin Rouge: La Goulue",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henri_de_Toulouse-Lautrec,_Moulin_Rouge_-_La_Goulue,_1891_-_The_Metropolitan_Museum_of_Art.jpg",
+        "author": "Henri de Toulouse-Lautrec",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "ما هذا الرسم؟",
+      "a": "الرجل الفيتروفي",
+      "qid": "tilepuzzle-200-045",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "رجل فيتروفيوس"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-045.webp",
+        "type": "image",
+        "title": "Vitruvian Man",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Da_Vinci_Vitruve_Luc_Viatour.jpg",
+        "author": "Leonardo da Vinci",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 200,
+      "q": "قطعة بعد قطعة: ما هذه الخريطة؟",
+      "a": "خريطة الإدريسي",
+      "qid": "tilepuzzle-200-047",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "نزهة المشتاق",
+        "لوح الترسيم"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-200-047.webp",
+        "type": "image",
+        "title": "Map of al-Maghrib al-Aqsa and al-Maghrib al-Awsat in the oldest known surviving manuscript copy of Idrisi's Tabula Roge…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:89v_90r_%D9%86%D8%B2%D9%87%D8%A9_%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%A7%D9%82_Arabe_2221_BNF.jpg",
+        "author": "unknown copyist",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "خمّن قبل الكشف: ما هذه اللوحة؟",
+      "a": "درس التشريح للدكتور تولب",
+      "qid": "tilepuzzle-400-001",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "درس التشريح"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-001.webp",
+        "type": "image",
+        "title": "The Anatomy Lesson of Dr Nicolaes Tulp title QS:P1476,en:\"The Anatomy Lesson of Dr Nicolaes Tulp \"label QS:Len,\"The Ana…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt_-_The_Anatomy_Lesson_of_Dr_Nicolaes_Tulp.jpg",
+        "author": "Rembrandt",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "خمّن قبل الكشف: لأي عمل فني هذه القطع؟",
+      "a": "عربة القش",
+      "qid": "tilepuzzle-400-002",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-002.webp",
+        "type": "image",
+        "title": "The Hay Wain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Constable_-_The_Hay_Wain_(1821).jpg",
+        "author": "John Constable",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "الصورة مفكّكة: ما هذه اللوحة؟",
+      "a": "الأرجوحة",
+      "qid": "tilepuzzle-400-003",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "أرجوحة فراغونار"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-003.webp",
+        "type": "image",
+        "title": "A painting of a woman on a swing",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Swing_(P430).jpg",
+        "author": "Ajc994",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "أعد الترتيب ذهنيًا: ما هذه اللوحة؟",
+      "a": "نابليون يعبر الألب",
+      "qid": "tilepuzzle-400-004",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "نابليون على جبال الألب"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-004.webp",
+        "type": "image",
+        "title": "Bonaparte has an orange cloak, the crispin (cuff) of his gauntlet is embroidered, the horse is piebald, black and white…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg",
+        "author": "Jacques-Louis David",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "الصورة مفكّكة: لأي عمل فني هذه القطع؟",
+      "a": "طوف الميدوزا",
+      "qid": "tilepuzzle-400-005",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "طوف ميدوسا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-005.webp",
+        "type": "image",
+        "title": "The Raft of the Medusa title QS:P1476,en:\"The Raft of the Medusa \"label QS:Len,\"The Raft of the Medusa \"label QS:Les,\"L…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:JEAN_LOUIS_TH%C3%89ODORE_G%C3%89RICAULT_-_La_Balsa_de_la_Medusa_(Museo_del_Louvre,_1818-19).jpg",
+        "author": "Théodore Géricault",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من شظايا الصورة: ما هذه اللوحة؟",
+      "a": "الثالث من مايو 1808",
+      "qid": "tilepuzzle-400-006",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "إعدامات الثالث من مايو"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-006.webp",
+        "type": "image",
+        "title": "The Third of May by Francisco Goya",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin.jpg",
+        "author": "El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_in_Google_Earth.jpg: Francisco de Goya derivative work: Papa Lima Whiskey 2",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "الأحجية مقلوبة: ما هذه اللوحة؟",
+      "a": "زحل يلتهم أحد أبنائه",
+      "qid": "tilepuzzle-400-007",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زحل يلتهم ابنه"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-007.webp",
+        "type": "image",
+        "title": "This painting is part of the \"Black Paintings\" series and is thought to depict the Greek Myth of Cronus.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg",
+        "author": "Francisco Goya",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "أعد الترتيب ذهنيًا: لأي عمل فني هذه القطع؟",
+      "a": "بورتريه آرنولفيني",
+      "qid": "tilepuzzle-400-008",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زفاف آرنولفيني"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-008.webp",
+        "type": "image",
+        "title": "The Arnolfini Portrait title QS:P1476,en:\"The Arnolfini Portrait \"label QS:Len,\"The Arnolfini Portrait \"label QS:Les,\"R…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Arnolfini_portrait_(1434).jpg",
+        "author": "Jan van Eyck",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ركّبها صح: ما هذه اللوحة؟",
+      "a": "الربيع",
+      "qid": "tilepuzzle-400-009",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بريمافيرا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-009.webp",
+        "type": "image",
+        "title": "Primavera",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Botticelli-primavera.jpg",
+        "author": "Sandro Botticelli",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بنظرة إلى الألوان وحدها: ما هذه اللوحة؟",
+      "a": "مدرسة أثينا",
+      "qid": "tilepuzzle-400-010",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-010.webp",
+        "type": "image",
+        "title": "Italian: Scuola di AteneThe School of Athenstitle QS:P1476,it:\"Scuola di Atene\"label QS:Lit,\"Scuola di Atene\"label QS:L…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg",
+        "author": "Raphael",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من شظايا الصورة: لأي عمل فني هذه القطع؟",
+      "a": "حالبة اللبن",
+      "qid": "tilepuzzle-400-011",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الخادمة الحالبة",
+        "ساكبة الحليب"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-011.webp",
+        "type": "image",
+        "title": "Maid with milk jug",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.png",
+        "author": "Johannes Vermeer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "مبعثرة على شبكة: ما هذه اللوحة؟",
+      "a": "ليلة النجوم فوق الرون",
+      "qid": "tilepuzzle-400-012",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-012.webp",
+        "type": "image",
+        "title": "Vincent van Gogh - Starry Night on the Rhone, 1888",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+        "author": "Vincent van Gogh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "الأحجية مقلوبة: لأي عمل فني هذه القطع؟",
+      "a": "أم ويسلر",
+      "qid": "tilepuzzle-400-013",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بورتريه أم الفنان"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-013.webp",
+        "type": "image",
+        "title": "Depicted person: Anna McNeill Whistler place of creation: London",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whistlers_Mother_high_res.jpg",
+        "author": "James McNeill Whistler",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "اثنتا عشرة قطعة فقط: ما هذه اللوحة؟",
+      "a": "غداء أهل القوارب",
+      "qid": "tilepuzzle-400-014",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "غداء حفلة التجديف"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-014.webp",
+        "type": "image",
+        "title": "Le déjeuner des canotiers",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_-_Google_Art_Project.jpg",
+        "author": "Pierre-Auguste Renoir",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "القطع مخلوطة: ما هذه اللوحة؟",
+      "a": "حصة الرقص",
+      "qid": "tilepuzzle-400-015",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "درس الرقص"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-015.webp",
+        "type": "image",
+        "title": "Die Tanzklasse",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edgar_Degas_-_La_Classe_de_danse.jpg",
+        "author": "Edgar Degas",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ركّبها صح: لأي عمل فني هذه القطع؟",
+      "a": "الغداء على العشب",
+      "qid": "tilepuzzle-400-016",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "غداء على العشب"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-016.webp",
+        "type": "image",
+        "title": "Le Déjeuner sur l'herbe Luncheon on the Grasstitle QS:P1476,en:\"Luncheon on the Grass\"label QS:Len,\"Luncheon on the Gra…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edouard_Manet_-_Luncheon_on_the_Grass_-_Google_Art_Project.jpg",
+        "author": "Édouard Manet",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من الفسيفساء المبعثرة: ما هذه اللوحة؟",
+      "a": "رقصة في مولان دو لا غاليت",
+      "qid": "tilepuzzle-400-017",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "حفل في مولان دو لا غاليت"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-017.webp",
+        "type": "image",
+        "title": "French: Bal du moulin de la Galette Bal du moulin de la Galettetitle QS:P1476,fr:\"Bal du moulin de la Galette \"label QS…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Renoir,_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette,_1876.jpg",
+        "author": "Pierre-Auguste Renoir",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بلا ترتيب: ما هذا التمثال؟",
+      "a": "لاوكون وأبناؤه",
+      "qid": "tilepuzzle-400-018",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لاؤكون"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-018.webp",
+        "type": "image",
+        "title": "Laocoön and his sons group",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laoco%C3%B6n_and_his_sons_group.jpg",
+        "author": "Wilfredor",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "القطع في غير أماكنها: ما هذا التمثال؟",
+      "a": "تمثال موسى",
+      "qid": "tilepuzzle-400-019",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "موسى لمايكل أنجلو"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-019.webp",
+        "type": "image",
+        "title": "Michelangelo's Moses (Rome)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michelangelo%27s_Moses_(Rome).jpg",
+        "author": "Livioandronico2013",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "لمّ الشتات: ما هذا التمثال؟",
+      "a": "أغسطس بريما بورتا",
+      "qid": "tilepuzzle-400-020",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تمثال أغسطس"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-020.webp",
+        "type": "image",
+        "title": "Augustus of Prima Porta",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Augustus_of_Prima_Porta.jpg",
+        "author": "Justin Benttinen",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "بنظرة إلى الألوان وحدها: لأي عمل فني هذه القطع؟",
+      "a": "قناع توت عنخ آمون",
+      "qid": "tilepuzzle-400-021",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "القناع الذهبي"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-021.webp",
+        "type": "image",
+        "title": "Since January 1, 2016 it is possible again to take photographs in the Egyptian Museum in Cairo. The funerary mask of Tu…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CairoEgMuseumTaaMaskMostlyPhotographed.jpg",
+        "author": "Roland Unger",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من الألوان والكتل: ما هذا التمثال؟",
+      "a": "القبلة لرودان",
+      "qid": "tilepuzzle-400-022",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "القبلة"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-022.webp",
+        "type": "image",
+        "title": "Le Baiser de Rodin, vers 1881-1882. Plâtre patiné, Musée de Rodin, Paris (Numéro d'inventaire : S.02834 et Joconde data…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rodin_-_Le_Baiser_06.jpg",
+        "author": "Tylwyth Eldar",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل التركيب: ما هذا التمثال؟",
+      "a": "مانيكن بيس",
+      "qid": "tilepuzzle-400-023",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الولد الصغير المتبول"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-023.webp",
+        "type": "image",
+        "title": "Manneken Pis in Brussels, Belgium. The original bronze statue was created by Jerome Duquesnoy, 1619. The one exhibited…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bruxelles_Manneken_Pis_cropped.jpg",
+        "author": "Bruxelles_Manneken_Pis.jpg: Myrabella derivative work: Myrabella (talk)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "لمّ الشتات: ما هذه الزخرفة؟",
+      "a": "الزخرفة الهندسية الإسلامية",
+      "qid": "tilepuzzle-400-024",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الزخارف الهندسية"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-024.webp",
+        "type": "image",
+        "title": "A small doorway in Ben Youssef Madrasa, Marrakech. The wooden doors are carved with a girih pattern of strapwork. The a…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doorway_in_Ben_Youssef_Madrasa.JPG",
+        "author": "Ian Alexander",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من الألوان والكتل: ما هذه الزخرفة؟",
+      "a": "خزف إزنيق",
+      "qid": "tilepuzzle-400-025",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الخزف العثماني"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-025.webp",
+        "type": "image",
+        "title": "Two Tilestitle QS:P1476,en:\"Two Tiles\"label QS:Len,\"Two Tiles\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turkey;_Iznik_-_Two_Tiles_-_Google_Art_Project.jpg",
+        "author": "Turkey; Iznik",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قطعة بعد قطعة: ما هذا الرسم؟",
+      "a": "الطغراء",
+      "qid": "tilepuzzle-400-026",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "طغراء"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-026.webp",
+        "type": "image",
+        "title": "Scanned from an image of an original document (Mulkname) in the Istanbul Topkapi Palace Museum Archives. Document from…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tughra_Orhan_I.jpg",
+        "author": "Free smyrnan (uploaded by Pagan)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "ما هذا الخط؟",
+      "a": "الخط الكوفي",
+      "qid": "tilepuzzle-400-027",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كوفي"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-027.webp",
+        "type": "image",
+        "title": "Blue Qur'an Pagetitle QS:P1476,en:\"Blue Qur'an Page\"label QS:Len,\"Blue Qur'an Page\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unknown,_North_Africa_or_Southern_Spain,_9th_or_10th_Century_-_Blue_Qur%27an_Page_-_Google_Art_Project_(cropped).jpg",
+        "author": "Unknown, North Africa or Southern Spain, 9th or 10th Century (North Africa or Southern Spain)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل التركيب: ما هذه الزخرفة؟",
+      "a": "المحراب",
+      "qid": "tilepuzzle-400-028",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "محراب"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-028.webp",
+        "type": "image",
+        "title": "Mihrab Othmani at al-Masjid al-Nabawi",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mihrab_Othmani.jpg",
+        "author": "بلال الدويك",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "خمّن قبل الكشف: ما هذه الزخرفة؟",
+      "a": "المنمنمات الإسلامية",
+      "qid": "tilepuzzle-400-029",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "المنمنمة",
+        "منمنمات"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-029.webp",
+        "type": "image",
+        "title": "BIHZAD, Yusef vlucht voor Zuleykha (Jozef en de vrouw van Potifar), 1488, Herat, Afghanistan",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yusef_Zuleykha.jpg",
+        "author": "Kamāl ud-Dīn Behzād",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "مبعثرة على شبكة: لأي عمل فني هذه القطع؟",
+      "a": "ست وثلاثون منظرًا لجبل فوجي",
+      "qid": "tilepuzzle-400-030",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مناظر جبل فوجي"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-030.webp",
+        "type": "image",
+        "title": "The Great Wave at Kanagawa. Designed by Hokusai",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great_Wave_off_Kanagawa2.jpg",
+        "author": "After Katsushika Hokusai",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "الصورة مفكّكة: ما هذه الزخرفة؟",
+      "a": "خزف السيلادون",
+      "qid": "tilepuzzle-400-031",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "سيلادون"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-031.webp",
+        "type": "image",
+        "title": "A Chinese Song Dynasty celadon vase dated to the 13th century. Personal photo released into public domain.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Song_Dynasty_Celadon_Vase.jpg",
+        "author": "Iwanafish at English Wikipedia",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "اثنتا عشرة قطعة فقط: لأي عمل فني هذه القطع؟",
+      "a": "التانكا",
+      "qid": "tilepuzzle-400-032",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تانكا"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-032.webp",
+        "type": "image",
+        "title": "This representation of Buddha Vairocana, the “Resplendent One,” features several of his defining characteristics, inclu…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buddha_Vairocana_-_Google_Art_Project.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "أعد الترتيب ذهنيًا: ما هذه الزخرفة؟",
+      "a": "الرسم بالحبر",
+      "qid": "tilepuzzle-400-033",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرسم الحبري الصيني"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-033.webp",
+        "type": "image",
+        "title": "This painting depicts an immortal, with his chest and abdomen exposed, as he seemingly strides forward. Except for the…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Immortal_in_Splashed_Ink.jpg",
+        "author": "Liang Kai 梁楷 (fl. first half of 13th century)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من القطع المبعثرة: ما هذا النقش؟",
+      "a": "راية أور",
+      "qid": "tilepuzzle-400-034",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لوحة أور"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-034.webp",
+        "type": "image",
+        "title": "Standard of Ur, British Museum, London.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Denis_Bourez_-_British_Museum,_London_(8747049029)_(2).jpg",
+        "author": "Denis Bourez from France",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تكتمل الصورة: ما هذا النقش؟",
+      "a": "نقش بيستون",
+      "qid": "tilepuzzle-400-035",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "نقش بهستون"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-035.webp",
+        "type": "image",
+        "title": "This is a photo of a monument in Iran identified by the ID",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%DA%A9%D8%AA%DB%8C%D8%A8%D9%87_%D8%AF%D8%A7%D8%B1%DB%8C%D9%88%D8%B4_(_%D8%A8%DB%8C%D8%B3%D8%AA%D9%88%D9%86(.jpg",
+        "author": "Korosh.091",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "رتّب القطع في ذهنك: ما هذا النقش؟",
+      "a": "لوحة نارمر",
+      "qid": "tilepuzzle-400-036",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "صلاية نارمر"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-036.webp",
+        "type": "image",
+        "title": "The Narmer Palette",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Narmer_Palette.jpg",
+        "author": "anonymous",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "القطع مخلوطة: لأي عمل فني هذه القطع؟",
+      "a": "ملصق كتشنر",
+      "qid": "tilepuzzle-400-037",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بلدك بحاجة إليك"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-037.webp",
+        "type": "image",
+        "title": "UK. Alfred Leete (1882-1933). Britons (Kitchener) wants you (British / Kitchener / needs you). 1914 (reprint), 74 x 50…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:30a_Sammlung_Eybl_Gro%C3%9Fbritannien._Alfred_Leete_(1882%E2%80%931933)_Britons_(Kitchener)_wants_you_(Briten_Kitchener_braucht_Euch)._1914_(Nachdruck),_74_x_50_cm._(Slg.Nr._552).jpg",
+        "author": "A. Erhardt",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تكتمل الصورة: ما هذا الملصق؟",
+      "a": "القط الأسود",
+      "qid": "tilepuzzle-400-038",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لو شا نوار"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-038.webp",
+        "type": "image",
+        "title": "Le Chat noir, boulevard de Clichy, Paris, 1929.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_Chat_noir_1929.jpg",
+        "author": "Agence de presse Meurisse",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تعود لمكانها: ما هذه اللوحة؟",
+      "a": "صوت سيده",
+      "qid": "tilepuzzle-400-039",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "نيبر",
+        "الكلب والغرامافون"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-039.webp",
+        "type": "image",
+        "title": "In England, artist Francis Barraud (1856-1924) painted his brother's dog Nipper listening to the horn of an early phono…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:His_Master%27s_Voice.jpg",
+        "author": "Francis Barraud",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "من القطع المبعثرة: ما هذه الخريطة؟",
+      "a": "خريطة بيري ريس",
+      "qid": "tilepuzzle-400-040",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بيري ريس"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-040.webp",
+        "type": "image",
+        "title": "Map of the world by Ottoman admiral Piri Reis, drawn in 1513. Only part of the original map survives and is held at the…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Piri_reis_world_map_01.jpg",
+        "author": "Piri Reis",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "قبل أن تكتمل الصورة: ما هذه الخريطة؟",
+      "a": "خريطة فالدزيمولر",
+      "qid": "tilepuzzle-400-041",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-041.webp",
+        "type": "image",
+        "title": "Waldseemüller map from 1507 is the first map to include the name \"America\" and the first to depict the Americas as sepa…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Waldseemuller_map_2.jpg",
+        "author": "Martin Waldseemüller",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "لوحة مبعثرة: ما هذه اللوحة؟",
+      "a": "العاصفة",
+      "qid": "tilepuzzle-400-043",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "البحر العاصف"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-043.webp",
+        "type": "image",
+        "title": "Italian: La Tempesta Tempestlabel QS:Len,\"Tempest\"label QS:Lde,\"Das Gewitter\"label QS:Lit,\"Tempesta\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giorgione_-_Das_Gewitter.jpg",
+        "author": "Giorgione",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "خمّن قبل الكشف: ما هذا التمثال؟",
+      "a": "الذئبة الكابيتولية",
+      "qid": "tilepuzzle-400-044",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "ذئبة روما"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-044.webp",
+        "type": "image",
+        "title": "Lupa Capitolina: she-wolf with Romulus and Remus. Bronze, 12th century AD[1], 5th century BC (the twins are a 15th-cent…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lupa_Capitolina,_Rome.jpg",
+        "author": "Wilfredor",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "الترتيب مغلوط: ما هذه اللوحة؟",
+      "a": "أزهار اللوز",
+      "qid": "tilepuzzle-400-045",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-045.webp",
+        "type": "image",
+        "title": "Almond blossomtitle QS:P1476,en:\"Almond blossom\"label QS:Len,\"Almond blossom\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg",
+        "author": "Vincent van Gogh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا النقش؟",
+      "a": "مسلة أخيرام",
+      "qid": "tilepuzzle-400-046",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تابوت أحيرام"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-046.webp",
+        "type": "image",
+        "title": "Sarcophagus of Ahiram, King of Biblos (Phoenicia) in XIII-X c. BC. Kept in Beirut National Museum. Sarcophagus made in…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahiram_sarcophag_from_Biblos_XIII-XBC.jpg",
+        "author": "Matson Photo Service, photographer, published in 1936",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "الصورة مفكّكة: ما هذا التمثال؟",
+      "a": "تمثال زيوس في أولمبيا",
+      "qid": "tilepuzzle-400-047",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زيوس أرتيميسيون"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-047.webp",
+        "type": "image",
+        "title": "Poseidon or Zeus from Cape Artemision",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Artemision_in_Museum.jpg",
+        "author": "Nikos Kitsakis",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "p": 400,
+      "q": "رتّبها ثم أجب: ما هذه اللوحة؟",
+      "a": "المرأة ذات المظلة",
+      "qid": "tilepuzzle-400-048",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مدام مونيه وابنها"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-400-048.webp",
+        "type": "image",
+        "title": "Woman with a Parasol - Madame Monet and Her Son title QS:P1476,en:\"Woman with a Parasol - Madame Monet and Her Son \"lab…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Woman_with_a_Parasol_-_Madame_Monet_and_Her_Son_-_Google_Art_Project.jpg",
+        "author": "Claude Monet",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من المربعات المبدّلة: ما هذه اللوحة؟",
+      "a": "السفيران",
+      "qid": "tilepuzzle-600-001",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "السفراء"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-001.webp",
+        "type": "image",
+        "title": "Jean de Dinteville, French Ambassador to the court of Henry VIII of England, and Georges de Selve, Bishop of Lavaur. Th…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg",
+        "author": "Hans Holbein the Younger",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من الفسيفساء المبعثرة: لأي عمل فني هذه القطع؟",
+      "a": "دعوة القديس متى",
+      "qid": "tilepuzzle-600-002",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-002.webp",
+        "type": "image",
+        "title": "The Calling of Saint Matthew, by Caravaggio",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caravaggio_%E2%80%94_The_Calling_of_Saint_Matthew.jpg",
+        "author": "Gleb Simonov",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل أن تستقيم الصورة: ما هذه اللوحة؟",
+      "a": "المحاربة تيميرير",
+      "qid": "tilepuzzle-600-003",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "السفينة تيميرير"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-003.webp",
+        "type": "image",
+        "title": "The Fighting Temeraire. 1839, by Joseph Mallord William Turner. Measures 3' x 4'",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Fighting_Temeraire,_JMW_Turner,_National_Gallery.jpg",
+        "author": "J. M. W. Turner",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بالألوان فقط: ما هذه اللوحة؟",
+      "a": "المتجول فوق بحر الضباب",
+      "qid": "tilepuzzle-600-004",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرحالة فوق بحر الضباب"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-004.webp",
+        "type": "image",
+        "title": "The hiker stands as a back figure in the center of the composition. He looks down on an almost impenetrable sea of fog…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg",
+        "author": "Caspar David Friedrich",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل أن تعود لمكانها: لأي عمل فني هذه القطع؟",
+      "a": "اللاقطات",
+      "qid": "tilepuzzle-600-005",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "جامعات السنابل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-005.webp",
+        "type": "image",
+        "title": "The Gleaners label QS:Lfr,\"Des glaneuses\"label QS:Len,\"The Gleaners\"label QS:Lde,\"Die Ährenleserinnen\"label QS:Les,\"Las…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg",
+        "author": "Jean-François Millet",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما اسم هذه اللوحة؟",
+      "a": "صلاة الملاك",
+      "qid": "tilepuzzle-600-006",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الأنجيلوس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-006.webp",
+        "type": "image",
+        "title": "French: L'Angélus The Angelustitle QS:P1476,fr:\"L'Angélus \"label QS:Lfr,\"L'Angélus \"label QS:Les,\"El Ángelus\"label QS:L…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:JEAN-FRAN%C3%87OIS_MILLET_-_El_%C3%81ngelus_(Museo_de_Orsay,_1857-1859._%C3%93leo_sobre_lienzo,_55.5_x_66_cm).jpg",
+        "author": "Jean-François Millet",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "لوحة مبعثرة: لأي عمل فني هذه القطع؟",
+      "a": "سيدة شالوت",
+      "qid": "tilepuzzle-600-007",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "ليدي شالوت"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-007.webp",
+        "type": "image",
+        "title": "The Lady of Shalotttitle QS:P1476,en:\"The Lady of Shalott\"label QS:Len,\"The Lady of Shalott\"",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg",
+        "author": "John William Waterhouse",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قطعة بعد قطعة: ما اسم هذه اللوحة؟",
+      "a": "موت سقراط",
+      "qid": "tilepuzzle-600-008",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-008.webp",
+        "type": "image",
+        "title": "The Death of Socrates",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:David_-_The_Death_of_Socrates.jpg",
+        "author": "Jacques-Louis David",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من القطع المبعثرة: ما اسم هذه اللوحة؟",
+      "a": "قسم الهوراتيين",
+      "qid": "tilepuzzle-600-009",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "يمين الهوراتيين"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-009.webp",
+        "type": "image",
+        "title": "Oath of the Horatii title QS:P1476,en:\"Oath of the Horatii \"label QS:Len,\"Oath of the Horatii \"label QS:Les,\"Juramento…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_Serment_des_Horaces_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3692_;_MR_1432.jpg",
+        "author": "Jacques-Louis David",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "الترتيب مغلوط: لأي عمل فني هذه القطع؟",
+      "a": "يهوديت تقطع رأس هولوفرنيس",
+      "qid": "tilepuzzle-600-010",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "يهوديت وهولوفرنيس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-010.webp",
+        "type": "image",
+        "title": "Judith and Holofernes",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_Giuditta_e_Oloferne_(ca._1599).jpg",
+        "author": "Caravaggio",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل أن تكتمل الصورة: ما اسم هذه اللوحة؟",
+      "a": "البيت الأصفر",
+      "qid": "tilepuzzle-600-011",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-011.webp",
+        "type": "image",
+        "title": "The yellow house ('The street')",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_The_yellow_house_(%27The_street%27).jpg",
+        "author": "Vincent van Gogh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "رتّبها ثم أجب: لأي عمل فني هذه القطع؟",
+      "a": "آكلو البطاطس",
+      "qid": "tilepuzzle-600-012",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-012.webp",
+        "type": "image",
+        "title": "Painting by Vincent van Gogh, 1885",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:De_aardappeleters_-_s0005V1962_-_Van_Gogh_Museum.jpg",
+        "author": "Vincent van Gogh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "رتّب القطع في ذهنك: ما اسم هذه اللوحة؟",
+      "a": "في مولان روج",
+      "qid": "tilepuzzle-600-013",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "في المولان روج"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-013.webp",
+        "type": "image",
+        "title": "At the Moulin Rouge",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henri_de_Toulouse-Lautrec,_At_the_Moulin_Rouge.jpg",
+        "author": "Henri de Toulouse-Lautrec",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما اسم هذه اللوحة؟",
+      "a": "أولمبيا",
+      "qid": "tilepuzzle-600-014",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-014.webp",
+        "type": "image",
+        "title": "Olympia title QS:P1476,en:\"Olympia \"label QS:Len,\"Olympia \"label QS:Les,\"Olympia\"label QS:Lhu,\"Olympia\"label QS:Leu,\"Ol…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edouard_Manet_-_Olympia_-_Google_Art_ProjectFXD.jpg",
+        "author": "Édouard Manet",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من المربعات المبدّلة: لأي عمل فني هذه القطع؟",
+      "a": "حانة في الفولي برجير",
+      "qid": "tilepuzzle-600-015",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بار في الفولي برجير"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-015.webp",
+        "type": "image",
+        "title": "French: Un bar aux Folies Bergère A Bar at the Folies-Bergèretitle QS:P1476,fr:\"Un bar aux Folies Bergère \"label QS:Lfr…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:%22Un_Bar_aux_Folies-Berg%C3%A8re%22_by_%C3%89douard_Manet_(1882).jpg",
+        "author": "Édouard Manet",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "المواضع مبعثرة: ما اسم هذه اللوحة؟",
+      "a": "حقل قمح مع غربان",
+      "qid": "tilepuzzle-600-016",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "حقل القمح والغربان"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-016.webp",
+        "type": "image",
+        "title": "Painting by Vincent van Gogh, 1890",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Korenveld_met_kraaien_-_s0149V1962_-_Van_Gogh_Museum.jpg",
+        "author": "Vincent van Gogh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "أعد الترتيب ذهنيًا: ما هذا التمثال؟",
+      "a": "فينوس فيلندورف",
+      "qid": "tilepuzzle-600-017",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زهرة فيلندورف"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-017.webp",
+        "type": "image",
+        "title": "Venus von Willendorf",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Venus_von_Willendorf_01.jpg",
+        "author": "User:MatthiasKabel",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من شظايا الصورة: ما هذا التمثال؟",
+      "a": "لاماسو",
+      "qid": "tilepuzzle-600-018",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الثور المجنح"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-018.webp",
+        "type": "image",
+        "title": "Assyrian Hall at the Iraqi Museum, Baghdad, Iraq",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iraqi_Museum.jpg",
+        "author": "MohammadHuzam",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "الأحجية مقلوبة: ما هذا التمثال؟",
+      "a": "برونزيات رياتشي",
+      "qid": "tilepuzzle-600-019",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "محاربو رياتشي"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-019.webp",
+        "type": "image",
+        "title": "The Riace Bronzes, National Museum of Magna Grecia in Reggio Calabria",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reggio_calabria_museo_nazionale_bronzi_di_riace.jpg",
+        "author": "Me",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ركّبها صح: ما هذا التمثال؟",
+      "a": "نشوة القديسة تريزا",
+      "qid": "tilepuzzle-600-020",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "وجد القديسة تريزا"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-020.webp",
+        "type": "image",
+        "title": "Ecstasy of St. Teresa HDR",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ecstasy_of_St._Teresa_HDR.jpg",
+        "author": "Livioandronico2013",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بنظرة إلى الألوان وحدها: ما هذا التمثال؟",
+      "a": "أبولو ودافني",
+      "qid": "tilepuzzle-600-021",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-021.webp",
+        "type": "image",
+        "title": "Apollo and Daphne (Bernini)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apollo_and_Daphne_(Bernini)_(cropped).jpg",
+        "author": "Architas",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذه القطعة؟",
+      "a": "قناع أغاممنون",
+      "qid": "tilepuzzle-600-022",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-022.webp",
+        "type": "image",
+        "title": "Athens — Mask of Agamemnon",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Athens_%E2%80%94_Mask_of_Agamemnon.jpg",
+        "author": "Gleb Simonov",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قطعة بعد قطعة: ما هذه القطعة؟",
+      "a": "قرص نبرا السماوي",
+      "qid": "tilepuzzle-600-023",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "قرص نبرا"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-023.webp",
+        "type": "image",
+        "title": "Nebra Sky Disk",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nebra_disc_1.jpg",
+        "author": "Frank Vincentz",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من القطع المبعثرة: ما هذه القطعة؟",
+      "a": "مطهر القديس لويس",
+      "qid": "tilepuzzle-600-025",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "طست القديس لويس"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-025.webp",
+        "type": "image",
+        "title": "Baptistère de Saint Louis - Musée du Louvre Arts de l'Islam LP 16",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baptist%C3%A8re_de_Saint_Louis_-_Mus%C3%A9e_du_Louvre_Arts_de_l%27Islam_LP_16.jpg",
+        "author": "Shonagon",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذه المخطوطة؟",
+      "a": "مقامات الحريري",
+      "qid": "tilepuzzle-600-026",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "منمنمات الواسطي"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-026.webp",
+        "type": "image",
+        "title": "Maqama 43 Abu Zayd travelling on horse",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maqama_43_Abu_Zayd_travelling_on_horse.jpg",
+        "author": "13th century CE artist, public domain artist",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قطعة بعد قطعة: ما هذه المخطوطة؟",
+      "a": "المصحف الأزرق",
+      "qid": "tilepuzzle-600-027",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-027.webp",
+        "type": "image",
+        "title": "Folio from the so-called Blue Qur'an (sura 30:28-32), Fatimid artwork.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Folio_Blue_Quran_Met_2004.88.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل أن تكتمل الصورة: ما هذه القطعة؟",
+      "a": "علبة المغيرة",
+      "qid": "tilepuzzle-600-028",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مبخرة المغيرة"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-028.webp",
+        "type": "image",
+        "title": "Pyxid bearing the name of Prince Al-Mugẖīra, son of Caliph 'Abd al-Rahman III. Spain, Medina Azahara (near Cordoba).",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pyxid_Al_Mughira_OA_4068.jpg",
+        "author": "Workshop at the court of Medina Azahara",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "المواضع مبعثرة: ما هذا النقش؟",
+      "a": "واجهة المشتى",
+      "qid": "tilepuzzle-600-029",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "قصر المشتى"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-029.webp",
+        "type": "image",
+        "title": "Mshatta Facade – Pergamon Museum, Berlin",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mschatta-Fassade_(Pergamonmuseum).jpg",
+        "author": "Raimond Spekking",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بالألوان فقط: لأي عمل فني هذه القطع؟",
+      "a": "على ضفة النهر في عيد تشينغمينغ",
+      "qid": "tilepuzzle-600-030",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لوحة تشينغمينغ"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-030.webp",
+        "type": "image",
+        "title": "Bianjing city gate in Along the River During the Qingming Festival.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bianjing_city_gate.JPG",
+        "author": "Zhang Zeduan",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "ما هذا العمل الفني؟",
+      "a": "أزهار البرقوق الحمراء والبيضاء",
+      "qid": "tilepuzzle-600-031",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-031.webp",
+        "type": "image",
+        "title": "RED AND WHITE PLUM BLOSSOMS (National Treasure)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ogata_Korin_-_RED_AND_WHITE_PLUM_BLOSSOMS_(National_Treasure)_-_Google_Art_Project.jpg",
+        "author": "Ogata Kōrin",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قطعة بعد قطعة: ما هذا العمل الفني؟",
+      "a": "كهوف موغاو",
+      "qid": "tilepuzzle-600-032",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "جداريات دونهوانغ"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-032.webp",
+        "type": "image",
+        "title": "The Mogao Caves, also known as the Thousand Buddha Grottoes, are a magnificent ensemble of Buddhist art and culture loc…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mogao_Caves_(54376969262).jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من شظايا الصورة: ما هذه الزخرفة؟",
+      "a": "التصوير الراجبوتي",
+      "qid": "tilepuzzle-600-033",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرسم الراجبوتي"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-033.webp",
+        "type": "image",
+        "title": "Krishna Lifting up Mount Govardhan title QS:P1476,en:\"Krishna Lifting up Mount Govardhan \"label QS:Len,\"Krishna Lifting…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shahadin_001.jpg",
+        "author": "Shahadin",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "رتّب القطع في ذهنك: ما هذه القطعة؟",
+      "a": "بدلة الدفن اليشمية",
+      "qid": "tilepuzzle-600-034",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بدلة اليشم"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-034.webp",
+        "type": "image",
+        "title": "Jade burial suit dated from 40 BC, excavated from the Xishan Tomb 1 (僖山一号墓) of Prince of Liang Liu Sui (刘遂) at Yongchen…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xihan_Tomb_1_Jade_Burial_Suit.JPG",
+        "author": "Zcm11",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "من القطع المبعثرة: ما هذه المخطوطة؟",
+      "a": "أناجيل لينديسفارن",
+      "qid": "tilepuzzle-600-035",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-035.webp",
+        "type": "image",
+        "title": "Folio 27r from the Lindisfarne Gospels, incipit to the Gospel of Matthew. The main text contains the first sentence of…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:LindisfarneFol27rIncipitMatt.jpg",
+        "author": "Eadfrith of Lindisfarne (presumed)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل أن تكتمل الصورة: ما هذه المخطوطة؟",
+      "a": "مخطوطة فوينيتش",
+      "qid": "tilepuzzle-600-036",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-036.webp",
+        "type": "image",
+        "title": "A page from the mysterious Voynich manuscript, which is undeciphered to this day.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Voynich_Manuscript_(32).jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "رتّب القطع في ذهنك: ما هذه المخطوطة؟",
+      "a": "ساعات دوق بيري",
+      "qid": "tilepuzzle-600-037",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كتاب ساعات دوق بيري"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-037.webp",
+        "type": "image",
+        "title": "The signs of the zodiac correspond to each part of the body, starting with Pisces, the feet, and working up their way t…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anatomical_Man.jpg",
+        "author": "Limbourg brothers",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بلا ترتيب: ما هذا النقش؟",
+      "a": "أسطوانة كورش",
+      "qid": "tilepuzzle-600-038",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "اسطوانة قورش"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-038.webp",
+        "type": "image",
+        "title": "Front of the Cyrus Cylinder. Can be seen in The British Museum",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cyrus_Cylinder_front.jpg",
+        "author": "Prioryman",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "رتّب القطع في ذهنك: ما هذا الملصق؟",
+      "a": "اضرب البيض بالإسفين الأحمر",
+      "qid": "tilepuzzle-600-039",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الإسفين الأحمر"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-039.webp",
+        "type": "image",
+        "title": "Клином красным бей белых",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Klinom_Krasnym_Bej_Belych.JPG",
+        "author": "El Lissitzky",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا الملصق؟",
+      "a": "حافظ على هدوئك وواصل",
+      "qid": "tilepuzzle-600-040",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كيب كام"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-040.webp",
+        "type": "image",
+        "title": "Digital scan of original KEEP CALM AND CARRY ON poster owned by wartimeposters.co.uk.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keep-calm-and-carry-on-scan.jpg",
+        "author": "UK Government",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "المواضع مبعثرة: ما هذا الملصق؟",
+      "a": "ملصقات موشا",
+      "qid": "tilepuzzle-600-041",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "ألفونس موشا"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-041.webp",
+        "type": "image",
+        "title": "Photographic self-portrait of Alfons Mucha, Prague, 1928",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photographic_selfportrait_of_Alfons_Mucha,_1928_(2).jpg",
+        "author": "Alphonse Mucha",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "رتّب القطع في ذهنك: ما هذه الخريطة؟",
+      "a": "الأطلس الكتالوني",
+      "qid": "tilepuzzle-600-042",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-042.webp",
+        "type": "image",
+        "title": "First compass rose depicted on a map, detail from the Catalan Atlas (1375), attributed to cartographer Abraham Cresques…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Compass_rose_from_Catalan_Atlas_(1375).jpg",
+        "author": "Cresques Abraham",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه الخريطة؟",
+      "a": "خريطة هيريفورد",
+      "qid": "tilepuzzle-600-043",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مابا موندي هيريفورد"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-043.webp",
+        "type": "image",
+        "title": "Hereford Mappa Mundi (world map), displayed at the Hereford Cathedral, England.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hereford-Karte.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "قبل أن تكتمل الصورة: ما هذا الرسم؟",
+      "a": "ميكروغرافيا",
+      "qid": "tilepuzzle-600-044",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كتاب ميكروغرافيا",
+        "رسوم هوك"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-044.webp",
+        "type": "image",
+        "title": "Title page",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Micrographia_title_page.gif",
+        "author": "Robert Hooke (1635-1703)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "بلا ترتيب: ما اسم هذه اللوحة؟",
+      "a": "عاشقان",
+      "qid": "tilepuzzle-600-045",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الغرفة الصينية"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-045.webp",
+        "type": "image",
+        "title": "The Umbrellas",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pierre-Auguste_Renoir,_The_Umbrellas,_ca._1881-86.jpg",
+        "author": "Pierre-Auguste Renoir",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "القطع في غير أماكنها: ما اسم هذه اللوحة؟",
+      "a": "جسر لانغلوا",
+      "qid": "tilepuzzle-600-046",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الجسر في آرل"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-046.webp",
+        "type": "image",
+        "title": "Die Zugbrücke.[1] Alternative titles: Brücke in Arles.[3]Brücke von Arles.[2]",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vincent_Van_Gogh_0014.jpg",
+        "author": "Vincent van Gogh",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه القطعة؟",
+      "a": "عربة الشمس",
+      "qid": "tilepuzzle-600-047",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "عربة ترونهولم"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-047.webp",
+        "type": "image",
+        "title": "A simple animation showing a 360˚ view of the artifact.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trundholm_sun_chariot_animation.gif",
+        "author": "National Museum of Denmark",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/"
+      }
+    },
+    {
+      "p": 600,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذه المخطوطة؟",
+      "a": "مزامير أوترخت الرومانية",
+      "qid": "tilepuzzle-600-048",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مزامير شتوتغارت"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-600-048.webp",
+        "type": "image",
+        "title": "Psautier de Stuttgart, Beatus Vir, première page du 1er psaume.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stuttgarter_Psalter_f2r.jpg",
+        "author": "anonymous",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من القطع المبعثرة: ما هذا العمل الفني؟",
+      "a": "مذبح إيزنهايم",
+      "qid": "tilepuzzle-800-001",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-001.webp",
+        "type": "image",
+        "title": "Isenheim Altarpiece - In situ",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Isenheim_Altarpiece_-_In_situ_(cropped).jpg",
+        "author": "Matthias Grünewald / Nikolaus Hagenauer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تكتمل الصورة: ما هذا العمل الفني؟",
+      "a": "مذبح غنت",
+      "qid": "tilepuzzle-800-002",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "عبادة الحمل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-002.webp",
+        "type": "image",
+        "title": "Lamb of God Annunciation",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_Google_Art_Project.jpg",
+        "author": "Jan van Eyck / Presumably Hubert van Eyck",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لمّ الشتات: ما اسم هذه اللوحة؟",
+      "a": "برج بابل",
+      "qid": "tilepuzzle-800-003",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "برج بابل لبروغل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-003.webp",
+        "type": "image",
+        "title": "Tower of Babel",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project_-_edited.jpg",
+        "author": "Pieter Brueghel the Elder",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "رتّب القطع في ذهنك: ما هذا العمل الفني؟",
+      "a": "الصيادون في الثلج",
+      "qid": "tilepuzzle-800-004",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "صيادون في الثلج"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-004.webp",
+        "type": "image",
+        "title": "\"The Hunters in the Snow\" by Pieter Bruegel the Elder. 1565. oil on panel, 117 cm × 162 cm. Kunsthistorisches Museum, V…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_(Winter)_-_Google_Art_Project.jpg",
+        "author": "Pieter Brueghel the Elder",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من الألوان والكتل: ما اسم هذه اللوحة؟",
+      "a": "الأمثال الهولندية",
+      "qid": "tilepuzzle-800-005",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "أمثال بروغل"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-005.webp",
+        "type": "image",
+        "title": "Netherlandish Proverbs (The Blue Cloak) title QS:P1476,en:\"Netherlandish Proverbs (The Blue Cloak) \"label QS:Len,\"Nethe…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Brueghel_the_Elder_-_The_Dutch_Proverbs_-_Google_Art_Project.jpg",
+        "author": "Pieter Brueghel the Elder",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل التركيب: ما اسم هذه اللوحة؟",
+      "a": "منظر مع سقوط إيكاروس",
+      "qid": "tilepuzzle-800-006",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "سقوط إيكاروس"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-006.webp",
+        "type": "image",
+        "title": "Landscape with the Fall of Icarus title QS:P1476,en:\"Landscape with the Fall of Icarus \"label QS:Len,\"Landscape with th…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Landscape_with_the_Fall_of_Icarus_-_Brussels,_Royal_Museums_of_Fine_Arts_of_Belgium_-_Google_Arts_%26_Culture.jpg",
+        "author": "After Miep Gies",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا العمل الفني؟",
+      "a": "انتصار الموت",
+      "qid": "tilepuzzle-800-007",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-007.webp",
+        "type": "image",
+        "title": "Painting",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Triumph_of_Death_Brueghel.jpg",
+        "author": "Pieter Brueghel the Elder",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "خمّن قبل الكشف: ما اسم هذه اللوحة؟",
+      "a": "دفن الكونت أورغاز",
+      "qid": "tilepuzzle-800-008",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-008.webp",
+        "type": "image",
+        "title": "El entierro del señor de Orgaz, más conocido como El entierro del conde de Orgaz, es un óleo sobre lienzo pintado en es…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Greco_-_The_Burial_of_the_Count_of_Orgaz.JPG",
+        "author": "El Greco",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "الصورة مفكّكة: ما اسم هذه اللوحة؟",
+      "a": "استسلام بريدا",
+      "qid": "tilepuzzle-800-009",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرماح"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-009.webp",
+        "type": "image",
+        "title": "La obra representa el momento en que Justino de Nassau rindió la ciudad de Breda, en 1625, a las tropas españolas al ma…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Velazquez-The_Surrender_of_Breda.jpg",
+        "author": "Diego Velázquez",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "المواضع مبعثرة: ما هذا العمل الفني؟",
+      "a": "الإبحار إلى سيثيرا",
+      "qid": "tilepuzzle-800-010",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرحيل إلى سيثيرا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-010.webp",
+        "type": "image",
+        "title": "Pilgrimage to Cythera, so-called The Embarkation for Cythera",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:L%27Embarquement_pour_Cyth%C3%A8re,_by_Antoine_Watteau,_from_C2RMF_retouched.jpg",
+        "author": "Jean-Antoine Watteau",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "أعد الترتيب ذهنيًا: ما اسم هذه اللوحة؟",
+      "a": "لاعبو الورق",
+      "qid": "tilepuzzle-800-011",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لاعبو الكوتشينة"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-011.webp",
+        "type": "image",
+        "title": "(5th version)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Les_Joueurs_de_cartes,_par_Paul_C%C3%A9zanne.jpg",
+        "author": "Paul Cézanne",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بلا ترتيب: ما هذا العمل الفني؟",
+      "a": "جبل سانت فيكتوار",
+      "qid": "tilepuzzle-800-012",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-012.webp",
+        "type": "image",
+        "title": "Montagne Saint-Victoire",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paul_C%C3%A9zanne_-_Montagne_Saint-victoire_-_Google_Art_Project.jpg",
+        "author": "Paul Cézanne",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من شظايا الصورة: ما اسم هذه اللوحة؟",
+      "a": "من أين أتينا",
+      "qid": "tilepuzzle-800-013",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "من أين أتينا؟ من نحن؟ إلى أين نمضي؟"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-013.webp",
+        "type": "image",
+        "title": "Where Do We Come From? What Are We? Where Are We Going? title QS:P1476,en:\"Where Do We Come From? What Are We? Where Ar…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gauguin_-_Where_Do_We_Come_From%3F_What_Are_We%3F_Where_Are_We_Going%3F_(1897-98).jpg",
+        "author": "Paul Gauguin",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "القطع في غير أماكنها: ما هذا العمل الفني؟",
+      "a": "العيادة الكبرى",
+      "qid": "tilepuzzle-800-014",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "عيادة غروس"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-014.webp",
+        "type": "image",
+        "title": "Portrait of Dr. Samuel D. Gross (The Gross Clinic)title QS:P1476,en:\"Portrait of Dr. Samuel D. Gross (The Gross Clinic)…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thomas_Eakins,_American_-_Portrait_of_Dr._Samuel_D._Gross_(The_Gross_Clinic)_-_Google_Art_Project.jpg",
+        "author": "Thomas Eakins, American, 1844 - 1916 (1844 - 1916) – Artist/Maker (American) Born in Philadelphia, Pennsylvania, United States. Died in Philadelphia, Pennsylvania, United States. Details on Google Art Project",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "الأحجية مقلوبة: ما اسم هذه اللوحة؟",
+      "a": "شارع باريس في يوم ممطر",
+      "qid": "tilepuzzle-800-015",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "يوم ممطر في باريس"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-015.webp",
+        "type": "image",
+        "title": "Il s'agit de la Place de Dublin vue depuis la Rue de Turin.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gustave_Caillebotte_-_Paris_Street;_Rainy_Day_-_Google_Art_Project.jpg",
+        "author": "Gustave Caillebotte",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "ركّبها صح: ما اسم هذه اللوحة؟",
+      "a": "رؤيا بعد العظة",
+      "qid": "tilepuzzle-800-016",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرؤيا بعد الموعظة"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-016.webp",
+        "type": "image",
+        "title": "It's a painting of Paul Gauguin which is in National Gallery of Scotland.The picture shows us the vision that a few Bre…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_vision_apr%C3%A8s_le_sermon_(Paul_Gauguin).jpg",
+        "author": "Paul Gauguin",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "مبعثرة على شبكة: ما هذا التمثال؟",
+      "a": "الكاتب الجالس",
+      "qid": "tilepuzzle-800-017",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تمثال الكاتب المصري"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-017.webp",
+        "type": "image",
+        "title": "Le Scribe accroupi - Musée du Louvre Antiquités égyptiennes E 3023",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_Scribe_accroupi_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_%C3%A9gyptiennes_E_3023.jpg",
+        "author": "Shonagon",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "اثنتا عشرة قطعة فقط: ما هذا التمثال؟",
+      "a": "تمثال خفرع",
+      "qid": "tilepuzzle-800-018",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "خفرع على العرش"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-018.webp",
+        "type": "image",
+        "title": "Sitzstatue des Königs Chephren der 4. altägyptischen Dynastie, ausgestellt im Ägyptischen Museum in Kairo, Ägypten",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kairo_Museum_Sitzstatue_Chephren_06.jpg",
+        "author": "Olaf Tausch",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "القطع مخلوطة: ما هذا التمثال؟",
+      "a": "برسيوس ورأس ميدوسا",
+      "qid": "tilepuzzle-800-019",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "برسيوس لتشيليني"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-019.webp",
+        "type": "image",
+        "title": "Perseus by Benvenuto Cellini",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Perseus_(Benvenuto_Cellini)_2013_February.jpg",
+        "author": "Morio",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من الفسيفساء المبعثرة: ما هذا التمثال؟",
+      "a": "اختطاف بروسربينا",
+      "qid": "tilepuzzle-800-020",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "خطف بروسربين"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-020.webp",
+        "type": "image",
+        "title": "The Rape of Proserpina (1621–22), by Gian Lorenzo Bernini. Galleria Borghese, Rome",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rape_of_Prosepina_September_2015-3a.jpg",
+        "author": "Alvesgaspar",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل أن تعود لمكانها: ما هذا التمثال؟",
+      "a": "بورجوازيو كاليه",
+      "qid": "tilepuzzle-800-021",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "أعيان كاليه"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-021.webp",
+        "type": "image",
+        "title": "Statue bourgeois calais rodin",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_bourgeois_calais_rodin.jpg",
+        "author": "Romainberth",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لوحة مبعثرة: ما هذا التمثال؟",
+      "a": "سائق عربة دلفي",
+      "qid": "tilepuzzle-800-022",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "حوذي دلفي"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-022.webp",
+        "type": "image",
+        "title": "Charioteer of Delphi",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vognstyreren-fra_Delfi2.jpg",
+        "author": "Gunnar Bach Pedersen",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "المواضع مبعثرة: ما هذه المخطوطة؟",
+      "a": "شاهنامه طهماسب",
+      "qid": "tilepuzzle-800-023",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "شاهنامه الشاه طهماسب"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-023.webp",
+        "type": "image",
+        "title": "Sultan Mohammed. Kayumars' Court. Miniature, detail. \"Shahnameh\" by Ferdowsi. 1525-1535. Geneva, Collection of Sadruddi…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Court_of_Gayumars.jpg",
+        "author": "Attributed to Sultan Muhammad",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لمّ الشتات: ما هذا العمل الفني؟",
+      "a": "لفيفة طوبكابي",
+      "qid": "tilepuzzle-800-024",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مخطوط طوبقابي"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-024.webp",
+        "type": "image",
+        "title": "Panel from the Topkapi Scroll. Repeat unit of a fragmentary square panel, and quarter repeat unit of a double-layered p…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Topkap%C4%B1_Scroll_P306.JPG",
+        "author": "Unknown author of ~15th century Topkapi Scroll",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "المواضع مبعثرة: ما هذه القطعة؟",
+      "a": "كأس إيدنهول",
+      "qid": "tilepuzzle-800-025",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "حظ إيدنهول"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-025.webp",
+        "type": "image",
+        "title": "Beaker made in Egypt or Syria.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luck_of_Edenhall_VandA_C.1toB-1959.jpg",
+        "author": "Marie-Lan Nguyen (2012)",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من الألوان والكتل: ما هذا العمل الفني؟",
+      "a": "لفيفة حكاية غينجي",
+      "qid": "tilepuzzle-800-027",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "غينجي مونوغاتاري إيماكي"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-027.webp",
+        "type": "image",
+        "title": "A scene (AZUMA YA: East Wing) of Illustrated scroll of Tale of Genji (written by MURASAKI SHIKIBU (11th cent.). The mul…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Genji_emaki_azumaya.jpg",
+        "author": "Imperial court in Kyoto",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل التركيب: ما هذا العمل الفني؟",
+      "a": "تشوجو جيغا",
+      "qid": "tilepuzzle-800-028",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لفائف الحيوانات الهزلية"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-028.webp",
+        "type": "image",
+        "title": "Part of Chōjū-giga scroll with animals sumō wrestling at a celebration.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chouju_sumo2.jpg",
+        "author": "Kyoto National Museum",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "خمّن قبل الكشف: ما هذا العمل الفني؟",
+      "a": "التنانين التسعة",
+      "qid": "tilepuzzle-800-029",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تسعة تنانين"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-029.webp",
+        "type": "image",
+        "title": "Nine-Dragons1",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nine-Dragons1.jpg",
+        "author": "Chen Rong",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "الأحجية مقلوبة: ما هذه الزخرفة؟",
+      "a": "التصوير البهاري",
+      "qid": "tilepuzzle-800-030",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرسم البهاري"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-030.webp",
+        "type": "image",
+        "title": "Krishna and Radha looking into a mirror.title QS:P1476,en:\"Krishna and Radha looking into a mirror.\"label QS:Len,\"Krish…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Krishna_and_Radha_looking_into_a_mirror._-_Google_Art_Project.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "القطع في غير أماكنها: ما هذا النقش؟",
+      "a": "دائرة بروج دندرة",
+      "qid": "tilepuzzle-800-031",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زودياك دندرة"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-031.webp",
+        "type": "image",
+        "title": "Zodiaque de Dendéra - Musée du Louvre Antiquités Egyptiennes D 38 ; E 13482",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zodiaque_de_Dend%C3%A9ra_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_Egyptiennes_D_38_;_E_13482.jpg",
+        "author": "Shonagon",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "القطع في غير أماكنها: ما هذه المخطوطة؟",
+      "a": "كتاب الموتى",
+      "qid": "tilepuzzle-800-032",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كتاب الموتى المصري"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-032.webp",
+        "type": "image",
+        "title": "\"This is an excellent example of one of the many fine vignettes (illustrations) from the Book of the Dead of Hunefer. T…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_pesado_del_coraz%C3%B3n_en_el_Papiro_de_Hunefer.jpg",
+        "author": "Hunefer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لمّ الشتات: ما هذه المخطوطة؟",
+      "a": "مخطوط مندوزا",
+      "qid": "tilepuzzle-800-033",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كودكس مندوزا"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-033.webp",
+        "type": "image",
+        "title": "Codex Mendoza depicting the coat of arms of Mexico",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CodexMendoza01.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "من الألوان والكتل: ما هذه المخطوطة؟",
+      "a": "مخطوط درسدن",
+      "qid": "tilepuzzle-800-034",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كودكس درسدن"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-034.webp",
+        "type": "image",
+        "title": "Six sheets of the Dresden Codex (pp. 55-59, 74) depicting eclipses, multiplication tables and the flood",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dresden_Codex_pp.58-62_78.jpg",
+        "author": "Unknown authorUnknown author",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لمّ الشتات: ما هذا النقش؟",
+      "a": "مسلة مرنبتاح",
+      "qid": "tilepuzzle-800-035",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لوح مرنبتاح"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-035.webp",
+        "type": "image",
+        "title": "Merneptah Victory Stele exhibited in the Egyptian Museum.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Merneptah_Steli_(cropped).jpg",
+        "author": "𐰇𐱅𐰚𐰤",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "الصورة مفكّكة: ما هذا العمل الفني؟",
+      "a": "عيادة الدكتور كاليغاري",
+      "qid": "tilepuzzle-800-036",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كابينة الدكتور كاليغاري"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-036.webp",
+        "type": "image",
+        "title": "Das Cabinet des Dr. Caligari poster",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Das_Cabinet_des_Dr._Caligari.JPG",
+        "author": "Rudolf Ledl / Fritz Bernhard",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بلا ترتيب: ما هذا الملصق؟",
+      "a": "البارجة بوتيمكين",
+      "qid": "tilepuzzle-800-037",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "المدرعة بوتمكين"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-037.webp",
+        "type": "image",
+        "title": "Battleship Potemkin original movie poster",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vintage_Potemkin.jpg",
+        "author": "Not mentioned on poster",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "رتّب القطع في ذهنك: ما هذا الرسم؟",
+      "a": "روزي المبرشمة",
+      "qid": "tilepuzzle-800-038",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "روزي عاملة البرشام"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-038.webp",
+        "type": "image",
+        "title": "A real-life \"Rosie the Riveter\" operating a hand drill at Vultee-Nashville, Tennessee, working on an A-31 Vengeance div…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosie_the_Riveter_(Vultee)_DS.jpg",
+        "author": "Alfred T. Palmer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "أعد الترتيب ذهنيًا: ما هذا العمل الفني؟",
+      "a": "الأم المهاجرة",
+      "qid": "tilepuzzle-800-039",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مهاجرة"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-039.webp",
+        "type": "image",
+        "title": "Portrait shows Florence Thompson with several of her children in a photograph known as \"Migrant Mother\". The Library of…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lange-MigrantMother02.jpg",
+        "author": "Dorothea Lange",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "المواضع مبعثرة: ما هذه الخريطة؟",
+      "a": "خريطة كانتينو",
+      "qid": "tilepuzzle-800-040",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كانتينو"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-040.webp",
+        "type": "image",
+        "title": "The Cantino planisphere, completed by an unknown Portuguese cartographer in 1502, is one of the most precious cartograp…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cantino_planisphere_(1502).jpg",
+        "author": "anonymous Portuguese (1502)",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "اثنتا عشرة قطعة مبدّلة: ما هذا الرسم؟",
+      "a": "طيور أمريكا",
+      "qid": "tilepuzzle-800-041",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كتاب طيور أمريكا"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-041.webp",
+        "type": "image",
+        "title": "Book cover for Birds of America.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Audubon_Birds_of_America.jpg",
+        "author": "John James Audubon",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بنظرة إلى الألوان وحدها: ما اسم هذه اللوحة؟",
+      "a": "عربة القش لبوش",
+      "qid": "tilepuzzle-800-042",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "عربة التبن"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-042.webp",
+        "type": "image",
+        "title": "The Haywain Triptych.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bosch_-_Haywain_Triptych.jpg",
+        "author": "Hieronymus Bosch or workshop",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "الترتيب مغلوط: ما هذا التمثال؟",
+      "a": "ثور فارنيزي",
+      "qid": "tilepuzzle-800-043",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-043.webp",
+        "type": "image",
+        "title": "The death of Dirce. Roman copy of the Imperial era after a Greek original of the Early Hellenistic era.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Farnese_Bull_MAN_Napoli_Inv6002_n01.jpg",
+        "author": "Marie-Lan Nguyen (2011)",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "بلا ترتيب: ما هذه القطعة؟",
+      "a": "مبخرة الأسد",
+      "qid": "tilepuzzle-800-044",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "أسد البرونز"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-044.webp",
+        "type": "image",
+        "title": "Grifone di Pisa al nuovo museo dell'opera del Duomo di Pisa",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grifo-museo-opera-duomo_(cropped)_(cropped).jpg",
+        "author": "Federigo Federighi",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "القطع في غير أماكنها: ما هذه القطعة؟",
+      "a": "قنديل المسجد",
+      "qid": "tilepuzzle-800-045",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مشكاة المسجد",
+        "قنديل زجاجي مملوكي"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-045.webp",
+        "type": "image",
+        "title": "Working Title/Artist: Mosque Lamp Department: Islamic Art Culture/Period/Location: HB/TOA Date Code: Working Date: phot…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mosque_Lamp_of_Amir_Qawsun.jpg",
+        "author": "The Metropolitan Museum",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "لمّ الشتات: ما هذه القطعة؟",
+      "a": "دلو بوبرينسكي",
+      "qid": "tilepuzzle-800-046",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الدلو الهروي"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-046.webp",
+        "type": "image",
+        "title": "An image of the Bobrisnki bucket (also called a kettle or cauldron) that appeared in Die Ausstellung von Meisterwerken…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bobrinsky_Bronzekessel.jpg",
+        "author": "Muhammed ibn Abd al-Wahid",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "قبل التركيب: ما هذه المخطوطة؟",
+      "a": "شاهنامه بايسنغر",
+      "qid": "tilepuzzle-800-047",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "شاهنامه بايسنغري"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-047.webp",
+        "type": "image",
+        "title": "Baysunghur attending a hunt (contemporary 1430 painting). Shahnama (Baysunghur) (Gulistan Museum Ms 716) Frontispiece.…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baysunghur_attending_a_hunt._Shahnama_(Baysunghur)_(Gulistan_Museum_Ms_716)_Frontispiece,_1430_painting.jpg",
+        "author": "1430 artist",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 800,
+      "q": "خمّن قبل الكشف: ما هذه المخطوطة؟",
+      "a": "جامع التواريخ",
+      "qid": "tilepuzzle-800-048",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "منمنمات جامع التواريخ"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-800-048.webp",
+        "type": "image",
+        "title": "Mongol archers featured in Compendium of Chronicles of Rashiduldin Hamadani, Herat, Afghanistan; around 1430-1434, prob…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mongol_soldiers_by_Rashid_al-Din_1305.JPG",
+        "author": "Rashid al-Din",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من شظايا الصورة: ما هذا العمل الفني؟",
+      "a": "ميلانكوليا الأولى",
+      "qid": "tilepuzzle-1000-001",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الكآبة الأولى"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-001.webp",
+        "type": "image",
+        "title": "Melencolia I",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Melencolia_I_-_Google_Art_Project_(_AGDdr3EHmNGyA).jpg",
+        "author": "Albrecht Dürer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "المواضع مبعثرة: ما هذا الرسم؟",
+      "a": "الأرنب الصغير",
+      "qid": "tilepuzzle-1000-002",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "أرنب دورر"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-002.webp",
+        "type": "image",
+        "title": "Die Werkstattfenster spiegeln sich in den Augen des Hasen.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Hare,_1502_-_Google_Art_Project.jpg",
+        "author": "Albrecht Dürer",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "الأحجية مقلوبة: ما هذا العمل الفني؟",
+      "a": "الفارس والموت والشيطان",
+      "qid": "tilepuzzle-1000-004",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-004.webp",
+        "type": "image",
+        "title": "German: Der Reiter (Ritter, Tod und Teufel) Knight, Death, and the Deviltitle QS:P1476,de:\"Der Reiter (Ritter, Tod und…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer,_Knight,_Death_and_Devil,_1513,_NGA_6637.jpg",
+        "author": "Albrecht Dürer",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "مبعثرة على شبكة: ما اسم هذه اللوحة؟",
+      "a": "فينوس أوربينو",
+      "qid": "tilepuzzle-1000-005",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زهرة أوربينو"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-005.webp",
+        "type": "image",
+        "title": "Toilet of Venus",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg",
+        "author": "Titian",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "اثنتا عشرة قطعة فقط: ما اسم هذه اللوحة؟",
+      "a": "باخوس وأريادني",
+      "qid": "tilepuzzle-1000-006",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-006.webp",
+        "type": "image",
+        "title": "Theseus, whose ship is shown in the distance, has just left Ariadne on Naxos, when Bacchus arrives, jumping from his ch…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Titian_Bacchus_and_Ariadne.jpg",
+        "author": "Titian",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ركّبها صح: ما هذا العمل الفني؟",
+      "a": "موت مارا",
+      "qid": "tilepuzzle-1000-007",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مقتل مارا"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-007.webp",
+        "type": "image",
+        "title": "French: La Mort de Marat The Death of Marat.label QS:Les,\"La muerte de Marat.\"label QS:Lfr,\"Marat, Martyr de la Revolut…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Death_of_Marat_by_David.jpg",
+        "author": "Jacques-Louis David",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "القطع مخلوطة: ما اسم هذه اللوحة؟",
+      "a": "الكابوس",
+      "qid": "tilepuzzle-1000-008",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كابوس فوسلي"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-008.webp",
+        "type": "image",
+        "title": "Johann Heinrich Füssli's 1781 painting The Nightmare.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johann_Heinrich_F%C3%BCssli_-_The_Nightmare_55.5.A-d1-2019-04-15.jpg",
+        "author": "Henry Fuseli",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من الفسيفساء المبعثرة: ما اسم هذه اللوحة؟",
+      "a": "تجربة على طائر في مضخة هواء",
+      "qid": "tilepuzzle-1000-009",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تجربة مضخة الهواء"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-009.webp",
+        "type": "image",
+        "title": "An Experiment on a Bird in an Air Pump by Joseph Wright 'of Derby', 1768. The original is in The National Gallery, Lond…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby,_1768.jpg",
+        "author": "Joseph Wright of Derby",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تعود لمكانها: ما اسم هذه اللوحة؟",
+      "a": "الغزّالات",
+      "qid": "tilepuzzle-1000-010",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "أسطورة أراكني"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-010.webp",
+        "type": "image",
+        "title": "La obra representa el momento en que la tejedora Aracne fue convertida en araña por la diosa Atenea, y es una de las ob…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Velazquez-las_hilanderas.jpg",
+        "author": "Diego Velázquez",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "لوحة مبعثرة: ما اسم هذه اللوحة؟",
+      "a": "حمّام الطفل",
+      "qid": "tilepuzzle-1000-011",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الاستحمام"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-011.webp",
+        "type": "image",
+        "title": "The Child’s Bath title QS:P1476,en:\"The Child’s Bath \"label QS:Len,\"The Child’s Bath \"label QS:Les,\"El baño\"label QS:Lf…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg",
+        "author": "Mary Cassatt",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "الترتيب مغلوط: ما اسم هذه اللوحة؟",
+      "a": "الأبسنت",
+      "qid": "tilepuzzle-1000-012",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "شاربة الأبسنت"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-012.webp",
+        "type": "image",
+        "title": "In a café or L’Absinthe.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edgar_Degas_-_In_a_Caf%C3%A9_-_Google_Art_Project_2.jpg",
+        "author": "Edgar Degas",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "رتّبها ثم أجب: ما اسم هذه اللوحة؟",
+      "a": "كاشطو الأرضية",
+      "qid": "tilepuzzle-1000-013",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مقشرو الأرضيات"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-013.webp",
+        "type": "image",
+        "title": "French: Les raboteurs de parquet Les raboteurs de parquettitle QS:P1476,fr:\"Les raboteurs de parquet \"label QS:Lfr,\"Les…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gustave_Caillebotte_-_The_Floor_Planers_-_Google_Art_Project.jpg",
+        "author": "Gustave Caillebotte",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بنظرة إلى الألوان وحدها: ما هذا العمل الفني؟",
+      "a": "جزيرة الموتى",
+      "qid": "tilepuzzle-1000-014",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "جزيرة الأموات"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-014.webp",
+        "type": "image",
+        "title": "1th version",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Toteninsel_I_(Basel,_Kunstmuseum).jpg",
+        "author": "Arnold Böcklin",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من المربعات المبدّلة: ما اسم هذه اللوحة؟",
+      "a": "الغجرية النائمة",
+      "qid": "tilepuzzle-1000-015",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الغجري النائم"
+      ],
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-015.webp",
+        "type": "image",
+        "title": "French: La Bohémienne endormieThe Sleeping Gypsytitle QS:P1476,fr:\"La Bohémienne endormie\"label QS:Lfr,\"La Bohémienne e…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Boh%C3%A9mienne_endormie.jpg",
+        "author": "Henri Rousseau",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تستقيم الصورة: ما اسم هذه اللوحة؟",
+      "a": "جوبيتر وسيميلي",
+      "qid": "tilepuzzle-1000-016",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن حديث",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-016.webp",
+        "type": "image",
+        "title": "Joconde database: entry 50410004307",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jupiter_and_Semele_by_Gustave_Moreau.jpg",
+        "author": "Gustave Moreau",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "رتّبها ثم أجب: ما هذا التمثال؟",
+      "a": "سيدة إلتشي",
+      "qid": "tilepuzzle-1000-017",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "ليدي إلتشي"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-017.webp",
+        "type": "image",
+        "title": "Dama d'Elx, Iberian sculpture from the 5th or 4th century BC. National Archaeological Museum, Madrid.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dama_de_Elche_-_MAN_-_20241220e.jpg",
+        "author": "Luis Fernández García",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من المربعات المبدّلة: ما هذا التمثال؟",
+      "a": "فتى كريتيوس",
+      "qid": "tilepuzzle-1000-018",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-018.webp",
+        "type": "image",
+        "title": "Ephebe of Kritios (c. 480 BC), Acropolis Museum, Athens",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:009MA_Kritios.jpg",
+        "author": "User:Tetraktys",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل أن تستقيم الصورة: ما هذا التمثال؟",
+      "a": "الغالي المحتضر",
+      "qid": "tilepuzzle-1000-019",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الغالي الجريح"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-019.webp",
+        "type": "image",
+        "title": "The Dying Gaul, or The Capitoline Gaul, a Roman marble copy of a Hellenistic work of the late 3rd century BCE Capitolin…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dying_gaul.jpg",
+        "author": "antmoose",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بالألوان فقط: ما هذا التمثال؟",
+      "a": "فاون بربريني",
+      "qid": "tilepuzzle-1000-020",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الساتير النائم"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-020.webp",
+        "type": "image",
+        "title": "Marble copy by a Hellenistic sculptor of the Pergamene school or a Roman sculptor, of a bronze original.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Barberini_Faun_front_Glyptothek_Munich_218_n2.jpg",
+        "author": "Unknown artistUnknown artist.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "لأي منحوتة هذه القطع؟",
+      "a": "هرمس وديونيسوس الرضيع",
+      "qid": "tilepuzzle-1000-021",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "هرمس براكسيتيليس"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-021.webp",
+        "type": "image",
+        "title": "Hermes and the infant Dionysus by Praxiteles at the Olympia museum, Greece.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hermes_and_the_infant_Dionysus_by_Praxiteles.jpg",
+        "author": "Dwaisman",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من الألوان والكتل: ما هذه القطعة؟",
+      "a": "ناووس الزوجين",
+      "qid": "tilepuzzle-1000-022",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "تابوت الزوجين"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-022.webp",
+        "type": "image",
+        "title": "Sarcòfag dels esposos del segle VI aC, de la ciutat etrusca de Cere (actual Cerveteri), ara al Museu Nacional Etrusc de…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sarcophagus_of_the_Spouses_from_Villa_Giulia_in_Rome.jpg",
+        "author": "Sailko",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قطعة بعد قطعة: لأي منحوتة هذه القطع؟",
+      "a": "رؤوس الأولمك العملاقة",
+      "qid": "tilepuzzle-1000-023",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "رؤوس الأولمك"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-023.webp",
+        "type": "image",
+        "title": "Colossal Head 4 from San Lorenzo Tenochtitlán, Veracruz, Mexico. Photographed at at a temporary exhibition in the De Yo…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Lorenzo_Monument_4_crop.jpg",
+        "author": "Marshall Astor (Life on the Edge)",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "ركّبها صح: ما هذه الزخرفة؟",
+      "a": "الخزف ذو البريق المعدني",
+      "qid": "tilepuzzle-1000-024",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "اللسترواير",
+        "الخزف المذهّب"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-024.webp",
+        "type": "image",
+        "title": "British, Staffordshire; Jug; Ceramics-Pottery",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jug_MET_DP-1239-049_(cropped).jpg",
+        "author": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art. See the Image and Data Resources Open Access Policy",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "مبعثرة على شبكة: ما هذا العمل الفني؟",
+      "a": "الطراز",
+      "qid": "tilepuzzle-1000-025",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "نسيج الطراز"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-025.webp",
+        "type": "image",
+        "title": "Arab painting is the frontispice of a manuscript of Kitāb al-Aghānī (Book of Songs) of Abu al-Faraj al-Isfahani. It may…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Badr_al-Din_Lu%27lu%27.jpg",
+        "author": "Ettinghausen, Richard (1977) Arab Painting, Geneva: Skira, p. 65 ISBN: 0847800954.",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "اثنتا عشرة قطعة فقط: ما هذا العمل الفني؟",
+      "a": "كسوة الكعبة",
+      "qid": "tilepuzzle-1000-026",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الكسوة"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-026.webp",
+        "type": "image",
+        "title": "RemasterDirector_V0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Kabah_in_the_Grand_Mosque_of_Makkah,_Saudi_Arabia_(52501405646).jpg",
+        "author": "Richard Mortel from Riyadh, Saudi Arabia",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "القطع مخلوطة: ما هذا العمل الفني؟",
+      "a": "لفيفة النصائح",
+      "qid": "tilepuzzle-1000-027",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لفيفة المواعظ"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-027.webp",
+        "type": "image",
+        "title": "'Palace Ladies', detail from 'Admonitions of the Instructress to the Palace Ladies' (女史箴图)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ku_K%27ai-chih_001.jpg",
+        "author": "Gu Kaizhi",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بالألوان فقط: ما اسم هذه اللوحة؟",
+      "a": "الربيع المبكر",
+      "qid": "tilepuzzle-1000-028",
+      "type": "image",
+      "effect": "jumble",
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-028.webp",
+        "type": "image",
+        "title": "Beginning of spring, Guo Xi. Northern Song. Ink and light colors on silk.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guo_Xi_-_Early_Spring_(large).jpg",
+        "author": "Guo Xi",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "بنظرة إلى الألوان وحدها: ما هذه الزخرفة؟",
+      "a": "التصوير الكانغري",
+      "qid": "tilepuzzle-1000-029",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرسم الكانغري"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-029.webp",
+        "type": "image",
+        "title": "The Gods Sing and Dance for Shiva and Parvatititle QS:P1476,en:\"The Gods Sing and Dance for Shiva and Parvati\"label QS:…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Attributed_to_Khushala,_Indian,_active_late_18th_century_-_The_Gods_Sing_and_Dance_for_Shiva_and_Parvati_-_Google_Art_Project.jpg",
+        "author": "Attributed to Khushala, Indian, active late 18th century – Attributed artist (Indian) Details on Google Art Project",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "الصورة مفكّكة: ما هذه المخطوطة؟",
+      "a": "مخطوط أميانتينوس",
+      "qid": "tilepuzzle-1000-030",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كودكس أميانتينوس"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-030.webp",
+        "type": "image",
+        "title": "Folio 5r from the Codex Amiatinus (Florence, Biblioteca Medicea Laurenziana, MS Amiatinus 1), Ezra the scribe. \"When th…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CodxAmiatinusFolio5rEzra.jpg",
+        "author": "مؤلف غير معروف",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "أعد الترتيب ذهنيًا: ما هذه المخطوطة؟",
+      "a": "مزامير أوترخت",
+      "qid": "tilepuzzle-1000-031",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "سفر المزامير الأوترختي"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-031.webp",
+        "type": "image",
+        "title": "Utrecht Psalter, Utrecht University Library",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Utrecht104.jpg",
+        "author": "Unknown monks c. 800",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من شظايا الصورة: ما هذه المخطوطة؟",
+      "a": "تكوين فيينا",
+      "qid": "tilepuzzle-1000-032",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "سفر التكوين الفييني"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-032.webp",
+        "type": "image",
+        "title": "Image of page from the Vienna Genesis, a 1500 year old book.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:ViennGenFol12vJacob.jpg",
+        "author": "en:User:Dsmdgold",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من الألوان والكتل: ما هذا النقش؟",
+      "a": "مسلة نارام سين",
+      "qid": "tilepuzzle-1000-033",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "مسلة النصر"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-033.webp",
+        "type": "image",
+        "title": "Stèle de Naram-Sin - Musée du Louvre Antiquités orientales SB 4 ; AS 6065",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:St%C3%A8le_de_Naram-Sin_-_Mus%C3%A9e_du_Louvre_Antiquit%C3%A9s_orientales_SB_4_;_AS_6065.jpg",
+        "author": "Shonagon",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "قبل التركيب: ما هذه القطعة؟",
+      "a": "قرص فيستوس",
+      "qid": "tilepuzzle-1000-034",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "قرص فايستوس"
+      ],
+      "topic": "مخطوطات ونقوش",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-034.webp",
+        "type": "image",
+        "title": "Phaistos Disc — Side A",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phaistos_Disc_%E2%80%94_Side_A.jpg",
+        "author": "Gleb Simonov",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "القطع في غير أماكنها: ما هذا الرسم؟",
+      "a": "رجل ميشلان",
+      "qid": "tilepuzzle-1000-035",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "بيبندوم"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-035.webp",
+        "type": "image",
+        "title": "Sign for Michelin tyres",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sign_for_Michelin_tyres.jpg",
+        "author": "Stephencdickson",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "لأي لوحة هذه القطع؟",
+      "a": "فقاعات",
+      "qid": "tilepuzzle-1000-036",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "لوحة الفقاعات"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-036.webp",
+        "type": "image",
+        "title": "Bubbles, a painting by Sir John Everett Millais; the subject his grandson, en:William Milbourne James",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bubbles_by_John_Everett_Millais.jpg",
+        "author": "John Everett Millais",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "القطع في غير أماكنها: ما هذا الملصق؟",
+      "a": "رحلة إلى القمر",
+      "qid": "tilepuzzle-1000-037",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الرحلة إلى القمر"
+      ],
+      "topic": "ملصقات ورسوم",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-037.webp",
+        "type": "image",
+        "title": "Screenshot from Le Voyage dans la lune (A Trip to the Moon) (1902)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_lune.jpg",
+        "author": "Georges Méliès",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "القطع في غير أماكنها: ما هذه الخريطة؟",
+      "a": "خريطة العالم البابلية",
+      "qid": "tilepuzzle-1000-039",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "إيماغو موندي"
+      ],
+      "topic": "خرائط ورسوم علمية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-039.webp",
+        "type": "image",
+        "title": "A close-up view of the. This partially broken clay tablet contains both cuneiform inscriptions and a unique map of the…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Babylonian_map_of_the_world,_from_Sippar,_Mesopotamia..JPG",
+        "author": "Osama Shukir Muhammed Amin FRCP(Glasg)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "لمّ الشتات: ما هذا الرسم؟",
+      "a": "بورتريه إيزابيلا ديستي",
+      "qid": "tilepuzzle-1000-041",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "إيزابيلا ديستي"
+      ],
+      "topic": "لوحات كلاسيكية",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-041.webp",
+        "type": "image",
+        "title": "Portrait of Isabella d'Este",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci,_Portrait_of_Isabella_d%27Este.jpg",
+        "author": "Leonardo da Vinci",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من القطع المبعثرة: لأي منحوتة هذه القطع؟",
+      "a": "أبو الهول الناكسي",
+      "qid": "tilepuzzle-1000-042",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "أبو الهول اليوناني"
+      ],
+      "topic": "نحت",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-042.webp",
+        "type": "image",
+        "title": "Votive column of the Naxians. Colossal sphinge (H. 2.22 m) originally placed on top of a ten-meter ionic column, which…",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:028MAD_Sphinx.jpg",
+        "author": "taken by Ricardo André Frantz (User:Tetraktys), 2006",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "مبعثرة على شبكة: ما هذه الزخرفة؟",
+      "a": "بلاطات الجيريه",
+      "qid": "tilepuzzle-1000-043",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "الجيريه",
+        "التبليط الجيري"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-043.webp",
+        "type": "image",
+        "title": "Girih_tiles",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Girih_tiles.svg",
+        "author": "Cronholm144",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "القطع مخلوطة: ما هذه الزخرفة؟",
+      "a": "الزجاج الإسلامي",
+      "qid": "tilepuzzle-1000-045",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "زجاج إسلامي"
+      ],
+      "topic": "فن إسلامي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-045.webp",
+        "type": "image",
+        "title": "Exhibit in the Freer Gallery of Art, Washington, D.C., USA.",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lamp,_Egypt,_c._1360_AD,_glass_painted_with_enamel_and_gold_-_Freer_Gallery_of_Art_-_DSC04603.jpg",
+        "author": "Daderot",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    },
+    {
+      "p": 1000,
+      "q": "من الفسيفساء المبعثرة: ما هذه الزخرفة؟",
+      "a": "مدرسة كانو",
+      "qid": "tilepuzzle-1000-046",
+      "type": "image",
+      "effect": "jumble",
+      "alt": [
+        "كانو"
+      ],
+      "topic": "فن آسيوي",
+      "verified": true,
+      "media": {
+        "src": "tilepuzzle-1000-046.webp",
+        "type": "image",
+        "title": "春夏花鳥図屏風（左隻）",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kano_Eino_-_Birds_and_Flowers_of_Spring_and_Summer_-_Google_Art_Project.jpg",
+        "author": "Kano Eino (1631 - 1697) – Painter (Japan) Born in Kyoto. Died in Kyoto. Details on Google Art Project",
+        "license": "Public Domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    }
+  ]
+}

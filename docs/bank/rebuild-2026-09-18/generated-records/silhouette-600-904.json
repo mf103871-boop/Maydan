@@ -1,0 +1,40 @@
+{
+  "id": "silhouette-600-904",
+  "kind": "question",
+  "pack": "silhouette",
+  "file": "media/silhouette/silhouette-600-904.webp",
+  "asset": "media/silhouette/silhouette-600-904.webp",
+  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a submarine side profile with periscope and propeller.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 88252,
+  "sha256": "80c8c7951f9a9a0ccfc14a2a675eb0cfefea95e7039a41120b2cf1123d8b8c74",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Complete submarine hull with tower/periscope-like protrusions, tail fins and propeller. Original-size inspection confirms the apparent thumbnail lettering is hull vent detail, not a readable word. No specific real submarine class is supported.",
+    "gameplayReview": "approved",
+    "alpha": {
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 88252,
+      "sha256": "80c8c7951f9a9a0ccfc14a2a675eb0cfefea95e7039a41120b2cf1123d8b8c74",
+      "transparentFraction": 0.823759,
+      "nearOpaqueFraction": 0.153785,
+      "bboxAlphaOver128": [
+        113,
+        249,
+        1216,
+        683
+      ]
+    },
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  }
+}

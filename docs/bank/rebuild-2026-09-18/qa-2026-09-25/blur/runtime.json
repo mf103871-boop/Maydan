@@ -1,0 +1,2162 @@
+{
+  "executedAt": "2026-09-25T02:23:18.949Z",
+  "sourcePackSha256": "2ddfe52a59c017b0167055ab30a55be7fac2c2b3970016c4e9a2fccdec6cf8d9",
+  "mockAccountOnly": true,
+  "sourcePackQuestions": 40,
+  "selection": "8 isolated browser contexts; each test-only in-memory deck contains one untouched actual question per tier; all40 questions exercised",
+  "manualVisualReview": "Root actually viewed all40 before/after pairs on five actual-renderer contact sheets. Sharp identity is clear; blur intentionally obscures thin details. Questions retain context clues for trumpet, sloth, tram, armadillo, charcoal iron and hammer throw. No unique shape-only or measured difficulty guarantee.",
+  "errors": [],
+  "networkErrors": [],
+  "results": [
+    {
+      "name": "all40 neutral media filenames",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-901: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-400-901: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-600-901: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-800-901: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-901: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-902: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-400-902: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-600-902: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-800-902: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-902: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-903: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-400-903: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-600-903: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-800-903: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-903: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-904: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-400-904: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-600-904: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-800-904: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-904: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-905: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-400-905: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-600-905: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-800-905: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-905: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-906: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-400-906: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-600-906: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-800-906: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-906: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-907: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-400-907: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-600-907: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-800-907: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-907: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-200-908: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-400-908: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-600-908: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-800-908: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: blurred base and hidden sharp layer before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: generic alt and no answer leak before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: enlargement unavailable before reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: pressing blur does not open original",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: fits 390px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: fits 320px mobile",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: sharp clean layer after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: answer matches after reveal",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: actual screenshot loses fine detail under blur",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: revealed screenshot differs from blurred image",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: enlarged revealed image has answer alt",
+      "ok": true
+    },
+    {
+      "name": "blur-1000-908: hiding answer restores blur and blocks enlarge",
+      "ok": true
+    },
+    {
+      "name": "all40 media decode in Chromium",
+      "ok": true
+    },
+    {
+      "name": "all40 own About rows disclose AI creation",
+      "ok": true
+    },
+    {
+      "name": "all40 individually exercised",
+      "ok": true
+    },
+    {
+      "name": "no browser runtime errors",
+      "ok": true
+    },
+    {
+      "name": "no missing assets",
+      "ok": true
+    }
+  ],
+  "questions": [
+    {
+      "qid": "blur-200-901",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-200.png"
+    },
+    {
+      "qid": "blur-400-901",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-400.png"
+    },
+    {
+      "qid": "blur-600-901",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-600.png"
+    },
+    {
+      "qid": "blur-800-901",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-800.png"
+    },
+    {
+      "qid": "blur-1000-901",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-1000.png"
+    },
+    {
+      "qid": "blur-200-902",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-200.png"
+    },
+    {
+      "qid": "blur-400-902",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-400.png"
+    },
+    {
+      "qid": "blur-600-902",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-600.png"
+    },
+    {
+      "qid": "blur-800-902",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-800.png"
+    },
+    {
+      "qid": "blur-1000-902",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-1000.png"
+    },
+    {
+      "qid": "blur-200-903",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-200.png"
+    },
+    {
+      "qid": "blur-400-903",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-400.png"
+    },
+    {
+      "qid": "blur-600-903",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-600.png"
+    },
+    {
+      "qid": "blur-800-903",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-800.png"
+    },
+    {
+      "qid": "blur-1000-903",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-1000.png"
+    },
+    {
+      "qid": "blur-200-904",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-200.png"
+    },
+    {
+      "qid": "blur-400-904",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-400.png"
+    },
+    {
+      "qid": "blur-600-904",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-600.png"
+    },
+    {
+      "qid": "blur-800-904",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-800.png"
+    },
+    {
+      "qid": "blur-1000-904",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-1000.png"
+    },
+    {
+      "qid": "blur-200-905",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-200.png"
+    },
+    {
+      "qid": "blur-400-905",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-400.png"
+    },
+    {
+      "qid": "blur-600-905",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-600.png"
+    },
+    {
+      "qid": "blur-800-905",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-800.png"
+    },
+    {
+      "qid": "blur-1000-905",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-1000.png"
+    },
+    {
+      "qid": "blur-200-906",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-200.png"
+    },
+    {
+      "qid": "blur-400-906",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-400.png"
+    },
+    {
+      "qid": "blur-600-906",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-600.png"
+    },
+    {
+      "qid": "blur-800-906",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-800.png"
+    },
+    {
+      "qid": "blur-1000-906",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-1000.png"
+    },
+    {
+      "qid": "blur-200-907",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-200.png"
+    },
+    {
+      "qid": "blur-400-907",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-400.png"
+    },
+    {
+      "qid": "blur-600-907",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-600.png"
+    },
+    {
+      "qid": "blur-800-907",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-800.png"
+    },
+    {
+      "qid": "blur-1000-907",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-1000.png"
+    },
+    {
+      "qid": "blur-200-908",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-200.png"
+    },
+    {
+      "qid": "blur-400-908",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-400.png"
+    },
+    {
+      "qid": "blur-600-908",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-600.png"
+    },
+    {
+      "qid": "blur-800-908",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-800.png"
+    },
+    {
+      "qid": "blur-1000-908",
+      "visualReview": "approved-with-installed-question-context",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/contact-1000.png"
+    }
+  ],
+  "initialAttempt": {
+    "questionsPassedBeforeInterruption": 20,
+    "outcome": "Local browser navigation ERR_NETWORK_IO_SUSPENDED; complete retry passed486/486. No app change required."
+  }
+}

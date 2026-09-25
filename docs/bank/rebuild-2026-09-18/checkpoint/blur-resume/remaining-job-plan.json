@@ -1,0 +1,1427 @@
+{
+  "status": "paused-at-user-request",
+  "jobs": [
+    {
+      "id": "blur-200-901",
+      "kind": "question",
+      "pack": "blur",
+      "a": "فيل",
+      "p": 200,
+      "topic": "حيوانات",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a full African elephant in a clean natural savanna setting.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 200,
+        "q": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "a": "فيل",
+        "qid": "blur-200-901",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "حيوانات",
+        "difficultyTarget": 0.8,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-200-901.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-901.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-200-902",
+      "kind": "question",
+      "pack": "blur",
+      "a": "بيتزا",
+      "p": 200,
+      "topic": "أطعمة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a round margherita pizza viewed at a slight top-down angle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 200,
+        "q": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "a": "بيتزا",
+        "qid": "blur-200-902",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "أطعمة",
+        "difficultyTarget": 0.8,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-200-902.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-902.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-200-903",
+      "kind": "question",
+      "pack": "blur",
+      "a": "إبريق شاي",
+      "p": 200,
+      "topic": "البيت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a simple metal teapot with spout and loop handle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 200,
+        "q": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "a": "إبريق شاي",
+        "qid": "blur-200-903",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "البيت",
+        "difficultyTarget": 0.8,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-200-903.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-903.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-200-904",
+      "kind": "question",
+      "pack": "blur",
+      "a": "بيانو",
+      "p": 200,
+      "topic": "موسيقى",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a black grand piano with keyboard and lid open.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 200,
+        "q": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "a": "بيانو",
+        "qid": "blur-200-904",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "موسيقى",
+        "difficultyTarget": 0.8,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-200-904.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-904.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-200-905",
+      "kind": "question",
+      "pack": "blur",
+      "a": "طائرة",
+      "p": 200,
+      "topic": "وسائل نقل",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a white passenger airplane with swept wings seen in three quarter view.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 200,
+        "q": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "a": "طائرة",
+        "qid": "blur-200-905",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "وسائل نقل",
+        "difficultyTarget": 0.8,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-200-905.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-905.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-200-906",
+      "kind": "question",
+      "pack": "blur",
+      "a": "برج إيفل",
+      "p": 200,
+      "topic": "معالم ومنشآت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: the Eiffel Tower with correct lattice structure in Paris, clear sky.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 200,
+        "q": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "a": "برج إيفل",
+        "qid": "blur-200-906",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "معالم ومنشآت",
+        "difficultyTarget": 0.8,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-200-906.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-906.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-200-907",
+      "kind": "question",
+      "pack": "blur",
+      "a": "سباحة",
+      "p": 200,
+      "topic": "رياضة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one adult swimmer wearing a cap and goggles performing freestyle in a swimming pool.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 200,
+        "q": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "a": "سباحة",
+        "qid": "blur-200-907",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "رياضة",
+        "difficultyTarget": 0.8,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-200-907.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-907.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-200-908",
+      "kind": "question",
+      "pack": "blur",
+      "a": "شلال",
+      "p": 200,
+      "topic": "طبيعة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a broad natural waterfall over a rock cliff.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 200,
+        "q": "ما الذي يظهر في الصورة الضبابية؟",
+        "a": "شلال",
+        "qid": "blur-200-908",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "طبيعة",
+        "difficultyTarget": 0.8,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-200-908.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-908.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-400-901",
+      "kind": "question",
+      "pack": "blur",
+      "a": "بطريق",
+      "p": 400,
+      "topic": "حيوانات",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a full emperor penguin standing on ice.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 400,
+        "q": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "a": "بطريق",
+        "qid": "blur-400-901",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "حيوانات",
+        "difficultyTarget": 0.6,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-400-901.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-901.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-400-902",
+      "kind": "question",
+      "pack": "blur",
+      "a": "كرواسون",
+      "p": 400,
+      "topic": "أطعمة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one crescent-shaped baked croissant.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 400,
+        "q": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "a": "كرواسون",
+        "qid": "blur-400-902",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "أطعمة",
+        "difficultyTarget": 0.6,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-400-902.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-902.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-400-903",
+      "kind": "question",
+      "pack": "blur",
+      "a": "مظلة",
+      "p": 400,
+      "topic": "البيت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an open yellow rain umbrella.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 400,
+        "q": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "a": "مظلة",
+        "qid": "blur-400-903",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "البيت",
+        "difficultyTarget": 0.6,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-400-903.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-903.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-400-904",
+      "kind": "question",
+      "pack": "blur",
+      "a": "بوق",
+      "p": 400,
+      "topic": "موسيقى",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a polished brass trumpet with correct three valves.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 400,
+        "q": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "a": "بوق",
+        "qid": "blur-400-904",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "موسيقى",
+        "difficultyTarget": 0.6,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-400-904.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-904.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-400-905",
+      "kind": "question",
+      "pack": "blur",
+      "a": "قارب شراعي",
+      "p": 400,
+      "topic": "وسائل نقل",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a small sailboat with white triangular sails.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 400,
+        "q": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "a": "قارب شراعي",
+        "qid": "blur-400-905",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "وسائل نقل",
+        "difficultyTarget": 0.6,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-400-905.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-905.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-400-906",
+      "kind": "question",
+      "pack": "blur",
+      "a": "طاحونة هواء",
+      "p": 400,
+      "topic": "معالم ومنشآت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a traditional Dutch windmill with four long sails.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 400,
+        "q": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "a": "طاحونة هواء",
+        "qid": "blur-400-906",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "معالم ومنشآت",
+        "difficultyTarget": 0.6,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-400-906.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-906.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-400-907",
+      "kind": "question",
+      "pack": "blur",
+      "a": "ملاكمة",
+      "p": 400,
+      "topic": "رياضة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: two red boxing gloves on a simple gym bench.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 400,
+        "q": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "a": "ملاكمة",
+        "qid": "blur-400-907",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "رياضة",
+        "difficultyTarget": 0.6,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-400-907.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-907.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-400-908",
+      "kind": "question",
+      "pack": "blur",
+      "a": "بركان",
+      "p": 400,
+      "topic": "طبيعة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a conical volcano with a glowing lava flow.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 400,
+        "q": "ما الذي يظهر في الصورة الضبابية؟",
+        "a": "بركان",
+        "qid": "blur-400-908",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "طبيعة",
+        "difficultyTarget": 0.6,
+        "verified": true,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-400-908.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-908.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-600-901",
+      "kind": "question",
+      "pack": "blur",
+      "a": "كسلان",
+      "p": 600,
+      "topic": "حيوانات",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one full adult sloth hanging upside down from a single horizontal branch, with a rounded pale face, dark eye markings, shaggy brown fur and long curved claws. Clearly show its four natural limbs gripping the branch, body and head, against soft green forest foliage.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 600,
+        "q": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "a": "كسلان",
+        "qid": "blur-600-901",
+        "type": "image",
+        "effect": "blur",
+        "alt": [
+          "حيوان الكسلان",
+          "Sloth"
+        ],
+        "topic": "حيوانات",
+        "difficultyTarget": 0.4,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-600-901.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-901.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-600-902",
+      "kind": "question",
+      "pack": "blur",
+      "a": "بريتزل",
+      "p": 600,
+      "topic": "أطعمة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one large golden-brown baked soft pretzel, the traditional symmetrical looped knot shape with two arms crossing and connecting to the outer loop, coarse salt on the crust, on a simple pale bakery surface. Show the entire recognizable pretzel knot from a near top-down angle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 600,
+        "q": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "a": "بريتزل",
+        "qid": "blur-600-902",
+        "type": "image",
+        "effect": "blur",
+        "alt": [
+          "بريتسل",
+          "كعك البريتزل",
+          "Pretzel"
+        ],
+        "topic": "أطعمة",
+        "difficultyTarget": 0.4,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-600-902.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-902.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-600-903",
+      "kind": "question",
+      "pack": "blur",
+      "a": "آلة خياطة",
+      "p": 600,
+      "topic": "البيت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a recognizable modern home sewing machine.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 600,
+        "q": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "a": "آلة خياطة",
+        "qid": "blur-600-903",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "البيت",
+        "difficultyTarget": 0.4,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-600-903.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-903.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-600-904",
+      "kind": "question",
+      "pack": "blur",
+      "a": "عود",
+      "p": 600,
+      "topic": "موسيقى",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an Arabic oud with pear-shaped body, short fretless neck and angled pegbox.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 600,
+        "q": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "a": "عود",
+        "qid": "blur-600-904",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "موسيقى",
+        "difficultyTarget": 0.4,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-600-904.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-904.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-600-905",
+      "kind": "question",
+      "pack": "blur",
+      "a": "ترام",
+      "p": 600,
+      "topic": "وسائل نقل",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a yellow urban street tram on rails.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 600,
+        "q": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "a": "ترام",
+        "qid": "blur-600-905",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "وسائل نقل",
+        "difficultyTarget": 0.4,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-600-905.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-905.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-600-906",
+      "kind": "question",
+      "pack": "blur",
+      "a": "منارة",
+      "p": 600,
+      "topic": "معالم ومنشآت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a coastal red and white striped lighthouse.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 600,
+        "q": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "a": "منارة",
+        "qid": "blur-600-906",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "معالم ومنشآت",
+        "difficultyTarget": 0.4,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-600-906.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-906.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-600-907",
+      "kind": "question",
+      "pack": "blur",
+      "a": "رماية بالقوس",
+      "p": 600,
+      "topic": "رياضة",
+      "prompt": "Use case: precise-object-edit. Edit the supplied archery photograph. Preserve the adult archer, two natural arms and hands, recurve bow, outdoor range, target, colors and realistic photography. Correct one structural issue: the thin black ARROW SHAFT at the level of his draw hand (with red fletching beside his face) must extend straight horizontally through the arrow rest and at least 10 cm beyond the front of the wooden bow riser, ending in a clearly visible small metal target point. Keep it a single continuous arrow; do not confuse it with the thicker stabilizer rod lower down. Preserve that lower stabilizer separately. Also widen the framing just enough to include the top tip of the bow with a small sky margin. Maintain landscape 4:3, no text or logos. Keep the arrow and the image sharply focused; the game applies blur later.",
+      "question": {
+        "p": 600,
+        "q": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "a": "رماية بالقوس",
+        "qid": "blur-600-907",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "رياضة",
+        "difficultyTarget": 0.4,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-600-907.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-907.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-600-908",
+      "kind": "question",
+      "pack": "blur",
+      "a": "شفق قطبي",
+      "p": 600,
+      "topic": "طبيعة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a vivid natural aurora borealis with broad green luminous curtains and a subtle violet edge flowing in unmistakable wavy ribbons across the dark night sky, above a low dark conifer forest and a narrow strip of snowy ground. The luminous auroral curtains occupy most of the image; a few real stars, no moon, no city, no text.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 600,
+        "q": "ما الذي يظهر في الصورة الضبابية؟",
+        "a": "شفق قطبي",
+        "qid": "blur-600-908",
+        "type": "image",
+        "effect": "blur",
+        "alt": [
+          "الأضواء الشمالية",
+          "الشفق القطبي الشمالي",
+          "Aurora"
+        ],
+        "topic": "طبيعة",
+        "difficultyTarget": 0.4,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-600-908.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-23",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-908.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-800-901",
+      "kind": "question",
+      "pack": "blur",
+      "a": "مدرع",
+      "p": 800,
+      "topic": "حيوانات",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a nine-banded armadillo, clearly showing segmented armor.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 800,
+        "q": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "a": "مدرع",
+        "qid": "blur-800-901",
+        "type": "image",
+        "effect": "blur",
+        "alt": [
+          "أرماديلو"
+        ],
+        "topic": "حيوانات",
+        "difficultyTarget": 0.25,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-800-901.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-901.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-800-902",
+      "kind": "question",
+      "pack": "blur",
+      "a": "سوشي",
+      "p": 800,
+      "topic": "أطعمة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: three sushi rolls with nori, rice and vegetables.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 800,
+        "q": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "a": "سوشي",
+        "qid": "blur-800-902",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "أطعمة",
+        "difficultyTarget": 0.25,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-800-902.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-902.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-800-903",
+      "kind": "question",
+      "pack": "blur",
+      "a": "مكبس قهوة",
+      "p": 800,
+      "topic": "البيت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a glass French press coffee maker with metal plunger.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 800,
+        "q": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "a": "مكبس قهوة",
+        "qid": "blur-800-903",
+        "type": "image",
+        "effect": "blur",
+        "alt": [
+          "فرنش برس"
+        ],
+        "topic": "البيت",
+        "difficultyTarget": 0.25,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-800-903.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-903.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-800-904",
+      "kind": "question",
+      "pack": "blur",
+      "a": "بانجو",
+      "p": 800,
+      "topic": "موسيقى",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a five-string banjo with round white drum head.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 800,
+        "q": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "a": "بانجو",
+        "qid": "blur-800-904",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "موسيقى",
+        "difficultyTarget": 0.25,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-800-904.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-904.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-800-905",
+      "kind": "question",
+      "pack": "blur",
+      "a": "عربة ثلج",
+      "p": 800,
+      "topic": "وسائل نقل",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a snowmobile with two skis and a rear track.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 800,
+        "q": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "a": "عربة ثلج",
+        "qid": "blur-800-905",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "وسائل نقل",
+        "difficultyTarget": 0.25,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-800-905.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-905.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-800-906",
+      "kind": "question",
+      "pack": "blur",
+      "a": "مرصد فلكي",
+      "p": 800,
+      "topic": "معالم ومنشآت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a small astronomical observatory with a silver dome and open slit.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 800,
+        "q": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "a": "مرصد فلكي",
+        "qid": "blur-800-906",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "معالم ومنشآت",
+        "difficultyTarget": 0.25,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-800-906.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-906.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-800-907",
+      "kind": "question",
+      "pack": "blur",
+      "a": "كيرلنغ",
+      "p": 800,
+      "topic": "رياضة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a granite curling stone with red handle on ice.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 800,
+        "q": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "a": "كيرلنغ",
+        "qid": "blur-800-907",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "رياضة",
+        "difficultyTarget": 0.25,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-800-907.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-907.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-800-908",
+      "kind": "question",
+      "pack": "blur",
+      "a": "مرجان",
+      "p": 800,
+      "topic": "طبيعة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a colorful branching coral colony underwater.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 800,
+        "q": "ما الذي يظهر في الصورة الضبابية؟",
+        "a": "مرجان",
+        "qid": "blur-800-908",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "طبيعة",
+        "difficultyTarget": 0.25,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-800-908.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-908.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-1000-901",
+      "kind": "question",
+      "pack": "blur",
+      "a": "تابير",
+      "p": 1000,
+      "topic": "حيوانات",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a Malayan tapir with black and white saddle coloring and short flexible snout.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 1000,
+        "q": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "a": "تابير",
+        "qid": "blur-1000-901",
+        "type": "image",
+        "effect": "blur",
+        "alt": [
+          "التابير"
+        ],
+        "topic": "حيوانات",
+        "difficultyTarget": 0.15,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-1000-901.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-901.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-1000-902",
+      "kind": "question",
+      "pack": "blur",
+      "a": "فاكهة التنين",
+      "p": 1000,
+      "topic": "أطعمة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a pink dragon fruit cut open to show white flesh and tiny black seeds.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 1000,
+        "q": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "a": "فاكهة التنين",
+        "qid": "blur-1000-902",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "أطعمة",
+        "difficultyTarget": 0.15,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-1000-902.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-902.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-1000-903",
+      "kind": "question",
+      "pack": "blur",
+      "a": "مكواة فحم",
+      "p": 1000,
+      "topic": "البيت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an antique hinged charcoal clothes iron.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 1000,
+        "q": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "a": "مكواة فحم",
+        "qid": "blur-1000-903",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "البيت",
+        "difficultyTarget": 0.15,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-1000-903.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-903.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-1000-904",
+      "kind": "question",
+      "pack": "blur",
+      "a": "مزمار القربة",
+      "p": 1000,
+      "topic": "موسيقى",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a complete traditional Scottish bagpipe with bag, chanter and three drones.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 1000,
+        "q": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "a": "مزمار القربة",
+        "qid": "blur-1000-904",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "موسيقى",
+        "difficultyTarget": 0.15,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-1000-904.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-904.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-1000-905",
+      "kind": "question",
+      "pack": "blur",
+      "a": "قطار جبلي",
+      "p": 1000,
+      "topic": "وسائل نقل",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a funicular railway carriage climbing a steep inclined track.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 1000,
+        "q": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "a": "قطار جبلي",
+        "qid": "blur-1000-905",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "وسائل نقل",
+        "difficultyTarget": 0.15,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-1000-905.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-905.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-1000-906",
+      "kind": "question",
+      "pack": "blur",
+      "a": "برج مياه",
+      "p": 1000,
+      "topic": "معالم ومنشآت",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an elevated water tank on slender supports.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 1000,
+        "q": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "a": "برج مياه",
+        "qid": "blur-1000-906",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "معالم ومنشآت",
+        "difficultyTarget": 0.15,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-1000-906.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-906.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-1000-907",
+      "kind": "question",
+      "pack": "blur",
+      "a": "رمي المطرقة",
+      "p": 1000,
+      "topic": "رياضة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an adult track athlete swinging a hammer throw implement, ball on a wire, in a throwing circle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 1000,
+        "q": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "a": "رمي المطرقة",
+        "qid": "blur-1000-907",
+        "type": "image",
+        "effect": "blur",
+        "alt": [],
+        "topic": "رياضة",
+        "difficultyTarget": 0.15,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-1000-907.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-907.json"
+          }
+        }
+      }
+    },
+    {
+      "id": "blur-1000-908",
+      "kind": "question",
+      "pack": "blur",
+      "a": "هوابط كلسية",
+      "p": 1000,
+      "topic": "طبيعة",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: limestone stalactites hanging from the ceiling of a cave.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.",
+      "question": {
+        "p": 1000,
+        "q": "ما الذي يظهر في الصورة الضبابية؟",
+        "a": "هوابط كلسية",
+        "qid": "blur-1000-908",
+        "type": "image",
+        "effect": "blur",
+        "alt": [
+          "هوابط",
+          "نوازل كلسية",
+          "هوابط كلسية",
+          "ستالاكتايت"
+        ],
+        "topic": "طبيعة",
+        "difficultyTarget": 0.15,
+        "verified": false,
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "media": {
+          "src": "blur-1000-908.webp",
+          "type": "image",
+          "title": "لغز بصري مولّد",
+          "author": "Maydan / OpenAI image generation",
+          "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+          "provenance": {
+            "kind": "ai-generated",
+            "tool": "OpenAI image generation",
+            "createdAt": "2026-09-18",
+            "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-908.json"
+          }
+        }
+      }
+    }
+  ]
+}

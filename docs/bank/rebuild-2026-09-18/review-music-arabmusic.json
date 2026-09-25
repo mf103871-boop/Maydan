@@ -1,0 +1,627 @@
+{
+  "category": "arabmusic",
+  "reviewedAt": "2026-09-23",
+  "reviewType": "Independent editorial and source QA of the actual 40-question rebuild, not the obsolete 240-question pack.",
+  "questionCount": 40,
+  "tierCounts": {
+    "200": 8,
+    "400": 8,
+    "600": 8,
+    "800": 8,
+    "1000": 8
+  },
+  "topicCount": 9,
+  "difficulty": "Editorial targets80/60/40/25/15 percent only; no player success-rate measurement.",
+  "method": "Read precise MaqamWorld teaching pages, official artist/cultural-institution biographies, institutional archival material, and publisher or licensed release catalogues. Indexed source extracts counted as such, not as a successful full-page fetch. No lyrics reproduced.",
+  "accessCaveats": [
+    {
+      "qids": [
+        "arabmusic-800-904"
+      ],
+      "note": "Dokan Bach score publisher direct product search extract was readable and explicitly credited lyrics to Mansour and composer to Zeyad; direct opens returned an error. ORF actual broadcast playlist independently credits Ziad for Saalouni. A Qobuz compilation carries generic Rahbani-brothers credits; it was not used to infer the separate roles. Do not describe the two publisher rows as full-page reads.",
+      "corroboratingUrl": "https://oe1.orf.at/programm/20251005/809921/Ziad-Rahbani-Nicht-nur-der-Sohn"
+    }
+  ],
+  "items": [
+    {
+      "qid": "arabmusic-200-901",
+      "p": 200,
+      "topic": "أغاني مصر",
+      "question": "من صاحب أغنية وألبوم «نور العين»؟",
+      "answer": "عمرو دياب",
+      "sourceUrl": "https://amrdiab.net/biography/",
+      "evidence": "Artist biography: Nour El Ein album paragraph (1996).",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-200-902",
+      "p": 200,
+      "topic": "أغاني الشام",
+      "question": "من المطربة صاحبة أغنية «شخبط شخابيط»؟",
+      "answer": "نانسي عجرم",
+      "sourceUrl": "https://play.anghami.com/song/33813463",
+      "evidence": "Licensed Anghami track title and artist identify Shakhbat Shakhabiet; official Nancy album page also found but body was not extractable.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-200-903",
+      "p": 200,
+      "topic": "الخليج والعراق",
+      "question": "من المطرب صاحب أغنية «بشرة خير»؟",
+      "answer": "حسين الجسمي",
+      "sourceUrl": "https://www.youtube.com/watch?v=QUBvVTNRp4Q",
+      "evidence": "Artist official music-video title names Hussain Al Jassmi and Boshret Kheir.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-200-904",
+      "p": 200,
+      "topic": "الخليج والعراق",
+      "question": "من المطرب العراقي الذي يلقبه جمهوره بالقيصر؟",
+      "answer": "كاظم الساهر",
+      "sourceUrl": "https://www.byblosfestival.com/kadim-al-sahir/",
+      "evidence": "Byblos Festival performer biography explicitly calls Kadim Caesar of Arabic Music and states Iraq.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-200-905",
+      "p": 200,
+      "topic": "المغرب العربي",
+      "question": "من المطرب الجزائري الذي اشتهر عالميًا بأغنية «ديدي»؟",
+      "answer": "الشاب خالد",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "evidence": "Universal Music label biography, 1992/Didi paragraph.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-200-906",
+      "p": 200,
+      "topic": "المغرب العربي",
+      "question": "من المغني صاحب أغنية «لمعلم»؟",
+      "answer": "سعد لمجرد",
+      "sourceUrl": "https://www.youtube.com/watch?v=_Fwf45pIAtM",
+      "evidence": "Artist official exclusive music-video title identifies Saad Lamjarred and LM3ALLEM.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-200-907",
+      "p": 200,
+      "topic": "آلات وعازفون",
+      "question": "ما اسم الآلة الوترية المعروفة أيضًا بالكمنجة؟",
+      "answer": "الكمان",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/violin.php",
+      "evidence": "MaqamWorld violin heading and opening paragraph give kamanja/kaman.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-200-908",
+      "p": 200,
+      "topic": "آلات وعازفون",
+      "question": "ما آلة الإيقاع الكأسية التي يُضرب جلدها باليدين وترافق الأغاني الشعبية؟",
+      "answer": "الدربكة",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/tabla.php",
+      "evidence": "MaqamWorld tabla opening description: goblet drum, skin on one side; Dirbakki/Darbuka names.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-400-901",
+      "p": 400,
+      "topic": "أغاني مصر",
+      "question": "من المطربة صاحبة أغنية «سيدي وصالك»؟",
+      "answer": "أنغام",
+      "sourceUrl": "https://music.apple.com/us/song/770937661",
+      "evidence": "Apple Music licensed Leih Sebtaha track listing credits Sidi Wesalak to Angham.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-400-902",
+      "p": 400,
+      "topic": "أغاني مصر",
+      "question": "من المطرب الشعبي المصري صاحب «يا حلو الملامح»؟",
+      "answer": "أحمد عدوية",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/accordion.php",
+      "evidence": "MaqamWorld accordion, Ahmed Adaweya demonstration caption.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-400-903",
+      "p": 400,
+      "topic": "المغرب العربي",
+      "question": "من المطربة صاحبة ألبوم «يوم ورا يوم»؟",
+      "answer": "سميرة سعيد",
+      "sourceUrl": "https://music.apple.com/us/album/youm-wara-youm/771786474",
+      "evidence": "Apple Music licensed album title and artist, Youm Wara Youm.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-400-904",
+      "p": 400,
+      "topic": "أغاني الشام",
+      "question": "من المطرب الفلسطيني الذي فاز بلقب «عرب أيدول» عام 2013؟",
+      "answer": "محمد عساف",
+      "sourceUrl": "https://www.unrwa.org/newsroom/press-releases/unrwa-commissioner-general-welcomes-singer-mohammad-assaf-unrwa-headquarters",
+      "evidence": "UNRWA contemporaneous announcement identifies Palestinian Arab Idol winner Assaf in 2013; season number removed.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-400-905",
+      "p": 400,
+      "topic": "أغاني الشام",
+      "question": "من المطربة صاحبة التسجيل الشهير «يا طيور» من تلحين القصبجي؟",
+      "answer": "أسمهان",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Ya Tuyur caption: Asmahan, Qasabgi.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-400-906",
+      "p": 400,
+      "topic": "المغرب العربي",
+      "question": "ما اللون الغنائي الجزائري الذي اشتهر به صاحب أغنية «ديدي»؟",
+      "answer": "الراي",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "evidence": "Universal Music Khaled biography repeatedly identifies rai and the Didi success; unsupported cheb/cheba wording removed.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-400-907",
+      "p": 400,
+      "topic": "قوالب غنائية وآلية",
+      "question": "ماذا يسمى الارتجال المنفرد على آلة موسيقية لاستعراض المقام ومهارة العازف؟",
+      "answer": "التقسيم",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "evidence": "MaqamWorld improvised forms, The Taqsim definition.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-400-908",
+      "p": 400,
+      "topic": "آلات وعازفون",
+      "question": "بماذا ينقر الموسيقي أوتار العود بدل القوس؟",
+      "answer": "الريشة",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
+      "evidence": "MaqamWorld oud paragraph on plectrum/risha.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-600-901",
+      "p": 600,
+      "topic": "المغرب العربي",
+      "question": "من الفنانة الجزائرية صاحبة ألبوم «راوي»؟",
+      "answer": "سعاد ماسي",
+      "sourceUrl": "https://souad-massi.com/en/biography/",
+      "evidence": "Artist official biography names Raoui as her album released March 2001.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-600-902",
+      "p": 600,
+      "topic": "المغرب العربي",
+      "question": "من المغني الجزائري صاحب الأغنية الأمازيغية «أفافا إينوفا»؟",
+      "answer": "إدير",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "evidence": "Universal Music Khaled biography identifies Kabyle singer Hamid Cheriet/Idir and Vava Inouva.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-600-903",
+      "p": 600,
+      "topic": "صناعة الألحان",
+      "question": "من لحّن أغنية «سألوني الناس» لجارة القمر؟",
+      "answer": "زياد الرحباني",
+      "sourceUrl": "https://oe1.orf.at/programm/20251005/809921/Ziad-Rahbani-Nicht-nur-der-Sohn",
+      "evidence": "ORF broadcaster actual playlist explicitly credits Ziad Rahbani as composer of Saalouni el Nass from Al Mahatta. Narrative biography on the page was not relied upon.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-600-904",
+      "p": 600,
+      "topic": "صناعة الألحان",
+      "question": "من وضع لحن «أنا في انتظارك» لكوكب الشرق؟",
+      "answer": "زكريا أحمد",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
+      "evidence": "MaqamWorld qanun, Abdel Fattah Mansi performance caption credits Zakariya Ahmad.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-600-905",
+      "p": 600,
+      "topic": "التعاون الغنائي",
+      "question": "من الفنان الذي شارك صاحب «نور العين» أغنية «القاهرة»؟",
+      "answer": "محمد منير",
+      "sourceUrl": "https://amrdiab.net/biography/",
+      "evidence": "Artist Amr Diab biography, November 2015/January 2016 Al Qahira paragraph names Mohamed Mounir.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-600-906",
+      "p": 600,
+      "topic": "مقامات وإيقاعات",
+      "question": "ما الإيقاع الرباعي الشائع في الأغاني العربية والذي يُعزف في «دارت الأيام»؟",
+      "answer": "المقسوم",
+      "sourceUrl": "https://www.maqamworld.com/en/iqaa/maqsum.php",
+      "evidence": "MaqamWorld Maqsum page:4/4 heading and Darit el-Ayyam example. Editorial note: asks a common rhythm used in the example, not its exclusive rhythm.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-600-907",
+      "p": 600,
+      "topic": "آلات وعازفون",
+      "question": "ما اسم الصنوج النحاسية الصغيرة التي يثبتها المؤدي في أصابعه لضبط الإيقاع؟",
+      "answer": "الصاجات",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/sagat.php",
+      "evidence": "MaqamWorld sagat heading and first descriptive paragraph: brass finger cymbals.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-600-908",
+      "p": 600,
+      "topic": "قوالب غنائية وآلية",
+      "question": "ما القالب الغنائي القصير الذي تتناوب فيه الكوبليهات مع مذهب متكرر؟",
+      "answer": "الطقطوقة",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, The Taqtuqa section: verses and repeated chorus.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-800-901",
+      "p": 800,
+      "topic": "المغرب العربي",
+      "question": "من المطرب الجزائري صاحب التسجيل الأصلي لأغنية «يا رايح»؟",
+      "answer": "دحمان الحراشي",
+      "sourceUrl": "https://www.imarabe.org/fr/agenda/spectacles/hommage-el-hadj-m-hamed-el-anka-et-dahmane-el-harrachi",
+      "evidence": "Institut du monde arabe event curator identifies Dahmane as creator of Ya Rayah and distinguishes Rachid Taha cover.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-800-902",
+      "p": 800,
+      "topic": "المغرب العربي",
+      "question": "ما الفرقة المغربية التي يتناولها الفيلم الموسيقي «الحال»؟",
+      "answer": "ناس الغيوان",
+      "sourceUrl": "https://www.film-foundation.org/trances-kj",
+      "evidence": "Film Foundation restoration project article identifies El Hal/Trances and Nass El-Ghiwane.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-800-903",
+      "p": 800,
+      "topic": "صناعة الألحان",
+      "question": "من وضع لحن «حيرانة ليه» لليلى مراد؟",
+      "answer": "داود حسني",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Hayrana Leh caption credits Dawud Husni and Leila Murad.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-800-904",
+      "p": 800,
+      "topic": "صناعة الألحان",
+      "question": "من كتب كلمات «سألوني الناس» لجارة القمر؟",
+      "answer": "منصور الرحباني",
+      "sourceUrl": "https://dokanbach.com/product/saalouny-elnas-%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A-%D8%A7%D9%84%D9%86%D8%A7%D8%B3/",
+      "evidence": "Dokan Bach score publisher indexed product metadata names Mansour ElRahbani as lyricist. Removed illness story. See access/credit caveat below.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-800-905",
+      "p": 800,
+      "topic": "مقامات وإيقاعات",
+      "question": "على أي مقام لحّن القصبجي مقطوعته الآلية «ذكرياتي»؟",
+      "answer": "نهاوند",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "evidence": "MaqamWorld instrumental forms, Zikrayati caption identifies Nahawand.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-800-906",
+      "p": 800,
+      "topic": "آلات وعازفون",
+      "question": "من العازف السوري الذي اشتهر بلقب أمير الكمان؟",
+      "answer": "سامي الشوا",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/violin.php",
+      "evidence": "MaqamWorld violin, Sami al-Shawwa caption: Syrian, Prince of Violin.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-800-907",
+      "p": 800,
+      "topic": "قوالب غنائية وآلية",
+      "question": "ما القالب الآلي العثماني الأصل الذي يُعرف بسرعته، ومن أمثلته «فرحفزا» للسنباطي؟",
+      "answer": "اللونجا",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "evidence": "MaqamWorld Ottoman forms, Longa section and Farahfaza Sunbati example.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-800-908",
+      "p": 800,
+      "topic": "قوالب غنائية وآلية",
+      "question": "ما اسم المقدمة الآلية القصيرة المتكررة التي تعرّف بالمقام قبل الغناء؟",
+      "answer": "الدولاب",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "evidence": "MaqamWorld instrumental forms, Dulab definition.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-1000-901",
+      "p": 1000,
+      "topic": "صناعة الألحان",
+      "question": "من لحّن موشح «ملا الكاسات»؟",
+      "answer": "محمد عثمان",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "evidence": "MaqamWorld vocal forms, Mala al-Kasat caption credits Muhammad Uthman.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-1000-902",
+      "p": 1000,
+      "topic": "صناعة الألحان",
+      "question": "من صاحب سماعي حجازكار كرد الذي يستخدم إيقاع الجورجينا في خانته الرابعة؟",
+      "answer": "روحي الخماش",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "evidence": "MaqamWorld Ottoman forms, Rawhi Khammash Hijazkar Kurd example and Jurjina fourth khana.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-1000-903",
+      "p": 1000,
+      "topic": "آلات وعازفون",
+      "question": "من عازف الناي المصري الذي كان من أعضاء الفرقة الماسية وعُرف بتدريس هذه الآلة؟",
+      "answer": "محمود عفت",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/nay.php",
+      "evidence": "MaqamWorld nay, Mahmud Effat caption: Egypt, teacher, Diamond Orchestra.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-1000-904",
+      "p": 1000,
+      "topic": "آلات وعازفون",
+      "question": "من رائد الأورغ المصري الذي شارك هاني مهنا العزف في «قارئة الفنجان»؟",
+      "answer": "مجدي الحسيني",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/org.php",
+      "evidence": "MaqamWorld org, Qariat al-Fingan caption identifies both Magdi el-Husseini and Hani Mehanna.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-1000-905",
+      "p": 1000,
+      "topic": "قوالب غنائية وآلية",
+      "question": "ما نوع الموال المعروف بالسبعاوي لتكوّنه من سبعة أبيات؟",
+      "answer": "الموال البغدادي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "evidence": "MaqamWorld improvised forms, Mawwal section describes Baghdadi/Sabawi and seven lines.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-1000-906",
+      "p": 1000,
+      "topic": "التعاون الغنائي",
+      "question": "من المطربة اليونانية التي شاركت صاحب «نور العين» دويتو «بحبك أكتر»؟",
+      "answer": "أنجيلا ديميتريو",
+      "sourceUrl": "https://amrdiab.net/biography/",
+      "evidence": "Artist Amr Diab biography, Amarain paragraph explicitly identifies Greek Angela Dimitriou and Bahebbak Aktar.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-1000-907",
+      "p": 1000,
+      "topic": "المغرب العربي",
+      "question": "ما الألبوم المشترك الذي جمع صاحب «ديدي» بالموسيقي صافي بوتلة؟",
+      "answer": "كوتشي",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "evidence": "Universal Music Khaled biography explicitly names Kutche and Safy Boutella. Removed unnecessary jazz-specialism clue.",
+      "review": "supported"
+    },
+    {
+      "qid": "arabmusic-1000-908",
+      "p": 1000,
+      "topic": "مقامات وإيقاعات",
+      "question": "ما الإيقاع العشري الذي تُبنى عليه الخانات الثلاث الأولى في قالب السماعي؟",
+      "answer": "السماعي الثقيل",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "evidence": "MaqamWorld Ottoman forms, Samai definition: Samai Thaqil except fourth khana.",
+      "review": "supported"
+    }
+  ],
+  "validation": {
+    "command": "npm run bank:validate -- --cat arabmusic",
+    "exitCode": 0,
+    "contentErrors": 0,
+    "reviewedWarnings": "Single-word instrument mentions in other artist clues are incidental; cross-category entity answers are allowed with distinct clues. No within-pack normalized answer duplicates or multiword answer leaks.",
+    "gitDiffCheckExitCode": 0
+  },
+  "changes": [
+    {
+      "qid": "arabmusic-200-905",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Khaled_(musician)"
+      },
+      "after": {
+        "sourceUrl": "https://universalmusic.fr/artistes/20000129953"
+      }
+    },
+    {
+      "qid": "arabmusic-600-902",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Idir_(singer)"
+      },
+      "after": {
+        "sourceUrl": "https://universalmusic.fr/artistes/20000129953"
+      }
+    },
+    {
+      "qid": "arabmusic-1000-907",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Khaled_(musician)"
+      },
+      "after": {
+        "sourceUrl": "https://universalmusic.fr/artistes/20000129953"
+      }
+    },
+    {
+      "qid": "arabmusic-200-902",
+      "before": {
+        "sourceUrl": "https://www.youtube.com/Nancyajram"
+      },
+      "after": {
+        "sourceUrl": "https://play.anghami.com/song/33813463"
+      }
+    },
+    {
+      "qid": "arabmusic-200-903",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Boshret_Kheir"
+      },
+      "after": {
+        "sourceUrl": "https://www.youtube.com/watch?v=QUBvVTNRp4Q"
+      }
+    },
+    {
+      "qid": "arabmusic-200-904",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Kadim_Al_Sahir"
+      },
+      "after": {
+        "sourceUrl": "https://www.byblosfestival.com/kadim-al-sahir/"
+      }
+    },
+    {
+      "qid": "arabmusic-200-906",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Saad_Lamjarred"
+      },
+      "after": {
+        "sourceUrl": "https://www.youtube.com/watch?v=_Fwf45pIAtM"
+      }
+    },
+    {
+      "qid": "arabmusic-400-901",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Angham"
+      },
+      "after": {
+        "sourceUrl": "https://music.apple.com/us/song/770937661"
+      }
+    },
+    {
+      "qid": "arabmusic-400-903",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Samira_Said"
+      },
+      "after": {
+        "sourceUrl": "https://music.apple.com/us/album/youm-wara-youm/771786474"
+      }
+    },
+    {
+      "qid": "arabmusic-400-904",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mohammed_Assaf"
+      },
+      "after": {
+        "sourceUrl": "https://www.unrwa.org/newsroom/press-releases/unrwa-commissioner-general-welcomes-singer-mohammad-assaf-unrwa-headquarters"
+      }
+    },
+    {
+      "qid": "arabmusic-400-904",
+      "before": {
+        "q": "من المطرب الفلسطيني الفائز بالموسم الثاني من «عرب أيدول»؟"
+      },
+      "after": {
+        "q": "من المطرب الفلسطيني الذي فاز بلقب «عرب أيدول» عام 2013؟"
+      }
+    },
+    {
+      "qid": "arabmusic-400-906",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Khaled_(musician)"
+      },
+      "after": {
+        "sourceUrl": "https://universalmusic.fr/artistes/20000129953"
+      }
+    },
+    {
+      "qid": "arabmusic-400-906",
+      "before": {
+        "q": "ما اللون الغنائي الجزائري المرتبط بألقاب «الشاب» و«الشابة»؟"
+      },
+      "after": {
+        "q": "ما اللون الغنائي الجزائري الذي اشتهر به صاحب أغنية «ديدي»؟"
+      }
+    },
+    {
+      "qid": "arabmusic-600-901",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Souad_Massi"
+      },
+      "after": {
+        "sourceUrl": "https://souad-massi.com/en/biography/"
+      }
+    },
+    {
+      "qid": "arabmusic-600-903",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Fairuz"
+      },
+      "after": {
+        "sourceUrl": "https://dokanbach.com/product/saalouny-elnas-%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A-%D8%A7%D9%84%D9%86%D8%A7%D8%B3/"
+      }
+    },
+    {
+      "qid": "arabmusic-800-904",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Fairuz"
+      },
+      "after": {
+        "sourceUrl": "https://dokanbach.com/product/saalouny-elnas-%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A-%D8%A7%D9%84%D9%86%D8%A7%D8%B3/"
+      }
+    },
+    {
+      "qid": "arabmusic-800-904",
+      "before": {
+        "q": "من كتب كلمات «سألوني الناس» بعد مرض أخيه عاصي؟"
+      },
+      "after": {
+        "q": "من كتب كلمات «سألوني الناس» التي لحّنها زياد الرحباني؟"
+      }
+    },
+    {
+      "qid": "arabmusic-800-901",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Dahmane_El_Harrachi"
+      },
+      "after": {
+        "sourceUrl": "https://www.imarabe.org/fr/agenda/spectacles/hommage-el-hadj-m-hamed-el-anka-et-dahmane-el-harrachi"
+      }
+    },
+    {
+      "qid": "arabmusic-800-902",
+      "before": {
+        "sourceUrl": "https://en.wikipedia.org/wiki/Nass_El_Ghiwane"
+      },
+      "after": {
+        "sourceUrl": "https://www.film-foundation.org/trances-kj"
+      }
+    },
+    {
+      "qid": "arabmusic-1000-907",
+      "before": {
+        "q": "ما الألبوم المشترك الذي جمع صاحب «ديدي» بموسيقي الجاز صافي بوتلة؟"
+      },
+      "after": {
+        "q": "ما الألبوم المشترك الذي جمع صاحب «ديدي» بالموسيقي صافي بوتلة؟"
+      }
+    },
+    {
+      "qid": "arabmusic-600-903",
+      "after": {
+        "sourceUrl": "https://oe1.orf.at/programm/20251005/809921/Ziad-Rahbani-Nicht-nur-der-Sohn"
+      },
+      "reason": "Use fully readable primary broadcast playlist instead of score-publisher index extract."
+    }
+  ],
+  "packSha256": "a11d6f001c2a012489b0b0c0efa5acf1bca77bc52fb45c2c0d7bb7caf46747aa",
+  "maxQuestionWords": 14,
+  "maxAnswerWords": 2,
+  "maxTopicCountPerTier": 2
+}

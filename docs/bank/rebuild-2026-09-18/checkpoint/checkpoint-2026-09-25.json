@@ -1,0 +1,130 @@
+{
+  "date": "2026-09-25",
+  "status": "content_review_complete",
+  "userInstruction": "اكمل",
+  "repository": "mf103871-boop/Maydan",
+  "branch": "codex/badeeha-curated-bank-2026-09-18",
+  "releasable": false,
+  "recoveryBaseCommit": "2a85059a3de04dad49126835bfa09b7cd9542602",
+  "priorCheckpoint": "checkpoint-2026-09-23.json",
+  "handoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md",
+  "thisContinuation": {
+    "integratedPacks": [
+      "flags",
+      "silhouette",
+      "blur",
+      "guesscar",
+      "tilepuzzle",
+      "placefinder",
+      "reveal",
+      "spotdiff"
+    ],
+    "newQuestions": 320,
+    "newSilhouetteAssets": 8,
+    "correctedSilhouetteAssets": [
+      "silhouette-200-905",
+      "silhouette-200-907",
+      "silhouette-200-908",
+      "silhouette-800-905"
+    ],
+    "generatedTool": "OpenAI image generation (built-in), independent call per asset",
+    "flagGameplayScope": "All40 identity/source reviewed and decoded;5 actual gameplay samples,41checks",
+    "silhouetteGameplayScope": "All40 individual gameplay and black/color visual review;486checks",
+    "mediaDirectories": [
+      "media/flags/",
+      "media/silhouette/",
+      "media/blur/",
+      "media/guesscar/",
+      "media/tilepuzzle/",
+      "media/placefinder/",
+      "media/reveal/",
+      "media/spotdiff/"
+    ],
+    "promptRecords": "docs/bank/rebuild-2026-09-18/generated-records/",
+    "flagsReview": "docs/bank/rebuild-2026-09-18/review-flags.json",
+    "silhouetteReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "additionalCompletedImagePacks": {
+      "blur": {
+        "questions": 40,
+        "runtimeChecks": 486,
+        "review": "docs/bank/rebuild-2026-09-18/review-blur-generated.json"
+      },
+      "guesscar": {
+        "questions": 40,
+        "runtimeChecks": 486,
+        "review": "docs/bank/rebuild-2026-09-18/review-guesscar-final.json"
+      },
+      "tilepuzzle": {
+        "questions": 40,
+        "runtimeChecks": 606,
+        "review": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json"
+      }
+    },
+    "completedImageReviews": {
+      "flags": {
+        "review": "docs/bank/rebuild-2026-09-18/review-flags.json",
+        "scope": "40 صورة و5 أسئلة فعلية؛ 41 فحصًا"
+      },
+      "silhouette": {
+        "review": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+        "scope": "40 صورة وسؤالًا؛ 486 فحصًا وشفافية حقيقية"
+      },
+      "blur": {
+        "review": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "scope": "40 صورة وسؤالًا؛ 486 فحصًا"
+      },
+      "guesscar": {
+        "review": "docs/bank/rebuild-2026-09-18/review-guesscar-final.json",
+        "scope": "40 صورة وسؤالًا؛ 486 فحصًا"
+      },
+      "tilepuzzle": {
+        "review": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+        "scope": "40 صورة وسؤالًا؛ 606 فحوص"
+      },
+      "placefinder": {
+        "review": "docs/bank/rebuild-2026-09-18/review-placefinder-final.json",
+        "scope": "40 صورة وسؤالًا؛ 446 فحصًا"
+      },
+      "reveal": {
+        "review": "docs/bank/rebuild-2026-09-18/review-reveal-generated.json",
+        "scope": "40 صورة وسؤالًا؛ 1450 فحصًا و43 للحركة العادية"
+      },
+      "spotdiff": {
+        "review": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+        "scope": "80 صورة و40 سؤالًا بعرض320 و390؛ 1089 فحصًا"
+      }
+    },
+    "humanListening": {
+      "heard": 40,
+      "currentlyApproved": 40,
+      "originalEvidence": "docs/bank/rebuild-2026-09-18/checkpoint/sound-resume/human-listening-original-2026-09-25.json"
+    },
+    "rendererFix": {
+      "files": [
+        "src/games/badeeha/App.js",
+        "src/games/badeeha/styles.css"
+      ],
+      "reason": "Reveal overlay intercepted the reveal-piece button. Button now sits beside the image stage; real-click regression evidence retained."
+    }
+  },
+  "completedContent": {
+    "packs": 78,
+    "questions": 3120,
+    "verifiedQuestionsIncludingPartialPacks": 3120,
+    "note": "Content counts reflect exact40 new IDs, verified flags and zero validator errors. Historical status rows are not blanket runtime approval."
+  },
+  "activeBankQuestions": 3120,
+  "integratedGeneratedArtRecords": 478,
+  "validation": "docs/bank/rebuild-2026-09-18/validation-2026-09-25.json",
+  "remaining": [],
+  "nextPack": null,
+  "releaseBlockers": [
+    "No merge, deployment, full offline/device release review or production account/payment validation claimed."
+  ],
+  "preserved": [
+    "Existing78 category names/order",
+    "All old media files until final replacements are validated",
+    "Payment/account/service-worker/fabraka code unchanged",
+    "Original September23 checkpoint remains historical evidence"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "blur-1000-904",
+  "kind": "question",
+  "pack": "blur",
+  "a": "مزمار القربة",
+  "p": 1000,
+  "topic": "موسيقى",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a complete traditional Scottish bagpipe with bag, chanter and three drones.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.\nInstrument accuracy: show one cloth-covered inflated bag, exactly three long drone pipes emerging from it, one blowpipe with mouthpiece and one finger-holed chanter. Separate all pipes clearly so the structure is plausible; no extra pipes. Entire instrument inside the frame.",
+  "question": {
+    "p": 1000,
+    "q": "ما آلة النفخ التي تجمع كيسًا مرنًا وأنابيب متعددة؟",
+    "a": "مزمار القربة",
+    "qid": "blur-1000-904",
+    "type": "image",
+    "effect": "blur",
+    "alt": [
+      "قربة موسيقية",
+      "آلة القربة",
+      "قربة اسكتلندية",
+      "مزمار اسكتلندي",
+      "Bagpipes"
+    ],
+    "topic": "موسيقى",
+    "difficultyTarget": 0.15,
+    "verified": true,
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "media": {
+      "src": "blur-1000-904.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation (built-in)",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-904.json"
+      }
+    }
+  }
+}

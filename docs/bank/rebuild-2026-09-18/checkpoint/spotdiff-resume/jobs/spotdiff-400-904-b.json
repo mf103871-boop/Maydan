@@ -1,0 +1,6 @@
+{
+  "id": "spotdiff-400-904-b",
+  "kind": "question",
+  "pack": "spotdiff",
+  "prompt": "Use case: precise-object-edit. Input image is the EXACT first image of a spot-the-difference pair. Make ONE AND ONLY ONE intentional change: Remove only the top BLUE cube from the three-cube tower, leaving the lower GREEN cube resting on RED cube exactly in original positions. Background fills vacated top cube area, horse unchanged. Preserve every other visible detail pixel-consistently: exact camera, crop, geometry, positions, colors, textures, light and shadows. Do not introduce any other semantic difference. Same landscape 4:3 composition, no words, labels or new objects."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "guesscar-1000-904",
+  "kind": "question",
+  "pack": "guesscar",
+  "p": 1000,
+  "a": "باغاني هوايرا",
+  "topic": "خارقة",
+  "prompt": "Edit this generated car illustration only. Preserve the silver Pagani Huayra model family, exact composition, complete vehicle framing, wheels, lamps, mirrors, lighting, ivory studio background and proportions. Remove the tiny cursive script badge on the lower rear side panel immediately ahead of the visible rear wheel and replace it with uninterrupted matching silver body paint. Also remove any other readable letters, numbers or model-name lettering while retaining simple non-text graphic emblems. The license plate stays blank. Do not add text or watermark.",
+  "priorQid": "guesscar-1000-022",
+  "identityReference": {
+    "src": "guesscar-1000-022.webp",
+    "type": "image",
+    "title": "Geneva International Motor Show 2019, Le Grand-Saconnex",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pagani,_GIMS_2019,_Le_Grand-Saconnex_(GIMS0023).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "question": {
+    "p": 1000,
+    "q": "ما طراز السيارة الفضية ذات المرايا المرتفعة على سيقان منحنية؟",
+    "a": "باغاني هوايرا",
+    "alt": [
+      "هوايرا",
+      "Pagani Huayra",
+      "Huayra"
+    ],
+    "qid": "guesscar-1000-904",
+    "type": "image",
+    "topic": "خارقة",
+    "difficultyTarget": 0.15,
+    "verified": true,
+    "sourceUrl": "https://www.pagani.com/huayra/",
+    "media": {
+      "src": "guesscar-1000-904.webp",
+      "type": "image",
+      "title": "سيارة — تصوير توضيحي مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/guesscar-1000-904.json"
+      }
+    }
+  },
+  "model": "2012 Pagani Huayra coupe, silver",
+  "initialPrompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2012 Pagani Huayra coupe, silver.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "generationMethod": "Edit of original generated illustration; original prompt and hash retained in per-asset history."
+}

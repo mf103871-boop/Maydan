@@ -61,6 +61,19 @@ test('collectCredits: بطاقة إسناد لكل ملف مرة واحدة، و
   assert.deepEqual(collectCredits([]), []);
 });
 
+test('collectCredits: generated media disclose AI creation without invented source or photo license', () => {
+  const media = { src: 'scene.webp', type: 'image', title: 'مشهد توضيحي', author: 'ميدان',
+    disclosure: 'صورة توضيحية مولّدة بالذكاء الاصطناعي', provenance: { kind: 'ai-generated' },
+    sourceUrl: 'https://unrelated.example/photograph', license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/' };
+  const [credit] = collectCredits([{ id: 'trial', name: 'اختبار', qs: [{ media }, { media }] }]);
+  assert.equal(credit.generated, true);
+  assert.equal(credit.disclosure, media.disclosure);
+  assert.equal(credit.url, 'media/trial/scene.webp');
+  assert.equal(credit.sourceUrl, '');
+  assert.equal(credit.license, '');
+  assert.equal(credit.licenseUrl, '');
+});
+
 test('deckMedia: يجمع ملفات الجولة بلا تكرار ويتجاهل حزمة غير معروفة', () => {
   const cats = [{ id: 'a' }, { id: 'b' }];
   const deck = {

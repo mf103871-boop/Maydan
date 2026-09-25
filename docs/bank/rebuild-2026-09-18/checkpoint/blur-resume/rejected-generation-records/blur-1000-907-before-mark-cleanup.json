@@ -1,0 +1,22 @@
+{
+  "id": "blur-1000-907",
+  "kind": "question",
+  "pack": "blur",
+  "file": "media/blur/blur-1000-907.webp",
+  "asset": "media/blur/blur-1000-907.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: an adult track athlete swinging a hammer throw implement, ball on a wire, in a throwing circle.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed.  \nBackground: simple uncluttered setting appropriate to the subject, natural lighting.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words. Create a sharp original, not a blurred image; the game applies the blur.  The subject must be visually unambiguous, with a strong clear outline and identifying features large enough to survive a moderate blur. Do not add any text or split-panel layout. Keep the entire subject in frame.\nSports accuracy: one adult athlete holding a single handle with both hands, one thin taut wire running unobstructed from that handle to one clearly visible heavy spherical metal ball. Capture an anatomically correct two-footed stance in a throwing circle, entire body and full wire and ball visible, no detached wire or duplicated arms; no motion blur on the implement.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 138046,
+  "sha256": "efb6089daa49ca7f66870b7874ff3d0951c0efae1fd047fcc4c4ca70b079fa86",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "identity-reviewed-runtime-pending",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+    "note": "Full-size image shows an athlete standing inside a circular throwing area within a cage, both hands on a handle joined by one continuous taut wire to a spherical metal head. The hammer equipment and pose are coherent for class identification. Fine wire disappears in the approximate static blur; contextual question about a ball attached to a wire matters. A conspicuous swoosh-like shoe mark remains a minor no-logo brief issue, separate from successful subject identity.",
+    "gameplayReview": "pending"
+  }
+}

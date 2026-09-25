@@ -1,0 +1,314 @@
+{
+  "executedAt": "2026-09-25T03:41:25.264Z",
+  "sourcePackSha256": "bca69ef0b6d6a4e6a739ba701646c81a349e70040bd579848fa0bec4c39c9325",
+  "mockAccountOnly": true,
+  "sourcePackQuestions": 40,
+  "selection": "Additional normal-motion smoke case, one200-point question; early answer reveals all tiles, hide restores six unopened tiles; ordinary clicks only",
+  "manualVisualReview": "All40 closed/six-open/answer contact-sheet panels viewed on2026-09-25. Full portraits retain complete faces and no names/logos; partial openings vary because tiles are random and more pieces remain available.",
+  "results": [
+    {
+      "name": "all40 neutral media filenames",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: fresh question resets12 opaque closed pieces",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: cover encloses complete image",
+      "ok": true,
+      "detail": {
+        "ib": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 326,
+          "height": 326
+        },
+        "cb": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 326,
+          "height": 326
+        }
+      }
+    },
+    {
+      "name": "reveal-200-901: generic alt and no answer metadata leak",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "reveal-200-901: no initial enlargement",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: pressing hidden image cannot enlarge",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: fits 390px viewport",
+      "ok": true,
+      "detail": {
+        "box": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 326,
+          "height": 326
+        },
+        "layout": {
+          "width": 390,
+          "scroll": 390,
+          "fit": "contain"
+        }
+      }
+    },
+    {
+      "name": "reveal-200-901: fits 320px viewport",
+      "ok": true,
+      "detail": {
+        "box": {
+          "x": 32,
+          "y": 457.28125,
+          "width": 256,
+          "height": 256
+        },
+        "layout": {
+          "width": 320,
+          "scroll": 320,
+          "fit": "contain"
+        }
+      }
+    },
+    {
+      "name": "reveal-200-901: fits 1440px viewport",
+      "ok": true,
+      "detail": {
+        "box": {
+          "x": 445.3125,
+          "y": 437.5,
+          "width": 549.375,
+          "height": 460
+        },
+        "layout": {
+          "width": 1440,
+          "scroll": 1440,
+          "fit": "contain"
+        }
+      }
+    },
+    {
+      "name": "reveal-200-901: click1 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step1 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click2 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step2 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click3 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step3 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click4 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step4 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click5 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step5 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click6 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step6 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: early answer opens all tiles",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: hiding early answer restores six unopened tiles",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click7 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step7 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click8 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step8 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click9 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step9 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click10 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step10 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click11 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step11 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: click12 opens exactly one piece",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: step12 keeps answer metadata hidden",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: exhausted pieces button disabled",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: answer exposes every piece and enables enlargement",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: revealed text and alt match",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: lightbox has the revealed answer alt",
+      "ok": true
+    },
+    {
+      "name": "reveal-200-901: answer hide retains player progress but blocks enlargement",
+      "ok": true
+    },
+    {
+      "name": "one additional normal-motion early-reveal/hide case exercised",
+      "ok": true
+    },
+    {
+      "name": "no browser runtime errors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "no missing assets",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "questions": [
+    {
+      "qid": "reveal-200-901",
+      "answer": "عادل إمام",
+      "tier": 200,
+      "batch": 0,
+      "ok": true,
+      "progress": [
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "sizing": [
+        {
+          "width": 390,
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 326,
+            "height": 326
+          },
+          "layout": {
+            "width": 390,
+            "scroll": 390,
+            "fit": "contain"
+          }
+        },
+        {
+          "width": 320,
+          "box": {
+            "x": 32,
+            "y": 457.28125,
+            "width": 256,
+            "height": 256
+          },
+          "layout": {
+            "width": 320,
+            "scroll": 320,
+            "fit": "contain"
+          }
+        },
+        {
+          "width": 1440,
+          "box": {
+            "x": 445.3125,
+            "y": 437.5,
+            "width": 549.375,
+            "height": 460
+          },
+          "layout": {
+            "width": 1440,
+            "scroll": 1440,
+            "fit": "contain"
+          }
+        }
+      ],
+      "assetSha256": "a18a5e62f6808fa19614cdc02d36e533cc18951104652172fdfccefdaeeb73de",
+      "evidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/reveal/contact-200.png",
+      "panel": "reveal-200-901"
+    }
+  ],
+  "errors": [],
+  "networkErrors": [],
+  "sourceFiles": {
+    "appSha256": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca",
+    "cssSha256": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13"
+  }
+}

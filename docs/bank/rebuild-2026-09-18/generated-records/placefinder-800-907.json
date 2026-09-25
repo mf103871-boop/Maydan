@@ -1,0 +1,32 @@
+{
+  "id": "placefinder-800-907",
+  "kind": "question",
+  "pack": "placefinder",
+  "file": "media/placefinder/placefinder-800-907.webp",
+  "asset": "media/placefinder/placefinder-800-907.webp",
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. Rapa Nui Easter Island moai statues, group of five monumental weathered grey-brown stone ancestor figures standing shoulder-to-shoulder on a low ahu stone platform, elongated rectangular faces with heavy brow ridges, long noses, elongated ears, narrow lips and torsos with arms held against sides. Three-quarter view emphasizing full statues, green grass and distant blue Pacific sea behind, one statue may have a dark red cylindrical pukao but others bare. No living people, no fantasy carved symbols. Illustrative group, not an exact count of a named ahu.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 212654,
+  "sha256": "125530548e473039c0b2092417aa59cf057c19d9002e624779e70ca37f587433",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReviewed": true,
+    "sourceReview": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/source-review-2026-09-25.json",
+    "identity": "Elongated stone heads and torsos with long noses, ears and side arms on ahu; one pukao. Illustrative group, not exact inventory of a named ahu.",
+    "scope": "Landmark recognition and actual image presentation; not measured geometry or documentary image accuracy.",
+    "runtime": {
+      "status": "approved",
+      "allPackQuestionsExercised": 40,
+      "thisQuestionChecksPassed": 11,
+      "packChecksPassed": 446,
+      "packChecksTotal": 446,
+      "sourcePackSha256": "abde8ced012f5885171c7b4c504d95d443722df28e3459b83643c18a0185310a",
+      "evidence": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/ui-2026-09-25/results.json"
+    }
+  }
+}

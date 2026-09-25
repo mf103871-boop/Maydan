@@ -1,0 +1,26 @@
+{
+  "id": "guesscar-400-903",
+  "kind": "question",
+  "pack": "guesscar",
+  "file": "media/guesscar/guesscar-400-903.webp",
+  "asset": "media/guesscar/guesscar-400-903.webp",
+  "prompt": "Use case: product-mockup.\nAsset: one AI-generated car-identification illustration for an Arabic family quiz.\nSubject: 2023 Ford Ranger P703 Wildtrak double cab, orange.\nGenerate a new high-quality realistic studio rendering of precisely this vehicle model and generation. Match its real proportions, characteristic body shape, grille, headlights, windows and wheel layout accurately; do not invent a hybrid car.\nComposition: full vehicle from front three-quarter angle (rear three-quarter angle for Tatra 87), centered, wheels and roof wholly visible, landscape 4:3. Soft ivory seamless studio floor and background, subtle contact shadow, natural materials and paint.\nDo not reproduce the described original photograph or its environment. No people, scenery, border, watermark or captions. The license plate must be blank. Omit readable model-name lettering that would reveal the answer. Brand emblems may retain their simple graphic shapes. This is a faithful visual illustration, not a document photograph.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 118314,
+  "sha256": "d260cd5d7255b6203434931c67950399dfd84bd534718aaf0c7db274777e9a9a",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "subjectReview": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-guesscar-final.json",
+    "note": "Ranger double-cab and C-shaped headlights match current model family.",
+    "gameplayReview": "approved",
+    "scope": "Broad model-family identification, complete framing and absence of readable model-name answers. Exact year, trim and fine engineering fidelity are not certified.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/guesscar/runtime.json",
+    "runtimePackSha256": "7a1cd3fd4d4f947d19af7831914c121f0efe5464b64b2d10a44ea2bf81c3eec9"
+  }
+}

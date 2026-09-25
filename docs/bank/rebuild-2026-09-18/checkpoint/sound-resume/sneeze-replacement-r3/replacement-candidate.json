@@ -1,0 +1,88 @@
+{
+  "id": "sound-400-905",
+  "revision": "r3",
+  "preparedAt": "2026-09-25T06:49:22.201Z",
+  "file": "sound-400-905-r3.mp3",
+  "sha256": "dd16293f4364987340dad4d1f8836b4b844f9169bab6b5111cb7c15f6c2dc17f",
+  "bytes": 48945,
+  "question": "ما الفعل البشري المسموع في هذا المقطع؟",
+  "answer": "عطاس",
+  "alt": [
+    "عطسة",
+    "عطس"
+  ],
+  "p": 400,
+  "topic": "جسم وحركة",
+  "source": {
+    "retrievedAt": "2026-09-25T06:48:17.490Z",
+    "sourceUrl": "https://freesound.org/people/sofiuzc/sounds/563313/",
+    "sourceHttpStatus": 200,
+    "title": "sneeze.wav",
+    "author": "sofiuzc",
+    "published": "2021-03-13",
+    "sourceOriginal": {
+      "format": "WAV",
+      "durationSeconds": 3,
+      "channels": 2,
+      "sampleRateHz": 44100,
+      "bitDepth": 16
+    },
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "licenseLinksInFetchedPage": [
+      "http://creativecommons.org/publicdomain/zero/1.0/"
+    ],
+    "sourcePageActuallyOpened": true,
+    "licenseDeedActuallyOpened": true,
+    "evidence": "Creator describes an unexpected natural sneeze while the microphone was on, before the planned recording. The page describes the sneeze only and does not mention speech or music.",
+    "evidenceLimits": "This is source-description evidence, not listening. Absence of speech/music and perceived clarity still require the user to listen.",
+    "download": {
+      "url": "https://cdn.freesound.org/previews/563/563313_12536394-hq.mp3",
+      "httpStatus": 200,
+      "contentType": "audio/mpeg",
+      "bytes": 72109,
+      "sha256": "abc085f6c0e9be5666259029a9097a4b6d7a3b75ff205550972816d56235d35e",
+      "file": "input-sofiuzc-563313-hq.mp3",
+      "type": "Public HQ MP3 preview; no original WAV claimed."
+    }
+  },
+  "processing": {
+    "fullSourceEventRetained": true,
+    "sourceStartSeconds": 0,
+    "sourceDurationSeconds": 3,
+    "trimmed": false,
+    "compressed": false,
+    "synthetic": false,
+    "composite": false,
+    "speedUnchanged": true,
+    "ffmpegFilter": "aformat=channel_layouts=mono,volume=-7.08371415dB",
+    "peakNormalizationTargetDbFS": -2,
+    "metadataRemoved": true,
+    "encoder": "ffmpeg version 6.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers"
+  },
+  "technical": {
+    "durationSeconds": 3,
+    "sampleRateHz": 44100,
+    "channels": 1,
+    "codec": "mp3",
+    "bitRate": 128000,
+    "peakDbFS": -1.4098830971451068,
+    "rmsDbFS": -24.64078224447791,
+    "decodeSucceeded": true,
+    "within160KiB": true,
+    "within8Seconds": true,
+    "notDigitallyClipped": true
+  },
+  "review": {
+    "status": "pending-human-listening",
+    "sourceAndLicenseActuallyRead": true,
+    "listened": false,
+    "naturalnessEvidence": "Creator explicitly describes a natural, unplanned sneeze recorded with the microphone already on.",
+    "speechOrMusic": "Source describes only the sneeze; absence of other audible content is not confirmed by listening.",
+    "limits": "Neither recognizability nor absence of speech/music is approved until the user listens. Signal analysis is technical evidence only."
+  },
+  "rejectedPriorSourcesNotReused": [
+    "Double_sneeze_(man).ogg",
+    "https://freesound.org/people/edschaefer/sounds/464232/"
+  ]
+}

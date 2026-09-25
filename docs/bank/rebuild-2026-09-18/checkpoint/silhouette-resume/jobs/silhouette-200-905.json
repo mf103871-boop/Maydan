@@ -1,0 +1,39 @@
+{
+  "id": "silhouette-200-905",
+  "kind": "question",
+  "pack": "silhouette",
+  "a": "صبار",
+  "p": 200,
+  "topic": "نباتات",
+  "prompt": "Use case: precise-object-edit. Input image is the edit target. Preserve the same pictured subject and realistic photographic style; correct only the specified framing or leaf anatomy. Maintain a genuinely transparent PNG background.\nUse case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a saguaro cactus with two upward arms.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow.\n\nRequired correction:\nCorrect the framing: show the complete saguaro cactus, including its entire base and both upward arms, wholly inside the canvas. Center the whole plant in the central 55% of the frame with broad truly transparent padding on all four sides. Do not crop or let any part touch the image edge. Preserve natural full color and genuine transparent alpha; no pot, ground plane or cast shadow.",
+  "question": {
+    "p": 200,
+    "q": "ما النبات ذو الأذرع المرفوعة الذي يوضحه الظل؟",
+    "a": "صبار",
+    "qid": "silhouette-200-905",
+    "type": "image",
+    "effect": "silhouette",
+    "alt": [
+      "نبات الصبار",
+      "Cactus"
+    ],
+    "topic": "نباتات",
+    "difficultyTarget": 0.8,
+    "verified": true,
+    "sourceUrl": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "media": {
+      "src": "silhouette-200-905.webp",
+      "type": "image",
+      "title": "لغز بصري مولّد",
+      "author": "Maydan / OpenAI image generation",
+      "disclosure": "تصوير توضيحي مولّد بالذكاء الاصطناعي",
+      "provenance": {
+        "kind": "ai-generated",
+        "tool": "OpenAI image generation (built-in)",
+        "createdAt": "2026-09-25",
+        "record": "docs/bank/rebuild-2026-09-18/generated-records/silhouette-200-905.json"
+      }
+    }
+  },
+  "requireAlpha": true
+}

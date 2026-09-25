@@ -1,0 +1,18 @@
+{
+  "checkpointAt": "2026-09-25",
+  "status": "complete-ready-for-root-shared-status-sync",
+  "generatedCount": 45,
+  "generatedCountDefinition": "32 outputs in recovered checkpoint plus13 built-in calls on25September, including replaced/rejected candidates.",
+  "finalAssetCount": 40,
+  "installedCount": 40,
+  "reviewStatus": "All40 final images/source identities and all40 actual gameplay questions approved;606/606 UI checks.",
+  "oldPackCount": 225,
+  "activePackCount": 40,
+  "pendingRevisions": [],
+  "nextGenerationIds": [],
+  "reviewRecord": "docs/bank/rebuild-2026-09-18/review-tilepuzzle-final.json",
+  "testedCategorySha256": "6609d1e98ca7816bb288b28bbfaccd370479ae479e85f0748d4b50c45e78cf27",
+  "sharedFilesUpdated": false,
+  "oldAssetsDeleted": false,
+  "deployed": false
+}

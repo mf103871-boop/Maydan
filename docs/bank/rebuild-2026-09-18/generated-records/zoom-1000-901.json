@@ -1,0 +1,19 @@
+{
+  "id": "zoom-1000-901",
+  "kind": "question",
+  "pack": "zoom",
+  "file": "media/zoom/zoom-1000-901.webp",
+  "asset": "media/zoom/zoom-1000-901.webp",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: a green globe artichoke.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject fills about 75% of the frame; centered with ample margins, immediately recognizable when revealed. Keep the most distinctive surface detail near the exact center; this full image will be digitally zoomed by the game. \nBackground: seamless warm off-white studio background, subtle contact shadow.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  ",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-23",
+  "width": 1280,
+  "height": 960,
+  "bytes": 174942,
+  "sha256": "c76cbb00ad9fd4ba6430152dbf35dcab1f5ea50f5ecc0648eda996db2ac0be8a",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "pending",
+    "note": "Generation and file checks do not imply subject or gameplay verification."
+  }
+}

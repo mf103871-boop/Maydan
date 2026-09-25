@@ -1,0 +1,762 @@
+[
+  {
+    "id": "placefinder-200-901",
+    "asset": "media/placefinder/placefinder-200-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-200-901.json",
+    "sha256": "739108414749dc4559d49c76e345b2b89717229acc460fd3348a734ea5e35eed",
+    "bytes": 232266,
+    "visualReview": {
+      "id": "placefinder-200-901",
+      "answer": "برج إيفل",
+      "sha256": "739108414749dc4559d49c76e345b2b89717229acc460fd3348a734ea5e35eed",
+      "status": "approved",
+      "note": "Full lattice Eiffel tower, splayed legs, base arch and two decks; feet and tip visible.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "03433263dd3640eb2fdc403147a576e43b8abe287069e1b6fd4d28c91749a610"
+  },
+  {
+    "id": "placefinder-200-902",
+    "asset": "media/placefinder/placefinder-200-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-200-902.json",
+    "sha256": "a59997d2f51f367f3cf5bdf0f132d8db1d097ae358349b8d20c5ecadc02071be",
+    "bytes": 254602,
+    "visualReview": {
+      "id": "placefinder-200-902",
+      "answer": "برج بيزا المائل",
+      "sha256": "a59997d2f51f367f3cf5bdf0f132d8db1d097ae358349b8d20c5ecadc02071be",
+      "status": "approved",
+      "note": "White cylindrical Pisa campanile visibly leaning relative to level lawn; stacked arcades and narrower belfry.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "1d96b925656d7eaf40375a77dcc33c1e235ce779c74955073fb87d1c4229495b"
+  },
+  {
+    "id": "placefinder-200-903",
+    "asset": "media/placefinder/placefinder-200-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-200-903.json",
+    "sha256": "a6287fd9487de7c88aa86974dfa1bb68f8368459632619f91b4cbc5da52c5f83",
+    "bytes": 167708,
+    "visualReview": {
+      "id": "placefinder-200-903",
+      "answer": "برج خليفة",
+      "sha256": "a6287fd9487de7c88aa86974dfa1bb68f8368459632619f91b4cbc5da52c5f83",
+      "status": "approved",
+      "note": "Full bundled setback Burj Khalifa silhouette with needle spire; lake and subdued lower buildings.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "b6dfd33974f3d5b8190f15f0758aa88674f209dd8bee0e244354ecb1e40e0e10"
+  },
+  {
+    "id": "placefinder-200-904",
+    "asset": "media/placefinder/placefinder-200-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-200-904.json",
+    "sha256": "3514d9269622f204a18fec844d40b8f06469f7db46681de042f85b37b60d3b10",
+    "bytes": 239424,
+    "visualReview": {
+      "id": "placefinder-200-904",
+      "answer": "أهرامات الجيزة",
+      "sha256": "3514d9269622f204a18fec844d40b8f06469f7db46681de042f85b37b60d3b10",
+      "status": "approved",
+      "note": "Three principal limestone pyramids, one smaller and one retaining apex casing; illustrative spacing, no claimed survey accuracy.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "09a918ed2d442a55da95cbf37c6113482d41fd7e92045420afad2f8fbd339bbc"
+  },
+  {
+    "id": "placefinder-200-905",
+    "asset": "media/placefinder/placefinder-200-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-200-905.json",
+    "sha256": "58a401b4d11e792a8ca9c6d1bb85484f89e070196e0ccb11e5450ef737f313ec",
+    "bytes": 221002,
+    "visualReview": {
+      "id": "placefinder-200-905",
+      "answer": "سور الصين العظيم",
+      "sha256": "58a401b4d11e792a8ca9c6d1bb85484f89e070196e0ccb11e5450ef737f313ec",
+      "status": "approved",
+      "note": "Masonry Great Wall winds along mountain ridges with crenellations and rectangular watchtowers.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "969cf2009687116f55e3946b08f26fdb5711d4399f6e737756218326da93f62b"
+  },
+  {
+    "id": "placefinder-200-906",
+    "asset": "media/placefinder/placefinder-200-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-200-906.json",
+    "sha256": "6532a1ca825e1b3a4279f6a40998893df2f14b938ae474617f89ad941919d340",
+    "bytes": 201314,
+    "visualReview": {
+      "id": "placefinder-200-906",
+      "answer": "تاج محل",
+      "sha256": "6532a1ca825e1b3a4279f6a40998893df2f14b938ae474617f89ad941919d340",
+      "status": "approved",
+      "note": "White onion dome, central pointed arch, smaller pavilions and four separate minarets with reflecting pool.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "ff080693e96e4e504d7f67f822ce60ebad04dbc0ef83c301d4df876f7631e690"
+  },
+  {
+    "id": "placefinder-200-907",
+    "asset": "media/placefinder/placefinder-200-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-200-907.json",
+    "sha256": "d3303c41a316aa83950578049146b671a4facb8fdebcb9803ae7600e13c2277c",
+    "bytes": 198788,
+    "visualReview": {
+      "id": "placefinder-200-907",
+      "answer": "تمثال الحرية",
+      "sha256": "d3303c41a316aa83950578049146b671a4facb8fdebcb9803ae7600e13c2277c",
+      "status": "approved",
+      "note": "Green Liberty statue with raised right torch, left tablet, crown and full pedestal; no readable inscription.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "5ed8cfec97d303c1af51316c425c6408bc01f6ddef38e6256c01c2cabeb7794a"
+  },
+  {
+    "id": "placefinder-200-908",
+    "asset": "media/placefinder/placefinder-200-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-200-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-200-908.json",
+    "sha256": "de4d86a04e3ee405b663738bd1158d9d524d6fcd1ed192b7751c3aab7522598f",
+    "bytes": 229508,
+    "visualReview": {
+      "id": "placefinder-200-908",
+      "answer": "دار أوبرا سيدني",
+      "sha256": "de4d86a04e3ee405b663738bd1158d9d524d6fcd1ed192b7751c3aab7522598f",
+      "status": "approved",
+      "note": "Recognizable grouped white Opera House shells on broad brown podium beside harbor.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "fb421a5b257237be2383aac7ee889e193afbacfa29d4cd09c166b004120d6699"
+  },
+  {
+    "id": "placefinder-400-901",
+    "asset": "media/placefinder/placefinder-400-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-400-901.json",
+    "sha256": "1637715dbf77228592354ca65c4aba06d319f20df9cb5b715cacae8f91c60d48",
+    "bytes": 232542,
+    "visualReview": {
+      "id": "placefinder-400-901",
+      "answer": "الكولوسيوم",
+      "sha256": "1637715dbf77228592354ca65c4aba06d319f20df9cb5b715cacae8f91c60d48",
+      "status": "approved",
+      "note": "Oval Roman amphitheatre, repeated stone arcades, high surviving wall and lower broken arc; recognizable Colosseum.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "278a0b1bac359119d4ee58ecda706548ba4657cccec25f0cfe3b0f9d4e52c717"
+  },
+  {
+    "id": "placefinder-400-902",
+    "asset": "media/placefinder/placefinder-400-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-400-902.json",
+    "sha256": "e39a126abb17ee7ba916b5c8937b9f9bb44fb0cd0420bed20b0b8ee93bd9aa2f",
+    "bytes": 259828,
+    "visualReview": {
+      "id": "placefinder-400-902",
+      "answer": "البتراء",
+      "sha256": "e39a126abb17ee7ba916b5c8937b9f9bb44fb0cd0420bed20b0b8ee93bd9aa2f",
+      "status": "approved",
+      "note": "Rose sandstone Treasury facade in cliffs, lower columns, upper tholos and pediments; question specifically asks Petra site.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "8cc8d0689b3463f333a49d6d7892b1c4f6b3d708fd895441e0c5579b13a54979"
+  },
+  {
+    "id": "placefinder-400-903",
+    "asset": "media/placefinder/placefinder-400-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-400-903.json",
+    "sha256": "e8861c8ce8ae5b712574e1c830e26db836cc801b5adb22f8f0e126f1cf17e718",
+    "bytes": 206002,
+    "visualReview": {
+      "id": "placefinder-400-903",
+      "answer": "جسر البرج",
+      "sha256": "e8861c8ce8ae5b712574e1c830e26db836cc801b5adb22f8f0e126f1cf17e718",
+      "status": "approved",
+      "note": "Two Gothic stone towers, high connecting walkways, blue suspension members and lower roadway across river.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "400e80c27f0e32bea2d806160ba79a655c613e821e32dc23386236bf7c575164"
+  },
+  {
+    "id": "placefinder-400-904",
+    "asset": "media/placefinder/placefinder-400-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-400-904.json",
+    "sha256": "2b5689137f1c1b9d24c87e26342a28a7a8c6ec86508f940a70faf8b65dc8592c",
+    "bytes": 260968,
+    "visualReview": {
+      "id": "placefinder-400-904",
+      "answer": "جسر البوابة الذهبية",
+      "sha256": "2b5689137f1c1b9d24c87e26342a28a7a8c6ec86508f940a70faf8b65dc8592c",
+      "status": "approved",
+      "note": "Two international-orange portal towers with suspension cables and vertical hangers above blue channel; skyline illustrative.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "d5134ccaea5ab553791412979aebffca9059e05c05669f3e214c58c174adabb6"
+  },
+  {
+    "id": "placefinder-400-905",
+    "asset": "media/placefinder/placefinder-400-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-400-905.json",
+    "sha256": "b2a56723c06c504a7877bb4219dc921ad69a1d59ff143fefa0d1ccb7df4726f9",
+    "bytes": 248474,
+    "visualReview": {
+      "id": "placefinder-400-905",
+      "answer": "تمثال المسيح الفادي",
+      "sha256": "b2a56723c06c504a7877bb4219dc921ad69a1d59ff143fefa0d1ccb7df4726f9",
+      "status": "approved",
+      "note": "Pale art-deco statue with horizontal outstretched arms on Corcovado-like summit above bay; full hands and pedestal.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "b99151b4ff38fa44f9b1e39198c2c81cac938409037f9674fe0be46dcd19b5a6"
+  },
+  {
+    "id": "placefinder-400-906",
+    "asset": "media/placefinder/placefinder-400-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-400-906.json",
+    "sha256": "47cd4483a08878df3e705d27c1b61869e2decf7d9fc881aaac7bbbb71337e1ea",
+    "bytes": 206192,
+    "visualReview": {
+      "id": "placefinder-400-906",
+      "answer": "متحف اللوفر",
+      "sha256": "47cd4483a08878df3e705d27c1b61869e2decf7d9fc881aaac7bbbb71337e1ea",
+      "status": "approved",
+      "note": "Transparent metal-framed pyramid with historic palace courtyard facades; identifies Louvre museum.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "dc02319219cd7a85dd53576014f0de5a164df31ce760bb6b8ec5946b8e08cd59"
+  },
+  {
+    "id": "placefinder-400-907",
+    "asset": "media/placefinder/placefinder-400-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-400-907.json",
+    "sha256": "3036b7619828c7cb30f4c6acfe2314bc6fc2ce32b032d5d212254a2f6530812b",
+    "bytes": 219972,
+    "visualReview": {
+      "id": "placefinder-400-907",
+      "answer": "جبل فوجي",
+      "sha256": "3036b7619828c7cb30f4c6acfe2314bc6fc2ce32b032d5d212254a2f6530812b",
+      "status": "approved",
+      "note": "Solitary broad snow-capped volcanic cone, flattened summit and lake setting identify Fuji.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "b965db82ab065c095ddd7ef17bbbc87f3949dc9645fcec24f59281d65db35d99"
+  },
+  {
+    "id": "placefinder-400-908",
+    "asset": "media/placefinder/placefinder-400-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-400-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-400-908.json",
+    "sha256": "f09fc77a99175ea2911858c82942696baa3edeb6eaa3b491eddc7dd66be51056",
+    "bytes": 210342,
+    "visualReview": {
+      "id": "placefinder-400-908",
+      "answer": "معبد أبو سمبل",
+      "sha256": "f09fc77a99175ea2911858c82942696baa3edeb6eaa3b491eddc7dd66be51056",
+      "status": "approved",
+      "note": "Four seated-colossus positions with second from viewer left broken, central doorway and rock-cut sandstone facade.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "143e33e2b2c3f7a3597d15dc9684dc2339a78a682f923c5b3622219f150e5af7"
+  },
+  {
+    "id": "placefinder-600-901",
+    "asset": "media/placefinder/placefinder-600-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-600-901.json",
+    "sha256": "886571c85fa1fabcc0685b48a1e504dbe976088cb952c0214f8727766459130f",
+    "bytes": 230956,
+    "visualReview": {
+      "id": "placefinder-600-901",
+      "answer": "ماتشو بيتشو",
+      "sha256": "886571c85fa1fabcc0685b48a1e504dbe976088cb952c0214f8727766459130f",
+      "status": "approved",
+      "note": "Stone city and terraces on steep Andean saddle with distinctive peak behind; site identity readable.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "498316bc31ac032dad156efbb0d8fee5bbc83719d40dc2a2d88827e623e1f86a"
+  },
+  {
+    "id": "placefinder-600-902",
+    "asset": "media/placefinder/placefinder-600-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-600-902.json",
+    "sha256": "a3c16c17058e33e80f7287b3f52e18084f941d978adc57841c3dd9a2dc327647",
+    "bytes": 248756,
+    "visualReview": {
+      "id": "placefinder-600-902",
+      "answer": "تشيتشن إيتزا",
+      "sha256": "a3c16c17058e33e80f7287b3f52e18084f941d978adc57841c3dd9a2dc327647",
+      "status": "approved",
+      "note": "Broad stepped El Castillo with central staircases and small summit shrine; question asks Chichen Itza site.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "9c9174b8c123f8da96768ed2c90a57a7f25c7f7279b2e7e2b9dd0b669b6800e0"
+  },
+  {
+    "id": "placefinder-600-903",
+    "asset": "media/placefinder/placefinder-600-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-600-903.json",
+    "sha256": "0e7ef2c40842070d7cf510367d41b55ac8210e10cf6e2a7783c6ebb33ff3ba87",
+    "bytes": 240508,
+    "visualReview": {
+      "id": "placefinder-600-903",
+      "answer": "ستونهنج",
+      "sha256": "0e7ef2c40842070d7cf510367d41b55ac8210e10cf6e2a7783c6ebb33ff3ba87",
+      "status": "approved",
+      "note": "Incomplete sarsen circle with surviving lintelled uprights, inner trilithons and fallen stones on grassy plain.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "3620a77cd97b0e3596207e0bf1981bd7b7b052934c0ccfbd2f0dd08e270661b1"
+  },
+  {
+    "id": "placefinder-600-904",
+    "asset": "media/placefinder/placefinder-600-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-600-904.json",
+    "sha256": "5f3f7bf261050d50f88bc5bf0016c8b0573b49a69342899aed513d11f5b346eb",
+    "bytes": 233386,
+    "visualReview": {
+      "id": "placefinder-600-904",
+      "answer": "بوابة براندنبورغ",
+      "sha256": "5f3f7bf261050d50f88bc5bf0016c8b0573b49a69342899aed513d11f5b346eb",
+      "status": "approved",
+      "note": "Six front columns, five passages and four-horse bronze Quadriga above attic; whole gate visible.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "a409b524ffd0d1366b24c0306076fded474147460544225191451cd6b7111c85"
+  },
+  {
+    "id": "placefinder-600-905",
+    "asset": "media/placefinder/placefinder-600-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-600-905.json",
+    "sha256": "f303f5ee5eace680493495480ac4ac1dc4ffc3d3d8107154a358e339baf61199",
+    "bytes": 257022,
+    "visualReview": {
+      "id": "placefinder-600-905",
+      "answer": "ساغرادا فاميليا",
+      "sha256": "f303f5ee5eace680493495480ac4ac1dc4ffc3d3d8107154a358e339baf61199",
+      "status": "approved",
+      "note": "Four tapering perforated Nativity bell towers and ornate portals; targeted edit restored sky and entrance margins. Historic facade study, no current whole-building skyline claim.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "08c78e0a01638ca8878948372c238e522b914ce047b63809675006db7dbf7354"
+  },
+  {
+    "id": "placefinder-600-906",
+    "asset": "media/placefinder/placefinder-600-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-600-906.json",
+    "sha256": "213ee516667ca668e5dad3a471f8b8afe94a05ef91b58113f8dd590e37a9adb3",
+    "bytes": 253318,
+    "visualReview": {
+      "id": "placefinder-600-906",
+      "answer": "أنغكور وات",
+      "sha256": "213ee516667ca668e5dad3a471f8b8afe94a05ef91b58113f8dd590e37a9adb3",
+      "status": "approved",
+      "note": "Five principal lotus-like towers over low galleries and pond reflection; recognition illustration, not exact temple plan.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "8a4511f165a0a67c044361f7d6f96e91534f202a341bc3c2ef1ab12efec9ae78"
+  },
+  {
+    "id": "placefinder-600-907",
+    "asset": "media/placefinder/placefinder-600-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-600-907.json",
+    "sha256": "56976d6470bf04412cc544305ccee290ca52597d3c1241c66a6e985d6988450c",
+    "bytes": 249796,
+    "visualReview": {
+      "id": "placefinder-600-907",
+      "answer": "معبد السماء",
+      "sha256": "56976d6470bf04412cc544305ccee290ca52597d3c1241c66a6e985d6988450c",
+      "status": "approved",
+      "note": "Round hall, three blue conical eaves, gold finial and white tiered terraces; exact named hall belongs to Temple of Heaven complex.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "85e963419c0ae15f8921ae8af0c635c58934ad45bc8f7e8e4d8d63c6ecd95ef6"
+  },
+  {
+    "id": "placefinder-600-908",
+    "asset": "media/placefinder/placefinder-600-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-600-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-600-908.json",
+    "sha256": "335ead71eddb961717308abb43a733d03b513d35ede0ac9c8e6a2302ac99a25e",
+    "bytes": 206160,
+    "visualReview": {
+      "id": "placefinder-600-908",
+      "answer": "مسجد الحسن الثاني",
+      "sha256": "335ead71eddb961717308abb43a733d03b513d35ede0ac9c8e6a2302ac99a25e",
+      "status": "approved",
+      "note": "Single tall square decorated minaret, green roofs, broad prayer hall and Atlantic seawall; Moroccan architectural identity.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "bac85f7c3a04beca05d0e0160e071dcf4f8f604b81fc68a3035ca543c580d4c5"
+  },
+  {
+    "id": "placefinder-800-901",
+    "asset": "media/placefinder/placefinder-800-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-800-901.json",
+    "sha256": "e514f5d1dbed2bc4e8b287cf7a5d7f45e58a42d76a47a029c4be0839fc6afbd1",
+    "bytes": 220280,
+    "visualReview": {
+      "id": "placefinder-800-901",
+      "answer": "قلعة نويشفانشتاين",
+      "sha256": "e514f5d1dbed2bc4e8b287cf7a5d7f45e58a42d76a47a029c4be0839fc6afbd1",
+      "status": "approved",
+      "note": "White asymmetric palace, square tower, round pointed turrets and red gatehouse on forest ridge; Neuschwanstein recognition, not an architectural survey.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "adf808c0d5284d89959b0ccd408d23864e1f7d27626e11cfcab378487e764a13"
+  },
+  {
+    "id": "placefinder-800-902",
+    "asset": "media/placefinder/placefinder-800-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-800-902.json",
+    "sha256": "df5387192795fff671dcf227d565497e3a3cf5a86808fd24d04cdcbedebd4437",
+    "bytes": 237204,
+    "visualReview": {
+      "id": "placefinder-800-902",
+      "answer": "قصر الحمراء",
+      "sha256": "df5387192795fff671dcf227d565497e3a3cf5a86808fd24d04cdcbedebd4437",
+      "status": "approved",
+      "note": "Nasrid columned arcades, projecting pavilion and central lion-supported basin; Alhambra identity. Small sculptural detail and hidden lion count not tested.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "dc505a494a3a3a4cc1b5e430384cb4e5e6bf199a9c378e58c4ecaaba7e2c9c04"
+  },
+  {
+    "id": "placefinder-800-903",
+    "asset": "media/placefinder/placefinder-800-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-800-903.json",
+    "sha256": "e337e227d27145028c673c6d1f05397f22b72ed2a1057897ce3d3e1ab98359c6",
+    "bytes": 218420,
+    "visualReview": {
+      "id": "placefinder-800-903",
+      "answer": "بوروبودور",
+      "sha256": "e337e227d27145028c673c6d1f05397f22b72ed2a1057897ce3d3e1ab98359c6",
+      "status": "approved",
+      "note": "Perforated bell stupas in circular terraces around large central solid stupa; Borobudur identity clear.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "f51c0ba88d8e75ff114b532502419f73ca67d4cb05544c3e976d318406fb9991"
+  },
+  {
+    "id": "placefinder-800-904",
+    "asset": "media/placefinder/placefinder-800-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-800-904.json",
+    "sha256": "f07bc13177a0d5117e71738ace449b19d74660b05fe47409450e0b81cf2306e1",
+    "bytes": 248446,
+    "visualReview": {
+      "id": "placefinder-800-904",
+      "answer": "بوابة إتسوكوشيما",
+      "sha256": "f07bc13177a0d5117e71738ace449b19d74660b05fe47409450e0b81cf2306e1",
+      "status": "approved",
+      "note": "Vermilion sea torii with two major pillars and four smaller supporting posts; dark curved upper beam; blank plaque.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "c55336390f5852615f6acbdea80cc7081061d1d3986d327a370047372f042801"
+  },
+  {
+    "id": "placefinder-800-905",
+    "asset": "media/placefinder/placefinder-800-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-800-905.json",
+    "sha256": "8a45ef29bcffc583343b280e3a12d1d08da39cbfad3b3bc120ca2b6c781264fa",
+    "bytes": 237420,
+    "visualReview": {
+      "id": "placefinder-800-905",
+      "answer": "الحِجر",
+      "sha256": "8a45ef29bcffc583343b280e3a12d1d08da39cbfad3b3bc120ca2b6c781264fa",
+      "status": "approved",
+      "note": "Isolated sandstone mass with decorated stepped Nabataean facade and unfinished lower rock; question asks Hegra archaeological site.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "cf4512715a32a4bdb0ff0ef09a1319590ba0612027222198b085b8ceec68e5ff"
+  },
+  {
+    "id": "placefinder-800-906",
+    "asset": "media/placefinder/placefinder-800-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-800-906.json",
+    "sha256": "d96d01e99a4363823954f93ed4c324cdcae6c05fb021705aaaac403f6687f989",
+    "bytes": 245290,
+    "visualReview": {
+      "id": "placefinder-800-906",
+      "answer": "زيمبابوي العظمى",
+      "sha256": "d96d01e99a4363823954f93ed4c324cdcae6c05fb021705aaaac403f6687f989",
+      "status": "approved",
+      "note": "Curved dry-stone granite enclosure, chevron pattern and tapering conical tower distinguish Great Zimbabwe.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "4e43cf300f1f0e45eac6f03b3eab5c629a57ed92cf91e605b95b71001d6b8628"
+  },
+  {
+    "id": "placefinder-800-907",
+    "asset": "media/placefinder/placefinder-800-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-800-907.json",
+    "sha256": "125530548e473039c0b2092417aa59cf057c19d9002e624779e70ca37f587433",
+    "bytes": 212654,
+    "visualReview": {
+      "id": "placefinder-800-907",
+      "answer": "تماثيل المواي",
+      "sha256": "125530548e473039c0b2092417aa59cf057c19d9002e624779e70ca37f587433",
+      "status": "approved",
+      "note": "Elongated stone heads and torsos with long noses, ears and side arms on ahu; one pukao. Illustrative group, not exact inventory of a named ahu.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "e791f27eb9ad6a2e1452f34f76899b04b47ccf9ba9035886dce9b93af8dac174"
+  },
+  {
+    "id": "placefinder-800-908",
+    "asset": "media/placefinder/placefinder-800-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-800-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-800-908.json",
+    "sha256": "6f8140e276afe8716b5d59d6dd9a0faf8b563b9dde16d2404854af94bf0d768e",
+    "bytes": 236170,
+    "visualReview": {
+      "id": "placefinder-800-908",
+      "answer": "أولورو",
+      "sha256": "6f8140e276afe8716b5d59d6dd9a0faf8b563b9dde16d2404854af94bf0d768e",
+      "status": "approved",
+      "note": "Broad solitary red monolith with grooved face on flat arid plain; Uluru rather than Kata Tjuta domes.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "0a8972f3d8e6ed44a103879999388f89751c50ab3a6a4ee7965ade8f5eeff648"
+  },
+  {
+    "id": "placefinder-1000-901",
+    "asset": "media/placefinder/placefinder-1000-901.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-901.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-1000-901.json",
+    "sha256": "279b07c677371d20e773be2d2ba5f516867679aba93ee3983df0a58e1cd03d04",
+    "bytes": 250058,
+    "visualReview": {
+      "id": "placefinder-1000-901",
+      "answer": "معبد كايلاسا",
+      "sha256": "279b07c677371d20e773be2d2ba5f516867679aba93ee3983df0a58e1cd03d04",
+      "status": "approved",
+      "note": "Monolithic tiered temple, elephant plinth and pillared pavilion surrounded by excavated basalt cliff courtyard; Kailasa identity.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "a1331cef41969a0f89df8752d0bf781814baca0f074b7971745d9aa7138e77cb"
+  },
+  {
+    "id": "placefinder-1000-902",
+    "asset": "media/placefinder/placefinder-1000-902.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-902.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-1000-902.json",
+    "sha256": "98302183392852aff754dda5c1cffa4a46f8bebf224b1e8b732617c0e8cdf8be",
+    "bytes": 211442,
+    "visualReview": {
+      "id": "placefinder-1000-902",
+      "answer": "برامبانان",
+      "sha256": "98302183392852aff754dda5c1cffa4a46f8bebf224b1e8b732617c0e8cdf8be",
+      "status": "approved",
+      "note": "Tall narrow richly tiered pointed andesite shrines with central larger tower; distinct from Borobudur and Angkor.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "9c361e62e8f96db40081b51a72d902dba8493472aec6627c2362401edbbbb964"
+  },
+  {
+    "id": "placefinder-1000-903",
+    "asset": "media/placefinder/placefinder-1000-903.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-903.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-1000-903.json",
+    "sha256": "cbf4d468fcd1bffa02722aa77298e3cc222a8bf0ff164ee162ac9507471ad69e",
+    "bytes": 218914,
+    "visualReview": {
+      "id": "placefinder-1000-903",
+      "answer": "قلعة هيميجي",
+      "sha256": "cbf4d468fcd1bffa02722aa77298e3cc222a8bf0ff164ee162ac9507471ad69e",
+      "status": "approved",
+      "note": "White plaster keeps with layered grey gabled roofs and sloped stone foundations; Himeji identity.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "a071ece4a2397cea46919fcd51f9e8648218ef8bf41c77c6a7de1d7543079d97"
+  },
+  {
+    "id": "placefinder-1000-904",
+    "asset": "media/placefinder/placefinder-1000-904.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-904.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-1000-904.json",
+    "sha256": "8e71336579e834fb07b74d6439d6eead5cdb79efb9e2a0013a98f6e7b868bf50",
+    "bytes": 229638,
+    "visualReview": {
+      "id": "placefinder-1000-904",
+      "answer": "بوذا ليشان",
+      "sha256": "8e71336579e834fb07b74d6439d6eead5cdb79efb9e2a0013a98f6e7b868bf50",
+      "status": "approved",
+      "note": "Giant seated cliff Buddha with hands on knees, feet below, curled hair, long ears and river; Leshan identity.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "f32b9b7fc3cbe6e8ec89a3ff59d553ce91009533d3a6c91b3a4be61faecb3d15"
+  },
+  {
+    "id": "placefinder-1000-905",
+    "asset": "media/placefinder/placefinder-1000-905.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-905.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-1000-905.json",
+    "sha256": "596c2343ffe5082c93c30ee6681523d78754014c32cae0a688092417cb37ebdf",
+    "bytes": 228666,
+    "visualReview": {
+      "id": "placefinder-1000-905",
+      "answer": "نان مادول",
+      "sha256": "596c2343ffe5082c93c30ee6681523d78754014c32cae0a688092417cb37ebdf",
+      "status": "approved",
+      "note": "Dark polygonal basalt logs in alternating masonry courses beside tropical canal; Nan Madol identity.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "aaa8d5fd4dedeb1fe7d4785873f1fde325e6604709103c0383b133fe623227a7"
+  },
+  {
+    "id": "placefinder-1000-906",
+    "asset": "media/placefinder/placefinder-1000-906.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-906.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-1000-906.json",
+    "sha256": "ff8d6698636a5a18ec59855e8e77f3ef7925c24687b22f9927fc73eef879f762",
+    "bytes": 199674,
+    "visualReview": {
+      "id": "placefinder-1000-906",
+      "answer": "مسجد جينيه الكبير",
+      "sha256": "ff8d6698636a5a18ec59855e8e77f3ef7925c24687b22f9927fc73eef879f762",
+      "status": "approved",
+      "note": "Earthen mosque with three main tapering towers, buttresses and protruding toron beams; Great Mosque of Djenne identity.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "ba12eeb01f4a14f777b0620a62f64a1c2e01781141e8ed94abf94ba7eed3f61a"
+  },
+  {
+    "id": "placefinder-1000-907",
+    "asset": "media/placefinder/placefinder-1000-907.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-907.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-1000-907.json",
+    "sha256": "25e776e32d65e51ef35608eab439aeb783d621664875397b92e102f1c97769c2",
+    "bytes": 253558,
+    "visualReview": {
+      "id": "placefinder-1000-907",
+      "answer": "تيكال",
+      "sha256": "25e776e32d65e51ef35608eab439aeb783d621664875397b92e102f1c97769c2",
+      "status": "approved",
+      "note": "Steep tall Temple I pyramid with narrow staircase and tall roof comb in jungle plaza; question asks Tikal site.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "571961f07cc7d746e37a8278c6588e93c595cce97d986001acd89402bdb1f3a1"
+  },
+  {
+    "id": "placefinder-1000-908",
+    "asset": "media/placefinder/placefinder-1000-908.webp",
+    "record": "docs/bank/rebuild-2026-09-18/generated-records/placefinder-1000-908.json",
+    "job": "docs/bank/rebuild-2026-09-18/checkpoint/placefinder-resume/jobs/placefinder-1000-908.json",
+    "sha256": "c959bda2bebe103aee86558bc884d79e539af2abe98c61a634c0a5486ac6819d",
+    "bytes": 253508,
+    "visualReview": {
+      "id": "placefinder-1000-908",
+      "answer": "قناة شقوبية",
+      "sha256": "c959bda2bebe103aee86558bc884d79e539af2abe98c61a634c0a5486ac6819d",
+      "status": "approved",
+      "note": "Two tiers of round granite arches on town plaza with receding piers; Segovia aqueduct, no river or third arch tier.",
+      "scope": "Identity/recognition and framing; not measured geometry or documentary photography.",
+      "reviewedAt": "2026-09-25"
+    },
+    "runtimeReviewed": true,
+    "originalGenerationPngSha256": "ace5a6f7032a3d1022b9eee08beae64f22931972d40b8e42cbe587c625bc9777"
+  }
+]

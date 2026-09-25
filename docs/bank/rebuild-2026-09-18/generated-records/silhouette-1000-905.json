@@ -1,0 +1,40 @@
+{
+  "id": "silhouette-1000-905",
+  "kind": "question",
+  "pack": "silhouette",
+  "file": "media/silhouette/silhouette-1000-905.webp",
+  "asset": "media/silhouette/silhouette-1000-905.webp",
+  "prompt": "Use case: product-mockup.\nAsset type: one standalone professional image for an Arabic family visual guessing game (age 16+).\nSubject: one fan-shaped ginkgo leaf with a central notch and slim stem.\nStyle: realistic high quality photography with correct anatomy and object geometry, clean natural textures.\nComposition: landscape 4:3, the complete subject occupies only the central 55% of the frame, leaving at least 20% completely transparent margin on ALL FOUR sides; centered with ample margins, immediately recognizable when revealed.  \nBackground: genuinely transparent background with alpha channel; isolated cutout; no shadow backdrop; no checkerboard; color subject will become a silhouette inside the game.\nConstraints: exactly the stated subject; no label, caption, watermark, collage, borders or readable words.  Do not create a black silhouette; render the full natural-color cutout with transparent surroundings. Output must be a PNG cutout with actual alpha=0 pixels outside the subject, fully transparent canvas. Do not paint white, gray, black or checkerboard behind it. Keep the entire outline visible. Natural color, no ground plane or cast shadow. Every tip, leaf, antenna, extremity and protruding part must be well inside the canvas, with broad transparent padding. Zoom out. Do not crop any part of the object.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 99460,
+  "sha256": "655df36deff0730f91f399947cec09d5acb66fe9c71ec379387ba35f873458b6",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-silhouette-final.json",
+    "note": "Installed image shows a fan-shaped green leaf, a deep central cleft, radiating veins and a slim petiole attached to the narrow basal end. Black preview retains the distinctive bilateral fan outline. Ginkgo/common-name identification is supported; no cultivar is determined.",
+    "gameplayReview": "approved",
+    "alpha": {
+      "size": [
+        1280,
+        960
+      ],
+      "bytes": 99460,
+      "sha256": "655df36deff0730f91f399947cec09d5acb66fe9c71ec379387ba35f873458b6",
+      "transparentFraction": 0.827452,
+      "nearOpaqueFraction": 0.161368,
+      "bboxAlphaOver128": [
+        281,
+        174,
+        999,
+        805
+      ]
+    },
+    "independentVisualReview": "All40 installed assets rechecked on2026-09-25; visible outline and subject accepted.",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/silhouette/runtime.json"
+  }
+}

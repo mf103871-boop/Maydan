@@ -1,0 +1,2099 @@
+{
+  "category": "blur",
+  "reviewedAt": "2026-09-25",
+  "status": "approved",
+  "expectedCount": 40,
+  "difficultyCalibration": "editorial-not-measured",
+  "method": "Independent sharp-image and approximate blur review, then actual Chromium renderer exercise and root visual review of all40 blurred/sharp pairs. Important clues remain in question text where blur removes fine shape detail. Difficulty targets remain editorial.",
+  "openedPrimaryReferences": [
+    {
+      "id": "nps-stalactites",
+      "url": "https://www.nps.gov/subjects/caves/speleothems.htm",
+      "institution": "U.S. National Park Service",
+      "retrievedAt": "2026-09-25",
+      "outcome": "opened",
+      "evidence": "The Stalactites section describes hanging cave-ceiling deposits; the Stalagmites section describes deposits building upward from the floor. Stalactites are usually calcite, although other minerals are possible.",
+      "application": "Use المتدلية من سقف الكهف and accept هوابط/نوازل. Never accept صواعد or صواعد سقفية for this ceiling subject. Mineral composition cannot be certified from a generated image."
+    },
+    {
+      "id": "met-bagpipe",
+      "url": "https://www.metmuseum.org/art/collection/search/502089",
+      "institution": "The Metropolitan Museum of Art",
+      "retrievedAt": "2026-09-25",
+      "outcome": "opened",
+      "evidence": "The museum's Lowland Pipe record describes a bag, conical chanter, three drones and bellows, illustrating the bag-and-pipes instrument family.",
+      "application": "Supports broad bagpipe terminology only. This Lowland example is not a geometry template for every Highland bagpipe; do not copy its common drone stock or bellows as universal requirements."
+    },
+    {
+      "id": "poma-funicular",
+      "url": "https://www.poma.net/en/product-range/funicular-railway/",
+      "institution": "POMA, transport-system manufacturer",
+      "retrievedAt": "2026-09-25",
+      "outcome": "opened",
+      "evidence": "The manufacturer describes rope-pulled reversible vehicles on tracks, including sloped track profiles and multiple track configurations.",
+      "application": "Use a rail vehicle on a clear incline; accept funicular/قطار سلكي. Do not use aerial تلفريك as an exact synonym or demand two visible cars."
+    },
+    {
+      "id": "usatf-hammer",
+      "url": "https://usatfsc.org/wp-content/uploads/2024-USATF-Competition-Rules-for-Rules-Reviews.pdf",
+      "institution": "USA Track & Field, official 2024 rulebook hosted by its South Carolina association",
+      "retrievedAt": "2026-09-25",
+      "outcome": "opened",
+      "evidence": "Rule 191 on printed pages 113–114 identifies the hammer's metal head, wire and handle; the head is spherical and the wire is continuous. The athlete holds the implement by its handle with both hands.",
+      "application": "Supports the ball-on-wire clue and image-anatomy review. No claim about the latest competition rules, exact dimensions, athlete eligibility or a specific event result."
+    },
+    {
+      "id": "world-curling",
+      "url": "https://worldcurling.org/about/curling/",
+      "institution": "World Curling",
+      "retrievedAt": "2026-09-25",
+      "outcome": "opened",
+      "evidence": "The governing body's overview describes sliding granite stones on ice and distinguishes stones by their handle colors.",
+      "application": "Ask for the sport using a handled stone on ice. Do not call the stone a ball or confuse curling with bowling."
+    },
+    {
+      "id": "noaa-coral",
+      "url": "https://oceanservice.noaa.gov/facts/coral.html",
+      "institution": "NOAA",
+      "retrievedAt": "2026-09-25",
+      "outcome": "opened",
+      "evidence": "The official page identifies corals as animals and explains that many visible colonies consist of numerous polyps.",
+      "application": "Question uses كائن بحري, not نبات. No species or health-of-reef inference is required."
+    }
+  ],
+  "categorySha256": "2ddfe52a59c017b0167055ab30a55be7fac2c2b3970016c4e9a2fccdec6cf8d9",
+  "identityScope": "All40 final installed assets independently viewed and hashes checked, including both no-label cleanups. Actual gameplay tested for all40 on320px and390px with local test entitlement.",
+  "items": [
+    {
+      "qid": "blur-200-901",
+      "answer": "فيل",
+      "tier": 200,
+      "topic": "حيوانات",
+      "image": "media/blur/blur-200-901.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-901.json",
+      "sha256": "0032b39fcbd8ddc9ae9a867cd40cc7e2ff294130e2de5d4b5ccab8081e433245",
+      "width": 1280,
+      "height": 960,
+      "bytes": 221742,
+      "editorialReview": {
+        "id": "blur-200-901",
+        "tier": 200,
+        "topic": "حيوانات",
+        "question": "ما الحيوان الكبير ذو الخرطوم الذي يظهر في الصورة؟",
+        "answer": "فيل",
+        "alt": [
+          "Elephant",
+          "فيل إفريقي"
+        ],
+        "originalQuestion": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-200-901.webp",
+          "sha256": "0032b39fcbd8ddc9ae9a867cd40cc7e2ff294130e2de5d4b5ccab8081e433245",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full elephant with trunk, two tusks, broad ears and four legs in savanna. Subject remains generally recognizable in the approximate blur; no exact species answer required.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full elephant with trunk, two tusks, broad ears and four legs in savanna. Subject remains generally recognizable in the approximate blur; no exact species answer required.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-200-902",
+      "answer": "بيتزا",
+      "tier": 200,
+      "topic": "أطعمة",
+      "image": "media/blur/blur-200-902.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-902.json",
+      "sha256": "3dc3d05fd01b821ad7a50ddab45e4bc7f845328cd6bfaaefb56d58051f8cd911",
+      "width": 1280,
+      "height": 960,
+      "bytes": 219964,
+      "editorialReview": {
+        "id": "blur-200-902",
+        "tier": 200,
+        "topic": "أطعمة",
+        "question": "ما الوجبة الدائرية المخبوزة ذات الجبن والطماطم في الصورة؟",
+        "answer": "بيتزا",
+        "alt": [
+          "Pizza",
+          "بيتسا"
+        ],
+        "originalQuestion": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-200-902.webp",
+          "sha256": "3dc3d05fd01b821ad7a50ddab45e4bc7f845328cd6bfaaefb56d58051f8cd911",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Round baked pizza with crust, tomato, cheese and basil on a board. The circular orange/cream pattern survives static blur; no topping variety should be required.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Round baked pizza with crust, tomato, cheese and basil on a board. The circular orange/cream pattern survives static blur; no topping variety should be required.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-200-903",
+      "answer": "إبريق شاي",
+      "tier": 200,
+      "topic": "البيت",
+      "image": "media/blur/blur-200-903.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-903.json",
+      "sha256": "731a1f537d277ed4c97b62d85243ede6a371a7d472c22b5e2400931bf5c157eb",
+      "width": 1280,
+      "height": 960,
+      "bytes": 134256,
+      "editorialReview": {
+        "id": "blur-200-903",
+        "tier": 200,
+        "topic": "البيت",
+        "question": "ما الوعاء المعدني ذو الفوهة والمقبض الظاهر في الصورة؟",
+        "answer": "إبريق شاي",
+        "alt": [
+          "براد شاي",
+          "إبريق",
+          "Teapot"
+        ],
+        "originalQuestion": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-200-903.webp",
+          "sha256": "731a1f537d277ed4c97b62d85243ede6a371a7d472c22b5e2400931bf5c157eb",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Metal teapot with curved pouring spout, lid and loop side handle. Both distinguishing appendages remain hinted under static blur. Do not require electric-kettle or manufacturer identification.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Metal teapot with curved pouring spout, lid and loop side handle. Both distinguishing appendages remain hinted under static blur. Do not require electric-kettle or manufacturer identification.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-200-904",
+      "answer": "بيانو",
+      "tier": 200,
+      "topic": "موسيقى",
+      "image": "media/blur/blur-200-904.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-904.json",
+      "sha256": "3585c16d5681b0832cbe18ddb60ccbd29dbba9df113e5ab45707a7480ca94490",
+      "width": 1280,
+      "height": 960,
+      "bytes": 161674,
+      "editorialReview": {
+        "id": "blur-200-904",
+        "tier": 200,
+        "topic": "موسيقى",
+        "question": "ما الآلة ذات المفاتيح والغطاء الأسود المرفوع في الصورة؟",
+        "answer": "بيانو",
+        "alt": [
+          "بيانو كبير",
+          "Grand piano",
+          "Piano"
+        ],
+        "originalQuestion": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-200-904.webp",
+          "sha256": "3585c16d5681b0832cbe18ddb60ccbd29dbba9df113e5ab45707a7480ca94490",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Black grand piano, raised lid, keyboard, legs and pedals. General piano answer fits the sharp image and large blurred profile.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Black grand piano, raised lid, keyboard, legs and pedals. General piano answer fits the sharp image and large blurred profile.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-200-905",
+      "answer": "طائرة",
+      "tier": 200,
+      "topic": "وسائل نقل",
+      "image": "media/blur/blur-200-905.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-905.json",
+      "sha256": "e4f17b88fdef95caf969ddaf886f2f86199a7565a20cb0d5227749d372bce4a5",
+      "width": 1280,
+      "height": 960,
+      "bytes": 106790,
+      "editorialReview": {
+        "id": "blur-200-905",
+        "tier": 200,
+        "topic": "وسائل نقل",
+        "question": "ما وسيلة النقل البيضاء التي تحلق فوق السحب؟",
+        "answer": "طائرة",
+        "alt": [
+          "طائرة ركاب",
+          "طائرة مدنية",
+          "طيارة",
+          "Airplane"
+        ],
+        "originalQuestion": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-200-905.webp",
+          "sha256": "e4f17b88fdef95caf969ddaf886f2f86199a7565a20cb0d5227749d372bce4a5",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "White passenger airplane with cabin windows, wings, engines and tail above clouds. Generic airplane identification is supported; model and airline are not.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "White passenger airplane with cabin windows, wings, engines and tail above clouds. Generic airplane identification is supported; model and airline are not.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-200-906",
+      "answer": "برج إيفل",
+      "tier": 200,
+      "topic": "معالم ومنشآت",
+      "image": "media/blur/blur-200-906.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-906.json",
+      "sha256": "53cc9e7f009e9527550582f64d9ba2989d088d0e42b14f1a135ac5b1f3e6b0ca",
+      "width": 1280,
+      "height": 960,
+      "bytes": 202744,
+      "editorialReview": {
+        "id": "blur-200-906",
+        "tier": 200,
+        "topic": "معالم ومنشآت",
+        "question": "ما المعلم الباريسي صاحب الهيكل المعدني في الصورة؟",
+        "answer": "برج إيفل",
+        "alt": [
+          "إيفل",
+          "Eiffel Tower"
+        ],
+        "originalQuestion": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-200-906.webp",
+          "sha256": "53cc9e7f009e9527550582f64d9ba2989d088d0e42b14f1a135ac5b1f3e6b0ca",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Eiffel Tower's tapering lattice profile, wide arched base and horizontal platforms are visible. The blurred overall profile supports the familiar landmark; no engineering-scale accuracy is certified.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Eiffel Tower's tapering lattice profile, wide arched base and horizontal platforms are visible. The blurred overall profile supports the familiar landmark; no engineering-scale accuracy is certified.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-200-907",
+      "answer": "سباحة",
+      "tier": 200,
+      "topic": "رياضة",
+      "image": "media/blur/blur-200-907.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-907.json",
+      "sha256": "e5e33fe680740f384f2c054207ba4aaaf3c3447370aeeb3f798a1f2d41c7d25a",
+      "width": 1280,
+      "height": 960,
+      "bytes": 245066,
+      "editorialReview": {
+        "id": "blur-200-907",
+        "tier": 200,
+        "topic": "رياضة",
+        "question": "ما الرياضة المائية التي يمارسها الشخص في الصورة؟",
+        "answer": "سباحة",
+        "alt": [
+          "السباحة الحرة",
+          "Swimming"
+        ],
+        "originalQuestion": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-200-907.webp",
+          "sha256": "e5e33fe680740f384f2c054207ba4aaaf3c3447370aeeb3f798a1f2d41c7d25a",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Adult swimmer wearing cap and goggles, with a raised recovering arm in a pool lane. Generic swimming is appropriate; image crops the submerged/lower body as a normal sports scene.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Adult swimmer wearing cap and goggles, with a raised recovering arm in a pool lane. Generic swimming is appropriate; image crops the submerged/lower body as a normal sports scene.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-200-908",
+      "answer": "شلال",
+      "tier": 200,
+      "topic": "طبيعة",
+      "image": "media/blur/blur-200-908.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-200-908.json",
+      "sha256": "8c036a0298fb4bcde5f5b2ade601b3e4ffdb5cc7f62853d2b7367b2072111bd8",
+      "width": 1280,
+      "height": 960,
+      "bytes": 254286,
+      "editorialReview": {
+        "id": "blur-200-908",
+        "tier": 200,
+        "topic": "طبيعة",
+        "question": "ما الظاهرة الطبيعية التي تتدفق فيها المياه فوق الحافة الصخرية؟",
+        "answer": "شلال",
+        "alt": [
+          "شلال ماء",
+          "شلالات",
+          "Waterfall"
+        ],
+        "originalQuestion": "ما الذي يظهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-200-908.webp",
+          "sha256": "8c036a0298fb4bcde5f5b2ade601b3e4ffdb5cc7f62853d2b7367b2072111bd8",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Broad waterfall over a rocky ledge, white falling water and a pool below. Generic waterfall only; no actual location is established.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Broad waterfall over a rocky ledge, white falling water and a pool below. Generic waterfall only; no actual location is established.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-400-901",
+      "answer": "بطريق",
+      "tier": 400,
+      "topic": "حيوانات",
+      "image": "media/blur/blur-400-901.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-901.json",
+      "sha256": "0d34a7e1e1ce7dc9376467ae53e8e550cdae9dfffd0f1651aaa70e3790aa89ac",
+      "width": 1280,
+      "height": 960,
+      "bytes": 123252,
+      "editorialReview": {
+        "id": "blur-400-901",
+        "tier": 400,
+        "topic": "حيوانات",
+        "question": "ما الطائر الواقف على الجليد بصدره الأبيض وظهره الأسود؟",
+        "answer": "بطريق",
+        "alt": [
+          "Penguin",
+          "بطريق إمبراطور"
+        ],
+        "originalQuestion": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-400-901.webp",
+          "sha256": "0d34a7e1e1ce7dc9376467ae53e8e550cdae9dfffd0f1651aaa70e3790aa89ac",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Upright penguin with black back, white front, yellow neck patches, flippers and visible feet. General penguin answer is fair; exact species not required.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Upright penguin with black back, white front, yellow neck patches, flippers and visible feet. General penguin answer is fair; exact species not required.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-400-902",
+      "answer": "كرواسون",
+      "tier": 400,
+      "topic": "أطعمة",
+      "image": "media/blur/blur-400-902.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-902.json",
+      "sha256": "fb001a47a62cf25ca25ff4a2a0ec350b034abb342c0f4a51ba059d6d61fdf5be",
+      "width": 1280,
+      "height": 960,
+      "bytes": 205636,
+      "editorialReview": {
+        "id": "blur-400-902",
+        "tier": 400,
+        "topic": "أطعمة",
+        "question": "ما اسم المعجنات الهلالية الذهبية الظاهرة في الصورة؟",
+        "answer": "كرواسون",
+        "alt": [
+          "كرواسان",
+          "كروسان",
+          "Croissant"
+        ],
+        "originalQuestion": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-400-902.webp",
+          "sha256": "fb001a47a62cf25ca25ff4a2a0ec350b034abb342c0f4a51ba059d6d61fdf5be",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Single flaky golden crescent-shaped croissant with both ends visible. Crescent and baked color remain in the approximate blur.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Single flaky golden crescent-shaped croissant with both ends visible. Crescent and baked color remain in the approximate blur.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-400-903",
+      "answer": "مظلة",
+      "tier": 400,
+      "topic": "البيت",
+      "image": "media/blur/blur-400-903.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-903.json",
+      "sha256": "26983ebf381e36d9fb3e1c6bcf6a830656ed94216047298f0c0a28534ceaf88e",
+      "width": 1280,
+      "height": 960,
+      "bytes": 142676,
+      "editorialReview": {
+        "id": "blur-400-903",
+        "tier": 400,
+        "topic": "البيت",
+        "question": "ما الغرض الأصفر المفتوح ذو المقبض المنحني في الصورة؟",
+        "answer": "مظلة",
+        "alt": [
+          "شمسية",
+          "Umbrella"
+        ],
+        "originalQuestion": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-400-903.webp",
+          "sha256": "26983ebf381e36d9fb3e1c6bcf6a830656ed94216047298f0c0a28534ceaf88e",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Open yellow umbrella with intact canopy, shaft and hooked handle on wet paving. The dome/handle composition survives the approximate blur.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Open yellow umbrella with intact canopy, shaft and hooked handle on wet paving. The dome/handle composition survives the approximate blur.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-400-904",
+      "answer": "بوق",
+      "tier": 400,
+      "topic": "موسيقى",
+      "image": "media/blur/blur-400-904.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-904.json",
+      "sha256": "6a755f7bba9281cdc5bbc6c942b6494f58ca48aae97b0ea2d29e1452d0e47762",
+      "width": 1280,
+      "height": 960,
+      "bytes": 154790,
+      "editorialReview": {
+        "id": "blur-400-904",
+        "tier": 400,
+        "topic": "موسيقى",
+        "question": "ما آلة النفخ المعدنية ذات الفوهة المتسعة في الصورة؟",
+        "answer": "بوق",
+        "alt": [
+          "ترومبيت",
+          "ترومبت",
+          "Trumpet"
+        ],
+        "originalQuestion": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-400-904.webp",
+          "sha256": "6a755f7bba9281cdc5bbc6c942b6494f58ca48aae97b0ea2d29e1452d0e47762",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Actual full-size installed WebP and fresh paired sharp/static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full-size inspection confirms a brass trumpet with mouthpiece, flared bell, looped tubing and three valve buttons. General بوق/Trumpet is suitable; exact mechanical dimensions are not certified.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size inspection confirms a brass trumpet with mouthpiece, flared bell, looped tubing and three valve buttons. General بوق/Trumpet is suitable; exact mechanical dimensions are not certified.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-400-905",
+      "answer": "قارب شراعي",
+      "tier": 400,
+      "topic": "وسائل نقل",
+      "image": "media/blur/blur-400-905.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-905.json",
+      "sha256": "95dee0df052156ac425c2f6f50ffce837a56af667d80130fdf2090a41e84a4d0",
+      "width": 1280,
+      "height": 960,
+      "bytes": 117274,
+      "editorialReview": {
+        "id": "blur-400-905",
+        "tier": 400,
+        "topic": "وسائل نقل",
+        "question": "ما المركب ذو الأشرعة البيضاء الذي يظهر في الصورة؟",
+        "answer": "قارب شراعي",
+        "alt": [
+          "مركب شراعي",
+          "زورق شراعي",
+          "يخت شراعي",
+          "Sailboat"
+        ],
+        "originalQuestion": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-400-905.webp",
+          "sha256": "95dee0df052156ac425c2f6f50ffce837a56af667d80130fdf2090a41e84a4d0",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Small sailboat with hull, mast and triangular white sails on blue water. The triangular sails remain the main blurred cue. Do not demand a model or rig subtype.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Small sailboat with hull, mast and triangular white sails on blue water. The triangular sails remain the main blurred cue. Do not demand a model or rig subtype.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-400-906",
+      "answer": "طاحونة هواء",
+      "tier": 400,
+      "topic": "معالم ومنشآت",
+      "image": "media/blur/blur-400-906.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-906.json",
+      "sha256": "c9330f97e4fad79aa0aeb06b6b5328426d63d3d56b805e34195121190117edb5",
+      "width": 1280,
+      "height": 960,
+      "bytes": 242376,
+      "editorialReview": {
+        "id": "blur-400-906",
+        "tier": 400,
+        "topic": "معالم ومنشآت",
+        "question": "ما المنشأة التقليدية ذات الأذرع الدوارة الأربعة في الصورة؟",
+        "answer": "طاحونة هواء",
+        "alt": [
+          "طاحونة هوائية",
+          "مطحنة هوائية",
+          "طاحونة",
+          "Windmill"
+        ],
+        "originalQuestion": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-400-906.webp",
+          "sha256": "c9330f97e4fad79aa0aeb06b6b5328426d63d3d56b805e34195121190117edb5",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Traditional four-sailed windmill with tapering tower beside water. Distinguishable from a modern three-blade power turbine. No specific mill or town is established.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Traditional four-sailed windmill with tapering tower beside water. Distinguishable from a modern three-blade power turbine. No specific mill or town is established.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-400-907",
+      "answer": "ملاكمة",
+      "tier": 400,
+      "topic": "رياضة",
+      "image": "media/blur/blur-400-907.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-907.json",
+      "sha256": "7ce58b0d00a7879553b8cc9a605d431551d6c96be2aded47b7692cf1b7561ede",
+      "width": 1280,
+      "height": 960,
+      "bytes": 148552,
+      "editorialReview": {
+        "id": "blur-400-907",
+        "tier": 400,
+        "topic": "رياضة",
+        "question": "إلى أي رياضة تنتمي القفازات الحمراء الظاهرة في الصورة؟",
+        "answer": "ملاكمة",
+        "alt": [
+          "Boxing"
+        ],
+        "originalQuestion": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-400-907.webp",
+          "sha256": "7ce58b0d00a7879553b8cc9a605d431551d6c96be2aded47b7692cf1b7561ede",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Two padded red boxing gloves on a gym bench. The question correctly asks for the sport, not the equipment; sharp identity is clear and red rounded forms survive the blur.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Two padded red boxing gloves on a gym bench. The question correctly asks for the sport, not the equipment; sharp identity is clear and red rounded forms survive the blur.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-400-908",
+      "answer": "بركان",
+      "tier": 400,
+      "topic": "طبيعة",
+      "image": "media/blur/blur-400-908.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-400-908.json",
+      "sha256": "b5e230a76e468b5a0eeffe1ecc47c0e8941a535ada69a2a613afdb9c56485592",
+      "width": 1280,
+      "height": 960,
+      "bytes": 214844,
+      "editorialReview": {
+        "id": "blur-400-908",
+        "tier": 400,
+        "topic": "طبيعة",
+        "question": "ما التكوين الجبلي الذي تنساب منه الحمم في الصورة؟",
+        "answer": "بركان",
+        "alt": [
+          "بركان ثائر",
+          "Volcano"
+        ],
+        "originalQuestion": "ما الذي يظهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-400-908.webp",
+          "sha256": "b5e230a76e468b5a0eeffe1ecc47c0e8941a535ada69a2a613afdb9c56485592",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Conical volcano with bright erupting summit and orange lava streams. A generic volcano answer is supported; no location or actual event claim.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Conical volcano with bright erupting summit and orange lava streams. A generic volcano answer is supported; no location or actual event claim.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-600-901",
+      "answer": "كسلان",
+      "tier": 600,
+      "topic": "حيوانات",
+      "image": "media/blur/blur-600-901.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-901.json",
+      "sha256": "b6891f3686ca4923f0d8f2f0f1715f23796766525b014b9736340bc0a5d88e4d",
+      "width": 1280,
+      "height": 960,
+      "bytes": 222136,
+      "editorialReview": {
+        "id": "blur-600-901",
+        "tier": 600,
+        "topic": "حيوانات",
+        "question": "ما الحيوان المتدلي من الغصن بمخالبه الطويلة في الصورة؟",
+        "answer": "كسلان",
+        "alt": [
+          "حيوان الكسلان",
+          "Sloth"
+        ],
+        "originalQuestion": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "originalAlt": [
+          "حيوان الكسلان",
+          "Sloth"
+        ],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-600-901.webp",
+          "sha256": "b6891f3686ca4923f0d8f2f0f1715f23796766525b014b9736340bc0a5d88e4d",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Actual full-size installed WebP and fresh paired sharp/static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full-size view shows a sloth hanging with four limbs, shaggy fur, pale round face with dark eye markings and curved claws. Three gripping claw sets are clearly exposed; the fourth is naturally partly obscured over the branch. No extra-limb defect observed. Static blur loses facial detail, so retain the hanging/claw wording.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size view shows a sloth hanging with four limbs, shaggy fur, pale round face with dark eye markings and curved claws. Three gripping claw sets are clearly exposed; the fourth is naturally partly obscured over the branch. No extra-limb defect observed. Static blur loses facial detail, so retain the hanging/claw wording.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-600-902",
+      "answer": "بريتزل",
+      "tier": 600,
+      "topic": "أطعمة",
+      "image": "media/blur/blur-600-902.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-902.json",
+      "sha256": "b9dc51955536e009312ac8b4d15b217072b133484da9fa5533c96eea674be569",
+      "width": 1280,
+      "height": 960,
+      "bytes": 249744,
+      "editorialReview": {
+        "id": "blur-600-902",
+        "tier": 600,
+        "topic": "أطعمة",
+        "question": "ما المخبوز المالح ذو العقدة المتشابكة في الصورة؟",
+        "answer": "بريتزل",
+        "alt": [
+          "بريتسل",
+          "بريتزيل",
+          "كعك البريتزل",
+          "Pretzel"
+        ],
+        "originalQuestion": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "originalAlt": [
+          "بريتسل",
+          "كعك البريتزل",
+          "Pretzel"
+        ],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-600-902.webp",
+          "sha256": "b9dc51955536e009312ac8b4d15b217072b133484da9fa5533c96eea674be569",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Salted golden pretzel with the familiar crossing arms and three openings. Shape survives approximate blur; no regional or recipe subtype required.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Salted golden pretzel with the familiar crossing arms and three openings. Shape survives approximate blur; no regional or recipe subtype required.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-600-903",
+      "answer": "آلة خياطة",
+      "tier": 600,
+      "topic": "البيت",
+      "image": "media/blur/blur-600-903.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-903.json",
+      "sha256": "1352033a952c3807dd76a61e5b4287797c2fe70118cec8e931a310be310559f0",
+      "width": 1280,
+      "height": 960,
+      "bytes": 85068,
+      "editorialReview": {
+        "id": "blur-600-903",
+        "tier": 600,
+        "topic": "البيت",
+        "question": "ما الجهاز المنزلي ذو الإبرة وبكرة الخيط في الصورة؟",
+        "answer": "آلة خياطة",
+        "alt": [
+          "ماكينة خياطة",
+          "مكنة خياطة",
+          "Sewing machine"
+        ],
+        "originalQuestion": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-600-903.webp",
+          "sha256": "1352033a952c3807dd76a61e5b4287797c2fe70118cec8e931a310be310559f0",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Home sewing machine with thread spool, needle/presser assembly, arm, base and side control. General identification is clear; tiny dial markings are incidental rather than answer-bearing.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Home sewing machine with thread spool, needle/presser assembly, arm, base and side control. General identification is clear; tiny dial markings are incidental rather than answer-bearing.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-600-904",
+      "answer": "عود",
+      "tier": 600,
+      "topic": "موسيقى",
+      "image": "media/blur/blur-600-904.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-904.json",
+      "sha256": "7407cc8f24a3aa11d1a40ade2f1251dbcf111850ef44a3cc489afbf603bafcba",
+      "width": 1280,
+      "height": 960,
+      "bytes": 200112,
+      "editorialReview": {
+        "id": "blur-600-904",
+        "tier": 600,
+        "topic": "موسيقى",
+        "question": "ما الآلة الوترية ذات الجسم الكمثري والعنق القصير في الصورة؟",
+        "answer": "عود",
+        "alt": [
+          "عود عربي",
+          "Oud"
+        ],
+        "originalQuestion": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-600-904.webp",
+          "sha256": "7407cc8f24a3aa11d1a40ade2f1251dbcf111850ef44a3cc489afbf603bafcba",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Actual full-size installed WebP and fresh paired sharp/static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full-size image shows oud-shaped pear body, short fretless neck, angled pegbox, strings, bridge and three rosettes. Thin string/peg detail is not a basis for requiring an exact string count. Static blur leaves the large body/neck relation.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size image shows oud-shaped pear body, short fretless neck, angled pegbox, strings, bridge and three rosettes. Thin string/peg detail is not a basis for requiring an exact string count. Static blur leaves the large body/neck relation.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-600-905",
+      "answer": "ترام",
+      "tier": 600,
+      "topic": "وسائل نقل",
+      "image": "media/blur/blur-600-905.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-905.json",
+      "sha256": "bb57ec694604aca2fa7197ae1ac850a56da1cff2a49b923e9aa5966d6ad68c6f",
+      "width": 1280,
+      "height": 960,
+      "bytes": 224340,
+      "editorialReview": {
+        "id": "blur-600-905",
+        "tier": 600,
+        "topic": "وسائل نقل",
+        "question": "ما المركبة الصفراء التي تسير على سكك داخل المدينة؟",
+        "answer": "ترام",
+        "alt": [
+          "ترامواي",
+          "قطار شوارع",
+          "Streetcar",
+          "Tram"
+        ],
+        "originalQuestion": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-600-905.webp",
+          "sha256": "bb57ec694604aca2fa7197ae1ac850a56da1cff2a49b923e9aa5966d6ad68c6f",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Yellow articulated street tram on rails with an overhead collector. Static blur can resemble a bus, so retaining the rail/city clue is useful. Exact tram model and city are unsupported.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Yellow articulated street tram on rails with an overhead collector. Static blur can resemble a bus, so retaining the rail/city clue is useful. Exact tram model and city are unsupported.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-600-906",
+      "answer": "منارة",
+      "tier": 600,
+      "topic": "معالم ومنشآت",
+      "image": "media/blur/blur-600-906.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-906.json",
+      "sha256": "aa779ba0202791af06a37dff24e763b8d72821943f24f100e3ee8432dcd8c357",
+      "width": 1280,
+      "height": 960,
+      "bytes": 182412,
+      "editorialReview": {
+        "id": "blur-600-906",
+        "tier": 600,
+        "topic": "معالم ومنشآت",
+        "question": "ما المنشأة الساحلية المخططة بالأحمر والأبيض في الصورة؟",
+        "answer": "منارة",
+        "alt": [
+          "فنار",
+          "منارة بحرية",
+          "فنار بحري",
+          "Lighthouse"
+        ],
+        "originalQuestion": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-600-906.webp",
+          "sha256": "aa779ba0202791af06a37dff24e763b8d72821943f24f100e3ee8432dcd8c357",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Coastal red-and-white striped lighthouse with lantern room on top of a rocky base. Large stripes survive blur; no specific named lighthouse is established.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Coastal red-and-white striped lighthouse with lantern room on top of a rocky base. Large stripes survive blur; no specific named lighthouse is established.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-600-907",
+      "answer": "رماية بالقوس",
+      "tier": 600,
+      "topic": "رياضة",
+      "image": "media/blur/blur-600-907.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-907.json",
+      "sha256": "836d2c3a3d64fea543dc83fe0681adcaf6f7d52f6b92e3d72e9b1738ad5cc1eb",
+      "width": 1280,
+      "height": 960,
+      "bytes": 153056,
+      "editorialReview": {
+        "id": "blur-600-907",
+        "tier": 600,
+        "topic": "رياضة",
+        "question": "ما الرياضة التي يصوّب فيها اللاعب سهمًا نحو هدف دائري؟",
+        "answer": "رماية بالقوس",
+        "alt": [
+          "القوس والسهم",
+          "رماية بالقوس والسهم",
+          "نبالة",
+          "Archery"
+        ],
+        "originalQuestion": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-600-907.webp",
+          "sha256": "836d2c3a3d64fea543dc83fe0681adcaf6f7d52f6b92e3d72e9b1738ad5cc1eb",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Actual full-size installed WebP and fresh paired sharp/static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Revised full-size archery image has a complete recurve bow, drawn string, continuous arrow shaft with fletching and a visible point, plus target to the right. Lower athlete body is normally cropped; equipment is complete. Static blur loses the thin arrow but retains the pose/target, so the question's arrow clue is appropriate.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Revised full-size archery image has a complete recurve bow, drawn string, continuous arrow shaft with fletching and a visible point, plus target to the right. Lower athlete body is normally cropped; equipment is complete. Static blur loses the thin arrow but retains the pose/target, so the question's arrow clue is appropriate.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-600-908",
+      "answer": "شفق قطبي",
+      "tier": 600,
+      "topic": "طبيعة",
+      "image": "media/blur/blur-600-908.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-600-908.json",
+      "sha256": "9201319dae196ca85171c227e36ba7950ff8fd386b822bf3a2bae865f9780894",
+      "width": 1280,
+      "height": 960,
+      "bytes": 142806,
+      "editorialReview": {
+        "id": "blur-600-908",
+        "tier": 600,
+        "topic": "طبيعة",
+        "question": "ما الظاهرة المضيئة التي ترسم ستائر خضراء في السماء ليلًا؟",
+        "answer": "شفق قطبي",
+        "alt": [
+          "الأضواء الشمالية",
+          "الشفق القطبي الشمالي",
+          "أضواء قطبية",
+          "Aurora"
+        ],
+        "originalQuestion": "ما الذي يظهر في الصورة الضبابية؟",
+        "originalAlt": [
+          "الأضواء الشمالية",
+          "الشفق القطبي الشمالي",
+          "Aurora"
+        ],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-600-908.webp",
+          "sha256": "9201319dae196ca85171c227e36ba7950ff8fd386b822bf3a2bae865f9780894",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sheet made from the actual installed WebP pixels"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Current aurora image shows broad green luminous curtains with violet edges in a starry night sky above forest and snow. This is the replacement, not the stale bamboo scene. Fresh approximate static blur retains green ribbons against dark sky; no exact location is implied.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Current aurora image shows broad green luminous curtains with violet edges in a starry night sky above forest and snow. This is the replacement, not the stale bamboo scene. Fresh approximate static blur retains green ribbons against dark sky; no exact location is implied.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-800-901",
+      "answer": "مدرع",
+      "tier": 800,
+      "topic": "حيوانات",
+      "image": "media/blur/blur-800-901.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-901.json",
+      "sha256": "ff0cb8dbfc678de2b841576def0d674206f43ef0ebc6da193c789eebb70ccd5b",
+      "width": 1280,
+      "height": 960,
+      "bytes": 213118,
+      "editorialReview": {
+        "id": "blur-800-901",
+        "tier": 800,
+        "topic": "حيوانات",
+        "question": "ما الحيوان صاحب الصفائح العظمية والذيل الطويل في الصورة؟",
+        "answer": "مدرع",
+        "alt": [
+          "أرماديلو",
+          "أرماديللو",
+          "حيوان المدرع",
+          "Armadillo"
+        ],
+        "originalQuestion": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "originalAlt": [
+          "أرماديلو"
+        ],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-800-901.webp",
+          "sha256": "ff0cb8dbfc678de2b841576def0d674206f43ef0ebc6da193c789eebb70ccd5b",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full-size image shows a complete armadillo with segmented armored back, pointed muzzle, ears, four coherent legs and long tapering tail with its tip inside the frame. General armadillo identity is supported; no nine-band/species requirement. Static blur retains a low domed body but loses armor texture, so retain the question's plates/tail context.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size image shows a complete armadillo with segmented armored back, pointed muzzle, ears, four coherent legs and long tapering tail with its tip inside the frame. General armadillo identity is supported; no nine-band/species requirement. Static blur retains a low domed body but loses armor texture, so retain the question's plates/tail context.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-800-902",
+      "answer": "سوشي",
+      "tier": 800,
+      "topic": "أطعمة",
+      "image": "media/blur/blur-800-902.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-902.json",
+      "sha256": "9a63b89c20ba7628ab5b4d599b96306f71b2b4bb5aae70d52fd8f81ac98b19fb",
+      "width": 1280,
+      "height": 960,
+      "bytes": 224614,
+      "editorialReview": {
+        "id": "blur-800-902",
+        "tier": 800,
+        "topic": "أطعمة",
+        "question": "ما الطعام الياباني المصنوع من لفائف الأرز الظاهرة في الصورة؟",
+        "answer": "سوشي",
+        "alt": [
+          "لفائف سوشي",
+          "Sushi"
+        ],
+        "originalQuestion": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-800-902.webp",
+          "sha256": "9a63b89c20ba7628ab5b4d599b96306f71b2b4bb5aae70d52fd8f81ac98b19fb",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sharp/approximate-static-blur sheet from installed WebP"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Three sushi rolls have dark nori exteriors, rice rings and colorful vegetable fillings. The arrangement and rice/nori contrast remain in static blur. Generic sushi answer is clear; no fish ingredient is asserted.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Three sushi rolls have dark nori exteriors, rice rings and colorful vegetable fillings. The arrangement and rice/nori contrast remain in static blur. Generic sushi answer is clear; no fish ingredient is asserted.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-800-903",
+      "answer": "مكبس قهوة",
+      "tier": 800,
+      "topic": "البيت",
+      "image": "media/blur/blur-800-903.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-903.json",
+      "sha256": "de262d37bed8af51df443ab072bfe96515ef28e90a53644e2cf12e37d009fb52",
+      "width": 1280,
+      "height": 960,
+      "bytes": 152140,
+      "editorialReview": {
+        "id": "blur-800-903",
+        "tier": 800,
+        "topic": "البيت",
+        "question": "ما أداة تحضير المشروبات ذات الوعاء الزجاجي والمصفاة الضاغطة؟",
+        "answer": "مكبس قهوة",
+        "alt": [
+          "فرنش برس",
+          "مكبس فرنسي",
+          "إبريق كبس القهوة",
+          "French press"
+        ],
+        "originalQuestion": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [
+          "فرنش برس"
+        ],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-800-903.webp",
+          "sha256": "de262d37bed8af51df443ab072bfe96515ef28e90a53644e2cf12e37d009fb52",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sharp/approximate-static-blur sheet from installed WebP"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "French press has a glass vessel with coffee, metal frame and lid, top plunger knob/rod, pouring lip and handle. Static blur retains the handled vessel and dark contents; the plunger/filter wording supplies fair context.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "French press has a glass vessel with coffee, metal frame and lid, top plunger knob/rod, pouring lip and handle. Static blur retains the handled vessel and dark contents; the plunger/filter wording supplies fair context.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-800-904",
+      "answer": "بانجو",
+      "tier": 800,
+      "topic": "موسيقى",
+      "image": "media/blur/blur-800-904.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-904.json",
+      "sha256": "3de97213fac2ea12d5185649e9fca0eb570564971a43bef744597ef0395512e8",
+      "width": 1280,
+      "height": 960,
+      "bytes": 170848,
+      "editorialReview": {
+        "id": "blur-800-904",
+        "tier": 800,
+        "topic": "موسيقى",
+        "question": "ما الآلة الوترية ذات الجسم الدائري المغطى بغشاء أبيض؟",
+        "answer": "بانجو",
+        "alt": [
+          "بانجوا",
+          "Banjo"
+        ],
+        "originalQuestion": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-800-904.webp",
+          "sha256": "3de97213fac2ea12d5185649e9fca0eb570564971a43bef744597ef0395512e8",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full-size banjo has round white membrane, bridge/tailpiece, fretted neck, four headstock tuners and a separate shorter-string tuning peg partway up the side. Five string courses appear across the head/bridge region. General banjo identity and requested five-string layout are visually supported without a tuning/scale claim.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size banjo has round white membrane, bridge/tailpiece, fretted neck, four headstock tuners and a separate shorter-string tuning peg partway up the side. Five string courses appear across the head/bridge region. General banjo identity and requested five-string layout are visually supported without a tuning/scale claim.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-800-905",
+      "answer": "عربة ثلج",
+      "tier": 800,
+      "topic": "وسائل نقل",
+      "image": "media/blur/blur-800-905.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-905.json",
+      "sha256": "2e181f5dc1c866aa50162ce6cc04b81ef4a70f1a12f2798aaa57175ddf3581dd",
+      "width": 1280,
+      "height": 960,
+      "bytes": 196482,
+      "editorialReview": {
+        "id": "blur-800-905",
+        "tier": 800,
+        "topic": "وسائل نقل",
+        "question": "ما المركبة ذات الزلاجتين الأماميتين والجنزير الخلفي في الصورة؟",
+        "answer": "عربة ثلج",
+        "alt": [
+          "دراجة ثلجية",
+          "مركبة ثلجية",
+          "سكوتر ثلجي",
+          "سنوموبيل",
+          "Snowmobile"
+        ],
+        "originalQuestion": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-800-905.webp",
+          "sha256": "2e181f5dc1c866aa50162ce6cc04b81ef4a70f1a12f2798aaa57175ddf3581dd",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-subject-match",
+        "observation": "Independently viewed the updated installed WebP at full size: former side-panel lettering and nose emblem are removed. Two front skis, rear drive track, suspension, seat and windshield remain coherent and complete. Current image has no observed readable brand or answer-bearing text. Fresh approximate static blur also viewed.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false,
+        "previousObservedImageEvidence": [
+          {
+            "path": "C:/Users/user/Desktop/maydan/media/blur/blur-800-905.webp",
+            "sha256": "5aa5bfae4087dc148502c1652d6681d068ebc89c9b499667e99640dfd6539094",
+            "width": 1280,
+            "height": 960,
+            "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet",
+            "contactSheet": "C:/Users/user/Documents/Codex/2026-09-25/hg/work/blur-editorial-sheet-800-new.png"
+          }
+        ]
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Independently viewed the updated installed WebP at full size: former side-panel lettering and nose emblem are removed. Two front skis, rear drive track, suspension, seat and windshield remain coherent and complete. Current image has no observed readable brand or answer-bearing text. Fresh approximate static blur also viewed.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-800-906",
+      "answer": "مرصد فلكي",
+      "tier": 800,
+      "topic": "معالم ومنشآت",
+      "image": "media/blur/blur-800-906.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-906.json",
+      "sha256": "9739f92f2f173da31dc564e28d14bc38468624c3e1b43fff13a249a642cfff25",
+      "width": 1280,
+      "height": 960,
+      "bytes": 175204,
+      "editorialReview": {
+        "id": "blur-800-906",
+        "tier": 800,
+        "topic": "معالم ومنشآت",
+        "question": "ما المبنى ذو القبة المشقوقة المخصص لمراقبة النجوم؟",
+        "answer": "مرصد فلكي",
+        "alt": [
+          "مرصد",
+          "مرصد نجوم",
+          "Observatory"
+        ],
+        "originalQuestion": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-800-906.webp",
+          "sha256": "9739f92f2f173da31dc564e28d14bc38468624c3e1b43fff13a249a642cfff25",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sharp/approximate-static-blur sheet from installed WebP"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Small astronomical observatory has a silver dome with a large observing slit and a visible telescope above a round building. The open dark slit survives blur. No named site or telescope model is claimed.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Small astronomical observatory has a silver dome with a large observing slit and a visible telescope above a round building. The open dark slit survives blur. No named site or telescope model is claimed.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-800-907",
+      "answer": "كيرلنغ",
+      "tier": 800,
+      "topic": "رياضة",
+      "image": "media/blur/blur-800-907.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-907.json",
+      "sha256": "83c3969c71ae72641daa106a4693f86bdeeaecc2e39ff5c354630ad123f4cb47",
+      "width": 1280,
+      "height": 960,
+      "bytes": 198532,
+      "editorialReview": {
+        "id": "blur-800-907",
+        "tier": 800,
+        "topic": "رياضة",
+        "question": "ما الرياضة الشتوية التي تستخدم الحجر ذا المقبض الظاهر؟",
+        "answer": "كيرلنغ",
+        "alt": [
+          "كيرلينغ",
+          "كيرلنج",
+          "كرلنغ",
+          "Curling"
+        ],
+        "originalQuestion": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [
+          "world-curling"
+        ],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-800-907.webp",
+          "sha256": "83c3969c71ae72641daa106a4693f86bdeeaecc2e39ff5c354630ad123f4cb47",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sharp/approximate-static-blur sheet from installed WebP"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Gray granite-like curling stone with a curved red handle rests on ice. Body and handle are coherent and remain recognizable in static blur with the sport clue. No exact stone material certification or event identity.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Gray granite-like curling stone with a curved red handle rests on ice. Body and handle are coherent and remain recognizable in static blur with the sport clue. No exact stone material certification or event identity.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-800-908",
+      "answer": "مرجان",
+      "tier": 800,
+      "topic": "طبيعة",
+      "image": "media/blur/blur-800-908.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-800-908.json",
+      "sha256": "df750a9bb24edfa8687c24f8e4823baa0e1cf8a57799a49f5816afd551402f69",
+      "width": 1280,
+      "height": 960,
+      "bytes": 238038,
+      "editorialReview": {
+        "id": "blur-800-908",
+        "tier": 800,
+        "topic": "طبيعة",
+        "question": "ما الكائن البحري المتفرع والملون الذي يظهر تحت الماء؟",
+        "answer": "مرجان",
+        "alt": [
+          "مستعمرة مرجانية",
+          "شعاب مرجانية",
+          "Coral"
+        ],
+        "originalQuestion": "ما الذي يظهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [
+          "noaa-coral"
+        ],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-800-908.webp",
+          "sha256": "df750a9bb24edfa8687c24f8e4823baa0e1cf8a57799a49f5816afd551402f69",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sharp/approximate-static-blur sheet from installed WebP"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Underwater branching coral colony has orange/pink branches, light tips and a seabed base against blue water. Branching form/color survives static blur. Generic coral is supported, not a species or a claim that coral is a plant.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Underwater branching coral colony has orange/pink branches, light tips and a seabed base against blue water. Branching form/color survives static blur. Generic coral is supported, not a species or a claim that coral is a plant.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-1000-901",
+      "answer": "تابير",
+      "tier": 1000,
+      "topic": "حيوانات",
+      "image": "media/blur/blur-1000-901.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-901.json",
+      "sha256": "ea49c14e765fa87835920fa51d8518eeda8bbd1053d26bcea24ba3baf85e7ff0",
+      "width": 1280,
+      "height": 960,
+      "bytes": 233266,
+      "editorialReview": {
+        "id": "blur-1000-901",
+        "tier": 1000,
+        "topic": "حيوانات",
+        "question": "ما الحيوان ذو الخطم القصير والرقعة البيضاء العريضة في الصورة؟",
+        "answer": "تابير",
+        "alt": [
+          "حيوان التابير",
+          "تابير ملاوي",
+          "Tapir"
+        ],
+        "originalQuestion": "ما الحيوان الظاهر في الصورة الضبابية؟",
+        "originalAlt": [
+          "التابير"
+        ],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-1000-901.webp",
+          "sha256": "ea49c14e765fa87835920fa51d8518eeda8bbd1053d26bcea24ba3baf85e7ff0",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full-size tapir has black front/hindquarters, broad white saddle, rounded ears, fleshy projecting snout and coherent legs. General tapir identity is supported; the quiz need not demand a species. The large dark/light pattern remains under blur.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size tapir has black front/hindquarters, broad white saddle, rounded ears, fleshy projecting snout and coherent legs. General tapir identity is supported; the quiz need not demand a species. The large dark/light pattern remains under blur.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-1000-902",
+      "answer": "فاكهة التنين",
+      "tier": 1000,
+      "topic": "أطعمة",
+      "image": "media/blur/blur-1000-902.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-902.json",
+      "sha256": "a0ba0a7abe89272c32abd4be2be026c244f6bfc8c8c1e662f22a776572724d27",
+      "width": 1280,
+      "height": 960,
+      "bytes": 206908,
+      "editorialReview": {
+        "id": "blur-1000-902",
+        "tier": 1000,
+        "topic": "أطعمة",
+        "question": "ما اسم الثمرة الوردية ذات اللب الأبيض والبذور السوداء؟",
+        "answer": "فاكهة التنين",
+        "alt": [
+          "بيتايا",
+          "بتايا",
+          "دراغون فروت",
+          "Dragon fruit"
+        ],
+        "originalQuestion": "ما اسم الطعام الظاهر في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-1000-902.webp",
+          "sha256": "a0ba0a7abe89272c32abd4be2be026c244f6bfc8c8c1e662f22a776572724d27",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Fresh paired sharp/approximate-static-blur sheet from installed WebP"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Dragon fruit arrangement shows a whole bright pink fruit with green bracts and a cut face with white flesh and many small dark seeds. Contrast survives static blur. No exact species/cultivar is inferred.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Dragon fruit arrangement shows a whole bright pink fruit with green bracts and a cut face with white flesh and many small dark seeds. Contrast survives static blur. No exact species/cultivar is inferred.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-1000-903",
+      "answer": "مكواة فحم",
+      "tier": 1000,
+      "topic": "البيت",
+      "image": "media/blur/blur-1000-903.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-903.json",
+      "sha256": "5bf16ff4202f77dd5a8899ccec884e488bd4f63229e662666e7729bcbb763958",
+      "width": 1280,
+      "height": 960,
+      "bytes": 239638,
+      "editorialReview": {
+        "id": "blur-1000-903",
+        "tier": 1000,
+        "topic": "البيت",
+        "question": "ما أداة كي الملابس القديمة ذات الغطاء المفصلي في الصورة؟",
+        "answer": "مكواة فحم",
+        "alt": [
+          "مكواة على الفحم",
+          "مكواة تعمل بالفحم",
+          "مكواة قديمة",
+          "Charcoal iron"
+        ],
+        "originalQuestion": "ما الأداة الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-1000-903.webp",
+          "sha256": "5bf16ff4202f77dd5a8899ccec884e488bd4f63229e662666e7729bcbb763958",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full-size antique iron has a wooden handle, metal chamber, visible lid hinge/latch and ventilation holes, consistent with a charcoal iron. Entire object is in frame. Internal burning fuel is not shown, so the broader antique-iron alias remains fair.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size antique iron has a wooden handle, metal chamber, visible lid hinge/latch and ventilation holes, consistent with a charcoal iron. Entire object is in frame. Internal burning fuel is not shown, so the broader antique-iron alias remains fair.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-1000-904",
+      "answer": "مزمار القربة",
+      "tier": 1000,
+      "topic": "موسيقى",
+      "image": "media/blur/blur-1000-904.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-904.json",
+      "sha256": "c2b609d7312914c898df9981d7d71b03a4cec289df9107f69f92651d46893418",
+      "width": 1280,
+      "height": 960,
+      "bytes": 236870,
+      "editorialReview": {
+        "id": "blur-1000-904",
+        "tier": 1000,
+        "topic": "موسيقى",
+        "question": "ما آلة النفخ التي تجمع كيسًا مرنًا وأنابيب متعددة؟",
+        "answer": "مزمار القربة",
+        "alt": [
+          "قربة موسيقية",
+          "آلة القربة",
+          "قربة اسكتلندية",
+          "مزمار اسكتلندي",
+          "Bagpipes"
+        ],
+        "originalQuestion": "ما الآلة الموسيقية الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [
+          "met-bagpipe"
+        ],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-1000-904.webp",
+          "sha256": "c2b609d7312914c898df9981d7d71b03a4cec289df9107f69f92651d46893418",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-general-subject-match",
+        "observation": "Full-size bagpipe has one tartan-covered bag, exactly three tall drone pipes, a separate short blowpipe with mouthpiece, and one finger-holed chanter. Pipes attach coherently to the bag; connecting cord/tassels are decorative, not extra pipes. Static blur retains bag and projecting pipes; no exact instrument tuning is certified.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size bagpipe has one tartan-covered bag, exactly three tall drone pipes, a separate short blowpipe with mouthpiece, and one finger-holed chanter. Pipes attach coherently to the bag; connecting cord/tassels are decorative, not extra pipes. Static blur retains bag and projecting pipes; no exact instrument tuning is certified.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-1000-905",
+      "answer": "قطار جبلي",
+      "tier": 1000,
+      "topic": "وسائل نقل",
+      "image": "media/blur/blur-1000-905.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-905.json",
+      "sha256": "cf1a115905b6d9cf83a656c31d42c771ee2a987615c1209a14c132e50e7ca758",
+      "width": 1280,
+      "height": 960,
+      "bytes": 257154,
+      "editorialReview": {
+        "id": "blur-1000-905",
+        "tier": 1000,
+        "topic": "وسائل نقل",
+        "question": "ما وسيلة النقل التي تصعد سكة شديدة الانحدار في الصورة؟",
+        "answer": "قطار جبلي",
+        "alt": [
+          "قطار سلكي",
+          "قطار كابلي",
+          "قطار مائل",
+          "فونيكولار",
+          "Funicular"
+        ],
+        "originalQuestion": "ما وسيلة النقل الظاهرة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [
+          "poma-funicular"
+        ],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-1000-905.webp",
+          "sha256": "cf1a115905b6d9cf83a656c31d42c771ee2a987615c1209a14c132e50e7ca758",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-subject-match",
+        "observation": "Full-size image shows a red enclosed passenger car resting on steep diagonal rails on a stone viaduct, with internally coherent sloping carriage/window lines and complete outline. This supports the planned funicular class; cable machinery is not visible and no exact engineering certification is claimed. Approximate blur retains the rising red diagonal vehicle but hides rail detail; contextual incline wording is useful.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size image shows a red enclosed passenger car resting on steep diagonal rails on a stone viaduct, with internally coherent sloping carriage/window lines and complete outline. This supports the planned funicular class; cable machinery is not visible and no exact engineering certification is claimed. Approximate blur retains the rising red diagonal vehicle but hides rail detail; contextual incline wording is useful.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-1000-906",
+      "answer": "برج مياه",
+      "tier": 1000,
+      "topic": "معالم ومنشآت",
+      "image": "media/blur/blur-1000-906.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-906.json",
+      "sha256": "8537038a02be0c8737d4be5390916b1da021e55d8b1bc42558e55ea6c61c78ef",
+      "width": 1280,
+      "height": 960,
+      "bytes": 133714,
+      "editorialReview": {
+        "id": "blur-1000-906",
+        "tier": 1000,
+        "topic": "معالم ومنشآت",
+        "question": "ما المنشأة ذات الخزان المرتفع فوق دعامات في الصورة؟",
+        "answer": "برج مياه",
+        "alt": [
+          "برج ماء",
+          "خزان مياه مرتفع",
+          "خزان ماء مرتفع",
+          "Water tower"
+        ],
+        "originalQuestion": "ما اسم المعلم أو المنشأة في الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-1000-906.webp",
+          "sha256": "8537038a02be0c8737d4be5390916b1da021e55d8b1bc42558e55ea6c61c78ef",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-subject-match",
+        "observation": "Full-size image shows a large cylindrical water tank with rounded underside elevated on structural legs, braces, ladder and top rail, with bases and tank visible. Elevated-storage-tower identity is clear. Approximate blur retains the raised broad tank and long narrow supports.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size image shows a large cylindrical water tank with rounded underside elevated on structural legs, braces, ladder and top rail, with bases and tank visible. Elevated-storage-tower identity is clear. Approximate blur retains the raised broad tank and long narrow supports.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-1000-907",
+      "answer": "رمي المطرقة",
+      "tier": 1000,
+      "topic": "رياضة",
+      "image": "media/blur/blur-1000-907.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-907.json",
+      "sha256": "ba0264765aa618249b9dd1e779c961f04cfda2a75ca19bd198af905fc362768e",
+      "width": 1280,
+      "height": 960,
+      "bytes": 130234,
+      "editorialReview": {
+        "id": "blur-1000-907",
+        "tier": 1000,
+        "topic": "رياضة",
+        "question": "ما مسابقة ألعاب القوى التي تستخدم كرة معدنية متصلة بسلك؟",
+        "answer": "رمي المطرقة",
+        "alt": [
+          "إطاحة المطرقة",
+          "قذف المطرقة",
+          "Hammer throw"
+        ],
+        "originalQuestion": "ما الرياضة التي تدل عليها الصورة الضبابية؟",
+        "originalAlt": [],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [
+          "usatf-hammer"
+        ],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-1000-907.webp",
+          "sha256": "ba0264765aa618249b9dd1e779c961f04cfda2a75ca19bd198af905fc362768e",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size cleaned installed WebP plus fresh paired sharp/approximate-static-blur preview"
+        },
+        "assessment": "observed-subject-match",
+        "observation": "Independently viewed the current cleaned WebP at full size. Both shoes now have plain panels without the former swoosh-like logos; the athlete, two-handed grip, handle, single continuous taut wire and spherical hammer head remain intact. Both legs/feet and circular throwing area remain coherent and complete. Fresh approximate static blur viewed: fine wire disappears, while athlete/cage/ball context and question about a ball attached to a wire remain important. This is not live-renderer approval.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false,
+        "previousObservedImageEvidence": [
+          {
+            "path": "C:/Users/user/Desktop/maydan/media/blur/blur-1000-907.webp",
+            "sha256": "efb6089daa49ca7f66870b7874ff3d0951c0efae1fd047fcc4c4ca70b079fa86",
+            "width": 1280,
+            "height": 960,
+            "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet",
+            "contactSheet": "C:/Users/user/Documents/Codex/2026-09-25/hg/work/blur-editorial-sheet-final5.png"
+          }
+        ]
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Independently viewed the current cleaned WebP at full size. Both shoes now have plain panels without the former swoosh-like logos; the athlete, two-handed grip, handle, single continuous taut wire and spherical hammer head remain intact. Both legs/feet and circular throwing area remain coherent and complete. Fresh approximate static blur viewed: fine wire disappears, while athlete/cage/ball context and question about a ball attached to a wire remain important. This is not live-renderer approval.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    },
+    {
+      "qid": "blur-1000-908",
+      "answer": "هوابط كلسية",
+      "tier": 1000,
+      "topic": "طبيعة",
+      "image": "media/blur/blur-1000-908.webp",
+      "generationRecord": "docs/bank/rebuild-2026-09-18/generated-records/blur-1000-908.json",
+      "sha256": "408ca8cabad5173c57ce6190d100a94350c6680d24d666af47f35ad570919be1",
+      "width": 1280,
+      "height": 960,
+      "bytes": 204976,
+      "editorialReview": {
+        "id": "blur-1000-908",
+        "tier": 1000,
+        "topic": "طبيعة",
+        "question": "ما التكوينات الصخرية المتدلية من سقف الكهف في الصورة؟",
+        "answer": "هوابط كلسية",
+        "alt": [
+          "هوابط",
+          "نوازل",
+          "نوازل كلسية",
+          "نوازل جيرية",
+          "ستالاكتايت",
+          "Stalactites"
+        ],
+        "originalQuestion": "ما الذي يظهر في الصورة الضبابية؟",
+        "originalAlt": [
+          "هوابط",
+          "نوازل كلسية",
+          "هوابط كلسية",
+          "ستالاكتايت"
+        ],
+        "sourceUrl": "docs/bank/rebuild-2026-09-18/review-blur-generated.json",
+        "externalEvidence": [
+          "nps-stalactites"
+        ],
+        "actualImageObserved": true,
+        "imageEvidence": {
+          "path": "media/blur/blur-1000-908.webp",
+          "sha256": "408ca8cabad5173c57ce6190d100a94350c6680d24d666af47f35ad570919be1",
+          "width": 1280,
+          "height": 960,
+          "viewMethod": "Full-size installed WebP plus fresh paired sharp/approximate-static-blur sheet"
+        },
+        "assessment": "observed-subject-match",
+        "observation": "Full-size image shows many mineral formations attached to the cave roof and tapering downward, with no competing central floor-grown form. Stalactite identity and ceiling wording match. Composition cannot be measured from a photograph; generic هوابط/نوازل remain fair accepted answers. Approximate blur retains pointed descending cream forms against a dark cave.",
+        "pendingImageReviewCriteria": null,
+        "approximateBlurObserved": true,
+        "realRendererReviewed": false,
+        "verified": false
+      },
+      "review": {
+        "status": "approved",
+        "reviewedAt": "2026-09-25",
+        "fullImage": "Full-size image shows many mineral formations attached to the cave roof and tapering downward, with no competing central floor-grown form. Stalactite identity and ceiling wording match. Composition cannot be measured from a photograph; generic هوابط/نوازل remain fair accepted answers. Approximate blur retains pointed descending cream forms against a dark cave.",
+        "blurredGameplay": "Actual320/390px game reviewed; blur before, sharp after, no early enlargement, hide answer restores blur; identity judged with installed text context.",
+        "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json"
+      }
+    }
+  ],
+  "runtimeReview": "approved",
+  "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/blur/runtime.json",
+  "runtimeChecks": 486,
+  "limits": [
+    "Blur can erase thin wire, valves or facial details; keep the installed descriptive question context.",
+    "No measured audience success rate, production account or offline-release validation claimed."
+  ]
+}

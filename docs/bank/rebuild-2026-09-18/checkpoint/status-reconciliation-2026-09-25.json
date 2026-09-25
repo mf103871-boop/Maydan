@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-25",
+  "scope": "Three stale recovered status rows with exact-hash review evidence",
+  "changes": [
+    {
+      "pack": "arabmusic",
+      "beforeStatus": "pending",
+      "afterStatus": "done",
+      "review": "docs/bank/rebuild-2026-09-18/review-music-arabmusic.json",
+      "sha256": "a11d6f001c2a012489b0b0c0efa5acf1bca77bc52fb45c2c0d7bb7caf46747aa",
+      "basis": "Recorded independent review of all40, zero content errors and exact matching current category hash; content completion only."
+    },
+    {
+      "pack": "tarab",
+      "beforeStatus": "pending",
+      "afterStatus": "done",
+      "review": "docs/bank/rebuild-2026-09-18/review-music-tarab.json",
+      "sha256": "5e587cdd921e5a313f5783a79507b2ee5958e2fb220b72b1f7f0639a55476dbd",
+      "basis": "Recorded independent review of all40, zero content errors and exact matching current category hash; content completion only."
+    },
+    {
+      "pack": "emoji",
+      "beforeStatus": "pending",
+      "afterStatus": "done",
+      "review": "docs/bank/rebuild-2026-09-18/review-interactive-emoji.json",
+      "sha256": "8ac0f83b53eb1fee1c07202336f1bf8593027d74af2c6fee248fe751ed940bc7",
+      "basis": "Recorded independent review of all40, zero content errors and exact matching current category hash; content completion only."
+    }
+  ],
+  "otherHistoricalRows": "Retained as recorded; no blanket runtime approval inferred."
+}

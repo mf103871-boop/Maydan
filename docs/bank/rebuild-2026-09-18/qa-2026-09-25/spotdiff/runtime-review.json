@@ -1,0 +1,4751 @@
+{
+  "pack": "spotdiff",
+  "status": "runtime-and-visual-approved",
+  "sourcePackSha256": "922d2f552b64f158837561ec48589f19ecf70d85ce77ed559c940e6e67aa69ae",
+  "rendererHashes": [
+    {
+      "file": "src/games/badeeha/App.js",
+      "sha256": "942f30dff7d47b312946e8a45bb7468008ab6092d7a72c217b171dea0668c1ca"
+    },
+    {
+      "file": "src/games/badeeha/styles.css",
+      "sha256": "b86e44ad3a5ac1eb5d319c37b359983c3d035c274c49e97fb0508db3fa3b6b13"
+    }
+  ],
+  "runtimeExecutedAt": "2026-09-25T03:39:53.425Z",
+  "reviewedAt": "2026-09-25T03:48:47.887Z",
+  "actualImageObserved": true,
+  "checks": {
+    "passed": 1089,
+    "failed": 0,
+    "questions": 40,
+    "decodedImages": 80,
+    "aiAboutRows": 80,
+    "viewportWidths": [
+      390,
+      320
+    ],
+    "viewportHeight": 844,
+    "browserRuntimeErrors": 0,
+    "missingAssets": 0
+  },
+  "runtimeScope": "Headless local Chrome, production source bundle and unchanged actual pack/media; eight isolated contexts and test-only deterministic per-tier deck selection. All questions traversed real category/board/reveal/hide flow at both widths. No production entitlement claim.",
+  "criteria": [
+    "two decoded contain-fit images",
+    "390px side-by-side and 320px stacked without overflow",
+    "neutral filenames and generic numbered alt before reveal",
+    "answer and accepted aliases absent from visible text and image/title/aria/src before reveal",
+    "no marker or hidden-answer lightbox before reveal",
+    "exact revealed answer",
+    "two marker centers at physical left/top spot percentages with diameter 2r, contained in image bounds",
+    "hide removes both markers and answer",
+    "new questions start unmarked",
+    "all80 images decode",
+    "80 visible AI About credit rows",
+    "category,80media,App.js and styles.css hashes unchanged during runtime"
+  ],
+  "manualVisualReview": {
+    "status": "passed-with-editorial-notes",
+    "reviewedAt": "2026-09-25T03:48:47.887Z",
+    "reviewer": "audit_current_repo",
+    "actualImagesObserved": true,
+    "contactSheetsActuallyViewed": [
+      "contact-200-320-1.png",
+      "contact-200-320-2.png",
+      "contact-200-320-3.png",
+      "contact-200-320-4.png",
+      "contact-200-390-1.png",
+      "contact-200-390-2.png",
+      "contact-400-320-1.png",
+      "contact-400-320-2.png",
+      "contact-400-320-3.png",
+      "contact-400-320-4.png",
+      "contact-400-390-1.png",
+      "contact-400-390-2.png",
+      "contact-600-320-1.png",
+      "contact-600-320-2.png",
+      "contact-600-320-3.png",
+      "contact-600-320-4.png",
+      "contact-600-390-1.png",
+      "contact-600-390-2.png",
+      "contact-800-320-1.png",
+      "contact-800-320-2.png",
+      "contact-800-320-3.png",
+      "contact-800-320-4.png",
+      "contact-800-390-1.png",
+      "contact-800-390-2.png",
+      "contact-1000-320-1.png",
+      "contact-1000-320-2.png",
+      "contact-1000-320-3.png",
+      "contact-1000-320-4.png",
+      "contact-1000-390-1.png",
+      "contact-1000-390-2.png"
+    ],
+    "method": "All 30 final runtime contact sheets were actually viewed: every one of the 40 pairs before/after reveal at both 320px and 390px. Native stage images originate from the real application renderer. Representative complete question screens were also viewed. Contacts are resized display aids; original stage and full-page PNGs are retained.",
+    "completeScreensActuallyViewed": [
+      "screens/spotdiff-1000-907-390-before.png",
+      "screens/spotdiff-600-905-320-after.png",
+      "screens/spotdiff-200-901-320-after.png"
+    ],
+    "semanticCriterion": "Exactly one intended meaningful object/color/count/orientation/shape difference was identified per pair. Generated fine texture and lighting may drift; this is not a claim of pixel identity outside the target.",
+    "coordinateCorrectionsRequired": [],
+    "notes": [
+      "Difficulty targets are editorial estimates, not measured success rates. Some high-tier color or count changes remain relatively conspicuous (especially spotdiff-800-902).",
+      "spotdiff-1000-903: the correct marker has modest contrast against the red ladybug shell. A future contrasting outline could improve visibility; no coordinate correction is required.",
+      "spotdiff-800-906 and spotdiff-1000-906/907 use small discernible targets at 390px; 320px stacked images are larger. These were inspected before reveal.",
+      "This tested renderer already contains the concurrently saved reveal App.js/styles.css fix. This spotdiff report does not certify reveal behavior.",
+      "Local synthetic account and entitlement fixture only; no paid production account, billing, deployment, or real service validation."
+    ]
+  },
+  "harnessPackaging": "Runtime used the scratch harness. The portable copy differs only in repository/output path resolution and fileURLToPath import; syntax checked separately. Reruns default to a separate rerun/ directory.",
+  "supersededAttempt": "initial-results-before-capture-fix.json passed928 automated checks but its 320px element screenshots could be scrolled underneath the sticky header by Playwright. Final harness centers the stage and asserts both images below the header. Current results and all current PNGs are the corrected full rerun,1089/1089. No app source was changed for this capture issue.",
+  "items": [
+    {
+      "qid": "spotdiff-200-901",
+      "tier": 200,
+      "question": "ما التغيير بين صورتي ركن الشاي؟",
+      "answer": "تغيّر لون الغلاية",
+      "alt": [
+        "لون الغلاية"
+      ],
+      "spot": {
+        "x": 66,
+        "y": 56,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Enamel kettle changes red to blue; yellow mug, folded blue cloth and handle remain. Marker identifies the kettle body.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-200-901-a.webp",
+          "sha256": "33057f44f41c8d8f521c494a201506bdf0dc7ddf0c354e63d1446133a128a65c"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-200-901-b.webp",
+          "sha256": "a4240e1f6c1404e8c22d8b9db63f0745e96bb2e97ec815f8d0f5d75dfb169f4e"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-200-901-390-before.png",
+          "after": "stages/spotdiff-200-901-390-after.png",
+          "fullBefore": "screens/spotdiff-200-901-390-before.png",
+          "fullAfter": "screens/spotdiff-200-901-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 65.99090189873418,
+                "y": 55.99947257383966,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 66,
+                "y": 56,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 65.99090189873418,
+                "y": 55.99947257383966,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 66,
+                "y": 56,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-200-901-320-before.png",
+          "after": "stages/spotdiff-200-901-320-after.png",
+          "fullBefore": "screens/spotdiff-200-901-320-before.png",
+          "fullAfter": "screens/spotdiff-200-901-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 65.997314453125,
+                "y": 55.997721354166664,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 66,
+                "y": 56,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 65.997314453125,
+                "y": 55.997721354166664,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 66,
+                "y": 56,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-200-902",
+      "tier": 200,
+      "question": "ما الاختلاف بين صورتي مكتب الطالب؟",
+      "answer": "تغيّر لون الدفتر",
+      "alt": [
+        "لون الدفتر"
+      ],
+      "spot": {
+        "x": 63,
+        "y": 57,
+        "r": 27
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Notebook cover changes green to orange; cup, two pens and wood pencil remain. Cover marker is correct.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-200-902-a.webp",
+          "sha256": "72b6d33813d561cd976149099e7f2ea463616bb4107eeae7e4319ceb62fa4ff6"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-200-902-b.webp",
+          "sha256": "e794b3732ab1a83d932dad9ceda8fd04006725a9d14357ea083e8daa1dee69f7"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-200-902-390-before.png",
+          "after": "stages/spotdiff-200-902-390-after.png",
+          "fullBefore": "screens/spotdiff-200-902-390-before.png",
+          "fullAfter": "screens/spotdiff-200-902-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 62.99446202531646,
+                "y": 56.98839662447257,
+                "diameter": 53.995253164556964
+              },
+              "wanted": {
+                "x": 63,
+                "y": 57,
+                "r": 27
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 62.99446202531646,
+                "y": 56.98839662447257,
+                "diameter": 53.995253164556964
+              },
+              "wanted": {
+                "x": 63,
+                "y": 57,
+                "r": 27
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-200-902-320-before.png",
+          "after": "stages/spotdiff-200-902-320-after.png",
+          "fullBefore": "screens/spotdiff-200-902-320-before.png",
+          "fullAfter": "screens/spotdiff-200-902-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 62.994384765625,
+                "y": 56.998697916666664,
+                "diameter": 53.997802734375
+              },
+              "wanted": {
+                "x": 63,
+                "y": 57,
+                "r": 27
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 62.994384765625,
+                "y": 56.998697916666664,
+                "diameter": 53.997802734375
+              },
+              "wanted": {
+                "x": 63,
+                "y": 57,
+                "r": 27
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-200-903",
+      "tier": 200,
+      "question": "ما الذي تبدّل في صورتي زاوية الزراعة؟",
+      "answer": "تغيّر لون إبريق الري",
+      "alt": [
+        "لون إبريق الري"
+      ],
+      "spot": {
+        "x": 63,
+        "y": 54,
+        "r": 27
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Watering can changes blue to red; plant, terracotta pot and gloves remain. Marker identifies the can.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-200-903-a.webp",
+          "sha256": "20db8af44a1613a9aa08d3317aac9cb78c1f8202ea5cdce86a4ed9fe1b566c47"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-200-903-b.webp",
+          "sha256": "208bd31ee30c0ba93cf76c59b93f90e10191d64ca2e983b8a9bdf3d365326caf"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-200-903-390-before.png",
+          "after": "stages/spotdiff-200-903-390-after.png",
+          "fullBefore": "screens/spotdiff-200-903-390-before.png",
+          "fullAfter": "screens/spotdiff-200-903-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 62.99446202531646,
+                "y": 53.995253164556964,
+                "diameter": 53.995253164556964
+              },
+              "wanted": {
+                "x": 63,
+                "y": 54,
+                "r": 27
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 62.99446202531646,
+                "y": 53.995253164556964,
+                "diameter": 53.995253164556964
+              },
+              "wanted": {
+                "x": 63,
+                "y": 54,
+                "r": 27
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-200-903-320-before.png",
+          "after": "stages/spotdiff-200-903-320-after.png",
+          "fullBefore": "screens/spotdiff-200-903-320-before.png",
+          "fullAfter": "screens/spotdiff-200-903-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 62.994384765625,
+                "y": 53.995768229166664,
+                "diameter": 53.997802734375
+              },
+              "wanted": {
+                "x": 63,
+                "y": 54,
+                "r": 27
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 62.994384765625,
+                "y": 53.995768229166664,
+                "diameter": 53.997802734375
+              },
+              "wanted": {
+                "x": 63,
+                "y": 54,
+                "r": 27
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-200-904",
+      "tier": 200,
+      "question": "ما التغيير الظاهر في صورتي رف الألعاب؟",
+      "answer": "تغيّر لون السيارة",
+      "alt": [
+        "لون السيارة"
+      ],
+      "spot": {
+        "x": 68,
+        "y": 49,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Toy car body changes yellow to blue; wheels, bear and stacking rings remain. Marker identifies the body.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-200-904-a.webp",
+          "sha256": "fb9548186adc05cee4583bb027731744e9bd004a68c286061ad018111bdbd141"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-200-904-b.webp",
+          "sha256": "197c25d40abf36598e080437ced61ca899a1ae1ac2a076f709f01908a8ee31c7"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-200-904-390-before.png",
+          "after": "stages/spotdiff-200-904-390-after.png",
+          "fullBefore": "screens/spotdiff-200-904-390-before.png",
+          "fullAfter": "screens/spotdiff-200-904-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 67.99841772151899,
+                "y": 48.99789029535865,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 68,
+                "y": 49,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 67.99841772151899,
+                "y": 48.99789029535865,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 68,
+                "y": 49,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-200-904-320-before.png",
+          "after": "stages/spotdiff-200-904-320-after.png",
+          "fullBefore": "screens/spotdiff-200-904-320-before.png",
+          "fullAfter": "screens/spotdiff-200-904-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 67.999267578125,
+                "y": 48.9990234375,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 68,
+                "y": 49,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 67.999267578125,
+                "y": 48.9990234375,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 68,
+                "y": 49,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-200-905",
+      "tier": 200,
+      "question": "ما الذي اختلف بين صورتي ركن الإيقاع؟",
+      "answer": "تغيّر لون الطبلة",
+      "alt": [
+        "لون الطبلة"
+      ],
+      "spot": {
+        "x": 69,
+        "y": 56,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Drum shell changes red to green; drumhead, rim, mallet and blue pouch remain. Marker identifies the shell.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-200-905-a.webp",
+          "sha256": "756650c9d71b49cac407ab60c8090fa5eaf8f3ab24ab36027a7126b5ed044457"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-200-905-b.webp",
+          "sha256": "222f0e339eeba11349f9f5710371427b725cf925d9556c29d5b2052ac39393ff"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-200-905-390-before.png",
+          "after": "stages/spotdiff-200-905-390-after.png",
+          "fullBefore": "screens/spotdiff-200-905-390-before.png",
+          "fullAfter": "screens/spotdiff-200-905-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 68.99723101265823,
+                "y": 55.99947257383966,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 69,
+                "y": 56,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 68.99723101265823,
+                "y": 55.99947257383966,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 69,
+                "y": 56,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-200-905-320-before.png",
+          "after": "stages/spotdiff-200-905-320-after.png",
+          "fullBefore": "screens/spotdiff-200-905-320-before.png",
+          "fullAfter": "screens/spotdiff-200-905-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 68.994140625,
+                "y": 55.997721354166664,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 69,
+                "y": 56,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 68.994140625,
+                "y": 55.997721354166664,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 69,
+                "y": 56,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-200-906",
+      "tier": 200,
+      "question": "ما الفرق بين صورتي تجهيز الرحلة؟",
+      "answer": "تغيّر لون الحقيبة",
+      "alt": [
+        "لون الحقيبة"
+      ],
+      "spot": {
+        "x": 71,
+        "y": 53,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Suitcase changes blue to yellow; hat, towel and bench remain. Marker identifies the case.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-200-906-a.webp",
+          "sha256": "cbb159ef79002390f55d958c4d0e74063a3f9d29998bb33abf4088c2ec60016c"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-200-906-b.webp",
+          "sha256": "e6336448ab5505f1e0473d095809b9d08b6dbd745f2536f82f1d483cfcf62434"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-200-906-390-before.png",
+          "after": "stages/spotdiff-200-906-390-after.png",
+          "fullBefore": "screens/spotdiff-200-906-390-before.png",
+          "fullAfter": "screens/spotdiff-200-906-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 70.9948575949367,
+                "y": 52.993143459915615,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 71,
+                "y": 53,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 70.9948575949367,
+                "y": 52.993143459915615,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 71,
+                "y": 53,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-200-906-320-before.png",
+          "after": "stages/spotdiff-200-906-320-after.png",
+          "fullBefore": "screens/spotdiff-200-906-320-before.png",
+          "fullAfter": "screens/spotdiff-200-906-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 70.99609375,
+                "y": 52.994791666666664,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 71,
+                "y": 53,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 70.99609375,
+                "y": 52.994791666666664,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 71,
+                "y": 53,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-200-907",
+      "tier": 200,
+      "question": "ما الذي تبدّل بين صورتي الملابس الشتوية؟",
+      "answer": "تغيّر لون القبعة",
+      "alt": [
+        "لون القبعة"
+      ],
+      "spot": {
+        "x": 72,
+        "y": 44,
+        "r": 24
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Knitted beanie changes red to purple; mittens and scarf remain. Fine knit texture is not pixel-identical. Marker identifies the beanie.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-200-907-a.webp",
+          "sha256": "74e48bc3187c72cac82857815c36b34f5e4544ff33615792fa92737b028cda2e"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-200-907-b.webp",
+          "sha256": "d0815358b4f88568b4099f53d698ff11e96981939598bbbc3f2b458a7d339de5"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-200-907-390-before.png",
+          "after": "stages/spotdiff-200-907-390-after.png",
+          "fullBefore": "screens/spotdiff-200-907-390-before.png",
+          "fullAfter": "screens/spotdiff-200-907-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 71.99367088607595,
+                "y": 43.9873417721519,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 72,
+                "y": 44,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 71.99367088607595,
+                "y": 43.9873417721519,
+                "diameter": 47.99248417721519
+              },
+              "wanted": {
+                "x": 72,
+                "y": 44,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-200-907-320-before.png",
+          "after": "stages/spotdiff-200-907-320-after.png",
+          "fullBefore": "screens/spotdiff-200-907-320-before.png",
+          "fullAfter": "screens/spotdiff-200-907-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 71.9970703125,
+                "y": 43.994140625,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 72,
+                "y": 44,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 71.9970703125,
+                "y": 43.994140625,
+                "diameter": 47.998046875
+              },
+              "wanted": {
+                "x": 72,
+                "y": 44,
+                "r": 24
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-200-908",
+      "tier": 200,
+      "question": "ما الاختلاف بين صورتي طاولة الصيانة؟",
+      "answer": "تغيّر لون صندوق الأدوات",
+      "alt": [
+        "لون صندوق الأدوات"
+      ],
+      "spot": {
+        "x": 64,
+        "y": 49,
+        "r": 25
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Toolbox changes orange to green; hammer and wrench remain. Marker identifies the box.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-200-908-a.webp",
+          "sha256": "38c04ca5f4ae9646689927773bcdc9452670ed14be1cba9368c0182b43aa341f"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-200-908-b.webp",
+          "sha256": "64292e1ef91b0ab3b2631d95a8fb544fba31dbaeda076ee0f0e4341f0254305e"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-200-908-390-before.png",
+          "after": "stages/spotdiff-200-908-390-after.png",
+          "fullBefore": "screens/spotdiff-200-908-390-before.png",
+          "fullAfter": "screens/spotdiff-200-908-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 63.993275316455694,
+                "y": 48.99789029535865,
+                "diameter": 50
+              },
+              "wanted": {
+                "x": 64,
+                "y": 49,
+                "r": 25
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 63.993275316455694,
+                "y": 48.99789029535865,
+                "diameter": 50
+              },
+              "wanted": {
+                "x": 64,
+                "y": 49,
+                "r": 25
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-200-908-320-before.png",
+          "after": "stages/spotdiff-200-908-320-after.png",
+          "fullBefore": "screens/spotdiff-200-908-320-before.png",
+          "fullAfter": "screens/spotdiff-200-908-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 63.995361328125,
+                "y": 48.9990234375,
+                "diameter": 50
+              },
+              "wanted": {
+                "x": 64,
+                "y": 49,
+                "r": 25
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 63.995361328125,
+                "y": 48.9990234375,
+                "diameter": 50
+              },
+              "wanted": {
+                "x": 64,
+                "y": 49,
+                "r": 25
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-400-901",
+      "tier": 400,
+      "question": "ما الذي اختفى من صورتي مائدة الحساء؟",
+      "answer": "اختفت الملعقة",
+      "alt": [
+        "الملعقة"
+      ],
+      "spot": {
+        "x": 85,
+        "y": 33,
+        "r": 10
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Spoon is removed while soup, bowl and napkin remain. Marker locates the spoon head, a decisive part of the removed object.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-400-901-a.webp",
+          "sha256": "6bda203b0ac31f3d7f01472a2aefe1ea15f83a10abef96e24efed6c3f3f58cd8"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-400-901-b.webp",
+          "sha256": "5d6cae468a72bbd00685f2359f197102d76fd2d971d5db3b25d3ade9c066f11a"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-400-901-390-before.png",
+          "after": "stages/spotdiff-400-901-390-after.png",
+          "fullBefore": "screens/spotdiff-400-901-390-before.png",
+          "fullAfter": "screens/spotdiff-400-901-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 84.99802215189874,
+                "y": 32.99050632911393,
+                "diameter": 19.99604430379747
+              },
+              "wanted": {
+                "x": 85,
+                "y": 33,
+                "r": 10
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 84.99802215189874,
+                "y": 32.99050632911393,
+                "diameter": 19.99604430379747
+              },
+              "wanted": {
+                "x": 85,
+                "y": 33,
+                "r": 10
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-400-901-320-before.png",
+          "after": "stages/spotdiff-400-901-320-after.png",
+          "fullBefore": "screens/spotdiff-400-901-320-before.png",
+          "fullAfter": "screens/spotdiff-400-901-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 84.99755859375,
+                "y": 32.999674479166664,
+                "diameter": 19.9951171875
+              },
+              "wanted": {
+                "x": 85,
+                "y": 33,
+                "r": 10
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 84.99755859375,
+                "y": 32.999674479166664,
+                "diameter": 19.9951171875
+              },
+              "wanted": {
+                "x": 85,
+                "y": 33,
+                "r": 10
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-400-902",
+      "tier": 400,
+      "question": "ما الذي غاب عن صورتي التحضير للرسم؟",
+      "answer": "اختفى القلم الأحمر",
+      "alt": [
+        "القلم الأحمر"
+      ],
+      "spot": {
+        "x": 83,
+        "y": 55,
+        "r": 12
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Red pencil is removed while notebook, cup and blue eraser remain. Marker locates its former central section.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-400-902-a.webp",
+          "sha256": "18f01f770900f9de7ab6bc328943249e94d857494731f50814871008235df002"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-400-902-b.webp",
+          "sha256": "7659d346b929cd957b6754b14a29717da343addec0ad868f268e2f6ab5c03682"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-400-902-390-before.png",
+          "after": "stages/spotdiff-400-902-390-after.png",
+          "fullBefore": "screens/spotdiff-400-902-390-before.png",
+          "fullAfter": "screens/spotdiff-400-902-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 82.99050632911393,
+                "y": 54.99736286919831,
+                "diameter": 23.991297468354432
+              },
+              "wanted": {
+                "x": 83,
+                "y": 55,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 82.99050632911393,
+                "y": 54.99736286919831,
+                "diameter": 23.991297468354432
+              },
+              "wanted": {
+                "x": 83,
+                "y": 55,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-400-902-320-before.png",
+          "after": "stages/spotdiff-400-902-320-after.png",
+          "fullBefore": "screens/spotdiff-400-902-320-before.png",
+          "fullAfter": "screens/spotdiff-400-902-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 82.99560546875,
+                "y": 54.996744791666664,
+                "diameter": 23.9990234375
+              },
+              "wanted": {
+                "x": 83,
+                "y": 55,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 82.99560546875,
+                "y": 54.996744791666664,
+                "diameter": 23.9990234375
+              },
+              "wanted": {
+                "x": 83,
+                "y": 55,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-400-903",
+      "tier": 400,
+      "question": "ما العنصر المفقود في صورتي أدوات الزراعة؟",
+      "answer": "اختفت المجرفة الصغيرة",
+      "alt": [
+        "المجرفة الصغيرة"
+      ],
+      "spot": {
+        "x": 76,
+        "y": 67,
+        "r": 19
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Trowel is removed while plant, pot and gloves remain. Marker identifies its former location.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-400-903-a.webp",
+          "sha256": "0dec6bf7cf4874c7a126403785235f6c0c081730f982eb05846ac6fb366ccfc4"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-400-903-b.webp",
+          "sha256": "39c611dee11fe06ba6f0473166a4a62f39c4db4e76b43f542bc6b9c0dd041616"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-400-903-390-before.png",
+          "after": "stages/spotdiff-400-903-390-after.png",
+          "fullBefore": "screens/spotdiff-400-903-390-before.png",
+          "fullAfter": "screens/spotdiff-400-903-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 75.99881329113924,
+                "y": 66.99630801687763,
+                "diameter": 37.99446202531646
+              },
+              "wanted": {
+                "x": 76,
+                "y": 67,
+                "r": 19
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 75.99881329113924,
+                "y": 66.99630801687763,
+                "diameter": 37.99446202531646
+              },
+              "wanted": {
+                "x": 76,
+                "y": 67,
+                "r": 19
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-400-903-320-before.png",
+          "after": "stages/spotdiff-400-903-320-after.png",
+          "fullBefore": "screens/spotdiff-400-903-320-before.png",
+          "fullAfter": "screens/spotdiff-400-903-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 75.994873046875,
+                "y": 66.9921875,
+                "diameter": 37.994384765625
+              },
+              "wanted": {
+                "x": 76,
+                "y": 67,
+                "r": 19
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 75.994873046875,
+                "y": 66.9921875,
+                "diameter": 37.994384765625
+              },
+              "wanted": {
+                "x": 76,
+                "y": 67,
+                "r": 19
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-400-904",
+      "tier": 400,
+      "question": "ما التغيير في صورتي مكعبات اللعب؟",
+      "answer": "اختفى المكعب العلوي",
+      "alt": [
+        "المكعب الأزرق",
+        "المكعب العلوي"
+      ],
+      "spot": {
+        "x": 67,
+        "y": 26,
+        "r": 16
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Top blue cube is removed while red/green cubes and horse remain. Newly exposed green top is a consequence of this removal. Marker is correct.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-400-904-a.webp",
+          "sha256": "959facf6175dc8c27d9044e24e2c435f5a7b536a7a880d5098ad7a954f0d23d4"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-400-904-b.webp",
+          "sha256": "c197375a3e0152bee67b7d98bfdcf1ed269aa2bedf2a0435f664757fa0120538"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-400-904-390-before.png",
+          "after": "stages/spotdiff-400-904-390-after.png",
+          "fullBefore": "screens/spotdiff-400-904-390-before.png",
+          "fullAfter": "screens/spotdiff-400-904-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 66.99960443037975,
+                "y": 25.98892405063291,
+                "diameter": 31.991693037974684
+              },
+              "wanted": {
+                "x": 67,
+                "y": 26,
+                "r": 16
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 66.99960443037975,
+                "y": 25.98892405063291,
+                "diameter": 31.991693037974684
+              },
+              "wanted": {
+                "x": 67,
+                "y": 26,
+                "r": 16
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-400-904-320-before.png",
+          "after": "stages/spotdiff-400-904-320-after.png",
+          "fullBefore": "screens/spotdiff-400-904-320-before.png",
+          "fullAfter": "screens/spotdiff-400-904-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 66.998291015625,
+                "y": 25.992838541666668,
+                "diameter": 31.99462890625
+              },
+              "wanted": {
+                "x": 67,
+                "y": 26,
+                "r": 16
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 66.998291015625,
+                "y": 25.992838541666668,
+                "diameter": 31.99462890625
+              },
+              "wanted": {
+                "x": 67,
+                "y": 26,
+                "r": 16
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-400-905",
+      "tier": 400,
+      "question": "ما العنصر الذي اختفى من صورتي التدريب الإيقاعي؟",
+      "answer": "اختفت الماراكاس",
+      "alt": [
+        "الماراكاس",
+        "الخشخيشة"
+      ],
+      "spot": {
+        "x": 75,
+        "y": 57,
+        "r": 23
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Maraca is removed while tambourine and cloth remain. Minor drum-skin texture smoothing is not a second semantic change. Marker identifies former maraca location.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-400-905-a.webp",
+          "sha256": "f8420d1ac4587c46c99aa568b0dabefa45bf3117a839c7a78e38fb9f9981b8a3"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-400-905-b.webp",
+          "sha256": "bf79307afa6f9d13502a5c517f62290de958d01a9ad96b8fce74fbd325e2787a"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-400-905-390-before.png",
+          "after": "stages/spotdiff-400-905-390-after.png",
+          "fullBefore": "screens/spotdiff-400-905-390-before.png",
+          "fullAfter": "screens/spotdiff-400-905-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 75,
+                "y": 56.98839662447257,
+                "diameter": 45.99485759493671
+              },
+              "wanted": {
+                "x": 75,
+                "y": 57,
+                "r": 23
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 75,
+                "y": 56.98839662447257,
+                "diameter": 45.99485759493671
+              },
+              "wanted": {
+                "x": 75,
+                "y": 57,
+                "r": 23
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-400-905-320-before.png",
+          "after": "stages/spotdiff-400-905-320-after.png",
+          "fullBefore": "screens/spotdiff-400-905-320-before.png",
+          "fullAfter": "screens/spotdiff-400-905-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 75,
+                "y": 56.998697916666664,
+                "diameter": 45.99609375
+              },
+              "wanted": {
+                "x": 75,
+                "y": 57,
+                "r": 23
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 75,
+                "y": 56.998697916666664,
+                "diameter": 45.99609375
+              },
+              "wanted": {
+                "x": 75,
+                "y": 57,
+                "r": 23
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-400-906",
+      "tier": 400,
+      "question": "ما الشيء الناقص في صورتي مستلزمات التنزه؟",
+      "answer": "اختفت البوصلة",
+      "alt": [
+        "البوصلة"
+      ],
+      "spot": {
+        "x": 64,
+        "y": 62,
+        "r": 14
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Brass compass is removed while map, orange bottle and table remain. Marker identifies former compass location.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-400-906-a.webp",
+          "sha256": "44ea754efd26d8d776675454cbbedea392df59dabfd74f62d9efb67dace72a9e"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-400-906-b.webp",
+          "sha256": "8aeff4fd26b2ff7567e931b5bb5ba1625b890c46e31c0485484586e5161a0722"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-400-906-390-before.png",
+          "after": "stages/spotdiff-400-906-390-after.png",
+          "fullBefore": "screens/spotdiff-400-906-390-before.png",
+          "fullAfter": "screens/spotdiff-400-906-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 63.993275316455694,
+                "y": 61.99894514767932,
+                "diameter": 27.99643987341772
+              },
+              "wanted": {
+                "x": 64,
+                "y": 62,
+                "r": 14
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 63.993275316455694,
+                "y": 61.99894514767932,
+                "diameter": 27.99643987341772
+              },
+              "wanted": {
+                "x": 64,
+                "y": 62,
+                "r": 14
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-400-906-320-before.png",
+          "after": "stages/spotdiff-400-906-320-after.png",
+          "fullBefore": "screens/spotdiff-400-906-320-before.png",
+          "fullAfter": "screens/spotdiff-400-906-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 63.995361328125,
+                "y": 61.995442708333336,
+                "diameter": 27.996826171875
+              },
+              "wanted": {
+                "x": 64,
+                "y": 62,
+                "r": 14
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 63.995361328125,
+                "y": 61.995442708333336,
+                "diameter": 27.996826171875
+              },
+              "wanted": {
+                "x": 64,
+                "y": 62,
+                "r": 14
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-400-907",
+      "tier": 400,
+      "question": "ما المفقود من صورتي الاستعداد للبرد؟",
+      "answer": "اختفى الوشاح",
+      "alt": [
+        "الوشاح"
+      ],
+      "spot": {
+        "x": 71,
+        "y": 48,
+        "r": 25
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Red scarf is removed while white hat, brown gloves and blue bench remain. Marker identifies former scarf location.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-400-907-a.webp",
+          "sha256": "f8ec506cf58a7f26caece4ed624f4b8aa81673429df858f2cffe5c87143b9f4d"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-400-907-b.webp",
+          "sha256": "15ab18d161e52dd0b6e2517547d98a9eca42ac28daeee07f2e248e50b53a5e3b"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-400-907-390-before.png",
+          "after": "stages/spotdiff-400-907-390-after.png",
+          "fullBefore": "screens/spotdiff-400-907-390-before.png",
+          "fullAfter": "screens/spotdiff-400-907-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 70.9948575949367,
+                "y": 47.9957805907173,
+                "diameter": 50
+              },
+              "wanted": {
+                "x": 71,
+                "y": 48,
+                "r": 25
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 70.9948575949367,
+                "y": 47.9957805907173,
+                "diameter": 50
+              },
+              "wanted": {
+                "x": 71,
+                "y": 48,
+                "r": 25
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-400-907-320-before.png",
+          "after": "stages/spotdiff-400-907-320-after.png",
+          "fullBefore": "screens/spotdiff-400-907-320-before.png",
+          "fullAfter": "screens/spotdiff-400-907-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 70.99609375,
+                "y": 47.998046875,
+                "diameter": 50
+              },
+              "wanted": {
+                "x": 71,
+                "y": 48,
+                "r": 25
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 70.99609375,
+                "y": 47.998046875,
+                "diameter": 50
+              },
+              "wanted": {
+                "x": 71,
+                "y": 48,
+                "r": 25
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-400-908",
+      "tier": 400,
+      "question": "ما الأداة التي غابت عن صورتي طاولة الإصلاح؟",
+      "answer": "اختفى المفك",
+      "alt": [
+        "المفك"
+      ],
+      "spot": {
+        "x": 73,
+        "y": 53,
+        "r": 22
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Red-handled screwdriver is removed while hammer and wrench remain. Marker identifies former screwdriver location.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-400-908-a.webp",
+          "sha256": "e0f8a405de102d87609f783bcff64acff2aa169c97fb84a077c186501f5d36f8"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-400-908-b.webp",
+          "sha256": "0d98671f3d5e916a14ea84235f20a17a28ccce4a37f418e294a442970695f019"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-400-908-390-before.png",
+          "after": "stages/spotdiff-400-908-390-after.png",
+          "fullBefore": "screens/spotdiff-400-908-390-before.png",
+          "fullAfter": "screens/spotdiff-400-908-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 72.99248417721519,
+                "y": 52.993143459915615,
+                "diameter": 43.997231012658226
+              },
+              "wanted": {
+                "x": 73,
+                "y": 53,
+                "r": 22
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 72.99248417721519,
+                "y": 52.993143459915615,
+                "diameter": 43.997231012658226
+              },
+              "wanted": {
+                "x": 73,
+                "y": 53,
+                "r": 22
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-400-908-320-before.png",
+          "after": "stages/spotdiff-400-908-320-after.png",
+          "fullBefore": "screens/spotdiff-400-908-320-before.png",
+          "fullAfter": "screens/spotdiff-400-908-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 72.998046875,
+                "y": 52.994791666666664,
+                "diameter": 43.994140625
+              },
+              "wanted": {
+                "x": 73,
+                "y": 53,
+                "r": 22
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 72.998046875,
+                "y": 52.994791666666664,
+                "diameter": 43.994140625
+              },
+              "wanted": {
+                "x": 73,
+                "y": 53,
+                "r": 22
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-600-901",
+      "tier": 600,
+      "question": "ما التفصيل المختلف في صورتي تقديم الماء؟",
+      "answer": "تغيّر لون مقبض الإبريق",
+      "alt": [
+        "مقبض الإبريق"
+      ],
+      "spot": {
+        "x": 75,
+        "y": 40,
+        "r": 16
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Pitcher handle changes turquoise to red; ivory body, lemon and water glass remain. Marker overlaps the handle loop.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-600-901-a.webp",
+          "sha256": "02c1c95ff4bb5a22d81052d340ed7444bb3c911cd7d1e2842c8f17a1c08e3559"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-600-901-b.webp",
+          "sha256": "501ec2dd183da37cff7a8932357776f03a26019e2c6e2eeec57990f2c2adcde4"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-600-901-390-before.png",
+          "after": "stages/spotdiff-600-901-390-after.png",
+          "fullBefore": "screens/spotdiff-600-901-390-before.png",
+          "fullAfter": "screens/spotdiff-600-901-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 75,
+                "y": 39.99208860759494,
+                "diameter": 31.991693037974684
+              },
+              "wanted": {
+                "x": 75,
+                "y": 40,
+                "r": 16
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 75,
+                "y": 39.99208860759494,
+                "diameter": 31.991693037974684
+              },
+              "wanted": {
+                "x": 75,
+                "y": 40,
+                "r": 16
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-600-901-320-before.png",
+          "after": "stages/spotdiff-600-901-320-after.png",
+          "fullBefore": "screens/spotdiff-600-901-320-before.png",
+          "fullAfter": "screens/spotdiff-600-901-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 75,
+                "y": 39.998372395833336,
+                "diameter": 31.99462890625
+              },
+              "wanted": {
+                "x": 75,
+                "y": 40,
+                "r": 16
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 75,
+                "y": 39.998372395833336,
+                "diameter": 31.99462890625
+              },
+              "wanted": {
+                "x": 75,
+                "y": 40,
+                "r": 16
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-600-902",
+      "tier": 600,
+      "question": "ما الاختلاف في صورتي أدوات الهندسة؟",
+      "answer": "تغيّر اتجاه المسطرة",
+      "alt": [
+        "اتجاه المسطرة",
+        "دوران المسطرة"
+      ],
+      "spot": {
+        "x": 73,
+        "y": 47,
+        "r": 23
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Ruler changes from horizontal to a clockwise diagonal; notebook and eraser remain. Marker identifies the ruler.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-600-902-a.webp",
+          "sha256": "229583ed73cc5627500c6fffd19b28a5507e8c3262f5ead68677a2c7e1c7fddd"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-600-902-b.webp",
+          "sha256": "5ffb90ee19754cc8c831bf9f6436fc857ff4831997c50b0a9d550b32c198a3cb"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-600-902-390-before.png",
+          "after": "stages/spotdiff-600-902-390-after.png",
+          "fullBefore": "screens/spotdiff-600-902-390-before.png",
+          "fullAfter": "screens/spotdiff-600-902-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 72.99248417721519,
+                "y": 46.99367088607595,
+                "diameter": 45.99485759493671
+              },
+              "wanted": {
+                "x": 73,
+                "y": 47,
+                "r": 23
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 72.99248417721519,
+                "y": 46.99367088607595,
+                "diameter": 45.99485759493671
+              },
+              "wanted": {
+                "x": 73,
+                "y": 47,
+                "r": 23
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-600-902-320-before.png",
+          "after": "stages/spotdiff-600-902-320-after.png",
+          "fullBefore": "screens/spotdiff-600-902-320-before.png",
+          "fullAfter": "screens/spotdiff-600-902-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 72.998046875,
+                "y": 46.9970703125,
+                "diameter": 45.99609375
+              },
+              "wanted": {
+                "x": 73,
+                "y": 47,
+                "r": 23
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 72.998046875,
+                "y": 46.9970703125,
+                "diameter": 45.99609375
+              },
+              "wanted": {
+                "x": 73,
+                "y": 47,
+                "r": 23
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-600-903",
+      "tier": 600,
+      "question": "ما التفصيل الذي تبدّل في صورتي زاوية النباتات؟",
+      "answer": "تغيّر لون حافة الأصيص",
+      "alt": [
+        "حافة الأصيص"
+      ],
+      "spot": {
+        "x": 49,
+        "y": 49,
+        "r": 22
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Pot rim changes cobalt blue to yellow; fern, terracotta body and white watering vessel remain. Broad marker identifies the rim region.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-600-903-a.webp",
+          "sha256": "0aff2ba8c1204a2d0c2d01fc2cc7bf68f7b02da70a7947151223bbaf1cc880f2"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-600-903-b.webp",
+          "sha256": "bbe1cf9d2d4dd1af005ba08bd27c590686803f70e9c996a75e52dd078e1b2cf4"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-600-903-390-before.png",
+          "after": "stages/spotdiff-600-903-390-after.png",
+          "fullBefore": "screens/spotdiff-600-903-390-before.png",
+          "fullAfter": "screens/spotdiff-600-903-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 48.99129746835443,
+                "y": 48.99789029535865,
+                "diameter": 43.997231012658226
+              },
+              "wanted": {
+                "x": 49,
+                "y": 49,
+                "r": 22
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 48.99129746835443,
+                "y": 48.99789029535865,
+                "diameter": 43.997231012658226
+              },
+              "wanted": {
+                "x": 49,
+                "y": 49,
+                "r": 22
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-600-903-320-before.png",
+          "after": "stages/spotdiff-600-903-320-after.png",
+          "fullBefore": "screens/spotdiff-600-903-320-before.png",
+          "fullAfter": "screens/spotdiff-600-903-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 48.9990234375,
+                "y": 48.9990234375,
+                "diameter": 43.994140625
+              },
+              "wanted": {
+                "x": 49,
+                "y": 49,
+                "r": 22
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 48.9990234375,
+                "y": 48.9990234375,
+                "diameter": 43.994140625
+              },
+              "wanted": {
+                "x": 49,
+                "y": 49,
+                "r": 22
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-600-904",
+      "tier": 600,
+      "question": "ما الذي اختلف بين صورتي القطار الخشبي؟",
+      "answer": "تغيّر لون مدخنة القطار",
+      "alt": [
+        "مدخنة القطار"
+      ],
+      "spot": {
+        "x": 44,
+        "y": 28,
+        "r": 10
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Toy train chimney changes red to yellow; green engine, wheels, cab and blue blocks remain. Marker identifies the chimney.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-600-904-a.webp",
+          "sha256": "279359bc8a8263c999f7039caa43e1ce0086c81136f3a1b4e627f41e860d2913"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-600-904-b.webp",
+          "sha256": "04e4d78eba6a318a8c1628e6a35e4d2e836857f9d49f2031988d579171be7fa2"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-600-904-390-before.png",
+          "after": "stages/spotdiff-600-904-390-after.png",
+          "fullBefore": "screens/spotdiff-600-904-390-before.png",
+          "fullAfter": "screens/spotdiff-600-904-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 43.997231012658226,
+                "y": 27.99314345991561,
+                "diameter": 19.99604430379747
+              },
+              "wanted": {
+                "x": 44,
+                "y": 28,
+                "r": 10
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 43.997231012658226,
+                "y": 27.99314345991561,
+                "diameter": 19.99604430379747
+              },
+              "wanted": {
+                "x": 44,
+                "y": 28,
+                "r": 10
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-600-904-320-before.png",
+          "after": "stages/spotdiff-600-904-320-after.png",
+          "fullBefore": "screens/spotdiff-600-904-320-before.png",
+          "fullAfter": "screens/spotdiff-600-904-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 43.994140625,
+                "y": 27.994791666666668,
+                "diameter": 19.9951171875
+              },
+              "wanted": {
+                "x": 44,
+                "y": 28,
+                "r": 10
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 43.994140625,
+                "y": 27.994791666666668,
+                "diameter": 19.9951171875
+              },
+              "wanted": {
+                "x": 44,
+                "y": 28,
+                "r": 10
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-600-905",
+      "tier": 600,
+      "question": "ما التفصيل المتبدّل في صورتي ضبط الإيقاع؟",
+      "answer": "تغيّر اتجاه بندول المسرّع",
+      "alt": [
+        "بندول المسرّع",
+        "ذراع المسرّع"
+      ],
+      "spot": {
+        "x": 48,
+        "y": 41,
+        "r": 17
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Metronome pendulum changes from left-leaning to right-leaning about the same pivot. Case, scale, side knob and wood case remain. Marker identifies the pendulum.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-600-905-a.webp",
+          "sha256": "2dc4e5ad23a1e4fe6cf0cba037c5d143fa902ac24b6679f2a62565e34c191d5a"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-600-905-b.webp",
+          "sha256": "e1ccf85c42d17f170298796ee12683ef690643b992732dcba9a719f6c4bf6ba4"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-600-905-390-before.png",
+          "after": "stages/spotdiff-600-905-390-after.png",
+          "fullBefore": "screens/spotdiff-600-905-390-before.png",
+          "fullAfter": "screens/spotdiff-600-905-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 47.99248417721519,
+                "y": 40.994198312236286,
+                "diameter": 33.999208860759495
+              },
+              "wanted": {
+                "x": 48,
+                "y": 41,
+                "r": 17
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 47.99248417721519,
+                "y": 40.994198312236286,
+                "diameter": 33.999208860759495
+              },
+              "wanted": {
+                "x": 48,
+                "y": 41,
+                "r": 17
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-600-905-320-before.png",
+          "after": "stages/spotdiff-600-905-320-after.png",
+          "fullBefore": "screens/spotdiff-600-905-320-before.png",
+          "fullAfter": "screens/spotdiff-600-905-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 47.998046875,
+                "y": 40.999348958333336,
+                "diameter": 33.99658203125
+              },
+              "wanted": {
+                "x": 48,
+                "y": 41,
+                "r": 17
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 47.998046875,
+                "y": 40.999348958333336,
+                "diameter": 33.99658203125
+              },
+              "wanted": {
+                "x": 48,
+                "y": 41,
+                "r": 17
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-600-906",
+      "tier": 600,
+      "question": "ما الاختلاف بين صورتي مراقبة الطبيعة؟",
+      "answer": "اختفى غطاء عدسة المنظار",
+      "alt": [
+        "غطاء العدسة",
+        "غطاء عدسة المنظار"
+      ],
+      "spot": {
+        "x": 84,
+        "y": 68,
+        "r": 12
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Red cap on image-right binocular lens is removed, exposing dark glass; other lens and pouch remain. Marker identifies that lens.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-600-906-a.webp",
+          "sha256": "e29980922c1115bdc08254919c1ccaeddc0834d04ea017eaa790b9da4cbb7860"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-600-906-b.webp",
+          "sha256": "bc7f9ecdccb08ee861efca92763292f6118e011c8fee32ca376b1240c2a99d69"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-600-906-390-before.png",
+          "after": "stages/spotdiff-600-906-390-after.png",
+          "fullBefore": "screens/spotdiff-600-906-390-before.png",
+          "fullAfter": "screens/spotdiff-600-906-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 83.9992088607595,
+                "y": 67.99841772151899,
+                "diameter": 23.991297468354432
+              },
+              "wanted": {
+                "x": 84,
+                "y": 68,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 83.9992088607595,
+                "y": 67.99841772151899,
+                "diameter": 23.991297468354432
+              },
+              "wanted": {
+                "x": 84,
+                "y": 68,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-600-906-320-before.png",
+          "after": "stages/spotdiff-600-906-320-after.png",
+          "fullBefore": "screens/spotdiff-600-906-320-before.png",
+          "fullAfter": "screens/spotdiff-600-906-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 83.99658203125,
+                "y": 67.9931640625,
+                "diameter": 23.9990234375
+              },
+              "wanted": {
+                "x": 84,
+                "y": 68,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 83.99658203125,
+                "y": 67.9931640625,
+                "diameter": 23.9990234375
+              },
+              "wanted": {
+                "x": 84,
+                "y": 68,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-600-907",
+      "tier": 600,
+      "question": "ما التفصيل المختلف في صورتي القفاز الجلدي؟",
+      "answer": "اختفى زر القفاز",
+      "alt": [
+        "زر القفاز"
+      ],
+      "spot": {
+        "x": 87,
+        "y": 54,
+        "r": 7
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Brown cuff button is removed; five glove digits and cuff seam remain. Fine leather grain drift is not a second semantic difference. Marker identifies button site.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-600-907-a.webp",
+          "sha256": "a0584cdecb837ceb645d8195e814456e5e20b692fe90ec24f5ba45c0ee989d25"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-600-907-b.webp",
+          "sha256": "59c703cc9bf87276628415784820ded51b17eb14f779ac9abd3b812006ec8961"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-600-907-390-before.png",
+          "after": "stages/spotdiff-600-907-390-after.png",
+          "fullBefore": "screens/spotdiff-600-907-390-before.png",
+          "fullAfter": "screens/spotdiff-600-907-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 86.99564873417721,
+                "y": 53.995253164556964,
+                "diameter": 13.993275316455696
+              },
+              "wanted": {
+                "x": 87,
+                "y": 54,
+                "r": 7
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 86.99564873417721,
+                "y": 53.995253164556964,
+                "diameter": 13.993275316455696
+              },
+              "wanted": {
+                "x": 87,
+                "y": 54,
+                "r": 7
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-600-907-320-before.png",
+          "after": "stages/spotdiff-600-907-320-after.png",
+          "fullBefore": "screens/spotdiff-600-907-320-before.png",
+          "fullAfter": "screens/spotdiff-600-907-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 86.99951171875,
+                "y": 53.995768229166664,
+                "diameter": 13.995361328125
+              },
+              "wanted": {
+                "x": 87,
+                "y": 54,
+                "r": 7
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 86.99951171875,
+                "y": 53.995768229166664,
+                "diameter": 13.995361328125
+              },
+              "wanted": {
+                "x": 87,
+                "y": 54,
+                "r": 7
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-600-908",
+      "tier": 600,
+      "question": "ما التغيير في صورتي أدوات الطلاء؟",
+      "answer": "تغيّر لون شعيرات الفرشاة",
+      "alt": [
+        "شعيرات الفرشاة"
+      ],
+      "spot": {
+        "x": 48,
+        "y": 73,
+        "r": 17
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Brush bristles change black to white; blue handle, ferrule and red paint can remain. Marker identifies bristles.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-600-908-a.webp",
+          "sha256": "53cdac817bd8a880cc35fe29728bfd502b97e91ed2eb8778ab3a998f9be7ff3b"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-600-908-b.webp",
+          "sha256": "601bf6b3a80844dc7070deaf4630ad6ca28349c9105c88962e88cbe37fd2e37d"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-600-908-390-before.png",
+          "after": "stages/spotdiff-600-908-390-after.png",
+          "fullBefore": "screens/spotdiff-600-908-390-before.png",
+          "fullAfter": "screens/spotdiff-600-908-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 47.99248417721519,
+                "y": 72.9957805907173,
+                "diameter": 33.999208860759495
+              },
+              "wanted": {
+                "x": 48,
+                "y": 73,
+                "r": 17
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 47.99248417721519,
+                "y": 72.9957805907173,
+                "diameter": 33.999208860759495
+              },
+              "wanted": {
+                "x": 48,
+                "y": 73,
+                "r": 17
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-600-908-320-before.png",
+          "after": "stages/spotdiff-600-908-320-after.png",
+          "fullBefore": "screens/spotdiff-600-908-320-before.png",
+          "fullAfter": "screens/spotdiff-600-908-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 47.998046875,
+                "y": 72.998046875,
+                "diameter": 33.99658203125
+              },
+              "wanted": {
+                "x": 48,
+                "y": 73,
+                "r": 17
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 47.998046875,
+                "y": 72.998046875,
+                "diameter": 33.99658203125
+              },
+              "wanted": {
+                "x": 48,
+                "y": 73,
+                "r": 17
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-800-901",
+      "tier": 800,
+      "question": "ما التفصيل الدقيق في صورتي جلسة القهوة؟",
+      "answer": "تغيّر لون حافة الفنجان",
+      "alt": [
+        "حافة الفنجان"
+      ],
+      "spot": {
+        "x": 63,
+        "y": 25,
+        "r": 18
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Thin cup rim changes blue to red; cup, saucer, spoon and biscuit remain. Circle identifies the central rim region rather than enclosing its entire ellipse.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-800-901-a.webp",
+          "sha256": "89287fe2d65b9667ef5910a15f9a3e3cbfe55bbb52fccd2996b276f056864727"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-800-901-b.webp",
+          "sha256": "139381880824e6e83a2e88281d4fc3ae3b5517855151ec454d633eb34ef01d02"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-800-901-390-before.png",
+          "after": "stages/spotdiff-800-901-390-after.png",
+          "fullBefore": "screens/spotdiff-800-901-390-before.png",
+          "fullAfter": "screens/spotdiff-800-901-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 62.99446202531646,
+                "y": 25,
+                "diameter": 35.99683544303797
+              },
+              "wanted": {
+                "x": 63,
+                "y": 25,
+                "r": 18
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 62.99446202531646,
+                "y": 25,
+                "diameter": 35.99683544303797
+              },
+              "wanted": {
+                "x": 63,
+                "y": 25,
+                "r": 18
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-800-901-320-before.png",
+          "after": "stages/spotdiff-800-901-320-after.png",
+          "fullBefore": "screens/spotdiff-800-901-320-before.png",
+          "fullAfter": "screens/spotdiff-800-901-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 62.994384765625,
+                "y": 25,
+                "diameter": 35.99853515625
+              },
+              "wanted": {
+                "x": 63,
+                "y": 25,
+                "r": 18
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 62.994384765625,
+                "y": 25,
+                "diameter": 35.99853515625
+              },
+              "wanted": {
+                "x": 63,
+                "y": 25,
+                "r": 18
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-800-902",
+      "tier": 800,
+      "question": "ما التفصيل المتغير في صورتي مساحة العمل؟",
+      "answer": "تغيّر لون ورقة الملاحظات",
+      "alt": [
+        "ورقة الملاحظات"
+      ],
+      "spot": {
+        "x": 80,
+        "y": 74,
+        "r": 14
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Sticky note pad changes yellow to pink; laptop, mug and pen remain. Marker identifies pad. This is visually prominent for an 800-point item.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-800-902-a.webp",
+          "sha256": "433157c823c9162f9a98f314a536971736887f7b3fde52ce59fe2e4bc057e7f4"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-800-902-b.webp",
+          "sha256": "0bc5bb3850a1de0523b5335adb023c9e65e33eec4400003d900ddc413a86daf7"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-800-902-390-before.png",
+          "after": "stages/spotdiff-800-902-390-after.png",
+          "fullBefore": "screens/spotdiff-800-902-390-before.png",
+          "fullAfter": "screens/spotdiff-800-902-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 79.9940664556962,
+                "y": 73.99789029535864,
+                "diameter": 27.99643987341772
+              },
+              "wanted": {
+                "x": 80,
+                "y": 74,
+                "r": 14
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 79.9940664556962,
+                "y": 73.99789029535864,
+                "diameter": 27.99643987341772
+              },
+              "wanted": {
+                "x": 80,
+                "y": 74,
+                "r": 14
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-800-902-320-before.png",
+          "after": "stages/spotdiff-800-902-320-after.png",
+          "fullBefore": "screens/spotdiff-800-902-320-before.png",
+          "fullAfter": "screens/spotdiff-800-902-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 79.998779296875,
+                "y": 73.9990234375,
+                "diameter": 27.996826171875
+              },
+              "wanted": {
+                "x": 80,
+                "y": 74,
+                "r": 14
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 79.998779296875,
+                "y": 73.9990234375,
+                "diameter": 27.996826171875
+              },
+              "wanted": {
+                "x": 80,
+                "y": 74,
+                "r": 14
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-800-903",
+      "tier": 800,
+      "question": "ما التفصيل غير المتطابق في صورتي النبتة المنزلية؟",
+      "answer": "تغيّر لون ورقة النبات",
+      "alt": [
+        "ورقة النبات"
+      ],
+      "spot": {
+        "x": 67,
+        "y": 14,
+        "r": 9
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Upper image-right leaf changes green to orange; the rest of the plant and stone remain. Marker identifies the leaf.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-800-903-a.webp",
+          "sha256": "e228bea4a565af8b583c060abe0fe330569059664dfc26651c4ce5238d4d27ca"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-800-903-b.webp",
+          "sha256": "5553918c6a0a92a1f1bdfc9e7f9693ecf6affe8dfde4e2aad9f9b2e4ec71e537"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-800-903-390-before.png",
+          "after": "stages/spotdiff-800-903-390-after.png",
+          "fullBefore": "screens/spotdiff-800-903-390-before.png",
+          "fullAfter": "screens/spotdiff-800-903-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 66.99960443037975,
+                "y": 13.989978902953586,
+                "diameter": 17.998417721518987
+              },
+              "wanted": {
+                "x": 67,
+                "y": 14,
+                "r": 9
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 66.99960443037975,
+                "y": 13.989978902953586,
+                "diameter": 17.998417721518987
+              },
+              "wanted": {
+                "x": 67,
+                "y": 14,
+                "r": 9
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-800-903-320-before.png",
+          "after": "stages/spotdiff-800-903-320-after.png",
+          "fullBefore": "screens/spotdiff-800-903-320-before.png",
+          "fullAfter": "screens/spotdiff-800-903-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 66.998291015625,
+                "y": 13.997395833333334,
+                "diameter": 17.999267578125
+              },
+              "wanted": {
+                "x": 67,
+                "y": 14,
+                "r": 9
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 66.998291015625,
+                "y": 13.997395833333334,
+                "diameter": 17.999267578125
+              },
+              "wanted": {
+                "x": 67,
+                "y": 14,
+                "r": 9
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-800-904",
+      "tier": 800,
+      "question": "ما التفصيل المختلف في صورتي الروبوت الصغير؟",
+      "answer": "تغيّر لون عين الروبوت",
+      "alt": [
+        "عين الروبوت"
+      ],
+      "spot": {
+        "x": 57,
+        "y": 25,
+        "r": 5
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Robot image-right eye changes black to white; other eye and body remain. Marker identifies the changed eye.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-800-904-a.webp",
+          "sha256": "c2b3ddda9c338bc682185934497286a63daf3ee66edd8cbae017365f1aad5c6b"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-800-904-b.webp",
+          "sha256": "d3128a7a84b0b6ede6550c18f6dd16e063e901ff38248367c8e3df12d2805484"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-800-904-390-before.png",
+          "after": "stages/spotdiff-800-904-390-after.png",
+          "fullBefore": "screens/spotdiff-800-904-390-before.png",
+          "fullAfter": "screens/spotdiff-800-904-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 56.991693037974684,
+                "y": 25,
+                "diameter": 9.998022151898734
+              },
+              "wanted": {
+                "x": 57,
+                "y": 25,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 56.991693037974684,
+                "y": 25,
+                "diameter": 9.998022151898734
+              },
+              "wanted": {
+                "x": 57,
+                "y": 25,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-800-904-320-before.png",
+          "after": "stages/spotdiff-800-904-320-after.png",
+          "fullBefore": "screens/spotdiff-800-904-320-before.png",
+          "fullAfter": "screens/spotdiff-800-904-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 56.99462890625,
+                "y": 25,
+                "diameter": 9.99755859375
+              },
+              "wanted": {
+                "x": 57,
+                "y": 25,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 56.99462890625,
+                "y": 25,
+                "diameter": 9.99755859375
+              },
+              "wanted": {
+                "x": 57,
+                "y": 25,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-800-905",
+      "tier": 800,
+      "question": "ما التفصيل الناقص في صورتي آلة الإيقاع الدائرية؟",
+      "answer": "اختفى زوج الصنوج",
+      "alt": [
+        "زوج الصنوج",
+        "صنوج الدف"
+      ],
+      "spot": {
+        "x": 80,
+        "y": 47,
+        "r": 6
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Only the rightmost 3-o-clock jingle location is removed, seven visible locations become six; lower-right jingle remains. Marker correctly locates the missing jingle.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-800-905-a.webp",
+          "sha256": "83b336130a14ca150656b29fee2a1a5ca98d26988b1c6b8acf309f06a0eadb42"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-800-905-b.webp",
+          "sha256": "3219aa9cba5c8a77d014f619f9b872469bb431ab9a08521f121f9178b1b5a09a"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-800-905-390-before.png",
+          "after": "stages/spotdiff-800-905-390-after.png",
+          "fullBefore": "screens/spotdiff-800-905-390-before.png",
+          "fullAfter": "screens/spotdiff-800-905-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 79.9940664556962,
+                "y": 46.99367088607595,
+                "diameter": 11.995648734177216
+              },
+              "wanted": {
+                "x": 80,
+                "y": 47,
+                "r": 6
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 79.9940664556962,
+                "y": 46.99367088607595,
+                "diameter": 11.995648734177216
+              },
+              "wanted": {
+                "x": 80,
+                "y": 47,
+                "r": 6
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-800-905-320-before.png",
+          "after": "stages/spotdiff-800-905-320-after.png",
+          "fullBefore": "screens/spotdiff-800-905-320-before.png",
+          "fullAfter": "screens/spotdiff-800-905-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 79.998779296875,
+                "y": 46.9970703125,
+                "diameter": 11.99951171875
+              },
+              "wanted": {
+                "x": 80,
+                "y": 47,
+                "r": 6
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 79.998779296875,
+                "y": 46.9970703125,
+                "diameter": 11.99951171875
+              },
+              "wanted": {
+                "x": 80,
+                "y": 47,
+                "r": 6
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-800-906",
+      "tier": 800,
+      "question": "ما التفصيل المتبدّل في صورتي المخيم؟",
+      "answer": "تغيّر لون حلقة باب الخيمة",
+      "alt": [
+        "حلقة باب الخيمة",
+        "حلقة السحاب"
+      ],
+      "spot": {
+        "x": 77,
+        "y": 71,
+        "r": 5
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Tent zipper pull loop changes bright blue to red; tent and campsite remain. Small but discernible at the narrow side-by-side presentation; marker is correct.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-800-906-a.webp",
+          "sha256": "83016119c71c00a93d53ec1e8f1580e70c9df60054f546a1079676f366841a91"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-800-906-b.webp",
+          "sha256": "79218680d494c0ddb57ecc58a72e0aebde560eb16855feac6708071ced7e668d"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-800-906-390-before.png",
+          "after": "stages/spotdiff-800-906-390-after.png",
+          "fullBefore": "screens/spotdiff-800-906-390-before.png",
+          "fullAfter": "screens/spotdiff-800-906-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 76.99762658227849,
+                "y": 70.9915611814346,
+                "diameter": 9.998022151898734
+              },
+              "wanted": {
+                "x": 77,
+                "y": 71,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 76.99762658227849,
+                "y": 70.9915611814346,
+                "diameter": 9.998022151898734
+              },
+              "wanted": {
+                "x": 77,
+                "y": 71,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-800-906-320-before.png",
+          "after": "stages/spotdiff-800-906-320-after.png",
+          "fullBefore": "screens/spotdiff-800-906-320-before.png",
+          "fullAfter": "screens/spotdiff-800-906-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 76.995849609375,
+                "y": 70.99609375,
+                "diameter": 9.99755859375
+              },
+              "wanted": {
+                "x": 77,
+                "y": 71,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 76.995849609375,
+                "y": 70.99609375,
+                "diameter": 9.99755859375
+              },
+              "wanted": {
+                "x": 77,
+                "y": 71,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-800-907",
+      "tier": 800,
+      "question": "ما التفصيل المختلف في صورتي الحزام الجلدي؟",
+      "answer": "تغيّر شكل مشبك الحزام",
+      "alt": [
+        "شكل مشبك الحزام"
+      ],
+      "spot": {
+        "x": 64,
+        "y": 73,
+        "r": 12
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Belt buckle changes from square corners to rounded corners, not a circle. Strap and pouch remain. Marker identifies the buckle.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-800-907-a.webp",
+          "sha256": "f5bb3eda59608dd756e86180663346e4c037e0123681579fb6ba255030f948e0"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-800-907-b.webp",
+          "sha256": "b76bf102da31454e4982b1b42c05030f085362e92512ec26d1ce9dafe4836845"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-800-907-390-before.png",
+          "after": "stages/spotdiff-800-907-390-after.png",
+          "fullBefore": "screens/spotdiff-800-907-390-before.png",
+          "fullAfter": "screens/spotdiff-800-907-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 63.993275316455694,
+                "y": 72.9957805907173,
+                "diameter": 23.991297468354432
+              },
+              "wanted": {
+                "x": 64,
+                "y": 73,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 63.993275316455694,
+                "y": 72.9957805907173,
+                "diameter": 23.991297468354432
+              },
+              "wanted": {
+                "x": 64,
+                "y": 73,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-800-907-320-before.png",
+          "after": "stages/spotdiff-800-907-320-after.png",
+          "fullBefore": "screens/spotdiff-800-907-320-before.png",
+          "fullAfter": "screens/spotdiff-800-907-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 63.995361328125,
+                "y": 72.998046875,
+                "diameter": 23.9990234375
+              },
+              "wanted": {
+                "x": 64,
+                "y": 73,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 63.995361328125,
+                "y": 72.998046875,
+                "diameter": 23.9990234375
+              },
+              "wanted": {
+                "x": 64,
+                "y": 73,
+                "r": 12
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-800-908",
+      "tier": 800,
+      "question": "ما التفصيل المتغير في صورتي قياس الخشب؟",
+      "answer": "تغيّر لون زر شريط القياس",
+      "alt": [
+        "زر شريط القياس"
+      ],
+      "spot": {
+        "x": 65,
+        "y": 34,
+        "r": 7
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Tape-measure button changes yellow to red; tape, case, pencil and wood block remain. Marker identifies the button.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-800-908-a.webp",
+          "sha256": "2bfa4357776f90ff15ad3a9813d2453f0e1a2bd828c6703cf653b781f64625a0"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-800-908-b.webp",
+          "sha256": "2e31dc386ab437ae2787cc97bfe6faf1d6e6e27f87c9f4604c15022f0ebd7ad9"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-800-908-390-before.png",
+          "after": "stages/spotdiff-800-908-390-after.png",
+          "fullBefore": "screens/spotdiff-800-908-390-before.png",
+          "fullAfter": "screens/spotdiff-800-908-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 64.99208860759494,
+                "y": 33.992616033755276,
+                "diameter": 13.993275316455696
+              },
+              "wanted": {
+                "x": 65,
+                "y": 34,
+                "r": 7
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 64.99208860759494,
+                "y": 33.992616033755276,
+                "diameter": 13.993275316455696
+              },
+              "wanted": {
+                "x": 65,
+                "y": 34,
+                "r": 7
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-800-908-320-before.png",
+          "after": "stages/spotdiff-800-908-320-after.png",
+          "fullBefore": "screens/spotdiff-800-908-320-before.png",
+          "fullAfter": "screens/spotdiff-800-908-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 64.996337890625,
+                "y": 33.992513020833336,
+                "diameter": 13.995361328125
+              },
+              "wanted": {
+                "x": 65,
+                "y": 34,
+                "r": 7
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 64.996337890625,
+                "y": 33.992513020833336,
+                "diameter": 13.995361328125
+              },
+              "wanted": {
+                "x": 65,
+                "y": 34,
+                "r": 7
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-901",
+      "tier": 1000,
+      "question": "ما التغيير الصغير في صورتي تحضير التوابل؟",
+      "answer": "نقصت حبة فلفل",
+      "alt": [
+        "حبة فلفل"
+      ],
+      "spot": {
+        "x": 90,
+        "y": 58,
+        "r": 5
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Rightmost peppercorn is removed, five become four; bowl and scoop remain. Marker correctly identifies the former rightmost peppercorn site.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-1000-901-a.webp",
+          "sha256": "85eae32e1e48364ac737bebcc50d43790f5fddc5ba1c242e17b6e869b7d9bb9b"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-1000-901-b.webp",
+          "sha256": "4fb9a9f8e398c4244f41c26bd108f40c6ac33dba9c261568daf154de0dcae31b"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-1000-901-390-before.png",
+          "after": "stages/spotdiff-1000-901-390-after.png",
+          "fullBefore": "screens/spotdiff-1000-901-390-before.png",
+          "fullAfter": "screens/spotdiff-1000-901-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 89.99208860759494,
+                "y": 57.99050632911393,
+                "diameter": 9.998022151898734
+              },
+              "wanted": {
+                "x": 90,
+                "y": 58,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 89.99208860759494,
+                "y": 57.99050632911393,
+                "diameter": 9.998022151898734
+              },
+              "wanted": {
+                "x": 90,
+                "y": 58,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-1000-901-320-before.png",
+          "after": "stages/spotdiff-1000-901-320-after.png",
+          "fullBefore": "screens/spotdiff-1000-901-320-before.png",
+          "fullAfter": "screens/spotdiff-1000-901-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 89.996337890625,
+                "y": 57.999674479166664,
+                "diameter": 9.99755859375
+              },
+              "wanted": {
+                "x": 90,
+                "y": 58,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 89.996337890625,
+                "y": 57.999674479166664,
+                "diameter": 9.99755859375
+              },
+              "wanted": {
+                "x": 90,
+                "y": 58,
+                "r": 5
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-902",
+      "tier": 1000,
+      "question": "ما التفصيل الصغير الذي تغيّر في صورتي الأوراق المرتبة؟",
+      "answer": "تغيّر لون مشبك الورق",
+      "alt": [
+        "مشبك الورق"
+      ],
+      "spot": {
+        "x": 81,
+        "y": 57,
+        "r": 8
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Paperclip changes green to purple; pen, blank paper and eraser remain. Marker identifies the clip.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-1000-902-a.webp",
+          "sha256": "5b79e4cd256d1cd1068474e424759ad37e3f2ef54a49d0d6b77f3b0a3372bb28"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-1000-902-b.webp",
+          "sha256": "efae7f163f6e8723e2bc46836b9344ecb4e4f7bda4467796061de50d6bcdbb47"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-1000-902-390-before.png",
+          "after": "stages/spotdiff-1000-902-390-after.png",
+          "fullBefore": "screens/spotdiff-1000-902-390-before.png",
+          "fullAfter": "screens/spotdiff-1000-902-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 80.99287974683544,
+                "y": 56.98839662447257,
+                "diameter": 15.990901898734178
+              },
+              "wanted": {
+                "x": 81,
+                "y": 57,
+                "r": 8
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 80.99287974683544,
+                "y": 56.98839662447257,
+                "diameter": 15.990901898734178
+              },
+              "wanted": {
+                "x": 81,
+                "y": 57,
+                "r": 8
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-1000-902-320-before.png",
+          "after": "stages/spotdiff-1000-902-320-after.png",
+          "fullBefore": "screens/spotdiff-1000-902-320-before.png",
+          "fullAfter": "screens/spotdiff-1000-902-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 80.999755859375,
+                "y": 56.998697916666664,
+                "diameter": 15.997314453125
+              },
+              "wanted": {
+                "x": 81,
+                "y": 57,
+                "r": 8
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 80.999755859375,
+                "y": 56.998697916666664,
+                "diameter": 15.997314453125
+              },
+              "wanted": {
+                "x": 81,
+                "y": 57,
+                "r": 8
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-903",
+      "tier": 1000,
+      "question": "ما التغيير الدقيق في صورتي الحشرة على الورقة؟",
+      "answer": "نقصت بقعة على الدعسوقة",
+      "alt": [
+        "بقعة الدعسوقة"
+      ],
+      "spot": {
+        "x": 57,
+        "y": 62,
+        "r": 4
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Ladybug lower image-right black spot is removed, four spots become three; other spots remain. Marker is correctly centered but pink/red contrast on the red shell is low.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-1000-903-a.webp",
+          "sha256": "5ad583c11e4abd382380bb9db24a903f910e344980aca45ef07efa77fb640445"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-1000-903-b.webp",
+          "sha256": "16265252f9eb8502f9aa90a074301fd4d93cf8b008d5c8d3000cd543feca9086"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-1000-903-390-before.png",
+          "after": "stages/spotdiff-1000-903-390-after.png",
+          "fullBefore": "screens/spotdiff-1000-903-390-before.png",
+          "fullAfter": "screens/spotdiff-1000-903-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 56.991693037974684,
+                "y": 61.99894514767932,
+                "diameter": 7.9905063291139244
+              },
+              "wanted": {
+                "x": 57,
+                "y": 62,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 56.991693037974684,
+                "y": 61.99894514767932,
+                "diameter": 7.9905063291139244
+              },
+              "wanted": {
+                "x": 57,
+                "y": 62,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-1000-903-320-before.png",
+          "after": "stages/spotdiff-1000-903-320-after.png",
+          "fullBefore": "screens/spotdiff-1000-903-320-before.png",
+          "fullAfter": "screens/spotdiff-1000-903-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 56.99462890625,
+                "y": 61.995442708333336,
+                "diameter": 7.99560546875
+              },
+              "wanted": {
+                "x": 57,
+                "y": 62,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 56.99462890625,
+                "y": 61.995442708333336,
+                "diameter": 7.99560546875
+              },
+              "wanted": {
+                "x": 57,
+                "y": 62,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-904",
+      "tier": 1000,
+      "question": "ما التفصيل المختلف في صورتي لعبة الطاولة؟",
+      "answer": "زادت نقطة على النرد",
+      "alt": [
+        "نقطة النرد"
+      ],
+      "spot": {
+        "x": 65,
+        "y": 36,
+        "r": 4
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "A center pip is added to the visible top die face, two become three; tokens and die remain. Marker identifies the added pip site.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-1000-904-a.webp",
+          "sha256": "6a5027726d9e15ded72c194220dfb6dd358b23bac1b715bc694a2a8de78ea652"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-1000-904-b.webp",
+          "sha256": "1431d69374783d27429a29ef2f4c41a38947ee680c351730759083aadaa7d175"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-1000-904-390-before.png",
+          "after": "stages/spotdiff-1000-904-390-after.png",
+          "fullBefore": "screens/spotdiff-1000-904-390-before.png",
+          "fullAfter": "screens/spotdiff-1000-904-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 64.99208860759494,
+                "y": 35.99683544303797,
+                "diameter": 7.9905063291139244
+              },
+              "wanted": {
+                "x": 65,
+                "y": 36,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 64.99208860759494,
+                "y": 35.99683544303797,
+                "diameter": 7.9905063291139244
+              },
+              "wanted": {
+                "x": 65,
+                "y": 36,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-1000-904-320-before.png",
+          "after": "stages/spotdiff-1000-904-320-after.png",
+          "fullBefore": "screens/spotdiff-1000-904-320-before.png",
+          "fullAfter": "screens/spotdiff-1000-904-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 64.996337890625,
+                "y": 35.994466145833336,
+                "diameter": 7.99560546875
+              },
+              "wanted": {
+                "x": 65,
+                "y": 36,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 64.996337890625,
+                "y": 35.994466145833336,
+                "diameter": 7.99560546875
+              },
+              "wanted": {
+                "x": 65,
+                "y": 36,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-905",
+      "tier": 1000,
+      "question": "ما التفصيل الناقص في صورتي ضبط الآلات؟",
+      "answer": "اختفى شريط الشوكة الرنانة",
+      "alt": [
+        "شريط الشوكة الرنانة"
+      ],
+      "spot": {
+        "x": 90,
+        "y": 66,
+        "r": 9
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Red ribbon at tuning-fork handle tip is removed; fork and wood block remain. Marker identifies the former ribbon location.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-1000-905-a.webp",
+          "sha256": "0f09b805b1c00f1da274ec26f120b7ffdf5fd37cf686bb5fa94db79a2d07a5cd"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-1000-905-b.webp",
+          "sha256": "79bdae58b0cb9d8185cb5fd01d7d729c3d86cbcb9d514dc08165772fc3d6e1e8"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-1000-905-390-before.png",
+          "after": "stages/spotdiff-1000-905-390-after.png",
+          "fullBefore": "screens/spotdiff-1000-905-390-before.png",
+          "fullAfter": "screens/spotdiff-1000-905-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 89.99208860759494,
+                "y": 65.99419831223629,
+                "diameter": 17.998417721518987
+              },
+              "wanted": {
+                "x": 90,
+                "y": 66,
+                "r": 9
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 89.99208860759494,
+                "y": 65.99419831223629,
+                "diameter": 17.998417721518987
+              },
+              "wanted": {
+                "x": 90,
+                "y": 66,
+                "r": 9
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-1000-905-320-before.png",
+          "after": "stages/spotdiff-1000-905-320-after.png",
+          "fullBefore": "screens/spotdiff-1000-905-320-before.png",
+          "fullAfter": "screens/spotdiff-1000-905-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 89.996337890625,
+                "y": 65.99934895833333,
+                "diameter": 17.999267578125
+              },
+              "wanted": {
+                "x": 90,
+                "y": 66,
+                "r": 9
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 89.996337890625,
+                "y": 65.99934895833333,
+                "diameter": 17.999267578125
+              },
+              "wanted": {
+                "x": 90,
+                "y": 66,
+                "r": 9
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-906",
+      "tier": 1000,
+      "question": "ما التفصيل الدقيق المتبدّل في صورتي حقيبة التخييم؟",
+      "answer": "تغيّر لون مشبك حقيبة الظهر",
+      "alt": [
+        "مشبك حقيبة الظهر"
+      ],
+      "spot": {
+        "x": 52,
+        "y": 63,
+        "r": 4
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Small backpack buckle changes blue to orange; straps, blanket and landscape remain. Small but visible before reveal; marker correctly identifies the buckle.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-1000-906-a.webp",
+          "sha256": "2b555858274f2d96c632f88b5e1797c3cab57ff886442a74249255e91fa03e3a"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-1000-906-b.webp",
+          "sha256": "a309cf003de436ee8a3c4fcb911e281a11451097f9d3c95615ea4cc002f2e06e"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-1000-906-390-before.png",
+          "after": "stages/spotdiff-1000-906-390-after.png",
+          "fullBefore": "screens/spotdiff-1000-906-390-before.png",
+          "fullAfter": "screens/spotdiff-1000-906-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 51.99762658227848,
+                "y": 62.98786919831224,
+                "diameter": 7.9905063291139244
+              },
+              "wanted": {
+                "x": 52,
+                "y": 63,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 51.99762658227848,
+                "y": 62.98786919831224,
+                "diameter": 7.9905063291139244
+              },
+              "wanted": {
+                "x": 52,
+                "y": 63,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-1000-906-320-before.png",
+          "after": "stages/spotdiff-1000-906-320-after.png",
+          "fullBefore": "screens/spotdiff-1000-906-320-before.png",
+          "fullAfter": "screens/spotdiff-1000-906-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 51.995849609375,
+                "y": 62.996419270833336,
+                "diameter": 7.99560546875
+              },
+              "wanted": {
+                "x": 52,
+                "y": 63,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 51.995849609375,
+                "y": 62.996419270833336,
+                "diameter": 7.99560546875
+              },
+              "wanted": {
+                "x": 52,
+                "y": 63,
+                "r": 4
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-907",
+      "tier": 1000,
+      "question": "ما التفصيل المختلف في صورتي كم القميص؟",
+      "answer": "تغيّر لون فص زر الكم",
+      "alt": [
+        "فص زر الكم"
+      ],
+      "spot": {
+        "x": 68,
+        "y": 55,
+        "r": 3
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Small cufflink inset changes blue to black; metal surround, cuff and tie remain. This is the smallest target and requires close inspection at 390px. Marker is tightly centered.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-1000-907-a.webp",
+          "sha256": "3f8071d8ed5d68e1f03e1137cd567d01ab6335415f0a901d27ee363dbe68a6cb"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-1000-907-b.webp",
+          "sha256": "22ccfc8377ff4e838d1b43d01bb0a47f5632614c8989ba3f15e8779ab472dcba"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-1000-907-390-before.png",
+          "after": "stages/spotdiff-1000-907-390-after.png",
+          "fullBefore": "screens/spotdiff-1000-907-390-before.png",
+          "fullAfter": "screens/spotdiff-1000-907-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 67.99841772151899,
+                "y": 54.99736286919831,
+                "diameter": 5.992879746835443
+              },
+              "wanted": {
+                "x": 68,
+                "y": 55,
+                "r": 3
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 67.99841772151899,
+                "y": 54.99736286919831,
+                "diameter": 5.992879746835443
+              },
+              "wanted": {
+                "x": 68,
+                "y": 55,
+                "r": 3
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-1000-907-320-before.png",
+          "after": "stages/spotdiff-1000-907-320-after.png",
+          "fullBefore": "screens/spotdiff-1000-907-320-before.png",
+          "fullAfter": "screens/spotdiff-1000-907-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 67.999267578125,
+                "y": 54.996744791666664,
+                "diameter": 5.999755859375
+              },
+              "wanted": {
+                "x": 68,
+                "y": 55,
+                "r": 3
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 67.999267578125,
+                "y": 54.996744791666664,
+                "diameter": 5.999755859375
+              },
+              "wanted": {
+                "x": 68,
+                "y": 55,
+                "r": 3
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "spotdiff-1000-908",
+      "tier": 1000,
+      "question": "ما التغيير الصغير في صورتي القطع المعدنية؟",
+      "answer": "تغيّر لون الحلقة المطاطية",
+      "alt": [
+        "الحلقة المطاطية"
+      ],
+      "spot": {
+        "x": 81,
+        "y": 32,
+        "r": 6
+      },
+      "actualImageObserved": true,
+      "oneMeaningfulDifference": true,
+      "markerCorrect": true,
+      "observation": "Small O-ring changes red to black; nuts and bolt remain. Marker identifies the ring.",
+      "media": [
+        {
+          "path": "media/spotdiff/spotdiff-1000-908-a.webp",
+          "sha256": "2d4e515cccd0a67e75e57d97ed1726af26f93d2a6018de3617b29bcc244c8dd1"
+        },
+        {
+          "path": "media/spotdiff/spotdiff-1000-908-b.webp",
+          "sha256": "4b6bc6cd9b73363ad916ecc1334d176fc64548d27ad1b3e25125693b292c2b59"
+        }
+      ],
+      "views": [
+        {
+          "width": 390,
+          "imageCssSize": {
+            "width": 158,
+            "height": 118.5
+          },
+          "before": "stages/spotdiff-1000-908-390-before.png",
+          "after": "stages/spotdiff-1000-908-390-after.png",
+          "fullBefore": "screens/spotdiff-1000-908-390-before.png",
+          "fullAfter": "screens/spotdiff-1000-908-390-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 80.99287974683544,
+                "y": 31.988396624472575,
+                "diameter": 11.995648734177216
+              },
+              "wanted": {
+                "x": 81,
+                "y": 32,
+                "r": 6
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 80.99287974683544,
+                "y": 31.988396624472575,
+                "diameter": 11.995648734177216
+              },
+              "wanted": {
+                "x": 81,
+                "y": 32,
+                "r": 6
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "imageCssSize": {
+            "width": 256,
+            "height": 192
+          },
+          "before": "stages/spotdiff-1000-908-320-before.png",
+          "after": "stages/spotdiff-1000-908-320-after.png",
+          "fullBefore": "screens/spotdiff-1000-908-320-before.png",
+          "fullAfter": "screens/spotdiff-1000-908-320-after.png",
+          "automatedPass": true,
+          "visuallyInspectedInContact": true,
+          "markers": [
+            {
+              "actual": {
+                "x": 80.999755859375,
+                "y": 31.998697916666668,
+                "diameter": 11.99951171875
+              },
+              "wanted": {
+                "x": 81,
+                "y": 32,
+                "r": 6
+              },
+              "ok": true,
+              "inside": true
+            },
+            {
+              "actual": {
+                "x": 80.999755859375,
+                "y": 31.998697916666668,
+                "diameter": 11.99951171875
+              },
+              "wanted": {
+                "x": 81,
+                "y": 32,
+                "r": 6
+              },
+              "ok": true,
+              "inside": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

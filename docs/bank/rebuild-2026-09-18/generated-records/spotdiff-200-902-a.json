@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-200-902-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-200-902-a.webp",
+  "asset": "media/spotdiff/spotdiff-200-902-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. A large plain GREEN closed notebook at center-right, an unmarked wooden pencil at left, and small round ivory cup holding two pens behind on a pale wood desk. Notebook fills 45 percent width. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 104894,
+  "sha256": "72b6d33813d561cd976149099e7f2ea463616bb4107eeae7e4319ceb62fa4ff6",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Plain notebook cover changes green to orange; pencil, cup, both pens, notebook shape and desk unchanged.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

@@ -5,231 +5,56 @@
   "qs": [
     {
       "p": 200,
-      "topic": "أدب وشعر",
+      "topic": "شعر عربي قديم",
       "q": "من صاحب البيت: «على قدر أهل العزم تأتي العزائم»؟",
       "a": "المتنبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-001"
-    },
-    {
-      "p": 200,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «إذا الشعب يوما أراد الحياة»؟",
-      "a": "أبو القاسم الشابي",
       "alt": [
-        "الشابي"
+        "أبو الطيب المتنبي"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://ar.wikisource.org/wiki/على_قدر_أهل_العزم_تأتي_العزائم",
       "verified": true,
-      "qid": "quotes-200-002"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-901"
     },
     {
       "p": 200,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «إنما الأمم الأخلاق ما بقيت»؟",
+      "topic": "شعر عربي حديث",
+      "q": "من صاحب البيت: «وطني لو شغلت بالخلد عنه»؟",
       "a": "أحمد شوقي",
       "alt": [
         "شوقي",
         "أمير الشعراء"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.safahat.org/books/70706142/62/",
       "verified": true,
-      "qid": "quotes-200-003"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-902"
     },
     {
       "p": 200,
-      "topic": "أدب وشعر",
-      "q": "من صاحب العبارة: «على هذه الأرض ما يستحق الحياة»؟",
-      "a": "محمود درويش",
+      "topic": "شعر عربي حديث",
+      "q": "من صاحب البيت: «إذا الشعب يوما أراد الحياة»؟",
+      "a": "أبو القاسم الشابي",
       "alt": [
-        "درويش"
+        "الشابي"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/66026-إذا-الشعب-يوما-أراد-الحياة",
       "verified": true,
-      "qid": "quotes-200-004"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-903"
     },
     {
       "p": 200,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «وطني لو شغلت بالخلد عنه»؟",
-      "a": "إبراهيم طوقان",
-      "alt": [
-        "طوقان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-005"
-    },
-    {
-      "p": 200,
-      "topic": "أدب وشعر",
+      "topic": "شعر عربي قديم",
       "q": "من صاحب البيت: «السيف أصدق أنباء من الكتب»؟",
       "a": "أبو تمام",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-006"
-    },
-    {
-      "p": 200,
-      "topic": "أدب وشعر",
-      "q": "من صاحب المطلع: «قفا نبك من ذكرى حبيب ومنزل»؟",
-      "a": "امرؤ القيس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-007"
-    },
-    {
-      "p": 200,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «الأم مدرسة إذا أعددتها»؟",
-      "a": "حافظ إبراهيم",
       "alt": [
-        "حافظ"
+        "حبيب بن أوس"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/1118-السيف-أصدق-أنباء-من-الكتب",
       "verified": true,
-      "qid": "quotes-200-008"
-    },
-    {
-      "p": 200,
-      "topic": "تراث وحكمة",
-      "q": "من قال منكرا على وال: «متى استعبدتم الناس وقد ولدتهم أمهاتهم أحرارا»؟",
-      "a": "عمر بن الخطاب",
-      "alt": [
-        "الفاروق"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-009"
-    },
-    {
-      "p": 200,
-      "topic": "تراث وحكمة",
-      "q": "من افتتح خلافته بقوله: «وُليت عليكم ولست بخيركم»؟",
-      "a": "أبو بكر الصديق",
-      "alt": [
-        "أبو بكر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-010"
-    },
-    {
-      "p": 200,
-      "topic": "تراث وحكمة",
-      "q": "من قال على المنبر: «سلوني قبل أن تفقدوني»؟",
-      "a": "علي بن أبي طالب",
-      "alt": [
-        "الإمام علي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-011"
-    },
-    {
-      "p": 200,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «كلكم راع وكلكم مسؤول عن رعيته»؟",
-      "a": "النبي محمد",
-      "alt": [
-        "الرسول",
-        "محمد صلى الله عليه وسلم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-012"
-    },
-    {
-      "p": 200,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «رأيي صواب يحتمل الخطأ، ورأي غيري خطأ يحتمل الصواب»؟",
-      "a": "الشافعي",
-      "alt": [
-        "الإمام الشافعي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-013"
-    },
-    {
-      "p": 200,
-      "topic": "تراث وحكمة",
-      "q": "من الخليفة الأموي القائل: «إن لي نفسا تواقة»؟",
-      "a": "عمر بن عبد العزيز",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-014"
-    },
-    {
-      "p": 200,
-      "topic": "تاريخ وقادة",
-      "q": "من خطب في جنده: «البحر من ورائكم والعدو أمامكم»؟",
-      "a": "طارق بن زياد",
-      "alt": [
-        "طارق"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-015"
-    },
-    {
-      "p": 200,
-      "topic": "تاريخ وقادة",
-      "q": "من رفع شعار: «الحق فوق القوة والأمة فوق الحكومة»؟",
-      "a": "سعد زغلول",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-016"
-    },
-    {
-      "p": 200,
-      "topic": "تاريخ وقادة",
-      "q": "من قال: «لو لم أكن مصريا لوددت أن أكون مصريا»؟",
-      "a": "مصطفى كامل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-017"
-    },
-    {
-      "p": 200,
-      "topic": "تاريخ وقادة",
-      "q": "من قال وهو يقاوم الاحتلال: «نحن لا نستسلم، ننتصر أو نموت»؟",
-      "a": "عمر المختار",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-018"
-    },
-    {
-      "p": 200,
-      "topic": "تاريخ وقادة",
-      "q": "من أوجز انتصاره بقوله: «جئت، رأيت، انتصرت»؟",
-      "a": "يوليوس قيصر",
-      "alt": [
-        "قيصر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-019"
-    },
-    {
-      "p": 200,
-      "topic": "تاريخ وقادة",
-      "q": "من قال محتضرا: «أموت على فراشي كما يموت البعير»؟",
-      "a": "خالد بن الوليد",
-      "alt": [
-        "سيف الله المسلول"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-020"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-904"
     },
     {
       "p": 200,
@@ -237,1111 +62,201 @@
       "q": "من صاحب العبارة: «أنا أفكر إذن أنا موجود»؟",
       "a": "رينيه ديكارت",
       "alt": [
-        "ديكارت"
+        "ديكارت",
+        "René Descartes",
+        "Rene Descartes"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/59/pg59-images.html",
       "verified": true,
-      "qid": "quotes-200-021"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-905"
     },
     {
       "p": 200,
-      "topic": "فكر وفلسفة",
-      "q": "من الفيلسوف اليوناني القائل: «كل ما أعرفه أنني لا أعرف شيئا»؟",
-      "a": "سقراط",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-022"
-    },
-    {
-      "p": 200,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب العبارة: «الإنسان حيوان سياسي بطبعه»؟",
-      "a": "أرسطو",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-023"
-    },
-    {
-      "p": 200,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب القاعدة: «الظلم مؤذن بخراب العمران»؟",
-      "a": "ابن خلدون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-024"
-    },
-    {
-      "p": 200,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب العبارة: «ما لا يقتلني يجعلني أقوى»؟",
-      "a": "فريدريك نيتشه",
-      "alt": [
-        "نيتشه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-025"
-    },
-    {
-      "p": 200,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب العبارة: «المعرفة قوة»؟",
-      "a": "فرانسيس بيكون",
-      "alt": [
-        "بيكون"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-026"
-    },
-    {
-      "p": 200,
-      "topic": "علم واختراع",
-      "q": "من قال: «إن رأيت أبعد فلأني وقفت على أكتاف عمالقة»؟",
-      "a": "إسحاق نيوتن",
-      "alt": [
-        "نيوتن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-027"
-    },
-    {
-      "p": 200,
-      "topic": "علم واختراع",
-      "q": "من صاحب العبارة: «الخيال أهم من المعرفة»؟",
+      "topic": "علم واكتشاف",
+      "q": "من قال: «الخيال أهم من المعرفة»؟",
       "a": "ألبرت أينشتاين",
       "alt": [
-        "أينشتاين"
+        "أينشتاين",
+        "اينشتاين",
+        "Albert Einstein"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.cc.kyoto-su.ac.jp/~hara/einstein4.html",
       "verified": true,
-      "qid": "quotes-200-028"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-906"
     },
     {
       "p": 200,
-      "topic": "علم واختراع",
-      "q": "من قال: «أعطوني نقطة ارتكاز أحرك لكم الأرض»؟",
-      "a": "أرخميدس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-029"
-    },
-    {
-      "p": 200,
-      "topic": "علم واختراع",
-      "q": "من قال إن كتاب الكون مكتوب بلغة الرياضيات؟",
-      "a": "غاليليو غاليلي",
-      "alt": [
-        "غاليليو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-030"
-    },
-    {
-      "p": 200,
-      "topic": "علم واختراع",
-      "q": "من قال: «العبقرية إلهام بواحد بالمئة وعرق بتسعة وتسعين»؟",
-      "a": "توماس إديسون",
-      "alt": [
-        "إديسون"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-031"
-    },
-    {
-      "p": 200,
-      "topic": "علم واختراع",
-      "q": "من قالت: «لا شيء في الحياة يُخشى، إنما يُفهم»؟",
-      "a": "ماري كوري",
-      "alt": [
-        "كوري"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-032"
-    },
-    {
-      "p": 200,
-      "topic": "حكم معاصرة",
-      "q": "من قال في خطاب تنصيبه: «لا تسأل ماذا قدّم لك وطنك»؟",
-      "a": "جون كينيدي",
-      "alt": [
-        "كينيدي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-033"
-    },
-    {
-      "p": 200,
-      "topic": "حكم معاصرة",
-      "q": "من قال أمام حشد واشنطن: «لديّ حلم»؟",
-      "a": "مارتن لوثر كينغ",
-      "alt": [
-        "لوثر كينغ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-034"
-    },
-    {
-      "p": 200,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «خطوة صغيرة لإنسان، قفزة كبيرة للبشرية»؟",
+      "topic": "خطب وكلمات",
+      "q": "من قال عند نزوله على القمر: «خطوة صغيرة لإنسان، قفزة كبيرة للبشرية»؟",
       "a": "نيل أرمسترونغ",
       "alt": [
-        "أرمسترونغ"
+        "أرمسترونغ",
+        "نيل آرمسترونغ",
+        "Neil Armstrong"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.nasa.gov/history/50-years-ago-one-small-step-one-giant-leap/",
       "verified": true,
-      "qid": "quotes-200-035"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-907"
     },
     {
       "p": 200,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «التعليم أقوى سلاح تستطيع أن تغيّر به العالم»؟",
-      "a": "نيلسون مانديلا",
-      "alt": [
-        "مانديلا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-036"
-    },
-    {
-      "p": 200,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «لا أملك ما أقدمه سوى الدم والكدح والدموع والعرق»؟",
-      "a": "ونستون تشرشل",
-      "alt": [
-        "تشرشل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-037"
-    },
-    {
-      "p": 200,
-      "topic": "حكم معاصرة",
-      "q": "من ختم خطابه في جامعة ستانفورد بعبارة: «ابقَ جائعا، ابقَ أحمق»؟",
-      "a": "ستيف جوبز",
-      "alt": [
-        "جوبز"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-038"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "q": "من الملاكم الذي كرر: «أنا الأعظم»؟",
-      "a": "محمد علي كلاي",
-      "alt": [
-        "محمد علي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-039"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "q": "من وصف هدفه المثير للجدل عام 1986 بأنه «يد الله»؟",
-      "a": "دييغو مارادونا",
-      "alt": [
-        "مارادونا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-040"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "q": "من قال: «اللعب بالكرة بسيط، لكن اللعب ببساطة أصعب شيء»؟",
-      "a": "يوهان كرويف",
-      "alt": [
-        "كرويف"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-041"
-    },
-    {
-      "p": 200,
-      "topic": "رياضة",
-      "q": "من قال: «أخفقت مرارا في حياتي، ولهذا نجحت»؟",
-      "a": "مايكل جوردن",
-      "alt": [
-        "جوردن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-042"
-    },
-    {
-      "p": 200,
-      "topic": "أدب عالمي",
-      "q": "من كتب على لسان بطله: «أكون أو لا أكون، تلك هي المسألة»؟",
+      "topic": "مسرح عالمي",
+      "q": "من كتب في «هاملت»: «أكون أو لا أكون»؟",
       "a": "وليم شكسبير",
       "alt": [
-        "شكسبير"
+        "ويليام شكسبير",
+        "شكسبير",
+        "William Shakespeare"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.folger.edu/explore/shakespeares-works/hamlet/read/",
       "verified": true,
-      "qid": "quotes-200-043"
+      "difficultyTarget": 0.8,
+      "qid": "quotes-200-908"
     },
     {
-      "p": 200,
-      "topic": "أدب عالمي",
-      "q": "من كتب: «أولادكم ليسوا أولادكم»؟",
-      "a": "جبران خليل جبران",
+      "p": 400,
+      "topic": "شعر عربي حديث",
+      "q": "من كتب: «على هذه الأرض ما يستحق الحياة»؟",
+      "a": "محمود درويش",
       "alt": [
-        "جبران"
+        "درويش"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.aldiwan.net/poem9094.html",
       "verified": true,
-      "qid": "quotes-200-044"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-901"
     },
     {
-      "p": 200,
-      "topic": "أدب عالمي",
-      "q": "من قال: «التعليم كالماء والهواء حق لكل مواطن»؟",
-      "a": "طه حسين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-200-045"
-    },
-    {
-      "p": 200,
-      "topic": "أدب عالمي",
-      "q": "من كتب في الأمير الصغير: «لا يرى المرء جيدا إلا بقلبه»؟",
-      "a": "سانت إكزوبيري",
+      "p": 400,
+      "topic": "شعر عربي حديث",
+      "q": "من صاحب البيت: «الأم مدرسة إذا أعددتها»؟",
+      "a": "حافظ إبراهيم",
       "alt": [
-        "أنطوان دو سانت إكزوبيري"
+        "حافظ ابراهيم"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.safahat.org/books/94053925/6/",
       "verified": true,
-      "qid": "quotes-200-046"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-902"
     },
     {
-      "p": 200,
-      "topic": "أدب عالمي",
-      "q": "من قال: «الحقيقة أغرب من الخيال»؟",
-      "a": "مارك توين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "p": 400,
+      "topic": "شعر عربي قديم",
+      "q": "من صاحب معلقة «قفا نبك من ذكرى حبيب ومنزل»؟",
+      "a": "امرؤ القيس",
+      "alt": [
+        "امرئ القيس",
+        "امرؤ القيس بن حجر"
+      ],
+      "sourceUrl": "https://ar.wikisource.org/wiki/قفا_نبك_من_ذكرى_حبيب_ومنزل_(معلقة)",
       "verified": true,
-      "qid": "quotes-200-047"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-903"
     },
     {
-      "p": 200,
-      "topic": "أدب عالمي",
-      "q": "من افتتح روايته: «كان أفضل الأزمنة، وكان أسوأ الأزمنة»؟",
+      "p": 400,
+      "topic": "شعر عربي قديم",
+      "q": "من صاحب معلقة «هل غادر الشعراء من متردم»؟",
+      "a": "عنترة بن شداد",
+      "alt": [
+        "عنترة",
+        "عنترة العبسي"
+      ],
+      "sourceUrl": "https://www.aldiwan.net/poem85.html",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-904"
+    },
+    {
+      "p": 400,
+      "topic": "فكر وفلسفة",
+      "q": "من كتب: «ما لا يقتلني يجعلني أقوى»؟",
+      "a": "فريدريك نيتشه",
+      "alt": [
+        "نيتشه",
+        "فريدريش نيتشه",
+        "Friedrich Nietzsche"
+      ],
+      "sourceUrl": "https://www.gutenberg.org/files/52263/52263-h/52263-h.htm",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-905"
+    },
+    {
+      "p": 400,
+      "topic": "علم واكتشاف",
+      "q": "من كتب إلى روبرت هوك أنه رأى أبعد بوقوفه على أكتاف عمالقة؟",
+      "a": "إسحاق نيوتن",
+      "alt": [
+        "نيوتن",
+        "إسحق نيوتن",
+        "Isaac Newton"
+      ],
+      "sourceUrl": "https://newtonproject.ox.ac.uk/view/texts/normalized/OTHE00018",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-906"
+    },
+    {
+      "p": 400,
+      "topic": "رواية ونثر عالمي",
+      "q": "من افتتح «قصة مدينتين» بمعنى: «كان أفضل الأزمنة، وكان أسوأ الأزمنة»؟",
       "a": "تشارلز ديكنز",
       "alt": [
-        "ديكنز"
+        "ديكنز",
+        "تشارلس ديكنز",
+        "Charles Dickens"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.gutenberg.org/files/98/98-h/98-h.htm",
       "verified": true,
-      "qid": "quotes-200-048"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-907"
     },
     {
       "p": 400,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «أحبيني بلا عقد وضيعي في متاهات»؟",
-      "a": "نزار قباني",
+      "topic": "رواية ونثر عالمي",
+      "q": "من كتب في «النبي»: «أولادكم ليسوا أولادكم»؟",
+      "a": "جبران خليل جبران",
       "alt": [
-        "نزار"
+        "جبران",
+        "خليل جبران",
+        "Kahlil Gibran"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://poets.org/poem/children-1/print",
       "verified": true,
-      "qid": "quotes-400-001"
+      "difficultyTarget": 0.6,
+      "qid": "quotes-400-908"
     },
     {
-      "p": 400,
-      "topic": "أدب وشعر",
+      "p": 600,
+      "topic": "شعر عربي قديم",
+      "q": "من صاحب البيت: «تعب كلها الحياة»؟",
+      "a": "أبو العلاء المعري",
+      "alt": [
+        "المعري",
+        "أبو العلاء"
+      ],
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/16598-غير-مجد-في-ملتي-واعتقادي",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-901"
+    },
+    {
+      "p": 600,
+      "topic": "شعر عربي حديث",
       "q": "من صاحب البيت: «قال السماء كئيبة وتجهما»؟",
       "a": "إيليا أبو ماضي",
       "alt": [
+        "إيليا أبي ماضي",
         "أبو ماضي"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://ar.wikisource.org/wiki/ابتسم",
       "verified": true,
-      "qid": "quotes-400-002"
-    },
-    {
-      "p": 400,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «تعب كلهم في الحياة فما أعجب إلا من راغب في ازدياد»؟",
-      "a": "أبو العلاء المعري",
-      "alt": [
-        "المعري"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-003"
-    },
-    {
-      "p": 400,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «ولقد ذكرتك والرماح نواهل مني»؟",
-      "a": "عنترة بن شداد",
-      "alt": [
-        "عنترة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-004"
-    },
-    {
-      "p": 400,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «وما الحرب إلا ما علمتم وذقتم»؟",
-      "a": "زهير بن أبي سلمى",
-      "alt": [
-        "زهير"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-005"
-    },
-    {
-      "p": 400,
-      "topic": "أدب وشعر",
-      "q": "من الشاعرة صاحبة البيت: «وإن صخرا لتأتم الهداة به»؟",
-      "a": "الخنساء",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-006"
-    },
-    {
-      "p": 400,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «دع عنك لومي فإن اللوم إغراء»؟",
-      "a": "أبو نواس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-007"
-    },
-    {
-      "p": 400,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «إن العيون التي في طرفها حور قتلننا»؟",
-      "a": "جرير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-008"
-    },
-    {
-      "p": 400,
-      "topic": "تراث وحكمة",
-      "q": "من وصف الكتاب بأنه «الجليس الذي لا يطريك»؟",
-      "a": "الجاحظ",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-009"
-    },
-    {
-      "p": 400,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «العقل عقلان: مطبوع ومسموع»؟",
-      "a": "ابن المقفع",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-010"
-    },
-    {
-      "p": 400,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «ابن آدم، إنما أنت أيام، كلما ذهب يوم ذهب بعضك»؟",
-      "a": "الحسن البصري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-011"
-    },
-    {
-      "p": 400,
-      "topic": "تراث وحكمة",
-      "q": "من قال عند قبر النبي: «كل يؤخذ من قوله ويرد إلا صاحب هذا القبر»؟",
-      "a": "الإمام مالك",
-      "alt": [
-        "مالك بن أنس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-012"
-    },
-    {
-      "p": 400,
-      "topic": "تراث وحكمة",
-      "q": "من صاحب البيت: «لا تنه عن خلق وتأتي مثله»؟",
-      "a": "أبو الأسود الدؤلي",
-      "alt": [
-        "الدؤلي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-013"
-    },
-    {
-      "p": 400,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «إن الله يزع بالسلطان ما لا يزع بالقرآن»؟",
-      "a": "عثمان بن عفان",
-      "alt": [
-        "عثمان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-014"
-    },
-    {
-      "p": 400,
-      "topic": "تاريخ وقادة",
-      "q": "من قال لجنوده في مصر: «من أعالي هذه الأهرام أربعون قرنا تنظر إليكم»؟",
-      "a": "نابليون بونابرت",
-      "alt": [
-        "نابليون"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-015"
-    },
-    {
-      "p": 400,
-      "topic": "تاريخ وقادة",
-      "q": "من وصف الديمقراطية بأنها «حكم الشعب بالشعب للشعب»؟",
-      "a": "أبراهام لينكولن",
-      "alt": [
-        "لينكولن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-016"
-    },
-    {
-      "p": 400,
-      "topic": "تاريخ وقادة",
-      "q": "من أذاع من لندن: «فرنسا خسرت معركة، لكنها لم تخسر الحرب»؟",
-      "a": "شارل ديغول",
-      "alt": [
-        "ديغول"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-017"
-    },
-    {
-      "p": 400,
-      "topic": "تاريخ وقادة",
-      "q": "من قال: «القوة لا تأتي من القدرة الجسدية، بل من إرادة لا تُقهر»؟",
-      "a": "المهاتما غاندي",
-      "alt": [
-        "غاندي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-018"
-    },
-    {
-      "p": 400,
-      "topic": "تاريخ وقادة",
-      "q": "من قالت في محاكمتها: «لا أخاف شيئا، فقد وُلدت لأفعل هذا»؟",
-      "a": "جان دارك",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-019"
-    },
-    {
-      "p": 400,
-      "topic": "تاريخ وقادة",
-      "q": "من القائد القرطاجي القائل: «سأجد طريقا أو أشق واحدا»؟",
-      "a": "هنيبعل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-020"
-    },
-    {
-      "p": 400,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب العبارة: «الحاجة أم الاختراع»؟",
-      "a": "أفلاطون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-021"
-    },
-    {
-      "p": 400,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب العبارة: «الإنسان ذئب لأخيه الإنسان»؟",
-      "a": "توماس هوبز",
-      "alt": [
-        "هوبز"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-022"
-    },
-    {
-      "p": 400,
-      "topic": "فكر وفلسفة",
-      "q": "من كتب في مسرحيته: «الجحيم هو الآخرون»؟",
-      "a": "جان بول سارتر",
-      "alt": [
-        "سارتر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-023"
-    },
-    {
-      "p": 400,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب العبارة: «الأفضل عدو الجيد»؟",
-      "a": "فولتير",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-024"
-    },
-    {
-      "p": 400,
-      "topic": "فكر وفلسفة",
-      "q": "من افتتح كتابه: «يولد الإنسان حرا، وهو في كل مكان في الأغلال»؟",
-      "a": "جان جاك روسو",
-      "alt": [
-        "روسو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-025"
-    },
-    {
-      "p": 400,
-      "topic": "فكر وفلسفة",
-      "q": "من الحكيم الصيني القائل: «لا تفعل بغيرك ما لا تحب أن يُفعل بك»؟",
-      "a": "كونفوشيوس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-026"
-    },
-    {
-      "p": 400,
-      "topic": "علم واختراع",
-      "q": "من قال: «الجهل يولّد الثقة أكثر مما تفعل المعرفة»؟",
-      "a": "تشارلز داروين",
-      "alt": [
-        "داروين"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-027"
-    },
-    {
-      "p": 400,
-      "topic": "علم واختراع",
-      "q": "من قال: «الحظ لا يحالف إلا العقول المستعدة»؟",
-      "a": "لويس باستور",
-      "alt": [
-        "باستور"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-028"
-    },
-    {
-      "p": 400,
-      "topic": "علم واختراع",
-      "q": "من المخترع القائل: «الحاضر لهم، أما المستقبل فلي»؟",
-      "a": "نيكولا تسلا",
-      "alt": [
-        "تسلا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-029"
-    },
-    {
-      "p": 400,
-      "topic": "علم واختراع",
-      "q": "من قال إن طالب الحق يشك في كتب من سبقوه ولا يسلّم بها؟",
-      "a": "ابن الهيثم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-030"
-    },
-    {
-      "p": 400,
-      "topic": "علم واختراع",
-      "q": "من الفلكي القائل: «نحن مصنوعون من غبار النجوم»؟",
-      "a": "كارل ساغان",
-      "alt": [
-        "ساغان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-031"
-    },
-    {
-      "p": 400,
-      "topic": "علم واختراع",
-      "q": "من نصح طلابه: «انظروا إلى النجوم لا إلى أقدامكم»؟",
-      "a": "ستيفن هوكينغ",
-      "alt": [
-        "هوكينغ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-032"
-    },
-    {
-      "p": 400,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «الحياة مأساة إذا رأيتها عن قرب، وملهاة عن بُعد»؟",
-      "a": "تشارلي تشابلن",
-      "alt": [
-        "تشابلن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-033"
-    },
-    {
-      "p": 400,
-      "topic": "حكم معاصرة",
-      "q": "من قالت: «وحدنا نستطيع القليل، ومعا نستطيع الكثير»؟",
-      "a": "هيلين كيلر",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-034"
-    },
-    {
-      "p": 400,
-      "topic": "حكم معاصرة",
-      "q": "من قال ساخرا: «أستطيع مقاومة كل شيء إلا الإغراء»؟",
-      "a": "أوسكار وايلد",
-      "alt": [
-        "وايلد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-035"
-    },
-    {
-      "p": 400,
-      "topic": "حكم معاصرة",
-      "q": "من قالت: «إن لم تستطع إطعام مئة، فأطعم واحدا»؟",
-      "a": "الأم تيريزا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-036"
-    },
-    {
-      "p": 400,
-      "topic": "حكم معاصرة",
-      "q": "من قالت أمام الأمم المتحدة: «طفل ومعلم وكتاب وقلم تغيّر العالم»؟",
-      "a": "ملالا يوسفزي",
-      "alt": [
-        "ملالا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-037"
-    },
-    {
-      "p": 400,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «الشيء الوحيد الذي علينا أن نخشاه هو الخوف نفسه»؟",
-      "a": "فرانكلين روزفلت",
-      "alt": [
-        "روزفلت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-038"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "q": "من قال: «كرة القدم ليست مسألة حياة أو موت، إنها أهم من ذلك»؟",
-      "a": "بيل شانكلي",
-      "alt": [
-        "شانكلي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-039"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "q": "من هتف بعد نهائي 1999: «كرة القدم، يا إلهي!»؟",
-      "a": "أليكس فيرغسون",
-      "alt": [
-        "فيرغسون"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-040"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "q": "من قدّم نفسه للصحافة الإنجليزية بقوله: «أنا المميز»؟",
-      "a": "جوزيه مورينيو",
-      "alt": [
-        "مورينيو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-041"
-    },
-    {
-      "p": 400,
-      "topic": "رياضة",
-      "q": "من نجم الهوكي القائل: «تخطئ مئة بالمئة من التسديدات التي لا تسددها»؟",
-      "a": "وين غريتزكي",
-      "alt": [
-        "غريتزكي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-042"
-    },
-    {
-      "p": 400,
-      "topic": "أدب عالمي",
-      "q": "من كتب في روايته: «الجمال سينقذ العالم»؟",
-      "a": "فيودور دوستويفسكي",
-      "alt": [
-        "دوستويفسكي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-043"
-    },
-    {
-      "p": 400,
-      "topic": "أدب عالمي",
-      "q": "من افتتح روايته: «كل العائلات السعيدة متشابهة»؟",
-      "a": "ليو تولستوي",
-      "alt": [
-        "تولستوي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-044"
-    },
-    {
-      "p": 400,
-      "topic": "أدب عالمي",
-      "q": "من كتب: «يمكن تدمير الإنسان، لكن لا يمكن هزيمته»؟",
-      "a": "إرنست همنغواي",
-      "alt": [
-        "همنغواي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-045"
-    },
-    {
-      "p": 400,
-      "topic": "أدب عالمي",
-      "q": "من كتب: «كل الحيوانات متساوية، لكن بعضها أكثر مساواة»؟",
-      "a": "جورج أورويل",
-      "alt": [
-        "أورويل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-046"
-    },
-    {
-      "p": 400,
-      "topic": "أدب عالمي",
-      "q": "من كتب: «في قلب الشتاء أدركت أن بداخلي صيفا لا يُقهر»؟",
-      "a": "ألبير كامو",
-      "alt": [
-        "كامو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-047"
-    },
-    {
-      "p": 400,
-      "topic": "أدب عالمي",
-      "q": "من قال: «الحياة ليست ما عاشه المرء، بل ما يتذكره»؟",
-      "a": "غابرييل غارسيا ماركيز",
-      "alt": [
-        "ماركيز"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-400-048"
-    },
-    {
-      "p": 600,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «ستبدي لك الأيام ما كنت جاهلا»؟",
-      "a": "طرفة بن العبد",
-      "alt": [
-        "طرفة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-001"
-    },
-    {
-      "p": 600,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «ألا كل شيء ما خلا الله باطل»؟",
-      "a": "لبيد بن ربيعة",
-      "alt": [
-        "لبيد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-002"
-    },
-    {
-      "p": 600,
-      "topic": "أدب وشعر",
-      "q": "من صاحب المطلع: «عيناك غابتا نخيل ساعة السحر»؟",
-      "a": "بدر شاكر السياب",
-      "alt": [
-        "السياب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-003"
-    },
-    {
-      "p": 600,
-      "topic": "أدب وشعر",
-      "q": "من الشاعرة صاحبة قصيدة الكوليرا ومطلعها: «سكن الليل»؟",
-      "a": "نازك الملائكة",
-      "alt": [
-        "نازك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-004"
-    },
-    {
-      "p": 600,
-      "topic": "أدب وشعر",
-      "q": "من صاحب القصيدة التي يتكرر فيها النداء: «لا تصالح»؟",
-      "a": "أمل دنقل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-005"
-    },
-    {
-      "p": 600,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «إذا كنت في كل الأمور معاتبا صديقك»؟",
-      "a": "بشار بن برد",
-      "alt": [
-        "بشار"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-006"
-    },
-    {
-      "p": 600,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «سل الرماح العوالي عن معالينا»؟",
-      "a": "صفي الدين الحلي",
-      "alt": [
-        "الحلي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-007"
-    },
-    {
-      "p": 600,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «أراك عصيّ الدمع شيمتك الصبر»؟",
-      "a": "أبو فراس الحمداني",
-      "alt": [
-        "أبو فراس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-008"
-    },
-    {
-      "p": 600,
-      "topic": "تراث وحكمة",
-      "q": "من خطب في أهل العراق: «إني لأرى رؤوسا قد أينعت وحان قطافها»؟",
-      "a": "الحجاج بن يوسف",
-      "alt": [
-        "الحجاج"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-009"
-    },
-    {
-      "p": 600,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «لو أن بيني وبين الناس شعرة ما انقطعت»؟",
-      "a": "معاوية بن أبي سفيان",
-      "alt": [
-        "معاوية"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-010"
-    },
-    {
-      "p": 600,
-      "topic": "تراث وحكمة",
-      "q": "من خطيب عكاظ صاحب: «من عاش مات، ومن مات فات»؟",
-      "a": "قس بن ساعدة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-011"
-    },
-    {
-      "p": 600,
-      "topic": "تراث وحكمة",
-      "q": "من قسّم الرجال إلى: من يدري ويدري أنه يدري، ومن لا يدري؟",
-      "a": "الخليل بن أحمد",
-      "alt": [
-        "الفراهيدي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-012"
-    },
-    {
-      "p": 600,
-      "topic": "تراث وحكمة",
-      "q": "من قال في صيد الخاطر: «الوقت أنفس ما عُني بحفظه»؟",
-      "a": "ابن الجوزي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-013"
-    },
-    {
-      "p": 600,
-      "topic": "تراث وحكمة",
-      "q": "من أجاب عن وقت الراحة: «مع أول قدم أضعها في الجنة»؟",
-      "a": "أحمد بن حنبل",
-      "alt": [
-        "الإمام أحمد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-014"
-    },
-    {
-      "p": 600,
-      "topic": "تاريخ وقادة",
-      "q": "من قال: «ليس العاقل من يعرف الخير من الشر، بل من يعرف خير الشرين»؟",
-      "a": "عمرو بن العاص",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-015"
-    },
-    {
-      "p": 600,
-      "topic": "تاريخ وقادة",
-      "q": "من صاح في عين جالوت: «وا إسلاماه»؟",
-      "a": "المظفر قطز",
-      "alt": [
-        "قطز"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-016"
-    },
-    {
-      "p": 600,
-      "topic": "تاريخ وقادة",
-      "q": "من المستشار الألماني القائل: «السياسة فن الممكن»؟",
-      "a": "أوتو فون بسمارك",
-      "alt": [
-        "بسمارك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-017"
-    },
-    {
-      "p": 600,
-      "topic": "تاريخ وقادة",
-      "q": "من خاطب نخلة في قرطبة: «أنت مثلي في النوى»؟",
-      "a": "عبد الرحمن الداخل",
-      "alt": [
-        "صقر قريش"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-018"
-    },
-    {
-      "p": 600,
-      "topic": "تاريخ وقادة",
-      "q": "من قالت لجندها: «لي جسد امرأة ضعيفة، لكن قلب ملك»؟",
-      "a": "إليزابيث الأولى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-019"
-    },
-    {
-      "p": 600,
-      "topic": "تاريخ وقادة",
-      "q": "من خاطب سحابة قائلا: «أمطري حيث شئت فسيأتيني خراجك»؟",
-      "a": "هارون الرشيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-020"
-    },
-    {
-      "p": 600,
-      "topic": "فكر وفلسفة",
-      "q": "من قال: «شيئان يملآن النفس إعجابا: السماء المرصعة فوقي والقانون الأخلاقي في داخلي»؟",
-      "a": "إيمانويل كانط",
-      "alt": [
-        "كانط"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-021"
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-902"
     },
     {
       "p": 600,
@@ -1349,1418 +264,317 @@
       "q": "من كتب: «للقلب أسبابه التي لا يعرفها العقل»؟",
       "a": "بليز باسكال",
       "alt": [
-        "باسكال"
+        "باسكال",
+        "Blaise Pascal"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.gutenberg.org/files/18269/18269-h/18269-h.htm",
       "verified": true,
-      "qid": "quotes-600-022"
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-903"
     },
     {
       "p": 600,
-      "topic": "فكر وفلسفة",
-      "q": "من قال: «يظن كل إنسان أن حدود رؤيته هي حدود العالم»؟",
-      "a": "آرثر شوبنهاور",
-      "alt": [
-        "شوبنهاور"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-023"
-    },
-    {
-      "p": 600,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب المقولة: «الشك أول مراتب اليقين»؟",
-      "a": "أبو حامد الغزالي",
-      "alt": [
-        "الغزالي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-024"
-    },
-    {
-      "p": 600,
-      "topic": "فكر وفلسفة",
-      "q": "من كتب: «الحكمة صاحبة الشريعة والأخت الرضيعة»؟",
-      "a": "ابن رشد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-025"
-    },
-    {
-      "p": 600,
-      "topic": "فكر وفلسفة",
-      "q": "من قال: «لا تسخر ولا تبكِ ولا تلعن، بل افهم»؟",
-      "a": "باروخ سبينوزا",
-      "alt": [
-        "سبينوزا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-026"
-    },
-    {
-      "p": 600,
-      "topic": "علم واختراع",
-      "q": "من قال إن الحقيقة العلمية تنتصر حين يموت خصومها لا حين يقتنعون؟",
-      "a": "ماكس بلانك",
-      "alt": [
-        "بلانك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-027"
-    },
-    {
-      "p": 600,
-      "topic": "علم واختراع",
-      "q": "من حذّر: «القاعدة الأولى ألا تخدع نفسك، وأنت أسهل من تُخدع»؟",
+      "topic": "علم واكتشاف",
+      "q": "من حذر في خطاب بمعهد كاليفورنيا للتقنية من خداع نفسك لأنك أسهل من تخدع؟",
       "a": "ريتشارد فاينمان",
       "alt": [
-        "فاينمان"
+        "فاينمان",
+        "فاينمن",
+        "ريتشارد فاينمن",
+        "Richard Feynman"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://calteches.library.caltech.edu/51/2/CargoCult.htm",
       "verified": true,
-      "qid": "quotes-600-028"
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-904"
     },
     {
       "p": 600,
-      "topic": "علم واختراع",
-      "q": "من كتب: «نرى مسافة قصيرة أمامنا، لكننا نرى الكثير مما ينبغي عمله»؟",
-      "a": "آلان تورينغ",
+      "topic": "رواية ونثر عالمي",
+      "q": "من كتب في رواية «الأبله» فكرة أن الجمال سينقذ العالم؟",
+      "a": "فيودور دوستويفسكي",
       "alt": [
-        "تورينغ"
+        "دوستويفسكي",
+        "دستويفسكي",
+        "Fyodor Dostoevsky"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Idiot/Part_III/Chapter_V",
       "verified": true,
-      "qid": "quotes-600-029"
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-905"
     },
     {
       "p": 600,
-      "topic": "علم واختراع",
-      "q": "من الكيميائي صاحب: «لا شيء يفنى ولا شيء يُخلق، كل شيء يتحول»؟",
-      "a": "أنطوان لافوازييه",
+      "topic": "رواية ونثر عالمي",
+      "q": "من افتتح «آنا كارينينا» بأن كل العائلات السعيدة متشابهة؟",
+      "a": "ليو تولستوي",
       "alt": [
-        "لافوازييه"
+        "تولستوي",
+        "ليف تولستوي",
+        "Leo Tolstoy"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://penguinrandomhousehighereducation.com/book/?isbn=9780143035008",
       "verified": true,
-      "qid": "quotes-600-030"
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-906"
     },
     {
       "p": 600,
-      "topic": "علم واختراع",
-      "q": "من قال: «نقيض الحقيقة العميقة حقيقة عميقة أخرى»؟",
-      "a": "نيلز بور",
+      "topic": "مسرح عالمي",
+      "q": "من كتب في «مروحة الليدي ويندرمير»: «أستطيع مقاومة كل شيء إلا الإغراء»؟",
+      "a": "أوسكار وايلد",
       "alt": [
-        "بور"
+        "وايلد",
+        "Oscar Wilde"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.gutenberg.org/files/790/old/lwfan10h.htm",
       "verified": true,
-      "qid": "quotes-600-031"
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-907"
     },
     {
       "p": 600,
-      "topic": "علم واختراع",
-      "q": "من قال: «ما نرصده ليس الطبيعة ذاتها، بل الطبيعة وقد عرّضناها لأسئلتنا»؟",
-      "a": "فيرنر هايزنبرغ",
+      "topic": "خطب وكلمات",
+      "q": "من ختم خطابه في ستانفورد بعبارة «ابق جائعا، ابق أحمق»؟",
+      "a": "ستيف جوبز",
       "alt": [
-        "هايزنبرغ"
+        "جوبز",
+        "Steve Jobs"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://stevejobsarchive.com/stories/stay-hungry-stay-foolish",
       "verified": true,
-      "qid": "quotes-600-032"
-    },
-    {
-      "p": 600,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «بعضهم يرى الأشياء ويسأل لماذا، وأنا أحلم بما لم يكن»؟",
-      "a": "جورج برنارد شو",
-      "alt": [
-        "برنارد شو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-033"
-    },
-    {
-      "p": 600,
-      "topic": "حكم معاصرة",
-      "q": "من كتب: «الفلاسفة اكتفوا بتفسير العالم، والمهم هو تغييره»؟",
-      "a": "كارل ماركس",
-      "alt": [
-        "ماركس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-034"
-    },
-    {
-      "p": 600,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «مشكلة كل شعب هي في جوهرها مشكلة حضارته»؟",
-      "a": "مالك بن نبي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-035"
-    },
-    {
-      "p": 600,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «حتى يصير اللاوعي واعيا، سيقود حياتك وستسميه قدرا»؟",
-      "a": "كارل يونغ",
-      "alt": [
-        "يونغ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-036"
-    },
-    {
-      "p": 600,
-      "topic": "حكم معاصرة",
-      "q": "من وصف الأحلام بأنها «الطريق الملكي إلى اللاوعي»؟",
-      "a": "سيغموند فرويد",
-      "alt": [
-        "فرويد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-037"
-    },
-    {
-      "p": 600,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «أطلب القراءة لأن حياة واحدة لا تكفيني»؟",
-      "a": "عباس محمود العقاد",
-      "alt": [
-        "العقاد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-038"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "q": "من سائق الفورمولا القائل: «إن لم تعد تسعى إلى الفجوة فلست سائقا»؟",
-      "a": "أيرتون سينا",
-      "alt": [
-        "سينا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-039"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "q": "من قال للصحافة: «حين تُلقى السردين خلف القارب، تتبعه النوارس»؟",
-      "a": "إريك كانتونا",
-      "alt": [
-        "كانتونا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-040"
-    },
-    {
-      "p": 600,
-      "topic": "رياضة",
-      "q": "من الملاكم القائل: «لكل واحد خطة حتى يتلقى لكمة في فمه»؟",
-      "a": "مايك تايسون",
-      "alt": [
-        "تايسون"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-041"
-    },
-    {
-      "p": 600,
-      "topic": "أدب عالمي",
-      "q": "من قال إن الكتاب يجب أن يكون فأسا تحطم البحر المتجمد فينا؟",
-      "a": "فرانز كافكا",
-      "alt": [
-        "كافكا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-042"
-    },
-    {
-      "p": 600,
-      "topic": "أدب عالمي",
-      "q": "من وضع القاعدة: «إن علّقت بندقية في الفصل الأول فلا بد أن تُطلق»؟",
-      "a": "أنطون تشيخوف",
-      "alt": [
-        "تشيخوف"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-043"
-    },
-    {
-      "p": 600,
-      "topic": "أدب عالمي",
-      "q": "من كتب: «الحرية يا سانشو من أثمن ما وهبته السماء للبشر»؟",
-      "a": "ميغيل دي ثربانتس",
-      "alt": [
-        "ثربانتس",
-        "سرفانتس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-044"
-    },
-    {
-      "p": 600,
-      "topic": "أدب عالمي",
-      "q": "من قال: «من لا يعرف لغات أجنبية لا يعرف شيئا عن لغته»؟",
-      "a": "يوهان غوته",
-      "alt": [
-        "غوته"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-045"
-    },
-    {
-      "p": 600,
-      "topic": "أدب عالمي",
-      "q": "من قال: «تخيلت الجنة دائما على هيئة مكتبة»؟",
-      "a": "خورخي لويس بورخيس",
-      "alt": [
-        "بورخيس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-046"
-    },
-    {
-      "p": 600,
-      "topic": "أدب عالمي",
-      "q": "من كتب على لسان بطله: «أنا لست حجرا يُلقى في الماء، بل البذرة»؟",
-      "a": "الطيب صالح",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-047"
-    },
-    {
-      "p": 600,
-      "topic": "أدب عالمي",
-      "q": "من قال: «الموسيقى تعبّر عما يستحيل قوله ويستحيل السكوت عنه»؟",
-      "a": "فيكتور هوغو",
-      "alt": [
-        "هوغو"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-600-048"
+      "difficultyTarget": 0.4,
+      "qid": "quotes-600-908"
     },
     {
       "p": 800,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «إذا المرء لم يدنس من اللؤم عرضه»؟",
-      "a": "السموأل",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-001"
-    },
-    {
-      "p": 800,
-      "topic": "أدب وشعر",
-      "q": "من صاحب مطلع لامية العرب: «أقيموا بني أمي صدور مطيكم»؟",
-      "a": "الشنفرى",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-002"
-    },
-    {
-      "p": 800,
-      "topic": "أدب وشعر",
-      "q": "من صاحب النونية: «أضحى التنائي بديلا من تدانينا»؟",
-      "a": "ابن زيدون",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-003"
-    },
-    {
-      "p": 800,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «صنت نفسي عما يدنس نفسي»؟",
-      "a": "البحتري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-004"
-    },
-    {
-      "p": 800,
-      "topic": "أدب وشعر",
-      "q": "من صاحب مرثية الأندلس: «لكل شيء إذا ما تم نقصان»؟",
+      "topic": "شعر عربي قديم",
+      "q": "من صاحب البيت: «لكل شيء إذا ما تم نقصان»؟",
       "a": "أبو البقاء الرندي",
       "alt": [
         "الرندي"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://ar.wikisource.org/wiki/لكل_شيء_اذا_ماتم_(رثاء_الأندلس)",
       "verified": true,
-      "qid": "quotes-800-005"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-901"
     },
     {
       "p": 800,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «عيون المها بين الرصافة والجسر»؟",
-      "a": "علي بن الجهم",
+      "topic": "شعر عربي حديث",
+      "q": "من كتبت في قصيدة «الكوليرا»: «أصغ إلى وقع صدى الأنات»؟",
+      "a": "نازك الملائكة",
       "alt": [
-        "ابن الجهم"
+        "نازك"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://poetsgate.com/poem.php?pm=623",
       "verified": true,
-      "qid": "quotes-800-006"
-    },
-    {
-      "p": 800,
-      "topic": "أدب وشعر",
-      "q": "من صاحب لامية العجم: «أصالة الرأي صانتني عن الخطل»؟",
-      "a": "الطغرائي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-007"
-    },
-    {
-      "p": 800,
-      "topic": "أدب وشعر",
-      "q": "من صاحب الخمرية الصوفية: «شربنا على ذكر الحبيب مدامة»؟",
-      "a": "ابن الفارض",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-008"
-    },
-    {
-      "p": 800,
-      "topic": "تراث وحكمة",
-      "q": "من حكيم العرب صاحب: «الصمت حكم وقليل فاعله»؟",
-      "a": "أكثم بن صيفي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-009"
-    },
-    {
-      "p": 800,
-      "topic": "تراث وحكمة",
-      "q": "من قال في السيادة: «السؤدد مع السواد» يريد أنها تُنال في الشباب؟",
-      "a": "الأحنف بن قيس",
-      "alt": [
-        "الأحنف"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-010"
-    },
-    {
-      "p": 800,
-      "topic": "تراث وحكمة",
-      "q": "من الأندلسي صاحب البيت: «أنا الشمس في جو العلوم منيرة»؟",
-      "a": "ابن حزم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-011"
-    },
-    {
-      "p": 800,
-      "topic": "تراث وحكمة",
-      "q": "من كتب: «في القلب شعث لا يلمه إلا الإقبال على الله»؟",
-      "a": "ابن القيم",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-012"
-    },
-    {
-      "p": 800,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «ما عالجت شيئا أشد عليّ من نيتي»؟",
-      "a": "سفيان الثوري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-013"
-    },
-    {
-      "p": 800,
-      "topic": "تراث وحكمة",
-      "q": "من الفقيه القائل: «هذا رأينا، فمن جاءنا بأحسن منه قبلناه»؟",
-      "a": "أبو حنيفة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-014"
-    },
-    {
-      "p": 800,
-      "topic": "تاريخ وقادة",
-      "q": "من قالت في أسوأ أسابيع حرب البوير: «لسنا مهتمين باحتمالات الهزيمة»؟",
-      "a": "الملكة فيكتوريا",
-      "alt": [
-        "فيكتوريا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-015"
-    },
-    {
-      "p": 800,
-      "topic": "تاريخ وقادة",
-      "q": "من الجنرال الذي وعد وهو يغادر الفلبين: «سأعود»؟",
-      "a": "دوغلاس ماك آرثر",
-      "alt": [
-        "ماك آرثر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-016"
-    },
-    {
-      "p": 800,
-      "topic": "تاريخ وقادة",
-      "q": "من الخليفة العباسي القائل: «إنما أنا سلطان الله في أرضه»؟",
-      "a": "أبو جعفر المنصور",
-      "alt": [
-        "المنصور"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-017"
-    },
-    {
-      "p": 800,
-      "topic": "تاريخ وقادة",
-      "q": "من خطب في فرجينيا: «أعطوني الحرية أو أعطوني الموت»؟",
-      "a": "باتريك هنري",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-018"
-    },
-    {
-      "p": 800,
-      "topic": "تاريخ وقادة",
-      "q": "من حذّر: «من يتنازل عن حريته لينال أمنا مؤقتا لا يستحق أيهما»؟",
-      "a": "بنجامين فرانكلين",
-      "alt": [
-        "فرانكلين"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-019"
-    },
-    {
-      "p": 800,
-      "topic": "تاريخ وقادة",
-      "q": "من كتب: «الاستبداد أصل لكل فساد»؟",
-      "a": "عبد الرحمن الكواكبي",
-      "alt": [
-        "الكواكبي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-020"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-902"
     },
     {
       "p": 800,
       "topic": "فكر وفلسفة",
-      "q": "من الفيلسوف القائل: «لا ينزل المرء النهر نفسه مرتين»؟",
-      "a": "هيراقليطس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-021"
-    },
-    {
-      "p": 800,
-      "topic": "فكر وفلسفة",
-      "q": "من قال لملك مقدونيا: «تنحَّ عن شمسي»؟",
-      "a": "ديوجين",
-      "alt": [
-        "ديوجين الكلبي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-022"
-    },
-    {
-      "p": 800,
-      "topic": "فكر وفلسفة",
-      "q": "من كتب: «ليس وقتنا قصيرا، لكننا نضيّع كثيرا منه»؟",
-      "a": "سينيكا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-023"
-    },
-    {
-      "p": 800,
-      "topic": "فكر وفلسفة",
-      "q": "من الإمبراطور الرواقي القائل: «العقبة في الطريق تصير هي الطريق»؟",
-      "a": "ماركوس أوريليوس",
-      "alt": [
-        "أوريليوس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-024"
-    },
-    {
-      "p": 800,
-      "topic": "فكر وفلسفة",
-      "q": "من قال: «تُفهم الحياة بالنظر إلى الوراء، لكنها تُعاش إلى الأمام»؟",
-      "a": "سورين كيركغارد",
-      "alt": [
-        "كيركغارد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-025"
-    },
-    {
-      "p": 800,
-      "topic": "فكر وفلسفة",
-      "q": "من قال إن ما نتعلمه من التاريخ أن أحدا لا يتعلم منه؟",
-      "a": "جورج هيغل",
-      "alt": [
-        "هيغل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-026"
-    },
-    {
-      "p": 800,
-      "topic": "فكر وفلسفة",
-      "q": "من اتخذ شعارا لتفكيره سؤال: «وماذا أعرف أنا؟»؟",
-      "a": "ميشيل دو مونتاني",
-      "alt": [
-        "مونتاني"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-027"
-    },
-    {
-      "p": 800,
-      "topic": "علم واختراع",
-      "q": "من عالم الوراثة الذي قال وهو مهمل: «سيأتي زماني»؟",
-      "a": "غريغور مندل",
-      "alt": [
-        "مندل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-028"
-    },
-    {
-      "p": 800,
-      "topic": "علم واختراع",
-      "q": "من قال: «في الرياضيات لا تفهم الأشياء، بل تعتاد عليها»؟",
-      "a": "جون فون نيومان",
-      "alt": [
-        "فون نيومان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-029"
-    },
-    {
-      "p": 800,
-      "topic": "علم واختراع",
-      "q": "من تعجّب ممن سأله: هل تعطي الآلة نتيجة صحيحة من أرقام خاطئة؟",
-      "a": "تشارلز باباج",
-      "alt": [
-        "باباج"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-030"
-    },
-    {
-      "p": 800,
-      "topic": "علم واختراع",
-      "q": "من وصف الرياضيات بأنها «ملكة العلوم»؟",
-      "a": "كارل غاوس",
-      "alt": [
-        "غاوس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-031"
-    },
-    {
-      "p": 800,
-      "topic": "علم واختراع",
-      "q": "من قال بعد أول تفجير نووي: «صرت الموت، مدمر العوالم»؟",
-      "a": "روبرت أوبنهايمر",
-      "alt": [
-        "أوبنهايمر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-032"
-    },
-    {
-      "p": 800,
-      "topic": "علم واختراع",
-      "q": "من قال: «أفضل طريقة لفكرة جيدة أن تكون لديك أفكار كثيرة»؟",
-      "a": "لينوس باولينغ",
-      "alt": [
-        "باولينغ"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-033"
-    },
-    {
-      "p": 800,
-      "topic": "حكم معاصرة",
-      "q": "من كتب في والدن: «معظم الناس يعيشون حياة يأس هادئ»؟",
+      "q": "من كتب في «والدن» أن معظم الناس يعيشون حياة يأس هادئ؟",
       "a": "هنري ديفيد ثورو",
       "alt": [
-        "ثورو"
+        "ثورو",
+        "هنري ثورو",
+        "Henry David Thoreau"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://digitalthoreau.org/walden/fluid/text/01.html",
       "verified": true,
-      "qid": "quotes-800-034"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-903"
     },
     {
       "p": 800,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «الاتساق الأحمق عفريت العقول الصغيرة»؟",
-      "a": "رالف والدو إمرسون",
+      "topic": "علم واكتشاف",
+      "q": "من اختتم بحث «آلات الحوسبة والذكاء» بأننا نرى مسافة قصيرة أمامنا، لكن فيها الكثير مما يجب إنجازه؟",
+      "a": "آلان تورينغ",
       "alt": [
-        "إمرسون"
+        "آلان تورنج",
+        "ألان تورينج",
+        "تورينغ",
+        "Alan Turing"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.cs.tufts.edu/comp/50cog/readings/turing.html",
       "verified": true,
-      "qid": "quotes-800-035"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-904"
     },
     {
       "p": 800,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «من لا يتذكر الماضي محكوم عليه بتكراره»؟",
-      "a": "جورج سانتايانا",
+      "topic": "رواية ونثر عالمي",
+      "q": "من افتتحت «كبرياء وتحامل» بفكرة أن كل أعزب ثري يحتاج زوجة؟",
+      "a": "جين أوستن",
       "alt": [
-        "سانتايانا"
+        "أوستن",
+        "جين اوستن",
+        "Jane Austen"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.gutenberg.org/cache/epub/1342/pg1342.html",
       "verified": true,
-      "qid": "quotes-800-036"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-905"
     },
     {
       "p": 800,
-      "topic": "حكم معاصرة",
-      "q": "من صاحب العبارة: «الوسيلة هي الرسالة»؟",
-      "a": "مارشال ماكلوهان",
-      "alt": [
-        "ماكلوهان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-037"
-    },
-    {
-      "p": 800,
-      "topic": "حكم معاصرة",
-      "q": "من كتب في وحي القلم: «إذا لم تزد شيئا على الدنيا كنت زائدا عليها»؟",
-      "a": "مصطفى صادق الرافعي",
-      "alt": [
-        "الرافعي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-038"
-    },
-    {
-      "p": 800,
-      "topic": "حكم معاصرة",
-      "q": "من قال: «مشكلة العالم أن الأغبياء واثقون والحكماء مليئون بالشك»؟",
-      "a": "برتراند راسل",
-      "alt": [
-        "راسل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-039"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "q": "من لاعب البيسبول صاحب: «اللعبة لا تنتهي حتى تنتهي»؟",
-      "a": "يوغي بيرا",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-040"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "q": "من المدرب الساخر القائل: «لا أزعم أني الأفضل، لكني في المركز الأول»؟",
-      "a": "بريان كلاف",
-      "alt": [
-        "كلاف"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-041"
-    },
-    {
-      "p": 800,
-      "topic": "رياضة",
-      "q": "من الملاكم القائل عن خصمه: «يستطيع الهرب، لكنه لا يستطيع الاختباء»؟",
-      "a": "جو لويس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-042"
-    },
-    {
-      "p": 800,
-      "topic": "أدب عالمي",
-      "q": "من قالت إن المرأة تحتاج مالا وغرفة تخصها وحدها لتكتب؟",
-      "a": "فرجينيا وولف",
-      "alt": [
-        "وولف"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-043"
-    },
-    {
-      "p": 800,
-      "topic": "أدب عالمي",
+      "topic": "رواية ونثر عالمي",
       "q": "من كتب: «حاول ثانية، أخفق ثانية، أخفق على نحو أفضل»؟",
       "a": "صمويل بيكيت",
       "alt": [
-        "بيكيت"
+        "صامويل بيكيت",
+        "بيكيت",
+        "Samuel Beckett"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.allenandunwin.com/browse/book/Samuel-Beckett-Company--Ill-Seen-Ill-Said--Worstward-Ho--Stirrings-Still-9780571244737",
       "verified": true,
-      "qid": "quotes-800-044"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-906"
     },
     {
       "p": 800,
-      "topic": "أدب عالمي",
-      "q": "من افتتحت روايتها بأن كل رجل أعزب ثري لا بد يبحث عن زوجة؟",
-      "a": "جين أوستن",
-      "alt": [
-        "أوستن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-045"
-    },
-    {
-      "p": 800,
-      "topic": "أدب عالمي",
-      "q": "من كتب على باب جحيمه: «اتركوا كل أمل أيها الداخلون»؟",
-      "a": "دانتي أليغييري",
-      "alt": [
-        "دانتي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-046"
-    },
-    {
-      "p": 800,
-      "topic": "أدب عالمي",
-      "q": "من كتب: «الطائر يكافح ليخرج من البيضة، والبيضة هي العالم»؟",
-      "a": "هرمان هسه",
-      "alt": [
-        "هسه"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-800-047"
-    },
-    {
-      "p": 800,
-      "topic": "أدب عالمي",
+      "topic": "شعر عالمي",
       "q": "من الشاعرة التي وصفت الأمل بأنه «الشيء ذو الريش»؟",
       "a": "إميلي ديكنسون",
       "alt": [
-        "ديكنسون"
+        "إميلي ديكنسن",
+        "ديكنسون",
+        "Emily Dickinson"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.poetryfoundation.org/poems/42889/hope-is-the-thing-with-feathers-314",
       "verified": true,
-      "qid": "quotes-800-048"
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-907"
+    },
+    {
+      "p": 800,
+      "topic": "خطب وكلمات",
+      "q": "من كتب في خطاب نوبل: «أنا ابن حضارتين»؟",
+      "a": "نجيب محفوظ",
+      "alt": [
+        "محفوظ",
+        "Naguib Mahfouz"
+      ],
+      "sourceUrl": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/lecture/",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "qid": "quotes-800-908"
     },
     {
       "p": 1000,
-      "topic": "أدب وشعر",
+      "topic": "شعر عربي قديم",
       "q": "من رثى نفسه بقوله: «ألا ليت شعري هل أبيتن ليلة بجنب الغضا»؟",
       "a": "مالك بن الريب",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-001"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «أمرتهم أمري بمنعرج اللوى»؟",
-      "a": "دريد بن الصمة",
       "alt": [
-        "دريد"
+        "مالك بن الريب التميمي"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://poetry.dct.gov.ae/poems/28285-ألا-ليت-شعري-هل-أبيتن-ليلة",
       "verified": true,
-      "qid": "quotes-1000-002"
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-901"
     },
     {
       "p": 1000,
-      "topic": "أدب وشعر",
-      "q": "من صاحب المطلع: «يا ليل الصب متى غده»؟",
-      "a": "الحصري القيرواني",
-      "alt": [
-        "الحصري"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-003"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب وشعر",
-      "q": "من صاحب البيت: «هل درى ظبي الحمى أن قد حمى قلب صب»؟",
-      "a": "ابن سهل الأندلسي",
-      "alt": [
-        "ابن سهل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-004"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب وشعر",
-      "q": "من صاحب الموشح: «جادك الغيث إذا الغيث همى»؟",
-      "a": "لسان الدين بن الخطيب",
-      "alt": [
-        "ابن الخطيب"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-005"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب وشعر",
-      "q": "من الصعلوك صاحب البيت: «أقسّم جسمي في جسوم كثيرة»؟",
-      "a": "عروة بن الورد",
-      "alt": [
-        "عروة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-006"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب وشعر",
-      "q": "من هجا مضيفه بقوله: «دع المكارم لا ترحل لبغيتها»؟",
-      "a": "الحطيئة",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-007"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب وشعر",
+      "topic": "شعر عربي قديم",
       "q": "من صاحب البيت: «وإذا المنية أنشبت أظفارها»؟",
       "a": "أبو ذؤيب الهذلي",
       "alt": [
-        "أبو ذؤيب"
+        "أبو ذؤيب",
+        "خويلد بن خالد الهذلي"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.aldiwan.net/poem24106.html",
       "verified": true,
-      "qid": "quotes-1000-008"
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-902"
     },
     {
       "p": 1000,
-      "topic": "أدب وشعر",
-      "q": "من صاحب المطلع: «أمتي هل لك بين الأمم منبر للسيف أو للقلم»؟",
-      "a": "عمر أبو ريشة",
+      "topic": "شعر عالمي",
+      "q": "من افتتح قصيدة «إنديميون» بمعنى: «الشيء الجميل بهجة إلى الأبد»؟",
+      "a": "جون كيتس",
       "alt": [
-        "أبو ريشة"
+        "كيتس",
+        "John Keats"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.poetryfoundation.org/poems/44469/endymion-56d2239287ca5",
       "verified": true,
-      "qid": "quotes-1000-009"
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-903"
     },
     {
       "p": 1000,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «إن هذا العلم دين، فانظروا عمن تأخذون دينكم»؟",
-      "a": "ابن سيرين",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-010"
-    },
-    {
-      "p": 1000,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «نحن إلى قليل من الأدب أحوج منا إلى كثير من العلم»؟",
-      "a": "عبد الله بن المبارك",
-      "alt": [
-        "ابن المبارك"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-011"
-    },
-    {
-      "p": 1000,
-      "topic": "تراث وحكمة",
-      "q": "من الزاهد القائل: «ترك العمل لأجل الناس رياء، والعمل لأجلهم شرك»؟",
-      "a": "الفضيل بن عياض",
-      "alt": [
-        "الفضيل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-012"
-    },
-    {
-      "p": 1000,
-      "topic": "تراث وحكمة",
-      "q": "من شيخ الصوفية القائل: «الطرق كلها مسدودة إلا على من اقتفى أثر الرسول»؟",
-      "a": "الجنيد البغدادي",
-      "alt": [
-        "الجنيد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-013"
-    },
-    {
-      "p": 1000,
-      "topic": "تراث وحكمة",
-      "q": "من صاحب الحكم: «من علامات الاعتماد على العمل نقصان الرجاء عند وجود الزلل»؟",
-      "a": "ابن عطاء الله السكندري",
-      "alt": [
-        "ابن عطاء الله"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-014"
-    },
-    {
-      "p": 1000,
-      "topic": "تراث وحكمة",
-      "q": "من قال: «أحسن الكلام ما قامت صورته بين لفظ أنيق ومعنى رشيق»؟",
-      "a": "أبو حيان التوحيدي",
-      "alt": [
-        "التوحيدي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-015"
-    },
-    {
-      "p": 1000,
-      "topic": "تاريخ وقادة",
-      "q": "من دفع فرسه في المحيط قائلا: «اللهم لولا هذا البحر لمضيت مجاهدا»؟",
-      "a": "عقبة بن نافع",
-      "alt": [
-        "عقبة"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-016"
-    },
-    {
-      "p": 1000,
-      "topic": "تاريخ وقادة",
-      "q": "من الخليفة الأندلسي الذي أحصى أيام سروره فوجدها أربعة عشر يوما؟",
-      "a": "عبد الرحمن الناصر",
-      "alt": [
-        "الناصر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-017"
-    },
-    {
-      "p": 1000,
-      "topic": "تاريخ وقادة",
-      "q": "من ملك إشبيلية القائل: «لأن أرعى الجمال خير من أن أرعى الخنازير»؟",
-      "a": "المعتمد بن عباد",
-      "alt": [
-        "المعتمد"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-018"
-    },
-    {
-      "p": 1000,
-      "topic": "تاريخ وقادة",
-      "q": "من بثّ في أسطوله قبل ترافلغار: «إنجلترا تتوقع أن يؤدي كل رجل واجبه»؟",
-      "a": "هوراشيو نيلسون",
-      "alt": [
-        "نيلسون"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-019"
-    },
-    {
-      "p": 1000,
-      "topic": "تاريخ وقادة",
-      "q": "من الملك القائل بعد نصر مكلف: «انتصار آخر كهذا وأنا هالك»؟",
-      "a": "بيروس",
-      "alt": [
-        "بيروس ملك إبيروس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-020"
-    },
-    {
-      "p": 1000,
-      "topic": "تاريخ وقادة",
-      "q": "من الرئيس الذي وضع على مكتبه لافتة: «المسؤولية تنتهي هنا»؟",
-      "a": "هاري ترومان",
-      "alt": [
-        "ترومان"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-021"
-    },
-    {
-      "p": 1000,
-      "topic": "فكر وفلسفة",
-      "q": "من الفيلسوف القائل: «الوجود موجود واللاوجود غير موجود»؟",
-      "a": "بارمنيدس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-022"
-    },
-    {
-      "p": 1000,
-      "topic": "فكر وفلسفة",
-      "q": "من السوفسطائي صاحب: «الإنسان مقياس كل شيء»؟",
-      "a": "بروتاغوراس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-023"
-    },
-    {
-      "p": 1000,
-      "topic": "فكر وفلسفة",
-      "q": "من قال: «ليست الأشياء ما يزعج الناس، بل آراؤهم عنها»؟",
-      "a": "إبيكتيتوس",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-024"
-    },
-    {
-      "p": 1000,
-      "topic": "فكر وفلسفة",
-      "q": "من صاحب العبارة: «حدود لغتي هي حدود عالمي»؟",
-      "a": "لودفيغ فيتغنشتاين",
-      "alt": [
-        "فيتغنشتاين"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-025"
-    },
-    {
-      "p": 1000,
-      "topic": "فكر وفلسفة",
-      "q": "من فيلسوف العرب القائل: «لا نستحي من استحسان الحق من أين أتى»؟",
-      "a": "الكندي",
-      "alt": [
-        "يعقوب الكندي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-026"
-    },
-    {
-      "p": 1000,
-      "topic": "فكر وفلسفة",
-      "q": "من قال: «العقل عبد للانفعالات ولا ينبغي أن يكون غير ذلك»؟",
-      "a": "ديفيد هيوم",
-      "alt": [
-        "هيوم"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-027"
-    },
-    {
-      "p": 1000,
-      "topic": "علم واختراع",
-      "q": "من افتتح كتابه بأنه ألّفه فيما يحتاج إليه الناس من الحساب؟",
-      "a": "الخوارزمي",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-028"
-    },
-    {
-      "p": 1000,
-      "topic": "علم واختراع",
-      "q": "من حكى أنه كان يرى حل المسائل في منامه إذا غلبه النوم؟",
-      "a": "ابن سينا",
-      "alt": [
-        "الشيخ الرئيس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-029"
-    },
-    {
-      "p": 1000,
-      "topic": "علم واختراع",
-      "q": "من أجاب نابليون عن غياب الله في نظامه: «لم أحتج إلى تلك الفرضية»؟",
-      "a": "بيير لابلاس",
-      "alt": [
-        "لابلاس"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-030"
-    },
-    {
-      "p": 1000,
-      "topic": "علم واختراع",
-      "q": "من رائدة البرمجة القائلة: «الاعتذار أسهل من الاستئذان»؟",
-      "a": "غريس هوبر",
-      "alt": [
-        "هوبر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-031"
-    },
-    {
-      "p": 1000,
-      "topic": "علم واختراع",
-      "q": "من أجاب عما فكر فيه لحظة اكتشافه: «لم أفكر، بل بحثت»؟",
-      "a": "فيلهلم رونتغن",
-      "alt": [
-        "رونتغن"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-032"
-    },
-    {
-      "p": 1000,
-      "topic": "علم واختراع",
-      "q": "من قال: «اختبار البرمجيات يثبت وجود العلل لا غيابها»؟",
-      "a": "إدسخر ديكسترا",
-      "alt": [
-        "ديكسترا"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-033"
-    },
-    {
-      "p": 1000,
-      "topic": "حكم معاصرة",
-      "q": "من كتب في سجنه: «القديم يموت والجديد لا يستطيع أن يولد»؟",
-      "a": "أنطونيو غرامشي",
-      "alt": [
-        "غرامشي"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-034"
-    },
-    {
-      "p": 1000,
-      "topic": "حكم معاصرة",
-      "q": "من صاحبة المفهوم الشهير: «تفاهة الشر»؟",
-      "a": "حنة آرندت",
-      "alt": [
-        "آرندت"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-035"
-    },
-    {
-      "p": 1000,
-      "topic": "حكم معاصرة",
-      "q": "من الناقد الفلسطيني القائل: «كل الثقافات متشابكة، وليس فيها نقية واحدة»؟",
-      "a": "إدوارد سعيد",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-036"
-    },
-    {
-      "p": 1000,
-      "topic": "حكم معاصرة",
-      "q": "من كتب أن الهوية لا تتجزأ ولا تُقسّم إلى أنصاف؟",
-      "a": "أمين معلوف",
-      "alt": [
-        "معلوف"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-037"
-    },
-    {
-      "p": 1000,
-      "topic": "حكم معاصرة",
-      "q": "من وضع معيارا للعلم: «نظرية لا يمكن تكذيبها ليست علمية»؟",
-      "a": "كارل بوبر",
-      "alt": [
-        "بوبر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-038"
-    },
-    {
-      "p": 1000,
-      "topic": "حكم معاصرة",
-      "q": "من الاقتصادي القائل: «على المدى الطويل كلنا موتى»؟",
-      "a": "جون مينارد كينز",
-      "alt": [
-        "كينز"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-039"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضة",
-      "q": "من لاعب التنس القائل: «ابدأ من حيث أنت، بما لديك، وافعل ما تستطيع»؟",
-      "a": "آرثر آش",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-040"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضة",
-      "q": "من لاعب الشطرنج صاحب: «الخطأ ما قبل الأخير هو الذي يفوز»؟",
-      "a": "سافيلي تارتاكوفر",
-      "alt": [
-        "تارتاكوفر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-041"
-    },
-    {
-      "p": 1000,
-      "topic": "رياضة",
-      "q": "من بطل الشطرنج الأمريكي القائل: «الشطرنج هو الحياة»؟",
-      "a": "بوبي فيشر",
-      "alt": [
-        "فيشر"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-042"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب عالمي",
-      "q": "من افتتح روايته بجملة: «نادوني إسماعيل»؟",
-      "a": "هيرمان ملفيل",
-      "alt": [
-        "ملفيل"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-043"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب عالمي",
-      "q": "من قال إن رحلة الاكتشاف الحقيقية ليست في مناظر جديدة بل في عيون جديدة؟",
-      "a": "مارسيل بروست",
-      "alt": [
-        "بروست"
-      ],
-      "sourceUrl": "https://ar.wikiquote.org/",
-      "verified": true,
-      "qid": "quotes-1000-044"
-    },
-    {
-      "p": 1000,
-      "topic": "أدب عالمي",
-      "q": "من افتتح قصيدته الطويلة: «أبريل أقسى الشهور»؟",
+      "topic": "شعر عالمي",
+      "q": "من افتتح قصيدة «الأرض اليباب» بعبارة «أبريل أقسى الشهور»؟",
       "a": "تي إس إليوت",
       "alt": [
-        "إليوت"
+        "ت. س. إليوت",
+        "توماس ستيرنز إليوت",
+        "إليوت",
+        "T. S. Eliot"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://www.poetryfoundation.org/poems/47311/the-waste-land",
       "verified": true,
-      "qid": "quotes-1000-045"
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-904"
     },
     {
       "p": 1000,
-      "topic": "أدب عالمي",
-      "q": "من قال: «إن أغلقت بابك أمام كل الأخطاء بقيت الحقيقة خارجا»؟",
-      "a": "رابندرانات طاغور",
+      "topic": "فكر وفلسفة",
+      "q": "من كتب في «رسالة في الطبيعة البشرية» أن العقل عبد للانفعالات؟",
+      "a": "ديفيد هيوم",
       "alt": [
-        "طاغور"
+        "هيوم",
+        "David Hume"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://metaphors.lib.virginia.edu/metaphors/18227",
       "verified": true,
-      "qid": "quotes-1000-046"
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-905"
     },
     {
       "p": 1000,
-      "topic": "أدب عالمي",
-      "q": "من قال في خطاب نوبل: «أنا ابن حضارتين تزوجتا في عهد من عهود التاريخ»؟",
-      "a": "نجيب محفوظ",
-      "alt": [],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "topic": "علم واكتشاف",
+      "q": "من كتب أن اختبار البرامج يكشف وجود الأخطاء ولا يثبت غيابها؟",
+      "a": "إدسخر ديكسترا",
+      "alt": [
+        "ديكسترا",
+        "إدسخر دايكسترا",
+        "Edsger Dijkstra"
+      ],
+      "sourceUrl": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD02xx/EWD249/EWD249.html",
       "verified": true,
-      "qid": "quotes-1000-047"
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-906"
     },
     {
       "p": 1000,
-      "topic": "أدب عالمي",
-      "q": "من كتب على لسان بطله: «التاريخ كابوس أحاول أن أستيقظ منه»؟",
+      "topic": "رواية ونثر عالمي",
+      "q": "من كتب في «عوليس»: «التاريخ كابوس أحاول أن أستيقظ منه»؟",
       "a": "جيمس جويس",
       "alt": [
-        "جويس"
+        "جويس",
+        "James Joyce"
       ],
-      "sourceUrl": "https://ar.wikiquote.org/",
+      "sourceUrl": "https://en.wikisource.org/wiki/Ulysses_(1922)/Chapter_2",
       "verified": true,
-      "qid": "quotes-1000-048"
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-907"
+    },
+    {
+      "p": 1000,
+      "topic": "فكر وفلسفة",
+      "q": "من كتب: «من لا يتذكر الماضي محكوم عليه بتكراره»؟",
+      "a": "جورج سانتايانا",
+      "alt": [
+        "سانتايانا",
+        "George Santayana"
+      ],
+      "sourceUrl": "https://www.gutenberg.org/files/15000/15000-h/15000-h.htm",
+      "verified": true,
+      "difficultyTarget": 0.15,
+      "qid": "quotes-1000-908"
     }
   ]
 }

@@ -1,0 +1,1066 @@
+{
+  "status": "paused_by_user",
+  "savedAt": "2026-09-18T06:27:49.162Z",
+  "branch": "codex/badeeha-curated-bank-2026-09-18",
+  "base": "4dc4e03641ffd955192c1f0060ed555e185e567f",
+  "expectedPacks": 78,
+  "expectedQuestions": 3120,
+  "rewrittenPacks": 44,
+  "rewrittenQuestions": 1760,
+  "generatedCovers": 67,
+  "missingCovers": [
+    "blur",
+    "flags",
+    "guesscar",
+    "hints",
+    "placefinder",
+    "reveal",
+    "silhouette",
+    "sound",
+    "spotdiff",
+    "tilepuzzle",
+    "zoom"
+  ],
+  "generatedQuestionAssets": [
+    "zoom-200-901",
+    "zoom-200-902",
+    "zoom-200-903",
+    "zoom-200-904",
+    "zoom-200-905",
+    "zoom-200-906",
+    "zoom-200-907",
+    "zoom-200-908",
+    "zoom-400-901",
+    "zoom-400-902",
+    "zoom-400-903",
+    "zoom-400-904",
+    "zoom-400-905",
+    "zoom-400-906",
+    "zoom-400-907",
+    "zoom-400-908",
+    "zoom-600-901",
+    "zoom-600-902",
+    "zoom-600-903",
+    "zoom-600-904",
+    "zoom-600-905",
+    "zoom-600-906",
+    "zoom-600-907",
+    "zoom-600-908"
+  ],
+  "packs": [
+    {
+      "id": "actors",
+      "name": "ممثلون ونجوم",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "animals",
+      "name": "حيوانات",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "anime",
+      "name": "أنمي",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "aot",
+      "name": "هجوم العمالقة",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "apps",
+      "name": "تطبيقات وسوشيال",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "arabart",
+      "name": "فن عربي",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "arabcelebs",
+      "name": "مشاهير عرب",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "arabic",
+      "name": "لغة عربية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "arabliterature",
+      "name": "أدب عربي",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "arabmovies",
+      "name": "أفلام عربية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "arabmusic",
+      "name": "أغاني عربية",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "arabseries",
+      "name": "مسلسلات عربية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "babalhara",
+      "name": "باب الحارة",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "beforeafter",
+      "name": "قبل ولا بعد",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "blur",
+      "name": "وضّح شوي",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "books",
+      "name": "كتب وروايات",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "brands",
+      "name": "ماركات وشركات",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "breakingbad",
+      "name": "بريكنغ باد",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "capitals",
+      "name": "عواصم",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "cars",
+      "name": "سيارات",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "cartoon",
+      "name": "كرتون",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "code",
+      "name": "الشفرة",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "commonbond",
+      "name": "القاسم المشترك",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "completeproverb",
+      "name": "أكمل المثل",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "deathnote",
+      "name": "ديث نوت",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "demonslayer",
+      "name": "قاتل الشياطين",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "dialects",
+      "name": "لهجات عربية",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "dragonball",
+      "name": "دراغون بول",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "egyptdrama",
+      "name": "دراما مصرية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "emoji",
+      "name": "إيموجي",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "ertugrul",
+      "name": "قيامة أرطغرل",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "flags",
+      "name": "أعلام",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "food",
+      "name": "أكلات ومطابخ",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "football",
+      "name": "كرة القدم",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "foreignseries",
+      "name": "مسلسلات أجنبية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "fruitsveg",
+      "name": "فواكه وخضار",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "general",
+      "name": "معلومات عامة",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "geo",
+      "name": "جغرافيا",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "guesscar",
+      "name": "خمن السيارة",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 46
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "hidden",
+      "name": "البطة المخفية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "hints",
+      "name": "تلميحات",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "history",
+      "name": "تاريخ",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "hunterxhunter",
+      "name": "هنتر × هنتر",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "islamiyat",
+      "name": "إسلاميات",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "jujutsu",
+      "name": "جوجوتسو كايسن",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "movies",
+      "name": "أفلام عالمية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "naruto",
+      "name": "ناروتو",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "onepiece",
+      "name": "ون بيس",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "placefinder",
+      "name": "وين المكان؟",
+      "counts": {
+        "200": 43,
+        "400": 45,
+        "600": 47,
+        "800": 45,
+        "1000": 46
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "premier",
+      "name": "الدوري الإنجليزي",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "prophets",
+      "name": "قصص الأنبياء",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "proverbs",
+      "name": "أمثال شعبية",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "puzzles",
+      "name": "ألغاز وذكاء",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "quotes",
+      "name": "من القائل",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "quran",
+      "name": "القرآن الكريم",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "ramadan",
+      "name": "رمضان",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "ramadanseries",
+      "name": "مسلسلات رمضان",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "reveal",
+      "name": "إكشفني",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "science",
+      "name": "علوم",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "seerah",
+      "name": "السيرة النبوية",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "shopping",
+      "name": "تسوق وحديث البنات",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "silhouette",
+      "name": "صور غامضة",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "sound",
+      "name": "خمن الصوت",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "spacetoon",
+      "name": "سبيستون",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "sports",
+      "name": "رياضة",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "spotdiff",
+      "name": "اكتشف الفرق",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "squidgame",
+      "name": "لعبة الحبار",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "syriandrama",
+      "name": "دراما سورية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "tarab",
+      "name": "طرب وأغاني زمان",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "tech",
+      "name": "تقنية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "theater",
+      "name": "مسرح",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "tilepuzzle",
+      "name": "ركّبها صح",
+      "counts": {
+        "200": 42,
+        "400": 47,
+        "600": 47,
+        "800": 47,
+        "1000": 42
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "turkishdrama",
+      "name": "مسلسلات تركية",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "ucl",
+      "name": "دوري أبطال أوروبا",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "videogames",
+      "name": "ألعاب فيديو",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "worldcup",
+      "name": "كأس العالم",
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "newCount": 40,
+      "rewritten": true
+    },
+    {
+      "id": "youtubers",
+      "name": "يوتيوبرز وصنّاع محتوى",
+      "counts": {
+        "200": 48,
+        "400": 48,
+        "600": 48,
+        "800": 48,
+        "1000": 48
+      },
+      "newCount": 0,
+      "rewritten": false
+    },
+    {
+      "id": "zoom",
+      "name": "زووم",
+      "counts": {
+        "200": 48,
+        "400": 46,
+        "600": 47,
+        "800": 48,
+        "1000": 47
+      },
+      "newCount": 0,
+      "rewritten": false
+    }
+  ]
+}

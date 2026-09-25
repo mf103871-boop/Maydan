@@ -1,0 +1,24 @@
+{
+  "id": "spotdiff-400-903-a",
+  "kind": "question",
+  "pack": "spotdiff",
+  "file": "media/spotdiff/spotdiff-400-903-a.webp",
+  "asset": "media/spotdiff/spotdiff-400-903-a.webp",
+  "prompt": "Use case: product-mockup. Landscape 4:3, sharp realistic studio photograph for a family spot-the-difference game. Objects fully framed with ample margins, soft even illumination, clean simple composition. No words, labels, numerals, logos, watermark, collage, people, extra objects or decorative patterns. Terracotta pot with small leafy basil plant center-left on stone potting bench. A single hand garden TROWEL with wide silver blade and orange handle lies fully visible diagonally at center-right, center x=73 y=62, length 30 percent width. Folded beige gloves far left. This is the first image of a matched pair. All objects stable, stationary and easy to compare.",
+  "tool": "OpenAI image generation (built-in)",
+  "createdAt": "2026-09-25",
+  "width": 1280,
+  "height": 960,
+  "bytes": 244302,
+  "sha256": "0dec6bf7cf4874c7a126403785235f6c0c081730f982eb05846ac6fb366ccfc4",
+  "disclosure": "صورة توضيحية مولّدة بالذكاء الاصطناعي",
+  "review": {
+    "status": "approved",
+    "note": "Only the orange-handled garden trowel disappears. Basil leaves, pot and gloves keep their shape/positions; fine material rendering changes are not separate game answers. Marker indicates a decisive part of the former object and is fully inside the4:3image; it need not enclose the whole removed object.",
+    "visualStatus": "approved",
+    "reviewedAt": "2026-09-25",
+    "sourceReview": "docs/bank/rebuild-2026-09-18/review-spotdiff-final.json",
+    "runtimeStatus": "approved",
+    "runtimeEvidence": "docs/bank/rebuild-2026-09-18/qa-2026-09-25/spotdiff/runtime-review.json"
+  }
+}

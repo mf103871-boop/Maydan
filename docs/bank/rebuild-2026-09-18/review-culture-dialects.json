@@ -1,0 +1,370 @@
+{
+  "pack": "dialects",
+  "reviewedAt": "2026-09-23",
+  "previousQuestionCount": 240,
+  "questionCount": 40,
+  "method": "Rebuilt the 240-item unreferenced pack after a fresh factual and ambiguity review. Read publisher vocabulary/phrase tables, government-sponsored Peace Corps lessons, Abu Dhabi Culture definitions, Al Ramsa Institute sample textbook, and NYU CAMeL Maknuune v1.0.1 lexical entries. Scanned 1992 Darija appendix pages were downloaded from US Department of Education ERIC and visually read because OCR damaged Arabic. Question text is newly edited, not an automatic first-eight selection.",
+  "difficulty": "Editorial targets .80/.60/.40/.25/.15 for mixed Arabic-speaking families 16+; not measured. Basic media-familiar terms first, local household and kinship terms in middle tiers, narrow material-culture terms in hardest tiers. Native speakers of the represented regions will find local words easier.",
+  "sourcesReviewed": [
+    {
+      "url": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
+      "publisher": "Lingualism",
+      "evidence": "Read greetings, common expressions, time, feelings, food and travel phrase tables."
+    },
+    {
+      "url": "https://resources.lingualism.com/egyptian-arabic/the-house/",
+      "publisher": "Lingualism",
+      "evidence": "Read room, table, and bedside-table entries."
+    },
+    {
+      "url": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "publisher": "Peace Corps Morocco",
+      "evidence": "Read lessons 9, 11, 13, 19, 22–24, 28–29."
+    },
+    {
+      "url": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "publisher": "Peace Corps Morocco, distributed by ERIC, US Department of Education",
+      "evidence": "Visually read printed appendix pages 183–188. No claims rely on corrupted Arabic OCR."
+    },
+    {
+      "url": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "publisher": "Al Ramsa Institute",
+      "evidence": "Read lesson 1 idiom, salary vocabulary, and bilingual meeting example; page numbers recorded per question."
+    },
+    {
+      "url": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
+      "publisher": "Abu Dhabi Department of Culture and Tourism",
+      "evidence": "Read staff and equipment definitions; rejected old Diyeen/Zabeel alias because source distinguishes basket and rope."
+    },
+    {
+      "url": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "landingUrl": "https://sites.google.com/nyu.edu/palestine-lexicon/download",
+      "publisher": "NYU Abu Dhabi CAMeL Lab and Maknuune authors",
+      "version": "v1.0.1",
+      "file": "maknuune-v1.0.1/maknuune-v1.0.1.tsv",
+      "sha256": "0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d",
+      "evidence": "Downloaded published archive through its official download-page link, extracted TSV, and read named lexical entries and examples; ID locators recorded per question."
+    },
+    {
+      "url": "https://sites.google.com/nyu.edu/palestine-lexicon",
+      "publisher": "NYU Abu Dhabi CAMeL Lab and Maknuune authors",
+      "evidence": "Read original explanation of the lexicon name, a farmers term for a deliberately retained egg."
+    }
+  ],
+  "editorialDecisions": [
+    "Semantic topics provide ten substantive areas. Geographic labels specify Egyptian, Emirati, Moroccan or Palestinian usage; they do not claim exclusivity or collapse all Gulf dialects into one.",
+    "Polysemous words receive context: عيان means tired in the quoted Moroccan bedtime/comfort setting; شختورة is restricted to the boat sense; معاش to employment; وايد to adjective intensification; طشة to an outing.",
+    "Removed etymology guesses, uncited culinary trivia, duplicate translations and inherited verified flags without proof. Old IDs are replaced by 901–908; global retired-ID registration is handled by the bank rebuild owner.",
+    "Did not accept الزبيل for الديين: official pearl-diving source calls the former a rope and the latter a collection basket.",
+    "No fabricated sources, no empirical pass-rate claim, and no change to game logic, bank status, or other editors files."
+  ],
+  "questions": [
+    {
+      "qid": "dialects-200-901",
+      "answerChecked": "كيف حالك",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
+      "locator": "Egyptian Arabic Greetings: إزيك",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-200-902",
+      "answerChecked": "الآن",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
+      "locator": "Talking About Time and Plans: دلوقتي",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-200-903",
+      "answerChecked": "أريد",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
+      "locator": "Restaurant/Transportation Phrases: عايز أطلب / عايز أروح",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-200-904",
+      "answerChecked": "غرفة",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/the-house/",
+      "locator": "room: أوضة",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-200-905",
+      "answerChecked": "سعيد",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
+      "locator": "Talking About Feelings and Opinions: أنا مبسوط",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-200-906",
+      "answerChecked": "الوسادة",
+      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "locator": "Maknuune v1.0.1, IDs 7704–7705: مخدة",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-200-907",
+      "answerChecked": "أمس",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/100-essential-egyptian-arabic-phrases-for-everyday-conversation/",
+      "locator": "Talking About Time and Plans: إمبارح",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-200-908",
+      "answerChecked": "النقود",
+      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "locator": "Maknuune v1.0.1, ID 30808: مَصَارِي",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-400-901",
+      "answerChecked": "الشاي",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 19, lesson 24: tea / atay",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-400-902",
+      "answerChecked": "اثنان",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 14, lesson 19: two / juj",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-400-903",
+      "answerChecked": "من فضلك",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 12, lesson 13: عطيني ... عافاك",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-400-904",
+      "answerChecked": "نزهة",
+      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "locator": "Maknuune v1.0.1, ID 19123: طَشِّة",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-400-905",
+      "answerChecked": "لذيذة",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 10, lesson 9: الماكلة بنينة",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-400-906",
+      "answerChecked": "جدًا",
+      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "locator": "PDF page 12, printed page 12: الاجتماع وايد طويل = The meeting is very long",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-400-907",
+      "answerChecked": "أعطني الخلاصة",
+      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "locator": "PDF page 6, printed page 6: idiom عطني الزبدة, main point rather than unnecessary details",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-400-908",
+      "answerChecked": "الطاولة",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/the-house/",
+      "locator": "table: طرابيزة",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-600-901",
+      "answerChecked": "الجزر",
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "locator": "Printed page 184; PDF page 183, appendix vegetables, visually reviewed",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-600-902",
+      "answerChecked": "كم",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 24, lesson 29: How many sisters do you have?",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-600-903",
+      "answerChecked": "الراتب",
+      "sourceUrl": "https://alramsa.ae/wp-content/uploads/2025/09/Emirati-Arabic-Beginner-level-A3-Al-Ramsa-Sample-Book.pdf",
+      "locator": "PDF page 10, printed page 10: Salary / معاش / راتب",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-600-904",
+      "answerChecked": "منضدة بجانب السرير",
+      "sourceUrl": "https://resources.lingualism.com/egyptian-arabic/the-house/",
+      "locator": "bedside table: كومودينو",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-600-905",
+      "answerChecked": "فرن طيني",
+      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "locator": "Maknuune v1.0.1, IDs 18828–18829: طَابُون",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-600-906",
+      "answerChecked": "الإخوة",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 23, lesson 28: brothers/siblings / xut",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-600-907",
+      "answerChecked": "متعب",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 11, lesson 11: I am tired / ana 3iyan",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-600-908",
+      "answerChecked": "ملء اليد",
+      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "locator": "Maknuune v1.0.1, ID 28345: كَمْشِة",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-800-901",
+      "answerChecked": "الكركم",
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "locator": "Printed page 186; PDF page 185, appendix spices, visually reviewed",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-800-902",
+      "answerChecked": "الكرز",
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "locator": "Printed page 185; PDF page 184, appendix fruit, visually reviewed",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-800-903",
+      "answerChecked": "السيب",
+      "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
+      "locator": "طاقم السفينة: السيب",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-800-904",
+      "answerChecked": "إبريق الشاي",
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "locator": "Printed page 187; PDF page 186, appendix houseware, visually reviewed",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-800-905",
+      "answerChecked": "خزانة لحفظ الطعام",
+      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "locator": "Maknuune v1.0.1, ID 33541: نَمْلِيّة",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-800-906",
+      "answerChecked": "بالضبط",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF pages 17–18, lessons 22–23: It is exactly one oclock",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-800-907",
+      "answerChecked": "الأصهار",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 23, lesson 28: in-laws / nsab",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-800-908",
+      "answerChecked": "قارب",
+      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "locator": "Maknuune v1.0.1, ID 15772: شَخْتُورَة, boat sense selected using marine context",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-1000-901",
+      "answerChecked": "خمس دقائق",
+      "sourceUrl": "https://files.peacecorps.gov/multimedia/audio/languagelessons/morocco/MO_Arabic_Language_Lessons.pdf",
+      "locator": "PDF page 17, lesson 22: five minutes / qsm",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-1000-902",
+      "answerChecked": "النكتارين",
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "locator": "Printed page 185; PDF page 184, appendix fruit, visually reviewed",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-1000-903",
+      "answerChecked": "الفطام",
+      "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
+      "locator": "الأدوات: الفطام",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-1000-904",
+      "answerChecked": "الديين",
+      "sourceUrl": "https://abudhabiculture.ae/ar/cultural-heritage/intangible/heritage-register/traditional-handicraft/pearl-diving",
+      "locator": "الأدوات: الديين; explicitly distinguish from الزبيل, a descent rope",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-1000-905",
+      "answerChecked": "إناء مثقب لتبخير الكسكس",
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "locator": "Printed page 188; PDF page 187, appendix houseware, visually reviewed",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-1000-906",
+      "answerChecked": "خيمة صغيرة",
+      "sourceUrl": "https://drive.google.com/uc?id=1prIUi6nw9DHVkvBx0YiVcm6aQYYfqXLy&export=download",
+      "locator": "Maknuune v1.0.1, ID 7781: خَرْبُوش",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-1000-907",
+      "answerChecked": "حزام نسائي مطرز",
+      "sourceUrl": "https://files.eric.ed.gov/fulltext/ED353812.pdf",
+      "locator": "Printed page 183; PDF page 182, appendix clothes, visually reviewed",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    },
+    {
+      "qid": "dialects-1000-908",
+      "answerChecked": "بيضة لإرشاد الدجاج لموضع البيض",
+      "sourceUrl": "https://sites.google.com/nyu.edu/palestine-lexicon",
+      "locator": "About: explanation of the Palestinian farmers term maknuune",
+      "review": "Read the cited vocabulary entry or contextual example; Arabic answer is an independently worded equivalent. Regional qualification retained; no claim that this term is exclusive to that region."
+    }
+  ],
+  "validation": {
+    "command": "npm run bank:validate -- --cat dialects",
+    "validatorExitCode": 1,
+    "contentErrors": 0,
+    "sharedStatusErrors": [
+      "Each tier is still recorded as48 in bank-status.json; actual count is8. Shared status intentionally not modified by this editor."
+    ],
+    "warnings": [
+      "Cross-category answers الجزر (fruitsveg) and قارب (sound) are allowed; no within-pack answer leaks remain."
+    ],
+    "diffCheck": "git diff --check on owned files passed",
+    "metrics": {
+      "count": 40,
+      "counts": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "uniqueNormalizedAnswers": 40,
+      "topics": 10,
+      "maxQuestionWords": 13,
+      "maxAnswerWords": 5,
+      "maxTopicQuestionsWithinTier": 2
+    }
+  }
+}

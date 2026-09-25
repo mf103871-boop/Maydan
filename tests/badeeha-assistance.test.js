@@ -17,7 +17,9 @@ test('light assistance covers every high-tier question without altering the bank
       }
     }
   }
-  assert.ok(count > 10000);
+  const status = JSON.parse(readFileSync('src/data/bank-status.json', 'utf8'));
+  const minimumHighTierQuestions = Object.keys(status.categories).length * status.tierCount * 3;
+  assert.ok(count >= minimumHighTierQuestions, 'assistance must cover the curated bank high-tier minimum');
 });
 
 test('context clues never contain an accepted answer and multiple-choice answers do not disclose word counts', () => {

@@ -1,0 +1,21 @@
+{
+  "id": "placefinder-400-901",
+  "kind": "question",
+  "pack": "placefinder",
+  "p": 400,
+  "a": "الكولوسيوم",
+  "alt": [
+    "الكولوسيوم في روما",
+    "المدرج الفلافي",
+    "Colosseum"
+  ],
+  "topic": "أوروبا الجنوبية",
+  "q": "ما اسم هذا المدرج الأثري في روما؟",
+  "sourceUrl": "https://whc.unesco.org/en/list/91/",
+  "sourceEvidence": "UNESCO identifies the Colosseum as an ancient monument of Rome; opened 2026-09-25. Operator page timed out; exact arch counts are not claimed.",
+  "sourceReviewed": true,
+  "prompt": "Use case: scientific-educational. Asset: one landscape 4:3 architectural landmark recognition illustration for an Arabic family quiz. Original detailed realistic architectural illustration, natural daylight, restrained natural colors, recognizable at phone size. Preserve real defining architecture; not a fantasy redesign. Show the complete main subject with comfortable margins. No words, signs, captions, readable inscriptions, maps, logos, watermark, borders or inset. No distracting crowds. The Colosseum in Rome, three-quarter elevated exterior view of the immense oval Roman amphitheatre: weathered pale travertine, repeated tiers of open rounded arches, high surviving curved outer wall at left and the recognizably broken lower outer arc to the right exposing inner concentric structure. Broad paved foreground, subdued Rome context. Correct elliptical arena; not a complete circular fantasy stadium.",
+  "visualReviewStatus": "approved",
+  "visualReviewNote": "Oval Roman amphitheatre, repeated stone arcades, high surviving wall and lower broken arc; recognizable Colosseum.",
+  "runtimeReviewStatus": "approved"
+}

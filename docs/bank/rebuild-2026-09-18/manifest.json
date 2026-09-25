@@ -1,0 +1,586 @@
+{
+  "version": 1,
+  "status": "content_review_complete",
+  "scope": "all_existing_packs",
+  "audience": "Arabic-speaking families and adults aged 16+",
+  "tiers": {
+    "200": {
+      "count": 8,
+      "targetCorrectRate": 0.8
+    },
+    "400": {
+      "count": 8,
+      "targetCorrectRate": 0.6
+    },
+    "600": {
+      "count": 8,
+      "targetCorrectRate": 0.4
+    },
+    "800": {
+      "count": 8,
+      "targetCorrectRate": 0.25
+    },
+    "1000": {
+      "count": 8,
+      "targetCorrectRate": 0.15
+    }
+  },
+  "calibration": "Editorial targets, not empirically measured success rates",
+  "spoilers": "All seasons and endings allowed",
+  "expectedQuestions": 3120,
+  "packs": [
+    {
+      "id": "general",
+      "name": "معلومات عامة",
+      "media": false,
+      "style": "",
+      "order": 1
+    },
+    {
+      "id": "geo",
+      "name": "جغرافيا",
+      "media": false,
+      "style": "",
+      "order": 2
+    },
+    {
+      "id": "capitals",
+      "name": "عواصم",
+      "media": false,
+      "style": "",
+      "order": 3
+    },
+    {
+      "id": "science",
+      "name": "علوم",
+      "media": false,
+      "style": "",
+      "order": 4
+    },
+    {
+      "id": "animals",
+      "name": "حيوانات",
+      "media": false,
+      "style": "",
+      "order": 5
+    },
+    {
+      "id": "history",
+      "name": "تاريخ",
+      "media": false,
+      "style": "",
+      "order": 6
+    },
+    {
+      "id": "food",
+      "name": "أكلات ومطابخ",
+      "media": false,
+      "style": "",
+      "order": 7
+    },
+    {
+      "id": "fruitsveg",
+      "name": "فواكه وخضار",
+      "media": false,
+      "style": "",
+      "order": 8
+    },
+    {
+      "id": "sports",
+      "name": "رياضة",
+      "media": false,
+      "style": "",
+      "order": 9
+    },
+    {
+      "id": "football",
+      "name": "كرة القدم",
+      "media": false,
+      "style": "",
+      "order": 10
+    },
+    {
+      "id": "worldcup",
+      "name": "كأس العالم",
+      "media": false,
+      "style": "",
+      "order": 11
+    },
+    {
+      "id": "ucl",
+      "name": "دوري أبطال أوروبا",
+      "media": false,
+      "style": "",
+      "order": 12
+    },
+    {
+      "id": "premier",
+      "name": "الدوري الإنجليزي",
+      "media": false,
+      "style": "",
+      "order": 13
+    },
+    {
+      "id": "tech",
+      "name": "تقنية",
+      "media": false,
+      "style": "",
+      "order": 14
+    },
+    {
+      "id": "apps",
+      "name": "تطبيقات وسوشيال",
+      "media": false,
+      "style": "",
+      "order": 15
+    },
+    {
+      "id": "brands",
+      "name": "ماركات وشركات",
+      "media": false,
+      "style": "",
+      "order": 16
+    },
+    {
+      "id": "cars",
+      "name": "سيارات",
+      "media": false,
+      "style": "",
+      "order": 17
+    },
+    {
+      "id": "shopping",
+      "name": "تسوق وحديث البنات",
+      "media": false,
+      "style": "",
+      "order": 18
+    },
+    {
+      "id": "arabic",
+      "name": "لغة عربية",
+      "media": false,
+      "style": "",
+      "order": 19
+    },
+    {
+      "id": "proverbs",
+      "name": "أمثال شعبية",
+      "media": false,
+      "style": "",
+      "order": 20
+    },
+    {
+      "id": "dialects",
+      "name": "لهجات عربية",
+      "media": false,
+      "style": "",
+      "order": 21
+    },
+    {
+      "id": "arabliterature",
+      "name": "أدب عربي",
+      "media": false,
+      "style": "",
+      "order": 22
+    },
+    {
+      "id": "books",
+      "name": "كتب وروايات",
+      "media": false,
+      "style": "",
+      "order": 23
+    },
+    {
+      "id": "quotes",
+      "name": "من القائل",
+      "media": false,
+      "style": "",
+      "order": 24
+    },
+    {
+      "id": "arabcelebs",
+      "name": "مشاهير عرب",
+      "media": false,
+      "style": "",
+      "order": 25
+    },
+    {
+      "id": "youtubers",
+      "name": "يوتيوبرز وصنّاع محتوى",
+      "media": false,
+      "style": "",
+      "order": 26
+    },
+    {
+      "id": "arabmusic",
+      "name": "أغاني عربية",
+      "media": false,
+      "style": "",
+      "order": 27
+    },
+    {
+      "id": "tarab",
+      "name": "طرب وأغاني زمان",
+      "media": false,
+      "style": "",
+      "order": 28
+    },
+    {
+      "id": "arabart",
+      "name": "فن عربي",
+      "media": false,
+      "style": "",
+      "order": 29
+    },
+    {
+      "id": "theater",
+      "name": "مسرح",
+      "media": false,
+      "style": "",
+      "order": 30
+    },
+    {
+      "id": "ramadan",
+      "name": "رمضان",
+      "media": false,
+      "style": "",
+      "order": 31
+    },
+    {
+      "id": "islamiyat",
+      "name": "إسلاميات",
+      "media": false,
+      "style": "",
+      "order": 32
+    },
+    {
+      "id": "quran",
+      "name": "القرآن الكريم",
+      "media": false,
+      "style": "",
+      "order": 33
+    },
+    {
+      "id": "seerah",
+      "name": "السيرة النبوية",
+      "media": false,
+      "style": "",
+      "order": 34
+    },
+    {
+      "id": "prophets",
+      "name": "قصص الأنبياء",
+      "media": false,
+      "style": "",
+      "order": 35
+    },
+    {
+      "id": "arabseries",
+      "name": "مسلسلات عربية",
+      "media": false,
+      "style": "story",
+      "order": 36
+    },
+    {
+      "id": "ramadanseries",
+      "name": "مسلسلات رمضان",
+      "media": false,
+      "style": "story",
+      "order": 37
+    },
+    {
+      "id": "babalhara",
+      "name": "باب الحارة",
+      "media": false,
+      "style": "story",
+      "order": 38
+    },
+    {
+      "id": "syriandrama",
+      "name": "دراما سورية",
+      "media": false,
+      "style": "story",
+      "order": 39
+    },
+    {
+      "id": "egyptdrama",
+      "name": "دراما مصرية",
+      "media": false,
+      "style": "story",
+      "order": 40
+    },
+    {
+      "id": "turkishdrama",
+      "name": "مسلسلات تركية",
+      "media": false,
+      "style": "story",
+      "order": 41
+    },
+    {
+      "id": "ertugrul",
+      "name": "قيامة أرطغرل",
+      "media": false,
+      "style": "story",
+      "order": 42
+    },
+    {
+      "id": "foreignseries",
+      "name": "مسلسلات أجنبية",
+      "media": false,
+      "style": "story",
+      "order": 43
+    },
+    {
+      "id": "breakingbad",
+      "name": "بريكنغ باد",
+      "media": false,
+      "style": "story",
+      "order": 44
+    },
+    {
+      "id": "squidgame",
+      "name": "لعبة الحبار",
+      "media": false,
+      "style": "story",
+      "order": 45
+    },
+    {
+      "id": "movies",
+      "name": "أفلام عالمية",
+      "media": false,
+      "style": "story",
+      "order": 46
+    },
+    {
+      "id": "arabmovies",
+      "name": "أفلام عربية",
+      "media": false,
+      "style": "story",
+      "order": 47
+    },
+    {
+      "id": "actors",
+      "name": "ممثلون ونجوم",
+      "media": false,
+      "style": "",
+      "order": 48
+    },
+    {
+      "id": "anime",
+      "name": "أنمي",
+      "media": false,
+      "style": "story",
+      "order": 49
+    },
+    {
+      "id": "naruto",
+      "name": "ناروتو",
+      "media": false,
+      "style": "story",
+      "order": 50
+    },
+    {
+      "id": "onepiece",
+      "name": "ون بيس",
+      "media": false,
+      "style": "story",
+      "order": 51
+    },
+    {
+      "id": "dragonball",
+      "name": "دراغون بول",
+      "media": false,
+      "style": "story",
+      "order": 52
+    },
+    {
+      "id": "aot",
+      "name": "هجوم العمالقة",
+      "media": false,
+      "style": "story",
+      "order": 53
+    },
+    {
+      "id": "deathnote",
+      "name": "ديث نوت",
+      "media": false,
+      "style": "story",
+      "order": 54
+    },
+    {
+      "id": "demonslayer",
+      "name": "قاتل الشياطين",
+      "media": false,
+      "style": "story",
+      "order": 55
+    },
+    {
+      "id": "jujutsu",
+      "name": "جوجوتسو كايسن",
+      "media": false,
+      "style": "story",
+      "order": 56
+    },
+    {
+      "id": "hunterxhunter",
+      "name": "هنتر × هنتر",
+      "media": false,
+      "style": "story",
+      "order": 57
+    },
+    {
+      "id": "spacetoon",
+      "name": "سبيستون",
+      "media": false,
+      "style": "story",
+      "order": 58
+    },
+    {
+      "id": "cartoon",
+      "name": "كرتون",
+      "media": false,
+      "style": "story",
+      "order": 59
+    },
+    {
+      "id": "videogames",
+      "name": "ألعاب فيديو",
+      "media": false,
+      "style": "",
+      "order": 60
+    },
+    {
+      "id": "puzzles",
+      "name": "ألغاز وذكاء",
+      "media": false,
+      "style": "",
+      "order": 61
+    },
+    {
+      "id": "emoji",
+      "name": "إيموجي",
+      "media": false,
+      "style": "",
+      "order": 62
+    },
+    {
+      "id": "hidden",
+      "name": "البطة المخفية",
+      "media": false,
+      "style": "",
+      "order": 63
+    },
+    {
+      "id": "completeproverb",
+      "name": "أكمل المثل",
+      "media": false,
+      "style": "",
+      "order": 64
+    },
+    {
+      "id": "beforeafter",
+      "name": "قبل ولا بعد",
+      "media": false,
+      "style": "",
+      "order": 65
+    },
+    {
+      "id": "commonbond",
+      "name": "القاسم المشترك",
+      "media": false,
+      "style": "",
+      "order": 66
+    },
+    {
+      "id": "code",
+      "name": "الشفرة",
+      "media": false,
+      "style": "",
+      "order": 67
+    },
+    {
+      "id": "hints",
+      "name": "تلميحات",
+      "media": false,
+      "style": "",
+      "order": 68
+    },
+    {
+      "id": "flags",
+      "name": "أعلام",
+      "media": true,
+      "style": "",
+      "order": 69
+    },
+    {
+      "id": "zoom",
+      "name": "زووم",
+      "media": true,
+      "style": "",
+      "order": 70
+    },
+    {
+      "id": "blur",
+      "name": "وضّح شوي",
+      "media": true,
+      "style": "",
+      "order": 71
+    },
+    {
+      "id": "reveal",
+      "name": "إكشفني",
+      "media": true,
+      "style": "",
+      "order": 72
+    },
+    {
+      "id": "silhouette",
+      "name": "صور غامضة",
+      "media": true,
+      "style": "",
+      "order": 73
+    },
+    {
+      "id": "guesscar",
+      "name": "خمن السيارة",
+      "media": true,
+      "style": "",
+      "order": 74
+    },
+    {
+      "id": "placefinder",
+      "name": "وين المكان؟",
+      "media": true,
+      "style": "",
+      "order": 75
+    },
+    {
+      "id": "tilepuzzle",
+      "name": "ركّبها صح",
+      "media": true,
+      "style": "",
+      "order": 77
+    },
+    {
+      "id": "spotdiff",
+      "name": "اكتشف الفرق",
+      "media": true,
+      "style": "",
+      "order": 78
+    },
+    {
+      "id": "sound",
+      "name": "خمن الصوت",
+      "media": true,
+      "style": "",
+      "order": 79
+    }
+  ],
+  "checkpoint": "checkpoint/checkpoint-2026-09-25.json",
+  "updatedAt": "2026-09-25",
+  "releasable": false,
+  "latestHandoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md",
+  "activeQuestions": 3120,
+  "verifiedQuestions": 3120,
+  "bankContentReady": true
+}
