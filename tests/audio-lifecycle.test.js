@@ -52,7 +52,7 @@ test('muting cancels current and scheduled voices and never replays them on unmu
   sound.play('drumroll');
   const c = env.instances[0], count = c.sources.length;
   assert.ok(count > 1);
-  assert.ok(c.sources.some((source) => source.starts[0] > c.currentTime), 'anticipation includes scheduled bubbles');
+  assert.ok(c.sources.some((source) => source.starts[0] > c.currentTime), 'anticipation includes scheduled taps');
   sound.enable(false);
   assert.ok(c.sources.every((source) => source.stops.includes(undefined) && source.disconnected));
   assert.equal(c.state, 'running', 'mute uses gain/cancellation, not a paused timeline');
@@ -131,8 +131,8 @@ test('all approved masters reach playback as identical 24-bit PCM without fetchi
   let now = 1000;
   t.mock.method(Date, 'now', () => now);
   const sound = createSound();
-  const cases = [['click', 'tap'], ['click', 'tap-2'], ['click', 'tap-3'],
-    ['correct', 'correct'], ['wrong', 'wrong'], ['reveal', 'reveal'], ['win', 'win']];
+  const cases = [['click', 'tap'], ['correct', 'correct'], ['wrong', 'wrong'],
+    ['reveal', 'reveal'], ['start', 'start'], ['win', 'win']];
   for (const [name, file] of cases) {
     sound.play(name); now += 1000;
     const buffer = env.instances[0].sources.at(-1).buffer;
@@ -142,7 +142,7 @@ test('all approved masters reach playback as identical 24-bit PCM without fetchi
     for (let frame = 0; frame < buffer.length; frame++) {
       for (let ch = 0; ch < 2; ch++) actual.writeIntLE(Math.round(buffer.getChannelData(ch)[frame] * 8388608), frame * 6 + ch * 3, 3);
     }
-    const wav = readFileSync(new URL(`../assets/audio/maydan-bubbles/${file}.wav`, import.meta.url));
+    const wav = readFileSync(new URL(`../assets/audio/maydan-casual/${file}.wav`, import.meta.url));
     let expected;
     for (let pos = 12; pos + 8 <= wav.length;) {
       const size = wav.readUInt32LE(pos + 4);
@@ -152,7 +152,7 @@ test('all approved masters reach playback as identical 24-bit PCM without fetchi
     const hash = (value) => createHash('sha256').update(value).digest('hex');
     assert.equal(hash(actual), hash(expected), `approved waveform changed: ${file}`);
   }
-  assert.equal(env.instances[0].buffers.length, 7);
+  assert.equal(env.instances[0].buffers.length, 6);
   sound.dispose();
 });
 

@@ -1,0 +1,89 @@
+{
+  "approved": "Option A with +6 dB clicks, 2026-09-25",
+  "cues": {
+    "tap": {
+      "author": "Dustyroom",
+      "source_page": "https://dustyroom.com/free-casual-game-sounds/",
+      "original_file": "DM-CGS-03.wav",
+      "original_sha256": "cb6febbba59dce8ef1bee80b48891c74280f26f34502ae4b70bb48b466394e8e",
+      "gain_db": -10.549,
+      "modifications": "Resampled to 48 kHz, gain balanced, 0.5 ms entry fade and 8 ms exit fade; no pitch change, new layers or filtering.",
+      "license": "CC0",
+      "audition_sha256": "fd7e7fbe02adaadb3a0534002ce0e8fea5618ded58cd0e62d1ad02ea0301f23d",
+      "master_sha256": "0a4dc1efc5a881ff7538aaeda54b4378c5379d815a723d917da7c3bb154a39cd",
+      "additional_gain_db": 6,
+      "duration_seconds": 0.215375,
+      "true_peak_dbtp": -4.545
+    },
+    "correct": {
+      "author": "Dustyroom",
+      "source_page": "https://dustyroom.com/free-casual-game-sounds/",
+      "original_file": "DM-CGS-26.wav",
+      "original_sha256": "1ead91423eff0f1b4584182778d89f83fd5be3f9467bc5da7ee7f5c463840da3",
+      "gain_db": -4.72,
+      "modifications": "Resampled to 48 kHz, gain balanced, 0.5 ms entry fade and 8 ms exit fade; no pitch change, new layers or filtering.",
+      "license": "CC0",
+      "audition_sha256": "b332f31ec1777b8ffc00e49100d36ed2686c28ac8e416174bbc3066edf0f5e07",
+      "master_sha256": "b332f31ec1777b8ffc00e49100d36ed2686c28ac8e416174bbc3066edf0f5e07",
+      "additional_gain_db": 0,
+      "duration_seconds": 0.49985416666666665,
+      "true_peak_dbtp": -4.814
+    },
+    "wrong": {
+      "author": "Dustyroom",
+      "source_page": "https://dustyroom.com/free-casual-game-sounds/",
+      "original_file": "DM-CGS-16.wav",
+      "original_sha256": "424e8f427d3943fac810b4a6fdb32fa76998f2c79af51ecb6f760811183db5a8",
+      "gain_db": -4.205,
+      "modifications": "Resampled to 48 kHz, gain balanced, 0.5 ms entry fade and 8 ms exit fade; no pitch change, new layers or filtering.",
+      "license": "CC0",
+      "audition_sha256": "30ddedfe0c44eb7200b143518bac840a127a03d3bfbe794459b3563812db8365",
+      "master_sha256": "30ddedfe0c44eb7200b143518bac840a127a03d3bfbe794459b3563812db8365",
+      "additional_gain_db": 0,
+      "duration_seconds": 0.17839583333333334,
+      "true_peak_dbtp": -4.196
+    },
+    "reveal": {
+      "author": "Dustyroom",
+      "source_page": "https://dustyroom.com/free-casual-game-sounds/",
+      "original_file": "DM-CGS-23.wav",
+      "original_sha256": "d526089b4175bc1da7a39b943f31b0994fa59a863c9937b78ec433e07915a7b5",
+      "gain_db": -6.871,
+      "modifications": "Resampled to 48 kHz, gain balanced, 0.5 ms entry fade and 8 ms exit fade; no pitch change, new layers or filtering.",
+      "license": "CC0",
+      "audition_sha256": "bedc1df95d9c776a4ccfe24766aa77784e6d52c35dbd6c0fbd1137c14cb89008",
+      "master_sha256": "bedc1df95d9c776a4ccfe24766aa77784e6d52c35dbd6c0fbd1137c14cb89008",
+      "additional_gain_db": 0,
+      "duration_seconds": 1.5514166666666667,
+      "true_peak_dbtp": -6.971
+    },
+    "start": {
+      "author": "Chequered Ink",
+      "source_page": "https://ci.itch.io/400-sounds-pack",
+      "original_file": "Musical Effects/brass_level_start.wav",
+      "original_sha256": "a137bda7fc2e0e034bf3c097cc7c6ecac491c988fec048124190f502257cb5f2",
+      "gain_db": 7.859,
+      "modifications": "Resampled to 48 kHz, gain balanced, 0.5 ms entry fade and 8 ms exit fade; no pitch change, new layers or filtering.",
+      "license": "Creator permits all uses including commercial; do not sell or redistribute unaltered assets as your own.",
+      "audition_sha256": "591e13bce2a0e616dc9222fe910b0bc73899324a0483618fc69c9bd4c3b7ebe9",
+      "master_sha256": "591e13bce2a0e616dc9222fe910b0bc73899324a0483618fc69c9bd4c3b7ebe9",
+      "additional_gain_db": 0,
+      "duration_seconds": 2.0993958333333333,
+      "true_peak_dbtp": -2.3
+    },
+    "win": {
+      "author": "Chequered Ink",
+      "source_page": "https://ci.itch.io/400-sounds-pack",
+      "original_file": "Musical Effects/brass_level_complete.wav",
+      "original_sha256": "acec60a4d6c0e05f9c3d237e34af8f25a4915e30b38dbb796983cc9d1f70d40f",
+      "gain_db": -1.619,
+      "modifications": "Resampled to 48 kHz, gain balanced, 0.5 ms entry fade and 8 ms exit fade; no pitch change, new layers or filtering.",
+      "license": "Creator permits all uses including commercial; do not sell or redistribute unaltered assets as your own.",
+      "audition_sha256": "23e7010301b96213736228f23523e988cc172204fa7a58bc03b2429ea57433ab",
+      "master_sha256": "23e7010301b96213736228f23523e988cc172204fa7a58bc03b2429ea57433ab",
+      "additional_gain_db": 0,
+      "duration_seconds": 3.1018333333333334,
+      "true_peak_dbtp": -2.3
+    }
+  }
+}
