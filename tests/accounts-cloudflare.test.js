@@ -399,9 +399,19 @@ test('إنشاء الغرف: مجاني للمجهول، مباراة واحدة
   const premiumRoom = await api.post('/api/rooms', { ...credentials(), name: 'مضيف', avatar: 1, rounds: 5, game: 'meenfina' });
   assert.equal(premiumRoom.status, 201, JSON.stringify(premiumRoom.data));
 
-  // الدخول إلى غرفة قائمة مجاني دائمًا، ويقبل ترويسة Bearer ويتجاهلها.
-  const guest = credentials();
-  const joined = await api.post(`/api/rooms/${premiumRoom.data.code}/join`, { ...guest, name: 'ضيف مسجّل', avatar: 2 });
+  // الحساب المصادق لا يشغل مقعدين في الغرفة نفسها.
+  const duplicate = await api.post(`/api/rooms/${premiumRoom.data.code}/join`, { ...credentials(), name: 'مقعد ثانٍ', avatar: 2 });
+  assert.equal(duplicate.status, 409);
+  assert.deepEqual(duplicate.data, { error: 'ACCOUNT_IN_ROOM' });
+
+  // الانضمام مجاني حتى لحساب آخر استهلك تجربة اللعبة ولا يملك اشتراكًا.
+  const joining = await signInDev('rooms-joining-user', 'ضيف مسجّل');
+  assert.equal((await joining.api.post('/api/trials/meenfina', {})).status, 200);
+  assert.deepEqual((await joining.api.get('/api/me')).data.trials, { meenfina: true });
+  const joiningCreate = await joining.api.post('/api/rooms', { ...credentials(), name: 'ضيف مسجّل', avatar: 2, rounds: 5, game: 'meenfina' });
+  assert.equal(joiningCreate.status, 402);
+  assert.equal(joiningCreate.data.error, 'PLUS_REQUIRED');
+  const joined = await joining.api.post(`/api/rooms/${premiumRoom.data.code}/join`, { ...credentials(), name: 'ضيف مسجّل', avatar: 2 });
   assert.equal(joined.status, 200, JSON.stringify(joined.data));
 
   // سحب الاشتراك يعيد القفل، والمجهول لا يتأثر بشيء من هذا.

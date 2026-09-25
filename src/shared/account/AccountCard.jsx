@@ -10,6 +10,7 @@ import { accountErrorText } from './errors.js';
 import { SignInSheet } from './SignInSheet.jsx';
 import { RedeemSheet, REDEEM_PROMPT } from './RedeemSheet.jsx';
 import { REDEEM_ON_IOS } from './config.js';
+import { navigate } from '../../platform/router.js';
 
 const SOURCE_TEXT = { apple: 'عبر App Store', paddle: 'عبر الويب', promo: 'برمز هدية' };
 
@@ -64,6 +65,7 @@ export function AccountCard() {
             <b>{user.name || 'لاعب ميدان'}</b>
             {user.email && <small className="muted">{user.email}</small>}
           </div>
+          <Button variant="secondary" icon={<IconUsers />} onClick={() => navigate('/profile')}>بروفايلي وإنجازاتي</Button>
           <p className={`account-plan ${account.premium ? 'is-plus' : ''}`}>{subscriptionLine(account.me, account.premium, account.promo)}</p>
           {!account.premium && (
             <Button variant="primary" icon={<IconStar />} onClick={() => account.openPaywall({ reason: 'settings' })}>اشترك في {PLUS_NAME}</Button>

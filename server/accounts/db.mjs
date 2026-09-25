@@ -4,6 +4,7 @@ import { TRIAL_GAMES } from '../../src/shared/account/config.js';
 import { failure } from './errors.mjs';
 import { paddleEnvironmentOf } from './billing-environment.mjs';
 import { socialDeleteStatements } from '../social/db.mjs';
+import { profileDeleteStatements } from '../profiles/db.mjs';
 
 function statement(env, sql, args) {
   const prepared = env.DB.prepare(sql);
@@ -147,6 +148,7 @@ export async function deleteUser(env, userId) {
   const statements = ['sessions', 'auth_codes', 'trials', 'subscriptions', 'paddle_customers', 'paddle_customers_scoped', 'paddle_checkouts', 'account_deletions', 'identities']
     .map((table) => statement(env, `DELETE FROM ${table} WHERE user_id = ?`, [userId]));
   statements.push(...socialDeleteStatements(env, userId));
+  statements.push(...profileDeleteStatements(env, userId));
   statements.push(statement(env, 'DELETE FROM users WHERE id = ?', [userId]));
   // D1 batch is transactional: a failed delete cannot strand a partial account.
   await env.DB.batch(statements);

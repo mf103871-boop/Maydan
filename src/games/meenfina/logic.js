@@ -75,6 +75,7 @@ export function initialState(players, options) {
     scores: Object.fromEntries(players.map((p) => [p.id, 0])),
     tags: Object.fromEntries(players.map((p) => [p.id, {}])), // playerId → {tag: count}
     phase: 'intro', // intro | countdown | pick | vote | result | over
+    completed: false,
     round: 1,
     statement: null,
     voter: 0,
@@ -138,12 +139,12 @@ export function reduce(state, action) {
 
     case 'NEXT': {
       if (state.phase !== 'result') return state;
-      if (state.round >= state.rounds) return { ...state, phase: 'over' };
+      if (state.round >= state.rounds) return { ...state, phase: 'over', completed: true };
       return { ...state, phase: 'intro', round: state.round + 1, statement: null, votes: {}, voter: 0, winners: [] };
     }
 
     case 'END':
-      return { ...state, phase: 'over' };
+      return { ...state, phase: 'over', completed: false };
 
     default:
       return state;

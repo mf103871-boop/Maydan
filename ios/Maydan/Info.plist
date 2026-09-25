@@ -35,6 +35,10 @@
     <string>$(CURRENT_PROJECT_VERSION)</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
+    <key>NSCameraUsageDescription</key>
+    <string>لالتقاط صورة تختارها لصورتك الشخصية أو غلاف بروفايلك في ميدان.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>لاختيار صورة شخصية أو غلاف لبروفايلك في ميدان.</string>
     <key>UIApplicationSceneManifest</key>
     <dict>
         <key>UIApplicationSupportsMultipleScenes</key>

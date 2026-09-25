@@ -2,14 +2,20 @@ import statements from '../src/data/games/meenfina/statements.json' with { type:
 import { createRoom, joinRoom, connected, leaveRoom, action, tick, snapshot, nextAlarm, member, RoomError, fail } from './game-model.mjs';
 import { buildFabrakaDeck } from './fabraka-content.mjs';
 import { credentials, readJson, json, errorResponse, shuffled } from './protocol.mjs';
+import { bindSeatAccount, prepareRoomStats } from './room-stats.mjs';
+import { recordOnlineResult } from './profiles/db.mjs';
 const SOCKET_IDLE = 45_000;
+const STATS_RETRY = 30_000;
 
 // Plain Durable Object constructor works in Cloudflare and the local Node adapter.
 // All mutations share a queue; a failed storage write never becomes visible.
 export class Room {
   constructor(ctx, env) {
-    this.ctx = ctx; this.env = env; this.room = null; this.queue = Promise.resolve();
-    this.ready = ctx.blockConcurrencyWhile(async () => { this.room = await ctx.storage.get('room') || null; });
+    this.ctx = ctx; this.env = env; this.room = null; this.profileOutbox = []; this.queue = Promise.resolve();
+    this.ready = ctx.blockConcurrencyWhile(async () => {
+      this.room = await ctx.storage.get('room') || null;
+      this.profileOutbox = await ctx.storage.get('profileOutbox') || [];
+    });
     if (typeof WebSocketRequestResponsePair !== 'undefined') {
       ctx.setWebSocketAutoResponse(new WebSocketRequestResponsePair('ping', 'pong'));
     }
@@ -23,6 +29,7 @@ export class Room {
   attachment(ws) { try { return ws.deserializeAttachment() || {}; } catch { return {}; } }
   send(ws, value) { try { ws.send(typeof value === 'string' ? value : JSON.stringify(value)); } catch { /* close handler reconciles presence */ } }
   close(ws, code, reason) { try { ws.close(code, reason); } catch { /* already closed */ } }
+  deleteKey(key) { return this.ctx.storage.delete ? this.ctx.storage.delete(key) : this.ctx.storage.put(key, null); }
   lastSeen(ws, attachment) {
     const pong = this.ctx.getWebSocketAutoResponseTimestamp?.(ws);
     return Math.max(attachment.seenAt || 0, pong?.getTime() || 0);
@@ -32,20 +39,57 @@ export class Room {
       const a = this.attachment(ws);
       return a.id ? this.lastSeen(ws, a) + SOCKET_IDLE : a.authDeadline;
     }).filter(Number.isFinite);
-    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines));
+    return Math.max(now + 1, Math.min(nextAlarm(room, now), ...deadlines, ...(this.profileOutbox.length ? [now + STATS_RETRY] : [])));
   }
   async schedule() {
     if (this.room) await this.ctx.storage.setAlarm(this.alarmAt(this.room, Date.now()));
+    else if (this.profileOutbox.length) await this.ctx.storage.setAlarm(Date.now() + STATS_RETRY);
+    else await this.ctx.storage.deleteAlarm();
   }
   async commit(candidate) {
     candidate.revision++;
+    const outbox = [...this.profileOutbox, ...prepareRoomStats(this.room, candidate)];
     // KV writes and alarms are committed in a single storage transaction.
     await this.ctx.storage.transaction(async (tx) => {
       await tx.put('room', candidate);
-      await tx.setAlarm(this.alarmAt(candidate, Date.now()));
+      if (outbox.length) await tx.put('profileOutbox', outbox);
+      await tx.setAlarm(Math.min(this.alarmAt(candidate, Date.now()), ...(outbox.length ? [Date.now() + STATS_RETRY] : [])));
     });
     this.room = candidate;
+    this.profileOutbox = outbox;
     this.broadcast();
+    if (outbox.length) {
+      const task = this.flushStats();
+      this.ctx.waitUntil?.(task);
+      task.catch(() => {});
+    }
+  }
+  flushStats() {
+    if (this.flushingStats) return this.flushingStats;
+    const task = (async () => {
+      await this.ready;
+      while (this.env.DB && this.profileOutbox.length) {
+        const event = this.profileOutbox[0];
+        // D1 waits happen outside the game-command queue. A slow or unavailable
+        // database must not delay a room action or the next match.
+        try { await recordOnlineResult(this.env, event); }
+        catch { break; }
+        await this.serial(async () => {
+          const pending = this.profileOutbox.filter((item) => item.eventId !== event.eventId || item.userId !== event.userId);
+          // D1 success followed by a failed DO write is safe to retry: the D1
+          // transaction deduplicates account + eventId. Keep newer queued games.
+          if (pending.length) await this.ctx.storage.put('profileOutbox', pending);
+          else await this.deleteKey('profileOutbox');
+          this.profileOutbox = pending;
+          await this.schedule();
+        });
+      }
+      await this.serial(() => this.schedule());
+    })();
+    this.flushingStats = task;
+    const release = () => { if (this.flushingStats === task) this.flushingStats = null; };
+    task.then(release, release);
+    return task;
   }
   broadcast() {
     if (!this.room) return;
@@ -74,9 +118,10 @@ export class Room {
     if (candidate.phase === 'closed') {
       const reason = candidate.reason === 'expired' ? 'EXPIRED' : 'NOT_FOUND';
       for (const ws of this.sockets()) { this.send(ws, { type: 'error', error: reason }); this.close(ws, 4404, reason); }
-      await this.ctx.storage.deleteAll();
-      await this.ctx.storage.deleteAlarm();
+      if (this.profileOutbox.length) await this.deleteKey('room');
+      else await this.ctx.storage.deleteAll();
       this.room = null;
+      await this.schedule();
     } else if (JSON.stringify(candidate) !== JSON.stringify(this.room)) await this.commit(candidate);
   }
   async authenticate(input) {
@@ -103,6 +148,7 @@ export class Room {
             return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
           }
           const created = createRoom(code, input, Date.now());
+          bindSeatAccount(created, input.id, input.accountUserId);
           // Reject empty topic selections while the creator can still edit them,
           // rather than trapping an assembled group in an unstartable lobby.
           if (created.game === 'fabraka' && buildFabrakaDeck(created).length < created.rounds) fail('QUESTIONS');
@@ -114,6 +160,7 @@ export class Room {
           const input = await credentials(await readJson(request));
           const candidate = structuredClone(this.room);
           joinRoom(candidate, input, Date.now());
+          bindSeatAccount(candidate, input.id, input.accountUserId);
           await this.commit(candidate);
           return json({ code: this.room.code, id: input.id, game: this.room.game || 'meenfina' });
         }
@@ -214,7 +261,7 @@ export class Room {
         const a = this.attachment(ws);
         if (!a.id && a.authDeadline <= Date.now()) this.close(ws, 4401, 'AUTH');
       }
-      if (this.room) await this.schedule();
-    });
+      await this.schedule();
+    }).then(() => this.flushStats());
   }
 }

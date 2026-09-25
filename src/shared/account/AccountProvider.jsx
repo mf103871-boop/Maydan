@@ -17,6 +17,7 @@ import { callNative, isNativeShell, onNativeEvent } from './native.js';
 import { clearPaddleCustomer, loadPaddle, openCheckout, previewPrices, setPaddleCustomer } from './paddle.js';
 import { usePlatform } from '../../platform/context.js';
 import { navigate, useRoute } from '../../platform/router.js';
+import { rememberProfileReturn, consumeProfileReturn } from './return-path.js';
 
 const EMPTY = Object.freeze({});
 // أوراق النظام (Apple، المتجر) قد تنتظر المستخدم طويلًا: مهلة أطول من مهلة الجسر الافتراضية.
@@ -289,7 +290,10 @@ export function AccountProvider({ children }) {
           if (isDisabled(codeOf(err))) { setOffline(true); throw new ClientError('OFFLINE'); }
           throw err; // لا نغادر الصفحة إن فشل فحص الخادم، حتى بعد تحميل إعدادات سابقة.
         }
-        if (typeof location !== 'undefined') location.assign(url);
+        if (typeof location !== 'undefined') {
+          try { rememberProfileReturn(sessionStorage, location.hash); } catch { /* Storage may be unavailable. */ }
+          location.assign(url);
+        }
         return null;
       }
       if (provider === 'apple') {
@@ -611,7 +615,9 @@ export function AccountProvider({ children }) {
       catch (err) { const code = handleError(err); toast(accountErrorText(code)); }
       finally {
         if (alive) setBusy(false);
-        navigate('/', { replace: true });
+        let target = '/';
+        try { target = consumeProfileReturn(sessionStorage); } catch { /* Keep the default route. */ }
+        navigate(target, { replace: true });
       }
     })();
     return () => { alive = false; };

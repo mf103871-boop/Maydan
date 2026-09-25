@@ -6,6 +6,7 @@ import { base64url, bytesFromBase64url, hmacHex, randomHex, randomToken, safeEqu
 import * as db from './db.mjs';
 import { meResponse } from './entitlements.mjs';
 import { paddleEnvironmentOf } from './billing-environment.mjs';
+import { ensurePlayerProfile } from '../profiles/db.mjs';
 
 export const SESSION_TTL = 180 * 24 * 60 * 60 * 1000; // 180 يومًا
 export const ROTATE_AFTER = 24 * 60 * 60 * 1000;      // تدوير منزلق بعد يوم من آخر استعمال
@@ -70,6 +71,7 @@ export function withRotation(response, rotated) {
 }
 
 export async function me(env, user, now = Date.now()) {
+  await ensurePlayerProfile(env, user.id);
   const [subscriptions, trials, customer] = await Promise.all([
     db.subscriptionsOf(env, user.id), db.trialsOf(env, user.id), db.paddleCustomerOf(env, user.id),
   ]);

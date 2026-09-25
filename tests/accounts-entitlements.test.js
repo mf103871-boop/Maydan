@@ -207,11 +207,22 @@ test('cleanup يحذف الجلسات المنتهية قديمًا ورموز �
 
 test('ترحيلات D1 جمل مستقلة بسطر واحد يقبلها exec', () => {
   const statements = migrationStatements();
+  // Existing account identities may receive missing profile rows. OR IGNORE
+  // preserves existing rows; no update/delete/upsert or other table is allowed.
+  const allowed = statement => /^CREATE (TABLE|INDEX) IF NOT EXISTS /.test(statement) ||
+    (/^INSERT OR IGNORE INTO (social_profiles|player_profiles)\(/.test(statement) &&
+      !/\b(UPDATE|DELETE|REPLACE|DROP|ALTER)\b/i.test(statement));
+  for (const unsafe of [
+    'INSERT OR IGNORE INTO users(id) VALUES(1);',
+    'INSERT OR REPLACE INTO player_profiles(user_id) VALUES(1);',
+    'INSERT OR IGNORE INTO player_profiles(user_id) VALUES(1) ON CONFLICT(user_id) DO UPDATE SET bio=1;',
+    'DELETE FROM player_profiles;',
+  ]) assert.equal(allowed(unsafe), false, `جملة غير آمنة: ${unsafe}`);
   assert.ok(statements.length >= 10, 'الترحيل الأول ينشئ جداول الحسابات كلها');
   for (const statement of statements) {
     assert.equal(statement.includes('\n'), false, `جملة متعددة الأسطر يرفضها D1 exec: ${statement.slice(0, 40)}`);
     assert.equal(statement.includes('--'), false, 'التعليقات تُزال قبل التنفيذ');
-    assert.match(statement, /^CREATE (TABLE|INDEX) IF NOT EXISTS /);
+    assert.ok(allowed(statement), `جملة ترحيل ليست إنشاءً آمنًا أو إضافة بروفايل مفقود: ${statement}`);
   }
   for (const table of ['users', 'identities', 'sessions', 'auth_codes', 'subscriptions', 'trials', 'webhook_events', 'paddle_customers']) {
     assert.ok(statements.some((statement) => statement.includes(`CREATE TABLE IF NOT EXISTS ${table} `)), `جدول ${table} مفقود`);

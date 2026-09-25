@@ -54,6 +54,7 @@ export function initialState(players, options, { random = Math.random } = {}) {
     rounds: o.mode === 'three' ? o.rounds : 0,
     players: players.map((p) => ({ id: p.id, name: p.name, emoji: p.emoji, color: p.color })),
     phase: 'intro', // intro | prompt | judge | boom | over
+    completed: false,
     round: 1,
     turn: 0,
     prompt: null,
@@ -105,7 +106,7 @@ export function reduce(state, action) {
       const lastPlayer = state.turn === state.players.length - 1;
       const round = lastPlayer ? state.round + 1 : state.round;
       const over = lastPlayer && state.round >= state.rounds;
-      return { ...state, scores, history, turn: lastPlayer ? 0 : state.turn + 1, round, phase: over ? 'over' : 'intro', prompt: null, timedOut: false };
+      return { ...state, scores, history, turn: lastPlayer ? 0 : state.turn + 1, round, phase: over ? 'over' : 'intro', completed: over, prompt: null, timedOut: false };
     }
 
     case 'PASS': { // وضع القنبلة: أجاب ومرّر الجوال للتالي
@@ -125,7 +126,7 @@ export function reduce(state, action) {
       const history = [...state.history, { playerId: player.id, promptId: state.prompt.id, ok: false, exploded: true }];
       const living = state.players.filter((p) => !eliminated.includes(p.id));
       const over = living.length <= 1;
-      return { ...state, lives, eliminated, history, phase: over ? 'over' : 'boom', boomPlayerId: player.id };
+      return { ...state, lives, eliminated, history, phase: over ? 'over' : 'boom', completed: over, boomPlayerId: player.id };
     }
 
     case 'CONTINUE': { // بعد شاشة الانفجار: قنبلة جديدة بمؤقت جديد
@@ -135,7 +136,7 @@ export function reduce(state, action) {
     }
 
     case 'END': // إنهاء مبكر
-      return { ...state, phase: 'over' };
+      return { ...state, phase: 'over', completed: false };
 
     default:
       return state;

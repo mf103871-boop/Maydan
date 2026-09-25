@@ -4,6 +4,7 @@ import { fail } from '../room-model.mjs';
 import * as db from './db.mjs';
 import { clientIdOf, pagination, publicProfile, sequenceOf, textOf, userId } from './model.mjs';
 import { notifyUsers } from './realtime.mjs';
+import { profileSummaries } from '../profiles/db.mjs';
 
 export const isSocialPath = (path) => path === '/api/social' || path.startsWith('/api/social/');
 async function notify(env, ids, event = { type: 'refresh' }) {
@@ -21,7 +22,16 @@ export async function routeSocial(request, env, url = new URL(request.url), char
   if (charge) await charge(request.method === 'GET' ? 'socialRead' : 'socialWrite');
   const auth = await requireSession(env, request);
   try {
-    const response = await dispatch(request, env, url, auth.user.id, Date.now());
+    let response = await dispatch(request, env, url, auth.user.id, Date.now());
+    if (response.ok && ['/api/social/me', '/api/social/search', '/api/social/friends', '/api/social/requests', '/api/social/blocks', '/api/social/conversations'].includes(url.pathname)) {
+      const body = await response.json();
+      const users = [body.user, body.request?.user, ...(body.users || []), ...(body.friends || []),
+        ...(body.incoming || []).map(item => item.user), ...(body.outgoing || []).map(item => item.user),
+        ...(body.conversations || []).map(item => item.user)].filter(Boolean);
+      const summaries = await profileSummaries(env, users.map(user => user.id));
+      for (const user of users) Object.assign(user, summaries.get(user.id) || {});
+      response = json(body);
+    }
     return withRotation(response, auth.rotated);
   } catch (error) {
     return withRotation(errorResponse(error), auth.rotated);

@@ -32,6 +32,7 @@ export function initialState(entrants, category, options) {
     entrants: entrants.map((e) => ({ id: e.id, name: e.name, emoji: e.emoji, color: e.color })),
     scores: Object.fromEntries(entrants.map((e) => [e.id, 0])),
     phase: 'intro', // intro | play | review | over
+    completed: false,
     turn: 0,
     item: null,
     results: [], // {itemId, text, ok} للجولة الحالية
@@ -111,11 +112,11 @@ export function reduce(state, action) {
       const scores = { ...state.scores, [entrant.id]: state.scores[entrant.id] + correct };
       const log = [...state.log, { entrantId: entrant.id, correct, total: state.results.length }];
       const last = state.turn === state.entrants.length - 1;
-      if (last) return { ...state, scores, log, phase: 'over', results: [] };
+      if (last) return { ...state, scores, log, phase: 'over', results: [], completed: log.some((entry) => entry.total > 0) };
       return { ...state, scores, log, phase: 'intro', turn: state.turn + 1, results: [] };
     }
     case 'END':
-      return { ...state, phase: 'over' };
+      return { ...state, phase: 'over', completed: false };
     default:
       return state;
   }
