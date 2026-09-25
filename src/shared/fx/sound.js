@@ -1,96 +1,36 @@
-// Gesture-unlocked Web Audio mixer. Voices feed a master gain + compressor.
-// Muting cancels scheduled cues instead of freezing them until the next unmute.
+import { BUBBLE_BANK, BUBBLE_RATE } from './bubble-bank.js';
 
-function tone(c, { f = 440, f2 = null, t = 0, d = 0.2, type = 'sine', v = 0.1, a = 0.008 } = {}) {
-  const o = c.createOscillator();
-  const g = c.createGain();
-  const T = c.currentTime + t;
-  o.type = type;
-  o.frequency.setValueAtTime(f, T);
-  if (f2) o.frequency.exponentialRampToValueAtTime(Math.max(20, f2), T + d);
-  g.gain.setValueAtTime(0.0001, T);
-  g.gain.exponentialRampToValueAtTime(v, T + a);
-  g.gain.exponentialRampToValueAtTime(0.0001, T + d);
-  c.track(o, [o, g]);
-  o.connect(g);
-  g.connect(c.destination);
-  o.start(T);
-  o.stop(T + d + 0.05);
-}
-
-function noise(c, { t = 0, d = 0.3, v = 0.1, lp = null, hp = null, a = 0.005 } = {}) {
-  const T = c.currentTime + t;
-  const source = c.createBufferSource();
-  source.buffer = c.noiseBuffer;
-  source.loop = true;
-  const nodes = [source];
-  let node = source;
-  if (lp) {
-    const filter = c.createBiquadFilter();
-    filter.type = 'lowpass';
-    filter.frequency.value = lp;
-    nodes.push(filter);
-    node.connect(filter);
-    node = filter;
-  }
-  if (hp) {
-    const filter = c.createBiquadFilter();
-    filter.type = 'highpass';
-    filter.frequency.value = hp;
-    nodes.push(filter);
-    node.connect(filter);
-    node = filter;
-  }
-  const g = c.createGain();
-  g.gain.setValueAtTime(0.0001, T);
-  g.gain.exponentialRampToValueAtTime(v, T + a);
-  g.gain.setValueAtTime(v, T + Math.max(a, d - 0.05));
-  g.gain.exponentialRampToValueAtTime(0.0001, T + d);
-  c.track(source, [...nodes, g]);
-  node.connect(g);
-  g.connect(c.destination);
-  source.start(T);
-  source.stop(T + d + 0.05);
-}
-
+// Approved cartoon bubble samples, embedded for instant offline playback.
+const TAPS = ['tap', 'tap-2', 'tap-3'];
 export const RECIPES = {
-  click: (c) => tone(c, { f: 720, f2: 980, d: 0.05, v: 0.03, type: 'sine' }),
-  pop: (c) => tone(c, { f: 520, f2: 880, d: 0.09, v: 0.05, type: 'triangle' }),
-  tick: (c) => tone(c, { f: 1320, f2: 1180, d: 0.045, v: 0.045, type: 'triangle' }),
-  tickFast: (c) => tone(c, { f: 1650, f2: 1400, d: 0.04, v: 0.045, type: 'triangle' }),
-  correct: (c) =>
-    [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => tone(c, { f, t: i * 0.075, d: i === 3 ? 0.55 : 0.28, v: 0.065, type: 'triangle' })),
-  wrong: (c) => {
-    tone(c, { f: 246.94, f2: 174.61, d: 0.34, v: 0.06, type: 'triangle' });
-    tone(c, { f: 196, f2: 130.81, t: 0.11, d: 0.42, v: 0.05, type: 'sine' });
-  },
-  buzzer: (c) => {
-    tone(c, { f: 180, d: 0.4, v: 0.07, type: 'triangle', a: 0.008 });
-    tone(c, { f: 120, d: 0.4, v: 0.045, type: 'sine', a: 0.008 });
-  },
-  whoosh: (c) => noise(c, { d: 0.32, v: 0.06, hp: 900, lp: 5000, a: 0.04 }),
-  fanfare: (c) => {
-    [523.25, 659.25, 783.99, 1046.5, 1318.51].forEach((f, i) => tone(c, { f, t: i * 0.13, d: i === 4 ? 0.95 : 0.38, v: 0.07, type: 'triangle' }));
-    noise(c, { t: 0.44, d: 0.55, v: 0.02, hp: 2800, a: 0.03 });
-  },
+  click: (c) => c.sample(c.nextTap()),
+  pop: (c) => c.sample('tap-3', { gain: 0.9 }),
+  tick: (c) => c.sample('tap-2', { gain: 0.32, rate: 0.94 }),
+  tickFast: (c) => c.sample('tap', { gain: 0.42, rate: 1.08 }),
+  correct: (c) => c.sample('correct'),
+  wrong: (c) => c.sample('wrong'),
+  buzzer: (c) => c.sample('wrong', { rate: 0.9 }),
+  whoosh: (c) => c.sample('reveal', { gain: 0.65, rate: 1.1 }),
+  fanfare: (c) => c.sample('win'),
   explosion: (c) => {
-    noise(c, { d: 0.65, v: 0.12, lp: 900, a: 0.008 });
-    noise(c, { d: 0.25, v: 0.07, hp: 1200, a: 0.008 });
-    tone(c, { f: 110, f2: 32, d: 0.6, v: 0.1, type: 'triangle', a: 0.008 });
+    c.sample('wrong', { rate: 0.85 });
+    c.sample('tap-3', { at: 0.12, gain: 0.6, rate: 0.8 });
   },
   drumroll: (c) => {
-    for (let i = 0; i < 28; i += 1) noise(c, { t: i * 0.055, d: 0.04, v: 0.05 + (i / 28) * 0.08, lp: 700 });
-    noise(c, { t: 1.6, d: 0.35, v: 0.14, hp: 2000 });
+    [0, 0.23, 0.44, 0.63, 0.8, 0.95, 1.08, 1.19].forEach((at, i) => {
+      c.sample(TAPS[i % TAPS.length], { at, gain: 0.28 + i * 0.035, rate: 0.9 + i * 0.035 });
+    });
   },
-  countdown: (c) => tone(c, { f: 880, d: 0.14, v: 0.055, type: 'sine' }),
-  countdownGo: (c) => tone(c, { f: 1320, f2: 1760, d: 0.45, v: 0.07, type: 'triangle' }),
-  reveal: (c) => [392, 523.25, 783.99].forEach((f, i) => tone(c, { f, t: i * 0.075, d: 0.3, v: 0.05 })),
-  pass: (c) => tone(c, { f: 660, f2: 330, d: 0.22, v: 0.05, type: 'triangle' }),
-  timeout: (c) => [0, 0.28].forEach((t, i) => tone(c, { f: i ? 146.83 : 196, f2: i ? 98 : 130.81, t, d: 0.42, v: 0.06, type: 'triangle' })),
+  countdown: (c) => c.sample('tap-3', { gain: 0.55, rate: 0.9 }),
+  countdownGo: (c) => c.sample('correct'),
+  reveal: (c) => c.sample('reveal'),
+  pass: (c) => c.sample('tap-3', { gain: 0.7, rate: 0.85 }),
+  timeout: (c) => c.sample('wrong', { rate: 0.9 }),
 };
 
 const clampVolume = (value) => typeof value === 'number' && Number.isFinite(value) ? Math.min(1, Math.max(0, value)) : 0.75;
-const COOLDOWNS = { click: 45, pop: 45, tick: 80, tickFast: 80, countdown: 120 };
+const COOLDOWNS = { click: 65, pop: 70, tick: 100, tickFast: 100, countdown: 120, correct: 150, wrong: 180,
+  buzzer: 300, whoosh: 100, fanfare: 500, explosion: 400, drumroll: 1250, countdownGo: 180, reveal: 160, timeout: 300 };
 const ALIASES = { open: 'whoosh', steal: 'correct', win: 'fanfare', start: 'countdownGo', tool: 'reveal', scoreUp: 'pop', scoreDown: 'wrong' };
 
 export function createSound({ enabled = true, volume = 0.75 } = {}) {
@@ -103,6 +43,8 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
   let generation = 0;
   let ducked = false;
   let resumePromise = null;
+  let tapIndex = 0;
+  const buffers = new Map();
   const voices = new Set();
   const lastPlayed = new Map();
   const hidden = () => typeof document !== 'undefined' && document.hidden;
@@ -122,7 +64,7 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     }
   }
   function track(source, nodes) {
-    if (voices.size >= 96) {
+    if (voices.size >= 20) {
       const oldest = voices.values().next().value;
       try { oldest.source.stop(); } catch { /* ended */ }
       oldest.cleanup();
@@ -135,37 +77,56 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     voices.add(voice);
     source.onended = voice.cleanup;
   }
+  function bufferFor(id) {
+    if (buffers.has(id)) return buffers.get(id);
+    const entry = BUBBLE_BANK[id];
+    const bytes = atob(entry.pcm);
+    const buffer = context.createBuffer(2, entry.frames, BUBBLE_RATE);
+    const channels = [buffer.getChannelData(0), buffer.getChannelData(1)];
+    for (let frame = 0, offset = 0; frame < entry.frames; frame += 1) {
+      for (let channel = 0; channel < 2; channel += 1, offset += 3) {
+        const value = bytes.charCodeAt(offset) | (bytes.charCodeAt(offset + 1) << 8) | (bytes.charCodeAt(offset + 2) << 16);
+        channels[channel][frame] = ((value << 8) >> 8) / 8388608;
+      }
+    }
+    buffers.set(id, buffer);
+    return buffer;
+  }
+  function sample(id, { at = 0, gain = 1, rate = 1 } = {}) {
+    const buffer = bufferFor(id);
+    const source = context.createBufferSource();
+    source.buffer = buffer;
+    source.playbackRate.value = rate;
+    const voiceGain = context.createGain();
+    voiceGain.gain.value = gain;
+    source.connect(voiceGain);
+    voiceGain.connect(master);
+    track(source, [source, voiceGain]);
+    source.start(context.currentTime + at);
+  }
   function getContext() {
     if (context && context.state !== 'closed') return context;
     try {
       const AC = typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext);
       if (!AC) return null;
+      stop(); buffers.clear(); resumePromise = null;
       context = new AC({ latencyHint: 'interactive' });
       master = context.createGain();
       const compressor = context.createDynamicsCompressor();
-      compressor.threshold.value = -18;
-      compressor.knee.value = 12;
-      compressor.ratio.value = 5;
+      // Preserve mastered single cues; limit peaks from overlapping events.
+      compressor.threshold.value = -8;
+      compressor.knee.value = 6;
+      compressor.ratio.value = 4;
       compressor.attack.value = 0.003;
-      compressor.release.value = 0.18;
+      compressor.release.value = 0.12;
       master.connect(compressor);
       compressor.connect(context.destination);
-      const noiseBuffer = context.createBuffer(1, context.sampleRate, context.sampleRate);
-      const data = noiseBuffer.getChannelData(0);
-      for (let i = 0; i < data.length; i += 1) data[i] = Math.random() * 2 - 1;
-      voiceContext = {
-        get currentTime() { return context.currentTime; },
-        destination: master, noiseBuffer, track,
-        createOscillator: () => context.createOscillator(),
-        createGain: () => context.createGain(),
-        createBufferSource: () => context.createBufferSource(),
-        createBiquadFilter: () => context.createBiquadFilter(),
-      };
-      master.gain.value = canPlay() ? level * level : 0;
+      voiceContext = { sample, nextTap: () => TAPS[tapIndex++ % TAPS.length] };
+      master.gain.value = canPlay() ? level * level * (ducked ? 0.3 : 1) : 0;
       return context;
     } catch {
       try { Promise.resolve(context?.close()).catch(() => {}); } catch { /* unavailable */ }
-      context = null; master = null; voiceContext = null;
+      context = null; master = null; voiceContext = null; buffers.clear();
       return null;
     }
   }
@@ -201,7 +162,7 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
     document.addEventListener('visibilitychange', onVisibility);
   }
   function dispose() {
-    stop();
+    stop(); buffers.clear();
     if (attached) {
       document.removeEventListener('pointerdown', onGesture, true);
       document.removeEventListener('touchstart', onGesture, true);
@@ -218,10 +179,10 @@ export function createSound({ enabled = true, volume = 0.75 } = {}) {
       name = ALIASES[name] || name;
       if (!canPlay() || !RECIPES[name]) return;
       const now = Date.now();
-      if (now - (lastPlayed.get(name) ?? -Infinity) < (COOLDOWNS[name] || 30)) return;
-      lastPlayed.set(name, now);
+      if (now - (lastPlayed.get(name) ?? -Infinity) < (COOLDOWNS[name] || 80)) return;
       const c = getContext();
       if (!c) return;
+      lastPlayed.set(name, now);
       const token = generation;
       const render = () => {
         if (!canPlay() || token !== generation || c !== context || c.state !== 'running') return;
