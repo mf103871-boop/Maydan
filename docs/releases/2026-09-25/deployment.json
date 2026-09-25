@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-25",
+  "status": "published_and_public_smoke_passed",
+  "scope": "Existing Cloudflare web application; no native iOS release claimed",
+  "userInstruction": "ادمجها وثبت اللعبه في المستودع وارسلي رابط التجربه",
+  "pullRequest": "https://github.com/mf103871-boop/Maydan/pull/9",
+  "sourceCommit": "51c37ec03c7c5043aea725a61239ee575a68549f",
+  "workerVersion": "316f0fcf-6371-432c-afc5-e87b5641e6a7",
+  "url": "https://maydan-game.mf103871.workers.dev/#/play/badeeha",
+  "evidence": "docs/releases/2026-09-25/README.md"
+}

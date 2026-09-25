@@ -1,0 +1,208 @@
+{
+  "checkedAt": "2026-09-25T07:09:22.060Z",
+  "completedAt": "2026-09-25T07:09:26.318Z",
+  "baseUrl": "https://maydan-game.mf103871.workers.dev",
+  "mainCommit": "51c37ec03c7c5043aea725a61239ee575a68549f",
+  "reportedDeployment": {
+    "workerVersion": "316f0fcf-6371-432c-afc5-e87b5641e6a7",
+    "mainCommit": "51c37ec",
+    "source": "deployment identifiers supplied by parent; HTTP content independently checked here"
+  },
+  "scope": "Ordinary unauthenticated HTTPS GET requests only; no login, mock account, payment, account changes, or deployment. This evidence verifies shipped bytes and content presence, not premium access.",
+  "checks": [
+    {
+      "test": "index.html",
+      "url": "https://maydan-game.mf103871.workers.dev/",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 3036875,
+      "localBytes": 3036875,
+      "remoteSha256": "9c947c11456b597065d7fa58042eeaf0721ef384865fde0c981eda1c112fab04",
+      "localSha256": "9c947c11456b597065d7fa58042eeaf0721ef384865fde0c981eda1c112fab04",
+      "ok": true
+    },
+    {
+      "test": "sw.js",
+      "url": "https://maydan-game.mf103871.workers.dev/sw.js",
+      "status": 200,
+      "contentType": "text/javascript",
+      "bytes": 12976,
+      "localBytes": 12976,
+      "remoteSha256": "3d857563b415e96217e4f1c67dfffc511c6ff74daa9837968c8b39405545c786",
+      "localSha256": "3d857563b415e96217e4f1c67dfffc511c6ff74daa9837968c8b39405545c786",
+      "ok": true
+    },
+    {
+      "test": "all active qids occur in published HTML",
+      "categories": 78,
+      "qidCount": 3120,
+      "uniqueQids": 3120,
+      "expected": 3120,
+      "absentCount": 0,
+      "absent": [],
+      "ok": true
+    },
+    {
+      "test": "service-worker cache tied to deployed HTML hash",
+      "expectedCache": "maydan-platform-1.4.1-9c947c11",
+      "actualCache": "maydan-platform-1.4.1-9c947c11",
+      "ok": true
+    }
+  ],
+  "assets": [
+    {
+      "pack": "flags",
+      "qid": "flags-1000-908",
+      "path": "media/flags/flags-1000-908.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/flags/flags-1000-908.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 32628,
+      "localSha256": "c712f4517ceacca3e96129ec252cdc4ecde19d11117a4d2bca7180262bf90eee",
+      "remoteSha256": "c712f4517ceacca3e96129ec252cdc4ecde19d11117a4d2bca7180262bf90eee",
+      "ok": true
+    },
+    {
+      "pack": "silhouette",
+      "qid": "silhouette-1000-908",
+      "path": "media/silhouette/silhouette-1000-908.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/silhouette/silhouette-1000-908.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 123684,
+      "localSha256": "2af4e9bf27bbc070e8d968587a0554a4dcce95fdd27d34b6dc1faf9a2537c3ff",
+      "remoteSha256": "2af4e9bf27bbc070e8d968587a0554a4dcce95fdd27d34b6dc1faf9a2537c3ff",
+      "ok": true
+    },
+    {
+      "pack": "blur",
+      "qid": "blur-1000-908",
+      "path": "media/blur/blur-1000-908.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/blur/blur-1000-908.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 204976,
+      "localSha256": "408ca8cabad5173c57ce6190d100a94350c6680d24d666af47f35ad570919be1",
+      "remoteSha256": "408ca8cabad5173c57ce6190d100a94350c6680d24d666af47f35ad570919be1",
+      "ok": true
+    },
+    {
+      "pack": "guesscar",
+      "qid": "guesscar-1000-908",
+      "path": "media/guesscar/guesscar-1000-908.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/guesscar/guesscar-1000-908.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 107196,
+      "localSha256": "d1ff9344411cbd2736bac63a18a1bca3b136f5fa1c017731e64ae0c661153821",
+      "remoteSha256": "d1ff9344411cbd2736bac63a18a1bca3b136f5fa1c017731e64ae0c661153821",
+      "ok": true
+    },
+    {
+      "pack": "tilepuzzle",
+      "qid": "tilepuzzle-1000-908",
+      "path": "media/tilepuzzle/tilepuzzle-1000-908.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/tilepuzzle/tilepuzzle-1000-908.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 205274,
+      "localSha256": "505817d10a5e9c3f3827fa56e1cffe55a61c41bc4d78b6f7b04a657ebe996192",
+      "remoteSha256": "505817d10a5e9c3f3827fa56e1cffe55a61c41bc4d78b6f7b04a657ebe996192",
+      "ok": true
+    },
+    {
+      "pack": "reveal",
+      "qid": "reveal-1000-908",
+      "path": "media/reveal/reveal-1000-908.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/reveal/reveal-1000-908.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 201486,
+      "localSha256": "792c4dd11fde70de8edee02187fbd1b4e1d9cc436fef07bf70c02c9c950df075",
+      "remoteSha256": "792c4dd11fde70de8edee02187fbd1b4e1d9cc436fef07bf70c02c9c950df075",
+      "ok": true
+    },
+    {
+      "pack": "placefinder",
+      "qid": "placefinder-1000-908",
+      "path": "media/placefinder/placefinder-1000-908.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/placefinder/placefinder-1000-908.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 253508,
+      "localSha256": "c959bda2bebe103aee86558bc884d79e539af2abe98c61a634c0a5486ac6819d",
+      "remoteSha256": "c959bda2bebe103aee86558bc884d79e539af2abe98c61a634c0a5486ac6819d",
+      "ok": true
+    },
+    {
+      "pack": "spotdiff",
+      "qid": "spotdiff-1000-908",
+      "path": "media/spotdiff/spotdiff-1000-908-a.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/spotdiff/spotdiff-1000-908-a.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 72450,
+      "localSha256": "2d4e515cccd0a67e75e57d97ed1726af26f93d2a6018de3617b29bcc244c8dd1",
+      "remoteSha256": "2d4e515cccd0a67e75e57d97ed1726af26f93d2a6018de3617b29bcc244c8dd1",
+      "ok": true
+    },
+    {
+      "pack": "spotdiff",
+      "qid": "spotdiff-1000-908",
+      "path": "media/spotdiff/spotdiff-1000-908-b.webp",
+      "url": "https://maydan-game.mf103871.workers.dev/media/spotdiff/spotdiff-1000-908-b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 60246,
+      "localSha256": "4b6bc6cd9b73363ad916ecc1334d176fc64548d27ad1b3e25125693b292c2b59",
+      "remoteSha256": "4b6bc6cd9b73363ad916ecc1334d176fc64548d27ad1b3e25125693b292c2b59",
+      "ok": true
+    },
+    {
+      "pack": "sound",
+      "qid": "sound-400-902",
+      "path": "media/sound/sound-400-902-r2.mp3",
+      "url": "https://maydan-game.mf103871.workers.dev/media/sound/sound-400-902-r2.mp3",
+      "status": 200,
+      "contentType": "audio/mpeg",
+      "bytes": 121252,
+      "localSha256": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+      "remoteSha256": "007214a611fd72d6de1dfa22c5561ec27d5ec91bd44f7c14d53c423e4e7baef2",
+      "ok": true
+    },
+    {
+      "pack": "sound",
+      "qid": "sound-800-908",
+      "path": "media/sound/sound-800-908-r2.mp3",
+      "url": "https://maydan-game.mf103871.workers.dev/media/sound/sound-800-908-r2.mp3",
+      "status": 200,
+      "contentType": "audio/mpeg",
+      "bytes": 43093,
+      "localSha256": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5",
+      "remoteSha256": "51a7cd20b447b01b1bbd09160d4f4a169eb1a883b4f2ef5cb15c928d913adfc5",
+      "ok": true
+    },
+    {
+      "pack": "sound",
+      "qid": "sound-400-905",
+      "path": "media/sound/sound-400-905-r3.mp3",
+      "url": "https://maydan-game.mf103871.workers.dev/media/sound/sound-400-905-r3.mp3",
+      "status": 200,
+      "contentType": "audio/mpeg",
+      "bytes": 48945,
+      "localSha256": "dd16293f4364987340dad4d1f8836b4b844f9169bab6b5111cb7c15f6c2dc17f",
+      "remoteSha256": "dd16293f4364987340dad4d1f8836b4b844f9169bab6b5111cb7c15f6c2dc17f",
+      "ok": true
+    }
+  ],
+  "summary": {
+    "checksPassed": 4,
+    "checksTotal": 4,
+    "assetsPassed": 12,
+    "assetsTotal": 12,
+    "imagePacks": 8,
+    "imageSamples": 9,
+    "audioSamples": 3,
+    "ok": true
+  }
+}

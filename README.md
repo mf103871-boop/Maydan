@@ -16,6 +16,8 @@ Cloudflare، يُضبط عنوان الغرف تلقائيًا إلى عنوان
 
 **اللعب الآن:** [ميدان](https://maydan-game.mf103871.workers.dev/#/) · [غرف فبركة](https://maydan-game.mf103871.workers.dev/#/online/fabraka)
 
+**تحديث 25 سبتمبر 2026 منشور:** بنك بديهة من 78 فئة و3,120 سؤالًا، مع الصور والأصوات المعتمدة. [تجربة بديهة](https://maydan-game.mf103871.workers.dev/#/play/badeeha) · [سجل الدمج والنشر والتحقق](docs/releases/2026-09-25/README.md).
+
 ## الألعاب
 
 | اللعبة | الفكرة | اللاعبون | المدة |
@@ -53,7 +55,7 @@ npm run dev      # يبني dist/ عند كل تغيير ويخدمه على htt
 npm test         # اختبارات المنصة والألعاب والمحتوى
 npm run build    # dist/index.html مع media والأصول اللازمة؛ انشر dist كاملًا
 
-npm run bank:report                    # حالة الفئات التسع والسبعين × الشرائح
+npm run bank:report                    # حالة الفئات الثماني والسبعين × الشرائح
 npm run bank:validate -- <id>          # فحص فئة (أو البنك كله بلا معامل)
 npm run bank:placeholders              # قائمة الأسئلة الحشو المُولَّدة آليًا
 npm run bank:status -- <id>            # حالة فئة وأعدادها (وبـ done|pending يحدّثها)

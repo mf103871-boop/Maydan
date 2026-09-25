@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "content_review_complete",
+  "status": "web_published",
   "scope": "all_existing_packs",
   "audience": "Arabic-speaking families and adults aged 16+",
   "tiers": {
@@ -578,9 +578,11 @@
   ],
   "checkpoint": "checkpoint/checkpoint-2026-09-25.json",
   "updatedAt": "2026-09-25",
-  "releasable": false,
+  "releasable": true,
   "latestHandoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md",
   "activeQuestions": 3120,
   "verifiedQuestions": 3120,
-  "bankContentReady": true
+  "bankContentReady": true,
+  "releaseScope": "Existing Cloudflare web application; no native iOS release claimed",
+  "webDeployment": "docs/releases/2026-09-25/deployment.json"
 }

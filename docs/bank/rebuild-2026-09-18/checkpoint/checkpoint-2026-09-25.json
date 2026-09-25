@@ -1,10 +1,10 @@
 {
   "date": "2026-09-25",
-  "status": "content_review_complete",
-  "userInstruction": "اكمل",
+  "status": "web_published",
+  "userInstruction": "ادمجها وثبت اللعبه في المستودع وارسلي رابط التجربه",
   "repository": "mf103871-boop/Maydan",
-  "branch": "codex/badeeha-curated-bank-2026-09-18",
-  "releasable": false,
+  "branch": "main",
+  "releasable": true,
   "recoveryBaseCommit": "2a85059a3de04dad49126835bfa09b7cd9542602",
   "priorCheckpoint": "checkpoint-2026-09-23.json",
   "handoff": "CONTINUE_FROM_ANOTHER_ACCOUNT.md",
@@ -118,13 +118,27 @@
   "validation": "docs/bank/rebuild-2026-09-18/validation-2026-09-25.json",
   "remaining": [],
   "nextPack": null,
-  "releaseBlockers": [
-    "No merge, deployment, full offline/device release review or production account/payment validation claimed."
-  ],
+  "releaseBlockers": [],
   "preserved": [
     "Existing78 category names/order",
     "All old media files until final replacements are validated",
     "Payment/account/service-worker/fabraka code unchanged",
     "Original September23 checkpoint remains historical evidence"
-  ]
+  ],
+  "sourceBranch": "codex/badeeha-curated-bank-2026-09-18",
+  "releaseScope": "Existing Cloudflare web application; no native iOS release claimed",
+  "verificationLimits": [
+    "No full offline/device release review or production account/payment validation claimed."
+  ],
+  "webDeployment": {
+    "date": "2026-09-25",
+    "status": "published_and_public_smoke_passed",
+    "scope": "Existing Cloudflare web application; no native iOS release claimed",
+    "userInstruction": "ادمجها وثبت اللعبه في المستودع وارسلي رابط التجربه",
+    "pullRequest": "https://github.com/mf103871-boop/Maydan/pull/9",
+    "sourceCommit": "51c37ec03c7c5043aea725a61239ee575a68549f",
+    "workerVersion": "316f0fcf-6371-432c-afc5-e87b5641e6a7",
+    "url": "https://maydan-game.mf103871.workers.dev/#/play/badeeha",
+    "evidence": "docs/releases/2026-09-25/README.md"
+  }
 }
