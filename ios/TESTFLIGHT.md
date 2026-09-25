@@ -1,6 +1,6 @@
 # بناء iOS موقّع ورفعه اختياريًا إلى TestFlight
 
-قالب سير GitHub Actions **iOS signed build and optional TestFlight upload** محفوظ في `docs/ci/ios-testflight.yml.template`. رفض GitHub إضافته إلى مجلد workflows لأن اعتماد Git الحالي لا يملك صلاحية `workflow`؛ لذلك لم يُفعّل السير. بعد توفير صلاحية مناسبة، انسخ القالب إلى `.github/workflows/ios-testflight.yml`. يعمل يدويًا فقط. يُنتج IPA موقّعًا لسجل التطبيق الحالي `6808385717`، بالمعرّف `Maydan` والفريق `96WJBK2MB2`. الرفع مغلق افتراضيًا؛ لا يرسل إصدارًا إلى مراجعة App Store ولا ينشره للعامة. لم يُشغّل هذا السير أو التوقيع على macOS عند إضافته.
+سير GitHub Actions **iOS signed build and optional TestFlight upload** مثبّت في `.github/workflows/ios-testflight.yml` على الفرع الرئيسي منذ 25 سبتمبر 2026، ونسخته المرجعية محفوظة في `docs/ci/ios-testflight.yml.template`. يعمل يدويًا فقط. يُنتج IPA موقّعًا لسجل التطبيق الحالي `6808385717`، بالمعرّف `Maydan` والفريق `96WJBK2MB2`. الرفع مغلق افتراضيًا؛ لا يرسل إصدارًا إلى مراجعة App Store ولا ينشره للعامة. تثبيت السير لا يعني تجهيز أسرار التوقيع أو نجاح بناء موقّع؛ يلزم إكمال الخطوات التالية.
 
 ## الإعداد مرة واحدة
 
