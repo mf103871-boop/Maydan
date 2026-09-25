@@ -5,131 +5,22 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما اسم الألياف التي تُجز من الخراف وتُغزل لصنع الملابس الدافئة؟",
-      "a": "الصوف",
-      "qid": "shopping-200-901",
-      "topic": "ألياف وأنسجة",
-      "verified": true,
-      "alt": [
-        "صوف"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/wool",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ما النسيج الطبيعي الناعم الذي تُنتج خيوطه دودة القز؟",
-      "a": "الحرير",
-      "qid": "shopping-200-902",
-      "topic": "ألياف وأنسجة",
-      "verified": true,
-      "alt": [
-        "حرير"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/silk",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ما اسم البنطال غير الرسمي المصنوع من الدنيم، وغالبًا يكون أزرق؟",
-      "a": "الجينز",
-      "qid": "shopping-200-903",
-      "topic": "ملابس وقصات",
-      "verified": true,
-      "alt": [
-        "جينز",
-        "بنطال الجينز"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/jeans",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الحذاء الصيفي المفتوح الذي تثبته أشرطة على القدم؟",
-      "a": "الصندل",
-      "qid": "shopping-200-904",
-      "topic": "حقائب وأحذية",
-      "verified": true,
-      "alt": [
-        "صندل",
-        "صندال"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/sandal",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ما مستحضر التجميل الذي يُوضع على الرموش لتبدو أطول وأكثر كثافة؟",
-      "a": "الماسكارا",
-      "qid": "shopping-200-905",
-      "topic": "تجميل وأدواته",
-      "verified": true,
-      "alt": [
-        "ماسكارا",
-        "Mascara"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/mascara",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الحلية الدائرية التي تُلبس في إصبع اليد؟",
-      "a": "الخاتم",
-      "qid": "shopping-200-906",
-      "topic": "حلي وأحجار",
-      "verified": true,
-      "alt": [
-        "خاتم"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/ring",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ما الأداة المعدنية المدببة التي يمر الخيط في ثقبها لخياطة الملابس؟",
-      "a": "إبرة الخياطة",
-      "qid": "shopping-200-907",
-      "topic": "خياطة وزخرفة",
-      "verified": true,
-      "alt": [
-        "الإبرة",
-        "إبرة"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/needle",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ماذا تُسمى المرأة التي ترتدي الملابس الجديدة لعرضها أمام الجمهور أو للتصوير؟",
-      "a": "عارضة أزياء",
-      "qid": "shopping-200-908",
-      "topic": "تصميم وعرض الأزياء",
-      "verified": true,
-      "alt": [
-        "العارضة",
-        "موديل"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/model",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 400,
       "q": "ما القماش المعروف أيضًا بالقطيفة، وله سطح وبري كثيف وناعم؟",
       "a": "المخمل",
-      "qid": "shopping-400-901",
+      "qid": "shopping-200-911",
       "topic": "ألياف وأنسجة",
       "verified": true,
       "alt": [
         "مخمل"
       ],
       "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/velvet",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم القماش الناعم الذي يلمع وجهه بينما يكون ظهره مطفأ؟",
       "a": "الساتان",
-      "qid": "shopping-400-902",
+      "qid": "shopping-200-912",
       "topic": "ألياف وأنسجة",
       "verified": true,
       "alt": [
@@ -137,13 +28,13 @@
         "ستان"
       ],
       "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/satin",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم الرداء الياباني التقليدي الطويل ذي الأكمام الواسعة؟",
       "a": "الكيمونو",
-      "qid": "shopping-400-903",
+      "qid": "shopping-200-913",
       "topic": "ملابس وقصات",
       "verified": true,
       "alt": [
@@ -151,13 +42,13 @@
         "Kimono"
       ],
       "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/kimono",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الاسم الشائع لحقيبة السهرة الصغيرة المسطحة التي تُحمل باليد دون مقبض؟",
       "a": "الكلاتش",
-      "qid": "shopping-400-904",
+      "qid": "shopping-200-914",
       "topic": "حقائب وأحذية",
       "verified": true,
       "alt": [
@@ -166,13 +57,13 @@
         "Clutch"
       ],
       "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/clutch-bag",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما المستحضر الذي يوفر تغطية مركزة للهالات والبقع الصغيرة بدل توزيعه على الوجه كله؟",
       "a": "الكونسيلر",
-      "qid": "shopping-400-905",
+      "qid": "shopping-200-915",
       "topic": "تجميل وأدواته",
       "verified": true,
       "alt": [
@@ -181,129 +72,13 @@
         "Concealer"
       ],
       "sourceUrl": "https://www.maybelline.com/makeup-tips/face/foundation-vs-concealer",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "q": "ما الجوهرة التي تتكون طبيعيًا داخل بعض الرخويات وتُستخدم حباتها في العقود؟",
-      "a": "اللؤلؤ",
-      "qid": "shopping-400-906",
-      "topic": "حلي وأحجار",
-      "verified": true,
-      "alt": [
-        "لؤلؤ"
-      ],
-      "sourceUrl": "https://www.gia.edu/pearl-description",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "ما اسم فن تزيين الملابس برسوم تُحاك بالخيوط مباشرة على القماش؟",
-      "a": "التطريز",
-      "qid": "shopping-400-907",
-      "topic": "خياطة وزخرفة",
-      "verified": true,
-      "alt": [
-        "تطريز"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/embroidery",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الممر الطويل الضيق الذي يسير عليه المشاركون في عروض الملابس؟",
-      "a": "منصة عرض الأزياء",
-      "qid": "shopping-400-908",
-      "topic": "تصميم وعرض الأزياء",
-      "verified": true,
-      "alt": [
-        "الكات ووك",
-        "كات ووك",
-        "Catwalk",
-        "Runway"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/de/worterbuch/englisch/catwalk",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 600,
-      "q": "ما القماش الرقيق الشفاف المتماسك نسبيًا، المصنوع من خيوط طبيعية أو صناعية والمستخدم في فساتين السهرة؟",
-      "a": "الأورغانزا",
-      "qid": "shopping-600-901",
-      "topic": "ألياف وأنسجة",
-      "verified": true,
-      "alt": [
-        "الأورجانزا",
-        "أورغانزا",
-        "Organza"
-      ],
-      "sourceUrl": "https://www.ahdictionary.com/word/search.html?q=organza",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "q": "ما الليف الفاخر الذي يُجمع من الطبقة السفلية الناعمة لشعر بعض سلالات الماعز؟",
-      "a": "الكشمير",
-      "qid": "shopping-600-902",
-      "topic": "ألياف وأنسجة",
-      "verified": true,
-      "alt": [
-        "كشمير",
-        "الكاشمير",
-        "Cashmere"
-      ],
-      "sourceUrl": "https://www.agmrc.org/commodities-products/livestock-dairy-poultry/goats/goats-for-fiber",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "q": "ما اسم السترة المحبوكة التي تُفتح من الأمام وتُغلق عادة بالأزرار؟",
-      "a": "الكارديغان",
-      "qid": "shopping-600-903",
-      "topic": "ملابس وقصات",
-      "verified": true,
-      "alt": [
-        "كارديغان",
-        "كارديجان",
-        "Cardigan"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/cardigan?q=cardigans",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الكعب النسائي العالي والرفيع جدًا الذي يشبه الإبرة؟",
-      "a": "الستيلتو",
-      "qid": "shopping-600-904",
-      "topic": "حقائب وأحذية",
-      "verified": true,
-      "alt": [
-        "ستيلتو",
-        "ستيليتو",
-        "Stiletto"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/stiletto",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
-      "q": "ما اسم المستحضر التمهيدي الذي يسبق كريم الأساس ويساعد المكياج على الثبات؟",
-      "a": "البرايمر",
-      "qid": "shopping-600-905",
-      "topic": "تجميل وأدواته",
-      "verified": true,
-      "alt": [
-        "برايمر",
-        "Primer"
-      ],
-      "sourceUrl": "https://www.maybelline.com/makeup-tips/face/what-is-makeup-primer",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما وحدة وزن الأحجار الكريمة التي تساوي 200 مليغرام؟",
       "a": "القيراط",
-      "qid": "shopping-600-906",
+      "qid": "shopping-200-916",
       "topic": "حلي وأحجار",
       "verified": true,
       "alt": [
@@ -311,13 +86,13 @@
         "Carat"
       ],
       "sourceUrl": "https://4cs.gia.edu/en-us/diamond-carat-weight/",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما اسم الزخرفة التي تُثبت فيها قصاصات قماش فوق قماش آخر لتكوين رسم؟",
       "a": "الأبليك",
-      "qid": "shopping-600-907",
+      "qid": "shopping-200-917",
       "topic": "خياطة وزخرفة",
       "verified": true,
       "alt": [
@@ -327,13 +102,13 @@
         "Appliqué"
       ],
       "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/applique",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما المصطلح الفرنسي للأزياء الراقية التي تُصنع يدويًا وتُفصل لزبون بعينه؟",
       "a": "هوت كوتور",
-      "qid": "shopping-600-908",
+      "qid": "shopping-200-918",
       "topic": "تصميم وعرض الأزياء",
       "verified": true,
       "alt": [
@@ -341,85 +116,100 @@
         "Haute couture"
       ],
       "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/haute-couture?topic=clothing-general-words",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 800,
-      "q": "ما اسم الليف الذي تنتجه ماعز الأنجورا؟",
-      "a": "الموهير",
-      "qid": "shopping-800-901",
+      "p": 400,
+      "q": "ما القماش الرقيق الشفاف المتماسك نسبيًا، المصنوع من خيوط طبيعية أو صناعية والمستخدم في فساتين السهرة؟",
+      "a": "الأورغانزا",
+      "qid": "shopping-400-911",
       "topic": "ألياف وأنسجة",
       "verified": true,
       "alt": [
-        "موهير",
-        "Mohair"
+        "الأورجانزا",
+        "أورغانزا",
+        "Organza"
+      ],
+      "sourceUrl": "https://www.ahdictionary.com/word/search.html?q=organza",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "ما الليف الفاخر الذي يُجمع من الطبقة السفلية الناعمة لشعر بعض سلالات الماعز؟",
+      "a": "الكشمير",
+      "qid": "shopping-400-912",
+      "topic": "ألياف وأنسجة",
+      "verified": true,
+      "alt": [
+        "كشمير",
+        "الكاشمير",
+        "Cashmere"
       ],
       "sourceUrl": "https://www.agmrc.org/commodities-products/livestock-dairy-poultry/goats/goats-for-fiber",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "q": "ما الألياف السليلوزية التي تنتجها لينزنغ من لب الخشب، تحت علامة تنسل، بعملية تستعيد المذيب في دورة مغلقة؟",
-      "a": "الليوسيل",
-      "qid": "shopping-800-902",
-      "topic": "ألياف وأنسجة",
-      "verified": true,
-      "alt": [
-        "ليوسيل",
-        "ليوسل",
-        "Lyocell"
-      ],
-      "sourceUrl": "https://www.lenzing.com/products/textile-fibers/tenceltm-lyocell/",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الكشكش القصير المتسع الذي يُضاف حول خصر البلوزة أو الفستان؟",
-      "a": "البيبلوم",
-      "qid": "shopping-800-903",
+      "p": 400,
+      "q": "ما اسم السترة المحبوكة التي تُفتح من الأمام وتُغلق عادة بالأزرار؟",
+      "a": "الكارديغان",
+      "qid": "shopping-400-913",
       "topic": "ملابس وقصات",
       "verified": true,
       "alt": [
-        "بيبلوم",
-        "بيبلم",
-        "Peplum"
+        "كارديغان",
+        "كارديجان",
+        "Cardigan"
       ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/peplum?topic=parts-of-clothes",
-      "difficultyTarget": 0.25
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/cardigan?q=cardigans",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "q": "ما اسم الحذاء القماشي الذي يُصنع نعله التقليدي من الحبال؟",
-      "a": "الإسبادريل",
-      "qid": "shopping-800-904",
+      "p": 400,
+      "q": "ما اسم الكعب النسائي العالي والرفيع جدًا الذي يشبه الإبرة؟",
+      "a": "الستيلتو",
+      "qid": "shopping-400-914",
       "topic": "حقائب وأحذية",
       "verified": true,
       "alt": [
-        "إسبادريل",
-        "إسبادريّ",
-        "Espadrille"
+        "ستيلتو",
+        "ستيليتو",
+        "Stiletto"
       ],
-      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/espadrille",
-      "difficultyTarget": 0.25
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/stiletto",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "ما اسم المستحضر التمهيدي الذي يسبق كريم الأساس ويساعد المكياج على الثبات؟",
+      "a": "البرايمر",
+      "qid": "shopping-400-915",
+      "topic": "تجميل وأدواته",
+      "verified": true,
+      "alt": [
+        "برايمر",
+        "Primer"
+      ],
+      "sourceUrl": "https://www.maybelline.com/makeup-tips/face/what-is-makeup-primer",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
       "q": "أي لون يُستخدم في مصحح ألوان المكياج لمعادلة احمرار البشرة؟",
       "a": "الأخضر",
-      "qid": "shopping-800-905",
+      "qid": "shopping-400-916",
       "topic": "تجميل وأدواته",
       "verified": true,
       "alt": [
         "أخضر"
       ],
       "sourceUrl": "https://www.maybelline.com/makeup-tips/face/what-is-makeup-primer",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما اسم صقل الحجر الكريم بقمة ملساء محدبة وقاعدة مسطحة؟",
       "a": "الكابوشون",
-      "qid": "shopping-800-906",
+      "qid": "shopping-400-917",
       "topic": "حلي وأحجار",
       "verified": true,
       "alt": [
@@ -427,28 +217,13 @@
         "Cabochon"
       ],
       "sourceUrl": "https://www.gia.edu/gia-news-research-value-factors-gem-cutting-styles-definitions",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "q": "ما اسم تقنية جمع القماش في طيات صغيرة وتثبيتها بغرز زخرفية؟",
-      "a": "السموكينغ",
-      "qid": "shopping-800-907",
-      "topic": "خياطة وزخرفة",
-      "verified": true,
-      "alt": [
-        "سموكينغ",
-        "سموكنج",
-        "Smocking"
-      ],
-      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/smocking",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 400,
       "q": "ما المصطلح الفرنسي للملابس الجاهزة التي تُنتج بمقاسات قياسية؟",
       "a": "بريه آ بورتيه",
-      "qid": "shopping-800-908",
+      "qid": "shopping-400-918",
       "topic": "تصميم وعرض الأزياء",
       "verified": true,
       "alt": [
@@ -458,13 +233,132 @@
         "Pret-a-porter"
       ],
       "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/pret-a-porter",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 1000,
+      "p": 600,
+      "q": "ما اسم الليف الذي تنتجه ماعز الأنجورا؟",
+      "a": "الموهير",
+      "qid": "shopping-600-911",
+      "topic": "ألياف وأنسجة",
+      "verified": true,
+      "alt": [
+        "موهير",
+        "Mohair"
+      ],
+      "sourceUrl": "https://www.agmrc.org/commodities-products/livestock-dairy-poultry/goats/goats-for-fiber",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما الألياف السليلوزية التي تنتجها لينزنغ من لب الخشب، تحت علامة تنسل، بعملية تستعيد المذيب في دورة مغلقة؟",
+      "a": "الليوسيل",
+      "qid": "shopping-600-912",
+      "topic": "ألياف وأنسجة",
+      "verified": true,
+      "alt": [
+        "ليوسيل",
+        "ليوسل",
+        "Lyocell"
+      ],
+      "sourceUrl": "https://www.lenzing.com/products/textile-fibers/tenceltm-lyocell/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الكشكش القصير المتسع الذي يُضاف حول خصر البلوزة أو الفستان؟",
+      "a": "البيبلوم",
+      "qid": "shopping-600-913",
+      "topic": "ملابس وقصات",
+      "verified": true,
+      "alt": [
+        "بيبلوم",
+        "بيبلم",
+        "Peplum"
+      ],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/peplum?topic=parts-of-clothes",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الحذاء القماشي الذي يُصنع نعله التقليدي من الحبال؟",
+      "a": "الإسبادريل",
+      "qid": "shopping-600-914",
+      "topic": "حقائب وأحذية",
+      "verified": true,
+      "alt": [
+        "إسبادريل",
+        "إسبادريّ",
+        "Espadrille"
+      ],
+      "sourceUrl": "https://dictionary.cambridge.org/us/dictionary/english/espadrille",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما اسم تقنية جمع القماش في طيات صغيرة وتثبيتها بغرز زخرفية؟",
+      "a": "السموكينغ",
+      "qid": "shopping-600-915",
+      "topic": "خياطة وزخرفة",
+      "verified": true,
+      "alt": [
+        "سموكينغ",
+        "سموكنج",
+        "Smocking"
+      ],
+      "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/smocking",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما تقنية المكياج المسماة نسبة إلى أضواء الوميض، وتُبرز ملامح الوجه بالهايلايتر وحده؟",
+      "a": "الستروبينغ",
+      "qid": "shopping-600-916",
+      "topic": "تجميل وأدواته",
+      "verified": true,
+      "alt": [
+        "ستروبينغ",
+        "ستروبنغ",
+        "Strobing"
+      ],
+      "sourceUrl": "https://www.lorealparisusa.com/beauty-magazine/makeup/face-makeup/strobing-tips-for-every-skin-tone",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما اسم تقنية صياغة الحلي بلحام أسلاك معدنية دقيقة في زخارف تشبه الدانتيل؟",
+      "a": "الفليغري",
+      "qid": "shopping-600-917",
+      "topic": "حلي وأحجار",
+      "verified": true,
+      "alt": [
+        "فليغري",
+        "فيليغري",
+        "Filigree"
+      ],
+      "sourceUrl": "https://www.gia.edu/gia-news-research/metalwork-takes-bow-techniques-enhance-gemstone-jewelry",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما تقنية القص التي اشتهرت بها مادلين فيونيه وتقطع النسيج قطريًا ليصبح انسيابيًا على الجسم؟",
+      "a": "القص المائل",
+      "qid": "shopping-600-918",
+      "topic": "خياطة وزخرفة",
+      "verified": true,
+      "alt": [
+        "قص الباياس",
+        "الباياس",
+        "Bias cut"
+      ],
+      "sourceUrl": "https://www.vam.ac.uk/articles/madeleine-vionnet-an-introduction",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 800,
       "q": "ما المعالجة التي تُعرّض القطن للصودا الكاوية تحت الشد لزيادة لمعانه وقابليته للصباغة؟",
       "a": "المرسرة",
-      "qid": "shopping-1000-901",
+      "qid": "shopping-800-911",
       "topic": "ألياف وأنسجة",
       "verified": true,
       "alt": [
@@ -473,13 +367,13 @@
         "Mercerization"
       ],
       "sourceUrl": "https://cottonworks.com/encyclopedia-item/mercerization/",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم القماش الخفيف الذي تتناوب في سطحه خطوط ناعمة وأخرى مجعدة بارزة؟",
       "a": "السيرساكر",
-      "qid": "shopping-1000-902",
+      "qid": "shopping-800-912",
       "topic": "ألياف وأنسجة",
       "verified": true,
       "alt": [
@@ -488,13 +382,13 @@
         "Seersucker"
       ],
       "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/seersucker",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم الأكمام المنتفخة عند الكتف والضيقة عند المعصم، المسماة بالفرنسية نسبة إلى فخذ الخروف؟",
       "a": "أكمام الجيغو",
-      "qid": "shopping-1000-903",
+      "qid": "shopping-800-913",
       "topic": "ملابس وقصات",
       "verified": true,
       "alt": [
@@ -504,13 +398,13 @@
         "Gigot sleeves"
       ],
       "sourceUrl": "https://fashionhistory.fitnyc.edu/leg-of-mutton-sleeves/",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم الأحذية ذات المنصات الشديدة الارتفاع التي اشتهرت بها نساء البندقية في عصر النهضة؟",
       "a": "الشوبين",
-      "qid": "shopping-1000-904",
+      "qid": "shopping-800-914",
       "topic": "حقائب وأحذية",
       "verified": true,
       "alt": [
@@ -520,58 +414,13 @@
         "Chopine"
       ],
       "sourceUrl": "https://fashionhistory.fitnyc.edu/chopines/",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "ما تقنية المكياج المسماة نسبة إلى أضواء الوميض، وتُبرز ملامح الوجه بالهايلايتر وحده؟",
-      "a": "الستروبينغ",
-      "qid": "shopping-1000-905",
-      "topic": "تجميل وأدواته",
-      "verified": true,
-      "alt": [
-        "ستروبينغ",
-        "ستروبنغ",
-        "Strobing"
-      ],
-      "sourceUrl": "https://www.lorealparisusa.com/beauty-magazine/makeup/face-makeup/strobing-tips-for-every-skin-tone",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم تقنية صياغة الحلي بلحام أسلاك معدنية دقيقة في زخارف تشبه الدانتيل؟",
-      "a": "الفليغري",
-      "qid": "shopping-1000-906",
-      "topic": "حلي وأحجار",
-      "verified": true,
-      "alt": [
-        "فليغري",
-        "فيليغري",
-        "Filigree"
-      ],
-      "sourceUrl": "https://www.gia.edu/gia-news-research/metalwork-takes-bow-techniques-enhance-gemstone-jewelry",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
-      "q": "ما تقنية القص التي اشتهرت بها مادلين فيونيه وتقطع النسيج قطريًا ليصبح انسيابيًا على الجسم؟",
-      "a": "القص المائل",
-      "qid": "shopping-1000-907",
-      "topic": "خياطة وزخرفة",
-      "verified": true,
-      "alt": [
-        "قص الباياس",
-        "الباياس",
-        "Bias cut"
-      ],
-      "sourceUrl": "https://www.vam.ac.uk/articles/madeleine-vionnet-an-introduction",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 800,
       "q": "من المصممة التي اشتهرت بكنزة محبوكة تُظهر عقدة فيونكة بوهم بصري؟",
       "a": "إلسا شياباريللي",
-      "qid": "shopping-1000-908",
+      "qid": "shopping-800-915",
       "topic": "تصميم وعرض الأزياء",
       "verified": true,
       "alt": [
@@ -581,6 +430,172 @@
         "Elsa Schiaparelli"
       ],
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/157240",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما تقنية الصباغة اليابانية التي تربط القماش أو تطويه لحماية أجزاء منه من اللون؟",
+      "a": "شيبوري",
+      "topic": "خياطة وزخرفة",
+      "verified": true,
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/79595",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Shibori"
+      ],
+      "p": 800,
+      "qid": "shopping-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما تقنية المينا التي توضع فيها الألوان داخل تجاويف محفورة في المعدن؟",
+      "a": "شامبليفيه",
+      "topic": "حلي وأحجار",
+      "verified": true,
+      "sourceUrl": "https://www.metmuseum.org/fr/perspectives/metalworking-champleve-enameling",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Champlevé",
+        "شامبلفيه"
+      ],
+      "p": 800,
+      "qid": "shopping-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما العطر الذي ابتكرته دار لانفان عام 1927 هدية لابنة مؤسستها؟",
+      "a": "أربيج",
+      "topic": "تجميل وأدواته",
+      "verified": true,
+      "sourceUrl": "https://eu.lanvin.com/pages/jeanne-lanvin",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Arpège",
+        "أربيج"
+      ],
+      "p": 800,
+      "qid": "shopping-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "أي حيوان أندي ارتبط باتفاق لورو بيانا وبيرو عام 1994 للحصول على أليافه؟",
+      "a": "الفيكونيا",
+      "topic": "ألياف وأنسجة",
+      "verified": true,
+      "sourceUrl": "https://it.loropiana.com/en/our-world/vicuna",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "فيكونيا",
+        "Vicuña",
+        "الفيكونا"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما نسيج أناناس أنام البديل للجلد والمصنوع من ألياف أوراق الأناناس؟",
+      "a": "بيناتكس",
+      "topic": "ألياف وأنسجة",
+      "verified": true,
+      "sourceUrl": "https://www.ananas-anam.com/faqs/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Piñatex",
+        "بيناتيكس"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الاسم الفرنسي لقطعة القماش المثلثة المضافة بين درزات التنورة لتوسيع أسفلها؟",
+      "a": "غوديه",
+      "topic": "ملابس وقصات",
+      "verified": true,
+      "sourceUrl": "https://web.mit.edu/knoiva/www/Old/apparel/terms/construction/godet.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Godet",
+        "جوديه"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما طريقة صنع الأحذية التي تربط النعل والجزء العلوي بحافة جلدية وغرزتين منفصلتين؟",
+      "a": "غوديير ويلت",
+      "topic": "حقائب وأحذية",
+      "verified": true,
+      "sourceUrl": "https://www.crockettandjones.com/blogs/the-article/goodyear-welted-uncovered",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Goodyear welt",
+        "جوديير ويلت",
+        "خياطة غوديير"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم الصبغة الحمراء المستخدمة في مستحضرات التجميل والمستخرجة من حشرات القرمز؟",
+      "a": "الكارمين",
+      "topic": "تجميل وأدواته",
+      "verified": true,
+      "sourceUrl": "https://apnews.com/article/6e6b998a78deb12e2b99a42f23358f08",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "كارمين",
+        "Carmine"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الاسم العلمي لتأثير شريط الضوء المتحرك الشبيه بعين القط داخل بعض الأحجار الكريمة؟",
+      "a": "الشاتويانسي",
+      "topic": "حلي وأحجار",
+      "verified": true,
+      "sourceUrl": "https://www.gia.edu/articles/gems-gemology-summary-guide-to-phenomenal-gems",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Chatoyancy",
+        "Chatoyance",
+        "شاتويانسي"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما تقنية التضريب التي تضيف حشوًا موضعيًا لإبراز أشكال كالزهور فوق سطح القماش؟",
+      "a": "ترابونتو",
+      "topic": "خياطة وزخرفة",
+      "verified": true,
+      "sourceUrl": "https://boiseartmuseum.org/exhibition/common-threads-audio-guide/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Trapunto"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من مصممة الأزياء الفرنسية التي اشتهرت بفساتين «روب دو ستيل» في عشرينيات القرن العشرين؟",
+      "a": "جان لانفان",
+      "topic": "تصميم وعرض الأزياء",
+      "verified": true,
+      "sourceUrl": "https://www.parismuseescollections.paris.fr/fr/expositions/jeanne-lanvin",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Jeanne Lanvin",
+        "جين لانفان"
+      ],
+      "p": 1000,
+      "qid": "shopping-1000-918",
       "difficultyTarget": 0.15
     }
   ]

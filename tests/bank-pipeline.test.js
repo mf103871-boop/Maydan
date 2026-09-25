@@ -276,3 +276,31 @@ test('bank:status بمعرّف وحده يعرض الحالة بدل سطر ال
   assert.match(r.stdout, /الحالة:/);
   assert.match(r.stdout, /الخانات:/);
 });
+
+test('append and merge allocate within a category replacement range without reusing previous releases', async (t) => {
+  for (const command of ['append', 'merge']) {
+    for (const exhausted of [false, true]) {
+      const initial = { id: 'trial', name: 'اختبار', icon: '🧩', qs: [] };
+      const root = await fixture(t, command === 'append' ? initial : undefined);
+      await curatedPolicy(root);
+      const statusFile = path.join(root, 'src/data/bank-status.json');
+      const status = JSON.parse(await readFile(statusFile, 'utf8'));
+      status.categories.trial.qidRange = { start: 911, end: 918 };
+      await writeFile(statusFile, JSON.stringify(status));
+      await mkdir(path.join(root, 'docs/bank'), { recursive: true });
+      await writeFile(path.join(root, 'docs/bank/retired-qids.json'), JSON.stringify({
+        ranges: [{ category: 'trial', tier: 200, start: 901, end: exhausted ? 918 : 910 }], qids: [],
+      }));
+      const result = await run(root, command, [candidate()], [{ i: 0, verdict: 'keep' }]);
+      if (!exhausted) {
+        assert.equal(result.status, 0, result.stderr);
+        assert.equal((await readPack(root)).qs[0].qid, 'trial-200-911');
+      } else {
+        assert.notEqual(result.status, 0);
+        assert.match(result.stderr, /نفدت المعرّفات/);
+        if (command === 'append') assert.deepEqual(await readPack(root), initial);
+        else await assert.rejects(readPack(root), { code: 'ENOENT' });
+      }
+    }
+  }
+});

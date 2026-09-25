@@ -14,11 +14,12 @@ const batch = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const status = JSON.parse(readFileSync(path.join(ROOT, 'src/data/bank-status.json'), 'utf8'));
 const tierCount = status.tierCount ?? status.tierMin ?? 8;
 const topicCap = Math.max(1, Math.floor(tierCount * 0.25));
-const serialStart = status.qidRange?.start ?? 1;
-const serialEnd = status.qidRange?.end ?? 999;
 const retiredQids = await readRetiredQids(ROOT);
 for (const add of batch.packs) {
   if (!Object.hasOwn(status.categories, add.id)) throw new Error(`فئة غير معتمدة: ${add.id}`);
+  const qidRange = status.categories[add.id].qidRange ?? status.qidRange;
+  const serialStart = qidRange?.start ?? 1;
+  const serialEnd = qidRange?.end ?? 999;
   const file = path.join(CATS, `${add.id}.json`);
   const originalText = readFileSync(file, 'utf8');
   const pack = JSON.parse(originalText);

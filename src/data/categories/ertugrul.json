@@ -5,157 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "ertugrul-200-901",
+      "qid": "ertugrul-200-911",
       "p": 200,
-      "topic": "أسرة البطل",
-      "q": "في المسلسل، من والد أرطغرل وزعيم القبيلة في بداية الأحداث؟",
-      "a": "سليمان شاه",
-      "alt": [
-        "سليمان شاة",
-        "Süleyman Şah"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ertugrul-200-902",
-      "p": 200,
-      "topic": "رفاق السلاح",
-      "q": "أي رفيق لأرطغرل يشتهر باستخدام الفأس بدلًا من السيف؟",
-      "a": "تورغوت",
-      "alt": [
-        "تورغوت ألب",
-        "طرغوت",
-        "Turgut"
-      ],
-      "sourceUrl": "https://www.trt1.com.tr/diziler/dirilis-ertugrul/oyuncu/turgut-alp",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ertugrul-200-903",
-      "p": 200,
-      "topic": "القصر والسلطة",
-      "q": "من الأمير السلجوقي الذي يدبر المؤامرات للاستيلاء على الحكم ويعادي أرطغرل؟",
-      "a": "سعد الدين كوبيك",
-      "alt": [
-        "سعد الدين",
-        "سعد الدين كوبك",
-        "Saadettin Köpek"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ertugrul-200-904",
-      "p": 200,
-      "topic": "المغول",
-      "q": "من القائد المغولي الذي يأسر أرطغرل ويعذبه في الموسم الثاني؟",
-      "a": "نويان",
-      "alt": [
-        "بايجو نويان",
-        "نويان المغولي",
-        "Noyan"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ertugrul-200-905",
-      "p": 200,
-      "topic": "القبائل والحلفاء",
-      "q": "ما اسم القبيلة التي ينتمي إليها أرطغرل وأسرته؟",
-      "a": "قايي",
-      "alt": [
-        "الكايي",
-        "كايي",
-        "الكاي",
-        "Kayı"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ertugrul-200-906",
-      "p": 200,
-      "topic": "المدن والقلاع",
-      "q": "إلى أي مدينة يذهب أرطغرل ليطلب من أميرها أرضًا لقبيلته في الموسم الأول؟",
-      "a": "حلب",
-      "alt": [
-        "Aleppo"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ertugrul-200-907",
-      "p": 200,
-      "topic": "الولاء والخيانة",
-      "q": "من أخو والد أرطغرل بالتبني الذي يخطط للاستيلاء على زعامة القبيلة في الموسم الأول؟",
-      "a": "كورد أوغلو",
-      "alt": [
-        "كوردوغلو",
-        "كوردأوغلو",
-        "Kurdoğlu"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ertugrul-200-908",
-      "p": 200,
-      "topic": "الزيجات والهويات",
-      "q": "من زوجة أرطغرل الأولى وأم أبنائه في المسلسل؟",
-      "a": "حليمة",
-      "alt": [
-        "حليمة سلطان",
-        "حليمة خاتون",
-        "Halime"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ertugrul-400-901",
-      "p": 400,
-      "topic": "أسرة البطل",
-      "q": "من والدة أرطغرل التي تقود نساء القبيلة وتساند أبناءها؟",
-      "a": "هيمة خاتون",
-      "alt": [
-        "هايماه",
-        "هيمة",
-        "هيماه",
-        "Hayme"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "ertugrul-400-902",
-      "p": 400,
-      "topic": "رفاق السلاح",
-      "q": "من المحارب المرح الذي يقاتل بسيفين ويصبح زوج حفصة؟",
-      "a": "بامسي",
-      "alt": [
-        "بامسي بيرك",
-        "بامسى",
-        "Bamsı"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "ertugrul-400-903",
-      "p": 400,
       "topic": "القصر والسلطة",
       "q": "من السلطان السلجوقي الذي يكافئ أرطغرل بلقب أمير القبائل بعد إحباط كمين فاسيليوس؟",
       "a": "علاء الدين كيقباد",
@@ -166,11 +17,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ertugrul-400-904",
-      "p": 400,
+      "qid": "ertugrul-200-912",
+      "p": 200,
       "topic": "المغول",
       "q": "أي زوجة لمحارب من رفاق أرطغرل تموت متأثرة بحروق هجوم المغول في بداية الموسم الثاني؟",
       "a": "آيكز",
@@ -182,11 +33,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ertugrul-400-905",
-      "p": 400,
+      "qid": "ertugrul-200-913",
+      "p": 200,
       "topic": "القبائل والحلفاء",
       "q": "إلى أي قبيلة يلجأ الناجون من هجوم المغول في بداية الموسم الثاني؟",
       "a": "دودورغا",
@@ -196,10 +47,82 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ertugrul-400-906",
+      "qid": "ertugrul-200-914",
+      "p": 200,
+      "topic": "الزيجات والهويات",
+      "q": "ما الاسم الذي يتخذه القائد آريس بعد إسلامه؟",
+      "a": "أحمد",
+      "alt": [
+        "أحمد ألب",
+        "Ahmet"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-915",
+      "p": 200,
+      "topic": "أسرة البطل",
+      "q": "من ابن أرطغرل الذي يولد في اليوم الذي تتوفى فيه أمه خلال الموسم الرابع؟",
+      "a": "عثمان",
+      "alt": [
+        "عثمان بك",
+        "Osman"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-916",
+      "p": 200,
+      "topic": "رفاق السلاح",
+      "q": "من طبيب القبيلة الذي يعالج المصابين ويصبح من أهم مستشاري أرطغرل؟",
+      "a": "أرتوك",
+      "alt": [
+        "أرتوك بك",
+        "ارتوك",
+        "Artuk"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-917",
+      "p": 200,
+      "topic": "القبائل والحلفاء",
+      "q": "ما اسم قبيلة جاندر التي ينافس تجارها الوافدين الجدد في الموسم الثالث؟",
+      "a": "تشافدار",
+      "alt": [
+        "جافدار",
+        "تشاوودار",
+        "Çavdar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-200-918",
+      "p": 200,
+      "topic": "الولاء والخيانة",
+      "q": "من شقيق أورال الذي يصادق أرطغرل ويقف في صفه؟",
+      "a": "عليار",
+      "alt": [
+        "عليار بك",
+        "Aliyar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "ertugrul-400-911",
       "p": 400,
       "topic": "المدن والقلاع",
       "q": "ما البلدة التي تنتقل إليها قبيلة البطل في نهاية الموسم الرابع؟",
@@ -214,66 +137,8 @@
       "difficultyTarget": 0.6
     },
     {
-      "qid": "ertugrul-400-907",
+      "qid": "ertugrul-400-912",
       "p": 400,
-      "topic": "الولاء والخيانة",
-      "q": "من زوجة غوندوغدو التي تبدأ بالتآمر ثم تتوب وتصبح من أوفى نساء الأسرة؟",
-      "a": "سالجان",
-      "alt": [
-        "سيلجان",
-        "سلجان",
-        "Selcan"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "ertugrul-400-908",
-      "p": 400,
-      "topic": "الزيجات والهويات",
-      "q": "ما الاسم الذي يتخذه القائد آريس بعد إسلامه؟",
-      "a": "أحمد",
-      "alt": [
-        "أحمد ألب",
-        "Ahmet"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "ertugrul-600-901",
-      "p": 600,
-      "topic": "أسرة البطل",
-      "q": "من ابن أرطغرل الذي يولد في اليوم الذي تتوفى فيه أمه خلال الموسم الرابع؟",
-      "a": "عثمان",
-      "alt": [
-        "عثمان بك",
-        "Osman"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "ertugrul-600-902",
-      "p": 600,
-      "topic": "رفاق السلاح",
-      "q": "من طبيب القبيلة الذي يعالج المصابين ويصبح من أهم مستشاري أرطغرل؟",
-      "a": "أرتوك",
-      "alt": [
-        "أرتوك بك",
-        "ارتوك",
-        "Artuk"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "ertugrul-600-903",
-      "p": 600,
       "topic": "القصر والسلطة",
       "q": "من الخائن داخل قصر أمير حلب الذي يعمل لحساب فرسان المعبد؟",
       "a": "ناصر",
@@ -283,40 +148,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ertugrul-600-904",
-      "p": 600,
-      "topic": "المغول",
-      "q": "أي عضو يثقبه آسرو أرطغرل بمسمار ليصعب عليه حمل السيف في الموسم الثاني؟",
-      "a": "يده",
-      "alt": [
-        "اليد",
-        "كفه"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "ertugrul-600-905",
-      "p": 600,
-      "topic": "القبائل والحلفاء",
-      "q": "ما اسم قبيلة جاندر التي ينافس تجارها الوافدين الجدد في الموسم الثالث؟",
-      "a": "تشافدار",
-      "alt": [
-        "جافدار",
-        "تشاوودار",
-        "Çavdar"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "ertugrul-600-906",
-      "p": 600,
+      "qid": "ertugrul-400-913",
+      "p": 400,
       "topic": "المدن والقلاع",
       "q": "ما اسم السوق الذي ينتزعه أرطغرل من سيطرة سيمون في الموسم الثالث؟",
       "a": "هانلي بازار",
@@ -328,25 +164,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ertugrul-600-907",
-      "p": 600,
-      "topic": "الولاء والخيانة",
-      "q": "من شقيق أورال الذي يصادق أرطغرل ويقف في صفه؟",
-      "a": "عليار",
-      "alt": [
-        "عليار بك",
-        "Aliyar"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "ertugrul-600-908",
-      "p": 600,
+      "qid": "ertugrul-400-914",
+      "p": 400,
       "topic": "الزيجات والهويات",
       "q": "من ابنة جاندر التي تتزوج رفيق أرطغرل صاحب الفأس؟",
       "a": "أصليهان",
@@ -357,11 +179,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ertugrul-800-901",
-      "p": 800,
+      "qid": "ertugrul-400-915",
+      "p": 400,
       "topic": "أسرة البطل",
       "q": "من شقيق أرطغرل الذي ظنته الأسرة مفقودًا قبل عودته بعدما عمل سرًا بين المغول؟",
       "a": "سونغورتكين",
@@ -372,11 +194,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ertugrul-800-902",
-      "p": 800,
+      "qid": "ertugrul-400-916",
+      "p": 400,
       "topic": "رفاق السلاح",
       "q": "أي رفيق لأرطغرل يستشهد في الكمين الذي يُصاب فيه دوندار بالموسم الثالث؟",
       "a": "دوغان",
@@ -387,25 +209,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_3",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ertugrul-800-903",
-      "p": 800,
-      "topic": "القصر والسلطة",
-      "q": "من السلطان الذي يخلف والده ويتعاون مع أرطغرل للقضاء على الأمير المتآمر في الموسم الرابع؟",
-      "a": "غياث الدين",
-      "alt": [
-        "غياث الدين كيخسرو",
-        "Gıyaseddin"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "ertugrul-800-904",
-      "p": 800,
+      "qid": "ertugrul-400-917",
+      "p": 400,
       "topic": "المغول",
       "q": "من الزعيم الذي يعمل لحساب المغول متنكرًا باسم ألباستي؟",
       "a": "بيبولات",
@@ -416,11 +224,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ertugrul-800-905",
-      "p": 800,
+      "qid": "ertugrul-400-918",
+      "p": 400,
       "topic": "القبائل والحلفاء",
       "q": "من خال أرطغرل الذي يستضيف قبيلته بعد هجوم المغول ويقود القبيلة المضيفة؟",
       "a": "كوركوت",
@@ -431,11 +239,25 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ertugrul-800-906",
-      "p": 800,
+      "qid": "ertugrul-600-911",
+      "p": 600,
+      "topic": "القصر والسلطة",
+      "q": "من السلطان الذي يخلف والده ويتعاون مع أرطغرل للقضاء على الأمير المتآمر في الموسم الرابع؟",
+      "a": "غياث الدين",
+      "alt": [
+        "غياث الدين كيخسرو",
+        "Gıyaseddin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-600-912",
+      "p": 600,
       "topic": "المدن والقلاع",
       "q": "ما القلعة التي يفتحها أرطغرل في الموسم الرابع بعد صراعه مع آريس؟",
       "a": "كاراجا حصار",
@@ -447,11 +269,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ertugrul-800-907",
-      "p": 800,
+      "qid": "ertugrul-600-913",
+      "p": 600,
       "topic": "الولاء والخيانة",
       "q": "بأي وظيفة متواضعة يتنكر دراغوس داخل البلدة في الموسم الخامس؟",
       "a": "قارع جرس الكنيسة",
@@ -462,11 +284,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ertugrul-800-908",
-      "p": 800,
+      "qid": "ertugrul-600-914",
+      "p": 600,
       "topic": "الزيجات والهويات",
       "q": "من المرأة التي يتزوجها أرطغرل في ختام المسلسل بعد أن تسانده ضد شقيقها الخائن؟",
       "a": "إيلبيلغي",
@@ -478,11 +300,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ertugrul-1000-901",
-      "p": 1000,
+      "qid": "ertugrul-600-915",
+      "p": 600,
       "topic": "أسرة البطل",
       "q": "أي ابن لأرطغرل يُختطف قبل الهجوم على قلعة آريس في الموسم الرابع؟",
       "a": "غوندوز",
@@ -493,11 +315,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ertugrul-1000-902",
-      "p": 1000,
+      "qid": "ertugrul-600-916",
+      "p": 600,
       "topic": "رفاق السلاح",
       "q": "من المحارب الذي يرسله أرطغرل للتجسس داخل معسكر المغول في الموسم الثاني؟",
       "a": "عبد الرحمن",
@@ -508,26 +330,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ertugrul-1000-903",
-      "p": 1000,
-      "topic": "القصر والسلطة",
-      "q": "من زوجة السلطان التي تنقذ الأمير المتآمر بعد شهادة آريس ضده؟",
-      "a": "ماه بري",
-      "alt": [
-        "ماه بيري",
-        "مهبري",
-        "Mahperi"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "ertugrul-1000-904",
-      "p": 1000,
+      "qid": "ertugrul-600-917",
+      "p": 600,
       "topic": "المغول",
       "q": "ما اسم أخت القائد المغولي التي تدخل القبيلة بهوية ألميلة وتحاول قتل رضيع أرطغرل؟",
       "a": "ألانغويا",
@@ -538,56 +345,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ertugrul-1000-905",
-      "p": 1000,
-      "topic": "القبائل والحلفاء",
-      "q": "في الموسم الخامس، ما الدولة المغولية التي يحكمها بركة خان حليف أرطغرل؟",
-      "a": "القبيلة الذهبية",
-      "alt": [
-        "القبيلة الذهبية المغولية",
-        "الحشد الذهبي",
-        "Golden Horde"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "ertugrul-1000-906",
-      "p": 1000,
-      "topic": "المدن والقلاع",
-      "q": "إلى أي مدينة تتجه جماعة غوندوغدو عند انقسام القبيلة في نهاية الموسم الثاني؟",
-      "a": "أخلاط",
-      "alt": [
-        "أهلات",
-        "أحلات",
-        "Ahlat"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "ertugrul-1000-907",
-      "p": 1000,
-      "topic": "الولاء والخيانة",
-      "q": "من المحارب المغولي الذي يعتنق الإسلام ويتحول إلى جاسوس يعمل لصالح أرطغرل؟",
-      "a": "ميرغن",
-      "alt": [
-        "ميرجن",
-        "ميرغان",
-        "Mergen"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "ertugrul-1000-908",
-      "p": 1000,
+      "qid": "ertugrul-600-918",
+      "p": 600,
       "topic": "الزيجات والهويات",
       "q": "ما اسم زوجة رفيق أرطغرل الذي يستشهد في كمين مع دوندار خلال الموسم الثالث؟",
       "a": "بانو تشيتشك",
@@ -599,7 +361,225 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "ertugrul-800-911",
+      "p": 800,
+      "topic": "القصر والسلطة",
+      "q": "من زوجة السلطان التي تنقذ الأمير المتآمر بعد شهادة آريس ضده؟",
+      "a": "ماه بري",
+      "alt": [
+        "ماه بيري",
+        "مهبري",
+        "Mahperi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_4",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "ertugrul-800-912",
+      "p": 800,
+      "topic": "القبائل والحلفاء",
+      "q": "في الموسم الخامس، ما الدولة المغولية التي يحكمها بركة خان حليف أرطغرل؟",
+      "a": "القبيلة الذهبية",
+      "alt": [
+        "القبيلة الذهبية المغولية",
+        "الحشد الذهبي",
+        "Golden Horde"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "ertugrul-800-913",
+      "p": 800,
+      "topic": "المدن والقلاع",
+      "q": "إلى أي مدينة تتجه جماعة غوندوغدو عند انقسام القبيلة في نهاية الموسم الثاني؟",
+      "a": "أخلاط",
+      "alt": [
+        "أهلات",
+        "أحلات",
+        "Ahlat"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "ertugrul-800-914",
+      "p": 800,
+      "topic": "الولاء والخيانة",
+      "q": "من المحارب المغولي الذي يعتنق الإسلام ويتحول إلى جاسوس يعمل لصالح أرطغرل؟",
+      "a": "ميرغن",
+      "alt": [
+        "ميرجن",
+        "ميرغان",
+        "Mergen"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "الزيجات والهويات",
+      "q": "من زوجة خال أرطغرل الثانية التي انكشف تآمرها في الموسم الثاني؟",
+      "a": "آيتولون",
+      "alt": [
+        "Aytolun"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "qid": "ertugrul-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "رفاق السلاح",
+      "q": "من ابن خال أرطغرل الذي يتحول من منافس له إلى حليف في الموسم الثاني؟",
+      "a": "توغتكين",
+      "alt": [
+        "Tuğtekin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_2",
+      "qid": "ertugrul-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الولاء والخيانة",
+      "q": "من المحارب الذي خدم نويان سرًا واتهم أرطغرل بقتل قائده في الموسم الثاني؟",
+      "a": "كوجاباش",
+      "alt": [
+        "Kocabaş"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "القصر والسلطة",
+      "q": "من والد غونجاغول الذي خطط لتولي إمارة القبائل في الموسم الثاني؟",
+      "a": "غوموش تكين",
+      "alt": [
+        "Gümüştekin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "أسرة البطل",
+      "q": "من والد سالجان وغوكجة الذي يظهر في رؤى ابنته طلبًا للانتقام؟",
+      "a": "ألب تكين",
+      "alt": [
+        "Alptekin"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المدن والقلاع",
+      "q": "إلى أي مدينة هاجرت القبيلة تنفيذًا لوصية زعيمها بنهاية الموسم الأول؟",
+      "a": "أرضروم",
+      "alt": [
+        "Erzurum",
+        "أرزروم"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_1",
+      "qid": "ertugrul-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "أسرة البطل",
+      "q": "من والد حليمة والأمير يغيت في المسلسل؟",
+      "a": "الأمير نعمان",
+      "alt": [
+        "Şehzade Numan",
+        "نعمان"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الزيجات والهويات",
+      "q": "بأي اسم عُرف المحارب عمر قبل تحوله إلى جاسوس لأرطغرل داخل قلعة الفرسان؟",
+      "a": "كلوديوس",
+      "alt": [
+        "Claudius"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "القبائل والحلفاء",
+      "q": "من سيد قلعة فرسان المعبد الذي طعنته ابنة أخيه بخنجر مسموم؟",
+      "a": "بيتروتشيو مانزيني",
+      "alt": [
+        "Petruccio Manzini"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Diriliş:_Ertuğrul_characters",
+      "qid": "ertugrul-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المغول",
+      "q": "من الجاسوس المغولي الذي واجهه أرطغرل بعد موت ألباستي في الموسم الخامس؟",
+      "a": "أريكبوغا",
+      "alt": [
+        "Arikbuka"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "qid": "ertugrul-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الولاء والخيانة",
+      "q": "من جاسوس هولاكو الذي عمل ضد بركة خان في الموسم الخامس؟",
+      "a": "قيات",
+      "alt": [
+        "Qiyat"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "qid": "ertugrul-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المدن والقلاع",
+      "q": "ما القلعة التي سيطر عليها دراغوس بعد قتل يانيس في الموسم الخامس؟",
+      "a": "ليفكه",
+      "alt": [
+        "Lefke"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diriliş:_Ertuğrul_season_5",
+      "qid": "ertugrul-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

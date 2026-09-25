@@ -5,98 +5,6 @@
   "qs": [
     {
       "p": 200,
-      "q": "من نجم الكرة المصري الذي عرفته جماهير ليفربول بلقب «الملك المصري»؟",
-      "a": "محمد صلاح",
-      "alt": [],
-      "topic": "رياضيون",
-      "verified": true,
-      "sourceUrl": "https://www.liverpoolfc.com/news/thank-you-mo-salah-fond-farewell-egyptian-king",
-      "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-901"
-    },
-    {
-      "p": 200,
-      "q": "من قائد الجزائر عندما أحرزت كأس أمم أفريقيا لكرة القدم عام 2019؟",
-      "a": "رياض محرز",
-      "alt": [],
-      "topic": "رياضيون",
-      "verified": true,
-      "sourceUrl": "https://www.cafonline.com/news/riyad-mahrez-at-100-caps-a-century-of-brilliance-for-algeria/",
-      "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-902"
-    },
-    {
-      "p": 200,
-      "q": "من العالم المصري الذي نال نوبل الكيمياء لأبحاثه في كيمياء الفيمتو؟",
-      "a": "أحمد زويل",
-      "alt": [],
-      "topic": "علوم وفضاء",
-      "verified": true,
-      "sourceUrl": "https://www.nobelprize.org/laureate/292",
-      "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-903"
-    },
-    {
-      "p": 200,
-      "q": "من جراح القلب المصري الذي أنشأت مؤسسته مركز أسوان للقلب؟",
-      "a": "مجدي يعقوب",
-      "alt": [],
-      "topic": "علوم وفضاء",
-      "verified": true,
-      "sourceUrl": "https://www.myf-egypt.org/about//",
-      "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-904"
-    },
-    {
-      "p": 200,
-      "q": "من الأديب المصري الذي أصبح أول كاتب بالعربية ينال نوبل الأدب؟",
-      "a": "نجيب محفوظ",
-      "alt": [],
-      "topic": "أدباء",
-      "verified": true,
-      "sourceUrl": "https://www.nobelprize.org/prizes/literature/1988/mahfouz/article/",
-      "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-905"
-    },
-    {
-      "p": 200,
-      "q": "من الإعلامي السعودي الذي يقدم برنامج «سين»؟",
-      "a": "أحمد الشقيري",
-      "alt": [],
-      "topic": "إعلام وصحافة",
-      "verified": true,
-      "sourceUrl": "https://shahid.mbc.net/ar/shows/Seen/show-874715",
-      "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-906"
-    },
-    {
-      "p": 200,
-      "q": "من نجم الكوميديا المصري الذي عيّنته مفوضية اللاجئين سفيرًا للنوايا الحسنة عام 2000؟",
-      "a": "عادل إمام",
-      "alt": [
-        "عادل امام"
-      ],
-      "topic": "سينما ومسرح",
-      "verified": true,
-      "sourceUrl": "https://www.unhcr.org/eg/goodwill-ambassador-adel-imam",
-      "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-907"
-    },
-    {
-      "p": 200,
-      "q": "من خبيرة التجميل التي أسست علامة «Huda Beauty»؟",
-      "a": "هدى قطان",
-      "alt": [
-        "هدي قطان"
-      ],
-      "topic": "أعمال وريادة",
-      "verified": true,
-      "sourceUrl": "https://hudabeauty.com/",
-      "difficultyTarget": 0.8,
-      "qid": "arabcelebs-200-908"
-    },
-    {
-      "p": 400,
       "q": "من لاعبة التنس التونسية التي أصبحت أول عربية تبلغ نهائي ويمبلدون للفردي؟",
       "a": "أنس جابر",
       "alt": [
@@ -105,11 +13,11 @@
       "topic": "رياضيون",
       "verified": true,
       "sourceUrl": "https://www.wimbledon.com/amp/en_GB/news/articles/2023-07-08/jabeur_passes_tough_test_from_andreescu.html",
-      "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-901"
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-911"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من القطري الذي تقاسم ذهبية الوثب العالي في طوكيو مع الإيطالي تامبيري؟",
       "a": "معتز برشم",
       "alt": [
@@ -118,22 +26,21 @@
       "topic": "رياضيون",
       "verified": true,
       "sourceUrl": "https://worldathletics.org/news/feature/barshim-tamberi-friendship-tokyo-olympics-gold",
-      "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-902"
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-912"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من صاحب الرحلة الأولى لرائد فضاء إماراتي إلى محطة الفضاء الدولية؟",
       "a": "هزاع المنصوري",
-      "alt": [],
       "topic": "علوم وفضاء",
       "verified": true,
       "sourceUrl": "https://www.mbrsc.ae/hazzaa-almansoori/",
-      "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-903"
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-913"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من الباحثة السعودية التي أصبحت أول امرأة سعودية تصل إلى الفضاء؟",
       "a": "ريانة برناوي",
       "alt": [
@@ -142,19 +49,108 @@
       "topic": "علوم وفضاء",
       "verified": true,
       "sourceUrl": "https://www.axiomspace.com/astronaut/rayyanah-barnawi",
-      "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-904"
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-914"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من الشاعر الفلسطيني صاحب ديوان «جدارية»؟",
       "a": "محمود درويش",
-      "alt": [],
       "topic": "أدباء",
       "verified": true,
       "sourceUrl": "https://www.bibliotheque.nat.tn/BNT/detailstatic.aspx?RSC_BASE=SYRACUSE&RSC_DOCID=5713209&TITLE=&_lg=ar-TN",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-915"
+    },
+    {
+      "p": 200,
+      "q": "من الإعلامية اللبنانية التي قدمت البرنامج السينمائي «سكووب»؟",
+      "a": "ريا أبي راشد",
+      "alt": [
+        "ريا ابي راشد"
+      ],
+      "topic": "إعلام وصحافة",
+      "verified": true,
+      "sourceUrl": "https://www.unhcr.org/uk/news/news-releases/raya-abirached-appointed-unhcr-goodwill-ambassador-mena-region",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-916"
+    },
+    {
+      "p": 200,
+      "q": "من الممثل المصري الذي جسّد الطبيب يوري في فيلم «دكتور جيفاغو»؟",
+      "a": "عمر الشريف",
+      "topic": "سينما ومسرح",
+      "verified": true,
+      "sourceUrl": "https://goldenglobes.com/articles/1966-drama-doctor-zhivago/",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-917"
+    },
+    {
+      "p": 200,
+      "q": "من رائد الأعمال الأردني الذي شارك في تأسيس شركة الشحن «أرامكس»؟",
+      "a": "فادي غندور",
+      "topic": "أعمال وريادة",
+      "verified": true,
+      "sourceUrl": "https://www.aramex.com/content/uploads/109/200/38482/Fadi-Ghandour-profile-in-English.pdf",
+      "difficultyTarget": 0.8,
+      "qid": "arabcelebs-200-918"
+    },
+    {
+      "p": 400,
+      "q": "من لاعب التايكوندو الذي منح الأردن أول ميدالية أولمبية رسمية وكانت ذهبية؟",
+      "a": "أحمد أبو غوش",
+      "alt": [
+        "احمد ابو غوش"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "sourceUrl": "https://www.anocolympic.org/noc-highlights/jordan-wins-first-ever-olympic-medal/",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-905"
+      "qid": "arabcelebs-400-911"
+    },
+    {
+      "p": 400,
+      "q": "من لاعبة الكاراتيه التي أصبحت أول مصرية تحرز ذهبية أولمبية؟",
+      "a": "فريال أشرف",
+      "alt": [
+        "فريال عبد العزيز",
+        "فريال عبدالعزيز"
+      ],
+      "topic": "رياضيون",
+      "verified": true,
+      "sourceUrl": "https://www.olympedia.org/results/18000275",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-912"
+    },
+    {
+      "p": 400,
+      "q": "من العالم المصري الذي شارك في اختيار مواقع هبوط بعثات أبولو على القمر؟",
+      "a": "فاروق الباز",
+      "topic": "علوم وفضاء",
+      "verified": true,
+      "sourceUrl": "https://siarchives.si.edu/collections/siris_arc_217570",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-913"
+    },
+    {
+      "p": 400,
+      "q": "من عالمة التقنية الحيوية السعودية التي عيّنتها اليونسكو سفيرة للعلوم والابتكار؟",
+      "a": "حياة سندي",
+      "topic": "علوم وفضاء",
+      "verified": true,
+      "sourceUrl": "https://www.unesco.org/en/articles/hayat-sindi-calls-inclusive-sti-investment-and-gender-responsive-financing-ffd4-seville",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-914"
+    },
+    {
+      "p": 400,
+      "q": "من الروائية الجزائرية التي كتبت «ذاكرة الجسد»؟",
+      "a": "أحلام مستغانمي",
+      "topic": "أدباء",
+      "verified": true,
+      "sourceUrl": "https://www.neelwafurat.com/itempage.aspx?id=lbb223144-199427&search=books",
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-915"
     },
     {
       "p": 400,
@@ -167,127 +163,30 @@
       "verified": true,
       "sourceUrl": "https://www.watchit.com/watch/en/shows/Maakom/shows-37",
       "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-906"
+      "qid": "arabcelebs-400-916"
     },
     {
       "p": 400,
-      "q": "من الممثل المصري الذي جسّد الطبيب يوري في فيلم «دكتور جيفاغو»؟",
-      "a": "عمر الشريف",
-      "alt": [],
-      "topic": "سينما ومسرح",
-      "verified": true,
-      "sourceUrl": "https://goldenglobes.com/articles/1966-drama-doctor-zhivago/",
-      "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-907"
-    },
-    {
-      "p": 400,
-      "q": "من رائد الأعمال الأردني الذي شارك في تأسيس شركة الشحن «أرامكس»؟",
-      "a": "فادي غندور",
-      "alt": [],
-      "topic": "أعمال وريادة",
-      "verified": true,
-      "sourceUrl": "https://www.aramex.com/content/uploads/109/200/38482/Fadi-Ghandour-profile-in-English.pdf",
-      "difficultyTarget": 0.6,
-      "qid": "arabcelebs-400-908"
-    },
-    {
-      "p": 600,
-      "q": "من لاعب التايكوندو الذي منح الأردن أول ميدالية أولمبية رسمية وكانت ذهبية؟",
-      "a": "أحمد أبو غوش",
-      "alt": [
-        "احمد ابو غوش"
-      ],
-      "topic": "رياضيون",
-      "verified": true,
-      "sourceUrl": "https://www.anocolympic.org/noc-highlights/jordan-wins-first-ever-olympic-medal/",
-      "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-901"
-    },
-    {
-      "p": 600,
-      "q": "من لاعبة الكاراتيه التي أصبحت أول مصرية تحرز ذهبية أولمبية؟",
-      "a": "فريال أشرف",
-      "alt": [
-        "فريال عبد العزيز",
-        "فريال عبدالعزيز"
-      ],
-      "topic": "رياضيون",
-      "verified": true,
-      "sourceUrl": "https://www.olympedia.org/results/18000275",
-      "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-902"
-    },
-    {
-      "p": 600,
-      "q": "من العالم المصري الذي شارك في اختيار مواقع هبوط بعثات أبولو على القمر؟",
-      "a": "فاروق الباز",
-      "alt": [],
-      "topic": "علوم وفضاء",
-      "verified": true,
-      "sourceUrl": "https://siarchives.si.edu/collections/siris_arc_217570",
-      "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-903"
-    },
-    {
-      "p": 600,
-      "q": "من عالمة التقنية الحيوية السعودية التي عيّنتها اليونسكو سفيرة للعلوم والابتكار؟",
-      "a": "حياة سندي",
-      "alt": [],
-      "topic": "علوم وفضاء",
-      "verified": true,
-      "sourceUrl": "https://www.unesco.org/en/articles/hayat-sindi-calls-inclusive-sti-investment-and-gender-responsive-financing-ffd4-seville",
-      "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-904"
-    },
-    {
-      "p": 600,
-      "q": "من الروائية الجزائرية التي كتبت «ذاكرة الجسد»؟",
-      "a": "أحلام مستغانمي",
-      "alt": [],
-      "topic": "أدباء",
-      "verified": true,
-      "sourceUrl": "https://www.neelwafurat.com/itempage.aspx?id=lbb223144-199427&search=books",
-      "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-905"
-    },
-    {
-      "p": 600,
-      "q": "من الإعلامية اللبنانية التي قدمت البرنامج السينمائي «سكووب»؟",
-      "a": "ريا أبي راشد",
-      "alt": [
-        "ريا ابي راشد"
-      ],
-      "topic": "إعلام وصحافة",
-      "verified": true,
-      "sourceUrl": "https://www.unhcr.org/uk/news/news-releases/raya-abirached-appointed-unhcr-goodwill-ambassador-mena-region",
-      "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-906"
-    },
-    {
-      "p": 600,
       "q": "من الممثلة التونسية التي عيّنها برنامج الأغذية العالمي سفيرة عام 2010؟",
       "a": "هند صبري",
-      "alt": [],
       "topic": "سينما ومسرح",
       "verified": true,
       "sourceUrl": "https://www.wfp.org/news/arab-film-star-hend-sabry-marks-ten-years-wfp-goodwill-ambassador",
-      "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-907"
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-917"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "من رجل الأعمال الكويتي الذي أسس مشروع «صخر» لتعريب الحاسوب؟",
       "a": "محمد الشارخ",
-      "alt": [],
       "topic": "أعمال وريادة",
       "verified": true,
       "sourceUrl": "https://kingfaisalprize.org/mohamed-bin-abdulrahman-al-sharekh/",
-      "difficultyTarget": 0.4,
-      "qid": "arabcelebs-600-908"
+      "difficultyTarget": 0.6,
+      "qid": "arabcelebs-400-918"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من العداء التونسي صاحب فضية عشرة آلاف متر في أولمبياد طوكيو 1964؟",
       "a": "محمد القمودي",
       "alt": [
@@ -296,55 +195,51 @@
       "topic": "رياضيون",
       "verified": true,
       "sourceUrl": "https://www.olympedia.org/athletes/76964",
-      "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-901"
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-911"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من العداءة الجزائرية التي نالت ذهبية 1500 متر في أولمبياد برشلونة؟",
       "a": "حسيبة بولمرقة",
-      "alt": [],
       "topic": "رياضيون",
       "verified": true,
       "sourceUrl": "https://worldathletics.org/news/news/boulmerka-bubka-crooks-and-zelezny-elected-io",
-      "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-902"
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-912"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من عالمة الأحياء الأردنية التي أسست مبادرة «نحن نحب القراءة»؟",
       "a": "رنا الدجاني",
-      "alt": [],
       "topic": "علوم وفضاء",
       "verified": true,
       "sourceUrl": "https://welovereading.org/about/story/",
-      "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-903"
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-913"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من العالم المصري بجامعة جورجيا تك الذي درس استخدام جسيمات الذهب النانوية ضد السرطان؟",
       "a": "مصطفى السيد",
-      "alt": [],
       "topic": "علوم وفضاء",
       "verified": true,
       "sourceUrl": "https://chemistry.gatech.edu/people/mostafa-el-sayed",
-      "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-904"
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-914"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من الأديب الفلسطيني الذي ألّف رواية «رجال في الشمس»؟",
       "a": "غسان كنفاني",
-      "alt": [],
       "topic": "أدباء",
       "verified": true,
       "sourceUrl": "https://www.rienner.com/title/Men_in_the_Sun_and_Other_Palestinian_Stories",
-      "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-905"
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-915"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من الممثلة التي أسست مجلة مصرية تحمل اسمها الفني عام 1925؟",
       "a": "فاطمة اليوسف",
       "alt": [
@@ -354,22 +249,21 @@
       "topic": "إعلام وصحافة",
       "verified": true,
       "sourceUrl": "https://www.library.dartmouth.edu/digital/digital-collections/rose-el-youssef",
-      "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-906"
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-916"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من المخرجة اللبنانية التي قدّمت فيلم «كفرناحوم» الفائز بجائزة لجنة التحكيم في كان؟",
       "a": "نادين لبكي",
-      "alt": [],
       "topic": "سينما ومسرح",
       "verified": true,
       "sourceUrl": "https://www.festival-cannes.com/en/2024/meeting-nadine-labaki-member-of-the-jury-for-feature-films/",
-      "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-907"
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-917"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من رائد الأعمال السعودي الذي انضم مؤسسًا ثالثًا لتطبيق «كريم»؟",
       "a": "عبد الله إلياس",
       "alt": [
@@ -379,11 +273,11 @@
       "topic": "أعمال وريادة",
       "verified": true,
       "sourceUrl": "https://www.careem.com/ar-KW/about-us/",
-      "difficultyTarget": 0.25,
-      "qid": "arabcelebs-800-908"
+      "difficultyTarget": 0.4,
+      "qid": "arabcelebs-600-918"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من التونسي الذي نال فضية وزن 58 كيلوغرامًا في تايكوندو أولمبياد طوكيو؟",
       "a": "محمد خليل الجندوبي",
       "alt": [
@@ -392,11 +286,11 @@
       "topic": "رياضيون",
       "verified": true,
       "sourceUrl": "https://results.worldtaekwondo.org/competitions/tokyo-2020-og/medalists",
-      "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-901"
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-911"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من السباح التونسي الذي أحرز ذهبية ماراثون عشرة كيلومترات في أولمبياد لندن؟",
       "a": "أسامة الملولي",
       "alt": [
@@ -405,11 +299,11 @@
       "topic": "رياضيون",
       "verified": true,
       "sourceUrl": "https://www.worldaquatics.com/athletes/1000445/ous-mellouli/medals",
-      "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-902"
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-912"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من الطبيب الجزائري الذي أدار المعاهد الوطنية الأمريكية للصحة بين 2002 و2008؟",
       "a": "إلياس زرهوني",
       "alt": [
@@ -418,11 +312,11 @@
       "topic": "علوم وفضاء",
       "verified": true,
       "sourceUrl": "https://www.nih.gov/about-nih/nih-almanac/elias-zerhouni-md",
-      "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-903"
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-913"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من العالم المغربي الذي اخترع أنود الغرافيت المستخدم في بطاريات الليثيوم أيون؟",
       "a": "رشيد اليزمي",
       "alt": [
@@ -432,33 +326,31 @@
       "topic": "علوم وفضاء",
       "verified": true,
       "sourceUrl": "https://www.nae.edu/105813/Rachid-Yazami",
-      "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-904"
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-914"
     },
     {
-      "p": 1000,
-      "q": "من الروائية الفلسطينية صاحبة رواية «الصبار»؟",
-      "a": "سحر خليفة",
-      "alt": [],
       "topic": "أدباء",
+      "q": "من الروائي صاحب «مدن الملح»؟",
+      "a": "عبد الرحمن منيف",
+      "sourceUrl": "https://www.penguinrandomhouse.ca/books/118591/cities-of-salt-by-abdelrahman-munif/9780394755267",
       "verified": true,
-      "sourceUrl": "https://ci.nii.ac.jp/ncid/BA51544870",
-      "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-905"
+      "p": 800,
+      "qid": "arabcelebs-800-915",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من الكاتب المصري صاحب عمود «صندوق الدنيا» في الأهرام؟",
       "a": "أحمد بهجت",
-      "alt": [],
       "topic": "إعلام وصحافة",
       "verified": true,
       "sourceUrl": "https://gate.ahram.org.eg/daily/WriterArticles/08/2002/70.aspx",
-      "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-906"
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-916"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من المخرجة الفلسطينية التي جمعت محمد وصالح بكري في فيلم «واجب»؟",
       "a": "آن ماري جاسر",
       "alt": [
@@ -469,11 +361,11 @@
       "topic": "سينما ومسرح",
       "verified": true,
       "sourceUrl": "https://www.bam.org/film/2026/of-father-and-sons-wajib",
-      "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-907"
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-917"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من الناشرة الإماراتية التي أسست مجموعة «كلمات» المتخصصة في كتب الأطفال العربية؟",
       "a": "بدور القاسمي",
       "alt": [
@@ -482,8 +374,95 @@
       "topic": "أعمال وريادة",
       "verified": true,
       "sourceUrl": "https://www.zayedaward.ae/en/previous-editions/winners/kalimat-group-uae",
+      "difficultyTarget": 0.25,
+      "qid": "arabcelebs-800-918"
+    },
+    {
+      "topic": "رياضيون",
+      "q": "من العداء المغربي الذي احتفظ بلقب ماراثون بطولة العالم في هلسنكي بعد فوزه في باريس؟",
+      "a": "جواد غريب",
+      "sourceUrl": "https://worldathletics.org/news/news/el-guerrouj-phones-to-say-well-done-to-the-as",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "رياضيون",
+      "q": "من المغربي الذي حطم الرقم العالمي لعشرة آلاف متر في بروكسل بعد برونزية أتلانتا؟",
+      "a": "صلاح حيسو",
+      "sourceUrl": "https://worldathletics.org/news/news/salah-hissou-10000-m-world-record-holder-in-t-1",
+      "alt": [
+        "صلاح حسو"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "علوم وفضاء",
+      "q": "من العالم اللبناني الذي أسس مشروع جهاز AIRS لدراسة الغلاف الجوي في ناسا؟",
+      "a": "مصطفى شاهين",
+      "sourceUrl": "https://airs.jpl.nasa.gov/news/92/in-memoriam-the-passing-of-airs-project-founder-dr-moustafa-t-chahine/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "علوم وفضاء",
+      "q": "من العالم المولود في لبنان الذي أدار مختبر الدفع النفاث خلال رحلات سبيريت وأوبورتيونيتي وكوريوسيتي؟",
+      "a": "شارل العشي",
+      "sourceUrl": "https://www.jpl.nasa.gov/who-we-are/faces-of-leadership-the-directors-of-jpl/dr-charles-elachi-1947/",
+      "alt": [
+        "شارل عشي",
+        "Charles Elachi"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "p": 1000,
+      "q": "من الروائية الفلسطينية صاحبة رواية «الصبار»؟",
+      "a": "سحر خليفة",
+      "topic": "أدباء",
+      "verified": true,
+      "sourceUrl": "https://ci.nii.ac.jp/ncid/BA51544870",
       "difficultyTarget": 0.15,
-      "qid": "arabcelebs-1000-908"
+      "qid": "arabcelebs-1000-915"
+    },
+    {
+      "topic": "إعلام وصحافة",
+      "q": "من الصحافي المصري الذي أسس مجلة «آخر ساعة» بعد مغادرته «روز اليوسف»؟",
+      "a": "محمد التابعي",
+      "sourceUrl": "https://arabi.ahram.org.eg/News/46769.aspx",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "سينما ومسرح",
+      "q": "من المخرج السوري صاحب الوثائقي «الحياة اليومية في قرية سورية»؟",
+      "a": "عمر أميرالاي",
+      "sourceUrl": "https://www.arsenal-berlin.de/en/cinema/film-screening/mahere-2180/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "أعمال وريادة",
+      "q": "من رائد الأعمال الأردني الذي أسس «مكتوب» مع حسام خوري؟",
+      "a": "سميح طوقان",
+      "sourceUrl": "https://www.meed.com/interview-samih-toukan-chief-executive-officer-jabbar/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabcelebs-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

@@ -99,3 +99,20 @@ test('external media keeps its attribution and license checks; provenance cannot
   const { errors } = await validateBank(bad);
   for (const text of ['media بلا sourceUrl', 'ترخيص مرفوض', 'نوع provenance غير مدعوم']) assert.ok(errors.some((e) => e.includes(text)), errors.join('\n'));
 });
+
+test('per-category replacement range overrides default and rejects the old range', async (t) => {
+  const root = await fixture(t, qs => qs.forEach((q, i) => {q.qid = `curated-${q.p}-${911 + i % 8}`;}));
+  const file = path.join(root, 'src/data/bank-status.json');
+  const status = JSON.parse(await readFile(file, 'utf8'));
+  status.categories.curated.qidRange = { start: 911, end: 918 };
+  await writeFile(file, JSON.stringify(status));
+  assert.deepEqual((await validateBank(root)).errors, []);
+  const packFile = path.join(root, 'src/data/categories/curated.json');
+  const pack = JSON.parse(await readFile(packFile, 'utf8'));
+  pack.qs[0].qid = 'curated-200-901';
+  await writeFile(packFile, JSON.stringify(pack));
+  assert.ok((await validateBank(root)).errors.some(e => e.includes('911..918')));
+  delete status.categories.curated.qidRange;
+  await writeFile(file, JSON.stringify(status));
+  assert.ok((await validateBank(root)).errors.some(e => e.includes('901..908')));
+});

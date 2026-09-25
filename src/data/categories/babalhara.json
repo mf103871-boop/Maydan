@@ -5,119 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "babalhara-200-901",
+      "qid": "babalhara-200-911",
       "p": 200,
-      "topic": "عائلة الحكيم",
-      "q": "من حكيم الحارة ووالد عصام وأشقائه؟",
-      "a": "أبو عصام",
-      "alt": [
-        "ابو عصام",
-        "شوكت"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010631/cast",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "babalhara-200-902",
-      "p": 200,
-      "topic": "زعامة الحارة",
-      "q": "من عكيد الحارة في الأجزاء الثلاثة الأولى وخال أبناء الحكيم؟",
-      "a": "أبو شهاب",
-      "alt": [
-        "ابو شهاب"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1821972/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "babalhara-200-903",
-      "p": 200,
-      "topic": "سرقة الذهب",
-      "q": "من اللص الذي يسرق ثروة أبو إبراهيم في بداية الجزء الأول؟",
-      "a": "الإدعشري",
-      "alt": [
-        "الادعشري",
-        "أبو معروف",
-        "الادعشرى"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "babalhara-200-904",
-      "p": 200,
-      "topic": "البيوت والزواج",
-      "q": "من الداية التي تساعد نساء الحارة على الولادة؟",
-      "a": "أم زكي",
-      "alt": [
-        "ام زكي",
-        "أم زكى"
-      ],
-      "sourceUrl": "https://royanews.tv/news/179723",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "babalhara-200-905",
-      "p": 200,
-      "topic": "المقاومة",
-      "q": "ما قوات الاحتلال التي تحاصر الحارة ويقاومها أهلها؟",
-      "a": "الفرنسيون",
-      "alt": [
-        "الفرنسيين",
-        "الاحتلال الفرنسي",
-        "فرنسا"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "babalhara-200-906",
-      "p": 200,
-      "topic": "الأسرار والجواسيس",
-      "q": "من الجاسوس الذي ينكشف تورطه بعد مقتل بائع الفول في ختام الجزء الأول؟",
-      "a": "سطيف",
-      "alt": [
-        "صطيف",
-        "ستيف"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "babalhara-200-907",
-      "p": 200,
-      "topic": "أعمال أهل الحارة",
-      "q": "من صاحب المقهى الذي تجتمع عنده رجال الحارة؟",
-      "a": "أبو حاتم",
-      "alt": [
-        "ابو حاتم"
-      ],
-      "sourceUrl": "https://www.alwasatnews.com/news/381492.html",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "babalhara-200-908",
-      "p": 200,
-      "topic": "الأماكن",
-      "q": "ما اسم الحارة الرئيسية التي تدور فيها الأجزاء الأولى؟",
-      "a": "حارة الضبع",
-      "alt": [
-        "الضبع"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "babalhara-400-901",
-      "p": 400,
       "topic": "عائلة الحكيم",
       "q": "ما اسم زوجة الحكيم وأم أبنائه التي يقع بينها وبينه الطلاق في الجزء الثاني؟",
       "a": "سعاد",
@@ -126,38 +15,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1821972/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "babalhara-400-902",
-      "p": 400,
-      "topic": "زعامة الحارة",
-      "q": "من ابن الحكيم الذي يتولى قيادة الشباب بعد غياب خاله العكيد؟",
-      "a": "معتز",
-      "alt": [
-        "أبو جود"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "babalhara-400-903",
-      "p": 400,
-      "topic": "سرقة الذهب",
-      "q": "ما الثروة التي تُسرق من منزل أبو إبراهيم وتطلق أحداث الجزء الأول؟",
-      "a": "الذهب",
-      "alt": [
-        "ذهب",
-        "الليرات الذهبية"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "babalhara-400-904",
-      "p": 400,
+      "qid": "babalhara-200-912",
+      "p": 200,
       "topic": "البيوت والزواج",
       "q": "ما اسم الزوجة الأولى لعصام، وهي ابنة فريال؟",
       "a": "لطفية",
@@ -166,22 +28,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1821972/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "babalhara-400-905",
-      "p": 400,
-      "topic": "المقاومة",
-      "q": "إلى أي بلد يرسل شباب الحارة السلاح لمساندة المقاومين في الجزء الثالث؟",
-      "a": "فلسطين",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "babalhara-400-906",
-      "p": 400,
+      "qid": "babalhara-200-913",
+      "p": 200,
       "topic": "الأسرار والجواسيس",
       "q": "من الرجل الذي يتزوج فريال ثم تنكشف عمالته للاحتلال في الجزء الخامس؟",
       "a": "مأمون بك",
@@ -192,48 +43,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1295836/content",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "babalhara-400-907",
-      "p": 400,
-      "topic": "أعمال أهل الحارة",
-      "q": "ما الطعام الذي يصنعه أبو بشير ويبيع في فرنه؟",
-      "a": "الخبز",
-      "alt": [
-        "خبز"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "babalhara-400-908",
-      "p": 400,
-      "topic": "الأماكن",
-      "q": "في أي مدينة سورية تقع الحارة؟",
-      "a": "دمشق",
-      "alt": [
-        "الشام"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/content",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "babalhara-600-901",
-      "p": 600,
+      "qid": "babalhara-200-914",
+      "p": 200,
       "topic": "عائلة الحكيم",
       "q": "من ابنة الحكيم التي تترمل بعد استشهاد إبراهيم في بداية الجزء الرابع؟",
       "a": "دلال",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "babalhara-600-902",
-      "p": 600,
+      "qid": "babalhara-200-915",
+      "p": 200,
       "topic": "زعامة الحارة",
       "q": "من زعيم الحارة الذي يقتله الجاسوس في بداية الجزء الثاني؟",
       "a": "أبو صالح",
@@ -243,39 +68,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1821972/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "babalhara-600-903",
-      "p": 600,
-      "topic": "سرقة الذهب",
-      "q": "ما الأثر الذي يراه أبو إبراهيم في منزله ويجعله يشك في هوية السارق؟",
-      "a": "حذاء السارق",
-      "alt": [
-        "حذاؤه",
-        "الحذاء",
-        "حذاء الإدعشري"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "babalhara-600-904",
-      "p": 600,
-      "topic": "البيوت والزواج",
-      "q": "ما اسم ابنة أبو خاطر التي يتزوجها ابن الحكيم الأصغر في نهاية الجزء الرابع؟",
-      "a": "خيرية",
-      "alt": [
-        "خيريه"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "babalhara-600-905",
-      "p": 600,
+      "qid": "babalhara-200-916",
+      "p": 200,
       "topic": "المقاومة",
       "q": "من المرأة التي تساعد المقاومين وتثأر لمقتل أبو يوسف في الجزء الرابع؟",
       "a": "أم جوزيف",
@@ -285,65 +82,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "babalhara-600-906",
-      "p": 600,
-      "topic": "الأسرار والجواسيس",
-      "q": "من ابن عم النمس القادم من السجن الذي يساعد على كشف الجاسوس المتنكر في الجزء الخامس؟",
-      "a": "أبو دياب",
-      "alt": [
-        "ابو دياب"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/content",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "babalhara-600-907",
-      "p": 600,
-      "topic": "أعمال أهل الحارة",
-      "q": "بأي مهنة يخدم حمزة أهل الحارة بعد أن يُعرض عليه الإقامة فيها؟",
-      "a": "الطب",
-      "alt": [
-        "طبيب",
-        "مداواة المرضى"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "babalhara-600-908",
-      "p": 600,
-      "topic": "الأماكن",
-      "q": "في أي سجن عرف كاشف الجاسوس حقيقة زوج فريال قبل وصوله إلى الحارة؟",
-      "a": "سجن أرواد",
-      "alt": [
-        "أرواد",
-        "ارواد"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/content",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "babalhara-800-901",
-      "p": 800,
-      "topic": "عائلة الحكيم",
-      "q": "ما اسم الزوجة الثانية للحكيم التي تخفي إصابتها بالسل في بداية الجزء السابع؟",
-      "a": "ناديا",
-      "alt": [
-        "نادية"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "babalhara-800-902",
-      "p": 800,
+      "qid": "babalhara-200-917",
+      "p": 200,
       "topic": "زعامة الحارة",
       "q": "ما كنية عكيد الحارة المجاورة الذي يخاصم أهل الحارة ثم يساندهم في الحصار؟",
       "a": "أبو النار",
@@ -352,66 +95,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "babalhara-800-903",
-      "p": 800,
-      "topic": "سرقة الذهب",
-      "q": "ما سبب وفاة معروف، ابن سارق الليرات، في الجزء الأول؟",
-      "a": "لدغة أفعى",
-      "alt": [
-        "لدغة ثعبان",
-        "لدغ ثعبان",
-        "لدغة حية"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "babalhara-800-904",
-      "p": 800,
-      "topic": "البيوت والزواج",
-      "q": "من ابنة صاحب المقهى التي يتزوجها العكيد الأول في الجزء الثالث؟",
-      "a": "شريفة",
-      "alt": [
-        "شريفه"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "babalhara-800-905",
-      "p": 800,
-      "topic": "المقاومة",
-      "q": "ما الشيء الذي يُعاد إلى مدخل الحارة بعد التخلص من الجاسوس في ختام الجزء الخامس؟",
-      "a": "الباب",
-      "alt": [
-        "باب الحارة"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "babalhara-800-906",
-      "p": 800,
-      "topic": "الأسرار والجواسيس",
-      "q": "في أي مهنة يتنكر ابن عم النمس وهو يجمع الأدلة ضد زوج فريال؟",
-      "a": "زبال",
-      "alt": [
-        "جامع قمامة",
-        "عامل نظافة"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1295836/content",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "babalhara-800-907",
-      "p": 800,
+      "qid": "babalhara-200-918",
+      "p": 200,
       "topic": "أعمال أهل الحارة",
       "q": "ما تجارة أبو إبراهيم، الرجل الذي سُرقت ليراته في الجزء الأول؟",
       "a": "الأقمشة",
@@ -422,11 +110,107 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1295836/content",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "babalhara-800-908",
-      "p": 800,
+      "qid": "babalhara-400-911",
+      "p": 400,
+      "topic": "سرقة الذهب",
+      "q": "ما الأثر الذي يراه أبو إبراهيم في منزله ويجعله يشك في هوية السارق؟",
+      "a": "حذاء السارق",
+      "alt": [
+        "حذاؤه",
+        "الحذاء",
+        "حذاء الإدعشري"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-912",
+      "p": 400,
+      "topic": "البيوت والزواج",
+      "q": "ما اسم ابنة أبو خاطر التي يتزوجها ابن الحكيم الأصغر في نهاية الجزء الرابع؟",
+      "a": "خيرية",
+      "alt": [
+        "خيريه"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-913",
+      "p": 400,
+      "topic": "الأسرار والجواسيس",
+      "q": "من ابن عم النمس القادم من السجن الذي يساعد على كشف الجاسوس المتنكر في الجزء الخامس؟",
+      "a": "أبو دياب",
+      "alt": [
+        "ابو دياب"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-914",
+      "p": 400,
+      "topic": "الأماكن",
+      "q": "في أي سجن عرف كاشف الجاسوس حقيقة زوج فريال قبل وصوله إلى الحارة؟",
+      "a": "سجن أرواد",
+      "alt": [
+        "أرواد",
+        "ارواد"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-915",
+      "p": 400,
+      "topic": "عائلة الحكيم",
+      "q": "ما اسم الزوجة الثانية للحكيم التي تخفي إصابتها بالسل في بداية الجزء السابع؟",
+      "a": "ناديا",
+      "alt": [
+        "نادية"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-916",
+      "p": 400,
+      "topic": "سرقة الذهب",
+      "q": "ما سبب وفاة معروف، ابن سارق الليرات، في الجزء الأول؟",
+      "a": "لدغة أفعى",
+      "alt": [
+        "لدغة ثعبان",
+        "لدغ ثعبان",
+        "لدغة حية"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010631/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-917",
+      "p": 400,
+      "topic": "البيوت والزواج",
+      "q": "من ابنة صاحب المقهى التي يتزوجها العكيد الأول في الجزء الثالث؟",
+      "a": "شريفة",
+      "alt": [
+        "شريفه"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "babalhara-400-918",
+      "p": 400,
       "topic": "الأماكن",
       "q": "من أي مرفق يحرر الرجال المرأة المقاومة المختبئة لاحقًا لدى الفران في الجزء الخامس؟",
       "a": "المستشفى",
@@ -436,11 +220,25 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1295836/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "babalhara-1000-901",
-      "p": 1000,
+      "qid": "babalhara-600-911",
+      "p": 600,
+      "topic": "الأسرار والجواسيس",
+      "q": "في أي مهنة يتنكر ابن عم النمس وهو يجمع الأدلة ضد زوج فريال؟",
+      "a": "زبال",
+      "alt": [
+        "جامع قمامة",
+        "عامل نظافة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/content",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "babalhara-600-912",
+      "p": 600,
       "topic": "عائلة الحكيم",
       "q": "ما اسم الطفلة اللقيطة التي ترعاها فوزية في الجزء الرابع؟",
       "a": "وردة",
@@ -449,11 +247,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "babalhara-1000-902",
-      "p": 1000,
+      "qid": "babalhara-600-913",
+      "p": 600,
       "topic": "زعامة الحارة",
       "q": "ما اسم الحارة التي يتزعمها أبو صياح ويظهر الخلاف معها في الجزء الثالث؟",
       "a": "حارة الماوي",
@@ -463,11 +261,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1667786/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "babalhara-1000-903",
-      "p": 1000,
+      "qid": "babalhara-600-914",
+      "p": 600,
       "topic": "سرقة الذهب",
       "q": "من ابن سارق الليرات الذي يبيع البيت ويغادر الحارة بعد اعتراف والده وموته؟",
       "a": "صبحي",
@@ -476,11 +274,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010631/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "babalhara-1000-904",
-      "p": 1000,
+      "qid": "babalhara-600-915",
+      "p": 600,
       "topic": "البيوت والزواج",
       "q": "ما اسم ابنة صاحب المقهى التي يتزوجها الطبيب حمزة؟",
       "a": "حميدة",
@@ -489,11 +287,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1653818/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "babalhara-1000-905",
-      "p": 1000,
+      "qid": "babalhara-600-916",
+      "p": 600,
       "topic": "المقاومة",
       "q": "من الرجل الذي يكلّفه الجاسوس بإحراق المقهى والمحل، لكنه يُقتل قبل التنفيذ في الجزء الخامس؟",
       "a": "أبو الورد",
@@ -502,22 +300,36 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1295836/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "babalhara-1000-906",
-      "p": 1000,
+      "qid": "babalhara-600-917",
+      "p": 600,
       "topic": "الأسرار والجواسيس",
       "q": "من الجاسوس الذي يقتل زعتر بالرصاص في الجزء السابع؟",
       "a": "هلال",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2034936/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "babalhara-1000-907",
-      "p": 1000,
+      "qid": "babalhara-600-918",
+      "p": 600,
+      "topic": "الأماكن",
+      "q": "في أي بيت تختبئ المرأة المقاومة بعد تحريرها في الجزء الخامس؟",
+      "a": "بيت أبو بشير",
+      "alt": [
+        "منزل أبو بشير",
+        "دار أبو بشير"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "babalhara-800-911",
+      "p": 800,
       "topic": "أعمال أهل الحارة",
       "q": "بأي مهمة اجتماعية يساعد أبو فارس شباب الحارة العازبين في الجزء الخامس؟",
       "a": "خطبة العرائس لهم",
@@ -528,21 +340,176 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1295836/content",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "babalhara-1000-908",
-      "p": 1000,
-      "topic": "الأماكن",
-      "q": "في أي بيت تختبئ المرأة المقاومة بعد تحريرها في الجزء الخامس؟",
-      "a": "بيت أبو بشير",
+      "topic": "الأسرار والجواسيس",
+      "q": "بأي كنية يبدأ ابن عم النمس العمل متخفيًا في الحارة في الجزء الخامس؟",
+      "a": "أبو قاعود",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "أعمال أهل الحارة",
+      "q": "من يستلم إدارة محل العكيد الغائب في الجزء الرابع؟",
+      "a": "عبده",
       "alt": [
-        "منزل أبو بشير",
-        "دار أبو بشير"
+        "عبدو"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "qid": "babalhara-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "البيوت والزواج",
+      "q": "من الفتاة التي توافق على الزواج من ابن العكيد في الجزء الخامس؟",
+      "a": "مطيعة",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "البيوت والزواج",
+      "q": "ما اسم المرأة التي يقرر سعيد الزواج منها فتغضب بوران في الجزء الخامس؟",
+      "a": "هدية",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "المقاومة",
+      "q": "من قائد الرجال الذين يهربون صاحب المقهى من الحبس في الجزء الخامس؟",
+      "a": "أبو حسن",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1295836/episodes",
+      "qid": "babalhara-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الأماكن",
+      "q": "ما الأرض التابعة للحارة التي تُحتل بتحريض من زوج فريال في الجزء الخامس؟",
+      "a": "أرض الوقف",
+      "alt": [
+        "الوقف"
       ],
       "sourceUrl": "https://elcinema.com/work/1295836/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "qid": "babalhara-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "زعامة الحارة",
+      "q": "ما اسم السجين الذي يستغل الحكيم أوراقه للخروج، فتُفتح القضية في الجزء السابع؟",
+      "a": "الدوماني",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "qid": "babalhara-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "عائلة الحكيم",
+      "q": "ماذا تهدي سارة ابن الحكيم الأصغر في بداية الجزء السابع؟",
+      "a": "حجر كريم",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "qid": "babalhara-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "البيوت والزواج",
+      "q": "ما اسم زوجة ظافر التي تسعى حماتها لتزويجه عليها في الجزء السابع؟",
+      "a": "بهية",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "qid": "babalhara-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الأسرار والجواسيس",
+      "q": "من الجاسوس الذي يحرّض أبو عرب ضد الحارة ويقتله أبو صياح في نهاية الجزء الثالث؟",
+      "a": "حمدي",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "qid": "babalhara-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الأسرار والجواسيس",
+      "q": "ما اسم الضابط الذي يسرق زعتر سلاحه قبل أن يُطلب منه إعادته في الجزء السابع؟",
+      "a": "سلوم",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2034936/episodes",
+      "qid": "babalhara-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المقاومة",
+      "q": "من الرجل الذي يتحد مع أبو شهاب ضد الجيش الفرنسي في الجزء الثالث؟",
+      "a": "أدهم",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "qid": "babalhara-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المقاومة",
+      "q": "من الرجل الذي يعدمه الفرنسيون في الحلقة الحادية والعشرين من الجزء الرابع؟",
+      "a": "أبو عبده",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1653818/episodes",
+      "qid": "babalhara-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "البيوت والزواج",
+      "q": "ما اسم الرجل الذي عقد قرانه على ابنة أبو خاطر وطالب بأخذها بالقانون في الجزء الثالث؟",
+      "a": "كمال",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "qid": "babalhara-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الأماكن",
+      "q": "من الرجل الذي يرفع دعوى لانتزاع بيت والد إبراهيم احتيالًا في الجزء الثالث؟",
+      "a": "أبو نصوح",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1667786/episodes",
+      "qid": "babalhara-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

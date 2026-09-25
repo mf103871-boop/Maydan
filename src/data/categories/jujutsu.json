@@ -5,146 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "jujutsu-200-901",
+      "qid": "jujutsu-200-911",
       "p": 200,
-      "q": "من بطل جوجوتسو كايسن الذي أصبح وعاء سوكونا بابتلاع إصبعه؟",
-      "a": "يوجي إيتادوري",
-      "alt": [
-        "يوجي",
-        "Yuji Itadori"
-      ],
-      "topic": "البدايات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "jujutsu-200-902",
-      "p": 200,
-      "q": "من ملك اللعنات الذي يسكن جسد يوجي في بداية القصة؟",
-      "a": "ريومن سوكونا",
-      "alt": [
-        "سوكونا",
-        "Sukuna"
-      ],
-      "topic": "اللعنات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "jujutsu-200-903",
-      "p": 200,
-      "q": "من معلّم يوجي الذي يُعرف بأنه أقوى ساحر؟",
-      "a": "ساتورو غوجو",
-      "alt": [
-        "غوجو",
-        "جوجو",
-        "Satoru Gojo"
-      ],
-      "topic": "مدرسة طوكيو",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "jujutsu-200-904",
-      "p": 200,
-      "q": "من طالب السحرة الذي يتحدث بحشوات كرات الأرز كي يتجنب لعن الآخرين؟",
-      "a": "توغي إينوماكي",
-      "alt": [
-        "إينوماكي",
-        "Toge Inumaki"
-      ],
-      "topic": "القدرات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "jujutsu-200-905",
-      "p": 200,
-      "q": "بأي أداة تضرب نوبارا المسامير في قتالها؟",
-      "a": "المطرقة",
-      "alt": [
-        "مطرقة"
-      ],
-      "topic": "الأدوات",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#Powers_and_abilities",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "jujutsu-200-906",
-      "p": 200,
-      "q": "ما صلة قرابة ماي بماكي في جوجوتسو كايسن؟",
-      "a": "أختها التوأم",
-      "alt": [
-        "توأمها",
-        "أخت توأم"
-      ],
-      "topic": "العائلات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "jujutsu-200-907",
-      "p": 200,
-      "q": "بأي رياضة حُسم اليوم الثاني من لقاء مدرستي السحرة بعد هجوم اللعنات؟",
-      "a": "البيسبول",
-      "alt": [
-        "كرة القاعدة",
-        "Baseball"
-      ],
-      "topic": "المنافسات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/episodes/21.php",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "jujutsu-200-908",
-      "p": 200,
-      "q": "ما العقوبة التي أُجّلت ليوجي حتى يجمع أصابع سوكونا؟",
-      "a": "الإعدام",
-      "alt": [
-        "حكم الإعدام"
-      ],
-      "topic": "البدايات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/episodes/02.php",
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "jujutsu-400-901",
-      "p": 400,
-      "q": "ما العمل الذي تركه نانامي قبل عودته إلى ممارسة الجوجوتسو؟",
-      "a": "موظف شركة",
-      "alt": [
-        "موظف مكتبي",
-        "موظف في شركة"
-      ],
-      "topic": "مدرسة طوكيو",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category3.php",
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "jujutsu-400-902",
-      "p": 400,
-      "q": "من اللعنة التي تغيّر هيئة البشر بلمس أرواحهم؟",
-      "a": "ماهيتو",
-      "alt": [
-        "Mahito"
-      ],
-      "topic": "اللعنات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "jujutsu-400-903",
-      "p": 400,
       "q": "ما حقيقة باندا، الطالب المتكلم في مدرسة السحرة؟",
       "a": "جثة ملعونة",
       "alt": [
@@ -154,25 +16,11 @@
       "topic": "مدرسة طوكيو",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "jujutsu-400-904",
-      "p": 400,
-      "q": "ما اسم مدرسة السحرة المنافسة لطوكيو في اللقاء الودي؟",
-      "a": "مدرسة كيوتو",
-      "alt": [
-        "كيوتو",
-        "Kyoto Jujutsu High"
-      ],
-      "topic": "مدرسة كيوتو",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "jujutsu-400-905",
-      "p": 400,
+      "qid": "jujutsu-200-912",
+      "p": 200,
       "q": "ما اسم تقنية غوجو الموروثة للتحكم بالمسافة؟",
       "a": "اللامحدود",
       "alt": [
@@ -182,11 +30,11 @@
       "topic": "القدرات",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "jujutsu-400-906",
-      "p": 400,
+      "qid": "jujutsu-200-913",
+      "p": 200,
       "q": "ما اسم التقنية الموروثة التي يستعملها ميغومي لاستدعاء مخلوقات الظلال؟",
       "a": "الظلال العشرة",
       "alt": [
@@ -196,11 +44,11 @@
       "topic": "القدرات",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "jujutsu-400-907",
-      "p": 400,
+      "qid": "jujutsu-200-914",
+      "p": 200,
       "q": "من صديقة طفولة يوتا التي تحولت إلى روح ملعونة مرتبطة به؟",
       "a": "ريكا أوريموتو",
       "alt": [
@@ -210,11 +58,11 @@
       "topic": "اللعنات",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen-movie.jp/character/",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "jujutsu-400-908",
-      "p": 400,
+      "qid": "jujutsu-200-915",
+      "p": 200,
       "q": "ما اسم أخت ميغومي الكبرى التي أُصيبت بلعنة غامضة؟",
       "a": "تسوميكي فوشيغورو",
       "alt": [
@@ -224,11 +72,11 @@
       "topic": "العائلات",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category5.php",
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "jujutsu-600-901",
-      "p": 600,
+      "qid": "jujutsu-200-916",
+      "p": 200,
       "q": "من مدير مدرسة السحرة الذي صنع باندا؟",
       "a": "ماساميتشي ياغا",
       "alt": [
@@ -238,52 +86,11 @@
       "topic": "مدرسة طوكيو",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "jujutsu-600-902",
-      "p": 600,
-      "q": "من طبيبة مدرسة السحرة التي تشفي الآخرين بالتقنية العكسية؟",
-      "a": "شوكو إييري",
-      "alt": [
-        "شوكو",
-        "Shoko Ieiri"
-      ],
-      "topic": "مدرسة طوكيو",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "jujutsu-600-903",
-      "p": 600,
-      "q": "من أي خوف بشري وُلدت هانامي؟",
-      "a": "الخوف من الغابات",
-      "alt": [
-        "الغابات",
-        "خوف الغابات"
-      ],
-      "topic": "اللعنات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "jujutsu-600-904",
-      "p": 600,
-      "q": "من كبير إخوة لوحات الموت الذي اعتبر يوجي أخًا له؟",
-      "a": "تشوسو",
-      "alt": [
-        "Choso"
-      ],
-      "topic": "العائلات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "jujutsu-600-905",
-      "p": 600,
+      "qid": "jujutsu-200-917",
+      "p": 200,
       "q": "ما الاسم الحقيقي لطالب السحرة الذي يتحكم بميكامارو عن بُعد؟",
       "a": "كوكيتشي موتا",
       "alt": [
@@ -293,37 +100,11 @@
       "topic": "مدرسة كيوتو",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "jujutsu-600-906",
-      "p": 600,
-      "q": "بأي لقب اشتهر توجي، منفّذ مهمة اغتيال وعاء البلازما النجمية؟",
-      "a": "قاتل السحرة",
-      "alt": [
-        "Sorcerer Killer"
-      ],
-      "topic": "ماضي السحرة",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "jujutsu-600-907",
-      "p": 600,
-      "q": "ما هجوم نوبارا الذي ينقل الأذى عبر جزء من جسد الخصم ودمية قش؟",
-      "a": "الرنين",
-      "alt": [
-        "Resonance"
-      ],
-      "topic": "القدرات",
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#Powers_and_abilities",
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "jujutsu-600-908",
-      "p": 600,
+      "qid": "jujutsu-200-918",
+      "p": 200,
       "q": "من الفتاة التي كُلّف غوجو وغيتو بحمايتها تمهيدًا لاندماجها مع تينغن؟",
       "a": "ريكو أماناي",
       "alt": [
@@ -333,11 +114,64 @@
       "topic": "ماضي السحرة",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "jujutsu-800-901",
-      "p": 800,
+      "qid": "jujutsu-400-911",
+      "p": 400,
+      "q": "من طبيبة مدرسة السحرة التي تشفي الآخرين بالتقنية العكسية؟",
+      "a": "شوكو إييري",
+      "alt": [
+        "شوكو",
+        "Shoko Ieiri"
+      ],
+      "topic": "مدرسة طوكيو",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/shibuyajihen.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-912",
+      "p": 400,
+      "q": "من كبير إخوة لوحات الموت الذي اعتبر يوجي أخًا له؟",
+      "a": "تشوسو",
+      "alt": [
+        "Choso"
+      ],
+      "topic": "العائلات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-913",
+      "p": 400,
+      "q": "بأي لقب اشتهر توجي، منفّذ مهمة اغتيال وعاء البلازما النجمية؟",
+      "a": "قاتل السحرة",
+      "alt": [
+        "Sorcerer Killer"
+      ],
+      "topic": "ماضي السحرة",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-914",
+      "p": 400,
+      "q": "ما هجوم نوبارا الذي ينقل الأذى عبر جزء من جسد الخصم ودمية قش؟",
+      "a": "الرنين",
+      "alt": [
+        "Resonance"
+      ],
+      "topic": "القدرات",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#Powers_and_abilities",
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "jujutsu-400-915",
+      "p": 400,
       "q": "من صاحب تقنية تبديل الأجساد الذي دبّر لعبة الإبادة داخل جسد غيتو؟",
       "a": "كينجاكو",
       "alt": [
@@ -346,39 +180,11 @@
       "topic": "لعبة الإبادة",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "jujutsu-800-902",
-      "p": 800,
-      "q": "ما مهنة هيغوروما قبل إيقاظ قوته ودخوله لعبة الإبادة؟",
-      "a": "محامٍ",
-      "alt": [
-        "محامي",
-        "المحاماة"
-      ],
-      "topic": "لعبة الإبادة",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "jujutsu-800-903",
-      "p": 800,
-      "q": "ما القدرة التي تمنح تينغن استمرار حياته عبر القرون؟",
-      "a": "الخلود",
-      "alt": [
-        "عدم الموت",
-        "Immortality"
-      ],
-      "topic": "القدرات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "jujutsu-800-904",
-      "p": 800,
+      "qid": "jujutsu-400-916",
+      "p": 400,
       "q": "من المعلّمة التي تشرف على طلاب كيوتو ويتعمد غوجو إزعاجها؟",
       "a": "أوتاهيمي إيوري",
       "alt": [
@@ -388,25 +194,11 @@
       "topic": "مدرسة كيوتو",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "jujutsu-800-905",
-      "p": 800,
-      "q": "من اعتنت بريكو منذ وفاة والديها في طفولتها؟",
-      "a": "ميساتو كوروي",
-      "alt": [
-        "كوروي",
-        "Misato Kuroi"
-      ],
-      "topic": "ماضي السحرة",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "jujutsu-800-906",
-      "p": 800,
+      "qid": "jujutsu-400-917",
+      "p": 400,
       "q": "ما اسم صديقة نوبارا التي أُجبرت على مغادرة قريتها وتتمنى لقاءها مجددًا؟",
       "a": "ساوري",
       "alt": [
@@ -415,25 +207,11 @@
       "topic": "مدرسة طوكيو",
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Nobara_Kugisaki#In_Jujutsu_Kaisen",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "jujutsu-800-907",
-      "p": 800,
-      "q": "ما الجهاز الذي تستخدمه ناناكو هاسابا في تقنيتها الملعونة؟",
-      "a": "الهاتف الذكي",
-      "alt": [
-        "هاتف ذكي",
-        "الهاتف المحمول"
-      ],
-      "topic": "الأدوات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "jujutsu-800-908",
-      "p": 800,
+      "qid": "jujutsu-400-918",
+      "p": 400,
       "q": "ما اسم النجمة الغنائية التي يعشقها تودو؟",
       "a": "تاكادا تشان",
       "alt": [
@@ -443,11 +221,39 @@
       "topic": "مدرسة كيوتو",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "jujutsu-1000-901",
-      "p": 1000,
+      "qid": "jujutsu-600-911",
+      "p": 600,
+      "q": "من اعتنت بريكو منذ وفاة والديها في طفولتها؟",
+      "a": "ميساتو كوروي",
+      "alt": [
+        "كوروي",
+        "Misato Kuroi"
+      ],
+      "topic": "ماضي السحرة",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-912",
+      "p": 600,
+      "q": "ما الجهاز الذي تستخدمه ناناكو هاسابا في تقنيتها الملعونة؟",
+      "a": "الهاتف الذكي",
+      "alt": [
+        "هاتف ذكي",
+        "الهاتف المحمول"
+      ],
+      "topic": "الأدوات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/category4.php",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-600-913",
+      "p": 600,
       "q": "من كان الرئيس السادس والعشرين لعشيرة زينين؟",
       "a": "ناوبيتو زينين",
       "alt": [
@@ -457,11 +263,11 @@
       "topic": "العائلات",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category3.php",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "jujutsu-1000-902",
-      "p": 1000,
+      "qid": "jujutsu-600-914",
+      "p": 600,
       "q": "من الوسيط الذي عرض على توجي مهمة اغتيال وعاء البلازما النجمية؟",
       "a": "شيو كونغ",
       "alt": [
@@ -471,25 +277,11 @@
       "topic": "ماضي السحرة",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category6.php",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "jujutsu-1000-903",
-      "p": 1000,
-      "q": "أي كوكبة تستوحي منها تقنية كيرارا ترتيب نجومها؟",
-      "a": "الصليب الجنوبي",
-      "alt": [
-        "كوكبة الصليب الجنوبي",
-        "Southern Cross"
-      ],
-      "topic": "القدرات",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "jujutsu-1000-904",
-      "p": 1000,
+      "qid": "jujutsu-600-915",
+      "p": 600,
       "q": "ما اسم الشيكيغامي الذي يصل كل لاعب بقواعد لعبة الإبادة؟",
       "a": "كوغاني",
       "alt": [
@@ -499,11 +291,11 @@
       "topic": "لعبة الإبادة",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "jujutsu-1000-905",
-      "p": 1000,
+      "qid": "jujutsu-600-916",
+      "p": 600,
       "q": "من لاعب لعبة الإبادة الذي يحوّل أجزاء جسده إلى قنابل؟",
       "a": "إيوري هازينوكي",
       "alt": [
@@ -513,25 +305,11 @@
       "topic": "القدرات",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "jujutsu-1000-906",
-      "p": 1000,
-      "q": "من قائدة فرقة اغتيال آل فوجيوارا السابقة التي تتلاعب بالسماء؟",
-      "a": "تاكاكو أورو",
-      "alt": [
-        "أورو",
-        "Takako Uro"
-      ],
-      "topic": "ماضي السحرة",
-      "verified": true,
-      "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "jujutsu-1000-907",
-      "p": 1000,
+      "qid": "jujutsu-600-917",
+      "p": 600,
       "q": "من طالب كيوتو الذي تكون أكاري نيتا أخته الكبرى؟",
       "a": "أراتا نيتا",
       "alt": [
@@ -541,11 +319,11 @@
       "topic": "مدرسة كيوتو",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/category2.php",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "jujutsu-1000-908",
-      "p": 1000,
+      "qid": "jujutsu-600-918",
+      "p": 600,
       "q": "ما اسم لعنة الصرصور من الدرجة الخاصة في مستعمرة سينداي؟",
       "a": "كوروروشي",
       "alt": [
@@ -555,7 +333,218 @@
       "topic": "لعبة الإبادة",
       "verified": true,
       "sourceUrl": "https://jujutsukaisen.jp/character/",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "jujutsu-800-911",
+      "p": 800,
+      "q": "أي كوكبة تستوحي منها تقنية كيرارا ترتيب نجومها؟",
+      "a": "الصليب الجنوبي",
+      "alt": [
+        "كوكبة الصليب الجنوبي",
+        "Southern Cross"
+      ],
+      "topic": "القدرات",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "jujutsu-800-912",
+      "p": 800,
+      "q": "من قائدة فرقة اغتيال آل فوجيوارا السابقة التي تتلاعب بالسماء؟",
+      "a": "تاكاكو أورو",
+      "alt": [
+        "أورو",
+        "Takako Uro"
+      ],
+      "topic": "ماضي السحرة",
+      "verified": true,
+      "sourceUrl": "https://jujutsukaisen.jp/character/",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "لعبة الإبادة",
+      "q": "من مقاتل سينداي الذي يطلق غرانيت بلاست من شعره؟",
+      "a": "ريو إيشيغوري",
+      "alt": [
+        "Ryu Ishigori"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "مدرسة طوكيو",
+      "q": "من تلميذ نانامي الذي يغطي وجهه لاستدعاء أربعة وحوش؟",
+      "a": "تاكوما إينو",
+      "alt": [
+        "Takuma Ino"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "القدرات",
+      "q": "من الساحرة التي تتحكم بالغربان وتشاركها الرؤية؟",
+      "a": "مي مي",
+      "alt": [
+        "Mei Mei"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "البدايات",
+      "q": "من زميلة يوجي القديمة التي سألت نوبارا عنه بعد انتقالها لطوكيو؟",
+      "a": "يوكو أوزاوا",
+      "alt": [
+        "Yuko Ozawa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "مدرسة كيوتو",
+      "q": "ما الآلة الموسيقية التي يستخدمها مدير مدرسة كيوتو لإطلاق الطاقة؟",
+      "a": "الغيتار",
+      "alt": [
+        "غيتار كهربائي",
+        "الجيتار"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "ماضي السحرة",
+      "q": "من درّب يوتا في أفريقيا بعد أحداث جوجوتسو كايسن صفر؟",
+      "a": "ميغيل",
+      "alt": [
+        "Miguel"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "لعبة الإبادة",
+      "q": "من يحوّل إيصالات الشراء إلى أغراض فعلية أثناء لعبة الإبادة؟",
+      "a": "ريجي ستار",
+      "alt": [
+        "Reggie Star"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "لعبة الإبادة",
+      "q": "من رسام المانغا الذي يقاتل هاكاري برمح على شكل قلم؟",
+      "a": "شارل برنار",
+      "alt": [
+        "Charles Bernard"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "العائلات",
+      "q": "ما اسم أم يوجي التي استولى صاحب تقنية تبديل الأجساد على جسدها؟",
+      "a": "كاوري إيتادوري",
+      "alt": [
+        "Kaori Itadori"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "البدايات",
+      "q": "ما اسم أم جونبي التي قُتلت بعد وضع إصبع سوكونا بمنزلها؟",
+      "a": "ناغي يوشينو",
+      "alt": [
+        "Nagi Yoshino"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "مدرسة طوكيو",
+      "q": "ما اسم الجثة الملعونة المصنوعة من معلومات روح ابن أخت كوساكابي؟",
+      "a": "تاكيرو",
+      "alt": [
+        "Takeru"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "ماضي السحرة",
+      "q": "من العجوز التي استحضرت توجي داخل جسد حفيدها في شيبويا؟",
+      "a": "أوغامي",
+      "alt": [
+        "Ogami"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "القدرات",
+      "q": "من مستخدم اللعنات الذي تجعل تقنيته الضربات القوية أضعف؟",
+      "a": "جيرو أواساكا",
+      "alt": [
+        "Jiro Awasaka"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الأدوات",
+      "q": "ما الأداة التي استخدمها مقاتل من أفريقيا لتعطيل تقنية غوجو في «جوجوتسو كايسن صفر»؟",
+      "a": "الحبل الأسود",
+      "alt": [
+        "Black Rope"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Jujutsu_Kaisen_characters",
+      "qid": "jujutsu-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

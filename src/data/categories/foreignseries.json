@@ -5,119 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "foreignseries-200-901",
+      "qid": "foreignseries-200-911",
       "p": 200,
-      "topic": "فريندز",
-      "q": "في «فريندز»، ما اسم المقهى الذي يجتمع فيه الأصدقاء؟",
-      "a": "سنترال بيرك",
-      "alt": [
-        "Central Perk"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "foreignseries-200-902",
-      "p": 200,
-      "topic": "بريزن بريك",
-      "q": "من يدخل السجن عمدًا لينقذ أخاه في «بريزن بريك»؟",
-      "a": "مايكل سكوفيلد",
-      "alt": [
-        "مايكل",
-        "Michael Scofield"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "foreignseries-200-903",
-      "p": 200,
-      "topic": "صراع العروش",
-      "q": "في «صراع العروش»، ما اسم قلعة آل ستارك الرئيسية؟",
-      "a": "وينترفيل",
-      "alt": [
-        "وينترفل",
-        "Winterfell"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "foreignseries-200-904",
-      "p": 200,
-      "topic": "سترينجر ثينغز",
-      "q": "في «سترينجر ثينغز»، ما اسم البلدة التي تبدأ فيها الاختفاءات الغامضة؟",
-      "a": "هوكينز",
-      "alt": [
-        "Hawkins"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "foreignseries-200-905",
-      "p": 200,
-      "topic": "لا كاسا دي بابيل",
-      "q": "ما لقب العقل المدبر للعملية في «لا كاسا دي بابيل»؟",
-      "a": "البروفيسور",
-      "alt": [
-        "الأستاذ",
-        "Professor"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "foreignseries-200-906",
-      "p": 200,
-      "topic": "وينزداي",
-      "q": "في «وينزداي»، ما اسم الأكاديمية التي تنتقل إليها البطلة؟",
-      "a": "نيفرمور",
-      "alt": [
-        "Nevermore",
-        "نيفر مور"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/wednesday-character-cast-guide-season-1",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "foreignseries-200-907",
-      "p": 200,
-      "topic": "الموتى السائرون",
-      "q": "ما التسمية المعتادة للموتى المتحركين في «ذا ووكينغ ديد»؟",
-      "a": "الواكرز",
-      "alt": [
-        "السائرون",
-        "Walkers",
-        "المشاة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "foreignseries-200-908",
-      "p": 200,
-      "topic": "شيرلوك",
-      "q": "في مسلسل «شيرلوك»، من الطبيب وصديق المحقق الذي يرافقه في قضاياه؟",
-      "a": "جون واتسون",
-      "alt": [
-        "واتسون",
-        "John Watson"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "foreignseries-400-901",
-      "p": 400,
       "topic": "فريندز",
       "q": "في «فريندز»، في أي علم يتخصص روس؟",
       "a": "علم الأحافير",
@@ -128,56 +17,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "foreignseries-400-902",
-      "p": 400,
-      "topic": "بريزن بريك",
-      "q": "في «بريزن بريك»، ما اسم السجن الذي تجري داخله خطة الهروب في الموسم الأول؟",
-      "a": "فوكس ريفر",
-      "alt": [
-        "Fox River",
-        "سجن فوكس ريفر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "foreignseries-400-903",
-      "p": 400,
-      "topic": "صراع العروش",
-      "q": "أي شخصية تُعرف بلقب «أم التنانين» في «صراع العروش»؟",
-      "a": "دينيريس تارغاريان",
-      "alt": [
-        "دينيريس",
-        "دنيريس",
-        "Daenerys Targaryen"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "foreignseries-400-904",
-      "p": 400,
-      "topic": "سترينجر ثينغز",
-      "q": "ما اسم الفتاة ذات القدرات الذهنية التي تصادق الأطفال في «سترينجر ثينغز»؟",
-      "a": "إليفن",
-      "alt": [
-        "إلفن",
-        "أحد عشر",
-        "Eleven",
-        "11"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "foreignseries-400-905",
-      "p": 400,
+      "qid": "foreignseries-200-912",
+      "p": 200,
       "topic": "لا كاسا دي بابيل",
       "q": "وجه أي رسام تقلّده أقنعة أفراد العصابة في «لا كاسا دي بابيل»؟",
       "a": "سلفادور دالي",
@@ -187,26 +31,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "foreignseries-400-906",
-      "p": 400,
-      "topic": "وينزداي",
-      "q": "ما اسم اليد المتحركة التي تساعد البطلة في «وينزداي»؟",
-      "a": "ثينغ",
-      "alt": [
-        "Thing",
-        "الشيء",
-        "ثينج"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/wednesday-character-cast-guide-season-1",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "foreignseries-400-907",
-      "p": 400,
+      "qid": "foreignseries-200-913",
+      "p": 200,
       "topic": "الموتى السائرون",
       "q": "ما مهنة ريك غرايمز قبل انتشار الوباء في «ذا ووكينغ ديد»؟",
       "a": "نائب مأمور الشرطة",
@@ -217,11 +46,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "foreignseries-400-908",
-      "p": 400,
+      "qid": "foreignseries-200-914",
+      "p": 200,
       "topic": "شيرلوك",
       "q": "ما عنوان الشقة التي يسكنها المحقق مع رفيقه في مسلسل «شيرلوك»؟",
       "a": "221B شارع بيكر",
@@ -233,40 +62,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "foreignseries-600-901",
-      "p": 600,
-      "topic": "فريندز",
-      "q": "في «فريندز»، ما اسم أغنية فيبي الشهيرة عن حيوان ذي رائحة كريهة؟",
-      "a": "سميلي كات",
-      "alt": [
-        "Smelly Cat",
-        "القطة النتنة",
-        "القط ذو الرائحة الكريهة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Phoebe_Buffay",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "foreignseries-600-902",
-      "p": 600,
-      "topic": "بريزن بريك",
-      "q": "بأي وسيلة يحمل مخطط الهروب على جسده بطل «بريزن بريك»؟",
-      "a": "وشم",
-      "alt": [
-        "الوشم",
-        "وشوم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "foreignseries-600-903",
-      "p": 600,
+      "qid": "foreignseries-200-915",
+      "p": 200,
       "topic": "صراع العروش",
       "q": "في «صراع العروش»، ماذا تسمي آريا سيفها الرفيع؟",
       "a": "نيدل",
@@ -276,26 +76,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "foreignseries-600-904",
-      "p": 600,
-      "topic": "سترينجر ثينغز",
-      "q": "ما اسم العالم الموازي المظلم في «سترينجر ثينغز»؟",
-      "a": "العالم المقلوب",
-      "alt": [
-        "الأبسايد داون",
-        "Upside Down",
-        "البعد المقلوب"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "foreignseries-600-905",
-      "p": 600,
+      "qid": "foreignseries-200-916",
+      "p": 200,
       "topic": "لا كاسا دي بابيل",
       "q": "أي منشأة تستهدفها السرقة الأولى في «لا كاسا دي بابيل»؟",
       "a": "دار سك العملة الملكية",
@@ -306,11 +91,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "foreignseries-600-906",
-      "p": 600,
+      "qid": "foreignseries-200-917",
+      "p": 200,
       "topic": "وينزداي",
       "q": "في «وينزداي»، إلى أي مخلوق يمكن أن تتحول إينيد، زميلة البطلة في الغرفة؟",
       "a": "مستذئبة",
@@ -320,11 +105,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/wednesday-character-cast-guide-season-1",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "foreignseries-600-907",
-      "p": 600,
+      "qid": "foreignseries-200-918",
+      "p": 200,
       "topic": "الموتى السائرون",
       "q": "ما السلاح المميز الذي يحمله داريل ديكسون في «ذا ووكينغ ديد»؟",
       "a": "قوس نشاب",
@@ -335,11 +120,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "foreignseries-600-908",
-      "p": 600,
+      "qid": "foreignseries-400-911",
+      "p": 400,
       "topic": "شيرلوك",
       "q": "ما اسم المجرم الاستشاري الذي يصبح خصم المحقق الأبرز في «شيرلوك»؟",
       "a": "جيم موريارتي",
@@ -349,25 +134,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "foreignseries-800-901",
-      "p": 800,
-      "topic": "فريندز",
-      "q": "في «فريندز»، ما اسم الطبيب الذي يؤديه جوي في المسلسل داخل المسلسل؟",
-      "a": "دريك راموراي",
-      "alt": [
-        "Drake Ramoray",
-        "دكتور دريك راموراي"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Joey_Tribbiani",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "foreignseries-800-902",
-      "p": 800,
+      "qid": "foreignseries-400-912",
+      "p": 400,
       "topic": "بريزن بريك",
       "q": "في «بريزن بريك»، ما اسم طبيبة السجن التي تساعد في خطة الهروب الأولى؟",
       "a": "سارا تانكريدي",
@@ -377,11 +148,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "foreignseries-800-903",
-      "p": 800,
+      "qid": "foreignseries-400-913",
+      "p": 400,
       "topic": "صراع العروش",
       "q": "في «صراع العروش»، إلى أي مدينة تسافر آريا لتتدرب مع الرجال بلا وجوه؟",
       "a": "برافوس",
@@ -390,11 +161,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "foreignseries-800-904",
-      "p": 800,
+      "qid": "foreignseries-400-914",
+      "p": 400,
       "topic": "سترينجر ثينغز",
       "q": "في «سترينجر ثينغز»، في الموسم الثاني، ما الاسم المختصر الذي يطلقه داستن على الكائن الذي يربيه سرًا؟",
       "a": "دارت",
@@ -405,25 +176,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "foreignseries-800-905",
-      "p": 800,
-      "topic": "لا كاسا دي بابيل",
-      "q": "في «لا كاسا دي بابيل»، ما الأغنية الإيطالية التي يرددها أفراد العصابة رمزًا للمقاومة؟",
-      "a": "بيلا تشاو",
-      "alt": [
-        "Bella Ciao",
-        "بيلا شاو"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "foreignseries-800-906",
-      "p": 800,
+      "qid": "foreignseries-400-915",
+      "p": 400,
       "topic": "وينزداي",
       "q": "ما اسم فصيلة الوحش الذي يتحول إليه تايلر في الموسم الأول من «وينزداي»؟",
       "a": "هايد",
@@ -433,11 +190,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/is-wednesday-addams-a-witch-goody-addams",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "foreignseries-800-907",
-      "p": 800,
+      "qid": "foreignseries-400-916",
+      "p": 400,
       "topic": "الموتى السائرون",
       "q": "في «الموتى السائرون»، ما الاسم الذي يمنحه نيغان لمضربه الملفوف بالأسلاك؟",
       "a": "لوسيل",
@@ -447,11 +204,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "foreignseries-800-908",
-      "p": 800,
+      "qid": "foreignseries-400-917",
+      "p": 400,
       "topic": "شيرلوك",
       "q": "ما اسم شقيق المحقق الذي يعمل في الحكومة البريطانية في مسلسل «شيرلوك»؟",
       "a": "مايكروفت هولمز",
@@ -461,11 +218,39 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Sherlock_(TV_series)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "foreignseries-1000-901",
-      "p": 1000,
+      "qid": "foreignseries-400-918",
+      "p": 400,
+      "topic": "سترينجر ثينغز",
+      "q": "في «سترينجر ثينغز»، ما أغنية كيت بوش التي تساعد ماكس على النجاة من فيكنا في الموسم الرابع؟",
+      "a": "Running Up That Hill",
+      "alt": [
+        "رانينغ أب ذات هيل",
+        "الجري فوق ذلك التل"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/this-is-the-stranger-things-song-everyone-is-talking-about",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "foreignseries-600-911",
+      "p": 600,
+      "topic": "فريندز",
+      "q": "في «فريندز»، ما اسم الطبيب الذي يؤديه جوي في المسلسل داخل المسلسل؟",
+      "a": "دريك راموراي",
+      "alt": [
+        "Drake Ramoray",
+        "دكتور دريك راموراي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Joey_Tribbiani",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "foreignseries-600-912",
+      "p": 600,
       "topic": "فريندز",
       "q": "في «فريندز»، ما الاسم المستعار الذي تستخدمه فيبي مرارًا لتقمص شخصية أخرى؟",
       "a": "ريجينا فالانجي",
@@ -475,11 +260,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Phoebe_Buffay",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "foreignseries-1000-902",
-      "p": 1000,
+      "qid": "foreignseries-600-913",
+      "p": 600,
       "topic": "بريزن بريك",
       "q": "في «بريزن بريك»، بأي هوية شهيرة يتبين أن السجين تشارلز ويستمورلاند عاش سابقًا؟",
       "a": "دي بي كوبر",
@@ -489,11 +274,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "foreignseries-1000-903",
-      "p": 1000,
+      "qid": "foreignseries-600-914",
+      "p": 600,
       "topic": "صراع العروش",
       "q": "في «صراع العروش»، ما الاسم الأصلي لهودور الذي يكشفه بران في رؤى الماضي؟",
       "a": "ويليس",
@@ -504,25 +289,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "foreignseries-1000-904",
-      "p": 1000,
-      "topic": "سترينجر ثينغز",
-      "q": "في «سترينجر ثينغز»، ما أغنية كيت بوش التي تساعد ماكس على النجاة من فيكنا في الموسم الرابع؟",
-      "a": "Running Up That Hill",
-      "alt": [
-        "رانينغ أب ذات هيل",
-        "الجري فوق ذلك التل"
-      ],
-      "sourceUrl": "https://www.netflix.com/tudum/articles/this-is-the-stranger-things-song-everyone-is-talking-about",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "foreignseries-1000-905",
-      "p": 1000,
+      "qid": "foreignseries-600-915",
+      "p": 600,
       "topic": "لا كاسا دي بابيل",
       "q": "في «لا كاسا دي بابيل»، ما الاسم الحقيقي للشخصية التي تخطط للسرقات من خارج المبنى؟",
       "a": "سيرخيو ماركينا",
@@ -532,11 +303,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "foreignseries-1000-906",
-      "p": 1000,
+      "qid": "foreignseries-600-916",
+      "p": 600,
       "topic": "وينزداي",
       "q": "في «وينزداي»، ما اسم جدّة البطلة القديمة التي تظهر في رؤاها وتساعدها في مواجهة كراكستون؟",
       "a": "غودي آدامز",
@@ -547,11 +318,11 @@
       ],
       "sourceUrl": "https://www.netflix.com/tudum/articles/is-wednesday-addams-a-witch-goody-addams",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "foreignseries-1000-907",
-      "p": 1000,
+      "qid": "foreignseries-600-917",
+      "p": 600,
       "topic": "الموتى السائرون",
       "q": "ما اسم النمر المرافق للملك حزقيال في «ذا ووكينغ ديد»؟",
       "a": "شيفا",
@@ -560,11 +331,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "foreignseries-1000-908",
-      "p": 1000,
+      "qid": "foreignseries-600-918",
+      "p": 600,
       "topic": "شيرلوك",
       "q": "في «المشكلة الأخيرة»، ما اسم شقيقة المحقق التي احتُجزت في شيرينفورد؟",
       "a": "يوروس هولمز",
@@ -575,7 +346,219 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/The_Final_Problem_(Sherlock)",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "فريندز",
+      "q": "في «فريندز»، إلى أي مدينة يُنقل تشاندلر للعمل قبل استقالته؟",
+      "a": "تولسا",
+      "alt": [
+        "Tulsa"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
+      "qid": "foreignseries-800-911",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "بريزن بريك",
+      "q": "في «بريزن بريك»، ما اسم السجين الحقيقي الملقب بهايواير؟",
+      "a": "تشارلز باتوشيك",
+      "alt": [
+        "Charles Patoshik"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
+      "qid": "foreignseries-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "صراع العروش",
+      "q": "في «صراع العروش»، من الثري الذي يستضيف دينيريس وفيسيريس في بنتوس ويرتب زواجها؟",
+      "a": "إيليريو موباتيس",
+      "alt": [
+        "Illyrio Mopatis"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
+      "qid": "foreignseries-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "سترينجر ثينغز",
+      "q": "في الموسم الثاني من «سترينجر ثينغز»، من الفتاة التي تعلّم إليفن تقوية قدراتها بالغضب؟",
+      "a": "كالي",
+      "alt": [
+        "Kali"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
+      "qid": "foreignseries-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "لا كاسا دي بابيل",
+      "q": "في «لا كاسا دي بابيل»، ما اسم ابن برلين الذي يسرق الذهب مع تاتيانا؟",
+      "a": "رافاييل",
+      "alt": [
+        "Rafael"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
+      "qid": "foreignseries-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "وينزداي",
+      "q": "في «وينزداي»، ما اسم الطالب الشغوف بتربية النحل الذي يصادق البطلة؟",
+      "a": "يوجين",
+      "alt": [
+        "Eugene"
+      ],
+      "sourceUrl": "https://www.netflix.com/tudum/articles/wednesday-character-cast-guide-season-1",
+      "qid": "foreignseries-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الموتى السائرون",
+      "q": "في «الموتى السائرون»، من الطبيبة التي تنقذ كارل بعد إصابة عينه في الإسكندرية؟",
+      "a": "دينيس كلويد",
+      "alt": [
+        "Denise Cloyd"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
+      "qid": "foreignseries-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "شيرلوك",
+      "q": "في «المشكلة الأخيرة» من «شيرلوك»، من صديق الطفولة الذي ارتبط بلقب ريدبيرد؟",
+      "a": "فيكتور تريفور",
+      "alt": [
+        "Victor Trevor"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Final_Problem_(Sherlock)",
+      "qid": "foreignseries-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "فريندز",
+      "q": "في «فريندز»، ما اسم والدة تشاندلر الكاتبة؟",
+      "a": "نورا تايلر بينغ",
+      "alt": [
+        "Nora Tyler Bing",
+        "نورا بينغ"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Friends",
+      "qid": "foreignseries-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "بريزن بريك",
+      "q": "في «بريزن بريك»، ما اسم الشاهد الذي يبحث أبروتزي عن مكان اختبائه؟",
+      "a": "فيبوناتشي",
+      "alt": [
+        "Fibonacci"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Prison_Break_season_1",
+      "qid": "foreignseries-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "صراع العروش",
+      "q": "في «صراع العروش»، من الفارس الذي يحاول قتل تيريون بمعركة بلاك ووتر قبل أن يوقفه بودريك؟",
+      "a": "ماندون مور",
+      "alt": [
+        "Mandon Moore"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Game_of_Thrones_characters",
+      "qid": "foreignseries-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "سترينجر ثينغز",
+      "q": "في الموسم الثاني من «سترينجر ثينغز»، ما اسم الرجل الذي ترفض إليفن قتله بعدما ترى صورة ابنتيه؟",
+      "a": "راي",
+      "alt": [
+        "Ray"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stranger_Things_season_2",
+      "qid": "foreignseries-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "لا كاسا دي بابيل",
+      "q": "في «لا كاسا دي بابيل»، ما الاسم الذي تختاره أليسيا سييرا لمولودتها؟",
+      "a": "فيكتوريا",
+      "alt": [
+        "Victoria"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Money_Heist",
+      "qid": "foreignseries-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "وينزداي",
+      "q": "في الموسم الأول من «وينزداي»، ما اسم الطبيبة النفسية التي تزورها البطلة؟",
+      "a": "فاليري كينبوت",
+      "alt": [
+        "كينبوت",
+        "Valerie Kinbott",
+        "Dr. Kinbott"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wednesday_(TV_series)",
+      "qid": "foreignseries-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الموتى السائرون",
+      "q": "في «الموتى السائرون»، من الطبيب الوحيد الباقي في مركز مكافحة الأمراض حين تصل مجموعة ريك؟",
+      "a": "إدوين جينر",
+      "alt": [
+        "Edwin Jenner"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_The_Walking_Dead_(TV_series)_characters",
+      "qid": "foreignseries-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "شيرلوك",
+      "q": "في «شيرلوك»، من مساعدة ماغنوسن التي يتظاهر المحقق بأنه يريد الزواج منها؟",
+      "a": "جانين هوكينز",
+      "alt": [
+        "Janine Hawkins",
+        "جانين"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_Sherlock_characters",
+      "qid": "foreignseries-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

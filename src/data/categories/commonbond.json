@@ -5,154 +5,9 @@
   "qs": [
     {
       "p": 200,
-      "q": "النحلة والنملة والفراشة: إلى أي مجموعة حيوانية تنتمي؟",
-      "a": "حشرات",
-      "qid": "commonbond-200-901",
-      "type": "common",
-      "items": [
-        "النملة",
-        "النحلة",
-        "الفراشة"
-      ],
-      "topic": "الحيوانات",
-      "alt": [],
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://animaldiversity.org/accounts/Insecta/"
-    },
-    {
-      "p": 200,
-      "q": "كروم وفايرفوكس وسفاري: ما نوع هذه البرامج؟",
-      "a": "متصفحات الويب",
-      "qid": "commonbond-200-902",
-      "type": "common",
-      "items": [
-        "كروم",
-        "فايرفوكس",
-        "سفاري"
-      ],
-      "topic": "تقنية وحوسبة",
-      "alt": [],
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Browsing_the_web"
-    },
-    {
-      "p": 200,
-      "q": "القاهرة والإسكندرية والأقصر: في أي بلد تقع؟",
-      "a": "مصر",
-      "qid": "commonbond-200-903",
-      "type": "common",
-      "items": [
-        "القاهرة",
-        "الإسكندرية",
-        "أسوان"
-      ],
-      "topic": "جغرافيا وأماكن",
-      "alt": [],
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Egypt"
-    },
-    {
-      "p": 200,
-      "q": "المتر والسنتيمتر والكيلومتر: ماذا نقيس بها؟",
-      "a": "الطول",
-      "qid": "commonbond-200-904",
-      "type": "common",
-      "items": [
-        "المتر",
-        "السنتيمتر",
-        "الكيلومتر"
-      ],
-      "topic": "فضاء وعلوم",
-      "alt": [
-        "وحدات طول",
-        "المسافة"
-      ],
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://www.nist.gov/pml/owm/metric-si/si-units"
-    },
-    {
-      "p": 200,
-      "q": "السبت والأحد والاثنين: ما القاسم المشترك بينها؟",
-      "a": "أيام الأسبوع",
-      "qid": "commonbond-200-905",
-      "type": "common",
-      "items": [
-        "السبت",
-        "الأحد",
-        "الاثنين"
-      ],
-      "topic": "كلمات ولغة",
-      "alt": [],
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Week"
-    },
-    {
-      "p": 200,
-      "q": "العود والكمان والغيتار: ما نوعها من الآلات الموسيقية؟",
-      "a": "آلات وترية",
-      "qid": "commonbond-200-906",
-      "type": "common",
-      "items": [
-        "العود",
-        "الكمان",
-        "الغيتار"
-      ],
-      "topic": "فنون وأدب",
-      "alt": [
-        "الوتريات",
-        "آلات ذات أوتار"
-      ],
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/String_instrument"
-    },
-    {
-      "p": 200,
-      "q": "الركنية والتسلل وركلة الجزاء: في أي رياضة تسمعها؟",
-      "a": "كرة القدم",
-      "qid": "commonbond-200-907",
-      "type": "common",
-      "items": [
-        "التسلل",
-        "الركنية",
-        "ركلة الجزاء"
-      ],
-      "topic": "رياضة وألعاب",
-      "alt": [],
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Association_football"
-    },
-    {
-      "p": 200,
-      "q": "الجبن واللبن والزبدة: من أي مادة غذائية تُصنع عادة؟",
-      "a": "الحليب",
-      "qid": "commonbond-200-908",
-      "type": "common",
-      "items": [
-        "حليب",
-        "جبن",
-        "زبادي"
-      ],
-      "topic": "طعام ونباتات غذائية",
-      "alt": [
-        "اللبن الحليب",
-        "منتجات الألبان"
-      ],
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Dairy_product"
-    },
-    {
-      "p": 400,
-      "q": "التمساح والسحلية والأفعى: ما المجموعة الحيوانية التي تجمعها؟",
+      "q": "التمساح والثعبان والسلحفاة: ما المجموعة الحيوانية التي تجمعها؟",
       "a": "زواحف",
-      "qid": "commonbond-400-901",
+      "qid": "commonbond-200-911",
       "type": "common",
       "items": [
         "التمساح",
@@ -161,15 +16,15 @@
       ],
       "topic": "الحيوانات",
       "alt": [],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://animaldiversity.org/accounts/Reptilia/"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "JPG وPNG وGIF: ما نوع الملفات التي تدل عليها؟",
       "a": "صيغ صور",
-      "qid": "commonbond-400-902",
+      "qid": "commonbond-200-912",
       "type": "common",
       "items": [
         "PNG",
@@ -178,15 +33,15 @@
       ],
       "topic": "تقنية وحوسبة",
       "alt": [],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "النرويج والسويد والدنمارك: ما اسم منطقتها المشتركة؟",
       "a": "إسكندنافيا",
-      "qid": "commonbond-400-903",
+      "qid": "commonbond-200-913",
       "type": "common",
       "items": [
         "النرويج",
@@ -198,15 +53,15 @@
         "دول الشمال",
         "الدول الإسكندنافية"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Scandinavia"
     },
     {
-      "p": 400,
-      "q": "عطارد والزهرة والأرض: ما نوع هذه الكواكب؟",
+      "p": 200,
+      "q": "عطارد والزهرة والمريخ: ما نوع هذه الكواكب؟",
       "a": "كواكب صخرية",
-      "qid": "commonbond-400-904",
+      "qid": "commonbond-200-914",
       "type": "common",
       "items": [
         "عطارد",
@@ -218,15 +73,15 @@
         "الكواكب الداخلية",
         "كواكب أرضية"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
     },
     {
-      "p": 400,
-      "q": "مَن وأين ومتى: ما الاستخدام اللغوي المشترك لها؟",
+      "p": 200,
+      "q": "أين ومتى وكيف: ما الاستخدام اللغوي المشترك لها؟",
       "a": "أسماء استفهام",
-      "qid": "commonbond-400-905",
+      "qid": "commonbond-200-915",
       "type": "common",
       "items": [
         "أين",
@@ -237,15 +92,15 @@
       "alt": [
         "أدوات استفهام"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://ar.wikipedia.org/wiki/اسم_استفهام"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "النسخ والرقعة والثلث: ما الفن الذي تنتمي إليه؟",
       "a": "الخط العربي",
-      "qid": "commonbond-400-906",
+      "qid": "commonbond-200-916",
       "type": "common",
       "items": [
         "الثلث",
@@ -254,15 +109,15 @@
       ],
       "topic": "فنون وأدب",
       "alt": [],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Arabic_calligraphy"
     },
     {
-      "p": 400,
-      "q": "التنس والاسكواش والريشة الطائرة: ما الأداة التي تضرب بها المقذوف؟",
+      "p": 200,
+      "q": "الريشة الطائرة والإسكواش والبادل: ما الأداة التي تضرب بها المقذوف؟",
       "a": "مضرب",
-      "qid": "commonbond-400-907",
+      "qid": "commonbond-200-917",
       "type": "common",
       "items": [
         "الريشة الطائرة",
@@ -274,157 +129,15 @@
         "المضرب",
         "المضارب"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Racket_sport"
     },
     {
-      "p": 400,
-      "q": "الإسبريسو والكابتشينو واللاتيه: على أي مشروب تعتمد؟",
-      "a": "القهوة",
-      "qid": "commonbond-400-908",
-      "type": "common",
-      "items": [
-        "إسبريسو",
-        "لاتيه",
-        "كابتشينو"
-      ],
-      "topic": "طعام ونباتات غذائية",
-      "alt": [
-        "قهوة"
-      ],
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_coffee_drinks"
-    },
-    {
-      "p": 600,
-      "q": "الكنغر والكوالا والأبوسوم: ما المجموعة التي تحمل صغارها عادة في جراب؟",
-      "a": "جرابيات",
-      "qid": "commonbond-600-901",
-      "type": "common",
-      "items": [
-        "الكنغر",
-        "الكوالا",
-        "الأبوسوم"
-      ],
-      "topic": "الحيوانات",
-      "alt": [],
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://animaldiversity.org/accounts/Metatheria/"
-    },
-    {
-      "p": 600,
-      "q": "ZIP وRAR و7z: ما الاستخدام المشترك لهذه الصيغ؟",
-      "a": "أرشفة وضغط الملفات",
-      "qid": "commonbond-600-902",
-      "type": "common",
-      "items": [
-        "ZIP",
-        "RAR",
-        "7z"
-      ],
-      "topic": "تقنية",
-      "alt": [
-        "ملفات مضغوطة",
-        "ضغط الملفات",
-        "صيغ أرشيف"
-      ],
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://www.7-zip.org/"
-    },
-    {
-      "p": 600,
-      "q": "مون بلان وماترهورن ويونغفراو: ما السلسلة الجبلية التي تجمعها؟",
-      "a": "جبال الألب",
-      "qid": "commonbond-600-903",
-      "type": "common",
-      "items": [
-        "مون بلان",
-        "ماترهورن",
-        "يونغفراو"
-      ],
-      "topic": "جغرافيا وأماكن",
-      "alt": [],
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Alps"
-    },
-    {
-      "p": 600,
-      "q": "المطرقة والسندان والركاب: في أي جزء من الجسم توجد هذه العظام؟",
-      "a": "الأذن الوسطى",
-      "qid": "commonbond-600-904",
-      "type": "common",
-      "items": [
-        "المطرقة",
-        "السندان",
-        "الركاب"
-      ],
-      "topic": "فضاء وعلوم",
-      "alt": [],
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://www.nidcd.nih.gov/health/how-do-we-hear"
-    },
-    {
-      "p": 600,
-      "q": "صار وأصبح وأمسى: إلى أي مجموعة نحوية تنتمي؟",
-      "a": "كان وأخواتها",
-      "qid": "commonbond-600-905",
-      "type": "common",
-      "items": [
-        "صار",
-        "أصبح",
-        "أمسى"
-      ],
-      "topic": "كلمات ولغة",
-      "alt": [],
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://ar.wikipedia.org/wiki/كان_وأخواتها"
-    },
-    {
-      "p": 600,
-      "q": "دوروثي والفزاعة والرجل الصفيح: ما الحكاية التي تجمعهم؟",
-      "a": "ساحر أوز",
-      "qid": "commonbond-600-906",
-      "type": "common",
-      "items": [
-        "دوروثي",
-        "الفزاعة",
-        "الرجل الصفيح"
-      ],
-      "topic": "فنون وأدب",
-      "alt": [],
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Wizard_of_Oz"
-    },
-    {
-      "p": 600,
-      "q": "سترايك وسبير وسبليت: ما اللعبة التي تستخدم هذه المصطلحات؟",
-      "a": "البولينغ",
-      "qid": "commonbond-600-907",
-      "type": "common",
-      "items": [
-        "سترايك",
-        "سبير",
-        "سبليت"
-      ],
-      "topic": "رياضة وألعاب",
-      "alt": [],
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Ten-pin_bowling"
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "المجهول ودقلة نور والعجوة: أصناف من أي ثمرة؟",
       "a": "التمر",
-      "qid": "commonbond-600-908",
+      "qid": "commonbond-200-918",
       "type": "common",
       "items": [
         "المجهول",
@@ -436,15 +149,158 @@
         "تمر",
         "أصناف تمر"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Date_palm"
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "ما المجموعة الحيوانية التي تجمع هذه الكائنات؟",
+      "a": "جرابيات",
+      "qid": "commonbond-400-911",
+      "type": "common",
+      "items": [
+        "الكنغر",
+        "الكوالا",
+        "الأبوسوم"
+      ],
+      "topic": "الحيوانات",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://animaldiversity.org/accounts/Metatheria/"
+    },
+    {
+      "p": 400,
+      "q": "ZIP وRAR و7z: ما الاستخدام المشترك لهذه الصيغ؟",
+      "a": "أرشفة وضغط الملفات",
+      "qid": "commonbond-400-912",
+      "type": "common",
+      "items": [
+        "ZIP",
+        "RAR",
+        "7z"
+      ],
+      "topic": "تقنية وحوسبة",
+      "alt": [
+        "ملفات مضغوطة",
+        "ضغط الملفات",
+        "صيغ أرشيف"
+      ],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.7-zip.org/"
+    },
+    {
+      "p": 400,
+      "q": "مون بلان وماترهورن ويونغفراو: ما السلسلة الجبلية التي تجمعها؟",
+      "a": "جبال الألب",
+      "qid": "commonbond-400-913",
+      "type": "common",
+      "items": [
+        "مون بلان",
+        "ماترهورن",
+        "يونغفراو"
+      ],
+      "topic": "جغرافيا وأماكن",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Alps"
+    },
+    {
+      "p": 400,
+      "q": "المطرقة والسندان والركاب: في أي جزء من الجسم توجد هذه العظام؟",
+      "a": "الأذن الوسطى",
+      "qid": "commonbond-400-914",
+      "type": "common",
+      "items": [
+        "المطرقة",
+        "السندان",
+        "الركاب"
+      ],
+      "topic": "فضاء وعلوم",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://www.nidcd.nih.gov/health/how-do-we-hear"
+    },
+    {
+      "p": 400,
+      "q": "صار وأصبح وأمسى: إلى أي مجموعة نحوية تنتمي؟",
+      "a": "كان وأخواتها",
+      "qid": "commonbond-400-915",
+      "type": "common",
+      "items": [
+        "صار",
+        "أصبح",
+        "أمسى"
+      ],
+      "topic": "كلمات ولغة",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/كان_وأخواتها"
+    },
+    {
+      "p": 400,
+      "q": "دوروثي والفزاعة والرجل الصفيح: ما الحكاية التي تجمعهم؟",
+      "a": "ساحر أوز",
+      "qid": "commonbond-400-916",
+      "type": "common",
+      "items": [
+        "دوروثي",
+        "الفزاعة",
+        "الرجل الصفيح"
+      ],
+      "topic": "فنون وأدب",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Wonderful_Wizard_of_Oz"
+    },
+    {
+      "p": 400,
+      "q": "سترايك وسبير وسبليت: ما اللعبة التي تستخدم هذه المصطلحات؟",
+      "a": "البولينغ",
+      "qid": "commonbond-400-917",
+      "type": "common",
+      "items": [
+        "سترايك",
+        "سبير",
+        "سبليت"
+      ],
+      "topic": "رياضة وألعاب",
+      "alt": [],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ten-pin_bowling"
+    },
+    {
+      "p": 400,
+      "q": "البرغل والفريكة والسميد: من أي حبوب تُحضّر؟",
+      "a": "القمح",
+      "qid": "commonbond-400-918",
+      "type": "common",
+      "items": [
+        "برغل",
+        "فريكة",
+        "سميد"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "alt": [
+        "قمح",
+        "مشتقات القمح"
+      ],
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Freekeh"
+    },
+    {
+      "p": 600,
       "q": "الأخطبوط والحبار والنوتيلوس: ما الطائفة التي تجمعها؟",
       "a": "رأسيات الأرجل",
-      "qid": "commonbond-800-901",
+      "qid": "commonbond-600-911",
       "type": "common",
       "items": [
         "الأخطبوط",
@@ -453,35 +309,35 @@
       ],
       "topic": "الحيوانات",
       "alt": [],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "verified": true,
       "sourceUrl": "https://animaldiversity.org/accounts/Cephalopoda/"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "CD وDVD وBlu-ray: ما نوع وسائط التخزين هذه؟",
       "a": "أقراص ضوئية",
-      "qid": "commonbond-800-902",
+      "qid": "commonbond-600-912",
       "type": "common",
       "items": [
         "CD",
         "DVD",
         "Blu-ray"
       ],
-      "topic": "تقنية",
+      "topic": "تقنية وحوسبة",
       "alt": [
         "وسائط تخزين ضوئية",
         "أقراص ليزر"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "verified": true,
       "sourceUrl": "https://www.sony.com/electronics/support/articles/00090460"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "إستونيا ولاتفيا وليتوانيا: ما الاسم الشائع لمجموعتها؟",
       "a": "دول البلطيق",
-      "qid": "commonbond-800-903",
+      "qid": "commonbond-600-913",
       "type": "common",
       "items": [
         "إستونيا",
@@ -490,15 +346,168 @@
       ],
       "topic": "جغرافيا وأماكن",
       "alt": [],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Baltic_states"
+    },
+    {
+      "q": "ما التصنيف الفلكي الذي يجمع هذه الأجرام؟",
+      "a": "كواكب قزمة",
+      "topic": "فضاء وعلوم",
+      "sourceUrl": "https://science.nasa.gov/dwarf-planets/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "سيريس",
+        "بلوتو",
+        "إيريس"
+      ],
+      "p": 600,
+      "qid": "commonbond-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "غفور وصبور وشكور: ما الصيغة الصرفية المشتركة؟",
+      "a": "صيغ مبالغة",
+      "qid": "commonbond-600-915",
+      "type": "common",
+      "items": [
+        "غفور",
+        "صبور",
+        "شكور"
+      ],
+      "topic": "كلمات ولغة",
+      "alt": [],
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://ar.wikipedia.org/wiki/صيغة_مبالغة"
+    },
+    {
+      "q": "ما المدرسة الفنية التي ارتبط بها هؤلاء الرسامون؟",
+      "a": "الانطباعية",
+      "topic": "فنون وأدب",
+      "sourceUrl": "https://www.metmuseum.org/pt/essays/impressionism-art-and-modernity",
+      "alt": [
+        "التأثيرية"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "كلود مونيه",
+        "ألفريد سيسلي",
+        "كاميل بيسارو"
+      ],
+      "p": 600,
+      "qid": "commonbond-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "الفويل والإيبيه والسابر: أسلحة مستخدمة في أي رياضة؟",
+      "a": "المبارزة",
+      "qid": "commonbond-600-917",
+      "type": "common",
+      "items": [
+        "الفويل",
+        "الإيبيه",
+        "السابر"
+      ],
+      "topic": "رياضة وألعاب",
+      "alt": [
+        "مبارزة",
+        "مبارزة بالسيف"
+      ],
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fencing"
+    },
+    {
+      "p": 600,
+      "q": "الإسبريسو والكابتشينو واللاتيه: على أي مشروب تعتمد؟",
+      "a": "القهوة",
+      "qid": "commonbond-600-918",
+      "type": "common",
+      "items": [
+        "إسبريسو",
+        "لاتيه",
+        "كابتشينو"
+      ],
+      "topic": "طعام ونباتات غذائية",
+      "alt": [
+        "قهوة"
+      ],
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_coffee_drinks"
+    },
+    {
+      "q": "ما الشعبة الحيوانية التي تجمع هذه الكائنات؟",
+      "a": "اللاسعات",
+      "topic": "الحيوانات",
+      "sourceUrl": "https://www.nhm.ac.uk/our-science/services/collections/zoology/cnidaria.html",
+      "alt": [
+        "لاسعات"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "قنديل البحر",
+        "شقائق النعمان البحرية",
+        "المرجان"
+      ],
+      "p": 800,
+      "qid": "commonbond-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "ما نوع البرمجيات الذي يجمع هذه الأسماء؟",
+      "a": "أنظمة ملفات",
+      "qid": "commonbond-800-912",
+      "type": "common",
+      "items": [
+        "Ext4",
+        "XFS",
+        "Btrfs"
+      ],
+      "topic": "تقنية وحوسبة",
+      "alt": [
+        "نظم الملفات",
+        "أنظمة الملفات",
+        "أنظمة إدارة الملفات"
+      ],
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://docs.kernel.org/filesystems/index.html"
+    },
+    {
+      "q": "لأي دولة تنتمي هذه الجزر الثلاث؟",
+      "a": "إندونيسيا",
+      "topic": "جغرافيا وأماكن",
+      "sourceUrl": "https://www.indonesia.travel/id/id/destination",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "common",
+      "items": [
+        "سومطرة",
+        "جاوة",
+        "سولاويسي"
+      ],
+      "p": 800,
+      "qid": "commonbond-800-913",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
       "q": "الفلور والكلور والبروم: إلى أي عائلة كيميائية تنتمي؟",
       "a": "الهالوجينات",
-      "qid": "commonbond-800-904",
+      "qid": "commonbond-800-914",
       "type": "common",
       "items": [
         "الفلور",
@@ -512,27 +521,30 @@
       "sourceUrl": "https://periodic-table.rsc.org/"
     },
     {
-      "p": 800,
-      "q": "غفور وصبور وشكور: ما الصيغة الصرفية المشتركة؟",
-      "a": "صيغ مبالغة",
-      "qid": "commonbond-800-905",
+      "q": "ما التسمية الصرفية المشتركة لهذه الأوزان؟",
+      "a": "صيغ منتهى الجموع",
+      "topic": "كلمات ولغة",
+      "sourceUrl": "https://uomustansiriyah.edu.iq/media/lectures/12/12_2021_08_14%2107_06_27_PM.pdf",
+      "alt": [
+        "صيغة منتهى الجموع"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "common",
       "items": [
-        "غفور",
-        "صبور",
-        "شكور"
+        "مَفاعِل",
+        "مَفاعيل",
+        "فَواعِل"
       ],
-      "topic": "كلمات ولغة",
-      "alt": [],
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "https://ar.wikipedia.org/wiki/صيغة_مبالغة"
+      "p": 800,
+      "qid": "commonbond-800-915",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
       "q": "بيكاسو وبراك وخوان غريس: بأي حركة فنية اشتهروا؟",
       "a": "التكعيبية",
-      "qid": "commonbond-800-906",
+      "qid": "commonbond-800-916",
       "type": "common",
       "items": [
         "جورج براك",
@@ -546,50 +558,50 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/Cubism"
     },
     {
-      "p": 800,
-      "q": "الفويل والإيبيه والسابر: أسلحة مستخدمة في أي رياضة؟",
-      "a": "المبارزة",
-      "qid": "commonbond-800-907",
+      "q": "في أي رياضة مصارعة يابانية تستخدم هذه التسميات للتسجيل؟",
+      "a": "الجودو",
+      "topic": "رياضة وألعاب",
+      "sourceUrl": "https://www.ijf.org/news/show/new-rules-what-to-remember",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "common",
       "items": [
-        "الفويل",
-        "الإيبيه",
-        "السابر"
+        "إيبون",
+        "وازا آري",
+        "يوكو"
       ],
-      "topic": "رياضة وألعاب",
-      "alt": [
-        "مبارزة",
-        "مبارزة بالسيف"
-      ],
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fencing"
+      "p": 800,
+      "qid": "commonbond-800-917",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 800,
-      "q": "البرغل والفريكة والسميد: من أي حبوب تُحضّر؟",
-      "a": "القمح",
-      "qid": "commonbond-800-908",
+      "q": "أي نبات هو مصدر هذه المشروبات رغم اختلاف معالجتها؟",
+      "a": "نبات الشاي",
+      "topic": "طعام ونباتات غذائية",
+      "sourceUrl": "https://www.kew.org/plants/tea-plant",
+      "alt": [
+        "الشاي",
+        "كاميليا سينينسيس",
+        "Camellia sinensis"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "common",
       "items": [
-        "برغل",
-        "فريكة",
-        "سميد"
+        "أولونغ",
+        "الأبيض",
+        "الأخضر"
       ],
-      "topic": "طعام ونباتات غذائية",
-      "alt": [
-        "قمح",
-        "مشتقات القمح"
-      ],
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Freekeh"
+      "p": 800,
+      "qid": "commonbond-800-918",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
-      "q": "خلد الماء وآكل النمل الشوكي: ما رتبة الثدييات التي تجمعهما؟",
+      "q": "ما الرتبة الحيوانية المشتركة لهذه الكائنات؟",
       "a": "وحيدات المسلك",
-      "qid": "commonbond-1000-901",
+      "qid": "commonbond-1000-911",
       "type": "common",
       "items": [
         "خلد الماء",
@@ -603,31 +615,30 @@
       "sourceUrl": "https://animaldiversity.org/accounts/Monotremata/"
     },
     {
-      "p": 1000,
-      "q": "Ext4 وXFS وBtrfs: ما الفئة المشتركة التي تنظم تخزين البيانات على الأقراص؟",
-      "a": "أنظمة ملفات",
-      "qid": "commonbond-1000-902",
+      "q": "ما نوع المكوّن البرمجي الذي تمثله هذه الأسماء؟",
+      "a": "محركات جافاسكريبت",
+      "topic": "تقنية وحوسبة",
+      "sourceUrl": "https://developer.mozilla.org/en-US/docs/Glossary/Engine/JavaScript",
+      "alt": [
+        "محركات JavaScript"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "common",
       "items": [
-        "Ext4",
-        "XFS",
-        "Btrfs"
+        "V8",
+        "SpiderMonkey",
+        "JavaScriptCore"
       ],
-      "topic": "تقنية",
-      "alt": [
-        "نظم الملفات",
-        "أنظمة الملفات",
-        "أنظمة إدارة الملفات"
-      ],
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "https://docs.kernel.org/filesystems/index.html"
+      "p": 1000,
+      "qid": "commonbond-1000-912",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
-      "q": "موريشيوس وريونيون ورودريغز: ما الأرخبيل الذي يجمعها؟",
+      "q": "ما اسم الأرخبيل الذي يضم هذه الجزر؟",
       "a": "جزر ماسكارين",
-      "qid": "commonbond-1000-903",
+      "qid": "commonbond-1000-913",
       "type": "common",
       "items": [
         "موريشيوس",
@@ -642,9 +653,9 @@
     },
     {
       "p": 1000,
-      "q": "تيتانيا وأوبيرون وميراندا: أقمار لأي كوكب؟",
+      "q": "تدور الأجرام الثلاثة حول كوكب واحد؛ ما هو؟",
       "a": "أورانوس",
-      "qid": "commonbond-1000-904",
+      "qid": "commonbond-1000-914",
       "type": "common",
       "items": [
         "تيتانيا",
@@ -659,9 +670,9 @@
     },
     {
       "p": 1000,
-      "q": "وقى ووفى ووعى: ما نوع الأفعال المعتلة الذي تمثله؟",
+      "q": "ما التصنيف الصرفي الأدق الذي يجمع هذه الأفعال؟",
       "a": "لفيف مفروق",
-      "qid": "commonbond-1000-905",
+      "qid": "commonbond-1000-915",
       "type": "common",
       "items": [
         "وقى",
@@ -676,12 +687,12 @@
     },
     {
       "p": 1000,
-      "q": "الهايكو والتانكا والرينغا: أشكال شعرية من أي بلد؟",
+      "q": "إلى أي بلد تنتمي تقاليد هذه الأشكال الأدبية؟",
       "a": "اليابان",
-      "qid": "commonbond-1000-906",
+      "qid": "commonbond-1000-916",
       "type": "common",
       "items": [
-        "الهايكو",
+        "الكيوكا",
         "التانكا",
         "الرينغا"
       ],
@@ -692,16 +703,17 @@
       ],
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Japanese_poetry"
+      "sourceUrl": "https://www.loc.gov/item/2021666455/",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 1000,
-      "q": "التايكواندو والتايكيون والهابكيدو: من أي بلد تنحدر هذه الفنون القتالية؟",
+      "q": "إلى تقاليد أي بلد تنتمي هذه الفنون القتالية؟",
       "a": "كوريا",
-      "qid": "commonbond-1000-907",
+      "qid": "commonbond-1000-917",
       "type": "common",
       "items": [
-        "التايكواندو",
+        "التانغ سودو",
         "التايكيون",
         "الهابكيدو"
       ],
@@ -712,13 +724,14 @@
       ],
       "difficultyTarget": 0.15,
       "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Korean_martial_arts"
+      "sourceUrl": "https://worldtangsoodo.com/about/",
+      "verifiedAt": "2026-09-25"
     },
     {
       "p": 1000,
-      "q": "كانيليني وبورلوتي وبينتو: أصناف من أي بقول؟",
+      "q": "أصناف من أي محصول تجمعها هذه الأسماء؟",
       "a": "الفاصوليا",
-      "qid": "commonbond-1000-908",
+      "qid": "commonbond-1000-918",
       "type": "common",
       "items": [
         "كانيليني",

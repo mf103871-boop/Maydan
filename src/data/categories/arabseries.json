@@ -5,135 +5,30 @@
   "style": "story",
   "qs": [
     {
-      "qid": "arabseries-200-901",
+      "qid": "arabseries-200-911",
       "p": 200,
-      "topic": "الهيبة",
-      "q": "في «الهيبة»، ما اسم كبير عائلة شيخ الجبل الذي تتزوجه عليا؟",
-      "a": "جبل",
-      "alt": [
-        "جبل شيخ الجبل"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabseries-200-902",
-      "p": 200,
-      "topic": "رشاش",
-      "q": "في مسلسل «رشاش»، ما اسم الضابط الذي يقود مطاردة العصابة؟",
-      "a": "فهد",
-      "alt": [
-        "النقيب فهد"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabseries-200-903",
-      "p": 200,
-      "topic": "الروابي",
-      "q": "في الموسم الأول من «مدرسة الروابي للبنات»، من الطالبة التي تبدأ خطة الانتقام بعد تعرضها للتنمر؟",
-      "a": "مريم",
-      "alt": [
-        "ماريام"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabseries-200-904",
-      "p": 200,
-      "topic": "الثمن",
-      "q": "في «الثمن»، ما اسم الأم التي تعمل لتوفير علاج ابنها؟",
-      "a": "سارة",
-      "alt": [
-        "سارا"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabseries-200-905",
-      "p": 200,
-      "topic": "العاصوف",
-      "q": "في «العاصوف»، ما اسم أم خالد التي تجمع الأسرة وتقود شؤونها؟",
-      "a": "هيلة",
-      "alt": [
-        "هيله"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabseries-200-906",
-      "p": 200,
-      "topic": "ساق البامبو",
-      "q": "في «ساق البامبو»، من أي بلد جاءت جوزفين للعمل في منزل عائلة الطاروف؟",
-      "a": "الفلبين",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabseries-200-907",
-      "p": 200,
-      "topic": "ما وراء الطبيعة",
-      "q": "في مسلسل «ما وراء الطبيعة»، ما اسم الطبيب المتشكك الذي يواجه الظواهر الغريبة؟",
-      "a": "رفعت إسماعيل",
-      "alt": [
-        "رفعت",
-        "رفعت اسماعيل"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabseries-200-908",
-      "p": 200,
-      "topic": "قابيل",
-      "q": "في مسلسل «قابيل»، ما مهنة طارق الذي يطارد صاحب الحساب الغامض؟",
-      "a": "ضابط شرطة",
-      "alt": [
-        "محقق",
-        "شرطي",
-        "ضابط"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "arabseries-400-901",
-      "p": 400,
       "topic": "الهيبة",
       "q": "إلى أي دولة تريد عليا العودة مع ابنها في الموسم الأول من «الهيبة»؟",
       "a": "كندا",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2030474/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabseries-400-902",
-      "p": 400,
+      "qid": "arabseries-200-912",
+      "p": 200,
       "topic": "رشاش",
       "q": "إلى أي بلد مجاور يهرب زعيم العصابة قرب نهاية مسلسل «رشاش»؟",
       "a": "اليمن",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2067733/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabseries-400-903",
-      "p": 400,
+      "qid": "arabseries-200-913",
+      "p": 200,
       "topic": "الروابي",
       "q": "في الموسم الأول من «مدرسة الروابي للبنات»، ما اسم الطالبة الجديدة التي تتحالف مع البطلة ضد المتنمرات؟",
       "a": "نوف",
@@ -143,83 +38,68 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabseries-400-904",
-      "p": 400,
-      "topic": "الثمن",
-      "q": "في «الثمن»، ما اسم مدير الشركة الذي تتغير علاقته بالبطلة بعد معرفة مرض ابنها؟",
-      "a": "زين",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "arabseries-400-905",
-      "p": 400,
+      "qid": "arabseries-200-914",
+      "p": 200,
       "topic": "العاصوف",
       "q": "في «العاصوف»، من الشقيق الذي يعترف بأنه والد الرضيع الذي عُثر عليه؟",
       "a": "محسن",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2009970/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabseries-400-906",
-      "p": 400,
-      "topic": "ساق البامبو",
-      "q": "في «ساق البامبو»، ما اسم الشاب الذي يعود إلى الكويت بحثًا عن عائلة أبيه؟",
-      "a": "عيسى",
-      "alt": [
-        "هوزيه",
-        "خوسيه"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "arabseries-400-907",
-      "p": 400,
+      "qid": "arabseries-200-915",
+      "p": 200,
       "topic": "ما وراء الطبيعة",
       "q": "في مسلسل «ما وراء الطبيعة»، ما اسم الطفلة الشبح المرتبطة بذكريات الطبيب وبيت الخضراوي؟",
       "a": "شيراز",
       "alt": [],
       "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabseries-400-908",
-      "p": 400,
-      "topic": "قابيل",
-      "q": "في مسلسل «قابيل»، ما الذي يراه طارق من ضحايا القضية ويتحدث معه رغم موتهم؟",
-      "a": "أشباحهم",
-      "alt": [
-        "أشباح",
-        "أرواح الضحايا"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "arabseries-600-901",
-      "p": 600,
+      "qid": "arabseries-200-916",
+      "p": 200,
       "topic": "الهيبة",
       "q": "في الموسم الأول من «الهيبة»، ما اسم المحامي الذي يساعد عليا على محاولة الهرب؟",
       "a": "نعيم",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2030474/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "arabseries-600-902",
-      "p": 600,
+      "qid": "arabseries-200-917",
+      "p": 200,
+      "topic": "الثمن",
+      "q": "في «الثمن»، ما اسم صديقة البطلة التي تنصحها بإخفاء أمومتها عند التقدم للعمل؟",
+      "a": "تيما",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-200-918",
+      "p": 200,
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، ما اسم الجدة التي ترفض الاعتراف بحفيدها القادم من الخارج؟",
+      "a": "غنيمة",
+      "alt": [
+        "غنيمه"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "arabseries-400-911",
+      "p": 400,
       "topic": "رشاش",
       "q": "في مسلسل «رشاش»، ما الحلم المهني الذي يساعد الضابط شقيقه على تحقيقه؟",
       "a": "تعلم الطيران",
@@ -230,11 +110,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2067733/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabseries-600-903",
-      "p": 600,
+      "qid": "arabseries-400-912",
+      "p": 400,
       "topic": "الروابي",
       "q": "في الموسم الثاني من «مدرسة الروابي للبنات»، ما المنصب المدرسي الذي تتنافس عليه الطالبات بحملات انتخابية؟",
       "a": "رئاسة مجلس الطلبة",
@@ -245,46 +125,22 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabseries-600-904",
-      "p": 600,
-      "topic": "الثمن",
-      "q": "في «الثمن»، ما اسم صديقة البطلة التي تنصحها بإخفاء أمومتها عند التقدم للعمل؟",
-      "a": "تيما",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "arabseries-600-905",
-      "p": 600,
+      "qid": "arabseries-400-913",
+      "p": 400,
       "topic": "العاصوف",
       "q": "في «العاصوف»، ما اسم الفتاة التي يتزوجها خالد ويحبها قبل زواجه؟",
       "a": "جهير",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2009970/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabseries-600-906",
-      "p": 600,
-      "topic": "ساق البامبو",
-      "q": "في «ساق البامبو»، ما اسم الجدة التي ترفض الاعتراف بحفيدها القادم من الخارج؟",
-      "a": "غنيمة",
-      "alt": [
-        "غنيمه"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "arabseries-600-907",
-      "p": 600,
+      "qid": "arabseries-400-914",
+      "p": 400,
       "topic": "ما وراء الطبيعة",
       "q": "في مسلسل «ما وراء الطبيعة»، ما التخصص الطبي الذي يعمل به البطل؟",
       "a": "أمراض الدم",
@@ -294,11 +150,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabseries-600-908",
-      "p": 600,
+      "qid": "arabseries-400-915",
+      "p": 400,
       "topic": "قابيل",
       "q": "في مسلسل «قابيل»، من الرجل الذي يتبين أنه وراء شخصية القاتل الإلكترونية؟",
       "a": "آدم",
@@ -307,33 +163,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabseries-800-901",
-      "p": 800,
+      "qid": "arabseries-400-916",
+      "p": 400,
       "topic": "الهيبة",
       "q": "في الموسم الأول من «الهيبة»، من ابن العم الذي يتعاون مع كبير العائلة للإيقاع بدريد؟",
       "a": "شاهين",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2030474/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabseries-800-902",
-      "p": 800,
-      "topic": "رشاش",
-      "q": "في مسلسل «رشاش»، ما اسم رئيس الضابط المطارد للعصابة الذي يتعاون معه لكشف الجاسوس؟",
-      "a": "عزام",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "arabseries-800-903",
-      "p": 800,
+      "qid": "arabseries-400-917",
+      "p": 400,
       "topic": "الروابي",
       "q": "في الموسم الأول من «مدرسة الروابي للبنات»، من المتنمرة التي تُستهدف أولًا بفضيحة خلال اليوم المفتوح؟",
       "a": "رقية",
@@ -342,22 +187,33 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabseries-800-904",
-      "p": 800,
+      "qid": "arabseries-400-918",
+      "p": 400,
       "topic": "الثمن",
       "q": "في «الثمن»، من صديق المدير الذي يقع هو الآخر في حب البطلة؟",
       "a": "كرم",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2076120/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "arabseries-800-905",
-      "p": 800,
+      "qid": "arabseries-600-911",
+      "p": 600,
+      "topic": "رشاش",
+      "q": "في مسلسل «رشاش»، ما اسم رئيس الضابط المطارد للعصابة الذي يتعاون معه لكشف الجاسوس؟",
+      "a": "عزام",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2067733/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-912",
+      "p": 600,
       "topic": "العاصوف",
       "q": "في الجزء الأول من «العاصوف»، ما المشروع الذي يقيمه خالد ثم يُهدم لأن الأرض ليست له؟",
       "a": "محطة بنزين",
@@ -366,22 +222,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2009970/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabseries-800-906",
-      "p": 800,
+      "qid": "arabseries-600-913",
+      "p": 600,
       "topic": "ساق البامبو",
       "q": "في «ساق البامبو»، من صديق الأب الذي يستقبل ابنه عند عودته إلى الكويت؟",
       "a": "غسان",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2042472/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabseries-800-907",
-      "p": 800,
+      "qid": "arabseries-600-914",
+      "p": 600,
       "topic": "ما وراء الطبيعة",
       "q": "في مسلسل «ما وراء الطبيعة»، من أي بلد تأتي ماغي التي تعرف إليها البطل أيام الدراسة؟",
       "a": "اسكتلندا",
@@ -391,33 +247,55 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabseries-800-908",
-      "p": 800,
+      "qid": "arabseries-600-915",
+      "p": 600,
       "topic": "قابيل",
       "q": "في مسلسل «قابيل»، إلى أي محافظة يُنقل طارق عقب التحقيق التأديبي؟",
       "a": "قنا",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabseries-1000-901",
-      "p": 1000,
+      "qid": "arabseries-600-916",
+      "p": 600,
       "topic": "الهيبة",
       "q": "في الموسم الأول من «الهيبة»، من الفتاة التي تساعدها عليا بعد العثور على أموال ومخدرات معها؟",
       "a": "هنادي",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2030474/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "arabseries-1000-902",
-      "p": 1000,
+      "qid": "arabseries-600-917",
+      "p": 600,
+      "topic": "الروابي",
+      "q": "في الموسم الثاني من «مدرسة الروابي للبنات»، من الطالبة الغامضة التي تصادقها نادين؟",
+      "a": "شمس",
+      "alt": [],
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-600-918",
+      "p": 600,
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، ما اسم العمة التي تدافع عن قبول ابن أخيها في العائلة؟",
+      "a": "هند",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "arabseries-800-911",
+      "p": 800,
       "topic": "رشاش",
       "q": "في نهاية مسلسل «رشاش»، ما الذي يدفع شريك زعيم العصابة إلى تسليمه للشرطة؟",
       "a": "مكافأة مالية",
@@ -428,33 +306,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2067733/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "arabseries-1000-903",
-      "p": 1000,
-      "topic": "الروابي",
-      "q": "في الموسم الثاني من «مدرسة الروابي للبنات»، من الطالبة الغامضة التي تصادقها نادين؟",
-      "a": "شمس",
-      "alt": [],
-      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "arabseries-1000-904",
-      "p": 1000,
+      "qid": "arabseries-800-912",
+      "p": 800,
       "topic": "الثمن",
       "q": "في «الثمن»، من الشخص الذي يصور فراس ورولا ويستخدم الفيديو لابتزازه؟",
       "a": "سالم",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/2076120/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "arabseries-1000-905",
-      "p": 1000,
+      "qid": "arabseries-800-913",
+      "p": 800,
       "topic": "العاصوف",
       "q": "في الجزء الأول من «العاصوف»، ما المهنة التي يمارسها خالد بعد خروجه من أزمة مشروعه المهدوم؟",
       "a": "سائق أجرة",
@@ -464,36 +331,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2009970/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "arabseries-1000-906",
-      "p": 1000,
-      "topic": "ساق البامبو",
-      "q": "في «ساق البامبو»، ما اسم العمة التي تدافع عن قبول ابن أخيها في العائلة؟",
-      "a": "هند",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "arabseries-1000-907",
-      "p": 1000,
-      "topic": "ما وراء الطبيعة",
-      "q": "في مسلسل «ما وراء الطبيعة»، ما اسم خطيبة الطبيب التي يصيبها خطر لعنة المومياء؟",
-      "a": "هويدا",
-      "alt": [
-        "هويدة",
-        "هويدا عبد المنعم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "arabseries-1000-908",
-      "p": 1000,
+      "qid": "arabseries-800-914",
+      "p": 800,
       "topic": "قابيل",
       "q": "في نهاية مسلسل «قابيل»، ماذا تحرق سما لتعرقل هرب شريكها إلى الخارج؟",
       "a": "جواز سفره",
@@ -503,7 +345,148 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2056050/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "الهيبة",
+      "q": "في الموسم الأول من «الهيبة»، من المرأة التي تقرر ترك البلد بعد تقرّب جبل من عليا؟",
+      "a": "غادة",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "qid": "arabseries-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "العاصوف",
+      "q": "في الجزء الأول من «العاصوف»، من المرأة التي تتولى رعاية الرضيع الذي يُعثر عليه بالشارع؟",
+      "a": "عزيزة",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "qid": "arabseries-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، على هيئة أي حيوان كانت الهدية الصغيرة التي قدمتها نور لعيسى؟",
+      "a": "سلحفاة",
+      "alt": [
+        "السلحفاة"
+      ],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "qid": "arabseries-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "ما وراء الطبيعة",
+      "q": "في مسلسل «ما وراء الطبيعة»، في أي صحراء يبحث رفعت عن الزهرة النادرة لإنقاذ خطيبته؟",
+      "a": "الصحراء الليبية",
+      "alt": [
+        "صحراء ليبيا"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
+      "qid": "arabseries-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الهيبة",
+      "q": "في الموسم الأول من «الهيبة»، ما اسم المحامي الذي يتفق مع مجدي لتحصيل أموال من جبل؟",
+      "a": "نجار",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2030474/episodes",
+      "qid": "arabseries-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الثمن",
+      "q": "في «الثمن»، ما اسم جد ابن سارة الذي يرفض مساعدتها بتكاليف العملية أولًا؟",
+      "a": "إبراهيم",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "qid": "arabseries-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الثمن",
+      "q": "في «الثمن»، من المرأة التي تمنعها موافقة زوجها البنكية من دفع تكاليف علاج ابن سارة؟",
+      "a": "نادية",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2076120/episodes",
+      "qid": "arabseries-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "العاصوف",
+      "q": "في الجزء الأول من «العاصوف»، من الجارة الشامية التي يرفض أخوها تزويجها لحمود؟",
+      "a": "سعدية",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2009970/episodes",
+      "qid": "arabseries-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "ساق البامبو",
+      "q": "في «ساق البامبو»، ما اسم ابن نورية الراغب في الزواج من خولة؟",
+      "a": "عويس",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2042472/episodes",
+      "qid": "arabseries-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الروابي",
+      "q": "في الموسم الأول من «مدرسة الروابي للبنات»، ما اسم مديرة المدرسة؟",
+      "a": "فاتن قاضي",
+      "alt": [
+        "فاتن",
+        "Faten Qadi"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/AlRawabi_School_for_Girls",
+      "qid": "arabseries-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "ما وراء الطبيعة",
+      "q": "في مسلسل «ما وراء الطبيعة»، من زميل رفعت الذي يقرأ ماضيه ومستقبله بأوراق التاروت؟",
+      "a": "لويس",
+      "alt": [
+        "Louis"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paranormal_(TV_series)",
+      "qid": "arabseries-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "قابيل",
+      "q": "في «قابيل»، ضد من كان آدم يلعب القمار وفق ما يعرفه عبد الرحمن؟",
+      "a": "خالد المصري",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/2056050/episodes",
+      "qid": "arabseries-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

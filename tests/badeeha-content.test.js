@@ -49,7 +49,10 @@ test('المعرّفات فريدة عبر البنك كله، ولا سؤال �
   for (const q of all) {
     assert.match(String(q.qid || ''), QID, `${q.cat}: qid غير صالح (${q.qid})`);
     assert.ok(TIERS.includes(q.p), `${q.cat}/${q.qid}: نقاط غير صالحة`);
-    assert.match(q.qid, new RegExp(`^${q.cat}-${q.p}-90[1-8]$`), 'المعرّفات الجديدة لا تعيد استعمال سجل سؤال قديم');
+    const range = STATUS.categories[q.cat].qidRange ?? STATUS.qidRange;
+    const serial = Number(q.qid.split('-')[2]);
+    assert.ok(q.qid.startsWith(`${q.cat}-${q.p}-`) && serial >= range.start && serial <= range.end,
+      'المعرّف ضمن إصدار الفئة ولا يعيد استعمال سجل سؤال قديم');
     assert.equal(q.difficultyTarget, STATUS.difficultyTargets[q.p], q.qid);
     const hasPrompt = (q.q && String(q.q).trim()) || q.type;
     assert.ok(hasPrompt, `${q.cat}/${q.qid}: سؤال بلا نص`);

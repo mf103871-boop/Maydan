@@ -5,67 +5,90 @@
   "qs": [
     {
       "p": 200,
-      "q": "أي منتخب رفع كأس العالم 2022 بعد الفوز بركلات الترجيح على فرنسا؟",
-      "a": "الأرجنتين",
-      "qid": "worldcup-200-901",
+      "q": "أي منتخب فاز بأول نسخة من كأس العالم عام 1930؟",
+      "a": "أوروغواي",
+      "qid": "worldcup-200-911",
       "topic": "الأبطال",
       "verified": true,
       "difficultyTarget": 0.8,
-      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-france-2022-final-greatest-games",
-      "verifiedAt": "2026-09-18"
+      "source": "https://www.fifa.com/es/articles/cuantas-veces-gano-la-seleccion-de-uruguay-la-copa-mundial-de-la-fifa",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "الأوروغواي"
+      ]
     },
     {
       "p": 200,
-      "q": "أي منتخب حقق لقبه العالمي الخامس في مونديال 2002؟",
-      "a": "البرازيل",
-      "qid": "worldcup-200-902",
-      "topic": "الأبطال",
+      "q": "من سجل هدف إسبانيا الوحيد في نهائي كأس العالم 2010؟",
+      "a": "أندريس إنييستا",
+      "qid": "worldcup-200-912",
+      "topic": "نجوم النهائيات",
       "verified": true,
       "difficultyTarget": 0.8,
-      "source": "https://www.fifa.com/pt/news/articles/copa-2002-brasil-campeao-penta",
-      "verifiedAt": "2026-09-18"
+      "source": "https://inside.fifa.com/es/tournaments/mens/worldcup/2010south-africa/news/donde-estabas-cuando-el-gol-de-iniesta",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "إنييستا"
+      ]
     },
     {
       "p": 200,
-      "q": "من ارتدى شارة قيادة الأرجنتين في نهائي مونديال قطر 2022؟",
-      "a": "ليونيل ميسي",
-      "qid": "worldcup-200-903",
-      "topic": "النجوم",
+      "q": "ما اسم الملعب الذي احتضن نهائي كأس العالم 2022؟",
+      "a": "لوسيل",
+      "qid": "worldcup-200-913",
+      "topic": "الاستضافة",
       "verified": true,
       "difficultyTarget": 0.8,
       "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-france-2022-final-greatest-games",
       "verifiedAt": "2026-09-18",
       "alt": [
-        "ميسي"
+        "استاد لوسيل"
       ]
     },
     {
       "p": 200,
-      "q": "أي دولة عربية استضافت كأس العالم للرجال عام 2022؟",
-      "a": "قطر",
-      "qid": "worldcup-200-904",
-      "topic": "الاستضافة",
+      "q": "من مدرب ألمانيا في مشوار لقب كأس العالم 2014؟",
+      "a": "يواخيم لوف",
+      "qid": "worldcup-200-914",
+      "topic": "المدربون",
       "verified": true,
       "difficultyTarget": 0.8,
-      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-france-2022-final-greatest-games",
+      "source": "https://www.fifa.com/de/tournaments/mens/worldcup/articles/wm-titel-deutschland-ueberblick-ergebnisse-torschuetzen-kader",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "يواكيم لوف"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "من سجل رأسيتي فرنسا في نهائي كأس العالم 1998؟",
+      "a": "زين الدين زيدان",
+      "qid": "worldcup-200-915",
+      "topic": "نجوم النهائيات",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://www.fifa.com/pt/articles/historia-brasil-finais-copa-mundo-fifa",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "زيدان"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "من حارس ألمانيا الفائز بالقفاز الذهبي في كأس العالم 2014؟",
+      "a": "مانويل نوير",
+      "qid": "worldcup-200-916",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "source": "https://inside.fifa.com/de/tournaments/mens/worldcup/2014brazil/news/multimedia-als-deutschland-im-maracana-den-vierten-stern-holte-2663720",
       "verifiedAt": "2026-09-18"
     },
     {
       "p": 200,
-      "q": "أي منتخب عربي بلغ نصف نهائي المونديال لأول مرة عام 2022؟",
-      "a": "المغرب",
-      "qid": "worldcup-200-905",
-      "topic": "المشاركة العربية",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/morocco-world-cup-documentary-walid-regragui-romain-saiss-yassine-bounou",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "أي منتخب عربي هزم الأرجنتين 2–1 في افتتاح مشواره بمونديال 2022؟",
-      "a": "السعودية",
-      "qid": "worldcup-200-906",
+      "q": "من أحرز هدف الفوز السعودي على الأرجنتين في مونديال 2022؟",
+      "a": "سالم الدوسري",
+      "qid": "worldcup-200-917",
       "topic": "المشاركة العربية",
       "verified": true,
       "difficultyTarget": 0.8,
@@ -74,79 +97,20 @@
     },
     {
       "p": 200,
-      "q": "من النجم الأرجنتيني صاحب الهدف الشهير باليد أمام إنجلترا عام 1986؟",
-      "a": "دييغو مارادونا",
-      "qid": "worldcup-200-907",
-      "topic": "لحظات خالدة",
+      "q": "من قائد كرواتيا الذي نال الكرة الذهبية في مونديال 2018؟",
+      "a": "لوكا مودريتش",
+      "qid": "worldcup-200-918",
+      "topic": "الجوائز",
       "verified": true,
       "difficultyTarget": 0.8,
-      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-england-1986-diego-maradona",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "مارادونا"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "من المهاجم الفرنسي الذي سجل ثلاثة أهداف في نهائي كأس العالم 2022؟",
-      "a": "كيليان مبابي",
-      "qid": "worldcup-200-908",
-      "topic": "النجوم",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-france-2022-final-greatest-games",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "مبابي"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "أي منتخب فاز بأول نسخة من كأس العالم عام 1930؟",
-      "a": "أوروغواي",
-      "qid": "worldcup-400-901",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.fifa.com/es/articles/cuantas-veces-gano-la-seleccion-de-uruguay-la-copa-mundial-de-la-fifa",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "الأوروغواي"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "من سجل هدف إسبانيا الوحيد في نهائي كأس العالم 2010؟",
-      "a": "أندريس إنييستا",
-      "qid": "worldcup-400-902",
-      "topic": "نجوم النهائيات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://inside.fifa.com/es/tournaments/mens/worldcup/2010south-africa/news/donde-estabas-cuando-el-gol-de-iniesta",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "إنييستا"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الملعب الذي احتضن نهائي كأس العالم 2022؟",
-      "a": "لوسيل",
-      "qid": "worldcup-400-903",
-      "topic": "الاستضافة",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-france-2022-final-greatest-games",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "استاد لوسيل"
-      ]
+      "source": "https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/157-awards-piece-2986294",
+      "verifiedAt": "2026-09-18"
     },
     {
       "p": 400,
       "q": "من أحرز هدفي البرازيل أمام ألمانيا في نهائي كأس العالم 2002؟",
       "a": "رونالدو",
-      "qid": "worldcup-400-904",
+      "qid": "worldcup-400-911",
       "topic": "نجوم النهائيات",
       "verified": true,
       "difficultyTarget": 0.6,
@@ -158,101 +122,12 @@
     },
     {
       "p": 400,
-      "q": "من المدرب المغربي الذي قاد منتخب بلاده إلى نصف نهائي 2022؟",
-      "a": "وليد الركراكي",
-      "qid": "worldcup-400-905",
-      "topic": "المدربون",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/morocco-world-cup-documentary-walid-regragui-romain-saiss-yassine-bounou",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "من حارس الأرجنتين الحائز على القفاز الذهبي في مونديال 2022؟",
-      "a": "إيميليانو مارتينيز",
-      "qid": "worldcup-400-906",
-      "topic": "حراس المرمى",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.fifa.com/fr/articles/lionel-messi-ballon-d-or-meilleur-joueur-coupe-du-monde-2022",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "إيمي مارتينيز"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "أي دولة أقيم فيها أول مونديال على أرض إفريقية عام 2010؟",
-      "a": "جنوب إفريقيا",
-      "qid": "worldcup-400-907",
-      "topic": "الاستضافة",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://inside.fifa.com/tournaments/mens/worldcup/2010south-africa/news/pride-for-africa-spain-strike-gold-2247372",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "جنوب أفريقيا"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "أي منتخب توج للمرة الأولى عالميًا بهدف في الوقت الإضافي لنهائي 2010؟",
-      "a": "إسبانيا",
-      "qid": "worldcup-400-908",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://inside.fifa.com/tournaments/mens/worldcup/2010south-africa/news/pride-for-africa-spain-strike-gold-2247372",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
-      "q": "من مدرب ألمانيا في مشوار لقب كأس العالم 2014؟",
-      "a": "يواخيم لوف",
-      "qid": "worldcup-600-901",
-      "topic": "المدربون",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.fifa.com/de/tournaments/mens/worldcup/articles/wm-titel-deutschland-ueberblick-ergebnisse-torschuetzen-kader",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "يواكيم لوف"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "من أحرز رأسيتي فرنسا في نهائي كأس العالم 1998؟",
-      "a": "زين الدين زيدان",
-      "qid": "worldcup-600-902",
-      "topic": "نجوم النهائيات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.fifa.com/pt/articles/historia-brasil-finais-copa-mundo-fifa",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "زيدان"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "أي منتخب هزم فرنسا بركلات الترجيح ليحرز كأس العالم 2006؟",
-      "a": "إيطاليا",
-      "qid": "worldcup-600-903",
-      "topic": "الأبطال",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.fifa.com/es/tournaments/mens/worldcup/articles/todas-las-finales-de-la-copa-mundial-de-la-fifa",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
       "q": "من اللاعب الكولومبي صاحب الحذاء الذهبي في مونديال 2014؟",
       "a": "خاميس رودريغيز",
-      "qid": "worldcup-600-904",
+      "qid": "worldcup-400-912",
       "topic": "الجوائز",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/highest-scoring-south-americans-history",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -260,82 +135,35 @@
       ]
     },
     {
-      "p": 600,
-      "q": "من حارس ألمانيا الفائز بالقفاز الذهبي في كأس العالم 2014؟",
-      "a": "مانويل نوير",
-      "qid": "worldcup-600-905",
-      "topic": "حراس المرمى",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://inside.fifa.com/de/tournaments/mens/worldcup/2014brazil/news/multimedia-als-deutschland-im-maracana-den-vierten-stern-holte-2663720",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
-      "q": "من أحرز هدف الفوز السعودي على الأرجنتين في مونديال 2022؟",
-      "a": "سالم الدوسري",
-      "qid": "worldcup-600-906",
-      "topic": "المشاركة العربية",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.fifa.com/en/articles/world-cup-qatar-2022-argentina-v-saudi-arabia-match-report-review-first-game-group-e-result",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 600,
+      "p": 400,
       "q": "ما الملعب البرازيلي الذي استضاف نهائي كأس العالم 2014؟",
       "a": "ماراكانا",
-      "qid": "worldcup-600-907",
+      "qid": "worldcup-400-913",
       "topic": "الاستضافة",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://inside.fifa.com/news/world-cup-winner-schurrle-hangs-up-his-boots",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
-      "q": "من قائد كرواتيا الذي نال الكرة الذهبية في مونديال 2018؟",
-      "a": "لوكا مودريتش",
-      "qid": "worldcup-600-908",
-      "topic": "الجوائز",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/157-awards-piece-2986294",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "من المهاجم الفرنسي الذي سجل 13 هدفًا في مونديال 1958؟",
-      "a": "جوست فونتين",
-      "qid": "worldcup-800-901",
-      "topic": "النجوم",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.fifa.com/en/articles/just-fontaine-13-goal-fifa-world-cup-record-sweden-1958-france",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "جاست فونتين"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "من نجم أوروغواي الذي فاز بالكرة الذهبية في مونديال 2010؟",
+      "p": 400,
+      "q": "من فاز بالكرة الذهبية لأفضل لاعب في مونديال 2010؟",
       "a": "دييغو فورلان",
-      "qid": "worldcup-800-902",
+      "qid": "worldcup-400-914",
       "topic": "الجوائز",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.plus.fifa.com/en/showcase/awarded-players-2010-fifa-world-cup/786b5d53-7160-4e6a-bea2-56586aca597f",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "من مدرب فرنسا عند فوزها بكأس العالم 2018؟",
       "a": "ديدييه ديشان",
-      "qid": "worldcup-800-903",
+      "qid": "worldcup-400-915",
       "topic": "المدربون",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://inside.fifa.com/media-releases/luka-modric-and-marta-crowned-at-the-best-fifa-football-awardstm-2018",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -343,13 +171,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "من صنع العرضية لهدف غوتزه الحاسم في نهائي كأس العالم 2014؟",
       "a": "أندريه شورله",
-      "qid": "worldcup-800-904",
+      "qid": "worldcup-400-916",
       "topic": "نجوم النهائيات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://inside.fifa.com/news/world-cup-winner-schurrle-hangs-up-his-boots",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -357,35 +185,49 @@
       ]
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "من السعودي الذي راوغ دفاع بلجيكا ليسجل هدفًا فرديًا شهيرًا بمونديال 1994؟",
       "a": "سعيد العويران",
-      "qid": "worldcup-800-905",
+      "qid": "worldcup-400-917",
       "topic": "المشاركة العربية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.fifa.com/en/articles/100-great-world-cup-moments-69-al-owairan-saudi-arabia-usa-94",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "من الحارس البلجيكي صاحب القفاز الذهبي في كأس العالم 2018؟",
       "a": "تيبو كورتوا",
-      "qid": "worldcup-800-906",
+      "qid": "worldcup-400-918",
       "topic": "حراس المرمى",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/157-awards-piece-2986294",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
+      "p": 600,
+      "q": "من المهاجم الفرنسي الذي سجل 13 هدفًا في مونديال 1958؟",
+      "a": "جوست فونتين",
+      "qid": "worldcup-600-911",
+      "topic": "النجوم",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/articles/just-fontaine-13-goal-fifa-world-cup-record-sweden-1958-france",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "جاست فونتين"
+      ]
+    },
+    {
+      "p": 600,
       "q": "ما اسم ملعب نهائي أول كأس عالم عام 1930؟",
       "a": "سنتيناريو",
-      "qid": "worldcup-800-907",
+      "qid": "worldcup-600-912",
       "topic": "الاستضافة",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/uruguay-players-results-goalscorers",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -394,24 +236,24 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من سجل أول هدف جزائري في تاريخ كأس العالم، أمام ألمانيا الغربية عام 1982؟",
       "a": "رابح ماجر",
-      "qid": "worldcup-800-908",
+      "qid": "worldcup-600-913",
       "topic": "المشاركة العربية",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.fifa.com/en/articles/every-country-nation-first-goalscorer",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "من أحرز هدف الفوز الألماني في نهائي 1954 المعروف بمعجزة برن؟",
       "a": "هيلموت ران",
-      "qid": "worldcup-1000-901",
+      "qid": "worldcup-600-914",
       "topic": "لحظات خالدة",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.fifa.com/en/articles/world-cup-finals-that-made-history",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -419,13 +261,13 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "من المهاجم الأرجنتيني الذي سجل ثمانية أهداف وتصدر هدافي مونديال 1930؟",
       "a": "غييرمو ستابيلي",
-      "qid": "worldcup-1000-902",
+      "qid": "worldcup-600-915",
       "topic": "الجوائز",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.fifa.com/ar/tournaments/mens/worldcup/articles/just-fontaine-france-goals-one-edition-record-1958-ar",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -433,13 +275,13 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "من قائد أوروغواي الذي رفع أول كأس عالم؟",
+      "p": 600,
+      "q": "من قائد المنتخب الذي رفع أول كأس عالم؟",
       "a": "خوسيه ناسازي",
-      "qid": "worldcup-1000-903",
+      "qid": "worldcup-600-916",
       "topic": "النجوم",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/uruguay-players-results-goalscorers",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -447,35 +289,46 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "من المغربي الذي سجل هدفين أمام البرتغال في مونديال 1986؟",
       "a": "عبد الرزاق خيري",
-      "qid": "worldcup-1000-904",
+      "qid": "worldcup-600-917",
       "topic": "المشاركة العربية",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.fifa.com/en/articles/article-greater-than-fwc-2022-greater-than-morocco-v-croatia-archive-follow",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 1000,
+      "p": 600,
+      "q": "من المدرب الذي قاد الأرجنتين للقب كأس العالم 1986؟",
+      "a": "كارلوس بيلاردو",
+      "qid": "worldcup-600-918",
+      "topic": "المدربون",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-england-1986-diego-maradona",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 800,
       "q": "من الحارس الذي فاز بالكرة الذهبية لأفضل لاعب في مونديال 2002؟",
       "a": "أوليفر كان",
-      "qid": "worldcup-1000-905",
+      "qid": "worldcup-800-911",
       "topic": "حراس المرمى",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.fifa.com/fr/articles/lionel-messi-ballon-d-or-meilleur-joueur-coupe-du-monde-2022",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من الإنجليزي صاحب أول ثلاثية في نهائي كأس العالم عام 1966؟",
       "a": "جيف هيرست",
-      "qid": "worldcup-1000-906",
+      "qid": "worldcup-800-912",
       "topic": "نجوم النهائيات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.fifa.com/en/articles/world-cup-finals-that-made-history",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -483,13 +336,13 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "من أحرز هدف أوروغواي الحاسم أمام البرازيل في مباراة تتويج 1950؟",
+      "p": 800,
+      "q": "من أحرز هدف الفوز أمام البرازيل في مباراة تتويج مونديال 1950؟",
       "a": "ألسيديس غيغيا",
-      "qid": "worldcup-1000-907",
+      "qid": "worldcup-800-913",
       "topic": "لحظات خالدة",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.fifa.com/es/articles/cuantas-veces-gano-la-seleccion-de-uruguay-la-copa-mundial-de-la-fifa",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -497,15 +350,200 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "من المدرب الذي قاد الأرجنتين للقب كأس العالم 1986؟",
-      "a": "كارلوس بيلاردو",
-      "qid": "worldcup-1000-908",
+      "q": "من الفرنسي الذي سجل أول هدف في تاريخ كأس العالم أمام المكسيك عام 1930؟",
+      "a": "لوسيان لوران",
+      "topic": "لحظات خالدة",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/1930uruguay/news/lucien-laurent-the-first-world-cup-goalscorer",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Lucien Laurent",
+        "لوسيان لوران"
+      ],
+      "p": 800,
+      "qid": "worldcup-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من سجل هدف تركيا أمام كوريا الجنوبية بعد نحو 11 ثانية في مونديال 2002؟",
+      "a": "هاكان شوكور",
+      "topic": "أرقام قياسية",
+      "verified": true,
+      "sourceUrl": "https://www.fifa.com/en/articles/quickest-fastest-goals",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Hakan Şükür",
+        "هاكان شكر",
+        "هاكان شوكر"
+      ],
+      "p": 800,
+      "qid": "worldcup-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من المدرب الذي قاد إيطاليا إلى لقبي كأس العالم 1934 و1938؟",
+      "a": "فيتوريو بوتسو",
       "topic": "المدربون",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/argentina-england-1986-diego-maradona",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/1934italy/news/pozzo-prepares-azzurri-push-2769391",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Vittorio Pozzo",
+        "فيتوريو بوزو"
+      ],
+      "p": 800,
+      "qid": "worldcup-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من الكاميروني الذي سجل في مونديال 1994 وعمره 42 عامًا؟",
+      "a": "روجيه ميلا",
+      "topic": "أرقام قياسية",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/1990italy/news/roger-milla-my-record-will-be-very-difficult-to-beat",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Roger Milla",
+        "روجر ميلا"
+      ],
+      "p": 800,
+      "qid": "worldcup-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من الروسي الذي أحرز خمسة أهداف في مباراة واحدة أمام الكاميرون بمونديال 1994؟",
+      "a": "أوليغ سالينكو",
+      "topic": "النجوم",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/es/tournaments/mens/worldcup/1994usa/news/salenko-el-apellido-del-gol-2877511",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Oleg Salenko",
+        "أوليج سالينكو"
+      ],
+      "p": 800,
+      "qid": "worldcup-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من خاض نهائي كأس العالم مع الأرجنتين عام 1930 ثم مع إيطاليا عام 1934؟",
+      "a": "لويس مونتي",
+      "topic": "نجوم النهائيات",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/es/tournaments/mens/worldcup/1934italy/news/la-singular-historia-de-luis-monti-y-sus-dos-finales",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Luis Monti"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من لاعب أيرلندا الشمالية الذي شارك في مونديال 1982 بعمر 17 عامًا و41 يومًا؟",
+      "a": "نورمان وايتسايد",
+      "topic": "النجوم",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/2018russia/news/whiteside-makes-history-2951643",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Norman Whiteside",
+        "نورمان وايتسايد"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من البولندي الذي سجل أربعة أهداف رغم خسارة بلاده 6–5 أمام البرازيل في مونديال 1938؟",
+      "a": "إرنست فيليموفسكي",
+      "topic": "لحظات خالدة",
+      "verified": true,
+      "sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/articles/every-hat-trick-history",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ernest Wilimowski",
+        "إرنست ويليموفسكي"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من البرازيلي الذي تصدر هدافي مونديال 1938 بسبعة أهداف؟",
+      "a": "ليونيداس دا سيلفا",
+      "topic": "الجوائز",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/news/medals-lost-found-given-and-returned-2792789",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Leônidas",
+        "ليونيداس"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من حارس البرتغال الذي صد ثلاث ركلات ترجيح أمام إنجلترا في ربع نهائي مونديال 2006؟",
+      "a": "ريكاردو",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/european-qualifiers/news/0254-0d7b9ad6a5b3-a8f7adb30905-1000--portugal-prevail-as-rooney-sees-red/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Ricardo",
+        "ريكاردو بيريرا"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من حارس الأرجنتين الذي تألق في ترجيحيات يوغوسلافيا وإيطاليا بمونديال 1990؟",
+      "a": "سيرخيو غويكوتشيا",
+      "topic": "حراس المرمى",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/news/1990-world-cup-a-magical-night-in-rome-2402993",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Sergio Goycochea",
+        "سيرجيو غويكوتشيا",
+        "سيرخيو جويكوتشيا"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الملعب السويدي الذي استضاف نهائي كأس العالم 1958؟",
+      "a": "راسوندَا",
+      "topic": "الاستضافة",
+      "verified": true,
+      "sourceUrl": "https://www.plus.fifa.com/en/content/bresil-suede-coupe-du-monde-de-la-fifa-suede-1958-matches-classiques/8ea9a023-998e-4afe-826a-35ecb47d5c81",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Råsunda",
+        "راسوندا"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من المهاجم المجري الذي سجل 11 هدفًا في كأس العالم 1954؟",
+      "a": "شاندور كوتشيس",
+      "topic": "الجوائز",
+      "verified": true,
+      "sourceUrl": "https://inside.fifa.com/tournaments/mens/worldcup/1954switzerland/news/the-beginning-of-the-magyars-magic",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Sándor Kocsis",
+        "ساندور كوتشيس"
+      ],
+      "p": 1000,
+      "qid": "worldcup-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

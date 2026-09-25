@@ -5,205 +5,92 @@
   "qs": [
     {
       "p": 200,
-      "q": "بكم لاعبًا يبدأ كل فريق مباراة كرة قدم مكتملة العدد؟",
-      "a": "11",
-      "qid": "football-200-901",
-      "topic": "قوانين اللعب",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.theifab.com/laws/latest/the-players/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "ما لون البطاقة التي تعني طرد اللاعب من المباراة؟",
-      "a": "أحمر",
-      "qid": "football-200-902",
-      "topic": "التحكيم",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.theifab.com/laws/latest/fouls-and-misconduct/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "البطاقة الحمراء"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي منتخب نال بطولة أوروبا 2016 رغم خروج رونالدو مصابًا من النهائي؟",
-      "a": "البرتغال",
-      "qid": "football-200-903",
-      "topic": "كأس أوروبا",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefaeuro/history/news/025a-0ec0db63e375-e3d06be8c923-1000--euro-2016-all-you-need-to-know/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "أي منتخب رفع كأس أوروبا 1984 على أرضه بقيادة بلاتيني؟",
-      "a": "فرنسا",
-      "qid": "football-200-904",
-      "topic": "كأس أوروبا",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.uefa.com/uefaeuro/history/news/025a-0eb3409cf5d7-59ea269c3fd2-1000--euro-1984-all-you-need-to-know/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "أي منتخب خليجي هزم اليابان 3–1 وأحرز كأس آسيا 2019؟",
-      "a": "قطر",
-      "qid": "football-200-905",
-      "topic": "كأس آسيا",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/moriyasu_qatar_were_the_better_side.html",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "أي منتخب عربي أحرز لقب كأس آسيا 2007 بعد فوزه بالنهائي بهدف وحيد؟",
-      "a": "العراق",
-      "qid": "football-200-906",
-      "topic": "كأس آسيا",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/2007_afc_asian_cup%E2%84%A2_lookback_1.html",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "أي منتخب عربي فاز بنهائي كأس إفريقيا 2006 على أرضه أمام ساحل العاج؟",
-      "a": "مصر",
-      "qid": "football-200-907",
-      "topic": "كأس إفريقيا",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.cafonline.com/caf-africa-cup-of-nations/news/match-facts-cote-d-ivoire-v-egypt/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "أي منتخب قاده ميسي إلى لقب كوبا أمريكا 2021؟",
-      "a": "الأرجنتين",
-      "qid": "football-200-908",
-      "topic": "كوبا أمريكا",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://copaamerica.com/es/copa-america-2021",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "كم دقيقة تستغرق مباراة كرة القدم دون الوقت المضاف أو الإضافي؟",
-      "a": "90",
-      "qid": "football-400-901",
-      "topic": "قوانين اللعب",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.theifab.com/laws/latest/the-duration-of-the-match/",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
-      "q": "ما القرار عند عرقلة مدافع لمهاجم داخل منطقة جزائه والكرة في اللعب؟",
-      "a": "ركلة جزاء",
-      "qid": "football-400-902",
-      "topic": "التحكيم",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.theifab.com/laws/latest/fouls-and-misconduct/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "ضربة جزاء"
-      ]
-    },
-    {
-      "p": 400,
       "q": "أي منتخب سحق إيطاليا 4–0 في نهائي بطولة أوروبا 2012؟",
       "a": "إسبانيا",
-      "qid": "football-400-903",
+      "qid": "football-200-911",
       "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/news/0252-0cdc4f07099d-36a02f333f87-1000--spain-overpower-exhausted-italy-to-win-uefa-euro-2012-final/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "أي منتخب حقق مفاجأة بطولة أوروبا 2004 على حساب أصحاب الأرض؟",
       "a": "اليونان",
-      "qid": "football-400-904",
+      "qid": "football-200-912",
       "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.uefa.com/uefaeuro/history/news/0254-0d7b673abd33-d04e3bb2cd62-1000/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "أي منتخب نال أول كأس آسيوية له بفوزه على الصين في نهائي 1984؟",
       "a": "السعودية",
-      "qid": "football-400-905",
+      "qid": "football-200-913",
       "topic": "كأس آسيا",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/flashback_saudi_arabias_historic_triumph_at_the_1984_afc_asian_cup%C2%A0.html",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "أي منتخب استضاف كأس آسيا 2015 وفاز بنهائيها أمام كوريا الجنوبية؟",
       "a": "أستراليا",
-      "qid": "football-400-906",
+      "qid": "football-200-914",
       "topic": "كأس آسيا",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/on_this_day_australia_crowned_champions_of_asia.html",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "أي منتخب توج لأول مرة بكأس إفريقيا في نسخة 2021 بعد الفوز على مصر؟",
       "a": "السنغال",
-      "qid": "football-400-907",
+      "qid": "football-200-915",
       "topic": "كأس إفريقيا",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.cafonline.com/afcon2025/news/match-stats-senegal-vs-egypt-totalenergies-caf-africa-cup-of-nations-morocco-2025-semi-final/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "أي منتخب نال أول ألقابه بكوبا أمريكا على أرضه عام 2015؟",
       "a": "تشيلي",
-      "qid": "football-400-908",
+      "qid": "football-200-916",
       "topic": "كوبا أمريكا",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://copaamerica.com/es/novedades/chile-cuantas-veces-gano-conmebol-copa-america",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
-      "q": "ما أقل عدد لاعبين يسمح لفريق ببدء مباراة كرة قدم؟",
-      "a": "7",
-      "qid": "football-600-901",
+      "p": 200,
+      "q": "كم مترًا تفصل علامة تنفيذ الجزاء عن منتصف خط المرمى؟",
+      "a": "11 مترًا",
+      "qid": "football-200-917",
       "topic": "قوانين اللعب",
       "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.theifab.com/laws/latest/the-players/",
-      "verifiedAt": "2026-09-18"
+      "difficultyTarget": 0.8,
+      "source": "https://www.theifab.com/laws/latest/the-field-of-play/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "11"
+      ]
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما المبدأ الذي يتيح للحكم مواصلة اللعب بعد مخالفة إذا استفاد الفريق المتضرر؟",
       "a": "إتاحة الفرصة",
-      "qid": "football-600-902",
+      "qid": "football-200-918",
       "topic": "التحكيم",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://theifab.com/laws/latest/the-referee/#powers-and-duties",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -212,13 +99,13 @@
       ]
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "من البديل الذي سجل الهدف الوحيد في نهائي أوروبا 2016؟",
       "a": "إيدر",
-      "qid": "football-600-903",
+      "qid": "football-400-911",
       "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://www.uefa.com/uefaeuro/history/news/025a-0ec0db63e375-e3d06be8c923-1000--euro-2016-all-you-need-to-know/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -226,57 +113,57 @@
       ]
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "أي منتخب فاز على ألمانيا 2–0 في نهائي أوروبا 1992؟",
       "a": "الدنمارك",
-      "qid": "football-600-904",
+      "qid": "football-400-912",
       "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://www.uefa.com/uefaeuro/history/news/0253-0d7b301f026e-4388f32eaa87-1000--gatecrashing-denmark-down-germany-in-euro-1992-final/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
-      "q": "من صاحب الرأسية التي حسمت نهائي آسيا 2007 أمام السعودية؟",
+      "p": 400,
+      "q": "من صاحب الرأسية التي حسمت نهائي كأس آسيا 2007؟",
       "a": "يونس محمود",
-      "qid": "football-600-905",
+      "qid": "football-400-913",
       "topic": "كأس آسيا",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://www.the-afc.com/en/more/news/asian_icons_younis_mahmoud_iraq.html",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
-      "q": "أي منتخب تغلب على أستراليا في نهائي كأس آسيا 2011؟",
+      "p": 400,
+      "q": "أي منتخب أحرز لقب كأس آسيا 2011؟",
       "a": "اليابان",
-      "qid": "football-600-906",
+      "qid": "football-400-914",
       "topic": "كأس آسيا",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/tadanari_lee_recalls_2011_final_high.html",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "أي منتخب نال كأس إفريقيا 2019 تحت قيادة جمال بلماضي؟",
       "a": "الجزائر",
-      "qid": "football-600-907",
+      "qid": "football-400-915",
       "topic": "كأس إفريقيا",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://www.cafonline.com/afcon2025/news/a-year-ago-algeria-ruled-the-continent/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "من أحرز الهدف الوحيد في نهائي كوبا أمريكا 2021 أمام البرازيل؟",
       "a": "أنخيل دي ماريا",
-      "qid": "football-600-908",
+      "qid": "football-400-916",
       "topic": "كوبا أمريكا",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "source": "https://copaamerica.com/es/novedades/di-maria-historico-campeon-copa-america",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -284,27 +171,24 @@
       ]
     },
     {
-      "p": 800,
-      "q": "كم مترًا تفصل علامة تنفيذ الجزاء عن منتصف خط المرمى؟",
-      "a": "11 مترًا",
-      "qid": "football-800-901",
+      "p": 400,
+      "q": "ما أقل عدد لاعبين يسمح لفريق ببدء مباراة كرة قدم؟",
+      "a": "7",
+      "qid": "football-400-917",
       "topic": "قوانين اللعب",
       "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.theifab.com/laws/latest/the-field-of-play/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "11"
-      ]
+      "difficultyTarget": 0.6,
+      "source": "https://www.theifab.com/laws/latest/the-players/",
+      "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "ما نوع الركلة الحرة التي يشير إليها الحكم برفع ذراعه فوق رأسه؟",
       "a": "غير مباشرة",
-      "qid": "football-800-902",
+      "qid": "football-400-918",
       "topic": "التحكيم",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.6,
       "source": "https://www.theifab.com/laws/latest/free-kicks/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -312,13 +196,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من قائد هولندا الذي رفع كأس أوروبا 1988؟",
       "a": "رود خوليت",
-      "qid": "football-800-903",
+      "qid": "football-600-911",
       "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.uefa.com/uefaeuro/history/news/025b-0ed955722c3e-d9f74ab7998d-1000--euro-1988-all-you-need-to-know/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -326,13 +210,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من أحرز التسديدة الطائرة الشهيرة لهولندا من زاوية ضيقة في نهائي 1988؟",
       "a": "ماركو فان باستن",
-      "qid": "football-800-904",
+      "qid": "football-600-912",
       "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.uefa.com/uefaeuro/history/news/0253-0d7b2f78ca99-40f24ef873fd-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -340,46 +224,46 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من هداف كأس آسيا 2019 بتسعة أهداف، بينها مقصية في النهائي؟",
       "a": "المعز علي",
-      "qid": "football-800-905",
+      "qid": "football-600-913",
       "topic": "كأس آسيا",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://assets.the-afc.com/migration/a/f/AFC%20Quarterly%20Issue%2026.pdf",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
-      "q": "من سجل هدف فوز أستراليا في الوقت الإضافي لنهائي كأس آسيا 2015؟",
+      "p": 600,
+      "q": "من سجل هدف الفوز في الوقت الإضافي لنهائي كأس آسيا 2015؟",
       "a": "جيمس ترويسي",
-      "qid": "football-800-906",
+      "qid": "football-600-914",
       "topic": "كأس آسيا",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/on_this_day_australia_crowned_champions_of_asia.html",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من أحرز هدف نهائي كأس إفريقيا 2019 المبكر بتسديدة غيّرت اتجاهها؟",
       "a": "بغداد بونجاح",
-      "qid": "football-800-907",
+      "qid": "football-600-915",
       "topic": "كأس إفريقيا",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.cafonline.com/afcon2025/news/a-year-ago-algeria-ruled-the-continent/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "أي منتخب هزم باراغواي 3–0 ليفوز بكوبا أمريكا 2011؟",
       "a": "أوروغواي",
-      "qid": "football-800-908",
+      "qid": "football-600-916",
       "topic": "كوبا أمريكا",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://cdn.conmebol.com/wp-content/uploads/documents/copaamericaweb-es.pdf",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -387,13 +271,13 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "كم مترًا يجب أن يبتعد الخصوم عن الكرة في ركلة حرة خارج منطقة جزائهم؟",
       "a": "9.15 متر",
-      "qid": "football-1000-901",
+      "qid": "football-600-917",
       "topic": "قوانين اللعب",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.theifab.com/laws/latest/free-kicks/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -401,24 +285,24 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "ما الهيئة المسؤولة عن اعتماد قوانين كرة القدم والمعروفة باختصار IFAB؟",
       "a": "مجلس الاتحاد الدولي لكرة القدم",
-      "qid": "football-1000-902",
+      "qid": "football-600-918",
       "topic": "التحكيم",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.4,
       "source": "https://www.theifab.com/organisation/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من المهاجم الذي سجل برأسه هدف نهائي أوروبا 2004 الوحيد؟",
       "a": "أنغيلوس خاريستياس",
-      "qid": "football-1000-903",
+      "qid": "football-800-911",
       "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefaeuro/history/news/0254-0d7b673abd33-d04e3bb2cd62-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -427,13 +311,13 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "من المدرب الألماني الذي صنع مفاجأة اليونان في أوروبا 2004؟",
+      "p": 800,
+      "q": "من المدرب الألماني الذي قاد المنتخب البطل لأمم أوروبا 2004؟",
       "a": "أوتو ريهاجل",
-      "qid": "football-1000-904",
+      "qid": "football-800-912",
       "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.uefa.com/uefaeuro/history/news/0254-0d7b673abd33-d04e3bb2cd62-1000/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -441,21 +325,90 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من البديل الياباني الذي حسم نهائي كأس آسيا 2011 بتسديدة طائرة؟",
       "a": "تاداناري لي",
-      "qid": "football-1000-905",
+      "qid": "football-800-913",
       "topic": "كأس آسيا",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.the-afc.com/en/national/afc_asian_cup/news/tadanari_lee_recalls_2011_final_high.html",
       "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 800,
+      "q": "أي منتخب فاز بركلات الترجيح 8–7 في نهائي كأس إفريقيا 2012؟",
+      "a": "زامبيا",
+      "qid": "football-800-914",
+      "topic": "كأس إفريقيا",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.cafonline.com/afcon2025/news/one-year-to-afcon-2025-unforgettable-tournament-finales/",
+      "verifiedAt": "2026-09-18"
+    },
+    {
+      "p": 800,
+      "q": "من مهاجم بيرو الذي تصدر هدافي كوبا أمريكا 2011 بخمسة أهداف؟",
+      "a": "باولو غيريرو",
+      "qid": "football-800-915",
+      "topic": "كوبا أمريكا",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://cdn.conmebol.com/wp-content/uploads/documents/copaamericaweb-es.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "باولو جيريرو"
+      ]
+    },
+    {
+      "q": "من فاز بجائزة أفضل لاعب في كأس آسيا 2015؟",
+      "a": "ماسيمو لونغو",
+      "topic": "كأس آسيا",
+      "verified": true,
+      "sourceUrl": "https://www.the-afc.com/en/more/news/mvp_award_%E2%80%98the_icing_on_the_cake%E2%80%99_for_livewire_luongo.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "ماسيمو لوونغو",
+        "Massimo Luongo"
+      ],
+      "p": 800,
+      "qid": "football-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من حارس المرمى الفائز بالكرة الذهبية عام 1963؟",
+      "a": "ليف ياشين",
+      "topic": "نجوم وجوائز",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/ballondor/news/0292-1c2705cb8fd5-8f2dcb111a8a-1000--ballon-d-or-how-are-the-winners-decided/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "ياشين",
+        "Lev Yashin"
+      ],
+      "p": 800,
+      "qid": "football-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من أول فرنسي فاز بالكرة الذهبية، عام 1958؟",
+      "a": "ريمون كوبا",
+      "topic": "نجوم وجوائز",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/ballondor/news/0292-1c2705cb8fd5-8f2dcb111a8a-1000--ballon-d-or-how-are-the-winners-decided/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Raymond Kopa"
+      ],
+      "p": 800,
+      "qid": "football-800-918",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
       "q": "من الظهير الياباني الذي صنع العرضية لهدف نهائي كأس آسيا 2011؟",
       "a": "يوتو ناغاتومو",
-      "qid": "football-1000-906",
+      "qid": "football-1000-911",
       "topic": "كأس آسيا",
       "verified": true,
       "difficultyTarget": 0.15,
@@ -466,29 +419,107 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "أي منتخب فاز بركلات الترجيح 8–7 في نهائي كأس إفريقيا 2012؟",
-      "a": "زامبيا",
-      "qid": "football-1000-907",
-      "topic": "كأس إفريقيا",
+      "q": "من حارس التشيك الذي استقبل الهدف الذهبي في نهائي أوروبا 1996؟",
+      "a": "بيتر كوبا",
+      "topic": "كأس أوروبا",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.cafonline.com/afcon2025/news/one-year-to-afcon-2025-unforgettable-tournament-finales/",
-      "verifiedAt": "2026-09-18"
+      "sourceUrl": "https://www.uefa.com/uefaeuro/history/news/025e-0f99be7db66e-04b0e76360bb-1000--classics-euro-96-final/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Petr Kouba"
+      ],
+      "p": 1000,
+      "qid": "football-1000-912",
+      "difficultyTarget": 0.15
     },
     {
+      "q": "من الألماني الذي أهدر ركلة الترجيح قبل ركلة بانينكا الحاسمة في نهائي أوروبا 1976؟",
+      "a": "أولي هونيس",
+      "topic": "كأس أوروبا",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/uefaeuro/history/news/0252-0cdc4f44202f-a028ba3167e3-1000--panenka-the-hero-for-czechoslovakia/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Uli Hoeness",
+        "أولي هونيس"
+      ],
       "p": 1000,
-      "q": "من مهاجم بيرو الذي تصدر هدافي كوبا أمريكا 2011 بخمسة أهداف؟",
-      "a": "باولو غيريرو",
-      "qid": "football-1000-908",
+      "qid": "football-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من قائد المنتخب الذي أحرز كأس آسيا 2004؟",
+      "a": "تسونياسو ميياموتو",
+      "topic": "كأس آسيا",
+      "verified": true,
+      "sourceUrl": "https://www.the-afc.com/en/national/afc_asian_cup/news/flashback_japan_2004.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Tsuneyasu Miyamoto",
+        "تسونياسو مياموتو"
+      ],
+      "p": 1000,
+      "qid": "football-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من النيجيري الفائز بجائزة أفضل لاعب في كأس أمم إفريقيا 2004؟",
+      "a": "جاي جاي أوكوتشا",
+      "topic": "كأس إفريقيا",
+      "verified": true,
+      "sourceUrl": "https://www.cafonline.com/fr/can2025/infos/tout-ce-qu-il-faut-savoir-sur-la-totalenergies-caf-coupe-d-afrique-des-nations-maroc-2025/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "أوكوتشا",
+        "Jay-Jay Okocha"
+      ],
+      "p": 1000,
+      "qid": "football-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من شارك رونالدو صدارة هدافي كوبا أمريكا 1999 بخمسة أهداف؟",
+      "a": "ريفالدو",
       "topic": "كوبا أمريكا",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://cdn.conmebol.com/wp-content/uploads/documents/copaamericaweb-es.pdf",
-      "verifiedAt": "2026-09-18",
+      "sourceUrl": "https://copaamerica.com/en/news/top-scorer-every-edition-conmebol-copa-america",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "باولو جيريرو"
-      ]
+        "Rivaldo"
+      ],
+      "p": 1000,
+      "qid": "football-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من درب تونس عندما أحرزت كأس أمم إفريقيا 2004؟",
+      "a": "روجيه لومير",
+      "topic": "المدربون",
+      "verified": true,
+      "sourceUrl": "https://www.cafonline.com/fr/can2025/infos/tout-ce-qu-il-faut-savoir-sur-la-totalenergies-caf-coupe-d-afrique-des-nations-maroc-2025/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Roger Lemerre",
+        "روجيه ليمير"
+      ],
+      "p": 1000,
+      "qid": "football-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من حارس يوغوسلافيا الذي صد ركلة بوشكاش في نهائي أولمبياد 1952؟",
+      "a": "فلاديمير بيارا",
+      "topic": "نجوم وجوائز",
+      "verified": true,
+      "sourceUrl": "https://www.uefa.com/news-media/news/0218-0e15a7bb937f-80e550b52621-1000--goalkeeping-idol-vladimir-beara-mourned/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Vladimir Beara",
+        "فلاديمير بيرا"
+      ],
+      "p": 1000,
+      "qid": "football-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

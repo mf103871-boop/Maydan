@@ -5,446 +5,485 @@
   "qs": [
     {
       "p": 200,
-      "q": "جمعت تسع كرات إلى اثنتي عشرة كرة. كم أصبح معك؟",
-      "a": "21",
-      "qid": "puzzles-200-901",
-      "topic": "الحساب",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "ما الكلمة التي تنتج من قراءة أحرف«ملح» بالعكس؟",
-      "a": "حلم",
-      "qid": "puzzles-200-902",
-      "topic": "الحروف والرموز",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "دخلت السينما 3:15 وبدأ الفيلم 3:30. كم انتظرت؟",
-      "a": "15 دقيقة",
-      "qid": "puzzles-200-903",
-      "topic": "الوقت",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "عمر مريم خمس سنوات وعمر أختها ضعف عمرها. كم عمر الأخت؟",
-      "a": "10 سنوات",
-      "qid": "puzzles-200-904",
-      "topic": "الأعمار",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "تجاوزت العداء الموجود مباشرة خلف المتصدر دون تجاوز المتصدر نفسه. ما مركزك؟",
-      "a": "الثاني",
-      "qid": "puzzles-200-905",
-      "topic": "الترتيب",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "لديك مربعان منفصلان. كم زاوية لهما معًا؟",
-      "a": "8 زوايا",
-      "qid": "puzzles-200-906",
-      "topic": "الأشكال",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "في الصندوق ثلاثة أزواج من الأحذية. كم حذاء فيه؟",
-      "a": "6 أحذية",
-      "qid": "puzzles-200-907",
-      "topic": "العد",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 200,
-      "q": "كرتان متطابقتان شكلًا وإحداهما أثقل. كم وزنة بميزان كفتين تكفي لتحديدها؟",
-      "a": "وزنة واحدة",
-      "qid": "puzzles-200-908",
-      "topic": "المنطق",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 400,
       "q": "سعر حقيبة 50، خُصم 20% منه ثم خُصمت 5 إضافية. كم أصبح السعر؟",
       "a": "35",
-      "qid": "puzzles-400-901",
+      "qid": "puzzles-200-911",
+      "topic": "الحساب",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "q": "اقلب حروف «ملك»، ثم أضف همزة «أ» في البداية. ما الفعل الناتج؟",
+      "a": "أكلم",
+      "topic": "الحروف والرموز",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "أكلّم"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 200,
+      "qid": "puzzles-200-912",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "بدأ فيلم الساعة 9:40 ومدته 95 دقيقة. متى ينتهي؟",
+      "a": "11:15",
+      "topic": "الوقت",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "الحادية عشرة والربع"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 200,
+      "qid": "puzzles-200-913",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 200,
+      "q": "مجموع عمري أخوين 24 سنة، والفارق 12 سنة. كم عمر الأكبر؟",
+      "a": "18 سنة",
+      "qid": "puzzles-200-914",
+      "topic": "الأعمار",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "أمام شخص أربعة أفراد وخلفه سبعة في طابور. ما ترتيبه من الخلف؟",
+      "a": "الثامن",
+      "qid": "puzzles-200-915",
+      "topic": "الترتيب",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "كم حافة لمكعب، دون عد أي حافة مرتين؟",
+      "a": "12 حافة",
+      "qid": "puzzles-200-916",
+      "topic": "الأشكال",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "عشرة أشخاص؛ صافح كل واحد الآخرين مرة واحدة. كم مصافحة حدثت؟",
+      "a": "45 مصافحة",
+      "qid": "puzzles-200-917",
+      "topic": "العد",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "p": 200,
+      "q": "ثماني كرات وواحدة أثقل؛ ما أقل عدد وزنات بميزان كفتين يضمن تحديدها؟",
+      "a": "وزنتان",
+      "qid": "puzzles-200-918",
+      "topic": "المنطق",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "p": 400,
+      "q": "ثمن دفتر وقلم 18، والدفتر ضعف القلم. ما ثمن ثلاثة دفاتر وقلم؟",
+      "a": "42",
+      "qid": "puzzles-400-911",
       "topic": "الحساب",
       "verified": true,
       "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
-      "p": 400,
-      "q": "اقرأ حروف كلمة«برق» من النهاية إلى البداية. ما الكلمة الناتجة؟",
-      "a": "قرب",
-      "qid": "puzzles-400-902",
+      "q": "احذف آخر حرف من «ملحق»، ثم انقل أول حرف إلى النهاية. ما الكلمة الناتجة؟",
+      "a": "لحم",
       "topic": "الحروف والرموز",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "puzzles-400-912",
+      "difficultyTarget": 0.6
     },
     {
       "p": 400,
-      "q": "رحلة استغرقت ساعتين ونصفًا. كم دقيقة استغرقت؟",
-      "a": "150 دقيقة",
-      "qid": "puzzles-400-903",
+      "q": "ساعة تتأخر خمس دقائق كل ساعة حقيقية. بعد كم ساعة حقيقية تتأخر ساعة كاملة؟",
+      "a": "12 ساعة",
+      "qid": "puzzles-400-913",
       "topic": "الوقت",
       "verified": true,
       "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 400,
-      "q": "مجموع عمري أخوين 24 سنة، والفارق 12 سنة. كم عمر الأكبر؟",
-      "a": "18 سنة",
-      "qid": "puzzles-400-904",
+      "q": "أب عمره ثلاثة أضعاف ابنه؛ بعد 12 سنة يصبح ضعفه. كم عمر الأب الآن؟",
+      "a": "36 سنة",
+      "qid": "puzzles-400-914",
       "topic": "الأعمار",
       "verified": true,
       "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 400,
-      "q": "أمام شخص أربعة أفراد وخلفه سبعة في طابور. ما ترتيبه من الخلف؟",
-      "a": "الثامن",
-      "qid": "puzzles-400-905",
+      "q": "شخص ترتيبه السابع من طرفَي طابور. كم شخصًا في الطابور؟",
+      "a": "13 شخصًا",
+      "qid": "puzzles-400-915",
       "topic": "الترتيب",
       "verified": true,
       "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 400,
-      "q": "كم حافة لمكعب، دون عد أي حافة مرتين؟",
-      "a": "12 حافة",
-      "qid": "puzzles-400-906",
+      "q": "كم قطرًا للشكل الخماسي المحدب؟",
+      "a": "5 أقطار",
+      "qid": "puzzles-400-916",
       "topic": "الأشكال",
       "verified": true,
       "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 400,
-      "q": "عشرة أشخاص؛ صافح كل واحد الآخرين مرة واحدة. كم مصافحة حدثت؟",
-      "a": "45 مصافحة",
-      "qid": "puzzles-400-907",
+      "q": "بكم طريقة يمكن اختيار شخصين من مجموعة تضم ستة، دون اعتبار لترتيبهما؟",
+      "a": "15 طريقة",
+      "qid": "puzzles-400-917",
       "topic": "العد",
       "verified": true,
       "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 400,
-      "q": "ثماني كرات وواحدة أثقل؛ ما أقل عدد وزنات بميزان كفتين يضمن تحديدها؟",
-      "a": "وزنتان",
-      "qid": "puzzles-400-908",
+      "q": "درج فيه جوارب سوداء وبيضاء كثيرة. كم تسحب عشوائيًا لتضمن ثلاثة من اللون نفسه؟",
+      "a": "5 جوارب",
+      "qid": "puzzles-400-918",
       "topic": "المنطق",
       "verified": true,
       "difficultyTarget": 0.6,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 600,
-      "q": "ثمن دفتر وقلم 18، والدفتر ضعف القلم. ما ثمن ثلاثة دفاتر وقلم؟",
-      "a": "42",
-      "qid": "puzzles-600-901",
+      "q": "عدد من رقمين مجموع رقميه 11. بعكسهما يزداد 27. ما العدد؟",
+      "a": "47",
+      "qid": "puzzles-600-911",
       "topic": "الحساب",
       "verified": true,
       "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 600,
-      "q": "احذف الحرف الأول من«سلام» لتحصل على اسم حرف عربي. ما هو؟",
-      "a": "لام",
-      "qid": "puzzles-600-902",
+      "q": "شفرة تستبدل كل حرف بالتالي في ترتيب الهجاء العربي. ما أصل كلمة«كنز»؟",
+      "a": "قمر",
+      "qid": "puzzles-600-912",
       "topic": "الحروف والرموز",
       "verified": true,
       "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 600,
       "q": "ما الزاوية الأصغر بين عقربَي ساعة تناظرية عند الثالثة والنصف؟",
       "a": "75 درجة",
-      "qid": "puzzles-600-903",
+      "qid": "puzzles-600-913",
       "topic": "الوقت",
       "verified": true,
       "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 600,
-      "q": "أب عمره ثلاثة أضعاف ابنه؛ بعد 12 سنة يصبح ضعفه. كم عمر الأب الآن؟",
-      "a": "36 سنة",
-      "qid": "puzzles-600-904",
+      "q": "أم عمرها ضعف ابنتها. قبل عشر سنوات كان ثلاثة أضعافها. كم عمر الأم الآن؟",
+      "a": "40 سنة",
+      "qid": "puzzles-600-914",
       "topic": "الأعمار",
       "verified": true,
       "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 600,
-      "q": "شخص ترتيبه السابع من طرفَي طابور. كم شخصًا في الطابور؟",
-      "a": "13 شخصًا",
-      "qid": "puzzles-600-905",
+      "q": "أربعة أشخاص يتناوبون بالترتيب نفسه بدءًا بالأول. لمن تكون المرة 27؟",
+      "a": "الشخص الثالث",
+      "qid": "puzzles-600-915",
       "topic": "الترتيب",
       "verified": true,
       "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 600,
-      "q": "كم قطرًا للشكل الخماسي المحدب؟",
-      "a": "5 أقطار",
-      "qid": "puzzles-600-906",
+      "q": "كم مربعًا تحدده خطوط شبكة من ثلاثة صفوف وثلاثة أعمدة، بكل الأحجام؟",
+      "a": "14 مربعًا",
+      "qid": "puzzles-600-916",
       "topic": "الأشكال",
       "verified": true,
       "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 600,
       "q": "شبكة مستطيلة من صفين وثلاثة أعمدة؛ كم مستطيلًا مختلفًا تحدده خطوطها، بما فيها المربعات؟",
       "a": "18 مستطيلًا",
-      "qid": "puzzles-600-907",
+      "qid": "puzzles-600-917",
       "topic": "العد",
       "verified": true,
       "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
       "p": 600,
       "q": "مصباح متوهج أُطفئ للتو وآخر لم يُشغّل؛ كلاهما مظلم. ما الخاصية التي تميزهما فورًا؟",
       "a": "الحرارة",
-      "qid": "puzzles-600-908",
+      "qid": "puzzles-600-918",
       "topic": "المنطق",
       "verified": true,
       "difficultyTarget": 0.4,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
-      "p": 800,
-      "q": "عدد من رقمين مجموع رقميه 11. بعكسهما يزداد 27. ما العدد؟",
-      "a": "47",
-      "qid": "puzzles-800-901",
+      "q": "دفعت 40 دينارًا بعد خصم 20% من السعر الأصلي. كم كان السعر الأصلي؟",
+      "a": "50 دينارًا",
       "topic": "الحساب",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "50"
+      ],
       "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "puzzles-800-911",
+      "difficultyTarget": 0.25
     },
     {
       "p": 800,
-      "q": "شفرة تستبدل كل حرف بالتالي في ترتيب الهجاء العربي. ما أصل كلمة«كنز»؟",
-      "a": "قمر",
-      "qid": "puzzles-800-902",
-      "topic": "الحروف والرموز",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "ساعة تتأخر خمس دقائق كل ساعة حقيقية. بعد كم ساعة حقيقية تتأخر ساعة كاملة؟",
-      "a": "12 ساعة",
-      "qid": "puzzles-800-903",
-      "topic": "الوقت",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "أم عمرها ضعف ابنتها. قبل عشر سنوات كان ثلاثة أضعافها. كم عمر الأم الآن؟",
-      "a": "40 سنة",
-      "qid": "puzzles-800-904",
-      "topic": "الأعمار",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "أربعة أشخاص يتناوبون بالترتيب نفسه بدءًا بالأول. لمن تكون المرة 27؟",
-      "a": "الشخص الثالث",
-      "qid": "puzzles-800-905",
-      "topic": "الترتيب",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "كم مربعًا تحدده خطوط شبكة من ثلاثة صفوف وثلاثة أعمدة، بكل الأحجام؟",
-      "a": "14 مربعًا",
-      "qid": "puzzles-800-906",
-      "topic": "الأشكال",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "بكم طريقة يمكن اختيار شخصين من مجموعة تضم ستة، دون اعتبار لترتيبهما؟",
-      "a": "15 طريقة",
-      "qid": "puzzles-800-907",
-      "topic": "العد",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 800,
-      "q": "درج فيه جوارب سوداء وبيضاء كثيرة. كم تسحب عشوائيًا لتضمن ثلاثة من اللون نفسه؟",
-      "a": "5 جوارب",
-      "qid": "puzzles-800-908",
-      "topic": "المنطق",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 1000,
-      "q": "ما أصغر عدد موجب يقبل القسمة على 7، ويترك باقيًا 1 بقسمته على 2 و 3 و 4 و 5؟",
-      "a": "301",
-      "qid": "puzzles-1000-901",
-      "topic": "الحساب",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 1000,
       "q": "في شفرة تعكس ترتيب الحروف الهجائية العربية الثمانية والعشرين، أي حرف يقابل الذال؟",
       "a": "الفاء",
-      "qid": "puzzles-1000-902",
+      "qid": "puzzles-800-912",
       "topic": "الحروف والرموز",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
-    },
-    {
-      "p": 1000,
-      "q": "بعد الثانية تمامًا، بكم دقيقة ينطبق عقربا الساعات والدقائق لأول مرة؟",
-      "a": "120/11 دقيقة",
-      "qid": "puzzles-1000-903",
-      "topic": "الوقت",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
+      "difficultyTarget": 0.25,
       "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "q": "جرس بفواصل متساوية يستغرق عشر ثوانٍ من أول دقة إلى السادسة. كم يستغرق من الأولى إلى الثانية عشرة؟",
+      "a": "22 ثانية",
+      "topic": "الوقت",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
       "alt": [
-        "10 و10/11 دقيقة"
-      ]
-    },
-    {
-      "p": 1000,
-      "q": "عمري الآن ضعف عمرك حين كان عمري يساوي عمرك الآن. مجموعنا 56 سنة؛ كم عمري؟",
-      "a": "32 سنة",
-      "qid": "puzzles-1000-904",
-      "topic": "الأعمار",
+        "22"
+      ],
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "puzzles-800-913",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "q": "أب يبلغ أربعين عامًا وابنه عشر سنوات. بعد كم سنة يصبح عمر الأب ضعف عمر الابن؟",
+      "a": "20 سنة",
+      "topic": "الأعمار",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "20"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "puzzles-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
       "q": "خمسة كتب مختلفة على رف؛ كتابان محددان يجب أن يتجاورا. كم ترتيبًا ممكنًا؟",
       "a": "48 ترتيبًا",
-      "qid": "puzzles-1000-905",
+      "qid": "puzzles-800-915",
       "topic": "الترتيب",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "شبكة 3×3 مربعات؛ كم مسارًا أقصر بين ركنين متقابلين باستخدام اليمين والأسفل فقط؟",
       "a": "20 مسارًا",
-      "qid": "puzzles-1000-906",
+      "qid": "puzzles-800-916",
       "topic": "الأشكال",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "عند كتابة الأعداد من 1 إلى 100، كم مرة يظهر الرقم 9؟",
       "a": "20 مرة",
-      "qid": "puzzles-1000-907",
+      "qid": "puzzles-800-917",
       "topic": "العد",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "difficultyTarget": 0.25,
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "q": "شهر من ثلاثين يومًا فيه خمس جمع وخمس سبوت. بأي يوم بدأ؟",
+      "a": "الجمعة",
+      "topic": "الترتيب",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "puzzles-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "رفع تاجر السعر 25% فوق التكلفة، ثم خصم 20% من سعر البيع. ما نسبة ربحه من التكلفة؟",
+      "a": "0%",
+      "topic": "الحساب",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "صفر",
+        "لا ربح"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "puzzles-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "صناديق تفاح وبرتقال وخليط، وكل الملصقات خاطئة. من أي صندوق تسحب ثمرة لتحدد محتويات الجميع؟",
+      "a": "المسمى خليطًا",
+      "topic": "المنطق",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "صندوق الخليط",
+        "المكتوب عليه خليط"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "puzzles-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "حبلان يحترق كل منهما بساعة غير منتظمة؛ أشعل الأول بطرفيه والثاني بطرف، ثم طرف الثاني بعد نفاد الأول. الزمن؟",
+      "a": "45 دقيقة",
+      "topic": "الوقت",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "ثلاثة أرباع الساعة"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "puzzles-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "كم ترتيبًا لجلوس ستة أشخاص حول طاولة دائرية، إذا اعتبرنا الدوران وحده الترتيب نفسه؟",
+      "a": "120 ترتيبًا",
+      "topic": "الترتيب",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "120"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "puzzles-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "حُذف ركنان متقابلان من رقعة شطرنج. لماذا يستحيل تغطية الباقي بقطع 2×1 دون تداخل أو خروج؟",
+      "a": "اختلاف عدد المربعات من اللونين",
+      "topic": "الأشكال",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "عدم تساوي مربعات اللونين",
+        "كل قطعة تغطي مربعًا من كل لون"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "puzzles-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من 1 إلى 100، كم عددًا يحتوي الرقم 9 مرة واحدة على الأقل؟",
+      "a": "19 عددًا",
+      "topic": "العد",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "19"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "puzzles-1000-916",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
       "q": "أربعة بضفة، أزمنتهم 1،2،7،10 دقائق. يعبر الجسر اثنان كحد أقصى بسرعة الأبطأ، مع مصباح يعاد؛ أقل زمن؟",
       "a": "17 دقيقة",
-      "qid": "puzzles-1000-908",
+      "qid": "puzzles-1000-917",
       "topic": "المنطق",
       "verified": true,
       "difficultyTarget": 0.15,
-      "source": "docs/bank/rebuild-2026-09-18/puzzles-proofs.json",
-      "verifiedAt": "2026-09-18"
+      "verifiedAt": "2026-09-18",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json"
+    },
+    {
+      "q": "ثلاثة مفاتيح لثلاثة أقفال، لكل قفل مفتاح مختلف. ما أقل عدد تجارب يكفي لتحديد جميع المطابقات في أسوأ حالة؟",
+      "a": "3 تجارب",
+      "topic": "العد",
+      "sourceUrl": "docs/bank/difficulty-2026-09-25/puzzles-proofs.json",
+      "alt": [
+        "ثلاث تجارب",
+        "3"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "puzzles-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

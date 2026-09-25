@@ -5,128 +5,12 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما الشركة اليابانية التي أطلقت كورولا عام 1966؟",
-      "a": "تويوتا",
-      "qid": "cars-200-901",
-      "topic": "الشركات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60003189/index.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Toyota"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما سيارة فورد ذات شعار الحصان التي ظهرت في معرض نيويورك عام 1964؟",
-      "a": "موستانغ",
-      "qid": "cars-200-902",
-      "topic": "الطرازات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://corporate.ford.com/articles/history/mustang.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Mustang",
-        "موستانج"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الجزء الذي يبرد سائل المحرك بنقل حرارته إلى الهواء؟",
-      "a": "الرادياتير",
-      "qid": "cars-200-903",
-      "topic": "الأجزاء",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.denso-am.eu/products/ac-engine-cooling/cooling-radiators",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "المشع",
-        "الرديتر"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما اختصار نظام المكابح الذي يمنع انغلاق العجلات عند الفرملة؟",
-      "a": "ABS",
-      "qid": "cars-200-904",
-      "topic": "التقنيات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.bosch-mobility.com/en/solutions/driving-safety/antilock-braking-system/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "إيه بي إس"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "أي شركة سيارات إيطالية يشتهر شعارها بحصان أسود جامح على خلفية صفراء؟",
-      "a": "فيراري",
-      "qid": "cars-200-905",
-      "topic": "الشعارات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.ferrari.com/content/dam/ferrari-fcom/old/pdf/pr_90_years_eng_fin.pdf",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Ferrari"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "من الصناعي الأمريكي الذي حملت سيارته الشعبية لعام 1908 اسم Model T؟",
-      "a": "هنري فورد",
-      "qid": "cars-200-906",
-      "topic": "التاريخ",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://corporate.ford.com/articles/history/the-model-t.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Henry Ford"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "إلى أي فئة من السيارات يشير الاختصار SUV؟",
-      "a": "رياضية متعددة الاستخدام",
-      "qid": "cars-200-907",
-      "topic": "أشكال السيارات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.landrover.com/discovery/family-suv/index.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "مركبة رياضية متعددة الأغراض",
-        "سيارة رياضية متعددة الاستخدامات"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "في أي بطولة سيارات عالمية اشتهر لويس هاميلتون بحصد ألقابه؟",
-      "a": "فورمولا1",
-      "qid": "cars-200-908",
-      "topic": "السباقات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "source": "https://www.formula1.com/en/information/drivers-hall-of-fame-lewis-hamilton.6TbSwzJA2miTUwtnXUHkjk",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "فورمولا واحد",
-        "Formula 1"
-      ]
-    },
-    {
-      "p": 400,
       "q": "ما شركة السيارات التي خرجت أول سياراتها من مصنع غوتنبرغ السويدي عام 1927؟",
       "a": "فولفو",
-      "qid": "cars-400-901",
+      "qid": "cars-200-911",
       "topic": "الشركات",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.volvocars.com/se/our-heritage/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -134,68 +18,24 @@
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الرقم الذي اشتهر به طراز بورشه الرياضي الذي عُرض أولًا باسم 901 عام 1963؟",
       "a": "911",
-      "qid": "cars-400-902",
+      "qid": "cars-200-912",
       "topic": "الطرازات",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.porsche.com/stories/innovation/a-brief-history-of-the-porsche-911/",
       "verifiedAt": "2026-09-18"
     },
     {
-      "p": 400,
-      "q": "ما اسم الجزء الذي يبدّل نسب التروس بين المحرك ومنظومة نقل الحركة؟",
-      "a": "ناقل الحركة",
-      "qid": "cars-400-903",
-      "topic": "الأجزاء",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.zf.com/products/en/cv/products_64551.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "علبة التروس",
-        "الجير"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "كيف توصف سيارة تجمع محرك بنزين ومحركًا كهربائيًا للدفع؟",
-      "a": "هجينة",
-      "qid": "cars-400-904",
-      "topic": "التقنيات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.toyota.com/electrified-vehicles/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "هايبرد",
-        "Hybrid"
-      ]
-    },
-    {
-      "p": 400,
-      "q": "أي ماركة ألمانية يرمز شعار حلقاتها الأربع إلى اتحاد أربع شركات؟",
-      "a": "أودي",
-      "qid": "cars-400-905",
-      "topic": "الشعارات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.audi.com/en/press-releases/how-the-four-rings-became-the-audi-trademark-auto-union-ag-founded-90-years-ago-14750",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Audi"
-      ]
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "من المخترع الذي سجل براءة عربته ذات محرك البنزين في يناير 1886؟",
       "a": "كارل بنز",
-      "qid": "cars-400-906",
+      "qid": "cars-200-913",
       "topic": "التاريخ",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://group.mercedes-benz.com/company/tradition/company-history/1885-1886.html",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -204,28 +44,13 @@
       ]
     },
     {
-      "p": 400,
-      "q": "ما التسمية التقليدية للسيارة الرياضية ذات السقف الثابت والبابين؟",
-      "a": "كوبيه",
-      "qid": "cars-400-907",
-      "topic": "أشكال السيارات",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "source": "https://www.bmwusa.com/all-bmws/coupe.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "كوبي",
-        "Coupé"
-      ]
-    },
-    {
-      "p": 400,
+      "p": 200,
       "q": "كم ساعة يستمر سباق التحمل الرئيسي في لومان؟",
       "a": "24 ساعة",
-      "qid": "cars-400-908",
+      "qid": "cars-200-914",
       "topic": "السباقات",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "source": "https://www.24h-lemans.com/en/info/the-race",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -233,43 +58,13 @@
       ]
     },
     {
-      "p": 600,
-      "q": "ما شركة السيارات التشيكية التي يقع مقرها في ملادا بوليسلاف؟",
-      "a": "شكودا",
-      "qid": "cars-600-901",
-      "topic": "الشركات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.skoda-auto.com/other/imprint",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Skoda",
-        "سكودا"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما رمز رودستر مازدا الصغيرة التي أطلقت عام 1989 وتعرف أيضًا باسم مياتا؟",
-      "a": "MX-5",
-      "qid": "cars-600-902",
-      "topic": "الطرازات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.mazda.com/en/about/history/greatcar/roadster/04/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "إم إكس5",
-        "مازدا إم إكس5"
-      ]
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما الجهاز الذي يسمح لعجلتَي المحور الدافع بالدوران بسرعتين مختلفتين في المنعطف؟",
       "a": "الدفرنس",
-      "qid": "cars-600-903",
+      "qid": "cars-200-915",
       "topic": "الأجزاء",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://www.eaton.com/in/en-us/products/differentials-traction-control.html",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -278,13 +73,13 @@
       ]
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما الجهاز الذي يستعمل طاقة غازات العادم لتدوير ضاغط يزيد الهواء الداخل للمحرك؟",
       "a": "الشاحن التوربيني",
-      "qid": "cars-600-904",
+      "qid": "cars-200-916",
       "topic": "التقنيات",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://www.garrettmotion.com/wp-content/uploads/2020/06/Catalog-Volume-8_Full-Version_FINAL_web-version_June_2020_PAGES.pdf",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -293,42 +88,13 @@
       ]
     },
     {
-      "p": 600,
-      "q": "على مقدمة سيارات أي شركة يوجد تمثال Spirit of Ecstasy؟",
-      "a": "رولز رويس",
-      "qid": "cars-600-905",
-      "topic": "الشعارات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.rolls-roycemotorcars.com/en_US/inspiring-greatness/values/the-spirit-of-ecstasy.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Rolls-Royce"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما سيارة سيتروين التي أبهرت معرض باريس 1955 بتصميمها ونظام تعليقها الهيدرونيوماتيكي؟",
-      "a": "دي إس19",
-      "qid": "cars-600-906",
-      "topic": "التاريخ",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.media.stellantis.com/uk-en/ds/press/ds-a-70-year-history",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "DS 19",
-        "سيتروين دي إس"
-      ]
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "ما اسم الهيكل العائلي الطويل السقف الذي يسمى Estate في بريطانيا؟",
       "a": "ستيشن واغن",
-      "qid": "cars-600-907",
+      "qid": "cars-200-917",
       "topic": "أشكال السيارات",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.8,
       "source": "https://www.volvocars.com/uk/cars/wagon/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -338,101 +104,13 @@
       ]
     },
     {
-      "p": 600,
-      "q": "في أي نوع سباقات يقرأ الملاح تعليمات المنعطفات للسائق من ملاحظات الطريق؟",
-      "a": "الرالي",
-      "qid": "cars-600-908",
-      "topic": "السباقات",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "source": "https://www.wrc.com/en/misc/about-wrc",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Rally"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "ما العلامة الرومانية التابعة لرينو التي بدأت بصناعة طراز 1100 عام 1968؟",
-      "a": "داسيا",
-      "qid": "cars-800-901",
-      "topic": "الشركات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.dacia.ro/despre-dacia/istoric.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Dacia",
-        "داتشيا"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "ما السيارة الكهربائية التي أطلقتها نيسان عام 2010 برمز ZE0؟",
-      "a": "ليف",
-      "qid": "cars-800-902",
-      "topic": "الطرازات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.nissan-global.com/EN/COMPANY/PROFILE/HERITAGE/2010/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "نيسان ليف",
-        "Leaf"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "ما العمود الذي يحول حركة المكابس الترددية إلى حركة دورانية داخل المحرك؟",
-      "a": "عمود المرفق",
-      "qid": "cars-800-903",
-      "topic": "الأجزاء",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.ms-motorservice.com/int/en/technipedia/structure-and-function-of-the-crankshaft-1127",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "عمود الكرنك",
-        "الكرنك"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "ما نظام الفرملة الذي يستعيد جزءًا من طاقة الحركة ويحولها إلى كهرباء؟",
-      "a": "الكبح التجديدي",
-      "qid": "cars-800-904",
-      "topic": "التقنيات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.bosch-mobility.com/en/solutions/driving-safety/regenerative-braking-systems/",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "الفرملة التجديدية",
-        "الكبح الاسترجاعي"
-      ]
-    },
-    {
-      "p": 800,
-      "q": "أي ماركة سيارات بريطانية استبدلت شعارها الدائري بجناحين ممدودين عام 1927؟",
-      "a": "أستون مارتن",
-      "qid": "cars-800-905",
-      "topic": "الشعارات",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "source": "https://www.astonmartin.com/de/our-world/intensity-driven",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Aston Martin"
-      ]
-    },
-    {
-      "p": 800,
+      "p": 200,
       "q": "ما شركة السيارات الرياضية الإيطالية التي أسسها فيروتشيو عام 1963؟",
       "a": "لامبورغيني",
-      "qid": "cars-800-906",
+      "qid": "cars-200-918",
       "topic": "التاريخ",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.8,
       "source": "https://www.lamborghini.com/en-en/history/company",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -441,13 +119,174 @@
       ]
     },
     {
-      "p": 800,
+      "p": 400,
+      "q": "ما شركة السيارات التشيكية التي يقع مقرها في ملادا بوليسلاف؟",
+      "a": "شكودا",
+      "qid": "cars-400-911",
+      "topic": "الشركات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.skoda-auto.com/other/imprint",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Skoda",
+        "سكودا"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما رمز رودستر مازدا الصغيرة التي أطلقت عام 1989 وتعرف أيضًا باسم مياتا؟",
+      "a": "MX-5",
+      "qid": "cars-400-912",
+      "topic": "الطرازات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.mazda.com/en/about/history/greatcar/roadster/04/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "إم إكس5",
+        "مازدا إم إكس5"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "على مقدمة سيارات أي شركة يوجد تمثال Spirit of Ecstasy؟",
+      "a": "رولز رويس",
+      "qid": "cars-400-913",
+      "topic": "الشعارات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.rolls-roycemotorcars.com/en_US/inspiring-greatness/values/the-spirit-of-ecstasy.html",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Rolls-Royce"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما سيارة سيتروين التي أبهرت معرض باريس 1955 بتصميمها ونظام تعليقها الهيدرونيوماتيكي؟",
+      "a": "دي إس19",
+      "qid": "cars-400-914",
+      "topic": "التاريخ",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.media.stellantis.com/uk-en/ds/press/ds-a-70-year-history",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "DS 19",
+        "سيتروين دي إس"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "في أي نوع سباقات يقرأ الملاح تعليمات المنعطفات للسائق من ملاحظات الطريق؟",
+      "a": "الرالي",
+      "qid": "cars-400-915",
+      "topic": "السباقات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.wrc.com/en/misc/about-wrc",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Rally"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما العمود الذي يحول حركة المكابس الترددية إلى حركة دورانية داخل المحرك؟",
+      "a": "عمود المرفق",
+      "qid": "cars-400-916",
+      "topic": "الأجزاء",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.ms-motorservice.com/int/en/technipedia/structure-and-function-of-the-crankshaft-1127",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "عمود الكرنك",
+        "الكرنك"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما نظام الفرملة الذي يستعيد جزءًا من طاقة الحركة ويحولها إلى كهرباء؟",
+      "a": "الكبح التجديدي",
+      "qid": "cars-400-917",
+      "topic": "التقنيات",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.bosch-mobility.com/en/solutions/driving-safety/regenerative-braking-systems/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "الفرملة التجديدية",
+        "الكبح الاسترجاعي"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما العمود ذو الحدبات الذي يحدد مواعيد فتح صمامات السحب والعادم؟",
+      "a": "عمود الكامات",
+      "qid": "cars-400-918",
+      "topic": "الأجزاء",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "source": "https://www.ms-motorservice.com/MediaAssets/671352_bf_50020042-02_web.pdf",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Camshaft"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما العلامة الرومانية التابعة لرينو التي بدأت بصناعة طراز 1100 عام 1968؟",
+      "a": "داسيا",
+      "qid": "cars-600-911",
+      "topic": "الشركات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.dacia.ro/despre-dacia/istoric.html",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Dacia",
+        "داتشيا"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "ما السيارة الكهربائية التي أطلقتها نيسان عام 2010 برمز ZE0؟",
+      "a": "ليف",
+      "qid": "cars-600-912",
+      "topic": "الطرازات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.nissan-global.com/EN/COMPANY/PROFILE/HERITAGE/2010/",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "نيسان ليف",
+        "Leaf"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "أي ماركة سيارات بريطانية استبدلت شعارها الدائري بجناحين ممدودين عام 1927؟",
+      "a": "أستون مارتن",
+      "qid": "cars-600-913",
+      "topic": "الشعارات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.astonmartin.com/de/our-world/intensity-driven",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Aston Martin"
+      ]
+    },
+    {
+      "p": 600,
       "q": "ما الاسم الذي أطلقته بورشه عام 1965 على نسختها المكشوفة ذات قوس الحماية الثابت؟",
       "a": "تارغا",
-      "qid": "cars-800-907",
+      "qid": "cars-600-914",
       "topic": "أشكال السيارات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.porsche.com/stories/innovation/911-targa-the-open-top-style-icon/",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -456,13 +295,13 @@
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من السائق الإسكتلندي الذي أحرز بطولة العالم في 1969 و 1971 و 1973؟",
       "a": "جاكي ستيوارت",
-      "qid": "cars-800-908",
+      "qid": "cars-600-915",
       "topic": "السباقات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "source": "https://www.formula1.com/en/information/drivers-hall-of-fame-jackie-stewart.18715uErEG7LS83UDkeqP4",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -470,13 +309,160 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "ما الشركة السويدية للسيارات الخارقة التي أسسها كريستيان فون عام 1994؟",
+      "q": "من المهندس الذي صمم سيارة ميني الأصلية التي ظهرت عام 1959؟",
+      "a": "أليك إيسيغونيس",
+      "topic": "التاريخ",
+      "verified": true,
+      "sourceUrl": "https://www.mini.com/en_MS/home/heritage/1959-the-mini-was-born.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Alec Issigonis",
+        "أليك إيسيجونيس"
+      ],
+      "p": 600,
+      "qid": "cars-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "p": 600,
+      "q": "ما نوع المحرك المرتبط بابتكار فيليكس فانكل والذي طوّرته مازدا؟",
+      "a": "المحرك الدوار",
+      "qid": "cars-600-917",
+      "topic": "التقنيات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://newsroom.mazda.com/en/publicity/release/2002/200207/0705ae.html",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "محرك وانكل",
+        "محرك فانكل"
+      ]
+    },
+    {
+      "p": 600,
+      "q": "من جمع بطولة العالم للدراجات النارية مع لقب الفورمولا 1 عام 1964؟",
+      "a": "جون سورتيس",
+      "qid": "cars-600-918",
+      "topic": "السباقات",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "source": "https://www.formula1.com/en/latest/article/50-years-on-john-surtees-on-his-unique-bike-car-double.60TDlv4eb6RlRED1Vb8DYb",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "John Surtees"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما نموذج لانشيا الإسفيني التجريبي الذي صممه غانديني لبيرتوني عام 1970؟",
+      "a": "ستراتوس زيرو",
+      "qid": "cars-800-911",
+      "topic": "الطرازات",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.media.stellantis.com/it-it/lancia/press/il-viaggio-verso-il-lancia-design-day-il-design-brutale-di-stratos-rally-037-e-delta",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Stratos Zero",
+        "ستراتوس صفر"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "أي ماركة إيطالية يجمع شعارها صليب ميلانو وأفعى عائلة فيسكونتي؟",
+      "a": "ألفا روميو",
+      "qid": "cars-800-912",
+      "topic": "الشعارات",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.alfaromeo.com/history",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Alfa Romeo"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما السيارة الأمريكية لعام 1948 المعروفة بمصباح أمامي وسطي يتحرك مع التوجيه؟",
+      "a": "تاكر48",
+      "qid": "cars-800-913",
+      "topic": "التاريخ",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.si.edu/stories/1948-tucker-sedan",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Tucker 48",
+        "تاكر سيدان"
+      ]
+    },
+    {
+      "p": 800,
+      "q": "ما المصطلح الفرنسي للهيكل ذي القشرة الحاملة الواحدة الذي استخدمته لوتس 25؟",
+      "a": "مونوكوك",
+      "qid": "cars-800-914",
+      "topic": "أشكال السيارات",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "source": "https://www.lotuscars.com/en-KW/lotus-story/race-cars/type-25",
+      "verifiedAt": "2026-09-18",
+      "alt": [
+        "Monocoque"
+      ]
+    },
+    {
+      "q": "من المهندس الذي بدأ تصميم فيراري 250 GTO اعتمادًا على 250 GT SWB؟",
+      "a": "جيوتو بيزاريني",
+      "topic": "التاريخ",
+      "verified": true,
+      "sourceUrl": "https://www.ferrari.com/en-OM/history/moments/1962/masterpiece/more",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Giotto Bizzarrini",
+        "جيوتو بيتزاريني"
+      ],
+      "p": 800,
+      "qid": "cars-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من المصمم الإيطالي الذي وضع تصميم دي لوريان DMC-12؟",
+      "a": "جورجيتو جوجارو",
+      "topic": "أشكال السيارات",
+      "verified": true,
+      "sourceUrl": "https://www.giorgettofabriziogiugiaro.it/projects/vehicles/dmc-12",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Giorgetto Giugiaro",
+        "جورجيتو جيوجيارو"
+      ],
+      "p": 800,
+      "qid": "cars-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما القسم الطويل من نوربورغرينغ المعروف بلقب «الجحيم الأخضر»؟",
+      "a": "نوردشلايفه",
+      "topic": "السباقات",
+      "verified": true,
+      "sourceUrl": "https://www.nuerburgring.de/info/nuerburgring/race-tracks/nordschleife",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Nordschleife",
+        "نوردشلايف"
+      ],
+      "p": 800,
+      "qid": "cars-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "q": "ما شركة السيارات الخارقة السويدية التي تأسست عام 1994؟",
       "a": "كوينيغسيغ",
-      "qid": "cars-1000-901",
+      "qid": "cars-800-918",
       "topic": "الشركات",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "source": "https://www.koenigsegg.com/history",
       "verifiedAt": "2026-09-18",
       "alt": [
@@ -486,105 +472,123 @@
       ]
     },
     {
-      "p": 1000,
-      "q": "ما نموذج لانشيا الإسفيني التجريبي الذي صممه غانديني لبيرتوني عام 1970؟",
-      "a": "ستراتوس زيرو",
-      "qid": "cars-1000-902",
-      "topic": "الطرازات",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.media.stellantis.com/it-it/lancia/press/il-viaggio-verso-il-lancia-design-day-il-design-brutale-di-stratos-rally-037-e-delta",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Stratos Zero",
-        "ستراتوس صفر"
-      ]
-    },
-    {
-      "p": 1000,
-      "q": "ما العمود ذو الحدبات الذي يحدد مواعيد فتح صمامات السحب والعادم؟",
-      "a": "عمود الكامات",
-      "qid": "cars-1000-903",
-      "topic": "الأجزاء",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.ms-motorservice.com/MediaAssets/671352_bf_50020042-02_web.pdf",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Camshaft"
-      ]
-    },
-    {
-      "p": 1000,
-      "q": "ما نوع المحرك المرتبط بابتكار فيليكس فانكل والذي طوّرته مازدا؟",
-      "a": "المحرك الدوار",
-      "qid": "cars-1000-904",
-      "topic": "التقنيات",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://newsroom.mazda.com/en/publicity/release/2002/200207/0705ae.html",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "محرك وانكل",
-        "محرك فانكل"
-      ]
-    },
-    {
-      "p": 1000,
-      "q": "أي ماركة إيطالية يجمع شعارها صليب ميلانو وأفعى عائلة فيسكونتي؟",
-      "a": "ألفا روميو",
-      "qid": "cars-1000-905",
-      "topic": "الشعارات",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.alfaromeo.com/history",
-      "verifiedAt": "2026-09-18",
-      "alt": [
-        "Alfa Romeo"
-      ]
-    },
-    {
-      "p": 1000,
-      "q": "ما السيارة الأمريكية لعام 1948 المعروفة بمصباح أمامي وسطي يتحرك مع التوجيه؟",
-      "a": "تاكر48",
-      "qid": "cars-1000-906",
+      "q": "من المهندس النمساوي الذي صمم سيارة تاترا T87 الانسيابية؟",
+      "a": "هانز ليدفينكا",
       "topic": "التاريخ",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.si.edu/stories/1948-tucker-sedan",
-      "verifiedAt": "2026-09-18",
+      "sourceUrl": "https://museum.okstate.edu/site-files/2017/oklahoma-and-beyond/osuma-kravis-catalogue-2017.pdf",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "Tucker 48",
-        "تاكر سيدان"
-      ]
+        "Hans Ledwinka",
+        "هانس ليدوينكا"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-911",
+      "difficultyTarget": 0.15
     },
     {
-      "p": 1000,
-      "q": "ما المصطلح الفرنسي للهيكل ذي القشرة الحاملة الواحدة الذي استخدمته لوتس 25؟",
-      "a": "مونوكوك",
-      "qid": "cars-1000-907",
-      "topic": "أشكال السيارات",
+      "q": "ما رقم أول سيارة إنتاج من ساب، المزودة بمحرك ثنائي الأسطوانات سعة 764 سم³؟",
+      "a": "92",
+      "topic": "الطرازات",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.lotuscars.com/en-KW/lotus-story/race-cars/type-25",
-      "verifiedAt": "2026-09-18",
+      "sourceUrl": "https://www.lanemotormuseum.org/collection/cars/item/saab/",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "Monocoque"
-      ]
+        "٩٢",
+        "ساب 92"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-912",
+      "difficultyTarget": 0.15
     },
     {
+      "q": "ما سيارة فيرغسون ذات الدفع الرباعي التي فازت بكأس أولتون بارك للفورمولا 1 عام 1961؟",
+      "a": "P99",
+      "topic": "التقنيات",
+      "verified": true,
+      "sourceUrl": "https://www.formula1.com/en/latest/article/from-the-six-wheeled-tyrrell-to-the-dual-rear-wing-ferrari-10-of-the.1uvMU2qhHxAphWRhgjxwCj",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "بي 99",
+        "فيرغسون P99"
+      ],
       "p": 1000,
-      "q": "من جمع بطولة العالم للدراجات النارية مع لقب الفورمولا 1 عام 1964؟",
-      "a": "جون سورتيس",
-      "qid": "cars-1000-908",
+      "qid": "cars-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما سيارة تشابارال في كان آم 1970 التي استخدمت مروحتين لشفط الهواء من تحتها؟",
+      "a": "2J",
       "topic": "السباقات",
       "verified": true,
-      "difficultyTarget": 0.15,
-      "source": "https://www.formula1.com/en/latest/article/50-years-on-john-surtees-on-his-unique-bike-car-double.60TDlv4eb6RlRED1Vb8DYb",
-      "verifiedAt": "2026-09-18",
+      "sourceUrl": "https://petroleummuseum.org/chaparral-2j/",
+      "verifiedAt": "2026-09-25",
       "alt": [
-        "John Surtees"
-      ]
+        "2 جي",
+        "تشابارال 2J"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من المخترعة الأمريكية التي سجلت براءة ماسحة زجاج تُشغّل من داخل السيارة عام 1903؟",
+      "a": "ماري أندرسون",
+      "topic": "الأجزاء",
+      "verified": true,
+      "sourceUrl": "https://www.invent.org/inductees/mary-anderson",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Mary Anderson"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من المهندس الذي طور حزام الأمان ثلاثي النقاط عام 1959؟",
+      "a": "نيلز بوهلين",
+      "topic": "التقنيات",
+      "verified": true,
+      "sourceUrl": "https://www.volvogroup.com/en/about-us/heritage/three-point-safety-belt.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Nils Bohlin",
+        "نيلس بوهلين"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما رمز سيارة مرسيدس التجريبية التي عرضت بمحرك فانكل عام 1969؟",
+      "a": "C111",
+      "topic": "الطرازات",
+      "verified": true,
+      "sourceUrl": "https://www.mercedes-benz.com/en/innovation/milestones/technology/mercedes-benz-c-111/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "C 111",
+        "سي 111"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما رمز سيارة تيريل ذات العجلات الست التي فازت بسباق السويد عام 1976؟",
+      "a": "P34",
+      "topic": "أشكال السيارات",
+      "verified": true,
+      "sourceUrl": "https://www.formula1.com/en/latest/article/from-the-six-wheeled-tyrrell-to-the-dual-rear-wing-ferrari-10-of-the.1uvMU2qhHxAphWRhgjxwCj",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "بي 34",
+        "تيريل P34"
+      ],
+      "p": 1000,
+      "qid": "cars-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

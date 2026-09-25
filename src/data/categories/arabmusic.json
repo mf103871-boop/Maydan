@@ -6,110 +6,18 @@
     {
       "p": 200,
       "topic": "أغاني مصر",
-      "q": "من صاحب أغنية وألبوم «نور العين»؟",
-      "a": "عمرو دياب",
-      "sourceUrl": "https://amrdiab.net/biography/",
-      "qid": "arabmusic-200-901",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "أغاني الشام",
-      "q": "من المطربة صاحبة أغنية «شخبط شخابيط»؟",
-      "a": "نانسي عجرم",
-      "sourceUrl": "https://play.anghami.com/song/33813463",
-      "qid": "arabmusic-200-902",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "الخليج والعراق",
-      "q": "من المطرب صاحب أغنية «بشرة خير»؟",
-      "a": "حسين الجسمي",
-      "sourceUrl": "https://www.youtube.com/watch?v=QUBvVTNRp4Q",
-      "qid": "arabmusic-200-903",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "الخليج والعراق",
-      "q": "من المطرب العراقي الذي يلقبه جمهوره بالقيصر؟",
-      "a": "كاظم الساهر",
-      "sourceUrl": "https://www.byblosfestival.com/kadim-al-sahir/",
-      "qid": "arabmusic-200-904",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "المغرب العربي",
-      "q": "من المطرب الجزائري الذي اشتهر عالميًا بأغنية «ديدي»؟",
-      "a": "الشاب خالد",
-      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
-      "alt": [
-        "خالد"
-      ],
-      "qid": "arabmusic-200-905",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "المغرب العربي",
-      "q": "من المغني صاحب أغنية «لمعلم»؟",
-      "a": "سعد لمجرد",
-      "sourceUrl": "https://www.youtube.com/watch?v=_Fwf45pIAtM",
-      "qid": "arabmusic-200-906",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "آلات وعازفون",
-      "q": "ما اسم الآلة الوترية المعروفة أيضًا بالكمنجة؟",
-      "a": "الكمان",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/violin.php",
-      "alt": [
-        "كمان",
-        "الفيولن"
-      ],
-      "qid": "arabmusic-200-907",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 200,
-      "topic": "آلات وعازفون",
-      "q": "ما آلة الإيقاع الكأسية التي يُضرب جلدها باليدين وترافق الأغاني الشعبية؟",
-      "a": "الدربكة",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/tabla.php",
-      "alt": [
-        "الطبلة",
-        "دربوكة",
-        "دربكة"
-      ],
-      "qid": "arabmusic-200-908",
-      "difficultyTarget": 0.8,
-      "verified": true
-    },
-    {
-      "p": 400,
-      "topic": "أغاني مصر",
       "q": "من المطربة صاحبة أغنية «سيدي وصالك»؟",
       "a": "أنغام",
       "sourceUrl": "https://music.apple.com/us/song/770937661",
       "alt": [
         "انغام"
       ],
-      "qid": "arabmusic-400-901",
-      "difficultyTarget": 0.6,
+      "qid": "arabmusic-200-911",
+      "difficultyTarget": 0.8,
       "verified": true
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "أغاني مصر",
       "q": "من المطرب الشعبي المصري صاحب «يا حلو الملامح»؟",
       "a": "أحمد عدوية",
@@ -117,27 +25,129 @@
       "alt": [
         "احمد عدوية"
       ],
-      "qid": "arabmusic-400-902",
+      "qid": "arabmusic-200-912",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "المغرب العربي",
+      "q": "من المطربة صاحبة ألبوم «يوم ورا يوم»؟",
+      "a": "سميرة سعيد",
+      "sourceUrl": "https://music.apple.com/us/album/youm-wara-youm/771786474",
+      "qid": "arabmusic-200-913",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "أغاني الشام",
+      "q": "من المطرب الفلسطيني الذي فاز بلقب «عرب أيدول» عام 2013؟",
+      "a": "محمد عساف",
+      "sourceUrl": "https://www.unrwa.org/newsroom/press-releases/unrwa-commissioner-general-welcomes-singer-mohammad-assaf-unrwa-headquarters",
+      "qid": "arabmusic-200-914",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "التعاون الغنائي",
+      "q": "من الفنان الذي شارك صاحب «نور العين» أغنية «القاهرة»؟",
+      "a": "محمد منير",
+      "sourceUrl": "https://amrdiab.net/biography/",
+      "qid": "arabmusic-200-915",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "المغرب العربي",
+      "q": "ما اللون الغنائي الجزائري الذي اشتهر به صاحب أغنية «ديدي»؟",
+      "a": "الراي",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "alt": [
+        "راي"
+      ],
+      "qid": "arabmusic-200-916",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "قوالب غنائية وآلية",
+      "q": "ماذا يسمى الارتجال المنفرد على آلة موسيقية لاستعراض المقام ومهارة العازف؟",
+      "a": "التقسيم",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [
+        "تقاسيم",
+        "تقسيم"
+      ],
+      "qid": "arabmusic-200-917",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 200,
+      "topic": "آلات وعازفون",
+      "q": "بماذا ينقر الموسيقي أوتار العود بدل القوس؟",
+      "a": "الريشة",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
+      "alt": [
+        "ريشة",
+        "مضراب"
+      ],
+      "qid": "arabmusic-200-918",
+      "difficultyTarget": 0.8,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "المغرب العربي",
+      "q": "من الفنانة الجزائرية صاحبة ألبوم «راوي»؟",
+      "a": "سعاد ماسي",
+      "sourceUrl": "https://souad-massi.com/en/biography/",
+      "alt": [
+        "سعاد ماسّي"
+      ],
+      "qid": "arabmusic-400-911",
       "difficultyTarget": 0.6,
       "verified": true
     },
     {
       "p": 400,
       "topic": "المغرب العربي",
-      "q": "من المطربة صاحبة ألبوم «يوم ورا يوم»؟",
-      "a": "سميرة سعيد",
-      "sourceUrl": "https://music.apple.com/us/album/youm-wara-youm/771786474",
-      "qid": "arabmusic-400-903",
+      "q": "من المغني الجزائري صاحب الأغنية الأمازيغية «أفافا إينوفا»؟",
+      "a": "إدير",
+      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
+      "alt": [
+        "ايدير",
+        "إيدير",
+        "حميد شريت"
+      ],
+      "qid": "arabmusic-400-912",
       "difficultyTarget": 0.6,
       "verified": true
     },
     {
       "p": 400,
-      "topic": "أغاني الشام",
-      "q": "من المطرب الفلسطيني الذي فاز بلقب «عرب أيدول» عام 2013؟",
-      "a": "محمد عساف",
-      "sourceUrl": "https://www.unrwa.org/newsroom/press-releases/unrwa-commissioner-general-welcomes-singer-mohammad-assaf-unrwa-headquarters",
-      "qid": "arabmusic-400-904",
+      "topic": "صناعة الألحان",
+      "q": "من لحّن أغنية «سألوني الناس» لجارة القمر؟",
+      "a": "زياد الرحباني",
+      "sourceUrl": "https://oe1.orf.at/programm/20251005/809921/Ziad-Rahbani-Nicht-nur-der-Sohn",
+      "qid": "arabmusic-400-913",
+      "difficultyTarget": 0.6,
+      "verified": true
+    },
+    {
+      "p": 400,
+      "topic": "صناعة الألحان",
+      "q": "من وضع لحن «أنا في انتظارك» لكوكب الشرق؟",
+      "a": "زكريا أحمد",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
+      "alt": [
+        "زكريا احمد"
+      ],
+      "qid": "arabmusic-400-914",
       "difficultyTarget": 0.6,
       "verified": true
     },
@@ -151,114 +161,12 @@
         "اسمهان",
         "آمال الأطرش"
       ],
-      "qid": "arabmusic-400-905",
+      "qid": "arabmusic-400-915",
       "difficultyTarget": 0.6,
       "verified": true
     },
     {
       "p": 400,
-      "topic": "المغرب العربي",
-      "q": "ما اللون الغنائي الجزائري الذي اشتهر به صاحب أغنية «ديدي»؟",
-      "a": "الراي",
-      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
-      "alt": [
-        "راي"
-      ],
-      "qid": "arabmusic-400-906",
-      "difficultyTarget": 0.6,
-      "verified": true
-    },
-    {
-      "p": 400,
-      "topic": "قوالب غنائية وآلية",
-      "q": "ماذا يسمى الارتجال المنفرد على آلة موسيقية لاستعراض المقام ومهارة العازف؟",
-      "a": "التقسيم",
-      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
-      "alt": [
-        "تقاسيم",
-        "تقسيم"
-      ],
-      "qid": "arabmusic-400-907",
-      "difficultyTarget": 0.6,
-      "verified": true
-    },
-    {
-      "p": 400,
-      "topic": "آلات وعازفون",
-      "q": "بماذا ينقر الموسيقي أوتار العود بدل القوس؟",
-      "a": "الريشة",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/oud.php",
-      "alt": [
-        "ريشة",
-        "مضراب"
-      ],
-      "qid": "arabmusic-400-908",
-      "difficultyTarget": 0.6,
-      "verified": true
-    },
-    {
-      "p": 600,
-      "topic": "المغرب العربي",
-      "q": "من الفنانة الجزائرية صاحبة ألبوم «راوي»؟",
-      "a": "سعاد ماسي",
-      "sourceUrl": "https://souad-massi.com/en/biography/",
-      "alt": [
-        "سعاد ماسّي"
-      ],
-      "qid": "arabmusic-600-901",
-      "difficultyTarget": 0.4,
-      "verified": true
-    },
-    {
-      "p": 600,
-      "topic": "المغرب العربي",
-      "q": "من المغني الجزائري صاحب الأغنية الأمازيغية «أفافا إينوفا»؟",
-      "a": "إدير",
-      "sourceUrl": "https://universalmusic.fr/artistes/20000129953",
-      "alt": [
-        "ايدير",
-        "إيدير",
-        "حميد شريت"
-      ],
-      "qid": "arabmusic-600-902",
-      "difficultyTarget": 0.4,
-      "verified": true
-    },
-    {
-      "p": 600,
-      "topic": "صناعة الألحان",
-      "q": "من لحّن أغنية «سألوني الناس» لجارة القمر؟",
-      "a": "زياد الرحباني",
-      "sourceUrl": "https://oe1.orf.at/programm/20251005/809921/Ziad-Rahbani-Nicht-nur-der-Sohn",
-      "qid": "arabmusic-600-903",
-      "difficultyTarget": 0.4,
-      "verified": true
-    },
-    {
-      "p": 600,
-      "topic": "صناعة الألحان",
-      "q": "من وضع لحن «أنا في انتظارك» لكوكب الشرق؟",
-      "a": "زكريا أحمد",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/qanun.php",
-      "alt": [
-        "زكريا احمد"
-      ],
-      "qid": "arabmusic-600-904",
-      "difficultyTarget": 0.4,
-      "verified": true
-    },
-    {
-      "p": 600,
-      "topic": "التعاون الغنائي",
-      "q": "من الفنان الذي شارك صاحب «نور العين» أغنية «القاهرة»؟",
-      "a": "محمد منير",
-      "sourceUrl": "https://amrdiab.net/biography/",
-      "qid": "arabmusic-600-905",
-      "difficultyTarget": 0.4,
-      "verified": true
-    },
-    {
-      "p": 600,
       "topic": "مقامات وإيقاعات",
       "q": "ما الإيقاع الرباعي الشائع في الأغاني العربية والذي يُعزف في «دارت الأيام»؟",
       "a": "المقسوم",
@@ -266,12 +174,12 @@
       "alt": [
         "إيقاع المقسوم"
       ],
-      "qid": "arabmusic-600-906",
-      "difficultyTarget": 0.4,
+      "qid": "arabmusic-400-916",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "آلات وعازفون",
       "q": "ما اسم الصنوج النحاسية الصغيرة التي يثبتها المؤدي في أصابعه لضبط الإيقاع؟",
       "a": "الصاجات",
@@ -280,12 +188,12 @@
         "الساجات",
         "الصنوج الإصبعية"
       ],
-      "qid": "arabmusic-600-907",
-      "difficultyTarget": 0.4,
+      "qid": "arabmusic-400-917",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "قوالب غنائية وآلية",
       "q": "ما القالب الغنائي القصير الذي تتناوب فيه الكوبليهات مع مذهب متكرر؟",
       "a": "الطقطوقة",
@@ -293,12 +201,12 @@
       "alt": [
         "طقطوقة"
       ],
-      "qid": "arabmusic-600-908",
-      "difficultyTarget": 0.4,
+      "qid": "arabmusic-400-918",
+      "difficultyTarget": 0.6,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "المغرب العربي",
       "q": "من المطرب الجزائري صاحب التسجيل الأصلي لأغنية «يا رايح»؟",
       "a": "دحمان الحراشي",
@@ -307,22 +215,22 @@
         "دحمان الحرّاشي",
         "عبد الرحمن عمراني"
       ],
-      "qid": "arabmusic-800-901",
-      "difficultyTarget": 0.25,
+      "qid": "arabmusic-600-911",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "المغرب العربي",
       "q": "ما الفرقة المغربية التي يتناولها الفيلم الموسيقي «الحال»؟",
       "a": "ناس الغيوان",
       "sourceUrl": "https://www.film-foundation.org/trances-kj",
-      "qid": "arabmusic-800-902",
-      "difficultyTarget": 0.25,
+      "qid": "arabmusic-600-912",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "صناعة الألحان",
       "q": "من وضع لحن «حيرانة ليه» لليلى مراد؟",
       "a": "داود حسني",
@@ -330,22 +238,22 @@
       "alt": [
         "داوود حسني"
       ],
-      "qid": "arabmusic-800-903",
-      "difficultyTarget": 0.25,
+      "qid": "arabmusic-600-913",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "صناعة الألحان",
       "q": "من كتب كلمات «سألوني الناس» لجارة القمر؟",
       "a": "منصور الرحباني",
       "sourceUrl": "https://dokanbach.com/product/saalouny-elnas-%D8%B3%D8%A7%D9%84%D9%88%D9%86%D9%8A-%D8%A7%D9%84%D9%86%D8%A7%D8%B3/",
-      "qid": "arabmusic-800-904",
-      "difficultyTarget": 0.25,
+      "qid": "arabmusic-600-914",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "مقامات وإيقاعات",
       "q": "على أي مقام لحّن القصبجي مقطوعته الآلية «ذكرياتي»؟",
       "a": "نهاوند",
@@ -353,12 +261,12 @@
       "alt": [
         "مقام نهاوند"
       ],
-      "qid": "arabmusic-800-905",
-      "difficultyTarget": 0.25,
+      "qid": "arabmusic-600-915",
+      "difficultyTarget": 0.4,
       "verified": true
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "آلات وعازفون",
       "q": "من العازف السوري الذي اشتهر بلقب أمير الكمان؟",
       "a": "سامي الشوا",
@@ -366,7 +274,82 @@
       "alt": [
         "سامي الشوّا"
       ],
-      "qid": "arabmusic-800-906",
+      "qid": "arabmusic-600-916",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "قوالب غنائية وآلية",
+      "q": "ما نوع الموال المعروف بالسبعاوي لتكوّنه من سبعة أبيات؟",
+      "a": "الموال البغدادي",
+      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
+      "alt": [
+        "البغدادي"
+      ],
+      "qid": "arabmusic-600-917",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 600,
+      "topic": "قوالب غنائية وآلية",
+      "q": "ما اسم المقدمة الآلية القصيرة المتكررة التي تعرّف بالمقام قبل الغناء؟",
+      "a": "الدولاب",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "alt": [
+        "دولاب"
+      ],
+      "qid": "arabmusic-600-918",
+      "difficultyTarget": 0.4,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "صناعة الألحان",
+      "q": "من لحّن موشح «ملا الكاسات»؟",
+      "a": "محمد عثمان",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "qid": "arabmusic-800-911",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "صناعة الألحان",
+      "q": "من صاحب سماعي حجازكار كرد الذي يستخدم إيقاع الجورجينا في خانته الرابعة؟",
+      "a": "روحي الخماش",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "alt": [
+        "روحي الخمّاش"
+      ],
+      "qid": "arabmusic-800-912",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "آلات وعازفون",
+      "q": "من عازف الناي المصري الذي كان من أعضاء الفرقة الماسية وعُرف بتدريس هذه الآلة؟",
+      "a": "محمود عفت",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/nay.php",
+      "alt": [
+        "محمود عفّت"
+      ],
+      "qid": "arabmusic-800-913",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "p": 800,
+      "topic": "آلات وعازفون",
+      "q": "من رائد الأورغ المصري الذي شارك هاني مهنا العزف في «قارئة الفنجان»؟",
+      "a": "مجدي الحسيني",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/org.php",
+      "alt": [
+        "مجدي الحسينى"
+      ],
+      "qid": "arabmusic-800-914",
       "difficultyTarget": 0.25,
       "verified": true
     },
@@ -379,87 +362,12 @@
       "alt": [
         "لونجا"
       ],
-      "qid": "arabmusic-800-907",
+      "qid": "arabmusic-800-915",
       "difficultyTarget": 0.25,
       "verified": true
     },
     {
       "p": 800,
-      "topic": "قوالب غنائية وآلية",
-      "q": "ما اسم المقدمة الآلية القصيرة المتكررة التي تعرّف بالمقام قبل الغناء؟",
-      "a": "الدولاب",
-      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
-      "alt": [
-        "دولاب"
-      ],
-      "qid": "arabmusic-800-908",
-      "difficultyTarget": 0.25,
-      "verified": true
-    },
-    {
-      "p": 1000,
-      "topic": "صناعة الألحان",
-      "q": "من لحّن موشح «ملا الكاسات»؟",
-      "a": "محمد عثمان",
-      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
-      "qid": "arabmusic-1000-901",
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
-      "p": 1000,
-      "topic": "صناعة الألحان",
-      "q": "من صاحب سماعي حجازكار كرد الذي يستخدم إيقاع الجورجينا في خانته الرابعة؟",
-      "a": "روحي الخماش",
-      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
-      "alt": [
-        "روحي الخمّاش"
-      ],
-      "qid": "arabmusic-1000-902",
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
-      "p": 1000,
-      "topic": "آلات وعازفون",
-      "q": "من عازف الناي المصري الذي كان من أعضاء الفرقة الماسية وعُرف بتدريس هذه الآلة؟",
-      "a": "محمود عفت",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/nay.php",
-      "alt": [
-        "محمود عفّت"
-      ],
-      "qid": "arabmusic-1000-903",
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
-      "p": 1000,
-      "topic": "آلات وعازفون",
-      "q": "من رائد الأورغ المصري الذي شارك هاني مهنا العزف في «قارئة الفنجان»؟",
-      "a": "مجدي الحسيني",
-      "sourceUrl": "https://www.maqamworld.com/en/instr/org.php",
-      "alt": [
-        "مجدي الحسينى"
-      ],
-      "qid": "arabmusic-1000-904",
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
-      "p": 1000,
-      "topic": "قوالب غنائية وآلية",
-      "q": "ما نوع الموال المعروف بالسبعاوي لتكوّنه من سبعة أبيات؟",
-      "a": "الموال البغدادي",
-      "sourceUrl": "https://www.maqamworld.com/en/form/improv.php",
-      "alt": [
-        "البغدادي"
-      ],
-      "qid": "arabmusic-1000-905",
-      "difficultyTarget": 0.15,
-      "verified": true
-    },
-    {
-      "p": 1000,
       "topic": "التعاون الغنائي",
       "q": "من المطربة اليونانية التي شاركت صاحب «نور العين» دويتو «بحبك أكتر»؟",
       "a": "أنجيلا ديميتريو",
@@ -467,9 +375,99 @@
       "alt": [
         "Angela Dimitriou"
       ],
-      "qid": "arabmusic-1000-906",
-      "difficultyTarget": 0.15,
+      "qid": "arabmusic-800-916",
+      "difficultyTarget": 0.25,
       "verified": true
+    },
+    {
+      "topic": "أغاني مصر",
+      "q": "ما عنوان أول ألبوم أصدره عمرو دياب؟",
+      "a": "يا طريق",
+      "sourceUrl": "https://amrdiab.net/biography/",
+      "verified": true,
+      "p": 800,
+      "qid": "arabmusic-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "مقامات وإيقاعات",
+      "q": "ما الإيقاع العشري الذي تُبنى عليه الخانات الثلاث الأولى في قالب السماعي؟",
+      "a": "السماعي الثقيل",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "alt": [
+        "إيقاع السماعي الثقيل",
+        "سماعي ثقيل"
+      ],
+      "qid": "arabmusic-800-918",
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "صناعة الألحان",
+      "q": "من صاحب سماعي كرد المعروف بمقدمته الآلية الطويلة؟",
+      "a": "عبده داغر",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "صناعة الألحان",
+      "q": "من عازف العود المصري صاحب سماعي راست الذي سجلته فرقة الإذاعة التونسية؟",
+      "a": "جورج ميشيل",
+      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "آلات وعازفون",
+      "q": "من ضابط إيقاع الفرقة الماسية الذي يتبادل العزف المنفرد مع الأورغ في «قارئة الفنجان»؟",
+      "a": "حسن أنور",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/riqq.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "آلات وعازفون",
+      "q": "من عازف الكمان الذي قاد فرقة صباح في تسجيل «مرحبتين» بالكويت؟",
+      "a": "عبود عبد العال",
+      "sourceUrl": "https://www.maqamworld.com/en/instr/buzuq.php",
+      "alt": [
+        "عبود عبدالعاَل"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "قوالب غنائية وآلية",
+      "q": "ما القالب الآلي القصير ذو الميزان الثلاثي الذي اشتهرت منه مقطوعة بياتي للشوا؟",
+      "a": "الدارج",
+      "sourceUrl": "https://www.maqamworld.com/en/form/instr_comp.php",
+      "alt": [
+        "السماعي الدارج"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "قوالب غنائية وآلية",
+      "q": "ماذا تسمى مجموعة القوالب التي تؤدى متتابعة وتبدأ عادة بتمهيد المقام وتنتهي بأغان خفيفة؟",
+      "a": "الوصلة",
+      "sourceUrl": "https://www.maqamworld.com/en/form/vocal_comp.php",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-916",
+      "difficultyTarget": 0.15
     },
     {
       "p": 1000,
@@ -483,23 +481,22 @@
         "Kutché",
         "Kutche"
       ],
-      "qid": "arabmusic-1000-907",
+      "qid": "arabmusic-1000-917",
       "difficultyTarget": 0.15,
       "verified": true
     },
     {
-      "p": 1000,
-      "topic": "مقامات وإيقاعات",
-      "q": "ما الإيقاع العشري الذي تُبنى عليه الخانات الثلاث الأولى في قالب السماعي؟",
-      "a": "السماعي الثقيل",
-      "sourceUrl": "https://www.maqamworld.com/en/form/ottoman.php",
+      "topic": "المغرب العربي",
+      "q": "ما ألبوم المطربة الجزائرية صاحبة «راوي» الذي جمع نصوصًا للمتنبي والشابي؟",
+      "a": "المتكلمون",
+      "sourceUrl": "https://souad-massi.com/en/biography/",
       "alt": [
-        "إيقاع السماعي الثقيل",
-        "سماعي ثقيل"
+        "El Mutakallimun"
       ],
-      "qid": "arabmusic-1000-908",
-      "difficultyTarget": 0.15,
-      "verified": true
+      "verified": true,
+      "p": 1000,
+      "qid": "arabmusic-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

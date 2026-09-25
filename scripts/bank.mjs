@@ -418,11 +418,12 @@ export async function validateBank(root = ROOT, { only = null } = {}) {
         const idTier = Number(qid.split('-')[1]);
         if (idTier !== q.p) qwarn(`الخانة في المعرّف (${idTier}) تختلف عن p (${q.p}) — مقبول بعد إعادة التصنيف`);
       }
-      if (status.qidRange) {
+      const qidRange = meta?.qidRange ?? status.qidRange;
+      if (qidRange) {
         const sequence = Number(qid.split('-')[2]);
         if (!QID_NEW.test(qid) || Number(qid.split('-')[1]) !== q.p
-            || sequence < status.qidRange.start || sequence > status.qidRange.end) {
-          qerr(`معرّف البنك المنتقى يجب أن يكون ${id}-${q.p}-${status.qidRange.start}..${status.qidRange.end}`);
+            || sequence < qidRange.start || sequence > qidRange.end) {
+          qerr(`معرّف البنك المنتقى يجب أن يكون ${id}-${q.p}-${qidRange.start}..${qidRange.end}`);
         }
       }
       if (status.difficultyTargets) {

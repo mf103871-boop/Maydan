@@ -1,0 +1,1018 @@
+{
+  "baseCommit": "61938fb",
+  "contentVersion": "badeeha-text-challenge-2026-09-25",
+  "note": "Mechanical comparison of displayed text and exact answers, not a count of new facts or a measured difficulty score. Every targeted card was editorially reviewed; unchanged wording can retain an appropriate tier.",
+  "totals": {
+    "questions": 2640,
+    "sameDisplaySameTier": 97,
+    "sameDisplayMovedTier": 1649,
+    "revisedDisplayWithExistingAnswer": 119,
+    "answerNotInPreviousCategory": 775
+  },
+  "categories": [
+    {
+      "id": "general",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 7,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "geo",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 6,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 2,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "capitals",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 11,
+      "sameDisplayMovedTier": 20,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "science",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 12
+    },
+    {
+      "id": "animals",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 13
+    },
+    {
+      "id": "history",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 29,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "food",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 29,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 11
+    },
+    {
+      "id": "fruitsveg",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 30,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 9
+    },
+    {
+      "id": "sports",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 13
+    },
+    {
+      "id": "football",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 25,
+      "revisedDisplayWithExistingAnswer": 4,
+      "answerNotInPreviousCategory": 10
+    },
+    {
+      "id": "worldcup",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 22,
+      "revisedDisplayWithExistingAnswer": 4,
+      "answerNotInPreviousCategory": 13
+    },
+    {
+      "id": "ucl",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 30,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 10
+    },
+    {
+      "id": "premier",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 30,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 10
+    },
+    {
+      "id": "tech",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 2,
+      "answerNotInPreviousCategory": 14
+    },
+    {
+      "id": "apps",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 16,
+      "revisedDisplayWithExistingAnswer": 8,
+      "answerNotInPreviousCategory": 16
+    },
+    {
+      "id": "brands",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 12
+    },
+    {
+      "id": "cars",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 27,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 12
+    },
+    {
+      "id": "shopping",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 29,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 11
+    },
+    {
+      "id": "arabic",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 0,
+      "revisedDisplayWithExistingAnswer": 8,
+      "answerNotInPreviousCategory": 32
+    },
+    {
+      "id": "proverbs",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 31,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "dialects",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 28,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 9
+    },
+    {
+      "id": "arabliterature",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 28,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 10
+    },
+    {
+      "id": "books",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 29,
+      "revisedDisplayWithExistingAnswer": 2,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "quotes",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 31,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "arabcelebs",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 30,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "youtubers",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 28,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 12
+    },
+    {
+      "id": "arabmusic",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 3,
+      "sameDisplayMovedTier": 29,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "tarab",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 29,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 9
+    },
+    {
+      "id": "arabart",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 31,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "theater",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 31,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "ramadan",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 10,
+      "sameDisplayMovedTier": 22,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "islamiyat",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 3,
+      "sameDisplayMovedTier": 25,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 11
+    },
+    {
+      "id": "quran",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 31,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "seerah",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 30,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "prophets",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 4,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 2,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "arabseries",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 28,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 12
+    },
+    {
+      "id": "ramadanseries",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 16
+    },
+    {
+      "id": "babalhara",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 25,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 15
+    },
+    {
+      "id": "syriandrama",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 30,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "egyptdrama",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 16
+    },
+    {
+      "id": "turkishdrama",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 31,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 9
+    },
+    {
+      "id": "ertugrul",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 27,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 12
+    },
+    {
+      "id": "foreignseries",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 16
+    },
+    {
+      "id": "breakingbad",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 25,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 15
+    },
+    {
+      "id": "squidgame",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 31,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "movies",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 16
+    },
+    {
+      "id": "arabmovies",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 12
+    },
+    {
+      "id": "actors",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 4,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "anime",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 16
+    },
+    {
+      "id": "naruto",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 13
+    },
+    {
+      "id": "onepiece",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 27,
+      "revisedDisplayWithExistingAnswer": 1,
+      "answerNotInPreviousCategory": 11
+    },
+    {
+      "id": "dragonball",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 15
+    },
+    {
+      "id": "aot",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 13
+    },
+    {
+      "id": "deathnote",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 5,
+      "sameDisplayMovedTier": 25,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 10
+    },
+    {
+      "id": "demonslayer",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 28,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 11
+    },
+    {
+      "id": "jujutsu",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 14
+    },
+    {
+      "id": "hunterxhunter",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 27,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 12
+    },
+    {
+      "id": "spacetoon",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 28,
+      "revisedDisplayWithExistingAnswer": 2,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "cartoon",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 26,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 14
+    },
+    {
+      "id": "videogames",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 22,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 18
+    },
+    {
+      "id": "puzzles",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 4,
+      "sameDisplayMovedTier": 22,
+      "revisedDisplayWithExistingAnswer": 0,
+      "answerNotInPreviousCategory": 14
+    },
+    {
+      "id": "completeproverb",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 7,
+      "revisedDisplayWithExistingAnswer": 4,
+      "answerNotInPreviousCategory": 29
+    },
+    {
+      "id": "beforeafter",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 1,
+      "sameDisplayMovedTier": 3,
+      "revisedDisplayWithExistingAnswer": 36,
+      "answerNotInPreviousCategory": 0
+    },
+    {
+      "id": "commonbond",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 2,
+      "sameDisplayMovedTier": 17,
+      "revisedDisplayWithExistingAnswer": 13,
+      "answerNotInPreviousCategory": 8
+    },
+    {
+      "id": "code",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 0,
+      "sameDisplayMovedTier": 0,
+      "revisedDisplayWithExistingAnswer": 11,
+      "answerNotInPreviousCategory": 29
+    },
+    {
+      "id": "hints",
+      "questions": 40,
+      "byTier": {
+        "200": 8,
+        "400": 8,
+        "600": 8,
+        "800": 8,
+        "1000": 8
+      },
+      "sameDisplaySameTier": 4,
+      "sameDisplayMovedTier": 24,
+      "revisedDisplayWithExistingAnswer": 4,
+      "answerNotInPreviousCategory": 8
+    }
+  ],
+  "untouched": [
+    "emoji",
+    "hidden",
+    "flags",
+    "zoom",
+    "blur",
+    "reveal",
+    "silhouette",
+    "guesscar",
+    "placefinder",
+    "tilepuzzle",
+    "spotdiff",
+    "sound"
+  ]
+}

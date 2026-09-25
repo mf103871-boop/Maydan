@@ -5,110 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "ramadanseries-200-901",
+      "qid": "ramadanseries-200-911",
       "p": 200,
-      "topic": "الكبير أوي",
-      "q": "في «الكبير أوي»، ما اسم القرية التي يتنافس الإخوة على عموديتها؟",
-      "a": "المزاريطة",
-      "alt": [
-        "المزاريطه"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-200-902",
-      "p": 200,
-      "topic": "جعفر العمدة",
-      "q": "في «جعفر العمدة»، ما اسم الابن الذي يبحث عنه جعفر منذ اختطافه رضيعًا؟",
-      "a": "سيف",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-200-903",
-      "p": 200,
-      "topic": "تحت الوصاية",
-      "q": "في «تحت الوصاية»، ما العمل البحري الذي تمارسه البطلة لتعيل طفليها؟",
-      "a": "صيد الأسماك",
-      "alt": [
-        "الصيد",
-        "صيد السمك"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-200-904",
-      "p": 200,
-      "topic": "البرنس",
-      "q": "في «البرنس»، ما اسم الأخ الذي يتآمر إخوته عليه بسبب الميراث؟",
-      "a": "رضوان",
-      "alt": [
-        "رضوان البرنس"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-200-905",
-      "p": 200,
-      "topic": "بمئة وش",
-      "q": "في «بـ100 وش»، ما اسم النصابة التي تشكل عصابة مع عمر؟",
-      "a": "سكر",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-200-906",
-      "p": 200,
-      "topic": "أشغال شقة",
-      "q": "ما الحدث العائلي الذي يدفع الزوجين إلى توظيف مساعدة منزلية في بداية «أشغال شقة»؟",
-      "a": "ولادة توأم",
-      "alt": [
-        "إنجاب توأم",
-        "التوأم"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-200-907",
-      "p": 200,
-      "topic": "المداح",
-      "q": "في «المداح»، ما اسم البطل الذي يمتلك قدرات غامضة ويتعامل مع الجن؟",
-      "a": "صابر",
-      "alt": [
-        "صابر المداح"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-200-908",
-      "p": 200,
-      "topic": "اللعبة",
-      "q": "في «اللعبة»، ما لقب منافس وسيم وصديقه منذ الطفولة؟",
-      "a": "مازو",
-      "alt": [
-        "معتز"
-      ],
-      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "ramadanseries-400-901",
-      "p": 400,
       "topic": "الكبير أوي",
       "q": "في «الكبير أوي»، أي شقيق يعود من أمريكا وينافس أخاه في الانتخابات؟",
       "a": "جوني",
@@ -118,33 +16,31 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ramadanseries-400-902",
-      "p": 400,
+      "qid": "ramadanseries-200-912",
+      "p": 200,
       "topic": "جعفر العمدة",
       "q": "في «جعفر العمدة»، ما اسم أم الطفل المختطف التي لا تتوقف عن انتظار عودته؟",
       "a": "ثريا",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ramadanseries-400-903",
-      "p": 400,
+      "qid": "ramadanseries-200-913",
+      "p": 200,
       "topic": "تحت الوصاية",
       "q": "في «تحت الوصاية»، ما اسم الأم التي تهرب بطفليها ومركب زوجها؟",
       "a": "حنان",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ramadanseries-400-904",
-      "p": 400,
+      "qid": "ramadanseries-200-914",
+      "p": 200,
       "topic": "البرنس",
       "q": "في «البرنس»، من الأخ الأكبر الذي يقود المؤامرة على البطل؟",
       "a": "فتحي",
@@ -153,11 +49,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ramadanseries-400-905",
-      "p": 400,
+      "qid": "ramadanseries-200-915",
+      "p": 200,
       "topic": "بمئة وش",
       "q": "في بداية «بـ100 وش»، ما المهنة التي ينتحلها عمر ليستولي على المجوهرات المسروقة من البطلة؟",
       "a": "ضابط",
@@ -167,11 +63,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ramadanseries-400-906",
-      "p": 400,
+      "qid": "ramadanseries-200-916",
+      "p": 200,
       "topic": "أشغال شقة",
       "q": "في «أشغال شقة»، ما تخصص حمدي الطبي؟",
       "a": "الطب الشرعي",
@@ -181,22 +77,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ramadanseries-400-907",
-      "p": 400,
+      "qid": "ramadanseries-200-917",
+      "p": 200,
       "topic": "المداح",
       "q": "في «المداح»، ما اسم ابنة غالب التي يحبها البطل؟",
       "a": "رحاب",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ramadanseries-400-908",
-      "p": 400,
+      "qid": "ramadanseries-200-918",
+      "p": 200,
       "topic": "اللعبة",
       "q": "في «اللعبة»، ما اسم زوجة وسيم؟",
       "a": "إسراء",
@@ -205,58 +100,55 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "ramadanseries-600-901",
-      "p": 600,
+      "qid": "ramadanseries-400-911",
+      "p": 400,
       "topic": "الكبير أوي",
-      "q": "على أي منصب محلي يتنافس الشقيقان في بداية «الكبير أوي»؟",
-      "a": "العمدة",
+      "q": "في «الكبير أوي»، ما اسم الأم الأمريكية للشقيقين؟",
+      "a": "سامانثا",
       "alt": [
-        "عمودية القرية",
-        "العمودية"
+        "سمانثا",
+        "Samantha"
       ],
       "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ramadanseries-600-902",
-      "p": 600,
+      "qid": "ramadanseries-400-912",
+      "p": 400,
       "topic": "جعفر العمدة",
       "q": "أي زوجة تقف وراء خطف ابن جعفر في «جعفر العمدة»؟",
       "a": "دلال",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ramadanseries-600-903",
-      "p": 600,
+      "qid": "ramadanseries-400-913",
+      "p": 400,
       "topic": "تحت الوصاية",
       "q": "إلى أي مدينة تنقل البطلة المركب وتبدأ حياتها الجديدة في «تحت الوصاية»؟",
       "a": "دمياط",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ramadanseries-600-904",
-      "p": 600,
+      "qid": "ramadanseries-400-914",
+      "p": 400,
       "topic": "البرنس",
       "q": "في «البرنس»، ما اسم الابنة الصغيرة التي يبحث عنها الأب بعد خروجه من السجن؟",
       "a": "مريم",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ramadanseries-600-905",
-      "p": 600,
+      "qid": "ramadanseries-400-915",
+      "p": 400,
       "topic": "بمئة وش",
       "q": "في «بـ100 وش»، من عضو العصابة الذي يتنكر في هيئة غزال لسحب أمواله؟",
       "a": "سباعي",
@@ -265,11 +157,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ramadanseries-600-906",
-      "p": 600,
+      "qid": "ramadanseries-400-916",
+      "p": 400,
       "topic": "أشغال شقة",
       "q": "في «أشغال شقة»، ما مهنة ياسمين التي تحاول العودة إليها بعد الولادة؟",
       "a": "مذيعة",
@@ -279,36 +171,31 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ramadanseries-600-907",
-      "p": 600,
+      "qid": "ramadanseries-400-917",
+      "p": 400,
       "topic": "المداح",
       "q": "في الموسم الأول من «المداح»، من شقيق البطل الذي يُسجن بعد العثور على حقيبة مخدرات في البيت؟",
       "a": "حسن",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ramadanseries-600-908",
-      "p": 600,
+      "qid": "ramadanseries-400-918",
+      "p": 400,
       "topic": "اللعبة",
-      "q": "في الموسم الأول من «اللعبة»، ما المطلوب تصويره وجمع مشاهدات عالية له للفوز بأحد التحديات؟",
-      "a": "فيديو",
-      "alt": [
-        "مقطع فيديو",
-        "فيديو على الإنترنت"
-      ],
+      "q": "في نهاية الموسم الأول من «اللعبة»، ما اسم الرجل الذي ينكشف أنه يدير التحديات الغامضة؟",
+      "a": "سمير",
       "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "ramadanseries-800-901",
-      "p": 800,
+      "qid": "ramadanseries-600-911",
+      "p": 600,
       "topic": "الكبير أوي",
       "q": "في الجزء الأول من «الكبير أوي»، ما التقنية التي يمنعها الكبير ثم يتعلم استخدامها سرًا؟",
       "a": "الإنترنت",
@@ -318,11 +205,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1096845/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ramadanseries-800-902",
-      "p": 800,
+      "qid": "ramadanseries-600-912",
+      "p": 600,
       "topic": "جعفر العمدة",
       "q": "في «جعفر العمدة»، ما اسم الرجل الذي نفذ خطف الطفل ويطارده الأب لمعرفة الحقيقة؟",
       "a": "بلال شامة",
@@ -332,22 +219,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ramadanseries-800-903",
-      "p": 800,
+      "qid": "ramadanseries-600-913",
+      "p": 600,
       "topic": "تحت الوصاية",
       "q": "في «تحت الوصاية»، من البحار الذي يساعد البطلة في خطة لإعادة الطاقم إلى العمل؟",
       "a": "ربيع",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ramadanseries-800-904",
-      "p": 800,
+      "qid": "ramadanseries-600-914",
+      "p": 600,
       "topic": "البرنس",
       "q": "في «البرنس»، ما الحرفة التي يمارسها البطل في ورشة والده؟",
       "a": "دهان السيارات",
@@ -358,22 +244,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ramadanseries-800-905",
-      "p": 800,
+      "qid": "ramadanseries-600-915",
+      "p": 600,
       "topic": "بمئة وش",
       "q": "في «بـ100 وش»، ما اسم الممرضة التي تنضم إلى العصابة بعد سماع خطة الاستيلاء على ثروة غزال؟",
       "a": "نجلاء",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ramadanseries-800-906",
-      "p": 800,
+      "qid": "ramadanseries-600-916",
+      "p": 600,
       "topic": "أشغال شقة",
       "q": "في «أشغال شقة»، ما اسم المساعدة المنزلية التي تسرق أثاث الشقة؟",
       "a": "آيلا",
@@ -383,22 +268,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ramadanseries-800-907",
-      "p": 800,
+      "qid": "ramadanseries-600-917",
+      "p": 600,
       "topic": "المداح",
-      "q": "في الموسم الأول من «المداح»، إلى أي مدينة يسافر البطل للقاء رجل الأعمال سمير؟",
-      "a": "القاهرة",
-      "alt": [],
+      "q": "في الموسم الأول من «المداح»، من الرجل الذي يقرأ أفكار البطل ويواجهه بحادثة غالب؟",
+      "a": "مصباح",
       "sourceUrl": "https://elcinema.com/work/2068005/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "ramadanseries-800-908",
-      "p": 800,
+      "qid": "ramadanseries-600-918",
+      "p": 600,
       "topic": "اللعبة",
       "q": "في الموسم الأول من «اللعبة»، ما الشيء الذي يُطلب من المتنافسين سرقته من منزل مهجور؟",
       "a": "لوحة",
@@ -407,106 +291,173 @@
       ],
       "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "الكبير أوي",
+      "q": "في الجزء الأول من «الكبير أوي»، من يبيع تذاكر مزورة لحفل نيكول سابا؟",
+      "a": "هجرس",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
+      "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-911",
       "difficultyTarget": 0.25
     },
     {
-      "qid": "ramadanseries-1000-901",
-      "p": 1000,
-      "topic": "الكبير أوي",
-      "q": "في «الكبير أوي»، ما اسم الأم الأمريكية للشقيقين؟",
-      "a": "سامانثا",
-      "alt": [
-        "سمانثا",
-        "Samantha"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "ramadanseries-1000-902",
-      "p": 1000,
       "topic": "جعفر العمدة",
-      "q": "إلى أي مدينة تسافر عايدة بعدما تختار عدم العودة إلى زوجها في نهاية «جعفر العمدة»؟",
-      "a": "دبي",
-      "alt": [
-        "دبى"
-      ],
+      "q": "في «جعفر العمدة»، من المرأة التي ربّت سيف وماتت قبل كشف حقيقته لجعفر؟",
+      "a": "فاطمة",
       "sourceUrl": "https://elcinema.com/work/2077046/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "p": 800,
+      "qid": "ramadanseries-800-912",
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "ramadanseries-1000-903",
-      "p": 1000,
       "topic": "تحت الوصاية",
-      "q": "في «تحت الوصاية»، من يتبين أنه سارق برميلي السمك بعد اتهام عيد؟",
-      "a": "شنهابي",
-      "alt": [
-        "شنهابى"
-      ],
+      "q": "في «تحت الوصاية»، ما اسم شقيقة البطلة التي تتعرض للسجن بشهادة زور؟",
+      "a": "سناء",
       "sourceUrl": "https://elcinema.com/work/2077491/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "p": 800,
+      "qid": "ramadanseries-800-913",
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "ramadanseries-1000-904",
-      "p": 1000,
       "topic": "البرنس",
-      "q": "في «البرنس»، من الشقيق الذي يسجل تآمر إخوته ويقدم التسجيل للبطل؟",
-      "a": "عادل",
-      "alt": [],
+      "q": "في «البرنس»، من يعثر على ابنة رضوان في موقف النقل ويأخذها إلى بيته؟",
+      "a": "محمود",
       "sourceUrl": "https://elcinema.com/work/2059626/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "p": 800,
+      "qid": "ramadanseries-800-914",
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "ramadanseries-1000-905",
-      "p": 1000,
       "topic": "بمئة وش",
-      "q": "من عضو العصابة الذي يحتال على رفاقه ويستولي على المال في نهاية «بـ100 وش»؟",
-      "a": "كابتن فتحي",
-      "alt": [
-        "فتحي",
-        "كابتن فتحى"
-      ],
+      "q": "في «بـ100 وش»، إلى أي بلد يخطط أفراد العصابة للسفر بعد بيع ممتلكاتهم؟",
+      "a": "سويسرا",
       "sourceUrl": "https://elcinema.com/work/2056512/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "p": 800,
+      "qid": "ramadanseries-800-915",
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "ramadanseries-1000-906",
-      "p": 1000,
       "topic": "أشغال شقة",
-      "q": "في «أشغال شقة»، ما اسم المساعدة التي تضع سعرًا منفصلًا لكل طلب وشرطًا جزائيًا لترك العمل؟",
-      "a": "معتزة",
-      "alt": [
-        "معتزه"
-      ],
+      "q": "في «أشغال شقة»، ما اسم مديرة المنزل التي يسبب ضعف سمعها مشكلة لحمدي؟",
+      "a": "صفية",
       "sourceUrl": "https://elcinema.com/work/2083457/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "p": 800,
+      "qid": "ramadanseries-800-916",
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "ramadanseries-1000-907",
-      "p": 1000,
       "topic": "المداح",
-      "q": "في الموسم الأول من «المداح»، من الرجل الذي يقرأ أفكار البطل ويواجهه بحادثة غالب؟",
-      "a": "مصباح",
-      "alt": [],
+      "q": "في الموسم الأول من «المداح»، من يبتز صابر بفيديو هروبه بالذهب؟",
+      "a": "عبد الرازق",
       "sourceUrl": "https://elcinema.com/work/2068005/episodes",
+      "alt": [
+        "عبدالرازق"
+      ],
       "verified": true,
-      "difficultyTarget": 0.15
+      "p": 800,
+      "qid": "ramadanseries-800-917",
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "ramadanseries-1000-908",
-      "p": 1000,
       "topic": "اللعبة",
-      "q": "في نهاية الموسم الأول من «اللعبة»، ما اسم الرجل الذي ينكشف أنه يدير التحديات الغامضة؟",
-      "a": "سمير",
-      "alt": [],
+      "q": "في الموسم الأول من «اللعبة»، مع أي إعلامي يجب أن يظهر المتنافسان للفوز بالمهمة التاسعة؟",
+      "a": "شريف عامر",
       "sourceUrl": "https://elcinema.com/work/2010352/episodes",
       "verified": true,
+      "p": 800,
+      "qid": "ramadanseries-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "الكبير أوي",
+      "q": "في الجزء الأول من «الكبير أوي»، ما الشيء الذي يمنع نجاح محاولة القنص؟",
+      "a": "آنية للغسيل",
+      "sourceUrl": "https://elcinema.com/work/1096845/episodes",
+      "alt": [
+        "وعاء غسيل",
+        "طشت غسيل"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "جعفر العمدة",
+      "q": "في «جعفر العمدة»، ما اسم الخادمة التي تنقل أخبار المنزل إلى عائلة فتح الله؟",
+      "a": "سعدة",
+      "sourceUrl": "https://elcinema.com/work/2077046/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "تحت الوصاية",
+      "q": "في «تحت الوصاية»، من الشخص الذي يزوّر بطاقة البطلة ثم يهدده صالح؟",
+      "a": "شعبان",
+      "sourceUrl": "https://elcinema.com/work/2077491/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "البرنس",
+      "q": "في «البرنس»، من يحتال على شقيق رضوان بتقديم طفلة على أنها ابنة رضوان المفقودة؟",
+      "a": "كيلاني",
+      "sourceUrl": "https://elcinema.com/work/2059626/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "بمئة وش",
+      "q": "ما اسم شركة التوفيق للزواج التي تؤسسها العصابة في «بـ100 وش»؟",
+      "a": "توفيق راسين في الحلال",
+      "sourceUrl": "https://elcinema.com/work/2056512/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "أشغال شقة",
+      "q": "في «أشغال شقة»، من مديرة المنزل التي تزوّر عقد إيجار وتطرد الزوجين؟",
+      "a": "فايزة",
+      "sourceUrl": "https://elcinema.com/work/2083457/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "المداح",
+      "q": "في الموسم الأول من «المداح»، ما اسم والدة صابر الحقيقية التي يبحث عنها؟",
+      "a": "عفاف",
+      "sourceUrl": "https://elcinema.com/work/2068005/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "اللعبة",
+      "q": "إلى أين يمشي مازو لتنفيذ المهمة الوهمية التي يخدعه بها وسيم في الموسم الأول من «اللعبة»؟",
+      "a": "العين السخنة",
+      "sourceUrl": "https://elcinema.com/work/2010352/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "ramadanseries-1000-918",
       "difficultyTarget": 0.15
     }
   ]

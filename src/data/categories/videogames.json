@@ -5,247 +5,22 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما اسم سبّاك نينتندو صاحب القبعة الحمراء والشارب؟",
-      "a": "ماريو",
-      "qid": "videogames-200-901",
-      "topic": "شخصيات",
-      "verified": true,
-      "alt": [
-        "Mario",
-        "سوبر ماريو"
-      ],
-      "sourceUrl": "https://www.nintendo.com/en-gb/Games/Characters-hub/Super-Mario-Hub/Characters-2493286.html",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "من القنفذ الأزرق الشهير بسرعته الخارقة في ألعاب سيغا؟",
-      "a": "سونيك",
-      "qid": "videogames-200-902",
-      "topic": "شخصيات",
-      "verified": true,
-      "alt": [
-        "Sonic",
-        "سونيك القنفذ"
-      ],
-      "sourceUrl": "https://manuals.sega.com/sonicxshadowgenerations/en/",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ما الأشياء التي تكسرها وتضعها لبناء المنازل وتغيير العالم في ماينكرافت؟",
-      "a": "الكتل",
-      "qid": "videogames-200-903",
-      "topic": "أدوات وموارد",
-      "verified": true,
-      "alt": [
-        "مكعبات",
-        "البلوكات",
-        "Blocks"
-      ],
-      "sourceUrl": "https://www.minecraft.net/en-us/article/what-minecraft",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "في روكيت ليغ سايدسوايب، أي رياضة تلعبها السيارات بدفع الكرة إلى المرمى؟",
-      "a": "كرة القدم",
-      "qid": "videogames-200-904",
-      "topic": "قواعد الفوز",
-      "verified": true,
-      "alt": [
-        "فوتبول",
-        "Soccer"
-      ],
-      "sourceUrl": "https://sideswipe.rocketleague.com/",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "في أمونغ أس، ما اسم دور اللاعب الذي يتخفى بين الطاقم ويخرّب السفينة؟",
-      "a": "المحتال",
-      "qid": "videogames-200-905",
-      "topic": "خصوم وأخطار",
-      "verified": true,
-      "alt": [
-        "المندس",
-        "إمبوستر",
-        "Impostor"
-      ],
-      "sourceUrl": "https://www.innersloth.com/games/among-us/",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "في تتريس، ما الذي يجب إكماله بلا فراغات كي تختفي القطع وتحرز النقاط؟",
-      "a": "صفوف أفقية",
-      "qid": "videogames-200-906",
-      "topic": "ألغاز وتحديات",
-      "verified": true,
-      "alt": [
-        "صف أفقي",
-        "خطوط أفقية",
-        "الصفوف"
-      ],
-      "sourceUrl": "https://tetris.com/about",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "ما الأشياء التي تقطعها بالسحب على الشاشة في فروت نينجا؟",
-      "a": "الفواكه",
-      "qid": "videogames-200-907",
-      "topic": "أدوات وموارد",
-      "verified": true,
-      "alt": [
-        "فاكهة",
-        "الثمار"
-      ],
-      "sourceUrl": "https://www.halfbrick.com/blog/the-ultimate-beginners-guide-to-fruit-ninja",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "q": "في أنجري بيردز الكلاسيكية، بأي أداة تقذف الطيور نحو أبراج الخنازير؟",
-      "a": "المقلاع",
-      "qid": "videogames-200-908",
-      "topic": "آليات الحركة",
-      "verified": true,
-      "alt": [
-        "مقلاع",
-        "النبلة",
-        "Slingshot"
-      ],
-      "sourceUrl": "https://www.angrybirds.com/games/rovio-classics-angry-birds/",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 400,
-      "q": "من شقيق سبّاك نينتندو ذي القبعة الحمراء، الذي يرتدي الأخضر ويخشى الأشباح؟",
-      "a": "لويجي",
-      "qid": "videogames-400-901",
-      "topic": "شخصيات",
-      "verified": true,
-      "alt": [
-        "Luigi"
-      ],
-      "sourceUrl": "https://www.nintendo.com/en-gb/Games/Characters-hub/Super-Mario-Hub/Characters-2493286.html",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "ما اسم بوكيمون الفأر الكهربائي الأصفر الشهير؟",
-      "a": "بيكاتشو",
-      "qid": "videogames-400-902",
-      "topic": "شخصيات",
-      "verified": true,
-      "alt": [
-        "Pikachu"
-      ],
-      "sourceUrl": "https://www.pokemon.com/uk/pokedex/pikachu",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "ما اسم المخلوق الأخضر في ماينكرافت الذي ينفجر عندما يقترب منك؟",
-      "a": "كريبر",
-      "qid": "videogames-400-903",
-      "topic": "خصوم وأخطار",
-      "verified": true,
-      "alt": [
-        "Creeper",
-        "الكريبر"
-      ],
-      "sourceUrl": "https://www.minecraft.net/en-us/article/meet-creeper",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "في اجتماعات أمونغ أس، بأي إجراء جماعي يقرر الطاقم طرد المشتبه به؟",
-      "a": "التصويت",
-      "qid": "videogames-400-904",
-      "topic": "قواعد الفوز",
-      "verified": true,
-      "alt": [
-        "تصويت",
-        "Vote"
-      ],
-      "sourceUrl": "https://www.innersloth.com/games/among-us/",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "في باك مان، إلى أي لون تتحول الأشباح بعد أكل حبة القوة؟",
-      "a": "الأزرق",
-      "qid": "videogames-400-905",
-      "topic": "قدرات وتحولات",
-      "verified": true,
-      "alt": [
-        "أزرق",
-        "Blue"
-      ],
-      "sourceUrl": "https://www.pacman.com/en/character/",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "في بلانتس ضد زومبي الأصلية، ما المورد الذي تجمعه لشراء معظم النباتات؟",
-      "a": "الشمس",
-      "qid": "videogames-400-906",
-      "topic": "أدوات وموارد",
-      "verified": true,
-      "alt": [
-        "نقاط الشمس",
-        "Sun"
-      ],
-      "sourceUrl": "https://akamai.cdn.ea.com/eadownloads/u/f/manuals/GAME-PVZ/en_US_readme.html",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "في كلاش رويال، ما الرموز الملكية التي تكسبها بتدمير أبراج الخصم؟",
-      "a": "التيجان",
-      "qid": "videogames-400-907",
-      "topic": "قواعد الفوز",
-      "verified": true,
-      "alt": [
-        "تاج",
-        "Crowns"
-      ],
-      "sourceUrl": "https://supercell.com/en/games/clashroyale/blog/release-notes/an-update-for-losers-2/",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 400,
-      "q": "ما سلسلة الألغاز التي تفتح فيها ممرات على الجدران بجهاز خاص للتنقل بين موضعين؟",
-      "a": "بورتال",
-      "qid": "videogames-400-908",
-      "topic": "ألغاز وتحديات",
-      "verified": true,
-      "alt": [
-        "Portal"
-      ],
-      "sourceUrl": "https://store.steampowered.com/app/400/Portal?l=english",
-      "difficultyTarget": 0.6
-    },
-    {
-      "p": 600,
       "q": "في أسطورة زيلدا، من البطل الذي يحمل ترايفورس الشجاعة؟",
       "a": "لينك",
-      "qid": "videogames-600-901",
+      "qid": "videogames-200-911",
       "topic": "شخصيات",
       "verified": true,
       "alt": [
         "Link"
       ],
       "sourceUrl": "https://zelda.nintendo.com/about/",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "ما اسم صائدة الجوائز التي يتحكم بها اللاعب في سلسلة مترويد؟",
       "a": "ساموس آران",
-      "qid": "videogames-600-902",
+      "qid": "videogames-200-912",
       "topic": "شخصيات",
       "verified": true,
       "alt": [
@@ -253,13 +28,13 @@
         "ساموس"
       ],
       "sourceUrl": "https://www.nintendo.com/us/store/products/metroid-dread-switch/",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "في ماينكرافت، ما الأداة التي ترميها لينتقل اللاعب فورًا إلى موضع سقوطها؟",
       "a": "لؤلؤة الإندر",
-      "qid": "videogames-600-903",
+      "qid": "videogames-200-913",
       "topic": "أدوات وموارد",
       "verified": true,
       "alt": [
@@ -268,28 +43,13 @@
         "اندر بيرل"
       ],
       "sourceUrl": "https://www.minecraft.net/en-us/article/ender-pearl",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
-      "q": "في أمونغ أس، ما الممرات التي يستخدمها المخرّب للتنقل سرًا بين الغرف؟",
-      "a": "فتحات التهوية",
-      "qid": "videogames-600-904",
-      "topic": "آليات الحركة",
-      "verified": true,
-      "alt": [
-        "الفتحات",
-        "Vents",
-        "الفنت"
-      ],
-      "sourceUrl": "https://www.innersloth.com/games/among-us/",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 200,
       "q": "في ليغ أوف ليجندز، ما المبنى المركزي الذي يجب تدميره للفوز على الخصم؟",
       "a": "النكسوس",
-      "qid": "videogames-600-905",
+      "qid": "videogames-200-914",
       "topic": "قواعد الفوز",
       "verified": true,
       "alt": [
@@ -297,81 +57,39 @@
         "نيكسوس"
       ],
       "sourceUrl": "https://www.leagueoflegends.com/en-sg/how-to-play/",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "في سوبر ماريو أوديسي، ما اسم الرفيق الشبيه بالقبعة الذي يتيح الاستحواذ على الأعداء؟",
       "a": "كابي",
-      "qid": "videogames-600-906",
+      "qid": "videogames-200-915",
       "topic": "قدرات وتحولات",
       "verified": true,
       "alt": [
         "Cappy"
       ],
       "sourceUrl": "https://supermario.nintendo.com/mario-cappy/",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 200,
       "q": "في بوكيمون ليتس غو، ما المنطقة التي تبدأ فيها رحلة المدرّب؟",
       "a": "كانتو",
-      "qid": "videogames-600-907",
+      "qid": "videogames-200-916",
       "topic": "أماكن وعوالم",
       "verified": true,
       "alt": [
         "Kanto"
       ],
       "sourceUrl": "https://pokemonletsgo.pokemon.com/en-us/kanto-region/",
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
-      "q": "في ألعاب سونيك، ما الذي يديره تيلز كالمروحة ليطير؟",
-      "a": "ذيلاه",
-      "qid": "videogames-600-908",
-      "topic": "آليات الحركة",
-      "verified": true,
-      "alt": [
-        "ذيلان",
-        "ذيلَيه",
-        "الذيلان"
-      ],
-      "sourceUrl": "https://asia.sega.com/SonicSuperStars/en/character/",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 800,
-      "q": "ما اسم بطل فاينل فانتسي السابع الذي يحمل سيف باستر الضخم؟",
-      "a": "كلاود سترايف",
-      "qid": "videogames-800-901",
-      "topic": "شخصيات",
-      "verified": true,
-      "alt": [
-        "Cloud Strife",
-        "كلاود"
-      ],
-      "sourceUrl": "https://na.store.square-enix-games.com/final-fantasy-vii-bring-arts-action-figure---cloud-strife-digital-plus-edition",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
-      "q": "في أنيمال كروسينغ نيو هورايزنز، مع من تتحدث لتسديد قرض المنزل وتوسيعه؟",
-      "a": "توم نوك",
-      "qid": "videogames-800-902",
-      "topic": "شخصيات",
-      "verified": true,
-      "alt": [
-        "Tom Nook"
-      ],
-      "sourceUrl": "https://play.nintendo.com/news-tips/tips-tricks/animal-crossing-new-horizons-discover-tips/",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 200,
       "q": "في ماينكرافت، من أي مادة تبني إطار بوابة النذر؟",
       "a": "الأوبسيديان",
-      "qid": "videogames-800-903",
+      "qid": "videogames-200-917",
       "topic": "أدوات وموارد",
       "verified": true,
       "alt": [
@@ -380,13 +98,54 @@
         "أوبسيديان"
       ],
       "sourceUrl": "https://www.minecraft.net/en-us/article/dragon-s-breath",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.8
     },
     {
-      "p": 800,
+      "p": 200,
+      "q": "في أمونغ أس، أي دور من أدوار الطاقم يستطيع دخول الممرات السرية مثل المخرّب؟",
+      "a": "المهندس",
+      "qid": "videogames-200-918",
+      "topic": "آليات الحركة",
+      "verified": true,
+      "alt": [
+        "Engineer",
+        "إنجينير"
+      ],
+      "sourceUrl": "https://www.innersloth.com/new-roles-cosmicubes-out-now-emergency-meeting-33/",
+      "difficultyTarget": 0.8
+    },
+    {
+      "p": 400,
+      "q": "ما اسم بطل فاينل فانتسي السابع الذي يحمل سيف باستر الضخم؟",
+      "a": "كلاود سترايف",
+      "qid": "videogames-400-911",
+      "topic": "شخصيات",
+      "verified": true,
+      "alt": [
+        "Cloud Strife",
+        "كلاود"
+      ],
+      "sourceUrl": "https://na.store.square-enix-games.com/final-fantasy-vii-bring-arts-action-figure---cloud-strife-digital-plus-edition",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "في أنيمال كروسينغ نيو هورايزنز، مع من تتحدث لتسديد قرض المنزل وتوسيعه؟",
+      "a": "توم نوك",
+      "qid": "videogames-400-912",
+      "topic": "شخصيات",
+      "verified": true,
+      "alt": [
+        "Tom Nook"
+      ],
+      "sourceUrl": "https://play.nintendo.com/news-tips/tips-tricks/animal-crossing-new-horizons-discover-tips/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
       "q": "في طور زيرو بيلد بفورتنايت، ما اسم طبقة الحماية الإضافية التي تتجدد تلقائيًا؟",
       "a": "أوفرشيلد",
-      "qid": "videogames-800-904",
+      "qid": "videogames-400-913",
       "topic": "قدرات وتحولات",
       "verified": true,
       "alt": [
@@ -395,27 +154,13 @@
         "الدرع الزائد"
       ],
       "sourceUrl": "https://www.fortnite.com/news/fortnite-zero-build-take-the-offensive-in-this-no-build-battle-royale",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
-      "q": "في أمونغ أس، أي دور من أدوار الطاقم يستطيع دخول الممرات السرية مثل المخرّب؟",
-      "a": "المهندس",
-      "qid": "videogames-800-905",
-      "topic": "آليات الحركة",
-      "verified": true,
-      "alt": [
-        "Engineer",
-        "إنجينير"
-      ],
-      "sourceUrl": "https://www.innersloth.com/new-roles-cosmicubes-out-now-emergency-meeting-33/",
-      "difficultyTarget": 0.25
-    },
-    {
-      "p": 800,
+      "p": 400,
       "q": "في هولو نايت، ما اسم المملكة المدمرة التي يستكشفها البطل تحت الأرض؟",
       "a": "هالونست",
-      "qid": "videogames-800-906",
+      "qid": "videogames-400-914",
       "topic": "أماكن وعوالم",
       "verified": true,
       "alt": [
@@ -423,13 +168,13 @@
         "هالونيست"
       ],
       "sourceUrl": "https://www.teamcherry.com.au/blog/hollow-knight-then-and-now",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "في بورتال، ما اسم المؤسسة التي تقع فيها مختبرات الاختبار؟",
       "a": "أبرتشر ساينس",
-      "qid": "videogames-800-907",
+      "qid": "videogames-400-915",
       "topic": "أماكن وعوالم",
       "verified": true,
       "alt": [
@@ -438,13 +183,13 @@
         "أبرتشر"
       ],
       "sourceUrl": "https://store.steampowered.com/app/400/Portal?l=english",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "p": 400,
       "q": "في ماريو كارت 8 ديلوكس، ما القذيفة الشوكية التي تطارد متصدر السباق؟",
       "a": "الصدفة الزرقاء",
-      "qid": "videogames-800-908",
+      "qid": "videogames-400-916",
       "topic": "أدوات وموارد",
       "verified": true,
       "alt": [
@@ -454,13 +199,41 @@
         "القوقعة الزرقاء"
       ],
       "sourceUrl": "https://www.nintendo.com/jp/ichikara/aabpa/index_en.html",
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "p": 1000,
+      "p": 400,
+      "q": "في ليغ أوف ليجندز، ما الوحش الذي يمنح قتله تعزيزًا للمينيونز القريبة من فريقك؟",
+      "a": "بارون ناشور",
+      "qid": "videogames-400-917",
+      "topic": "خصوم وأخطار",
+      "verified": true,
+      "alt": [
+        "Baron Nashor",
+        "البارون"
+      ],
+      "sourceUrl": "https://www.leagueoflegends.com/en-sg/how-to-play/",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 400,
+      "q": "في بورتال 2، ما اسم الذكاء الاصطناعي الذي يواجه البطلة داخل مختبرات الاختبار؟",
+      "a": "غلادوس",
+      "qid": "videogames-400-918",
+      "topic": "خصوم وأخطار",
+      "verified": true,
+      "alt": [
+        "GLaDOS",
+        "جلادوس"
+      ],
+      "sourceUrl": "https://www.thinkwithportals.com/about.php",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
       "q": "في ماينكرافت، ما المادة التي تصلح أجنحة الإليترا عند استعمال السندان؟",
       "a": "غشاء الفانتوم",
-      "qid": "videogames-1000-901",
+      "qid": "videogames-600-911",
       "topic": "أدوات وموارد",
       "verified": true,
       "alt": [
@@ -469,13 +242,13 @@
         "غشاء الطيف"
       ],
       "sourceUrl": "https://www.minecraft.net/en-us/article/taking-inventory--phantom-membrane",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "في ماينكرافت، ما المادة التي تحوّل جرعة الرش إلى جرعة تترك سحابة تأثير؟",
       "a": "نَفَس التنين",
-      "qid": "videogames-1000-902",
+      "qid": "videogames-600-912",
       "topic": "أدوات وموارد",
       "verified": true,
       "alt": [
@@ -484,27 +257,13 @@
         "أنفاس التنين"
       ],
       "sourceUrl": "https://www.minecraft.net/en-us/article/dragon-s-breath",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "q": "في ليغ أوف ليجندز، ما الوحش الذي يمنح قتله تعزيزًا للمينيونز القريبة من فريقك؟",
-      "a": "بارون ناشور",
-      "qid": "videogames-1000-903",
-      "topic": "خصوم وأخطار",
-      "verified": true,
-      "alt": [
-        "Baron Nashor",
-        "البارون"
-      ],
-      "sourceUrl": "https://www.leagueoflegends.com/en-sg/how-to-play/",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "في زيلدا ماجوراز ماسك، ما اسم العالم الذي يهدده سقوط القمر؟",
       "a": "تيرمينا",
-      "qid": "videogames-1000-904",
+      "qid": "videogames-600-913",
       "topic": "أماكن وعوالم",
       "verified": true,
       "alt": [
@@ -512,27 +271,13 @@
         "ترمينا"
       ],
       "sourceUrl": "https://www.nintendo.com/en-gb/Games/Nintendo-64/The-Legend-of-Zelda-Majora-s-Mask-269525.html",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "q": "في بورتال 2، ما اسم الذكاء الاصطناعي الذي يواجه البطلة داخل مختبرات الاختبار؟",
-      "a": "غلادوس",
-      "qid": "videogames-1000-905",
-      "topic": "خصوم وأخطار",
-      "verified": true,
-      "alt": [
-        "GLaDOS",
-        "جلادوس"
-      ],
-      "sourceUrl": "https://www.thinkwithportals.com/about.php",
-      "difficultyTarget": 0.15
-    },
-    {
-      "p": 1000,
+      "p": 600,
       "q": "في كاب هيد، ما اسم مجموعة الجزر التي تجري فيها المغامرة؟",
       "a": "جزر إنكويل",
-      "qid": "videogames-1000-906",
+      "qid": "videogames-600-914",
       "topic": "أماكن وعوالم",
       "verified": true,
       "alt": [
@@ -540,13 +285,13 @@
         "إنكويل"
       ],
       "sourceUrl": "https://studiomdhr.com/about-us/",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "في تتريس إفكت كونيكتد، ما اسم الميزة التي توقف الوقت وسقوط القطع مؤقتًا؟",
       "a": "زون",
-      "qid": "videogames-1000-907",
+      "qid": "videogames-600-915",
       "topic": "ألغاز وتحديات",
       "verified": true,
       "alt": [
@@ -554,13 +299,13 @@
         "The Zone"
       ],
       "sourceUrl": "https://tetris.com/news/tetris-effect-connected-is-now-available-on-ps5-and-playstation-vr2",
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "p": 600,
       "q": "في ألعاب سونيك، ما الاسم الحقيقي للثعلب المعروف بلقب تيلز؟",
       "a": "مايلز براور",
-      "qid": "videogames-1000-908",
+      "qid": "videogames-600-916",
       "topic": "شخصيات",
       "verified": true,
       "alt": [
@@ -568,6 +313,276 @@
         "مايلز باور"
       ],
       "sourceUrl": "https://asia.sega.com/SonicSuperStars/en/character/",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "ما اسم الجنية التي ترافق البطل وترشده في زيلدا: أوكارينا أوف تايم؟",
+      "a": "نافي",
+      "topic": "شخصيات",
+      "verified": true,
+      "sourceUrl": "https://www.nintendo.com/jp/character/zelda/en/history/index.html",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Navi"
+      ],
+      "p": 600,
+      "qid": "videogames-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "ما الفطر الذي تسبب بنوع العدوى الخيالي في عالم ذا لاست أوف أس؟",
+      "a": "كورديسيبس",
+      "topic": "خصوم وأخطار",
+      "verified": true,
+      "sourceUrl": "https://www.playstation.com/es-es/the-last-of-us/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Cordyceps",
+        "كوردي سيبس"
+      ],
+      "p": 600,
+      "qid": "videogames-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "ما اسما الأخوين الحدادين من الأقزام اللذين يساعدان كريتوس في غود أوف وور 2018؟",
+      "a": "بروك وسندري",
+      "topic": "شخصيات",
+      "verified": true,
+      "sourceUrl": "https://blog.playstation.com/?p=368052",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Brok and Sindri",
+        "بروك وسيندري"
+      ],
+      "p": 800,
+      "qid": "videogames-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم المدينة الغارقة تحت المحيط التي تدور فيها أحداث بايوشوك الأولى؟",
+      "a": "رابتشر",
+      "topic": "أماكن وعوالم",
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rapture_%28BioShock%29",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Rapture",
+        "رابتشر"
+      ],
+      "p": 800,
+      "qid": "videogames-800-912",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم المبنى الذي يضم مقر مكتب التحكم الفيدرالي في لعبة كنترول؟",
+      "a": "البيت الأقدم",
+      "topic": "أماكن وعوالم",
+      "verified": true,
+      "sourceUrl": "https://control.fandom.com/wiki/Welcome_to_the_Oldest_House",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "The Oldest House",
+        "أولدست هاوس"
+      ],
+      "p": 800,
+      "qid": "videogames-800-913",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اسم قدرة إبطاء الوقت أثناء التصويب في طور القصة من ريد ديد ريدمبشن؟",
+      "a": "ديد آي",
+      "topic": "قدرات وتحولات",
+      "verified": true,
+      "sourceUrl": "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/manuals/en_us/RDRD_UN_PS3_Manual_M01.pdf",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Dead Eye",
+        "العين الميتة"
+      ],
+      "p": 800,
+      "qid": "videogames-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما اختصار نظام فولت تك المساعد على التصويب في سلسلة فال آوت؟",
+      "a": "VATS",
+      "topic": "ألغاز وتحديات",
+      "verified": true,
+      "sourceUrl": "https://fallout.bethesda.net/en-US/news/what-makes-fallout-4-vr-s-p-e-c-i-a-l",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "فاتس",
+        "V.A.T.S."
+      ],
+      "p": 800,
+      "qid": "videogames-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من فارس دارك سولز الذي يبحث عن شمسه الخاصة ويرتبط بعبارة «Praise the Sun»؟",
+      "a": "سولير من أستورا",
+      "topic": "شخصيات",
+      "verified": true,
+      "sourceUrl": "https://www.pcgamer.com/why-we-praise-the-sun-the-story-of-dark-souls-most-famous-gesture/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Solaire of Astora",
+        "سولير",
+        "سولاير"
+      ],
+      "p": 800,
+      "qid": "videogames-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما المورد الذي يجمعه فارس هولو نايت من ضرب الأعداء ليستخدمه في الشفاء والتعاويذ؟",
+      "a": "سول",
+      "topic": "أدوات وموارد",
+      "verified": true,
+      "sourceUrl": "https://hollowknight.wiki/w/Soul",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Soul",
+        "الروح"
+      ],
+      "p": 800,
+      "qid": "videogames-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما الجهاز الذي ترتديه ألوي قرب أذنها لتحليل الآلات وإظهار نقاط ضعفها في هورايزن؟",
+      "a": "الفوكس",
+      "topic": "أدوات وموارد",
+      "verified": true,
+      "sourceUrl": "https://horizon.fandom.com/wiki/Focus",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Focus",
+        "فوكس",
+        "التركيز"
+      ],
+      "p": 800,
+      "qid": "videogames-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "في أي مدينة يقع حي مارتينيز الذي يحقق فيه بطل ديسكو إليسيوم؟",
+      "a": "ريفاشول",
+      "topic": "أماكن وعوالم",
+      "verified": true,
+      "sourceUrl": "https://discoelysium.com/devblog/2019/09/24/disco-elysium-is-a-colossal-game",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Revachol",
+        "ريفاكول"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الرمز الذي يحمله كوكب لعبة سابنوتيكا وبيـلو زيرو؟",
+      "a": "4546B",
+      "topic": "أماكن وعوالم",
+      "verified": true,
+      "sourceUrl": "https://unknownworlds.com/en/news/below-zero-lost-ship-update",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "4546 بي",
+        "٤٥٤٦ بي"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "كم دقيقة تستغرق الدورة الزمنية المعتادة قبل تكرارها في أوتر وايلدز؟",
+      "a": "22 دقيقة",
+      "topic": "ألغاز وتحديات",
+      "verified": true,
+      "sourceUrl": "https://blog.playstation.com/archive/2019/10/08/explore-a-solar-system-that-resets-every-22-minutes-in-the-outer-wilds-out-this-month",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "22",
+        "٢٢",
+        "اثنتان وعشرون دقيقة"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الاسم الحقيقي لمطور ستارديو فالي المعروف باسم ConcernedApe؟",
+      "a": "إريك بارون",
+      "topic": "صناعة الألعاب",
+      "verified": true,
+      "sourceUrl": "https://www.stardewvalley.net/press/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Eric Barone",
+        "إيريك بارون"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من ألف موسيقى لعبة هيديز من استوديو سوبرجاينت؟",
+      "a": "دارين كورب",
+      "topic": "صناعة الألعاب",
+      "verified": true,
+      "sourceUrl": "https://www.supergiantgames.com/blog/hades-faq/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Darren Korb"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما المهارة في سيكيرو التي تصد الطعنة بالدوس على سلاح الخصم؟",
+      "a": "ميكيري كاونتر",
+      "topic": "قدرات وتحولات",
+      "verified": true,
+      "sourceUrl": "https://sekiro-shadows-die-twice.fandom.com/wiki/Mikiri_Counter",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Mikiri Counter",
+        "صد ميكيري"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الأداة التي تمنع تحول البطل إلى أرنب في العالم المظلم بلعبة Zelda: A Link to the Past؟",
+      "a": "لؤلؤة القمر",
+      "topic": "أدوات وموارد",
+      "verified": true,
+      "sourceUrl": "https://www.zeldadungeon.net/wiki/Moon_Pearl",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Moon Pearl"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم النظام المتأخر في هيديز الذي يضيف شروطًا تزيد صعوبة محاولات الهروب؟",
+      "a": "ميثاق العقاب",
+      "topic": "ألغاز وتحديات",
+      "verified": true,
+      "sourceUrl": "https://www.supergiantgames.com/blog/hades-faq/",
+      "verifiedAt": "2026-09-25",
+      "alt": [
+        "Pact of Punishment",
+        "باكت أوف بانيشمنت"
+      ],
+      "p": 1000,
+      "qid": "videogames-1000-918",
       "difficultyTarget": 0.15
     }
   ]

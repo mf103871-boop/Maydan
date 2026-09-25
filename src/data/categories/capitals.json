@@ -5,102 +5,116 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما عاصمة المملكة العربية السعودية؟",
-      "a": "الرياض",
-      "qid": "capitals-200-901",
+      "q": "ما اسم المدينة التي بُنيت خصيصًا لتكون عاصمة البرازيل؟",
+      "a": "برازيليا",
+      "qid": "capitals-200-911",
+      "topic": "عواصم تغيّرت",
+      "verified": true,
+      "alt": [
+        "Brasilia"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://whc.unesco.org/fr/list/445"
+    },
+    {
+      "p": 200,
+      "q": "ما عاصمة موريتانيا؟",
+      "a": "نواكشوط",
+      "qid": "capitals-200-912",
       "topic": "عواصم عربية",
       "verified": true,
+      "alt": [
+        "Nouakchott"
+      ],
       "difficultyTarget": 0.8,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
       "p": 200,
-      "q": "ما عاصمة فرنسا؟",
-      "a": "باريس",
-      "qid": "capitals-200-902",
+      "q": "ما عاصمة النرويج؟",
+      "a": "أوسلو",
+      "qid": "capitals-200-913",
       "topic": "عواصم أوروبية",
       "verified": true,
       "alt": [
-        "Paris"
+        "Oslo"
       ],
       "difficultyTarget": 0.8,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
       "p": 200,
-      "q": "ما عاصمة اليابان؟",
-      "a": "طوكيو",
-      "qid": "capitals-200-903",
-      "topic": "عواصم آسيوية",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
-    },
-    {
-      "p": 200,
-      "q": "ما عاصمة ليبيا؟",
-      "a": "طرابلس",
-      "qid": "capitals-200-904",
-      "topic": "عواصم أفريقية",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
-    },
-    {
-      "p": 200,
-      "q": "ما عاصمة الولايات المتحدة الأمريكية؟",
-      "a": "واشنطن",
-      "qid": "capitals-200-905",
+      "q": "ما عاصمة كندا؟",
+      "a": "أوتاوا",
+      "qid": "capitals-200-914",
       "topic": "عواصم الأمريكتين",
       "verified": true,
       "alt": [
-        "واشنطن العاصمة",
-        "واشنطن دي سي"
+        "Ottawa"
       ],
       "difficultyTarget": 0.8,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
       "p": 200,
-      "q": "ما عاصمة ألمانيا؟",
-      "a": "برلين",
-      "qid": "capitals-200-906",
-      "topic": "عواصم تغيّرت",
+      "q": "ما عاصمة نيوزيلندا؟",
+      "a": "ويلينغتون",
+      "qid": "capitals-200-915",
+      "topic": "عواصم أوقيانوسيا",
       "verified": true,
+      "alt": [
+        "ولنغتون",
+        "Wellington"
+      ],
       "difficultyTarget": 0.8,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
       "p": 200,
-      "q": "ما المدينة الأمريكية التي تستضيف المقر الرئيسي للأمم المتحدة؟",
-      "a": "نيويورك",
-      "qid": "capitals-200-907",
+      "q": "ما المدينة الهولندية التي تضمّ مقرّ الحكومة والبرلمان رغم أنها ليست العاصمة؟",
+      "a": "لاهاي",
+      "qid": "capitals-200-916",
       "topic": "مدن تُظنّ عواصم",
       "verified": true,
       "alt": [
-        "مدينة نيويورك"
+        "دن هاخ",
+        "The Hague"
       ],
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.un.org/visit"
+      "sourceUrl": "https://www.government.nl/binaries/government/documenten/publications/2017/04/21/culture-at-a-first-glance/CIB2015_ENG_publicatie_v8_DEF.pdf"
     },
     {
       "p": 200,
-      "q": "ما عاصمة دولة الإمارات العربية المتحدة؟",
-      "a": "أبوظبي",
-      "qid": "capitals-200-908",
+      "q": "ما عاصمة أذربيجان الواقعة على ساحل بحر قزوين؟",
+      "a": "باكو",
+      "qid": "capitals-200-917",
+      "topic": "عواصم آسيوية",
+      "verified": true,
+      "alt": [
+        "Baku",
+        "باكي"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://azerbaijan.az/en/information/110"
+    },
+    {
+      "p": 200,
+      "q": "ما الاسم الإغريقي القديم الذي حملته العاصمة الأردنية؟",
+      "a": "فيلادلفيا",
+      "qid": "capitals-200-918",
       "topic": "عواصم عربية",
       "verified": true,
       "alt": [
-        "أبو ظبي"
+        "Philadelphia"
       ],
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+      "sourceUrl": "https://international.visitjordan.com/uploads/brochures/H%26C-English2022.pdf"
     },
     {
       "p": 400,
       "q": "ما عاصمة كوريا الشمالية؟",
       "a": "بيونغ يانغ",
-      "qid": "capitals-400-901",
+      "qid": "capitals-400-911",
       "topic": "عواصم آسيوية",
       "verified": true,
       "alt": [
@@ -115,7 +129,7 @@
       "p": 400,
       "q": "ما عاصمة أوغندا؟",
       "a": "كمبالا",
-      "qid": "capitals-400-902",
+      "qid": "capitals-400-912",
       "topic": "عواصم أفريقية",
       "verified": true,
       "alt": [
@@ -127,89 +141,91 @@
     },
     {
       "p": 400,
-      "q": "ما اسم المدينة التي بُنيت خصيصًا لتكون عاصمة البرازيل؟",
-      "a": "برازيليا",
-      "qid": "capitals-400-903",
+      "q": "ما عاصمة كازاخستان؟",
+      "a": "أستانا",
+      "qid": "capitals-400-913",
       "topic": "عواصم تغيّرت",
       "verified": true,
       "alt": [
-        "Brasilia"
+        "أستانة",
+        "استانا",
+        "Astana"
       ],
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://whc.unesco.org/fr/list/445"
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
       "p": 400,
-      "q": "ما عاصمة موريتانيا؟",
-      "a": "نواكشوط",
-      "qid": "capitals-400-904",
+      "q": "ما عاصمة جزر القمر؟",
+      "a": "موروني",
+      "qid": "capitals-400-914",
       "topic": "عواصم عربية",
       "verified": true,
       "alt": [
-        "Nouakchott"
+        "Moroni",
+        "مروني"
       ],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
       "p": 400,
-      "q": "ما عاصمة النرويج؟",
-      "a": "أوسلو",
-      "qid": "capitals-400-905",
+      "q": "ما عاصمة سلوفينيا؟",
+      "a": "ليوبليانا",
+      "qid": "capitals-400-915",
       "topic": "عواصم أوروبية",
       "verified": true,
       "alt": [
-        "Oslo"
+        "لوبليانا"
       ],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
       "p": 400,
-      "q": "ما عاصمة كندا؟",
-      "a": "أوتاوا",
-      "qid": "capitals-400-906",
+      "q": "ما عاصمة أوروغواي؟",
+      "a": "مونتيفيديو",
+      "qid": "capitals-400-916",
       "topic": "عواصم الأمريكتين",
       "verified": true,
       "alt": [
-        "Ottawa"
+        "مونتيﭬيديو"
       ],
       "difficultyTarget": 0.6,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
       "p": 400,
-      "q": "ما عاصمة نيوزيلندا؟",
-      "a": "ويلينغتون",
-      "qid": "capitals-400-907",
-      "topic": "عواصم أوقيانوسيا",
-      "verified": true,
-      "alt": [
-        "ولنغتون",
-        "Wellington"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
-    },
-    {
-      "p": 400,
-      "q": "ما المدينة الهولندية التي تضمّ مقرّ الحكومة والبرلمان رغم أنها ليست العاصمة؟",
-      "a": "لاهاي",
-      "qid": "capitals-400-908",
+      "q": "ما العاصمة الإدارية لجنوب أفريقيا؟",
+      "a": "بريتوريا",
+      "qid": "capitals-400-917",
       "topic": "مدن تُظنّ عواصم",
       "verified": true,
       "alt": [
-        "دن هاخ",
-        "The Hague"
+        "Pretoria"
       ],
       "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.government.nl/binaries/government/documenten/publications/2017/04/21/culture-at-a-first-glance/CIB2015_ENG_publicatie_v8_DEF.pdf"
+      "sourceUrl": "https://www.gov.za/about-sa/south-africas-provinces"
+    },
+    {
+      "p": 400,
+      "q": "في أي مدينة اجتمع البرلمان الأسترالي قبل انتقاله إلى كانبيرا؟",
+      "a": "ملبورن",
+      "qid": "capitals-400-918",
+      "topic": "عواصم أوقيانوسيا",
+      "verified": true,
+      "alt": [
+        "ملبورن الأسترالية",
+        "Melbourne"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://www.aph.gov.au/Visit_Parliament/About_the_Building/History_of_Parliament_House"
     },
     {
       "p": 600,
       "q": "ما عاصمة ساموا؟",
       "a": "آبيا",
-      "qid": "capitals-600-901",
+      "qid": "capitals-600-911",
       "topic": "عواصم أوقيانوسيا",
       "verified": true,
       "alt": [
@@ -221,51 +237,9 @@
     },
     {
       "p": 600,
-      "q": "ما عاصمة كازاخستان؟",
-      "a": "أستانا",
-      "qid": "capitals-600-902",
-      "topic": "عواصم تغيّرت",
-      "verified": true,
-      "alt": [
-        "أستانة",
-        "استانا",
-        "Astana"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
-    },
-    {
-      "p": 600,
-      "q": "ما عاصمة جزر القمر؟",
-      "a": "موروني",
-      "qid": "capitals-600-903",
-      "topic": "عواصم عربية",
-      "verified": true,
-      "alt": [
-        "Moroni",
-        "مروني"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
-    },
-    {
-      "p": 600,
-      "q": "ما عاصمة سلوفينيا؟",
-      "a": "ليوبليانا",
-      "qid": "capitals-600-904",
-      "topic": "عواصم أوروبية",
-      "verified": true,
-      "alt": [
-        "لوبليانا"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
-    },
-    {
-      "p": 600,
       "q": "ما عاصمة مملكة بوتان في جبال الهيمالايا؟",
       "a": "تيمفو",
-      "qid": "capitals-600-905",
+      "qid": "capitals-600-912",
       "topic": "عواصم آسيوية",
       "verified": true,
       "alt": [
@@ -278,7 +252,7 @@
       "p": 600,
       "q": "ما عاصمة بوركينا فاسو؟",
       "a": "واغادوغو",
-      "qid": "capitals-600-906",
+      "qid": "capitals-600-913",
       "topic": "عواصم أفريقية",
       "verified": true,
       "alt": [
@@ -289,104 +263,79 @@
     },
     {
       "p": 600,
-      "q": "ما عاصمة أوروغواي؟",
-      "a": "مونتيفيديو",
-      "qid": "capitals-600-907",
-      "topic": "عواصم الأمريكتين",
-      "verified": true,
-      "alt": [
-        "مونتيﭬيديو"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
-    },
-    {
-      "p": 600,
-      "q": "ما العاصمة الإدارية لجنوب أفريقيا؟",
-      "a": "بريتوريا",
-      "qid": "capitals-600-908",
-      "topic": "مدن تُظنّ عواصم",
-      "verified": true,
-      "alt": [
-        "Pretoria"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://www.gov.za/about-sa/south-africas-provinces"
-    },
-    {
-      "p": 800,
       "q": "ما اسم عاصمة فانواتو؟",
       "a": "بورت فيلا",
-      "qid": "capitals-800-901",
+      "qid": "capitals-600-914",
       "topic": "عواصم أوقيانوسيا",
       "verified": true,
       "alt": [
         "بور ﭬيلا",
         "Port Vila"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما المدينة التاريخية التي قامت الرياض على موقعها وأطلالها؟",
       "a": "حجر اليمامة",
-      "qid": "capitals-800-902",
+      "qid": "capitals-600-915",
       "topic": "عواصم عربية",
       "verified": true,
       "alt": [
         "حجر",
         "حجر اليمامه"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.rcrc.gov.sa/wp-content/uploads/2023/05/المناخ-الاستثماري-في-مدينة-الرياض-1433-هـ-1.pdf"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما عاصمة مولدوفا؟",
       "a": "كيشيناو",
-      "qid": "capitals-800-903",
+      "qid": "capitals-600-916",
       "topic": "عواصم أوروبية",
       "verified": true,
       "alt": [
         "كيشينيف",
         "Chisinau"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
     },
     {
-      "p": 800,
-      "q": "ما عاصمة أذربيجان الواقعة على ساحل بحر قزوين؟",
-      "a": "باكو",
-      "qid": "capitals-800-904",
-      "topic": "عواصم آسيوية",
-      "verified": true,
-      "alt": [
-        "Baku",
-        "باكي"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://azerbaijan.az/en/information/110"
-    },
-    {
-      "p": 800,
+      "p": 600,
       "q": "ما عاصمة جمهورية سيشل؟",
       "a": "فيكتوريا",
-      "qid": "capitals-800-905",
+      "qid": "capitals-600-917",
       "topic": "عواصم أفريقية",
       "verified": true,
       "alt": [
         "Victoria"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf"
+    },
+    {
+      "p": 600,
+      "q": "ما المدينة الفلبينية التي كانت العاصمة الرسمية قبل أن تستعيد مانيلا هذه الصفة؟",
+      "a": "كويزون سيتي",
+      "qid": "capitals-600-918",
+      "topic": "مدن تُظنّ عواصم",
+      "verified": true,
+      "alt": [
+        "Quezon City",
+        "كيزون سيتي",
+        "مدينة كويزون"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quezoncity.gov.ph/about-the-city-government/history/"
     },
     {
       "p": 800,
       "q": "ما عاصمة سورينام؟",
       "a": "باراماريبو",
-      "qid": "capitals-800-906",
+      "qid": "capitals-800-911",
       "topic": "عواصم الأمريكتين",
       "verified": true,
       "alt": [
@@ -399,7 +348,7 @@
       "p": 800,
       "q": "ما عاصمة ميانمار؟",
       "a": "نايبيداو",
-      "qid": "capitals-800-907",
+      "qid": "capitals-800-912",
       "topic": "عواصم تغيّرت",
       "verified": true,
       "alt": [
@@ -415,7 +364,7 @@
       "p": 800,
       "q": "ما المدينة السريلانكية التي انتقل إليها البرلمان من كولومبو عام 1982؟",
       "a": "سري جاياواردنابورا كوتي",
-      "qid": "capitals-800-908",
+      "qid": "capitals-800-913",
       "topic": "مدن تُظنّ عواصم",
       "verified": true,
       "alt": [
@@ -427,66 +376,82 @@
       "sourceUrl": "https://www.parliament.lk/en/home/parliament-news/view/2548"
     },
     {
-      "p": 1000,
-      "q": "في أي مدينة اجتمع البرلمان الأسترالي قبل انتقاله إلى كانبيرا؟",
-      "a": "ملبورن",
-      "qid": "capitals-1000-901",
-      "topic": "عواصم أوقيانوسيا",
+      "p": 800,
+      "q": "ما اسم المدينة الأزتيكية التي قامت مدينة مكسيكو على أنقاضها؟",
+      "a": "تينوتشتيتلان",
+      "qid": "capitals-800-914",
+      "topic": "عواصم الأمريكتين",
       "verified": true,
       "alt": [
-        "ملبورن الأسترالية",
-        "Melbourne"
+        "تينوختتلان",
+        "Tenochtitlan"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.aph.gov.au/Visit_Parliament/About_the_Building/History_of_Parliament_House"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://whc.unesco.org/en/list/412"
     },
     {
-      "p": 1000,
-      "q": "ما الاسم الإغريقي القديم الذي حملته العاصمة الأردنية؟",
-      "a": "فيلادلفيا",
-      "qid": "capitals-1000-902",
-      "topic": "عواصم عربية",
-      "verified": true,
-      "alt": [
-        "Philadelphia"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://international.visitjordan.com/uploads/brochures/H%26C-English2022.pdf"
-    },
-    {
-      "p": 1000,
-      "q": "أي عاصمة أوروبية يعني اسمها «ميناء التجار»؟",
-      "a": "كوبنهاغن",
-      "qid": "capitals-1000-903",
-      "topic": "عواصم أوروبية",
-      "verified": true,
-      "alt": [
-        "كوبنهاجن",
-        "Copenhagen",
-        "كوبنهاون"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://cphmuseum.kk.dk/sites/default/files/2021-10/133_PDFsam_Gammel%20Strand%20Cultural%20historical%20report.pdf"
-    },
-    {
-      "p": 1000,
+      "p": 800,
       "q": "ما المدينة التي توصف بالعاصمة القضائية لجنوب أفريقيا وتضم محكمة الاستئناف العليا؟",
       "a": "بلومفونتين",
-      "qid": "capitals-1000-904",
+      "qid": "capitals-800-915",
       "topic": "عواصم أفريقية",
       "verified": true,
       "alt": [
         "Bloemfontein",
         "بلومفونتاين"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://www.gov.za/about-sa/south-africas-provinces"
+    },
+    {
+      "q": "ما عاصمة الجبل الأسود؟",
+      "a": "بودغوريتسا",
+      "topic": "عواصم أوروبية",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [
+        "بودغوريتزا",
+        "Podgorica"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "capitals-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما عاصمة ليسوتو؟",
+      "a": "ماسيرو",
+      "topic": "عواصم أفريقية",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [
+        "Maseru"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "capitals-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "ما عاصمة سلطنة بروناي؟",
+      "a": "بندر سري بكاوان",
+      "topic": "عواصم آسيوية",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [
+        "بندر سري بيغاوان",
+        "Bandar Seri Begawan"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "capitals-800-918",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
       "q": "ما الاسم الذي حملته العاصمة النرويجية قبل استعادة اسمها الحالي عام 1925؟",
       "a": "كريستيانيا",
-      "qid": "capitals-1000-905",
+      "qid": "capitals-1000-911",
       "topic": "عواصم تغيّرت",
       "verified": true,
       "alt": [
@@ -502,7 +467,7 @@
       "p": 1000,
       "q": "ما اسم الحصن القديم الذي نشأت منه العاصمة الأرمينية؟",
       "a": "إريبوني",
-      "qid": "capitals-1000-906",
+      "qid": "capitals-1000-912",
       "topic": "عواصم آسيوية",
       "verified": true,
       "alt": [
@@ -515,32 +480,91 @@
     },
     {
       "p": 1000,
-      "q": "ما اسم المدينة الأزتيكية التي قامت مدينة مكسيكو على أنقاضها؟",
-      "a": "تينوتشتيتلان",
-      "qid": "capitals-1000-907",
-      "topic": "عواصم الأمريكتين",
+      "q": "أي عاصمة أوروبية يعني اسمها «ميناء التجار»؟",
+      "a": "كوبنهاغن",
+      "qid": "capitals-1000-913",
+      "topic": "عواصم أوروبية",
       "verified": true,
       "alt": [
-        "تينوختتلان",
-        "Tenochtitlan"
+        "كوبنهاجن",
+        "Copenhagen",
+        "كوبنهاون"
       ],
       "difficultyTarget": 0.15,
-      "sourceUrl": "https://whc.unesco.org/en/list/412"
+      "sourceUrl": "https://cphmuseum.kk.dk/sites/default/files/2021-10/133_PDFsam_Gammel%20Strand%20Cultural%20historical%20report.pdf"
     },
     {
-      "p": 1000,
-      "q": "ما المدينة الفلبينية التي حملت اسم الرئيس مانويل كويزون وكانت عاصمة البلاد قبل عودة الدور إلى مانيلا؟",
-      "a": "كويزون سيتي",
-      "qid": "capitals-1000-908",
-      "topic": "مدن تُظنّ عواصم",
-      "verified": true,
+      "q": "ما عاصمة مالاوي؟",
+      "a": "ليلونغوي",
+      "topic": "عواصم أفريقية",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
       "alt": [
-        "Quezon City",
-        "كيزون سيتي",
-        "مدينة كويزون"
+        "ليلونغواي",
+        "Lilongwe"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://quezoncity.gov.ph/about-the-city-government/history/"
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما عاصمة تيمور الشرقية؟",
+      "a": "ديلي",
+      "topic": "عواصم آسيوية",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [
+        "Dili"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما عاصمة ولايات ميكرونيزيا الموحدة؟",
+      "a": "باليكير",
+      "topic": "عواصم أوقيانوسيا",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [
+        "Palikir"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما عاصمة سانت كيتس ونيفيس؟",
+      "a": "باستير",
+      "topic": "عواصم الأمريكتين",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [
+        "باسيتير",
+        "Basseterre"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما عاصمة دومينيكا؟",
+      "a": "روسو",
+      "topic": "عواصم الأمريكتين",
+      "sourceUrl": "https://unstats.un.org/UNSDWebsite/publications/pocketbook/world-stats-pocketbook-2025.pdf",
+      "alt": [
+        "روزو",
+        "Roseau"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "capitals-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

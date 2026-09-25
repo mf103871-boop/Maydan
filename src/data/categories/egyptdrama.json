@@ -5,115 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "egyptdrama-200-901",
+      "qid": "egyptdrama-200-911",
       "p": 200,
-      "topic": "جلباب أبي",
-      "q": "في «لن أعيش في جلباب أبي»، ما الأكلة التي تبيعها فاطمة في بداية الحكاية؟",
-      "a": "الكشري",
-      "alt": [
-        "كشري"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "egyptdrama-200-902",
-      "p": 200,
-      "topic": "رأفت الهجان",
-      "q": "في «رأفت الهجان»، ما الهوية التي يتخذها البطل للعمل داخل إسرائيل؟",
-      "a": "ديفيد شارل سمحون",
-      "alt": [
-        "ديفيد سمحون",
-        "ديفيد سامحون"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "egyptdrama-200-903",
-      "p": 200,
-      "topic": "الراية البيضاء",
-      "q": "من المرأة الثرية التي تريد هدم الفيلا الأثرية في «الراية البيضاء»؟",
-      "a": "فضة المعداوي",
-      "alt": [
-        "فضة",
-        "فضة المعداوى"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "egyptdrama-200-904",
-      "p": 200,
-      "topic": "المال والبنون",
-      "q": "في «المال والبنون»، من صاحب الثروة الذي يختلف معه عباس الضو حول مصدر أمواله؟",
-      "a": "سلامة فراويلة",
-      "alt": [
-        "سلامة",
-        "سلامة فراويله"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "egyptdrama-200-905",
-      "p": 200,
-      "topic": "ليالي الحلمية",
-      "q": "من صاحب المصنع الذي يدخل في صراع طويل مع خصمه الريفي في «ليالي الحلمية»؟",
-      "a": "سليم البدري",
-      "alt": [
-        "سليم البدرى",
-        "سليم"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "egyptdrama-200-906",
-      "p": 200,
-      "topic": "الشهد والدموع",
-      "q": "في «الشهد والدموع»، ما اسم شقيق شوقي الذي يستولي على حقوقه؟",
-      "a": "حافظ",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "egyptdrama-200-907",
-      "p": 200,
-      "topic": "يوميات ونيس",
-      "q": "في «يوميات ونيس»، ما اسم زوجة ونيس وشريكته في تربية الأبناء؟",
-      "a": "مايسة",
-      "alt": [
-        "مايسه",
-        "مايسة ونيس"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "egyptdrama-200-908",
-      "p": 200,
-      "topic": "ذات",
-      "q": "في مسلسل «ذات»، ما اسم الرجل الذي تتزوجه البطلة؟",
-      "a": "عبد المجيد",
-      "alt": [
-        "عبدالمجيد"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "egyptdrama-400-901",
-      "p": 400,
       "topic": "جلباب أبي",
       "q": "في «لن أعيش في جلباب أبي»، ما اسم الابن الوحيد لعبد الغفور؟",
       "a": "عبد الوهاب",
@@ -122,39 +15,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010312/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "egyptdrama-400-902",
-      "p": 400,
-      "topic": "رأفت الهجان",
-      "q": "في المسلسل، لأي دولة يعمل رأفت الهجان سرًا رغم هويته الإسرائيلية؟",
-      "a": "مصر",
-      "alt": [
-        "جمهورية مصر العربية"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "egyptdrama-400-903",
-      "p": 400,
-      "topic": "الراية البيضاء",
-      "q": "ما نوع المبنى الذي تتمحور حول حمايته أحداث «الراية البيضاء»؟",
-      "a": "فيلا أثرية",
-      "alt": [
-        "فيلا تاريخية",
-        "قصر أثري",
-        "فيلا"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "egyptdrama-400-904",
-      "p": 400,
+      "qid": "egyptdrama-200-912",
+      "p": 200,
       "topic": "المال والبنون",
       "q": "ما النشاط غير المشروع الذي يرتبط بأصل ثروة سلامة في «المال والبنون»؟",
       "a": "تهريب الآثار",
@@ -164,11 +29,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1723192/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "egyptdrama-400-905",
-      "p": 400,
+      "qid": "egyptdrama-200-913",
+      "p": 200,
       "topic": "ليالي الحلمية",
       "q": "من خصم سليم القادم من الريف الذي يشتري حصة في المصنع في «ليالي الحلمية»؟",
       "a": "سليمان غانم",
@@ -177,22 +42,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010572/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "egyptdrama-400-906",
-      "p": 400,
+      "qid": "egyptdrama-200-914",
+      "p": 200,
       "topic": "الشهد والدموع",
       "q": "في «الشهد والدموع»، ما اسم زوجة شوقي التي تكافح بعد وفاته؟",
       "a": "زينب",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/1650915/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "egyptdrama-400-907",
-      "p": 400,
+      "qid": "egyptdrama-200-915",
+      "p": 200,
       "topic": "يوميات ونيس",
       "q": "في «يوميات ونيس»، ما اسم والد ونيس الذي يشارك الأسرة حياتها؟",
       "a": "أبو الفضل",
@@ -202,11 +67,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1011316/cast",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "egyptdrama-400-908",
-      "p": 400,
+      "qid": "egyptdrama-200-916",
+      "p": 200,
       "topic": "ذات",
       "q": "في مسلسل «ذات»، في أي مبنى تلفزيوني تحصل البطلة على وظيفة؟",
       "a": "ماسبيرو",
@@ -215,11 +80,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1975418/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "egyptdrama-600-901",
-      "p": 600,
+      "qid": "egyptdrama-200-917",
+      "p": 200,
       "topic": "جلباب أبي",
       "q": "من المعلم الذي يعمل عنده عبد الغفور ويتعلم منه التجارة في «لن أعيش في جلباب أبي»؟",
       "a": "إبراهيم سردينة",
@@ -230,11 +95,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010312/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "egyptdrama-600-902",
-      "p": 600,
+      "qid": "egyptdrama-200-918",
+      "p": 200,
       "topic": "رأفت الهجان",
       "q": "في «رأفت الهجان»، من الضابط الذي يتولى إعداد البطل للمهمة؟",
       "a": "محسن ممتاز",
@@ -243,11 +108,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1011599/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "egyptdrama-600-903",
-      "p": 600,
+      "qid": "egyptdrama-400-911",
+      "p": 400,
       "topic": "الراية البيضاء",
       "q": "ما الوظيفة التي شغلها مفيد أبو الغار قبل تقاعده في «الراية البيضاء»؟",
       "a": "سفير",
@@ -257,22 +122,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1205935/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "egyptdrama-600-904",
-      "p": 600,
+      "qid": "egyptdrama-400-912",
+      "p": 400,
       "topic": "المال والبنون",
       "q": "في «المال والبنون»، ما اسم ابنة سلامة التي يحبها ابن عباس الضو؟",
       "a": "فريال",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/1723192/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "egyptdrama-600-905",
-      "p": 600,
+      "qid": "egyptdrama-400-913",
+      "p": 400,
       "topic": "ليالي الحلمية",
       "q": "ما اسم الزوجة الأرستقراطية التي يطلقها سليم في بداية «ليالي الحلمية»؟",
       "a": "نازك السلحدار",
@@ -281,11 +146,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010572/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "egyptdrama-600-906",
-      "p": 600,
+      "qid": "egyptdrama-400-914",
+      "p": 400,
       "topic": "الشهد والدموع",
       "q": "ما الحيلة التي ينفذها الأخ الأكبر في مخزن الشركة لحرمان شقيقه من نصيبه في «الشهد والدموع»؟",
       "a": "حرق المخزن",
@@ -296,11 +161,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1650915/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "egyptdrama-600-907",
-      "p": 600,
+      "qid": "egyptdrama-400-915",
+      "p": 400,
       "topic": "يوميات ونيس",
       "q": "في «يوميات ونيس»، من يكسر نباتات الزينة ويُتّهم شرف الدين ظلمًا بدلًا منه؟",
       "a": "قطة الجيران",
@@ -310,11 +175,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1011316/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "egyptdrama-600-908",
-      "p": 600,
+      "qid": "egyptdrama-400-916",
+      "p": 400,
       "topic": "ذات",
       "q": "في مسلسل «ذات»، في أي قسم فني تعمل البطلة بالتلفزيون؟",
       "a": "المونتاج",
@@ -324,11 +189,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1975418/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "egyptdrama-800-901",
-      "p": 800,
+      "qid": "egyptdrama-400-917",
+      "p": 400,
       "topic": "جلباب أبي",
       "q": "ما الشيء الضخم الذي يشتريه عبد الغفور في مزاد ليفككه ويبيع أجزاءه في «لن أعيش في جلباب أبي»؟",
       "a": "طائرة جامبو",
@@ -339,11 +204,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010312/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "egyptdrama-800-902",
-      "p": 800,
+      "qid": "egyptdrama-400-918",
+      "p": 400,
       "topic": "رأفت الهجان",
       "q": "في «رأفت الهجان»، ما اسم زوجة البطل الألمانية التي يكشف لها سره قبيل وفاته؟",
       "a": "هيلين",
@@ -353,25 +218,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1011599/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "egyptdrama-800-903",
-      "p": 800,
-      "topic": "الراية البيضاء",
-      "q": "في أي مدينة ساحلية تدور معركة الحفاظ على المبنى في «الراية البيضاء»؟",
-      "a": "الإسكندرية",
-      "alt": [
-        "اسكندرية",
-        "الاسكندرية"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "egyptdrama-800-904",
-      "p": 800,
+      "qid": "egyptdrama-600-911",
+      "p": 600,
       "topic": "المال والبنون",
       "q": "في «المال والبنون»، من الشاب الذي يُتهم بقتل لولا قبل انكشاف القاتل الحقيقي؟",
       "a": "يوسف",
@@ -380,11 +231,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1723192/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "egyptdrama-800-905",
-      "p": 800,
+      "qid": "egyptdrama-600-912",
+      "p": 600,
       "topic": "ليالي الحلمية",
       "q": "في «ليالي الحلمية»، ما اسم خالة علي التي ترعاه بعد وفاة والدته؟",
       "a": "أنيسة",
@@ -393,22 +244,22 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010572/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "egyptdrama-800-906",
-      "p": 800,
+      "qid": "egyptdrama-600-913",
+      "p": 600,
       "topic": "الشهد والدموع",
       "q": "في «الشهد والدموع»، ما اسم زوجة الأخ الأكبر التي تسانده ضد أسرة شقيقه؟",
       "a": "دولت",
       "alt": [],
       "sourceUrl": "https://elcinema.com/work/1650915/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "egyptdrama-800-907",
-      "p": 800,
+      "qid": "egyptdrama-600-914",
+      "p": 600,
       "topic": "يوميات ونيس",
       "q": "في «يوميات ونيس»، إلى من تعود القصة التي ينقلها عز الدين وينسبها لنفسه؟",
       "a": "يوسف إدريس",
@@ -417,25 +268,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1011316/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "egyptdrama-800-908",
-      "p": 800,
-      "topic": "ذات",
-      "q": "ما الأداة التي تشتريها بطلة «ذات» لتعمل من المنزل وتزيد دخل الأسرة؟",
-      "a": "ماكينة خياطة",
-      "alt": [
-        "آلة خياطة",
-        "مكنة خياطة"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "egyptdrama-1000-901",
-      "p": 1000,
+      "qid": "egyptdrama-600-915",
+      "p": 600,
       "topic": "جلباب أبي",
       "q": "في «لن أعيش في جلباب أبي»، ما الاسم الذي تختاره روزالين بعد إسلامها؟",
       "a": "أمينة",
@@ -444,11 +281,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010312/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "egyptdrama-1000-902",
-      "p": 1000,
+      "qid": "egyptdrama-600-916",
+      "p": 600,
       "topic": "رأفت الهجان",
       "q": "في «رأفت الهجان»، ما الشيء الذي يتركه البطل لزوجته لتتعرف به إلى رجال المخابرات الموثوقين؟",
       "a": "نصف عملة ورقية",
@@ -459,11 +296,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1011599/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "egyptdrama-1000-903",
-      "p": 1000,
+      "qid": "egyptdrama-600-917",
+      "p": 600,
       "topic": "الراية البيضاء",
       "q": "في «الراية البيضاء»، من ابن حنفي الذي يعيد عقد الإيجار المزور إلى مفيد؟",
       "a": "العربي",
@@ -472,11 +309,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1205935/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "egyptdrama-1000-904",
-      "p": 1000,
+      "qid": "egyptdrama-600-918",
+      "p": 600,
       "topic": "المال والبنون",
       "q": "في «المال والبنون»، ما مهنة علي الحقيقية التي يخفيها وراء ادعاء العمل بالشرطة؟",
       "a": "ضابط إيقاع",
@@ -487,62 +324,196 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1723192/episodes",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "egyptdrama-1000-905",
-      "p": 1000,
-      "topic": "ليالي الحلمية",
-      "q": "ما الشرط المتعلق بالطلاق الذي تفرضه نازك عند زواجها من سليمان في «ليالي الحلمية»؟",
-      "a": "العصمة في يدها",
+      "topic": "جلباب أبي",
+      "q": "في «لن أعيش في جلباب أبي»، بأي كلية يلتحق الابن الوحيد بعد نجاحه في الثانوية؟",
+      "a": "الاقتصاد والعلوم السياسية",
       "alt": [
-        "أن تكون العصمة بيدها",
-        "حق تطليق نفسها"
+        "كلية الاقتصاد والعلوم السياسية"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "qid": "egyptdrama-800-911",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "رأفت الهجان",
+      "q": "في بداية «رأفت الهجان»، ما الرقم الذي يُعرّف به العميل عند إبلاغ عزيز بوفاته؟",
+      "a": "313",
+      "alt": [
+        "٣١٣"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "qid": "egyptdrama-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الراية البيضاء",
+      "q": "في «الراية البيضاء»، ما اسم محامي مفيد الذي يُستدرج للتوقيع على عقد الإيجار المزور؟",
+      "a": "أنيس",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
+      "qid": "egyptdrama-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "المال والبنون",
+      "q": "في الجزء الأول من «المال والبنون»، من يقتل لولا تنفيذًا لأوامر سلامة؟",
+      "a": "القص",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "qid": "egyptdrama-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "ليالي الحلمية",
+      "q": "في الجزء الأول من «ليالي الحلمية»، من يخدع سليمان ليبيع أسهمه في المصنع؟",
+      "a": "توفيق",
+      "alt": [
+        "توفيق البدري"
       ],
       "sourceUrl": "https://elcinema.com/work/1010572/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "qid": "egyptdrama-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
     },
     {
-      "qid": "egyptdrama-1000-906",
-      "p": 1000,
       "topic": "الشهد والدموع",
-      "q": "في «الشهد والدموع»، ما السلعة التي يبيعها الأخ الأكبر في السوق السوداء قبل وفاة والده؟",
-      "a": "السكر",
-      "alt": [
-        "سكر"
-      ],
+      "q": "في الجزء الأول من «الشهد والدموع»، من صديق حافظ الذي يدبّر سرقة أموال شوقي بعد بيع محلاته؟",
+      "a": "مختار",
+      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1650915/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "qid": "egyptdrama-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
     },
     {
-      "qid": "egyptdrama-1000-907",
-      "p": 1000,
       "topic": "يوميات ونيس",
-      "q": "في «يوميات ونيس»، ما نوع الشركة التي يعمل بها الأب خلافًا لما تدعيه جهاد أمام المدرسة؟",
-      "a": "شركة مقاولات",
+      "q": "في الجزء الأول من «يوميات ونيس»، ما المحصول الذي يفسد بعد انتظار الأب ارتفاع سعره؟",
+      "a": "الطماطم",
       "alt": [
-        "مقاولات"
+        "طماطم"
       ],
       "sourceUrl": "https://elcinema.com/work/1011316/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "qid": "egyptdrama-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
     },
     {
-      "qid": "egyptdrama-1000-908",
-      "p": 1000,
       "topic": "ذات",
-      "q": "ما المنتج المنزلي الكهربائي الذي يجرب زوج بطلة «ذات» الاتجار به ثم يفشل بسبب عيوبه؟",
-      "a": "قدر كهربائي",
-      "alt": [
-        "حلة كهربائية",
-        "طنجرة كهربائية",
-        "حلة بالكهرباء"
-      ],
+      "q": "في مسلسل «ذات»، ما اسم ابن البطلة الذي يتسمم بسبب لبن فاسد؟",
+      "a": "أمجد",
+      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1975418/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
+      "qid": "egyptdrama-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "جلباب أبي",
+      "q": "في «لن أعيش في جلباب أبي»، من الشيخ الذي يذكر عبد الغفور أنه جاء من طرفه عند طلب العمل؟",
+      "a": "حنفي العنبري",
+      "alt": [
+        "الشيخ حنفي العنبري",
+        "حنفي"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010312/episodes",
+      "qid": "egyptdrama-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "رأفت الهجان",
+      "q": "في «رأفت الهجان»، لمن تعطي زوجة البطل كتالوج الطائرتين مقابل إيصال رسالتها للمخابرات المصرية؟",
+      "a": "نهاد",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1011599/episodes",
+      "qid": "egyptdrama-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الراية البيضاء",
+      "q": "في «الراية البيضاء»، من المرأة التي تتهم هشام بالتعدي عليها وتطلب طرده من عمله؟",
+      "a": "سمحة",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1205935/episodes",
+      "qid": "egyptdrama-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "المال والبنون",
+      "q": "في الجزء الأول من «المال والبنون»، من المرأة التي تطلب من قاتل لولا أن ينكر ارتكابه الجريمة؟",
+      "a": "بيسة",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1723192/episodes",
+      "qid": "egyptdrama-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "ليالي الحلمية",
+      "q": "من يقتل جنديين إنجليزيين في الجزء الأول من «ليالي الحلمية»؟",
+      "a": "زكريا",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1010572/episodes",
+      "qid": "egyptdrama-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الشهد والدموع",
+      "q": "في الجزء الأول من «الشهد والدموع»، ما اسم الرجل الذي تتزوجه إحسان بعد وفاة الحاج رضوان؟",
+      "a": "عبد البديع",
+      "alt": [
+        "عبدالبديع"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1650915/episodes",
+      "qid": "egyptdrama-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "يوميات ونيس",
+      "q": "في الجزء الأول من «يوميات ونيس»، ما اسم حفيد ماما زوزو الذي تطلب رؤيته؟",
+      "a": "حسام",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1011316/episodes",
+      "qid": "egyptdrama-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "ذات",
+      "q": "في مسلسل «ذات»، من زوج سميحة الذي يُسجن بسبب تراخيص بناء مخالفة بعد الزلزال؟",
+      "a": "وجدي",
+      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1975418/episodes",
+      "qid": "egyptdrama-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ]
 }

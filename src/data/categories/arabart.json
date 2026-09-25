@@ -5,211 +5,214 @@
   "qs": [
     {
       "p": 200,
-      "q": "من نحت تمثال «نهضة مصر»؟",
-      "a": "محمود مختار",
-      "qid": "arabart-200-901",
-      "topic": "رواد التشكيل",
-      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "مختار"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الطفل حافي القدمين الذي ظهر في رسوم ناجي العلي؟",
-      "a": "حنظلة",
-      "qid": "arabart-200-902",
-      "topic": "أعمال شهيرة",
-      "sourceUrl": "https://freedomarchives.org/La_Lucha_Continua/Handala.html",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "حنظله"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما السائل الملوّن الذي يغمس فيه الخطاط قلمه للكتابة؟",
-      "a": "الحبر",
-      "qid": "arabart-200-903",
-      "topic": "خط عربي",
-      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "حبر"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الفن الذي يكوّن الصور بجمع قطع صغيرة ملوّنة من الحجر أو الزجاج؟",
-      "a": "الفسيفساء",
-      "qid": "arabart-200-904",
-      "topic": "عمارة وزخرفة",
-      "sourceUrl": "https://www.metmuseum.org/art/collection/search/708072",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "فسيفساء",
-        "موزاييك"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما اسم مجمّع القصور الأندلسي في غرناطة الذي يضم بهو السباع؟",
-      "a": "الحمراء",
-      "qid": "arabart-200-905",
-      "topic": "عمارة وزخرفة",
-      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-court-of-the-lions",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "قصر الحمراء",
-        "قصور الحمراء"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما المادة النباتية التي تُرسم بها زخارف مؤقتة على أيدي العرائس في بلدان عربية؟",
-      "a": "الحناء",
-      "qid": "arabart-200-906",
-      "topic": "حرف وتقنيات",
-      "sourceUrl": "https://ich.unesco.org/en/RL/henna-rituals-aesthetic-and-social-practices-02116",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "حناء"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "ما الحرفة التي تصنع أواني من الطين المحروق؟",
-      "a": "الفخار",
-      "qid": "arabart-200-907",
-      "topic": "حرف وتقنيات",
-      "sourceUrl": "https://www.unesco.org/archives/multimedia/document-4753",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "صناعة الفخار",
-        "الخزف"
-      ]
-    },
-    {
-      "p": 200,
-      "q": "لأي ملك مصري قديم يعود القناع الجنائزي الذهبي الشهير المكتشف مع كنوز مقبرته؟",
-      "a": "توت عنخ آمون",
-      "qid": "arabart-200-908",
-      "topic": "متاحف ومجموعات",
-      "sourceUrl": "https://gem.eg/en/collection/artefacts/the-golden-burial-mask-of-tutankhamun",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "alt": [
-        "توت عنخ امون",
-        "توت عنخآمون"
-      ]
-    },
-    {
-      "p": 400,
       "q": "من الأديب اللبناني الذي رسم لوحات كتابه «النبي» بنفسه؟",
       "a": "جبران خليل جبران",
-      "qid": "arabart-400-901",
+      "qid": "arabart-200-911",
       "topic": "رواد التشكيل",
       "sourceUrl": "https://www.barjeelartfoundation.org/wp-content/uploads/2017/08/Jordan-Catalogue-March8-LowRes-no-bleed.pdf",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "جبران",
         "خليل جبران"
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من الفنان الفلسطيني صاحب لوحة «جمل المحامل» التي يحمل فيها رجل مدينة القدس على ظهره؟",
       "a": "سليمان منصور",
-      "qid": "arabart-400-902",
+      "qid": "arabart-200-912",
       "topic": "رواد التشكيل",
       "sourceUrl": "https://dafbeirut.org/collection/sliman-anis-mansour/jamal-al-mahamel-iii-camelcarrier-hardships",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "Sliman Mansour"
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الخط العربي القديم الذي يتميز بحروف زاويّة وامتدادات أفقية واضحة؟",
       "a": "الكوفي",
-      "qid": "arabart-400-903",
+      "qid": "arabart-200-913",
       "topic": "خط عربي",
       "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "الخط الكوفي",
         "خط كوفي"
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الاسم الشائع للزخارف النباتية المتشابكة في الفن الإسلامي؟",
       "a": "الأرابيسك",
-      "qid": "arabart-400-904",
+      "qid": "arabart-200-914",
       "topic": "عمارة وزخرفة",
       "sourceUrl": "https://www.metmuseum.org/essays/vegetal-patterns-in-islamic-art",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "ارابيسك",
         "العربسة"
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما اسم النسيج التقليدي الذي تصنعه نساء البادية على نول أرضي؟",
       "a": "السدو",
-      "qid": "arabart-400-905",
+      "qid": "arabart-200-915",
       "topic": "حرف وتقنيات",
       "sourceUrl": "https://ich.unesco.org/en/RL/traditional-weaving-of-al-sadu-02158",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "سدو"
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "في أي عاصمة يقع متحف الفن الإسلامي الذي صممه آي إم باي على الكورنيش؟",
       "a": "الدوحة",
-      "qid": "arabart-400-906",
+      "qid": "arabart-200-916",
       "topic": "متاحف ومجموعات",
       "sourceUrl": "https://mia.org.qa/en/about-us/",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "دوحة"
       ]
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من رسام لوحة «بنات بحري» المستوحاة من الإسكندرية؟",
       "a": "محمود سعيد",
-      "qid": "arabart-400-907",
+      "qid": "arabart-200-917",
       "topic": "أعمال شهيرة",
       "sourceUrl": "https://www.bibalex.gov.eg/Attachments/Publications/Files/2013032016331232778_VOICESFROMCOSMOPOLITANALEXANDRIA.pdf",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "alt": [
         "Mahmoud Said"
+      ]
+    },
+    {
+      "p": 200,
+      "q": "ما اسم مادة الكتابة المصنوعة من جلد الحيوان التي استُخدمت للمخطوطات قبل انتشار الورق؟",
+      "a": "الرق",
+      "qid": "arabart-200-918",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.8,
+      "alt": [
+        "الرقوق",
+        "البارشمان"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "من الفنانة الجزائرية العصامية التي رسمت نساء وطيورًا ملوّنة وعُرفت باسم فني من كلمة واحدة؟",
+      "a": "باية",
+      "qid": "arabart-400-911",
+      "topic": "رواد التشكيل",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/algeria/baya/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "بايا",
+        "باية محيي الدين",
+        "فاطمة حداد"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "من الفنان السوداني المرتبط بمدرسة الخرطوم وصاحب لوحة «الصوت الأخير»؟",
+      "a": "إبراهيم الصلحي",
+      "qid": "arabart-400-912",
+      "topic": "رواد التشكيل",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/sudan/ibrahim-el-salahi/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "ابراهيم الصلحي"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما الوحدة المعينية التي يستخدمها الخطاط لضبط تناسب الحروف؟",
+      "a": "النقطة",
+      "qid": "arabart-400-913",
+      "topic": "خط عربي",
+      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "نقطة",
+        "النقطة المعينية"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الزخارف المعمارية المتدلية كهوابط الكهوف التي تُستخدم في أقواس وأسقف القصور الإسلامية؟",
+      "a": "المقرنصات",
+      "qid": "arabart-400-914",
+      "topic": "عمارة وزخرفة",
+      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-hall-of-the-muqarnas",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "المقرنص",
+        "مقرنصات"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم الفن التقليدي الذي تزيّن به نساء عسير الجدران الداخلية للمنازل؟",
+      "a": "القط العسيري",
+      "qid": "arabart-400-915",
+      "topic": "حرف وتقنيات",
+      "sourceUrl": "https://ich.unesco.org/en/RL/al-qatt-al-asiri-female-traditional-interior-wall-decoration-in-asir-saudi-arabia-01261",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "القَط العسيري",
+        "القط"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "من المعماري الذي صمم القبة المثقبة للوفر أبوظبي؟",
+      "a": "جان نوفيل",
+      "qid": "arabart-400-916",
+      "topic": "متاحف ومجموعات",
+      "sourceUrl": "https://www.louvreabudhabi.ae/about-us/architecture",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "Jean Nouvel"
+      ]
+    },
+    {
+      "p": 400,
+      "q": "ما اسم منحوتة نحّات «نهضة مصر» التي تصوّر فلاحة تقاوم عاصفة رملية بعباءة متطايرة؟",
+      "a": "الخماسين",
+      "qid": "arabart-400-917",
+      "topic": "أعمال شهيرة",
+      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
+      "verified": true,
+      "difficultyTarget": 0.6,
+      "alt": [
+        "عاصفة الخماسين",
+        "تمثال الخماسين"
       ]
     },
     {
       "p": 400,
       "q": "ما الألوان الشفافة التي تُخفّف بالماء ويظهر بياض الورق من خلالها؟",
       "a": "الألوان المائية",
-      "qid": "arabart-400-908",
+      "qid": "arabart-400-918",
       "topic": "حرف وتقنيات",
       "sourceUrl": "https://smarthistory.org/material/watercolor-paint/",
       "verified": true,
@@ -221,248 +224,137 @@
     },
     {
       "p": 600,
-      "q": "من الفنانة الجزائرية العصامية التي رسمت نساء وطيورًا ملوّنة وعُرفت باسم فني من كلمة واحدة؟",
-      "a": "باية",
-      "qid": "arabart-600-901",
-      "topic": "رواد التشكيل",
-      "sourceUrl": "https://www.barjeelartfoundation.org/artist/algeria/baya/",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "بايا",
-        "باية محيي الدين",
-        "فاطمة حداد"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "من الفنان السوداني المرتبط بمدرسة الخرطوم وصاحب لوحة «الصوت الأخير»؟",
-      "a": "إبراهيم الصلحي",
-      "qid": "arabart-600-902",
-      "topic": "رواد التشكيل",
-      "sourceUrl": "https://www.barjeelartfoundation.org/artist/sudan/ibrahim-el-salahi/",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "ابراهيم الصلحي"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما الوحدة المعينية التي يستخدمها الخطاط لضبط تناسب الحروف؟",
-      "a": "النقطة",
-      "qid": "arabart-600-903",
-      "topic": "خط عربي",
-      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "نقطة",
-        "النقطة المعينية"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الزخارف المعمارية المتدلية كهوابط الكهوف التي تُستخدم في أقواس وأسقف القصور الإسلامية؟",
-      "a": "المقرنصات",
-      "qid": "arabart-600-904",
-      "topic": "عمارة وزخرفة",
-      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-hall-of-the-muqarnas",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "المقرنص",
-        "مقرنصات"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما اسم الفن التقليدي الذي تزيّن به نساء عسير الجدران الداخلية للمنازل؟",
-      "a": "القط العسيري",
-      "qid": "arabart-600-905",
-      "topic": "حرف وتقنيات",
-      "sourceUrl": "https://ich.unesco.org/en/RL/al-qatt-al-asiri-female-traditional-interior-wall-decoration-in-asir-saudi-arabia-01261",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "القَط العسيري",
-        "القط"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "من المعماري الذي صمم القبة المثقبة للوفر أبوظبي؟",
-      "a": "جان نوفيل",
-      "qid": "arabart-600-906",
-      "topic": "متاحف ومجموعات",
-      "sourceUrl": "https://www.louvreabudhabi.ae/about-us/architecture",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "Jean Nouvel"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما اسم منحوتة نحّات «نهضة مصر» التي تصوّر فلاحة تقاوم عاصفة رملية بعباءة متطايرة؟",
-      "a": "الخماسين",
-      "qid": "arabart-600-907",
-      "topic": "أعمال شهيرة",
-      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "عاصفة الخماسين",
-        "تمثال الخماسين"
-      ]
-    },
-    {
-      "p": 600,
-      "q": "ما اسم مادة الكتابة المصنوعة من جلد الحيوان التي استُخدمت للمخطوطات قبل انتشار الورق؟",
-      "a": "الرق",
-      "qid": "arabart-600-908",
-      "topic": "حرف وتقنيات",
-      "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "alt": [
-        "الرقوق",
-        "البارشمان"
-      ]
-    },
-    {
-      "p": 800,
       "q": "من الفنانة اللبنانية التجريدية صاحبة «تكوين بالأصفر» التي استلهمت الرياضيات والعمارة؟",
       "a": "سلوى روضة شقير",
-      "qid": "arabart-800-901",
+      "qid": "arabart-600-911",
       "topic": "رواد التشكيل",
       "sourceUrl": "https://www.barjeelartfoundation.org/collection/composition-in-yellow-saloua-raouda-choucair/",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "سلوى شقير"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من الفنان العراقي الذي أسّس جماعة «البعد الواحد»؟",
       "a": "شاكر حسن آل سعيد",
-      "qid": "arabart-800-902",
+      "qid": "arabart-600-912",
       "topic": "رواد التشكيل",
       "sourceUrl": "https://www.barjeelartfoundation.org/artist/iraq/dia-azzawi/",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "شاكر حسن ال سعيد",
         "شاكر حسن"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما الخط الذي تطوّر في الأندلس وشمال أفريقيا واستُخدم في المصاحف المحلية؟",
       "a": "الخط المغربي",
-      "qid": "arabart-800-903",
+      "qid": "arabart-600-913",
       "topic": "خط عربي",
       "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "المغربي",
         "خط مغربي"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما القصر الأموي الأردني المشهور بالجداريات داخل قاعة الاستقبال والحمّام؟",
       "a": "قصير عمرة",
-      "qid": "arabart-800-904",
+      "qid": "arabart-600-914",
       "topic": "عمارة وزخرفة",
       "sourceUrl": "https://whc.unesco.org/en/list/327/",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "قصر عمرة",
         "قصير عمره"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما البلدة التونسية التي أدرجت اليونسكو مهارات نسائها في صنع الأواني الطينية المزيّنة؟",
       "a": "سجنان",
-      "qid": "arabart-800-905",
+      "qid": "arabart-600-915",
       "topic": "حرف وتقنيات",
       "sourceUrl": "https://www.unesco.org/archives/multimedia/document-4753",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "سجنان التونسية",
         "Sejnane"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما المتحف الذي استُلهمت كتل مبناه المتشابكة من بلورات وردة الصحراء؟",
       "a": "متحف قطر الوطني",
-      "qid": "arabart-800-906",
+      "qid": "arabart-600-916",
       "topic": "متاحف ومجموعات",
       "sourceUrl": "https://qm.org.qa/en/stories/all-stories/behind-the-scenes-the-making-of-nmoq/",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "المتحف الوطني القطري"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من زيّن نسخة «مقامات الحريري» البغدادية المحفوظة في المكتبة الوطنية الفرنسية برسومه؟",
       "a": "يحيى الواسطي",
-      "qid": "arabart-800-907",
+      "qid": "arabart-600-917",
       "topic": "أعمال شهيرة",
       "sourceUrl": "https://essentiels.bnf.fr/fr/image/360c5338-9868-4a62-aeb8-12cef666a1e0-dans-une-mosquee",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "يحيى بن محمود الواسطي",
         "الواسطي"
       ]
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما تقنية زخرفة الخزف التي تستخدم مركبات المعادن لإعطاء السطح لمعانًا معدنيًا؟",
       "a": "البريق المعدني",
-      "qid": "arabart-800-908",
+      "qid": "arabart-600-918",
       "topic": "حرف وتقنيات",
       "sourceUrl": "https://collections.agakhanmuseum.org/collection/artifact/lustre-painted-ewer-akm763",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "alt": [
         "الخزف ذو البريق المعدني",
         "التلوين بالبريق المعدني"
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من الفنان المغربي صاحب لوحة «أليا» المحفوظة ضمن مجموعة بارجيل؟",
       "a": "أحمد الشرقاوي",
-      "qid": "arabart-1000-901",
+      "qid": "arabart-800-911",
       "topic": "رواد التشكيل",
       "sourceUrl": "https://www.barjeelartfoundation.org/collection/ahmed-cherkaoui-alea/",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "احمد الشرقاوي",
         "Ahmed Cherkaoui"
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "من الشاعرة والرسامة اللبنانية التي صنعت دفاتر فنية مطوية كالأكورديون تُسمى «ليبوريلو»؟",
       "a": "إتيل عدنان",
-      "qid": "arabart-1000-902",
+      "qid": "arabart-800-912",
       "topic": "رواد التشكيل",
       "sourceUrl": "https://www.barjeelartfoundation.org/artist/lebanon/etel-adnan/",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "ايتيل عدنان",
         "إيتيل عدنان",
@@ -470,14 +362,14 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم الخط العربي بالغ الدقة الذي استُخدم لكتابة الحكم داخل أمواج لوحة «السفينة الخطية»؟",
       "a": "خط الغبار",
-      "qid": "arabart-1000-903",
+      "qid": "arabart-800-913",
       "topic": "خط عربي",
       "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "الغبار",
         "الغُباري",
@@ -485,42 +377,42 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم نوع الخط الزاوي الذي تنبت من حروفه زخارف نباتية؟",
       "a": "الكوفي المورق",
-      "qid": "arabart-1000-904",
+      "qid": "arabart-800-914",
       "topic": "خط عربي",
       "sourceUrl": "https://www.metmuseum.org/-/media/files/learn/for%20educators/publications%20for%20educators/islamic%20teacher%20resource/unit2.pdf",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "الكوفي المزهر",
         "الخط الكوفي المورق"
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما القصر الصحراوي الأردني الذي نُقلت واجهته الحجرية المزخرفة إلى برلين؟",
       "a": "قصر المشتى",
-      "qid": "arabart-1000-905",
+      "qid": "arabart-800-915",
       "topic": "عمارة وزخرفة",
       "sourceUrl": "https://www.smb.museum/en/exhibitions/detail/mshatta-in-focus/",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "المشتى",
         "المشتى الأموي"
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم الحامل ذي الوسادة الذي تستخدمه الحرفية الإماراتية في نسج التلي؟",
       "a": "الكاجوجة",
-      "qid": "arabart-1000-906",
+      "qid": "arabart-800-916",
       "topic": "حرف وتقنيات",
       "sourceUrl": "https://artsandculture.google.com/story/QQVxOxFtPMyAsw",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "كاجوجة",
         "الكاجوجا",
@@ -528,14 +420,14 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما المكتبة الإيرلندية التي تحفظ مصحف ابن البواب الموقّع؟",
       "a": "مكتبة تشستر بيتي",
-      "qid": "arabart-1000-907",
+      "qid": "arabart-800-917",
       "topic": "متاحف ومجموعات",
       "sourceUrl": "https://islamicart.museumwnf.org/database_item.php?id=object%3BEPM%3Bir%3BMus21%3B5%3Ben",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "تشستر بيتي",
         "مكتبة شستر بيتي",
@@ -543,17 +435,119 @@
       ]
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم المخطوط القرآني الشهير الذي كُتبت حروفه بالذهب على صفحات مصبوغة بالنيلة؟",
       "a": "المصحف الأزرق",
-      "qid": "arabart-1000-908",
+      "qid": "arabart-800-918",
       "topic": "أعمال شهيرة",
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/454662",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "alt": [
         "القرآن الأزرق"
       ]
+    },
+    {
+      "topic": "رواد التشكيل",
+      "q": "من الفنان العراقي صاحب لوحة «أقنعة الهاوية» ومؤسس جماعة «الرؤية الجديدة»؟",
+      "a": "ضياء العزاوي",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/iraq/dia-azzawi/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "رواد التشكيل",
+      "q": "ما الاسم الأصلي للفنانة الجزائرية صاحبة «المرأة ذات الفستان الوردي»؟",
+      "a": "فاطمة حداد",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/algeria/baya/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "أعمال شهيرة",
+      "q": "ما منحوتة مختار التي اقتنت الحكومة الفرنسية نسختها الحجرية وأصبحت ضمن مجموعة مركز بومبيدو؟",
+      "a": "عروس النيل",
+      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "عمارة وزخرفة",
+      "q": "من السلطان النصري الذي أنشأ قصر السباع في غرناطة خلال فترة حكمه الثانية؟",
+      "a": "محمد الخامس",
+      "sourceUrl": "https://www.alhambra-patronato.es/en/edificios-lugares/the-court-of-the-lions",
+      "alt": [
+        "محمد الخامس الغني بالله",
+        "الغني بالله"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "حرف وتقنيات",
+      "q": "ما الاسم المحلي للخيط المعدني الذهبي أو الفضي المستخدم في نسج التلي الإماراتي؟",
+      "a": "خوصة",
+      "sourceUrl": "https://artsandculture.google.com/story/QQVxOxFtPMyAsw",
+      "alt": [
+        "الخوصة",
+        "خوص"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "حرف وتقنيات",
+      "q": "ما المادة البيضاء التي تشكل عادة قاعدة زخارف جدران عسير التقليدية؟",
+      "a": "الجبس الأبيض",
+      "sourceUrl": "https://ich.unesco.org/en/RL/al-qatt-al-asiri-female-traditional-interior-wall-decoration-in-asir-saudi-arabia-01261",
+      "alt": [
+        "الجبس"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "متاحف ومجموعات",
+      "q": "ما متحف الشمع الباريسي الذي عمل مختار مديرًا فنيًا مؤقتًا له بعد الحرب العالمية الأولى؟",
+      "a": "متحف غريفان",
+      "sourceUrl": "https://mathaf.org.qa/en/encyclopedia/artists-biographies/mahmoud-mokhtar/",
+      "alt": [
+        "Musée Grévin",
+        "غريفان",
+        "غريفين"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "متاحف ومجموعات",
+      "q": "ما اسم الصالة الباريسية التي أقامت أول معرض لصاحبة «المرأة ذات الفستان الوردي»؟",
+      "a": "غاليري ميغ",
+      "sourceUrl": "https://www.barjeelartfoundation.org/artist/algeria/baya/",
+      "alt": [
+        "Maeght Gallery",
+        "غاليري مايخت",
+        "معرض ماغ",
+        "ماغ"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "arabart-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

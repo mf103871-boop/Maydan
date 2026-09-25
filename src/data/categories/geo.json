@@ -5,117 +5,117 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما القارة الجليدية التي تضم القطب الجنوبي ولا يسكنها سكان دائمون؟",
-      "a": "أنتاركتيكا",
-      "qid": "geo-200-901",
-      "topic": "قارات ومحيطات",
-      "verified": true,
-      "alt": [
-        "القارة القطبية الجنوبية",
-        "أنتاركتيكا القطبية"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.bas.ac.uk/wp-content/uploads/2015/04/Participants-Handbook-2017.pdf"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم السلسلة الجبلية الشهيرة الممتدّة في شمال الهند ونيبال؟",
-      "a": "الهيمالايا",
-      "qid": "geo-200-902",
-      "topic": "جبال وقمم",
-      "verified": true,
-      "alt": [
-        "جبال الهيمالايا",
-        "هملايا"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://pubs.usgs.gov/gip/dynamic/understanding.html"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم النهر الذي يمر بمدينة بغداد؟",
-      "a": "دجلة",
-      "qid": "geo-200-903",
-      "topic": "أنهار وبحيرات",
-      "verified": true,
-      "alt": [
-        "نهر دجلة"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?frame=87&mission=STS078&roll=740"
-    },
-    {
-      "p": 200,
-      "q": "في أي قارة تقع الصحراء الكبرى؟",
-      "a": "أفريقيا",
-      "qid": "geo-200-904",
-      "topic": "صحاري وغابات",
-      "verified": true,
-      "alt": [
-        "قارة أفريقيا",
-        "إفريقيا"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://science.nasa.gov/blogs/earth-matters/2012/11/02/dune-gallery/"
-    },
-    {
-      "p": 200,
-      "q": "ما اسم الدولة الجزيرة المرتبطة بالسعودية عبر جسر؟",
-      "a": "البحرين",
-      "qid": "geo-200-905",
-      "topic": "جزر وأرخبيلات",
-      "verified": true,
-      "alt": [
-        "مملكة البحرين"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.iga.gov.bh/Media/Pdf-Section/Bahrain_in_figures_Booklet.pdf"
-    },
-    {
-      "p": 200,
-      "q": "ماذا نسمي حبات الجليد الصلبة التي تسقط مع المطر؟",
-      "a": "البرَد",
-      "qid": "geo-200-906",
-      "topic": "مناخ وأقاليم",
-      "verified": true,
-      "alt": [
-        "برد",
-        "حبات البرد"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.weather.gov/key/glossary"
-    },
-    {
-      "p": 200,
-      "q": "ما القناة المصرية التي تصل البحر المتوسط بالبحر الأحمر؟",
-      "a": "قناة السويس",
-      "qid": "geo-200-907",
+      "q": "ما اسم المضيق الذي يفصل اليمن عن جيبوتي؟",
+      "a": "باب المندب",
+      "qid": "geo-200-911",
       "topic": "مضائق وحدود",
       "verified": true,
       "alt": [
-        "السويس"
+        "مضيق باب المندب"
       ],
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.suezcanal.gov.eg/Arabic/About/SuezCanal/Pages/AboutSuezCanal.aspx"
+      "sourceUrl": "https://www.eia.gov/todayinenergy/detail.php?id=32352"
     },
     {
       "p": 200,
-      "q": "ما اسم سلسلة الأمواج التي قد يولدها زلزال قوي تحت البحر؟",
-      "a": "تسونامي",
-      "qid": "geo-200-908",
+      "q": "ما السلسلة الجبلية التي تمتد عبر المغرب والجزائر وتونس؟",
+      "a": "الأطلس",
+      "qid": "geo-200-912",
+      "topic": "جبال وقمم",
+      "verified": true,
+      "alt": [
+        "جبال الأطلس"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_Africa_s_Atlas_Mountains"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم النهر الذي يشق مدينة لندن؟",
+      "a": "التايمز",
+      "qid": "geo-200-913",
+      "topic": "أنهار وبحيرات",
+      "verified": true,
+      "alt": [
+        "نهر التايمز",
+        "التيمز"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://pla.co.uk/visiting-thames"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الصحراء الممتدة في جنوب منغوليا وشمال الصين؟",
+      "a": "غوبي",
+      "qid": "geo-200-914",
+      "topic": "صحاري وغابات",
+      "verified": true,
+      "alt": [
+        "صحراء غوبي"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/gobi-dust-storm-46908/"
+    },
+    {
+      "p": 200,
+      "q": "ما الدولة الأوروبية الحبيسة التي تضم جبال الألب ومدينتي زيورخ وجنيف؟",
+      "a": "سويسرا",
+      "qid": "geo-200-915",
+      "topic": "دول العالم",
+      "verified": true,
+      "alt": [
+        "سويسرة"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://www.aboutswitzerland.eda.admin.ch/en/geography"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الإقليم العشبي المداري الذي تنتشر فيه أشجار متباعدة ويغطي مساحات واسعة من أفريقيا؟",
+      "a": "السافانا",
+      "qid": "geo-200-916",
+      "topic": "مناخ وأقاليم",
+      "verified": true,
+      "alt": [
+        "إقليم السافانا",
+        "السافانا الأفريقية"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://ucmp.berkeley.edu/exhibits/biomes/grasslands.php"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الحزام الذي تتركز فيه براكين وزلازل المحيط الهادئ؟",
+      "a": "حزام النار",
+      "qid": "geo-200-917",
       "topic": "ظواهر أرضية",
       "verified": true,
       "alt": [
-        "التسونامي"
+        "حلقة النار",
+        "حزام النار الهادئ"
       ],
       "difficultyTarget": 0.8,
-      "sourceUrl": "https://oceanservice.noaa.gov/facts/tsunami.html"
+      "sourceUrl": "https://www.usgs.gov/faqs/what-ring-fire"
+    },
+    {
+      "p": 200,
+      "q": "ما اسم الجزيرة اليمنية الشهيرة بشجرة دم الأخوين؟",
+      "a": "سقطرى",
+      "qid": "geo-200-918",
+      "topic": "جزر وأرخبيلات",
+      "verified": true,
+      "alt": [
+        "جزيرة سقطرى",
+        "سوقطرى"
+      ],
+      "difficultyTarget": 0.8,
+      "sourceUrl": "https://whc.unesco.org/document/168956"
     },
     {
       "p": 400,
       "q": "ما اسم أرخبيل الجزر الإكوادوري الشهير بسلاحفه العملاقة؟",
       "a": "غالاباغوس",
-      "qid": "geo-400-901",
+      "qid": "geo-400-911",
       "topic": "جزر وأرخبيلات",
       "verified": true,
       "alt": [
@@ -128,130 +128,36 @@
     },
     {
       "p": 400,
-      "q": "ما اسم المضيق الذي يفصل اليمن عن جيبوتي؟",
-      "a": "باب المندب",
-      "qid": "geo-400-902",
-      "topic": "مضائق وحدود",
-      "verified": true,
-      "alt": [
-        "مضيق باب المندب"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.eia.gov/todayinenergy/detail.php?id=32352"
-    },
-    {
-      "p": 400,
-      "q": "ما السلسلة الجبلية التي تمتد عبر المغرب والجزائر وتونس؟",
-      "a": "الأطلس",
-      "qid": "geo-400-903",
-      "topic": "جبال وقمم",
-      "verified": true,
-      "alt": [
-        "جبال الأطلس"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_Africa_s_Atlas_Mountains"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم النهر الذي يشق مدينة لندن؟",
-      "a": "التايمز",
-      "qid": "geo-400-904",
-      "topic": "أنهار وبحيرات",
-      "verified": true,
-      "alt": [
-        "نهر التايمز",
-        "التيمز"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://pla.co.uk/visiting-thames"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الصحراء الممتدة في جنوب منغوليا وشمال الصين؟",
-      "a": "غوبي",
-      "qid": "geo-400-905",
-      "topic": "صحاري وغابات",
-      "verified": true,
-      "alt": [
-        "صحراء غوبي"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/gobi-dust-storm-46908/"
-    },
-    {
-      "p": 400,
-      "q": "ما الدولة الأوروبية الحبيسة التي تضم جبال الألب ومدينتي زيورخ وجنيف؟",
-      "a": "سويسرا",
-      "qid": "geo-400-906",
-      "topic": "دول العالم",
-      "verified": true,
-      "alt": [
-        "سويسرة"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.aboutswitzerland.eda.admin.ch/en/geography"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الإقليم العشبي المداري الذي تنتشر فيه أشجار متباعدة ويغطي مساحات واسعة من أفريقيا؟",
-      "a": "السافانا",
-      "qid": "geo-400-907",
-      "topic": "مناخ وأقاليم",
-      "verified": true,
-      "alt": [
-        "إقليم السافانا",
-        "السافانا الأفريقية"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://ucmp.berkeley.edu/exhibits/biomes/grasslands.php"
-    },
-    {
-      "p": 400,
-      "q": "ما اسم الحزام الذي تتركز فيه براكين وزلازل المحيط الهادئ؟",
-      "a": "حزام النار",
-      "qid": "geo-400-908",
-      "topic": "ظواهر أرضية",
-      "verified": true,
-      "alt": [
-        "حلقة النار",
-        "حزام النار الهادئ"
-      ],
-      "difficultyTarget": 0.6,
-      "sourceUrl": "https://www.usgs.gov/faqs/what-ring-fire"
-    },
-    {
-      "p": 600,
       "q": "ما اسم النهر الذي ينبع من لبنان ويجري شمالًا عبر سوريا؟",
       "a": "نهر العاصي",
-      "qid": "geo-600-901",
+      "qid": "geo-400-912",
       "topic": "أنهار وبحيرات",
       "verified": true,
       "alt": [
         "العاصي"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://waterinventory.org/sites/waterinventory.org/files/chapters/Chapter-07-Orontes-River-Basin-web_1.pdf"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم المسطح المائي الذي يحيط بقارة أنتاركتيكا؟",
       "a": "المحيط الجنوبي",
-      "qid": "geo-600-902",
+      "qid": "geo-400-913",
       "topic": "قارات ومحيطات",
       "verified": true,
       "alt": [
         "المحيط المتجمد الجنوبي",
         "محيط القطب الجنوبي"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.bas.ac.uk/about/education-and-schools/antarctic-factsheet/"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم الغابات الشمالية الباردة التي تسودها الأشجار الصنوبرية في سيبيريا وكندا؟",
       "a": "التايغا",
-      "qid": "geo-600-903",
+      "qid": "geo-400-914",
       "topic": "صحاري وغابات",
       "verified": true,
       "alt": [
@@ -262,28 +168,14 @@
         "الغابات البوريالية",
         "الغابة البورية"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/introduction-to-boreas/"
     },
     {
-      "p": 600,
-      "q": "ما اسم الجزيرة اليمنية الشهيرة بشجرة دم الأخوين؟",
-      "a": "سقطرى",
-      "qid": "geo-600-904",
-      "topic": "جزر وأرخبيلات",
-      "verified": true,
-      "alt": [
-        "جزيرة سقطرى",
-        "سوقطرى"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://whc.unesco.org/document/168956"
-    },
-    {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم المضيق الذي يربط بحر إيجه ببحر مرمرة؟",
       "a": "الدردنيل",
-      "qid": "geo-600-905",
+      "qid": "geo-400-915",
       "topic": "مضائق وحدود",
       "verified": true,
       "alt": [
@@ -291,14 +183,56 @@
         "تشاناق قلعة",
         "هيليسبونت"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://earthobservatory.nasa.gov/images/7327/gallipoli-and-dardanelles-strait-turkey"
+    },
+    {
+      "p": 400,
+      "q": "ما التيار الأطلسي الذي ينقل مياه دافئة شمالًا بمحاذاة الساحل الشرقي لأمريكا ويؤثر في مناخ غرب أوروبا؟",
+      "a": "تيار الخليج",
+      "qid": "geo-400-916",
+      "topic": "مناخ وأقاليم",
+      "verified": true,
+      "alt": [
+        "غلف ستريم",
+        "التيار الخليجي"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://cdn.oceanservice.noaa.gov/oceanserviceprod/education/tutorial_currents/lessons/currents_tutorial.pdf"
+    },
+    {
+      "p": 400,
+      "q": "ما البحر شبه المغلق في شمال أوروبا الذي تصب فيه أنهار كثيرة فتقل ملوحته؟",
+      "a": "بحر البلطيق",
+      "qid": "geo-400-917",
+      "topic": "قارات ومحيطات",
+      "verified": true,
+      "alt": [
+        "البلطيق",
+        "بحر البلطيك"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://stateofthebalticsea.helcom.fi/overview/about-the-baltic-sea/"
+    },
+    {
+      "p": 400,
+      "q": "أي نهر تقع على ضفتيه عاصمتا كينشاسا وبرازافيل؟",
+      "a": "نهر الكونغو",
+      "qid": "geo-400-918",
+      "topic": "أنهار وبحيرات",
+      "verified": true,
+      "alt": [
+        "الكونغو",
+        "نهر زائير"
+      ],
+      "difficultyTarget": 0.6,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/kinshasa-and-brazzaville-4329/"
     },
     {
       "p": 600,
       "q": "ما نظام الأخاديد الناتج عن تباعد القشرة الأرضية والممتد من منطقة عفر نحو موزمبيق؟",
       "a": "الصدع الأفريقي الشرقي",
-      "qid": "geo-600-906",
+      "qid": "geo-600-911",
       "topic": "ظواهر أرضية",
       "verified": true,
       "alt": [
@@ -312,23 +246,9 @@
     },
     {
       "p": 600,
-      "q": "ما التيار الأطلسي الذي ينقل مياه دافئة شمالًا بمحاذاة الساحل الشرقي لأمريكا ويؤثر في مناخ غرب أوروبا؟",
-      "a": "تيار الخليج",
-      "qid": "geo-600-907",
-      "topic": "مناخ وأقاليم",
-      "verified": true,
-      "alt": [
-        "غلف ستريم",
-        "التيار الخليجي"
-      ],
-      "difficultyTarget": 0.4,
-      "sourceUrl": "https://cdn.oceanservice.noaa.gov/oceanserviceprod/education/tutorial_currents/lessons/currents_tutorial.pdf"
-    },
-    {
-      "p": 600,
       "q": "ما اسم القمة الهرمية الشهيرة المطلّة على قرية تسرمات في جبال الألب؟",
       "a": "ماترهورن",
-      "qid": "geo-600-908",
+      "qid": "geo-600-912",
       "topic": "جبال وقمم",
       "verified": true,
       "alt": [
@@ -340,24 +260,97 @@
       "sourceUrl": "https://zermatt.swiss/en/p/matterhorn-01tVj000005DoH6IAK"
     },
     {
-      "p": 800,
-      "q": "ما البحر بين السويد ودول البلطيق الذي تختلط فيه المياه البحرية والعذبة فتقل ملوحته؟",
-      "a": "بحر البلطيق",
-      "qid": "geo-800-901",
-      "topic": "قارات ومحيطات",
+      "p": 600,
+      "q": "ما اسم المضيق الذي يفصل جزيرة صقلية عن جنوب إيطاليا؟",
+      "a": "مسينا",
+      "qid": "geo-600-913",
+      "topic": "مضائق وحدود",
       "verified": true,
       "alt": [
-        "البلطيق",
-        "بحر البلطيك"
+        "مضيق مسينا",
+        "مضيق ميسينا"
       ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://stateofthebalticsea.helcom.fi/overview/about-the-baltic-sea/"
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_The_Strait_of_Messina"
+    },
+    {
+      "p": 600,
+      "q": "ما المنخفض الملحي الواسع بين توزر وقبلي في جنوب تونس؟",
+      "a": "شط الجريد",
+      "qid": "geo-600-914",
+      "topic": "أنهار وبحيرات",
+      "verified": true,
+      "alt": [
+        "شط الجريد الكبير"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://rsis.ramsar.org/ris/1699?language=en"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الشريط شبه الجاف الفاصل بين الصحراء الكبرى والسافانا؟",
+      "a": "منطقة الساحل",
+      "qid": "geo-600-915",
+      "topic": "صحاري وغابات",
+      "verified": true,
+      "alt": [
+        "الساحل",
+        "الساحل الأفريقي"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/lake-chad/"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم الرياح الحارة التي تهبّ من الصحراء الكبرى نحو جنوب أوروبا؟",
+      "a": "رياح السيروكو",
+      "qid": "geo-600-916",
+      "topic": "مناخ وأقاليم",
+      "verified": true,
+      "alt": [
+        "السيروكو",
+        "الشلوق",
+        "رياح الشلوق"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names"
+    },
+    {
+      "p": 600,
+      "q": "ما القناة اليونانية الضيقة التي تفصل شبه جزيرة بيلوبونيز عن البر الرئيسي؟",
+      "a": "قناة كورنث",
+      "qid": "geo-600-917",
+      "topic": "مضائق وحدود",
+      "verified": true,
+      "alt": [
+        "قناة كورنثوس",
+        "قناة كورينث",
+        "كورنث",
+        "كورنثوس",
+        "Corinth Canal"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://corinthcanal.com/images/CORINTHIAN_WEEK.pdf"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم التضاريس التي تنشأ من ذوبان الصخر الجيري وتكوّن الكهوف والبالوعات؟",
+      "a": "التضاريس الكارستية",
+      "qid": "geo-600-918",
+      "topic": "ظواهر أرضية",
+      "verified": true,
+      "alt": [
+        "الكارست",
+        "تضاريس الكارست"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-mammoth-cave-national-park"
     },
     {
       "p": 800,
       "q": "ما القمة الإكوادورية التي يفوق بُعدها عن مركز الأرض بُعد قمة إيفرست؟",
       "a": "تشيمبورازو",
-      "qid": "geo-800-902",
+      "qid": "geo-800-911",
       "topic": "جبال وقمم",
       "verified": true,
       "alt": [
@@ -369,50 +362,9 @@
     },
     {
       "p": 800,
-      "q": "ما اسم المضيق الذي يفصل جزيرة صقلية عن جنوب إيطاليا؟",
-      "a": "مسينا",
-      "qid": "geo-800-903",
-      "topic": "مضائق وحدود",
-      "verified": true,
-      "alt": [
-        "مضيق مسينا",
-        "مضيق ميسينا"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_The_Strait_of_Messina"
-    },
-    {
-      "p": 800,
-      "q": "ما المنخفض الملحي الواسع بين توزر وقبلي في جنوب تونس؟",
-      "a": "شط الجريد",
-      "qid": "geo-800-904",
-      "topic": "أنهار وبحيرات",
-      "verified": true,
-      "alt": [
-        "شط الجريد الكبير"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://rsis.ramsar.org/ris/1699?language=en"
-    },
-    {
-      "p": 800,
-      "q": "ما اسم الشريط شبه الجاف الفاصل بين الصحراء الكبرى والسافانا؟",
-      "a": "منطقة الساحل",
-      "qid": "geo-800-905",
-      "topic": "صحاري وغابات",
-      "verified": true,
-      "alt": [
-        "الساحل",
-        "الساحل الأفريقي"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/lake-chad/"
-    },
-    {
-      "p": 800,
       "q": "ما الجزيرة المعروفة بأشد الجزر المأهولة عزلة في جنوب الأطلسي بين البرازيل وجنوب أفريقيا؟",
       "a": "تريستان دا كونا",
-      "qid": "geo-800-906",
+      "qid": "geo-800-912",
       "topic": "جزر وأرخبيلات",
       "verified": true,
       "alt": [
@@ -423,24 +375,9 @@
     },
     {
       "p": 800,
-      "q": "ما اسم الرياح الحارة التي تهبّ من الصحراء الكبرى نحو جنوب أوروبا؟",
-      "a": "رياح السيروكو",
-      "qid": "geo-800-907",
-      "topic": "مناخ وأقاليم",
-      "verified": true,
-      "alt": [
-        "السيروكو",
-        "الشلوق",
-        "رياح الشلوق"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names"
-    },
-    {
-      "p": 800,
       "q": "ما اسم النبع الحار في أيسلندا الذي اشتُقّ منه اسم النوافير الحارة؟",
       "a": "غيسير",
-      "qid": "geo-800-908",
+      "qid": "geo-800-913",
       "topic": "ظواهر أرضية",
       "verified": true,
       "alt": [
@@ -451,55 +388,79 @@
       "sourceUrl": "https://www.south.is/static/files/brochures/south-2015-saman.pdf"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اسم أبعد نقطة في المحيطات عن أي يابسة؟",
       "a": "نقطة نيمو",
-      "qid": "geo-1000-901",
+      "qid": "geo-800-914",
       "topic": "قارات ومحيطات",
       "verified": true,
       "alt": [
         "بوينت نيمو",
         "قطب اللاوصول المحيطي"
       ],
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://oceanservice.noaa.gov/facts/nemo.html"
     },
     {
-      "p": 1000,
-      "q": "أي نهر تقع على ضفتيه عاصمتا كينشاسا وبرازافيل؟",
-      "a": "نهر الكونغو",
-      "qid": "geo-1000-902",
-      "topic": "أنهار وبحيرات",
+      "p": 800,
+      "q": "ما الجزيرة الأيسلندية التي ولدت من ثوران بدأ عام 1963 وأصبحت مختبرًا لاستيطان الكائنات للأرض الجديدة؟",
+      "a": "سورتسي",
+      "qid": "geo-800-915",
+      "topic": "جزر وأرخبيلات",
       "verified": true,
       "alt": [
-        "الكونغو",
-        "نهر زائير"
+        "جزيرة سورتسي"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/kinshasa-and-brazzaville-4329/"
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://whc.unesco.org/en/list/1267"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم الهضبة المرتفعة الواسعة في الأنديز بين بوليفيا وبيرو؟",
+      "a": "ألتيبلانو",
+      "qid": "geo-800-916",
+      "topic": "جبال وقمم",
+      "verified": true,
+      "alt": [
+        "هضبة ألتيبلانو",
+        "الألتيبلانو"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://earthobservatory.nasa.gov/IOTD/view.php?id=1152"
+    },
+    {
+      "p": 800,
+      "q": "ما الرياح الباردة الجافة التي تشتد قرب دلتا الرون وساحل بروفانس الفرنسي؟",
+      "a": "رياح الميسترال",
+      "qid": "geo-800-917",
+      "topic": "مناخ وأقاليم",
+      "verified": true,
+      "alt": [
+        "الميسترال"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names"
+    },
+    {
+      "q": "ما البحر الذي تحدده التيارات المحيطية من جميع الجهات بدل السواحل؟",
+      "a": "بحر سارجاسو",
+      "topic": "قارات ومحيطات",
+      "sourceUrl": "https://oceanservice.noaa.gov/facts/sargassosea.html",
+      "alt": [
+        "سارغاسو",
+        "سارجاسو"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "geo-800-918",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
-      "q": "ما القناة اليونانية الضيقة التي تفصل شبه جزيرة بيلوبونيز عن البر الرئيسي؟",
-      "a": "قناة كورنث",
-      "qid": "geo-1000-903",
-      "topic": "مضائق وحدود",
-      "verified": true,
-      "alt": [
-        "قناة كورنثوس",
-        "قناة كورينث",
-        "كورنث",
-        "كورنثوس",
-        "Corinth Canal"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://corinthcanal.com/images/CORINTHIAN_WEEK.pdf"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم إقليم الشجيرات الغني بالنباتات المتوطنة في منطقة الكاب بجنوب أفريقيا؟",
+      "q": "ما اسم الغطاء الشجيري المتنوع الذي يميز إقليم الكاب النباتي في جنوب أفريقيا؟",
       "a": "الفينبوس",
-      "qid": "geo-1000-904",
+      "qid": "geo-1000-911",
       "topic": "صحاري وغابات",
       "verified": true,
       "alt": [
@@ -509,58 +470,113 @@
       "sourceUrl": "https://pza.sanbi.org/vegetation/fynbos-biome"
     },
     {
-      "p": 1000,
-      "q": "ما الجزيرة الأيسلندية التي ولدت من ثوران بدأ عام 1963 وأصبحت مختبرًا لاستيطان الكائنات للأرض الجديدة؟",
-      "a": "سورتسي",
-      "qid": "geo-1000-905",
-      "topic": "جزر وأرخبيلات",
-      "verified": true,
-      "alt": [
-        "جزيرة سورتسي"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://whc.unesco.org/en/list/1267"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم الهضبة المرتفعة الواسعة في الأنديز بين بوليفيا وبيرو؟",
-      "a": "ألتيبلانو",
-      "qid": "geo-1000-906",
-      "topic": "جبال وقمم",
-      "verified": true,
-      "alt": [
-        "هضبة ألتيبلانو",
-        "الألتيبلانو"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://earthobservatory.nasa.gov/IOTD/view.php?id=1152"
-    },
-    {
-      "p": 1000,
-      "q": "ما الرياح الباردة الجافة التي تشتد قرب دلتا الرون وساحل بروفانس الفرنسي؟",
-      "a": "رياح الميسترال",
-      "qid": "geo-1000-907",
-      "topic": "مناخ وأقاليم",
-      "verified": true,
-      "alt": [
-        "الميسترال"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم التضاريس التي تنشأ من ذوبان الصخر الجيري وتكوّن الكهوف والبالوعات؟",
-      "a": "التضاريس الكارستية",
-      "qid": "geo-1000-908",
+      "q": "ما اسم التل البيضوي الانسيابي الذي شكله الجليد من رواسبه؟",
+      "a": "درملين",
       "topic": "ظواهر أرضية",
-      "verified": true,
+      "sourceUrl": "https://apps.usgs.gov/thesaurus/term-simple.php?code=337&thcode=3",
       "alt": [
-        "الكارست",
-        "تضاريس الكارست"
+        "دروملين",
+        "Drumlin"
       ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-mammoth-cave-national-park"
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما النهر الطبيعي الذي ينقل جزءًا من مياه أورينوكو إلى حوض الأمازون عبر ريو نيغرو؟",
+      "a": "كاسيكياري",
+      "topic": "أنهار وبحيرات",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/when-rivers-take-a-weird-turn-154394/",
+      "alt": [
+        "كاسيكوياري",
+        "كاسيكويري",
+        "Casiquiare"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الرياح الشمالية الشرقية الجافة التي تحمل غبار الصحراء إلى غرب أفريقيا؟",
+      "a": "الهارماتان",
+      "topic": "مناخ وأقاليم",
+      "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/wind/wind-names",
+      "alt": [
+        "هارمتان",
+        "هرمتان",
+        "Harmattan"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الأرخبيل الفرنسي في جنوب المحيط الهندي المعروف بجزر الوحشة؟",
+      "a": "كيرغولين",
+      "topic": "جزر وأرخبيلات",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/kerguelen-islands-89328/",
+      "alt": [
+        "كيرغويلين",
+        "كيرغولن",
+        "Kerguelen"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "في أي جمهورية روسية تقع الحديقة الطبيعية لأعمدة لينا الصخرية؟",
+      "a": "ساخا",
+      "topic": "دول العالم",
+      "sourceUrl": "https://whc.unesco.org/en/list/1299",
+      "alt": [
+        "ياقوتيا",
+        "ياكوتيا",
+        "جمهورية ساخا"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما أكبر بحيرة معروفة تحت الغطاء الجليدي لأنتاركتيكا؟",
+      "a": "بحيرة فوستوك",
+      "topic": "أنهار وبحيرات",
+      "sourceUrl": "https://www.bas.ac.uk/news/team-discovers-antarctic-sub-glacial-lake-from-over-20000-years-ago/",
+      "alt": [
+        "فوستوك",
+        "Vostok"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الخط الجغرافي الحيوي الذي يمر بين بالي ولومبوك ويفصل مجموعات حيوانية مختلفة؟",
+      "a": "خط والاس",
+      "topic": "مضائق وحدود",
+      "sourceUrl": "https://www.kew.org/read-and-watch/alfred-russel-wallace-treasures",
+      "alt": [
+        "خط ولاس",
+        "Wallace Line"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "geo-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

@@ -5,123 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "turkishdrama-200-901",
+      "qid": "turkishdrama-200-911",
       "p": 200,
-      "topic": "حريم السلطان",
-      "q": "في «حريم السلطان»، من السلطان الذي تتنافس نساء القصر على قربه؟",
-      "a": "سليمان القانوني",
-      "alt": [
-        "سليمان",
-        "السلطان سليمان"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "turkishdrama-200-902",
-      "p": 200,
-      "topic": "العشق الممنوع",
-      "q": "في «العشق الممنوع»، ما اسم الزوجة الشابة التي تقع في حب مهند، وفق الدبلجة العربية؟",
-      "a": "سمر",
-      "alt": [
-        "بيهتر",
-        "بيتر",
-        "Bihter"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "turkishdrama-200-903",
-      "p": 200,
-      "topic": "الحفرة",
-      "q": "في «الحفرة»، ما اسم العائلة التي تسيطر على الحي؟",
-      "a": "كوشوفالي",
-      "alt": [
-        "كوتشوفالي",
-        "كوشوفالى",
-        "Koçovalı"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "turkishdrama-200-904",
-      "p": 200,
-      "topic": "حب أعمى",
-      "q": "في «حب أعمى»، ما اسم الشاب الذي يحب نيهان منذ أيام الدراسة؟",
-      "a": "كمال",
-      "alt": [
-        "Kemal"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "turkishdrama-200-905",
-      "p": 200,
-      "topic": "حب للإيجار",
-      "q": "في «حب للإيجار»، ما اسم النادلة التي تدخل اتفاقًا لتجعل رجل أعمال يحبها؟",
-      "a": "دفنة",
-      "alt": [
-        "دافني",
-        "ديفنه",
-        "Defne"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "turkishdrama-200-906",
-      "p": 200,
-      "topic": "الطائر المبكر",
-      "q": "في «الطائر المبكر»، ما اسم الفتاة التي تحلم بأن تصبح كاتبة؟",
-      "a": "سانم",
-      "alt": [
-        "سنام",
-        "Sanem"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "turkishdrama-200-907",
-      "p": 200,
-      "topic": "فاطمة",
-      "q": "في «فاطمة»، ما اسم الرجل الذي تتزوجه البطلة ثم تتطور علاقتها به؟",
-      "a": "كريم",
-      "alt": [
-        "كريم إلغاز",
-        "Kerim"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "turkishdrama-200-908",
-      "p": 200,
-      "topic": "وادي الذئاب",
-      "q": "في «وادي الذئاب»، ما اسم البطل صاحب الهوية الجديدة في الدبلجة العربية؟",
-      "a": "مراد علمدار",
-      "alt": [
-        "بولات علمدار",
-        "بولات ألمدار",
-        "Polat Alemdar"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "turkishdrama-400-901",
-      "p": 400,
       "topic": "حريم السلطان",
       "q": "في «حريم السلطان»، ما اسم الجارية التي تصبح زوجة السلطان، وفق الدبلجة العربية؟",
       "a": "هيام",
@@ -133,11 +18,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-400-902",
-      "p": 400,
+      "qid": "turkishdrama-200-912",
+      "p": 200,
       "topic": "العشق الممنوع",
       "q": "في «العشق الممنوع»، من الأرمل الثري الذي يتزوج البطلة الشابة؟",
       "a": "عدنان",
@@ -146,11 +31,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-400-903",
-      "p": 400,
+      "qid": "turkishdrama-200-913",
+      "p": 200,
       "topic": "الحفرة",
       "q": "في «الحفرة»، من الابن الأصغر الذي يعود إلى عائلته بعد مقتل شقيقه كهرمان؟",
       "a": "ياماش",
@@ -160,11 +45,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-400-904",
-      "p": 400,
+      "qid": "turkishdrama-200-914",
+      "p": 200,
       "topic": "حب أعمى",
       "q": "في «حب أعمى»، من رجل الأعمال الذي تتزوجه نيهان رغم حبها لشخص آخر؟",
       "a": "أمير",
@@ -174,11 +59,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-400-905",
-      "p": 400,
+      "qid": "turkishdrama-200-915",
+      "p": 200,
       "topic": "حب للإيجار",
       "q": "في «حب للإيجار»، من رجل الأعمال الذي تعمل البطلة مساعدة شخصية له؟",
       "a": "عمر",
@@ -189,11 +74,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-400-906",
-      "p": 400,
+      "qid": "turkishdrama-200-916",
+      "p": 200,
       "topic": "الطائر المبكر",
       "q": "في «الطائر المبكر»، ما اسم المصور الذي يعود مؤقتًا لإدارة شركة والده؟",
       "a": "جان",
@@ -203,11 +88,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-400-907",
-      "p": 400,
+      "qid": "turkishdrama-200-917",
+      "p": 200,
       "topic": "فاطمة",
       "q": "في «فاطمة»، ما اسم خطيب البطلة الأول الذي يعمل صيادًا؟",
       "a": "مصطفى",
@@ -216,25 +101,26 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-400-908",
-      "p": 400,
+      "qid": "turkishdrama-200-918",
+      "p": 200,
       "topic": "وادي الذئاب",
-      "q": "ما العالم الإجرامي الذي يتسلل إليه بطل «وادي الذئاب» بهويته الجديدة؟",
-      "a": "المافيا",
+      "q": "ما اسم بطل «وادي الذئاب» الأصلي قبل تغيير وجهه وهويته؟",
+      "a": "علي جاندان",
       "alt": [
-        "عالم المافيا",
-        "مجلس الذئاب"
+        "علي جندان",
+        "علي كاندان",
+        "Ali Candan"
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "turkishdrama-600-901",
-      "p": 600,
+      "qid": "turkishdrama-400-911",
+      "p": 400,
       "topic": "حريم السلطان",
       "q": "في «حريم السلطان»، من صديق السلطان الذي يصعد إلى منصب الصدر الأعظم ويتزوج أخته؟",
       "a": "إبراهيم باشا",
@@ -245,11 +131,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-600-902",
-      "p": 600,
+      "qid": "turkishdrama-400-912",
+      "p": 400,
       "topic": "العشق الممنوع",
       "q": "في «العشق الممنوع»، ما اسم ابنة رجل الأعمال التي تُخطب لمهند؟",
       "a": "نهال",
@@ -259,11 +145,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-600-903",
-      "p": 600,
+      "qid": "turkishdrama-400-913",
+      "p": 400,
       "topic": "الحفرة",
       "q": "في «الحفرة»، ما التجارة التي تمنعها العائلة داخل الحي رغم نشاطها الإجرامي؟",
       "a": "المخدرات",
@@ -272,11 +158,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-600-904",
-      "p": 600,
+      "qid": "turkishdrama-400-914",
+      "p": 400,
       "topic": "حب أعمى",
       "q": "في «حب أعمى»، ما التخصص الهندسي الذي يدرسه البطل؟",
       "a": "هندسة التعدين",
@@ -286,11 +172,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-600-905",
-      "p": 600,
+      "qid": "turkishdrama-400-915",
+      "p": 400,
       "topic": "حب للإيجار",
       "q": "لماذا تقبل البطلة المال والدخول في خطة نريمان في بداية «حب للإيجار»؟",
       "a": "تسديد دين أخيها",
@@ -300,11 +186,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-600-906",
-      "p": 600,
+      "qid": "turkishdrama-400-916",
+      "p": 400,
       "topic": "الطائر المبكر",
       "q": "في «الطائر المبكر»، بأي اسم طائر تلقب البطلة الرجل الغامض الذي قابلته على الشرفة؟",
       "a": "القطرس",
@@ -316,11 +202,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-600-907",
-      "p": 600,
+      "qid": "turkishdrama-400-917",
+      "p": 400,
       "topic": "فاطمة",
       "q": "في «فاطمة»، ما اسم المرأة التي ربت زوج البطلة وتساندها في محنتها؟",
       "a": "مريم",
@@ -331,125 +217,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-600-908",
-      "p": 600,
-      "topic": "وادي الذئاب",
-      "q": "ما اسم بطل «وادي الذئاب» الأصلي قبل تغيير وجهه وهويته؟",
-      "a": "علي جاندان",
-      "alt": [
-        "علي جندان",
-        "علي كاندان",
-        "Ali Candan"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "turkishdrama-800-901",
-      "p": 800,
-      "topic": "حريم السلطان",
-      "q": "في «حريم السلطان»، ما اسم ابنة السلطان الوحيدة من زوجته المفضلة؟",
-      "a": "مهرماه",
-      "alt": [
-        "مهريماه",
-        "مريم",
-        "Mihrimah"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "turkishdrama-800-902",
-      "p": 800,
-      "topic": "العشق الممنوع",
-      "q": "في «العشق الممنوع»، ما اسم السائق الذي يحب ابنة صاحب المنزل ويكتشف العلاقة السرية؟",
-      "a": "بشير",
-      "alt": [
-        "بشیر",
-        "Beşir"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "turkishdrama-800-903",
-      "p": 800,
-      "topic": "الحفرة",
-      "q": "في «الحفرة»، ما الاسم الحقيقي لفارتولو الذي يتبين أنه ابن إدريس؟",
-      "a": "صالح",
-      "alt": [
-        "صالح كوشوفالي",
-        "Salih"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "turkishdrama-800-904",
-      "p": 800,
-      "topic": "حب أعمى",
-      "q": "في «حب أعمى»، ما اسم شقيق نيهان التوأم؟",
-      "a": "أوزان",
-      "alt": [
-        "اوزان",
-        "Ozan"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "turkishdrama-800-905",
-      "p": 800,
-      "topic": "حب للإيجار",
-      "q": "ما المنتجات التي يصممها رجل الأعمال في «حب للإيجار» وتدور حولها شركته؟",
-      "a": "الأحذية",
-      "alt": [
-        "أحذية",
-        "تصميم الأحذية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "turkishdrama-800-906",
-      "p": 800,
-      "topic": "الطائر المبكر",
-      "q": "في أي مجال تعمل وكالة فكري هاريكا التي تلتحق بها البطلة في «الطائر المبكر»؟",
-      "a": "الإعلانات",
-      "alt": [
-        "الدعاية والإعلان",
-        "الدعاية"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "turkishdrama-800-907",
-      "p": 800,
-      "topic": "فاطمة",
-      "q": "إلى أي مدينة كبيرة تنتقل البطلة وعائلة زوجها لبدء حياة جديدة في «فاطمة»؟",
-      "a": "إسطنبول",
-      "alt": [
-        "اسطنبول",
-        "إستانبول"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "turkishdrama-800-908",
-      "p": 800,
+      "qid": "turkishdrama-400-918",
+      "p": 400,
       "topic": "وادي الذئاب",
       "q": "في «وادي الذئاب»، من مسؤول الاستخبارات الذي يدرب البطل ويكلفه بالمهمة السرية؟",
       "a": "أصلان أكبي",
@@ -461,11 +233,124 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "turkishdrama-1000-901",
-      "p": 1000,
+      "qid": "turkishdrama-600-911",
+      "p": 600,
+      "topic": "حريم السلطان",
+      "q": "في «حريم السلطان»، ما اسم ابنة السلطان الوحيدة من زوجته المفضلة؟",
+      "a": "مهرماه",
+      "alt": [
+        "مهريماه",
+        "مريم",
+        "Mihrimah"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-912",
+      "p": 600,
+      "topic": "العشق الممنوع",
+      "q": "في «العشق الممنوع»، ما اسم السائق الذي يحب ابنة صاحب المنزل ويكتشف العلاقة السرية؟",
+      "a": "بشير",
+      "alt": [
+        "بشیر",
+        "Beşir"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-913",
+      "p": 600,
+      "topic": "الحفرة",
+      "q": "في «الحفرة»، ما الاسم الحقيقي لفارتولو الذي يتبين أنه ابن إدريس؟",
+      "a": "صالح",
+      "alt": [
+        "صالح كوشوفالي",
+        "Salih"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-914",
+      "p": 600,
+      "topic": "حب أعمى",
+      "q": "في «حب أعمى»، ما اسم شقيق نيهان التوأم؟",
+      "a": "أوزان",
+      "alt": [
+        "اوزان",
+        "Ozan"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-915",
+      "p": 600,
+      "topic": "حب للإيجار",
+      "q": "ما المنتجات التي يصممها رجل الأعمال في «حب للإيجار» وتدور حولها شركته؟",
+      "a": "الأحذية",
+      "alt": [
+        "أحذية",
+        "تصميم الأحذية"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-916",
+      "p": 600,
+      "topic": "الطائر المبكر",
+      "q": "في أي مجال تعمل وكالة فكري هاريكا التي تلتحق بها البطلة في «الطائر المبكر»؟",
+      "a": "الإعلانات",
+      "alt": [
+        "الدعاية والإعلان",
+        "الدعاية"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-600-917",
+      "p": 600,
+      "topic": "فاطمة",
+      "q": "إلى أي مدينة كبيرة تنتقل البطلة وعائلة زوجها لبدء حياة جديدة في «فاطمة»؟",
+      "a": "إسطنبول",
+      "alt": [
+        "اسطنبول",
+        "إستانبول"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "وادي الذئاب",
+      "q": "من صديق مراد علمدار الذي كان ميماتي ذراعه اليمنى في «وادي الذئاب»؟",
+      "a": "سليمان شاكر",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "alt": [
+        "Süleyman Çakır",
+        "سليمان جكير"
+      ],
+      "verified": true,
+      "p": 600,
+      "qid": "turkishdrama-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "turkishdrama-800-911",
+      "p": 800,
       "topic": "حريم السلطان",
       "q": "في «حريم السلطان»، من الباشا الذي يتزوج ابنة السلطان وتدعمه أمها سياسيًا؟",
       "a": "رستم باشا",
@@ -475,11 +360,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "turkishdrama-1000-902",
-      "p": 1000,
+      "qid": "turkishdrama-800-912",
+      "p": 800,
       "topic": "العشق الممنوع",
       "q": "في «العشق الممنوع»، ما وظيفة الآنسة لميس، المسماة دنيز في النسخة التركية، داخل المنزل؟",
       "a": "مربية الطفلين",
@@ -490,11 +375,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "turkishdrama-1000-903",
-      "p": 1000,
+      "qid": "turkishdrama-800-913",
+      "p": 800,
       "topic": "الحفرة",
       "q": "في «الحفرة»، من جامع القمامة صاحب الذاكرة القوية ومهارة القنص الذي يساند العائلة؟",
       "a": "عليشو",
@@ -505,11 +390,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "turkishdrama-1000-904",
-      "p": 1000,
+      "qid": "turkishdrama-800-914",
+      "p": 800,
       "topic": "حب أعمى",
       "q": "في «حب أعمى»، من المرأة التي تحب البطل ويتبين أنها أخت خصمه؟",
       "a": "أسو",
@@ -520,11 +405,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "turkishdrama-1000-905",
-      "p": 1000,
+      "qid": "turkishdrama-800-915",
+      "p": 800,
       "topic": "حب للإيجار",
       "q": "في مطلع الموسم الثاني من «حب للإيجار»، في أي مدينة إيطالية يعيش رجل الأعمال بعد الانفصال؟",
       "a": "روما",
@@ -533,11 +418,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "turkishdrama-1000-906",
-      "p": 1000,
+      "qid": "turkishdrama-800-916",
+      "p": 800,
       "topic": "الطائر المبكر",
       "q": "في «الطائر المبكر»، ما الجزر التي تحلم البطلة بالانتقال للعيش فيها؟",
       "a": "جزر غالاباغوس",
@@ -549,11 +434,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "turkishdrama-1000-907",
-      "p": 1000,
+      "qid": "turkishdrama-800-917",
+      "p": 800,
       "topic": "فاطمة",
       "q": "في «فاطمة»، ما الغرض الذي تعثر عليه مقدس ويكشف صلة سليم بالاعتداء؟",
       "a": "خاتم خطوبته",
@@ -564,11 +449,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.25
     },
     {
-      "qid": "turkishdrama-1000-908",
-      "p": 1000,
+      "qid": "turkishdrama-800-918",
+      "p": 800,
       "topic": "وادي الذئاب",
       "q": "في ختام المسلسل الأصلي من «وادي الذئاب»، ما اسم الأسطوانة المشفرة التي يريد آمون ما بداخلها؟",
       "a": "كريبتكس",
@@ -578,6 +463,112 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
       "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "حريم السلطان",
+      "q": "في «حريم السلطان»، ما اسم الجاسوسة الصفوية التي تدخل القصر متظاهرة بأنها جارية آشورية؟",
+      "a": "فيروزة",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Muhteşem_Yüzyıl",
+      "alt": [
+        "Firuze"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "العشق الممنوع",
+      "q": "في «العشق الممنوع»، من السائق الذي يرسله حلمي للتجسس على العائلة؟",
+      "a": "سيف",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Aşk-ı_Memnu_(2008_TV_series)",
+      "alt": [
+        "Saif"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الحفرة",
+      "q": "في «الحفرة»، ما اسم ابنة أفسون؟",
+      "a": "ماسال",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Çukur",
+      "alt": [
+        "Masal"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "حب أعمى",
+      "q": "إلى أي مدينة يذهب كمال للعمل في المناجم بعد انفصاله عن نيهان في «حب أعمى»؟",
+      "a": "زونغولداك",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kara_Sevda",
+      "alt": [
+        "Zonguldak",
+        "زونجولداك"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "حب للإيجار",
+      "q": "في «حب للإيجار»، من ابن أخ نريمان الذي تستدعيه ليتقرب من دفنة أثناء غياب عمر؟",
+      "a": "بامير",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiralık_Aşk",
+      "alt": [
+        "Pamir"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الطائر المبكر",
+      "q": "في «الطائر المبكر»، ما اسم حبيبة جان السابقة التي تعمل في الفيزياء بأوروبا؟",
+      "a": "بولين",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Erkenci_Kuş",
+      "alt": [
+        "Polen"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "فاطمة",
+      "q": "في «فاطمة»، إلى أي جزيرة يهرب سليم وأردوغان قبل إعادتهما للمحاكمة؟",
+      "a": "مالطا",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fatmagül%27ün_Suçu_Ne%3F",
+      "alt": [
+        "Malta"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "وادي الذئاب",
+      "q": "من معلم رئيس جهاز الاستخبارات الذي درّب مراد علمدار في «وادي الذئاب»، باسمه التركي؟",
+      "a": "دوغو أشرف أوغلو",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valley_of_the_Wolves_(TV_series)",
+      "alt": [
+        "Doğu Eşrefoğlu",
+        "دوغو إشرف أوغلو"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "turkishdrama-1000-918",
       "difficultyTarget": 0.15
     }
   ]

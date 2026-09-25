@@ -4,142 +4,36 @@
   "icon": "🧿",
   "qs": [
     {
-      "qid": "proverbs-200-901",
+      "qid": "proverbs-200-911",
       "p": 200,
-      "q": "على أي قيمة يحث المثل «البركة في كتر الأيادي»؟",
-      "a": "التعاون",
-      "topic": "التعاون والعلاقات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
-      "alt": [
-        "التكاتف",
-        "المعاونة"
-      ]
-    },
-    {
-      "qid": "proverbs-200-902",
-      "p": 200,
-      "q": "بم ينصح المثل «الباب اللي يجي لك منه الريح سده واستريح»؟",
-      "a": "تجنب مصدر الأذى",
-      "topic": "الحذر والعواقب",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
-      "alt": [
-        "الابتعاد عن أسباب المشاكل"
-      ]
-    },
-    {
-      "qid": "proverbs-200-903",
-      "p": 200,
-      "q": "من يصفه المثل «باب النجار مخلع»؟",
-      "a": "من يهمل صنعته لنفسه",
-      "topic": "العمل والتدبير",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
-      "alt": [
-        "يتقن للناس ويهمل نفسه"
-      ]
-    },
-    {
-      "qid": "proverbs-200-904",
-      "p": 200,
-      "q": "ما الخُلُق السيئ الذي يصفه المثل «حاميها حراميها»؟",
-      "a": "خيانة الأمانة",
-      "topic": "الأخلاق والمشاعر",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
-      "alt": [
-        "سرقة المؤتمن لما يحرسه"
-      ]
-    },
-    {
-      "qid": "proverbs-200-905",
-      "p": 200,
-      "q": "ما الذي يعيبه المثل «كبر البصل وادور ونسي حاله الأول»؟",
-      "a": "نسيان الماضي بعد الثراء",
-      "topic": "المال والقناعة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/21/",
-      "alt": [
-        "التنكر للأصل بعد الغنى"
-      ]
-    },
-    {
-      "qid": "proverbs-200-906",
-      "p": 200,
-      "q": "أي شعور تعبّر عنه عبارة «يا أرض انشقي وابلعيني»؟",
-      "a": "الخجل الشديد",
-      "topic": "الأخلاق والمشاعر",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/27/",
-      "alt": [
-        "الحرج",
-        "الخجل"
-      ]
-    },
-    {
-      "qid": "proverbs-200-907",
-      "p": 200,
-      "q": "ماذا يفضّل المثل «ابطي ولا تخطي» على السرعة؟",
-      "a": "التمهل مع الصواب",
-      "topic": "المعرفة والخبرة",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/1/",
-      "alt": [
-        "التأني لتجنب الخطأ"
-      ]
-    },
-    {
-      "qid": "proverbs-200-908",
-      "p": 200,
-      "q": "ما الذي يحذر منه المثل «البرميل الفارغ يرن»؟",
-      "a": "الادعاء بلا معرفة",
-      "topic": "المظاهر والادعاء",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
-      "alt": [
-        "كثرة الكلام وقلة العلم"
-      ]
-    },
-    {
-      "qid": "proverbs-400-901",
-      "p": 400,
       "q": "أي تصرف يصفه المثل «آخر المعروف ينضرب بالكفوف»؟",
       "a": "مجازاة الإحسان بالإساءة",
       "topic": "الأخلاق والمشاعر",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/1/",
       "alt": [
         "نكران الجميل"
       ]
     },
     {
-      "qid": "proverbs-400-902",
-      "p": 400,
+      "qid": "proverbs-200-912",
+      "p": 200,
       "q": "ما التناقض الذي يصفه المثل «بره وردة وجوه قردة»؟",
       "a": "حسن الظاهر وقبح الباطن",
       "topic": "المظاهر والادعاء",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/2/"
     },
     {
-      "qid": "proverbs-400-903",
-      "p": 400,
+      "qid": "proverbs-200-913",
+      "p": 200,
       "q": "ما المقصود بقولهم «البساط أحمدي» بين الضيوف؟",
       "a": "ترك التكلف",
       "topic": "التعاون والعلاقات",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/2/",
       "alt": [
         "التبسط في الجلسة",
@@ -147,143 +41,143 @@
       ]
     },
     {
-      "qid": "proverbs-400-904",
-      "p": 400,
+      "qid": "proverbs-200-914",
+      "p": 200,
       "q": "أي معروف يرفضه قائل «لا بصلتك ولا عيني تدمع»؟",
       "a": "معروف يتبعه أذى",
       "topic": "الحذر والعواقب",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/22/",
       "alt": [
         "مساعدة يعقبها ضرر"
       ]
     },
     {
-      "qid": "proverbs-400-905",
-      "p": 400,
+      "qid": "proverbs-200-915",
+      "p": 200,
       "q": "ما الفكرة التي يوضحها المثل «حبة تتقل الميزان»؟",
       "a": "للشيء الصغير أثر",
       "topic": "العمل والتدبير",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/5/",
       "alt": [
         "القليل مؤثر"
       ]
     },
     {
-      "qid": "proverbs-400-906",
-      "p": 400,
+      "qid": "proverbs-200-916",
+      "p": 200,
       "q": "ماذا يعني قولهم «العارف لا يُعرّف»؟",
       "a": "الخبير مستغن عن الشرح",
       "topic": "المعرفة والخبرة",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/17/",
       "alt": [
         "من يعلم لا يحتاج توضيحا"
       ]
     },
     {
-      "qid": "proverbs-400-907",
-      "p": 400,
+      "qid": "proverbs-200-917",
+      "p": 200,
       "q": "ماذا يصف المثل «حبر في ورق» حين يقال عن عهد؟",
       "a": "وعد مكتوب بلا تنفيذ",
       "topic": "الأخلاق والمشاعر",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/5/",
       "alt": [
         "عهد لا يعمل به"
       ]
     },
     {
-      "qid": "proverbs-400-908",
-      "p": 400,
+      "qid": "proverbs-200-918",
+      "p": 200,
       "q": "على أي فضيلة يحث المثل «بخمسة قهوة تقضي الشهوة»؟",
       "a": "القناعة بالقليل",
       "topic": "المال والقناعة",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://www.safahat.org/books/75241938/2/",
       "alt": [
         "الرضا بالمتاح"
       ]
     },
     {
-      "qid": "proverbs-600-901",
-      "p": 600,
+      "qid": "proverbs-400-911",
+      "p": 400,
       "q": "لماذا يقال «إبريق انكسر وآدي بزبوزه» لمن يطلب الدليل؟",
       "a": "لأن الدليل ظاهر",
       "topic": "المعرفة والخبرة",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/75241938/1/",
       "alt": [
         "الأمر واضح"
       ]
     },
     {
-      "qid": "proverbs-600-902",
-      "p": 600,
+      "qid": "proverbs-400-912",
+      "p": 400,
       "q": "ما المقصود بالمثل «بخمسة بصل، بصل بخمسة»؟",
       "a": "النتيجة واحدة",
       "topic": "العمل والتدبير",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/75241938/2/",
       "alt": [
         "لا فرق بين الأمرين"
       ]
     },
     {
-      "qid": "proverbs-600-903",
-      "p": 600,
+      "qid": "proverbs-400-913",
+      "p": 400,
       "q": "أي سلوك يمدحه المثل «حبيبك يمضغ لك الزلط»؟",
       "a": "التغاضي عن زلات المحبوب",
       "topic": "التعاون والعلاقات",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/75241938/5/",
       "alt": [
         "ستر عيوب من يحب"
       ]
     },
     {
-      "qid": "proverbs-600-904",
-      "p": 600,
+      "qid": "proverbs-400-914",
+      "p": 400,
       "q": "ما الذي يعيبه المثل «ما تزغرطوا إلا لما تتقمطوا»؟",
       "a": "الفرح قبل تحقق المطلوب",
       "topic": "الحذر والعواقب",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/75241938/23/",
       "alt": [
         "الابتهاج قبل الأوان"
       ]
     },
     {
-      "qid": "proverbs-600-905",
-      "p": 600,
+      "qid": "proverbs-400-915",
+      "p": 400,
       "q": "ما المسؤولية التي يبرزها المثل «كبير القوم خادمهم»؟",
       "a": "خدمة الجماعة",
       "topic": "التعاون والعلاقات",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/75241938/21/",
       "alt": [
         "رعاية مصالح القوم"
       ]
     },
     {
-      "qid": "proverbs-600-906",
-      "p": 600,
+      "qid": "proverbs-400-916",
+      "p": 400,
       "q": "بم تُمدح العطية في المثل «بشاشة الوجه عطية تانية»؟",
       "a": "حسن استقبال الناس",
       "topic": "الأخلاق والمشاعر",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/75241938/2/",
       "alt": [
         "البشاشة",
@@ -291,137 +185,242 @@
       ]
     },
     {
-      "qid": "proverbs-600-907",
-      "p": 600,
+      "qid": "proverbs-400-917",
+      "p": 400,
       "q": "ما الذي يدعو المثل «لا تدم ولا تشكر إلا بعد سنة وست أشهر» إلى انتظاره قبل الحكم؟",
       "a": "التجربة الكافية",
       "topic": "المعرفة والخبرة",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/75241938/22/",
       "alt": [
         "المعرفة بالتجربة"
       ]
     },
     {
-      "qid": "proverbs-600-908",
-      "p": 600,
+      "qid": "proverbs-400-918",
+      "p": 400,
       "q": "من يصفه المثل «قاعد على نخ وعمال يجخ»؟",
       "a": "المتفاخر بما لا يملك",
       "topic": "المظاهر والادعاء",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://www.safahat.org/books/75241938/20/",
       "alt": [
         "متكبر يكذبه حاله"
       ]
     },
     {
-      "qid": "proverbs-800-901",
-      "p": 800,
+      "qid": "proverbs-600-911",
+      "p": 600,
       "q": "ما المقصود بالمثل «الحاجة الدايرة ما عليهاش نور»؟",
       "a": "المألوف يفقد بريقه",
       "topic": "المظاهر والادعاء",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/75241938/5/",
       "alt": [
         "المتاح دائما تقل روعته"
       ]
     },
     {
-      "qid": "proverbs-800-902",
-      "p": 800,
+      "qid": "proverbs-600-912",
+      "p": 600,
       "q": "ما العبء الأثقل في المثل «قافلة فايتة ولا حمار مربوط»؟",
       "a": "النفقة المستمرة",
       "topic": "المال والقناعة",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/75241938/20/",
       "alt": [
         "إعالة واحد دائما"
       ]
     },
     {
-      "qid": "proverbs-800-903",
-      "p": 800,
+      "qid": "proverbs-600-913",
+      "p": 600,
       "q": "من يُضرب فيه المثل «ما التقى له عيلة جاب له خيلة»؟",
       "a": "من يستبدل بما لا يعوض",
       "topic": "العمل والتدبير",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/75241938/23/",
       "alt": [
         "من يتخذ بديلا غير مناسب"
       ]
     },
     {
-      "qid": "proverbs-800-904",
-      "p": 800,
+      "qid": "proverbs-600-914",
+      "p": 600,
       "q": "ما المقصود بـ«الجواب» في المثل «يا أبو الحسين اقرا الجواب»؟",
       "a": "الرسالة",
       "topic": "ألفاظ الأمثال",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/75241938/27/",
       "alt": [
         "الكتاب المرسل"
       ]
     },
     {
-      "qid": "proverbs-800-905",
-      "p": 800,
+      "qid": "proverbs-600-915",
+      "p": 600,
       "q": "على ماذا يحث المثل «بدال ما تعمل توب بفرحة هات توب وطرحة»؟",
       "a": "حسن توزيع النفقة",
       "topic": "المال والقناعة",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/75241938/2/",
       "alt": [
         "تقديم الحاجة على البذخ"
       ]
     },
     {
-      "qid": "proverbs-800-906",
-      "p": 800,
+      "qid": "proverbs-600-916",
+      "p": 600,
       "q": "ماذا يعني المثل «بصلة الحب خروف»؟",
       "a": "القليل من المحبوب كثير",
       "topic": "التعاون والعلاقات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/75241938/2/",
       "alt": [
         "تعظم عطية من نحب"
       ]
     },
     {
-      "qid": "proverbs-800-907",
-      "p": 800,
+      "qid": "proverbs-600-917",
+      "p": 600,
       "q": "ما المقصود بـ«النبوت» في المثل «هي المحبة بالنبوت»؟",
       "a": "عصا غليظة",
       "topic": "ألفاظ الأمثال",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/75241938/5/",
       "alt": [
         "هراوة"
       ]
     },
     {
-      "qid": "proverbs-800-908",
-      "p": 800,
+      "qid": "proverbs-600-918",
+      "p": 600,
       "q": "ما الخطأ الذي يعيبه المثل «آخر الزمر طيط»؟",
       "a": "عمل بلا نتيجة نافعة",
       "topic": "الحذر والعواقب",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://www.safahat.org/books/75241938/1/",
       "alt": [
         "ضياع الجهد بلا ثمرة"
       ]
     },
     {
-      "qid": "proverbs-1000-901",
+      "qid": "proverbs-800-911",
+      "p": 800,
+      "q": "من يصفه المثل «يا تابع الزول يا خايب الرجا»؟",
+      "a": "المغتر بحسن الهيئة",
+      "topic": "المظاهر والادعاء",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/27/",
+      "alt": [
+        "من يحكم بالمظهر وحده"
+      ]
+    },
+    {
+      "qid": "proverbs-800-912",
+      "p": 800,
+      "q": "أي حال يصفه المثل «الحب ملاحق القدوس» عند الحديث عن الأشغال؟",
+      "a": "تتابع العمل وكثرته",
+      "topic": "العمل والتدبير",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "alt": [
+        "عمل متلاحق لا ينقطع"
+      ]
+    },
+    {
+      "qid": "proverbs-800-913",
+      "p": 800,
+      "q": "ما الخُلُق الذي يعيبه المثل «يا با علمني الرزالة، قال: اللي تقوله عيده»؟",
+      "a": "إثقال الناس بتكرار الحديث",
+      "topic": "التعاون والعلاقات",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/27/",
+      "alt": [
+        "إعادة الكلام الممل"
+      ]
+    },
+    {
+      "qid": "proverbs-800-914",
+      "p": 800,
+      "q": "ما معنى قولهم «لا تهرف بما لا تعرف» بحسب شرح أحمد تيمور؟",
+      "a": "لا تمدح قبل التجربة",
+      "topic": "المعرفة والخبرة",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
+      "alt": [
+        "لا تبالغ بمدح مجهول"
+      ]
+    },
+    {
+      "qid": "proverbs-800-915",
+      "p": 800,
+      "q": "ماذا يفضّل المثل «بحر سنة ولا تقبل يوم» عند السفر؟",
+      "a": "الراحة على قصر المسافة",
+      "topic": "الحذر والعواقب",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "alt": [
+        "طريق طويل مريح"
+      ]
+    },
+    {
+      "qid": "proverbs-800-916",
+      "p": 800,
+      "q": "على أي مادة يدل «النخ» في المثل «كان على نخ وصبح على حصير»؟",
+      "a": "نسيج خشن من الحلفاء",
+      "topic": "ألفاظ الأمثال",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/21/",
+      "alt": [
+        "نسيج الحلفاء"
+      ]
+    },
+    {
+      "qid": "proverbs-800-917",
+      "p": 800,
+      "q": "ما المقصود بقولهم «لا ألف لي ولا ألف لك»؟",
+      "a": "كلاهما يفخر بمال موهوم",
+      "topic": "المال والقناعة",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
+      "alt": [
+        "التفاخر الكاذب بالمال"
+      ]
+    },
+    {
+      "q": "من المقصود بلفظ «باريها» في المثل «أعط القوس باريها»؟",
+      "a": "صانع القوس",
+      "topic": "ألفاظ الأمثال",
+      "sourceUrl": "https://ddl.ae/uploads/books/167.html",
+      "alt": [
+        "من يصنع القوس"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "proverbs-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "proverbs-1000-911",
       "p": 1000,
       "q": "ماذا تعني «المداعي» في المثل السكندري «حافية وسابقة المداعي»؟",
       "a": "داعيات الأعراس",
@@ -434,95 +433,105 @@
       ]
     },
     {
-      "qid": "proverbs-1000-902",
-      "p": 1000,
-      "q": "من يصفه المثل «يا تابع الزول يا خايب الرجا»؟",
-      "a": "المغتر بحسن الهيئة",
-      "topic": "المظاهر والادعاء",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.safahat.org/books/75241938/27/",
-      "alt": [
-        "من يحكم بالمظهر وحده"
-      ]
-    },
-    {
-      "qid": "proverbs-1000-903",
-      "p": 1000,
-      "q": "أي حال يصفه المثل «الحب ملاحق القدوس» عند الحديث عن الأشغال؟",
-      "a": "تتابع العمل وكثرته",
+      "q": "في الرواية المشهورة لمثل «رجع بخفّي حنين»، ما حرفة حنين؟",
+      "a": "إسكافي",
       "topic": "العمل والتدبير",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.safahat.org/books/75241938/5/",
+      "sourceUrl": "https://ddl.ae/uploads/books/167.html",
       "alt": [
-        "عمل متلاحق لا ينقطع"
-      ]
+        "صانع أحذية",
+        "صانع الخفاف"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-912",
+      "difficultyTarget": 0.15
     },
     {
-      "qid": "proverbs-1000-904",
-      "p": 1000,
-      "q": "ما الخُلُق الذي يعيبه المثل «يا با علمني الرزالة، قال: اللي تقوله عيده»؟",
-      "a": "إثقال الناس بتكرار الحديث",
-      "topic": "التعاون والعلاقات",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.safahat.org/books/75241938/27/",
+      "q": "ما اسم القصر الذي بناه سنمار في القصة المرتبطة بالمثل عن جزائه؟",
+      "a": "الخورنق",
+      "topic": "العمل والتدبير",
+      "sourceUrl": "https://www.islamweb.net/ar/library/content/122/4031/",
       "alt": [
-        "إعادة الكلام الممل"
-      ]
+        "قصر الخورنق"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-913",
+      "difficultyTarget": 0.15
     },
     {
-      "qid": "proverbs-1000-905",
-      "p": 1000,
-      "q": "ما معنى قولهم «لا تهرف بما لا تعرف» بحسب شرح أحمد تيمور؟",
-      "a": "لا تمدح قبل التجربة",
-      "topic": "المعرفة والخبرة",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
-      "alt": [
-        "لا تبالغ بمدح مجهول"
-      ]
-    },
-    {
-      "qid": "proverbs-1000-906",
-      "p": 1000,
-      "q": "ماذا يفضّل المثل «بحر سنة ولا تقبل يوم» عند السفر؟",
-      "a": "الراحة على قصر المسافة",
+      "q": "ما الذي كسره الكسعي ثم ندم عليه في قصة المثل؟",
+      "a": "قوسه",
       "topic": "الحذر والعواقب",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.safahat.org/books/75241938/2/",
+      "sourceUrl": "https://islamport.com/l/adb/5494/4387.htm",
       "alt": [
-        "طريق طويل مريح"
-      ]
+        "القوس"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-914",
+      "difficultyTarget": 0.15
     },
     {
-      "qid": "proverbs-1000-907",
-      "p": 1000,
-      "q": "على أي مادة يدل «النخ» في المثل «كان على نخ وصبح على حصير»؟",
-      "a": "نسيج خشن من الحلفاء",
-      "topic": "ألفاظ الأمثال",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.safahat.org/books/75241938/21/",
+      "q": "ما الحيوان الذي كانت عليه براقش في الرواية المشهورة لمثل جنايتها على أهلها؟",
+      "a": "كلبة",
+      "topic": "الحذر والعواقب",
+      "sourceUrl": "https://ablibrary.net/book_content/b/14229/180",
       "alt": [
-        "نسيج الحلفاء"
-      ]
+        "كلب"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-915",
+      "difficultyTarget": 0.15
     },
     {
-      "qid": "proverbs-1000-908",
-      "p": 1000,
-      "q": "ما المقصود بقولهم «لا ألف لي ولا ألف لك»؟",
-      "a": "كلاهما يفخر بمال موهوم",
-      "topic": "المال والقناعة",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://www.safahat.org/books/75241938/22/",
+      "q": "من علق قلادة ليتعرف إلى نفسه، وضرب به المثل في الحمق؟",
+      "a": "هبنقة",
+      "topic": "المظاهر والادعاء",
+      "sourceUrl": "https://ddl.ae/uploads/books/167.html",
       "alt": [
-        "التفاخر الكاذب بالمال"
-      ]
+        "هبنقة القيسي"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "في قصة زواج شن وطبقة، ماذا قصد بسؤاله لرفيقه «أتحملني أم أحملك»؟",
+      "a": "نتبادل الحديث في الطريق",
+      "topic": "التعاون والعلاقات",
+      "sourceUrl": "https://ddl.ae/uploads/books/167.html",
+      "alt": [
+        "أتحدثك أم تحدثني",
+        "أتحدثني أم أحدثك"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "بم استتر الجيش القادم في قصة زرقاء اليمامة ليخفي نفسه عن نظرها؟",
+      "a": "الشجر",
+      "topic": "المعرفة والخبرة",
+      "sourceUrl": "https://islamport.com/l/adb/5494/586.htm",
+      "alt": [
+        "الأشجار",
+        "أغصان الشجر"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "proverbs-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

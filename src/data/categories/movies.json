@@ -4,133 +4,8 @@
   "name": "أفلام عالمية",
   "qs": [
     {
-      "qid": "movies-200-901",
+      "qid": "movies-200-911",
       "p": 200,
-      "topic": "هاري بوتر",
-      "q": "في «هاري بوتر»، في أفلام هاري بوتر، ما اسم مدرسة السحر التي ينضم إليها البطل؟",
-      "a": "هوغوورتس",
-      "alt": [
-        "هوجوورتس",
-        "هوجورتس",
-        "Hogwarts"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "movies-200-902",
-      "p": 200,
-      "topic": "الحديقة الجوراسية",
-      "q": "ما المخلوقات المنقرضة التي يعيد العلماء إحياءها في «الحديقة الجوراسية»؟",
-      "a": "الديناصورات",
-      "alt": [
-        "ديناصورات"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "movies-200-903",
-      "p": 200,
-      "topic": "تايتانيك",
-      "q": "في «تايتانيك»، ما اسم الفتاة التي تقع في حب جاك على السفينة؟",
-      "a": "روز",
-      "alt": [
-        "Rose"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "movies-200-904",
-      "p": 200,
-      "topic": "استهلال",
-      "q": "في «Inception»، إلى ماذا يدخل فريق كوب لسرقة الأسرار من عقول الآخرين؟",
-      "a": "الأحلام",
-      "alt": [
-        "أحلامهم",
-        "الحلم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "movies-200-905",
-      "p": 200,
-      "topic": "ماتريكس",
-      "q": "في «ماتريكس»، أي حبة يختار البطل ليكتشف حقيقة العالم؟",
-      "a": "الحبة الحمراء",
-      "alt": [
-        "الحمراء",
-        "الأحمر"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "movies-200-906",
-      "p": 200,
-      "topic": "سيد الخواتم",
-      "q": "في «رفقة الخاتم»، ما اسم الساحر الرمادي الذي يرشد الهوبيت؟",
-      "a": "غاندالف",
-      "alt": [
-        "جاندالف",
-        "Gandalf"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "movies-200-907",
-      "p": 200,
-      "topic": "قراصنة الكاريبي",
-      "q": "ما اسم القرصان الماكر بطل سلسلة «قراصنة الكاريبي»؟",
-      "a": "جاك سبارو",
-      "alt": [
-        "Jack Sparrow",
-        "جاك سبارو الكابتن"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "movies-200-908",
-      "p": 200,
-      "topic": "العودة إلى المستقبل",
-      "q": "في «العودة إلى المستقبل»، ما نوع الآلة التي يصنعها دوك من سيارة؟",
-      "a": "آلة زمن",
-      "alt": [
-        "آلة للسفر عبر الزمن",
-        "آلة سفر زمني"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "movies-400-901",
-      "p": 400,
-      "topic": "هاري بوتر",
-      "q": "في «حجر الفيلسوف»، إلى أي منزل ينضم هاري وصديقاه في المدرسة؟",
-      "a": "غريفندور",
-      "alt": [
-        "جريفندور",
-        "Gryffindor"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "movies-400-902",
-      "p": 400,
       "topic": "الحديقة الجوراسية",
       "q": "في «الحديقة الجوراسية»، في الفيلم الأول، ما المادة التي حفظت البعوضة الحاملة للحمض النووي القديم؟",
       "a": "الكهرمان",
@@ -139,97 +14,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "movies-400-903",
-      "p": 400,
-      "topic": "تايتانيك",
-      "q": "في «تايتانيك»، ما مهنة جاك التي تمكّنه من رسم حبيبته؟",
-      "a": "رسام",
-      "alt": [
-        "فنان تشكيلي",
-        "رسم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "movies-400-904",
-      "p": 400,
-      "topic": "استهلال",
-      "q": "في نهاية «Inception»، ما الجسم الصغير الذي يديره كوب لاختبار الواقع؟",
-      "a": "بلبل دوار",
-      "alt": [
-        "دوامة",
-        "البلبل",
-        "خذروف",
-        "النحلة الدوارة"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "movies-400-905",
-      "p": 400,
-      "topic": "ماتريكس",
-      "q": "في «ماتريكس»، ما الاسم الحركي للمبرمج توماس أندرسون؟",
-      "a": "نيو",
-      "alt": [
-        "Neo"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "movies-400-906",
-      "p": 400,
-      "topic": "سيد الخواتم",
-      "q": "في «رفقة الخاتم»، من الهوبيت الذي يتطوع لحمل الخاتم إلى موردور؟",
-      "a": "فرودو باغنز",
-      "alt": [
-        "فرودو",
-        "Frodo Baggins"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "movies-400-907",
-      "p": 400,
-      "topic": "قراصنة الكاريبي",
-      "q": "ما اسم سفينة القرصان الرئيسية في الجزء الأول من «قراصنة الكاريبي»؟",
-      "a": "بلاك بيرل",
-      "alt": [
-        "اللؤلؤة السوداء",
-        "Black Pearl"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "movies-400-908",
-      "p": 400,
-      "topic": "العودة إلى المستقبل",
-      "q": "في «العودة إلى المستقبل»، ما اسم العالم صديق مارتي؟",
-      "a": "إيميت براون",
-      "alt": [
-        "دوك براون",
-        "Doc Brown",
-        "Emmett Brown"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
-      "verified": true,
-      "difficultyTarget": 0.6
-    },
-    {
-      "qid": "movies-600-901",
-      "p": 600,
+      "qid": "movies-200-912",
+      "p": 200,
       "topic": "هاري بوتر",
       "q": "في «حجر الفيلسوف»، ما اسم المرآة التي تعرض أعمق رغبات من ينظر إليها؟",
       "a": "مرآة إريسيد",
@@ -240,25 +29,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "movies-600-902",
-      "p": 600,
-      "topic": "الحديقة الجوراسية",
-      "q": "في «الحديقة الجوراسية»، في الفيلم الأول، من المبرمج الذي يعطّل أنظمة الأمان ليسرق الأجنة؟",
-      "a": "دينيس نيدري",
-      "alt": [
-        "نيدري",
-        "Dennis Nedry"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "movies-600-903",
-      "p": 600,
+      "qid": "movies-200-913",
+      "p": 200,
       "topic": "تايتانيك",
       "q": "ما اسم القلادة الزرقاء التي يبحث عنها فريق استكشاف الحطام في «تايتانيك»؟",
       "a": "قلب المحيط",
@@ -267,11 +42,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "movies-600-904",
-      "p": 600,
+      "qid": "movies-200-914",
+      "p": 200,
       "topic": "استهلال",
       "q": "في «Inception»، من طالبة العمارة التي تصمم عوالم المهمة؟",
       "a": "أريادني",
@@ -282,11 +57,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "movies-600-905",
-      "p": 600,
+      "qid": "movies-200-915",
+      "p": 200,
       "topic": "ماتريكس",
       "q": "في «ماتريكس»، من قائد الطاقم الذي يؤمن بأن البطل هو المختار؟",
       "a": "مورفيوس",
@@ -295,26 +70,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "movies-600-906",
-      "p": 600,
-      "topic": "سيد الخواتم",
-      "q": "في «رفقة الخاتم»، ما الجبل الذي يمكن في نيرانه تدمير الخاتم؟",
-      "a": "جبل الهلاك",
-      "alt": [
-        "جبل الموت",
-        "Mount Doom",
-        "أورودروين"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
-      "verified": true,
-      "difficultyTarget": 0.4
-    },
-    {
-      "qid": "movies-600-907",
-      "p": 600,
+      "qid": "movies-200-916",
+      "p": 200,
       "topic": "قراصنة الكاريبي",
       "q": "في «لعنة اللؤلؤة السوداء»، ما حرفة ويل ترنر قبل انطلاقه في المغامرة؟",
       "a": "الحدادة",
@@ -324,11 +84,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "movies-600-908",
-      "p": 600,
+      "qid": "movies-200-917",
+      "p": 200,
       "topic": "العودة إلى المستقبل",
       "q": "في «العودة إلى المستقبل»، ما الظاهرة التي يستغلها دوك لتوفير طاقة رحلة العودة من الماضي؟",
       "a": "ضربة برق",
@@ -339,11 +99,39 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "movies-800-901",
-      "p": 800,
+      "qid": "movies-200-918",
+      "p": 200,
+      "topic": "سيد الخواتم",
+      "q": "في «رفقة الخاتم»، أي ساحر يحبس صديقه في آيزنغارد بعد تحالفه مع ساورون؟",
+      "a": "سارومان",
+      "alt": [
+        "سارومون",
+        "Saruman"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "verified": true,
+      "difficultyTarget": 0.8
+    },
+    {
+      "qid": "movies-400-911",
+      "p": 400,
+      "topic": "الحديقة الجوراسية",
+      "q": "في «الحديقة الجوراسية»، في الفيلم الأول، من المبرمج الذي يعطّل أنظمة الأمان ليسرق الأجنة؟",
+      "a": "دينيس نيدري",
+      "alt": [
+        "نيدري",
+        "Dennis Nedry"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "verified": true,
+      "difficultyTarget": 0.6
+    },
+    {
+      "qid": "movies-400-912",
+      "p": 400,
       "topic": "هاري بوتر",
       "q": "في «حجر الفيلسوف»، من الخيميائي الذي صنع الحجر؟",
       "a": "نيكولاس فلاميل",
@@ -353,11 +141,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "movies-800-902",
-      "p": 800,
+      "qid": "movies-400-913",
+      "p": 400,
       "topic": "الحديقة الجوراسية",
       "q": "في «الحديقة الجوراسية»، ما اسم الجزيرة التي تقع عليها الحديقة في الفيلم الأول؟",
       "a": "إيسلا نوبلار",
@@ -368,11 +156,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "movies-800-903",
-      "p": 800,
+      "qid": "movies-400-914",
+      "p": 400,
       "topic": "تايتانيك",
       "q": "في «تايتانيك»، ما اسم الخطيب الثري الذي يتهم جاك بالسرقة؟",
       "a": "كال هوكلي",
@@ -382,11 +170,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "movies-800-904",
-      "p": 800,
+      "qid": "movies-400-915",
+      "p": 400,
       "topic": "استهلال",
       "q": "في «Inception»، من عضو الفريق الذي يبقى في مستوى الفندق ويدبّر إيقاظ رفاقه؟",
       "a": "آرثر",
@@ -396,11 +184,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "movies-800-905",
-      "p": 800,
+      "qid": "movies-400-916",
+      "p": 400,
       "topic": "ماتريكس",
       "q": "في «ماتريكس»، ما اسم الملجأ البشري الأخير تحت الأرض؟",
       "a": "زيون",
@@ -411,40 +199,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "movies-800-906",
-      "p": 800,
-      "topic": "سيد الخواتم",
-      "q": "في «رفقة الخاتم»، أي ساحر يحبس صديقه في آيزنغارد بعد تحالفه مع ساورون؟",
-      "a": "سارومان",
-      "alt": [
-        "سارومون",
-        "Saruman"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "movies-800-907",
-      "p": 800,
-      "topic": "قراصنة الكاريبي",
-      "q": "في «قراصنة الكاريبي»، في الجزء الأول، ماذا تحرق إليزابيث في الجزيرة لإرسال إشارة استغاثة؟",
-      "a": "مخزون الروم",
-      "alt": [
-        "الروم",
-        "براميل الروم",
-        "مؤونة الروم"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "movies-800-908",
-      "p": 800,
+      "qid": "movies-400-917",
+      "p": 400,
       "topic": "العودة إلى المستقبل",
       "q": "في «العودة إلى المستقبل»، ما الشيء الذي يبدأ أفراد عائلة مارتي بالاختفاء منه عندما يغيّر لقاء والديه؟",
       "a": "صورة عائلية",
@@ -455,11 +214,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "movies-1000-901",
-      "p": 1000,
+      "qid": "movies-400-918",
+      "p": 400,
       "topic": "هاري بوتر",
       "q": "في «حجر الفيلسوف»، من المدرس الذي يخفي فولدمورت خلف عمامته؟",
       "a": "كويريل",
@@ -469,11 +228,26 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "movies-1000-902",
-      "p": 1000,
+      "qid": "movies-600-911",
+      "p": 600,
+      "topic": "قراصنة الكاريبي",
+      "q": "في «قراصنة الكاريبي»، في الجزء الأول، ماذا تحرق إليزابيث في الجزيرة لإرسال إشارة استغاثة؟",
+      "a": "مخزون الروم",
+      "alt": [
+        "الروم",
+        "براميل الروم",
+        "مؤونة الروم"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "movies-600-912",
+      "p": 600,
       "topic": "الحديقة الجوراسية",
       "q": "في «الحديقة الجوراسية»، في الفيلم الأول، من حفيدي هاموند يعيد تشغيل النظام في مركز التحكم؟",
       "a": "ليكس",
@@ -483,11 +257,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "movies-1000-903",
-      "p": 1000,
+      "qid": "movies-600-913",
+      "p": 600,
       "topic": "تايتانيك",
       "q": "في «تايتانيك»، ما الاسم الذي تعطيه البطلة عند وصولها إلى نيويورك؟",
       "a": "روز داوسون",
@@ -497,11 +271,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "movies-1000-904",
-      "p": 1000,
+      "qid": "movies-600-914",
+      "p": 600,
       "topic": "استهلال",
       "q": "في «Inception»، ما اسم وريث الشركة الذي تستهدفه مهمة زرع الفكرة؟",
       "a": "روبرت فيشر",
@@ -511,11 +285,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "movies-1000-905",
-      "p": 1000,
+      "qid": "movies-600-915",
+      "p": 600,
       "topic": "ماتريكس",
       "q": "في «ماتريكس»، من يخون الطاقم مقابل وعد بإعادته إلى الحياة الوهمية المريحة؟",
       "a": "سايفر",
@@ -525,11 +299,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "movies-1000-906",
-      "p": 1000,
+      "qid": "movies-600-916",
+      "p": 600,
       "topic": "سيد الخواتم",
       "q": "في «رفقة الخاتم»، ما اسم قائد الأورك الذي يصيب بورومير بالسهام؟",
       "a": "لورتز",
@@ -539,11 +313,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "movies-1000-907",
-      "p": 1000,
+      "qid": "movies-600-917",
+      "p": 600,
       "topic": "قراصنة الكاريبي",
       "q": "في «قراصنة الكاريبي»، في الجزء الأول، إلى أي جزيرة يتجه البطل مع ويل لتجنيد طاقم؟",
       "a": "تورتوغا",
@@ -553,11 +327,11 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "movies-1000-908",
-      "p": 1000,
+      "qid": "movies-600-918",
+      "p": 600,
       "topic": "العودة إلى المستقبل",
       "q": "في «العودة إلى المستقبل»، ما اسم المركز التجاري عند تجربة دوك الأولى قبل أن يغيّر مارتي الماضي؟",
       "a": "توين باينز",
@@ -567,7 +341,217 @@
       ],
       "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
       "verified": true,
-      "difficultyTarget": 0.15
+      "difficultyTarget": 0.4
+    },
+    {
+      "topic": "هاري بوتر",
+      "q": "في «حجر الفيلسوف»، ما اسم الكلب ذي الرؤوس الثلاثة؟",
+      "a": "فلافي",
+      "alt": [
+        "Fluffy"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "qid": "movies-800-911",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "الحديقة الجوراسية",
+      "q": "في «الحديقة الجوراسية» الأول، ما اسم كبير المهندسين الذي يحاول إعادة تشغيل الأنظمة؟",
+      "a": "راي أرنولد",
+      "alt": [
+        "Ray Arnold"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "qid": "movies-800-912",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "تايتانيك",
+      "q": "في «تايتانيك»، ما اسم خادم كال وحارسه الذي يلفق تهمة السرقة لجاك؟",
+      "a": "سبايسر لوفجوي",
+      "alt": [
+        "Spicer Lovejoy",
+        "لوفجوي"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "qid": "movies-800-913",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "استهلال",
+      "q": "في «Inception»، من الكيميائي الذي يقود الشاحنة في مستوى الحلم الأول؟",
+      "a": "يوسف",
+      "alt": [
+        "Yusuf"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "qid": "movies-800-914",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "ماتريكس",
+      "q": "في «ماتريكس»، ما اسم سفينة طاقم المقاومة في الفيلم الأول؟",
+      "a": "نبوخذ نصر",
+      "alt": [
+        "Nebuchadnezzar"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "qid": "movies-800-915",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "سيد الخواتم",
+      "q": "في «رفقة الخاتم»، ما المخلوق الذي يواجهه غاندالف قبل سقوطه في موريا؟",
+      "a": "بالروغ",
+      "alt": [
+        "Balrog"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "qid": "movies-800-916",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "قراصنة الكاريبي",
+      "q": "في «لعنة اللؤلؤة السوداء»، على أي جزيرة يوجد كنز الذهب الملعون؟",
+      "a": "إيسلا دي مويرتا",
+      "alt": [
+        "Isla de Muerta"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "qid": "movies-800-917",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "العودة إلى المستقبل",
+      "q": "في «العودة إلى المستقبل»، ما اسم كلب دوك الذي يجرب السفر عبر الزمن؟",
+      "a": "أينشتاين",
+      "alt": [
+        "Einstein"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "qid": "movies-800-918",
+      "p": 800,
+      "difficultyTarget": 0.25,
+      "verified": true
+    },
+    {
+      "topic": "هاري بوتر",
+      "q": "في «حجر الفيلسوف»، ما الاسم الذي أطلقه هاغريد على التنين الصغير؟",
+      "a": "نوربرت",
+      "alt": [
+        "Norbert"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "qid": "movies-1000-911",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "الحديقة الجوراسية",
+      "q": "في «الحديقة الجوراسية» الأول، من دفع الرشوة للمبرمج لسرقة الأجنة؟",
+      "a": "لويس دودجسون",
+      "alt": [
+        "Lewis Dodgson"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "qid": "movies-1000-912",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "تايتانيك",
+      "q": "في «تايتانيك»، من رفيق جاك الذي يصعد معه بعد الفوز بالتذاكر؟",
+      "a": "فابريتسيو",
+      "alt": [
+        "Fabrizio"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "qid": "movies-1000-913",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "استهلال",
+      "q": "في «Inception»، من المزور الذي ينتحل شخصية بيتر براونينغ داخل الحلم؟",
+      "a": "إيمز",
+      "alt": [
+        "Eames"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception",
+      "qid": "movies-1000-914",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "ماتريكس",
+      "q": "في «ماتريكس»، من المشغّل الذي ينقذ الناجين بقتل الخائن بعد إصابته؟",
+      "a": "تانك",
+      "alt": [
+        "Tank"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+      "qid": "movies-1000-915",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "سيد الخواتم",
+      "q": "في «رفقة الخاتم»، أين تهاجم مجموعة الأورك الرفقة ويُصاب بورومير؟",
+      "a": "بارث غالين",
+      "alt": [
+        "Parth Galen"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "qid": "movies-1000-916",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "قراصنة الكاريبي",
+      "q": "في «لعنة اللؤلؤة السوداء»، ما السفينة البحرية التي يسرقها جاك وويل لإنقاذ إليزابيث؟",
+      "a": "إنترسيبتور",
+      "alt": [
+        "HMS Interceptor",
+        "Interceptor"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "qid": "movies-1000-917",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
+    },
+    {
+      "topic": "العودة إلى المستقبل",
+      "q": "في «العودة إلى المستقبل»، من عامل المقهى الذي يصبح لاحقًا عمدة هيل فالي؟",
+      "a": "غولدي ويلسون",
+      "alt": [
+        "Goldie Wilson"
+      ],
+      "sourceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+      "qid": "movies-1000-918",
+      "p": 1000,
+      "difficultyTarget": 0.15,
+      "verified": true
     }
   ],
   "style": "story"

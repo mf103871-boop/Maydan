@@ -4,1244 +4,1364 @@
   "name": "قبل ولا بعد",
   "qs": [
     {
-      "p": 200,
-      "q": "هبوط أبولو 11 على القمر مقارنة بـإطلاق تلسكوب جيمس ويب؟",
+      "q": "إطلاق أول ماكنتوش مقارنة بـإطلاق أول آيفون؟",
       "a": "قبل",
-      "qid": "beforeafter-200-901",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "رحلات الفضاء",
-      "source": [
-        "https://www.nasa.gov/mission/apollo-11/",
-        "https://science.nasa.gov/mission/webb/"
-      ],
-      "sourceUrl": "https://www.nasa.gov/mission/apollo-11/",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "apollo11",
-          "webb"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1969,
-          2021
-        ]
-      }
-    },
-    {
-      "p": 200,
-      "q": "افتتاح برج خليفة مقارنة بـاكتمال بناء برج إيفل؟",
-      "a": "بعد",
-      "qid": "beforeafter-200-902",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "معالم عمرانية",
-      "source": [
-        "https://en.wikipedia.org/wiki/Burj_Khalifa",
-        "https://www.toureiffel.paris/en/the-monument/history"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Burj_Khalifa",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "burjkhalifa",
-          "eiffel"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          2010,
-          1889
-        ]
-      }
-    },
-    {
-      "p": 200,
-      "q": "صدور رسوم «سنو وايت والأقزام السبعة» مقارنة بـصدور رسوم «الأسد الملك» الأصلية؟",
-      "a": "قبل",
-      "qid": "beforeafter-200-903",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "إصدارات سينمائية",
-      "source": [
-        "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
-        "https://movies.disney.com/the-lion-king"
-      ],
-      "sourceUrl": "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "snowwhite",
-          "lionking"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1937,
-          1994
-        ]
-      }
-    },
-    {
-      "p": 200,
-      "q": "إطلاق أول آيفون مقارنة بـالكشف العلني عن حاسوب إنياك؟",
-      "a": "بعد",
-      "qid": "beforeafter-200-904",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
       "topic": "تاريخ الحوسبة",
-      "source": [
-        "https://www.computerhistory.org/timeline/2007/",
-        "https://www.computerhistory.org/timeline/1946/"
-      ],
-      "sourceUrl": "https://www.computerhistory.org/timeline/2007/",
+      "sourceUrl": "https://www.computerhistory.org/timeline/1984/",
+      "alt": [],
       "verified": true,
-      "difficultyTarget": 0.8,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "iphone",
-          "eniac"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          2007,
-          1946
-        ]
-      }
-    },
-    {
-      "p": 200,
-      "q": "بدء تشغيل مترو لندن مقارنة بـبدء تشغيل مترو دبي؟",
-      "a": "قبل",
-      "qid": "beforeafter-200-905",
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "شبكات المترو",
       "source": [
-        "https://foi.tfl.gov.uk/FOI-0773-2324/TUBE160%20Heritage%20Leaflet.pdf",
-        "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders"
-      ],
-      "sourceUrl": "https://foi.tfl.gov.uk/FOI-0773-2324/TUBE160%20Heritage%20Leaflet.pdf",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "londonmetro",
-          "dubaimetro"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1863,
-          2009
-        ]
-      }
-    },
-    {
-      "p": 200,
-      "q": "أولمبياد ريو دي جانيرو الصيفي مقارنة بـأولمبياد بكين الصيفي؟",
-      "a": "بعد",
-      "qid": "beforeafter-200-906",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "دورات أولمبية",
-      "source": [
-        "https://en.wikipedia.org/wiki/2016_Summer_Olympics",
-        "https://en.wikipedia.org/wiki/2008_Summer_Olympics"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/2016_Summer_Olympics",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "rio",
-          "beijing"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          2016,
-          2008
-        ]
-      }
-    },
-    {
-      "p": 200,
-      "q": "صدور رسوم «علاء الدين» الأصلية مقارنة بـصدور رسوم «سندريلا» الأصلية؟",
-      "a": "بعد",
-      "qid": "beforeafter-200-907",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "إصدارات سينمائية",
-      "source": [
-        "https://movies.disney.com/aladdin",
-        "https://movies.disney.com/cinderella-1950"
-      ],
-      "sourceUrl": "https://movies.disney.com/aladdin",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "aladdin",
-          "cinderella"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1992,
-          1950
-        ]
-      }
-    },
-    {
-      "p": 200,
-      "q": "افتتاح تاور بريدج في لندن مقارنة بـافتتاح اللوفر أبوظبي؟",
-      "a": "قبل",
-      "qid": "beforeafter-200-908",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "معالم عمرانية",
-      "source": [
-        "https://www.towerbridge.org.uk/stories/history",
-        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi"
-      ],
-      "sourceUrl": "https://www.towerbridge.org.uk/stories/history",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "towerbridge",
-          "louvreabudhabi"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1894,
-          2017
-        ]
-      }
-    },
-    {
-      "p": 400,
-      "q": "اكتمال حاسوب آبل الأول مقارنة بـإطلاق أول آيفون؟",
-      "a": "قبل",
-      "qid": "beforeafter-400-901",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "تاريخ الحوسبة",
-      "source": [
-        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1984/",
         "https://www.computerhistory.org/timeline/2007/"
       ],
-      "sourceUrl": "https://www.computerhistory.org/timeline/1976/",
-      "verified": true,
-      "difficultyTarget": 0.6,
       "verification": {
-        "checkedAt": "2026-09-18",
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
         "events": [
-          "apple1",
+          "macintosh",
           "iphone"
         ],
-        "method": "dated-event-comparison",
         "years": [
-          1976,
+          1984,
           2007
         ]
-      }
+      },
+      "p": 200,
+      "qid": "beforeafter-200-911",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "q": "إطلاق تلسكوب جيمس ويب مقارنة بـإطلاق تلسكوب هابل؟",
+      "q": "إطلاق تلسكوب هابل مقارنة بـهبوط أبولو 11 على القمر؟",
       "a": "بعد",
-      "qid": "beforeafter-400-902",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
       "topic": "رحلات الفضاء",
-      "source": [
-        "https://science.nasa.gov/mission/webb/",
-        "https://science.nasa.gov/mission/hubble/"
-      ],
-      "sourceUrl": "https://science.nasa.gov/mission/webb/",
+      "sourceUrl": "https://science.nasa.gov/mission/hubble/",
+      "alt": [],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "webb",
-          "hubble"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          2021,
-          1990
-        ]
-      }
-    },
-    {
-      "p": 400,
-      "q": "تدشين تمثال الحرية بنيويورك مقارنة بـافتتاح برج خليفة؟",
-      "a": "قبل",
-      "qid": "beforeafter-400-903",
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "معالم عمرانية",
       "source": [
-        "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
-        "https://en.wikipedia.org/wiki/Burj_Khalifa"
+        "https://science.nasa.gov/mission/hubble/",
+        "https://www.nasa.gov/mission/apollo-11/"
       ],
-      "sourceUrl": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
-      "verified": true,
-      "difficultyTarget": 0.6,
       "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "liberty",
-          "burjkhalifa"
-        ],
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
         "method": "dated-event-comparison",
+        "events": [
+          "hubble",
+          "apollo11"
+        ],
         "years": [
-          1886,
-          2010
+          1990,
+          1969
         ]
-      }
+      },
+      "p": 200,
+      "qid": "beforeafter-200-912",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "q": "صدور رسوم «الأسد الملك» الأصلية مقارنة بـصدور فيلم «الفك المفترس» الأصلي؟",
-      "a": "بعد",
-      "qid": "beforeafter-400-904",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "إصدارات سينمائية",
-      "source": [
-        "https://movies.disney.com/the-lion-king",
-        "https://www.universalpicturesathome.com/movies/jaws"
-      ],
-      "sourceUrl": "https://movies.disney.com/the-lion-king",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "lionking",
-          "jaws"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1994,
-          1975
-        ]
-      }
-    },
-    {
-      "p": 400,
       "q": "بدء تشغيل مترو دبي مقارنة بـبدء تشغيل مترو الدوحة؟",
       "a": "قبل",
-      "qid": "beforeafter-400-905",
+      "topic": "شبكات المترو",
+      "sourceUrl": "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "شبكات المترو",
       "source": [
         "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders",
         "https://en.wikipedia.org/wiki/Doha_Metro"
       ],
-      "sourceUrl": "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders",
-      "verified": true,
-      "difficultyTarget": 0.6,
       "verification": {
-        "checkedAt": "2026-09-18",
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
         "events": [
           "dubaimetro",
           "dohametro"
         ],
-        "method": "dated-event-comparison",
         "years": [
           2009,
           2019
         ]
-      }
+      },
+      "p": 200,
+      "qid": "beforeafter-200-913",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "q": "أولمبياد بكين الصيفي مقارنة بـأولمبياد برشلونة الصيفي؟",
+      "q": "أولمبياد بكين الصيفي مقارنة بـأولمبياد سيدني الصيفي؟",
       "a": "بعد",
-      "qid": "beforeafter-400-906",
+      "topic": "دورات أولمبية",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "دورات أولمبية",
       "source": [
         "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
-        "https://en.wikipedia.org/wiki/1992_Summer_Olympics"
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/2008_Summer_Olympics",
-      "verified": true,
-      "difficultyTarget": 0.6,
       "verification": {
-        "checkedAt": "2026-09-18",
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
         "events": [
           "beijing",
-          "barcelona"
+          "sydneygames"
         ],
-        "method": "dated-event-comparison",
         "years": [
           2008,
-          1992
+          2000
         ]
-      }
+      },
+      "p": 200,
+      "qid": "beforeafter-200-914",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
-      "q": "صدور رسوم «كتاب الأدغال» الأصلية مقارنة بـصدور فيلم «إي تي»؟",
+      "q": "تدشين تمثال الحرية بنيويورك مقارنة بـافتتاح مبنى إمباير ستيت؟",
       "a": "قبل",
-      "qid": "beforeafter-400-907",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "إصدارات سينمائية",
-      "source": [
-        "https://movies.disney.com/the-jungle-book-1967",
-        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
-      ],
-      "sourceUrl": "https://movies.disney.com/the-jungle-book-1967",
-      "verified": true,
-      "difficultyTarget": 0.6,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "junglebook",
-          "et"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1967,
-          1982
-        ]
-      }
-    },
-    {
-      "p": 400,
-      "q": "افتتاح اللوفر أبوظبي مقارنة بـافتتاح دار أوبرا سيدني؟",
-      "a": "بعد",
-      "qid": "beforeafter-400-908",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
       "topic": "معالم عمرانية",
-      "source": [
-        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
-        "https://www.sydneyoperahouse.com/our-story"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+      "sourceUrl": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
+      "alt": [],
       "verified": true,
-      "difficultyTarget": 0.6,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "louvreabudhabi",
-          "sydneyopera"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          2017,
-          1973
-        ]
-      }
-    },
-    {
-      "p": 600,
-      "q": "بدء تشغيل شبكة أربانت مقارنة بـإطلاق أول ماكنتوش؟",
-      "a": "قبل",
-      "qid": "beforeafter-600-901",
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "تاريخ الحوسبة",
-      "source": [
-        "https://www.computerhistory.org/timeline/1969/",
-        "https://www.computerhistory.org/timeline/1984/"
-      ],
-      "sourceUrl": "https://www.computerhistory.org/timeline/1969/",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "arpanet",
-          "macintosh"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1969,
-          1984
-        ]
-      }
-    },
-    {
-      "p": 600,
-      "q": "إطلاق كاسيني مقارنة بـإطلاق فوياجر 1؟",
-      "a": "بعد",
-      "qid": "beforeafter-600-902",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "رحلات الفضاء",
-      "source": [
-        "https://science.nasa.gov/mission/cassini/",
-        "https://science.nasa.gov/mission/voyager/voyager-1/"
-      ],
-      "sourceUrl": "https://science.nasa.gov/mission/cassini/",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "cassini",
-          "voyager1"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1997,
-          1977
-        ]
-      }
-    },
-    {
-      "p": 600,
-      "q": "افتتاح دار أوبرا سيدني مقارنة بـافتتاح جسر البوابة الذهبية؟",
-      "a": "بعد",
-      "qid": "beforeafter-600-903",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "معالم عمرانية",
-      "source": [
-        "https://www.sydneyoperahouse.com/our-story",
-        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
-      ],
-      "sourceUrl": "https://www.sydneyoperahouse.com/our-story",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "sydneyopera",
-          "goldengate"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1973,
-          1937
-        ]
-      }
-    },
-    {
-      "p": 600,
-      "q": "صدور أول أفلام «العودة إلى المستقبل» مقارنة بـصدور أول أفلام «جوراسيك بارك»؟",
-      "a": "قبل",
-      "qid": "beforeafter-600-904",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "إصدارات سينمائية",
-      "source": [
-        "https://www.universalpicturesathome.com/movies/back-to-the-future",
-        "https://www.universalpicturesathome.com/movies/jurassic-park"
-      ],
-      "sourceUrl": "https://www.universalpicturesathome.com/movies/back-to-the-future",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "bttf",
-          "jurassicpark"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1985,
-          1993
-        ]
-      }
-    },
-    {
-      "p": 600,
-      "q": "بدء تشغيل مترو باريس مقارنة بـافتتاح أول خط لمترو طوكيو؟",
-      "a": "قبل",
-      "qid": "beforeafter-600-905",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "شبكات المترو",
-      "source": [
-        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
-        "https://en.wikipedia.org/wiki/Tokyo_Metro"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "parismetro",
-          "tokyometro"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1900,
-          1927
-        ]
-      }
-    },
-    {
-      "p": 600,
-      "q": "أولمبياد سيدني الصيفي مقارنة بـأولمبياد أتلانتا الصيفي؟",
-      "a": "بعد",
-      "qid": "beforeafter-600-906",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "دورات أولمبية",
-      "source": [
-        "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
-        "https://en.wikipedia.org/wiki/1996_Summer_Olympics"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "sydneygames",
-          "atlanta"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          2000,
-          1996
-        ]
-      }
-    },
-    {
-      "p": 600,
-      "q": "صدور فيلم «إي تي» مقارنة بـصدور رسوم «الجميلة والوحش» الأصلية؟",
-      "a": "قبل",
-      "qid": "beforeafter-600-907",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "إصدارات سينمائية",
-      "source": [
-        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
-        "https://movies.disney.com/beauty-and-the-beast"
-      ],
-      "sourceUrl": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "et",
-          "beautybeast"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1982,
-          1991
-        ]
-      }
-    },
-    {
-      "p": 600,
-      "q": "افتتاح مبنى إمباير ستيت مقارنة بـافتتاح تاور بريدج في لندن؟",
-      "a": "بعد",
-      "qid": "beforeafter-600-908",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "معالم عمرانية",
-      "source": [
-        "https://www.esbnyc.com/about/history",
-        "https://www.towerbridge.org.uk/stories/history"
-      ],
-      "sourceUrl": "https://www.esbnyc.com/about/history",
-      "verified": true,
-      "difficultyTarget": 0.4,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "empirestate",
-          "towerbridge"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1931,
-          1894
-        ]
-      }
-    },
-    {
-      "p": 800,
-      "q": "الإعلان عن حاسوب آي بي إم الشخصي مقارنة بـإطلاق أول ماكنتوش؟",
-      "a": "قبل",
-      "qid": "beforeafter-800-901",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "تاريخ الحوسبة",
-      "source": [
-        "https://www.computerhistory.org/timeline/1981/",
-        "https://www.computerhistory.org/timeline/1984/"
-      ],
-      "sourceUrl": "https://www.computerhistory.org/timeline/1981/",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "ibmpc",
-          "macintosh"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1981,
-          1984
-        ]
-      }
-    },
-    {
-      "p": 800,
-      "q": "إطلاق نيو هورايزنز مقارنة بـإطلاق كاسيني؟",
-      "a": "بعد",
-      "qid": "beforeafter-800-902",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "رحلات الفضاء",
-      "source": [
-        "https://science.nasa.gov/mission/new-horizons/",
-        "https://science.nasa.gov/mission/cassini/"
-      ],
-      "sourceUrl": "https://science.nasa.gov/mission/new-horizons/",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "newhorizons",
-          "cassini"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          2006,
-          1997
-        ]
-      }
-    },
-    {
-      "p": 800,
-      "q": "افتتاح برج سبيس نيدل مقارنة بـافتتاح جسر البوابة الذهبية؟",
-      "a": "بعد",
-      "qid": "beforeafter-800-903",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "معالم عمرانية",
-      "source": [
-        "https://www.spaceneedle.com/history",
-        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
-      ],
-      "sourceUrl": "https://www.spaceneedle.com/history",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "spaceneedle",
-          "goldengate"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1962,
-          1937
-        ]
-      }
-    },
-    {
-      "p": 800,
-      "q": "صدور رسوم «الجميلة والوحش» الأصلية مقارنة بـصدور رسوم «علاء الدين» الأصلية؟",
-      "a": "قبل",
-      "qid": "beforeafter-800-904",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "إصدارات سينمائية",
-      "source": [
-        "https://movies.disney.com/beauty-and-the-beast",
-        "https://movies.disney.com/aladdin"
-      ],
-      "sourceUrl": "https://movies.disney.com/beauty-and-the-beast",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "beautybeast",
-          "aladdin"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1991,
-          1992
-        ]
-      }
-    },
-    {
-      "p": 800,
-      "q": "بدء تشغيل مترو موسكو مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
-      "a": "بعد",
-      "qid": "beforeafter-800-905",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "شبكات المترو",
-      "source": [
-        "https://en.wikipedia.org/wiki/Moscow_Metro",
-        "https://en.wikipedia.org/wiki/New_York_City_Subway"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Moscow_Metro",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "moscowmetro",
-          "newyorkmetro"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1935,
-          1904
-        ]
-      }
-    },
-    {
-      "p": 800,
-      "q": "أولمبياد مونتريال الصيفي مقارنة بـأولمبياد موسكو الصيفي؟",
-      "a": "قبل",
-      "qid": "beforeafter-800-906",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "دورات أولمبية",
-      "source": [
-        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
-        "https://en.wikipedia.org/wiki/1980_Summer_Olympics"
-      ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "montreal",
-          "moscow"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1976,
-          1980
-        ]
-      }
-    },
-    {
-      "p": 800,
-      "q": "إطلاق أبولو 13 مقارنة بـهبوط أبولو 11 على القمر؟",
-      "a": "بعد",
-      "qid": "beforeafter-800-907",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "رحلات الفضاء",
-      "source": [
-        "https://www.nasa.gov/mission/apollo-13/",
-        "https://www.nasa.gov/mission/apollo-11/"
-      ],
-      "sourceUrl": "https://www.nasa.gov/mission/apollo-13/",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "apollo13",
-          "apollo11"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1970,
-          1969
-        ]
-      }
-    },
-    {
-      "p": 800,
-      "q": "الكشف العلني عن حاسوب إنياك مقارنة بـتسليم يونيفاك الأول لمكتب الإحصاء الأمريكي؟",
-      "a": "قبل",
-      "qid": "beforeafter-800-908",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "تاريخ الحوسبة",
-      "source": [
-        "https://www.computerhistory.org/timeline/1946/",
-        "https://www.computerhistory.org/timeline/1951/"
-      ],
-      "sourceUrl": "https://www.computerhistory.org/timeline/1946/",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "eniac",
-          "univac"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1946,
-          1951
-        ]
-      }
-    },
-    {
-      "p": 1000,
-      "q": "طرح معالج إنتل 4004 مقارنة بـبدء تشغيل شبكة أربانت؟",
-      "a": "بعد",
-      "qid": "beforeafter-1000-901",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "تاريخ الحوسبة",
-      "source": [
-        "https://www.computerhistory.org/timeline/1971/",
-        "https://www.computerhistory.org/timeline/1969/"
-      ],
-      "sourceUrl": "https://www.computerhistory.org/timeline/1971/",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "intel4004",
-          "arpanet"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1971,
-          1969
-        ]
-      }
-    },
-    {
-      "p": 1000,
-      "q": "إطلاق أبولو 8 مقارنة بـهبوط أبولو 11 على القمر؟",
-      "a": "قبل",
-      "qid": "beforeafter-1000-902",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "رحلات الفضاء",
-      "source": [
-        "https://www.nasa.gov/mission/apollo-8/",
-        "https://www.nasa.gov/mission/apollo-11/"
-      ],
-      "sourceUrl": "https://www.nasa.gov/mission/apollo-8/",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "apollo8",
-          "apollo11"
-        ],
-        "method": "dated-event-comparison",
-        "years": [
-          1968,
-          1969
-        ]
-      }
-    },
-    {
-      "p": 1000,
-      "q": "تدشين تمثال الحرية بنيويورك مقارنة بـاكتمال بناء برج إيفل؟",
-      "a": "قبل",
-      "qid": "beforeafter-1000-903",
-      "type": "choice",
-      "options": [
-        "قبل",
-        "بعد"
-      ],
-      "topic": "معالم عمرانية",
       "source": [
         "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
-        "https://www.toureiffel.paris/en/the-monument/history"
+        "https://www.esbnyc.com/about/history"
       ],
-      "sourceUrl": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
-      "verified": true,
-      "difficultyTarget": 0.15,
       "verification": {
-        "checkedAt": "2026-09-18",
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
         "events": [
           "liberty",
-          "eiffel"
+          "empirestate"
         ],
-        "method": "dated-event-comparison",
         "years": [
           1886,
-          1889
+          1931
         ]
-      }
+      },
+      "p": 200,
+      "qid": "beforeafter-200-915",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 1000,
-      "q": "صدور فيلم «الفك المفترس» الأصلي مقارنة بـصدور رسوم «كتاب الأدغال» الأصلية؟",
+      "q": "افتتاح برج خليفة مقارنة بـافتتاح دار أوبرا سيدني؟",
       "a": "بعد",
-      "qid": "beforeafter-1000-904",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Burj_Khalifa",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "إصدارات سينمائية",
       "source": [
-        "https://www.universalpicturesathome.com/movies/jaws",
+        "https://en.wikipedia.org/wiki/Burj_Khalifa",
+        "https://www.sydneyoperahouse.com/our-story"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "burjkhalifa",
+          "sydneyopera"
+        ],
+        "years": [
+          2010,
+          1973
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-916",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "صدور فيلم «إي تي» مقارنة بـصدور رسوم «الأسد الملك» الأصلية؟",
+      "a": "قبل",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial",
+        "https://movies.disney.com/the-lion-king"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "et",
+          "lionking"
+        ],
+        "years": [
+          1982,
+          1994
+        ]
+      },
+      "p": 200,
+      "qid": "beforeafter-200-917",
+      "difficultyTarget": 0.8
+    },
+    {
+      "q": "صدور رسوم «الجميلة والوحش» الأصلية مقارنة بـصدور رسوم «كتاب الأدغال» الأصلية؟",
+      "a": "بعد",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://movies.disney.com/beauty-and-the-beast",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
         "https://movies.disney.com/the-jungle-book-1967"
       ],
-      "sourceUrl": "https://www.universalpicturesathome.com/movies/jaws",
-      "verified": true,
-      "difficultyTarget": 0.15,
       "verification": {
-        "checkedAt": "2026-09-18",
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
         "events": [
-          "jaws",
+          "beautybeast",
           "junglebook"
         ],
-        "method": "dated-event-comparison",
         "years": [
-          1975,
+          1991,
           1967
         ]
-      }
+      },
+      "p": 200,
+      "qid": "beforeafter-200-918",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 1000,
-      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـبدء تشغيل مترو موسكو؟",
+      "q": "اكتمال حاسوب آبل الأول مقارنة بـإطلاق أول ماكنتوش؟",
       "a": "قبل",
-      "qid": "beforeafter-1000-905",
+      "topic": "تاريخ الحوسبة",
+      "sourceUrl": "https://www.computerhistory.org/timeline/1976/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1984/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "apple1",
+          "macintosh"
+        ],
+        "years": [
+          1976,
+          1984
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-911",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "إطلاق تلسكوب هابل مقارنة بـإطلاق فوياجر 1؟",
+      "a": "بعد",
+      "topic": "رحلات الفضاء",
+      "sourceUrl": "https://science.nasa.gov/mission/hubble/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://science.nasa.gov/mission/hubble/",
+        "https://science.nasa.gov/mission/voyager/voyager-1/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "hubble",
+          "voyager1"
+        ],
+        "years": [
+          1990,
+          1977
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-912",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "بدء تشغيل مترو لندن مقارنة بـبدء تشغيل مترو باريس؟",
+      "a": "قبل",
       "topic": "شبكات المترو",
+      "sourceUrl": "https://foi.tfl.gov.uk/FOI-0773-2324/TUBE160%20Heritage%20Leaflet.pdf",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://foi.tfl.gov.uk/FOI-0773-2324/TUBE160%20Heritage%20Leaflet.pdf",
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "londonmetro",
+          "parismetro"
+        ],
+        "years": [
+          1863,
+          1900
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-913",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "أولمبياد مونتريال الصيفي مقارنة بـأولمبياد ميونخ الصيفي؟",
+      "a": "بعد",
+      "topic": "دورات أولمبية",
+      "sourceUrl": "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "montreal",
+          "munich"
+        ],
+        "years": [
+          1976,
+          1972
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-914",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "افتتاح جسر البوابة الذهبية مقارنة بـافتتاح برج سبيس نيدل؟",
+      "a": "قبل",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+        "https://www.spaceneedle.com/history"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "goldengate",
+          "spaceneedle"
+        ],
+        "years": [
+          1937,
+          1962
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-915",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "افتتاح اللوفر أبوظبي مقارنة بـبدء تشغيل مترو دبي؟",
+      "a": "بعد",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+        "https://rta.ae/wps/portal/rta/ae/home/news-and-media/all-news/NewsDetails/dubai-metro-accomplishes-a-decade-of-happy-journeys-for-riders"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "louvreabudhabi",
+          "dubaimetro"
+        ],
+        "years": [
+          2017,
+          2009
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-916",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "صدور أول أفلام «العودة إلى المستقبل» مقارنة بـصدور رسوم «علاء الدين» الأصلية؟",
+      "a": "قبل",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://www.universalpicturesathome.com/movies/back-to-the-future",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://movies.disney.com/aladdin"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "bttf",
+          "aladdin"
+        ],
+        "years": [
+          1985,
+          1992
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-917",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "صدور أول أفلام «جوراسيك بارك» مقارنة بـصدور فيلم «إي تي»؟",
+      "a": "بعد",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://www.universalpicturesathome.com/movies/jurassic-park",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jurassic-park",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "jurassicpark",
+          "et"
+        ],
+        "years": [
+          1993,
+          1982
+        ]
+      },
+      "p": 400,
+      "qid": "beforeafter-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "q": "اكتمال حاسوب آبل الأول مقارنة بـالإعلان عن حاسوب آي بي إم الشخصي؟",
+      "a": "قبل",
+      "topic": "تاريخ الحوسبة",
+      "sourceUrl": "https://www.computerhistory.org/timeline/1976/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1976/",
+        "https://www.computerhistory.org/timeline/1981/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "apple1",
+          "ibmpc"
+        ],
+        "years": [
+          1976,
+          1981
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-911",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "إطلاق كاسيني مقارنة بـإطلاق تلسكوب هابل؟",
+      "a": "بعد",
+      "topic": "رحلات الفضاء",
+      "sourceUrl": "https://science.nasa.gov/mission/cassini/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://science.nasa.gov/mission/cassini/",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "cassini",
+          "hubble"
+        ],
+        "years": [
+          1997,
+          1990
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-912",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "افتتاح أول خط لمترو طوكيو مقارنة بـبدء تشغيل مترو موسكو؟",
+      "a": "قبل",
+      "topic": "شبكات المترو",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tokyo_Metro",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
       "source": [
         "https://en.wikipedia.org/wiki/Tokyo_Metro",
         "https://en.wikipedia.org/wiki/Moscow_Metro"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/Tokyo_Metro",
-      "verified": true,
-      "difficultyTarget": 0.15,
       "verification": {
-        "checkedAt": "2026-09-18",
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
         "events": [
           "tokyometro",
           "moscowmetro"
         ],
-        "method": "dated-event-comparison",
         "years": [
           1927,
           1935
         ]
-      }
+      },
+      "p": 600,
+      "qid": "beforeafter-600-913",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
-      "q": "أولمبياد ميونخ الصيفي مقارنة بـأولمبياد مكسيكو سيتي الصيفي؟",
+      "q": "أولمبياد سيدني الصيفي مقارنة بـأولمبياد أتلانتا الصيفي؟",
       "a": "بعد",
-      "qid": "beforeafter-1000-906",
+      "topic": "دورات أولمبية",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "دورات أولمبية",
       "source": [
-        "https://en.wikipedia.org/wiki/1972_Summer_Olympics",
-        "https://en.wikipedia.org/wiki/1968_Summer_Olympics"
+        "https://en.wikipedia.org/wiki/2000_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1996_Summer_Olympics"
       ],
-      "sourceUrl": "https://en.wikipedia.org/wiki/1972_Summer_Olympics",
-      "verified": true,
-      "difficultyTarget": 0.15,
       "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "munich",
-          "mexico"
-        ],
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
         "method": "dated-event-comparison",
+        "events": [
+          "sydneygames",
+          "atlanta"
+        ],
         "years": [
-          1972,
+          2000,
+          1996
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-914",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "افتتاح مبنى إمباير ستيت مقارنة بـافتتاح جسر البوابة الذهبية؟",
+      "a": "قبل",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://www.esbnyc.com/about/history",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.esbnyc.com/about/history",
+        "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "empirestate",
+          "goldengate"
+        ],
+        "years": [
+          1931,
+          1937
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-915",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "افتتاح اللوفر أبوظبي مقارنة بـافتتاح برج خليفة؟",
+      "a": "بعد",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi",
+        "https://en.wikipedia.org/wiki/Burj_Khalifa"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "louvreabudhabi",
+          "burjkhalifa"
+        ],
+        "years": [
+          2017,
+          2010
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-916",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "صدور فيلم «الفك المفترس» الأصلي مقارنة بـصدور فيلم «إي تي»؟",
+      "a": "قبل",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://www.universalpicturesathome.com/movies/jaws",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/jaws",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "jaws",
+          "et"
+        ],
+        "years": [
+          1975,
+          1982
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-917",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "صدور رسوم «الجميلة والوحش» الأصلية مقارنة بـصدور أول أفلام «العودة إلى المستقبل»؟",
+      "a": "بعد",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://movies.disney.com/beauty-and-the-beast",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
+        "https://www.universalpicturesathome.com/movies/back-to-the-future"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "beautybeast",
+          "bttf"
+        ],
+        "years": [
+          1991,
+          1985
+        ]
+      },
+      "p": 600,
+      "qid": "beforeafter-600-918",
+      "difficultyTarget": 0.4
+    },
+    {
+      "q": "طرح معالج إنتل 4004 مقارنة بـاكتمال حاسوب آبل الأول؟",
+      "a": "قبل",
+      "topic": "تاريخ الحوسبة",
+      "sourceUrl": "https://www.computerhistory.org/timeline/1971/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1971/",
+        "https://www.computerhistory.org/timeline/1976/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "intel4004",
+          "apple1"
+        ],
+        "years": [
+          1971,
+          1976
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-911",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "بدء تشغيل شبكة أربانت مقارنة بـإطلاق أبولو 8؟",
+      "a": "بعد",
+      "topic": "رحلات الفضاء",
+      "sourceUrl": "https://www.computerhistory.org/timeline/1969/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1969/",
+        "https://www.nasa.gov/mission/apollo-8/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "arpanet",
+          "apollo8"
+        ],
+        "years": [
+          1969,
           1968
         ]
-      }
+      },
+      "p": 800,
+      "qid": "beforeafter-800-912",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "صدور أول أفلام «جوراسيك بارك» مقارنة بـصدور رسوم «الأسد الملك» الأصلية؟",
+      "q": "بدء تشغيل مترو باريس مقارنة بـافتتاح أول خط أنفاق لمترو نيويورك؟",
       "a": "قبل",
-      "qid": "beforeafter-1000-907",
+      "topic": "شبكات المترو",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "إصدارات سينمائية",
       "source": [
-        "https://www.universalpicturesathome.com/movies/jurassic-park",
-        "https://movies.disney.com/the-lion-king"
+        "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro",
+        "https://en.wikipedia.org/wiki/New_York_City_Subway"
       ],
-      "sourceUrl": "https://www.universalpicturesathome.com/movies/jurassic-park",
-      "verified": true,
-      "difficultyTarget": 0.15,
       "verification": {
-        "checkedAt": "2026-09-18",
-        "events": [
-          "jurassicpark",
-          "lionking"
-        ],
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
         "method": "dated-event-comparison",
+        "events": [
+          "parismetro",
+          "newyorkmetro"
+        ],
         "years": [
-          1993,
-          1994
+          1900,
+          1904
         ]
-      }
+      },
+      "p": 800,
+      "qid": "beforeafter-800-913",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
-      "q": "افتتاح تاور بريدج في لندن مقارنة بـاكتمال بناء برج إيفل؟",
+      "q": "أولمبياد موسكو الصيفي مقارنة بـأولمبياد مونتريال الصيفي؟",
       "a": "بعد",
-      "qid": "beforeafter-1000-908",
+      "topic": "دورات أولمبية",
+      "sourceUrl": "https://en.wikipedia.org/wiki/1980_Summer_Olympics",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
       "type": "choice",
       "options": [
         "قبل",
         "بعد"
       ],
-      "topic": "معالم عمرانية",
       "source": [
-        "https://www.towerbridge.org.uk/stories/history",
+        "https://en.wikipedia.org/wiki/1980_Summer_Olympics",
+        "https://en.wikipedia.org/wiki/1976_Summer_Olympics"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "moscow",
+          "montreal"
+        ],
+        "years": [
+          1980,
+          1976
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "تدشين تمثال الحرية بنيويورك مقارنة بـاكتمال بناء برج إيفل؟",
+      "a": "قبل",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.nps.gov/stli/learn/statue-of-liberty-facts.htm",
         "https://www.toureiffel.paris/en/the-monument/history"
       ],
-      "sourceUrl": "https://www.towerbridge.org.uk/stories/history",
-      "verified": true,
-      "difficultyTarget": 0.15,
       "verification": {
-        "checkedAt": "2026-09-18",
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
         "events": [
-          "towerbridge",
+          "liberty",
           "eiffel"
         ],
-        "method": "dated-event-comparison",
         "years": [
-          1894,
+          1886,
           1889
         ]
-      }
+      },
+      "p": 800,
+      "qid": "beforeafter-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "صدور رسوم «كتاب الأدغال» الأصلية مقارنة بـافتتاح برج سبيس نيدل؟",
+      "a": "بعد",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://movies.disney.com/the-jungle-book-1967",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://movies.disney.com/the-jungle-book-1967",
+        "https://www.spaceneedle.com/history"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "junglebook",
+          "spaceneedle"
+        ],
+        "years": [
+          1967,
+          1962
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "صدور رسوم «الجميلة والوحش» الأصلية مقارنة بـصدور أول أفلام «جوراسيك بارك»؟",
+      "a": "قبل",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://movies.disney.com/beauty-and-the-beast",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://movies.disney.com/beauty-and-the-beast",
+        "https://www.universalpicturesathome.com/movies/jurassic-park"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "beautybeast",
+          "jurassicpark"
+        ],
+        "years": [
+          1991,
+          1993
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "صدور رسوم «علاء الدين» الأصلية مقارنة بـإطلاق تلسكوب هابل؟",
+      "a": "بعد",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://movies.disney.com/aladdin",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://movies.disney.com/aladdin",
+        "https://science.nasa.gov/mission/hubble/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "aladdin",
+          "hubble"
+        ],
+        "years": [
+          1992,
+          1990
+        ]
+      },
+      "p": 800,
+      "qid": "beforeafter-800-918",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "الإعلان عن حاسوب آي بي إم الشخصي مقارنة بـصدور فيلم «إي تي»؟",
+      "a": "قبل",
+      "topic": "تاريخ الحوسبة",
+      "sourceUrl": "https://www.computerhistory.org/timeline/1981/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/1981/",
+        "https://www.universalpicturesathome.com/movies/et-the-extra-terrestrial"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "ibmpc",
+          "et"
+        ],
+        "years": [
+          1981,
+          1982
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "إطلاق فوياجر 1 مقارنة بـاكتمال حاسوب آبل الأول؟",
+      "a": "بعد",
+      "topic": "رحلات الفضاء",
+      "sourceUrl": "https://science.nasa.gov/mission/voyager/voyager-1/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://science.nasa.gov/mission/voyager/voyager-1/",
+        "https://www.computerhistory.org/timeline/1976/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "voyager1",
+          "apple1"
+        ],
+        "years": [
+          1977,
+          1976
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "بدء تشغيل مترو موسكو مقارنة بـصدور رسوم «سنو وايت والأقزام السبعة»؟",
+      "a": "قبل",
+      "topic": "شبكات المترو",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Moscow_Metro",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://en.wikipedia.org/wiki/Moscow_Metro",
+        "https://movies.disney.com/snow-white-and-the-seven-dwarfs"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "moscowmetro",
+          "snowwhite"
+        ],
+        "years": [
+          1935,
+          1937
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "افتتاح دار أوبرا سيدني مقارنة بـأولمبياد ميونخ الصيفي؟",
+      "a": "بعد",
+      "topic": "دورات أولمبية",
+      "sourceUrl": "https://www.sydneyoperahouse.com/our-story",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.sydneyoperahouse.com/our-story",
+        "https://en.wikipedia.org/wiki/1972_Summer_Olympics"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "sydneyopera",
+          "munich"
+        ],
+        "years": [
+          1973,
+          1972
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "افتتاح مبنى إمباير ستيت مقارنة بـبدء تشغيل مترو موسكو؟",
+      "a": "قبل",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://www.esbnyc.com/about/history",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.esbnyc.com/about/history",
+        "https://en.wikipedia.org/wiki/Moscow_Metro"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "empirestate",
+          "moscowmetro"
+        ],
+        "years": [
+          1931,
+          1935
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "صدور أول أفلام «العودة إلى المستقبل» مقارنة بـإطلاق أول ماكنتوش؟",
+      "a": "بعد",
+      "topic": "معالم عمرانية",
+      "sourceUrl": "https://www.universalpicturesathome.com/movies/back-to-the-future",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.universalpicturesathome.com/movies/back-to-the-future",
+        "https://www.computerhistory.org/timeline/1984/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "bttf",
+          "macintosh"
+        ],
+        "years": [
+          1985,
+          1984
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "صدور رسوم «علاء الدين» الأصلية مقارنة بـصدور أول أفلام «جوراسيك بارك»؟",
+      "a": "قبل",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://movies.disney.com/aladdin",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://movies.disney.com/aladdin",
+        "https://www.universalpicturesathome.com/movies/jurassic-park"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "aladdin",
+          "jurassicpark"
+        ],
+        "years": [
+          1992,
+          1993
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "إطلاق أول آيفون مقارنة بـإطلاق نيو هورايزنز؟",
+      "a": "بعد",
+      "topic": "إصدارات سينمائية",
+      "sourceUrl": "https://www.computerhistory.org/timeline/2007/",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "choice",
+      "options": [
+        "قبل",
+        "بعد"
+      ],
+      "source": [
+        "https://www.computerhistory.org/timeline/2007/",
+        "https://science.nasa.gov/mission/new-horizons/"
+      ],
+      "verification": {
+        "checkedAt": "2026-09-25",
+        "sourceFactsCheckedAt": "2026-09-18",
+        "method": "dated-event-comparison",
+        "events": [
+          "iphone",
+          "newhorizons"
+        ],
+        "years": [
+          2007,
+          2006
+        ]
+      },
+      "p": 1000,
+      "qid": "beforeafter-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

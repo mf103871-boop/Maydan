@@ -6,115 +6,6 @@
     {
       "p": 200,
       "topic": "النشأة والأسرة",
-      "q": "من الزوجة التي طمأنت النبي عند رجوعه من أول لقاء بملك الوحي؟",
-      "a": "خديجة بنت خويلد",
-      "alt": [
-        "خديجة"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:3",
-      "verified": true,
-      "qid": "seerah-200-901",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "بداية الدعوة",
-      "q": "في أي غار بدأ نزول الوحي على النبي؟",
-      "a": "غار حراء",
-      "alt": [
-        "حراء"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:3",
-      "verified": true,
-      "qid": "seerah-200-902",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الهجرة",
-      "q": "من رافق النبي في هجرته من مكة إلى المدينة؟",
-      "a": "أبو بكر الصديق",
-      "alt": [
-        "أبو بكر",
-        "أبوبكر"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:3905",
-      "verified": true,
-      "qid": "seerah-200-903",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "المدينة",
-      "q": "إلى أي مدينة هاجر النبي من مكة؟",
-      "a": "المدينة المنورة",
-      "alt": [
-        "المدينة",
-        "يثرب"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:3905",
-      "verified": true,
-      "qid": "seerah-200-904",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الغزوات",
-      "q": "ما الغزوة المذكورة في آية «ولقد نصركم الله» من سورة آل عمران؟",
-      "a": "بدر",
-      "alt": [
-        "غزوة بدر",
-        "بدر الكبرى"
-      ],
-      "sourceUrl": "https://quran.com/3/123",
-      "verified": true,
-      "qid": "seerah-200-905",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الصحابة",
-      "q": "من الصحابي الذي أمره النبي أن يقوم فينادي للصلاة عند بدء الأذان؟",
-      "a": "بلال بن رباح",
-      "alt": [
-        "بلال"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:604",
-      "verified": true,
-      "qid": "seerah-200-906",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "النشأة والأسرة",
-      "q": "من ابنة النبي التي قال عنها إنها بضعة منه؟",
-      "a": "فاطمة الزهراء",
-      "alt": [
-        "فاطمة",
-        "فاطمة بنت محمد"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:3714",
-      "verified": true,
-      "qid": "seerah-200-907",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 200,
-      "topic": "الحياة اليومية",
-      "q": "ما العمل الذي مارسه النبي لأهل مكة مقابل قراريط، بحسب حديثه؟",
-      "a": "رعي الغنم",
-      "alt": [
-        "رعاية الأغنام",
-        "رعي الأغنام"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:2262",
-      "verified": true,
-      "qid": "seerah-200-908",
-      "difficultyTarget": 0.8
-    },
-    {
-      "p": 400,
-      "topic": "النشأة والأسرة",
       "q": "إلى أي بطن من قريش ينتمي نسب النبي؟",
       "a": "بنو هاشم",
       "alt": [
@@ -123,11 +14,11 @@
       ],
       "sourceUrl": "https://sunnah.com/muslim:2276",
       "verified": true,
-      "qid": "seerah-400-901",
-      "difficultyTarget": 0.6
+      "qid": "seerah-200-911",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "بداية الدعوة",
       "q": "كم كان عمر النبي عند بعثته، بحسب رواية ابن عباس في البخاري؟",
       "a": "أربعون سنة",
@@ -138,11 +29,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3902",
       "verified": true,
-      "qid": "seerah-400-902",
-      "difficultyTarget": 0.6
+      "qid": "seerah-200-912",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "الهجرة",
       "q": "في أي غار مكث النبي وصاحبه ثلاث ليال خلال الهجرة؟",
       "a": "غار ثور",
@@ -151,11 +42,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-400-903",
-      "difficultyTarget": 0.6
+      "qid": "seerah-200-913",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "المدينة",
       "q": "ما المسجد الذي أسسه النبي عند نزوله في بني عمرو بن عوف أثناء الهجرة؟",
       "a": "مسجد قباء",
@@ -164,11 +55,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3906",
       "verified": true,
-      "qid": "seerah-400-904",
-      "difficultyTarget": 0.6
+      "qid": "seerah-200-914",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "الغزوات",
       "q": "في أي غزوة ترك بعض الرماة مواقعهم بحثًا عن الغنائم؟",
       "a": "أحد",
@@ -177,11 +68,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3039",
       "verified": true,
-      "qid": "seerah-400-905",
-      "difficultyTarget": 0.6
+      "qid": "seerah-200-915",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "الصحابة",
       "q": "من الصحابي الذي روى أنه خدم النبي عشر سنين دون أن يقول له أف؟",
       "a": "أنس بن مالك",
@@ -190,11 +81,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:6038",
       "verified": true,
-      "qid": "seerah-400-906",
-      "difficultyTarget": 0.6
+      "qid": "seerah-200-916",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "بداية الدعوة",
       "q": "ما اسم الدابة التي ركبها النبي ليلة الإسراء؟",
       "a": "البراق",
@@ -203,11 +94,11 @@
       ],
       "sourceUrl": "https://sunnah.com/muslim:162a",
       "verified": true,
-      "qid": "seerah-400-907",
-      "difficultyTarget": 0.6
+      "qid": "seerah-200-917",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "النشأة والأسرة",
       "q": "بأي كنية اشتهر النبي محمد؟",
       "a": "أبو القاسم",
@@ -216,11 +107,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3537",
       "verified": true,
-      "qid": "seerah-400-908",
-      "difficultyTarget": 0.6
+      "qid": "seerah-200-918",
+      "difficultyTarget": 0.8
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "بداية الدعوة",
       "q": "من ابن عم خديجة الذي استمع إلى خبر لقاء النبي بملك الوحي؟",
       "a": "ورقة بن نوفل",
@@ -229,11 +120,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3",
       "verified": true,
-      "qid": "seerah-600-901",
-      "difficultyTarget": 0.4
+      "qid": "seerah-400-911",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "الهجرة",
       "q": "من التي شقت نطاقها لتربط به جراب زاد الهجرة؟",
       "a": "أسماء بنت أبي بكر",
@@ -243,11 +134,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-600-902",
-      "difficultyTarget": 0.4
+      "qid": "seerah-400-912",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "الصحابة",
       "q": "من كاتب الوحي الذي كلّفه الخليفة الأول بجمع القرآن؟",
       "a": "زيد بن ثابت",
@@ -256,11 +147,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:4986",
       "verified": true,
-      "qid": "seerah-600-903",
-      "difficultyTarget": 0.4
+      "qid": "seerah-400-913",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "الغزوات",
       "q": "من أخذ راية المسلمين في مؤتة بعد استشهاد الأمراء الثلاثة؟",
       "a": "خالد بن الوليد",
@@ -269,24 +160,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:4262",
       "verified": true,
-      "qid": "seerah-600-904",
-      "difficultyTarget": 0.4
+      "qid": "seerah-400-914",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
-      "topic": "العهود والوفود",
-      "q": "من مفاوض قريش الذي اتفق مع النبي على نص صلح الحديبية؟",
-      "a": "سهيل بن عمرو",
-      "alt": [
-        "سهيل"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:2731",
-      "verified": true,
-      "qid": "seerah-600-905",
-      "difficultyTarget": 0.4
-    },
-    {
-      "p": 600,
+      "p": 400,
       "topic": "الصحابة",
       "q": "من الشاعر الذي دعا له النبي أن يؤيده الله بروح القدس؟",
       "a": "حسان بن ثابت",
@@ -295,11 +173,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3212",
       "verified": true,
-      "qid": "seerah-600-906",
-      "difficultyTarget": 0.4
+      "qid": "seerah-400-915",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "الحياة اليومية",
       "q": "من أي معدن كان خاتم النبي المنقوش عليه «محمد رسول الله» في رواية أنس؟",
       "a": "الفضة",
@@ -308,11 +186,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:5877",
       "verified": true,
-      "qid": "seerah-600-907",
-      "difficultyTarget": 0.4
+      "qid": "seerah-400-916",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "الحياة اليومية",
       "q": "ما اسم ناقة النبي التي بركت أثناء مسيره إلى الحديبية؟",
       "a": "القصواء",
@@ -321,11 +199,25 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:2731",
       "verified": true,
-      "qid": "seerah-600-908",
-      "difficultyTarget": 0.4
+      "qid": "seerah-400-917",
+      "difficultyTarget": 0.6
     },
     {
-      "p": 800,
+      "q": "من الحاكم الذي مزّق رسالة النبي المرسلة إليه عبر عظيم البحرين؟",
+      "a": "كسرى",
+      "topic": "العهود والوفود",
+      "sourceUrl": "https://sunnah.com/bukhari:64",
+      "alt": [
+        "كسرى فارس"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 400,
+      "qid": "seerah-400-918",
+      "difficultyTarget": 0.6
+    },
+    {
+      "p": 600,
       "topic": "النشأة والأسرة",
       "q": "من مرضعة النبي التي كانت مولاة لعمه أبي لهب؟",
       "a": "ثويبة",
@@ -334,11 +226,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:5101",
       "verified": true,
-      "qid": "seerah-800-901",
-      "difficultyTarget": 0.25
+      "qid": "seerah-600-911",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "بداية الدعوة",
       "q": "بأي صورة بدأ الوحي للنبي قبل لقاء الملك، بحسب رواية عائشة؟",
       "a": "الرؤيا الصالحة",
@@ -348,11 +240,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3",
       "verified": true,
-      "qid": "seerah-800-902",
-      "difficultyTarget": 0.25
+      "qid": "seerah-600-912",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "الهجرة",
       "q": "من مولى رفيق الهجرة الذي كان يأتي بالغنم إلى الغار ليلًا؟",
       "a": "عامر بن فهيرة",
@@ -361,11 +253,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-800-903",
-      "difficultyTarget": 0.25
+      "qid": "seerah-600-913",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "المدينة",
       "q": "عند بيت أي صحابي نزل النبي حين قدم إلى المدينة؟",
       "a": "أبو أيوب الأنصاري",
@@ -375,11 +267,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3932",
       "verified": true,
-      "qid": "seerah-800-904",
-      "difficultyTarget": 0.25
+      "qid": "seerah-600-914",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "الغزوات",
       "q": "من قائد الرماة الذين أمرهم النبي بلزوم مواقعهم يوم أحد؟",
       "a": "عبد الله بن جبير",
@@ -389,11 +281,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3039",
       "verified": true,
-      "qid": "seerah-800-905",
-      "difficultyTarget": 0.25
+      "qid": "seerah-600-915",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "العهود والوفود",
       "q": "من زوجة النبي التي أشارت عليه أن يبدأ بالنحر والحلق بعد صلح الحديبية؟",
       "a": "أم سلمة",
@@ -402,11 +294,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:2731",
       "verified": true,
-      "qid": "seerah-800-906",
-      "difficultyTarget": 0.25
+      "qid": "seerah-600-916",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "الصحابة",
       "q": "من الصحابي الذي بعثه النبي مع وفد نجران ووصفه بأمين الأمة؟",
       "a": "أبو عبيدة بن الجراح",
@@ -416,11 +308,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:4380",
       "verified": true,
-      "qid": "seerah-800-907",
-      "difficultyTarget": 0.25
+      "qid": "seerah-600-917",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "الحياة اليومية",
       "q": "ما الخضار الذي كان النبي يتتبعه من جوانب القصعة في طعام الخياط؟",
       "a": "الدباء",
@@ -430,11 +322,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:5439",
       "verified": true,
-      "qid": "seerah-800-908",
-      "difficultyTarget": 0.25
+      "qid": "seerah-600-918",
+      "difficultyTarget": 0.4
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "النشأة والأسرة",
       "q": "من الصحابي الذي كان أخًا للنبي من الرضاعة وأصبحت ابنته ربيبته؟",
       "a": "أبو سلمة",
@@ -444,11 +336,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:5101",
       "verified": true,
-      "qid": "seerah-1000-901",
-      "difficultyTarget": 0.15
+      "qid": "seerah-800-911",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "بداية الدعوة",
       "q": "بأي لقب وصف ابن عم خديجة ملك الوحي حين سمع خبر النبي؟",
       "a": "الناموس",
@@ -457,11 +349,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3",
       "verified": true,
-      "qid": "seerah-1000-902",
-      "difficultyTarget": 0.15
+      "qid": "seerah-800-912",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "الهجرة",
       "q": "من سيد القارة الذي أجار رفيق الهجرة بمكة قبل هجرة النبي؟",
       "a": "ابن الدغنة",
@@ -470,11 +362,11 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3905",
       "verified": true,
-      "qid": "seerah-1000-903",
-      "difficultyTarget": 0.15
+      "qid": "seerah-800-913",
+      "difficultyTarget": 0.25
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "المدينة",
       "q": "ما اسما اليتيمين اللذين كانت لهما أرض بناء مسجد النبي؟",
       "a": "سهل وسهيل",
@@ -483,8 +375,62 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:3906",
       "verified": true,
-      "qid": "seerah-1000-904",
-      "difficultyTarget": 0.15
+      "qid": "seerah-800-914",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "العهود والوفود",
+      "q": "من مفاوض قريش الذي اتفق مع النبي على نص صلح الحديبية؟",
+      "a": "سهيل بن عمرو",
+      "alt": [
+        "سهيل"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
+      "verified": true,
+      "qid": "seerah-800-915",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الحياة اليومية",
+      "q": "ما اسم فرس أبي طلحة الذي استعاره النبي حين فزع أهل المدينة؟",
+      "a": "مندوب",
+      "alt": [
+        "المندوب"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:2862",
+      "verified": true,
+      "qid": "seerah-800-916",
+      "difficultyTarget": 0.25
+    },
+    {
+      "p": 800,
+      "topic": "الحياة اليومية",
+      "q": "في أي موضع قرب مكة بات النبي قبل دخولها، بحسب رواية ابن عمر؟",
+      "a": "ذو طوى",
+      "alt": [
+        "ذي طوى",
+        "طوى"
+      ],
+      "sourceUrl": "https://sunnah.com/bukhari:1573",
+      "verified": true,
+      "qid": "seerah-800-917",
+      "difficultyTarget": 0.25
+    },
+    {
+      "q": "من الصحابي الذي رأى الأذان في المنام ثم علّمه لبلال؟",
+      "a": "عبد الله بن زيد",
+      "topic": "المدينة",
+      "sourceUrl": "https://sunnah.com/abudawud:499",
+      "alt": [
+        "عبدالله بن زيد"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 800,
+      "qid": "seerah-800-918",
+      "difficultyTarget": 0.25
     },
     {
       "p": 1000,
@@ -496,7 +442,7 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:4090",
       "verified": true,
-      "qid": "seerah-1000-905",
+      "qid": "seerah-1000-911",
       "difficultyTarget": 0.15
     },
     {
@@ -509,34 +455,87 @@
       ],
       "sourceUrl": "https://sunnah.com/bukhari:2731",
       "verified": true,
-      "qid": "seerah-1000-906",
+      "qid": "seerah-1000-912",
       "difficultyTarget": 0.15
     },
     {
-      "p": 1000,
-      "topic": "الحياة اليومية",
-      "q": "ما اسم فرس أبي طلحة الذي استعاره النبي حين فزع أهل المدينة؟",
-      "a": "مندوب",
-      "alt": [
-        "المندوب"
-      ],
-      "sourceUrl": "https://sunnah.com/bukhari:2862",
+      "q": "أي زوجات النبي كانت أولهن وفاة بعده، واشتهرت بالعمل بيدها والصدقة؟",
+      "a": "زينب بنت جحش",
+      "topic": "النشأة والأسرة",
+      "sourceUrl": "https://sunnah.com/muslim:2452",
+      "alt": [],
       "verified": true,
-      "qid": "seerah-1000-907",
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-913",
       "difficultyTarget": 0.15
     },
     {
-      "p": 1000,
-      "topic": "الحياة اليومية",
-      "q": "في أي موضع قرب مكة بات النبي قبل دخولها، بحسب رواية ابن عمر؟",
-      "a": "ذو طوى",
+      "q": "من كان ينقل أخبار قريش إلى النبي وصاحبه أثناء إقامتهما في الغار؟",
+      "a": "عبد الله بن أبي بكر",
+      "topic": "الهجرة",
+      "sourceUrl": "https://sunnah.com/bukhari:3905",
       "alt": [
-        "ذي طوى",
-        "طوى"
+        "عبدالله بن أبي بكر"
       ],
-      "sourceUrl": "https://sunnah.com/bukhari:1573",
       "verified": true,
-      "qid": "seerah-1000-908",
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من أرسله النبي لاستطلاع أخبار العدو في ليلة باردة من غزوة الأحزاب؟",
+      "a": "حذيفة بن اليمان",
+      "topic": "الغزوات",
+      "sourceUrl": "https://sunnah.com/muslim:1788",
+      "alt": [
+        "حذيفة"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اسم حادي الإبل الذي قال له النبي «رويدك» رفقًا بالقوارير؟",
+      "a": "أنجشة",
+      "topic": "الحياة اليومية",
+      "sourceUrl": "https://sunnah.com/bukhari:6211",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من الصحابي الذي اشترى النبي جمله ثم أعاد إليه الجمل وثمنه؟",
+      "a": "جابر بن عبد الله",
+      "topic": "الحياة اليومية",
+      "sourceUrl": "https://sunnah.com/bukhari:2097",
+      "alt": [
+        "جابر بن عبدالله"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من جاء إلى المسلمين يرسف في قيوده أثناء مفاوضات الحديبية؟",
+      "a": "أبو جندل بن سهيل",
+      "topic": "العهود والوفود",
+      "sourceUrl": "https://sunnah.com/bukhari:2731",
+      "alt": [
+        "أبو جندل"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "seerah-1000-918",
       "difficultyTarget": 0.15
     }
   ]

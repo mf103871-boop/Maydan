@@ -5,119 +5,8 @@
   "style": "story",
   "qs": [
     {
-      "qid": "syriandrama-200-901",
+      "qid": "syriandrama-200-911",
       "p": 200,
-      "topic": "ضيعة ضايعة",
-      "q": "ما اسم القرية الساحلية التي تقع فيها أحداث «ضيعة ضايعة»؟",
-      "a": "أم الطنافس الفوقا",
-      "alt": [
-        "أم الطنافس",
-        "ام الطنافس الفوقا"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1400743/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "syriandrama-200-902",
-      "p": 200,
-      "topic": "الخربة",
-      "q": "ما العائلتان اللتان تتنافسان على النفوذ في «الخربة»؟",
-      "a": "بوقعقور وبومالحة",
-      "alt": [
-        "بو قعقور وبو مالحة",
-        "بومالحة وبوقعقور"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "syriandrama-200-903",
-      "p": 200,
-      "topic": "يوميات جميل وهناء",
-      "q": "أي شعور يحاول الزوج إثارتَه لدى زوجته في «يوميات جميل وهناء»؟",
-      "a": "الغيرة",
-      "alt": [
-        "أن تغار عليه",
-        "غيرة زوجته"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "syriandrama-200-904",
-      "p": 200,
-      "topic": "الزير سالم",
-      "q": "أي حرب قبل الإسلام تعيد أحداث مسلسل «الزير سالم» تصويرها؟",
-      "a": "حرب البسوس",
-      "alt": [
-        "البسوس"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1707324/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "syriandrama-200-905",
-      "p": 200,
-      "topic": "التغريبة الفلسطينية",
-      "q": "ما العمل الذي تعيش منه أسرة صالح الريفية في بداية «التغريبة الفلسطينية»؟",
-      "a": "الفلاحة",
-      "alt": [
-        "الزراعة",
-        "فلاحون",
-        "زراعة الأرض"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1002894/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "syriandrama-200-906",
-      "p": 200,
-      "topic": "الفصول الأربعة",
-      "q": "ما اسم الأب الكبير الذي تلتف حوله العائلة في «الفصول الأربعة»؟",
-      "a": "كريم",
-      "alt": [
-        "كريم مالك"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1011042/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "syriandrama-200-907",
-      "p": 200,
-      "topic": "أهل الراية",
-      "q": "بأي كنية يُعرف زعيم الحارة ووالد الحسن في «أهل الراية»؟",
-      "a": "أبو الحسن",
-      "alt": [
-        "ابو الحسن"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1846031/content",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "syriandrama-200-908",
-      "p": 200,
-      "topic": "الانتظار",
-      "q": "ما مهنة وائل الذي يحاول الحفاظ على مبادئه في «الانتظار»؟",
-      "a": "صحافي",
-      "alt": [
-        "صحفي",
-        "الصحافة",
-        "كاتب صحافي"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
-      "verified": true,
-      "difficultyTarget": 0.8
-    },
-    {
-      "qid": "syriandrama-400-901",
-      "p": 400,
       "topic": "ضيعة ضايعة",
       "q": "من الجار الذي يحسد أسعد ويحاول تعطيل افتتاح دكانه في «ضيعة ضايعة»؟",
       "a": "جودة",
@@ -126,11 +15,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1400743/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-400-902",
-      "p": 400,
+      "qid": "syriandrama-200-912",
+      "p": 200,
       "topic": "الخربة",
       "q": "ما تخصص عاطف الحقيقي الذي يفاجئ عائلته بعد عودته في «الخربة»؟",
       "a": "الطب البيطري",
@@ -140,22 +29,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1768474/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-400-903",
-      "p": 400,
+      "qid": "syriandrama-200-913",
+      "p": 200,
       "topic": "يوميات جميل وهناء",
       "q": "ما اسم السكرتيرة التي تنصح الزوجة برفع راتبها في «يوميات جميل وهناء»؟",
       "a": "أمل",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1010717/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-400-904",
-      "p": 400,
+      "qid": "syriandrama-200-914",
+      "p": 200,
       "topic": "الزير سالم",
       "q": "من يغدر بكليب ويقتله في مسلسل «الزير سالم»؟",
       "a": "جساس",
@@ -164,11 +52,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1707324/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-400-905",
-      "p": 400,
+      "qid": "syriandrama-200-915",
+      "p": 200,
       "topic": "التغريبة الفلسطينية",
       "q": "من الأخ المتعلم الذي يستعيد حكاية أسرته في «التغريبة الفلسطينية»؟",
       "a": "علي",
@@ -177,22 +65,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1002894/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-400-906",
-      "p": 400,
+      "qid": "syriandrama-200-916",
+      "p": 200,
       "topic": "الفصول الأربعة",
       "q": "ما اسم الأم التي يبدأ المسلسل باحتفال العائلة بعيد ميلادها في «الفصول الأربعة»؟",
       "a": "نبيلة",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1011042/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-400-907",
-      "p": 400,
+      "qid": "syriandrama-200-917",
+      "p": 200,
       "topic": "أهل الراية",
       "q": "ما اسم ابنة الزعيم التي تُظلم ثم تتزوج رضا في ختام «أهل الراية»؟",
       "a": "قطر الندى",
@@ -201,22 +88,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1846031/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-400-908",
-      "p": 400,
+      "qid": "syriandrama-200-918",
+      "p": 200,
       "topic": "الانتظار",
       "q": "من الشاب الذي يحمي رجا ويموت أثناء إنقاذه في ختام «الانتظار»؟",
       "a": "عبود",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1676776/episodes",
       "verified": true,
-      "difficultyTarget": 0.6
+      "difficultyTarget": 0.8
     },
     {
-      "qid": "syriandrama-600-901",
-      "p": 600,
+      "qid": "syriandrama-400-911",
+      "p": 400,
       "topic": "ضيعة ضايعة",
       "q": "أي حيوان يواجهه أسعد فتحتفل القرية بشجاعته في حلقة «البطل»؟",
       "a": "ضبع",
@@ -225,11 +111,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1400743/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "syriandrama-600-902",
-      "p": 600,
+      "qid": "syriandrama-400-912",
+      "p": 400,
       "topic": "الخربة",
       "q": "ما الشيء الذي يكتشف غسان غياب اسم قريته عنه في «الخربة»؟",
       "a": "الخريطة",
@@ -239,22 +125,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1768474/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "syriandrama-600-903",
-      "p": 600,
+      "qid": "syriandrama-400-913",
+      "p": 400,
       "topic": "يوميات جميل وهناء",
       "q": "من الصديق الذي يشجّع الزوج على تغيير تصرفاته مع النساء في «يوميات جميل وهناء»؟",
       "a": "وسيم",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1010717/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "syriandrama-600-904",
-      "p": 600,
+      "qid": "syriandrama-400-914",
+      "p": 400,
       "topic": "الزير سالم",
       "q": "في «الزير سالم»، ما الوصية القصيرة التي يجدها البطل مكتوبة بدم أخيه المقتول؟",
       "a": "لا تصالح",
@@ -263,11 +148,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1707324/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "syriandrama-600-905",
-      "p": 600,
+      "qid": "syriandrama-400-915",
+      "p": 400,
       "topic": "التغريبة الفلسطينية",
       "q": "من الأخ الذي يحب جميلة ويصر على الزواج منها في «التغريبة الفلسطينية»؟",
       "a": "حسن",
@@ -276,22 +161,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1002894/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "syriandrama-600-906",
-      "p": 600,
+      "qid": "syriandrama-400-916",
+      "p": 400,
       "topic": "الفصول الأربعة",
       "q": "من محامي العائلة ووالد نارا في «الفصول الأربعة»؟",
       "a": "عادل",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1011042/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "syriandrama-600-907",
-      "p": 600,
+      "qid": "syriandrama-400-917",
+      "p": 400,
       "topic": "أهل الراية",
       "q": "ما الحرفة التي تتعلمها ابنة الزعيم عند بدرية في «أهل الراية»؟",
       "a": "الخياطة",
@@ -301,11 +185,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1846031/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "syriandrama-600-908",
-      "p": 600,
+      "qid": "syriandrama-400-918",
+      "p": 400,
       "topic": "الانتظار",
       "q": "في «الانتظار»، ما حلم بسام الذي يحاول أخوه صابر إبعاده عنه بالزواج؟",
       "a": "الهجرة",
@@ -315,11 +199,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1676776/episodes",
       "verified": true,
-      "difficultyTarget": 0.4
+      "difficultyTarget": 0.6
     },
     {
-      "qid": "syriandrama-800-901",
-      "p": 800,
+      "qid": "syriandrama-600-911",
+      "p": 600,
       "topic": "ضيعة ضايعة",
       "q": "لماذا يغادر أسعد منزله سرًا في بداية الجزء الثاني من «ضيعة ضايعة»؟",
       "a": "هربًا من مضايقات جاره",
@@ -329,22 +213,21 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1494336/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "syriandrama-800-902",
-      "p": 800,
+      "qid": "syriandrama-600-912",
+      "p": 600,
       "topic": "الخربة",
       "q": "من أي بلد يعود عاطف، لتتكشف حقيقة دراسته وزواجه في «الخربة»؟",
       "a": "فرنسا",
-      "alt": [],
       "sourceUrl": "https://elcinema.com/work/1768474/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "syriandrama-800-903",
-      "p": 800,
+      "qid": "syriandrama-600-913",
+      "p": 600,
       "topic": "يوميات جميل وهناء",
       "q": "أي مادة يدرّسها الزوج لسهام بناءً على طلب جارته في «يوميات جميل وهناء»؟",
       "a": "الرياضيات",
@@ -353,11 +236,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1010717/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "syriandrama-800-904",
-      "p": 800,
+      "qid": "syriandrama-600-914",
+      "p": 600,
       "topic": "الزير سالم",
       "q": "في «الزير سالم»، من ابن الملك المقتول الذي يثأر لأبيه في مبارزة خاله؟",
       "a": "هجرس",
@@ -366,11 +249,11 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1707324/episodes",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "syriandrama-800-905",
-      "p": 800,
+      "qid": "syriandrama-600-915",
+      "p": 600,
       "topic": "التغريبة الفلسطينية",
       "q": "ما اسم أم أحمد التي تحاول جمع الأسرة في «التغريبة الفلسطينية»؟",
       "a": "مستورة",
@@ -379,21 +262,119 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1002894/cast",
       "verified": true,
-      "difficultyTarget": 0.25
+      "difficultyTarget": 0.4
     },
     {
-      "qid": "syriandrama-800-906",
-      "p": 800,
+      "qid": "syriandrama-600-916",
+      "p": 600,
       "topic": "الفصول الأربعة",
       "q": "في «الفصول الأربعة»، إلى أي مدينة توهم المسابقة نجيب بأنه ربح تذكرتي سفر؟",
       "a": "باريس",
-      "alt": [],
+      "sourceUrl": "https://elcinema.com/work/1011042/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "syriandrama-600-917",
+      "p": 600,
+      "topic": "أهل الراية",
+      "q": "في «أهل الراية»، ماذا يرسل الزعيم للإمبراطور الألماني ردًا على وسام الوجاهة؟",
+      "a": "سيفه",
+      "alt": [
+        "سيف",
+        "السيف"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1846031/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "syriandrama-600-918",
+      "p": 600,
+      "topic": "الانتظار",
+      "q": "ما اسم ابنة وائل التي تفقد بصرها مؤقتًا بعد حادث في «الانتظار»؟",
+      "a": "مالك",
+      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "verified": true,
+      "difficultyTarget": 0.4
+    },
+    {
+      "qid": "syriandrama-800-911",
+      "p": 800,
+      "topic": "ضيعة ضايعة",
+      "q": "في «ضيعة ضايعة»، من أي بلد يرسل عم أسعد المغترب رسالة تثير حسد جاره في الجزء الثاني؟",
+      "a": "فنزويلا",
+      "sourceUrl": "https://elcinema.com/work/1494336/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-912",
+      "p": 800,
+      "topic": "الخربة",
+      "q": "لأي طفل يزوّر بو نمر شهادة النجاح في بداية «الخربة»؟",
+      "a": "هيثم",
+      "alt": [
+        "هيثم ابن فياض"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-913",
+      "p": 800,
+      "topic": "يوميات جميل وهناء",
+      "q": "في «يوميات جميل وهناء»، ما الذي يعطيه الصديق للبطل ليقلّد أحداثه مع زوجته في الحلقة السابعة؟",
+      "a": "سيناريو مسلسل",
+      "alt": [
+        "سيناريو",
+        "نص مسلسل"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-914",
+      "p": 800,
+      "topic": "الزير سالم",
+      "q": "في «الزير سالم»، ما الاسم الذي تمنحه القبيلة للبطل بعد فقدان ذاكرته؟",
+      "a": "تمساح",
+      "alt": [
+        "التمساح"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1707324/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-915",
+      "p": 800,
+      "topic": "التغريبة الفلسطينية",
+      "q": "في «التغريبة الفلسطينية»، ما الوظيفة التي يحصل عليها الأخ المتعلم بعد الثانوية، بدل وظيفة المدينة التي أرادها؟",
+      "a": "مدرّس في قريته",
+      "alt": [
+        "مدرس",
+        "معلم القرية",
+        "التدريس"
+      ],
+      "sourceUrl": "https://elcinema.com/work/1002894/episodes",
+      "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "qid": "syriandrama-800-916",
+      "p": 800,
+      "topic": "الفصول الأربعة",
+      "q": "في «الفصول الأربعة»، لأي فنان تكتب نارا رسالة إعجاب يسيء والدها فهمها؟",
+      "a": "رامي عياش",
       "sourceUrl": "https://elcinema.com/work/1011042/episodes",
       "verified": true,
       "difficultyTarget": 0.25
     },
     {
-      "qid": "syriandrama-800-907",
+      "qid": "syriandrama-800-917",
       "p": 800,
       "topic": "أهل الراية",
       "q": "من الزوجة التي تدبر اتهام ابنة الزعيم ظلمًا في «أهل الراية»؟",
@@ -406,112 +387,8 @@
       "difficultyTarget": 0.25
     },
     {
-      "qid": "syriandrama-800-908",
+      "qid": "syriandrama-800-918",
       "p": 800,
-      "topic": "الانتظار",
-      "q": "ما اسم ابنة وائل التي تفقد بصرها مؤقتًا بعد حادث في «الانتظار»؟",
-      "a": "مالك",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
-      "verified": true,
-      "difficultyTarget": 0.25
-    },
-    {
-      "qid": "syriandrama-1000-901",
-      "p": 1000,
-      "topic": "ضيعة ضايعة",
-      "q": "في «ضيعة ضايعة»، من أي بلد يرسل عم أسعد المغترب رسالة تثير حسد جاره في الجزء الثاني؟",
-      "a": "فنزويلا",
-      "alt": [
-        "فنزويلا"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1494336/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "syriandrama-1000-902",
-      "p": 1000,
-      "topic": "الخربة",
-      "q": "لأي طفل يزوّر بو نمر شهادة النجاح في بداية «الخربة»؟",
-      "a": "هيثم",
-      "alt": [
-        "هيثم ابن فياض"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "syriandrama-1000-903",
-      "p": 1000,
-      "topic": "يوميات جميل وهناء",
-      "q": "في «يوميات جميل وهناء»، ما الذي يعطيه الصديق للبطل ليقلّد أحداثه مع زوجته في الحلقة السابعة؟",
-      "a": "سيناريو مسلسل",
-      "alt": [
-        "سيناريو",
-        "نص مسلسل"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "syriandrama-1000-904",
-      "p": 1000,
-      "topic": "الزير سالم",
-      "q": "في «الزير سالم»، ما الاسم الذي تمنحه القبيلة للبطل بعد فقدان ذاكرته؟",
-      "a": "تمساح",
-      "alt": [
-        "التمساح"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1707324/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "syriandrama-1000-905",
-      "p": 1000,
-      "topic": "التغريبة الفلسطينية",
-      "q": "في «التغريبة الفلسطينية»، ما الوظيفة التي يحصل عليها الأخ المتعلم بعد الثانوية، بدل وظيفة المدينة التي أرادها؟",
-      "a": "مدرّس في قريته",
-      "alt": [
-        "مدرس",
-        "معلم القرية",
-        "التدريس"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1002894/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "syriandrama-1000-906",
-      "p": 1000,
-      "topic": "الفصول الأربعة",
-      "q": "في «الفصول الأربعة»، لأي فنان تكتب نارا رسالة إعجاب يسيء والدها فهمها؟",
-      "a": "رامي عياش",
-      "alt": [],
-      "sourceUrl": "https://elcinema.com/work/1011042/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "syriandrama-1000-907",
-      "p": 1000,
-      "topic": "أهل الراية",
-      "q": "في «أهل الراية»، ماذا يرسل الزعيم للإمبراطور الألماني ردًا على وسام الوجاهة؟",
-      "a": "سيفه",
-      "alt": [
-        "سيف",
-        "السيف"
-      ],
-      "sourceUrl": "https://elcinema.com/work/1846031/episodes",
-      "verified": true,
-      "difficultyTarget": 0.15
-    },
-    {
-      "qid": "syriandrama-1000-908",
-      "p": 1000,
       "topic": "الانتظار",
       "q": "من الخصم الذي يقتل حامي رجا في الحلقة الأخيرة من «الانتظار»؟",
       "a": "شاويش",
@@ -520,6 +397,93 @@
       ],
       "sourceUrl": "https://elcinema.com/work/1676776/episodes",
       "verified": true,
+      "difficultyTarget": 0.25
+    },
+    {
+      "topic": "ضيعة ضايعة",
+      "q": "من أي جزر ترسل خالة ديبة رسالة الميراث في «ضيعة ضايعة 2»؟",
+      "a": "جزر الكناري",
+      "sourceUrl": "https://elcinema.com/work/1494336/episodes",
+      "alt": [
+        "الكناري"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الخربة",
+      "q": "في «الخربة»، ما الوثيقة التي ينساها جوهر فيُمنع من دخول الحفل الرسمي؟",
+      "a": "الهوية الشخصية",
+      "sourceUrl": "https://elcinema.com/work/1768474/episodes",
+      "alt": [
+        "هويته",
+        "بطاقة الهوية"
+      ],
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "يوميات جميل وهناء",
+      "q": "في «يوميات جميل وهناء»، أين تخبئ أم محمود أموال الجائزة التي يسرقها السباك؟",
+      "a": "المطبخ",
+      "sourceUrl": "https://elcinema.com/work/1010717/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الزير سالم",
+      "q": "في «الزير سالم»، إلى أي بلد يحلم سالم بالسفر في بداية الأحداث؟",
+      "a": "الهند",
+      "sourceUrl": "https://elcinema.com/work/1707324/content",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "التغريبة الفلسطينية",
+      "q": "في «التغريبة الفلسطينية»، من يجد ابن فتحية الضائع ويتولى تربيته؟",
+      "a": "أبو محمود",
+      "sourceUrl": "https://elcinema.com/work/1002894/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الفصول الأربعة",
+      "q": "في «الفصول الأربعة 1»، ما اسم الأرملة التي تطلب من محامي العائلة رفع دعوى ضد نفسها؟",
+      "a": "سراب",
+      "sourceUrl": "https://elcinema.com/work/1011042/content",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "أهل الراية",
+      "q": "في «أهل الراية 1»، ما اسم مرضعة ابن الزعيم؟",
+      "a": "فهيمة",
+      "sourceUrl": "https://elcinema.com/work/1846031/content",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "topic": "الانتظار",
+      "q": "في «الانتظار»، من زوجة ماهر التي تراقب محله وتشك في علاقاته؟",
+      "a": "ريهام",
+      "sourceUrl": "https://elcinema.com/work/1676776/episodes",
+      "verified": true,
+      "p": 1000,
+      "qid": "syriandrama-1000-918",
       "difficultyTarget": 0.15
     }
   ]

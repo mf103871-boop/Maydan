@@ -5,125 +5,39 @@
   "qs": [
     {
       "p": 200,
-      "q": "ما أول سورة في ترتيب المصحف؟",
-      "a": "الفاتحة",
-      "qid": "quran-200-901",
-      "topic": "السور والمقاطع",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/1"
-    },
-    {
-      "p": 200,
-      "q": "من علّمه الله الأسماء كلها ثم عرضهم على الملائكة؟",
-      "a": "آدم",
-      "qid": "quran-200-902",
-      "topic": "الشخصيات والأقوام",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/al-baqarah/31"
-    },
-    {
-      "p": 200,
-      "q": "أي طائر قال «أحطت بما لم تحط به»؟",
-      "a": "الهدهد",
-      "qid": "quran-200-903",
-      "topic": "الحيوان والنبات",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/an-naml/22"
-    },
-    {
-      "p": 200,
-      "q": "مم جعل الله كل شيء حي بحسب سورة الأنبياء؟",
-      "a": "الماء",
-      "qid": "quran-200-904",
-      "topic": "الأشياء والمواد",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/21/30"
-    },
-    {
-      "p": 200,
-      "q": "ما المدة التي ورد أن ليلة القدر خير منها؟",
-      "a": "ألف شهر",
-      "qid": "quran-200-905",
-      "topic": "الأعداد والأزمنة",
-      "verified": true,
-      "alt": [
-        "1000 شهر"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/al-qadr/3"
-    },
-    {
-      "p": 200,
-      "q": "إلى أي مسجد انتهت رحلة الإسراء المذكورة في مطلع سورتها؟",
-      "a": "المسجد الأقصى",
-      "qid": "quran-200-906",
-      "topic": "الأماكن",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/17/1"
-    },
-    {
-      "p": 200,
-      "q": "بأي لغة يصف القرآن نفسه أنه أُنزل؟",
-      "a": "العربية",
-      "qid": "quran-200-907",
-      "topic": "الألفاظ والأوصاف",
-      "verified": true,
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/yusuf/2"
-    },
-    {
-      "p": 200,
-      "q": "ما الحشرة التي حذرت قومها من أن يحطمهم سليمان وجنوده؟",
-      "a": "النملة",
-      "qid": "quran-200-908",
-      "topic": "الحيوان والنبات",
-      "verified": true,
-      "alt": [
-        "نملة"
-      ],
-      "difficultyTarget": 0.8,
-      "sourceUrl": "https://quran.com/27/18"
-    },
-    {
-      "p": 400,
       "q": "في أي سورة توجد آية الكرسي؟",
       "a": "البقرة",
-      "qid": "quran-400-901",
+      "qid": "quran-200-911",
       "topic": "السور والمقاطع",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://quran.com/2/255"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "من الشخص الذي يذكر القرآن أنه أوتي الحكمة ووعظ ابنه؟",
       "a": "لقمان",
-      "qid": "quran-400-902",
+      "qid": "quran-200-912",
       "topic": "الشخصيات والأقوام",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://quran.com/31/12-13"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الثمرة المذكورة بعد الفاكهة والنخل في وصف الجنتين؟",
       "a": "الرمان",
-      "qid": "quran-400-903",
+      "qid": "quran-200-913",
       "topic": "الحيوان والنبات",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://quran.com/ar-rahman/68"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما الشيء الذي أحضره صاحب علم الكتاب إلى سليمان قبل أن يرتد إليه طرفه؟",
       "a": "عرش ملكة سبأ",
-      "qid": "quran-400-904",
+      "qid": "quran-200-914",
       "topic": "الأشياء والمواد",
       "verified": true,
       "alt": [
@@ -131,93 +45,93 @@
         "عرش بلقيس",
         "عرش الملكة"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://quran.com/27/38-40"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "في كم يوم خلق الله السماوات والأرض بحسب القرآن؟",
       "a": "ستة أيام",
-      "qid": "quran-400-905",
+      "qid": "quran-200-915",
       "topic": "الأعداد والأزمنة",
       "verified": true,
       "alt": [
         "6 أيام"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://quran.com/7/54"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "على أي جبل استوت سفينة نوح؟",
       "a": "الجودي",
-      "qid": "quran-400-906",
+      "qid": "quran-200-916",
       "topic": "الأماكن",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://quran.com/11/44"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما المادة الموصوف بها ختام الرحيق المختوم؟",
       "a": "المسك",
-      "qid": "quran-400-907",
+      "qid": "quran-200-917",
       "topic": "الألفاظ والأوصاف",
       "verified": true,
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://quran.com/83/26"
     },
     {
-      "p": 400,
+      "p": 200,
       "q": "ما السورة الوحيدة التي لا تُفتتح بالبسملة؟",
       "a": "التوبة",
-      "qid": "quran-400-908",
+      "qid": "quran-200-918",
       "topic": "علوم القرآن",
       "verified": true,
       "alt": [
         "براءة"
       ],
-      "difficultyTarget": 0.6,
+      "difficultyTarget": 0.8,
       "sourceUrl": "https://quran.com/9"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "في أي سورة ورد «وجعلناكم شعوبا وقبائل لتعارفوا»؟",
       "a": "الحجرات",
-      "qid": "quran-600-901",
+      "qid": "quran-400-911",
       "topic": "السور والمقاطع",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/49/13"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "من الملك الذي زاده الله بسطة في العلم والجسم؟",
       "a": "طالوت",
-      "qid": "quran-600-902",
+      "qid": "quran-400-912",
       "topic": "الشخصيات والأقوام",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/2/247"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما الشجرة التي أنبتها الله على يونس بعد نجاته من الحوت؟",
       "a": "اليقطين",
-      "qid": "quran-600-903",
+      "qid": "quran-400-913",
       "topic": "الحيوان والنبات",
       "verified": true,
       "alt": [
         "يقطين"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/as-saffat/146"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما اسم المعدن المصهور الذي أفرغه ذو القرنين على حاجز يأجوج ومأجوج؟",
       "a": "القطر",
-      "qid": "quran-600-904",
+      "qid": "quran-400-914",
       "topic": "الأشياء والمواد",
       "verified": true,
       "alt": [
@@ -225,87 +139,87 @@
         "النحاس المذاب",
         "قطر"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/18/96"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "كم نعجة كان يملك أحد الخصمين في قصة المحراب؟",
       "a": "تسع وتسعون",
-      "qid": "quran-600-905",
+      "qid": "quran-400-915",
       "topic": "الأعداد والأزمنة",
       "verified": true,
       "alt": [
         "99"
       ],
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/38/23"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما المدينة التي ورد اسمها مع هاروت وماروت في سورة البقرة؟",
       "a": "بابل",
-      "qid": "quran-600-906",
+      "qid": "quran-400-916",
       "topic": "الأماكن",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/al-baqarah/102"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "بم شُبّهت أعمال الكافرين التي يحسبها الظمآن ماء؟",
       "a": "السراب",
-      "qid": "quran-600-907",
+      "qid": "quran-400-917",
       "topic": "الألفاظ والأوصاف",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/24/39"
     },
     {
-      "p": 600,
+      "p": 400,
       "q": "ما السورة التي يتحدث مطلعها عن تحول هزيمة إلى غلبة؟",
       "a": "الروم",
-      "qid": "quran-600-908",
+      "qid": "quran-400-918",
       "topic": "السور والمقاطع",
       "verified": true,
-      "difficultyTarget": 0.4,
+      "difficultyTarget": 0.6,
       "sourceUrl": "https://quran.com/30/2-4"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "في أي سورة ورد «وفي أنفسكم أفلا تبصرون»؟",
       "a": "الذاريات",
-      "qid": "quran-800-901",
+      "qid": "quran-600-911",
       "topic": "السور والمقاطع",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://quran.com/adh-dhariyat/21"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "من الذي أمره فرعون ببناء صرح لعله يبلغ الأسباب؟",
       "a": "هامان",
-      "qid": "quran-800-902",
+      "qid": "quran-600-912",
       "topic": "الشخصيات والأقوام",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://quran.com/40/36"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "ما الشجر الذي ورد بوصف «منضود» في سورة الواقعة؟",
       "a": "الطلح",
-      "qid": "quran-800-903",
+      "qid": "quran-600-913",
       "topic": "الحيوان والنبات",
       "verified": true,
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://quran.com/al-waqiah/29"
     },
     {
-      "p": 800,
+      "p": 600,
       "q": "بأي لفظ سمى القرآن النقود التي أرسلها أصحاب الكهف مع أحدهم لشراء الطعام؟",
       "a": "الوَرِق",
-      "qid": "quran-800-904",
+      "qid": "quran-600-914",
       "topic": "الأشياء والمواد",
       "verified": true,
       "alt": [
@@ -313,14 +227,115 @@
         "وَرِق",
         "ورقكم"
       ],
-      "difficultyTarget": 0.25,
+      "difficultyTarget": 0.4,
       "sourceUrl": "https://quran.com/18/19"
+    },
+    {
+      "p": 600,
+      "q": "ما الكلمة التي تقترن بقدح الشرر في الآية التالية لقسم العاديات؟",
+      "a": "الموريات",
+      "qid": "quran-600-915",
+      "topic": "الألفاظ والأوصاف",
+      "verified": true,
+      "alt": [
+        "فالموريات",
+        "الموريات قدحا"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/al-adiyat/2"
+    },
+    {
+      "p": 600,
+      "q": "ما الموضع الذي وصف أن عليه رجالًا يعرفون كلًا بسيماهم؟",
+      "a": "الأعراف",
+      "qid": "quran-600-916",
+      "topic": "الأماكن",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/7/46"
+    },
+    {
+      "p": 600,
+      "q": "بم شبه القمر في نهاية منازله في سورة يس؟",
+      "a": "العرجون القديم",
+      "qid": "quran-600-917",
+      "topic": "الألفاظ والأوصاف",
+      "verified": true,
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/ya-sin/39"
+    },
+    {
+      "p": 600,
+      "q": "ما اسم العين المذكورة بعد شراب الزنجبيل في سورة الإنسان؟",
+      "a": "سلسبيل",
+      "qid": "quran-600-918",
+      "topic": "الأماكن",
+      "verified": true,
+      "alt": [
+        "سلسبيلا"
+      ],
+      "difficultyTarget": 0.4,
+      "sourceUrl": "https://quran.com/76/18"
+    },
+    {
+      "p": 800,
+      "q": "في أي سورة ورد «انظروا إلى ثمره إذا أثمر وينعه»؟",
+      "a": "الأنعام",
+      "qid": "quran-800-911",
+      "topic": "السور والمقاطع",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/6/99"
+    },
+    {
+      "p": 800,
+      "q": "ما الفئة المذكورة قبل الأحبار في آية الحكم بالتوراة بسورة المائدة؟",
+      "a": "الربانيون",
+      "qid": "quran-800-912",
+      "topic": "الشخصيات والأقوام",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/5/44"
+    },
+    {
+      "p": 800,
+      "q": "ما اسم عناقيد النخل التي وصفها القرآن بالدنو في سورة الأنعام؟",
+      "a": "القنوان",
+      "qid": "quran-800-913",
+      "topic": "الحيوان والنبات",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/6/99"
+    },
+    {
+      "p": 800,
+      "q": "ما الكلمة المقترنة بالألواح في وصف سفينة نوح بسورة القمر؟",
+      "a": "الدسر",
+      "qid": "quran-800-914",
+      "topic": "الأشياء والمواد",
+      "verified": true,
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/54/13"
+    },
+    {
+      "p": 800,
+      "q": "ما المدة المذكورة لمجموع الحمل والفصال في القرآن؟",
+      "a": "ثلاثون شهرًا",
+      "qid": "quran-800-915",
+      "topic": "الأعداد والأزمنة",
+      "verified": true,
+      "alt": [
+        "30 شهرًا",
+        "ثلاثين شهرًا"
+      ],
+      "difficultyTarget": 0.25,
+      "sourceUrl": "https://quran.com/al-ahqaf/15"
     },
     {
       "p": 800,
       "q": "كيف وصفت سورة الدخان الليلة التي أنزل فيها الكتاب؟",
       "a": "ليلة مباركة",
-      "qid": "quran-800-905",
+      "qid": "quran-800-916",
       "topic": "الأعداد والأزمنة",
       "verified": true,
       "difficultyTarget": 0.25,
@@ -328,124 +343,131 @@
     },
     {
       "p": 800,
-      "q": "ما الموضع الذي وصف أن عليه رجالًا يعرفون كلًا بسيماهم؟",
-      "a": "الأعراف",
-      "qid": "quran-800-906",
-      "topic": "الأماكن",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/7/46"
-    },
-    {
-      "p": 800,
-      "q": "بم شبه القمر في نهاية منازله في سورة يس؟",
-      "a": "العرجون القديم",
-      "qid": "quran-800-907",
-      "topic": "الألفاظ والأوصاف",
-      "verified": true,
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/ya-sin/39"
-    },
-    {
-      "p": 800,
-      "q": "ما الكلمة التي تقترن بقدح الشرر في الآية التالية لقسم العاديات؟",
-      "a": "الموريات",
-      "qid": "quran-800-908",
-      "topic": "الألفاظ والأوصاف",
-      "verified": true,
-      "alt": [
-        "فالموريات",
-        "الموريات قدحا"
-      ],
-      "difficultyTarget": 0.25,
-      "sourceUrl": "https://quran.com/al-adiyat/2"
-    },
-    {
-      "p": 1000,
-      "q": "في أي سورة ورد «انظروا إلى ثمره إذا أثمر وينعه»؟",
-      "a": "الأنعام",
-      "qid": "quran-1000-901",
-      "topic": "السور والمقاطع",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://quran.com/6/99"
-    },
-    {
-      "p": 1000,
-      "q": "ما الفئة المذكورة قبل الأحبار في آية الحكم بالتوراة بسورة المائدة؟",
-      "a": "الربانيون",
-      "qid": "quran-1000-902",
-      "topic": "الشخصيات والأقوام",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://quran.com/5/44"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم عناقيد النخل التي وصفها القرآن بالدنو في سورة الأنعام؟",
-      "a": "القنوان",
-      "qid": "quran-1000-903",
-      "topic": "الحيوان والنبات",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://quran.com/6/99"
-    },
-    {
-      "p": 1000,
-      "q": "ما الكلمة المقترنة بالألواح في وصف سفينة نوح بسورة القمر؟",
-      "a": "الدسر",
-      "qid": "quran-1000-904",
-      "topic": "الأشياء والمواد",
-      "verified": true,
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://quran.com/54/13"
-    },
-    {
-      "p": 1000,
-      "q": "ما المدة المذكورة لمجموع الحمل والفصال في القرآن؟",
-      "a": "ثلاثون شهرًا",
-      "qid": "quran-1000-905",
-      "topic": "الأعداد والأزمنة",
-      "verified": true,
-      "alt": [
-        "30 شهرًا",
-        "ثلاثين شهرًا"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://quran.com/al-ahqaf/15"
-    },
-    {
-      "p": 1000,
-      "q": "ما اسم العين المذكورة بعد شراب الزنجبيل في سورة الإنسان؟",
-      "a": "سلسبيل",
-      "qid": "quran-1000-906",
-      "topic": "الأماكن",
-      "verified": true,
-      "alt": [
-        "سلسبيلا"
-      ],
-      "difficultyTarget": 0.15,
-      "sourceUrl": "https://quran.com/76/18"
-    },
-    {
-      "p": 1000,
       "q": "بأي وصف للسماء أُقسم قبل «إنكم لفي قول مختلف»؟",
       "a": "الحبك",
-      "qid": "quran-1000-907",
+      "qid": "quran-800-917",
       "topic": "الألفاظ والأوصاف",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://quran.com/adh-dhariyat/7"
     },
     {
-      "p": 1000,
+      "p": 800,
       "q": "ما اللفظ القرآني للمطر الخارج من خلال السحاب في سورة النور؟",
       "a": "الودق",
-      "qid": "quran-1000-908",
+      "qid": "quran-800-918",
       "topic": "الألفاظ والأوصاف",
       "verified": true,
-      "difficultyTarget": 0.15,
+      "difficultyTarget": 0.25,
       "sourceUrl": "https://quran.com/24/43"
+    },
+    {
+      "q": "في أي سورة ورد «وما أمرنا إلا واحدة كلمح بالبصر»؟",
+      "a": "القمر",
+      "topic": "السور والمقاطع",
+      "sourceUrl": "https://quran.com/54/50",
+      "alt": [
+        "سورة القمر"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما القوم المذكورون بعد أصحاب الأيكة في سورة ق؟",
+      "a": "قوم تبع",
+      "topic": "الشخصيات والأقوام",
+      "sourceUrl": "https://quran.com/50/14",
+      "alt": [
+        "تبع"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اللفظ الوارد بعد «والحب ذو العصف» في سورة الرحمن؟",
+      "a": "الريحان",
+      "topic": "الحيوان والنبات",
+      "sourceUrl": "https://quran.com/55/12",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "بم شُبّه الماء الذي يشوي الوجوه في سورة الكهف؟",
+      "a": "المهل",
+      "topic": "الأشياء والمواد",
+      "sourceUrl": "https://quran.com/18/29",
+      "alt": [],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "بأي لفظ شُبّهت حديقة أصحاب الجنة بعد تلفها في سورة القلم؟",
+      "a": "الصريم",
+      "topic": "التشبيهات",
+      "sourceUrl": "https://quran.com/al-qalam/20",
+      "alt": [
+        "كالصريم"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما لفظ المكان الذي أُوي إليه عيسى وأمه ووُصف بأنه ذات قرار ومعين؟",
+      "a": "ربوة",
+      "topic": "الأماكن",
+      "sourceUrl": "https://quran.com/23/50",
+      "alt": [
+        "الربوة"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "من ماذا أُنزل الماء الثجاج بحسب لفظ سورة النبأ؟",
+      "a": "المعصرات",
+      "topic": "الألفاظ والأوصاف",
+      "sourceUrl": "https://quran.com/78/14",
+      "alt": [
+        "من المعصرات"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-917",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اللفظ الموصوف بالخضرة في خاتمة سورة الرحمن قبل «وعبقري حسان»؟",
+      "a": "رفرف",
+      "topic": "الألفاظ والأوصاف",
+      "sourceUrl": "https://quran.com/55/76",
+      "alt": [
+        "رفرف خضر"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "p": 1000,
+      "qid": "quran-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }

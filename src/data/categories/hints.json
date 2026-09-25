@@ -8,145 +8,6 @@
       "p": 200,
       "topic": "بلدان",
       "type": "hints",
-      "q": "أي بلد عربي يشتهر بآثار الفراعنة؟",
-      "a": "مصر",
-      "hints": [
-        "يمرّ بي نهر النيل",
-        "في الجيزة تقف أهرامي الشهيرة",
-        "عاصمتي القاهرة"
-      ],
-      "alt": [],
-      "qid": "hints-200-901",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Egypt"
-    },
-    {
-      "p": 200,
-      "topic": "حيوانات",
-      "type": "hints",
-      "q": "من صاحب الزئير بين الحيوانات؟",
-      "a": "أسد",
-      "hints": [
-        "أعيش في جماعات تسمى زُمَرًا",
-        "لذكرِي غالبًا لبدة حول الرأس",
-        "يلقبونني بملك الغابة"
-      ],
-      "alt": [],
-      "qid": "hints-200-902",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Lion"
-    },
-    {
-      "p": 200,
-      "topic": "معالم",
-      "type": "hints",
-      "q": "أي معلم فرنسي نبحث عنه؟",
-      "a": "برج إيفل",
-      "hints": [
-        "بُنيت لمعرض عالمي سنة 1889",
-        "لي هيكل حديدي شبكي",
-        "أقف في باريس قرب نهر السين"
-      ],
-      "alt": [],
-      "qid": "hints-200-903",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://www.toureiffel.paris/en/the-monument/history"
-    },
-    {
-      "p": 200,
-      "topic": "أطعمة",
-      "type": "hints",
-      "q": "أي أكلة مخبوزة نقصد؟",
-      "a": "بيتزا",
-      "hints": [
-        "قاعدتي عجين مخبوز",
-        "قد أُغطّى بالطماطم والجبن",
-        "أُقدّم كثيرًا كقرص مقطّع إلى مثلثات"
-      ],
-      "alt": [],
-      "qid": "hints-200-904",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Pizza"
-    },
-    {
-      "p": 200,
-      "topic": "أدوات",
-      "type": "hints",
-      "q": "أي أداة تنظم مواعيدك؟",
-      "a": "ساعة",
-      "hints": [
-        "أُعلّق على الجدار أو أُلبس في المعصم",
-        "بعض أنواعي له عقارب",
-        "أخبرك بالوقت"
-      ],
-      "alt": [],
-      "qid": "hints-200-905",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Clock"
-    },
-    {
-      "p": 200,
-      "topic": "فضاء",
-      "type": "hints",
-      "q": "أي جرم قريب من الأرض نقصد؟",
-      "a": "القمر",
-      "hints": [
-        "سطحي مليء بالفوّهات",
-        "أعكس ضوء الشمس ولا أنتجه",
-        "أنا التابع الطبيعي للأرض"
-      ],
-      "alt": [],
-      "qid": "hints-200-906",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://science.nasa.gov/moon/facts/"
-    },
-    {
-      "p": 200,
-      "topic": "رياضات",
-      "type": "hints",
-      "q": "أي رياضة تُلعب في استاد ذي مرميين؟",
-      "a": "كرة القدم",
-      "hints": [
-        "في كل فريق أحد عشر لاعبًا داخل الملعب",
-        "الحارس يستطيع لمس الكرة بيديه في منطقته",
-        "يحاول الفريقان التسجيل في مرميين"
-      ],
-      "alt": [],
-      "qid": "hints-200-907",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Association_football"
-    },
-    {
-      "p": 200,
-      "topic": "نباتات",
-      "type": "hints",
-      "q": "أي نبات نضعه في الباقات؟",
-      "a": "ورد",
-      "hints": [
-        "قد أكون أحمر أو أبيض أو ورديًا",
-        "على سيقاني غالبًا أشواك",
-        "تدخل أزهاري في باقات الهدايا والعطور"
-      ],
-      "alt": [
-        "وردة",
-        "الورد"
-      ],
-      "qid": "hints-200-908",
-      "difficultyTarget": 0.8,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Rose"
-    },
-    {
-      "p": 400,
-      "topic": "بلدان",
-      "type": "hints",
       "q": "ما هذه الدولة الواقعة شرقي آسيا؟",
       "a": "اليابان",
       "hints": [
@@ -155,13 +16,13 @@
         "عاصمتي طوكيو"
       ],
       "alt": [],
-      "qid": "hints-400-901",
-      "difficultyTarget": 0.6,
+      "qid": "hints-200-911",
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Japan"
     },
     {
-      "p": 400,
+      "p": 200,
       "topic": "حيوانات",
       "type": "hints",
       "q": "ما هذا الثديي البحري الذكي؟",
@@ -172,10 +33,150 @@
         "أنا حوت مسنّن معروف بالقفز فوق الموج"
       ],
       "alt": [],
-      "qid": "hints-400-902",
-      "difficultyTarget": 0.6,
+      "qid": "hints-200-912",
+      "difficultyTarget": 0.8,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Dolphin"
+    },
+    {
+      "p": 200,
+      "topic": "معالم",
+      "type": "hints",
+      "q": "ما الموقع الأثري المقصود بهذه القرائن؟",
+      "a": "البتراء",
+      "hints": [
+        "اتخذني الأنباط عاصمة لهم",
+        "يصل الزائر إلى خزانتي عبر السيق",
+        "أنا المدينة الوردية المنحوتة في صخر الأردن"
+      ],
+      "alt": [],
+      "qid": "hints-200-913",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://whc.unesco.org/en/list/326/"
+    },
+    {
+      "p": 200,
+      "topic": "أطعمة",
+      "type": "hints",
+      "q": "أي أكلة مقلية من البقول نقصد؟",
+      "a": "فلافل",
+      "hints": [
+        "تدخل الأعشاب والبقول في خلطتي",
+        "أُحضّر بالحمص أو الفول بحسب البلد",
+        "أُقلى غالبًا على هيئة كرات أو أقراص"
+      ],
+      "alt": [
+        "طعمية"
+      ],
+      "qid": "hints-200-914",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Falafel"
+    },
+    {
+      "p": 200,
+      "topic": "أدوات",
+      "type": "hints",
+      "q": "ما الأداة التي ترشدك إلى الاتجاهات؟",
+      "a": "بوصلة",
+      "hints": [
+        "لا أحتاج إلى إشارة أقمار صناعية",
+        "إبرتي المغناطيسية تتحرك بحرية",
+        "تشير إبرتي نحو الشمال المغناطيسي"
+      ],
+      "alt": [],
+      "qid": "hints-200-915",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Compass"
+    },
+    {
+      "p": 200,
+      "topic": "فضاء",
+      "type": "hints",
+      "q": "أي عملاق غازي تقصده القرائن؟",
+      "a": "زحل",
+      "hints": [
+        "أنا عملاق غازي",
+        "ترتيبي السادس بُعدًا عن الشمس",
+        "تشتهر حولي حلقات واسعة من الجليد والصخر"
+      ],
+      "alt": [],
+      "qid": "hints-200-916",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://science.nasa.gov/saturn/facts/"
+    },
+    {
+      "p": 200,
+      "topic": "رياضات",
+      "type": "hints",
+      "q": "أي لعبة تُمارس عادة في ملعب ذي أرضية خشبية؟",
+      "a": "كرة السلة",
+      "hints": [
+        "يلعب خمسة لاعبين من كل فريق داخل الملعب",
+        "يلزم تنطيط الكرة أثناء التحرك بها",
+        "التسجيل يكون داخل طوق مرتفع ذي شبكة"
+      ],
+      "alt": [],
+      "qid": "hints-200-917",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Basketball"
+    },
+    {
+      "p": 200,
+      "topic": "نباتات",
+      "type": "hints",
+      "q": "ما هذه الشجرة المعروفة في بلاد المتوسط؟",
+      "a": "زيتون",
+      "hints": [
+        "تُؤكل ثماري بعد معالجتها",
+        "أوراقي طويلة ضيقة وخضراء مائلة للفضي",
+        "يُعصر من ثماري زيت يُستعمل كثيرًا في الطعام"
+      ],
+      "alt": [
+        "شجرة الزيتون"
+      ],
+      "qid": "hints-200-918",
+      "difficultyTarget": 0.8,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Olive"
+    },
+    {
+      "p": 400,
+      "topic": "بلدان",
+      "type": "hints",
+      "q": "أي بلد في شمال أفريقيا تقصده القرائن؟",
+      "a": "المغرب",
+      "hints": [
+        "أطلّ على الأطلسي والمتوسط",
+        "تضم مدني مراكش وفاس",
+        "عاصمتي الرباط"
+      ],
+      "alt": [],
+      "qid": "hints-400-911",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Morocco"
+    },
+    {
+      "p": 400,
+      "topic": "حيوانات",
+      "type": "hints",
+      "q": "ما هذا الرخوي البحري؟",
+      "a": "أخطبوط",
+      "hints": [
+        "أملك ثلاثة قلوب",
+        "أستطيع إطلاق الحبر عند الخطر",
+        "لدي ثمانية أذرع مزودة بممصّات"
+      ],
+      "alt": [],
+      "qid": "hints-400-912",
+      "difficultyTarget": 0.6,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Octopus"
     },
     {
       "p": 400,
@@ -185,14 +186,14 @@
       "a": "أهرامات الجيزة",
       "hints": [
         "بُنيت في مصر القديمة",
-        "منها خوفو وخفرع ومنقرع",
-        "تقف بجواري تمثال أبو الهول"
+        "تضم مجموعتي مقابر ثلاثة ملوك",
+        "من أصحابها خوفو وخفرع ومنقرع"
       ],
       "alt": [
         "الأهرامات",
         "اهرامات مصر"
       ],
-      "qid": "hints-400-903",
+      "qid": "hints-400-913",
       "difficultyTarget": 0.6,
       "verified": true,
       "sourceUrl": "https://whc.unesco.org/en/list/86/"
@@ -209,153 +210,13 @@
         "من أشكالي لفائف الماكي اليابانية"
       ],
       "alt": [],
-      "qid": "hints-400-904",
+      "qid": "hints-400-914",
       "difficultyTarget": 0.6,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Sushi"
     },
     {
       "p": 400,
-      "topic": "أدوات",
-      "type": "hints",
-      "q": "ما الأداة التي ترشدك إلى الاتجاهات؟",
-      "a": "بوصلة",
-      "hints": [
-        "لا أحتاج إلى إشارة أقمار صناعية",
-        "إبرتي المغناطيسية تتحرك بحرية",
-        "تشير إبرتي نحو الشمال المغناطيسي"
-      ],
-      "alt": [],
-      "qid": "hints-400-905",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Compass"
-    },
-    {
-      "p": 400,
-      "topic": "فضاء",
-      "type": "hints",
-      "q": "أي عملاق غازي تقصده القرائن؟",
-      "a": "زحل",
-      "hints": [
-        "أنا عملاق غازي",
-        "ترتيبي السادس بُعدًا عن الشمس",
-        "تشتهر حولي حلقات واسعة من الجليد والصخر"
-      ],
-      "alt": [],
-      "qid": "hints-400-906",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "https://science.nasa.gov/saturn/facts/"
-    },
-    {
-      "p": 400,
-      "topic": "رياضات",
-      "type": "hints",
-      "q": "أي لعبة تُمارس عادة في ملعب ذي أرضية خشبية؟",
-      "a": "كرة السلة",
-      "hints": [
-        "يلعب خمسة لاعبين من كل فريق داخل الملعب",
-        "يلزم تنطيط الكرة أثناء التحرك بها",
-        "التسجيل يكون داخل طوق مرتفع ذي شبكة"
-      ],
-      "alt": [],
-      "qid": "hints-400-907",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Basketball"
-    },
-    {
-      "p": 400,
-      "topic": "نباتات",
-      "type": "hints",
-      "q": "ما هذه الشجرة المعروفة في بلاد المتوسط؟",
-      "a": "زيتون",
-      "hints": [
-        "تُؤكل ثماري بعد معالجتها",
-        "أوراقي طويلة ضيقة وخضراء مائلة للفضي",
-        "يُعصر من ثماري زيت يُستعمل كثيرًا في الطعام"
-      ],
-      "alt": [
-        "شجرة الزيتون"
-      ],
-      "qid": "hints-400-908",
-      "difficultyTarget": 0.6,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Olive"
-    },
-    {
-      "p": 600,
-      "topic": "بلدان",
-      "type": "hints",
-      "q": "أي بلد في شمال أفريقيا تقصده القرائن؟",
-      "a": "المغرب",
-      "hints": [
-        "أطلّ على الأطلسي والمتوسط",
-        "تضم مدني مراكش وفاس",
-        "عاصمتي الرباط"
-      ],
-      "alt": [],
-      "qid": "hints-600-901",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Morocco"
-    },
-    {
-      "p": 600,
-      "topic": "حيوانات",
-      "type": "hints",
-      "q": "ما هذا الرخوي البحري؟",
-      "a": "أخطبوط",
-      "hints": [
-        "أملك ثلاثة قلوب",
-        "أستطيع إطلاق الحبر عند الخطر",
-        "لدي ثمانية أذرع مزودة بممصّات"
-      ],
-      "alt": [],
-      "qid": "hints-600-902",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Octopus"
-    },
-    {
-      "p": 600,
-      "topic": "معالم",
-      "type": "hints",
-      "q": "ما هذا الضريح الذي صار رمزًا للحب؟",
-      "a": "تاج محل",
-      "hints": [
-        "بُنيت في مدينة أغرا",
-        "أُنشئت بأمر شاه جهان لزوجته ممتاز محل",
-        "أنا معلم هندي من الرخام الأبيض"
-      ],
-      "alt": [],
-      "qid": "hints-600-903",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/252/"
-    },
-    {
-      "p": 600,
-      "topic": "أطعمة",
-      "type": "hints",
-      "q": "أي أكلة مقلية من البقول نقصد؟",
-      "a": "فلافل",
-      "hints": [
-        "تدخل الأعشاب والبقول في خلطتي",
-        "أُحضّر بالحمص أو الفول بحسب البلد",
-        "أُقلى غالبًا على هيئة أقراص وتُسمّى بعض أنواعي طعمية"
-      ],
-      "alt": [
-        "طعمية"
-      ],
-      "qid": "hints-600-904",
-      "difficultyTarget": 0.4,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Falafel"
-    },
-    {
-      "p": 600,
       "topic": "أدوات",
       "type": "hints",
       "q": "ما أداة القياس الموجودة في الصيدليات؟",
@@ -369,13 +230,13 @@
         "ترمومتر",
         "ميزان حرارة"
       ],
-      "qid": "hints-600-905",
-      "difficultyTarget": 0.4,
+      "qid": "hints-400-915",
+      "difficultyTarget": 0.6,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Thermometer"
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "فضاء",
       "type": "hints",
       "q": "أي كوكب زارته عربات استكشاف كثيرة؟",
@@ -386,13 +247,13 @@
         "أشتهر بلقب الكوكب الأحمر"
       ],
       "alt": [],
-      "qid": "hints-600-906",
-      "difficultyTarget": 0.4,
+      "qid": "hints-400-916",
+      "difficultyTarget": 0.6,
       "verified": true,
       "sourceUrl": "https://science.nasa.gov/mars/facts/"
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "رياضات",
       "type": "hints",
       "q": "أي لعبة تكون فيها حماية الملك أساسية؟",
@@ -403,30 +264,32 @@
         "تنتهي المباراة عادة بكش مات"
       ],
       "alt": [],
-      "qid": "hints-600-907",
-      "difficultyTarget": 0.4,
+      "qid": "hints-400-917",
+      "difficultyTarget": 0.6,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Chess"
     },
     {
-      "p": 600,
+      "p": 400,
       "topic": "نباتات",
       "type": "hints",
-      "q": "أي تابل يُباع على هيئة خيوط؟",
-      "a": "زعفران",
+      "q": "أي نبات طويل الساق تقصده القرائن؟",
+      "a": "خيزران",
       "hints": [
-        "أُجمع يدويًا من أزهار بنفسجية",
-        "الجزء المستخدم مني مياسم رفيعة حمراء",
-        "أعطي الأرز والطعام لونًا أصفر ذهبيًا"
+        "أنتمي إلى الفصيلة النجيلية",
+        "تظهر عقد واضحة على سيقاني",
+        "أتغذى عليّ دببة الباندا بكثرة"
       ],
-      "alt": [],
-      "qid": "hints-600-908",
-      "difficultyTarget": 0.4,
+      "alt": [
+        "بامبو"
+      ],
+      "qid": "hints-400-918",
+      "difficultyTarget": 0.6,
       "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Saffron"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bamboo"
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "بلدان",
       "type": "hints",
       "q": "أي جزيرة أوروبية تجمع النار والجليد؟",
@@ -440,13 +303,13 @@
         "أيسلندا",
         "ايسلندا"
       ],
-      "qid": "hints-800-901",
-      "difficultyTarget": 0.25,
+      "qid": "hints-600-911",
+      "difficultyTarget": 0.4,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Iceland"
     },
     {
-      "p": 800,
+      "p": 600,
       "topic": "حيوانات",
       "type": "hints",
       "q": "أي زاحف ماهر في صيد الحشرات نقصد؟",
@@ -457,27 +320,177 @@
         "أشتهر بتغيير لون جلدي"
       ],
       "alt": [],
-      "qid": "hints-800-902",
-      "difficultyTarget": 0.25,
+      "qid": "hints-600-912",
+      "difficultyTarget": 0.4,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Chameleon"
+    },
+    {
+      "p": 600,
+      "topic": "معالم",
+      "type": "hints",
+      "q": "ما هذا الضريح الذي صار رمزًا للحب؟",
+      "a": "تاج محل",
+      "hints": [
+        "بُنيت في مدينة أغرا",
+        "أُنشئت بأمر شاه جهان لزوجته ممتاز محل",
+        "أنا معلم هندي من الرخام الأبيض"
+      ],
+      "alt": [],
+      "qid": "hints-600-913",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://whc.unesco.org/en/list/252/"
+    },
+    {
+      "p": 600,
+      "topic": "أطعمة",
+      "type": "hints",
+      "q": "ما هذا الطعام المجفف من المؤونة الشامية؟",
+      "a": "كشك",
+      "hints": [
+        "تدخل الحبوب ومنتجات الحليب في تحضيري",
+        "أُجفّف ثم أُستخدم في إعداد حساء أو أطباق ساخنة",
+        "من وصفاتي الشامية برغل مخمّر مع اللبن"
+      ],
+      "alt": [
+        "الكشك"
+      ],
+      "qid": "hints-600-914",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kashk"
+    },
+    {
+      "p": 600,
+      "topic": "أدوات",
+      "type": "hints",
+      "q": "ما هذه الأداة التي تتابع أحوال الجو؟",
+      "a": "بارومتر",
+      "hints": [
+        "قد أعمل بالزئبق أو بعلبة معدنية مرنة",
+        "تغيّر قراءتي يساعد في متابعة الطقس",
+        "أقيس الضغط الجوي"
+      ],
+      "alt": [
+        "مقياس الضغط الجوي"
+      ],
+      "qid": "hints-600-915",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Barometer"
+    },
+    {
+      "p": 600,
+      "topic": "فضاء",
+      "type": "hints",
+      "q": "أي كوكب شديد اللمعان تقصده القرائن؟",
+      "a": "الزهرة",
+      "hints": [
+        "أدور حول محوري بعكس اتجاه معظم الكواكب",
+        "حرارتي السطحية أعلى من عطارد",
+        "أُرى لامعًا قرب الشروق أو الغروب وأُلقّب بنجمة الصباح"
+      ],
+      "alt": [],
+      "qid": "hints-600-916",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://science.nasa.gov/venus/facts/"
+    },
+    {
+      "p": 600,
+      "topic": "رياضات",
+      "type": "hints",
+      "q": "ما الرياضة التي تقصدها قرائن الشبكة والمقذوف؟",
+      "a": "ريشة طائرة",
+      "hints": [
+        "تُلعب فرديًا أو زوجيًا",
+        "يفصل جانبي اللعب حاجز شبكي",
+        "يضرب اللاعبون بالمضارب مقذوفًا ذا ريش أو تنورة صناعية"
+      ],
+      "alt": [
+        "تنس الريشة",
+        "كرة الريشة",
+        "بادمنتون"
+      ],
+      "qid": "hints-600-917",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Badminton"
+    },
+    {
+      "p": 600,
+      "topic": "نباتات",
+      "type": "hints",
+      "q": "أي تابل يُباع على هيئة خيوط؟",
+      "a": "زعفران",
+      "hints": [
+        "أُجمع يدويًا من أزهار بنفسجية",
+        "الجزء المستخدم مني مياسم رفيعة حمراء",
+        "أعطي الأرز والطعام لونًا أصفر ذهبيًا"
+      ],
+      "alt": [],
+      "qid": "hints-600-918",
+      "difficultyTarget": 0.4,
+      "verified": true,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Saffron"
+    },
+    {
+      "p": 800,
+      "topic": "بلدان",
+      "type": "hints",
+      "q": "أي مملكة صغيرة في آسيا نقصد؟",
+      "a": "بوتان",
+      "hints": [
+        "أقع في جبال الهيمالايا بين الهند والصين",
+        "أشتهر بمفهوم السعادة الوطنية الإجمالية",
+        "يلقّبني أهلي بأرض تنين الرعد"
+      ],
+      "alt": [],
+      "qid": "hints-800-911",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://bhutan.travel/about"
+    },
+    {
+      "p": 800,
+      "topic": "حيوانات",
+      "type": "hints",
+      "q": "أي برمائي ذي مظهر غير مألوف نقصد؟",
+      "a": "أكسولوتل",
+      "hints": [
+        "موطني الأصلي قرب مدينة مكسيكو",
+        "أستطيع تجديد أطراف مفقودة",
+        "تبقى خياشيمي الخارجية الريشية ظاهرة في البلوغ"
+      ],
+      "alt": [
+        "عفريت الماء",
+        "أكسولوتل مكسيكي"
+      ],
+      "qid": "hints-800-912",
+      "difficultyTarget": 0.25,
+      "verified": true,
+      "sourceUrl": "https://animaldiversity.org/accounts/Ambystoma_mexicanum/"
     },
     {
       "p": 800,
       "topic": "معالم",
       "type": "hints",
-      "q": "أي مدينة أثرية نبحث عنها في الأردن؟",
-      "a": "البتراء",
+      "q": "أي معلم ديني في برشلونة نقصد؟",
+      "a": "ساغرادا فاميليا",
       "hints": [
-        "اتخذني الأنباط عاصمة لهم",
-        "يصل الزائر إلى خزانتي عبر السيق",
-        "أنا المدينة الوردية المنحوتة في صخر الأردن"
+        "بدأ بنائي في برشلونة سنة 1882",
+        "ارتبط تصميمي بأنطوني غاودي",
+        "يعني اسمي العائلة المقدسة"
       ],
-      "alt": [],
-      "qid": "hints-800-903",
+      "alt": [
+        "ساجرادا فاميليا",
+        "كنيسة العائلة المقدسة"
+      ],
+      "qid": "hints-800-913",
       "difficultyTarget": 0.25,
       "verified": true,
-      "sourceUrl": "https://whc.unesco.org/en/list/326/"
+      "sourceUrl": "https://sagradafamilia.org/en/history-of-the-temple"
     },
     {
       "p": 800,
@@ -493,165 +506,13 @@
       "alt": [
         "صلصة البيستو"
       ],
-      "qid": "hints-800-904",
+      "qid": "hints-800-914",
       "difficultyTarget": 0.25,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Pesto"
     },
     {
       "p": 800,
-      "topic": "أدوات",
-      "type": "hints",
-      "q": "ما هذه الأداة التي تتابع أحوال الجو؟",
-      "a": "بارومتر",
-      "hints": [
-        "قد أعمل بالزئبق أو بعلبة معدنية مرنة",
-        "تغيّر قراءتي يساعد في متابعة الطقس",
-        "أقيس الضغط الجوي"
-      ],
-      "alt": [
-        "مقياس الضغط الجوي"
-      ],
-      "qid": "hints-800-905",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Barometer"
-    },
-    {
-      "p": 800,
-      "topic": "فضاء",
-      "type": "hints",
-      "q": "أي كوكب شديد اللمعان تقصده القرائن؟",
-      "a": "الزهرة",
-      "hints": [
-        "أدور حول محوري بعكس اتجاه معظم الكواكب",
-        "حرارتي السطحية أعلى من عطارد",
-        "أُرى لامعًا قرب الشروق أو الغروب وأُلقّب بنجمة الصباح"
-      ],
-      "alt": [],
-      "qid": "hints-800-906",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "https://science.nasa.gov/venus/facts/"
-    },
-    {
-      "p": 800,
-      "topic": "رياضات",
-      "type": "hints",
-      "q": "أي رياضة نلعب فيها بمقذوف غير كروي؟",
-      "a": "ريشة طائرة",
-      "hints": [
-        "تُمارَس فرديًا أو زوجيًا فوق شبكة",
-        "المقذوف المستخدم فيها خفيف وله ريش أو تنورة صناعية",
-        "اسمي الإنجليزي بادمنتون"
-      ],
-      "alt": [
-        "تنس الريشة",
-        "كرة الريشة",
-        "بادمنتون"
-      ],
-      "qid": "hints-800-907",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Badminton"
-    },
-    {
-      "p": 800,
-      "topic": "نباتات",
-      "type": "hints",
-      "q": "أي نبات طويل الساق تقصده القرائن؟",
-      "a": "خيزران",
-      "hints": [
-        "أنتمي إلى الفصيلة النجيلية",
-        "تظهر عقد واضحة على سيقاني",
-        "أتغذى عليّ دببة الباندا بكثرة"
-      ],
-      "alt": [
-        "بامبو"
-      ],
-      "qid": "hints-800-908",
-      "difficultyTarget": 0.25,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Bamboo"
-    },
-    {
-      "p": 1000,
-      "topic": "بلدان",
-      "type": "hints",
-      "q": "أي مملكة صغيرة في آسيا نقصد؟",
-      "a": "بوتان",
-      "hints": [
-        "أقع في جبال الهيمالايا بين الهند والصين",
-        "أشتهر بمفهوم السعادة الوطنية الإجمالية",
-        "يلقّبني أهلي بأرض تنين الرعد"
-      ],
-      "alt": [],
-      "qid": "hints-1000-901",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "https://bhutan.travel/about"
-    },
-    {
-      "p": 1000,
-      "topic": "حيوانات",
-      "type": "hints",
-      "q": "أي برمائي ذي مظهر غير مألوف نقصد؟",
-      "a": "أكسولوتل",
-      "hints": [
-        "موطني الأصلي قرب مدينة مكسيكو",
-        "أستطيع تجديد أطراف مفقودة",
-        "تبقى خياشيمي الخارجية الريشية ظاهرة في البلوغ"
-      ],
-      "alt": [
-        "عفريت الماء",
-        "أكسولوتل مكسيكي"
-      ],
-      "qid": "hints-1000-902",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "https://animaldiversity.org/accounts/Ambystoma_mexicanum/"
-    },
-    {
-      "p": 1000,
-      "topic": "معالم",
-      "type": "hints",
-      "q": "أي معلم ديني في برشلونة نقصد؟",
-      "a": "ساغرادا فاميليا",
-      "hints": [
-        "بدأ بنائي في برشلونة سنة 1882",
-        "ارتبط تصميمي بأنطوني غاودي",
-        "يعني اسمي العائلة المقدسة"
-      ],
-      "alt": [
-        "ساجرادا فاميليا",
-        "كنيسة العائلة المقدسة"
-      ],
-      "qid": "hints-1000-903",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "https://sagradafamilia.org/en/history-of-the-temple"
-    },
-    {
-      "p": 1000,
-      "topic": "أطعمة",
-      "type": "hints",
-      "q": "ما هذا الطعام المجفف من المؤونة الشامية؟",
-      "a": "كشك",
-      "hints": [
-        "تدخل الحبوب ومنتجات الحليب في تحضيري",
-        "أُجفّف ثم أُستخدم في إعداد حساء أو أطباق ساخنة",
-        "من وصفاتي الشامية برغل مخمّر مع اللبن"
-      ],
-      "alt": [
-        "الكشك"
-      ],
-      "qid": "hints-1000-904",
-      "difficultyTarget": 0.15,
-      "verified": true,
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kashk"
-    },
-    {
-      "p": 1000,
       "topic": "أدوات",
       "type": "hints",
       "q": "ما هذه الأداة التي عرفها علماء الفلك قديمًا؟",
@@ -665,13 +526,13 @@
         "استرلاب",
         "الأسطرلاب"
       ],
-      "qid": "hints-1000-905",
-      "difficultyTarget": 0.15,
+      "qid": "hints-800-915",
+      "difficultyTarget": 0.25,
       "verified": true,
       "sourceUrl": "https://shop.rmg.co.uk/collections/shop-by-theme/products/astrolabe-on-stand"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "فضاء",
       "type": "hints",
       "q": "أي قمر بعيد له طقس وبحيرات؟",
@@ -684,13 +545,13 @@
       "alt": [
         "تيتان قمر زحل"
       ],
-      "qid": "hints-1000-906",
-      "difficultyTarget": 0.15,
+      "qid": "hints-800-916",
+      "difficultyTarget": 0.25,
       "verified": true,
       "sourceUrl": "https://science.nasa.gov/saturn/moons/titan/facts/"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "رياضات",
       "type": "hints",
       "q": "أي رياضة على الجليد تقصدها القرائن؟",
@@ -704,13 +565,13 @@
         "الكيرلنغ",
         "كرلنغ"
       ],
-      "qid": "hints-1000-907",
-      "difficultyTarget": 0.15,
+      "qid": "hints-800-917",
+      "difficultyTarget": 0.25,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Curling"
     },
     {
-      "p": 1000,
+      "p": 800,
       "topic": "نباتات",
       "type": "hints",
       "q": "أي شجرة ضخمة الجذع تقصدها القرائن؟",
@@ -724,10 +585,195 @@
         "تبلدي",
         "الباوباب"
       ],
-      "qid": "hints-1000-908",
-      "difficultyTarget": 0.15,
+      "qid": "hints-800-918",
+      "difficultyTarget": 0.25,
       "verified": true,
       "sourceUrl": "https://en.wikipedia.org/wiki/Adansonia"
+    },
+    {
+      "q": "ما الدولة الأفريقية التي تجمعها هذه القرائن؟",
+      "a": "بوتسوانا",
+      "topic": "بلدان",
+      "sourceUrl": "https://www.botswanatourism.co.bw/glance",
+      "alt": [
+        "بتسوانا"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "دولة حبيسة في جنوب القارة",
+        "توجد فيها دلتا أوكافانغو",
+        "عاصمتها غابورون"
+      ],
+      "source": [
+        "https://www.botswanatourism.co.bw/glance",
+        "https://www.botswanatourism.co.bw/explore/okavango-delta"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-911",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما الثديي الذي تدل عليه قرائن الغابة والقرابة والخطوط؟",
+      "a": "أوكابي",
+      "topic": "حيوانات",
+      "sourceUrl": "https://animals.sandiegozoo.org/animals/okapi",
+      "alt": [
+        "الأوكابي"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "يعيش بريًا في غابات الكونغو الديمقراطية",
+        "هو قريب حي للزرافة",
+        "أرجله مخططة بالأبيض والأسود رغم أن جسمه بني"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-912",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "أي معبد آسيوي تصفه هذه القرائن؟",
+      "a": "أنغكور وات",
+      "topic": "معالم",
+      "sourceUrl": "https://apsaraauthority.gov.kh/2021/06/14/angkor-wat/",
+      "alt": [
+        "أنكور وات",
+        "أنجكور وات",
+        "Angkor Wat"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "من آثار إمبراطورية الخمير",
+        "كان معبدًا لفيشنو ثم أصبح موقعًا بوذيًا",
+        "يقع في كمبوديا وتحيط به خنادق مائية"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-913",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما المعجون الياباني الذي تدل عليه قرائن التخمير؟",
+      "a": "ميسو",
+      "topic": "أطعمة",
+      "sourceUrl": "https://www.maff.go.jp/e/policies/market/dento_syoku/bunrui/syouyu-miso.html",
+      "alt": [
+        "الميسو",
+        "Miso"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "تتبيلة مالحة مخمّرة",
+        "توجد منه أنواع تختلف في اللون ومدة التعتيق",
+        "تدخل فول الصويا والكوجي والملح في تحضيره"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-914",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما أداة الملاحة التي تصفها قرائن الزاوية والقوس؟",
+      "a": "السدس",
+      "topic": "أدوات",
+      "sourceUrl": "https://timeandnavigation.si.edu/multimedia-asset/sextant",
+      "alt": [
+        "آلة السدس",
+        "السدسية",
+        "سكستانت",
+        "Sextant"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "تساعد الملاح على استخدام النجوم",
+        "تقيس ارتفاع جرم فوق الأفق",
+        "اشتُق اسمها من قوس مقداره ستون درجة"
+      ],
+      "source": [
+        "https://timeandnavigation.si.edu/multimedia-asset/sextant",
+        "https://timeandnavigation.si.edu/navigating-at-sea/challenges/navigate-the-sea-activity"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-915",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "أي قمر جليدي تشير إليه قرائن المحيط والنفاثات؟",
+      "a": "إنسيلادوس",
+      "topic": "فضاء",
+      "sourceUrl": "https://science.nasa.gov/mission/cassini/science/enceladus/",
+      "alt": [
+        "إنكلادوس",
+        "أنسيلادوس",
+        "Enceladus"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "رصدته مركبة كاسيني قرب زحل",
+        "يخفي محيطًا مالحًا تحت قشرته الجليدية",
+        "تنطلق نفاثات من منطقة قطبه الجنوبي"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-916",
+      "difficultyTarget": 0.15
+    },
+    {
+      "q": "ما اللعبة الباسكية المعروفة بهذه الأداة المميزة؟",
+      "a": "جاي ألاي",
+      "topic": "رياضات",
+      "sourceUrl": "https://museotik.euskadi.eus/titulo-souvenir-turistico/objeto-cesta-punta/museotik-ca-324997/webmus00-contenedor/es/",
+      "alt": [
+        "هاي ألاي",
+        "Jai alai",
+        "سيستا بونتا"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "نوع من ألعاب الكرة الباسكية",
+        "تعتمد على أداة تشبه السلة",
+        "تُقام مبارياتي في ملاعب فرونتون"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-917",
+      "difficultyTarget": 0.15,
+      "source": [
+        "https://museotik.euskadi.eus/titulo-souvenir-turistico/objeto-cesta-punta/museotik-ca-324997/webmus00-contenedor/es/",
+        "https://www.euskadi.eus/gobierno-vasco/-/es/instalaciones-deportivas/fronton-galarreta-jai-alai/"
+      ]
+    },
+    {
+      "q": "ما الشجرة ذات الأوراق المميزة التي تصفها القرائن؟",
+      "a": "جنكو",
+      "topic": "نباتات",
+      "sourceUrl": "https://www.kew.org/plants/ginkgo-tree",
+      "alt": [
+        "جينكو",
+        "الجنكة",
+        "جنكة",
+        "Ginkgo"
+      ],
+      "verified": true,
+      "verifiedAt": "2026-09-25",
+      "type": "hints",
+      "hints": [
+        "هي النوع الحي الوحيد في رتبتها النباتية",
+        "توجد مجموعات برية محدودة منها في الصين",
+        "أوراقها مروحية الشكل وذات فصوص"
+      ],
+      "p": 1000,
+      "qid": "hints-1000-918",
+      "difficultyTarget": 0.15
     }
   ]
 }
